@@ -8345,7 +8345,7 @@ body.home-page *{
 
     width:23%;
 
-    height:60%;
+    height:45%;
 
     z-index:41;
 
@@ -8642,5 +8642,65 @@ body.home-page::before{
     pointer-events:none;
 
     background:#000000;
+
+}
+
+/* ========================================================= */
+/* ARS HOME — GOLD STATIC TOP PANEL — EXTENDED TO NAVY EDGE */
+/* ========================================================= */
+
+.ars-glass-card{
+    position:relative;
+    overflow:hidden;
+}
+
+
+/* ========================================================= */
+/* 01 — STATIC GOLD PANEL                                   */
+/* ========================================================= */
+
+.ars-glass-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+    right:0;
+
+    /* ارتفاع لایه طلایی ثابت */
+    height:42%;
+
+    z-index:20;
+
+    pointer-events:none;
+
+    background:
+
+        linear-gradient(
+            180deg,
+
+            rgba(184,137,63,.18) 0%,
+
+            rgba(205,157,72,.32) 35%,
+
+            rgba(230,188,103,.55) 75%,
+
+            rgba(230,188,103,.62) 100%
+        );
+
+}
+
+
+/* ========================================================= */
+/* 02 — KEEP CARD CONTENT ABOVE GOLD PANEL                  */
+/* ========================================================= */
+
+.ars-glass-card > *{
+
+    position:relative;
+
+    z-index:30;
 
 }
