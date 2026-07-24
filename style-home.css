@@ -8579,3 +8579,68 @@ body.home-page *{
     position:relative;
     left:-55%;
 }
+/* ========================================================= */
+/* ARS HOME — ABSOLUTE DEEP BLACK BACKGROUND                 */
+/* مستقل — فقط برای HOME                                     */
+/* ========================================================= */
+
+html:has(body.home-page),
+body.home-page{
+
+    background:
+
+        #000000 !important;
+
+    background-color:
+
+        #000000 !important;
+
+    background-image:
+
+        none !important;
+
+}
+
+/* کل محدوده صفحه HOME */
+body.home-page{
+
+    color:#ffffff;
+
+}
+
+/* جلوگیری از ایجاد رنگ ناخواسته توسط کانتینر اصلی */
+body.home-page > main,
+body.home-page main{
+
+    background-color:
+
+        transparent !important;
+
+}
+
+/* مشکی مطلق برای نواحی اصلی، بدون تغییر ظاهر محتوا */
+body.home-page .hero,
+body.home-page .ecosystem{
+
+    background-color:
+
+        #000000 !important;
+
+}
+
+/* لایه نهایی مشکی عمیق */
+body.home-page::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-9999;
+
+    pointer-events:none;
+
+    background:#000000;
+
+}
