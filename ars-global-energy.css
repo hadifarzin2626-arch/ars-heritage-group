@@ -2082,5 +2082,520 @@ a.org-card:focus-visible{
 
 
 /* =========================================================
+   ARS V7 — UNIVERSAL CARD CINEMATIC MOTION EXTENSION
+   مستقل از کلاس‌های اختصاصی صفحات
+   فقط بر پایه .ars-glass
+   بدون JavaScript
+   ========================================================= */
+
+
+/* =========================================================
+   01. CARD MOTION FOUNDATION
+   ========================================================= */
+
+.ars-glass{
+
+    position:relative;
+
+    isolation:isolate;
+
+    transform-origin:center center;
+
+    transition:
+
+        transform
+        1.15s
+        cubic-bezier(.16,1,.3,1),
+
+        box-shadow
+        1.15s
+        cubic-bezier(.16,1,.3,1),
+
+        border-color
+        .9s
+        ease,
+
+        filter
+        .9s
+        ease;
+
+}
+
+
+/* =========================================================
+   02. SLOW CARD ELEVATION
+   حرکت آهسته و سینمایی کارت
+   ========================================================= */
+
+.ars-glass:hover{
+
+    transform:
+
+        translateY(-48px)
+        scale(1.07);
+
+    border-color:
+
+        rgba(255,220,135,.72);
+
+    box-shadow:
+
+        0 40px 90px
+        rgba(0,0,0,.48),
+
+        0 0 45px
+        rgba(235,177,60,.32),
+
+        0 20px 65px
+        rgba(198,132,27,.25);
+
+    filter:
+
+        brightness(1.08)
+        saturate(1.08);
+
+}
+
+
+/* =========================================================
+   03. GOLDEN ENERGY UNDER CARD
+   انرژی طلایی زیر کارت
+   ========================================================= */
+
+.ars-glass::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:-10%;
+
+    right:-10%;
+
+    bottom:-28px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+
+            ellipse at center,
+
+            rgba(255,225,145,.82),
+
+            rgba(255,198,70,.46) 30%,
+
+            rgba(210,140,25,.18) 55%,
+
+            transparent 78%
+
+        );
+
+    filter:
+
+        blur(14px);
+
+    opacity:0;
+
+    transform:
+
+        scaleX(.45)
+        scaleY(.55);
+
+    transition:
+
+        opacity
+        .9s
+        ease,
+
+        transform
+        1.15s
+        cubic-bezier(.16,1,.3,1);
+
+    pointer-events:none;
+
+    z-index:-1;
+
+}
+
+
+/* =========================================================
+   04. ENERGY ACTIVATION
+   ========================================================= */
+
+.ars-glass:hover::after{
+
+    opacity:1;
+
+    transform:
+
+        scaleX(1.9)
+        scaleY(1);
+
+}
+
+
+/* =========================================================
+   05. CINEMATIC ARS VISUAL
+   ARS محو و طلایی
+   ========================================================= */
+
+.ars-glass::before{
+
+    content:"ARS";
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    z-index:-2;
+
+    pointer-events:none;
+
+    white-space:nowrap;
+
+    font-family:
+
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+
+        clamp(
+            4rem,
+            9vw,
+            9rem
+        );
+
+    font-weight:900;
+
+    letter-spacing:.18em;
+
+    color:
+
+        rgba(
+            255,
+            215,
+            125,
+            .055
+        );
+
+    text-shadow:
+
+        0 0 20px
+        rgba(255,215,125,.08),
+
+        0 0 60px
+        rgba(225,163,47,.05);
+
+    opacity:0;
+
+    transform:
+
+        translate(-50%,-50%)
+        scale(.35);
+
+    filter:
+
+        blur(2px);
+
+    transition:
+
+        opacity
+        .7s
+        ease;
+
+}
+
+
+/* =========================================================
+   06. ARS CINEMATIC REVEAL
+   ظاهر شدن ARS هنگام Hover
+   ========================================================= */
+
+.ars-glass:hover::before{
+
+    opacity:1;
+
+    animation:
+
+        arsCardGoldenIdentity
+        3.8s
+        cubic-bezier(.16,1,.3,1)
+        forwards;
+
+}
+
+
+/* =========================================================
+   07. ARS GOLDEN IDENTITY ANIMATION
+   کوچک → بزرگ → محو
+   ========================================================= */
+
+@keyframes arsCardGoldenIdentity{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+
+            translate(-50%,-50%)
+            scale(.35);
+
+        filter:
+
+            blur(5px);
+
+    }
+
+
+    18%{
+
+        opacity:.75;
+
+        transform:
+
+            translate(-50%,-50%)
+            scale(.55);
+
+        filter:
+
+            blur(2px);
+
+    }
+
+
+    48%{
+
+        opacity:.55;
+
+        transform:
+
+            translate(-50%,-50%)
+            scale(.90);
+
+        filter:
+
+            blur(2px);
+
+    }
+
+
+    75%{
+
+        opacity:.28;
+
+        transform:
+
+            translate(-50%,-50%)
+            scale(1.18);
+
+        filter:
+
+            blur(4px);
+
+    }
+
+
+    100%{
+
+        opacity:0;
+
+        transform:
+
+            translate(-50%,-50%)
+            scale(1.55);
+
+        filter:
+
+            blur(9px);
+
+    }
+
+}
+
+
+/* =========================================================
+   08. CARD CONTENT CINEMATIC SCALE
+   بزرگ شدن نرم محتوای کارت
+   ========================================================= */
+
+.ars-glass h1,
+.ars-glass h2,
+.ars-glass h3,
+.ars-glass h4,
+.ars-glass p,
+.ars-glass span,
+.ars-glass img{
+
+    transition:
+
+        transform
+        1.1s
+        cubic-bezier(.16,1,.3,1),
+
+        filter
+        .8s
+        ease;
+
+}
+
+
+/* =========================================================
+   09. CONTENT REVEAL
+   ========================================================= */
+
+.ars-glass:hover h1,
+.ars-glass:hover h2,
+.ars-glass:hover h3,
+.ars-glass:hover h4,
+.ars-glass:hover p,
+.ars-glass:hover span{
+
+    transform:
+
+        scale(1.12);
+
+}
+
+
+/* =========================================================
+   10. IMAGE MOTION
+   ========================================================= */
+
+.ars-glass:hover img{
+
+    transform:
+
+        scale(1.08);
+
+    filter:
+
+        brightness(1.08)
+        saturate(1.08);
+
+}
+
+
+/* =========================================================
+   11. CARD ENERGY BREATH
+   تنفس بسیار نرم انرژی
+   ========================================================= */
+
+.ars-glass:hover{
+
+    animation:
+
+        arsCardEnergyBreath
+        3.8s
+        ease-in-out
+        infinite
+        alternate;
+
+}
+
+
+/* =========================================================
+   12. ENERGY BREATH ANIMATION
+   ========================================================= */
+
+@keyframes arsCardEnergyBreath{
+
+    0%{
+
+        box-shadow:
+
+            0 35px 75px
+            rgba(0,0,0,.45),
+
+            0 0 30px
+            rgba(235,177,60,.24);
+
+    }
+
+    100%{
+
+        box-shadow:
+
+            0 45px 95px
+            rgba(0,0,0,.52),
+
+            0 0 55px
+            rgba(235,177,60,.42);
+
+    }
+
+}
+
+
+/* =========================================================
+   13. MOBILE
+   ========================================================= */
+
+@media(max-width:768px){
+
+    .ars-glass:hover{
+
+        transform:
+
+            translateY(-28px)
+            scale(1.045);
+
+    }
+
+
+    .ars-glass:hover h1,
+    .ars-glass:hover h2,
+    .ars-glass:hover h3,
+    .ars-glass:hover h4,
+    .ars-glass:hover p,
+    .ars-glass:hover span{
+
+        transform:
+
+            scale(1.06);
+
+    }
+
+
+    .ars-glass:hover img{
+
+        transform:
+
+            scale(1.04);
+
+    }
+
+}
+
+
+/* =========================================================
+   14. REDUCED MOTION
+   ========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    .ars-glass,
+    .ars-glass *,
+    .ars-glass::before,
+    .ars-glass::after{
+
+        animation:none !important;
+
+        transition:none !important;
+
+    }
+
+}
+
+
+/* =========================================================
    15. END OF ARS GLOBAL ENERGY SYSTEM V7
    ========================================================= */
