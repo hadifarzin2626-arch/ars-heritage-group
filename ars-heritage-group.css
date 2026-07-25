@@ -146,33 +146,44 @@
 /* 03 — CINEMATIC BACKGROUND ENERGY                          */
 /* ========================================================= */
 
-.ars-group-page::before{
+..ars-group-page::before{
 
-    content:
-        "";
+    content:"";
 
-    position:
-        fixed;
+    position:absolute;
 
-    inset:
-        0;
+    inset:0;
 
-    z-index:
-        0;
+    z-index:-2;
 
-    pointer-events:
-        none;
+    pointer-events:none;
 
     background:
 
         radial-gradient(
-            circle at 50% 30%,
-            rgba(201,164,90,.045),
+            ellipse at 20% 20%,
+            rgba(207,169,82,.08),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            ellipse at 80% 45%,
+            rgba(17,42,79,.22),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            ellipse at 50% 90%,
+            rgba(194,151,64,.07),
             transparent 28%
         );
 
     animation:
-        arsAmbientGlow 12s ease-in-out infinite alternate;
+        arsAmbientLight
+        18s
+        ease-in-out
+        infinite
+        alternate;
 
 }
 
