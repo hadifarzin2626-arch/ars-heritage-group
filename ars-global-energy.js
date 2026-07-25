@@ -1,157 +1,269 @@
 /* =========================================================
-   ARS GLOBAL ENERGY V8
-   CARD ACTIVATION ENGINE
+   ARS CARD INTERACTION SYSTEM V9
+   Premium Click Interaction
+   ---------------------------------------------------------
+   Controls ONLY:
+   .ars-glass
+
+   Does NOT control:
+   - body
+   - html
+   - page scroll
+   - global energy
+   - page background
    ========================================================= */
 
-(function(){
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
 
-    "use strict";
+        /* =================================================
+           01. FIND ALL ARS CARDS
+           ================================================= */
 
-
-    /* =====================================================
-       01. CARD SELECTOR
-       ===================================================== */
-
-    const cardSelector = [
-
-        ".ars-group-page .ars-glass",
-
-        ".mission-card",
-        ".value-card",
-        ".vision-card",
-        ".dna-card",
-        ".leader-card",
-        ".partner-card",
-        ".standard-card",
-        ".timeline-card",
-        ".gallery-card",
-        ".future-card",
-        ".stat-card",
-        ".country-card",
-        ".eco",
-        ".org-card"
-
-    ].join(",");
-
-
-    /* =====================================================
-       02. GET ALL CARDS
-       ===================================================== */
-
-    const cards = document.querySelectorAll(
-        cardSelector
-    );
-
-
-    if(!cards.length){
-
-        return;
-
-    }
-
-
-    /* =====================================================
-       03. ACTIVATE CARD
-       ===================================================== */
-
-    cards.forEach(function(card){
-
-        card.addEventListener(
-            "click",
-            function(event){
-
-                /*
-                 Prevent click from bubbling
-                 جلوگیری از انتشار کلیک
-                */
-
-                event.stopPropagation();
-
-
-                /*
-                 Remove active state
-                 از بین بردن کارت فعال قبلی
-                */
-
-                cards.forEach(function(otherCard){
-
-                    if(
-                        otherCard !== card
-                    ){
-
-                        otherCard.classList.remove(
-                            "ars-card-active"
-                        );
-
-                    }
-
-                });
-
-
-                /*
-                 Toggle selected card
-                 فعال / غیرفعال کردن کارت انتخاب‌شده
-                */
-
-                card.classList.toggle(
-                    "ars-card-active"
-                );
-
-            },
-            false
+        const cards = document.querySelectorAll(
+            ".ars-glass"
         );
 
-    });
+
+        /* =================================================
+           02. IF NO CARDS EXIST
+           ================================================= */
+
+        if(!cards.length){
+
+            return;
+
+        }
 
 
-    /* =====================================================
-       04. CLOSE ACTIVE CARD
-       04. بستن کارت فعال با کلیک بیرون
-       ===================================================== */
+        /* =================================================
+           03. CREATE ARS IDENTITY
+           ================================================= */
 
-    document.addEventListener(
-        "click",
-        function(){
+        function createARSIdentity(card){
 
-            cards.forEach(function(card){
-
-                card.classList.remove(
-                    "ars-card-active"
+            const oldIdentity =
+                card.querySelector(
+                    ".ars-card-identity"
                 );
 
-            });
 
-        },
-        false
-    );
+            if(oldIdentity){
 
-
-    /* =====================================================
-       05. ESCAPE KEY
-       05. بستن کارت با ESC
-       ===================================================== */
-
-    document.addEventListener(
-        "keydown",
-        function(event){
-
-            if(
-                event.key === "Escape"
-            ){
-
-                cards.forEach(function(card){
-
-                    card.classList.remove(
-                        "ars-card-active"
-                    );
-
-                });
+                oldIdentity.remove();
 
             }
 
-        },
-        false
-    );
+
+            const identity =
+                document.createElement(
+                    "div"
+                );
 
 
-})();
+            identity.className =
+                "ars-card-identity";
+
+
+            identity.textContent =
+                "ARS";
+
+
+            card.appendChild(
+                identity
+            );
+
+
+            identity.addEventListener(
+                "animationend",
+                function(){
+
+                    if(identity.parentNode){
+
+                        identity.remove();
+
+                    }
+
+                },
+                {
+                    once:true
+                }
+            );
+
+        }
+
+
+        /* =================================================
+           04. RESET OTHER CARDS
+           ================================================= */
+
+        function resetOtherCards(activeCard){
+
+            cards.forEach(
+                function(card){
+
+                    if(card !== activeCard){
+
+                        card.classList.remove(
+                            "is-selected"
+                        );
+
+
+                        const identity =
+                            card.querySelector(
+                                ".ars-card-identity"
+                            );
+
+
+                        if(identity){
+
+                            identity.remove();
+
+                        }
+
+                    }
+
+                }
+            );
+
+        }
+
+
+        /* =================================================
+           05. CARD CLICK
+           ================================================= */
+
+        cards.forEach(
+            function(card){
+
+                card.addEventListener(
+                    "click",
+                    function(event){
+
+                        /*
+                         * If the user clicked an actual link
+                         * inside the card, preserve its
+                         * original browser behaviour.
+                         */
+
+                        const clickedLink =
+                            event.target.closest(
+                                "a"
+                            );
+
+
+                        /*
+                         * If the card itself is an anchor,
+                         * allow its native navigation.
+                         */
+
+                        if(
+                            card.tagName.toLowerCase()
+                            === "a"
+                        ){
+
+                            resetOtherCards(
+                                card
+                            );
+
+
+                            card.classList.add(
+                                "is-selected"
+                            );
+
+
+                            createARSIdentity(
+                                card
+                            );
+
+
+                            return;
+
+                        }
+
+
+                        /*
+                         * If a child link was clicked,
+                         * do not interfere with it.
+                         */
+
+                        if(
+                            clickedLink
+                            &&
+                            clickedLink !== card
+                        ){
+
+                            return;
+
+                        }
+
+
+                        /*
+                         * If this card is already selected,
+                         * clicking again resets it.
+                         */
+
+                        if(
+                            card.classList.contains(
+                                "is-selected"
+                            )
+                        ){
+
+                            card.classList.remove(
+                                "is-selected"
+                            );
+
+
+                            const identity =
+                                card.querySelector(
+                                    ".ars-card-identity"
+                                );
+
+
+                            if(identity){
+
+                                identity.remove();
+
+                            }
+
+
+                            return;
+
+                        }
+
+
+                        /*
+                         * Reset previously selected card.
+                         */
+
+                        resetOtherCards(
+                            card
+                        );
+
+
+                        /*
+                         * Activate current card.
+                         */
+
+                        card.classList.add(
+                            "is-selected"
+                        );
+
+
+                        /*
+                         * Trigger ARS animation.
+                         */
+
+                        createARSIdentity(
+                            card
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+    }
+);
