@@ -1362,6 +1362,2551 @@ button:focus-visible{
 
 }
 
+/* =========================================================
+   ARS HERITAGE GROUP
+   PREMIUM CINEMATIC ECOSYSTEM
+   VERSION 01
+   ========================================================= */
+
+
+/* =========================================================
+   01 — ROOT SYSTEM
+   ========================================================= */
+
+.ars-group-page{
+
+    --ars-black:
+        #010203;
+
+    --ars-black-deep:
+        #000101;
+
+    --ars-surface:
+        #080a0d;
+
+    --ars-surface-2:
+        #0d1014;
+
+    --ars-gold:
+        #c9a45a;
+
+    --ars-gold-light:
+        #f0d58b;
+
+    --ars-gold-soft:
+        rgba(201,164,90,.55);
+
+    --ars-gold-glow:
+        rgba(201,164,90,.22);
+
+    --ars-blue:
+        #1598ff;
+
+    --ars-blue-bright:
+        #4cc7ff;
+
+    --ars-blue-soft:
+        rgba(21,152,255,.45);
+
+    --ars-blue-glow:
+        rgba(21,152,255,.18);
+
+    --ars-white:
+        #f4f1e8;
+
+    --ars-muted:
+        #a8a39a;
+
+    --ars-border:
+        rgba(201,164,90,.24);
+
+    position:
+        relative;
+
+    width:
+        100%;
+
+    min-height:
+        100vh;
+
+    overflow:
+        hidden;
+
+    color:
+        var(--ars-white);
+
+    background:
+        var(--ars-black);
+
+    isolation:
+        isolate;
+
+}
+
+
+/* =========================================================
+   02 — GLOBAL SECTION BASE
+   ========================================================= */
+
+.ars-group-page section{
+
+    position:
+        relative;
+
+    width:
+        100%;
+
+    padding:
+        120px 7vw;
+
+    box-sizing:
+        border-box;
+
+}
+
+
+.ars-group-page .section-header{
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    max-width:
+        900px;
+
+    margin:
+        0 auto 70px;
+
+    text-align:
+        center;
+
+}
+
+
+.ars-group-page .section-label{
+
+    display:
+        inline-block;
+
+    margin-bottom:
+        18px;
+
+    color:
+        var(--ars-gold-light);
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        .34em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.ars-group-page h1,
+.ars-group-page h2,
+.ars-group-page h3,
+.ars-group-page h4{
+
+    margin:
+        0;
+
+    color:
+        var(--ars-white);
+
+}
+
+
+.ars-group-page p{
+
+    color:
+        var(--ars-muted);
+
+    line-height:
+        1.9;
+
+}
+
+
+/* =========================================================
+   03 — GLOBAL AMBIENT LIGHT
+   ========================================================= */
+
+.ars-group-page::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    z-index:
+        -2;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(21,152,255,.055),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 85% 35%,
+            rgba(201,164,90,.045),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 50% 85%,
+            rgba(21,152,255,.035),
+            transparent 32%
+        );
+
+}
+
+
+/* =========================================================
+   04 — PREMIUM HERO
+   ========================================================= */
+
+.ars-group-page .group-hero{
+
+    min-height:
+        100vh;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+    padding:
+        100px 5vw;
+
+    overflow:
+        hidden;
+
+    background:
+
+        radial-gradient(
+            ellipse at center,
+            rgba(201,164,90,.10),
+            transparent 24%
+        ),
+
+        radial-gradient(
+            ellipse at center,
+            rgba(21,152,255,.08),
+            transparent 48%
+        ),
+
+        linear-gradient(
+            180deg,
+            #000101 0%,
+            #020509 55%,
+            #010203 100%
+        );
+
+}
+
+
+/* =========================================================
+   05 — HERO ENERGY FIELD
+   ========================================================= */
+
+.ars-group-page .group-hero::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        900px;
+
+    height:
+        900px;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius:
+        50%;
+
+    pointer-events:
+        none;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(201,164,90,.16) 0%,
+            rgba(21,152,255,.08) 22%,
+            transparent 62%
+        );
+
+    filter:
+        blur(25px);
+
+    animation:
+        arsHeroCorePulse
+        7s
+        ease-in-out
+        infinite;
+
+}
+
+
+/* =========================================================
+   06 — HERO BLUE ENERGY RINGS
+   ========================================================= */
+
+.ars-group-page .group-hero::after{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        760px;
+
+    height:
+        760px;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    border:
+        1px solid rgba(21,152,255,.13);
+
+    border-radius:
+        50%;
+
+    box-shadow:
+
+        0 0 80px rgba(21,152,255,.07),
+
+        inset 0 0 80px rgba(21,152,255,.05);
+
+    pointer-events:
+        none;
+
+    animation:
+        arsEnergyOrbit
+        22s
+        linear
+        infinite;
+
+}
+
+
+/* =========================================================
+   07 — HERO BACKGROUND GLOW
+   ========================================================= */
+
+.ars-group-page .group-background-glow{
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    z-index:
+        0;
+
+    opacity:
+        .85;
+
+    background:
+
+        radial-gradient(
+            ellipse at 50% 48%,
+            rgba(201,164,90,.14),
+            transparent 18%
+        ),
+
+        radial-gradient(
+            ellipse at 18% 25%,
+            rgba(21,152,255,.10),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            ellipse at 82% 68%,
+            rgba(21,152,255,.08),
+            transparent 30%
+        );
+
+    animation:
+        arsAmbientBreath
+        10s
+        ease-in-out
+        infinite
+        alternate;
+
+}
+
+
+/* =========================================================
+   08 — HERO CONTENT LAYER
+   ========================================================= */
+
+.ars-group-page .group-hero > *{
+
+    position:
+        relative;
+
+    z-index:
+        3;
+
+}
+
+
+/* =========================================================
+   09 — HERO LOGO
+   ========================================================= */
+
+.ars-group-page .group-logo-wrapper{
+
+    position:
+        relative;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    width:
+        190px;
+
+    height:
+        190px;
+
+    margin-bottom:
+        35px;
+
+}
+
+
+.ars-group-page .group-logo-wrapper::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        -30px;
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(201,164,90,.25),
+            transparent 65%
+        );
+
+    filter:
+        blur(20px);
+
+    animation:
+        arsLogoGlow
+        5s
+        ease-in-out
+        infinite
+        alternate;
+
+}
+
+
+.ars-group-page .group-logo{
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    width:
+        150px;
+
+    max-width:
+        80%;
+
+    height:
+        auto;
+
+    filter:
+
+        drop-shadow(
+            0 0 15px rgba(201,164,90,.45)
+        )
+
+        drop-shadow(
+            0 0 50px rgba(201,164,90,.18)
+        );
+
+    animation:
+        arsLogoFloat
+        6s
+        ease-in-out
+        infinite;
+
+}
+
+
+/* =========================================================
+   10 — HERO TYPOGRAPHY
+   ========================================================= */
+
+.ars-group-page .group-hero .group-overline{
+
+    position:
+        relative;
+
+    display:
+        inline-block;
+
+    margin-bottom:
+        22px;
+
+    color:
+        var(--ars-blue-bright);
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        .38em;
+
+    text-transform:
+        uppercase;
+
+    text-shadow:
+        0 0 18px rgba(21,152,255,.45);
+
+}
+
+
+.ars-group-page .group-hero h1{
+
+    font-size:
+        clamp(42px,7vw,92px);
+
+    line-height:
+        1;
+
+    letter-spacing:
+        -.035em;
+
+    font-weight:
+        700;
+
+    background:
+        linear-gradient(
+            110deg,
+            #f4f1e8 10%,
+            #f0d58b 45%,
+            #ffffff 70%,
+            #c9a45a 100%
+        );
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    color:
+        transparent;
+
+    text-shadow:
+        0 0 45px rgba(201,164,90,.12);
+
+    animation:
+        arsTitleReveal
+        1.4s
+        ease
+        both;
+
+}
+
+
+.ars-group-page .group-hero h2{
+
+    margin-top:
+        25px;
+
+    color:
+        var(--ars-gold-light);
+
+    font-size:
+        clamp(18px,2.4vw,30px);
+
+    line-height:
+        1.5;
+
+    font-weight:
+        400;
+
+    letter-spacing:
+        .03em;
+
+    text-shadow:
+        0 0 30px rgba(201,164,90,.25);
+
+}
+
+
+/* =========================================================
+   11 — HERO DESCRIPTION
+   ========================================================= */
+
+.ars-group-page .group-hero > p{
+
+    max-width:
+        760px;
+
+    margin:
+        30px auto 0;
+
+    font-size:
+        15px;
+
+    line-height:
+        2;
+
+}
+
+
+/* =========================================================
+   12 — BUTTON SYSTEM
+   ========================================================= */
+
+.ars-group-page .group-buttons{
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    justify-content:
+        center;
+
+    gap:
+        18px;
+
+    margin-top:
+        38px;
+
+}
+
+
+.ars-group-page .btn-primary,
+.ars-group-page .btn-secondary{
+
+    position:
+        relative;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-width:
+        190px;
+
+    min-height:
+        54px;
+
+    padding:
+        0 28px;
+
+    border-radius:
+        4px;
+
+    text-decoration:
+        none;
+
+    font-size:
+        12px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        .15em;
+
+    text-transform:
+        uppercase;
+
+    overflow:
+        hidden;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+
+}
+
+
+.ars-group-page .btn-primary{
+
+    color:
+        #050607;
+
+    background:
+        linear-gradient(
+            110deg,
+            #b8893f,
+            #f0d58b,
+            #b8893f
+        );
+
+    box-shadow:
+        0 0 35px rgba(201,164,90,.18);
+
+}
+
+
+.ars-group-page .btn-secondary{
+
+    color:
+        var(--ars-white);
+
+    border:
+        1px solid rgba(201,164,90,.35);
+
+    background:
+        rgba(255,255,255,.015);
+
+}
+
+
+.ars-group-page .btn-primary:hover,
+.ars-group-page .btn-secondary:hover{
+
+    transform:
+        translateY(-4px);
+
+}
+
+
+.ars-group-page .btn-primary:hover{
+
+    box-shadow:
+        0 0 50px rgba(201,164,90,.35);
+
+}
+
+
+.ars-group-page .btn-secondary:hover{
+
+    border-color:
+        rgba(21,152,255,.55);
+
+    box-shadow:
+        0 0 35px rgba(21,152,255,.14);
+
+}
+
+
+/* =========================================================
+   13 — GLASS SYSTEM
+   ========================================================= */
+
+.ars-group-page .ars-glass{
+
+    position:
+        relative;
+
+    border:
+        1px solid rgba(201,164,90,.16);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.035),
+            rgba(255,255,255,.008)
+        );
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.25);
+
+    overflow:
+        hidden;
+
+}
+
+
+.ars-group-page .ars-glass::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        -120%;
+
+    width:
+        80%;
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(21,152,255,.75),
+            transparent
+        );
+
+    animation:
+        arsCardScan
+        7s
+        ease-in-out
+        infinite;
+
+    pointer-events:
+        none;
+
+}
+
+
+/* =========================================================
+   14 — WHO WE ARE
+   ========================================================= */
+
+.ars-group-page .who-grid{
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        35px;
+
+    max-width:
+        1250px;
+
+    margin:
+        auto;
+
+}
+
+
+.ars-group-page .who-left,
+.ars-group-page .who-right{
+
+    min-height:
+        500px;
+
+    padding:
+        45px;
+
+}
+
+
+.ars-group-page .who-left{
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+}
+
+
+.ars-group-page .who-left h3{
+
+    color:
+        var(--ars-gold-light);
+
+    font-size:
+        30px;
+
+    margin-bottom:
+        25px;
+
+}
+
+
+.ars-group-page .who-right{
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+}
+
+
+.ars-group-page .who-right img{
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    opacity:
+        .88;
+
+}
+
+
+/* =========================================================
+   15 — MISSION / VALUES / VISION / DNA GRIDS
+   ========================================================= */
+
+.ars-group-page .mission-grid,
+.ars-group-page .values-grid,
+.ars-group-page .vision-grid,
+.ars-group-page .dna-grid,
+.ars-group-page .future-grid{
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:
+        24px;
+
+    max-width:
+        1250px;
+
+    margin:
+        auto;
+
+}
+
+
+.ars-group-page .mission-card,
+.ars-group-page .value-card,
+.ars-group-page .vision-card,
+.ars-group-page .dna-card,
+.ars-group-page .future-card{
+
+    min-height:
+        220px;
+
+    padding:
+        34px;
+
+    transition:
+        transform .4s ease,
+        border-color .4s ease,
+        box-shadow .4s ease;
+
+}
+
+
+.ars-group-page .mission-card:hover,
+.ars-group-page .value-card:hover,
+.ars-group-page .vision-card:hover,
+.ars-group-page .dna-card:hover,
+.ars-group-page .future-card:hover{
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(21,152,255,.38);
+
+    box-shadow:
+        0 25px 80px rgba(21,152,255,.08);
+
+}
+
+
+.ars-group-page .mission-card h3,
+.ars-group-page .value-card h3,
+.ars-group-page .vision-card h3,
+.ars-group-page .dna-card h3,
+.ars-group-page .future-card h3{
+
+    color:
+        var(--ars-gold-light);
+
+    margin-bottom:
+        15px;
+
+}
+
+
+/* =========================================================
+   16 — VISION CENTER
+   ========================================================= */
+
+.ars-group-page .vision-center{
+
+    max-width:
+        1000px;
+
+    margin:
+        0 auto 50px;
+
+    padding:
+        55px;
+
+    text-align:
+        center;
+
+}
+
+
+.ars-group-page .vision-center blockquote{
+
+    margin:
+        0;
+
+    color:
+        var(--ars-gold-light);
+
+    font-size:
+        clamp(22px,3vw,40px);
+
+    line-height:
+        1.5;
+
+    font-weight:
+        400;
+
+}
+
+
+/* =========================================================
+   17 — ECOSYSTEM
+   ========================================================= */
+
+.ars-group-page .ecosystem{
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(21,152,255,.05),
+            transparent 55%
+        );
+
+}
+
+
+.ars-group-page .ecosystem-wrapper{
+
+    position:
+        relative;
+
+    max-width:
+        1200px;
+
+    min-height:
+        680px;
+
+    margin:
+        auto;
+
+}
+
+
+.ars-group-page .ecosystem-center{
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        250px;
+
+    height:
+        110px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    transform:
+        translate(-50%,-50%);
+
+    color:
+        var(--ars-gold-light);
+
+    font-size:
+        20px;
+
+    text-align:
+        center;
+
+    border:
+        1px solid rgba(201,164,90,.45);
+
+    box-shadow:
+        0 0 70px rgba(201,164,90,.12);
+
+}
+
+
+.ars-group-page .eco{
+
+    position:
+        absolute;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-width:
+        150px;
+
+    min-height:
+        58px;
+
+    padding:
+        0 24px;
+
+    color:
+        var(--ars-white);
+
+    text-decoration:
+        none;
+
+    font-size:
+        13px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        .05em;
+
+    cursor:
+        pointer;
+
+    transition:
+        transform .4s ease,
+        border-color .4s ease,
+        box-shadow .4s ease;
+
+}
+
+
+.ars-group-page .eco:hover{
+
+    transform:
+        scale(1.07);
+
+    border-color:
+        rgba(21,152,255,.65);
+
+    box-shadow:
+        0 0 40px rgba(21,152,255,.18);
+
+}
+
+
+/* =========================================================
+   18 — ECOSYSTEM POSITIONS
+   ========================================================= */
+
+.ars-group-page .eco-1{
+
+    left:
+        50%;
+
+    top:
+        4%;
+
+    transform:
+        translateX(-50%);
+
+}
+
+
+.ars-group-page .eco-2{
+
+    right:
+        10%;
+
+    top:
+        18%;
+
+}
+
+
+.ars-group-page .eco-3{
+
+    right:
+        3%;
+
+    top:
+        50%;
+
+}
+
+
+.ars-group-page .eco-4{
+
+    right:
+        12%;
+
+    bottom:
+        15%;
+
+}
+
+
+.ars-group-page .eco-5{
+
+    left:
+        50%;
+
+    bottom:
+        4%;
+
+    transform:
+        translateX(-50%);
+
+}
+
+
+.ars-group-page .eco-6{
+
+    left:
+        12%;
+
+    bottom:
+        15%;
+
+}
+
+
+.ars-group-page .eco-7{
+
+    left:
+        3%;
+
+    top:
+        50%;
+
+}
+
+
+.ars-group-page .eco-8{
+
+    left:
+        10%;
+
+    top:
+        18%;
+
+}
+
+
+.ars-group-page .eco-9{
+
+    left:
+        50%;
+
+    top:
+        27%;
+
+    transform:
+        translateX(-50%);
+
+}
+
+
+/* =========================================================
+   19 — GLOBAL STRATEGY
+   ========================================================= */
+
+.ars-group-page .country-grid{
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:
+        22px;
+
+    max-width:
+        1100px;
+
+    margin:
+        auto;
+
+}
+
+
+.ars-group-page .country-card{
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        18px;
+
+    padding:
+        25px;
+
+    color:
+        var(--ars-white);
+
+    text-decoration:
+        none;
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease;
+
+}
+
+
+.ars-group-page .country-card:hover{
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(201,164,90,.55);
+
+}
+
+
+.ars-group-page .country-card img{
+
+    width:
+        42px;
+
+    height:
+        28px;
+
+    object-fit:
+        cover;
+
+}
+
+
+/* =========================================================
+   20 — ORGANIZATION
+   ========================================================= */
+
+.ars-group-page .org-tree{
+
+    max-width:
+        1200px;
+
+    margin:
+        auto;
+
+}
+
+
+.ars-group-page .org-level{
+
+    position:
+        relative;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        22px;
+
+    margin:
+        25px 0;
+
+}
+
+
+.ars-group-page .org-card{
+
+    min-width:
+        170px;
+
+    padding:
+        25px 30px;
+
+    text-align:
+        center;
+
+    color:
+        var(--ars-white);
+
+}
+
+
+.ars-group-page .org-main{
+
+    min-width:
+        260px;
+
+    color:
+        var(--ars-gold-light);
+
+    border-color:
+        rgba(201,164,90,.45);
+
+    box-shadow:
+        0 0 60px rgba(201,164,90,.10);
+
+}
+
+
+/* =========================================================
+   21 — LEADERSHIP
+   ========================================================= */
+
+.ars-group-page .leadership-grid{
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:
+        30px;
+
+    max-width:
+        900px;
+
+    margin:
+        auto;
+
+}
+
+
+.ars-group-page .leader-card{
+
+    padding:
+        40px;
+
+    text-align:
+        center;
+
+}
+
+
+.ars-group-page .leader-photo{
+
+    width:
+        130px;
+
+    height:
+        130px;
+
+    margin:
+        0 auto 25px;
+
+    border-radius:
+        50%;
+
+    border:
+        1px solid rgba(201,164,90,.35);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(201,164,90,.14),
+            rgba(21,152,255,.05),
+            transparent 70%
+        );
+
+    box-shadow:
+        0 0 50px rgba(201,164,90,.08);
+
+}
+
+
+.ars-group-page .leader-card h3{
+
+    color:
+        var(--ars-gold-light);
+
+}
+
+
+.ars-group-page .leader-card span{
+
+    display:
+        block;
+
+    margin:
+        10px 0 20px;
+
+    color:
+        var(--ars-blue-bright);
+
+    font-size:
+        12px;
+
+}
+
+
+/* =========================================================
+   22 — PARTNERS / STANDARDS
+   ========================================================= */
+
+.ars-group-page .partners-grid,
+.ars-group-page .standards-grid,
+.ars-group-page .partnership-grid{
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:
+        24px;
+
+    max-width:
+        1200px;
+
+    margin:
+        auto;
+
+}
+
+
+.ars-group-page .partner-card,
+.ars-group-page .standard-card{
+
+    min-height:
+        150px;
+
+    padding:
+        30px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+}
+
+
+.ars-group-page .partner-card img{
+
+    max-width:
+        150px;
+
+    max-height:
+        60px;
+
+    object-fit:
+        contain;
+
+    filter:
+        grayscale(1)
+        brightness(1.6);
+
+    opacity:
+        .75;
+
+    transition:
+        filter .35s ease,
+        opacity .35s ease,
+        transform .35s ease;
+
+}
+
+
+.ars-group-page .partner-card:hover img{
+
+    filter:
+        grayscale(0)
+        brightness(1);
+
+    opacity:
+        1;
+
+    transform:
+        scale(1.05);
+
+}
+
+
+/* =========================================================
+   23 — TIMELINE
+   ========================================================= */
+
+.ars-group-page .timeline-grid{
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:
+        20px;
+
+    max-width:
+        1200px;
+
+    margin:
+        auto;
+
+}
+
+
+.ars-group-page .timeline-card{
+
+    padding:
+        30px;
+
+}
+
+
+.ars-group-page .timeline-card > span{
+
+    color:
+        var(--ars-blue-bright);
+
+    font-size:
+        12px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        .2em;
+
+}
+
+
+.ars-group-page .timeline-card h3{
+
+    margin:
+        15px 0;
+
+    color:
+        var(--ars-gold-light);
+
+}
+
+
+/* =========================================================
+   24 — GALLERY
+   ========================================================= */
+
+.ars-group-page .gallery-grid{
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:
+        20px;
+
+    max-width:
+        1250px;
+
+    margin:
+        auto;
+
+}
+
+
+.ars-group-page .gallery-card{
+
+    min-height:
+        260px;
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+
+}
+
+
+.ars-group-page .gallery-card:hover{
+
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 30px 70px rgba(21,152,255,.10);
+
+}
+
+
+/* =========================================================
+   25 — STATS
+   ========================================================= */
+
+.ars-group-page .stats-grid{
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:
+        22px;
+
+    max-width:
+        1100px;
+
+    margin:
+        auto;
+
+}
+
+
+.ars-group-page .stat-card{
+
+    padding:
+        35px;
+
+    text-align:
+        center;
+
+}
+
+
+.ars-group-page .stat-card h3{
+
+    color:
+        var(--ars-gold-light);
+
+    font-size:
+        48px;
+
+}
+
+
+.ars-group-page .stat-card span{
+
+    color:
+        var(--ars-muted);
+
+}
+
+
+/* =========================================================
+   26 — CONTACT CTA
+   ========================================================= */
+
+.ars-group-page .contact-cta{
+
+    padding:
+        160px 7vw;
+
+    text-align:
+        center;
+
+    background:
+
+        radial-gradient(
+            ellipse at center,
+            rgba(201,164,90,.09),
+            transparent 45%
+        );
+
+}
+
+
+.ars-group-page .contact-cta .section-header{
+
+    margin-bottom:
+        0;
+
+}
+
+
+/* =========================================================
+   27 — FOOTER
+   ========================================================= */
+
+.ars-group-page .ars-footer{
+
+    padding:
+        70px 7vw 25px;
+
+    border-top:
+        1px solid rgba(201,164,90,.12);
+
+    background:
+        #010203;
+
+}
+
+
+.ars-group-page .footer-top{
+
+    display:
+        grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr 1fr;
+
+    gap:
+        50px;
+
+    max-width:
+        1250px;
+
+    margin:
+        auto;
+
+}
+
+
+.ars-group-page .footer-brand img{
+
+    width:
+        110px;
+
+    margin-bottom:
+        20px;
+
+}
+
+
+.ars-group-page .footer-brand h3{
+
+    color:
+        var(--ars-gold-light);
+
+}
+
+
+.ars-group-page .footer-links{
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        12px;
+
+}
+
+
+.ars-group-page .footer-links h4{
+
+    margin-bottom:
+        10px;
+
+    color:
+        var(--ars-gold-light);
+
+}
+
+
+.ars-group-page .footer-links a{
+
+    color:
+        var(--ars-muted);
+
+    text-decoration:
+        none;
+
+    transition:
+        color .3s ease;
+
+}
+
+
+.ars-group-page .footer-links a:hover{
+
+    color:
+        var(--ars-blue-bright);
+
+}
+
+
+.ars-group-page .footer-bottom{
+
+    max-width:
+        1250px;
+
+    margin:
+        50px auto 0;
+
+    padding-top:
+        25px;
+
+    border-top:
+        1px solid rgba(255,255,255,.06);
+
+    text-align:
+        center;
+
+    color:
+        #777;
+
+    font-size:
+        12px;
+
+}
+
+
+/* =========================================================
+   28 — ANIMATIONS
+   ========================================================= */
+
+@keyframes arsHeroCorePulse{
+
+    0%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(.92);
+
+        opacity:
+            .55;
+
+    }
+
+    50%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(1.06);
+
+        opacity:
+            .85;
+
+    }
+
+    100%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(.92);
+
+        opacity:
+            .55;
+
+    }
+
+}
+
+
+@keyframes arsEnergyOrbit{
+
+    from{
+
+        transform:
+            translate(-50%,-50%)
+            rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+            translate(-50%,-50%)
+            rotate(360deg);
+
+    }
+
+}
+
+
+@keyframes arsAmbientBreath{
+
+    from{
+
+        opacity:
+            .55;
+
+        transform:
+            scale(1);
+
+    }
+
+    to{
+
+        opacity:
+            1;
+
+        transform:
+            scale(1.06);
+
+    }
+
+}
+
+
+@keyframes arsLogoGlow{
+
+    from{
+
+        opacity:
+            .55;
+
+        transform:
+            scale(.92);
+
+    }
+
+    to{
+
+        opacity:
+            1;
+
+        transform:
+            scale(1.08);
+
+    }
+
+}
+
+
+@keyframes arsLogoFloat{
+
+    0%,
+    100%{
+
+        transform:
+            translateY(0);
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-8px);
+
+    }
+
+}
+
+
+@keyframes arsTitleReveal{
+
+    from{
+
+        opacity:
+            0;
+
+        transform:
+            translateY(25px);
+
+    }
+
+    to{
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+@keyframes arsCardScan{
+
+    0%{
+
+        left:
+            -120%;
+
+        opacity:
+            0;
+
+    }
+
+    15%{
+
+        opacity:
+            1;
+
+    }
+
+    50%{
+
+        left:
+            120%;
+
+        opacity:
+            0;
+
+    }
+
+    100%{
+
+        left:
+            120%;
+
+        opacity:
+            0;
+
+    }
+
+}
+
+
+/* =========================================================
+   29 — REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce){
+
+    .ars-group-page *,
+    .ars-group-page *::before,
+    .ars-group-page *::after{
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:
+            auto !important;
+
+        transition-duration:
+            .01ms !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   30 — TABLET
+   ========================================================= */
+
+@media (max-width: 900px){
+
+    .ars-group-page section{
+
+        padding:
+            90px 5vw;
+
+    }
+
+
+    .ars-group-page .who-grid,
+    .ars-group-page .leadership-grid{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .ars-group-page .mission-grid,
+    .ars-group-page .values-grid,
+    .ars-group-page .vision-grid,
+    .ars-group-page .dna-grid,
+    .ars-group-page .future-grid,
+    .ars-group-page .partners-grid,
+    .ars-group-page .standards-grid,
+    .ars-group-page .partnership-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .ars-group-page .country-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .ars-group-page .timeline-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .ars-group-page .gallery-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .ars-group-page .stats-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .ars-group-page .footer-top{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+}
+
+
+/* =========================================================
+   31 — MOBILE
+   ========================================================= */
+
+@media (max-width: 620px){
+
+    .ars-group-page section{
+
+        padding:
+            75px 20px;
+
+    }
+
+
+    .ars-group-page .group-hero{
+
+        min-height:
+            100svh;
+
+    }
+
+
+    .ars-group-page .group-logo-wrapper{
+
+        width:
+            150px;
+
+        height:
+            150px;
+
+    }
+
+
+    .ars-group-page .group-logo{
+
+        width:
+            120px;
+
+    }
+
+
+    .ars-group-page .group-overline{
+
+        font-size:
+            9px !important;
+
+        letter-spacing:
+            .22em !important;
+
+    }
+
+
+    .ars-group-page .group-buttons{
+
+        flex-direction:
+            column;
+
+        width:
+            100%;
+
+    }
+
+
+    .ars-group-page .btn-primary,
+    .ars-group-page .btn-secondary{
+
+        width:
+            100%;
+
+    }
+
+
+    .ars-group-page .mission-grid,
+    .ars-group-page .values-grid,
+    .ars-group-page .vision-grid,
+    .ars-group-page .dna-grid,
+    .ars-group-page .future-grid,
+    .ars-group-page .country-grid,
+    .ars-group-page .partners-grid,
+    .ars-group-page .standards-grid,
+    .ars-group-page .partnership-grid,
+    .ars-group-page .timeline-grid,
+    .ars-group-page .gallery-grid,
+    .ars-group-page .stats-grid{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .ars-group-page .who-left,
+    .ars-group-page .who-right{
+
+        min-height:
+            auto;
+
+        padding:
+            28px;
+
+    }
+
+
+    .ars-group-page .ecosystem-wrapper{
+
+        min-height:
+            850px;
+
+    }
+
+
+    .ars-group-page .ecosystem-center{
+
+        width:
+            210px;
+
+    }
+
+
+    .ars-group-page .eco{
+
+        min-width:
+            125px;
+
+        min-height:
+            50px;
+
+        padding:
+            0 14px;
+
+        font-size:
+            11px;
+
+    }
+
+
+    .ars-group-page .eco-1{
+
+        top:
+            5%;
+
+    }
+
+
+    .ars-group-page .eco-2{
+
+        right:
+            0;
+
+        top:
+            18%;
+
+    }
+
+
+    .ars-group-page .eco-3{
+
+        right:
+            0;
+
+        top:
+            42%;
+
+    }
+
+
+    .ars-group-page .eco-4{
+
+        right:
+            3%;
+
+        bottom:
+            17%;
+
+    }
+
+
+    .ars-group-page .eco-5{
+
+        bottom:
+            4%;
+
+    }
+
+
+    .ars-group-page .eco-6{
+
+        left:
+            3%;
+
+        bottom:
+            17%;
+
+    }
+
+
+    .ars-group-page .eco-7{
+
+        left:
+            0;
+
+        top:
+            42%;
+
+    }
+
+
+    .ars-group-page .eco-8{
+
+        left:
+            0;
+
+        top:
+            18%;
+
+    }
+
+
+    .ars-group-page .eco-9{
+
+        top:
+            29%;
+
+    }
+
+
+    .ars-group-page .footer-top{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+            }
+
 
 
 
