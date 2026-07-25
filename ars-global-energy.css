@@ -1,42 +1,82 @@
 /* =========================================================
    ARS GLOBAL ENERGY SYSTEM
-   HERITAGE GROUP — V2
-   =========================================================
-   PURPOSE
+   سیستم انرژی سراسری ARS
+
+   HERITAGE GROUP — V3 FINAL
+   گروه Heritage — نسخه نهایی V3
+
+   PURPOSE / هدف
    ---------------------------------------------------------
    01. Global golden energy atmosphere
-   02. Scroll-reactive radiation field
-   03. Subtle animated ARS identity in background
-   04. Floating atmospheric energy
-   05. Strong card hover elevation + golden energy
-   06. Strong focus/selection enlargement
-   07. Compatible with existing .ars-glass system
-   08. No reset / no global animation cancellation
-   09. No dependency on changing existing HTML card classes
-   10. All visual effects are isolated under ARS energy scope
+       ایجاد اتمسفر انرژی طلایی سراسری
+
+   02. Visible animated background energy
+       ایجاد انرژی متحرک و قابل مشاهده در پس‌زمینه
+
+   03. Scroll-reactive radiation field
+       ایجاد تشعشعات انرژی واکنش‌گرا هنگام اسکرول
+
+   04. Animated ARS background identity
+       نمایش ARSهای محو، متحرک و نورانی در پس‌زمینه
+
+   05. Floating energy particles
+       ایجاد ذرات شناور انرژی
+
+   06. Strong golden card hover
+       برجسته شدن قدرتمند کارت‌ها با نور طلایی
+
+   07. Extra-large card elevation
+       بالا آمدن و بزرگ شدن شدید کارت‌ها
+
+   08. Strong selected/focus card state
+       حالت انتخاب بسیار برجسته و بزرگ برای کارت‌ها
+
+   09. Golden energy under and around cards
+       انرژی و نور طلایی در زیر و اطراف کارت‌ها
+
+   10. Isolated visual layer
+       لایه بصری مستقل و جداگانه
+
+   11. No global reset
+       بدون ریست کردن استایل‌های اصلی سایت
+
+   12. No cancellation of existing page animations
+       بدون لغو انیمیشن‌های موجود صفحات
+
+   13. No modification of existing HTML card classes
+       بدون نیاز به تغییر کلاس‌های HTML کارت‌ها
    ========================================================= */
 
 
 /* =========================================================
-   00 — ENERGY ROOT
+   01 — GLOBAL PAGE ENERGY ROOT
+   01 — ریشه اصلی انرژی سراسری صفحه
    ========================================================= */
 
 .ars-group-page{
+
     position:relative;
-    isolation:isolate;
+
+    z-index:2;
+
 }
 
 
 /* =========================================================
-   01 — ENERGY SYSTEM ROOT
+   02 — ENERGY SYSTEM ROOT
+   02 — ریشه اصلی سیستم انرژی
    ---------------------------------------------------------
-   The energy layer is fixed to the viewport.
-   It does not change layout dimensions.
-   It does not capture pointer events.
+   This layer stays above the page background
+   but below the actual page content.
+
+   این لایه بالاتر از بک‌گراند صفحه
+   و پایین‌تر از محتوای اصلی صفحه قرار می‌گیرد.
    ========================================================= */
 
 .ars-energy-system{
+
     position:fixed;
+
     inset:0;
 
     width:100%;
@@ -46,51 +86,56 @@
 
     overflow:hidden;
 
-    z-index:-1;
+    z-index:0;
 
     isolation:isolate;
 
     opacity:1;
+
 }
 
 
 /* =========================================================
-   02 — GLOBAL ATMOSPHERE
-   ---------------------------------------------------------
-   Large moving golden light fields.
+   03 — ENERGY ATMOSPHERE
+   03 — اتمسفر و هاله انرژی طلایی
    ========================================================= */
 
 .ars-energy-atmosphere{
-    position:absolute;
-    inset:-25%;
 
-    width:150%;
-    height:150%;
+    position:absolute;
+
+    inset:-30%;
+
+    width:160%;
+    height:160%;
 
     background:
 
         radial-gradient(
-            ellipse at 50% 18%,
-            rgba(255,215,120,.16) 0%,
-            rgba(214,160,55,.10) 12%,
-            transparent 38%
+            ellipse at 50% 15%,
+            rgba(255,218,125,.24) 0%,
+            rgba(235,180,67,.16) 12%,
+            rgba(205,140,35,.08) 28%,
+            transparent 48%
         ),
 
         radial-gradient(
-            ellipse at 12% 52%,
-            rgba(210,157,53,.13) 0%,
-            transparent 34%
+            ellipse at 5% 48%,
+            rgba(232,174,54,.17) 0%,
+            rgba(200,130,25,.07) 25%,
+            transparent 48%
         ),
 
         radial-gradient(
-            ellipse at 88% 72%,
-            rgba(255,198,75,.11) 0%,
-            transparent 32%
+            ellipse at 95% 65%,
+            rgba(255,211,108,.16) 0%,
+            rgba(213,151,39,.07) 26%,
+            transparent 50%
         );
 
-    filter:blur(38px);
+    filter:blur(42px);
 
-    opacity:.75;
+    opacity:.95;
 
     animation:
         arsGlobalAtmosphereMove
@@ -99,26 +144,29 @@
         infinite alternate;
 
     will-change:transform;
+
 }
 
 
 /* =========================================================
-   03 — SECONDARY GOLDEN ENERGY FIELD
+   04 — CENTRAL GOLDEN ENERGY CORE
+   04 — هسته مرکزی انرژی طلایی
    ========================================================= */
 
 .ars-energy-atmosphere::before{
+
     content:"";
 
     position:absolute;
 
-    width:65vw;
-    height:65vw;
+    top:-15%;
+    left:50%;
+
+    width:75vw;
+    height:75vw;
 
     min-width:500px;
     min-height:500px;
-
-    top:-20%;
-    left:50%;
 
     transform:translateX(-50%);
 
@@ -128,13 +176,16 @@
 
         radial-gradient(
             circle,
-            rgba(255,224,145,.18) 0%,
-            rgba(220,170,68,.10) 22%,
-            rgba(170,115,28,.05) 42%,
-            transparent 70%
+            rgba(255,230,160,.28) 0%,
+            rgba(255,211,111,.19) 16%,
+            rgba(220,163,52,.10) 36%,
+            rgba(175,108,18,.04) 52%,
+            transparent 72%
         );
 
     filter:blur(55px);
+
+    opacity:.9;
 
     animation:
         arsGoldenCorePulse
@@ -142,44 +193,48 @@
         ease-in-out
         infinite;
 
-    opacity:.8;
 }
 
 
 /* =========================================================
-   04 — RADIATING ENERGY RINGS
+   05 — ENERGY RINGS
+   05 — حلقه‌های انرژی طلایی
    ========================================================= */
 
 .ars-energy-atmosphere::after{
+
     content:"";
 
     position:absolute;
 
-    left:50%;
     top:42%;
+    left:50%;
 
-    width:80vw;
-    height:80vw;
+    width:90vw;
+    height:90vw;
 
-    max-width:1100px;
-    max-height:1100px;
+    max-width:1300px;
+    max-height:1300px;
 
-    transform:translate(-50%,-50%);
+    transform:
+        translate(-50%,-50%);
 
     border-radius:50%;
 
     border:
-
         1px solid
-        rgba(255,214,120,.07);
+        rgba(255,215,125,.12);
 
     box-shadow:
 
-        0 0 60px
-        rgba(214,163,63,.05),
+        0 0 70px
+        rgba(225,166,55,.09),
 
-        inset 0 0 90px
-        rgba(255,210,115,.04);
+        0 0 150px
+        rgba(202,132,24,.06),
+
+        inset 0 0 100px
+        rgba(255,214,125,.06);
 
     animation:
         arsEnergyRingPulse
@@ -187,26 +242,22 @@
         ease-in-out
         infinite;
 
-    opacity:.8;
 }
 
 
 /* =========================================================
-   05 — SCROLL ENERGY FIELD
-   ---------------------------------------------------------
-   Primary visible energy radiation layer.
-   Uses CSS scroll-driven animation where supported.
-   It remains animated even when scroll timelines are
-   unavailable.
+   06 — SCROLL ENERGY RADIATION FIELD
+   06 — میدان تشعشعات انرژی هنگام اسکرول
    ========================================================= */
 
 .ars-energy-scroll-field{
+
     position:absolute;
 
-    inset:-35%;
+    inset:-40%;
 
-    width:170%;
-    height:170%;
+    width:180%;
+    height:180%;
 
     background:
 
@@ -215,49 +266,62 @@
 
             transparent 0deg,
 
-            rgba(255,211,112,.00) 25deg,
+            rgba(255,218,130,.02) 20deg,
 
-            rgba(255,211,112,.10) 45deg,
+            rgba(255,211,112,.16) 45deg,
 
-            transparent 72deg,
+            rgba(255,235,170,.07) 62deg,
 
-            transparent 112deg,
+            transparent 82deg,
 
-            rgba(205,149,44,.09) 142deg,
+            transparent 110deg,
 
-            transparent 178deg,
+            rgba(208,147,34,.13) 140deg,
 
-            transparent 220deg,
+            rgba(255,211,112,.05) 165deg,
 
-            rgba(255,223,145,.08) 250deg,
+            transparent 190deg,
 
-            transparent 290deg,
+            transparent 215deg,
 
-            transparent 330deg,
+            rgba(255,222,140,.12) 250deg,
 
-            rgba(213,159,52,.08) 350deg,
+            transparent 285deg,
+
+            transparent 315deg,
+
+            rgba(222,162,51,.14) 345deg,
 
             transparent 360deg
         );
 
-    filter:blur(22px);
+    filter:blur(25px);
 
-    opacity:.55;
+    opacity:.78;
 
     mix-blend-mode:screen;
 
     animation:
         arsEnergyRadiationRotate
-        28s
+        26s
         linear
         infinite;
 
-    will-change:transform,opacity;
+    will-change:
+        transform,
+        opacity;
+
 }
 
 
 /* =========================================================
-   06 — SCROLL REACTIVE RADIATION
+   07 — SCROLL TIMELINE
+   07 — واکنش انرژی به حرکت اسکرول
+   ---------------------------------------------------------
+   Supported browsers react to actual page scroll.
+
+   در مرورگرهای پشتیبانی‌شده،
+   میدان انرژی به حرکت واقعی اسکرول واکنش نشان می‌دهد.
    ========================================================= */
 
 @supports(animation-timeline:scroll()){
@@ -271,7 +335,8 @@
             linear
             both;
 
-        animation-timeline:scroll(root);
+        animation-timeline:
+            scroll(root);
 
     }
 
@@ -279,15 +344,17 @@
 
 
 /* =========================================================
-   07 — SCROLL ENERGY SECONDARY GLOW
+   08 — INNER SCROLL ENERGY CORE
+   08 — هسته داخلی انرژی اسکرول
    ========================================================= */
 
 .ars-energy-scroll-field::before{
+
     content:"";
 
     position:absolute;
 
-    inset:15%;
+    inset:12%;
 
     border-radius:50%;
 
@@ -295,12 +362,15 @@
 
         radial-gradient(
             circle at 50% 50%,
-            rgba(255,220,140,.15),
-            rgba(220,165,57,.08) 25%,
-            transparent 68%
+            rgba(255,231,170,.20),
+            rgba(255,210,110,.13) 20%,
+            rgba(218,156,43,.08) 42%,
+            transparent 70%
         );
 
-    filter:blur(50px);
+    filter:blur(55px);
+
+    opacity:.85;
 
     animation:
         arsScrollCoreBreath
@@ -308,47 +378,49 @@
         ease-in-out
         infinite alternate;
 
-    opacity:.7;
 }
 
 
 /* =========================================================
-   08 — MOVING ENERGY BEAM
+   09 — MOVING GOLDEN ENERGY BEAM
+   09 — پرتو متحرک انرژی طلایی
    ========================================================= */
 
 .ars-energy-scroll-field::after{
+
     content:"";
 
     position:absolute;
 
-    left:-20%;
-    top:20%;
+    left:-30%;
+    top:25%;
 
-    width:140%;
-    height:2px;
+    width:160%;
+    height:3px;
 
     background:
 
         linear-gradient(
             90deg,
-            transparent,
-            rgba(255,218,132,.00),
-            rgba(255,218,132,.65),
-            rgba(255,238,180,.90),
-            rgba(255,218,132,.65),
-            rgba(255,218,132,.00),
-            transparent
+            transparent 0%,
+            rgba(255,215,125,.00) 20%,
+            rgba(255,215,125,.35) 38%,
+            rgba(255,238,180,.95) 50%,
+            rgba(255,215,125,.35) 62%,
+            rgba(255,215,125,.00) 80%,
+            transparent 100%
         );
 
-    filter:blur(8px);
+    filter:blur(9px);
 
-    opacity:.35;
+    opacity:.6;
 
-    transform:rotate(-12deg);
+    transform:
+        rotate(-12deg);
 
     animation:
         arsEnergyBeamSweep
-        9s
+        8s
         ease-in-out
         infinite;
 
@@ -356,27 +428,34 @@
 
 
 /* =========================================================
-   09 — ARS BACKGROUND IDENTITY
-   ---------------------------------------------------------
-   Multiple soft ARS marks.
+   10 — ARS BACKGROUND IDENTITY
+   10 — هویت ARS در پس‌زمینه
    ========================================================= */
 
 .ars-energy-identity{
+
     position:absolute;
 
     inset:0;
 
     display:block;
 
-    pointer-events:none;
-
     overflow:hidden;
 
+    pointer-events:none;
+
     mix-blend-mode:screen;
+
 }
 
 
+/* =========================================================
+   11 — ARS IDENTITY TEXT
+   11 — نوشته‌های ARS محو و متحرک
+   ========================================================= */
+
 .ars-energy-identity span{
+
     position:absolute;
 
     display:block;
@@ -388,27 +467,29 @@
 
     font-weight:900;
 
-    letter-spacing:
-        .35em;
+    letter-spacing:.32em;
 
     line-height:1;
 
     color:
 
         rgba(
-            225,
-            176,
-            77,
-            .045
+            235,
+            185,
+            80,
+            .085
         );
 
     text-shadow:
 
-        0 0 35px
-        rgba(255,210,110,.06),
+        0 0 30px
+        rgba(255,215,120,.09),
 
-        0 0 90px
-        rgba(210,150,40,.05);
+        0 0 70px
+        rgba(225,160,45,.08),
+
+        0 0 140px
+        rgba(190,120,20,.05);
 
     white-space:nowrap;
 
@@ -416,439 +497,151 @@
 
     animation:
         arsIdentityFloat
-        16s
+        15s
         ease-in-out
         infinite;
-}
-
-
-.ars-energy-identity span:nth-child(1){
-
-    top:18%;
-    left:-5%;
-
-    font-size:
-        clamp(
-            7rem,
-            18vw,
-            18rem
-        );
-
-    transform:rotate(-8deg);
-
-    animation-delay:-2s;
-
-}
-
-
-.ars-energy-identity span:nth-child(2){
-
-    top:52%;
-    right:-8%;
-
-    font-size:
-        clamp(
-            6rem,
-            16vw,
-            16rem
-        );
-
-    transform:rotate(8deg);
-
-    animation-delay:-8s;
-
-}
-
-
-.ars-energy-identity span:nth-child(3){
-
-    bottom:4%;
-    left:30%;
-
-    font-size:
-        clamp(
-            5rem,
-            13vw,
-            13rem
-        );
-
-    transform:rotate(-4deg);
-
-    animation-delay:-12s;
 
 }
 
 
 /* =========================================================
-   10 — PARTICLE FIELD
+   12 — ARS IDENTITY POSITION 01
+   12 — موقعیت اول نوشته ARS
+   ========================================================= */
+
+.ars-energy-identity span:nth-child(1){
+
+    top:12%;
+    left:-8%;
+
+    font-size:
+        clamp(
+            8rem,
+            20vw,
+            22rem
+        );
+
+    transform:
+        rotate(-8deg);
+
+    animation-delay:
+        -2s;
+
+}
+
+
+/* =========================================================
+   13 — ARS IDENTITY POSITION 02
+   13 — موقعیت دوم نوشته ARS
+   ========================================================= */
+
+.ars-energy-identity span:nth-child(2){
+
+    top:48%;
+    right:-10%;
+
+    font-size:
+        clamp(
+            7rem,
+            18vw,
+            20rem
+        );
+
+    transform:
+        rotate(8deg);
+
+    animation-delay:
+        -7s;
+
+}
+
+
+/* =========================================================
+   14 — ARS IDENTITY POSITION 03
+   14 — موقعیت سوم نوشته ARS
+   ========================================================= */
+
+.ars-energy-identity span:nth-child(3){
+
+    bottom:2%;
+    left:28%;
+
+    font-size:
+        clamp(
+            6rem,
+            15vw,
+            17rem
+        );
+
+    transform:
+        rotate(-5deg);
+
+    animation-delay:
+        -12s;
+
+}
+
+
+/* =========================================================
+   15 — FLOATING ENERGY PARTICLES
+   15 — ذرات شناور انرژی
    ========================================================= */
 
 .ars-energy-particles{
+
     position:absolute;
 
     inset:0;
 
-    opacity:.45;
+    opacity:.65;
 
     background-image:
 
         radial-gradient(
             circle,
-            rgba(255,218,130,.55) 0 1px,
-            transparent 1.8px
+            rgba(255,225,145,.72) 0 1px,
+            transparent 2px
         ),
 
         radial-gradient(
             circle,
-            rgba(215,163,62,.35) 0 1px,
-            transparent 1.7px
+            rgba(224,169,65,.55) 0 1px,
+            transparent 2px
+        ),
+
+        radial-gradient(
+            circle,
+            rgba(255,239,190,.35) 0 1px,
+            transparent 2px
         );
 
     background-size:
 
-        95px 115px,
-        145px 170px;
+        90px 110px,
+        135px 155px,
+        210px 190px;
 
     background-position:
 
         0 0,
-        40px 65px;
+        40px 65px,
+        80px 20px;
 
     filter:
         blur(.2px);
 
     animation:
         arsParticleDrift
-        24s
+        22s
         linear
         infinite;
 
-    will-change:
-        background-position,
-        opacity;
 }
 
 
 /* =========================================================
-   11 — GLOBAL CARD ENERGY TARGET
-   ---------------------------------------------------------
-   All actual ARS cards use .ars-glass.
-   This gives the energy system one common entry point.
-
-   IMPORTANT:
-   Existing card styling is not reset.
-   No "all:unset".
-   No animation cancellation.
-   No transition reset.
-   ========================================================= */
-
-.ars-group-page .ars-glass{
-    position:relative;
-
-    isolation:isolate;
-
-    z-index:1;
-
-    transition:
-        transform .65s cubic-bezier(.16,1,.3,1),
-        box-shadow .65s cubic-bezier(.16,1,.3,1),
-        border-color .65s ease,
-        filter .65s ease;
-
-}
-
-
-/* =========================================================
-   12 — GOLDEN ENERGY UNDER CARD
-   ========================================================= */
-
-.ars-group-page .ars-glass::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:8%;
-    right:8%;
-
-    bottom:-18px;
-
-    height:32px;
-
-    border-radius:50%;
-
-    background:
-
-        radial-gradient(
-            ellipse at center,
-            rgba(255,204,95,.85) 0%,
-            rgba(226,163,49,.48) 28%,
-            rgba(193,127,25,.22) 48%,
-            transparent 74%
-        );
-
-    filter:blur(15px);
-
-    opacity:0;
-
-    transform:
-        scaleX(.55)
-        translateY(8px);
-
-    transition:
-
-        opacity .55s ease,
-        transform .65s cubic-bezier(.16,1,.3,1);
-
-    pointer-events:none;
-
-    z-index:-1;
-
-}
-
-
-/* =========================================================
-   13 — STRONG HOVER
-   ---------------------------------------------------------
-   Card becomes clearly elevated.
-   ========================================================= */
-
-.ars-group-page .ars-glass:hover{
-
-    transform:
-        translateY(-28px)
-        scale(1.045);
-
-    border-color:
-
-        rgba(
-            255,
-            213,
-            119,
-            .72
-        );
-
-    box-shadow:
-
-        0 30px 70px
-        rgba(0,0,0,.45),
-
-        0 0 0 1px
-        rgba(255,216,126,.20),
-
-        0 0 38px
-        rgba(224,165,55,.34),
-
-        0 22px 55px
-        rgba(198,137,30,.28);
-
-    filter:
-        brightness(1.12)
-        saturate(1.12);
-
-    z-index:20;
-
-}
-
-
-.ars-group-page .ars-glass:hover::after{
-
-    opacity:1;
-
-    transform:
-        scaleX(1.45)
-        translateY(0);
-
-}
-
-
-/* =========================================================
-   14 — CARD CONTENT ENERGY
-   ========================================================= */
-
-.ars-group-page .ars-glass:hover h3,
-.ars-group-page .ars-glass:hover h2,
-.ars-group-page .ars-glass:hover p,
-.ars-group-page .ars-glass:hover span{
-
-    text-shadow:
-
-        0 0 12px
-        rgba(255,216,125,.25),
-
-        0 0 28px
-        rgba(220,159,48,.12);
-
-}
-
-
-/* =========================================================
-   15 — SPECIAL CARD FAMILIES
-   ---------------------------------------------------------
-   Stronger lift for actual information cards.
-   ========================================================= */
-
-.ars-group-page
-.mission-card:hover,
-.ars-group-page
-.value-card:hover,
-.ars-group-page
-.vision-card:hover,
-.ars-group-page
-.dna-card:hover,
-.ars-group-page
-.country-card:hover,
-.ars-group-page
-.org-card:hover,
-.ars-group-page
-.leader-card:hover,
-.ars-group-page
-.partner-card:hover,
-.ars-group-page
-.standard-card:hover,
-.ars-group-page
-.timeline-card:hover,
-.ars-group-page
-.gallery-card:hover,
-.ars-group-page
-.future-card:hover,
-.ars-group-page
-.stat-card:hover{
-
-    transform:
-        translateY(-32px)
-        scale(1.07);
-
-}
-
-
-/* =========================================================
-   16 — FOCUS / SELECTED CARD
-   ---------------------------------------------------------
-   This is intentionally much stronger than hover.
-
-   Keyboard focus:
-   :focus-visible
-
-   Click/focus inside:
-   :focus-within
-
-   For non-link cards, tabindex="0" would be needed in HTML
-   if true click/focus selection is desired.
-   ========================================================= */
-
-.ars-group-page .ars-glass:focus-visible,
-.ars-group-page .ars-glass:focus-within{
-
-    transform:
-        translateY(-70px)
-        scale(1.38);
-
-    border-color:
-
-        rgba(
-            255,
-            222,
-            145,
-            .95
-        );
-
-    box-shadow:
-
-        0 55px 120px
-        rgba(0,0,0,.62),
-
-        0 0 0 2px
-        rgba(255,220,135,.35),
-
-        0 0 65px
-        rgba(255,190,55,.55),
-
-        0 0 140px
-        rgba(205,137,25,.32);
-
-    filter:
-
-        brightness(1.18)
-        saturate(1.2);
-
-    z-index:100;
-
-}
-
-
-.ars-group-page .ars-glass:focus-visible::after,
-.ars-group-page .ars-glass:focus-within::after{
-
-    opacity:1;
-
-    transform:
-        scaleX(2.2)
-        translateY(0);
-
-}
-
-
-/* =========================================================
-   17 — LINK CARD FOCUS
-   ========================================================= */
-
-.ars-group-page
-a.ars-glass:focus-visible{
-
-    outline:
-
-        2px solid
-        rgba(255,218,135,.85);
-
-    outline-offset:8px;
-
-}
-
-
-/* =========================================================
-   18 — STRONGER ENERGY FOR COUNTRY / ECO / ORG CARDS
-   ========================================================= */
-
-.ars-group-page
-.country-card:hover,
-.ars-group-page
-.eco:hover,
-.ars-group-page
-.org-card:hover{
-
-    box-shadow:
-
-        0 32px 75px
-        rgba(0,0,0,.48),
-
-        0 0 45px
-        rgba(235,174,61,.45),
-
-        0 24px 70px
-        rgba(205,139,26,.30);
-
-}
-
-
-.ars-group-page
-.country-card:focus-visible,
-.ars-group-page
-.eco:focus-visible,
-.ars-group-page
-.org-card:focus-visible{
-
-    transform:
-        translateY(-75px)
-        scale(1.5);
-
-    z-index:150;
-
-}
-
-
-/* =========================================================
-   19 — GLOBAL ENERGY PULSE
+   16 — PAGE ENERGY OVERLAY
+   16 — لایه انرژی روی بک‌گراند صفحه
    ========================================================= */
 
 .ars-group-page::before{
@@ -866,9 +659,21 @@ a.ars-glass:focus-visible{
     background:
 
         radial-gradient(
-            circle at 50% 35%,
-            rgba(255,216,125,.045),
+            circle at 50% 30%,
+            rgba(255,220,140,.065),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 15% 70%,
+            rgba(210,145,32,.045),
             transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(230,170,55,.04),
+            transparent 30%
         );
 
     animation:
@@ -881,7 +686,374 @@ a.ars-glass:focus-visible{
 
 
 /* =========================================================
-   20 — KEYFRAMES
+   17 — GLOBAL CARD ENERGY ENTRY
+   17 — فعال‌سازی سیستم انرژی روی کارت‌ها
+   ---------------------------------------------------------
+   Existing .ars-glass remains intact.
+
+   کلاس اصلی ars-glass دست‌نخورده باقی می‌ماند.
+   ========================================================= */
+
+.ars-group-page .ars-glass{
+
+    position:relative;
+
+    isolation:isolate;
+
+    z-index:3;
+
+    transition:
+
+        transform
+        .75s
+        cubic-bezier(.16,1,.3,1),
+
+        box-shadow
+        .75s
+        cubic-bezier(.16,1,.3,1),
+
+        border-color
+        .65s
+        ease,
+
+        filter
+        .65s
+        ease;
+
+}
+
+
+/* =========================================================
+   18 — GOLDEN ENERGY UNDER EVERY CARD
+   18 — انرژی طلایی زیر تمام کارت‌ها
+   ========================================================= */
+
+.ars-group-page .ars-glass::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:-5%;
+    right:-5%;
+
+    bottom:-25px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+            ellipse at center,
+
+            rgba(255,222,135,.95) 0%,
+
+            rgba(255,199,75,.72) 20%,
+
+            rgba(224,158,40,.45) 38%,
+
+            rgba(185,111,19,.20) 55%,
+
+            transparent 78%
+        );
+
+    filter:
+        blur(17px);
+
+    opacity:0;
+
+    transform:
+
+        scaleX(.35)
+        scaleY(.65)
+        translateY(12px);
+
+    transition:
+
+        opacity
+        .6s
+        ease,
+
+        transform
+        .75s
+        cubic-bezier(.16,1,.3,1);
+
+    pointer-events:none;
+
+    z-index:-1;
+
+}
+
+
+/* =========================================================
+   19 — STRONG GLOBAL HOVER
+   19 — حالت هاور بسیار قدرتمند کارت‌ها
+   ---------------------------------------------------------
+   Cards rise and enlarge significantly.
+
+   کارت‌ها به‌صورت بسیار محسوس بالا می‌آیند
+   و بزرگ‌تر می‌شوند.
+   ========================================================= */
+
+.ars-group-page .ars-glass:hover{
+
+    transform:
+
+        translateY(-56px)
+        scale(1.09);
+
+    border-color:
+
+        rgba(
+            255,
+            220,
+            135,
+            .85
+        );
+
+    box-shadow:
+
+        0 55px 110px
+        rgba(0,0,0,.55),
+
+        0 0 0 1px
+        rgba(255,220,135,.30),
+
+        0 0 55px
+        rgba(235,177,60,.52),
+
+        0 30px 85px
+        rgba(198,132,27,.42),
+
+        0 -10px 45px
+        rgba(255,214,120,.12);
+
+    filter:
+
+        brightness(1.16)
+        saturate(1.16);
+
+    z-index:50;
+
+}
+
+
+/* =========================================================
+   20 — CARD GOLDEN ENERGY ACTIVATION
+   20 — فعال شدن انرژی طلایی زیر کارت
+   ========================================================= */
+
+.ars-group-page .ars-glass:hover::after{
+
+    opacity:1;
+
+    transform:
+
+        scaleX(2.2)
+        scaleY(1)
+        translateY(0);
+
+}
+
+
+/* =========================================================
+   21 — CARD CONTENT LIGHT
+   21 — درخشش نوشته‌های داخل کارت
+   ========================================================= */
+
+.ars-group-page .ars-glass:hover h1,
+.ars-group-page .ars-glass:hover h2,
+.ars-group-page .ars-glass:hover h3,
+.ars-group-page .ars-glass:hover h4,
+.ars-group-page .ars-glass:hover p,
+.ars-group-page .ars-glass:hover span{
+
+    text-shadow:
+
+        0 0 14px
+        rgba(255,220,135,.35),
+
+        0 0 32px
+        rgba(225,163,47,.18);
+
+}
+
+
+/* =========================================================
+   22 — STRONG CARD FAMILY HOVER
+   22 — هاور قدرتمند برای خانواده‌های مختلف کارت
+   ========================================================= */
+
+.ars-group-page .mission-card:hover,
+.ars-group-page .value-card:hover,
+.ars-group-page .vision-card:hover,
+.ars-group-page .dna-card:hover,
+.ars-group-page .country-card:hover,
+.ars-group-page .org-card:hover,
+.ars-group-page .leader-card:hover,
+.ars-group-page .partner-card:hover,
+.ars-group-page .standard-card:hover,
+.ars-group-page .timeline-card:hover,
+.ars-group-page .gallery-card:hover,
+.ars-group-page .future-card:hover,
+.ars-group-page .stat-card:hover{
+
+    transform:
+
+        translateY(-64px)
+        scale(1.14);
+
+}
+
+
+/* =========================================================
+   23 — SELECTED / FOCUS CARD
+   23 — حالت انتخاب و فوکوس بسیار بزرگ کارت
+   ---------------------------------------------------------
+   Strong visual elevation.
+
+   کارت در حالت فوکوس به‌صورت بسیار محسوس
+   بالا آمده و بزرگ می‌شود.
+   ========================================================= */
+
+.ars-group-page .ars-glass:focus-visible,
+.ars-group-page .ars-glass:focus-within{
+
+    transform:
+
+        translateY(-140px)
+        scale(1.75);
+
+    border-color:
+
+        rgba(
+            255,
+            229,
+            160,
+            1
+        );
+
+    box-shadow:
+
+        0 90px 170px
+        rgba(0,0,0,.70),
+
+        0 0 0 2px
+        rgba(255,222,140,.45),
+
+        0 0 90px
+        rgba(255,195,65,.75),
+
+        0 0 180px
+        rgba(213,142,25,.48),
+
+        0 -20px 75px
+        rgba(255,221,140,.20);
+
+    filter:
+
+        brightness(1.22)
+        saturate(1.25);
+
+    z-index:500;
+
+}
+
+
+/* =========================================================
+   24 — SELECTED CARD ENERGY
+   24 — انرژی طلایی کارت انتخاب‌شده
+   ========================================================= */
+
+.ars-group-page
+.ars-glass:focus-visible::after,
+.ars-group-page
+.ars-glass:focus-within::after{
+
+    opacity:1;
+
+    transform:
+
+        scaleX(3)
+        scaleY(1.25)
+        translateY(0);
+
+}
+
+
+/* =========================================================
+   25 — FOCUS OUTLINE
+   25 — خط نورانی دور کارت در حالت فوکوس
+   ========================================================= */
+
+.ars-group-page
+a.ars-glass:focus-visible{
+
+    outline:
+
+        2px solid
+        rgba(255,220,135,.95);
+
+    outline-offset:
+
+        10px;
+
+}
+
+
+/* =========================================================
+   26 — SPECIAL ECO / COUNTRY / ORGANIZATION CARDS
+   26 — کارت‌های ویژه اکوسیستم، کشورها و سازمان
+   ========================================================= */
+
+.ars-group-page
+.country-card:hover,
+.ars-group-page
+.eco:hover,
+.ars-group-page
+.org-card:hover{
+
+    transform:
+
+        translateY(-70px)
+        scale(1.16);
+
+    box-shadow:
+
+        0 65px 120px
+        rgba(0,0,0,.58),
+
+        0 0 65px
+        rgba(239,181,65,.60),
+
+        0 35px 95px
+        rgba(205,138,25,.44);
+
+}
+
+
+.ars-group-page
+.country-card:focus-visible,
+.ars-group-page
+.eco:focus-visible,
+.ars-group-page
+.org-card:focus-visible{
+
+    transform:
+
+        translateY(-150px)
+        scale(1.85);
+
+    z-index:600;
+
+}
+
+
+/* =========================================================
+   27 — ANIMATION KEYFRAMES
+   27 — فریم‌های اصلی انیمیشن‌های انرژی
    ========================================================= */
 
 @keyframes arsGlobalAtmosphereMove{
@@ -889,7 +1061,7 @@ a.ars-glass:focus-visible{
     0%{
 
         transform:
-            translate3d(-2%,-1%,0)
+            translate3d(-3%,-2%,0)
             scale(1);
 
     }
@@ -897,16 +1069,16 @@ a.ars-glass:focus-visible{
     50%{
 
         transform:
-            translate3d(3%,2%,0)
-            scale(1.05);
+            translate3d(4%,3%,0)
+            scale(1.08);
 
     }
 
     100%{
 
         transform:
-            translate3d(-1%,4%,0)
-            scale(1.08);
+            translate3d(-2%,5%,0)
+            scale(1.13);
 
     }
 
@@ -919,7 +1091,7 @@ a.ars-glass:focus-visible{
 
         transform:
             translateX(-50%)
-            scale(.88);
+            scale(.82);
 
         opacity:.35;
 
@@ -929,9 +1101,9 @@ a.ars-glass:focus-visible{
 
         transform:
             translateX(-50%)
-            scale(1.08);
+            scale(1.12);
 
-        opacity:.75;
+        opacity:.95;
 
     }
 
@@ -939,9 +1111,9 @@ a.ars-glass:focus-visible{
 
         transform:
             translateX(-50%)
-            scale(.94);
+            scale(.90);
 
-        opacity:.45;
+        opacity:.48;
 
     }
 
@@ -954,9 +1126,9 @@ a.ars-glass:focus-visible{
 
         transform:
             translate(-50%,-50%)
-            scale(.88);
+            scale(.82);
 
-        opacity:.25;
+        opacity:.20;
 
     }
 
@@ -964,9 +1136,9 @@ a.ars-glass:focus-visible{
 
         transform:
             translate(-50%,-50%)
-            scale(1.04);
+            scale(1.08);
 
-        opacity:.65;
+        opacity:.75;
 
     }
 
@@ -974,9 +1146,9 @@ a.ars-glass:focus-visible{
 
         transform:
             translate(-50%,-50%)
-            scale(1.12);
+            scale(1.18);
 
-        opacity:.18;
+        opacity:.15;
 
     }
 
@@ -997,7 +1169,7 @@ a.ars-glass:focus-visible{
 
         transform:
             rotate(180deg)
-            scale(1.08);
+            scale(1.10);
 
     }
 
@@ -1017,11 +1189,11 @@ a.ars-glass:focus-visible{
     0%{
 
         transform:
-            translate3d(0,-8%,0)
+            translate3d(0,-15%,0)
             rotate(0deg)
-            scale(1);
+            scale(.95);
 
-        opacity:.35;
+        opacity:.30;
 
     }
 
@@ -1029,21 +1201,21 @@ a.ars-glass:focus-visible{
 
         transform:
             translate3d(0,0,0)
-            rotate(8deg)
-            scale(1.08);
+            rotate(12deg)
+            scale(1.10);
 
-        opacity:.8;
+        opacity:.95;
 
     }
 
     100%{
 
         transform:
-            translate3d(0,10%,0)
-            rotate(16deg)
-            scale(1.15);
+            translate3d(0,18%,0)
+            rotate(24deg)
+            scale(1.25);
 
-        opacity:.45;
+        opacity:.50;
 
     }
 
@@ -1054,17 +1226,19 @@ a.ars-glass:focus-visible{
 
     0%{
 
-        transform:scale(.86);
+        transform:
+            scale(.80);
 
-        opacity:.25;
+        opacity:.20;
 
     }
 
     100%{
 
-        transform:scale(1.12);
+        transform:
+            scale(1.18);
 
-        opacity:.7;
+        opacity:.80;
 
     }
 
@@ -1076,7 +1250,7 @@ a.ars-glass:focus-visible{
     0%{
 
         transform:
-            translateX(-25%)
+            translateX(-30%)
             rotate(-12deg);
 
         opacity:0;
@@ -1085,26 +1259,26 @@ a.ars-glass:focus-visible{
 
     25%{
 
-        opacity:.25;
+        opacity:.35;
 
     }
 
     50%{
 
-        opacity:.65;
+        opacity:.85;
 
     }
 
     75%{
 
-        opacity:.25;
+        opacity:.35;
 
     }
 
     100%{
 
         transform:
-            translateX(25%)
+            translateX(30%)
             rotate(-12deg);
 
         opacity:0;
@@ -1121,31 +1295,43 @@ a.ars-glass:focus-visible{
         opacity:.015;
 
         transform:
-            translate3d(0,2%,0)
-            rotate(-6deg)
-            scale(.96);
+            translate3d(0,3%,0)
+            rotate(-7deg)
+            scale(.94);
+
+    }
+
+    25%{
+
+        opacity:.055;
 
     }
 
     50%{
 
-        opacity:.065;
+        opacity:.10;
 
         transform:
-            translate3d(2%,-2%,0)
-            rotate(-2deg)
-            scale(1.03);
+            translate3d(3%,-3%,0)
+            rotate(-1deg)
+            scale(1.06);
+
+    }
+
+    75%{
+
+        opacity:.045;
 
     }
 
     100%{
 
-        opacity:.02;
+        opacity:.015;
 
         transform:
-            translate3d(-2%,3%,0)
+            translate3d(-3%,4%,0)
             rotate(-8deg)
-            scale(.98);
+            scale(.97);
 
     }
 
@@ -1157,8 +1343,10 @@ a.ars-glass:focus-visible{
     0%{
 
         background-position:
+
             0 0,
-            40px 65px;
+            40px 65px,
+            80px 20px;
 
         opacity:.25;
 
@@ -1167,20 +1355,24 @@ a.ars-glass:focus-visible{
     50%{
 
         background-position:
-            70px 110px,
-            -30px 130px;
 
-        opacity:.55;
+            80px 120px,
+            -40px 140px,
+            120px -60px;
+
+        opacity:.75;
 
     }
 
     100%{
 
         background-position:
-            140px 220px,
-            -100px 260px;
 
-        opacity:.3;
+            160px 240px,
+            -120px 280px,
+            240px -120px;
+
+        opacity:.30;
 
     }
 
@@ -1191,7 +1383,7 @@ a.ars-glass:focus-visible{
 
     0%{
 
-        opacity:.35;
+        opacity:.30;
 
     }
 
@@ -1205,48 +1397,88 @@ a.ars-glass:focus-visible{
 
 
 /* =========================================================
-   21 — MOBILE
-   ---------------------------------------------------------
-   Keep effects strong but prevent extreme zoom from
-   destroying mobile usability.
+   28 — MOBILE OPTIMIZATION
+   28 — بهینه‌سازی نسخه موبایل
    ========================================================= */
 
 @media(max-width:768px){
 
     .ars-energy-system{
-        opacity:.85;
+
+        opacity:.88;
+
     }
 
 
     .ars-energy-identity span:nth-child(1){
 
-        left:-25%;
+        left:-28%;
 
     }
 
 
     .ars-energy-identity span:nth-child(2){
 
-        right:-30%;
+        right:-32%;
 
     }
 
 
-    .ars-group-page .ars-glass:hover{
+    .ars-group-page
+    .ars-glass:hover{
 
         transform:
-            translateY(-16px)
-            scale(1.025);
+
+            translateY(-28px)
+            scale(1.045);
 
     }
 
 
-    .ars-group-page .ars-glass:focus-visible,
-    .ars-group-page .ars-glass:focus-within{
+    .ars-group-page
+    .mission-card:hover,
+    .ars-group-page
+    .value-card:hover,
+    .ars-group-page
+    .vision-card:hover,
+    .ars-group-page
+    .dna-card:hover,
+    .ars-group-page
+    .country-card:hover,
+    .ars-group-page
+    .org-card:hover,
+    .ars-group-page
+    .leader-card:hover,
+    .ars-group-page
+    .partner-card:hover,
+    .ars-group-page
+    .standard-card:hover,
+    .ars-group-page
+    .timeline-card:hover,
+    .ars-group-page
+    .gallery-card:hover,
+    .ars-group-page
+    .future-card:hover,
+    .ars-group-page
+    .stat-card:hover{
 
         transform:
-            translateY(-30px)
-            scale(1.12);
+
+            translateY(-34px)
+            scale(1.06);
+
+    }
+
+
+    .ars-group-page
+    .ars-glass:focus-visible,
+    .ars-group-page
+    .ars-glass:focus-within{
+
+        transform:
+
+            translateY(-55px)
+            scale(1.18);
 
     }
 
@@ -1259,8 +1491,9 @@ a.ars-glass:focus-visible{
     .org-card:focus-visible{
 
         transform:
-            translateY(-35px)
-            scale(1.16);
+
+            translateY(-65px)
+            scale(1.22);
 
     }
 
@@ -1268,10 +1501,13 @@ a.ars-glass:focus-visible{
 
 
 /* =========================================================
-   22 — REDUCED MOTION
+   29 — REDUCED MOTION
+   29 — حالت کاهش حرکت برای دسترسی‌پذیری
    ---------------------------------------------------------
-   Only ARS Global Energy animations are reduced.
-   Existing page animations are NOT globally disabled.
+   Only ARS Global Energy animations are affected.
+
+   فقط انیمیشن‌های سیستم Global Energy محدود می‌شوند
+   و انیمیشن‌های اصلی صفحات به‌صورت سراسری لغو نمی‌شوند.
    ========================================================= */
 
 @media(prefers-reduced-motion:reduce){
@@ -1287,11 +1523,12 @@ a.ars-glass:focus-visible{
     .ars-group-page::before{
 
         animation-duration:
-            0.01ms;
+            .01ms;
 
         animation-iteration-count:
             1;
 
     }
 
+}
             }
