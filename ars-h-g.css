@@ -1,0 +1,1373 @@
+/* ========================================================= */
+/*                                                         */
+/*               ARS GLOBAL VISUAL DNA                     */
+/*          SHARED DESIGN SYSTEM — ALL ARS PAGES           */
+/*                                                         */
+/*  ARS HERITAGE GROUP • ARS DESIGN • ARS COMPANY          */
+/*  ARS BRAIN • ROSE AI • ZHR NAJI • ALL FUTURE PAGES      */
+/*                                                         */
+/* ========================================================= */
+
+
+/* ========================================================= */
+/* 01 — GLOBAL COLOR DNA                                    */
+/* ========================================================= */
+
+:root{
+
+    /* ----------------------------------------------------- */
+    /* CORE BLACK                                             */
+    /* ----------------------------------------------------- */
+
+    --ars-black:
+        #000000;
+
+    --ars-black-deep:
+        #010101;
+
+    --ars-black-surface:
+        #030405;
+
+
+    /* ----------------------------------------------------- */
+    /* DEEP NAVY                                              */
+    /* ----------------------------------------------------- */
+
+    --ars-navy-deep:
+        #020712;
+
+    --ars-navy:
+        #06101f;
+
+    --ars-navy-soft:
+        #0a1728;
+
+
+    /* ----------------------------------------------------- */
+    /* GOLD                                                   */
+    /* ----------------------------------------------------- */
+
+    --ars-gold:
+        #c49a4a;
+
+    --ars-gold-light:
+        #e6c77a;
+
+    --ars-gold-bright:
+        #f3d995;
+
+    --ars-gold-dark:
+        #8d6729;
+
+
+    /* ----------------------------------------------------- */
+    /* BRONZE                                                 */
+    /* ----------------------------------------------------- */
+
+    --ars-bronze:
+        #8f6238;
+
+    --ars-bronze-light:
+        #b4875a;
+
+    --ars-bronze-dark:
+        #4a2e1c;
+
+
+    /* ----------------------------------------------------- */
+    /* WHITE                                                  */
+    /* ----------------------------------------------------- */
+
+    --ars-white:
+        #ffffff;
+
+    --ars-white-soft:
+        #f4f1e8;
+
+    --ars-white-muted:
+        #c8c6bf;
+
+
+    /* ----------------------------------------------------- */
+    /* TECHNOLOGY BLUE                                        */
+    /* ----------------------------------------------------- */
+
+    --ars-blue:
+        #174b82;
+
+    --ars-blue-light:
+        #4d91d1;
+
+    --ars-blue-glow:
+        rgba(45,130,220,.35);
+
+
+    /* ----------------------------------------------------- */
+    /* ENERGY RED                                             */
+    /* ----------------------------------------------------- */
+
+    --ars-red:
+        #7d2024;
+
+    --ars-red-light:
+        #bd4b4f;
+
+    --ars-red-glow:
+        rgba(180,50,55,.22);
+
+
+    /* ----------------------------------------------------- */
+    /* ENERGY YELLOW                                          */
+    /* ----------------------------------------------------- */
+
+    --ars-yellow:
+        #d7ad3f;
+
+    --ars-yellow-light:
+        #f1d36e;
+
+    --ars-yellow-glow:
+        rgba(235,190,65,.25);
+
+
+    /* ----------------------------------------------------- */
+    /* EARTH BROWN                                            */
+    /* ----------------------------------------------------- */
+
+    --ars-brown:
+        #4a3020;
+
+    --ars-brown-light:
+        #806047;
+
+
+    /* ----------------------------------------------------- */
+    /* GLOBAL TEXT                                            */
+    /* ----------------------------------------------------- */
+
+    --ars-text:
+        #f4f1e8;
+
+    --ars-text-soft:
+        rgba(244,241,232,.78);
+
+    --ars-text-muted:
+        rgba(244,241,232,.56);
+
+
+    /* ----------------------------------------------------- */
+    /* GLOBAL BORDERS                                         */
+    /* ----------------------------------------------------- */
+
+    --ars-border:
+        rgba(255,255,255,.10);
+
+    --ars-border-gold:
+        rgba(196,154,74,.40);
+
+    --ars-border-gold-bright:
+        rgba(230,199,122,.70);
+
+
+    /* ----------------------------------------------------- */
+    /* GLOBAL GLASS                                           */
+    /* ----------------------------------------------------- */
+
+    --ars-glass-dark:
+        rgba(2,7,15,.76);
+
+    --ars-glass-navy:
+        rgba(5,15,29,.68);
+
+    --ars-glass-light:
+        rgba(255,255,255,.075);
+
+    --ars-glass-gold:
+        rgba(196,154,74,.10);
+
+
+    /* ----------------------------------------------------- */
+    /* GLOBAL SHADOWS                                         */
+    /* ----------------------------------------------------- */
+
+    --ars-shadow-black:
+        0 25px 80px rgba(0,0,0,.70);
+
+    --ars-shadow-gold:
+        0 20px 70px rgba(160,115,35,.18);
+
+    --ars-shadow-blue:
+        0 20px 70px rgba(25,85,150,.16);
+
+    --ars-shadow-red:
+        0 20px 70px rgba(130,25,30,.12);
+
+}
+
+
+/* ========================================================= */
+/* 02 — GLOBAL RESET                                         */
+/* ========================================================= */
+
+html{
+
+    width:100%;
+
+    min-height:100%;
+
+    margin:0;
+
+    padding:0;
+
+    background:
+        #000000;
+
+    overflow-x:hidden;
+
+    scroll-behavior:smooth;
+
+}
+
+
+body{
+
+    width:100%;
+
+    min-height:100vh;
+
+    margin:0;
+
+    padding:0;
+
+    background:
+        #000000;
+
+    color:
+        var(--ars-text);
+
+    overflow-x:hidden;
+
+    font-family:
+
+        "Inter",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    -webkit-font-smoothing:
+        antialiased;
+
+    text-rendering:
+        optimizeLegibility;
+
+}
+
+
+*,
+*::before,
+*::after{
+
+    box-sizing:
+        border-box;
+
+}
+
+
+img,
+video,
+svg,
+canvas{
+
+    display:
+        block;
+
+    max-width:
+        100%;
+
+}
+
+
+a{
+
+    color:
+        inherit;
+
+    text-decoration:
+        none;
+
+}
+
+
+button,
+a{
+
+    -webkit-tap-highlight-color:
+        transparent;
+
+}
+
+
+/* ========================================================= */
+/* 03 — GLOBAL PAGE BACKGROUND                               */
+/* ========================================================= */
+
+body{
+
+    position:
+        relative;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(20,38,65,.16),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 15% 35%,
+            rgba(196,154,74,.035),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(23,75,130,.035),
+            transparent 32%
+        ),
+
+        #000000;
+
+}
+
+
+/* ========================================================= */
+/* 04 — CINEMATIC GLOBAL LIGHT FIELD                         */
+/* ========================================================= */
+
+body::before{
+
+    content:"";
+
+    position:
+        fixed;
+
+    inset:
+        -35%;
+
+    z-index:
+        0;
+
+    pointer-events:
+        none;
+
+    background:
+
+        radial-gradient(
+            ellipse at 25% 20%,
+            rgba(196,154,74,.055),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            ellipse at 75% 60%,
+            rgba(23,75,130,.045),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            ellipse at 50% 100%,
+            rgba(125,32,36,.025),
+            transparent 28%
+        );
+
+    animation:
+
+        arsGlobalAtmosphere
+        22s
+        ease-in-out
+        infinite
+        alternate;
+
+}
+
+
+@keyframes arsGlobalAtmosphere{
+
+    0%{
+
+        transform:
+            translate3d(-2%,-1%,0)
+            scale(1);
+
+        opacity:
+            .55;
+
+    }
+
+    50%{
+
+        transform:
+            translate3d(2%,2%,0)
+            scale(1.04);
+
+        opacity:
+            .85;
+
+    }
+
+    100%{
+
+        transform:
+            translate3d(-1%,3%,0)
+            scale(1.08);
+
+        opacity:
+            .65;
+
+    }
+
+}
+
+
+/* ========================================================= */
+/* 05 — GLOBAL PAGE ROOT                                     */
+/* ========================================================= */
+
+section,
+header,
+footer,
+main,
+nav{
+
+    position:
+        relative;
+
+    max-width:
+        100%;
+
+}
+
+
+.ars-group-page,
+.ars-company-page,
+.ars-design-page,
+.ars-brain-page,
+.ars-future-page{
+
+    position:
+        relative;
+
+    z-index:
+        1;
+
+    width:
+        100%;
+
+    max-width:
+        100%;
+
+    overflow:
+        hidden;
+
+}
+
+
+/* ========================================================= */
+/* 06 — GLOBAL CONTAINER                                     */
+/* ========================================================= */
+
+.container{
+
+    width:
+        min(1400px, 90%);
+
+    max-width:
+        100%;
+
+    margin-left:
+        auto;
+
+    margin-right:
+        auto;
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+}
+
+
+/* ========================================================= */
+/* 07 — GLOBAL SECTION                                      */
+/* ========================================================= */
+
+section{
+
+    width:
+        100%;
+
+    padding:
+
+        clamp(
+            90px,
+            9vw,
+            170px
+        )
+        0;
+
+    isolation:
+        isolate;
+
+}
+
+
+/* ========================================================= */
+/* 08 — GLOBAL SECTION HEADER                                */
+/* ========================================================= */
+
+.section-header{
+
+    position:
+        relative;
+
+    z-index:
+        3;
+
+    width:
+        100%;
+
+    max-width:
+        1000px;
+
+    margin:
+
+        0
+        auto
+        70px;
+
+    text-align:
+        center;
+
+}
+
+
+.section-label{
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    margin-bottom:
+        20px;
+
+    padding:
+
+        8px
+        18px;
+
+    border:
+
+        1px
+        solid
+        var(--ars-border-gold);
+
+    border-radius:
+        999px;
+
+    color:
+        var(--ars-gold-light);
+
+    background:
+
+        rgba(5,12,22,.55);
+
+    backdrop-filter:
+        blur(14px);
+
+    -webkit-backdrop-filter:
+        blur(14px);
+
+    box-shadow:
+
+        0
+        0
+        25px
+        rgba(196,154,74,.05);
+
+    font-size:
+        .70rem;
+
+    letter-spacing:
+        .18em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.section-header h2{
+
+    margin:
+        0;
+
+    color:
+        var(--ars-white-soft);
+
+    font-size:
+
+        clamp(
+            2rem,
+            4vw,
+            4rem
+        );
+
+    line-height:
+        1.12;
+
+    letter-spacing:
+        -.025em;
+
+}
+
+
+.section-header p{
+
+    max-width:
+        780px;
+
+    margin:
+
+        25px
+        auto
+        0;
+
+    color:
+        var(--ars-text-soft);
+
+    line-height:
+        1.9;
+
+}
+
+
+/* ========================================================= */
+/* 09 — UNIVERSAL ARS GLASS SYSTEM                           */
+/* ========================================================= */
+
+.ars-glass{
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    border:
+
+        1px
+        solid
+        rgba(255,255,255,.11);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.075),
+            rgba(255,255,255,.025)
+        );
+
+    backdrop-filter:
+
+        blur(24px)
+        saturate(125%);
+
+    -webkit-backdrop-filter:
+
+        blur(24px)
+        saturate(125%);
+
+    box-shadow:
+
+        var(--ars-shadow-black),
+
+        inset
+        0
+        1px
+        0
+        rgba(255,255,255,.10);
+
+    transition:
+
+        transform .6s cubic-bezier(.2,.8,.2,1),
+
+        border-color .5s ease,
+
+        box-shadow .5s ease,
+
+        background .5s ease;
+
+}
+
+
+/* ========================================================= */
+/* 10 — GLASS LIGHT REFLECTION                               */
+/* ========================================================= */
+
+.ars-glass::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    background:
+
+        linear-gradient(
+            115deg,
+            transparent 20%,
+            rgba(255,255,255,.09) 45%,
+            transparent 70%
+        );
+
+    transform:
+        translateX(-120%);
+
+    transition:
+        transform 1.2s ease;
+
+}
+
+
+.ars-glass:hover::before{
+
+    transform:
+        translateX(120%);
+
+}
+
+
+/* ========================================================= */
+/* 11 — GLASS HOVER                                         */
+/* ========================================================= */
+
+.ars-glass:hover{
+
+    transform:
+        translateY(-10px);
+
+    border-color:
+        var(--ars-border-gold-bright);
+
+    box-shadow:
+
+        0
+        30px
+        90px
+        rgba(0,0,0,.78),
+
+        0
+        0
+        35px
+        rgba(196,154,74,.10),
+
+        inset
+        0
+        1px
+        0
+        rgba(255,255,255,.18);
+
+}
+
+
+/* ========================================================= */
+/* 12 — GLASS VARIANTS                                      */
+/* ========================================================= */
+
+.ars-glass-dark{
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(0,0,0,.88),
+            rgba(4,9,17,.72)
+        );
+
+}
+
+
+.ars-glass-navy{
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(5,15,29,.82),
+            rgba(2,7,14,.65)
+        );
+
+    border-color:
+
+        rgba(38,91,145,.25);
+
+}
+
+
+.ars-glass-gold{
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(196,154,74,.16),
+            rgba(5,13,24,.70)
+        );
+
+    border-color:
+
+        rgba(196,154,74,.32);
+
+}
+
+
+.ars-glass-bronze{
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(143,98,56,.16),
+            rgba(3,7,12,.75)
+        );
+
+    border-color:
+
+        rgba(143,98,56,.30);
+
+}
+
+
+.ars-glass-blue{
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(23,75,130,.16),
+            rgba(2,8,17,.76)
+        );
+
+    border-color:
+
+        rgba(77,145,209,.22);
+
+}
+
+
+.ars-glass-red{
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(125,32,36,.13),
+            rgba(3,7,12,.78)
+        );
+
+    border-color:
+
+        rgba(189,75,79,.20);
+
+}
+
+
+.ars-glass-bright{
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.13),
+            rgba(255,255,255,.035)
+        );
+
+}
+
+
+.ars-glass-flat{
+
+    box-shadow:
+
+        inset
+        0
+        1px
+        0
+        rgba(255,255,255,.08);
+
+}
+
+
+.ars-glass-floating{
+
+    box-shadow:
+
+        0
+        30px
+        100px
+        rgba(0,0,0,.75),
+
+        0
+        0
+        40px
+        rgba(196,154,74,.08);
+
+}
+
+
+/* ========================================================= */
+/* 13 — GOLD TYPOGRAPHY                                     */
+/* ========================================================= */
+
+.gold-text{
+
+    background:
+
+        linear-gradient(
+            120deg,
+            var(--ars-gold-dark),
+            var(--ars-gold-light),
+            var(--ars-gold),
+            var(--ars-gold-bright)
+        );
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    color:
+        transparent;
+
+}
+
+
+h1,
+h2,
+h3,
+h4{
+
+    text-wrap:
+        balance;
+
+}
+
+
+h1,
+h2,
+h3{
+
+    color:
+        var(--ars-white-soft);
+
+}
+
+
+/* ========================================================= */
+/* 14 — UNIVERSAL ARS BUTTONS                               */
+/* ========================================================= */
+
+.btn-primary,
+.btn-secondary{
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-height:
+        52px;
+
+    padding:
+
+        0
+        28px;
+
+    border-radius:
+        999px;
+
+    font-size:
+        .84rem;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        .04em;
+
+    transition:
+
+        transform .4s ease,
+
+        box-shadow .4s ease,
+
+        background .4s ease,
+
+        border-color .4s ease;
+
+}
+
+
+.btn-primary{
+
+    color:
+        #090909;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #9e742c,
+            #e5c477,
+            #b7842e
+        );
+
+    box-shadow:
+
+        0
+        10px
+        35px
+        rgba(196,154,74,.20);
+
+}
+
+
+.btn-secondary{
+
+    color:
+        var(--ars-gold-light);
+
+    border:
+
+        1px
+        solid
+        var(--ars-border-gold);
+
+    background:
+
+        rgba(4,11,20,.60);
+
+    backdrop-filter:
+        blur(14px);
+
+    -webkit-backdrop-filter:
+        blur(14px);
+
+}
+
+
+.btn-primary:hover,
+.btn-secondary:hover{
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+
+        0
+        15px
+        45px
+        rgba(196,154,74,.28);
+
+}
+
+
+/* ========================================================= */
+/* 15 — GOLD CINEMATIC SCROLL INDICATOR                     */
+/* ========================================================= */
+
+.ars-scroll-line{
+
+    position:
+        fixed;
+
+    right:
+        24px;
+
+    top:
+        50%;
+
+    width:
+        2px;
+
+    height:
+        100px;
+
+    transform:
+        translateY(-50%);
+
+    z-index:
+        100;
+
+    pointer-events:
+        none;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            transparent,
+            var(--ars-gold-light),
+            transparent
+        );
+
+    opacity:
+        .65;
+
+    animation:
+
+        arsScrollGlow
+        2.5s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes arsScrollGlow{
+
+    0%,
+    100%{
+
+        opacity:
+            .30;
+
+        box-shadow:
+            0
+            0
+            5px
+            rgba(230,199,122,.15);
+
+    }
+
+    50%{
+
+        opacity:
+            1;
+
+        box-shadow:
+            0
+            0
+            22px
+            rgba(230,199,122,.70);
+
+    }
+
+}
+
+
+/* ========================================================= */
+/* 16 — UNIVERSAL FOCUS                                     */
+/* ========================================================= */
+
+a:focus-visible,
+button:focus-visible{
+
+    outline:
+
+        2px
+        solid
+        var(--ars-gold-light);
+
+    outline-offset:
+        5px;
+
+}
+
+
+/* ========================================================= */
+/* 17 — RESPONSIVE DNA                                      */
+/* ========================================================= */
+
+@media (max-width:1024px){
+
+    .container{
+
+        width:
+            90%;
+
+    }
+
+    section{
+
+        padding:
+            100px 0;
+
+    }
+
+}
+
+
+@media (max-width:768px){
+
+    .container{
+
+        width:
+            90%;
+
+    }
+
+    section{
+
+        padding:
+            80px 0;
+
+    }
+
+    .section-header{
+
+        margin-bottom:
+            50px;
+
+    }
+
+    .section-header h2{
+
+        font-size:
+
+            clamp(
+                1.8rem,
+                8vw,
+                3rem
+            );
+
+    }
+
+    .btn-primary,
+    .btn-secondary{
+
+        width:
+            100%;
+
+    }
+
+}
+
+
+@media (max-width:480px){
+
+    .container{
+
+        width:
+            92%;
+
+    }
+
+    section{
+
+        padding:
+            70px 0;
+
+    }
+
+    .section-label{
+
+        font-size:
+            .62rem;
+
+        letter-spacing:
+            .12em;
+
+    }
+
+}
+
+
+/* ========================================================= */
+/* 18 — MOBILE OVERFLOW PROTECTION                          */
+/* ========================================================= */
+
+@media (max-width:768px){
+
+    html,
+    body{
+
+        width:
+            100%;
+
+        max-width:
+            100%;
+
+        overflow-x:
+            hidden;
+
+    }
+
+    .ars-glass{
+
+        max-width:
+            100%;
+
+        min-width:
+            0;
+
+    }
+
+}
+
+
+/* ========================================================= */
+/* 19 — REDUCED MOTION                                      */
+/* ========================================================= */
+
+@media (prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:
+            auto !important;
+
+        transition-duration:
+            .01ms !important;
+
+    }
+
+}
+
+
+
+
+/* ========================================================= */
+/*                                                         */
+/*       END OF ARS GLOBAL VISUAL DNA                      */
+/*       START OF ARS COMPANY UNIQUE DESIGN                */
+/*                                                         */
+/* ========================================================= */
