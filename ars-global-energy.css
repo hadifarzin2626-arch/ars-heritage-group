@@ -2238,8 +2238,7 @@ a.org-card:focus-visible{
 
 
 /* =========================================================
-   05. ARS CINEMATIC IDENTITY
-   ARS بزرگ، طلایی و سینمایی
+   05. ARS CINEMATIC IDENTITY — REFINED LUXURY EDITION
    ========================================================= */
 
 .ars-glass::before{
@@ -2266,14 +2265,11 @@ a.org-card:focus-visible{
     white-space:nowrap;
 
     font-family:
+        "Arial Black",
+        "Trebuchet MS",
         Arial,
         Helvetica,
         sans-serif;
-
-    /*
-       بزرگ‌تر از نسخه قبلی
-       بدون تغییر ساختار اصلی
-    */
 
     font-size:
         clamp(
@@ -2285,44 +2281,44 @@ a.org-card:focus-visible{
     font-weight:900;
 
     letter-spacing:
-        .22em;
+        .30em;
 
     color:
         rgba(
             255,
             218,
             120,
-            .72
+            .48
         );
 
     text-shadow:
 
-        0 0 25px
-        rgba(255,225,145,.65),
+        0 0 30px
+        rgba(255,225,145,.42),
 
-        0 0 60px
-        rgba(255,205,90,.55),
+        0 0 70px
+        rgba(255,205,90,.34),
 
-        0 0 120px
-        rgba(235,170,45,.42),
+        0 0 140px
+        rgba(235,170,45,.24),
 
-        0 0 200px
-        rgba(210,140,25,.25);
+        0 0 220px
+        rgba(210,140,25,.14);
 
     opacity:0;
 
     transform:
 
         translate(-50%,-50%)
+
         scale(.22)
+
         rotate(-18deg);
 
     filter:
-        blur(7px);
+        blur(8px);
 
 }
-
-
 /* =========================================================
    06. ARS CINEMATIC REVEAL
    فعال شدن با همان Hover سیستم V7
@@ -2347,76 +2343,178 @@ a.org-card:focus-visible{
 
 /* =========================================================
    07. ARS GOLDEN CINEMATIC IDENTITY
-   کوچک
-   → ظاهر شدن
-   → چرخش
-   → بزرگ شدن
-   → پخش انرژی
-   → محو شدن
+   REFINED LUXURY EDITION
    ========================================================= */
 
 @keyframes arsCardGoldenIdentity{
-
-
-    /* -----------------------------------------
-       START
-       ARS بسیار کوچک و محو
-       ----------------------------------------- */
 
     0%{
 
         opacity:0;
 
         transform:
-
             translate(-50%,-50%)
-
             scale(.22)
-
             rotate(-18deg);
 
         filter:
-            blur(9px);
+            blur(11px);
 
         text-shadow:
 
-            0 0 10px
+            0 0 15px
             rgba(255,225,145,0);
 
     }
 
 
-    /* -----------------------------------------
-       EMERGENCE
-       شروع ظهور
-       ----------------------------------------- */
-
     12%{
 
-        opacity:.72;
+        opacity:.42;
 
         transform:
-
             translate(-50%,-50%)
-
             scale(.48)
-
             rotate(-8deg);
 
         filter:
-            blur(4px);
+            blur(6px);
 
         text-shadow:
 
-            0 0 30px
-            rgba(255,225,145,.75),
+            0 0 35px
+            rgba(255,225,145,.45),
 
-            0 0 70px
-            rgba(235,170,45,.55);
+            0 0 80px
+            rgba(235,170,45,.30);
 
     }
 
 
+    30%{
+
+        opacity:.62;
+
+        transform:
+            translate(-50%,-50%)
+            scale(.82)
+            rotate(4deg);
+
+        filter:
+            blur(3px);
+
+        text-shadow:
+
+            0 0 45px
+            rgba(255,235,165,.58),
+
+            0 0 100px
+            rgba(255,205,90,.42),
+
+            0 0 170px
+            rgba(225,155,35,.28);
+
+    }
+
+
+    48%{
+
+        opacity:.56;
+
+        transform:
+            translate(-50%,-50%)
+            scale(1.12)
+            rotate(-3deg);
+
+        filter:
+            blur(3px);
+
+        text-shadow:
+
+            0 0 55px
+            rgba(255,240,185,.62),
+
+            0 0 120px
+            rgba(255,215,110,.50),
+
+            0 0 210px
+            rgba(235,170,45,.34),
+
+            0 0 300px
+            rgba(210,140,25,.20);
+
+    }
+
+
+    68%{
+
+        opacity:.30;
+
+        transform:
+            translate(-50%,-50%)
+            scale(1.65)
+            rotate(8deg);
+
+        filter:
+            blur(6px);
+
+        text-shadow:
+
+            0 0 75px
+            rgba(255,225,145,.42),
+
+            0 0 160px
+            rgba(255,205,90,.30),
+
+            0 0 260px
+            rgba(220,150,30,.20);
+
+    }
+
+
+    86%{
+
+        opacity:.10;
+
+        transform:
+            translate(-50%,-50%)
+            scale(2.15)
+            rotate(18deg);
+
+        filter:
+            blur(11px);
+
+        text-shadow:
+
+            0 0 120px
+            rgba(255,220,120,.20),
+
+            0 0 240px
+            rgba(220,150,30,.10);
+
+    }
+
+
+    100%{
+
+        opacity:0;
+
+        transform:
+            translate(-50%,-50%)
+            scale(2.75)
+            rotate(28deg);
+
+        filter:
+            blur(18px);
+
+        text-shadow:
+
+            0 0 200px
+            rgba(255,220,120,0);
+
+    }
+
+}
     /* -----------------------------------------
        GOLDEN ARRIVAL
        ورود اصلی ARS
