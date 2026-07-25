@@ -2082,806 +2082,703 @@ a.org-card:focus-visible{
 
 
 /* =========================================================
-ARS V7.2 — PREMIUM UNIVERSAL CARD ENERGY SYSTEM
+   ARS CARD CINEMATIC INTERACTION V2
+   مستقل از JavaScript
+   مبنا: ARS CARD CINEMATIC INTERACTION V1
+   ========================================================= */
 
-BASED ON:
-ARS V7.1 WORKING CARD SYSTEM
-
-FEATURES:
-• Slow premium card elevation
-• Universal .ars-glass support
-• Large golden energy under cards
-• 70% stronger golden glow
-• Cinematic ARS energy animation
-• Rotational / dimensional ARS appearance
-• ARS grows, rotates and fades
-• No JavaScript
-• No page background control
-• No scroll control
-========================================================= */
 
 /* =========================================================
-
-1. UNIVERSAL CARD FOUNDATION
-   پایه مستقل تمام کارت‌ها
+   01. CARD INTERACTION FOUNDATION
+   پایه تعامل سینمایی کارت‌ها
    ========================================================= */
 
 .ars-group-page .ars-glass{
 
-position:relative;
+    position:relative;
 
-isolation:isolate;
+    isolation:isolate;
 
-z-index:3;
+    transform-origin:center center;
 
-transform-origin:center center;
+    transition:
 
-/*
-Slow premium movement
-حرکت بسیار آهسته و لوکس
-*/
+        transform
+        1.8s
+        cubic-bezier(.16,1,.3,1),
 
-transition:
+        box-shadow
+        1.8s
+        cubic-bezier(.16,1,.3,1),
 
-    transform
-    2.2s
-    cubic-bezier(.16,1,.3,1),
+        border-color
+        1.2s
+        ease,
 
-    box-shadow
-    2s
-    cubic-bezier(.16,1,.3,1),
-
-    border-color
-    1.4s
-    ease,
-
-    filter
-    1.5s
-    ease;
+        filter
+        1.2s
+        ease;
 
 }
 
-/* =========================================================
-02. GOLDEN ENERGY ENGINE
-موتور انرژی طلایی زیر کارت
-========================================================= */
-
-.ars-group-page .ars-glass::after{
-
-content:"";
-
-position:absolute;
-
-left:-35%;
-
-right:-35%;
-
-bottom:-48px;
-
-height:95px;
-
-border-radius:50%;
-
-pointer-events:none;
-
-z-index:-1;
-
-/*
-Strong premium golden energy
-انرژی طلایی بسیار پررنگ
-*/
-
-background:
-
-    radial-gradient(
-        ellipse at center,
-
-        rgba(255,245,200,1) 0%,
-
-        rgba(255,229,135,.98) 12%,
-
-        rgba(255,207,75,.90) 28%,
-
-        rgba(239,173,38,.72) 45%,
-
-        rgba(205,135,18,.45) 62%,
-
-        rgba(160,95,8,.20) 76%,
-
-        transparent 88%
-    );
-
-filter:
-
-    blur(18px)
-    brightness(1.15);
-
-opacity:0;
-
-transform:
-
-    translate3d(0,18px,0)
-    scaleX(.55)
-    scaleY(.45)
-    rotate(-2deg);
-
-transform-origin:center center;
-
-/*
-Slow energy transition
-*/
-
-transition:
-
-    opacity
-    1.3s
-    ease,
-
-    transform
-    2.2s
-    cubic-bezier(.16,1,.3,1),
-
-    filter
-    1.5s
-    ease;
-
-}
 
 /* =========================================================
-03. UNIVERSAL CARD HOVER
-بالا آمدن آهسته و بزرگ شدن کارت
-========================================================= */
+   02. CARD HOVER
+   حرکت بسیار نرم هنگام Hover
+   ========================================================= */
 
 .ars-group-page .ars-glass:hover{
 
-transform:
+    transform:
 
-    translate3d(
-        0,
-        -55px,
-        0
-    )
+        translateY(-42px)
+        scale(1.055);
 
-    scale(1.08);
+    border-color:
 
-border-color:
+        rgba(255,225,145,.78);
 
-    rgba(
-        255,
-        225,
-        145,
-        .82
-    );
+    box-shadow:
 
-filter:
+        0 40px 90px
+        rgba(0,0,0,.48),
 
-    brightness(1.08)
-    saturate(1.10);
+        0 0 42px
+        rgba(245,190,65,.42),
 
-box-shadow:
+        0 22px 70px
+        rgba(210,145,25,.32);
 
-    0 50px 110px
-    rgba(0,0,0,.52),
+    filter:
 
-    0 0 60px
-    rgba(255,210,90,.58),
+        brightness(1.08)
+        saturate(1.10);
 
-    0 0 120px
-    rgba(235,165,30,.38),
-
-    0 35px 90px
-    rgba(190,120,15,.32);
-
-z-index:50;
+    z-index:20;
 
 }
 
+
 /* =========================================================
-04. LARGE GOLDEN ENERGY ACTIVATION
-فعال شدن انرژی بزرگ زیر کارت
-========================================================= */
+   03. CARD CLICK / FOCUS INTERACTION
+   کلیک یا انتخاب کارت
+   ========================================================= */
 
-.ars-group-page .ars-glass:hover::after{
+.ars-group-page .ars-glass:focus-visible,
+.ars-group-page .ars-glass:focus-within{
 
-opacity:
+    animation:
 
-    .95;
+        arsCardCinematicRiseV2
+        2.4s
+        cubic-bezier(.16,1,.3,1)
+        both;
 
-transform:
+    border-color:
 
-    translate3d(
-        0,
-        4px,
-        0
-    )
+        rgba(255,232,165,.95);
 
-    scaleX(2.8)
-    scaleY(1.45)
-    rotate(2deg);
+    box-shadow:
 
-filter:
+        0 65px 125px
+        rgba(0,0,0,.60),
 
-    blur(20px)
-    brightness(1.25);
+        0 0 65px
+        rgba(255,205,80,.58),
+
+        0 0 135px
+        rgba(220,150,25,.36);
+
+    filter:
+
+        brightness(1.13)
+        saturate(1.14);
+
+    z-index:100;
 
 }
 
+
 /* =========================================================
-05. CARD CONTENT PREMIUM SCALE
-بزرگ شدن آرام محتوای کارت
-========================================================= */
+   04. CINEMATIC CARD RISE V2
+   بالا آمدن آهسته‌تر و سینمایی‌تر
+   ========================================================= */
+
+@keyframes arsCardCinematicRiseV2{
+
+    0%{
+
+        transform:
+
+            translateY(0)
+            scale(1);
+
+    }
+
+
+    25%{
+
+        transform:
+
+            translateY(-10px)
+            scale(1.012);
+
+    }
+
+
+    50%{
+
+        transform:
+
+            translateY(-25px)
+            scale(1.035);
+
+    }
+
+
+    72%{
+
+        transform:
+
+            translateY(-42px)
+            scale(1.055);
+
+    }
+
+
+    88%{
+
+        transform:
+
+            translateY(-52px)
+            scale(1.072);
+
+    }
+
+
+    100%{
+
+        transform:
+
+            translateY(-58px)
+            scale(1.085);
+
+    }
+
+}
+
+
+/* =========================================================
+   05. ARS CINEMATIC EMBLEM V2
+   نشان ARS سینمایی
+   ========================================================= */
+
+.ars-group-page .ars-glass::before{
+
+    content:
+        "ARS";
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    transform:
+
+        translate(-50%,-50%)
+        scale(.10)
+        rotate(-18deg)
+        rotateX(18deg);
+
+    transform-origin:center center;
+
+    font-family:
+
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+
+        clamp(
+            14rem,
+            48vw,
+            44rem
+        );
+
+    font-weight:900;
+
+    letter-spacing:
+
+        .22em;
+
+    white-space:nowrap;
+
+    color:
+
+        rgba(
+            255,
+            215,
+            95,
+            0
+        );
+
+    text-shadow:
+
+        0 0 20px
+        rgba(255,210,80,0),
+
+        0 0 55px
+        rgba(255,190,45,0),
+
+        0 0 110px
+        rgba(230,150,20,0),
+
+        0 0 180px
+        rgba(210,135,15,0);
+
+    pointer-events:none;
+
+    z-index:-1;
+
+    opacity:0;
+
+    filter:
+
+        blur(4px);
+
+}
+
+
+/* =========================================================
+   06. ARS EMBLEM ACTIVATION
+   فعال شدن ARS هنگام انتخاب کارت
+   ========================================================= */
+
+.ars-group-page .ars-glass:focus-visible::before,
+.ars-group-page .ars-glass:focus-within::before{
+
+    animation:
+
+        arsCardARSRevealV2
+        3.8s
+        cubic-bezier(.16,1,.3,1)
+        both;
+
+}
+
+
+/* =========================================================
+   07. ARS CINEMATIC REVEAL V2
+   ظاهر شدن
+   چرخش
+   بزرگ شدن
+   درخشش
+   محو شدن
+   ========================================================= */
+
+@keyframes arsCardARSRevealV2{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+
+            translate(-50%,-50%)
+            scale(.10)
+            rotate(-24deg)
+            rotateX(20deg);
+
+        color:
+
+            rgba(
+                255,
+                215,
+                95,
+                0
+            );
+
+        text-shadow:
+
+            0 0 15px
+            rgba(255,210,80,0);
+
+        filter:
+
+            blur(10px);
+
+    }
+
+
+    12%{
+
+        opacity:.20;
+
+        transform:
+
+            translate(-50%,-50%)
+            scale(.45)
+            rotate(-12deg)
+            rotateX(12deg);
+
+        color:
+
+            rgba(
+                255,
+                218,
+                110,
+                .38
+            );
+
+        text-shadow:
+
+            0 0 30px
+            rgba(255,210,80,.35),
+
+            0 0 70px
+            rgba(230,155,25,.20);
+
+        filter:
+
+            blur(3px);
+
+    }
+
+
+    28%{
+
+        opacity:.58;
+
+        transform:
+
+            translate(-50%,-50%)
+            scale(.95)
+            rotate(5deg)
+            rotateX(5deg);
+
+        color:
+
+            rgba(
+                255,
+                222,
+                125,
+                .68
+            );
+
+        text-shadow:
+
+            0 0 35px
+            rgba(255,220,105,.70),
+
+            0 0 80px
+            rgba(245,180,45,.55),
+
+            0 0 150px
+            rgba(215,135,15,.32);
+
+        filter:
+
+            blur(0);
+
+    }
+
+
+    45%{
+
+        opacity:.82;
+
+        transform:
+
+            translate(-50%,-50%)
+            scale(1.65)
+            rotate(14deg)
+            rotateX(0deg);
+
+        color:
+
+            rgba(
+                255,
+                226,
+                140,
+                .82
+            );
+
+        text-shadow:
+
+            0 0 45px
+            rgba(255,225,130,.85),
+
+            0 0 100px
+            rgba(255,195,60,.68),
+
+            0 0 190px
+            rgba(220,140,20,.42);
+
+        filter:
+
+            blur(0);
+
+    }
+
+
+    62%{
+
+        opacity:.62;
+
+        transform:
+
+            translate(-50%,-50%)
+            scale(2.45)
+            rotate(24deg)
+            rotateX(-4deg);
+
+        color:
+
+            rgba(
+                255,
+                220,
+                115,
+                .62
+            );
+
+        text-shadow:
+
+            0 0 60px
+            rgba(255,220,115,.75),
+
+            0 0 130px
+            rgba(245,175,35,.55),
+
+            0 0 230px
+            rgba(210,130,15,.30);
+
+        filter:
+
+            blur(1px);
+
+    }
+
+
+    78%{
+
+        opacity:.34;
+
+        transform:
+
+            translate(-50%,-50%)
+            scale(3.35)
+            rotate(34deg)
+            rotateX(-8deg);
+
+        color:
+
+            rgba(
+                255,
+                215,
+                100,
+                .34
+            );
+
+        text-shadow:
+
+            0 0 80px
+            rgba(255,215,100,.48),
+
+            0 0 170px
+            rgba(235,155,25,.30);
+
+        filter:
+
+            blur(3px);
+
+    }
+
+
+    90%{
+
+        opacity:.12;
+
+        transform:
+
+            translate(-50%,-50%)
+            scale(4.05)
+            rotate(42deg)
+            rotateX(-12deg);
+
+        color:
+
+            rgba(
+                255,
+                210,
+                90,
+                .12
+            );
+
+        text-shadow:
+
+            0 0 120px
+            rgba(255,210,90,.20);
+
+        filter:
+
+            blur(7px);
+
+    }
+
+
+    100%{
+
+        opacity:0;
+
+        transform:
+
+            translate(-50%,-50%)
+            scale(4.60)
+            rotate(50deg)
+            rotateX(-18deg);
+
+        color:
+
+            rgba(
+                255,
+                205,
+                80,
+                0
+            );
+
+        text-shadow:
+
+            0 0 180px
+            rgba(255,200,70,0);
+
+        filter:
+
+            blur(12px);
+
+    }
+
+}
+
+
+/* =========================================================
+   08. GOLDEN ENERGY UNDER CARD
+   انرژی طلایی زیر کارت
+   ========================================================= */
+
+.ars-group-page .ars-glass::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:-12%;
+
+    right:-12%;
+
+    bottom:-30px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+            ellipse at center,
+
+            rgba(255,232,155,.95),
+
+            rgba(255,205,80,.62) 30%,
+
+            rgba(220,150,25,.28) 55%,
+
+            transparent 82%
+        );
+
+    filter:
+
+        blur(15px);
+
+    opacity:0;
+
+    transform:
+
+        scaleX(.35)
+        scaleY(.55);
+
+    transition:
+
+        opacity
+        1.4s
+        ease,
+
+        transform
+        1.8s
+        cubic-bezier(.16,1,.3,1);
+
+    pointer-events:none;
+
+    z-index:-2;
+
+}
+
+
+/* =========================================================
+   09. ENERGY ACTIVATION
+   ========================================================= */
+
+.ars-group-page .ars-glass:hover::after,
+.ars-group-page .ars-glass:focus-visible::after,
+.ars-group-page .ars-glass:focus-within::after{
+
+    opacity:1;
+
+    transform:
+
+        scaleX(2.15)
+        scaleY(1.15);
+
+}
+
+
+/* =========================================================
+   10. CARD CONTENT CINEMATIC SCALE
+   متن و تصاویر
+   ========================================================= */
 
 .ars-group-page .ars-glass:hover h1,
 .ars-group-page .ars-glass:hover h2,
 .ars-group-page .ars-glass:hover h3,
 .ars-group-page .ars-glass:hover h4,
 .ars-group-page .ars-glass:hover p,
-.ars-group-page .ars-glass:hover span{
-
-transition:
-
-    transform
-    1.8s
-    cubic-bezier(.16,1,.3,1),
-
-    text-shadow
-    1.5s
-    ease;
-
-transform:
-
-    scale(1.5);
-
-transform-origin:
-
-    center center;
-
-text-shadow:
-
-    0 0 15px
-    rgba(255,225,145,.48),
-
-    0 0 35px
-    rgba(239,174,45,.30);
-
-}
-
-/* =========================================================
-06. ARS CINEMATIC ENERGY LAYER
-لایه مستقل ARS
-
-ARS appears from below,
-rotates diagonally,
-grows in depth,
-becomes visible,
-then fades away.
-========================================================= */
-
-.ars-group-page .ars-glass::before{
-
-content:
-
-    "ARS";
-
-position:absolute;
-
-left:50%;
-
-top:50%;
-
-width:
-
-    max-content;
-
-height:
-
-    auto;
-
-pointer-events:none;
-
-z-index:4;
-
-font-family:
-
-    Arial,
-    Helvetica,
-    sans-serif;
-
-font-size:
-
-    clamp(
-        5rem,
-        10vw,
-        11rem
-    );
-
-font-weight:
-
-    900;
-
-letter-spacing:
-
-    .28em;
-
-color:
-
-    rgba(
-        255,
-        218,
-        105,
-        .88
-    );
-
-white-space:
-
-    nowrap;
-
-/*
-Initial hidden state
-*/
-
-opacity:
-
-    0;
-
-transform:
-
-    translate3d(
-        -50%,
-        35%,
-        0
-    )
-
-    rotate(
-        -18deg
-    )
-
-    scale(
-        .25
-    )
-
-    skewX(
-        -8deg
-    );
-
-transform-origin:
-
-    center center;
-
-filter:
-
-    blur(
-        10px
-    );
-
-text-shadow:
-
-    0 0 8px
-    rgba(255,232,155,.75),
-
-    0 0 25px
-    rgba(255,204,70,.65),
-
-    0 0 55px
-    rgba(225,150,20,.50),
-
-    0 0 100px
-    rgba(190,115,10,.35);
-
-/*
-Cinematic slow entrance
-*/
-
-transition:
-
-    opacity
-    .9s
-    ease,
-
-    transform
-    2.4s
-    cubic-bezier(.16,1,.3,1),
-
-    filter
-    1.8s
-    ease;
-
-}
-
-/* =========================================================
-07. ARS CINEMATIC ACTIVATION
-فعال شدن انیمیشن ARS
-========================================================= */
-
-.ars-group-page .ars-glass:hover::before{
-
-opacity:
-
-    .72;
-
-transform:
-
-    translate3d(
-        -50%,
-        -50%,
-        0
-    )
-
-    rotate(
-        8deg
-    )
-
-    scale(
-        1.15
-    )
-
-    skewX(
-        0deg
-    );
-
-filter:
-
-    blur(
-        1px
-    );
-
-animation:
-
-    arsCinematicARS
-
-    4.2s
-
-    cubic-bezier(
-        .16,
-        1,
-        .3,
-        1
-    )
-
-    infinite;
-
-}
-
-/* =========================================================
-08. CINEMATIC ARS ANIMATION
-انیمیشن سینمایی ARS
-========================================================= */
-
-@keyframes arsCinematicARS{
-
-/*
-ظهور اولیه
-*/
-
-0%{
-
-    opacity:
-
-        0;
+.ars-group-page .ars-glass:hover span,
+.ars-group-page .ars-glass:hover img{
 
     transform:
 
-        translate3d(
-            -50%,
-            35%,
-            0
-        )
+        scale(1.10);
 
-        rotate(
-            -18deg
-        )
+    transition:
 
-        scale(
-            .25
-        );
-
-    filter:
-
-        blur(
-            12px
-        );
+        transform
+        1.8s
+        cubic-bezier(.16,1,.3,1);
 
 }
 
-
-/*
-ورود ARS
-*/
-
-18%{
-
-    opacity:
-
-        .82;
-
-    transform:
-
-        translate3d(
-            -50%,
-            -42%,
-            0
-        )
-
-        rotate(
-            7deg
-        )
-
-        scale(
-            1.15
-        );
-
-    filter:
-
-        blur(
-            1px
-        );
-
-}
-
-
-/*
-اوج بزرگ شدن
-*/
-
-42%{
-
-    opacity:
-
-        .72;
-
-    transform:
-
-        translate3d(
-            -50%,
-            -50%,
-            0
-        )
-
-        rotate(
-            -4deg
-        )
-
-        scale(
-            1.45
-        );
-
-    filter:
-
-        blur(
-            0
-        );
-
-}
-
-
-/*
-چرخش نرم و شناور
-*/
-
-65%{
-
-    opacity:
-
-        .48;
-
-    transform:
-
-        translate3d(
-            -50%,
-            -55%,
-            0
-        )
-
-        rotate(
-            5deg
-        )
-
-        scale(
-            1.72
-        );
-
-    filter:
-
-        blur(
-            3px
-        );
-
-}
-
-
-/*
-محو شدن نهایی
-*/
-
-100%{
-
-    opacity:
-
-        0;
-
-    transform:
-
-        translate3d(
-            -50%,
-            -70%,
-            0
-        )
-
-        rotate(
-            16deg
-        )
-
-        scale(
-            2.15
-        );
-
-    filter:
-
-        blur(
-            14px
-        );
-
-}
-
-}
 
 /* =========================================================
-09. SPECIAL CARD FAMILIES
-همه خانواده‌های کارت
-========================================================= */
-
-.ars-group-page .mission-card:hover,
-.ars-group-page .value-card:hover,
-.ars-group-page .vision-card:hover,
-.ars-group-page .dna-card:hover,
-.ars-group-page .leader-card:hover,
-.ars-group-page .partner-card:hover,
-.ars-group-page .standard-card:hover,
-.ars-group-page .timeline-card:hover,
-.ars-group-page .gallery-card:hover,
-.ars-group-page .future-card:hover,
-.ars-group-page .stat-card:hover,
-.ars-group-page .country-card:hover,
-.ars-group-page .eco:hover,
-.ars-group-page .org-card:hover{
-
-transition:
-
-    transform
-    2.2s
-    cubic-bezier(.16,1,.3,1),
-
-    box-shadow
-    2s
-    cubic-bezier(.16,1,.3,1);
-
-}
-
-/* =========================================================
-10. SELECTED / FOCUS CARD
-کارت انتخاب‌شده
-========================================================= */
-
-.ars-group-page .ars-glass:focus-visible,
-.ars-group-page .ars-glass:focus-within{
-
-transform:
-
-    translate3d(
-        0,
-        -95px,
-        0
-    )
-
-    scale(
-        1.28
-    );
-
-border-color:
-
-    rgba(
-        255,
-        235,
-        175,
-        .95
-    );
-
-filter:
-
-    brightness(
-        1.12
-    )
-
-    saturate(
-        1.15
-    );
-
-box-shadow:
-
-    0 70px 150px
-    rgba(0,0,0,.60),
-
-    0 0 80px
-    rgba(255,210,80,.68),
-
-    0 0 160px
-    rgba(235,160,25,.42);
-
-z-index:
-
-    500;
-
-}
-
-/* =========================================================
-11. SELECTED CARD ARS
-ARS هنگام انتخاب کارت
-========================================================= */
-
-.ars-group-page .ars-glass:focus-visible::before,
-.ars-group-page .ars-glass:focus-within::before{
-
-animation:
-
-    arsCinematicARS
-
-    4.2s
-
-    cubic-bezier(
-        .16,
-        1,
-        .3,
-        1
-    )
-
-    infinite;
-
-}
-
-/* =========================================================
-12. SELECTED CARD ENERGY
-انرژی بزرگ‌تر برای کارت انتخاب‌شده
-========================================================= */
-
-.ars-group-page .ars-glass:focus-visible::after,
-.ars-group-page .ars-glass:focus-within::after{
-
-opacity:
-
-    1;
-
-transform:
-
-    translate3d(
-        0,
-        8px,
-        0
-    )
-
-    scaleX(
-        3.8
-    )
-
-    scaleY(
-        1.8
-    );
-
-filter:
-
-    blur(
-        23px
-    )
-
-    brightness(
-        1.35
-    );
-
-}
-
-/* =========================================================
-13. SELECTED CARD CONTENT
-محتوای کارت انتخاب‌شده
-========================================================= */
+   11. FOCUS CONTENT SCALE
+   ========================================================= */
 
 .ars-group-page .ars-glass:focus-visible h1,
 .ars-group-page .ars-glass:focus-visible h2,
@@ -2889,109 +2786,146 @@ filter:
 .ars-group-page .ars-glass:focus-visible h4,
 .ars-group-page .ars-glass:focus-visible p,
 .ars-group-page .ars-glass:focus-visible span,
+.ars-group-page .ars-glass:focus-visible img,
+
 .ars-group-page .ars-glass:focus-within h1,
 .ars-group-page .ars-glass:focus-within h2,
 .ars-group-page .ars-glass:focus-within h3,
 .ars-group-page .ars-glass:focus-within h4,
 .ars-group-page .ars-glass:focus-within p,
-.ars-group-page .ars-glass:focus-within span{
+.ars-group-page .ars-glass:focus-within span,
+.ars-group-page .ars-glass:focus-within img{
 
-transform:
+    transform:
 
-    scale(
-        1.5
-    );
+        scale(1.15);
 
-transform-origin:
+    transition:
 
-    center center;
-
-text-shadow:
-
-    0 0 20px
-    rgba(255,230,150,.60),
-
-    0 0 45px
-    rgba(240,175,40,.35);
+        transform
+        1.8s
+        cubic-bezier(.16,1,.3,1);
 
 }
 
+
 /* =========================================================
-14. MOBILE ADAPTATION
-========================================================= */
+   12. ACCESSIBILITY
+   ========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    .ars-group-page .ars-glass,
+    .ars-group-page .ars-glass *,
+    .ars-group-page .ars-glass::before,
+    .ars-group-page .ars-glass::after{
+
+        animation-duration:
+
+            .01ms !important;
+
+        transition-duration:
+
+            .01ms !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   13. MOBILE
+   ========================================================= */
 
 @media(max-width:768px){
 
-.ars-group-page .ars-glass:hover{
+    .ars-group-page .ars-glass:hover{
 
-    transform:
+        transform:
 
-        translate3d(
-            0,
-            -32px,
-            0
-        )
+            translateY(-22px)
+            scale(1.035);
 
-        scale(
-            1.05
-        );
-
-}
+    }
 
 
-.ars-group-page .ars-glass:hover::after{
+    .ars-group-page .ars-glass:focus-visible,
+    .ars-group-page .ars-glass:focus-within{
 
-    transform:
+        animation:
 
-        translate3d(
-            0,
-            3px,
-            0
-        )
+            arsCardCinematicRiseMobileV2
+            2s
+            cubic-bezier(.16,1,.3,1)
+            both;
 
-        scaleX(
-            2.4
-        )
-
-        scaleY(
-            1.3
-        );
-
-}
+    }
 
 
-.ars-group-page .ars-glass:hover::before{
+    .ars-group-page .ars-glass::before{
 
-    font-size:
+        font-size:
 
-        clamp(
-            3rem,
-            18vw,
-            7rem
-        );
+            clamp(
+                7rem,
+                42vw,
+                18rem
+            );
+
+    }
 
 }
 
-
-.ars-group-page .ars-glass:focus-visible,
-.ars-group-page .ars-glass:focus-within{
-
-    transform:
-
-        translate3d(
-            0,
-            -55px,
-            0
-        )
-
-        scale(
-            1.14
-        );
-
-}
-
-}
 
 /* =========================================================
-END OF ARS V7.2
-========================================================= */
+   14. MOBILE CINEMATIC RISE
+   ========================================================= */
+
+@keyframes arsCardCinematicRiseMobileV2{
+
+    0%{
+
+        transform:
+
+            translateY(0)
+            scale(1);
+
+    }
+
+
+    30%{
+
+        transform:
+
+            translateY(-8px)
+            scale(1.015);
+
+    }
+
+
+    60%{
+
+        transform:
+
+            translateY(-20px)
+            scale(1.035);
+
+    }
+
+
+    100%{
+
+        transform:
+
+            translateY(-34px)
+            scale(1.065);
+
+    }
+
+}
+
+
+/* =========================================================
+   END
+   ARS CARD CINEMATIC INTERACTION V2
+   ========================================================= */
