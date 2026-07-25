@@ -9,25 +9,28 @@
    01.1. ریشه سیستم انرژی سراسری
    ---------------------------------------------------------
    Fixed visual layer only.
-   لایه بصری ثابت و مستقل.
-   
-   Important:
-   This layer does NOT control page scrolling.
-   این لایه کنترل اسکرول صفحه را بر عهده ندارد.
+   فقط یک لایه بصری ثابت است.
+
+   IMPORTANT:
+   This layer NEVER controls page scrolling.
+   این لایه هرگز کنترل اسکرول صفحه را بر عهده نمی‌گیرد.
    ========================================================= */
 
 .ars-energy-system{
 
     position:fixed;
 
-    inset:0;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
 
-    width:100%;
-    height:100%;
-
-    pointer-events:none;
+    width:auto;
+    height:auto;
 
     overflow:hidden;
+
+    pointer-events:none;
 
     z-index:0;
 
@@ -35,15 +38,42 @@
 
     opacity:.92;
 
+    contain:paint;
+
 }
 
 
 /* =========================================================
-   01.2. PAGE CONTENT SAFETY LAYER
-   01.2. لایه ایمنی محتوای اصلی صفحه
+   01.2. ENERGY SYSTEM NON-INTERACTION
+   01.2. عدم دخالت سیستم انرژی در تعاملات صفحه
    ---------------------------------------------------------
-   Keeps real page content above the energy system.
-   محتوای واقعی صفحه را بالاتر از سیستم انرژی نگه می‌دارد.
+   Energy layer can never block:
+   لایه انرژی هرگز مانع موارد زیر نمی‌شود:
+
+   - Page scrolling
+   - Mouse interaction
+   - Touch interaction
+   - Links
+   - Buttons
+   - Forms
+
+   اسکرول، لمس، کلیک، لینک، دکمه و فرم.
+   ========================================================= */
+
+.ars-energy-system,
+.ars-energy-system *{
+
+    pointer-events:none;
+
+}
+
+
+/* =========================================================
+   01.3. PAGE CONTENT SAFETY LAYER
+   01.3. لایه ایمنی محتوای اصلی صفحه
+   ---------------------------------------------------------
+   Real page content stays above the energy system.
+   محتوای واقعی صفحه بالاتر از سیستم انرژی قرار می‌گیرد.
    ========================================================= */
 
 .ars-group-page{
@@ -52,21 +82,26 @@
 
     z-index:1;
 
+    min-height:100%;
+
 }
 
 
 /* =========================================================
-   01.3. ENERGY SYSTEM NON-INTERACTION
-   01.3. عدم دخالت سیستم انرژی در تعاملات صفحه
+   01.4. GLOBAL SCROLL SAFETY
+   01.4. ایمنی اسکرول سراسری
    ---------------------------------------------------------
-   The energy layer never captures clicks or touch input.
-   لایه انرژی هیچ کلیک یا لمس کاربر را دریافت نمی‌کند.
+   The global energy system must NEVER disable page scrolling.
+   سیستم انرژی سراسری هرگز نباید اسکرول صفحه را غیرفعال کند.
+
+   IMPORTANT:
+   No overflow:hidden is applied to body or page.
+   هیچ overflow:hidden روی body یا خود صفحه اعمال نمی‌شود.
    ========================================================= */
 
-.ars-energy-system,
-.ars-energy-system *{
+.ars-group-page{
 
-    pointer-events:none;
+    overflow:visible;
 
 }
 
@@ -86,11 +121,13 @@
 
     position:absolute;
 
-    inset:-20%;
+    top:-20%;
+    right:-20%;
+    bottom:-20%;
+    left:-20%;
 
-    width:140%;
-
-    height:140%;
+    width:auto;
+    height:auto;
 
     background:
 
@@ -250,11 +287,13 @@
 
     position:absolute;
 
-    inset:-15%;
+    top:-15%;
+    right:-15%;
+    bottom:-15%;
+    left:-15%;
 
-    width:130%;
-
-    height:130%;
+    width:auto;
+    height:auto;
 
     background:
 
@@ -573,7 +612,9 @@
         linear
         infinite;
 
-    will-change:background-position,opacity;
+    will-change:
+        background-position,
+        opacity;
 
 }
 
@@ -582,16 +623,11 @@
    06. PAGE-LEVEL ENERGY OVERLAY
    06. لایه انرژی سطح صفحه
    ---------------------------------------------------------
-   IMPORTANT:
-   This V5 file does NOT style:
-   این نسخه V5 دیگر این مورد را استایل نمی‌دهد:
+   No page pseudo-element is created here.
+   در این فایل هیچ pseudo-element برای خود صفحه ساخته نمی‌شود.
 
-   .ars-group-page::before
-
-   The page pseudo-element belongs exclusively to the
-   page-specific stylesheet.
-
-   pseudo-element صفحه منحصراً متعلق به CSS اختصاصی صفحه است.
+   This prevents white overlay conflicts with page CSS.
+   این کار از تداخل لایه سفید با CSS اختصاصی صفحه جلوگیری می‌کند.
    ========================================================= */
 
 
@@ -1429,9 +1465,6 @@ a.ars-glass:focus-visible{
 /* =========================================================
    14. REDUCED MOTION ACCESSIBILITY
    14. حالت دسترسی برای کاهش حرکت
-   ---------------------------------------------------------
-   Only ARS Global Energy animations are reduced.
-   فقط انیمیشن‌های سیستم انرژی ARS کاهش می‌یابند.
    ========================================================= */
 
 @media(prefers-reduced-motion:reduce){
@@ -1457,21 +1490,29 @@ a.ars-glass:focus-visible{
 
 
 /* =========================================================
-   15. FINAL ENERGY SYSTEM SAFETY
-   15. ایمنی نهایی سیستم انرژی
+   15. FINAL SCROLL AND WHITE-SCREEN PROTECTION
+   15. محافظ نهایی اسکرول و جلوگیری از سفید شدن صفحه
    ---------------------------------------------------------
-   The global energy layer must never create page scrolling.
-   سیستم انرژی سراسری نباید باعث ایجاد اسکرول اضافی صفحه شود.
-   
-   Vertical document scrolling remains fully available.
-   اسکرول عمودی واقعی صفحه کاملاً فعال باقی می‌ماند.
+   IMPORTANT:
+   This section intentionally does NOT modify body scrolling.
+   این بخش عمداً اسکرول body را تغییر نمی‌دهد.
+
+   The energy layer remains visually bounded to the viewport.
+   لایه انرژی فقط در محدوده viewport باقی می‌ماند.
+
+   No forced width/height larger than viewport.
+   هیچ عرض یا ارتفاع اجباری بزرگ‌تر از viewport ایجاد نمی‌شود.
    ========================================================= */
 
 .ars-energy-system{
 
-    max-width:100vw;
+    max-width:none;
 
-    max-height:100vh;
+    max-height:none;
+
+    min-width:0;
+
+    min-height:0;
 
 }
 
@@ -1487,7 +1528,53 @@ a.ars-glass:focus-visible{
 
     max-height:100%;
 
+    min-width:0;
+
+    min-height:0;
+
 }
+
+
+/* =========================================================
+   15.2. FINAL HORIZONTAL OVERFLOW PROTECTION
+   15.2. محافظ نهایی از اسکرول افقی
+   ---------------------------------------------------------
+   Only the energy system is contained.
+   فقط خود سیستم انرژی محدود می‌شود.
+
+   The page itself remains vertically scrollable.
+   اسکرول عمودی واقعی صفحه کاملاً فعال باقی می‌ماند.
+   ========================================================= */
+
+.ars-energy-system{
+
+    overflow:
+        hidden;
+
+}
+
+
+/* =========================================================
+   15.3. NO PAGE SCROLL LOCK
+   15.3. عدم قفل کردن اسکرول صفحه
+   ---------------------------------------------------------
+   IMPORTANT:
+   Do NOT add:
+
+   body{
+       overflow:hidden;
+   }
+
+   html{
+       overflow:hidden;
+   }
+
+   .ars-group-page{
+       overflow:hidden;
+   }
+
+   هرگز این دستورات را برای Global Energy اضافه نکنید.
+   ========================================================= */
 
 
 /* =========================================================
