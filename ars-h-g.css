@@ -1,13 +1,7 @@
 /* =========================================================
 ARS HERITAGE GROUP
 PREMIUM INDUSTRIAL ECOSYSTEM
-MASTER CSS — FINAL UNIFIED VERSION
-INDUSTRIAL HERITAGE × GOLD × BRONZE × INTELLIGENCE
-========================================================= */
-
-
-/* =========================================================
-01 — ARS ROOT DNA
+MASTER CSS — FINAL UNIFIED V2
 ========================================================= */
 
 :root{
@@ -43,44 +37,20 @@ rgba(255,255,255,.075),
 rgba(255,255,255,.018)
 );
 
---ars-shadow-black:
-rgba(0,0,0,.75);
+--ars-shadow-black:rgba(0,0,0,.75);
 
---ars-shadow-gold:
-rgba(214,168,79,.28);
-
---ars-shadow-red:
-rgba(168,44,34,.22);
-
---ars-shadow-yellow:
-rgba(224,170,40,.20);
-
---ars-shadow-blue:
-rgba(21,121,200,.24);
-
---ars-shadow-brown:
-rgba(89,59,40,.25);
+--ars-shadow-gold:rgba(214,168,79,.28);
 
 --ars-gold-glow:
 0 0 30px rgba(214,168,79,.35),
 0 0 80px rgba(214,168,79,.12);
 
---ars-blue-glow:
-0 0 30px rgba(21,121,200,.35),
-0 0 70px rgba(21,121,200,.10);
-
---ars-red-glow:
-0 0 30px rgba(168,44,34,.30),
-0 0 70px rgba(168,44,34,.08);
-
---ars-ease:
-cubic-bezier(.16,1,.3,1);
+--ars-ease:cubic-bezier(.16,1,.3,1);
 
 }
 
-
 /* =========================================================
-02 — GLOBAL RESET
+GLOBAL RESET
 ========================================================= */
 
 *{
@@ -90,12 +60,8 @@ box-sizing:border-box;
 }
 
 html{
-
 scroll-behavior:smooth;
-
-background:
-var(--ars-black-deep);
-
+background:var(--ars-black-deep);
 }
 
 body{
@@ -117,8 +83,7 @@ linear-gradient(
 #050608 100%
 );
 
-color:
-var(--ars-white);
+color:var(--ars-white);
 
 font-family:
 Inter,
@@ -132,52 +97,33 @@ overflow-x:hidden;
 }
 
 a{
-
 color:inherit;
-
 text-decoration:none;
-
 }
 
 img{
-
 max-width:100%;
-
+height:auto;
 display:block;
-
 }
 
 ::selection{
-
-background:
-var(--ars-gold);
-
-color:
-var(--ars-black);
-
+background:var(--ars-gold);
+color:var(--ars-black);
 }
 
-
 /* =========================================================
-03 — MAIN PAGE
+PAGE
 ========================================================= */
 
 .ars-group-page{
 
 position:relative;
-
 min-height:100vh;
-
 isolation:isolate;
-
 overflow:hidden;
 
 }
-
-
-/* =========================================================
-04 — GLOBAL PAGE ENERGY
-========================================================= */
 
 .ars-group-page::before{
 
@@ -192,33 +138,28 @@ pointer-events:none;
 z-index:-10;
 
 background:
-
 linear-gradient(
 90deg,
-transparent 0%,
-rgba(255,255,255,.018) 50%,
-transparent 100%
+transparent,
+rgba(255,255,255,.018),
+transparent
 );
 
 opacity:.8;
 
 }
 
-
 /* =========================================================
-05 — UNIVERSAL GLASS SYSTEM
+GLASS
 ========================================================= */
 
 .ars-glass{
 
 position:relative;
 
-background:
-var(--ars-glass);
+background:var(--ars-glass);
 
-border:
-1px solid
-var(--ars-border);
+border:1px solid var(--ars-border);
 
 backdrop-filter:
 blur(20px)
@@ -263,9 +204,8 @@ pointer-events:none;
 
 }
 
-
 /* =========================================================
-06 — UNIVERSAL SECTION SYSTEM
+SECTION SYSTEM
 ========================================================= */
 
 .ars-group-page section{
@@ -299,8 +239,7 @@ display:inline-block;
 
 margin-bottom:20px;
 
-color:
-var(--ars-gold-light);
+color:var(--ars-gold-light);
 
 font-size:11px;
 
@@ -314,8 +253,7 @@ text-transform:uppercase;
 
 .section-header h2{
 
-color:
-var(--ars-white);
+color:var(--ars-white);
 
 font-size:
 clamp(36px,5vw,72px);
@@ -346,10 +284,43 @@ line-height:1.9;
 
 }
 
+/* =========================================================
+BACKGROUND GLOW
+========================================================= */
+
+.group-background-glow{
+
+position:absolute;
+
+width:900px;
+height:900px;
+
+top:15%;
+left:50%;
+
+transform:translateX(-50%);
+
+border-radius:50%;
+
+background:
+
+radial-gradient(
+circle,
+rgba(214,168,79,.055),
+rgba(21,121,200,.025) 35%,
+transparent 70%
+);
+
+filter:blur(70px);
+
+pointer-events:none;
+
+z-index:-5;
+
+}
 
 /* =========================================================
-07 — HERO MASTER
-INDUSTRIAL AUTOMOTIVE INTELLIGENCE COMMAND CENTER
+HERO
 ========================================================= */
 
 .group-hero{
@@ -357,7 +328,6 @@ INDUSTRIAL AUTOMOTIVE INTELLIGENCE COMMAND CENTER
 position:relative;
 
 min-height:100vh;
-
 min-height:100svh;
 
 display:flex;
@@ -408,9 +378,8 @@ linear-gradient(
 
 }
 
-
 /* =========================================================
-08 — HERO INDUSTRIAL GRID
+INDUSTRIAL GRID
 ========================================================= */
 
 .hero-industrial-grid{
@@ -443,13 +412,11 @@ background-size:
 80px 80px;
 
 transform:
-
 perspective(700px)
 rotateX(62deg)
 scale(1.8);
 
-transform-origin:
-center bottom;
+transform-origin:center bottom;
 
 animation:
 grid-drift
@@ -458,7 +425,6 @@ linear
 infinite;
 
 mask-image:
-
 radial-gradient(
 ellipse at center,
 black 0%,
@@ -470,26 +436,21 @@ transparent 70%
 @keyframes grid-drift{
 
 from{
-
 background-position:
 0 0,
 0 0;
-
 }
 
 to{
-
 background-position:
 0 80px,
 80px 0;
-
 }
 
 }
-
 
 /* =========================================================
-09 — HERO AMBIENT ENERGY
+HERO AMBIENT
 ========================================================= */
 
 .group-hero::before{
@@ -499,11 +460,9 @@ content:"";
 position:absolute;
 
 width:70vw;
-
 height:70vw;
 
 max-width:1000px;
-
 max-height:1000px;
 
 border-radius:50%;
@@ -518,8 +477,7 @@ rgba(21,121,200,.035) 45%,
 transparent 70%
 );
 
-filter:
-blur(30px);
+filter:blur(30px);
 
 animation:
 hero-breath
@@ -533,30 +491,20 @@ z-index:-3;
 
 @keyframes hero-breath{
 
-0%,
-100%{
-
-transform:
-scale(.9);
-
+0%,100%{
+transform:scale(.9);
 opacity:.55;
-
 }
 
 50%{
-
-transform:
-scale(1.08);
-
+transform:scale(1.08);
 opacity:1;
-
 }
 
 }
-
 
 /* =========================================================
-10 — HERO MOVING ENERGY SCAN
+MOVING SCAN
 ========================================================= */
 
 .group-hero::after{
@@ -566,11 +514,9 @@ content:"";
 position:absolute;
 
 top:-20%;
-
 left:-10%;
 
 width:120%;
-
 height:2px;
 
 background:
@@ -586,12 +532,8 @@ transparent
 );
 
 box-shadow:
-
-0 0 20px
-var(--ars-blue),
-
-0 0 45px
-rgba(214,168,79,.4);
+0 0 20px var(--ars-blue),
+0 0 45px rgba(214,168,79,.4);
 
 animation:
 hero-scan
@@ -608,38 +550,27 @@ z-index:-1;
 @keyframes hero-scan{
 
 0%{
-
 top:-20%;
-
 opacity:0;
-
 }
 
 15%{
-
 opacity:.8;
-
 }
 
 80%{
-
 opacity:.7;
-
 }
 
 100%{
-
 top:120%;
-
 opacity:0;
-
 }
 
 }
-
 
 /* =========================================================
-11 — HERO ENERGY CORE
+ENERGY CORE
 ========================================================= */
 
 .hero-energy-core{
@@ -647,7 +578,6 @@ opacity:0;
 position:absolute;
 
 width:240px;
-
 height:240px;
 
 border-radius:50%;
@@ -667,7 +597,6 @@ transparent 70%
 );
 
 filter:
-
 blur(1px)
 drop-shadow(
 0 0 35px
@@ -697,7 +626,6 @@ border:
 rgba(214,168,79,.32);
 
 box-shadow:
-
 0 0 45px
 rgba(214,168,79,.18),
 
@@ -715,23 +643,14 @@ infinite;
 
 @keyframes core-pulse{
 
-0%,
-100%{
-
-transform:
-scale(.82);
-
+0%,100%{
+transform:scale(.82);
 opacity:.65;
-
 }
 
 50%{
-
-transform:
-scale(1.08);
-
+transform:scale(1.08);
 opacity:1;
-
 }
 
 }
@@ -739,26 +658,17 @@ opacity:1;
 @keyframes core-ring{
 
 from{
-
-transform:
-rotate(0deg)
-scale(.8);
-
+transform:rotate(0deg) scale(.8);
 }
 
 to{
-
-transform:
-rotate(360deg)
-scale(1.15);
-
+transform:rotate(360deg) scale(1.15);
 }
 
 }
-
 
 /* =========================================================
-12 — HERO ORBITAL RINGS
+ORBITAL RINGS
 ========================================================= */
 
 .hero-energy-orbits{
@@ -766,11 +676,9 @@ scale(1.15);
 position:absolute;
 
 width:680px;
-
 height:680px;
 
 max-width:80vw;
-
 max-height:80vw;
 
 border-radius:50%;
@@ -792,7 +700,6 @@ border:
 rgba(214,168,79,.18);
 
 box-shadow:
-
 0 0 30px
 rgba(214,168,79,.05);
 
@@ -851,11 +758,9 @@ infinite;
 @keyframes orbit-spin-a{
 
 to{
-
 transform:
 rotateX(68deg)
 rotateZ(375deg);
-
 }
 
 }
@@ -863,11 +768,9 @@ rotateZ(375deg);
 @keyframes orbit-spin-b{
 
 to{
-
 transform:
 rotateY(65deg)
 rotateZ(-385deg);
-
 }
 
 }
@@ -875,18 +778,15 @@ rotateZ(-385deg);
 @keyframes orbit-spin-c{
 
 to{
-
 transform:
 rotateX(70deg)
 rotateZ(360deg);
-
 }
 
 }
-
 
 /* =========================================================
-13 — HERO ENERGY LINES
+ENERGY LINES
 ========================================================= */
 
 .hero-energy-lines{
@@ -907,8 +807,7 @@ position:absolute;
 
 height:1px;
 
-transform-origin:
-left center;
+transform-origin:left center;
 
 background:
 
@@ -922,7 +821,6 @@ transparent
 );
 
 box-shadow:
-
 0 0 12px
 rgba(214,168,79,.35);
 
@@ -980,30 +878,20 @@ transform:rotate(90deg);
 
 @keyframes energy-flow{
 
-0%,
-100%{
-
+0%,100%{
 opacity:.18;
-
-filter:
-brightness(.8);
-
+filter:brightness(.8);
 }
 
 50%{
-
 opacity:.9;
-
-filter:
-brightness(1.8);
-
+filter:brightness(1.8);
 }
 
 }
-
 
 /* =========================================================
-14 — HERO LOGO
+LOGO
 ========================================================= */
 
 .group-logo-wrapper{
@@ -1053,15 +941,13 @@ inset:-35px;
 border-radius:50%;
 
 background:
-
 radial-gradient(
 circle,
 rgba(214,168,79,.28),
 transparent 68%
 );
 
-filter:
-blur(18px);
+filter:blur(18px);
 
 animation:
 logo-glow
@@ -1098,7 +984,6 @@ infinite;
 position:relative;
 
 width:100%;
-
 height:100%;
 
 object-fit:contain;
@@ -1106,12 +991,10 @@ object-fit:contain;
 z-index:3;
 
 filter:
-
 drop-shadow(
 0 0 18px
 rgba(214,168,79,.55)
 )
-
 drop-shadow(
 0 0 55px
 rgba(21,121,200,.18)
@@ -1128,71 +1011,41 @@ infinite;
 @keyframes logo-arrival{
 
 from{
-
 opacity:0;
-
-transform:
-scale(.35)
-rotate(-12deg);
-
-filter:
-blur(20px);
-
+transform:scale(.35) rotate(-12deg);
+filter:blur(20px);
 }
 
 to{
-
 opacity:1;
-
-transform:
-scale(1)
-rotate(0);
-
-filter:
-blur(0);
-
+transform:scale(1) rotate(0);
+filter:blur(0);
 }
 
 }
 
 @keyframes logo-glow{
 
-0%,
-100%{
-
-transform:
-scale(.85);
-
+0%,100%{
+transform:scale(.85);
 opacity:.45;
-
 }
 
 50%{
-
-transform:
-scale(1.2);
-
+transform:scale(1.2);
 opacity:1;
-
 }
 
 }
 
 @keyframes logo-breathe{
 
-0%,
-100%{
-
-transform:
-scale(1);
-
+0%,100%{
+transform:scale(1);
 }
 
 50%{
-
-transform:
-scale(1.035);
-
+transform:scale(1.035);
 }
 
 }
@@ -1200,24 +1053,17 @@ scale(1.035);
 @keyframes logo-orbit{
 
 from{
-
-transform:
-rotate(0deg);
-
+transform:rotate(0deg);
 }
 
 to{
-
-transform:
-rotate(360deg);
-
+transform:rotate(360deg);
 }
 
 }
-
 
 /* =========================================================
-15 — HERO TYPOGRAPHY
+TYPOGRAPHY
 ========================================================= */
 
 .group-overline{
@@ -1230,11 +1076,7 @@ color:
 var(--ars-gold-light);
 
 font-size:
-clamp(
-.65rem,
-1vw,
-.85rem
-);
+clamp(.65rem,1vw,.85rem);
 
 font-weight:700;
 
@@ -1260,11 +1102,7 @@ z-index:3;
 margin:0;
 
 font-size:
-clamp(
-3rem,
-8vw,
-8rem
-);
+clamp(3rem,8vw,8rem);
 
 line-height:.9;
 
@@ -1283,11 +1121,9 @@ var(--ars-bronze-light) 75%,
 #ffffff 100%
 );
 
-background-size:
-250% auto;
+background-size:250% auto;
 
 -webkit-background-clip:text;
-
 background-clip:text;
 
 color:transparent;
@@ -1318,11 +1154,7 @@ margin:
 0;
 
 font-size:
-clamp(
-1.2rem,
-2.3vw,
-2.1rem
-);
+clamp(1.2rem,2.3vw,2.1rem);
 
 line-height:1.35;
 
@@ -1352,11 +1184,7 @@ color:
 rgba(247,244,238,.68);
 
 font-size:
-clamp(
-.95rem,
-1.3vw,
-1.1rem
-);
+clamp(.95rem,1.3vw,1.1rem);
 
 line-height:1.9;
 
@@ -1372,29 +1200,15 @@ both;
 @keyframes title-arrival{
 
 from{
-
 opacity:0;
-
-transform:
-translateY(50px)
-scale(.92);
-
-filter:
-blur(18px);
-
+transform:translateY(50px) scale(.92);
+filter:blur(18px);
 }
 
 to{
-
 opacity:1;
-
-transform:
-translateY(0)
-scale(1);
-
-filter:
-blur(0);
-
+transform:translateY(0) scale(1);
+filter:blur(0);
 }
 
 }
@@ -1402,21 +1216,13 @@ blur(0);
 @keyframes text-rise{
 
 from{
-
 opacity:0;
-
-transform:
-translateY(25px);
-
+transform:translateY(25px);
 }
 
 to{
-
 opacity:1;
-
-transform:
-translateY(0);
-
+transform:translateY(0);
 }
 
 }
@@ -1424,24 +1230,17 @@ translateY(0);
 @keyframes gold-shift{
 
 0%{
-
-background-position:
-0% center;
-
+background-position:0% center;
 }
 
 100%{
-
-background-position:
-250% center;
-
+background-position:250% center;
 }
 
 }
-
 
 /* =========================================================
-16 — HERO BUTTONS
+BUTTONS
 ========================================================= */
 
 .group-buttons{
@@ -1510,7 +1309,6 @@ var(--ars-gold)
 );
 
 box-shadow:
-
 0 12px 40px
 rgba(214,168,79,.22);
 
@@ -1545,7 +1343,6 @@ scale(1.03);
 .btn-primary:hover{
 
 box-shadow:
-
 0 18px 55px
 rgba(214,168,79,.4);
 
@@ -1557,15 +1354,13 @@ border-color:
 var(--ars-gold);
 
 box-shadow:
-
 0 0 35px
 rgba(21,121,200,.18);
 
 }
 
-
 /* =========================================================
-17 — SIX HERO ECOSYSTEM NODES
+HERO NODES
 ========================================================= */
 
 .hero-ecosystem-nodes{
@@ -1587,11 +1382,7 @@ position:absolute;
 pointer-events:auto;
 
 width:
-clamp(
-150px,
-12vw,
-210px
-);
+clamp(150px,12vw,210px);
 
 padding:
 18px
@@ -1637,6 +1428,9 @@ border-color
 .5s,
 
 box-shadow
+.5s,
+
+opacity
 .5s;
 
 animation:
@@ -1671,19 +1465,16 @@ rgba(154,107,63,.5)
 );
 
 -webkit-mask:
-
-linear-gradient(#fff 0 0)
-content-box,
-
+linear-gradient(#fff 0 0) content-box,
 linear-gradient(#fff 0 0);
 
--webkit-mask-composite:
-xor;
+-webkit-mask-composite:xor;
 
-mask-composite:
-exclude;
+mask-composite:exclude;
 
 opacity:.45;
+
+pointer-events:none;
 
 }
 
@@ -1753,87 +1544,55 @@ letter-spacing:.05em;
 }
 
 .node-brain{
-
 top:15%;
-
 left:5%;
-
 animation-delay:-1s;
-
 }
 
 .node-design{
-
 top:34%;
-
 left:2%;
-
 animation-delay:-3s;
-
 }
 
 .node-rose{
-
 bottom:15%;
-
 left:7%;
-
 animation-delay:-5s;
-
 }
 
 .node-naji{
-
 top:15%;
-
 right:5%;
-
 animation-delay:-2s;
-
 }
 
 .node-company{
-
 top:34%;
-
 right:2%;
-
 animation-delay:-4s;
-
 }
 
 .node-engineering{
-
 bottom:15%;
-
 right:7%;
-
 animation-delay:-6s;
-
 }
 
 @keyframes node-float{
 
-0%,
-100%{
-
-transform:
-translateY(0);
-
+0%,100%{
+transform:translateY(0);
 }
 
 50%{
-
-transform:
-translateY(-10px);
-
+transform:translateY(-10px);
 }
 
 }
-
 
 /* =========================================================
-18 — OPTIONAL HERO CONNECTION LINES
+CONNECTION LINES
 ========================================================= */
 
 .hero-connection-lines{
@@ -1868,7 +1627,6 @@ transparent
 );
 
 box-shadow:
-
 0 0 15px
 rgba(214,168,79,.25);
 
@@ -1884,30 +1642,20 @@ infinite;
 
 @keyframes connection-pulse{
 
-0%,
-100%{
-
+0%,100%{
 opacity:.15;
-
-filter:
-brightness(.7);
-
+filter:brightness(.7);
 }
 
 50%{
-
 opacity:.75;
-
-filter:
-brightness(1.6);
-
+filter:brightness(1.6);
 }
 
 }
-
 
 /* =========================================================
-19 — SECTION PAGE CLASSES
+UNIVERSAL PAGE CLASSES
 ========================================================= */
 
 .who-we-are,
@@ -1934,8 +1682,7 @@ padding:
 120px
 6vw;
 
-max-width:
-1500px;
+max-width:1500px;
 
 margin:
 0
@@ -1943,9 +1690,8 @@ auto;
 
 }
 
-
 /* =========================================================
-20 — CARD GRID SYSTEM
+GRIDS
 ========================================================= */
 
 .who-grid,
@@ -1968,72 +1714,40 @@ gap:24px;
 }
 
 .who-grid{
-
-grid-template-columns:
-1fr
-1fr;
-
+grid-template-columns:1fr 1fr;
 }
 
 .mission-grid,
 .values-grid,
 .dna-grid,
 .future-grid,
-.partnership-grid,
 .standards-grid{
+grid-template-columns:repeat(3,1fr);
+}
 
-grid-template-columns:
-repeat(
-3,
-1fr
-);
-
+.partnership-grid{
+grid-template-columns:repeat(4,1fr);
 }
 
 .vision-grid{
-
-grid-template-columns:
-repeat(
-4,
-1fr
-);
-
+grid-template-columns:repeat(4,1fr);
 }
 
 .timeline-grid,
 .stats-grid{
-
-grid-template-columns:
-repeat(
-4,
-1fr
-);
-
+grid-template-columns:repeat(4,1fr);
 }
 
 .leadership-grid{
-
-grid-template-columns:
-repeat(
-2,
-1fr
-);
-
+grid-template-columns:repeat(2,1fr);
 }
 
 .partners-grid{
-
-grid-template-columns:
-repeat(
-6,
-1fr
-);
-
+grid-template-columns:repeat(6,1fr);
 }
 
-
 /* =========================================================
-21 — UNIVERSAL CARD CONTENT
+CARDS
 ========================================================= */
 
 .mission-card,
@@ -2045,15 +1759,30 @@ repeat(
 .standard-card,
 .timeline-card,
 .stat-card,
-.leader-card{
+.leader-card,
+.country-card,
+.org-card{
 
 position:relative;
 
-padding:
-36px;
+padding:36px;
 
-border-radius:
-24px;
+border-radius:24px;
+
+transition:
+
+transform
+.5s
+var(--ars-ease),
+
+border-color
+.5s,
+
+box-shadow
+.5s,
+
+opacity
+.6s;
 
 }
 
@@ -2089,819 +1818,7 @@ font-size:
 color:
 rgba(247,244,238,.62);
 
-line-height:
-1.85;
-
-}
-
-
-/* =========================================================
-22 — WHO WE ARE
-========================================================= */
-
-.who-left,
-.who-right{
-
-min-height:
-500px;
-
-border-radius:
-24px;
-
-}
-
-.who-left{
-
-padding:
-55px;
-
-}
-
-.who-left h3{
-
-color:
-var(--ars-gold-light);
-
-font-size:
-32px;
-
-margin-bottom:
-30px;
-
-}
-
-.who-left p{
-
-color:
-rgba(255,255,255,.65);
-
-line-height:
-1.9;
-
-margin-bottom:
-22px;
-
-}
-
-.who-right{
-
-padding:0;
-
-overflow:hidden;
-
-}
-
-.who-right img{
-
-width:100%;
-
-height:100%;
-
-min-height:
-420px;
-
-object-fit:cover;
-
-filter:
-
-saturate(.8)
-contrast(1.08);
-
-transition:
-
-transform
-1s
-var(--ars-ease);
-
-}
-
-.who-right:hover img{
-
-transform:
-scale(1.06);
-
-}
-
-
-/* =========================================================
-23 — VISION CENTER
-========================================================= */
-
-.vision-center{
-
-max-width:
-900px;
-
-margin:
-0
-auto
-50px;
-
-padding:
-60px;
-
-border-radius:
-24px;
-
-text-align:center;
-
-}
-
-.vision-center blockquote{
-
-font-size:
-clamp(
-1.5rem,
-3vw,
-2.6rem
-);
-
-line-height:
-1.45;
-
-color:
-var(--ars-gold-light);
-
-}
-
-
-/* =========================================================
-24 — SECONDARY ECOSYSTEM
-========================================================= */
-
-.ecosystem-wrapper{
-
-position:relative;
-
-min-height:
-700px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-}
-
-.ecosystem-center{
-
-position:relative;
-
-width:
-220px;
-
-height:
-220px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-text-align:center;
-
-border-radius:50%;
-
-border:
-1px solid
-rgba(214,168,79,.4);
-
-box-shadow:
-
-0 0 70px
-rgba(214,168,79,.18);
-
-z-index:3;
-
-}
-
-.ecosystem-center h3{
-
-color:
-var(--ars-gold-light);
-
-font-size:
-22px;
-
-}
-
-.ecosystem-wrapper::before{
-
-content:"";
-
-position:absolute;
-
-width:
-650px;
-
-height:
-650px;
-
-border:
-1px solid
-rgba(255,255,255,.09);
-
-border-radius:50%;
-
-animation:
-orbit-spin
-30s
-linear
-infinite;
-
-}
-
-.eco{
-
-position:absolute;
-
-min-width:
-150px;
-
-padding:
-25px;
-
-text-align:center;
-
-border-radius:
-14px;
-
-cursor:pointer;
-
-transition:
-
-transform
-.5s
-var(--ars-ease),
-
-box-shadow
-.5s;
-
-}
-
-.eco:hover{
-
-transform:
-scale(1.08);
-
-box-shadow:
-var(--ars-gold-glow);
-
-}
-
-.eco-1{
-top:8%;
-left:30%;
-}
-
-.eco-2{
-top:8%;
-right:30%;
-}
-
-.eco-3{
-top:38%;
-left:8%;
-}
-
-.eco-4{
-top:38%;
-right:8%;
-}
-
-.eco-5{
-bottom:10%;
-left:20%;
-}
-
-.eco-6{
-bottom:10%;
-right:20%;
-}
-
-
-/* =========================================================
-25 — GLOBAL STRATEGY
-========================================================= */
-
-.country-grid{
-
-max-width:
-1100px;
-
-margin:auto;
-
-display:grid;
-
-grid-template-columns:
-repeat(
-6,
-1fr
-);
-
-gap:
-18px;
-
-}
-
-.country-card{
-
-display:flex;
-
-flex-direction:column;
-
-align-items:center;
-
-gap:
-15px;
-
-padding:
-28px
-15px;
-
-border-radius:
-16px;
-
-}
-
-.country-card img{
-
-width:
-70px;
-
-height:
-45px;
-
-object-fit:cover;
-
-}
-
-
-/* =========================================================
-26 — ORGANIZATION
-========================================================= */
-
-.org-tree{
-
-max-width:
-1100px;
-
-margin:auto;
-
-display:flex;
-
-flex-direction:column;
-
-align-items:center;
-
-gap:
-35px;
-
-}
-
-.org-level{
-
-display:flex;
-
-flex-wrap:wrap;
-
-justify-content:center;
-
-gap:
-20px;
-
-width:100%;
-
-}
-
-.org-card{
-
-min-width:
-180px;
-
-padding:
-25px
-35px;
-
-border-radius:
-16px;
-
-text-align:center;
-
-}
-
-.org-main{
-
-color:
-var(--ars-gold-light);
-
-border-color:
-rgba(214,168,79,.5);
-
-box-shadow:
-var(--ars-gold-glow);
-
-}
-
-
-/* =========================================================
-27 — LEADERSHIP
-========================================================= */
-
-.leader-card{
-
-text-align:center;
-
-}
-
-.leader-photo{
-
-width:
-130px;
-
-height:
-130px;
-
-margin:
-0
-auto
-25px;
-
-border-radius:
-50%;
-
-border:
-1px solid
-rgba(214,168,79,.4);
-
-background:
-
-radial-gradient(
-circle,
-rgba(214,168,79,.18),
-transparent 65%
-);
-
-}
-
-.leader-card h3{
-
-color:
-var(--ars-gold-light);
-
-margin-bottom:
-10px;
-
-}
-
-.leader-card span{
-
-color:
-var(--ars-silver);
-
-font-size:
-12px;
-
-}
-
-.leader-card p{
-
-margin-top:
-20px;
-
-color:
-rgba(255,255,255,.58);
-
-line-height:
-1.8;
-
-}
-
-
-/* =========================================================
-28 — PARTNER LOGOS
-========================================================= */
-
-.partner-card{
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-min-height:
-150px;
-
-}
-
-.partner-card img{
-
-max-width:
-75%;
-
-max-height:
-65px;
-
-filter:
-
-grayscale(1)
-brightness(1.7);
-
-opacity:.7;
-
-transition:
-
-filter
-.5s,
-
-opacity
-.5s,
-
-transform
-.5s;
-
-}
-
-.partner-card:hover img{
-
-filter:
-
-grayscale(0)
-brightness(1);
-
-opacity:1;
-
-transform:
-scale(1.08);
-
-}
-
-
-/* =========================================================
-29 — TIMELINE
-========================================================= */
-
-.timeline-card span{
-
-display:block;
-
-color:
-var(--ars-gold);
-
-font-size:
-.8rem;
-
-letter-spacing:
-.15em;
-
-margin-bottom:
-15px;
-
-}
-
-
-/* =========================================================
-30 — STATS
-========================================================= */
-
-.stat-card{
-
-text-align:center;
-
-}
-
-.stat-card h3{
-
-font-size:
-clamp(
-2.5rem,
-5vw,
-5rem
-);
-
-color:
-var(--ars-gold);
-
-margin-bottom:
-12px;
-
-}
-
-.stat-card span{
-
-color:
-var(--ars-silver);
-
-font-size:
-13px;
-
-letter-spacing:
-1px;
-
-}
-
-
-/* =========================================================
-31 — CONTACT CTA
-========================================================= */
-
-.contact-cta{
-
-text-align:center;
-
-padding-top:
-180px;
-
-padding-bottom:
-180px;
-
-background:
-
-radial-gradient(
-circle at center,
-rgba(214,168,79,.13),
-transparent 45%
-);
-
-}
-
-.contact-cta .section-header{
-
-max-width:
-900px;
-
-margin-bottom:
-0;
-
-}
-
-
-/* =========================================================
-32 — FOOTER
-========================================================= */
-
-.ars-footer{
-
-padding:
-80px
-6vw
-30px;
-
-border-top:
-1px solid
-rgba(255,255,255,.08);
-
-background:
-#030405;
-
-}
-
-.footer-top{
-
-max-width:
-1250px;
-
-margin:auto;
-
-display:grid;
-
-grid-template-columns:
-2fr
-1fr
-1fr
-1fr;
-
-gap:
-50px;
-
-}
-
-.footer-brand img{
-
-width:
-90px;
-
-margin-bottom:
-20px;
-
-}
-
-.footer-brand h3{
-
-color:
-var(--ars-gold-light);
-
-margin-bottom:
-15px;
-
-}
-
-.footer-brand p{
-
-color:
-rgba(247,244,238,.55);
-
-line-height:
-1.8;
-
-}
-
-.footer-links{
-
-display:flex;
-
-flex-direction:column;
-
-gap:
-14px;
-
-}
-
-.footer-links h4{
-
-color:
-var(--ars-gold);
-
-margin-bottom:
-8px;
-
-}
-
-.footer-links a{
-
-color:
-rgba(247,244,238,.55);
-
-transition:
-color
-.3s;
-
-}
-
-.footer-links a:hover{
-
-color:
-var(--ars-gold-light);
-
-}
-
-.footer-bottom{
-
-max-width:
-1250px;
-
-margin:
-60px
-auto
-0;
-
-padding-top:
-25px;
-
-border-top:
-1px solid
-rgba(255,255,255,.07);
-
-color:
-rgba(247,244,238,.4);
-
-font-size:
-.8rem;
-
-}
-
-
-/* =========================================================
-33 — HOVER SYSTEM
-========================================================= */
-
-.mission-card,
-.value-card,
-.vision-card,
-.dna-card,
-.future-card,
-.partner-card,
-.standard-card,
-.timeline-card,
-.stat-card,
-.leader-card,
-.country-card,
-.org-card{
-
-transition:
-
-transform
-.5s
-var(--ars-ease),
-
-border-color
-.5s,
-
-box-shadow
-.5s;
+line-height:1.85;
 
 }
 
@@ -2934,97 +1851,1232 @@ rgba(214,168,79,.1);
 
 }
 
+/* =========================================================
+WHO WE ARE
+========================================================= */
+
+.who-left,
+.who-right{
+
+min-height:500px;
+
+border-radius:24px;
+
+}
+
+.who-left{
+padding:55px;
+}
+
+.who-left h3{
+
+color:
+var(--ars-gold-light);
+
+font-size:32px;
+
+margin-bottom:30px;
+
+}
+
+.who-left p{
+
+color:
+rgba(255,255,255,.65);
+
+line-height:1.9;
+
+margin-bottom:22px;
+
+}
+
+.who-right{
+padding:0;
+overflow:hidden;
+}
+
+.who-right img{
+
+width:100%;
+height:100%;
+min-height:420px;
+object-fit:cover;
+
+filter:
+saturate(.8)
+contrast(1.08);
+
+transition:
+transform
+1s
+var(--ars-ease);
+
+}
+
+.who-right:hover img{
+transform:scale(1.06);
+}
 
 /* =========================================================
-34 — RESPONSIVE — 1100px
+VISION
+========================================================= */
+
+.vision-center{
+
+max-width:900px;
+
+margin:
+0
+auto
+50px;
+
+padding:60px;
+
+border-radius:24px;
+
+text-align:center;
+
+}
+
+.vision-center blockquote{
+
+font-size:
+clamp(1.5rem,3vw,2.6rem);
+
+line-height:1.45;
+
+color:
+var(--ars-gold-light);
+
+}
+
+/* =========================================================
+ECOSYSTEM — 9 NODES
+========================================================= */
+
+.ecosystem-wrapper{
+
+position:relative;
+
+min-height:760px;
+
+}
+
+.ecosystem-center{
+
+position:absolute;
+
+top:50%;
+left:50%;
+
+transform:
+translate(-50%,-50%);
+
+width:220px;
+height:220px;
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+text-align:center;
+
+border-radius:50%;
+
+border:
+1px solid
+rgba(214,168,79,.4);
+
+box-shadow:
+0 0 70px
+rgba(214,168,79,.18);
+
+z-index:5;
+
+}
+
+.ecosystem-center h3{
+
+color:
+var(--ars-gold-light);
+
+font-size:22px;
+
+}
+
+.eco{
+
+position:absolute;
+
+min-width:170px;
+
+padding:25px;
+
+text-align:center;
+
+border-radius:14px;
+
+z-index:3;
+
+transition:
+
+transform
+.5s
+var(--ars-ease),
+
+border-color
+.5s,
+
+box-shadow
+.5s,
+
+opacity
+.5s;
+
+}
+
+.eco:hover{
+
+transform:
+translateY(-8px)
+scale(1.04);
+
+border-color:
+rgba(214,168,79,.45);
+
+box-shadow:
+
+0 25px 65px
+rgba(0,0,0,.65),
+
+0 0 30px
+rgba(214,168,79,.12);
+
+}
+
+.eco h3{
+
+color:
+var(--ars-gold-light);
+
+margin-bottom:10px;
+
+}
+
+.eco p{
+
+color:
+rgba(247,244,238,.55);
+
+font-size:.85rem;
+
+}
+
+/* 9 NODE POSITIONS */
+
+.eco-1{
+top:5%;
+left:18%;
+}
+
+.eco-2{
+top:5%;
+right:18%;
+}
+
+.eco-3{
+top:35%;
+left:3%;
+}
+
+.eco-4{
+top:35%;
+right:3%;
+}
+
+.eco-5{
+bottom:8%;
+left:10%;
+}
+
+.eco-6{
+bottom:8%;
+right:10%;
+}
+
+.eco-7{
+top:60%;
+left:30%;
+}
+
+.eco-8{
+top:60%;
+right:30%;
+}
+
+.eco-9{
+
+top:78%;
+left:50%;
+
+transform:
+translateX(-50%);
+
+}
+
+.eco-9:hover{
+
+transform:
+translateX(-50%)
+translateY(-8px)
+scale(1.04);
+
+}
+
+/* =========================================================
+ECOSYSTEM ORBIT
+========================================================= */
+
+.ecosystem-wrapper::before{
+
+content:"";
+
+position:absolute;
+
+width:520px;
+height:520px;
+
+top:50%;
+left:50%;
+
+transform:
+translate(-50%,-50%);
+
+border-radius:50%;
+
+background:
+
+radial-gradient(
+circle,
+rgba(214,168,79,.10),
+rgba(21,121,200,.025) 40%,
+transparent 68%
+);
+
+filter:blur(30px);
+
+pointer-events:none;
+
+}
+
+.ecosystem-wrapper::after{
+
+content:"";
+
+position:absolute;
+
+width:420px;
+height:420px;
+
+top:50%;
+left:50%;
+
+transform:
+translate(-50%,-50%);
+
+border:
+1px solid
+rgba(214,168,79,.1);
+
+border-radius:50%;
+
+box-shadow:
+
+0 0 80px
+rgba(214,168,79,.05),
+
+inset
+0 0 50px
+rgba(21,121,200,.04);
+
+animation:
+ecosystem-ring
+18s
+linear
+infinite;
+
+pointer-events:none;
+
+}
+
+@keyframes ecosystem-ring{
+
+from{
+
+transform:
+translate(-50%,-50%)
+rotate(0deg)
+scale(.92);
+
+}
+
+50%{
+opacity:.65;
+}
+
+to{
+
+transform:
+translate(-50%,-50%)
+rotate(360deg)
+scale(1.08);
+
+}
+
+}
+
+/* =========================================================
+GLOBAL STRATEGY
+========================================================= */
+
+.country-grid{
+
+max-width:1100px;
+
+margin:auto;
+
+display:grid;
+
+grid-template-columns:
+repeat(6,1fr);
+
+gap:18px;
+
+}
+
+.country-card{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+gap:15px;
+
+padding:
+28px
+15px;
+
+border-radius:16px;
+
+}
+
+.country-card span{
+
+color:
+var(--ars-soft-white);
+
+font-size:.9rem;
+
+font-weight:600;
+
+}
+
+/* =========================================================
+ORGANIZATION
+========================================================= */
+
+.org-tree{
+
+max-width:1100px;
+
+margin:auto;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+gap:35px;
+
+}
+
+.org-level{
+
+display:flex;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:20px;
+
+width:100%;
+
+}
+
+.org-card{
+
+min-width:180px;
+
+padding:
+25px
+35px;
+
+border-radius:16px;
+
+text-align:center;
+
+}
+
+.org-main{
+
+color:
+var(--ars-gold-light);
+
+border-color:
+rgba(214,168,79,.5);
+
+box-shadow:
+var(--ars-gold-glow);
+
+}
+
+/* =========================================================
+LEADERSHIP
+========================================================= */
+
+.leader-card{
+
+text-align:center;
+
+overflow:hidden;
+
+}
+
+.leader-photo{
+
+position:relative;
+
+width:130px;
+height:130px;
+
+margin:
+0
+auto
+25px;
+
+border-radius:50%;
+
+border:
+1px solid
+rgba(214,168,79,.4);
+
+background:
+
+radial-gradient(
+circle,
+rgba(214,168,79,.18),
+transparent 65%
+);
+
+overflow:hidden;
+
+}
+
+.leader-photo::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+
+radial-gradient(
+circle at 50% 40%,
+rgba(214,168,79,.2),
+transparent 40%
+);
+
+}
+
+.leader-photo::after{
+
+content:"ARS LEADERSHIP";
+
+position:absolute;
+
+left:20px;
+bottom:18px;
+
+color:
+rgba(247,244,238,.3);
+
+font-size:.65rem;
+
+letter-spacing:.2em;
+
+}
+
+.leader-card h3{
+
+color:
+var(--ars-gold-light);
+
+margin-bottom:8px;
+
+}
+
+.leader-card > span{
+
+display:block;
+
+color:
+rgba(247,244,238,.45);
+
+font-size:.78rem;
+
+letter-spacing:.08em;
+
+margin-bottom:20px;
+
+}
+
+.leader-card p{
+
+margin-top:20px;
+
+color:
+rgba(255,255,255,.58);
+
+line-height:1.85;
+
+}
+
+/* =========================================================
+TECHNOLOGY PARTNERS
+========================================================= */
+
+.technology-ecosystem{
+
+position:relative;
+
+}
+
+.partner-card{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+min-height:150px;
+
+text-align:center;
+
+}
+
+.partner-card img{
+
+width:100%;
+
+max-width:150px;
+
+max-height:60px;
+
+object-fit:contain;
+
+filter:
+grayscale(1)
+brightness(.85)
+contrast(1.1);
+
+opacity:.65;
+
+transition:
+transform .5s var(--ars-ease),
+filter .5s,
+opacity .5s;
+
+}
+
+.partner-card:hover img{
+
+transform:scale(1.08);
+
+filter:
+grayscale(0)
+brightness(1)
+drop-shadow(
+0 0 18px
+rgba(214,168,79,.3)
+);
+
+opacity:1;
+
+}
+
+/* =========================================================
+STANDARDS
+========================================================= */
+
+.standard-card{
+text-align:center;
+}
+
+.standard-card p{
+line-height:1.7;
+}
+
+/* =========================================================
+TIMELINE
+========================================================= */
+
+.timeline-card{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.timeline-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:3px;
+height:100%;
+
+background:
+linear-gradient(
+180deg,
+var(--ars-gold),
+transparent
+);
+
+opacity:.7;
+
+}
+
+.timeline-card span{
+
+display:block;
+
+color:
+var(--ars-gold);
+
+font-size:.8rem;
+
+letter-spacing:.15em;
+
+margin-bottom:14px;
+
+}
+
+/* =========================================================
+GALLERY
+========================================================= */
+
+.gallery{
+
+position:relative;
+
+}
+
+.gallery-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(3,1fr);
+
+grid-auto-rows:260px;
+
+gap:22px;
+
+}
+
+.gallery-card{
+
+position:relative;
+
+min-height:260px;
+
+padding:0!important;
+
+overflow:hidden;
+
+background:
+
+linear-gradient(
+135deg,
+rgba(214,168,79,.08),
+rgba(21,121,200,.045),
+rgba(168,44,34,.045)
+);
+
+}
+
+.gallery-card::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+
+radial-gradient(
+circle at 30% 30%,
+rgba(214,168,79,.16),
+transparent 35%
+),
+
+radial-gradient(
+circle at 75% 70%,
+rgba(21,121,200,.1),
+transparent 40%
+);
+
+opacity:.7;
+
+transition:
+transform .8s var(--ars-ease),
+opacity .5s;
+
+}
+
+.gallery-card::after{
+
+content:"ARS HERITAGE";
+
+position:absolute;
+
+left:24px;
+bottom:20px;
+
+color:
+rgba(247,244,238,.38);
+
+font-size:.65rem;
+
+letter-spacing:.2em;
+
+}
+
+.gallery-card:hover::before{
+
+transform:scale(1.15);
+
+opacity:1;
+
+}
+
+.gallery-card:hover{
+
+transform:
+translateY(-8px);
+
+}
+
+/* =========================================================
+STATS
+========================================================= */
+
+.stat-card{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+justify-content:center;
+
+min-height:220px;
+
+text-align:center;
+
+}
+
+.stat-card h3{
+
+font-size:
+clamp(2.5rem,5vw,5rem);
+
+color:
+var(--ars-gold);
+
+margin-bottom:12px;
+
+}
+
+.stat-card span{
+
+color:
+var(--ars-silver);
+
+font-size:13px;
+
+letter-spacing:1px;
+
+}
+
+/* =========================================================
+PARTNERSHIP
+========================================================= */
+
+.partnership-grid{
+
+grid-template-columns:
+repeat(4,1fr);
+
+}
+
+.partnership-grid .partner-card{
+
+min-height:230px;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:flex-start;
+
+justify-content:center;
+
+text-align:left;
+
+}
+
+.partnership-grid .partner-card h3{
+
+color:
+var(--ars-gold-light);
+
+margin-bottom:15px;
+
+}
+
+.partnership-grid .partner-card p{
+
+color:
+rgba(247,244,238,.58);
+
+line-height:1.8;
+
+}
+
+/* =========================================================
+CONTACT CTA
+========================================================= */
+
+.contact-cta{
+
+position:relative;
+
+text-align:center;
+
+padding-top:
+180px;
+
+padding-bottom:
+180px;
+
+background:
+
+radial-gradient(
+circle at center,
+rgba(214,168,79,.13),
+transparent 45%
+);
+
+overflow:hidden;
+
+}
+
+.contact-cta::before{
+
+content:"";
+
+position:absolute;
+
+width:700px;
+height:700px;
+
+top:50%;
+left:50%;
+
+transform:
+translate(-50%,-50%);
+
+border-radius:50%;
+
+background:
+
+radial-gradient(
+circle,
+rgba(214,168,79,.1),
+rgba(21,121,200,.035) 35%,
+transparent 70%
+);
+
+filter:blur(35px);
+
+pointer-events:none;
+
+}
+
+.contact-cta .section-header{
+
+position:relative;
+
+z-index:2;
+
+margin-bottom:0;
+
+}
+
+/* =========================================================
+FOOTER
+========================================================= */
+
+.ars-footer{
+
+position:relative;
+
+padding:
+80px
+6vw
+30px;
+
+border-top:
+1px solid
+rgba(255,255,255,.08);
+
+background:#030405;
+
+overflow:hidden;
+
+}
+
+.ars-footer::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:100%;
+height:1px;
+
+background:
+
+linear-gradient(
+90deg,
+transparent,
+var(--ars-gold),
+rgba(21,121,200,.5),
+transparent
+);
+
+opacity:.6;
+
+}
+
+.footer-top{
+
+max-width:1250px;
+
+margin:auto;
+
+display:grid;
+
+grid-template-columns:
+2fr 1fr 1fr 1fr;
+
+gap:50px;
+
+}
+
+.footer-brand img{
+
+width:90px;
+
+margin-bottom:20px;
+
+filter:
+drop-shadow(
+0 0 15px
+rgba(214,168,79,.25)
+);
+
+}
+
+.footer-brand h3{
+
+color:
+var(--ars-gold-light);
+
+margin-bottom:12px;
+
+}
+
+.footer-brand p{
+
+color:
+rgba(247,244,238,.55);
+
+line-height:1.8;
+
+}
+
+.footer-links{
+
+display:flex;
+
+flex-direction:column;
+
+gap:14px;
+
+}
+
+.footer-links h4{
+
+color:
+var(--ars-gold);
+
+margin-bottom:8px;
+
+}
+
+.footer-links a{
+
+color:
+rgba(247,244,238,.55);
+
+transition:
+color .3s;
+
+}
+
+.footer-links a:hover{
+
+color:
+var(--ars-gold-light);
+
+}
+
+.footer-bottom{
+
+max-width:1250px;
+
+margin:
+60px
+auto
+0;
+
+padding-top:25px;
+
+border-top:
+1px solid
+rgba(255,255,255,.07);
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+color:
+rgba(247,244,238,.4);
+
+font-size:.8rem;
+
+}
+
+/* =========================================================
+RESPONSIVE — 1100px
 ========================================================= */
 
 @media(max-width:1100px){
 
 .hero-ecosystem-node{
 
-width:
-150px;
+width:150px;
 
 }
 
 .node-brain{
-
-left:
-2%;
-
+left:2%;
 }
 
 .node-design{
-
-left:
-1%;
-
+left:1%;
 }
 
 .node-rose{
-
-left:
-3%;
-
+left:3%;
 }
 
 .node-naji{
-
-right:
-2%;
-
+right:2%;
 }
 
 .node-company{
-
-right:
-1%;
-
+right:1%;
 }
 
 .node-engineering{
-
-right:
-3%;
-
+right:3%;
 }
 
 .country-grid{
 
 grid-template-columns:
-repeat(
-3,
-1fr
-);
+repeat(3,1fr);
 
 }
 
 .partners-grid{
 
 grid-template-columns:
-repeat(
-3,
-1fr
-);
+repeat(3,1fr);
+
+}
+
+.partnership-grid{
+
+grid-template-columns:
+repeat(2,1fr);
 
 }
 
 .footer-top{
 
 grid-template-columns:
-repeat(
-2,
-1fr
-);
+repeat(2,1fr);
 
 }
 
 }
-
 
 /* =========================================================
-35 — RESPONSIVE — 800px
+RESPONSIVE — 800px
 ========================================================= */
 
 @media(max-width:800px){
@@ -3039,8 +3091,7 @@ padding:
 
 .group-hero{
 
-padding-top:
-100px;
+padding-top:100px;
 
 }
 
@@ -3053,22 +3104,15 @@ inset:auto;
 display:grid;
 
 grid-template-columns:
-repeat(
-2,
-1fr
-);
+repeat(2,1fr);
 
-gap:
-12px;
+gap:12px;
 
-width:
-100%;
+width:100%;
 
-max-width:
-500px;
+max-width:500px;
 
-margin-top:
-50px;
+margin-top:50px;
 
 }
 
@@ -3077,11 +3121,8 @@ margin-top:
 position:relative;
 
 top:auto;
-
 left:auto;
-
 right:auto;
-
 bottom:auto;
 
 width:100%;
@@ -3092,19 +3133,15 @@ animation:none;
 
 .hero-energy-orbits{
 
-width:
-500px;
-
-height:
-500px;
+width:500px;
+height:500px;
 
 }
 
 .who-grid,
 .leadership-grid{
 
-grid-template-columns:
-1fr;
+grid-template-columns:1fr;
 
 }
 
@@ -3112,14 +3149,10 @@ grid-template-columns:
 .values-grid,
 .dna-grid,
 .future-grid,
-.partnership-grid,
 .standards-grid{
 
 grid-template-columns:
-repeat(
-2,
-1fr
-);
+repeat(2,1fr);
 
 }
 
@@ -3127,35 +3160,105 @@ repeat(
 .stats-grid{
 
 grid-template-columns:
-repeat(
-2,
-1fr
-);
+repeat(2,1fr);
 
 }
 
 .vision-grid{
 
 grid-template-columns:
-repeat(
-2,
-1fr
-);
+repeat(2,1fr);
 
 }
 
 .ecosystem-wrapper{
 
-min-height:
-600px;
+min-height:auto;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+gap:18px;
+
+padding:
+30px
+0;
+
+}
+
+.ecosystem-center{
+
+position:relative;
+
+top:auto;
+left:auto;
+
+transform:none;
+
+margin-bottom:20px;
+
+}
+
+.eco{
+
+position:relative;
+
+top:auto;
+left:auto;
+right:auto;
+bottom:auto;
+
+width:100%;
+
+max-width:360px;
+
+}
+
+.eco-9{
+
+transform:none;
+
+}
+
+.eco-9:hover{
+
+transform:
+translateY(-8px)
+scale(1.04);
+
+}
+
+.ecosystem-wrapper::before,
+.ecosystem-wrapper::after{
+
+display:none;
+
+}
+
+.gallery-grid{
+
+grid-template-columns:
+repeat(2,1fr);
+
+}
+
+.footer-bottom{
+
+flex-direction:column;
+
+gap:15px;
+
+text-align:center;
 
 }
 
 }
-
 
 /* =========================================================
-36 — RESPONSIVE — 560px
+RESPONSIVE — 560px
 ========================================================= */
 
 @media(max-width:560px){
@@ -3170,11 +3273,8 @@ padding:
 
 .group-hero{
 
-padding-left:
-20px;
-
-padding-right:
-20px;
+padding-left:20px;
+padding-right:20px;
 
 }
 
@@ -3191,59 +3291,45 @@ clamp(
 
 .group-buttons{
 
-flex-direction:
-column;
+flex-direction:column;
 
-width:
-100%;
+width:100%;
 
-max-width:
-320px;
+max-width:320px;
 
 }
 
 .btn-primary,
 .btn-secondary{
 
-width:
-100%;
+width:100%;
 
 }
 
 .group-logo-wrapper{
 
-width:
-180px;
-
-height:
-180px;
+width:180px;
+height:180px;
 
 }
 
 .hero-ecosystem-nodes{
 
-grid-template-columns:
-1fr;
+grid-template-columns:1fr;
 
 }
 
 .hero-energy-orbits{
 
-width:
-360px;
-
-height:
-360px;
+width:360px;
+height:360px;
 
 }
 
 .hero-energy-core{
 
-width:
-150px;
-
-height:
-150px;
+width:150px;
+height:150px;
 
 }
 
@@ -3252,90 +3338,92 @@ height:
 .vision-grid,
 .dna-grid,
 .future-grid,
-.partnership-grid,
 .standards-grid,
 .timeline-grid,
 .country-grid,
 .stats-grid{
 
-grid-template-columns:
-1fr;
+grid-template-columns:1fr;
 
 }
 
 .partners-grid{
 
-grid-template-columns:
-repeat(
-2,
-1fr
-);
+grid-template-columns:1fr;
 
 }
 
-.ecosystem-wrapper{
+.gallery-grid{
 
-min-height:
-850px;
+grid-template-columns:1fr;
 
-flex-direction:
-column;
-
-gap:
-15px;
+grid-auto-rows:220px;
 
 }
 
-.ecosystem-wrapper::before{
+.gallery-card{
 
-width:
-500px;
-
-height:
-500px;
+min-height:220px;
 
 }
 
-.eco{
+.partnership-grid{
 
-position:
-relative;
-
-top:auto;
-
-left:auto;
-
-right:auto;
-
-bottom:auto;
+grid-template-columns:1fr;
 
 }
 
-.ecosystem-center{
+.partner-card{
 
-width:
-180px;
+min-height:130px;
 
-height:
-180px;
+}
 
-margin-bottom:
-20px;
+.partnership-grid .partner-card{
+
+min-height:200px;
+
+}
+
+.leader-photo{
+
+height:220px;
+
+width:220px;
 
 }
 
 .footer-top{
 
-grid-template-columns:
-1fr;
+grid-template-columns:1fr;
 
 }
 
 }
-
 
 /* =========================================================
-37 — REDUCED MOTION
+ACCESSIBILITY
+========================================================= */
+
+button,
+a{
+
+-webkit-tap-highlight-color:transparent;
+
+}
+
+a:focus-visible{
+
+outline:
+2px solid
+var(--ars-gold-light);
+
+outline-offset:5px;
+
+}
+
+/* =========================================================
+REDUCED MOTION
 ========================================================= */
 
 @media(prefers-reduced-motion:reduce){
@@ -3358,1287 +3446,10 @@ auto!important;
 
 }
 
-     }
-
-/* ========================================================= */
-/* ARS HERITAGE GROUP — FINAL HTML COMPLETION LAYER          */
-/* FINAL PAGE-SPECIFIC EXTENSION                              */
-/* Place this block at the END of ars-h-g.css                 */
-/* ========================================================= */
-
-
-/* ========================================================= */
-/* 29 — BACKGROUND GLOW                                      */
-/* ========================================================= */
-
-.group-background-glow{
-
-    position:absolute;
-
-    width:900px;
-    height:900px;
-
-    top:15%;
-    left:50%;
-
-    transform:translateX(-50%);
-
-    border-radius:50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(214,168,79,.055),
-            rgba(21,121,200,.025) 35%,
-            transparent 70%
-        );
-
-    filter:blur(70px);
-
-    pointer-events:none;
-
-    z-index:-5;
-
-}
-
-
-/* ========================================================= */
-/* 30 — GENERAL CONTAINER                                    */
-/* ========================================================= */
-
-.container{
-
-    width:100%;
-
-    max-width:1500px;
-
-    margin:0 auto;
-
-}
-
-
-/* ========================================================= */
-/* 31 — TECHNOLOGY ECOSYSTEM                                 */
-/* ========================================================= */
-
-.technology-ecosystem{
-
-    position:relative;
-
-    padding:
-        120px
-        6vw;
-
-    max-width:1500px;
-
-    margin:0 auto;
-
-}
-
-
-.partners-grid{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(
-            6,
-            1fr
-        );
-
-    gap:22px;
-
-}
-
-
-.partner-card{
-
-    min-height:150px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    text-align:center;
-
-}
-
-
-.partner-card img{
-
-    width:100%;
-
-    max-width:150px;
-
-    max-height:60px;
-
-    object-fit:contain;
-
-    filter:
-        grayscale(1)
-        brightness(.85)
-        contrast(1.1);
-
-    opacity:.65;
-
-    transition:
-        transform .5s var(--ars-ease),
-        filter .5s,
-        opacity .5s;
-
-}
-
-
-.partner-card:hover img{
-
-    transform:
-        scale(1.08);
-
-    filter:
-        grayscale(0)
-        brightness(1)
-        drop-shadow(
-            0 0 18px
-            rgba(214,168,79,.3)
-        );
-
-    opacity:1;
-
-}
-
-
-/* ========================================================= */
-/* 32 — ENGINEERING STANDARDS                                */
-/* ========================================================= */
-
-.standard-card{
-
-    text-align:center;
-
-}
-
-
-.standard-card h3{
-
-    color:
-        var(--ars-gold-light);
-
-    margin-bottom:12px;
-
-    font-size:1.25rem;
-
-}
-
-
-.standard-card p{
-
-    color:
-        rgba(247,244,238,.55);
-
-    line-height:1.7;
-
-}
-
-
-/* ========================================================= */
-/* 33 — TIMELINE                                              */
-/* ========================================================= */
-
-.timeline-card{
-
-    position:relative;
-
-    overflow:hidden;
-
-}
-
-
-.timeline-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-    left:0;
-
-    width:3px;
-    height:100%;
-
-    background:
-        linear-gradient(
-            180deg,
-            var(--ars-gold),
-            transparent
-        );
-
-    opacity:.7;
-
-}
-
-
-.timeline-card span{
-
-    display:block;
-
-    margin-bottom:14px;
-
-}
-
-
-.timeline-card h3{
-
-    margin-bottom:12px;
-
-}
-
-
-/* ========================================================= */
-/* 34 — GALLERY                                               */
-/* ========================================================= */
-
-.gallery{
-
-    position:relative;
-
-    padding:
-        120px
-        6vw;
-
-    max-width:1500px;
-
-    margin:0 auto;
-
-}
-
-
-.gallery-grid{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(
-            3,
-            1fr
-        );
-
-    grid-auto-rows:260px;
-
-    gap:22px;
-
-}
-
-
-.gallery-card{
-
-    position:relative;
-
-    min-height:260px;
-
-    padding:0 !important;
-
-    overflow:hidden;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(214,168,79,.08),
-            rgba(21,121,200,.045),
-            rgba(168,44,34,.045)
-        );
-
-}
-
-
-.gallery-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-        radial-gradient(
-            circle at 30% 30%,
-            rgba(214,168,79,.16),
-            transparent 35%
-        ),
-
-        radial-gradient(
-            circle at 75% 70%,
-            rgba(21,121,200,.1),
-            transparent 40%
-        );
-
-    opacity:.7;
-
-    transition:
-        transform .8s var(--ars-ease),
-        opacity .5s;
-
-}
-
-
-.gallery-card::after{
-
-    content:"ARS HERITAGE";
-
-    position:absolute;
-
-    left:24px;
-
-    bottom:20px;
-
-    color:
-        rgba(247,244,238,.38);
-
-    font-size:.65rem;
-
-    letter-spacing:.2em;
-
-}
-
-
-.gallery-card:hover::before{
-
-    transform:
-        scale(1.15);
-
-    opacity:1;
-
-}
-
-
-.gallery-card:hover{
-
-    transform:
-        translateY(-8px);
-
-}
-
-
-/* ========================================================= */
-/* 35 — FUTURE SECTION                                       */
-/* ========================================================= */
-
-.future{
-
-    position:relative;
-
-}
-
-
-.future-card{
-
-    position:relative;
-
-}
-
-
-.future-card h3{
-
-    margin-bottom:14px;
-
-}
-
-
-.future-card p{
-
-    line-height:1.85;
-
-}
-
-
-/* ========================================================= */
-/* 36 — STATS                                                 */
-/* ========================================================= */
-
-.stat-card{
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    justify-content:center;
-
-    min-height:220px;
-
-}
-
-
-.stat-card h3{
-
-    margin-bottom:12px;
-
-}
-
-
-.stat-card span{
-
-    color:
-        rgba(247,244,238,.55);
-
-    font-size:.85rem;
-
-    letter-spacing:.06em;
-
-}
-
-
-/* ========================================================= */
-/* 37 — COUNTRY CARDS                                        */
-/* ========================================================= */
-
-.country-card{
-
-    transition:
-        transform .5s var(--ars-ease),
-        border-color .5s,
-        box-shadow .5s;
-
-}
-
-
-.country-card span{
-
-    color:
-        var(--ars-soft-white);
-
-    font-size:.9rem;
-
-    font-weight:600;
-
-}
-
-
-.country-card:hover{
-
-    transform:
-        translateY(-8px);
-
-    border-color:
-        rgba(214,168,79,.45);
-
-    box-shadow:
-        0 20px 55px
-        rgba(0,0,0,.6),
-
-        0 0 30px
-        rgba(214,168,79,.1);
-
-}
-
-
-.country-card img{
-
-    border-radius:4px;
-
-    box-shadow:
-        0 8px 20px
-        rgba(0,0,0,.45);
-
-}
-
-
-/* ========================================================= */
-/* 38 — LEADERSHIP                                           */
-/* ========================================================= */
-
-.leader-card{
-
-    position:relative;
-
-    overflow:hidden;
-
-}
-
-
-.leader-card h3{
-
-    color:
-        var(--ars-gold-light);
-
-    margin-bottom:8px;
-
-}
-
-
-.leader-card > span{
-
-    display:block;
-
-    color:
-        rgba(247,244,238,.45);
-
-    font-size:.78rem;
-
-    letter-spacing:.08em;
-
-    margin-bottom:20px;
-
-}
-
-
-.leader-card p{
-
-    line-height:1.85;
-
-}
-
-
-.leader-photo{
-
-    position:relative;
-
-    overflow:hidden;
-
-}
-
-
-.leader-photo::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-        radial-gradient(
-            circle at 50% 40%,
-            rgba(214,168,79,.2),
-            transparent 40%
-        );
-
-}
-
-
-.leader-photo::after{
-
-    content:"ARS LEADERSHIP";
-
-    position:absolute;
-
-    left:20px;
-
-    bottom:18px;
-
-    color:
-        rgba(247,244,238,.3);
-
-    font-size:.65rem;
-
-    letter-spacing:.2em;
-
-}
-
-
-/* ========================================================= */
-/* 39 — PARTNERSHIP                                          */
-/* ========================================================= */
-
-.partnership{
-
-    position:relative;
-
-}
-
-
-.partnership-grid{
-
-    grid-template-columns:
-        repeat(
-            4,
-            1fr
-        );
-
-}
-
-
-.partnership-grid .partner-card{
-
-    min-height:230px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:flex-start;
-
-    justify-content:center;
-
-    text-align:left;
-
-}
-
-
-.partnership-grid .partner-card h3{
-
-    color:
-        var(--ars-gold-light);
-
-    margin-bottom:15px;
-
-}
-
-
-.partnership-grid .partner-card p{
-
-    color:
-        rgba(247,244,238,.58);
-
-    line-height:1.8;
-
-}
-
-
-/* ========================================================= */
-/* 40 — ECOSYSTEM 9 NODE SYSTEM                              */
-/* ========================================================= */
-
-.ecosystem-wrapper{
-
-    position:relative;
-
-    min-height:760px;
-
-}
-
-
-.ecosystem-center{
-
-    position:absolute;
-
-    top:50%;
-    left:50%;
-
-    transform:
-        translate(
-            -50%,
-            -50%
-        );
-
-    z-index:5;
-
-}
-
-
-.eco{
-
-    position:absolute;
-
-    min-width:170px;
-
-    text-align:center;
-
-    z-index:3;
-
-    transition:
-        transform .5s var(--ars-ease),
-        border-color .5s,
-        box-shadow .5s;
-
-}
-
-
-.eco:hover{
-
-    transform:
-        translateY(-8px)
-        scale(1.04);
-
-    border-color:
-        rgba(214,168,79,.45);
-
-    box-shadow:
-        0 25px 65px
-        rgba(0,0,0,.65),
-
-        0 0 30px
-        rgba(214,168,79,.12);
-
-}
-
-
-/* 9 NODE POSITIONS */
-
-.eco-1{
-
-    top:5%;
-    left:18%;
-
-}
-
-
-.eco-2{
-
-    top:5%;
-    right:18%;
-
-}
-
-
-.eco-3{
-
-    top:35%;
-    left:3%;
-
-}
-
-
-.eco-4{
-
-    top:35%;
-    right:3%;
-
-}
-
-
-.eco-5{
-
-    bottom:8%;
-    left:10%;
-
-}
-
-
-.eco-6{
-
-    bottom:8%;
-    right:10%;
-
-}
-
-
-.eco-7{
-
-    top:60%;
-    left:30%;
-
-}
-
-
-.eco-8{
-
-    top:60%;
-    right:30%;
-
-}
-
-
-.eco-9{
-
-    top:78%;
-    left:50%;
-
-    transform:
-        translateX(-50%);
-
-}
-
-
-.eco-9:hover{
-
-    transform:
-        translateX(-50%)
-        translateY(-8px)
-        scale(1.04);
-
-}
-
-
-/* ========================================================= */
-/* 41 — ECOSYSTEM CONNECTOR ENERGY                           */
-/* ========================================================= */
-
-.ecosystem-wrapper::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:520px;
-    height:520px;
-
-    top:50%;
-    left:50%;
-
-    transform:
-        translate(
-            -50%,
-            -50%
-        );
-
-    border-radius:50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(214,168,79,.1),
-            transparent 65%
-        );
-
-    filter:blur(30px);
-
-    pointer-events:none;
-
-}
-
-
 .ecosystem-wrapper::after{
 
-    content:"";
-
-    position:absolute;
-
-    width:420px;
-    height:420px;
-
-    top:50%;
-    left:50%;
-
-    transform:
-        translate(
-            -50%,
-            -50%
-        );
-
-    border:
-        1px solid
-        rgba(214,168,79,.1);
-
-    border-radius:50%;
-
-    box-shadow:
-        0 0 80px
-        rgba(214,168,79,.05),
-
-        inset 0 0 50px
-        rgba(21,121,200,.04);
-
-    animation:
-        ecosystem-ring
-        18s
-        linear
-        infinite;
-
-    pointer-events:none;
+animation:none;
 
 }
 
-
-@keyframes ecosystem-ring{
-
-    from{
-
-        transform:
-            translate(
-                -50%,
-                -50%
-            )
-            rotate(0deg)
-            scale(.92);
-
-    }
-
-    50%{
-
-        opacity:.65;
-
-    }
-
-    to{
-
-        transform:
-            translate(
-                -50%,
-                -50%
-            )
-            rotate(360deg)
-            scale(1.08);
-
-    }
-
-}
-
-
-/* ========================================================= */
-/* 42 — CTA FINAL                                            */
-/* ========================================================= */
-
-.contact-cta{
-
-    position:relative;
-
-    overflow:hidden;
-
-}
-
-
-.contact-cta::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:700px;
-    height:700px;
-
-    top:50%;
-    left:50%;
-
-    transform:
-        translate(
-            -50%,
-            -50%
-        );
-
-    border-radius:50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(214,168,79,.1),
-            rgba(21,121,200,.035) 35%,
-            transparent 70%
-        );
-
-    filter:blur(35px);
-
-    pointer-events:none;
-
-}
-
-
-.contact-cta .section-header{
-
-    position:relative;
-
-    z-index:2;
-
-}
-
-
-/* ========================================================= */
-/* 43 — FOOTER ENHANCEMENT                                   */
-/* ========================================================= */
-
-.ars-footer{
-
-    position:relative;
-
-    overflow:hidden;
-
-}
-
-
-.ars-footer::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-    left:0;
-
-    width:100%;
-    height:1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            var(--ars-gold),
-            rgba(21,121,200,.5),
-            transparent
-        );
-
-    opacity:.6;
-
-}
-
-
-.footer-brand h3{
-
-    color:
-        var(--ars-gold-light);
-
-    margin-bottom:12px;
-
-}
-
-
-.footer-brand img{
-
-    filter:
-        drop-shadow(
-            0 0 15px
-            rgba(214,168,79,.25)
-        );
-
-}
-
-
-.footer-bottom{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-}
-
-
-/* ========================================================= */
-/* 44 — FINAL RESPONSIVE SYSTEM                              */
-/* ========================================================= */
-
-@media(max-width:1100px){
-
-    .partners-grid{
-
-        grid-template-columns:
-            repeat(
-                3,
-                1fr
-            );
-
-    }
-
-    .partnership-grid{
-
-        grid-template-columns:
-            repeat(
-                2,
-                1fr
-            );
-
-    }
-
-    .ecosystem-wrapper{
-
-        min-height:720px;
-
-    }
-
-}
-
-
-@media(max-width:800px){
-
-    .partners-grid{
-
-        grid-template-columns:
-            repeat(
-                2,
-                1fr
-            );
-
-    }
-
-    .gallery-grid{
-
-        grid-template-columns:
-            repeat(
-                2,
-                1fr
-            );
-
-    }
-
-    .ecosystem-wrapper{
-
-        min-height:auto;
-
-        display:flex;
-
-        flex-direction:column;
-
-        align-items:center;
-
-        gap:18px;
-
-        padding:
-            30px
-            0;
-
-    }
-
-    .ecosystem-center{
-
-        position:relative;
-
-        top:auto;
-        left:auto;
-
-        transform:none;
-
-        margin-bottom:20px;
-
-    }
-
-    .eco{
-
-        position:relative;
-
-        top:auto;
-        left:auto;
-        right:auto;
-        bottom:auto;
-
-        width:100%;
-
-        max-width:360px;
-
-    }
-
-    .eco-9{
-
-        transform:none;
-
-    }
-
-    .eco-9:hover{
-
-        transform:
-            translateY(-8px)
-            scale(1.04);
-
-    }
-
-    .ecosystem-wrapper::before,
-    .ecosystem-wrapper::after{
-
-        display:none;
-
-    }
-
-    .footer-bottom{
-
-        flex-direction:column;
-
-        gap:15px;
-
-        text-align:center;
-
-    }
-
-}
-
-
-@media(max-width:560px){
-
-    .technology-ecosystem,
-    .gallery{
-
-        padding-left:20px;
-        padding-right:20px;
-
-    }
-
-    .partners-grid{
-
-        grid-template-columns:
-            1fr;
-
-    }
-
-    .gallery-grid{
-
-        grid-template-columns:
-            1fr;
-
-        grid-auto-rows:220px;
-
-    }
-
-    .gallery-card{
-
-        min-height:220px;
-
-    }
-
-    .partnership-grid{
-
-        grid-template-columns:
-            1fr;
-
-    }
-
-    .partner-card{
-
-        min-height:130px;
-
-    }
-
-    .partnership-grid .partner-card{
-
-        min-height:200px;
-
-    }
-
-    .leader-photo{
-
-        height:220px;
-
-    }
-
-}
-
-
-/* ========================================================= */
-/* 45 — FINAL ACCESSIBILITY                                  */
-/* ========================================================= */
-
-@media(prefers-reduced-motion:reduce){
-
-    .ecosystem-wrapper::after{
-
-        animation:none;
-
-    }
-
-}
-
-
-/* ========================================================= */
-/* 46 — FINAL SAFETY                                         */
-/* ========================================================= */
-
-button,
-a{
-
-    -webkit-tap-highlight-color:
-        transparent;
-
-}
-
-
-a:focus-visible{
-
-    outline:
-        2px solid
-        var(--ars-gold-light);
-
-    outline-offset:
-        5px;
-
-}
-
-
-img{
-
-    height:auto;
-
-}
-
-
-/* ========================================================= */
-/* ARS HERITAGE GROUP CSS — FINAL EXTENSION END              */
-/* ========================================================= */
+     }
