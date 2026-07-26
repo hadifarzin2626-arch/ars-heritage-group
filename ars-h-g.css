@@ -4378,9 +4378,8 @@ animation:none;
 
 }
 /* =========================================================
-   ARS ECOSYSTEM
-   FINAL 7-NODE ORBITAL INTELLIGENCE SYSTEM
-   CLEAN REPLACEMENT
+   ARS HERITAGE GROUP
+   FINAL 7-NODE ORBITAL ECOSYSTEM SYSTEM
    ========================================================= */
 
 /* =========================================================
@@ -4391,36 +4390,24 @@ animation:none;
     position:relative;
     width:100%;
     overflow:hidden;
-    isolation:isolate;
 }
 
 
 /* =========================================================
-   AMBIENT FIELD
-   ========================================================= */
-
-.ecosystem-ambient-field{
-    position:absolute;
-    inset:0;
-    z-index:-2;
-    pointer-events:none;
-}
-
-
-/* =========================================================
-   MAIN ECOSYSTEM WRAPPER
+   ORBITAL WRAPPER
    IMPORTANT:
-   ALL 7 NODES + CORE LIVE INSIDE THIS SYSTEM
+   ALL NODE POSITIONS ARE RELATIVE TO THIS WRAPPER
    ========================================================= */
 
 .ecosystem-wrapper{
     position:relative;
 
-    width:min(1180px,94vw);
-
-    height:850px;
+    width:min(1200px, 94vw);
+    height:900px;
 
     margin:80px auto 0;
+
+    display:block;
 
     isolation:isolate;
 }
@@ -4433,16 +4420,22 @@ animation:none;
 .ecosystem-orbit-field{
     position:absolute;
 
-    inset:0;
+    top:50%;
+    left:50%;
 
-    z-index:1;
+    width:760px;
+    height:760px;
+
+    transform:translate(-50%, -50%);
 
     pointer-events:none;
+
+    z-index:1;
 }
 
 
 /* =========================================================
-   ORBITS
+   ORBIT RINGS
    ========================================================= */
 
 .ecosystem-orbit{
@@ -4451,57 +4444,35 @@ animation:none;
     top:50%;
     left:50%;
 
-    transform:translate(-50%,-50%);
-
-    border:1px solid rgba(184,137,63,.22);
-
     border-radius:50%;
+
+    transform:translate(-50%, -50%);
 
     pointer-events:none;
 }
 
 
-/* OUTER ORBIT */
-
 .ecosystem-orbit.orbit-outer{
-    width:900px;
-    height:680px;
-
-    box-shadow:
-        0 0 35px rgba(184,137,63,.06),
-        inset 0 0 35px rgba(184,137,63,.03);
+    width:760px;
+    height:760px;
 }
 
-
-/* MIDDLE ORBIT */
 
 .ecosystem-orbit.orbit-middle{
-    width:720px;
-    height:540px;
-
-    border-color:
-        rgba(184,137,63,.28);
-
-    box-shadow:
-        0 0 28px rgba(184,137,63,.05);
+    width:590px;
+    height:590px;
 }
 
-
-/* INNER ORBIT */
 
 .ecosystem-orbit.orbit-inner{
-    width:520px;
-    height:390px;
-
-    border-color:
-        rgba(184,137,63,.34);
-
-    box-shadow:
-        0 0 22px rgba(184,137,63,.08);
+    width:410px;
+    height:410px;
 }
 
 
-/* ORBITAL GLOW */
+/* =========================================================
+   ORBIT GLOW
+   ========================================================= */
 
 .ecosystem-orbit-glow{
     position:absolute;
@@ -4509,29 +4480,19 @@ animation:none;
     top:50%;
     left:50%;
 
-    width:560px;
-    height:420px;
+    width:620px;
+    height:620px;
 
-    transform:
-        translate(-50%,-50%);
+    transform:translate(-50%, -50%);
 
     border-radius:50%;
-
-    background:
-        radial-gradient(
-            ellipse,
-            rgba(184,137,63,.10),
-            transparent 68%
-        );
-
-    filter:blur(25px);
 
     pointer-events:none;
 }
 
 
 /* =========================================================
-   CENTRAL CORE FIELD
+   CENTRAL CORE
    ========================================================= */
 
 .ecosystem-core-field{
@@ -4540,19 +4501,20 @@ animation:none;
     top:50%;
     left:50%;
 
-    width:280px;
-    height:280px;
+    width:360px;
+    height:360px;
 
-    transform:
-        translate(-50%,-50%);
-
-    z-index:3;
+    transform:translate(-50%, -50%);
 
     pointer-events:none;
+
+    z-index:3;
 }
 
 
-/* CORE HALOS */
+/* =========================================================
+   CORE HALOS
+   ========================================================= */
 
 .ecosystem-core-halo{
     position:absolute;
@@ -4560,67 +4522,29 @@ animation:none;
     top:50%;
     left:50%;
 
-    transform:
-        translate(-50%,-50%);
-
     border-radius:50%;
 
-    pointer-events:none;
+    transform:translate(-50%, -50%);
 }
 
-
-/* OUTER HALO */
 
 .ecosystem-core-halo.halo-outer{
-    width:280px;
-    height:280px;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(184,137,63,.08),
-            transparent 70%
-        );
-
-    filter:blur(15px);
+    width:360px;
+    height:360px;
 }
 
-
-/* MIDDLE HALO */
 
 .ecosystem-core-halo.halo-middle{
-    width:210px;
-    height:210px;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(184,137,63,.12),
-            transparent 68%
-        );
-
-    filter:blur(10px);
+    width:300px;
+    height:300px;
 }
 
-
-/* INNER HALO */
 
 .ecosystem-core-halo.halo-inner{
-    width:160px;
-    height:160px;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,214,120,.16),
-            transparent 68%
-        );
-
-    filter:blur(6px);
+    width:240px;
+    height:240px;
 }
 
-
-/* CORE LIGHT */
 
 .ecosystem-core-light{
     position:absolute;
@@ -4628,26 +4552,12 @@ animation:none;
     top:50%;
     left:50%;
 
-    width:90px;
-    height:90px;
+    width:170px;
+    height:170px;
 
-    transform:
-        translate(-50%,-50%);
+    transform:translate(-50%, -50%);
 
     border-radius:50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,224,150,.28),
-            rgba(184,137,63,.10) 45%,
-            transparent 72%
-        );
-
-    filter:blur(3px);
-
-    box-shadow:
-        0 0 45px rgba(184,137,63,.20);
 }
 
 
@@ -4661,57 +4571,31 @@ animation:none;
     top:50%;
     left:50%;
 
-    width:230px;
-    height:230px;
+    width:250px;
+    min-height:250px;
 
-    transform:
-        translate(-50%,-50%);
-
-    z-index:10;
+    transform:translate(-50%, -50%);
 
     display:flex;
 
     flex-direction:column;
 
     align-items:center;
-
     justify-content:center;
 
     text-align:center;
 
-    border-radius:50%;
-
-    overflow:hidden;
-
-    padding:25px;
+    z-index:10;
 
     cursor:pointer;
 
-    transition:
-        transform .5s cubic-bezier(.16,1,.3,1),
-        box-shadow .5s ease,
-        border-color .5s ease;
+    box-sizing:border-box;
 }
 
 
-.ecosystem-center:hover,
-.ecosystem-center:focus-visible{
-
-    transform:
-        translate(-50%,-50%)
-        scale(1.04);
-
-    box-shadow:
-        0 0 50px rgba(184,137,63,.18);
-
-    border-color:
-        rgba(184,137,63,.55);
-
-    outline:none;
-}
-
-
-/* CENTER ENERGY */
+/* =========================================================
+   CENTER ENERGY
+   ========================================================= */
 
 .ecosystem-center-energy{
     position:absolute;
@@ -4720,37 +4604,25 @@ animation:none;
 
     border-radius:50%;
 
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(184,137,63,.14),
-            transparent 65%
-        );
-
     pointer-events:none;
 }
 
 
-/* CENTER LABEL */
+/* =========================================================
+   CENTER CONTENT
+   ========================================================= */
 
 .ecosystem-center-label{
     position:relative;
 
     z-index:2;
 
-    font-size:.55rem;
+    font-size:.65rem;
+    letter-spacing:.25em;
 
-    letter-spacing:.22em;
-
-    line-height:1.6;
-
-    opacity:.7;
-
-    margin-bottom:10px;
+    margin-bottom:14px;
 }
 
-
-/* CENTER TITLE */
 
 .ecosystem-center h3{
     position:relative;
@@ -4759,28 +4631,201 @@ animation:none;
 
     margin:0;
 
-    font-size:1.15rem;
+    line-height:1.15;
 
-    line-height:1.35;
-
-    letter-spacing:.08em;
+    letter-spacing:.12em;
 }
 
-
-/* CENTER SUBTITLE */
 
 .ecosystem-center-subtitle{
     position:relative;
 
     z-index:2;
 
-    margin-top:10px;
+    margin-top:14px;
 
-    font-size:.48rem;
+    font-size:.58rem;
+
+    letter-spacing:.2em;
+}
+
+
+/* =========================================================
+   7 NODE SYSTEM
+   IMPORTANT:
+   Every node is ABSOLUTELY positioned
+   relative to .ecosystem-wrapper
+   ========================================================= */
+
+.ecosystem-wrapper .eco{
+    position:absolute;
+
+    width:220px;
+    min-height:145px;
+
+    box-sizing:border-box;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:22px 18px;
+
+    z-index:20;
+
+    text-decoration:none;
+
+    transition:
+        transform .45s cubic-bezier(.16,1,.3,1),
+        opacity .35s ease,
+        box-shadow .45s ease;
+
+    will-change:transform;
+}
+
+
+/* =========================================================
+   NODE 01 — TOP
+   ========================================================= */
+
+.ecosystem-wrapper .eco-1{
+    top:0;
+    left:50%;
+
+    transform:translateX(-50%);
+}
+
+
+/* =========================================================
+   NODE 02 — UPPER RIGHT
+   ========================================================= */
+
+.ecosystem-wrapper .eco-2{
+    top:150px;
+    right:0;
+}
+
+
+/* =========================================================
+   NODE 03 — LOWER RIGHT
+   ========================================================= */
+
+.ecosystem-wrapper .eco-3{
+    bottom:110px;
+    right:40px;
+}
+
+
+/* =========================================================
+   NODE 04 — BOTTOM
+   ========================================================= */
+
+.ecosystem-wrapper .eco-4{
+    bottom:0;
+    left:50%;
+
+    transform:translateX(-50%);
+}
+
+
+/* =========================================================
+   NODE 05 — LOWER LEFT
+   ========================================================= */
+
+.ecosystem-wrapper .eco-5{
+    bottom:110px;
+    left:40px;
+}
+
+
+/* =========================================================
+   NODE 06 — UPPER LEFT
+   ========================================================= */
+
+.ecosystem-wrapper .eco-6{
+    top:150px;
+    left:0;
+}
+
+
+/* =========================================================
+   NODE 07 — TOP / INNER ORBIT
+   ========================================================= */
+
+.ecosystem-wrapper .eco-7{
+    top:55px;
+    left:50%;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+
+/* =========================================================
+   NODE TYPOGRAPHY
+   ========================================================= */
+
+.eco-node-index{
+    display:block;
+
+    margin-bottom:6px;
+
+    font-size:.65rem;
+
+    letter-spacing:.2em;
+}
+
+
+.eco-node-category{
+    display:block;
+
+    margin-bottom:8px;
+
+    font-size:.58rem;
 
     letter-spacing:.18em;
+}
 
-    opacity:.65;
+
+.ecosystem-wrapper .eco h3{
+    margin:0;
+
+    font-size:1.05rem;
+
+    line-height:1.25;
+}
+
+
+.ecosystem-wrapper .eco p{
+    margin:8px 0 0;
+
+    font-size:.72rem;
+
+    line-height:1.5;
+}
+
+
+/* =========================================================
+   NODE ENERGY
+   ========================================================= */
+
+.eco-node-energy{
+    position:absolute;
+
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    top:15px;
+    right:15px;
 }
 
 
@@ -4793,532 +4838,37 @@ animation:none;
 
     inset:0;
 
-    z-index:2;
+    z-index:5;
 
     pointer-events:none;
 }
 
 
-/* ENERGY LINK BASE */
-
 .ecosystem-energy-link{
     position:absolute;
+
+    display:block;
 
     height:1px;
 
     transform-origin:left center;
 
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(184,137,63,.30),
-            rgba(255,214,120,.65),
-            transparent
-        );
-
-    opacity:.45;
-
     pointer-events:none;
 }
 
 
-/* =========================================================
-   7 NODE ENERGY LINKS
-   ========================================================= */
-
-
-/* NODE 1 */
-
-.energy-link-1{
-    width:260px;
-
-    top:27%;
-    left:50%;
-
-    transform:
-        rotate(90deg);
-}
-
-
-/* NODE 2 */
-
-.energy-link-2{
-    width:270px;
-
-    top:35%;
-    left:54%;
-
-    transform:
-        rotate(150deg);
-}
-
-
-/* NODE 3 */
-
-.energy-link-3{
-    width:260px;
-
-    top:58%;
-    left:54%;
-
-    transform:
-        rotate(210deg);
-}
-
-
-/* NODE 4 */
-
-.energy-link-4{
-    width:250px;
-
-    top:67%;
-    left:50%;
-
-    transform:
-        rotate(270deg);
-}
-
-
-/* NODE 5 */
-
-.energy-link-5{
-    width:270px;
-
-    top:58%;
-    left:46%;
-
-    transform:
-        rotate(330deg);
-}
-
-
-/* NODE 6 */
-
-.energy-link-6{
-    width:270px;
-
-    top:35%;
-    left:46%;
-
-    transform:
-        rotate(30deg);
-}
-
-
-/* NODE 7 */
-
-.energy-link-7{
-    width:230px;
-
-    top:50%;
-    left:50%;
-
-    transform:
-        rotate(0deg);
-}
-
-
-/* UNUSED LINKS HIDDEN */
-
-.energy-link-8,
-.energy-link-9{
-    display:none;
-}
-
-
-/* ENERGY PARTICLE */
-
 .ecosystem-energy-link i{
     position:absolute;
+
+    width:6px;
+    height:6px;
 
     top:50%;
     left:0;
 
-    width:5px;
-    height:5px;
-
-    transform:
-        translateY(-50%);
+    transform:translateY(-50%);
 
     border-radius:50%;
-
-    background:
-        rgba(255,214,120,.9);
-
-    box-shadow:
-        0 0 10px rgba(255,214,120,.8);
-
-    animation:
-        ecosystem-energy-flow
-        3s linear infinite;
-}
-
-
-@keyframes ecosystem-energy-flow{
-
-    0%{
-        left:0;
-        opacity:0;
-    }
-
-    15%{
-        opacity:1;
-    }
-
-    85%{
-        opacity:1;
-    }
-
-    100%{
-        left:100%;
-        opacity:0;
-    }
-
-}
-
-
-/* =========================================================
-   BASE 7 NODE SYSTEM
-   IMPORTANT:
-   ALL NODES ARE ABSOLUTE INSIDE WRAPPER
-   ========================================================= */
-
-.ecosystem-wrapper .eco{
-
-    position:absolute;
-
-    z-index:8;
-
-    width:190px;
-
-    min-height:125px;
-
-    padding:20px 18px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    justify-content:center;
-
-    text-align:center;
-
-    border-radius:20px;
-
-    text-decoration:none;
-
-    box-sizing:border-box;
-
-    transition:
-        transform .5s cubic-bezier(.16,1,.3,1),
-        opacity .4s ease,
-        box-shadow .5s ease,
-        border-color .5s ease;
-
-}
-
-
-/* NODE HOVER */
-
-.ecosystem-wrapper .eco:hover{
-
-    z-index:20;
-
-    transform:
-        scale(1.06);
-
-    border-color:
-        rgba(184,137,63,.65);
-
-    box-shadow:
-        0 0 35px rgba(184,137,63,.16);
-
-}
-
-
-/* =========================================================
-   NODE CONTENT
-   ========================================================= */
-
-.eco-node-index{
-
-    font-size:.55rem;
-
-    letter-spacing:.18em;
-
-    opacity:.55;
-
-    margin-bottom:5px;
-}
-
-
-.eco-node-category{
-
-    font-size:.50rem;
-
-    letter-spacing:.16em;
-
-    opacity:.65;
-
-    margin-bottom:7px;
-}
-
-
-.ecosystem-wrapper .eco h3{
-
-    margin:0;
-
-    font-size:1rem;
-
-    line-height:1.3;
-
-    letter-spacing:.04em;
-}
-
-
-.ecosystem-wrapper .eco p{
-
-    margin:7px 0 0;
-
-    font-size:.68rem;
-
-    line-height:1.5;
-
-    opacity:.65;
-}
-
-
-/* =========================================================
-   NODE ENERGY INDICATOR
-   ========================================================= */
-
-.eco-node-energy{
-
-    position:absolute;
-
-    width:7px;
-
-    height:7px;
-
-    border-radius:50%;
-
-    background:
-        rgba(255,214,120,.8);
-
-    box-shadow:
-        0 0 12px rgba(255,214,120,.75);
-
-    opacity:.75;
-}
-
-
-/* =========================================================
-   NODE 01
-   TOP CENTER
-   ========================================================= */
-
-.ecosystem-wrapper .eco-1{
-
-    top:3%;
-
-    left:50%;
-
-    transform:
-        translateX(-50%);
-}
-
-
-.ecosystem-wrapper .eco-1:hover{
-
-    transform:
-        translateX(-50%)
-        scale(1.06);
-}
-
-
-.eco-1 .eco-node-energy{
-
-    bottom:-4px;
-    left:50%;
-
-    transform:
-        translateX(-50%);
-}
-
-
-/* =========================================================
-   NODE 02
-   TOP RIGHT
-   ========================================================= */
-
-.ecosystem-wrapper .eco-2{
-
-    top:18%;
-
-    right:5%;
-}
-
-
-.eco-2 .eco-node-energy{
-
-    left:-4px;
-    top:50%;
-
-    transform:
-        translateY(-50%);
-}
-
-
-/* =========================================================
-   NODE 03
-   RIGHT LOWER
-   ========================================================= */
-
-.ecosystem-wrapper .eco-3{
-
-    bottom:14%;
-
-    right:7%;
-}
-
-
-.eco-3 .eco-node-energy{
-
-    left:-4px;
-    top:50%;
-
-    transform:
-        translateY(-50%);
-}
-
-
-/* =========================================================
-   NODE 04
-   BOTTOM CENTER
-   ========================================================= */
-
-.ecosystem-wrapper .eco-4{
-
-    bottom:2%;
-
-    left:50%;
-
-    transform:
-        translateX(-50%);
-}
-
-
-.ecosystem-wrapper .eco-4:hover{
-
-    transform:
-        translateX(-50%)
-        scale(1.06);
-}
-
-
-.eco-4 .eco-node-energy{
-
-    top:-4px;
-    left:50%;
-
-    transform:
-        translateX(-50%);
-}
-
-
-/* =========================================================
-   NODE 05
-   BOTTOM LEFT
-   ========================================================= */
-
-.ecosystem-wrapper .eco-5{
-
-    bottom:14%;
-
-    left:7%;
-}
-
-
-.eco-5 .eco-node-energy{
-
-    right:-4px;
-    top:50%;
-
-    transform:
-        translateY(-50%);
-}
-
-
-/* =========================================================
-   NODE 06
-   TOP LEFT
-   ========================================================= */
-
-.ecosystem-wrapper .eco-6{
-
-    top:18%;
-
-    left:5%;
-}
-
-
-.eco-6 .eco-node-energy{
-
-    right:-4px;
-    top:50%;
-
-    transform:
-        translateY(-50%);
-}
-
-
-/* =========================================================
-   NODE 07
-   LOWER CENTER / STRATEGIC BRIDGE
-   ========================================================= */
-
-.ecosystem-wrapper .eco-7{
-
-    top:50%;
-
-    left:50%;
-
-    margin-top:145px;
-
-    transform:
-        translateX(-50%);
-}
-
-
-.ecosystem-wrapper .eco-7:hover{
-
-    transform:
-        translateX(-50%)
-        scale(1.06);
-}
-
-
-.eco-7 .eco-node-energy{
-
-    top:-4px;
-    left:50%;
-
-    transform:
-        translateX(-50%);
-}
-
-
-/* =========================================================
-   HIDE OLD NODES 08 / 09
-   ========================================================= */
-
-.ecosystem-wrapper .eco-8,
-.ecosystem-wrapper .eco-9{
-
-    display:none !important;
 }
 
 
@@ -5327,145 +4877,72 @@ animation:none;
    ========================================================= */
 
 .ecosystem-orbital-particles{
-
     position:absolute;
 
     inset:0;
 
-    z-index:4;
+    z-index:2;
 
     pointer-events:none;
 }
 
 
 .orbital-particle{
-
     position:absolute;
 
-    width:3px;
-    height:3px;
+    width:4px;
+    height:4px;
 
     border-radius:50%;
-
-    background:
-        rgba(255,214,120,.65);
-
-    box-shadow:
-        0 0 8px rgba(255,214,120,.55);
-
-    animation:
-        ecosystem-particle-float
-        5s ease-in-out infinite;
 }
-
-
-@keyframes ecosystem-particle-float{
-
-    0%,
-    100%{
-        opacity:.25;
-        transform:scale(.8);
-    }
-
-    50%{
-        opacity:1;
-        transform:scale(1.4);
-    }
-
-}
-
-
-/* PARTICLE POSITIONS */
-
-.particle-1{top:14%;left:35%;}
-.particle-2{top:22%;left:65%;}
-.particle-3{top:38%;left:83%;}
-.particle-4{top:58%;left:88%;}
-.particle-5{top:78%;left:72%;}
-.particle-6{top:88%;left:48%;}
-.particle-7{top:78%;left:25%;}
-.particle-8{top:58%;left:12%;}
-.particle-9{top:38%;left:17%;}
-.particle-10{top:22%;left:30%;}
-.particle-11{top:68%;left:40%;}
-.particle-12{top:32%;left:58%;}
 
 
 /* =========================================================
-   AMBIENT ENERGY RAYS
+   ENERGY RAYS
    ========================================================= */
 
 .ecosystem-energy-rays{
-
     position:absolute;
 
     inset:0;
 
-    z-index:0;
+    z-index:1;
 
     pointer-events:none;
 }
 
 
 .energy-ray{
-
     position:absolute;
 
-    width:1px;
+    display:block;
 
-    height:180px;
+    height:1px;
 
-    background:
-        linear-gradient(
-            to bottom,
-            transparent,
-            rgba(184,137,63,.18),
-            transparent
-        );
-
-    opacity:.35;
+    transform-origin:center;
 }
 
 
-.ray-1{
-    top:5%;
-    left:20%;
-    transform:rotate(25deg);
+/* =========================================================
+   NODE HOVER
+   ========================================================= */
+
+.ecosystem-wrapper .eco:hover{
+    transform:
+        translateY(-8px)
+        scale(1.035);
+
+    z-index:30;
 }
 
 
-.ray-2{
-    top:10%;
-    right:22%;
-    transform:rotate(-25deg);
-}
-
-
-.ray-3{
-    top:35%;
-    left:8%;
-    transform:rotate(70deg);
-}
-
-
-.ray-4{
-    top:35%;
-    right:8%;
-    transform:rotate(-70deg);
-}
-
-
-.ray-5{
-    bottom:5%;
-    left:30%;
-    transform:rotate(-25deg);
-}
-
-
-.ray-6{
-    bottom:5%;
-    right:30%;
-    transform:rotate(25deg);
+.ecosystem-wrapper .eco-1:hover,
+.ecosystem-wrapper .eco-4:hover,
+.ecosystem-wrapper .eco-7:hover{
+    transform:
+        translateX(-50%)
+        translateY(-8px)
+        scale(1.035);
 }
 
 
@@ -5473,101 +4950,51 @@ animation:none;
    TABLET
    ========================================================= */
 
-@media (max-width:900px){
+@media (max-width:1100px){
 
     .ecosystem-wrapper{
-
         width:94vw;
-
-        height:760px;
-
-        margin-top:60px;
+        height:850px;
     }
 
+    .ecosystem-orbit-field{
+        width:680px;
+        height:680px;
+    }
 
     .ecosystem-orbit.orbit-outer{
-        width:86vw;
-        height:600px;
+        width:680px;
+        height:680px;
     }
-
 
     .ecosystem-orbit.orbit-middle{
-        width:72vw;
-        height:480px;
+        width:530px;
+        height:530px;
     }
-
 
     .ecosystem-orbit.orbit-inner{
-        width:58vw;
-        height:360px;
+        width:370px;
+        height:370px;
     }
-
-
-    .ecosystem-center{
-
-        width:190px;
-        height:190px;
-    }
-
 
     .ecosystem-wrapper .eco{
-
-        width:165px;
-
-        min-height:110px;
-
-        padding:16px 12px;
+        width:200px;
     }
-
-
-    .ecosystem-wrapper .eco h3{
-
-        font-size:.88rem;
-    }
-
-
-    .ecosystem-wrapper .eco p{
-
-        font-size:.60rem;
-    }
-
-
-    .ecosystem-wrapper .eco-1{
-        top:4%;
-    }
-
 
     .ecosystem-wrapper .eco-2{
-        right:1%;
-        top:20%;
+        right:0;
     }
-
 
     .ecosystem-wrapper .eco-3{
-        right:2%;
-        bottom:15%;
+        right:20px;
     }
-
-
-    .ecosystem-wrapper .eco-4{
-        bottom:3%;
-    }
-
 
     .ecosystem-wrapper .eco-5{
-        left:2%;
-        bottom:15%;
+        left:20px;
     }
-
 
     .ecosystem-wrapper .eco-6{
-        left:1%;
-        top:20%;
-    }
-
-
-    .ecosystem-wrapper .eco-7{
-        margin-top:120px;
+        left:0;
     }
 
 }
@@ -5575,105 +5002,100 @@ animation:none;
 
 /* =========================================================
    MOBILE
-   IMPORTANT:
-   7 NODE ORBITAL SYSTEM BECOMES VERTICAL
-   TO PREVENT OVERLAP
    ========================================================= */
 
-@media (max-width:650px){
+@media (max-width:800px){
 
     .ecosystem-wrapper{
-
-        width:92vw;
-
+        width:94vw;
         height:auto;
 
-        margin-top:45px;
+        margin-top:50px;
 
-        padding:
+        display:flex;
 
-            0
-            0
-            40px;
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:20px;
     }
 
+
+    /* Hide decorative orbital geometry on mobile */
 
     .ecosystem-orbit-field,
     .ecosystem-core-field,
     .ecosystem-energy-network,
     .ecosystem-orbital-particles,
     .ecosystem-energy-rays{
-
         display:none;
     }
 
 
-    .ecosystem-center{
+    /* Center becomes first element */
 
+    .ecosystem-center{
         position:relative;
 
         top:auto;
         left:auto;
 
-        width:190px;
-        height:190px;
+        width:min(280px,85vw);
+        min-height:240px;
 
-        margin:
+        transform:none;
 
-            0
-            auto
-            50px;
+        margin-bottom:20px;
+    }
+
+
+    /* All nodes return to normal document flow */
+
+    .ecosystem-wrapper .eco,
+    .ecosystem-wrapper .eco-1,
+    .ecosystem-wrapper .eco-2,
+    .ecosystem-wrapper .eco-3,
+    .ecosystem-wrapper .eco-4,
+    .ecosystem-wrapper .eco-5,
+    .ecosystem-wrapper .eco-6,
+    .ecosystem-wrapper .eco-7{
+
+        position:relative;
+
+        top:auto;
+        right:auto;
+        bottom:auto;
+        left:auto;
+
+        width:min(360px,90vw);
+
+        min-height:140px;
 
         transform:none;
     }
 
 
-    .ecosystem-center:hover,
-    .ecosystem-center:focus-visible{
+    .ecosystem-wrapper .eco:hover,
+    .ecosystem-wrapper .eco-1:hover,
+    .ecosystem-wrapper .eco-4:hover,
+    .ecosystem-wrapper .eco-7:hover{
 
-        transform:scale(1.03);
+        transform:translateY(-5px) scale(1.01);
     }
 
+}
 
-    .ecosystem-wrapper .eco{
 
-        position:relative;
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
 
-        top:auto !important;
-        right:auto !important;
-        bottom:auto !important;
-        left:auto !important;
+@media (prefers-reduced-motion:reduce){
 
-        margin:
-
-            0
-            auto
-            18px;
-
-        width:min(340px,88vw);
-
-        min-height:115px;
-
-        transform:none !important;
+    .ecosystem-wrapper .eco,
+    .ecosystem-center{
+        transition:none;
     }
 
-
-    .ecosystem-wrapper .eco:hover{
-
-        transform:scale(1.03) !important;
-    }
-
-
-    .ecosystem-wrapper .eco-8,
-    .ecosystem-wrapper .eco-9{
-
-        display:none !important;
-    }
-
-
-    .eco-node-energy{
-
-        display:none;
-    }
-
-     }
+}
