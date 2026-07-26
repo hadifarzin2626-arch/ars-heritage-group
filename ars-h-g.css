@@ -7494,3 +7494,605 @@ animation:none;
     }
 
 }
+/* =========================================================
+   ARS ECOSYSTEM — FINAL 9 NODE LAYOUT FIX
+   HTML STRUCTURE LOCKED
+   TARGET: .ecosystem-wrapper > .eco
+   ========================================================= */
+
+
+/* =========================================================
+   01 — FINAL ECOSYSTEM CONTAINER
+   ========================================================= */
+
+.ecosystem-wrapper{
+
+    position:relative;
+
+    width:min(
+        1180px,
+        94vw
+    );
+
+    height:820px;
+
+    margin:
+        70px
+        auto
+        0;
+
+    isolation:isolate;
+
+    overflow:visible;
+
+}
+
+
+/* =========================================================
+   02 — FINAL NODE BASE
+   ========================================================= */
+
+.ecosystem-wrapper > .eco{
+
+    position:absolute;
+
+    width:190px;
+
+    min-height:115px;
+
+    padding:
+        20px
+        18px;
+
+    box-sizing:border-box;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    z-index:25;
+
+    border-radius:20px;
+
+    text-decoration:none;
+
+}
+
+
+/* =========================================================
+   03 — NODE 01
+   TOP CENTER
+   ========================================================= */
+
+.ecosystem-wrapper > .eco-1{
+
+    top:4%;
+
+    left:50%;
+
+    right:auto;
+
+    bottom:auto;
+
+    transform:
+        translateX(-50%);
+
+}
+
+
+/* =========================================================
+   04 — NODE 02
+   UPPER RIGHT
+   ========================================================= */
+
+.ecosystem-wrapper > .eco-2{
+
+    top:15%;
+
+    right:7%;
+
+    left:auto;
+
+    bottom:auto;
+
+    transform:none;
+
+}
+
+
+/* =========================================================
+   05 — NODE 03
+   RIGHT CENTER
+   ========================================================= */
+
+.ecosystem-wrapper > .eco-3{
+
+    top:43%;
+
+    right:0;
+
+    left:auto;
+
+    bottom:auto;
+
+    transform:none;
+
+}
+
+
+/* =========================================================
+   06 — NODE 04
+   LOWER RIGHT
+   ========================================================= */
+
+.ecosystem-wrapper > .eco-4{
+
+    bottom:9%;
+
+    right:7%;
+
+    left:auto;
+
+    top:auto;
+
+    transform:none;
+
+}
+
+
+/* =========================================================
+   07 — NODE 05
+   BOTTOM CENTER
+   ========================================================= */
+
+.ecosystem-wrapper > .eco-5{
+
+    bottom:1%;
+
+    left:50%;
+
+    right:auto;
+
+    top:auto;
+
+    transform:
+        translateX(-50%);
+
+}
+
+
+/* =========================================================
+   08 — NODE 06
+   LOWER LEFT
+   ========================================================= */
+
+.ecosystem-wrapper > .eco-6{
+
+    bottom:9%;
+
+    left:7%;
+
+    right:auto;
+
+    top:auto;
+
+    transform:none;
+
+}
+
+
+/* =========================================================
+   09 — NODE 07
+   LEFT CENTER
+   ========================================================= */
+
+.ecosystem-wrapper > .eco-7{
+
+    top:43%;
+
+    left:0;
+
+    right:auto;
+
+    bottom:auto;
+
+    transform:none;
+
+}
+
+
+/* =========================================================
+   10 — NODE 08
+   UPPER LEFT
+   ========================================================= */
+
+.ecosystem-wrapper > .eco-8{
+
+    top:15%;
+
+    left:7%;
+
+    right:auto;
+
+    bottom:auto;
+
+    transform:none;
+
+}
+
+
+/* =========================================================
+   11 — NODE 09
+   UPPER INNER LEFT
+   ========================================================= */
+
+.ecosystem-wrapper > .eco-9{
+
+    top:4%;
+
+    left:21%;
+
+    right:auto;
+
+    bottom:auto;
+
+    transform:none;
+
+}
+
+
+/* =========================================================
+   12 — FINAL HOVER
+   ========================================================= */
+
+.ecosystem-wrapper > .eco:hover{
+
+    transform:
+        translateY(-10px)
+        scale(1.05);
+
+    z-index:40;
+
+}
+
+
+/* =========================================================
+   13 — CENTERED NODE HOVER FIX
+   NODE 01
+   NODE 05
+   ========================================================= */
+
+.ecosystem-wrapper > .eco-1:hover,
+.ecosystem-wrapper > .eco-5:hover{
+
+    transform:
+        translateX(-50%)
+        translateY(-10px)
+        scale(1.05);
+
+}
+
+
+/* =========================================================
+   14 — TABLET
+   ========================================================= */
+
+@media(max-width:900px){
+
+    .ecosystem-wrapper{
+
+        width:96vw;
+
+        height:760px;
+
+    }
+
+
+    .ecosystem-wrapper > .eco{
+
+        width:165px;
+
+        min-height:105px;
+
+    }
+
+
+    .ecosystem-wrapper > .eco-2{
+
+        right:1%;
+
+    }
+
+
+    .ecosystem-wrapper > .eco-8{
+
+        left:1%;
+
+    }
+
+
+    .ecosystem-wrapper > .eco-3{
+
+        right:-1%;
+
+    }
+
+
+    .ecosystem-wrapper > .eco-7{
+
+        left:-1%;
+
+    }
+
+
+    .ecosystem-wrapper > .eco-4{
+
+        right:2%;
+
+    }
+
+
+    .ecosystem-wrapper > .eco-6{
+
+        left:2%;
+
+    }
+
+
+    .ecosystem-wrapper > .eco-9{
+
+        left:20%;
+
+    }
+
+}
+
+
+/* =========================================================
+   15 — MOBILE
+   CONTROLLED 9 NODE ORBITAL LAYOUT
+   ========================================================= */
+
+@media(max-width:600px){
+
+    .ecosystem-wrapper{
+
+        width:100%;
+
+        height:920px;
+
+        margin-top:60px;
+
+    }
+
+
+    .ecosystem-wrapper > .eco{
+
+        width:140px;
+
+        min-height:92px;
+
+        padding:
+            14px
+            9px;
+
+        border-radius:18px;
+
+    }
+
+
+    /* TOP CENTER */
+
+    .ecosystem-wrapper > .eco-1{
+
+        top:3%;
+
+        left:50%;
+
+        right:auto;
+
+        bottom:auto;
+
+        transform:
+            translateX(-50%);
+
+    }
+
+
+    /* UPPER RIGHT */
+
+    .ecosystem-wrapper > .eco-2{
+
+        top:15%;
+
+        right:-1%;
+
+        left:auto;
+
+        bottom:auto;
+
+        transform:none;
+
+    }
+
+
+    /* RIGHT */
+
+    .ecosystem-wrapper > .eco-3{
+
+        top:40%;
+
+        right:-2%;
+
+        left:auto;
+
+        bottom:auto;
+
+        transform:none;
+
+    }
+
+
+    /* LOWER RIGHT */
+
+    .ecosystem-wrapper > .eco-4{
+
+        bottom:14%;
+
+        right:0;
+
+        left:auto;
+
+        top:auto;
+
+        transform:none;
+
+    }
+
+
+    /* BOTTOM CENTER */
+
+    .ecosystem-wrapper > .eco-5{
+
+        bottom:2%;
+
+        left:50%;
+
+        right:auto;
+
+        top:auto;
+
+        transform:
+            translateX(-50%);
+
+    }
+
+
+    /* LOWER LEFT */
+
+    .ecosystem-wrapper > .eco-6{
+
+        bottom:14%;
+
+        left:0;
+
+        right:auto;
+
+        top:auto;
+
+        transform:none;
+
+    }
+
+
+    /* LEFT */
+
+    .ecosystem-wrapper > .eco-7{
+
+        top:40%;
+
+        left:-2%;
+
+        right:auto;
+
+        bottom:auto;
+
+        transform:none;
+
+    }
+
+
+    /* UPPER LEFT */
+
+    .ecosystem-wrapper > .eco-8{
+
+        top:15%;
+
+        left:-1%;
+
+        right:auto;
+
+        bottom:auto;
+
+        transform:none;
+
+    }
+
+
+    /* NODE 09 */
+
+    .ecosystem-wrapper > .eco-9{
+
+        top:3%;
+
+        left:4%;
+
+        right:auto;
+
+        bottom:auto;
+
+        transform:none;
+
+    }
+
+
+    /* MOBILE TYPOGRAPHY */
+
+    .ecosystem-wrapper > .eco h3{
+
+        font-size:
+            .86rem;
+
+    }
+
+
+    .ecosystem-wrapper > .eco p{
+
+        font-size:
+            .65rem;
+
+    }
+
+
+    /* MOBILE CENTER */
+
+    .ecosystem-center{
+
+        width:150px;
+
+        height:150px;
+
+    }
+
+
+    .ecosystem-center h3{
+
+        font-size:
+            .82rem;
+
+    }
+
+}
+
+
+/* =========================================================
+   16 — FINAL REDUCED MOTION
+   ========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    .ecosystem-wrapper > .eco{
+
+        animation:none !important;
+
+        transition:none !important;
+
+    }
+
+}
