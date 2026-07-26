@@ -5666,3 +5666,623 @@ animation:none;
     }
 
      }
+/* =========================================================
+   ARS ECOSYSTEM — FINAL ORBITAL POSITION OVERRIDE
+   PATCH V2
+   APPLY AFTER THE PREVIOUS 9-NODE CSS
+   ========================================================= */
+
+
+/* =========================================================
+   01 — HARD LOCK THE ORBITAL COORDINATE SYSTEM
+   ========================================================= */
+
+.ecosystem .ecosystem-wrapper{
+
+    position:relative !important;
+
+    width:min(1180px,94vw) !important;
+
+    height:900px !important;
+
+    min-height:900px !important;
+
+    margin:80px auto 0 !important;
+
+    display:block !important;
+
+    overflow:visible !important;
+
+    isolation:isolate !important;
+
+}
+
+
+/* =========================================================
+   02 — ORBITAL VISUAL FIELD
+   ========================================================= */
+
+.ecosystem .ecosystem-wrapper::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    width:760px;
+
+    height:760px;
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    z-index:0;
+
+}
+
+
+.ecosystem .ecosystem-wrapper::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    width:520px;
+
+    height:520px;
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    z-index:0;
+
+}
+
+
+/* =========================================================
+   03 — ORBITAL FIELD ABOVE BACKGROUND
+   ========================================================= */
+
+.ecosystem .ecosystem-orbit-field{
+
+    position:absolute !important;
+
+    left:50% !important;
+
+    top:50% !important;
+
+    width:760px !important;
+
+    height:760px !important;
+
+    transform:translate(-50%,-50%) !important;
+
+    z-index:1 !important;
+
+    pointer-events:none !important;
+
+}
+
+
+/* =========================================================
+   04 — CENTRAL CORE — HARD LOCK
+   ========================================================= */
+
+.ecosystem .ecosystem-center{
+
+    position:absolute !important;
+
+    left:50% !important;
+
+    top:50% !important;
+
+    width:270px !important;
+
+    height:270px !important;
+
+    margin:0 !important;
+
+    transform:translate(-50%,-50%) !important;
+
+    z-index:100 !important;
+
+    border-radius:50% !important;
+
+}
+
+
+/* =========================================================
+   05 — ALL NODES — HARD ABSOLUTE POSITION
+   ========================================================= */
+
+.ecosystem .eco{
+
+    position:absolute !important;
+
+    z-index:50 !important;
+
+    width:220px !important;
+
+    min-height:125px !important;
+
+    margin:0 !important;
+
+    box-sizing:border-box !important;
+
+}
+
+
+/* =========================================================
+   06 — NODE 01
+   TOP
+   ========================================================= */
+
+.ecosystem .eco-1{
+
+    left:50% !important;
+
+    top:15px !important;
+
+    right:auto !important;
+
+    bottom:auto !important;
+
+    transform:translateX(-50%) !important;
+
+}
+
+
+/* =========================================================
+   07 — NODE 02
+   UPPER LEFT
+   ========================================================= */
+
+.ecosystem .eco-2{
+
+    left:calc(50% - 430px) !important;
+
+    top:125px !important;
+
+    right:auto !important;
+
+    bottom:auto !important;
+
+    transform:none !important;
+
+}
+
+
+/* =========================================================
+   08 — NODE 03
+   LEFT
+   ========================================================= */
+
+.ecosystem .eco-3{
+
+    left:calc(50% - 500px) !important;
+
+    top:370px !important;
+
+    right:auto !important;
+
+    bottom:auto !important;
+
+    transform:none !important;
+
+}
+
+
+/* =========================================================
+   09 — NODE 04
+   LOWER LEFT
+   ========================================================= */
+
+.ecosystem .eco-4{
+
+    left:calc(50% - 410px) !important;
+
+    top:625px !important;
+
+    right:auto !important;
+
+    bottom:auto !important;
+
+    transform:none !important;
+
+}
+
+
+/* =========================================================
+   10 — NODE 05
+   BOTTOM LEFT
+   ========================================================= */
+
+.ecosystem .eco-5{
+
+    left:calc(50% - 250px) !important;
+
+    top:755px !important;
+
+    right:auto !important;
+
+    bottom:auto !important;
+
+    transform:none !important;
+
+}
+
+
+/* =========================================================
+   11 — NODE 06
+   BOTTOM RIGHT
+   ========================================================= */
+
+.ecosystem .eco-6{
+
+    left:calc(50% + 30px) !important;
+
+    top:755px !important;
+
+    right:auto !important;
+
+    bottom:auto !important;
+
+    transform:none !important;
+
+}
+
+
+/* =========================================================
+   12 — NODE 07
+   LOWER RIGHT
+   ========================================================= */
+
+.ecosystem .eco-7{
+
+    left:calc(50% + 190px) !important;
+
+    top:625px !important;
+
+    right:auto !important;
+
+    bottom:auto !important;
+
+    transform:none !important;
+
+}
+
+
+/* =========================================================
+   13 — NODE 08
+   RIGHT
+   ========================================================= */
+
+.ecosystem .eco-8{
+
+    left:calc(50% + 280px) !important;
+
+    top:370px !important;
+
+    right:auto !important;
+
+    bottom:auto !important;
+
+    transform:none !important;
+
+}
+
+
+/* =========================================================
+   14 — NODE 09
+   UPPER RIGHT
+   ========================================================= */
+
+.ecosystem .eco-9{
+
+    left:calc(50% + 210px) !important;
+
+    top:125px !important;
+
+    right:auto !important;
+
+    bottom:auto !important;
+
+    transform:none !important;
+
+}
+
+
+/* =========================================================
+   15 — NODE HOVER
+   ========================================================= */
+
+.ecosystem .eco:hover{
+
+    z-index:200 !important;
+
+    transform:translateY(-8px) scale(1.035) !important;
+
+}
+
+
+/* =========================================================
+   16 — CENTER CORE ABOVE ALL ORBITAL ELEMENTS
+   ========================================================= */
+
+.ecosystem .ecosystem-center{
+
+    z-index:300 !important;
+
+}
+
+
+/* =========================================================
+   17 — ENERGY NETWORK
+   ========================================================= */
+
+.ecosystem .ecosystem-energy-network{
+
+    position:absolute !important;
+
+    inset:0 !important;
+
+    z-index:20 !important;
+
+    pointer-events:none !important;
+
+}
+
+
+/* =========================================================
+   18 — ORBITAL PARTICLES
+   ========================================================= */
+
+.ecosystem .ecosystem-orbital-particles{
+
+    position:absolute !important;
+
+    inset:0 !important;
+
+    z-index:10 !important;
+
+    pointer-events:none !important;
+
+}
+
+
+/* =========================================================
+   19 — ENERGY RAYS
+   ========================================================= */
+
+.ecosystem .ecosystem-energy-rays{
+
+    position:absolute !important;
+
+    inset:0 !important;
+
+    z-index:5 !important;
+
+    pointer-events:none !important;
+
+}
+
+
+/* =========================================================
+   20 — DESKTOP ONLY
+   PREVENT MOBILE RULES FROM OVERRIDING ORBITAL SYSTEM
+   ========================================================= */
+
+@media (min-width:701px){
+
+    .ecosystem .ecosystem-wrapper{
+
+        display:block !important;
+
+        height:900px !important;
+
+        min-height:900px !important;
+
+    }
+
+
+    .ecosystem .eco{
+
+        position:absolute !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   21 — TABLET
+   ========================================================= */
+
+@media (min-width:701px) and (max-width:1100px){
+
+    .ecosystem .ecosystem-wrapper{
+
+        width:96vw !important;
+
+        height:850px !important;
+
+        min-height:850px !important;
+
+    }
+
+
+    .ecosystem .eco{
+
+        width:185px !important;
+
+        min-height:115px !important;
+
+    }
+
+
+    .ecosystem .eco-1{
+
+        top:20px !important;
+
+    }
+
+
+    .ecosystem .eco-2{
+
+        left:calc(50% - 350px) !important;
+
+        top:100px !important;
+
+    }
+
+
+    .ecosystem .eco-3{
+
+        left:calc(50% - 420px) !important;
+
+        top:340px !important;
+
+    }
+
+
+    .ecosystem .eco-4{
+
+        left:calc(50% - 350px) !important;
+
+        top:580px !important;
+
+    }
+
+
+    .ecosystem .eco-5{
+
+        left:calc(50% - 215px) !important;
+
+        top:700px !important;
+
+    }
+
+
+    .ecosystem .eco-6{
+
+        left:calc(50% + 30px) !important;
+
+        top:700px !important;
+
+    }
+
+
+    .ecosystem .eco-7{
+
+        left:calc(50% + 165px) !important;
+
+        top:580px !important;
+
+    }
+
+
+    .ecosystem .eco-8{
+
+        left:calc(50% + 235px) !important;
+
+        top:340px !important;
+
+    }
+
+
+    .ecosystem .eco-9{
+
+        left:calc(50% + 165px) !important;
+
+        top:100px !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   22 — MOBILE
+   ========================================================= */
+
+@media (max-width:700px){
+
+    .ecosystem .ecosystem-wrapper{
+
+        width:92vw !important;
+
+        height:auto !important;
+
+        min-height:0 !important;
+
+        display:flex !important;
+
+        flex-direction:column !important;
+
+        align-items:center !important;
+
+        gap:18px !important;
+
+        padding-bottom:50px !important;
+
+    }
+
+
+    .ecosystem .ecosystem-center{
+
+        position:relative !important;
+
+        left:auto !important;
+
+        top:auto !important;
+
+        transform:none !important;
+
+        flex:none !important;
+
+        order:0 !important;
+
+    }
+
+
+    .ecosystem .eco{
+
+        position:relative !important;
+
+        left:auto !important;
+
+        top:auto !important;
+
+        right:auto !important;
+
+        bottom:auto !important;
+
+        width:min(100%,360px) !important;
+
+        transform:none !important;
+
+        order:1 !important;
+
+    }
+
+
+    .ecosystem .eco:hover{
+
+        transform:translateY(-6px) !important;
+
+    }
+
+}
