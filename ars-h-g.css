@@ -5518,3 +5518,1675 @@ animation:none;
     }
 
 }
+
+/* =========================================================
+   ARS HERITAGE GROUP
+   FINAL ECOSYSTEM ORBITAL OVERRIDE
+   9 NODES + CENTRAL ENERGY CORE
+   ========================================================= */
+
+
+/* =========================================================
+   MAIN ECOSYSTEM
+   ========================================================= */
+
+.ecosystem{
+    position:relative;
+    overflow:hidden;
+    isolation:isolate;
+}
+
+
+/* =========================================================
+   ORBITAL SYSTEM
+   ========================================================= */
+
+.ecosystem-wrapper,
+.ecosystem-orbital-system{
+    position:relative;
+    width:min(1180px,94vw);
+    height:820px;
+    margin:80px auto 0;
+
+    isolation:isolate;
+    perspective:1200px;
+}
+
+
+/* =========================================================
+   AMBIENT BACKGROUND ENERGY
+   ========================================================= */
+
+.ecosystem-wrapper::before,
+.ecosystem-orbital-system::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:min(900px,90vw);
+    height:min(500px,50vw);
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(215,170,70,.13),
+            rgba(215,170,70,.05) 35%,
+            transparent 70%
+        );
+
+    filter:
+        blur(20px);
+
+    pointer-events:none;
+
+    z-index:-5;
+
+    animation:
+        ecosystemAmbientPulse
+        7s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   ORBIT FIELD
+   ========================================================= */
+
+.ecosystem-orbit-field{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:1;
+}
+
+
+/* =========================================================
+   ORBIT RINGS
+   ========================================================= */
+
+.ecosystem-orbit{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    border-radius:50%;
+
+    transform:
+        translate(-50%,-50%)
+        rotate(-8deg);
+
+    pointer-events:none;
+
+    box-sizing:border-box;
+}
+
+
+/* OUTER */
+
+.ecosystem-orbit.orbit-outer{
+
+    width:900px;
+    height:470px;
+
+    border:
+        1px solid
+        rgba(215,170,70,.28);
+
+    box-shadow:
+        0 0 35px
+        rgba(215,170,70,.06),
+
+        inset 0 0 35px
+        rgba(215,170,70,.035);
+
+    animation:
+        ecosystemOuterOrbit
+        28s
+        linear
+        infinite;
+}
+
+
+/* MIDDLE */
+
+.ecosystem-orbit.orbit-middle{
+
+    width:700px;
+    height:365px;
+
+    border:
+        1px solid
+        rgba(215,170,70,.20);
+
+    box-shadow:
+        0 0 25px
+        rgba(215,170,70,.05);
+
+    animation:
+        ecosystemMiddleOrbit
+        20s
+        linear
+        infinite;
+}
+
+
+/* INNER */
+
+.ecosystem-orbit.orbit-inner{
+
+    width:500px;
+    height:260px;
+
+    border:
+        1px solid
+        rgba(215,170,70,.13);
+
+    animation:
+        ecosystemInnerOrbit
+        15s
+        linear
+        infinite reverse;
+}
+
+
+/* =========================================================
+   ORBITAL GLOW
+   ========================================================= */
+
+.ecosystem-orbit-glow{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:760px;
+    height:390px;
+
+    transform:
+        translate(-50%,-50%)
+        rotate(-8deg);
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 45%,
+            rgba(215,170,70,.05) 65%,
+            transparent 75%
+        );
+
+    filter:
+        blur(8px);
+
+    pointer-events:none;
+
+    animation:
+        ecosystemGlowPulse
+        6s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   CENTRAL CORE FIELD
+   ========================================================= */
+
+.ecosystem-core-field{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:300px;
+    height:300px;
+
+    transform:
+        translate(-50%,-50%);
+
+    pointer-events:none;
+
+    z-index:5;
+}
+
+
+/* =========================================================
+   CORE HALOS
+   ========================================================= */
+
+.ecosystem-core-halo{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    border-radius:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    pointer-events:none;
+}
+
+
+.ecosystem-core-halo.halo-outer{
+
+    width:290px;
+    height:290px;
+
+    border:
+        1px solid
+        rgba(215,170,70,.12);
+
+    box-shadow:
+        0 0 60px
+        rgba(215,170,70,.12);
+
+    animation:
+        ecosystemHaloPulse
+        5s
+        ease-in-out
+        infinite;
+}
+
+
+.ecosystem-core-halo.halo-middle{
+
+    width:240px;
+    height:240px;
+
+    border:
+        1px solid
+        rgba(215,170,70,.20);
+
+    box-shadow:
+        0 0 45px
+        rgba(215,170,70,.16);
+
+    animation:
+        ecosystemHaloPulse
+        4s
+        ease-in-out
+        infinite reverse;
+}
+
+
+.ecosystem-core-halo.halo-inner{
+
+    width:190px;
+    height:190px;
+
+    border:
+        1px solid
+        rgba(215,170,70,.30);
+
+    box-shadow:
+        0 0 35px
+        rgba(215,170,70,.20);
+}
+
+
+/* =========================================================
+   CORE LIGHT
+   ========================================================= */
+
+.ecosystem-core-light{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:150px;
+    height:150px;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,232,164,.42),
+            rgba(215,170,70,.18) 28%,
+            rgba(215,170,70,.07) 52%,
+            transparent 72%
+        );
+
+    filter:
+        blur(3px);
+
+    box-shadow:
+        0 0 35px
+        rgba(215,170,70,.28),
+
+        0 0 90px
+        rgba(215,170,70,.16);
+
+    animation:
+        ecosystemCoreLightPulse
+        4s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   CENTRAL CORE
+   ========================================================= */
+
+.ecosystem-center{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:210px;
+    height:210px;
+
+    transform:
+        translate(-50%,-50%);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    border-radius:50%;
+
+    z-index:20;
+
+    overflow:visible;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(215,170,70,.30),
+            rgba(25,25,28,.96) 62%
+        );
+
+    border:
+        1px solid
+        rgba(215,170,70,.72);
+
+    box-shadow:
+        0 0 25px
+        rgba(215,170,70,.30),
+
+        0 0 70px
+        rgba(215,170,70,.16),
+
+        0 0 130px
+        rgba(215,170,70,.08),
+
+        inset 0 0 35px
+        rgba(215,170,70,.15);
+
+    animation:
+        ecosystemCenterPulse
+        4s
+        ease-in-out
+        infinite;
+}
+
+
+/* CORE RING */
+
+.ecosystem-center::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-15px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(215,170,70,.25);
+
+    box-shadow:
+        0 0 25px
+        rgba(215,170,70,.10);
+
+    animation:
+        ecosystemCenterRing
+        8s
+        linear
+        infinite;
+}
+
+
+/* SECONDARY RING */
+
+.ecosystem-center::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-30px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(215,170,70,.10);
+
+    animation:
+        ecosystemCenterRingReverse
+        12s
+        linear
+        infinite;
+}
+
+
+.ecosystem-center-label{
+
+    position:relative;
+
+    margin-bottom:7px;
+
+    font-size:.58rem;
+
+    letter-spacing:.20em;
+
+    color:
+        rgba(255,255,255,.50);
+}
+
+
+.ecosystem-center h3{
+
+    position:relative;
+
+    margin:0;
+
+    font-size:1.15rem;
+
+    line-height:1.45;
+
+    letter-spacing:.12em;
+
+    color:
+        #f3d58e;
+
+    text-shadow:
+        0 0 15px
+        rgba(215,170,70,.40);
+}
+
+
+.ecosystem-center-subtitle{
+
+    position:relative;
+
+    margin-top:8px;
+
+    font-size:.52rem;
+
+    letter-spacing:.18em;
+
+    color:
+        rgba(255,255,255,.42);
+}
+
+
+/* =========================================================
+   9 ENERGY CONNECTION LINES
+   ========================================================= */
+
+.ecosystem-energy-network{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:3;
+}
+
+
+.ecosystem-energy-link{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:1px;
+
+    height:0;
+
+    transform-origin:
+        0 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(215,170,70,.55),
+            rgba(215,170,70,.12),
+            transparent
+        );
+
+    opacity:.48;
+
+    box-shadow:
+        0 0 8px
+        rgba(215,170,70,.12);
+}
+
+
+/* INDIVIDUAL ENERGY LINES */
+
+.energy-link-1{
+    height:270px;
+    transform:rotate(0deg);
+}
+
+.energy-link-2{
+    height:270px;
+    transform:rotate(40deg);
+}
+
+.energy-link-3{
+    height:270px;
+    transform:rotate(80deg);
+}
+
+.energy-link-4{
+    height:270px;
+    transform:rotate(120deg);
+}
+
+.energy-link-5{
+    height:270px;
+    transform:rotate(160deg);
+}
+
+.energy-link-6{
+    height:270px;
+    transform:rotate(200deg);
+}
+
+.energy-link-7{
+    height:270px;
+    transform:rotate(240deg);
+}
+
+.energy-link-8{
+    height:270px;
+    transform:rotate(280deg);
+}
+
+.energy-link-9{
+    height:270px;
+    transform:rotate(320deg);
+}
+
+
+/* MOVING ENERGY PARTICLE */
+
+.ecosystem-energy-link i{
+
+    position:absolute;
+
+    left:50%;
+
+    top:10%;
+
+    width:5px;
+    height:5px;
+
+    border-radius:50%;
+
+    background:
+        #f0c968;
+
+    box-shadow:
+        0 0 8px
+        #f0c968,
+
+        0 0 20px
+        rgba(240,201,104,.65);
+
+    transform:
+        translateX(-50%);
+
+    animation:
+        ecosystemEnergyTravel
+        3.5s
+        ease-in-out
+        infinite;
+}
+
+
+/* DIFFERENT TIMINGS */
+
+.energy-link-2 i{animation-delay:.4s;}
+.energy-link-3 i{animation-delay:.8s;}
+.energy-link-4 i{animation-delay:1.2s;}
+.energy-link-5 i{animation-delay:1.6s;}
+.energy-link-6 i{animation-delay:2s;}
+.energy-link-7 i{animation-delay:2.4s;}
+.energy-link-8 i{animation-delay:2.8s;}
+.energy-link-9 i{animation-delay:3.2s;}
+
+
+/* =========================================================
+   9 NODES — BASE
+   ========================================================= */
+
+.ecosystem-wrapper .eco,
+.ecosystem-orbital-system .eco{
+
+    position:absolute;
+
+    width:190px;
+    min-height:115px;
+
+    padding:20px 18px;
+
+    box-sizing:border-box;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    z-index:25;
+
+    border-radius:20px;
+
+    text-decoration:none;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(34,35,39,.96),
+            rgba(12,13,16,.96)
+        );
+
+    border:
+        1px solid
+        rgba(215,170,70,.38);
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,.48),
+
+        0 0 25px
+        rgba(215,170,70,.06);
+
+    backdrop-filter:
+        blur(16px);
+
+    -webkit-backdrop-filter:
+        blur(16px);
+
+    transition:
+        transform .45s cubic-bezier(.16,1,.3,1),
+        border-color .4s ease,
+        box-shadow .4s ease,
+        opacity .4s ease;
+
+    animation:
+        ecosystemNodeFloat
+        6s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   NODE GOLD ENERGY DOT
+   ========================================================= */
+
+.ecosystem-wrapper .eco::before,
+.ecosystem-orbital-system .eco::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-5px;
+
+    left:50%;
+
+    width:7px;
+    height:7px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:50%;
+
+    background:
+        #e7bd62;
+
+    box-shadow:
+        0 0 10px
+        #e7bd62,
+
+        0 0 25px
+        rgba(231,189,98,.70);
+}
+
+
+/* =========================================================
+   NODE CONTENT
+   ========================================================= */
+
+.eco-node-index{
+
+    margin-bottom:5px;
+
+    font-size:.55rem;
+
+    letter-spacing:.18em;
+
+    color:
+        rgba(215,170,70,.65);
+}
+
+
+.eco-node-category{
+
+    margin-bottom:5px;
+
+    font-size:.58rem;
+
+    letter-spacing:.14em;
+
+    color:
+        rgba(255,255,255,.42);
+}
+
+
+.ecosystem-wrapper .eco h3,
+.ecosystem-orbital-system .eco h3{
+
+    margin:
+        0 0 7px;
+
+    font-size:
+        1rem;
+
+    line-height:
+        1.3;
+
+    color:
+        #f4f4f4;
+}
+
+
+.ecosystem-wrapper .eco p,
+.ecosystem-orbital-system .eco p{
+
+    margin:0;
+
+    font-size:
+        .72rem;
+
+    line-height:
+        1.45;
+
+    color:
+        rgba(255,255,255,.54);
+}
+
+
+/* =========================================================
+   NODE ENERGY
+   ========================================================= */
+
+.eco-node-energy{
+
+    position:absolute;
+
+    bottom:10px;
+
+    width:35px;
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(215,170,70,.65),
+            transparent
+        );
+
+    opacity:.5;
+}
+
+
+/* =========================================================
+   9 NODE POSITIONS
+   ========================================================= */
+
+
+/* 01 TOP */
+
+.ecosystem-wrapper .eco-1,
+.ecosystem-orbital-system .eco-1{
+
+    top:4%;
+    left:50%;
+
+    transform:
+        translateX(-50%);
+}
+
+
+/* 02 TOP RIGHT */
+
+.ecosystem-wrapper .eco-2,
+.ecosystem-orbital-system .eco-2{
+
+    top:15%;
+    right:7%;
+}
+
+
+/* 03 RIGHT */
+
+.ecosystem-wrapper .eco-3,
+.ecosystem-orbital-system .eco-3{
+
+    top:43%;
+    right:0;
+}
+
+
+/* 04 BOTTOM RIGHT */
+
+.ecosystem-wrapper .eco-4,
+.ecosystem-orbital-system .eco-4{
+
+    bottom:9%;
+    right:7%;
+}
+
+
+/* 05 BOTTOM */
+
+.ecosystem-wrapper .eco-5,
+.ecosystem-orbital-system .eco-5{
+
+    bottom:1%;
+    left:50%;
+
+    transform:
+        translateX(-50%);
+}
+
+
+/* 06 BOTTOM LEFT */
+
+.ecosystem-wrapper .eco-6,
+.ecosystem-orbital-system .eco-6{
+
+    bottom:9%;
+    left:7%;
+}
+
+
+/* 07 LEFT */
+
+.ecosystem-wrapper .eco-7,
+.ecosystem-orbital-system .eco-7{
+
+    top:43%;
+    left:0;
+}
+
+
+/* 08 TOP LEFT */
+
+.ecosystem-wrapper .eco-8,
+.ecosystem-orbital-system .eco-8{
+
+    top:15%;
+    left:7%;
+}
+
+
+/* 09 UPPER LEFT INNER */
+
+.ecosystem-wrapper .eco-9,
+.ecosystem-orbital-system .eco-9{
+
+    top:4%;
+    left:21%;
+}
+
+
+/* =========================================================
+   NODE HOVER
+   ========================================================= */
+
+.ecosystem-wrapper .eco:hover,
+.ecosystem-orbital-system .eco:hover{
+
+    transform:
+        translateY(-10px)
+        scale(1.05);
+
+    border-color:
+        rgba(230,188,94,.90);
+
+    box-shadow:
+        0 20px 55px
+        rgba(0,0,0,.60),
+
+        0 0 35px
+        rgba(215,170,70,.20),
+
+        0 0 70px
+        rgba(215,170,70,.08);
+
+    z-index:40;
+}
+
+
+.ecosystem-wrapper .eco-1:hover,
+.ecosystem-orbital-system .eco-1:hover,
+.ecosystem-wrapper .eco-5:hover,
+.ecosystem-orbital-system .eco-5:hover{
+
+    transform:
+        translateX(-50%)
+        translateY(-10px)
+        scale(1.05);
+}
+
+
+/* =========================================================
+   ORBITAL PARTICLES
+   ========================================================= */
+
+.ecosystem-orbital-particles{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:8;
+}
+
+
+.orbital-particle{
+
+    position:absolute;
+
+    width:4px;
+    height:4px;
+
+    border-radius:50%;
+
+    background:
+        #e7bd62;
+
+    box-shadow:
+        0 0 8px
+        #e7bd62,
+
+        0 0 18px
+        rgba(231,189,98,.6);
+
+    animation:
+        ecosystemParticlePulse
+        3s
+        ease-in-out
+        infinite;
+}
+
+
+.particle-1{left:20%;top:28%;}
+.particle-2{left:28%;top:18%;}
+.particle-3{left:42%;top:12%;}
+.particle-4{left:58%;top:13%;}
+.particle-5{left:73%;top:24%;}
+.particle-6{left:82%;top:40%;}
+.particle-7{left:76%;top:64%;}
+.particle-8{left:62%;top:79%;}
+.particle-9{left:43%;top:84%;}
+.particle-10{left:26%;top:72%;}
+.particle-11{left:15%;top:55%;}
+.particle-12{left:12%;top:38%;}
+
+
+/* =========================================================
+   ENERGY RAYS
+   ========================================================= */
+
+.ecosystem-energy-rays{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:2;
+
+    opacity:.4;
+}
+
+
+.energy-ray{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:1px;
+    height:400px;
+
+    transform-origin:
+        0 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(215,170,70,.15),
+            transparent
+        );
+
+    animation:
+        ecosystemRayPulse
+        5s
+        ease-in-out
+        infinite;
+}
+
+
+.ray-1{transform:rotate(20deg);}
+.ray-2{transform:rotate(80deg);}
+.ray-3{transform:rotate(140deg);}
+.ray-4{transform:rotate(200deg);}
+.ray-5{transform:rotate(260deg);}
+.ray-6{transform:rotate(320deg);}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes ecosystemAmbientPulse{
+
+    0%,100%{
+        opacity:.55;
+        transform:
+            translate(-50%,-50%)
+            scale(.96);
+    }
+
+    50%{
+        opacity:1;
+        transform:
+            translate(-50%,-50%)
+            scale(1.04);
+    }
+
+}
+
+
+@keyframes ecosystemOuterOrbit{
+
+    from{
+        transform:
+            translate(-50%,-50%)
+            rotate(-8deg);
+    }
+
+    to{
+        transform:
+            translate(-50%,-50%)
+            rotate(352deg);
+    }
+
+}
+
+
+@keyframes ecosystemMiddleOrbit{
+
+    from{
+        transform:
+            translate(-50%,-50%)
+            rotate(8deg);
+    }
+
+    to{
+        transform:
+            translate(-50%,-50%)
+            rotate(-352deg);
+    }
+
+}
+
+
+@keyframes ecosystemInnerOrbit{
+
+    from{
+        transform:
+            translate(-50%,-50%)
+            rotate(-12deg);
+    }
+
+    to{
+        transform:
+            translate(-50%,-50%)
+            rotate(348deg);
+    }
+
+}
+
+
+@keyframes ecosystemGlowPulse{
+
+    0%,100%{
+        opacity:.35;
+    }
+
+    50%{
+        opacity:.85;
+    }
+
+}
+
+
+@keyframes ecosystemHaloPulse{
+
+    0%,100%{
+        opacity:.45;
+        transform:
+            translate(-50%,-50%)
+            scale(.96);
+    }
+
+    50%{
+        opacity:1;
+        transform:
+            translate(-50%,-50%)
+            scale(1.04);
+    }
+
+}
+
+
+@keyframes ecosystemCoreLightPulse{
+
+    0%,100%{
+        opacity:.55;
+        transform:
+            translate(-50%,-50%)
+            scale(.92);
+    }
+
+    50%{
+        opacity:1;
+        transform:
+            translate(-50%,-50%)
+            scale(1.08);
+    }
+
+}
+
+
+@keyframes ecosystemCenterPulse{
+
+    0%,100%{
+        box-shadow:
+            0 0 25px
+            rgba(215,170,70,.25),
+
+            0 0 70px
+            rgba(215,170,70,.12),
+
+            inset 0 0 35px
+            rgba(215,170,70,.12);
+    }
+
+    50%{
+        box-shadow:
+            0 0 35px
+            rgba(215,170,70,.42),
+
+            0 0 100px
+            rgba(215,170,70,.20),
+
+            inset 0 0 45px
+            rgba(215,170,70,.20);
+    }
+
+}
+
+
+@keyframes ecosystemCenterRing{
+
+    from{
+        transform:
+            rotate(0deg)
+            scale(1);
+    }
+
+    to{
+        transform:
+            rotate(360deg)
+            scale(1);
+    }
+
+}
+
+
+@keyframes ecosystemCenterRingReverse{
+
+    from{
+        transform:
+            rotate(360deg)
+            scale(1);
+    }
+
+    to{
+        transform:
+            rotate(0deg)
+            scale(1);
+    }
+
+}
+
+
+@keyframes ecosystemEnergyTravel{
+
+    0%{
+        top:5%;
+        opacity:0;
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    85%{
+        opacity:1;
+    }
+
+    100%{
+        top:95%;
+        opacity:0;
+    }
+
+}
+
+
+@keyframes ecosystemNodeFloat{
+
+    0%,100%{
+        margin-top:0;
+    }
+
+    50%{
+        margin-top:-5px;
+    }
+
+}
+
+
+@keyframes ecosystemParticlePulse{
+
+    0%,100%{
+        opacity:.25;
+        transform:scale(.7);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.35);
+    }
+
+}
+
+
+@keyframes ecosystemRayPulse{
+
+    0%,100%{
+        opacity:.15;
+    }
+
+    50%{
+        opacity:.65;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media(max-width:900px){
+
+    .ecosystem-wrapper,
+    .ecosystem-orbital-system{
+
+        width:96vw;
+        height:760px;
+    }
+
+
+    .ecosystem-orbit.orbit-outer{
+
+        width:760px;
+        height:410px;
+    }
+
+
+    .ecosystem-orbit.orbit-middle{
+
+        width:610px;
+        height:330px;
+    }
+
+
+    .ecosystem-orbit.orbit-inner{
+
+        width:450px;
+        height:245px;
+    }
+
+
+    .ecosystem-wrapper .eco,
+    .ecosystem-orbital-system .eco{
+
+        width:165px;
+        min-height:105px;
+    }
+
+
+    .ecosystem-wrapper .eco-2,
+    .ecosystem-orbital-system .eco-2,
+    .ecosystem-wrapper .eco-8,
+    .ecosystem-orbital-system .eco-8{
+
+        right:3%;
+        left:auto;
+    }
+
+
+    .ecosystem-wrapper .eco-7,
+    .ecosystem-orbital-system .eco-7{
+
+        left:3%;
+    }
+
+
+    .ecosystem-wrapper .eco-3,
+    .ecosystem-orbital-system .eco-3,
+    .ecosystem-wrapper .eco-4,
+    .ecosystem-orbital-system .eco-4{
+
+        right:0;
+    }
+
+
+    .ecosystem-wrapper .eco-6,
+    .ecosystem-orbital-system .eco-6{
+
+        left:0;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:600px){
+
+    .ecosystem{
+
+        padding:
+            70px 10px;
+    }
+
+
+    .ecosystem-wrapper,
+    .ecosystem-orbital-system{
+
+        width:100%;
+        height:900px;
+
+        margin-top:50px;
+    }
+
+
+    .ecosystem-orbit.orbit-outer{
+
+        width:92vw;
+        height:500px;
+    }
+
+
+    .ecosystem-orbit.orbit-middle{
+
+        width:78vw;
+        height:420px;
+    }
+
+
+    .ecosystem-orbit.orbit-inner{
+
+        width:62vw;
+        height:340px;
+    }
+
+
+    .ecosystem-center{
+
+        width:150px;
+        height:150px;
+    }
+
+
+    .ecosystem-center h3{
+
+        font-size:.85rem;
+    }
+
+
+    .ecosystem-center-label{
+
+        font-size:.45rem;
+    }
+
+
+    .ecosystem-center-subtitle{
+
+        font-size:.40rem;
+    }
+
+
+    .ecosystem-wrapper .eco,
+    .ecosystem-orbital-system .eco{
+
+        width:140px;
+        min-height:95px;
+
+        padding:
+            14px 9px;
+
+        border-radius:17px;
+    }
+
+
+    .ecosystem-wrapper .eco h3,
+    .ecosystem-orbital-system .eco h3{
+
+        font-size:.82rem;
+    }
+
+
+    .ecosystem-wrapper .eco p,
+    .ecosystem-orbital-system .eco p{
+
+        font-size:.62rem;
+    }
+
+
+    /* TOP */
+
+    .ecosystem-wrapper .eco-1,
+    .ecosystem-orbital-system .eco-1{
+
+        top:3%;
+        left:50%;
+    }
+
+
+    /* TOP RIGHT */
+
+    .ecosystem-wrapper .eco-2,
+    .ecosystem-orbital-system .eco-2{
+
+        top:16%;
+        right:0;
+    }
+
+
+    /* RIGHT */
+
+    .ecosystem-wrapper .eco-3,
+    .ecosystem-orbital-system .eco-3{
+
+        top:39%;
+        right:-2%;
+    }
+
+
+    /* BOTTOM RIGHT */
+
+    .ecosystem-wrapper .eco-4,
+    .ecosystem-orbital-system .eco-4{
+
+        bottom:15%;
+        right:0;
+    }
+
+
+    /* BOTTOM */
+
+    .ecosystem-wrapper .eco-5,
+    .ecosystem-orbital-system .eco-5{
+
+        bottom:3%;
+        left:50%;
+    }
+
+
+    /* BOTTOM LEFT */
+
+    .ecosystem-wrapper .eco-6,
+    .ecosystem-orbital-system .eco-6{
+
+        bottom:15%;
+        left:0;
+    }
+
+
+    /* LEFT */
+
+    .ecosystem-wrapper .eco-7,
+    .ecosystem-orbital-system .eco-7{
+
+        top:39%;
+        left:-2%;
+    }
+
+
+    /* TOP LEFT */
+
+    .ecosystem-wrapper .eco-8,
+    .ecosystem-orbital-system .eco-8{
+
+        top:16%;
+        left:0;
+    }
+
+
+    /* OUTER TOP LEFT */
+
+    .ecosystem-wrapper .eco-9,
+    .ecosystem-orbital-system .eco-9{
+
+        top:3%;
+        left:3%;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    .ecosystem-wrapper::before,
+    .ecosystem-orbital-system::before,
+    .ecosystem-orbit,
+    .ecosystem-orbit-glow,
+    .ecosystem-core-halo,
+    .ecosystem-core-light,
+    .ecosystem-center,
+    .ecosystem-center::before,
+    .ecosystem-center::after,
+    .ecosystem-energy-link i,
+    .ecosystem-wrapper .eco,
+    .ecosystem-orbital-system .eco,
+    .orbital-particle,
+    .energy-ray{
+
+        animation:none!important;
+    }
+
+}
