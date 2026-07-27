@@ -13663,16 +13663,1113 @@ REDUCED MOTION
 
 
 /* =========================================================
-   ARS ORGANIZATION
-   INDUSTRIAL STRUCTURE — ANIMATION PATCH
+ARS HERITAGE GROUP
+ORGANIZATION
+INDUSTRIAL ENERGY NETWORK — FINAL CSS PATCH
+HTML MATCH:
+
+.organization
+.org-network
+.org-energy-network
+.org-network-level
+.org-node
+========================================================= */
+
+/* =========================================================
+ORGANIZATION ROOT
+========================================================= */
+
+.organization{
+
+position:relative;
+
+isolation:isolate;
+
+overflow:hidden;
+
+}
+
+/* =========================================================
+NETWORK CONTAINER
+========================================================= */
+
+.organization
+.org-network{
+
+position:relative;
+
+width:100%;
+
+max-width:1200px;
+
+margin:0 auto;
+
+padding:
+    80px
+    0
+    100px;
+
+}
+
+/* =========================================================
+SVG ENERGY NETWORK
+========================================================= */
+
+.organization
+.org-energy-network{
+
+position:absolute;
+
+inset:0;
+
+width:100%;
+
+height:100%;
+
+z-index:1;
+
+pointer-events:none;
+
+overflow:visible;
+
+}
+
+/* =========================================================
+BASE ENERGY PATH
+========================================================= */
+
+.organization
+.org-energy-path{
+
+fill:none;
+
+stroke:
+    rgba(210,165,72,.28);
+
+stroke-width:1.5;
+
+vector-effect:
+    non-scaling-stroke;
+
+filter:
+    drop-shadow(
+        0 0 5px
+        rgba(222,176,78,.22)
+    );
+
+}
+
+/* =========================================================
+MAIN ENERGY SPINE
+========================================================= */
+
+.organization
+.org-main-spine{
+
+stroke:
+    rgba(230,188,94,.55);
+
+stroke-width:2;
+
+stroke-linecap:round;
+
+stroke-dasharray:
+    8 16;
+
+animation:
+
+    orgSpineFlow
+    3s
+    linear
+    infinite;
+
+}
+
+/* =========================================================
+MAIN BRANCHES
+========================================================= */
+
+.organization
+.org-branch-main{
+
+stroke:
+    rgba(218,174,79,.4);
+
+stroke-width:1.7;
+
+stroke-linecap:round;
+
+stroke-dasharray:
+    5 12;
+
+animation:
+
+    orgBranchFlow
+    4s
+    linear
+    infinite;
+
+}
+
+/* =========================================================
+LOWER NETWORK BRANCHES
+========================================================= */
+
+.organization
+.org-branch-node{
+
+stroke:
+    rgba(207,161,66,.3);
+
+stroke-width:1.4;
+
+stroke-linecap:round;
+
+stroke-dasharray:
+    4 14;
+
+animation:
+
+    orgNodeFlow
+    5s
+    linear
+    infinite;
+
+}
+
+/* =========================================================
+ENERGY FLOW — MAIN
+========================================================= */
+
+.organization
+.org-energy-flow{
+
+fill:none;
+
+stroke:
+    url(#orgEnergyFlow);
+
+stroke-width:5;
+
+stroke-linecap:round;
+
+opacity:.85;
+
+filter:
+    url(#orgEnergyGlow);
+
+stroke-dasharray:
+    35 500;
+
+stroke-dashoffset:
+    0;
+
+animation:
+
+    orgEnergyTravel
+    3.8s
+    linear
+    infinite;
+
+}
+
+/* =========================================================
+ENERGY ANIMATION
+========================================================= */
+
+@keyframes orgEnergyTravel{
+
+from{
+
+    stroke-dashoffset:
+        535;
+
+}
+
+to{
+
+    stroke-dashoffset:
+        0;
+
+}
+
+}
+
+/* =========================================================
+SPINE FLOW
+========================================================= */
+
+@keyframes orgSpineFlow{
+
+from{
+
+    stroke-dashoffset:
+        24;
+
+}
+
+to{
+
+    stroke-dashoffset:
+        0;
+
+}
+
+}
+
+/* =========================================================
+BRANCH FLOW
+========================================================= */
+
+@keyframes orgBranchFlow{
+
+from{
+
+    stroke-dashoffset:
+        17;
+
+}
+
+to{
+
+    stroke-dashoffset:
+        0;
+
+}
+
+}
+
+/* =========================================================
+NODE FLOW
+========================================================= */
+
+@keyframes orgNodeFlow{
+
+from{
+
+    stroke-dashoffset:
+        18;
+
+}
+
+to{
+
+    stroke-dashoffset:
+        0;
+
+}
+
+}
+
+/* =========================================================
+NETWORK LEVELS
+========================================================= */
+
+.organization
+.org-network-level{
+
+position:relative;
+
+z-index:3;
+
+display:grid;
+
+align-items:center;
+
+justify-items:center;
+
+}
+
+/* =========================================================
+CORE LEVEL
+========================================================= */
+
+.organization
+.org-level-core{
+
+min-height:
+    190px;
+
+}
+
+/* =========================================================
+STRATEGIC PILLARS
+========================================================= */
+
+.organization
+.org-level-pillars{
+
+grid-template-columns:
+    repeat(3, minmax(0,1fr));
+
+gap:
+    80px;
+
+min-height:
+    250px;
+
+}
+
+/* =========================================================
+ECOSYSTEM LEVEL
+========================================================= */
+
+.organization
+.org-level-ecosystem{
+
+grid-template-columns:
+    repeat(4, minmax(0,1fr));
+
+gap:
+    35px;
+
+min-height:
+    270px;
+
+}
+
+/* =========================================================
+ORGANIZATION NODE
+========================================================= */
+
+.organization
+.org-node{
+
+position:relative;
+
+width:100%;
+
+min-height:180px;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+padding:
+    32px
+    24px;
+
+overflow:visible;
+
+opacity:0;
+
+transform:
+    translateY(35px)
+    scale(.96);
+
+animation:
+
+    orgNodeReveal
+    .9s
+    cubic-bezier(.2,.75,.2,1)
+    forwards;
+
+transition:
+
+    transform
+    .55s
+    cubic-bezier(.2,.8,.2,1),
+
+    border-color
+    .45s
+    ease,
+
+    box-shadow
+    .45s
+    ease;
+
+}
+
+/* =========================================================
+NODE REVEAL ORDER
+========================================================= */
+
+.organization
+.org-core-node{
+
+animation-delay:
+    .2s;
+
+}
+
+.organization
+.org-level-pillars
+.org-node:nth-child(1){
+
+animation-delay:
+    .55s;
+
+}
+
+.organization
+.org-level-pillars
+.org-node:nth-child(2){
+
+animation-delay:
+    .7s;
+
+}
+
+.organization
+.org-level-pillars
+.org-node:nth-child(3){
+
+animation-delay:
+    .85s;
+
+}
+
+.organization
+.org-level-ecosystem
+.org-node:nth-child(1){
+
+animation-delay:
+    1.05s;
+
+}
+
+.organization
+.org-level-ecosystem
+.org-node:nth-child(2){
+
+animation-delay:
+    1.18s;
+
+}
+
+.organization
+.org-level-ecosystem
+.org-node:nth-child(3){
+
+animation-delay:
+    1.31s;
+
+}
+
+.organization
+.org-level-ecosystem
+.org-node:nth-child(4){
+
+animation-delay:
+    1.44s;
+
+}
+
+/* =========================================================
+NODE REVEAL
+========================================================= */
+
+@keyframes orgNodeReveal{
+
+0%{
+
+    opacity:0;
+
+    transform:
+        translateY(35px)
+        scale(.96);
+
+    filter:
+        blur(6px);
+
+}
+
+70%{
+
+    opacity:1;
+
+    filter:
+        blur(0);
+
+}
+
+100%{
+
+    opacity:1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    filter:
+        blur(0);
+
+}
+
+}
+
+/* =========================================================
+CORE NODE
+========================================================= */
+
+.organization
+.org-core-node{
+
+max-width:
+    430px;
+
+min-height:
+    190px;
+
+border-color:
+    rgba(225,181,82,.38);
+
+box-shadow:
+
+    0 0 35px
+    rgba(214,165,69,.12),
+
+    inset 0 0 35px
+    rgba(214,165,69,.035);
+
+}
+
+/* =========================================================
+CORE ORBIT
+========================================================= */
+
+.organization
+.org-core-node
+.org-node-orbit{
+
+position:absolute;
+
+inset:-18px;
+
+border-radius:50%;
+
+border:
+    1px solid
+    rgba(224,178,78,.18);
+
+pointer-events:none;
+
+animation:
+
+    orgCoreOrbit
+    8s
+    linear
+    infinite;
+
+}
+
+/* =========================================================
+SECONDARY ORBIT
+========================================================= */
+
+.organization
+.org-core-node
+.org-node-orbit::after{
+
+content:"";
+
+position:absolute;
+
+inset:10px;
+
+border-radius:50%;
+
+border:
+    1px dashed
+    rgba(229,185,87,.16);
+
+animation:
+
+    orgCoreOrbitReverse
+    12s
+    linear
+    infinite;
+
+}
+
+/* =========================================================
+CORE ENERGY
+========================================================= */
+
+.organization
+.org-node-energy{
+
+position:absolute;
+
+width:10px;
+
+height:10px;
+
+top:-5px;
+
+left:50%;
+
+transform:
+    translateX(-50%);
+
+border-radius:50%;
+
+background:
+    rgba(244,211,133,.95);
+
+box-shadow:
+
+    0 0 8px
+    rgba(244,211,133,.9),
+
+    0 0 22px
+    rgba(221,173,73,.65);
+
+animation:
+
+    orgNodePulse
+    2.8s
+    ease-in-out
+    infinite;
+
+}
+
+/* =========================================================
+CORE ORBIT ANIMATION
+========================================================= */
+
+@keyframes orgCoreOrbit{
+
+from{
+
+    transform:
+        rotate(0deg);
+
+}
+
+to{
+
+    transform:
+        rotate(360deg);
+
+}
+
+}
+
+@keyframes orgCoreOrbitReverse{
+
+from{
+
+    transform:
+        rotate(360deg);
+
+}
+
+to{
+
+    transform:
+        rotate(0deg);
+
+}
+
+}
+
+/* =========================================================
+NODE PULSE
+========================================================= */
+
+@keyframes orgNodePulse{
+
+0%,
+100%{
+
+    transform:
+        translateX(-50%)
+        scale(.7);
+
+    opacity:.45;
+
+}
+
+50%{
+
+    transform:
+        translateX(-50%)
+        scale(1.35);
+
+    opacity:1;
+
+}
+
+}
+
+/* =========================================================
+LABEL
+========================================================= */
+
+.organization
+.org-node-label{
+
+display:block;
+
+margin-bottom:
+    10px;
+
+font-size:
+    .68rem;
+
+letter-spacing:
+    .22em;
+
+text-transform:
+    uppercase;
+
+color:
+    rgba(225,181,91,.72);
+
+}
+
+/* =========================================================
+TITLES
+========================================================= */
+
+.organization
+.org-node
+h3{
+
+margin:
+    0;
+
+transition:
+
+    color
+    .4s
+    ease,
+
+    text-shadow
+    .4s
+    ease,
+
+    transform
+    .4s
+    ease;
+
+}
+
+/* =========================================================
+DESCRIPTIONS
+========================================================= */
+
+.organization
+.org-node
+p{
+
+margin:
+    12px
+    0
+    0;
+
+max-width:
+    290px;
+
+color:
+    rgba(255,255,255,.58);
+
+transition:
+    color
+    .4s
+    ease;
+
+}
+
+/* =========================================================
+HOVER
+========================================================= */
+
+.organization
+.org-node:hover{
+
+transform:
+    translateY(-9px)
+    scale(1.025);
+
+border-color:
+    rgba(230,187,91,.45);
+
+box-shadow:
+
+    0 25px 60px
+    rgba(0,0,0,.32),
+
+    0 0 35px
+    rgba(214,165,69,.12);
+
+}
+
+/* =========================================================
+HOVER ENERGY
+========================================================= */
+
+.organization
+.org-node:hover
+.org-node-energy{
+
+animation-duration:
+    1.2s;
+
+box-shadow:
+
+    0 0 12px
+    rgba(249,219,148,1),
+
+    0 0 35px
+    rgba(223,174,73,.8);
+
+}
+
+/* =========================================================
+HOVER TEXT
+========================================================= */
+
+.organization
+.org-node:hover
+h3{
+
+transform:
+    translateY(-2px);
+
+color:
+    rgba(255,249,228,1);
+
+text-shadow:
+
+    0 0 20px
+    rgba(225,180,87,.18);
+
+}
+
+.organization
+.org-node:hover
+p{
+
+color:
+    rgba(255,255,255,.75);
+
+}
+
+/* =========================================================
+NETWORK STATUS
+========================================================= */
+
+.organization
+.org-network-status{
+
+position:relative;
+
+z-index:4;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:10px;
+
+margin-top:
+    45px;
+
+font-size:
+    .62rem;
+
+letter-spacing:
+    .24em;
+
+text-transform:
+    uppercase;
+
+color:
+    rgba(220,177,83,.55);
+
+}
+
+.organization
+.status-pulse{
+
+width:6px;
+
+height:6px;
+
+border-radius:50%;
+
+background:
+    rgba(240,204,123,.9);
+
+box-shadow:
+
+    0 0 8px
+    rgba(240,204,123,.9),
+
+    0 0 20px
+    rgba(215,165,70,.45);
+
+animation:
+
+    orgStatusPulse
+    2s
+    ease-in-out
+    infinite;
+
+}
+
+@keyframes orgStatusPulse{
+
+0%,
+100%{
+
+    transform:
+        scale(.7);
+
+    opacity:.45;
+
+}
+
+50%{
+
+    transform:
+        scale(1.25);
+
+    opacity:1;
+
+}
+
+}
+
+/* =========================================================
+RESPONSIVE
+========================================================= */
+
+@media (max-width:900px){
+
+.organization
+.org-network{
+
+    padding-left:
+        25px;
+
+    padding-right:
+        25px;
+
+}
+
+
+.organization
+.org-level-pillars{
+
+    gap:
+        25px;
+
+}
+
+
+.organization
+.org-level-ecosystem{
+
+    gap:
+        18px;
+
+}
+
+}
+
+@media (max-width:680px){
+
+.organization
+.org-network{
+
+    padding:
+        50px
+        20px
+        70px;
+
+}
+
+
+.organization
+.org-energy-network{
+
+    display:none;
+
+}
+
+
+.organization
+.org-level-pillars,
+.organization
+.org-level-ecosystem{
+
+    grid-template-columns:
+        1fr;
+
+    gap:
+        25px;
+
+}
+
+
+.organization
+.org-node{
+
+    max-width:
+        420px;
+
+}
+
+}
+
+/* =========================================================
+REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion:reduce){
+
+.organization
+.org-node{
+
+    opacity:1;
+
+    transform:none;
+
+    animation:none;
+
+}
+
+
+.organization
+.org-energy-path,
+.organization
+.org-energy-flow,
+.organization
+.org-node-orbit,
+.organization
+.org-node-energy,
+.organization
+.status-pulse{
+
+    animation:none;
+
+}
+
+}
+
+
+/* =========================================================
+   ARS LEADERSHIP
+   FINAL ANIMATION TEST PATCH
    ========================================================= */
 
 
 /* =========================================================
-   ORGANIZATION ROOT
+   LEADERSHIP SCOPE
    ========================================================= */
 
-.organization{
+.leadership{
 
     position:relative;
 
@@ -13684,25 +14781,11 @@ REDUCED MOTION
 
 
 /* =========================================================
-   ORGANIZATION TREE
+   LEADERSHIP GRID
    ========================================================= */
 
-.organization
-.org-tree{
-
-    position:relative;
-
-    isolation:isolate;
-
-}
-
-
-/* =========================================================
-   ORGANIZATION LEVELS
-   ========================================================= */
-
-.organization
-.org-level{
+.leadership
+.leadership-grid{
 
     position:relative;
 
@@ -13712,12 +14795,11 @@ REDUCED MOTION
 
 
 /* =========================================================
-   ORGANIZATION CARDS
-   INITIAL ANIMATION STATE
+   LEADER CARDS
    ========================================================= */
 
-.organization
-.org-card{
+.leadership
+.leader-card{
 
     position:relative;
 
@@ -13729,13 +14811,9 @@ REDUCED MOTION
         translateY(35px)
         scale(.97);
 
-    will-change:
-        opacity,
-        transform;
-
     animation:
 
-        organizationCardReveal
+        leadershipReveal
         .9s
         cubic-bezier(.2,.75,.2,1)
         forwards;
@@ -13744,93 +14822,30 @@ REDUCED MOTION
 
 
 /* =========================================================
-   LEVEL REVEAL ORDER
+   STAGGER
    ========================================================= */
 
+.leadership
+.leader-card:nth-child(1){
 
-/* MAIN GROUP */
-
-.organization
-.org-level:nth-child(1)
-.org-card{
-
-    animation-delay:.15s;
+    animation-delay:.2s;
 
 }
 
 
-/* THREE CORE DIVISIONS */
+.leadership
+.leader-card:nth-child(2){
 
-.organization
-.org-level:nth-child(2)
-.org-card:nth-child(1){
-
-    animation-delay:.4s;
-
-}
-
-
-.organization
-.org-level:nth-child(2)
-.org-card:nth-child(2){
-
-    animation-delay:.52s;
-
-}
-
-
-.organization
-.org-level:nth-child(2)
-.org-card:nth-child(3){
-
-    animation-delay:.64s;
-
-}
-
-
-/* FOUR ECOSYSTEM NODES */
-
-.organization
-.org-level:nth-child(3)
-.org-card:nth-child(1){
-
-    animation-delay:.8s;
-
-}
-
-
-.organization
-.org-level:nth-child(3)
-.org-card:nth-child(2){
-
-    animation-delay:.92s;
-
-}
-
-
-.organization
-.org-level:nth-child(3)
-.org-card:nth-child(3){
-
-    animation-delay:1.04s;
-
-}
-
-
-.organization
-.org-level:nth-child(3)
-.org-card:nth-child(4){
-
-    animation-delay:1.16s;
+    animation-delay:.55s;
 
 }
 
 
 /* =========================================================
-   MAIN REVEAL
+   CARD REVEAL
    ========================================================= */
 
-@keyframes organizationCardReveal{
+@keyframes leadershipReveal{
 
     0%{
 
@@ -13871,140 +14886,14 @@ REDUCED MOTION
 
 
 /* =========================================================
-   ORGANIZATION ENERGY TOP LINE
+   LUXURY ENERGY CORE
    ========================================================= */
 
-.organization
-.org-card::before{
+.leadership
+.leader-card
+.leader-photo{
 
-    content:"";
-
-    position:absolute;
-
-    top:0;
-
-    left:8%;
-
-    width:84%;
-
-    height:1px;
-
-    transform:
-        scaleX(0);
-
-    transform-origin:
-        center;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(207,159,62,.3),
-            rgba(241,204,122,.95),
-            rgba(207,159,62,.3),
-            transparent
-        );
-
-    box-shadow:
-
-        0 0 10px
-        rgba(224,177,77,.45),
-
-        0 0 25px
-        rgba(214,164,65,.15);
-
-    animation:
-
-        organizationEnergyReveal
-        1.2s
-        ease-out
-        forwards;
-
-}
-
-
-.organization
-.org-level:nth-child(1)
-.org-card::before{
-
-    animation-delay:.5s;
-
-}
-
-
-.organization
-.org-level:nth-child(2)
-.org-card::before{
-
-    animation-delay:.8s;
-
-}
-
-
-.organization
-.org-level:nth-child(3)
-.org-card::before{
-
-    animation-delay:1.15s;
-
-}
-
-
-@keyframes organizationEnergyReveal{
-
-    from{
-
-        transform:
-            scaleX(0);
-
-        opacity:0;
-
-    }
-
-    to{
-
-        transform:
-            scaleX(1);
-
-        opacity:.9;
-
-    }
-
-}
-
-
-/* =========================================================
-   MAIN ARS HERITAGE GROUP CARD
-   ========================================================= */
-
-.organization
-.org-card.org-main{
-
-    border-color:
-
-        rgba(220,176,79,.35);
-
-    box-shadow:
-
-        0 0 30px
-        rgba(210,161,62,.08);
-
-}
-
-
-/* =========================================================
-   MAIN CARD ENERGY
-   ========================================================= */
-
-.organization
-.org-card.org-main::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:20%;
+    position:relative;
 
     border-radius:50%;
 
@@ -14012,20 +14901,23 @@ REDUCED MOTION
 
         radial-gradient(
             circle,
-            rgba(222,177,77,.14),
-            transparent 65%
+            rgba(240,204,123,.9) 0%,
+            rgba(214,164,68,.45) 18%,
+            rgba(214,164,68,.12) 38%,
+            transparent 70%
         );
 
-    filter:
-        blur(18px);
+    box-shadow:
 
-    opacity:.45;
+        0 0 20px
+        rgba(222,177,78,.35),
 
-    pointer-events:none;
+        0 0 50px
+        rgba(214,164,68,.16);
 
     animation:
 
-        organizationCorePulse
+        leadershipCorePulse
         4s
         ease-in-out
         infinite;
@@ -14033,13 +14925,148 @@ REDUCED MOTION
 }
 
 
-@keyframes organizationCorePulse{
+/* =========================================================
+   ENERGY RINGS
+   ========================================================= */
+
+.leadership
+.leader-card
+.leader-photo::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-12px;
+
+    border-radius:50%;
+
+    border:
+
+        1px solid
+        rgba(231,191,103,.4);
+
+    box-shadow:
+
+        0 0 18px
+        rgba(219,171,76,.18);
+
+    animation:
+
+        leadershipRingPulse
+        3.5s
+        ease-in-out
+        infinite;
+
+}
+
+
+.leadership
+.leader-card
+.leader-photo::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-24px;
+
+    border-radius:50%;
+
+    border:
+
+        1px solid
+        rgba(221,175,80,.14);
+
+    animation:
+
+        leadershipOuterRing
+        6s
+        linear
+        infinite;
+
+}
+
+
+/* =========================================================
+   CORE PULSE
+   ========================================================= */
+
+@keyframes leadershipCorePulse{
 
     0%,
     100%{
 
         transform:
-            scale(.85);
+            scale(.94);
+
+        box-shadow:
+
+            0 0 18px
+            rgba(222,177,78,.25),
+
+            0 0 40px
+            rgba(214,164,68,.1);
+
+    }
+
+    50%{
+
+        transform:
+            scale(1.04);
+
+        box-shadow:
+
+            0 0 28px
+            rgba(240,204,123,.55),
+
+            0 0 70px
+            rgba(214,164,68,.2);
+
+    }
+
+}
+
+
+/* =========================================================
+   INNER RING
+   ========================================================= */
+
+@keyframes leadershipRingPulse{
+
+    0%,
+    100%{
+
+        transform:
+            scale(.96);
+
+        opacity:.35;
+
+    }
+
+    50%{
+
+        transform:
+            scale(1.08);
+
+        opacity:.85;
+
+    }
+
+}
+
+
+/* =========================================================
+   OUTER ORBIT
+   ========================================================= */
+
+@keyframes leadershipOuterRing{
+
+    from{
+
+        transform:
+            rotate(0deg)
+            scale(.96);
 
         opacity:.25;
 
@@ -14047,10 +15074,17 @@ REDUCED MOTION
 
     50%{
 
-        transform:
-            scale(1.12);
+        opacity:.65;
 
-        opacity:.6;
+    }
+
+    to{
+
+        transform:
+            rotate(360deg)
+            scale(.96);
+
+        opacity:.25;
 
     }
 
@@ -14058,86 +15092,77 @@ REDUCED MOTION
 
 
 /* =========================================================
-   CARD HOVER
+   HOVER
    ========================================================= */
 
-.organization
-.org-card{
+.leadership
+.leader-card:hover{
+
+    transform:
+        translateY(-10px)
+        scale(1.015);
+
+    border-color:
+
+        rgba(224,178,82,.4);
+
+    box-shadow:
+
+        0 25px 65px
+        rgba(0,0,0,.3),
+
+        0 0 40px
+        rgba(215,165,70,.12);
+
+}
+
+
+/* =========================================================
+   HOVER CORE
+   ========================================================= */
+
+.leadership
+.leader-card:hover
+.leader-photo{
+
+    animation-duration:
+        2s;
+
+}
+
+
+/* =========================================================
+   HOVER TEXT
+   ========================================================= */
+
+.leadership
+.leader-card
+h3{
 
     transition:
 
         transform
-        .55s
-        cubic-bezier(.2,.8,.2,1),
-
-        border-color
         .45s
         ease,
 
-        box-shadow
-        .45s
-        ease,
-
-        background
+        text-shadow
         .45s
         ease;
 
 }
 
 
-.organization
-.org-card:hover{
+.leadership
+.leader-card:hover
+h3{
 
     transform:
-        translateY(-8px)
-        scale(1.015);
+        translateY(-3px);
 
-    border-color:
+    text-shadow:
 
-        rgba(221,177,82,.42);
-
-    box-shadow:
-
-        0 20px 55px
-        rgba(0,0,0,.3),
-
-        0 0 32px
-        rgba(213,164,68,.1);
-
-}
-
-
-/* =========================================================
-   MAIN CARD HOVER
-   ========================================================= */
-
-.organization
-.org-card.org-main:hover{
-
-    transform:
-        translateY(-10px)
-        scale(1.025);
-
-    box-shadow:
-
-        0 25px 70px
-        rgba(0,0,0,.32),
-
-        0 0 45px
-        rgba(215,165,70,.16);
-
-}
-
-
-/* =========================================================
-   INDUSTRIAL ENERGY PARTICLE
-   ========================================================= */
-
-.organization
-.org-card
-::after{
-
-    pointer-events:none;
+        0 0 18px
+        rgba(226,181,88,.2);
 
 }
 
@@ -14148,22 +15173,12 @@ REDUCED MOTION
 
 @media (max-width:680px){
 
-    .organization
-    .org-card:hover{
-
-        transform:
-            translateY(-5px)
-            scale(1.01);
-
-    }
-
-
-    .organization
-    .org-card.org-main:hover{
+    .leadership
+    .leader-card:hover{
 
         transform:
             translateY(-6px)
-            scale(1.015);
+            scale(1.01);
 
     }
 
@@ -14176,8 +15191,8 @@ REDUCED MOTION
 
 @media (prefers-reduced-motion:reduce){
 
-    .organization
-    .org-card{
+    .leadership
+    .leader-card{
 
         opacity:1;
 
@@ -14185,15 +15200,11 @@ REDUCED MOTION
 
         animation:none;
 
-        transition:none;
-
     }
 
-
-    .organization
-    .org-card::before,
-    .organization
-    .org-card.org-main::after{
+    .leadership
+    .leader-card
+    .leader-photo{
 
         animation:none;
 
