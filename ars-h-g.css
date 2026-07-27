@@ -3836,6 +3836,214 @@ REDUCED MOTION
 }
 
 }
+
+/* =========================================================
+   ARS ORGANIZATION
+   MOBILE PORTRAIT — SINGLE ROW CHART PATCH
+   ========================================================= */
+
+@media (max-width:700px) and (orientation:portrait){
+
+    /* -----------------------------------------
+       ORGANIZATION CHART
+       Keep horizontal chart structure
+       ----------------------------------------- */
+
+    .organization .org-chart{
+
+        width:100%;
+
+        max-width:100%;
+
+        overflow-x:auto;
+
+        overflow-y:visible;
+
+        display:block;
+
+        padding-left:12px;
+
+        padding-right:12px;
+
+        -webkit-overflow-scrolling:touch;
+
+    }
+
+
+    /* -----------------------------------------
+       CORE CARD
+       ----------------------------------------- */
+
+    .organization .org-level-core{
+
+        width:100%;
+
+        display:flex;
+
+        justify-content:center;
+
+        align-items:center;
+
+        margin-bottom:70px;
+
+    }
+
+
+    /* -----------------------------------------
+       PILLARS
+       FORCE 4 CARDS IN ONE ROW
+       ----------------------------------------- */
+
+    .organization .org-level-pillars{
+
+        display:grid !important;
+
+        grid-template-columns:
+            repeat(4, 178px) !important;
+
+        grid-template-rows:
+            205px !important;
+
+        flex-wrap:nowrap;
+
+        width:max-content !important;
+
+        min-width:max-content !important;
+
+        gap:14px;
+
+        margin-left:auto;
+
+        margin-right:auto;
+
+        margin-bottom:100px;
+
+    }
+
+
+    /* -----------------------------------------
+       ECOSYSTEM
+       FORCE 4 CARDS IN ONE ROW
+       ----------------------------------------- */
+
+    .organization .org-level-ecosystem{
+
+        display:grid !important;
+
+        grid-template-columns:
+            repeat(4, 178px) !important;
+
+        grid-template-rows:
+            175px !important;
+
+        flex-wrap:nowrap;
+
+        width:max-content !important;
+
+        min-width:max-content !important;
+
+        gap:14px;
+
+        margin-left:auto;
+
+        margin-right:auto;
+
+    }
+
+
+    /* -----------------------------------------
+       ALL PILLAR CARDS
+       ----------------------------------------- */
+
+    .organization .org-pillar-node{
+
+        width:178px !important;
+
+        min-width:178px !important;
+
+        max-width:178px !important;
+
+        height:205px !important;
+
+        min-height:205px !important;
+
+        max-height:205px !important;
+
+        flex:none;
+
+    }
+
+
+    /* -----------------------------------------
+       ALL ECOSYSTEM CARDS
+       ----------------------------------------- */
+
+    .organization .org-ecosystem-node{
+
+        width:178px !important;
+
+        min-width:178px !important;
+
+        max-width:178px !important;
+
+        height:175px !important;
+
+        min-height:175px !important;
+
+        max-height:175px !important;
+
+        flex:none;
+
+    }
+
+
+    /* -----------------------------------------
+       KEEP ENERGY NETWORK VISIBLE
+       ----------------------------------------- */
+
+    .organization .org-energy-network{
+
+        display:block !important;
+
+        position:absolute;
+
+        top:0;
+
+        left:0;
+
+        width:1200px;
+
+        min-width:1200px;
+
+        height:100%;
+
+        pointer-events:none;
+
+    }
+
+
+    /* -----------------------------------------
+       STRONGER MOBILE ENERGY
+       ----------------------------------------- */
+
+    .organization .org-energy-path{
+
+        opacity:1 !important;
+
+        stroke-width:4px;
+
+    }
+
+
+    .organization .org-energy-flow{
+
+        opacity:1 !important;
+
+        stroke-width:9px;
+
+    }
+
+}
 /* =========================================================
 ARS HERITAGE GROUP
 LEADERSHIP & VISION
