@@ -13660,3 +13660,543 @@ REDUCED MOTION
 }
 
 }
+
+
+/* =========================================================
+   ARS ORGANIZATION
+   INDUSTRIAL STRUCTURE — ANIMATION PATCH
+   ========================================================= */
+
+
+/* =========================================================
+   ORGANIZATION ROOT
+   ========================================================= */
+
+.organization{
+
+    position:relative;
+
+    isolation:isolate;
+
+    overflow:hidden;
+
+}
+
+
+/* =========================================================
+   ORGANIZATION TREE
+   ========================================================= */
+
+.organization
+.org-tree{
+
+    position:relative;
+
+    isolation:isolate;
+
+}
+
+
+/* =========================================================
+   ORGANIZATION LEVELS
+   ========================================================= */
+
+.organization
+.org-level{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+/* =========================================================
+   ORGANIZATION CARDS
+   INITIAL ANIMATION STATE
+   ========================================================= */
+
+.organization
+.org-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    opacity:0;
+
+    transform:
+        translateY(35px)
+        scale(.97);
+
+    will-change:
+        opacity,
+        transform;
+
+    animation:
+
+        organizationCardReveal
+        .9s
+        cubic-bezier(.2,.75,.2,1)
+        forwards;
+
+}
+
+
+/* =========================================================
+   LEVEL REVEAL ORDER
+   ========================================================= */
+
+
+/* MAIN GROUP */
+
+.organization
+.org-level:nth-child(1)
+.org-card{
+
+    animation-delay:.15s;
+
+}
+
+
+/* THREE CORE DIVISIONS */
+
+.organization
+.org-level:nth-child(2)
+.org-card:nth-child(1){
+
+    animation-delay:.4s;
+
+}
+
+
+.organization
+.org-level:nth-child(2)
+.org-card:nth-child(2){
+
+    animation-delay:.52s;
+
+}
+
+
+.organization
+.org-level:nth-child(2)
+.org-card:nth-child(3){
+
+    animation-delay:.64s;
+
+}
+
+
+/* FOUR ECOSYSTEM NODES */
+
+.organization
+.org-level:nth-child(3)
+.org-card:nth-child(1){
+
+    animation-delay:.8s;
+
+}
+
+
+.organization
+.org-level:nth-child(3)
+.org-card:nth-child(2){
+
+    animation-delay:.92s;
+
+}
+
+
+.organization
+.org-level:nth-child(3)
+.org-card:nth-child(3){
+
+    animation-delay:1.04s;
+
+}
+
+
+.organization
+.org-level:nth-child(3)
+.org-card:nth-child(4){
+
+    animation-delay:1.16s;
+
+}
+
+
+/* =========================================================
+   MAIN REVEAL
+   ========================================================= */
+
+@keyframes organizationCardReveal{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+            translateY(35px)
+            scale(.97);
+
+        filter:
+            blur(5px);
+
+    }
+
+    70%{
+
+        opacity:1;
+
+        filter:
+            blur(0);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter:
+            blur(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   ORGANIZATION ENERGY TOP LINE
+   ========================================================= */
+
+.organization
+.org-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:8%;
+
+    width:84%;
+
+    height:1px;
+
+    transform:
+        scaleX(0);
+
+    transform-origin:
+        center;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(207,159,62,.3),
+            rgba(241,204,122,.95),
+            rgba(207,159,62,.3),
+            transparent
+        );
+
+    box-shadow:
+
+        0 0 10px
+        rgba(224,177,77,.45),
+
+        0 0 25px
+        rgba(214,164,65,.15);
+
+    animation:
+
+        organizationEnergyReveal
+        1.2s
+        ease-out
+        forwards;
+
+}
+
+
+.organization
+.org-level:nth-child(1)
+.org-card::before{
+
+    animation-delay:.5s;
+
+}
+
+
+.organization
+.org-level:nth-child(2)
+.org-card::before{
+
+    animation-delay:.8s;
+
+}
+
+
+.organization
+.org-level:nth-child(3)
+.org-card::before{
+
+    animation-delay:1.15s;
+
+}
+
+
+@keyframes organizationEnergyReveal{
+
+    from{
+
+        transform:
+            scaleX(0);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:
+            scaleX(1);
+
+        opacity:.9;
+
+    }
+
+}
+
+
+/* =========================================================
+   MAIN ARS HERITAGE GROUP CARD
+   ========================================================= */
+
+.organization
+.org-card.org-main{
+
+    border-color:
+
+        rgba(220,176,79,.35);
+
+    box-shadow:
+
+        0 0 30px
+        rgba(210,161,62,.08);
+
+}
+
+
+/* =========================================================
+   MAIN CARD ENERGY
+   ========================================================= */
+
+.organization
+.org-card.org-main::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:20%;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(222,177,77,.14),
+            transparent 65%
+        );
+
+    filter:
+        blur(18px);
+
+    opacity:.45;
+
+    pointer-events:none;
+
+    animation:
+
+        organizationCorePulse
+        4s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes organizationCorePulse{
+
+    0%,
+    100%{
+
+        transform:
+            scale(.85);
+
+        opacity:.25;
+
+    }
+
+    50%{
+
+        transform:
+            scale(1.12);
+
+        opacity:.6;
+
+    }
+
+}
+
+
+/* =========================================================
+   CARD HOVER
+   ========================================================= */
+
+.organization
+.org-card{
+
+    transition:
+
+        transform
+        .55s
+        cubic-bezier(.2,.8,.2,1),
+
+        border-color
+        .45s
+        ease,
+
+        box-shadow
+        .45s
+        ease,
+
+        background
+        .45s
+        ease;
+
+}
+
+
+.organization
+.org-card:hover{
+
+    transform:
+        translateY(-8px)
+        scale(1.015);
+
+    border-color:
+
+        rgba(221,177,82,.42);
+
+    box-shadow:
+
+        0 20px 55px
+        rgba(0,0,0,.3),
+
+        0 0 32px
+        rgba(213,164,68,.1);
+
+}
+
+
+/* =========================================================
+   MAIN CARD HOVER
+   ========================================================= */
+
+.organization
+.org-card.org-main:hover{
+
+    transform:
+        translateY(-10px)
+        scale(1.025);
+
+    box-shadow:
+
+        0 25px 70px
+        rgba(0,0,0,.32),
+
+        0 0 45px
+        rgba(215,165,70,.16);
+
+}
+
+
+/* =========================================================
+   INDUSTRIAL ENERGY PARTICLE
+   ========================================================= */
+
+.organization
+.org-card
+::after{
+
+    pointer-events:none;
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width:680px){
+
+    .organization
+    .org-card:hover{
+
+        transform:
+            translateY(-5px)
+            scale(1.01);
+
+    }
+
+
+    .organization
+    .org-card.org-main:hover{
+
+        transform:
+            translateY(-6px)
+            scale(1.015);
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion:reduce){
+
+    .organization
+    .org-card{
+
+        opacity:1;
+
+        transform:none;
+
+        animation:none;
+
+        transition:none;
+
+    }
+
+
+    .organization
+    .org-card::before,
+    .organization
+    .org-card.org-main::after{
+
+        animation:none;
+
+    }
+
+}
