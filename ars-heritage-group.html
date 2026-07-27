@@ -1609,12 +1609,15 @@ id="strategy"
     
     
     
-    <!-- =========================================================
-     ORGANIZATION
+  <!-- =========================================================
+     ARS HERITAGE GROUP
+     ORGANIZATION — INDUSTRIAL ENERGY NETWORK
      ========================================================= --><section
     class="organization"
     id="organization"
-><!-- SECTION HEADER -->
+><!-- =====================================================
+     SECTION HEADER
+     ===================================================== -->
 
 <div class="section-header">
 
@@ -1627,58 +1630,275 @@ id="strategy"
     </h2>
 
     <p>
-        A connected industrial architecture
-        designed for long-term growth,
-        engineering and intelligent innovation.
+        A connected industrial ecosystem where
+        strategy, engineering and intelligent
+        technology evolve as one structure.
     </p>
 
 </div>
 
 
-<!-- ORGANIZATION CHART -->
+<!-- =====================================================
+     ORGANIZATION NETWORK
+     ===================================================== -->
 
-<div class="organization-system">
+<div class="org-network">
 
 
-    <!-- ORGANIZATION ENERGY NETWORK -->
+    <!-- =================================================
+         ENERGY CONNECTION SYSTEM
+         SVG PATHS
+         ================================================= -->
 
-    <div
-        class="organization-energy-network"
+    <svg
+        class="org-energy-network"
+        viewBox="0 0 1200 900"
+        preserveAspectRatio="none"
         aria-hidden="true"
     >
 
-        <span class="organization-energy-line energy-line-main"></span>
+        <defs>
 
-        <span class="organization-energy-line energy-line-level-01"></span>
+            <!-- Main Energy Glow -->
 
-        <span class="organization-energy-line energy-line-level-02"></span>
+            <filter
+                id="orgEnergyGlow"
+                x="-50%"
+                y="-50%"
+                width="200%"
+                height="200%"
+            >
 
-        <span class="organization-energy-pulse pulse-01"></span>
+                <feGaussianBlur
+                    stdDeviation="4"
+                    result="blur"
+                />
 
-        <span class="organization-energy-pulse pulse-02"></span>
+                <feMerge>
 
-        <span class="organization-energy-pulse pulse-03"></span>
+                    <feMergeNode
+                        in="blur"
+                    />
 
-    </div>
+                    <feMergeNode
+                        in="SourceGraphic"
+                    />
+
+                </feMerge>
+
+            </filter>
 
 
-    <!-- LEVEL 01 — GROUP -->
+            <!-- Energy Gradient -->
+
+            <linearGradient
+                id="orgEnergyGradient"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+            >
+
+                <stop
+                    offset="0%"
+                    stop-color="#8d6828"
+                    stop-opacity=".15"
+                />
+
+                <stop
+                    offset="50%"
+                    stop-color="#f1ce7a"
+                    stop-opacity=".95"
+                />
+
+                <stop
+                    offset="100%"
+                    stop-color="#8d6828"
+                    stop-opacity=".15"
+                />
+
+            </linearGradient>
+
+
+            <!-- Animated Energy Flow -->
+
+            <linearGradient
+                id="orgEnergyFlow"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="0%"
+            >
+
+                <stop
+                    offset="0%"
+                    stop-color="transparent"
+                />
+
+                <stop
+                    offset="45%"
+                    stop-color="#f6d98c"
+                />
+
+                <stop
+                    offset="50%"
+                    stop-color="#fff4c7"
+                />
+
+                <stop
+                    offset="55%"
+                    stop-color="#f6d98c"
+                />
+
+                <stop
+                    offset="100%"
+                    stop-color="transparent"
+                />
+
+            </linearGradient>
+
+        </defs>
+
+
+        <!-- =================================================
+             CENTRAL ENERGY SPINE
+             ================================================= -->
+
+        <path
+            class="org-energy-path org-main-spine"
+            d="
+                M600 155
+                L600 300
+                L600 420
+                L600 570
+                L600 735
+            "
+        />
+
+
+        <!-- =================================================
+             LEVEL 01 → LEVEL 02
+             ================================================= -->
+
+        <path
+            class="org-energy-path org-branch-main"
+            d="
+                M600 300
+                C600 350 300 350 300 420
+            "
+        />
+
+        <path
+            class="org-energy-path org-branch-main"
+            d="
+                M600 300
+                C600 350 600 350 600 420
+            "
+        />
+
+        <path
+            class="org-energy-path org-branch-main"
+            d="
+                M600 300
+                C600 350 900 350 900 420
+            "
+        />
+
+
+        <!-- =================================================
+             LEVEL 02 DISTRIBUTION NETWORK
+             ================================================= -->
+
+        <path
+            class="org-energy-path org-branch-node"
+            d="
+                M300 520
+                C300 590 150 590 150 700
+            "
+        />
+
+        <path
+            class="org-energy-path org-branch-node"
+            d="
+                M300 520
+                C300 590 350 590 350 700
+            "
+        />
+
+        <path
+            class="org-energy-path org-branch-node"
+            d="
+                M900 520
+                C900 590 650 590 650 700
+            "
+        />
+
+        <path
+            class="org-energy-path org-branch-node"
+            d="
+                M900 520
+                C900 590 850 590 850 700
+            "
+        />
+
+
+        <!-- =================================================
+             ENERGY FLOW LAYERS
+             ================================================= -->
+
+        <path
+            class="org-energy-flow"
+            d="
+                M600 155
+                L600 735
+            "
+        />
+
+        <path
+            class="org-energy-flow"
+            d="
+                M600 300
+                C600 350 300 350 300 420
+            "
+        />
+
+        <path
+            class="org-energy-flow"
+            d="
+                M600 300
+                C600 350 900 350 900 420
+            "
+        />
+
+    </svg>
+
+
+    <!-- =====================================================
+         LEVEL 01
+         ORGANIZATIONAL CORE
+         ===================================================== -->
 
     <div
-        class="organization-level organization-level-main"
-        data-level="01"
+        class="org-network-level org-level-core"
     >
 
         <article
-            class="organization-card organization-card-main ars-glass"
+            class="org-node org-core-node ars-glass"
+            data-org-level="core"
         >
 
-            <span class="organization-card-index">
-                01
-            </span>
+            <span
+                class="org-node-orbit"
+                aria-hidden="true"
+            ></span>
 
-            <span class="organization-card-category">
-                GROUP
+            <span
+                class="org-node-energy"
+                aria-hidden="true"
+            ></span>
+
+            <span class="org-node-label">
+                INDUSTRIAL CORE
             </span>
 
             <h3>
@@ -1686,7 +1906,8 @@ id="strategy"
             </h3>
 
             <p>
-                Industrial Vision & Strategic Direction
+                Strategic vision, industrial direction
+                and long-term ecosystem architecture.
             </p>
 
         </article>
@@ -1694,24 +1915,28 @@ id="strategy"
     </div>
 
 
-    <!-- LEVEL 02 — CORE ORGANIZATION -->
+    <!-- =====================================================
+         LEVEL 02
+         STRATEGIC PILLARS
+         ===================================================== -->
 
     <div
-        class="organization-level organization-level-core"
-        data-level="02"
+        class="org-network-level org-level-pillars"
     >
 
 
         <article
-            class="organization-card ars-glass"
+            class="org-node org-pillar-node ars-glass"
+            data-org-level="pillar"
         >
 
-            <span class="organization-card-index">
-                02
-            </span>
+            <span
+                class="org-node-energy"
+                aria-hidden="true"
+            ></span>
 
-            <span class="organization-card-category">
-                HOLDING
+            <span class="org-node-label">
+                STRATEGIC PILLAR
             </span>
 
             <h3>
@@ -1719,22 +1944,25 @@ id="strategy"
             </h3>
 
             <p>
-                Industrial Operations
+                Corporate structure and
+                strategic industrial operations.
             </p>
 
         </article>
 
 
         <article
-            class="organization-card ars-glass"
+            class="org-node org-pillar-node ars-glass"
+            data-org-level="pillar"
         >
 
-            <span class="organization-card-index">
-                03
-            </span>
+            <span
+                class="org-node-energy"
+                aria-hidden="true"
+            ></span>
 
-            <span class="organization-card-category">
-                ENGINEERING
+            <span class="org-node-label">
+                ENGINEERING PILLAR
             </span>
 
             <h3>
@@ -1742,22 +1970,25 @@ id="strategy"
             </h3>
 
             <p>
-                Advanced Engineering Systems
+                Engineering systems,
+                architecture and technical execution.
             </p>
 
         </article>
 
 
         <article
-            class="organization-card ars-glass"
+            class="org-node org-pillar-node ars-glass"
+            data-org-level="pillar"
         >
 
-            <span class="organization-card-index">
-                04
-            </span>
+            <span
+                class="org-node-energy"
+                aria-hidden="true"
+            ></span>
 
-            <span class="organization-card-category">
-                TECHNOLOGY
+            <span class="org-node-label">
+                TECHNOLOGY PILLAR
             </span>
 
             <h3>
@@ -1765,7 +1996,8 @@ id="strategy"
             </h3>
 
             <p>
-                Intelligent Technology Platform
+                Intelligent technology,
+                platforms and future innovation.
             </p>
 
         </article>
@@ -1774,24 +2006,28 @@ id="strategy"
     </div>
 
 
-    <!-- LEVEL 03 — ECOSYSTEM -->
+    <!-- =====================================================
+         LEVEL 03
+         ECOSYSTEM NODES
+         ===================================================== -->
 
     <div
-        class="organization-level organization-level-ecosystem"
-        data-level="03"
+        class="org-network-level org-level-ecosystem"
     >
 
 
         <article
-            class="organization-card ars-glass"
+            class="org-node org-ecosystem-node ars-glass"
+            data-org-level="ecosystem"
         >
 
-            <span class="organization-card-index">
-                05
-            </span>
+            <span
+                class="org-node-energy"
+                aria-hidden="true"
+            ></span>
 
-            <span class="organization-card-category">
-                INTELLIGENCE
+            <span class="org-node-label">
+                INTELLIGENT PLATFORM
             </span>
 
             <h3>
@@ -1799,21 +2035,24 @@ id="strategy"
             </h3>
 
             <p>
-                Automotive Intelligence Platform
+                Intelligent automotive computing
+                and retrofit technology platform.
             </p>
 
         </article>
 
 
         <article
-            class="organization-card ars-glass"
+            class="org-node org-ecosystem-node ars-glass"
+            data-org-level="ecosystem"
         >
 
-            <span class="organization-card-index">
-                06
-            </span>
+            <span
+                class="org-node-energy"
+                aria-hidden="true"
+            ></span>
 
-            <span class="organization-card-category">
+            <span class="org-node-label">
                 DESIGN
             </span>
 
@@ -1822,22 +2061,25 @@ id="strategy"
             </h3>
 
             <p>
-                Heritage & Premium Design
+                Industrial design,
+                user experience and visual identity.
             </p>
 
         </article>
 
 
         <article
-            class="organization-card ars-glass"
+            class="org-node org-ecosystem-node ars-glass"
+            data-org-level="ecosystem"
         >
 
-            <span class="organization-card-index">
-                07
-            </span>
+            <span
+                class="org-node-energy"
+                aria-hidden="true"
+            ></span>
 
-            <span class="organization-card-category">
-                VOICE
+            <span class="org-node-label">
+                VOICE INTELLIGENCE
             </span>
 
             <h3>
@@ -1845,22 +2087,25 @@ id="strategy"
             </h3>
 
             <p>
-                Intelligent Voice Ecosystem
+                Intelligent voice interaction
+                and human-machine experience.
             </p>
 
         </article>
 
 
         <article
-            class="organization-card ars-glass"
+            class="org-node org-ecosystem-node ars-glass"
+            data-org-level="ecosystem"
         >
 
-            <span class="organization-card-index">
-                08
-            </span>
+            <span
+                class="org-node-energy"
+                aria-hidden="true"
+            ></span>
 
-            <span class="organization-card-category">
-                SAFETY
+            <span class="org-node-label">
+                SAFETY INTELLIGENCE
             </span>
 
             <h3>
@@ -1868,7 +2113,8 @@ id="strategy"
             </h3>
 
             <p>
-                Intelligent Safety Supervision
+                Intelligent safety supervision
+                and protective systems.
             </p>
 
         </article>
@@ -1877,24 +2123,26 @@ id="strategy"
     </div>
 
 
-    <!-- ORGANIZATION STATUS -->
+    <!-- =====================================================
+         ORGANIZATION NETWORK STATUS
+         ===================================================== -->
 
-    <div class="organization-status">
+    <div
+        class="org-network-status"
+        aria-hidden="true"
+    >
 
-        <span class="organization-status-line"></span>
+        <span class="status-pulse"></span>
 
-        <span class="organization-status-text">
-            INTEGRATED INDUSTRIAL ARCHITECTURE
+        <span>
+            CONNECTED INDUSTRIAL ECOSYSTEM
         </span>
-
-        <span class="organization-status-line"></span>
 
     </div>
 
 
 </div>
 
-     
 </section>
     
  <!-- =========================================================
