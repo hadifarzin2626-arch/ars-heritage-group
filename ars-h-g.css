@@ -3379,17 +3379,1062 @@ REDUCED MOTION
 }
 
 /* =========================================================
-STANDARDS
+ARS ENGINEERING STANDARDS
+INDUSTRIAL ENGINEERING DISCIPLINE SYSTEM
+PRECISION • SAFETY • RELIABILITY • MODULARITY
 ========================================================= */
 
-.standard-card{
+/* =========================================================
+SECTION ROOT
+========================================================= */
+
+.engineering-standards{
+
+position:relative;
+
+width:100%;
+
+padding:
+    clamp(100px,10vw,170px)
+    0
+    clamp(100px,10vw,160px);
+
+overflow:hidden;
+
+isolation:isolate;
+
+}
+
+/* =========================================================
+INDUSTRIAL AMBIENT FIELD
+========================================================= */
+
+.engineering-standards::before{
+
+content:"";
+
+position:absolute;
+
+inset:8% 10%;
+
+z-index:-3;
+
+pointer-events:none;
+
+background:
+
+    radial-gradient(
+        circle at 50% 45%,
+        rgba(196,151,72,.12),
+        transparent 27%
+    ),
+
+    radial-gradient(
+        circle at 18% 60%,
+        rgba(255,255,255,.022),
+        transparent 24%
+    ),
+
+    radial-gradient(
+        circle at 82% 38%,
+        rgba(255,255,255,.02),
+        transparent 24%
+    );
+
+filter:blur(42px);
+
+}
+
+/* =========================================================
+ENGINEERING PRECISION GRID
+========================================================= */
+
+.engineering-standards::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+z-index:-2;
+
+pointer-events:none;
+
+opacity:.16;
+
+background-image:
+
+    linear-gradient(
+        rgba(255,255,255,.025) 1px,
+        transparent 1px
+    ),
+
+    linear-gradient(
+        90deg,
+        rgba(255,255,255,.025) 1px,
+        transparent 1px
+    );
+
+background-size:
+    80px 80px;
+
+mask-image:
+
+    radial-gradient(
+        ellipse at center,
+        black 0%,
+        transparent 70%
+    );
+
+-webkit-mask-image:
+
+    radial-gradient(
+        ellipse at center,
+        black 0%,
+        transparent 70%
+    );
+
+}
+
+/* =========================================================
+SECTION HEADER
+========================================================= */
+
+.engineering-standards
+.section-header{
+
+position:relative;
+
+z-index:5;
+
+width:min(820px,90%);
+
+margin:
+    0 auto
+    clamp(65px,8vw,105px);
+
 text-align:center;
+
 }
 
-.standard-card p{
-line-height:1.7;
+/* =========================================================
+ENGINEERING LABEL
+========================================================= */
+
+.engineering-standards
+.section-header
+.section-label{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:15px;
+
+font-size:10px;
+
+font-weight:700;
+
+letter-spacing:.3em;
+
+text-transform:uppercase;
+
+color:
+
+    rgba(211,171,91,.9);
+
 }
 
+.engineering-standards
+.section-header
+.section-label::before,
+.engineering-standards
+.section-header
+.section-label::after{
+
+content:"";
+
+width:34px;
+
+height:1px;
+
+background:
+
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(214,170,84,.75)
+    );
+
+}
+
+.engineering-standards
+.section-header
+.section-label::after{
+
+background:
+
+    linear-gradient(
+        90deg,
+        rgba(214,170,84,.75),
+        transparent
+    );
+
+}
+
+/* =========================================================
+ENGINEERING TITLE
+========================================================= */
+
+.engineering-standards
+.section-header
+h2{
+
+margin:
+    20px 0
+    18px;
+
+font-size:
+    clamp(35px,4.5vw,64px);
+
+line-height:1.04;
+
+letter-spacing:-.04em;
+
+color:
+
+    rgba(255,255,255,.96);
+
+}
+
+/* =========================================================
+STANDARDS GRID
+========================================================= */
+
+.engineering-standards
+.standards-grid{
+
+position:relative;
+
+display:grid;
+
+grid-template-columns:
+    repeat(3,minmax(0,1fr));
+
+gap:
+    clamp(22px,3vw,42px);
+
+width:min(1180px,90%);
+
+margin:0 auto;
+
+}
+
+/* =========================================================
+CENTRAL ENGINEERING AXIS
+========================================================= */
+
+.engineering-standards
+.standards-grid::before{
+
+content:"";
+
+position:absolute;
+
+top:50%;
+
+left:8%;
+
+right:8%;
+
+height:1px;
+
+transform:
+    translateY(-50%);
+
+background:
+
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(199,154,68,.18) 10%,
+        rgba(211,168,82,.55) 50%,
+        rgba(199,154,68,.18) 90%,
+        transparent
+    );
+
+box-shadow:
+
+    0 0 18px
+    rgba(205,158,69,.12);
+
+pointer-events:none;
+
+z-index:0;
+
+}
+
+/* =========================================================
+ENGINEERING STANDARD CARD
+========================================================= */
+
+.engineering-standards
+.standard-card{
+
+position:relative;
+
+min-height:360px;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+justify-content:flex-end;
+
+text-align:center;
+
+padding:
+    170px
+    clamp(24px,3vw,42px)
+    42px;
+
+overflow:hidden;
+
+border:
+
+    1px solid
+    rgba(255,255,255,.075);
+
+background:
+
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.065),
+        rgba(255,255,255,.015)
+    );
+
+backdrop-filter:
+    blur(22px)
+    saturate(120%);
+
+-webkit-backdrop-filter:
+    blur(22px)
+    saturate(120%);
+
+box-shadow:
+
+    inset 0 1px 0
+    rgba(255,255,255,.055),
+
+    0 22px 60px
+    rgba(0,0,0,.22);
+
+transition:
+
+    transform .65s cubic-bezier(.2,.8,.2,1),
+
+    border-color .55s ease,
+
+    box-shadow .55s ease,
+
+    background .55s ease;
+
+opacity:0;
+
+animation:
+
+    engineering-card-reveal
+    .95s
+    cubic-bezier(.2,.75,.2,1)
+    forwards;
+
+}
+
+/* =========================================================
+SEQUENTIAL REVEAL
+========================================================= */
+
+.engineering-standards
+.standard-card:nth-child(1){
+
+animation-delay:.15s;
+
+}
+
+.engineering-standards
+.standard-card:nth-child(2){
+
+animation-delay:.32s;
+
+}
+
+.engineering-standards
+.standard-card:nth-child(3){
+
+animation-delay:.49s;
+
+}
+
+@keyframes engineering-card-reveal{
+
+from{
+
+    opacity:0;
+
+    transform:
+        translateY(38px)
+        scale(.97);
+
+}
+
+to{
+
+    opacity:1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+}
+
+}
+
+/* =========================================================
+ENGINEERING CORE
+========================================================= */
+
+.engineering-standards
+.standard-card::before{
+
+content:"";
+
+position:absolute;
+
+top:50px;
+
+left:50%;
+
+width:125px;
+
+height:125px;
+
+transform:
+    translateX(-50%);
+
+border-radius:50%;
+
+background:
+
+    radial-gradient(
+        circle,
+        rgba(255,244,194,.9) 0 3%,
+        rgba(223,182,94,.72) 7%,
+        rgba(197,145,53,.28) 22%,
+        rgba(197,145,53,.08) 42%,
+        transparent 70%
+    );
+
+box-shadow:
+
+    0 0 14px
+    rgba(231,190,100,.55),
+
+    0 0 35px
+    rgba(209,157,62,.28),
+
+    0 0 75px
+    rgba(209,157,62,.12);
+
+animation:
+
+    engineering-core-pulse
+    4.5s
+    ease-in-out
+    infinite;
+
+z-index:1;
+
+}
+
+/* =========================================================
+CORE RING
+========================================================= */
+
+.engineering-standards
+.standard-card::after{
+
+content:"";
+
+position:absolute;
+
+top:61px;
+
+left:50%;
+
+width:103px;
+
+height:103px;
+
+transform:
+    translateX(-50%);
+
+border-radius:50%;
+
+border:
+
+    1px solid
+    rgba(222,181,96,.32);
+
+box-shadow:
+
+    0 0 0 9px
+    rgba(208,159,67,.025),
+
+    0 0 0 18px
+    rgba(208,159,67,.018);
+
+animation:
+
+    engineering-ring-rotate
+    16s
+    linear
+    infinite;
+
+z-index:2;
+
+}
+
+@keyframes engineering-core-pulse{
+
+0%,
+100%{
+
+    transform:
+        translateX(-50%)
+        scale(.88);
+
+    opacity:.68;
+
+}
+
+50%{
+
+    transform:
+        translateX(-50%)
+        scale(1.08);
+
+    opacity:1;
+
+}
+
+}
+
+@keyframes engineering-ring-rotate{
+
+from{
+
+    transform:
+        translateX(-50%)
+        rotate(0deg);
+
+}
+
+to{
+
+    transform:
+        translateX(-50%)
+        rotate(360deg);
+
+}
+
+}
+
+/* =========================================================
+CORE INNER POINT
+========================================================= */
+
+.engineering-standards
+.standard-card
+h3::before{
+
+content:"";
+
+position:absolute;
+
+top:-105px;
+
+left:50%;
+
+width:7px;
+
+height:7px;
+
+transform:
+    translateX(-50%);
+
+border-radius:50%;
+
+background:
+
+    rgba(255,249,218,1);
+
+box-shadow:
+
+    0 0 8px
+    rgba(255,244,196,1),
+
+    0 0 20px
+    rgba(228,184,88,.95),
+
+    0 0 38px
+    rgba(215,157,48,.55);
+
+z-index:5;
+
+}
+
+/* =========================================================
+STANDARD TITLE
+========================================================= */
+
+.engineering-standards
+.standard-card
+h3{
+
+position:relative;
+
+z-index:5;
+
+margin:
+    0 0
+    16px;
+
+font-size:
+    clamp(22px,1.8vw,30px);
+
+line-height:1.15;
+
+letter-spacing:-.025em;
+
+color:
+
+    rgba(255,255,255,.95);
+
+transition:
+
+    color .45s ease,
+
+    text-shadow .45s ease,
+
+    transform .45s ease;
+
+}
+
+/* =========================================================
+STANDARD DESCRIPTION
+========================================================= */
+
+.engineering-standards
+.standard-card
+p{
+
+position:relative;
+
+z-index:5;
+
+max-width:300px;
+
+margin:0;
+
+font-size:14px;
+
+line-height:1.85;
+
+color:
+
+    rgba(255,255,255,.55);
+
+}
+
+/* =========================================================
+CARD TECHNICAL FRAME
+========================================================= */
+
+.engineering-standards
+.standard-card
+h3::after{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+
+bottom:-10px;
+
+width:0;
+
+height:1px;
+
+transform:
+    translateX(-50%);
+
+background:
+
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(218,174,84,.8),
+        transparent
+    );
+
+transition:
+
+    width .55s ease;
+
+}
+
+/* =========================================================
+HOVER
+========================================================= */
+
+.engineering-standards
+.standard-card:hover{
+
+transform:
+    translateY(-12px);
+
+border-color:
+
+    rgba(214,169,82,.32);
+
+background:
+
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.085),
+        rgba(255,255,255,.022)
+    );
+
+box-shadow:
+
+    inset 0 1px 0
+    rgba(255,255,255,.09),
+
+    0 30px 75px
+    rgba(0,0,0,.3),
+
+    0 0 40px
+    rgba(204,155,62,.09);
+
+}
+
+.engineering-standards
+.standard-card:hover
+h3{
+
+color:
+
+    rgba(255,249,224,1);
+
+transform:
+    translateY(-2px);
+
+text-shadow:
+
+    0 0 20px
+    rgba(227,184,95,.22);
+
+}
+
+.engineering-standards
+.standard-card:hover
+h3::after{
+
+width:80px;
+
+}
+
+.engineering-standards
+.standard-card:hover::before{
+
+box-shadow:
+
+    0 0 18px
+    rgba(241,202,119,.85),
+
+    0 0 45px
+    rgba(215,162,66,.42),
+
+    0 0 90px
+    rgba(215,162,66,.16);
+
+}
+
+/* =========================================================
+SPECIALIZED STANDARD IDENTITIES
+========================================================= */
+
+/* SAFETY */
+
+.engineering-standards
+.standard-card:nth-child(1)::before{
+
+background:
+
+    radial-gradient(
+        circle,
+        rgba(255,246,204,.95) 0 3%,
+        rgba(220,179,88,.72) 8%,
+        rgba(195,141,45,.25) 25%,
+        transparent 70%
+    );
+
+}
+
+/* RELIABILITY */
+
+.engineering-standards
+.standard-card:nth-child(2)::before{
+
+animation-duration:
+
+    5.2s;
+
+}
+
+/* MODULARITY */
+
+.engineering-standards
+.standard-card:nth-child(3)::before{
+
+animation-duration:
+
+    3.8s;
+
+}
+
+/* =========================================================
+ENERGY TRAVEL THROUGH ENGINEERING AXIS
+========================================================= */
+
+.engineering-standards
+.standards-grid
+.standard-card:nth-child(1){
+
+animation-name:
+
+    engineering-card-reveal,
+    engineering-energy-pulse;
+
+animation-duration:
+
+    .95s,
+    6s;
+
+animation-delay:
+
+    .15s,
+    2.5s;
+
+animation-iteration-count:
+
+    1,
+    infinite;
+
+}
+
+@keyframes engineering-energy-pulse{
+
+0%,
+100%{
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255,255,255,.055),
+
+        0 22px 60px
+        rgba(0,0,0,.22);
+
+}
+
+50%{
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255,255,255,.07),
+
+        0 22px 60px
+        rgba(0,0,0,.22),
+
+        0 0 32px
+        rgba(205,157,66,.055);
+
+}
+
+}
+
+/* =========================================================
+TABLET
+========================================================= */
+
+@media (max-width:950px){
+
+.engineering-standards
+.standards-grid{
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:24px;
+
+}
+
+
+.engineering-standards
+.standards-grid::before{
+
+    display:none;
+
+}
+
+
+.engineering-standards
+.standard-card{
+
+    min-height:330px;
+
+}
+
+
+.engineering-standards
+.standard-card:nth-child(3){
+
+    grid-column:
+        1 / -1;
+
+    width:
+        calc(50% - 12px);
+
+    margin:0 auto;
+
+}
+
+}
+
+/* =========================================================
+MOBILE
+========================================================= */
+
+@media (max-width:620px){
+
+.engineering-standards{
+
+    padding:
+        85px
+        0
+        90px;
+
+}
+
+
+.engineering-standards
+.section-header{
+
+    margin-bottom:60px;
+
+}
+
+
+.engineering-standards
+.standards-grid{
+
+    grid-template-columns:
+        1fr;
+
+    width:88%;
+
+    gap:20px;
+
+}
+
+
+.engineering-standards
+.standard-card{
+
+    min-height:330px;
+
+    padding:
+        165px
+        24px
+        36px;
+
+}
+
+
+.engineering-standards
+.standard-card:nth-child(3){
+
+    grid-column:auto;
+
+    width:auto;
+
+}
+
+
+.engineering-standards
+.standard-card:hover{
+
+    transform:
+        translateY(-6px);
+
+}
+
+}
+
+/* =========================================================
+REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion:reduce){
+
+.engineering-standards
+.standard-card{
+
+    opacity:1;
+
+    animation:none;
+
+    transform:none;
+
+    transition:none;
+
+}
+
+
+.engineering-standards
+.standard-card::before,
+.engineering-standards
+.standard-card::after{
+
+    animation:none;
+
+}
+
+
+.engineering-standards
+.standard-card:hover{
+
+    transform:none;
+
+}
+
+}
 /* =========================================================
 ARS TIMELINE — INDUSTRIAL JOURNEY
 PREMIUM ENERGY TIMELINE SYSTEM
