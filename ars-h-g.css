@@ -3839,44 +3839,85 @@ REDUCED MOTION
 
 /* =========================================================
    ARS ORGANIZATION
-   MOBILE PORTRAIT — SINGLE ROW CHART PATCH
+   MOBILE PORTRAIT
+   LIGHTWEIGHT HORIZONTAL CHART
+   FINAL PERFORMANCE PATCH
    ========================================================= */
 
 @media (max-width:700px) and (orientation:portrait){
 
-    /* -----------------------------------------
-       ORGANIZATION CHART
-       Keep horizontal chart structure
-       ----------------------------------------- */
+    /* =====================================================
+       ORGANIZATION SECTION
+       ===================================================== */
 
-    .organization .org-chart{
+    .organization{
 
         width:100%;
 
         max-width:100%;
 
-        overflow-x:auto;
+        overflow:hidden;
 
-        overflow-y:visible;
-
-        display:block;
-
-        padding-left:12px;
-
-        padding-right:12px;
-
-        -webkit-overflow-scrolling:touch;
+        contain:layout paint;
 
     }
 
 
-    /* -----------------------------------------
-       CORE CARD
-       ----------------------------------------- */
+    /* =====================================================
+       CHART VIEWPORT
+       ===================================================== */
+
+    .organization .org-chart{
+
+        position:relative;
+
+        width:100%;
+
+        max-width:100%;
+
+        min-height:auto;
+
+        padding:
+
+            60px
+
+            0
+
+            80px;
+
+        overflow-x:auto;
+
+        overflow-y:visible;
+
+        overscroll-behavior-x:contain;
+
+        overscroll-behavior-y:auto;
+
+        -webkit-overflow-scrolling:touch;
+
+        scrollbar-width:none;
+
+        contain:layout;
+
+    }
+
+
+    .organization .org-chart::-webkit-scrollbar{
+
+        display:none;
+
+    }
+
+
+    /* =====================================================
+       CORE
+       ===================================================== */
 
     .organization .org-level-core{
 
         width:100%;
+
+        min-width:100%;
 
         display:flex;
 
@@ -3889,79 +3930,125 @@ REDUCED MOTION
     }
 
 
-    /* -----------------------------------------
-       PILLARS
-       FORCE 4 CARDS IN ONE ROW
-       ----------------------------------------- */
+    .organization .org-core-node{
+
+        width:
+
+            min(
+                88vw,
+                430px
+            );
+
+        min-height:200px;
+
+    }
+
+
+    /* =====================================================
+       PILLARS ROW
+       4 CARDS — ONE ROW
+       ===================================================== */
 
     .organization .org-level-pillars{
 
         display:grid !important;
 
         grid-template-columns:
-            repeat(4, 178px) !important;
+
+            repeat(
+                4,
+                170px
+            ) !important;
 
         grid-template-rows:
+
             205px !important;
 
-        flex-wrap:nowrap;
+        width:
 
-        width:max-content !important;
+            max-content !important;
 
-        min-width:max-content !important;
+        min-width:
 
-        gap:14px;
+            max-content !important;
 
-        margin-left:auto;
+        gap:16px;
 
-        margin-right:auto;
+        margin-left:
 
-        margin-bottom:100px;
+            max(
+                16px,
+                calc(
+                    (100vw - 740px) / 2
+                )
+            );
+
+        margin-right:
+
+            16px;
+
+        margin-bottom:90px;
 
     }
 
 
-    /* -----------------------------------------
-       ECOSYSTEM
-       FORCE 4 CARDS IN ONE ROW
-       ----------------------------------------- */
+    /* =====================================================
+       ECOSYSTEM ROW
+       4 CARDS — ONE ROW
+       ===================================================== */
 
     .organization .org-level-ecosystem{
 
         display:grid !important;
 
         grid-template-columns:
-            repeat(4, 178px) !important;
+
+            repeat(
+                4,
+                170px
+            ) !important;
 
         grid-template-rows:
+
             175px !important;
 
-        flex-wrap:nowrap;
+        width:
 
-        width:max-content !important;
+            max-content !important;
 
-        min-width:max-content !important;
+        min-width:
 
-        gap:14px;
+            max-content !important;
 
-        margin-left:auto;
+        gap:16px;
 
-        margin-right:auto;
+        margin-left:
+
+            max(
+                16px,
+                calc(
+                    (100vw - 740px) / 2
+                )
+            );
+
+        margin-right:
+
+            16px;
 
     }
 
 
-    /* -----------------------------------------
-       ALL PILLAR CARDS
-       ----------------------------------------- */
+    /* =====================================================
+       PILLAR CARDS
+       ===================================================== */
 
     .organization .org-pillar-node{
 
-        width:178px !important;
+        width:170px !important;
 
-        min-width:178px !important;
+        min-width:170px !important;
 
-        max-width:178px !important;
+        max-width:170px !important;
 
         height:205px !important;
 
@@ -3969,22 +4056,20 @@ REDUCED MOTION
 
         max-height:205px !important;
 
-        flex:none;
-
     }
 
 
-    /* -----------------------------------------
-       ALL ECOSYSTEM CARDS
-       ----------------------------------------- */
+    /* =====================================================
+       ECOSYSTEM CARDS
+       ===================================================== */
 
     .organization .org-ecosystem-node{
 
-        width:178px !important;
+        width:170px !important;
 
-        min-width:178px !important;
+        min-width:170px !important;
 
-        max-width:178px !important;
+        max-width:170px !important;
 
         height:175px !important;
 
@@ -3992,18 +4077,15 @@ REDUCED MOTION
 
         max-height:175px !important;
 
-        flex:none;
-
     }
 
 
-    /* -----------------------------------------
-       KEEP ENERGY NETWORK VISIBLE
-       ----------------------------------------- */
+    /* =====================================================
+       ENERGY SVG
+       LIGHTWEIGHT
+       ===================================================== */
 
     .organization .org-energy-network{
-
-        display:block !important;
 
         position:absolute;
 
@@ -4011,35 +4093,96 @@ REDUCED MOTION
 
         left:0;
 
-        width:1200px;
-
-        min-width:1200px;
+        width:100%;
 
         height:100%;
 
+        min-width:0;
+
+        display:block !important;
+
         pointer-events:none;
+
+        will-change:auto;
 
     }
 
 
-    /* -----------------------------------------
-       STRONGER MOBILE ENERGY
-       ----------------------------------------- */
+    /* =====================================================
+       ENERGY PATHS
+       ===================================================== */
 
     .organization .org-energy-path{
 
-        opacity:1 !important;
+        opacity:1;
 
-        stroke-width:4px;
+        stroke-width:3px;
+
+        filter:
+
+            drop-shadow(
+                0 0 5px
+                rgba(
+                    235,
+                    185,
+                    76,
+                    .65
+                )
+            );
 
     }
 
 
     .organization .org-energy-flow{
 
-        opacity:1 !important;
+        opacity:.95;
 
-        stroke-width:9px;
+        stroke-width:6px;
+
+        filter:
+
+            drop-shadow(
+                0 0 8px
+                rgba(
+                    245,
+                    204,
+                    108,
+                    .8
+                )
+            );
+
+    }
+
+
+    /* =====================================================
+       REDUCE GPU LOAD
+       ===================================================== */
+
+    .organization .org-node-orbit{
+
+        animation-duration:
+
+            16s;
+
+    }
+
+
+    .organization .org-node-energy{
+
+        animation-duration:
+
+            2.8s;
+
+    }
+
+
+    /* =====================================================
+       STATUS
+       ===================================================== */
+
+    .organization .org-network-status{
+
+        margin-top:60px;
 
     }
 
