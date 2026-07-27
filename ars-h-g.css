@@ -2286,9 +2286,9 @@ font-weight:600;
 
 /* =========================================================
 ARS HERITAGE GROUP
-ORGANIZATION
-INDUSTRIAL ENERGY NETWORK
-FINAL UNIFIED CSS
+ORGANIZATION CHART
+PREMIUM INDUSTRIAL ENERGY NETWORK
+FINAL RESPONSIVE CSS
 ========================================================= */
 
 /* =========================================================
@@ -2299,44 +2299,55 @@ ORGANIZATION ROOT
 
 position:relative;
 
-isolation:isolate;
-
 width:100%;
+
+isolation:isolate;
 
 overflow:hidden;
 
 }
 
 /* =========================================================
-NETWORK CANVAS
+ORGANIZATION CHART WRAPPER
 ========================================================= */
 
-.organization .org-network{
+.organization .org-chart{
 
 position:relative;
 
-width:min(1200px, 100%);
+width:min(1400px, 100%);
 
-min-height:980px;
+min-height:1000px;
 
 margin:0 auto;
 
 padding:
-    100px
+
+    80px
+
     30px
-    120px;
+
+    100px;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
 
 }
 
 /* =========================================================
-ENERGY NETWORK SVG
+ENERGY SVG NETWORK
 ========================================================= */
 
 .organization .org-energy-network{
 
 position:absolute;
 
-inset:0;
+top:0;
+
+left:0;
 
 width:100%;
 
@@ -2351,7 +2362,7 @@ overflow:visible;
 }
 
 /* =========================================================
-BASE ENERGY LINES
+BASE ENERGY PATH
 ========================================================= */
 
 .organization .org-energy-path{
@@ -2359,93 +2370,147 @@ BASE ENERGY LINES
 fill:none;
 
 stroke:
-    rgba(211,166,70,.28);
 
-stroke-width:2;
+    rgba(238,194,91,.72);
+
+stroke-width:3;
 
 stroke-linecap:round;
 
 stroke-linejoin:round;
 
 vector-effect:
+
     non-scaling-stroke;
 
 filter:
+
     drop-shadow(
-        0 0 6px
-        rgba(221,174,74,.22)
+        0 0 5px
+        rgba(238,194,91,.55)
+    )
+
+    drop-shadow(
+        0 0 14px
+        rgba(215,165,65,.28)
     );
 
 }
 
 /* =========================================================
-MAIN ENERGY SPINE
+MAIN SPINE
 ========================================================= */
 
 .organization .org-main-spine{
 
 stroke:
-    rgba(237,197,108,.62);
 
-stroke-width:2.6;
+    rgba(248,211,123,.95);
+
+stroke-width:4;
 
 stroke-dasharray:
-    10 18;
+
+    12 16;
 
 animation:
-    orgMainSpineFlow
-    3.8s
+
+    orgMainEnergyFlow
+
+    3s
+
     linear
+
     infinite;
 
 }
 
 /* =========================================================
-PRIMARY BRANCHES
+DISTRIBUTION BAR
+========================================================= */
+
+.organization .org-distribution-bar{
+
+stroke:
+
+    rgba(232,184,77,.8);
+
+stroke-width:3;
+
+stroke-dasharray:
+
+    10 14;
+
+animation:
+
+    orgDistributionFlow
+
+    4s
+
+    linear
+
+    infinite;
+
+}
+
+/* =========================================================
+MAIN BRANCHES
 ========================================================= */
 
 .organization .org-branch-main{
 
 stroke:
-    rgba(226,184,91,.52);
 
-stroke-width:2;
+    rgba(239,194,91,.82);
+
+stroke-width:3;
 
 stroke-dasharray:
-    8 16;
+
+    8 14;
 
 animation:
-    orgPrimaryBranchFlow
-    4.2s
+
+    orgBranchFlow
+
+    3.5s
+
     linear
+
     infinite;
 
 }
 
 /* =========================================================
-SECONDARY BRANCHES
+LOWER BRANCHES
 ========================================================= */
 
 .organization .org-branch-node{
 
 stroke:
-    rgba(213,165,70,.42);
 
-stroke-width:1.7;
+    rgba(225,174,68,.7);
+
+stroke-width:2.5;
 
 stroke-dasharray:
-    5 14;
+
+    7 13;
 
 animation:
-    orgSecondaryBranchFlow
-    4.8s
+
+    orgLowerBranchFlow
+
+    4s
+
     linear
+
     infinite;
 
 }
 
 /* =========================================================
-MOVING ENERGY CORE
+MOVING ENERGY PULSE
 ========================================================= */
 
 .organization .org-energy-flow{
@@ -2453,31 +2518,43 @@ MOVING ENERGY CORE
 fill:none;
 
 stroke:
-    rgba(255,222,142,.95);
 
-stroke-width:5;
+    url(#orgEnergyFlow);
+
+stroke-width:8;
 
 stroke-linecap:round;
 
-opacity:.95;
+stroke-linejoin:round;
+
+opacity:1;
 
 filter:
+
+    url(#orgEnergyGlow)
+
     drop-shadow(
-        0 0 7px
-        rgba(255,216,123,.9)
+        0 0 10px
+        rgba(255,221,137,.9)
     )
+
     drop-shadow(
-        0 0 18px
-        rgba(218,166,67,.65)
+        0 0 25px
+        rgba(222,170,65,.55)
     );
 
 stroke-dasharray:
-    42 580;
+
+    55 500;
 
 animation:
-    orgEnergyTravel
-    3.6s
+
+    orgEnergyPulse
+
+    2.8s
+
     linear
+
     infinite;
 
 }
@@ -2486,11 +2563,32 @@ animation:
 ENERGY ANIMATIONS
 ========================================================= */
 
-@keyframes orgMainSpineFlow{
+@keyframes orgEnergyPulse{
 
 from{
 
     stroke-dashoffset:
+
+        555;
+
+}
+
+to{
+
+    stroke-dashoffset:
+
+        0;
+
+}
+
+}
+
+@keyframes orgMainEnergyFlow{
+
+from{
+
+    stroke-dashoffset:
+
         28;
 
 }
@@ -2498,17 +2596,19 @@ from{
 to{
 
     stroke-dashoffset:
+
         0;
 
 }
 
 }
 
-@keyframes orgPrimaryBranchFlow{
+@keyframes orgDistributionFlow{
 
 from{
 
     stroke-dashoffset:
+
         24;
 
 }
@@ -2516,42 +2616,47 @@ from{
 to{
 
     stroke-dashoffset:
+
         0;
 
 }
 
 }
 
-@keyframes orgSecondaryBranchFlow{
+@keyframes orgBranchFlow{
 
 from{
 
     stroke-dashoffset:
-        19;
+
+        22;
 
 }
 
 to{
 
     stroke-dashoffset:
+
         0;
 
 }
 
 }
 
-@keyframes orgEnergyTravel{
+@keyframes orgLowerBranchFlow{
 
 from{
 
     stroke-dashoffset:
-        622;
+
+        20;
 
 }
 
 to{
 
     stroke-dashoffset:
+
         0;
 
 }
@@ -2559,10 +2664,10 @@ to{
 }
 
 /* =========================================================
-NETWORK LEVELS
+CHART LEVELS
 ========================================================= */
 
-.organization .org-network-level{
+.organization .org-chart-level{
 
 position:relative;
 
@@ -2584,14 +2689,19 @@ justify-content:center;
 
 align-items:center;
 
-min-height:220px;
+min-height:
 
-margin-bottom:35px;
+    220px;
+
+margin-bottom:
+
+    55px;
 
 }
 
 /* =========================================================
-LEVEL 02 — STRATEGIC PILLARS
+LEVEL 02 — FOUR PILLARS
+ALL SAME SIZE
 ========================================================= */
 
 .organization .org-level-pillars{
@@ -2599,23 +2709,43 @@ LEVEL 02 — STRATEGIC PILLARS
 display:grid;
 
 grid-template-columns:
-    repeat(3, minmax(220px,1fr));
 
-width:min(950px,100%);
+    repeat(
+        4,
+        minmax(
+            0,
+            1fr
+        )
+    );
 
-min-height:250px;
+width:
+
+    min(
+        1180px,
+        100%
+    );
+
+gap:
+
+    28px;
+
+align-items:
+
+    stretch;
 
 margin:
-    0 auto 35px;
 
-gap:65px;
+    0 auto;
 
-align-items:center;
+margin-bottom:
+
+    100px;
 
 }
 
 /* =========================================================
-LEVEL 03 — ECOSYSTEM
+LEVEL 03 — FOUR ECOSYSTEM CARDS
+SAME WIDTH AS PILLARS
 ========================================================= */
 
 .organization .org-level-ecosystem{
@@ -2623,17 +2753,33 @@ LEVEL 03 — ECOSYSTEM
 display:grid;
 
 grid-template-columns:
-    repeat(4, minmax(180px,1fr));
 
-width:min(1120px,100%);
+    repeat(
+        4,
+        minmax(
+            0,
+            1fr
+        )
+    );
 
-min-height:240px;
+width:
 
-margin:0 auto;
+    min(
+        1180px,
+        100%
+    );
 
-gap:28px;
+gap:
 
-align-items:center;
+    28px;
+
+align-items:
+
+    stretch;
+
+margin:
+
+    0 auto;
 
 }
 
@@ -2653,182 +2799,253 @@ justify-content:center;
 
 align-items:center;
 
-width:100%;
+text-align:center;
 
-min-height:175px;
+box-sizing:border-box;
+
+min-width:0;
 
 padding:
-    30px
-    24px;
 
-text-align:center;
+    30px
+
+    22px;
 
 opacity:0;
 
 transform:
+
     translateY(35px)
+
     scale(.96);
 
 animation:
-    orgNodeReveal
+
+    orgNodeEntrance
+
     1s
-    cubic-bezier(.2,.75,.2,1)
+
+    cubic-bezier(
+        .2,
+        .75,
+        .2,
+        1
+    )
+
     forwards;
 
 transition:
 
     transform
-    .55s
-    cubic-bezier(.2,.8,.2,1),
+
+    .5s
+
+    cubic-bezier(
+        .2,
+        .8,
+        .2,
+        1
+    ),
 
     border-color
+
     .45s
+
     ease,
 
     box-shadow
+
     .45s
+
     ease;
 
 }
 
 /* =========================================================
-CORE NODE
+ENTRANCE
+========================================================= */
+
+@keyframes orgNodeEntrance{
+
+0%{
+
+    opacity:0;
+
+    transform:
+
+        translateY(35px)
+
+        scale(.95);
+
+    filter:
+
+        blur(7px);
+
+}
+
+70%{
+
+    opacity:1;
+
+    filter:
+
+        blur(0);
+
+}
+
+100%{
+
+    opacity:1;
+
+    transform:
+
+        translateY(0)
+
+        scale(1);
+
+}
+
+}
+
+/* =========================================================
+CORE CARD
 ========================================================= */
 
 .organization .org-core-node{
 
-position:relative;
+width:
 
-z-index:10;
+    min(
+        500px,
+        90%
+    );
 
-width:min(440px,90%);
+min-height:
 
-min-height:200px;
-
-opacity:0;
-
-animation-delay:
-    .15s;
+    210px;
 
 border-color:
-    rgba(235,194,101,.48);
+
+    rgba(
+        239,
+        195,
+        94,
+        .62
+    );
 
 box-shadow:
 
     0 0 35px
-    rgba(213,164,67,.14),
+    rgba(
+        220,
+        169,
+        65,
+        .2
+    ),
+
+    0 0 90px
+    rgba(
+        213,
+        161,
+        57,
+        .08
+    ),
 
     inset 0 0 45px
-    rgba(213,164,67,.045);
-
-}
-
-/* =========================================================
-CORE ENERGY AURA
-========================================================= */
-
-.organization .org-core-node::before{
-
-content:"";
-
-position:absolute;
-
-inset:-42px;
-
-z-index:-2;
-
-border-radius:50%;
-
-background:
-
-    radial-gradient(
-        circle,
-        rgba(231,184,78,.20)
-        0%,
-
-        rgba(218,168,68,.08)
-        38%,
-
-        transparent
-        72%
+    rgba(
+        220,
+        169,
+        65,
+        .06
     );
 
-filter:
-    blur(20px);
-
-animation:
-    orgCoreAura
-    4.5s
-    ease-in-out
-    infinite;
-
 }
 
 /* =========================================================
-CORE ROTATING ENERGY RING
+PILLAR CARDS
+ALL IDENTICAL SIZE
 ========================================================= */
 
-.organization .org-core-node::after{
+.organization .org-pillar-node{
 
-content:"";
+width:100%;
 
-position:absolute;
+min-height:
 
-inset:-25px;
+    210px;
 
-z-index:-1;
+height:
 
-border-radius:50%;
-
-border:
-
-    1px solid
-    rgba(235,193,99,.28);
-
-border-top-color:
-    rgba(255,226,145,.75);
-
-border-right-color:
-    transparent;
-
-border-bottom-color:
-    rgba(214,162,64,.38);
-
-border-left-color:
-    transparent;
-
-animation:
-    orgCoreRing
-    9s
-    linear
-    infinite;
+    210px;
 
 }
 
 /* =========================================================
-CORE ORBIT
+ECOSYSTEM CARDS
+SAME DIMENSION SYSTEM
+========================================================= */
+
+.organization .org-ecosystem-node{
+
+width:100%;
+
+min-height:
+
+    180px;
+
+height:
+
+    180px;
+
+}
+
+/* =========================================================
+ENERGY ORBIT
 ========================================================= */
 
 .organization .org-node-orbit{
 
 position:absolute;
 
-inset:-18px;
+inset:-22px;
 
 border:
 
     1px solid
-    rgba(229,184,85,.20);
 
-border-radius:50%;
+    rgba(
+        237,
+        190,
+        83,
+        .35
+    );
+
+border-radius:
+
+    50%;
 
 pointer-events:none;
 
 animation:
-    orgOrbit
-    12s
+
+    orgOrbitRotate
+
+    10s
+
     linear
+
     infinite;
+
+box-shadow:
+
+    0 0 25px
+
+    rgba(
+        220,
+        168,
+        61,
+        .14
+    );
 
 }
 
@@ -2838,55 +3055,45 @@ content:"";
 
 position:absolute;
 
-inset:12px;
+inset:10px;
 
 border:
 
     1px dashed
-    rgba(225,178,79,.16);
 
-border-radius:50%;
+    rgba(
+        242,
+        202,
+        111,
+        .28
+    );
+
+border-radius:
+
+    50%;
 
 animation:
+
     orgOrbitReverse
-    16s
+
+    14s
+
     linear
+
     infinite;
 
 }
 
 /* =========================================================
-CORE ANIMATIONS
+ORBIT ANIMATIONS
 ========================================================= */
 
-@keyframes orgCoreAura{
-
-0%,
-100%{
-
-    transform:
-        scale(.82);
-
-    opacity:.35;
-
-}
-
-50%{
-
-    transform:
-        scale(1.12);
-
-    opacity:.78;
-
-}
-
-}
-
-@keyframes orgCoreRing{
+@keyframes orgOrbitRotate{
 
 from{
 
     transform:
+
         rotate(0deg);
 
 }
@@ -2894,25 +3101,8 @@ from{
 to{
 
     transform:
+
         rotate(360deg);
-
-}
-
-}
-
-@keyframes orgOrbit{
-
-from{
-
-    transform:
-        rotate(360deg);
-
-}
-
-to{
-
-    transform:
-        rotate(0deg);
 
 }
 
@@ -2923,120 +3113,18 @@ to{
 from{
 
     transform:
-        rotate(0deg);
+
+        rotate(360deg);
 
 }
 
 to{
 
     transform:
-        rotate(360deg);
+
+        rotate(0deg);
 
 }
-
-}
-
-/* =========================================================
-NODE REVEAL
-========================================================= */
-
-@keyframes orgNodeReveal{
-
-0%{
-
-    opacity:0;
-
-    transform:
-        translateY(35px)
-        scale(.96);
-
-    filter:
-        blur(7px);
-
-}
-
-70%{
-
-    opacity:1;
-
-    filter:
-        blur(0);
-
-}
-
-100%{
-
-    opacity:1;
-
-    transform:
-        translateY(0)
-        scale(1);
-
-}
-
-}
-
-/* =========================================================
-PILLAR SEQUENCE
-========================================================= */
-
-.organization .org-level-pillars
-.org-node:nth-child(1){
-
-animation-delay:
-    .55s;
-
-}
-
-.organization .org-level-pillars
-.org-node:nth-child(2){
-
-animation-delay:
-    .70s;
-
-}
-
-.organization .org-level-pillars
-.org-node:nth-child(3){
-
-animation-delay:
-    .85s;
-
-}
-
-/* =========================================================
-ECOSYSTEM SEQUENCE
-========================================================= */
-
-.organization .org-level-ecosystem
-.org-node:nth-child(1){
-
-animation-delay:
-    1.05s;
-
-}
-
-.organization .org-level-ecosystem
-.org-node:nth-child(2){
-
-animation-delay:
-    1.18s;
-
-}
-
-.organization .org-level-ecosystem
-.org-node:nth-child(3){
-
-animation-delay:
-    1.31s;
-
-}
-
-.organization .org-level-ecosystem
-.org-node:nth-child(4){
-
-animation-delay:
-    1.44s;
 
 }
 
@@ -3048,63 +3136,95 @@ ENERGY POINT
 
 position:absolute;
 
-top:-5px;
+top:-6px;
 
 left:50%;
 
-width:9px;
+width:12px;
 
-height:9px;
+height:12px;
 
 transform:
+
     translateX(-50%);
 
-border-radius:50%;
+border-radius:
+
+    50%;
 
 background:
-    rgba(249,220,145,.98);
+
+    rgba(
+        255,
+        237,
+        174,
+        1
+    );
 
 box-shadow:
 
-    0 0 8px
-    rgba(249,220,145,.95),
+    0 0 10px
+    rgba(
+        255,
+        226,
+        139,
+        1
+    ),
 
-    0 0 22px
-    rgba(223,173,74,.78),
+    0 0 25px
+    rgba(
+        232,
+        183,
+        73,
+        .95
+    ),
 
-    0 0 42px
-    rgba(213,162,63,.32);
+    0 0 55px
+    rgba(
+        214,
+        158,
+        49,
+        .7
+    );
 
 animation:
-    orgNodeEnergyPulse
-    2.7s
+
+    orgEnergyNodePulse
+
+    2s
+
     ease-in-out
+
     infinite;
 
 }
 
 /* =========================================================
-ENERGY POINT ANIMATION
+ENERGY POINT PULSE
 ========================================================= */
 
-@keyframes orgNodeEnergyPulse{
+@keyframes orgEnergyNodePulse{
 
 0%,
 100%{
 
     transform:
+
         translateX(-50%)
+
         scale(.65);
 
-    opacity:.4;
+    opacity:.55;
 
 }
 
 50%{
 
     transform:
+
         translateX(-50%)
-        scale(1.4);
+
+        scale(1.6);
 
     opacity:1;
 
@@ -3113,7 +3233,7 @@ ENERGY POINT ANIMATION
 }
 
 /* =========================================================
-LABELS
+LABEL
 ========================================================= */
 
 .organization .org-node-label{
@@ -3121,19 +3241,29 @@ LABELS
 display:block;
 
 margin-bottom:
+
     10px;
 
 font-size:
-    .65rem;
+
+    .62rem;
 
 letter-spacing:
-    .22em;
+
+    .2em;
 
 text-transform:
+
     uppercase;
 
 color:
-    rgba(229,185,91,.72);
+
+    rgba(
+        234,
+        191,
+        96,
+        .82
+    );
 
 }
 
@@ -3147,41 +3277,52 @@ margin:0;
 
 transition:
 
-    transform
+    color
+
     .4s
+
     ease,
 
-    color
+    transform
+
     .4s
+
     ease,
 
     text-shadow
+
     .4s
+
     ease;
 
 }
 
 /* =========================================================
-DESCRIPTIONS
+DESCRIPTION
 ========================================================= */
 
 .organization .org-node p{
 
 max-width:
-    300px;
+
+    280px;
 
 margin:
+
     12px
+
     0
+
     0;
 
 color:
-    rgba(255,255,255,.58);
 
-transition:
-    color
-    .4s
-    ease;
+    rgba(
+        255,
+        255,
+        255,
+        .62
+    );
 
 }
 
@@ -3192,45 +3333,81 @@ HOVER
 .organization .org-node:hover{
 
 transform:
-    translateY(-9px)
+
+    translateY(-8px)
+
     scale(1.025);
 
 border-color:
-    rgba(239,199,108,.55);
+
+    rgba(
+        245,
+        204,
+        113,
+        .75
+    );
 
 box-shadow:
 
-    0 25px 65px
-    rgba(0,0,0,.38),
+    0 25px 70px
+    rgba(
+        0,
+        0,
+        0,
+        .4
+    ),
 
-    0 0 45px
-    rgba(216,166,68,.16);
-
-}
-
-.organization .org-node:hover h3{
-
-transform:
-    translateY(-3px);
-
-color:
-    rgba(255,249,229,1);
-
-text-shadow:
-    0 0 20px
-    rgba(226,181,87,.24);
-
-}
-
-.organization .org-node:hover p{
-
-color:
-    rgba(255,255,255,.80);
+    0 0 50px
+    rgba(
+        221,
+        169,
+        62,
+        .25
+    );
 
 }
 
 /* =========================================================
-STATUS
+HOVER ENERGY
+========================================================= */
+
+.organization .org-node:hover
+.org-node-energy{
+
+animation-duration:
+
+    1s;
+
+box-shadow:
+
+    0 0 15px
+    rgba(
+        255,
+        241,
+        187,
+        1
+    ),
+
+    0 0 40px
+    rgba(
+        230,
+        178,
+        68,
+        1
+    ),
+
+    0 0 75px
+    rgba(
+        211,
+        151,
+        41,
+        .65
+    );
+
+}
+
+/* =========================================================
+NETWORK STATUS
 ========================================================= */
 
 .organization .org-network-status{
@@ -3248,45 +3425,81 @@ align-items:center;
 gap:10px;
 
 margin-top:
-    55px;
+
+    65px;
 
 font-size:
-    .62rem;
+
+    .6rem;
 
 letter-spacing:
-    .24em;
+
+    .22em;
 
 text-transform:
+
     uppercase;
 
 color:
-    rgba(224,180,85,.58);
+
+    rgba(
+        231,
+        186,
+        88,
+        .7
+    );
 
 }
 
+/* =========================================================
+STATUS PULSE
+========================================================= */
+
 .organization .status-pulse{
 
-width:6px;
+width:7px;
 
-height:6px;
+height:7px;
 
 border-radius:50%;
 
 background:
-    rgba(242,207,128,.95);
+
+    rgba(
+        255,
+        229,
+        151,
+        1
+    );
 
 box-shadow:
 
-    0 0 8px
-    rgba(242,207,128,.9),
+    0 0 10px
 
-    0 0 22px
-    rgba(215,165,69,.5);
+    rgba(
+        255,
+        225,
+        135,
+        1
+    ),
+
+    0 0 25px
+
+    rgba(
+        218,
+        165,
+        58,
+        .8
+    );
 
 animation:
+
     orgStatusPulse
+
     2s
+
     ease-in-out
+
     infinite;
 
 }
@@ -3297,16 +3510,18 @@ animation:
 100%{
 
     transform:
+
         scale(.7);
 
-    opacity:.45;
+    opacity:.5;
 
 }
 
 50%{
 
     transform:
-        scale(1.3);
+
+        scale(1.4);
 
     opacity:1;
 
@@ -3318,61 +3533,17 @@ animation:
 TABLET
 ========================================================= */
 
-@media(max-width:900px){
+@media (max-width:1050px){
 
-.organization .org-network{
+.organization .org-chart{
 
-    min-height:
-        auto;
+    padding-left:
 
-    padding:
-        80px
-        25px
-        100px;
+        20px;
 
-}
+    padding-right:
 
-
-.organization .org-level-pillars{
-
-    grid-template-columns:
-        repeat(3,minmax(180px,1fr));
-
-    gap:25px;
-
-}
-
-
-.organization .org-level-ecosystem{
-
-    grid-template-columns:
-        repeat(2,minmax(180px,1fr));
-
-    gap:20px;
-
-}
-
-}
-
-/* =========================================================
-MOBILE
-========================================================= */
-
-@media(max-width:680px){
-
-.organization .org-network{
-
-    padding:
-        60px
-        20px
-        80px;
-
-}
-
-
-.organization .org-energy-network{
-
-    opacity:.35;
+        20px;
 
 }
 
@@ -3380,27 +3551,268 @@ MOBILE
 .organization .org-level-pillars,
 .organization .org-level-ecosystem{
 
-    grid-template-columns:
-        1fr;
+    gap:
 
-    width:100%;
-
-    gap:25px;
+        18px;
 
 }
 
 
 .organization .org-node{
 
-    max-width:
-        430px;
+    padding:
+
+        26px
+
+        16px;
+
+}
+
+}
+
+/* =========================================================
+MOBILE — KEEP ORGANIZATION CHART STRUCTURE
+========================================================= */
+
+@media (max-width:700px){
+
+.organization .org-chart{
+
+    width:
+
+        100%;
+
+    min-height:
+
+        900px;
+
+    padding:
+
+        65px
+
+        12px
+
+        90px;
+
+    overflow-x:
+
+        auto;
+
+    overflow-y:
+
+        visible;
+
+    align-items:
+
+        center;
+
+}
+
+
+/* Keep 4 cards in one row */
+
+.organization .org-level-pillars,
+.organization .org-level-ecosystem{
+
+    width:
+
+        760px;
+
+    min-width:
+
+        760px;
+
+    grid-template-columns:
+
+        repeat(
+            4,
+            1fr
+        );
+
+    gap:
+
+        14px;
+
+}
+
+
+/* Keep pillar cards identical */
+
+.organization .org-pillar-node{
+
+    width:
+
+        178px;
+
+    min-width:
+
+        178px;
+
+    height:
+
+        205px;
+
+    min-height:
+
+        205px;
+
+    padding:
+
+        22px
+
+        12px;
+
+}
+
+
+/* Keep ecosystem cards aligned */
+
+.organization .org-ecosystem-node{
+
+    width:
+
+        178px;
+
+    min-width:
+
+        178px;
+
+    height:
+
+        175px;
+
+    min-height:
+
+        175px;
+
+    padding:
+
+        20px
+
+        12px;
+
+}
+
+
+/* Stronger mobile energy */
+
+.organization .org-energy-path{
+
+    opacity:
+
+        1;
+
+    stroke-width:
+
+        4;
+
+    filter:
+
+        drop-shadow(
+            0 0 7px
+            rgba(
+                241,
+                194,
+                85,
+                .75
+            )
+        )
+
+        drop-shadow(
+            0 0 18px
+            rgba(
+                216,
+                160,
+                47,
+                .5
+            )
+        );
+
+}
+
+
+.organization .org-energy-flow{
+
+    stroke-width:
+
+        9;
+
+    opacity:
+
+        1;
 
 }
 
 
 .organization .org-core-node{
 
-    width:90%;
+    width:
+
+        min(
+            460px,
+            90%
+        );
+
+}
+
+
+/* Prevent SVG from disappearing */
+
+.organization .org-energy-network{
+
+    display:block;
+
+    min-width:
+
+        1200px;
+
+}
+
+}
+
+/* =========================================================
+VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width:430px){
+
+.organization .org-level-pillars,
+.organization .org-level-ecosystem{
+
+    width:
+
+        740px;
+
+    min-width:
+
+        740px;
+
+}
+
+
+.organization .org-pillar-node,
+.organization .org-ecosystem-node{
+
+    width:
+
+        170px;
+
+    min-width:
+
+        170px;
+
+}
+
+
+.organization .org-node-label{
+
+    font-size:
+
+        .54rem;
+
+    letter-spacing:
+
+        .14em;
 
 }
 
@@ -3410,24 +3822,14 @@ MOBILE
 REDUCED MOTION
 ========================================================= */
 
-@media(prefers-reduced-motion:reduce){
+@media (prefers-reduced-motion:reduce){
 
-.organization .org-node{
-
-    opacity:1;
-
-    transform:none;
-
-    animation:none;
-
-}
-
-
+.organization .org-node,
 .organization .org-energy-path,
 .organization .org-energy-flow,
 .organization .org-node-orbit,
 .organization .org-node-energy,
-.organization .org-status-pulse{
+.organization .status-pulse{
 
     animation:none;
 
