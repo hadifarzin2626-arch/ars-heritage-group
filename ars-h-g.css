@@ -13113,3 +13113,587 @@ animation:none;
     }
 
 }
+
+
+/* =========================================================
+   TIMELINE — ANIMATION ACTIVATION PATCH
+   DOM:
+   .timeline
+   └── .timeline-grid
+       └── .timeline-card
+   ========================================================= */
+
+
+/* =========================================================
+   TIMELINE ANIMATION ROOT
+   ========================================================= */
+
+.timeline .timeline-grid{
+
+    position:relative;
+
+    isolation:isolate;
+
+}
+
+
+/* =========================================================
+   FORCE CARD ANIMATION STATE
+   ========================================================= */
+
+.timeline .timeline-grid .timeline-card{
+
+    position:relative;
+
+    opacity:0;
+
+    transform:
+        translateY(55px)
+        scale(.96);
+
+    will-change:
+        transform,
+        opacity;
+
+    animation-name:
+        timelineCardReveal;
+
+    animation-duration:
+        1s;
+
+    animation-timing-function:
+        cubic-bezier(.2,.75,.2,1);
+
+    animation-fill-mode:
+        forwards;
+
+}
+
+
+/* =========================================================
+   SEQUENTIAL CARD REVEAL
+   ========================================================= */
+
+.timeline
+.timeline-grid
+.timeline-card:nth-child(1){
+
+    animation-delay:
+        .15s;
+
+}
+
+
+.timeline
+.timeline-grid
+.timeline-card:nth-child(2){
+
+    animation-delay:
+        .35s;
+
+}
+
+
+.timeline
+.timeline-grid
+.timeline-card:nth-child(3){
+
+    animation-delay:
+        .55s;
+
+}
+
+
+.timeline
+.timeline-grid
+.timeline-card:nth-child(4){
+
+    animation-delay:
+        .75s;
+
+}
+
+
+/* =========================================================
+   MAIN REVEAL KEYFRAME
+   ========================================================= */
+
+@keyframes timelineCardReveal{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+            translateY(55px)
+            scale(.96);
+
+        filter:
+            blur(8px);
+
+    }
+
+    60%{
+
+        opacity:1;
+
+        filter:
+            blur(0);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter:
+            blur(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   INDUSTRIAL ENERGY LINE
+   ========================================================= */
+
+.timeline
+.timeline-grid
+.timeline-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:2px;
+
+    transform:
+        scaleX(0);
+
+    transform-origin:
+        left center;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(214,171,82,.95),
+            rgba(255,224,145,1),
+            transparent
+        );
+
+    box-shadow:
+
+        0 0 12px
+        rgba(218,173,82,.55),
+
+        0 0 28px
+        rgba(218,173,82,.2);
+
+    opacity:.75;
+
+    animation:
+
+        timelineEnergyLine
+        1.4s
+        ease-out
+        forwards;
+
+}
+
+
+/* =========================================================
+   ENERGY LINE DELAY
+   ========================================================= */
+
+.timeline
+.timeline-card:nth-child(1)::before{
+
+    animation-delay:
+        .55s;
+
+}
+
+
+.timeline
+.timeline-card:nth-child(2)::before{
+
+    animation-delay:
+        .75s;
+
+}
+
+
+.timeline
+.timeline-card:nth-child(3)::before{
+
+    animation-delay:
+        .95s;
+
+}
+
+
+.timeline
+.timeline-card:nth-child(4)::before{
+
+    animation-delay:
+        1.15s;
+
+}
+
+
+@keyframes timelineEnergyLine{
+
+    from{
+
+        transform:
+            scaleX(0);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:
+            scaleX(1);
+
+        opacity:.8;
+
+    }
+
+}
+
+
+/* =========================================================
+   CARD HOVER
+   ========================================================= */
+
+.timeline
+.timeline-grid
+.timeline-card{
+
+    transition:
+
+        transform
+        .65s
+        cubic-bezier(.2,.8,.2,1),
+
+        border-color
+        .5s
+        ease,
+
+        box-shadow
+        .5s
+        ease,
+
+        background
+        .5s
+        ease;
+
+}
+
+
+.timeline
+.timeline-grid
+.timeline-card:hover{
+
+    transform:
+        translateY(-12px)
+        scale(1.015);
+
+    border-color:
+
+        rgba(216,174,87,.4);
+
+    box-shadow:
+
+        0 25px 65px
+        rgba(0,0,0,.3),
+
+        0 0 35px
+        rgba(211,166,74,.1);
+
+}
+
+
+/* =========================================================
+   HOVER ENERGY LINE
+   ========================================================= */
+
+.timeline
+.timeline-grid
+.timeline-card:hover::before{
+
+    opacity:1;
+
+    box-shadow:
+
+        0 0 16px
+        rgba(232,191,104,.75),
+
+        0 0 35px
+        rgba(218,170,74,.3);
+
+}
+
+
+/* =========================================================
+   TIMELINE PHASE LABEL
+   ========================================================= */
+
+.timeline
+.timeline-grid
+.timeline-card
+> span{
+
+    display:inline-block;
+
+    transition:
+
+        transform
+        .45s
+        ease,
+
+        color
+        .45s
+        ease,
+
+        text-shadow
+        .45s
+        ease;
+
+}
+
+
+.timeline
+.timeline-grid
+.timeline-card:hover
+> span{
+
+    transform:
+        translateX(5px);
+
+    color:
+
+        rgba(238,201,124,1);
+
+    text-shadow:
+
+        0 0 15px
+        rgba(220,175,82,.35);
+
+}
+
+
+/* =========================================================
+   TITLE MICRO MOTION
+   ========================================================= */
+
+.timeline
+.timeline-grid
+.timeline-card
+h3{
+
+    transition:
+
+        transform
+        .5s
+        cubic-bezier(.2,.8,.2,1),
+
+        color
+        .5s
+        ease;
+
+}
+
+
+.timeline
+.timeline-grid
+.timeline-card:hover
+h3{
+
+    transform:
+        translateX(4px);
+
+    color:
+
+        rgba(255,248,224,1);
+
+}
+
+
+/* =========================================================
+   INDUSTRIAL PARTICLE
+   ========================================================= */
+
+.timeline
+.timeline-grid
+.timeline-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:18px;
+
+    bottom:18px;
+
+    width:4px;
+
+    height:4px;
+
+    border-radius:50%;
+
+    background:
+
+        rgba(238,202,126,.85);
+
+    box-shadow:
+
+        0 0 8px
+        rgba(238,202,126,.8),
+
+        0 0 20px
+        rgba(214,164,67,.35);
+
+    opacity:.25;
+
+    animation:
+
+        timelineParticle
+        4s
+        ease-in-out
+        infinite;
+
+}
+
+
+.timeline
+.timeline-card:nth-child(2)::after{
+
+    animation-delay:
+        1s;
+
+}
+
+
+.timeline
+.timeline-card:nth-child(3)::after{
+
+    animation-delay:
+        2s;
+
+}
+
+
+.timeline
+.timeline-card:nth-child(4)::after{
+
+    animation-delay:
+        3s;
+
+}
+
+
+@keyframes timelineParticle{
+
+    0%,
+    100%{
+
+        transform:
+            translateY(0)
+            scale(.7);
+
+        opacity:.2;
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-14px)
+            scale(1.4);
+
+        opacity:.9;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width:680px){
+
+    .timeline
+    .timeline-grid
+    .timeline-card{
+
+        transform:
+            translateY(40px)
+            scale(.97);
+
+    }
+
+
+    .timeline
+    .timeline-grid
+    .timeline-card:hover{
+
+        transform:
+            translateY(-6px)
+            scale(1.01);
+
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion:reduce){
+
+    .timeline
+    .timeline-grid
+    .timeline-card{
+
+        opacity:1;
+
+        transform:none;
+
+        animation:none;
+
+        transition:none;
+
+    }
+
+
+    .timeline
+    .timeline-grid
+    .timeline-card::before,
+    .timeline
+    .timeline-grid
+    .timeline-card::after{
+
+        animation:none;
+
+    }
+
+}
