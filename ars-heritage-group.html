@@ -1609,9 +1609,10 @@ id="strategy"
     
     
     
-  <!-- =========================================================
+ <!-- =========================================================
      ARS HERITAGE GROUP
      ORGANIZATION — INDUSTRIAL ENERGY NETWORK
+     FINAL STRUCTURE
      ========================================================= --><section
     class="organization"
     id="organization"
@@ -1646,8 +1647,7 @@ id="strategy"
 
 
     <!-- =================================================
-         ENERGY CONNECTION SYSTEM
-         SVG PATHS
+         INDUSTRIAL ENERGY CONNECTION SYSTEM
          ================================================= -->
 
     <svg
@@ -1659,7 +1659,9 @@ id="strategy"
 
         <defs>
 
-            <!-- Main Energy Glow -->
+            <!-- =========================================
+                 ENERGY GLOW
+                 ========================================= -->
 
             <filter
                 id="orgEnergyGlow"
@@ -1689,38 +1691,9 @@ id="strategy"
             </filter>
 
 
-            <!-- Energy Gradient -->
-
-            <linearGradient
-                id="orgEnergyGradient"
-                x1="0%"
-                y1="0%"
-                x2="100%"
-                y2="100%"
-            >
-
-                <stop
-                    offset="0%"
-                    stop-color="#8d6828"
-                    stop-opacity=".15"
-                />
-
-                <stop
-                    offset="50%"
-                    stop-color="#f1ce7a"
-                    stop-opacity=".95"
-                />
-
-                <stop
-                    offset="100%"
-                    stop-color="#8d6828"
-                    stop-opacity=".15"
-                />
-
-            </linearGradient>
-
-
-            <!-- Animated Energy Flow -->
+            <!-- =========================================
+                 ENERGY FLOW GRADIENT
+                 ========================================= -->
 
             <linearGradient
                 id="orgEnergyFlow"
@@ -1736,18 +1709,33 @@ id="strategy"
                 />
 
                 <stop
-                    offset="45%"
-                    stop-color="#f6d98c"
+                    offset="42%"
+                    stop-color="#d7a94f"
+                    stop-opacity=".25"
+                />
+
+                <stop
+                    offset="48%"
+                    stop-color="#f3cf7b"
+                    stop-opacity=".9"
                 />
 
                 <stop
                     offset="50%"
-                    stop-color="#fff4c7"
+                    stop-color="#fff5ce"
+                    stop-opacity="1"
                 />
 
                 <stop
-                    offset="55%"
-                    stop-color="#f6d98c"
+                    offset="52%"
+                    stop-color="#f3cf7b"
+                    stop-opacity=".9"
+                />
+
+                <stop
+                    offset="58%"
+                    stop-color="#d7a94f"
+                    stop-opacity=".25"
                 />
 
                 <stop
@@ -1761,13 +1749,16 @@ id="strategy"
 
 
         <!-- =================================================
-             CENTRAL ENERGY SPINE
+             BASE NETWORK
              ================================================= -->
+
+
+        <!-- CORE → CENTRAL SPINE -->
 
         <path
             class="org-energy-path org-main-spine"
             d="
-                M600 155
+                M600 145
                 L600 300
                 L600 420
                 L600 570
@@ -1776,9 +1767,7 @@ id="strategy"
         />
 
 
-        <!-- =================================================
-             LEVEL 01 → LEVEL 02
-             ================================================= -->
+        <!-- CORE → PILLAR 01 -->
 
         <path
             class="org-energy-path org-branch-main"
@@ -1788,13 +1777,19 @@ id="strategy"
             "
         />
 
+
+        <!-- CORE → PILLAR 02 -->
+
         <path
             class="org-energy-path org-branch-main"
             d="
                 M600 300
-                C600 350 600 350 600 420
+                L600 420
             "
         />
+
+
+        <!-- CORE → PILLAR 03 -->
 
         <path
             class="org-energy-path org-branch-main"
@@ -1805,9 +1800,7 @@ id="strategy"
         />
 
 
-        <!-- =================================================
-             LEVEL 02 DISTRIBUTION NETWORK
-             ================================================= -->
+        <!-- PILLAR 01 → ECOSYSTEM 01 -->
 
         <path
             class="org-energy-path org-branch-node"
@@ -1817,6 +1810,9 @@ id="strategy"
             "
         />
 
+
+        <!-- PILLAR 01 → ECOSYSTEM 02 -->
+
         <path
             class="org-energy-path org-branch-node"
             d="
@@ -1825,6 +1821,9 @@ id="strategy"
             "
         />
 
+
+        <!-- PILLAR 03 → ECOSYSTEM 03 -->
+
         <path
             class="org-energy-path org-branch-node"
             d="
@@ -1832,6 +1831,9 @@ id="strategy"
                 C900 590 650 590 650 700
             "
         />
+
+
+        <!-- PILLAR 03 → ECOSYSTEM 04 -->
 
         <path
             class="org-energy-path org-branch-node"
@@ -1843,16 +1845,22 @@ id="strategy"
 
 
         <!-- =================================================
-             ENERGY FLOW LAYERS
+             MOVING ENERGY FLOWS
              ================================================= -->
+
+
+        <!-- MAIN CORE FLOW -->
 
         <path
             class="org-energy-flow"
             d="
-                M600 155
+                M600 145
                 L600 735
             "
         />
+
+
+        <!-- FLOW → PILLAR 01 -->
 
         <path
             class="org-energy-flow"
@@ -1862,6 +1870,20 @@ id="strategy"
             "
         />
 
+
+        <!-- FLOW → PILLAR 02 -->
+
+        <path
+            class="org-energy-flow"
+            d="
+                M600 300
+                L600 420
+            "
+        />
+
+
+        <!-- FLOW → PILLAR 03 -->
+
         <path
             class="org-energy-flow"
             d="
@@ -1869,6 +1891,51 @@ id="strategy"
                 C600 350 900 350 900 420
             "
         />
+
+
+        <!-- FLOW → ECOSYSTEM 01 -->
+
+        <path
+            class="org-energy-flow"
+            d="
+                M300 520
+                C300 590 150 590 150 700
+            "
+        />
+
+
+        <!-- FLOW → ECOSYSTEM 02 -->
+
+        <path
+            class="org-energy-flow"
+            d="
+                M300 520
+                C300 590 350 590 350 700
+            "
+        />
+
+
+        <!-- FLOW → ECOSYSTEM 03 -->
+
+        <path
+            class="org-energy-flow"
+            d="
+                M900 520
+                C900 590 650 590 650 700
+            "
+        />
+
+
+        <!-- FLOW → ECOSYSTEM 04 -->
+
+        <path
+            class="org-energy-flow"
+            d="
+                M900 520
+                C900 590 850 590 850 700
+            "
+        />
+
 
     </svg>
 
@@ -1925,6 +1992,8 @@ id="strategy"
     >
 
 
+        <!-- PILLAR 01 -->
+
         <article
             class="org-node org-pillar-node ars-glass"
             data-org-level="pillar"
@@ -1951,6 +2020,8 @@ id="strategy"
         </article>
 
 
+        <!-- PILLAR 02 -->
+
         <article
             class="org-node org-pillar-node ars-glass"
             data-org-level="pillar"
@@ -1976,6 +2047,8 @@ id="strategy"
 
         </article>
 
+
+        <!-- PILLAR 03 -->
 
         <article
             class="org-node org-pillar-node ars-glass"
@@ -2016,6 +2089,8 @@ id="strategy"
     >
 
 
+        <!-- ECOSYSTEM 01 -->
+
         <article
             class="org-node org-ecosystem-node ars-glass"
             data-org-level="ecosystem"
@@ -2041,6 +2116,8 @@ id="strategy"
 
         </article>
 
+
+        <!-- ECOSYSTEM 02 -->
 
         <article
             class="org-node org-ecosystem-node ars-glass"
@@ -2068,6 +2145,8 @@ id="strategy"
         </article>
 
 
+        <!-- ECOSYSTEM 03 -->
+
         <article
             class="org-node org-ecosystem-node ars-glass"
             data-org-level="ecosystem"
@@ -2093,6 +2172,8 @@ id="strategy"
 
         </article>
 
+
+        <!-- ECOSYSTEM 04 -->
 
         <article
             class="org-node org-ecosystem-node ars-glass"
@@ -2124,7 +2205,7 @@ id="strategy"
 
 
     <!-- =====================================================
-         ORGANIZATION NETWORK STATUS
+         NETWORK STATUS
          ===================================================== -->
 
     <div
@@ -2144,7 +2225,6 @@ id="strategy"
 </div>
 
 </section>
-    
  <!-- =========================================================
      LEADERSHIP — VISION & ENGINEERING
      ========================================================= --><section
