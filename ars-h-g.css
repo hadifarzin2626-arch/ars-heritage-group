@@ -17556,3 +17556,604 @@ REDUCED MOTION
     }
 
 }
+
+
+/* =========================================================
+   ARS PARTNERSHIP — FINAL OVERRIDE PATCH
+   HTML LOCKED COMPATIBILITY FIX
+   PLACE AT THE VERY END OF ars-h-g.css
+   ========================================================= */
+
+
+/* =========================================================
+   01 — HARD RESET FOR PARTNERSHIP SYSTEM
+   Prevent legacy partnership/grid/card systems
+   from interfering with the locked HTML
+   ========================================================= */
+
+.partnership .partnership-grid,
+.partnership .partnership-card,
+.partnership .partnership-item,
+.partnership .partnership-card-grid,
+.partnership .partnership-cards,
+.partnership .partnership-list{
+
+    all:unset !important;
+
+}
+
+
+/* =========================================================
+   02 — MASTER PARTNERSHIP CONTAINER
+   ========================================================= */
+
+.partnership{
+
+    position:relative !important;
+
+    min-height:100vh !important;
+
+    width:100% !important;
+
+    overflow:hidden !important;
+
+    isolation:isolate !important;
+
+}
+
+
+/* =========================================================
+   03 — ENERGY FIELD
+   ========================================================= */
+
+.partnership-energy-field{
+
+    position:absolute !important;
+
+    inset:0 !important;
+
+    z-index:0 !important;
+
+    pointer-events:none !important;
+
+    opacity:.55 !important;
+
+}
+
+
+/* =========================================================
+   04 — HEADER
+   ========================================================= */
+
+.partnership-header{
+
+    position:relative !important;
+
+    z-index:20 !important;
+
+}
+
+
+/* =========================================================
+   05 — NETWORK MASTER LAYER
+   ========================================================= */
+
+.partnership-network{
+
+    position:relative !important;
+
+    width:min(1180px,100%) !important;
+
+    height:clamp(700px,70vw,940px) !important;
+
+    margin:0 auto !important;
+
+    display:block !important;
+
+    overflow:visible !important;
+
+    isolation:isolate !important;
+
+}
+
+
+/* =========================================================
+   06 — CENTRAL ARS CORE
+   FORCE TRUE CENTER
+   ========================================================= */
+
+.partnership-core{
+
+    position:absolute !important;
+
+    left:50% !important;
+
+    top:50% !important;
+
+    width:clamp(190px,19vw,260px) !important;
+
+    height:clamp(190px,19vw,260px) !important;
+
+    transform:translate(-50%,-50%) !important;
+
+    z-index:30 !important;
+
+    display:flex !important;
+
+    flex-direction:column !important;
+
+    align-items:center !important;
+
+    justify-content:center !important;
+
+    border-radius:50% !important;
+
+}
+
+
+/* =========================================================
+   07 — CORE HOVER
+   ========================================================= */
+
+.partnership-core:hover,
+.partnership-core:focus-visible{
+
+    transform:
+        translate(-50%,-50%)
+        scale(1.045) !important;
+
+}
+
+
+/* =========================================================
+   08 — ENERGY NETWORK
+   ========================================================= */
+
+.partnership-energy-network{
+
+    position:absolute !important;
+
+    inset:0 !important;
+
+    z-index:15 !important;
+
+    pointer-events:none !important;
+
+}
+
+
+/* =========================================================
+   09 — ENERGY BRIDGES
+   ========================================================= */
+
+.partnership-energy-bridge{
+
+    position:absolute !important;
+
+    height:1px !important;
+
+    z-index:1 !important;
+
+    pointer-events:none !important;
+
+}
+
+
+/* =========================================================
+   10 — NODE MASTER
+   ========================================================= */
+
+.partnership-node{
+
+    position:absolute !important;
+
+    width:clamp(245px,25vw,330px) !important;
+
+    min-height:clamp(205px,20vw,255px) !important;
+
+    z-index:25 !important;
+
+    display:block !important;
+
+    box-sizing:border-box !important;
+
+}
+
+
+/* =========================================================
+   11 — NODE POSITIONS
+   ========================================================= */
+
+.partnership-node-01{
+
+    top:5% !important;
+
+    left:3% !important;
+
+    right:auto !important;
+
+    bottom:auto !important;
+
+}
+
+
+.partnership-node-02{
+
+    top:5% !important;
+
+    right:3% !important;
+
+    left:auto !important;
+
+    bottom:auto !important;
+
+}
+
+
+.partnership-node-03{
+
+    bottom:5% !important;
+
+    left:3% !important;
+
+    right:auto !important;
+
+    top:auto !important;
+
+}
+
+
+.partnership-node-04{
+
+    bottom:5% !important;
+
+    right:3% !important;
+
+    left:auto !important;
+
+    top:auto !important;
+
+}
+
+
+/* =========================================================
+   12 — NODE CONTENT
+   ========================================================= */
+
+.partnership-node-content{
+
+    position:relative !important;
+
+    z-index:5 !important;
+
+}
+
+
+/* =========================================================
+   13 — NODE ENERGY
+   ========================================================= */
+
+.partnership-node-energy{
+
+    position:absolute !important;
+
+    top:26px !important;
+
+    right:28px !important;
+
+    width:56px !important;
+
+    height:56px !important;
+
+    z-index:10 !important;
+
+    pointer-events:none !important;
+
+}
+
+
+/* =========================================================
+   14 — NODE ENERGY RINGS
+   ========================================================= */
+
+.node-energy-ring{
+
+    position:absolute !important;
+
+    inset:0 !important;
+
+    border-radius:50% !important;
+
+    pointer-events:none !important;
+
+}
+
+
+.ring-inner{
+
+    inset:10px !important;
+
+}
+
+
+/* =========================================================
+   15 — NODE ENERGY CORE
+   ========================================================= */
+
+.node-energy-core{
+
+    position:absolute !important;
+
+    left:50% !important;
+
+    top:50% !important;
+
+    width:10px !important;
+
+    height:10px !important;
+
+    transform:
+        translate(-50%,-50%) !important;
+
+    border-radius:50% !important;
+
+}
+
+
+/* =========================================================
+   16 — ORBITAL PARTICLES
+   ========================================================= */
+
+.partnership-orbital-particles{
+
+    position:absolute !important;
+
+    inset:0 !important;
+
+    z-index:12 !important;
+
+    pointer-events:none !important;
+
+}
+
+
+/* =========================================================
+   17 — PHILOSOPHY
+   ========================================================= */
+
+.partnership-philosophy{
+
+    position:relative !important;
+
+    z-index:20 !important;
+
+}
+
+
+/* =========================================================
+   18 — FINAL ENERGY
+   ========================================================= */
+
+.partnership-final-energy{
+
+    position:relative !important;
+
+    z-index:20 !important;
+
+}
+
+
+/* =========================================================
+   19 — PREVENT OLD GRID SYSTEMS
+   FROM CHANGING THE NEW NETWORK
+   ========================================================= */
+
+.partnership-network,
+.partnership-network > .partnership-core,
+.partnership-network > .partnership-node,
+.partnership-network > .partnership-energy-network,
+.partnership-network > .partnership-orbital-particles{
+
+    grid-template-columns:none !important;
+
+    grid-template-rows:none !important;
+
+    float:none !important;
+
+}
+
+
+/* =========================================================
+   20 — DESKTOP FORCE
+   ========================================================= */
+
+@media (min-width:901px){
+
+    .partnership-network{
+
+        display:block !important;
+
+        height:clamp(700px,70vw,940px) !important;
+
+    }
+
+    .partnership-core{
+
+        position:absolute !important;
+
+        left:50% !important;
+
+        top:50% !important;
+
+        transform:
+            translate(-50%,-50%) !important;
+
+    }
+
+    .partnership-node{
+
+        position:absolute !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   21 — TABLET
+   ========================================================= */
+
+@media (max-width:900px){
+
+    .partnership-network{
+
+        height:auto !important;
+
+        display:grid !important;
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr)) !important;
+
+        gap:24px !important;
+
+    }
+
+    .partnership-core{
+
+        position:relative !important;
+
+        left:auto !important;
+
+        top:auto !important;
+
+        transform:none !important;
+
+        grid-column:
+            1 / -1 !important;
+
+        margin:
+            0 auto 35px !important;
+
+    }
+
+    .partnership-node{
+
+        position:relative !important;
+
+        top:auto !important;
+
+        right:auto !important;
+
+        bottom:auto !important;
+
+        left:auto !important;
+
+        width:100% !important;
+
+    }
+
+    .partnership-energy-network{
+
+        display:none !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   22 — MOBILE
+   ========================================================= */
+
+@media (max-width:600px){
+
+    .partnership-network{
+
+        display:flex !important;
+
+        flex-direction:column !important;
+
+        gap:20px !important;
+
+        height:auto !important;
+
+    }
+
+    .partnership-core{
+
+        position:relative !important;
+
+        left:auto !important;
+
+        top:auto !important;
+
+        transform:none !important;
+
+        width:190px !important;
+
+        height:190px !important;
+
+        margin:
+            0 auto 25px !important;
+
+    }
+
+    .partnership-node{
+
+        position:relative !important;
+
+        width:100% !important;
+
+        min-height:230px !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   23 — FINAL VISUAL PRIORITY
+   Keep energy system above background
+   and cards above energy
+   ========================================================= */
+
+.partnership-energy-field{
+
+    z-index:-5 !important;
+
+}
+
+.partnership-network::before{
+
+    z-index:-4 !important;
+
+}
+
+.partnership-energy-network{
+
+    z-index:10 !important;
+
+}
+
+.partnership-orbital-particles{
+
+    z-index:15 !important;
+
+}
+
+.partnership-core{
+
+    z-index:30 !important;
+
+}
+
+.partnership-node{
+
+    z-index:25 !important;
+
+}
+
+
+/* =========================================================
+   24 — FINAL OVERRIDE COMPLETE
+   ========================================================= */
