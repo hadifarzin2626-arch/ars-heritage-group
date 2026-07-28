@@ -20165,3 +20165,446 @@ REDUCED MOTION
     }
 
 }
+
+
+/* =========================================================
+   PARTNERSHIP — FINAL ENERGY VISIBILITY PATCH
+   ENERGY / GLOW / LIGHT LAYER FIX
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   1. PARTNERSHIP MASTER STACKING
+   --------------------------------------------------------- */
+
+.partnership{
+    position:relative;
+    isolation:isolate;
+    overflow:hidden;
+}
+
+
+/* ---------------------------------------------------------
+   2. AMBIENT ENERGY FIELD
+   KEEP BEHIND EVERYTHING
+   BUT VISIBLE
+   --------------------------------------------------------- */
+
+.partnership-energy-field{
+    position:absolute;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    opacity:.75;
+}
+
+.partnership-energy-dot{
+    z-index:1;
+}
+
+
+/* ---------------------------------------------------------
+   3. NETWORK AREA
+   --------------------------------------------------------- */
+
+.partnership-network{
+    position:relative;
+    isolation:isolate;
+    z-index:2;
+}
+
+
+/* ---------------------------------------------------------
+   4. CENTRAL ENERGY ATMOSPHERE
+   VISIBLE BEHIND CORE
+   --------------------------------------------------------- */
+
+.partnership-network::before{
+    z-index:-3;
+}
+
+.partnership-network::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:clamp(420px,48vw,720px);
+    height:clamp(420px,48vw,720px);
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+    pointer-events:none;
+
+    z-index:-2;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(228,185,95,.10) 0%,
+            rgba(228,185,95,.045) 24%,
+            rgba(184,137,63,.025) 42%,
+            transparent 70%
+        );
+
+    filter:blur(18px);
+
+    animation:
+        partnershipAtmospherePulse
+        6s
+        ease-in-out
+        infinite;
+}
+
+
+/* ---------------------------------------------------------
+   5. ENERGY NETWORK
+   MOVE ABOVE BACKGROUND
+   BUT BELOW CORE AND CARDS
+   --------------------------------------------------------- */
+
+.partnership-energy-network{
+    position:absolute;
+    inset:0;
+
+    z-index:3;
+
+    pointer-events:none;
+}
+
+
+/* ---------------------------------------------------------
+   6. ENERGY BRIDGES
+   STRONGER VISIBILITY
+   --------------------------------------------------------- */
+
+.partnership-energy-bridge{
+    z-index:1;
+
+    opacity:.82;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(184,137,63,.10) 12%,
+            rgba(228,185,95,.38) 42%,
+            rgba(255,241,184,.82) 50%,
+            rgba(228,185,95,.38) 58%,
+            rgba(184,137,63,.10) 88%,
+            transparent 100%
+        );
+
+    box-shadow:
+        0 0 10px rgba(228,185,95,.22),
+        0 0 28px rgba(184,137,63,.12);
+}
+
+
+/* ---------------------------------------------------------
+   7. MOVING ENERGY PARTICLES
+   KEEP THEM ABOVE THE BRIDGE
+   --------------------------------------------------------- */
+
+.partnership-energy-bridge i{
+    z-index:5;
+
+    width:42px;
+    height:3px;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(255,250,220,1) 0%,
+            rgba(255,241,184,.95) 30%,
+            rgba(228,185,95,.55) 60%,
+            transparent 100%
+        );
+
+    box-shadow:
+        0 0 6px rgba(255,241,184,1),
+        0 0 18px rgba(228,185,95,.85),
+        0 0 36px rgba(184,137,63,.45);
+}
+
+
+/* ---------------------------------------------------------
+   8. SECONDARY ENERGY LINKS
+   --------------------------------------------------------- */
+
+.partnership-energy-link{
+    z-index:4;
+
+    opacity:.9;
+
+    width:6px;
+    height:6px;
+
+    box-shadow:
+        0 0 8px rgba(255,241,184,.9),
+        0 0 20px rgba(228,185,95,.75),
+        0 0 36px rgba(184,137,63,.4);
+}
+
+
+/* ---------------------------------------------------------
+   9. CENTRAL CORE
+   ALWAYS ABOVE ENERGY
+   --------------------------------------------------------- */
+
+.partnership-core{
+    position:absolute;
+    z-index:20;
+}
+
+
+/* ---------------------------------------------------------
+   10. CORE ENERGY SYSTEM
+   MUST APPEAR ABOVE CORE BACKGROUND
+   --------------------------------------------------------- */
+
+.partnership-core-energy{
+    z-index:21;
+    pointer-events:none;
+}
+
+.partnership-core-orbit{
+    z-index:22;
+}
+
+.partnership-core-halo{
+    z-index:23;
+}
+
+.partnership-core-light{
+    z-index:24;
+}
+
+
+/* ---------------------------------------------------------
+   11. CORE TEXT ABOVE ALL ENERGY
+   --------------------------------------------------------- */
+
+.partnership-core-label,
+.partnership-core h3,
+.partnership-core-title,
+.partnership-core-subtitle{
+    position:relative;
+    z-index:30;
+}
+
+
+/* ---------------------------------------------------------
+   12. PARTNERSHIP CARDS
+   ABOVE ENERGY NETWORK
+   --------------------------------------------------------- */
+
+.partnership-node{
+    z-index:20;
+}
+
+
+/* ---------------------------------------------------------
+   13. CARD ENERGY SYSTEM
+   VISIBLE ABOVE CARD SURFACE
+   --------------------------------------------------------- */
+
+.partnership-node-energy{
+    z-index:25;
+    pointer-events:none;
+}
+
+
+/* ---------------------------------------------------------
+   14. CARD ENERGY RINGS
+   --------------------------------------------------------- */
+
+.node-energy-ring{
+    z-index:26;
+}
+
+.node-energy-core{
+    z-index:28;
+}
+
+
+/* ---------------------------------------------------------
+   15. CARD CONTENT
+   ABOVE ENERGY
+   --------------------------------------------------------- */
+
+.partnership-node-content{
+    position:relative;
+    z-index:30;
+}
+
+.partnership-node-status{
+    z-index:31;
+}
+
+
+/* ---------------------------------------------------------
+   16. ORBITAL PARTICLES
+   BETWEEN ENERGY AND CARDS
+   --------------------------------------------------------- */
+
+.partnership-orbital-particles{
+    z-index:10;
+    pointer-events:none;
+}
+
+
+/* ---------------------------------------------------------
+   17. PARTICLES
+   --------------------------------------------------------- */
+
+.partnership-particle{
+    z-index:11;
+
+    opacity:.85;
+
+    box-shadow:
+        0 0 8px rgba(255,241,184,.85),
+        0 0 20px rgba(228,185,95,.65),
+        0 0 34px rgba(184,137,63,.3);
+}
+
+
+/* ---------------------------------------------------------
+   18. CARD BACKLIGHT
+   ENERGY GLOW BEHIND EACH CARD
+   --------------------------------------------------------- */
+
+.partnership-node::before{
+    content:"";
+
+    position:absolute;
+
+    left:-18%;
+    top:-25%;
+
+    width:136%;
+    height:150%;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(228,185,95,.07),
+            rgba(184,137,63,.035) 32%,
+            transparent 70%
+        );
+
+    filter:blur(24px);
+
+    opacity:.7;
+
+    animation:
+        partnershipCardGlow
+        5s
+        ease-in-out
+        infinite;
+}
+
+
+/* ---------------------------------------------------------
+   19. CARD ENERGY BREATHING
+   --------------------------------------------------------- */
+
+.partnership-node-01::before{
+    animation-delay:-1s;
+}
+
+.partnership-node-02::before{
+    animation-delay:-2.2s;
+}
+
+.partnership-node-03::before{
+    animation-delay:-3.4s;
+}
+
+.partnership-node-04::before{
+    animation-delay:-4.6s;
+}
+
+
+/* ---------------------------------------------------------
+   20. CENTRAL ATMOSPHERE ANIMATION
+   --------------------------------------------------------- */
+
+@keyframes partnershipAtmospherePulse{
+
+    0%,100%{
+        opacity:.45;
+        transform:
+            translate(-50%,-50%)
+            scale(.92);
+    }
+
+    50%{
+        opacity:.9;
+        transform:
+            translate(-50%,-50%)
+            scale(1.08);
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   21. CARD BACKLIGHT ANIMATION
+   --------------------------------------------------------- */
+
+@keyframes partnershipCardGlow{
+
+    0%,100%{
+        opacity:.35;
+        transform:scale(.92);
+    }
+
+    50%{
+        opacity:.85;
+        transform:scale(1.05);
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   22. MOBILE / TABLET
+   KEEP ENERGY VISIBLE
+   --------------------------------------------------------- */
+
+@media (max-width:900px){
+
+    .partnership-energy-field{
+        opacity:.55;
+    }
+
+    .partnership-orbital-particles{
+        z-index:5;
+        opacity:.7;
+    }
+
+    .partnership-node{
+        z-index:20;
+    }
+
+}
+
+@media (max-width:600px){
+
+    .partnership-energy-field{
+        opacity:.45;
+    }
+
+    .partnership-network::after{
+        width:420px;
+        height:420px;
+    }
+
+}
