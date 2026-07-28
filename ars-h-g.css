@@ -16916,3 +16916,331 @@ REDUCED MOTION
     }
 
 }
+/* =========================================================
+   ARS PARTNERSHIP — EMERGENCY VISUAL OVERRIDE
+   FINAL COMPATIBILITY PATCH
+   ========================================================= */
+
+/* SECTION */
+.partnership{
+    position:relative !important;
+    isolation:isolate !important;
+    overflow:hidden !important;
+    min-height:100vh !important;
+    padding:140px 6vw !important;
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(20,38,70,.18),
+            transparent 42%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(4,8,16,.96),
+            rgba(6,10,20,1)
+        ) !important;
+}
+
+
+/* HEADER */
+.partnership .section-header{
+    position:relative !important;
+    z-index:10 !important;
+    text-align:center !important;
+    margin-bottom:80px !important;
+}
+
+
+/* GRID */
+.partnership .partnership-grid{
+    position:relative !important;
+    z-index:5 !important;
+
+    width:min(1250px,100%) !important;
+    margin:0 auto !important;
+
+    display:grid !important;
+    grid-template-columns:
+        repeat(4,minmax(0,1fr)) !important;
+
+    gap:26px !important;
+}
+
+
+/* =========================================================
+   PARTNERSHIP CARDS
+   ========================================================= */
+
+.partnership .partner-card{
+    position:relative !important;
+    isolation:isolate !important;
+    overflow:hidden !important;
+
+    min-height:300px !important;
+
+    display:flex !important;
+    flex-direction:column !important;
+    justify-content:center !important;
+
+    padding:42px 32px !important;
+
+    border-radius:28px !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(184,137,63,.13),
+            rgba(15,28,52,.34) 48%,
+            rgba(5,10,20,.72)
+        ) !important;
+
+    border:
+        1px solid
+        rgba(184,137,63,.28) !important;
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.42),
+        inset 0 1px 0
+        rgba(255,255,255,.06) !important;
+
+    backdrop-filter:
+        blur(18px)
+        saturate(130%) !important;
+
+    -webkit-backdrop-filter:
+        blur(18px)
+        saturate(130%) !important;
+
+    transition:
+        transform .6s cubic-bezier(.16,1,.3,1),
+        border-color .6s ease,
+        box-shadow .6s ease,
+        background .6s ease !important;
+}
+
+
+/* GOLD ENERGY EDGE */
+.partnership .partner-card::before{
+    content:"" !important;
+
+    position:absolute !important;
+    inset:0 !important;
+
+    border-radius:inherit !important;
+
+    padding:1px !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(228,185,95,.55),
+            transparent 28%,
+            transparent 70%,
+            rgba(184,137,63,.28)
+        ) !important;
+
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0) !important;
+
+    -webkit-mask-composite:xor !important;
+    mask-composite:exclude !important;
+
+    pointer-events:none !important;
+}
+
+
+/* BLUE INDUSTRIAL LIGHT */
+.partnership .partner-card::after{
+    content:"" !important;
+
+    position:absolute !important;
+
+    width:180px !important;
+    height:180px !important;
+
+    top:-80px !important;
+    right:-70px !important;
+
+    border-radius:50% !important;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(35,65,110,.32),
+            transparent 68%
+        ) !important;
+
+    filter:blur(12px) !important;
+
+    pointer-events:none !important;
+
+    transition:
+        transform .7s ease,
+        opacity .7s ease !important;
+}
+
+
+/* HOVER */
+.partnership .partner-card:hover{
+    transform:
+        translateY(-12px)
+        scale(1.025) !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(184,137,63,.22),
+            rgba(20,42,75,.52),
+            rgba(7,13,25,.82)
+        ) !important;
+
+    border-color:
+        rgba(228,185,95,.65) !important;
+
+    box-shadow:
+        0 35px 90px
+        rgba(0,0,0,.58),
+        0 0 45px
+        rgba(184,137,63,.12),
+        inset 0 1px 0
+        rgba(255,255,255,.1) !important;
+}
+
+
+.partnership .partner-card:hover::after{
+    transform:
+        scale(1.5)
+        translate(-20px,20px) !important;
+
+    opacity:.9 !important;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+   ========================================================= */
+
+.partnership .partner-card h3{
+    position:relative !important;
+    z-index:3 !important;
+
+    margin:
+        0 0 18px
+        !important;
+
+    color:
+        #f1d28b !important;
+
+    font-size:
+        clamp(1.15rem,1.5vw,1.45rem) !important;
+
+    letter-spacing:
+        .04em !important;
+}
+
+
+.partnership .partner-card p{
+    position:relative !important;
+    z-index:3 !important;
+
+    margin:0 !important;
+
+    color:
+        rgba(225,232,242,.68) !important;
+
+    line-height:
+        1.8 !important;
+
+    font-size:
+        .95rem !important;
+}
+
+
+/* =========================================================
+   ENERGY PARTICLES
+   ========================================================= */
+
+.partnership::before{
+    content:"" !important;
+
+    position:absolute !important;
+    inset:0 !important;
+
+    z-index:-1 !important;
+
+    opacity:.28 !important;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(228,185,95,.55) 1px,
+            transparent 1.5px
+        ) !important;
+
+    background-size:
+        95px 95px !important;
+
+    animation:
+        partnershipParticles
+        28s linear infinite !important;
+
+    pointer-events:none !important;
+}
+
+
+@keyframes partnershipParticles{
+
+    0%{
+        background-position:
+            0 0;
+    }
+
+    100%{
+        background-position:
+            95px 95px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:1100px){
+
+    .partnership .partnership-grid{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr)) !important;
+    }
+
+}
+
+
+@media(max-width:650px){
+
+    .partnership{
+        padding:
+            100px 20px
+            !important;
+    }
+
+    .partnership .partnership-grid{
+        grid-template-columns:
+            1fr !important;
+
+        gap:20px !important;
+    }
+
+    .partnership .partner-card{
+        min-height:
+            260px !important;
+
+        padding:
+            34px 26px
+            !important;
+    }
+
+}
