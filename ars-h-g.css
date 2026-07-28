@@ -17557,90 +17557,21 @@ REDUCED MOTION
 
 }
 
-
 /* =========================================================
-   ARS PARTNERSHIP — FINAL OVERRIDE PATCH
-   HTML LOCKED COMPATIBILITY FIX
-   PLACE AT THE VERY END OF ars-h-g.css
+   ARS HERITAGE GROUP
+   PARTNERSHIP NETWORK — FINAL VISUAL OVERRIDE
+   LOCKED TO THE CURRENT PARTNERSHIP HTML
    ========================================================= */
 
-
 /* =========================================================
-   01 — HARD RESET FOR PARTNERSHIP SYSTEM
-   Prevent legacy partnership/grid/card systems
-   from interfering with the locked HTML
-   ========================================================= */
-
-.partnership .partnership-grid,
-.partnership .partnership-card,
-.partnership .partnership-item,
-.partnership .partnership-card-grid,
-.partnership .partnership-cards,
-.partnership .partnership-list{
-
-    all:unset !important;
-
-}
-
-
-/* =========================================================
-   02 — MASTER PARTNERSHIP CONTAINER
-   ========================================================= */
-
-.partnership{
-
-    position:relative !important;
-
-    min-height:100vh !important;
-
-    width:100% !important;
-
-    overflow:hidden !important;
-
-    isolation:isolate !important;
-
-}
-
-
-/* =========================================================
-   03 — ENERGY FIELD
-   ========================================================= */
-
-.partnership-energy-field{
-
-    position:absolute !important;
-
-    inset:0 !important;
-
-    z-index:0 !important;
-
-    pointer-events:none !important;
-
-    opacity:.55 !important;
-
-}
-
-
-/* =========================================================
-   04 — HEADER
-   ========================================================= */
-
-.partnership-header{
-
-    position:relative !important;
-
-    z-index:20 !important;
-
-}
-
-
-/* =========================================================
-   05 — NETWORK MASTER LAYER
+   01 — PARTNERSHIP NETWORK MASTER LAYER
    ========================================================= */
 
 .partnership-network{
 
     position:relative !important;
+
+    isolation:isolate !important;
 
     width:min(1180px,100%) !important;
 
@@ -17648,65 +17579,60 @@ REDUCED MOTION
 
     margin:0 auto !important;
 
-    display:block !important;
-
     overflow:visible !important;
-
-    isolation:isolate !important;
 
 }
 
 
 /* =========================================================
-   06 — CENTRAL ARS CORE
-   FORCE TRUE CENTER
+   02 — CENTRAL ATMOSPHERIC ENERGY FIELD
    ========================================================= */
 
-.partnership-core{
+.partnership-network::before{
+
+    content:"" !important;
 
     position:absolute !important;
 
     left:50% !important;
-
     top:50% !important;
 
-    width:clamp(190px,19vw,260px) !important;
-
-    height:clamp(190px,19vw,260px) !important;
+    width:clamp(420px,48vw,720px) !important;
+    height:clamp(420px,48vw,720px) !important;
 
     transform:translate(-50%,-50%) !important;
 
-    z-index:30 !important;
-
-    display:flex !important;
-
-    flex-direction:column !important;
-
-    align-items:center !important;
-
-    justify-content:center !important;
-
     border-radius:50% !important;
 
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(228,185,95,.075) 0%,
+            rgba(184,137,63,.045) 24%,
+            rgba(184,137,63,.018) 42%,
+            transparent 70%
+        ) !important;
+
+    filter:blur(8px) !important;
+
+    opacity:.85 !important;
+
+    pointer-events:none !important;
+
+    z-index:0 !important;
+
+    animation:
+        partnershipAtmosphere
+        8s
+        ease-in-out
+        infinite !important;
+
 }
 
 
 /* =========================================================
-   07 — CORE HOVER
-   ========================================================= */
-
-.partnership-core:hover,
-.partnership-core:focus-visible{
-
-    transform:
-        translate(-50%,-50%)
-        scale(1.045) !important;
-
-}
-
-
-/* =========================================================
-   08 — ENERGY NETWORK
+   03 — ENERGY NETWORK
    ========================================================= */
 
 .partnership-energy-network{
@@ -17715,7 +17641,9 @@ REDUCED MOTION
 
     inset:0 !important;
 
-    z-index:15 !important;
+    display:block !important;
+
+    z-index:4 !important;
 
     pointer-events:none !important;
 
@@ -17723,144 +17651,264 @@ REDUCED MOTION
 
 
 /* =========================================================
-   09 — ENERGY BRIDGES
+   04 — ENERGY BRIDGES
    ========================================================= */
 
 .partnership-energy-bridge{
 
     position:absolute !important;
 
-    height:1px !important;
+    left:50% !important;
+    top:50% !important;
 
-    z-index:1 !important;
+    width:34% !important;
+
+    height:2px !important;
+
+    margin:0 !important;
+
+    transform-origin:0 50% !important;
+
+    border-radius:50% !important;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(184,137,63,.06) 10%,
+            rgba(228,185,95,.20) 35%,
+            rgba(255,241,184,.55) 50%,
+            rgba(228,185,95,.20) 65%,
+            rgba(184,137,63,.06) 90%,
+            transparent 100%
+        ) !important;
+
+    box-shadow:
+
+        0 0 8px
+        rgba(228,185,95,.12),
+
+        0 0 24px
+        rgba(184,137,63,.06) !important;
+
+    opacity:.75 !important;
+
+    overflow:visible !important;
+
+}
+
+
+/* =========================================================
+   BRIDGE GEOMETRY
+   ========================================================= */
+
+.bridge-01{
+
+    transform:
+        rotate(-152deg) !important;
+
+}
+
+.bridge-02{
+
+    transform:
+        rotate(-28deg) !important;
+
+}
+
+.bridge-03{
+
+    transform:
+        rotate(152deg) !important;
+
+}
+
+.bridge-04{
+
+    transform:
+        rotate(28deg) !important;
+
+}
+
+
+/* =========================================================
+   05 — MOVING ENERGY PARTICLE
+   ========================================================= */
+
+.partnership-energy-bridge i{
+
+    position:absolute !important;
+
+    left:-12px !important;
+
+    top:50% !important;
+
+    width:34px !important;
+    height:3px !important;
+
+    transform:
+        translateY(-50%) !important;
+
+    border-radius:50% !important;
+
+    background:
+
+        radial-gradient(
+            ellipse,
+            rgba(255,249,220,1) 0%,
+            rgba(247,223,155,.95) 35%,
+            rgba(228,185,95,.45) 65%,
+            transparent 100%
+        ) !important;
+
+    box-shadow:
+
+        0 0 5px
+        rgba(255,249,220,1),
+
+        0 0 14px
+        rgba(247,223,155,.85),
+
+        0 0 30px
+        rgba(228,185,95,.55),
+
+        0 0 50px
+        rgba(184,137,63,.22) !important;
+
+    animation:
+        partnershipEnergyTravelFinal
+        4.2s
+        linear
+        infinite !important;
+
+}
+
+.bridge-02 i{
+    animation-delay:-1.05s !important;
+}
+
+.bridge-03 i{
+    animation-delay:-2.1s !important;
+}
+
+.bridge-04 i{
+    animation-delay:-3.15s !important;
+}
+
+
+/* =========================================================
+   06 — SECONDARY ENERGY NODES
+   ========================================================= */
+
+.partnership-energy-link{
+
+    position:absolute !important;
+
+    width:5px !important;
+    height:5px !important;
+
+    border-radius:50% !important;
+
+    background:
+        rgba(247,223,155,.9) !important;
+
+    box-shadow:
+
+        0 0 7px
+        rgba(255,241,184,.9),
+
+        0 0 18px
+        rgba(228,185,95,.65),
+
+        0 0 30px
+        rgba(184,137,63,.25) !important;
+
+    animation:
+        partnershipLinkPulseFinal
+        3.5s
+        ease-in-out
+        infinite !important;
+
+}
+
+.link-01{
+    top:31% !important;
+    left:31% !important;
+}
+
+.link-02{
+    top:31% !important;
+    right:31% !important;
+    animation-delay:-.8s !important;
+}
+
+.link-03{
+    bottom:31% !important;
+    left:31% !important;
+    animation-delay:-1.6s !important;
+}
+
+.link-04{
+    bottom:31% !important;
+    right:31% !important;
+    animation-delay:-2.4s !important;
+}
+
+
+/* =========================================================
+   07 — CENTRAL ARS CORE
+   ========================================================= */
+
+.partnership-core{
+
+    position:absolute !important;
+
+    left:50% !important;
+    top:50% !important;
+
+    width:clamp(190px,19vw,260px) !important;
+
+    height:clamp(190px,19vw,260px) !important;
+
+    margin:0 !important;
+
+    transform:
+        translate(-50%,-50%) !important;
+
+    z-index:20 !important;
+
+    border-radius:50% !important;
+
+}
+
+
+/* =========================================================
+   CORE ENERGY SYSTEM
+   ========================================================= */
+
+.partnership-core-energy{
+
+    position:absolute !important;
+
+    inset:-28px !important;
+
+    border-radius:50% !important;
 
     pointer-events:none !important;
 
+    z-index:-1 !important;
+
 }
 
 
 /* =========================================================
-   10 — NODE MASTER
+   CORE ORBITS
    ========================================================= */
 
-.partnership-node{
+.partnership-core-orbit{
 
     position:absolute !important;
-
-    width:clamp(245px,25vw,330px) !important;
-
-    min-height:clamp(205px,20vw,255px) !important;
-
-    z-index:25 !important;
-
-    display:block !important;
-
-    box-sizing:border-box !important;
-
-}
-
-
-/* =========================================================
-   11 — NODE POSITIONS
-   ========================================================= */
-
-.partnership-node-01{
-
-    top:5% !important;
-
-    left:3% !important;
-
-    right:auto !important;
-
-    bottom:auto !important;
-
-}
-
-
-.partnership-node-02{
-
-    top:5% !important;
-
-    right:3% !important;
-
-    left:auto !important;
-
-    bottom:auto !important;
-
-}
-
-
-.partnership-node-03{
-
-    bottom:5% !important;
-
-    left:3% !important;
-
-    right:auto !important;
-
-    top:auto !important;
-
-}
-
-
-.partnership-node-04{
-
-    bottom:5% !important;
-
-    right:3% !important;
-
-    left:auto !important;
-
-    top:auto !important;
-
-}
-
-
-/* =========================================================
-   12 — NODE CONTENT
-   ========================================================= */
-
-.partnership-node-content{
-
-    position:relative !important;
-
-    z-index:5 !important;
-
-}
-
-
-/* =========================================================
-   13 — NODE ENERGY
-   ========================================================= */
-
-.partnership-node-energy{
-
-    position:absolute !important;
-
-    top:26px !important;
-
-    right:28px !important;
-
-    width:56px !important;
-
-    height:56px !important;
-
-    z-index:10 !important;
-
-    pointer-events:none !important;
-
-}
-
-
-/* =========================================================
-   14 — NODE ENERGY RINGS
-   ========================================================= */
-
-.node-energy-ring{
-
-    position:absolute !important;
-
-    inset:0 !important;
 
     border-radius:50% !important;
 
@@ -17868,47 +17916,211 @@ REDUCED MOTION
 
 }
 
+.orbit-outer{
 
-.ring-inner{
+    inset:0 !important;
 
-    inset:10px !important;
+    border:
+        1px solid
+        rgba(228,185,95,.20) !important;
+
+    box-shadow:
+        0 0 16px
+        rgba(228,185,95,.04) !important;
+
+    animation:
+        partnershipOrbitFinal
+        18s
+        linear
+        infinite !important;
+
+}
+
+.orbit-middle{
+
+    inset:9% !important;
+
+    border:
+        1px solid
+        rgba(228,185,95,.26) !important;
+
+    animation:
+        partnershipOrbitReverseFinal
+        12s
+        linear
+        infinite !important;
+
+}
+
+.orbit-inner{
+
+    inset:18% !important;
+
+    border:
+        1px dashed
+        rgba(228,185,95,.18) !important;
+
+    animation:
+        partnershipOrbitFinal
+        8s
+        linear
+        infinite !important;
 
 }
 
 
 /* =========================================================
-   15 — NODE ENERGY CORE
+   CORE ORBIT ENERGY POINT
    ========================================================= */
+
+.partnership-core-orbit::after{
+
+    content:"" !important;
+
+    position:absolute !important;
+
+    top:-4px !important;
+    left:50% !important;
+
+    width:7px !important;
+    height:7px !important;
+
+    transform:
+        translateX(-50%) !important;
+
+    border-radius:50% !important;
+
+    background:
+        rgba(255,241,184,.95) !important;
+
+    box-shadow:
+
+        0 0 7px
+        rgba(255,255,230,1),
+
+        0 0 18px
+        rgba(228,185,95,.8),
+
+        0 0 30px
+        rgba(184,137,63,.35) !important;
+
+}
+
+
+/* =========================================================
+   08 — PARTNERSHIP NODES
+   ========================================================= */
+
+.partnership-node{
+
+    z-index:15 !important;
+
+    overflow:hidden !important;
+
+}
+
+
+/* =========================================================
+   NODE ENERGY CORE
+   ========================================================= */
+
+.partnership-node-energy{
+
+    z-index:4 !important;
+
+    pointer-events:none !important;
+
+}
+
+.node-energy-ring{
+
+    position:absolute !important;
+
+    border-radius:50% !important;
+
+    pointer-events:none !important;
+
+}
+
+.ring-outer{
+
+    inset:0 !important;
+
+    border:
+        1px solid
+        rgba(228,185,95,.22) !important;
+
+    box-shadow:
+        0 0 12px
+        rgba(228,185,95,.05) !important;
+
+    animation:
+        partnershipOrbitFinal
+        8s
+        linear
+        infinite !important;
+
+}
+
+.ring-inner{
+
+    inset:10px !important;
+
+    border:
+        1px dashed
+        rgba(228,185,95,.20) !important;
+
+    animation:
+        partnershipOrbitReverseFinal
+        5s
+        linear
+        infinite !important;
+
+}
 
 .node-energy-core{
 
     position:absolute !important;
 
     left:50% !important;
-
     top:50% !important;
 
-    width:10px !important;
-
-    height:10px !important;
+    width:9px !important;
+    height:9px !important;
 
     transform:
         translate(-50%,-50%) !important;
 
     border-radius:50% !important;
 
+    background:
+        rgba(255,241,184,.9) !important;
+
+    box-shadow:
+
+        0 0 7px
+        rgba(255,241,184,.9),
+
+        0 0 18px
+        rgba(228,185,95,.7),
+
+        0 0 32px
+        rgba(184,137,63,.3) !important;
+
+    animation:
+        partnershipNodeCorePulse
+        3s
+        ease-in-out
+        infinite !important;
+
 }
 
 
 /* =========================================================
-   16 — ORBITAL PARTICLES
+   09 — ORBITAL PARTICLES
    ========================================================= */
 
 .partnership-orbital-particles{
-
-    position:absolute !important;
-
-    inset:0 !important;
 
     z-index:12 !important;
 
@@ -17916,141 +18128,242 @@ REDUCED MOTION
 
 }
 
+.partnership-particle{
 
-/* =========================================================
-   17 — PHILOSOPHY
-   ========================================================= */
+    width:3px !important;
+    height:3px !important;
 
-.partnership-philosophy{
+    background:
+        rgba(247,223,155,.75) !important;
 
-    position:relative !important;
+    box-shadow:
 
-    z-index:20 !important;
+        0 0 7px
+        rgba(247,223,155,.8),
+
+        0 0 18px
+        rgba(228,185,95,.45) !important;
+
+    animation:
+        partnershipParticleFloatFinal
+        7s
+        ease-in-out
+        infinite !important;
 
 }
 
 
 /* =========================================================
-   18 — FINAL ENERGY
+   10 — FINAL ENERGY CONNECTION
    ========================================================= */
 
 .partnership-final-energy{
 
     position:relative !important;
 
-    z-index:20 !important;
+    z-index:5 !important;
+
+}
+
+.final-energy-line{
+
+    background:
+
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(228,185,95,.42),
+            rgba(255,241,184,.28),
+            transparent
+        ) !important;
+
+    box-shadow:
+        0 0 12px
+        rgba(228,185,95,.08) !important;
+
+}
+
+.final-energy-core{
+
+    background:
+        rgba(255,241,184,.9) !important;
+
+    box-shadow:
+
+        0 0 10px
+        rgba(255,241,184,.9),
+
+        0 0 25px
+        rgba(228,185,95,.65),
+
+        0 0 45px
+        rgba(184,137,63,.25) !important;
 
 }
 
 
 /* =========================================================
-   19 — PREVENT OLD GRID SYSTEMS
-   FROM CHANGING THE NEW NETWORK
+   11 — FINAL ANIMATIONS
    ========================================================= */
 
-.partnership-network,
-.partnership-network > .partnership-core,
-.partnership-network > .partnership-node,
-.partnership-network > .partnership-energy-network,
-.partnership-network > .partnership-orbital-particles{
+@keyframes partnershipEnergyTravelFinal{
 
-    grid-template-columns:none !important;
-
-    grid-template-rows:none !important;
-
-    float:none !important;
-
-}
-
-
-/* =========================================================
-   20 — DESKTOP FORCE
-   ========================================================= */
-
-@media (min-width:901px){
-
-    .partnership-network{
-
-        display:block !important;
-
-        height:clamp(700px,70vw,940px) !important;
-
+    0%{
+        left:-12px;
+        opacity:0;
     }
 
-    .partnership-core{
+    10%{
+        opacity:1;
+    }
 
-        position:absolute !important;
+    88%{
+        opacity:1;
+    }
 
-        left:50% !important;
+    100%{
+        left:calc(100% + 12px);
+        opacity:0;
+    }
 
-        top:50% !important;
+}
 
+
+@keyframes partnershipLinkPulseFinal{
+
+    0%,100%{
+        opacity:.28;
+        transform:scale(.75);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.45);
+    }
+
+}
+
+
+@keyframes partnershipOrbitFinal{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+
+@keyframes partnershipOrbitReverseFinal{
+
+    from{
+        transform:rotate(360deg);
+    }
+
+    to{
+        transform:rotate(0deg);
+    }
+
+}
+
+
+@keyframes partnershipNodeCorePulse{
+
+    0%,100%{
+        opacity:.5;
         transform:
-            translate(-50%,-50%) !important;
-
+            translate(-50%,-50%)
+            scale(.78);
     }
 
-    .partnership-node{
+    50%{
+        opacity:1;
+        transform:
+            translate(-50%,-50%)
+            scale(1.2);
+    }
 
-        position:absolute !important;
+}
 
+
+@keyframes partnershipParticleFloatFinal{
+
+    0%,100%{
+        opacity:.18;
+        transform:translate(0,0);
+    }
+
+    50%{
+        opacity:.9;
+        transform:translate(8px,-12px);
+    }
+
+}
+
+
+@keyframes partnershipAtmosphere{
+
+    0%,100%{
+        opacity:.65;
+        transform:
+            translate(-50%,-50%)
+            scale(.94);
+    }
+
+    50%{
+        opacity:.95;
+        transform:
+            translate(-50%,-50%)
+            scale(1.04);
     }
 
 }
 
 
 /* =========================================================
-   21 — TABLET
+   12 — IMPORTANT:
+   KEEP ENERGY SYSTEM ACTIVE ON TABLET
    ========================================================= */
 
 @media (max-width:900px){
 
-    .partnership-network{
+    .partnership-energy-network{
 
-        height:auto !important;
+        display:block !important;
 
-        display:grid !important;
+        opacity:.72 !important;
 
-        grid-template-columns:
-            repeat(2,minmax(0,1fr)) !important;
+    }
 
-        gap:24px !important;
+    .partnership-energy-bridge{
+
+        opacity:.38 !important;
 
     }
 
     .partnership-core{
 
-        position:relative !important;
-
-        left:auto !important;
-
-        top:auto !important;
-
-        transform:none !important;
-
-        grid-column:
-            1 / -1 !important;
-
-        margin:
-            0 auto 35px !important;
+        z-index:20 !important;
 
     }
 
     .partnership-node{
 
-        position:relative !important;
-
-        top:auto !important;
-
-        right:auto !important;
-
-        bottom:auto !important;
-
-        left:auto !important;
-
-        width:100% !important;
+        z-index:15 !important;
 
     }
+
+}
+
+
+/* =========================================================
+   13 — MOBILE ENERGY
+   ========================================================= */
+
+@media (max-width:600px){
 
     .partnership-energy-network{
 
@@ -18058,53 +18371,15 @@ REDUCED MOTION
 
     }
 
-}
+    .partnership-orbital-particles{
 
-
-/* =========================================================
-   22 — MOBILE
-   ========================================================= */
-
-@media (max-width:600px){
-
-    .partnership-network{
-
-        display:flex !important;
-
-        flex-direction:column !important;
-
-        gap:20px !important;
-
-        height:auto !important;
+        opacity:.55 !important;
 
     }
 
-    .partnership-core{
+    .partnership-core-energy{
 
-        position:relative !important;
-
-        left:auto !important;
-
-        top:auto !important;
-
-        transform:none !important;
-
-        width:190px !important;
-
-        height:190px !important;
-
-        margin:
-            0 auto 25px !important;
-
-    }
-
-    .partnership-node{
-
-        position:relative !important;
-
-        width:100% !important;
-
-        min-height:230px !important;
+        inset:-20px !important;
 
     }
 
@@ -18112,48 +18387,24 @@ REDUCED MOTION
 
 
 /* =========================================================
-   23 — FINAL VISUAL PRIORITY
-   Keep energy system above background
-   and cards above energy
+   14 — REDUCED MOTION
    ========================================================= */
 
-.partnership-energy-field{
+@media (prefers-reduced-motion:reduce){
 
-    z-index:-5 !important;
+    .partnership-network *,
+    .partnership-network *::before,
+    .partnership-network *::after{
 
-}
+        animation-duration:
+            .01ms !important;
 
-.partnership-network::before{
+        animation-iteration-count:
+            1 !important;
 
-    z-index:-4 !important;
+        transition-duration:
+            .01ms !important;
 
-}
+    }
 
-.partnership-energy-network{
-
-    z-index:10 !important;
-
-}
-
-.partnership-orbital-particles{
-
-    z-index:15 !important;
-
-}
-
-.partnership-core{
-
-    z-index:30 !important;
-
-}
-
-.partnership-node{
-
-    z-index:25 !important;
-
-}
-
-
-/* =========================================================
-   24 — FINAL OVERRIDE COMPLETE
-   ========================================================= */
+   }
