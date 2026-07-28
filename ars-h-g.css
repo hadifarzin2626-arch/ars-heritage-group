@@ -5241,111 +5241,152 @@ REDUCED MOTION
 }
 
 /* =========================================================
-ARS HERITAGE GROUP
-TECHNOLOGY ECOSYSTEM
-INDUSTRIAL AUTOMOTIVE TECHNOLOGY NETWORK
-PREMIUM TECHNOLOGY PARTNER ARCHITECTURE
-========================================================= */
+   ARS HERITAGE GROUP
+   TECHNOLOGY ECOSYSTEM
+   ISOLATED INDUSTRIAL AUTOMOTIVE TECHNOLOGY NETWORK
+   PREMIUM AUTOMOTIVE TECHNOLOGY ARCHITECTURE
+   ========================================================= */
 
 
 /* =========================================================
-TECHNOLOGY ROOT
-========================================================= */
+   TECHNOLOGY ROOT
+   ========================================================= */
 
 .technology-ecosystem{
 
     position:relative;
+
     width:100%;
+
     padding:
-        clamp(120px,11vw,190px)
+        clamp(130px,11vw,190px)
         0
-        clamp(120px,10vw,180px);
+        clamp(130px,10vw,180px);
 
     overflow:hidden;
+
     isolation:isolate;
+
+    background:
+
+        radial-gradient(
+            ellipse at 50% 45%,
+            rgba(190,140,45,.055),
+            transparent 55%
+        );
 
 }
 
 
 /* =========================================================
-DEEP TECHNOLOGY ATMOSPHERE
-========================================================= */
+   DEEP INDUSTRIAL ATMOSPHERE
+   ========================================================= */
 
 .technology-ecosystem::before{
 
     content:"";
 
     position:absolute;
-    inset:0;
 
-    z-index:-3;
+    inset:-20%;
+
+    z-index:-5;
 
     pointer-events:none;
 
     background:
 
         radial-gradient(
-            ellipse at 18% 35%,
-            rgba(206,158,61,.13),
+            ellipse at 15% 35%,
+            rgba(214,165,66,.14),
             transparent 28%
         ),
 
         radial-gradient(
-            ellipse at 82% 65%,
-            rgba(206,158,61,.10),
+            ellipse at 85% 65%,
+            rgba(214,165,66,.11),
             transparent 30%
         ),
 
         radial-gradient(
             ellipse at 50% 50%,
             rgba(255,255,255,.025),
-            transparent 55%
+            transparent 58%
         );
 
-    filter:blur(45px);
+    filter:blur(65px);
+
+    animation:
+        techAtmosphere
+        14s
+        ease-in-out
+        infinite
+        alternate;
+
+}
+
+
+@keyframes techAtmosphere{
+
+    0%{
+
+        transform:
+            scale(1)
+            translate3d(-1%,0,0);
+
+    }
+
+    100%{
+
+        transform:
+            scale(1.08)
+            translate3d(1%,1%,0);
+
+    }
 
 }
 
 
 /* =========================================================
-PRECISION INDUSTRIAL GRID
-========================================================= */
+   PRECISION AUTOMOTIVE GRID
+   ========================================================= */
 
 .technology-ecosystem::after{
 
     content:"";
 
     position:absolute;
+
     inset:0;
 
-    z-index:-2;
+    z-index:-4;
 
     pointer-events:none;
 
-    opacity:.12;
+    opacity:.13;
 
     background-image:
 
         linear-gradient(
-            rgba(255,255,255,.022) 1px,
+            rgba(255,255,255,.018) 1px,
             transparent 1px
         ),
 
         linear-gradient(
             90deg,
-            rgba(255,255,255,.022) 1px,
+            rgba(255,255,255,.018) 1px,
             transparent 1px
         );
 
     background-size:
-        85px 85px;
+        80px 80px;
 
     mask-image:
 
         radial-gradient(
             ellipse at center,
             black 0%,
-            transparent 75%
+            transparent 74%
         );
 
     -webkit-mask-image:
@@ -5353,27 +5394,29 @@ PRECISION INDUSTRIAL GRID
         radial-gradient(
             ellipse at center,
             black 0%,
-            transparent 75%
+            transparent 74%
         );
 
 }
 
 
 /* =========================================================
-SECTION HEADER
-========================================================= */
+   SECTION HEADER
+   ========================================================= */
 
 .technology-ecosystem
 .section-header{
 
     position:relative;
-    z-index:5;
 
-    width:min(900px,90%);
+    z-index:20;
+
+    width:
+        min(900px,90%);
 
     margin:
         0 auto
-        clamp(70px,8vw,115px);
+        clamp(75px,8vw,115px);
 
     text-align:center;
 
@@ -5381,8 +5424,8 @@ SECTION HEADER
 
 
 /* =========================================================
-SECTION LABEL
-========================================================= */
+   TECHNOLOGY LABEL
+   ========================================================= */
 
 .technology-ecosystem
 .section-label{
@@ -5404,14 +5447,20 @@ SECTION LABEL
     text-transform:uppercase;
 
     color:
-        rgba(224,181,91,.94);
+
+        rgba(
+            224,
+            181,
+            91,
+            .94
+        );
 
 }
 
 
 /* =========================================================
-LABEL SIDE LINES
-========================================================= */
+   LABEL SIDE SIGNALS
+   ========================================================= */
 
 .technology-ecosystem
 .section-label::before,
@@ -5420,7 +5469,7 @@ LABEL SIDE LINES
 
     content:"";
 
-    width:45px;
+    width:48px;
 
     height:1px;
 
@@ -5429,7 +5478,12 @@ LABEL SIDE LINES
         linear-gradient(
             90deg,
             transparent,
-            rgba(224,181,91,.8)
+            rgba(
+                224,
+                181,
+                91,
+                .8
+            )
         );
 
 }
@@ -5442,7 +5496,12 @@ LABEL SIDE LINES
 
         linear-gradient(
             90deg,
-            rgba(224,181,91,.8),
+            rgba(
+                224,
+                181,
+                91,
+                .8
+            ),
             transparent
         );
 
@@ -5450,8 +5509,8 @@ LABEL SIDE LINES
 
 
 /* =========================================================
-SECTION TITLE
-========================================================= */
+   SECTION TITLE
+   ========================================================= */
 
 .technology-ecosystem
 .section-header
@@ -5462,26 +5521,41 @@ h2{
         18px;
 
     font-size:
-        clamp(40px,5vw,72px);
+        clamp(
+            40px,
+            5vw,
+            72px
+        );
 
     line-height:1;
 
     letter-spacing:-.05em;
 
     color:
-        rgba(255,255,255,.97);
+
+        rgba(
+            255,
+            255,
+            255,
+            .97
+        );
 
     text-shadow:
 
         0 0 35px
-        rgba(255,255,255,.035);
+        rgba(
+            255,
+            255,
+            255,
+            .035
+        );
 
 }
 
 
 /* =========================================================
-SECTION DESCRIPTION
-========================================================= */
+   SECTION DESCRIPTION
+   ========================================================= */
 
 .technology-ecosystem
 .section-header
@@ -5496,47 +5570,146 @@ p{
     line-height:1.9;
 
     color:
-        rgba(255,255,255,.52);
+
+        rgba(
+            255,
+            255,
+            255,
+            .54
+        );
 
 }
 
 
 /* =========================================================
-TECHNOLOGY NETWORK
-========================================================= */
+   TECHNOLOGY NETWORK
+   ========================================================= */
 
 .technology-ecosystem
 .technology-network{
 
     position:relative;
 
+    width:
+        min(
+            1180px,
+            90%
+        );
+
+    margin:0 auto;
+
     display:grid;
 
     grid-template-columns:
-        repeat(3,minmax(0,1fr));
 
-    gap:
-        28px;
+        repeat(
+            3,
+            minmax(
+                0,
+                1fr
+            )
+        );
 
-    width:
-        min(1180px,90%);
-
-    margin:
-        0 auto;
+    gap:30px;
 
 }
 
 
 /* =========================================================
-PARTNER CARD
-========================================================= */
+   NETWORK CENTRAL SIGNAL
+   ========================================================= */
+
+.technology-ecosystem
+.technology-network::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:50%;
+
+    left:-4%;
+
+    width:108%;
+
+    height:1px;
+
+    z-index:-1;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(
+                214,
+                168,
+                74,
+                .12
+            ),
+            rgba(
+                238,
+                204,
+                128,
+                .42
+            ),
+            rgba(
+                214,
+                168,
+                74,
+                .12
+            ),
+            transparent
+        );
+
+    box-shadow:
+
+        0 0 25px
+        rgba(
+            218,
+            168,
+            70,
+            .18
+        );
+
+    animation:
+
+        techNetworkPulse
+        5s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes techNetworkPulse{
+
+    0%,
+    100%{
+
+        opacity:.25;
+
+    }
+
+    50%{
+
+        opacity:.85;
+
+    }
+
+}
+
+
+/* =========================================================
+   TECHNOLOGY PARTNER CARD
+   ========================================================= */
 
 .technology-ecosystem
 .technology-partner{
 
     position:relative;
 
-    min-height:350px;
+    min-height:370px;
 
     display:flex;
 
@@ -5549,9 +5722,9 @@ PARTNER CARD
     text-align:center;
 
     padding:
-        55px
+        60px
         32px
-        48px;
+        55px;
 
     box-sizing:border-box;
 
@@ -5561,49 +5734,87 @@ PARTNER CARD
 
     border:
         1px solid
-        rgba(255,255,255,.075);
+        rgba(
+            255,
+            255,
+            255,
+            .085
+        );
 
     background:
 
         linear-gradient(
             145deg,
-            rgba(255,255,255,.065),
-            rgba(255,255,255,.012)
+            rgba(
+                255,
+                255,
+                255,
+                .075
+            ),
+            rgba(
+                255,
+                255,
+                255,
+                .012
+            )
         );
 
     backdrop-filter:
-        blur(24px)
-        saturate(130%);
+
+        blur(28px)
+        saturate(135%);
 
     -webkit-backdrop-filter:
-        blur(24px)
-        saturate(130%);
+
+        blur(28px)
+        saturate(135%);
 
     box-shadow:
 
         inset 0 1px 0
-        rgba(255,255,255,.065),
+        rgba(
+            255,
+            255,
+            255,
+            .075
+        ),
 
-        0 28px 70px
-        rgba(0,0,0,.30);
+        0 30px 75px
+        rgba(
+            0,
+            0,
+            0,
+            .34
+        );
 
     opacity:0;
 
     transform:
+
         translateY(45px)
-        scale(.97);
+        scale(.965);
 
     animation:
 
-        techCardEntrance
-        1s
-        cubic-bezier(.2,.75,.2,1)
+        techPremiumReveal
+        1.1s
+        cubic-bezier(
+            .2,
+            .8,
+            .2,
+            1
+        )
         forwards;
 
     transition:
 
         transform .65s
-        cubic-bezier(.2,.8,.2,1),
+        cubic-bezier(
+            .2,
+            .8,
+            .2,
+            1
+        ),
 
         border-color .5s ease,
 
@@ -5615,49 +5826,62 @@ PARTNER CARD
 
 
 /* =========================================================
-CARD ENTRANCE
-========================================================= */
+   ENTRANCE SEQUENCE
+   ========================================================= */
 
 .technology-ecosystem
 .partner-1{
+
     animation-delay:.08s;
+
 }
 
 .technology-ecosystem
 .partner-2{
-    animation-delay:.20s;
+
+    animation-delay:.22s;
+
 }
 
 .technology-ecosystem
 .partner-3{
-    animation-delay:.32s;
+
+    animation-delay:.36s;
+
 }
 
 .technology-ecosystem
 .partner-4{
-    animation-delay:.44s;
+
+    animation-delay:.50s;
+
 }
 
 .technology-ecosystem
 .partner-5{
-    animation-delay:.56s;
+
+    animation-delay:.64s;
+
 }
 
 .technology-ecosystem
 .partner-6{
-    animation-delay:.68s;
+
+    animation-delay:.78s;
+
 }
 
 
-@keyframes techCardEntrance{
+@keyframes techPremiumReveal{
 
     from{
 
         opacity:0;
 
         transform:
+
             translateY(45px)
-            scale(.97);
+            scale(.965);
 
     }
 
@@ -5666,6 +5890,7 @@ CARD ENTRANCE
         opacity:1;
 
         transform:
+
             translateY(0)
             scale(1);
 
@@ -5675,8 +5900,8 @@ CARD ENTRANCE
 
 
 /* =========================================================
-TECHNICAL GOLD TOP EDGE
-========================================================= */
+   BACKLIGHT — PREMIUM INDUSTRIAL GLOW
+   ========================================================= */
 
 .technology-ecosystem
 .technology-partner::before{
@@ -5685,34 +5910,41 @@ TECHNICAL GOLD TOP EDGE
 
     position:absolute;
 
-    top:0;
+    inset:12%;
 
-    left:8%;
+    z-index:-2;
 
-    width:84%;
-
-    height:1px;
+    pointer-events:none;
 
     background:
 
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(231,190,104,.85),
-            transparent
+        radial-gradient(
+            ellipse at 50% 55%,
+            rgba(
+                214,
+                165,
+                67,
+                .16
+            ),
+            transparent 62%
         );
 
-    box-shadow:
+    filter:blur(35px);
 
-        0 0 18px
-        rgba(218,169,75,.35);
+    opacity:.65;
+
+    transition:
+
+        opacity .6s ease,
+
+        transform .8s ease;
 
 }
 
 
 /* =========================================================
-MOVING DIAGONAL SCAN SYSTEM
-========================================================= */
+   MOVING INDUSTRIAL LIGHT SCAN
+   ========================================================= */
 
 .technology-ecosystem
 .technology-partner::after{
@@ -5721,35 +5953,55 @@ MOVING DIAGONAL SCAN SYSTEM
 
     position:absolute;
 
-    top:-40%;
+    top:-30%;
 
-    left:-80%;
+    left:-70%;
 
-    width:35%;
+    width:28%;
 
-    height:180%;
+    height:160%;
+
+    pointer-events:none;
+
+    z-index:10;
 
     background:
 
         linear-gradient(
             90deg,
             transparent,
-            rgba(255,231,164,.16),
-            rgba(255,246,207,.42),
-            rgba(255,231,164,.16),
+            rgba(
+                255,
+                230,
+                165,
+                .06
+            ),
+            rgba(
+                255,
+                245,
+                205,
+                .55
+            ),
+            rgba(
+                255,
+                230,
+                165,
+                .06
+            ),
             transparent
         );
 
     transform:
-        skewX(-18deg);
+
+        skewX(
+            -18deg
+        );
 
     opacity:0;
 
-    pointer-events:none;
-
     animation:
 
-        techScanBeam
+        techIndustrialScan
         8s
         ease-in-out
         infinite;
@@ -5759,60 +6011,72 @@ MOVING DIAGONAL SCAN SYSTEM
 
 .technology-ecosystem
 .partner-2::after{
+
     animation-delay:1.3s;
+
 }
 
 .technology-ecosystem
 .partner-3::after{
+
     animation-delay:2.6s;
+
 }
 
 .technology-ecosystem
 .partner-4::after{
+
     animation-delay:3.9s;
+
 }
 
 .technology-ecosystem
 .partner-5::after{
+
     animation-delay:5.2s;
+
 }
 
 .technology-ecosystem
 .partner-6::after{
+
     animation-delay:6.5s;
+
 }
 
 
-@keyframes techScanBeam{
+@keyframes techIndustrialScan{
 
     0%{
 
-        left:-80%;
+        left:-70%;
+
         opacity:0;
 
     }
 
-    15%{
+    18%{
 
-        opacity:.15;
-
-    }
-
-    45%{
-
-        opacity:.75;
+        opacity:.12;
 
     }
 
-    70%{
+    48%{
 
-        opacity:.15;
+        opacity:.7;
+
+    }
+
+    72%{
+
+        opacity:.12;
 
     }
 
     100%{
 
         left:145%;
+
         opacity:0;
 
     }
@@ -5821,52 +6085,11 @@ MOVING DIAGONAL SCAN SYSTEM
 
 
 /* =========================================================
-TECHNICAL CORNER MARKS
-========================================================= */
+   INDUSTRIAL CORNER FRAME
+   ========================================================= */
 
 .technology-ecosystem
 .technology-partner
-{
-
-    --tech-gold:
-        rgba(224,181,91,.75);
-
-}
-
-
-/* TOP LEFT */
-.technology-ecosystem
-.technology-partner
-.partner-index::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:18px;
-
-    left:20px;
-
-    width:18px;
-
-    height:18px;
-
-    border-top:
-        1px solid
-        rgba(224,181,91,.55);
-
-    border-left:
-        1px solid
-        rgba(224,181,91,.55);
-
-}
-
-
-/* =========================================================
-PARTNER INDEX
-========================================================= */
-
-.technology-ecosystem
 .partner-index{
 
     position:absolute;
@@ -5879,26 +6102,74 @@ PARTNER INDEX
 
     font-weight:700;
 
-    letter-spacing:.25em;
+    letter-spacing:.28em;
 
     color:
-        rgba(224,181,91,.58);
+
+        rgba(
+            224,
+            181,
+            91,
+            .62
+        );
 
 }
 
 
 /* =========================================================
-PARTNER INDEX UNDERLINE
-========================================================= */
+   CORNER FRAME MARK
+   ========================================================= */
 
 .technology-ecosystem
+.technology-partner
+.partner-index::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-6px;
+
+    left:-8px;
+
+    width:20px;
+
+    height:20px;
+
+    border-top:
+        1px solid
+        rgba(
+            224,
+            181,
+            91,
+            .55
+        );
+
+    border-left:
+        1px solid
+        rgba(
+            224,
+            181,
+            91,
+            .55
+        );
+
+}
+
+
+/* =========================================================
+   INDEX UNDERLINE
+   ========================================================= */
+
+.technology-ecosystem
+.technology-partner
 .partner-index::after{
 
     content:"";
 
     display:block;
 
-    width:28px;
+    width:30px;
 
     height:1px;
 
@@ -5906,26 +6177,32 @@ PARTNER INDEX UNDERLINE
 
     background:
 
-        rgba(224,181,91,.45);
+        rgba(
+            224,
+            181,
+            91,
+            .48
+        );
 
 }
 
 
 /* =========================================================
-TECHNICAL LIGHT AXIS
-NO CIRCLE
-========================================================= */
+   INDUSTRIAL TECH BAR
+   NO CIRCLE
+   ========================================================= */
 
 .technology-ecosystem
 .partner-energy-core{
 
     position:relative;
 
-    width:110px;
+    width:120px;
 
-    height:1px;
+    height:2px;
 
     margin:
+
         0
         0
         38px;
@@ -5935,21 +6212,31 @@ NO CIRCLE
         linear-gradient(
             90deg,
             transparent,
-            rgba(255,238,180,.95),
+            rgba(
+                255,
+                238,
+                181,
+                .95
+            ),
             transparent
         );
 
     box-shadow:
 
-        0 0 12px
-        rgba(224,174,74,.6);
+        0 0 14px
+        rgba(
+            224,
+            174,
+            74,
+            .65
+        );
 
 }
 
 
 /* =========================================================
-VERTICAL TECHNICAL AXIS
-========================================================= */
+   TECH BAR SIDE EXTENSIONS
+   ========================================================= */
 
 .technology-ecosystem
 .partner-energy-core::before{
@@ -5958,32 +6245,41 @@ VERTICAL TECHNICAL AXIS
 
     position:absolute;
 
-    left:50%;
+    top:50%;
 
-    top:-22px;
+    left:0;
 
-    width:1px;
+    width:100%;
 
-    height:44px;
+    height:18px;
 
     transform:
-        translateX(-50%);
+        translateY(-50%);
 
-    background:
+    border-top:
+        1px solid
+        rgba(
+            224,
+            174,
+            74,
+            .18
+        );
 
-        linear-gradient(
-            180deg,
-            transparent,
-            rgba(235,197,119,.75),
-            transparent
+    border-bottom:
+        1px solid
+        rgba(
+            224,
+            174,
+            74,
+            .10
         );
 
 }
 
 
 /* =========================================================
-MOVING LIGHT NODE
-========================================================= */
+   MOVING TECH SIGNAL
+   ========================================================= */
 
 .technology-ecosystem
 .partner-energy-core::after{
@@ -5994,48 +6290,63 @@ MOVING LIGHT NODE
 
     top:50%;
 
-    left:-5px;
+    left:-10px;
 
-    width:10px;
+    width:20px;
 
-    height:2px;
+    height:3px;
 
     transform:
         translateY(-50%);
 
     background:
 
-        rgba(255,247,211,1);
+        rgba(
+            255,
+            247,
+            211,
+            1
+        );
 
     box-shadow:
 
         0 0 8px
-        rgba(255,239,183,1),
+        rgba(
+            255,
+            239,
+            183,
+            1
+        ),
 
-        0 0 20px
-        rgba(224,174,74,.85);
+        0 0 24px
+        rgba(
+            224,
+            174,
+            74,
+            .95
+        );
 
     animation:
 
-        techNodeTravel
-        3.2s
+        techSignalTravel
+        2.8s
         linear
         infinite;
 
 }
 
 
-@keyframes techNodeTravel{
+@keyframes techSignalTravel{
 
     0%{
 
-        left:-5px;
+        left:-10px;
 
         opacity:0;
 
     }
 
-    15%{
+    12%{
 
         opacity:1;
 
@@ -6047,7 +6358,7 @@ MOVING LIGHT NODE
 
     }
 
-    85%{
+    88%{
 
         opacity:1;
 
@@ -6055,7 +6366,7 @@ MOVING LIGHT NODE
 
     100%{
 
-        left:105px;
+        left:110px;
 
         opacity:0;
 
@@ -6065,15 +6376,16 @@ MOVING LIGHT NODE
 
 
 /* =========================================================
-PARTNER CATEGORY
-========================================================= */
+   PARTNER CATEGORY
+   ========================================================= */
 
 .technology-ecosystem
+.technology-partner
 .partner-category{
 
     display:block;
 
-    margin-bottom:13px;
+    margin-bottom:14px;
 
     font-size:9px;
 
@@ -6085,14 +6397,19 @@ PARTNER CATEGORY
 
     color:
 
-        rgba(222,180,91,.82);
+        rgba(
+            222,
+            180,
+            91,
+            .84
+        );
 
 }
 
 
 /* =========================================================
-PARTNER TITLE
-========================================================= */
+   PARTNER NAME
+   ========================================================= */
 
 .technology-ecosystem
 .technology-partner
@@ -6100,31 +6417,50 @@ h3{
 
     position:relative;
 
+    z-index:20;
+
     margin:
+
         0
         0
-        17px;
+        18px;
 
     font-size:
-        clamp(25px,2.3vw,34px);
+
+        clamp(
+            26px,
+            2.4vw,
+            36px
+        );
 
     line-height:1.1;
 
     letter-spacing:-.025em;
 
     color:
-        rgba(255,255,255,.97);
+
+        rgba(
+            255,
+            255,
+            255,
+            .98
+        );
 
     text-shadow:
 
-        0 0 25px
-        rgba(255,255,255,.035);
+        0 0 28px
+        rgba(
+            255,
+            255,
+            255,
+            .04
+        );
 
     transition:
 
-        transform .45s ease,
-
         color .45s ease,
+
+        transform .45s ease,
 
         text-shadow .45s ease;
 
@@ -6132,8 +6468,8 @@ h3{
 
 
 /* =========================================================
-TITLE GOLD UNDERLINE
-========================================================= */
+   PARTNER NAME GOLD SIGNAL
+   ========================================================= */
 
 .technology-ecosystem
 .technology-partner
@@ -6145,13 +6481,14 @@ h3::after{
 
     left:50%;
 
-    bottom:-9px;
+    bottom:-10px;
 
     width:0;
 
     height:1px;
 
     transform:
+
         translateX(-50%);
 
     background:
@@ -6159,28 +6496,43 @@ h3::after{
         linear-gradient(
             90deg,
             transparent,
-            rgba(230,187,94,.95),
+            rgba(
+                230,
+                187,
+                94,
+                .95
+            ),
             transparent
         );
 
     box-shadow:
 
-        0 0 12px
-        rgba(225,176,74,.35);
+        0 0 14px
+        rgba(
+            225,
+            176,
+            74,
+            .45
+        );
 
     transition:
+
         width .5s ease;
 
 }
 
 
 /* =========================================================
-PARTNER DESCRIPTION
-========================================================= */
+   PARTNER DESCRIPTION
+   ========================================================= */
 
 .technology-ecosystem
 .technology-partner
 p{
+
+    position:relative;
+
+    z-index:20;
 
     max-width:300px;
 
@@ -6191,29 +6543,36 @@ p{
     line-height:1.9;
 
     color:
-        rgba(255,255,255,.57);
+
+        rgba(
+            255,
+            255,
+            255,
+            .58
+        );
 
 }
 
 
 /* =========================================================
-BOTTOM TECHNICAL RAIL
-========================================================= */
+   BOTTOM INDUSTRIAL RAIL
+   ========================================================= */
 
 .technology-ecosystem
 .partner-energy-line{
 
     position:absolute;
 
-    bottom:25px;
-
     left:50%;
 
-    width:85px;
+    bottom:25px;
+
+    width:100px;
 
     height:1px;
 
     transform:
+
         translateX(-50%);
 
     background:
@@ -6221,7 +6580,12 @@ BOTTOM TECHNICAL RAIL
         linear-gradient(
             90deg,
             transparent,
-            rgba(218,172,82,.65),
+            rgba(
+                218,
+                172,
+                82,
+                .65
+            ),
             transparent
         );
 
@@ -6229,8 +6593,8 @@ BOTTOM TECHNICAL RAIL
 
 
 /* =========================================================
-BOTTOM RAIL MOVING SIGNAL
-========================================================= */
+   MOVING SIGNAL ON BOTTOM RAIL
+   ========================================================= */
 
 .technology-ecosystem
 .partner-energy-line::after{
@@ -6241,39 +6605,50 @@ BOTTOM RAIL MOVING SIGNAL
 
     top:50%;
 
-    left:-12px;
+    left:-15px;
 
-    width:12px;
+    width:15px;
 
     height:2px;
 
     transform:
+
         translateY(-50%);
 
     background:
 
-        rgba(255,239,181,1);
+        rgba(
+            255,
+            239,
+            181,
+            1
+        );
 
     box-shadow:
 
         0 0 10px
-        rgba(255,229,151,.95);
+        rgba(
+            255,
+            229,
+            151,
+            .95
+        );
 
     animation:
 
-        techRailSignal
-        3.5s
+        techBottomSignal
+        3.2s
         linear
         infinite;
 
 }
 
 
-@keyframes techRailSignal{
+@keyframes techBottomSignal{
 
     0%{
 
-        left:-12px;
+        left:-15px;
 
         opacity:0;
 
@@ -6293,7 +6668,7 @@ BOTTOM RAIL MOVING SIGNAL
 
     100%{
 
-        left:85px;
+        left:100px;
 
         opacity:0;
 
@@ -6303,60 +6678,119 @@ BOTTOM RAIL MOVING SIGNAL
 
 
 /* =========================================================
-CARD HOVER
-========================================================= */
+   HOVER — PREMIUM AUTOMOTIVE TECHNOLOGY
+   ========================================================= */
 
 .technology-ecosystem
 .technology-partner:hover{
 
     transform:
-        translateY(-12px)
+
+        translateY(-14px)
         scale(1.018);
 
     border-color:
 
-        rgba(225,184,97,.38);
+        rgba(
+            225,
+            184,
+            97,
+            .42
+        );
 
     background:
 
         linear-gradient(
             145deg,
-            rgba(255,255,255,.085),
-            rgba(255,255,255,.018)
+            rgba(
+                255,
+                255,
+                255,
+                .095
+            ),
+            rgba(
+                255,
+                255,
+                255,
+                .018
+            )
         );
 
     box-shadow:
 
         inset 0 1px 0
-        rgba(255,255,255,.11),
+        rgba(
+            255,
+            255,
+            255,
+            .12
+        ),
 
-        0 40px 100px
-        rgba(0,0,0,.40),
+        0 45px 110px
+        rgba(
+            0,
+            0,
+            0,
+            .44
+        ),
 
-        0 0 65px
-        rgba(216,166,69,.13);
+        0 0 75px
+        rgba(
+            216,
+            166,
+            69,
+            .16
+        );
 
 }
 
 
 /* =========================================================
-HOVER TITLE
-========================================================= */
+   HOVER BACKLIGHT
+   ========================================================= */
+
+.technology-ecosystem
+.technology-partner:hover::before{
+
+    opacity:1;
+
+    transform:
+
+        scale(1.25);
+
+}
+
+
+/* =========================================================
+   HOVER PARTNER NAME
+   ========================================================= */
 
 .technology-ecosystem
 .technology-partner:hover
 h3{
 
     color:
-        rgba(255,248,222,1);
+
+        rgba(
+            255,
+            248,
+            220,
+            1
+        );
 
     transform:
-        translateY(-2px);
+
+        translateY(-3px);
 
     text-shadow:
 
-        0 0 28px
-        rgba(227,184,95,.18);
+        0 0 30px
+        rgba(
+            227,
+            184,
+            95,
+            .24
+        );
 
 }
 
@@ -6365,33 +6799,14 @@ h3{
 .technology-partner:hover
 h3::after{
 
-    width:80px;
+    width:90px;
 
 }
 
 
 /* =========================================================
-HOVER TECH AXIS
-========================================================= */
-
-.technology-ecosystem
-.technology-partner:hover
-.partner-energy-core{
-
-    box-shadow:
-
-        0 0 18px
-        rgba(238,199,117,.8),
-
-        0 0 35px
-        rgba(218,168,70,.25);
-
-}
-
-
-/* =========================================================
-TABLET
-========================================================= */
+   TABLET
+   ========================================================= */
 
 @media (max-width:1050px){
 
@@ -6399,7 +6814,14 @@ TABLET
     .technology-network{
 
         grid-template-columns:
-            repeat(2,minmax(0,1fr));
+
+            repeat(
+                2,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
 
         gap:24px;
 
@@ -6409,17 +6831,18 @@ TABLET
 
 
 /* =========================================================
-MOBILE
-========================================================= */
+   MOBILE
+   ========================================================= */
 
 @media (max-width:680px){
 
     .technology-ecosystem{
 
         padding:
+
             90px
             0
-            100px;
+            105px;
 
     }
 
@@ -6436,6 +6859,7 @@ MOBILE
     .technology-network{
 
         grid-template-columns:
+
             1fr;
 
         width:88%;
@@ -6445,11 +6869,19 @@ MOBILE
     }
 
     .technology-ecosystem
+    .technology-network::before{
+
+        display:none;
+
+    }
+
+    .technology-ecosystem
     .technology-partner{
 
-        min-height:340px;
+        min-height:350px;
 
         padding:
+
             50px
             24px
             45px;
@@ -6460,7 +6892,8 @@ MOBILE
     .technology-partner:hover{
 
         transform:
-            translateY(-7px);
+
+            translateY(-8px);
 
     }
 
@@ -6468,8 +6901,8 @@ MOBILE
 
 
 /* =========================================================
-VERY SMALL MOBILE
-========================================================= */
+   VERY SMALL MOBILE
+   ========================================================= */
 
 @media (max-width:430px){
 
@@ -6483,9 +6916,10 @@ VERY SMALL MOBILE
     .technology-ecosystem
     .technology-partner{
 
-        min-height:325px;
+        min-height:330px;
 
         padding:
+
             45px
             20px
             42px;
@@ -6513,8 +6947,8 @@ VERY SMALL MOBILE
 
 
 /* =========================================================
-REDUCED MOTION
-========================================================= */
+   REDUCED MOTION
+   ========================================================= */
 
 @media (prefers-reduced-motion:reduce){
 
@@ -6531,6 +6965,10 @@ REDUCED MOTION
 
     }
 
+    .technology-ecosystem::before,
+    .technology-ecosystem::after,
+    .technology-ecosystem
+    .technology-network::before,
     .technology-ecosystem
     .technology-partner::after,
     .technology-ecosystem
