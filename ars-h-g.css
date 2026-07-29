@@ -8906,14 +8906,16 @@ CLEAN LAYER ARCHITECTURE
     width:min(1180px,100%);
     height:clamp(700px,70vw,940px);
     margin:0 auto;
+       position:relative;
     isolation:isolate;
+    overflow:visible
+
 }
 
 /* Central ambient field */
 
 .partnership-network::before{
     content:"";
-
     position:absolute;
 
     left:50%;
@@ -9157,7 +9159,7 @@ DESKTOP ONLY VISUAL BRIDGES
     transform:
         translate(-50%,-50%);
 
-    z-index:30;
+    z-index:40;
 
     display:flex;
     flex-direction:column;
@@ -9407,12 +9409,14 @@ ALWAYS ABOVE ENERGY
     min-height:
         clamp(205px,20vw,255px);
 
-    z-index:20;
+        z-index:30;
+    overflow:visible;
+
 
     padding:
         30px 32px;
 
-    overflow:hidden;
+    overflow:visible;
 
     border-radius:22px;
 
@@ -9464,7 +9468,7 @@ BUT BEHIND CONTENT
 
     border-radius:50%;
 
-    z-index:0;
+    z-index:1;
 
     pointer-events:none;
 
@@ -9478,12 +9482,12 @@ BUT BEHIND CONTENT
         );
 
     filter:
-        blur(25px);
+        blur(46px);
 
-    opacity:.95;
+    opacity:1;
 
     transform:
-        scale(.88);
+        scale(.93);
 
     animation:
         partnershipCardGlow
@@ -9772,7 +9776,7 @@ CONTENT ALWAYS ABOVE ENERGY
 .partnership-node:hover::before{
 
     opacity:1;
-
+  filter:blur(52px);
     transform:
         scale(1.05);
 
