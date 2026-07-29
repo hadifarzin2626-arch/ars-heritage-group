@@ -8873,6 +8873,7 @@ box-shadow:
 
 }
 
+
 /* =========================================================
 04 — NETWORK MASTER
 IMPORTANT:
@@ -8891,9 +8892,65 @@ margin:0 auto;
 
 }
 
-/* ==================================================⁶
+/* =========================================================
+05 — NETWORK ATMOSPHERE
+========================================================= */
+
+.partnership-network::before{
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:clamp(420px,48vw,720px);
+    height:clamp(420px,48vw,720px);
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    z-index:0;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(228,185,95,.13) 0%,
+            rgba(228,185,95,.065) 25%,
+            rgba(184,137,63,.025) 45%,
+            transparent 72%
+        );
+
+    filter:blur(22px);
+
+    animation:
+        partnershipAtmospherePulse
+        6s ease-in-out
+        infinite;
 }
 
+
+/* =========================================================
+06 — ENERGY NETWORK
+DESKTOP ONLY VISUAL BRIDGES
+========================================================= */
+
+.partnership-energy-network{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:8;
+
+    pointer-events:none;
+
+    display:block;
+
+}
 
 /* =========================================================
 07 — PRIMARY ENERGY BRIDGES
