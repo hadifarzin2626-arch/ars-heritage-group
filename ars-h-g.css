@@ -8741,173 +8741,271 @@ animation:
 }
 
 /* =========================================================
-ARS HERITAGE GROUP
-PARTNERSHIP NETWORK — MASTER CSS
-FINAL HTML-LOCKED SYSTEM
-PREMIUM INDUSTRIAL ENERGY / CORE / NODE NETWORK
-========================================================= */
+   ARS HERITAGE GROUP
+   PARTNERSHIP NETWORK
+   MASTER CSS — V3
+   =========================================================
+   ARCHITECTURE
+
+   PARTNERSHIP
+       │
+       ├── AMBIENT FIELD
+       │
+       ├── HEADER
+       │
+       └── NETWORK
+             │
+             ├── ENERGY NETWORK
+             │      ├── BRIDGE 01
+             │      ├── BRIDGE 02
+             │      ├── BRIDGE 03
+             │      ├── BRIDGE 04
+             │      └── SECONDARY LINKS
+             │
+             ├── ARS CORE
+             │      └── CORE ENERGY
+             │
+             ├── NODE 01
+             ├── NODE 02
+             ├── NODE 03
+             ├── NODE 04
+             │
+             └── ORBITAL PARTICLES
+
+   DESIGN RULE:
+   ENERGY ORIGIN = ARS CORE
+   CARDS DO NOT CREATE THEIR OWN ATMOSPHERIC BACKLIGHT
+   ========================================================= */
+
 
 /* =========================================================
-01 — PARTNERSHIP MASTER
-========================================================= */
+   01 — PARTNERSHIP SECTION
+   ========================================================= */
 
 .partnership{
-position:relative;
-min-height:100vh;
-padding:
-clamp(110px,10vw,170px)
-clamp(20px,5vw,80px)
-clamp(90px,9vw,150px);
 
-overflow:hidden;
-isolation:isolate;
+    position:relative;
 
-background:
-    radial-gradient(
-        circle at 50% 48%,
-        rgba(184,137,63,.065),
-        transparent 27%
-    ),
-    radial-gradient(
-        circle at 12% 82%,
-        rgba(15,28,48,.24),
-        transparent 32%
-    ),
-    radial-gradient(
-        circle at 88% 18%,
-        rgba(15,28,48,.20),
-        transparent 32%
-    );
+    width:100%;
+
+    padding:
+        clamp(90px,10vw,150px)
+        clamp(20px,4vw,60px)
+        clamp(80px,9vw,140px);
+
+    overflow:hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 46%,
+            rgba(228,185,95,.045),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 50% 78%,
+            rgba(20,45,75,.055),
+            transparent 45%
+        ),
+
+        #050607;
 
 }
 
+
 /* =========================================================
-02 — AMBIENT ENERGY FIELD
-========================================================= */
+   02 — GLOBAL PARTNERSHIP ENERGY FIELD
+   ========================================================= */
 
 .partnership-energy-field{
-position:absolute;
-inset:0;
-z-index:0;
-pointer-events:none;
-overflow:hidden;
-opacity:.55;
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
 }
+
+
+/* Ambient particles */
 
 .partnership-energy-dot{
-position:absolute;
-width:2px;
-height:2px;
-border-radius:50%;
 
-background:
-    rgba(247,223,155,.65);
+    position:absolute;
 
-box-shadow:
-    0 0 7px rgba(255,241,184,.55),
-    0 0 18px rgba(228,185,95,.28);
+    width:3px;
+    height:3px;
 
-animation:
-    partnershipDotPulse
-    5s ease-in-out
-    infinite;
+    border-radius:50%;
+
+    background:
+        rgba(228,185,95,.48);
+
+    box-shadow:
+        0 0 7px rgba(228,185,95,.38);
+
+    opacity:.45;
+
+    animation:
+        partnershipAmbientFloat
+        8s ease-in-out
+        infinite;
 
 }
 
-.dot-01{top:12%;left:14%;animation-delay:-1s;}
-.dot-02{top:19%;left:72%;animation-delay:-3s;}
-.dot-03{top:27%;left:88%;animation-delay:-2s;}
-.dot-04{top:41%;left:8%;animation-delay:-4s;}
-.dot-05{top:54%;left:94%;animation-delay:-1.5s;}
-.dot-06{top:67%;left:11%;animation-delay:-3.5s;}
-.dot-07{top:75%;left:84%;animation-delay:-2.5s;}
-.dot-08{top:84%;left:24%;animation-delay:-4.5s;}
-.dot-09{top:91%;left:68%;animation-delay:-1.2s;}
-.dot-10{top:35%;left:46%;animation-delay:-3.2s;}
-.dot-11{top:61%;left:52%;animation-delay:-2.2s;}
-.dot-12{top:15%;left:38%;animation-delay:-4.2s;}
+
+/* Individual positions */
+
+.partnership-energy-dot.dot-01{
+    left:8%;
+    top:18%;
+}
+
+.partnership-energy-dot.dot-02{
+    left:18%;
+    top:42%;
+    animation-delay:-2s;
+}
+
+.partnership-energy-dot.dot-03{
+    left:82%;
+    top:16%;
+    animation-delay:-4s;
+}
+
+.partnership-energy-dot.dot-04{
+    left:91%;
+    top:38%;
+    animation-delay:-1s;
+}
+
+.partnership-energy-dot.dot-05{
+    left:12%;
+    top:72%;
+    animation-delay:-5s;
+}
+
+.partnership-energy-dot.dot-06{
+    left:87%;
+    top:70%;
+    animation-delay:-3s;
+}
+
+.partnership-energy-dot.dot-07{
+    left:28%;
+    top:28%;
+    animation-delay:-6s;
+}
+
+.partnership-energy-dot.dot-08{
+    left:73%;
+    top:30%;
+    animation-delay:-2.5s;
+}
+
+.partnership-energy-dot.dot-09{
+    left:35%;
+    top:82%;
+    animation-delay:-4.5s;
+}
+
+.partnership-energy-dot.dot-10{
+    left:67%;
+    top:84%;
+    animation-delay:-1.5s;
+}
+
+.partnership-energy-dot.dot-11{
+    left:5%;
+    top:52%;
+    animation-delay:-7s;
+}
+
+.partnership-energy-dot.dot-12{
+    left:95%;
+    top:57%;
+    animation-delay:-3.5s;
+}
+
 
 /* =========================================================
-03 — HEADER
-========================================================= */
+   03 — SECTION HEADER
+   ========================================================= */
 
 .partnership-header{
-position:relative;
-z-index:50;
 
-max-width:900px;
-margin:
-    0 auto
-    clamp(60px,7vw,100px);
+    position:relative;
 
-text-align:center;
+    z-index:5;
 
-}
+    width:min(900px,100%);
 
-.partnership-header h2{
-position:relative;
-display:inline-block;
-}
+    margin:
+        0 auto
+        clamp(70px,8vw,120px);
 
-.partnership-header h2::after{
-content:"";
-position:absolute;
-left:50%;
-bottom:-18px;
-
-width:80px;
-height:1px;
-
-transform:translateX(-50%);
-
-background:
-    linear-gradient(
-        90deg,
-        transparent,
-        rgba(228,185,95,.8),
-        transparent
-    );
-
-box-shadow:
-    0 0 14px rgba(228,185,95,.3);
+    text-align:center;
 
 }
 
 
 /* =========================================================
-04 — NETWORK MASTER
-IMPORTANT:
-NO NEGATIVE Z-INDEX INSIDE NETWORK
-========================================================= */
+   04 — PARTNERSHIP NETWORK MASTER
+   ========================================================= */
 
 .partnership-network{
-position:relative;
 
-width:min(1180px,100%);
-height:clamp(700px,70vw,940px);
+    position:relative;
 
-margin:0 auto;
+    width:min(1080px,100%);
 
-/*isolation:isolate;*/
+    /*
+       Enough vertical space for:
+
+       CORE
+          ↓
+       ROW 01
+          ↓
+       ROW 02
+    */
+
+    min-height:
+        clamp(820px,78vw,1080px);
+
+    margin:0 auto;
+
+    isolation:isolate;
 
 }
 
+
 /* =========================================================
-05 — NETWORK ATMOSPHERE
-========================================================= */
+   05 — CENTRAL NETWORK ATMOSPHERE
+   ========================================================= */
 
 .partnership-network::before{
+
     content:"";
 
     position:absolute;
 
     left:50%;
-    top:50%;
+    top:37%;
 
-    width:clamp(420px,48vw,720px);
-    height:clamp(420px,48vw,720px);
+    width:
+        clamp(420px,55vw,720px);
 
-    transform:translate(-50%,-50%);
+    height:
+        clamp(420px,55vw,720px);
+
+    transform:
+        translate(-50%,-50%);
 
     border-radius:50%;
 
@@ -8916,27 +9014,25 @@ margin:0 auto;
     z-index:0;
 
     background:
+
         radial-gradient(
             circle,
-            rgba(228,185,95,.13) 0%,
-            rgba(228,185,95,.065) 25%,
-            rgba(184,137,63,.025) 45%,
+            rgba(228,185,95,.075) 0%,
+            rgba(228,185,95,.035) 28%,
+            rgba(184,137,63,.018) 48%,
             transparent 72%
         );
 
-    filter:blur(22px);
+    filter:blur(26px);
 
-    animation:
-        partnershipAtmospherePulse
-        6s ease-in-out
-        infinite;
+    opacity:.9;
+
 }
 
 
 /* =========================================================
-06 — ENERGY NETWORK
-DESKTOP ONLY VISUAL BRIDGES
-========================================================= */
+   06 — ENERGY CONNECTION MASTER
+   ========================================================= */
 
 .partnership-energy-network{
 
@@ -8944,272 +9040,353 @@ DESKTOP ONLY VISUAL BRIDGES
 
     inset:0;
 
-    z-index:8;
-
-    pointer-events:none;
+    z-index:2;
 
     display:block;
 
+    pointer-events:none;
+
+    overflow:visible;
+
 }
 
+
 /* =========================================================
-07 — PRIMARY ENERGY BRIDGES
-========================================================= */
+   07 — PRIMARY ENERGY BRIDGES
+   ========================================================= */
 
 .partnership-energy-bridge{
 
     position:absolute;
 
-    height:1px;
+    display:block;
+
+    height:2px;
 
     transform-origin:left center;
 
-    opacity:.78;
+    border-radius:999px;
 
     background:
+
         linear-gradient(
             90deg,
-            transparent 0%,
-            rgba(184,137,63,.05) 10%,
-            rgba(228,185,95,.28) 38%,
-            rgba(255,241,184,.82) 50%,
-            rgba(228,185,95,.28) 62%,
-            rgba(184,137,63,.05) 90%,
-            transparent 100%
+            rgba(255,248,210,.82),
+            rgba(228,185,95,.42),
+            rgba(184,137,63,.12),
+            transparent
         );
 
     box-shadow:
-        0 0 10px rgba(228,185,95,.22),
-        0 0 26px rgba(184,137,63,.10);
+
+        0 0 5px rgba(255,241,184,.55),
+
+        0 0 14px rgba(228,185,95,.32),
+
+        0 0 28px rgba(184,137,63,.12);
+
+    opacity:.78;
 
 }
-/*.partnership-energy-bridge{*/
-    z-index:25;
-    opacity:1;
-
-    filter:
-        drop-shadow(0 3  6px rgba(255,241,184,.75))
-        drop-shadow(0 0 18px rgba(228,185,95,.45))
-        drop-shadow(0 0 32px rgba(184,137,63,.22));
-}
 
 
-/* =========================================================
-08 — BRIDGE POSITIONS
-========================================================= */
-
-.bridge-01{
-    width:30%;
-    left:50%;
-    top:50%;
-    transform:rotate(-152deg);
-}
-
-.bridge-02{
-    width:30%;
-    left:50%;
-    top:50%;
-    transform:rotate(-28deg);
-}
-
-.bridge-03{
-    width:30%;
-    left:50%;
-    top:50%;
-    transform:rotate(152deg);
-}
-
-.bridge-04{
-    width:30%;
-    left:50%;
-    top:50%;
-    transform:rotate(28deg);
-}
-
-
-/* =========================================================
-09 — ENERGY TRAVEL PARTICLES
-========================================================= */
+/* Moving energy pulse */
 
 .partnership-energy-bridge i{
 
     position:absolute;
 
+    left:0;
     top:50%;
-    left:-10px;
 
-    width:38px;
-    height:3px;
+    width:9px;
+    height:9px;
 
-    transform:translateY(-50%);
+    transform:
+        translate(-50%,-50%);
 
     border-radius:50%;
 
     background:
+
         radial-gradient(
-            ellipse,
-            rgba(255,250,220,1) 0%,
-            rgba(255,241,184,.95) 30%,
-            rgba(228,185,95,.55) 62%,
+            circle,
+            rgba(255,255,235,1) 0%,
+            rgba(255,241,184,.95) 34%,
+            rgba(228,185,95,.6) 62%,
             transparent 100%
         );
 
     box-shadow:
-        0 0 6px rgba(255,241,184,1),
-        0 0 18px rgba(228,185,95,.8),
-        0 0 32px rgba(184,137,63,.4);
+
+        0 0 6px rgba(255,255,235,.95),
+
+        0 0 15px rgba(255,241,184,.8),
+
+        0 0 30px rgba(228,185,95,.45);
 
     animation:
         partnershipEnergyTravel
-        4.5s linear
+        4.8s
+        linear
         infinite;
 
 }
-/*.partnership-energy-bridge i{*/
-    z-index:2;
-    filter:
-        drop-shadow(0 0 8px rgba(255,241,184,1))
-        drop-shadow(0 0 20px rgba(228,185,95,.8))
-        drop-shadow(0 0 36px rgba(184,137,63,.45));
-}
-.bridge-02 i{
-    animation-delay:-1.1s;
+
+
+/*
+   CORE → NODE 01
+*/
+
+.partnership-energy-bridge.bridge-01{
+
+    left:50%;
+
+    top:49%;
+
+    width:35%;
+
+    transform:
+        rotate(137deg);
+
 }
 
-.bridge-03 i{
-    animation-delay:-2.2s;
+
+/*
+   CORE → NODE 02
+*/
+
+.partnership-energy-bridge.bridge-02{
+
+    left:50%;
+
+    top:49%;
+
+    width:35%;
+
+    transform:
+        rotate(43deg);
+
 }
 
-.bridge-04 i{
-    animation-delay:-3.3s;
+
+/*
+   CORE → NODE 03
+*/
+
+.partnership-energy-bridge.bridge-03{
+
+    left:50%;
+
+    top:49%;
+
+    width:35%;
+
+    transform:
+        rotate(223deg);
+
+}
+
+
+/*
+   CORE → NODE 04
+*/
+
+.partnership-energy-bridge.bridge-04{
+
+    left:50%;
+
+    top:49%;
+
+    width:35%;
+
+    transform:
+        rotate(317deg);
+
 }
 
 
 /* =========================================================
-10 — SECONDARY ENERGY LINKS
-========================================================= */
+   08 — SECONDARY ENERGY LINKS
+   ========================================================= */
 
 .partnership-energy-link{
 
     position:absolute;
 
-    width:5px;
-    height:5px;
+    height:1px;
 
-    border-radius:50%;
-
-    z-index:12;
+    border-radius:999px;
 
     background:
-        rgba(247,223,155,.9);
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(228,185,95,.18),
+            transparent
+        );
 
     box-shadow:
-        0 0 8px rgba(255,241,184,.85),
-        0 0 20px rgba(228,185,95,.6),
-        0 0 34px rgba(184,137,63,.3);
+        0 0 8px rgba(228,185,95,.10);
 
-    animation:
-        partnershipLinkPulse
-        3s ease-in-out
-        infinite;
+    opacity:.55;
 
 }
 
-.link-01{
-    top:31%;
-    left:31%;
+
+/* Subtle horizontal network connections */
+
+.partnership-energy-link.link-01{
+
+    left:20%;
+    top:63%;
+
+    width:60%;
+
 }
 
-.link-02{
-    top:31%;
-    right:31%;
-    animation-delay:-.8s;
+.partnership-energy-link.link-02{
+
+    left:26%;
+    top:73%;
+
+    width:48%;
+
 }
 
-.link-03{
-    bottom:31%;
-    left:31%;
-    animation-delay:-1.6s;
+.partnership-energy-link.link-03{
+
+    left:32%;
+    top:84%;
+
+    width:36%;
+
 }
 
-.link-04{
-    bottom:31%;
-    right:31%;
-    animation-delay:-2.4s;
+.partnership-energy-link.link-04{
+
+    left:38%;
+    top:55%;
+
+    width:24%;
+
 }
 
 
 /* =========================================================
-11 — CENTRAL ARS CORE
-========================================================= */
+   09 — CENTRAL ARS PARTNERSHIP CORE
+   ========================================================= */
 
 .partnership-core{
 
     position:absolute;
 
     left:50%;
-    top:50%;
+    top:7%;
 
-    width:clamp(190px,19vw,260px);
-    height:clamp(190px,19vw,260px);
+    /*
+       Slightly larger than the previous core.
+    */
+
+    width:
+        clamp(310px,30vw,390px);
+
+    aspect-ratio:1 / 1;
 
     transform:
-        translate(-50%,-50%);
+        translateX(-50%);
 
-    z-index:40;
+    z-index:20;
 
     display:flex;
+
     flex-direction:column;
+
     align-items:center;
+
     justify-content:center;
 
     text-align:center;
 
     border-radius:50%;
 
+    overflow:visible;
+
+    isolation:isolate;
+
     background:
+
         radial-gradient(
-            circle at 50% 42%,
-            rgba(228,185,95,.11),
-            transparent 36%
-        ),
-        linear-gradient(
-            145deg,
-            rgba(16,30,51,.48),
-            rgba(7,13,24,.64)
+            circle at 50% 45%,
+            rgba(21,39,64,.95),
+            rgba(8,15,28,.97) 66%,
+            rgba(4,8,15,.98) 100%
         );
 
     border:
         1px solid
-        rgba(228,185,95,.32);
+        rgba(228,185,95,.28);
 
     box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.07),
-        0 0 45px rgba(184,137,63,.16),
-        0 0 100px rgba(184,137,63,.08);
 
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
+        inset 0 0 40px
+        rgba(228,185,95,.035),
 
-    transition:
-        transform .7s cubic-bezier(.16,1,.3,1),
-        border-color .7s ease,
-        box-shadow .7s ease;
+        inset 0 1px 0
+        rgba(255,255,255,.05),
+
+        0 0 30px
+        rgba(228,185,95,.08),
+
+        0 0 80px
+        rgba(184,137,63,.07);
 
 }
 
 
 /* =========================================================
-12 — CORE ENERGY SYSTEM
-========================================================= */
+   10 — CORE OUTER ENERGY
+   ========================================================= */
+
+.partnership-core::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-20px;
+
+    z-index:-1;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(228,185,95,.16) 0%,
+            rgba(228,185,95,.07) 28%,
+            rgba(184,137,63,.025) 50%,
+            transparent 72%
+        );
+
+    filter:blur(20px);
+
+    opacity:.85;
+
+}
+
+
+/* =========================================================
+   11 — CORE ENERGY SYSTEM
+   ========================================================= */
 
 .partnership-core-energy{
 
     position:absolute;
 
-    inset:-22px;
-
-    border-radius:50%;
+    inset:-1px;
 
     z-index:1;
 
@@ -9218,418 +9395,435 @@ DESKTOP ONLY VISUAL BRIDGES
 }
 
 
-/* =========================================================
-13 — CORE ORBITS
-========================================================= */
+/* Orbit rings */
 
 .partnership-core-orbit{
 
     position:absolute;
 
-    inset:0;
+    left:50%;
+    top:50%;
 
     border-radius:50%;
 
     border:
-        1px solid
-        rgba(228,185,95,.20);
-
-    pointer-events:none;
-
-}
-
-.partnership-core-orbit::after{
-
-    content:"";
-
-    position:absolute;
-
-    top:-4px;
-    left:50%;
-
-    width:7px;
-    height:7px;
+        1px
+        dashed
+        rgba(228,185,95,.16);
 
     transform:
-        translateX(-50%);
-
-    border-radius:50%;
-
-    background:
-        rgba(247,223,155,.98);
-
-    box-shadow:
-        0 0 7px rgba(255,241,184,1),
-        0 0 18px rgba(228,185,95,.85);
+        translate(-50%,-50%);
 
 }
 
-.orbit-outer{
+
+/* Outer orbit */
+
+.partnership-core-orbit.orbit-outer{
+
+    width:88%;
+    height:88%;
 
     animation:
-        partnershipOrbit
-        18s linear
+        coreOrbitRotate
+        24s
+        linear
         infinite;
 
 }
 
-.orbit-middle{
 
-    inset:9%;
+/* Middle orbit */
+
+.partnership-core-orbit.orbit-middle{
+
+    width:73%;
+    height:73%;
 
     border-color:
-        rgba(228,185,95,.24);
-
-    transform:
-        rotate(45deg);
+        rgba(228,185,95,.12);
 
     animation:
-        partnershipOrbitReverse
-        12s linear
+        coreOrbitRotateReverse
+        18s
+        linear
         infinite;
 
 }
 
-.orbit-inner{
 
-    inset:18%;
+/* Inner orbit */
 
-    border:
-        1px dashed
-        rgba(228,185,95,.18);
+.partnership-core-orbit.orbit-inner{
 
-    animation:
-        partnershipOrbit
-        9s linear
-        infinite;
+    width:58%;
+    height:58%;
+
+    border-color:
+        rgba(228,185,95,.085);
 
 }
 
 
 /* =========================================================
-14 — CORE HALO
-========================================================= */
+   12 — CORE HALO
+   ========================================================= */
 
 .partnership-core-halo{
 
     position:absolute;
 
-    inset:20%;
+    left:50%;
+    top:50%;
+
+    width:48%;
+    height:48%;
+
+    transform:
+        translate(-50%,-50%);
 
     border-radius:50%;
 
-    z-index:2;
-
     background:
+
         radial-gradient(
             circle,
-            rgba(228,185,95,.18),
-            transparent 68%
+            rgba(228,185,95,.13),
+            rgba(184,137,63,.045) 42%,
+            transparent 72%
         );
 
-    filter:blur(6px);
+    filter:blur(18px);
 
     animation:
-        partnershipCoreBreath
-        4s ease-in-out
+        coreHaloPulse
+        5s
+        ease-in-out
         infinite;
 
 }
 
 
 /* =========================================================
-15 — CORE LIGHT
-========================================================= */
+   13 — CORE LIGHT
+   ========================================================= */
 
 .partnership-core-light{
 
     position:absolute;
 
-    width:44px;
-    height:44px;
-
     left:50%;
-    top:48%;
+    top:50%;
+
+    width:22px;
+    height:22px;
 
     transform:
         translate(-50%,-50%);
 
-    z-index:3;
-
     border-radius:50%;
 
     background:
+
         radial-gradient(
             circle,
-            rgba(255,244,199,.88),
-            rgba(228,185,95,.25) 42%,
-            transparent 72%
+            rgba(255,255,240,1) 0%,
+            rgba(255,241,184,.95) 28%,
+            rgba(228,185,95,.62) 58%,
+            transparent 100%
         );
 
-    filter:blur(2px);
+    box-shadow:
 
-    animation:
-        partnershipCoreLight
-        3.5s ease-in-out
-        infinite;
+        0 0 8px
+        rgba(255,255,240,1),
+
+        0 0 22px
+        rgba(255,241,184,.92),
+
+        0 0 42px
+        rgba(228,185,95,.62),
+
+        0 0 75px
+        rgba(184,137,63,.28);
+
+    opacity:.9;
 
 }
 
 
 /* =========================================================
-16 — CORE CONTENT
-ALWAYS ABOVE ENERGY
-========================================================= */
+   14 — CORE CONTENT
+   ========================================================= */
 
-.partnership-core-label,
-.partnership-core h3,
-.partnership-core-title,
+.partnership-core-label{
+
+    position:relative;
+
+    z-index:10;
+
+    margin-bottom:8px;
+
+    color:
+        rgba(228,185,95,.82);
+
+    font-size:
+        clamp(9px,.72vw,12px);
+
+    line-height:1.5;
+
+    letter-spacing:
+        .42em;
+
+    text-transform:uppercase;
+
+}
+
+
+.partnership-core h3{
+
+    position:relative;
+
+    z-index:10;
+
+    margin:
+        0 0 8px;
+
+    color:
+        rgba(255,252,244,.96);
+
+    font-size:
+        clamp(42px,4vw,60px);
+
+    line-height:.95;
+
+    font-weight:600;
+
+    letter-spacing:
+        .10em;
+
+}
+
+
+.partnership-core-title{
+
+    position:relative;
+
+    z-index:10;
+
+    color:
+        rgba(228,185,95,.82);
+
+    font-size:
+        clamp(10px,.8vw,13px);
+
+    letter-spacing:
+        .36em;
+
+}
+
+
 .partnership-core-subtitle{
 
     position:relative;
 
     z-index:10;
 
+    margin-top:12px;
+
+    color:
+        rgba(255,255,255,.45);
+
+    font-size:
+        clamp(8px,.65vw,11px);
+
+    letter-spacing:
+        .30em;
+
 }
 
 
 /* =========================================================
-17 — PARTNERSHIP NODES
-========================================================= */
+   15 — PARTNERSHIP NODES GRID
+   ========================================================= */
 
 .partnership-node{
 
     position:absolute;
 
-    width:clamp(245px,25vw,330px);
+    /*
+       Cards deliberately much smaller than Core.
+    */
+
+    width:
+        clamp(245px,24vw,300px);
 
     min-height:
-        clamp(205px,20vw,255px);
-
-        z-index:30;
-    overflow:visible;
-
+        clamp(190px,18vw,225px);
 
     padding:
-        30px 32px;
+        24px 26px;
+
+    z-index:15;
 
     overflow:visible;
 
     border-radius:22px;
 
     background:
+
         linear-gradient(
             145deg,
-            rgba(19,35,57,.25),
-            rgba(7,14,26,.42)
+            rgba(19,35,57,.32),
+            rgba(7,14,26,.72)
         );
 
     border:
         1px solid
-        rgba(228,185,95,.16);
+        rgba(228,185,95,.17);
 
     box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.045),
-        0 20px 55px rgba(0,0,0,.18);
 
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
+        inset 0 1px 0
+        rgba(255,255,255,.035),
 
-    transition:
-        transform .7s cubic-bezier(.16,1,.3,1),
-        border-color .6s ease,
-        box-shadow .6s ease,
-        background .6s ease;
+        0 18px 50px
+        rgba(0,0,0,.28);
 
 }
 
 
-/* =========================================================
-18 — CARD ENERGY BACKLIGHT
-CRITICAL:
-ENERGY STAYS INSIDE CARD LAYER
-BUT BEHIND CONTENT
-========================================================= */
+/*
+   IMPORTANT:
+   No card pseudo-element atmospheric glow.
+   Energy belongs to the network.
+*/
 
-.partnership-node::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:-25%;
-    top:-35%;
-
-    width:150%;
-    height:170%;
-
-    border-radius:50%;
-
-    z-index:1;
-
-    pointer-events:none;
-
-    background:
-        radial-gradient(
-            circle at 50% 50%,
-            rgba(255,241,184,.12) 0%,
-            rgba(228,185,95,.09) 18%,
-            rgba(184,137,63,.045) 38%,
-            transparent 72%
-        );
-
-    filter:
-        blur(46px);
-
-    opacity:1;
-
-    transform:
-        scale(.93);
-
-    animation:
-        partnershipCardGlow
-        5s ease-in-out
-        infinite;
-
-}
-
-
-/* Additional outer glow */
-
+.partnership-node::before,
 .partnership-node::after{
 
-    content:"";
-
-    position:absolute;
-
-    inset:-1px;
-
-    z-index:0;
-
-    pointer-events:none;
-
-    border-radius:inherit;
-
-    box-shadow:
-        0 0 28px rgba(228,185,95,.055),
-        0 0 65px rgba(184,137,63,.035);
+    content:none;
 
 }
 
 
 /* =========================================================
-19 — NODE POSITIONS
-========================================================= */
+   16 — NODE POSITIONS
+   TRUE 2 × 2 SYSTEM
+   ========================================================= */
+
+
+/* TOP LEFT */
 
 .partnership-node-01{
-    top:5%;
-    left:3%;
+
+    left:4%;
+
+    top:43%;
+
 }
+
+
+/* TOP RIGHT */
 
 .partnership-node-02{
-    top:5%;
-    right:3%;
+
+    right:4%;
+
+    top:43%;
+
 }
+
+
+/* BOTTOM LEFT */
 
 .partnership-node-03{
-    bottom:5%;
-    left:3%;
+
+    left:4%;
+
+    top:69%;
+
 }
 
+
+/* BOTTOM RIGHT */
+
 .partnership-node-04{
-    bottom:5%;
-    right:3%;
+
+    right:4%;
+
+    top:69%;
+
 }
 
 
 /* =========================================================
-20 — NODE ENERGY ORBIT
-========================================================= */
+   17 — NODE ENERGY MICRO CORE
+   ========================================================= */
 
 .partnership-node-energy{
 
     position:absolute;
 
-    top:26px;
-    right:28px;
+    top:20px;
+    right:20px;
 
-    width:56px;
-    height:56px;
+    width:52px;
+    height:52px;
 
-    z-index:8;
+    z-index:20;
 
-    border-radius:50%;
-
-    pointer-events:7;
+    pointer-events:none;
 
 }
+
+
+/* Rings */
 
 .node-energy-ring{
 
     position:absolute;
 
-    inset:0;
-
-    z-index:1;
+    left:50%;
+    top:50%;
 
     border-radius:50%;
+
+    transform:
+        translate(-50%,-50%);
 
     border:
         1px solid
-        rgba(228,185,95,.28);
+        rgba(228,185,95,.25);
 
 }
 
-.node-energy-ring::after{
 
-    content:"";
+.node-energy-ring.ring-outer{
 
-    position:absolute;
+    width:100%;
+    height:100%;
 
-    top:-3px;
-    left:50%;
-
-    width:5px;
-    height:5px;
-
-    transform:
-        translateX(-50%);
-
-    border-radius:50%;
-
-    background:
-        rgba(247,223,155,.95);
-
-    box-shadow:
-        0 0 10px rgba(255,241,184,.85),
-        0 0 18px rgba(228,185,95,.65);
+    border-color:
+        rgba(228,185,95,.18);
 
 }
 
-.ring-outer{
 
-    animation:
-        partnershipOrbit
-        8s linear
-        infinite;
+.node-energy-ring.ring-inner{
 
-}
-
-.ring-inner{
-
-    inset:10px;
+    width:68%;
+    height:68%;
 
     border-style:dashed;
 
     border-color:
-        rgba(228,185,95,.22);
-
-    animation:
-        partnershipOrbitReverse
-        5s linear
-        infinite;
+        rgba(228,185,95,.16);
 
 }
+
+
+/* Micro core */
 
 .node-energy-core{
 
@@ -9644,31 +9838,35 @@ BUT BEHIND CONTENT
     transform:
         translate(-50%,-50%);
 
-    z-index:3;
-
     border-radius:50%;
 
     background:
-        rgba(255,241,184,.95);
+
+        radial-gradient(
+            circle,
+            rgba(255,255,240,1),
+            rgba(255,241,184,.85) 35%,
+            rgba(228,185,95,.45) 62%,
+            transparent 100%
+        );
 
     box-shadow:
-        0 0 8px rgba(255,241,184,1),
-        0 0 20px rgba(228,185,95,.75),
-        0 0 34px rgba(184,137,63,.3);
 
-    animation:
-        partnershipNodeCorePulse
-        3s ease-in-out
-        infinite;
+        0 0 6px
+        rgba(255,255,240,.9),
+
+        0 0 14px
+        rgba(255,241,184,.65),
+
+        0 0 26px
+        rgba(228,185,95,.32);
 
 }
 
 
 /* =========================================================
-21 — NODE CONTENT
-CRITICAL:
-CONTENT ALWAYS ABOVE ENERGY
-========================================================= */
+   18 — NODE CONTENT
+   ========================================================= */
 
 .partnership-node-content{
 
@@ -9676,43 +9874,106 @@ CONTENT ALWAYS ABOVE ENERGY
 
     z-index:10;
 
-    max-width:80%;
+    padding-right:34px;
+
+}
+
+
+.partnership-node-index{
+
+    display:block;
+
+    margin-bottom:12px;
+
+    color:
+        rgba(255,255,255,.50);
+
+    font-size:11px;
+
+    letter-spacing:.28em;
+
+}
+
+
+.partnership-node-category{
+
+    display:block;
+
+    margin-bottom:9px;
+
+    color:
+        rgba(228,185,95,.78);
+
+    font-size:10px;
+
+    letter-spacing:.32em;
+
+}
+
+
+.partnership-node h3{
+
+    margin:
+        0 0 12px;
+
+    max-width:
+        88%;
+
+    color:
+        rgba(255,255,255,.93);
+
+    font-size:
+        clamp(20px,1.8vw,26px);
+
+    line-height:1.15;
+
+    font-weight:600;
+
+}
+
+
+.partnership-node p{
+
+    margin:0;
+
+    max-width:
+        92%;
+
+    color:
+        rgba(255,255,255,.52);
+
+    font-size:
+        clamp(12px,.9vw,14px);
+
+    line-height:1.75;
 
 }
 
 
 /* =========================================================
-22 — NODE STATUS
-========================================================= */
+   19 — NODE STATUS
+   ========================================================= */
 
 .partnership-node-status{
 
     position:absolute;
 
-    left:32px;
-    bottom:24px;
-
-    z-index:12;
-
-    font-size:7px;
-
-    letter-spacing:.28em;
+    left:26px;
+    bottom:20px;
 
     color:
-        rgba(228,185,95,.48);
+        rgba(228,185,95,.42);
 
-}
+    font-size:8px;
 
-.partnership-node > .partnership-node-status{
-
-    position:absolute;
+    letter-spacing:.28em;
 
 }
 
 
 /* =========================================================
-23 — ORBITAL PARTICLES
-========================================================= */
+   20 — ORBITAL DATA PARTICLES
+   ========================================================= */
 
 .partnership-orbital-particles{
 
@@ -9720,11 +9981,12 @@ CONTENT ALWAYS ABOVE ENERGY
 
     inset:0;
 
-    z-index:15;
+    z-index:5;
 
     pointer-events:none;
 
 }
+
 
 .partnership-particle{
 
@@ -9736,69 +9998,117 @@ CONTENT ALWAYS ABOVE ENERGY
     border-radius:50%;
 
     background:
-        rgba(247,223,155,.78);
+        rgba(228,185,95,.55);
 
     box-shadow:
-        0 0 7px rgba(255,241,184,.75),
-        0 0 18px rgba(228,185,95,.55);
+        0 0 8px rgba(228,185,95,.38);
 
     animation:
-        partnershipParticleFloat
-        7s ease-in-out
+        partnershipParticleDrift
+        7s
+        ease-in-out
         infinite;
 
 }
 
 
+.partnership-particle.particle-01{
+    left:13%;
+    top:38%;
+}
+
+.partnership-particle.particle-02{
+    left:87%;
+    top:40%;
+    animation-delay:-1s;
+}
+
+.partnership-particle.particle-03{
+    left:22%;
+    top:62%;
+    animation-delay:-2s;
+}
+
+.partnership-particle.particle-04{
+    left:78%;
+    top:62%;
+    animation-delay:-3s;
+}
+
+.partnership-particle.particle-05{
+    left:31%;
+    top:87%;
+    animation-delay:-4s;
+}
+
+.partnership-particle.particle-06{
+    left:69%;
+    top:87%;
+    animation-delay:-5s;
+}
+
+.partnership-particle.particle-07{
+    left:50%;
+    top:31%;
+    animation-delay:-2.5s;
+}
+
+.partnership-particle.particle-08{
+    left:50%;
+    top:92%;
+    animation-delay:-6s;
+}
+
+
 /* =========================================================
-24 — NODE HOVER
-========================================================= */
+   21 — NODE HOVER
+   ========================================================= */
 
-.partnership-node:hover{
+@media (hover:hover){
 
-    transform:
-        translateY(-8px)
-        scale(1.025);
+    .partnership-node{
 
-    border-color:
-        rgba(228,185,95,.36);
+        transition:
+            transform .45s cubic-bezier(.16,1,.3,1),
+            border-color .45s ease,
+            box-shadow .45s ease;
 
-    box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.065),
-        0 25px 70px rgba(0,0,0,.24),
-        0 0 35px rgba(184,137,63,.12);
+    }
 
-}
 
-.partnership-node:hover::before{
+    .partnership-node:hover{
 
-    opacity:1;
-  filter:blur(52px);
-    transform:
-        scale(1.05);
+        transform:
+            translateY(-5px);
 
-}
+        border-color:
+            rgba(228,185,95,.30);
 
-.partnership-node:hover .partnership-node-energy{
+        box-shadow:
 
-    transform:
-        scale(1.08);
+            inset 0 1px 0
+            rgba(255,255,255,.045),
 
-    transition:
-        transform .7s cubic-bezier(.16,1,.3,1);
+            0 22px 60px
+            rgba(0,0,0,.34),
+
+            0 0 28px
+            rgba(228,185,95,.06);
+
+    }
 
 }
 
 
 /* =========================================================
-25 — PHILOSOPHY
-========================================================= */
+   22 — PARTNERSHIP PHILOSOPHY
+   ========================================================= */
 
 .partnership-philosophy{
 
     position:relative;
 
-    z-index:40;
+    z-index:5;
 
     display:flex;
 
@@ -9806,84 +10116,115 @@ CONTENT ALWAYS ABOVE ENERGY
 
     justify-content:center;
 
-    gap:
-        clamp(14px,2vw,30px);
+    flex-wrap:wrap;
 
-    max-width:1000px;
+    gap:
+        18px;
+
+    width:min(1000px,100%);
 
     margin:
-        clamp(50px,6vw,90px)
-        auto
-        0;
+        50px auto 0;
 
-    text-align:center;
+    color:
+        rgba(228,185,95,.55);
+
+}
+
+
+.partnership-philosophy-line{
+
+    width:
+        clamp(40px,10vw,120px);
+
+    height:1px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(228,185,95,.35),
+            transparent
+        );
+
+}
+
+
+.partnership-philosophy-text{
+
+    font-size:
+        clamp(8px,.65vw,10px);
+
+    letter-spacing:
+        .30em;
+
+}
+
+
+.partnership-philosophy-divider{
+
+    color:
+        rgba(228,185,95,.30);
 
 }
 
 
 /* =========================================================
-26 — FINAL ENERGY CONNECTION
-PARTNERSHIP → CONTACT CTA
-========================================================= */
+   23 — FINAL ENERGY CONNECTION
+   ========================================================= */
 
 .partnership-final-energy{
 
     position:relative;
 
-    width:100%;
+    width:min(700px,100%);
 
     height:90px;
 
-    margin-top:20px;
+    margin:
+        45px auto 0;
 
     display:flex;
 
-    justify-content:center;
-
     align-items:center;
 
-    z-index:40;
+    justify-content:center;
 
 }
+
 
 .final-energy-line{
 
     position:absolute;
 
-    top:0;
-    left:50%;
+    left:0;
+    right:0;
 
-    width:1px;
-    height:100%;
+    top:50%;
 
-    transform:
-        translateX(-50%);
+    height:1px;
 
     background:
+
         linear-gradient(
-            180deg,
+            90deg,
             transparent,
-            rgba(228,185,95,.42),
+            rgba(228,185,95,.12),
+            rgba(228,185,95,.38),
+            rgba(228,185,95,.12),
             transparent
         );
 
-    box-shadow:
-        0 0 12px rgba(228,185,95,.18);
-
 }
+
 
 .final-energy-core{
 
-    position:absolute;
-
-    top:50%;
-    left:50%;
+    position:relative;
 
     width:8px;
     height:8px;
-
-    transform:
-        translate(-50%,-50%);
 
     border-radius:50%;
 
@@ -9891,134 +10232,50 @@ PARTNERSHIP → CONTACT CTA
         rgba(255,241,184,.95);
 
     box-shadow:
-        0 0 10px rgba(255,241,184,.9),
-        0 0 25px rgba(228,185,95,.6),
-        0 0 45px rgba(184,137,63,.25);
+
+        0 0 7px
+        rgba(255,255,240,.9),
+
+        0 0 18px
+        rgba(255,241,184,.65),
+
+        0 0 34px
+        rgba(228,185,95,.38);
 
 }
+
 
 .final-energy-pulse{
 
     position:absolute;
 
-    top:50%;
-    left:50%;
-
-    width:30px;
-    height:30px;
-
-    transform:
-        translate(-50%,-50%);
+    width:28px;
+    height:28px;
 
     border-radius:50%;
 
     border:
         1px solid
-        rgba(228,185,95,.34);
+        rgba(228,185,95,.22);
 
     animation:
-        partnershipPulseExpand
-        3s ease-out
+        finalEnergyPulse
+        3.5s
+        ease-out
         infinite;
 
 }
 
 
 /* =========================================================
-TABLET
-ENERGY REMAINS ACTIVE
-NO DISPLAY:NONE
-========================================================= */
+   24 — DESKTOP LARGE
+   ========================================================= */
 
-@media (max-width:900px){
-
-    .partnership-network{
-
-        height:auto;
-
-        display:grid;
-
-        grid-template-columns:
-            repeat(2,minmax(0,1fr));
-
-        gap:24px;
-
-        padding:
-            40px 0;
-
-    }
-
-    .partnership-network::before{
-
-        width:600px;
-        height:600px;
-
-    }
-
-    .partnership-core{
-
-        position:relative;
-
-        left:auto;
-        top:auto;
-
-        transform:none;
-
-        grid-column:
-            1 / -1;
-
-        grid-row:1;
-
-        margin:
-            0 auto 35px;
-
-    }
-
-    .partnership-core:hover,
-    .partnership-core:focus-visible{
-
-        transform:
-            scale(1.035);
-
-    }
+@media (min-width:1101px){
 
     .partnership-node{
 
-        position:relative;
-
-        top:auto;
-        right:auto;
-        bottom:auto;
-        left:auto;
-
-        width:100%;
-
-        min-height:230px;
-
-    }
-
-    /*
-    Energy bridges stay active,
-    but become subtle.
-    */
-
-    .partnership-energy-network{
-
-        display:block;
-
-        opacity:.28;
-
-    }
-
-    .partnership-energy-bridge{
-
-        opacity:.35;
-
-    }
-
-    .partnership-orbital-particles{
-
-        opacity:.65;
+        width:300px;
 
     }
 
@@ -10026,130 +10283,195 @@ NO DISPLAY:NONE
 
 
 /* =========================================================
-MOBILE
-ENERGY RELOCATED INTO CARD ATMOSPHERE
-========================================================= */
+   25 — TABLET
+   ========================================================= */
 
-@media (max-width:600px){
+@media (max-width:900px){
+
+    .partnership{
+
+        padding-left:20px;
+        padding-right:20px;
+
+    }
+
+
+    .partnership-network{
+
+        min-height:
+            980px;
+
+    }
+
+
+    .partnership-core{
+
+        width:
+            clamp(285px,42vw,340px);
+
+        top:6%;
+
+    }
+
+
+    .partnership-node{
+
+        width:
+            clamp(225px,32vw,280px);
+
+        min-height:
+            205px;
+
+        padding:
+            22px 22px;
+
+    }
+
+
+    .partnership-node-01,
+    .partnership-node-03{
+
+        left:0;
+
+    }
+
+
+    .partnership-node-02,
+    .partnership-node-04{
+
+        right:0;
+
+    }
+
+
+    .partnership-node-01,
+    .partnership-node-02{
+
+        top:39%;
+
+    }
+
+
+    .partnership-node-03,
+    .partnership-node-04{
+
+        top:67%;
+
+    }
+
+}
+
+
+/* =========================================================
+   26 — MOBILE
+   ========================================================= */
+
+@media (max-width:650px){
 
     .partnership{
 
         padding:
-            90px
-            18px
-            80px;
+            75px 16px
+            70px;
 
     }
+
 
     .partnership-header{
 
-        margin-bottom:40px;
+        margin-bottom:55px;
 
     }
+
 
     .partnership-network{
 
-        display:flex;
-
-        flex-direction:column;
-
-        gap:20px;
-
-        padding:
-            20px 0;
+        min-height:
+            1120px;
 
     }
+
 
     .partnership-core{
 
-        width:190px;
-        height:190px;
+        top:2%;
 
-        margin-bottom:25px;
+        width:
+            min(300px,78vw);
 
     }
+
 
     /*
-    Desktop bridges are visually suppressed,
-    but NOT removed from DOM.
-    Card energy becomes the main visual source.
+       On mobile the two-column architecture
+       becomes a controlled single column.
     */
-
-    .partnership-energy-network{
-
-        opacity:.12;
-
-    }
-
-    .partnership-energy-bridge{
-
-        opacity:.18;
-
-    }
-
-    .partnership-energy-link{
-
-        opacity:.55;
-
-    }
 
     .partnership-node{
 
-        min-height:230px;
+        left:50% !important;
+        right:auto !important;
 
-        padding:
-            26px
-            24px;
+        width:
+            min(300px,88vw);
 
-        border-radius:18px;
-
-        isolation:isolate;
-
-    }
-
-    /*
-    Stronger card backlight on mobile.
-    */
-
-    .partnership-node::before{
-
-        left:-35%;
-        top:-40%;
-
-        width:170%;
-        height:180%;
-
-        opacity:.95;
-
-        filter:
-            blur(22px);
-
-        background:
-            radial-gradient(
-                circle at 50% 50%,
-                rgba(255,241,184,.13),
-                rgba(228,185,95,.085) 25%,
-                rgba(184,137,63,.035) 45%,
-                transparent 72%
-            );
-
-    }
-
-    .partnership-node-energy{
-
-        right:22px;
-        top:22px;
+        min-height:
+            190px;
 
         transform:
-            scale(.85);
+            translateX(-50%);
 
     }
+
+
+    .partnership-node-01{
+
+        top:34%;
+
+    }
+
+
+    .partnership-node-02{
+
+        top:51%;
+
+    }
+
+
+    .partnership-node-03{
+
+        top:68%;
+
+    }
+
+
+    .partnership-node-04{
+
+        top:85%;
+
+    }
+
+
+    .partnership-energy-bridge{
+
+        opacity:.45;
+
+    }
+
+
+    .partnership-energy-link{
+
+        opacity:.25;
+
+    }
+
 
     .partnership-node-content{
 
-        max-width:75%;
+        padding-right:24px;
 
     }
+
 
     .partnership-node h3{
 
@@ -10157,39 +10479,26 @@ ENERGY RELOCATED INTO CARD ATMOSPHERE
 
     }
 
+
     .partnership-node p{
 
         font-size:12px;
 
-        line-height:1.75;
+        line-height:1.7;
 
     }
+
 
     .partnership-philosophy{
 
-        flex-wrap:wrap;
-
-        gap:12px;
+        gap:10px;
 
     }
+
 
     .partnership-philosophy-line{
 
-        flex-basis:35%;
-
-        flex-grow:0;
-
-    }
-
-    .partnership-philosophy-text{
-
-        font-size:7px;
-
-    }
-
-    .partnership-final-energy{
-
-        height:60px;
+        width:35px;
 
     }
 
@@ -10197,400 +10506,238 @@ ENERGY RELOCATED INTO CARD ATMOSPHERE
 
 
 /* =========================================================
-REDUCED MOTION
-========================================================= */
+   27 — VERY SMALL MOBILE
+   ========================================================= */
 
-@media (prefers-reduced-motion:reduce){
+@media (max-width:390px){
 
-    .partnership *,
-    .partnership *::before,
-    .partnership *::after{
+    .partnership-core{
 
-        animation-duration:
-            .01ms !important;
-
-        animation-iteration-count:
-            1 !important;
-
-        transition-duration:
-            .01ms !important;
-
-        scroll-behavior:
-            auto !important;
+        width:
+            270px;
 
     }
 
-   }
+
+    .partnership-network{
+
+        min-height:
+            1060px;
+
+    }
+
+
+    .partnership-node{
+
+        width:
+            92vw;
+
+    }
+
+}
+
+
 /* =========================================================
-27 — ANIMATIONS
-========================================================= */
-
-@keyframes partnershipDotPulse{
-0%,100%{
-opacity:.2;
-transform:scale(.8);
-}
-
-50%{
-    opacity:.85;
-    transform:scale(1.5);
-}
-
-}
+   28 — ENERGY ANIMATIONS
+   ========================================================= */
 
 @keyframes partnershipEnergyTravel{
-0%{
-left:-10px;
-opacity:0;
-}
 
-12%{
-    opacity:1;
-}
+    0%{
 
-88%{
-    opacity:1;
-}
+        left:0;
 
-100%{
-    left:calc(100% + 10px);
-    opacity:0;
-}
+        opacity:.1;
 
-}
+    }
 
-@keyframes partnershipLinkPulse{
-0%,100%{
-opacity:.3;
-transform:scale(.8);
-}
+    15%{
 
-50%{
-    opacity:1;
-    transform:scale(1.45);
-}
+        opacity:1;
+
+    }
+
+    75%{
+
+        opacity:.85;
+
+    }
+
+    100%{
+
+        left:100%;
+
+        opacity:0;
+
+    }
 
 }
 
-@keyframes partnershipOrbit{
-from{
-transform:rotate(0deg);
-}
 
-to{
-    transform:rotate(360deg);
-}
+@keyframes coreOrbitRotate{
 
-}
+    from{
+        transform:
+            translate(-50%,-50%)
+            rotate(0deg);
+    }
 
-@keyframes partnershipOrbitReverse{
-from{
-transform:rotate(360deg);
-}
-
-to{
-    transform:rotate(0deg);
-}
+    to{
+        transform:
+            translate(-50%,-50%)
+            rotate(360deg);
+    }
 
 }
 
-@keyframes partnershipCoreBreath{
-0%,100%{
-opacity:.55;
-transform:scale(.9);
-}
 
-50%{
-    opacity:1;
-    transform:scale(1.08);
-}
+@keyframes coreOrbitRotateReverse{
 
-}
+    from{
+        transform:
+            translate(-50%,-50%)
+            rotate(360deg);
+    }
 
-@keyframes partnershipCoreLight{
-0%,100%{
-opacity:.45;
-transform:
-translate(-50%,-50%)
-scale(.8);
-}
-
-50%{
-    opacity:1;
-    transform:
-        translate(-50%,-50%)
-        scale(1.2);
-}
+    to{
+        transform:
+            translate(-50%,-50%)
+            rotate(0deg);
+    }
 
 }
 
-@keyframes partnershipNodeCorePulse{
-0%,100%{
-opacity:.45;
-transform:
-translate(-50%,-50%)
-scale(.75);
-}
 
-50%{
-    opacity:1;
-    transform:
-        translate(-50%,-50%)
-        scale(1.35);
-}
+@keyframes coreHaloPulse{
 
-}
+    0%,100%{
 
-@keyframes partnershipParticleFloat{
-0%,100%{
-opacity:.2;
-transform:translate(0,0);
-}
+        opacity:.45;
 
-50%{
-    opacity:.9;
-    transform:translate(8px,-12px);
-}
+        transform:
+            translate(-50%,-50%)
+            scale(.88);
+
+    }
+
+    50%{
+
+        opacity:.85;
+
+        transform:
+            translate(-50%,-50%)
+            scale(1.08);
+
+    }
 
 }
 
-@keyframes partnershipAtmospherePulse{
-0%,100%{
-opacity:.45;
-transform:
-translate(-50%,-50%)
-scale(.92);
-}
 
-50%{
-    opacity:.95;
-    transform:
-        translate(-50%,-50%)
-        scale(1.08);
-}
+@keyframes partnershipAmbientFloat{
 
-}
+    0%,100%{
 
-@keyframes partnershipCardGlow{
-0%,100%{
-opacity:.35;
-transform:scale(.92);
-}
+        opacity:.25;
 
-50%{
-    opacity:.9;
-    transform:scale(1.05);
-}
+        transform:
+            translate3d(0,0,0);
+
+    }
+
+    50%{
+
+        opacity:.75;
+
+        transform:
+            translate3d(0,-10px,0);
+
+    }
 
 }
 
-@keyframes partnershipPulseExpand{
-0%{
-opacity:.65;
-transform:
-translate(-50%,-50%)
-scale(.5);
+
+@keyframes partnershipParticleDrift{
+
+    0%,100%{
+
+        opacity:.2;
+
+        transform:
+            translate3d(0,0,0)
+            scale(.8);
+
+    }
+
+    50%{
+
+        opacity:.75;
+
+        transform:
+            translate3d(0,-8px,0)
+            scale(1.15);
+
+    }
+
 }
 
-100%{
-    opacity:0;
-    transform:
-        translate(-50%,-50%)
-        scale(2.8);
-}
+
+@keyframes finalEnergyPulse{
+
+    0%{
+
+        opacity:.7;
+
+        transform:
+            scale(.45);
+
+    }
+
+    70%{
+
+        opacity:.12;
+
+        transform:
+            scale(1.5);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+            scale(1.8);
+
+    }
 
 }
 
 
 /* =========================================================
-28 — TABLET
-========================================================= */
-
-@media (max-width:900px){
-
-.partnership-network{
-    height:auto;
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(2,minmax(0,1fr));
-
-    gap:24px;
-
-    padding:
-        40px 0;
-}
-
-.partnership-network::before{
-    width:600px;
-    height:600px;
-}
-
-.partnership-core{
-    position:relative;
-
-    left:auto;
-    top:auto;
-
-    transform:none;
-
-    grid-column:1 / -1;
-    grid-row:1;
-
-    margin:
-        0 auto 35px;
-}
-
-.partnership-core:hover,
-.partnership-core:focus-visible{
-    transform:scale(1.035);
-}
-
-.partnership-node{
-    position:relative;
-
-    top:auto;
-    right:auto;
-    bottom:auto;
-    left:auto;
-
-    width:100%;
-    min-height:230px;
-}
-
-.partnership-orbital-particles{
-    opacity:.5;
-}
-
-}
-
-/* =========================================================
-29 — MOBILE
-========================================================= */
-
-@media (max-width:600px){
-
-.partnership{
-    padding:
-        90px
-        18px
-        80px;
-}
-
-.partnership-header{
-    margin-bottom:40px;
-}
-
-.partnership-network{
-    display:flex;
-    flex-direction:column;
-
-    gap:20px;
-
-    padding:20px 0;
-}
-
-.partnership-core{
-    width:190px;
-    height:190px;
-
-    margin-bottom:25px;
-}
-
-.partnership-node{
-    min-height:230px;
-
-    padding:
-        26px
-        24px;
-
-    border-radius:18px;
-}
-
-.partnership-node-energy{
-    right:22px;
-    top:22px;
-
-    transform:scale(.85);
-}
-
-.partnership-node-content{
-    max-width:75%;
-}
-
-.partnership-node h3{
-    font-size:20px;
-}
-
-.partnership-node p{
-    font-size:12px;
-    line-height:1.75;
-}
-
-.partnership-philosophy{
-    flex-wrap:wrap;
-    gap:12px;
-}
-
-.partnership-philosophy-line{
-    flex-basis:35%;
-    flex-grow:0;
-}
-
-.partnership-philosophy-text{
-    font-size:7px;
-}
-
-.partnership-final-energy{
-    height:60px;
-}
-
-}
-
-/* =========================================================
-30 — REDUCED MOTION
-========================================================= */
+   29 — ACCESSIBILITY / REDUCED MOTION
+   ========================================================= */
 
 @media (prefers-reduced-motion:reduce){
 
-.partnership *,
-.partnership *::before,
-.partnership *::after{
+    .partnership-energy-dot,
+    .partnership-energy-bridge i,
+    .partnership-core-orbit,
+    .partnership-core-halo,
+    .partnership-particle,
+    .final-energy-pulse{
 
-    animation-duration:.01ms !important;
-    animation-iteration-count:1 !important;
-    transition-duration:.01ms !important;
-    scroll-behavior:auto !important;
-}
+        animation:none !important;
 
-}
-/* =========================================================
-REDUCED MOTION
-========================================================= */
+    }
 
-@media (prefers-reduced-motion:reduce){
 
-.partnership *,
-.partnership *::before,
-.partnership *::after{
+    .partnership-node{
 
-    animation-duration:
-        .01ms !important;
+        transition:none !important;
 
-    animation-iteration-count:
-        1 !important;
-
-    transition-duration:
-        .01ms !important;
-
-    scroll-behavior:
-        auto !important;
+    }
 
 }
-
-           }
-
 
 
 
@@ -16969,611 +17116,3 @@ REDUCED MOTION
 
 }
 
-/* =========================================================
-   ARS HERITAGE GROUP
-   PARTNERSHIP — UNIFIED ENERGY SOURCE OVERRIDE
-   FINAL ENERGY SYSTEM TEST
-   ========================================================= */
-
-
-/* =========================================================
-   01 — NETWORK ENERGY FIELD
-   THE PARTNERSHIP NETWORK IS THE ENERGY SOURCE
-   ========================================================= */
-
-.partnership-network{
-    position:relative;
-    isolation:isolate;
-}
-
-
-/* =========================================================
-   02 — CENTRAL ENERGY SOURCE
-   ========================================================= */
-
-.partnership-network::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:50%;
-    top:50%;
-
-    width:clamp(440px,52vw,760px);
-    height:clamp(440px,52vw,760px);
-
-    transform:
-        translate(-50%,-50%);
-
-    border-radius:50%;
-
-    pointer-events:none;
-
-    z-index:1;
-
-    background:
-
-        radial-gradient(
-            circle,
-            rgba(255,241,184,.11) 0%,
-            rgba(228,185,95,.075) 18%,
-            rgba(228,185,95,.035) 38%,
-            rgba(184,137,63,.018) 55%,
-            transparent 74%
-        );
-
-    filter:blur(24px);
-
-    opacity:.9;
-
-    animation:
-        partnershipUnifiedSource
-        6s ease-in-out
-        infinite;
-
-}
-
-
-/* =========================================================
-   03 — ENERGY NETWORK LAYER
-   ========================================================= */
-
-.partnership-energy-network{
-
-    position:absolute;
-
-    inset:0;
-
-    display:block;
-
-    z-index:10;
-
-    pointer-events:none;
-
-}
-
-
-/* =========================================================
-   04 — BRIDGES
-   CORE → NODES
-   ========================================================= */
-
-.partnership-energy-bridge{
-
-    position:absolute;
-
-    height:1px;
-
-    z-index:12;
-
-    pointer-events:none;
-
-    transform-origin:left center;
-
-    opacity:.72;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            transparent 0%,
-            rgba(184,137,63,.04) 10%,
-            rgba(228,185,95,.18) 30%,
-            rgba(255,241,184,.58) 50%,
-            rgba(228,185,95,.18) 70%,
-            rgba(184,137,63,.04) 90%,
-            transparent 100%
-        );
-
-    box-shadow:
-
-        0 0 8px rgba(228,185,95,.16),
-        0 0 22px rgba(184,137,63,.08);
-
-}
-
-
-/* =========================================================
-   05 — BRIDGE GEOMETRY
-   ========================================================= */
-
-.bridge-01{
-
-    width:30%;
-
-    left:50%;
-    top:50%;
-
-    transform:
-        rotate(-152deg);
-
-}
-
-.bridge-02{
-
-    width:30%;
-
-    left:50%;
-    top:50%;
-
-    transform:
-        rotate(-28deg);
-
-}
-
-.bridge-03{
-
-    width:30%;
-
-    left:50%;
-    top:50%;
-
-    transform:
-        rotate(152deg);
-
-}
-
-.bridge-04{
-
-    width:30%;
-
-    left:50%;
-    top:50%;
-
-    transform:
-        rotate(28deg);
-
-}
-
-
-/* =========================================================
-   06 — ENERGY TRAVEL
-   ========================================================= */
-
-.partnership-energy-bridge i{
-
-    position:absolute;
-
-    top:50%;
-    left:-14px;
-
-    width:34px;
-    height:3px;
-
-    transform:
-        translateY(-50%);
-
-    border-radius:50%;
-
-    background:
-
-        radial-gradient(
-            ellipse,
-            rgba(255,250,220,1) 0%,
-            rgba(255,241,184,.95) 30%,
-            rgba(228,185,95,.55) 62%,
-            transparent 100%
-        );
-
-    box-shadow:
-
-        0 0 6px rgba(255,250,220,.95),
-        0 0 16px rgba(255,241,184,.75),
-        0 0 30px rgba(228,185,95,.38);
-
-    animation:
-        partnershipUnifiedTravel
-        4.5s linear
-        infinite;
-
-}
-
-.bridge-02 i{
-    animation-delay:-1.1s;
-}
-
-.bridge-03 i{
-    animation-delay:-2.2s;
-}
-
-.bridge-04 i{
-    animation-delay:-3.3s;
-}
-
-
-/* =========================================================
-   07 — NODE ENERGY RECEIVER
-   ========================================================= */
-
-.partnership-node-energy{
-
-    position:absolute;
-
-    z-index:20;
-
-    filter:
-
-        drop-shadow(
-            0 0 7px
-            rgba(228,185,95,.35)
-        );
-
-}
-
-
-/* =========================================================
-   08 — NODE CORE
-   RECEIVES ENERGY FROM NETWORK
-   ========================================================= */
-
-.partnership-node-energy
-.node-energy-core{
-
-    width:10px;
-    height:10px;
-
-    background:
-
-        radial-gradient(
-            circle,
-            rgba(255,250,220,1) 0%,
-            rgba(255,241,184,.92) 34%,
-            rgba(228,185,95,.55) 62%,
-            transparent 100%
-        );
-
-    box-shadow:
-
-        0 0 7px rgba(255,250,220,1),
-        0 0 17px rgba(255,241,184,.8),
-        0 0 30px rgba(228,185,95,.55),
-        0 0 44px rgba(184,137,63,.22);
-
-}
-
-
-/* =========================================================
-   09 — CARD ENERGY FIELD
-   SUBORDINATE TO CORE
-   ========================================================= */
-
-.partnership-node{
-
-    position:absolute;
-
-    isolation:isolate;
-
-}
-
-
-/* =========================================================
-   10 — CARD ENERGY FROM CORE
-   ========================================================= */
-
-.partnership-node::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:-18%;
-    top:-28%;
-
-    width:136%;
-    height:156%;
-
-    border-radius:50%;
-
-    z-index:1;
-
-    pointer-events:none;
-
-    background:
-
-        radial-gradient(
-            ellipse at 50% 52%,
-            rgba(228,185,95,.075) 0%,
-            rgba(228,185,95,.035) 28%,
-            rgba(184,137,63,.018) 48%,
-            transparent 72%
-        );
-
-    filter:blur(25px);
-
-    opacity:.72;
-
-    animation:
-        partnershipNodeEnergyBreath
-        5s ease-in-out
-        infinite;
-
-}
-
-.partnership-node-01::before{
-    animation-delay:-1s;
-}
-
-.partnership-node-02::before{
-    animation-delay:-2.2s;
-}
-
-.partnership-node-03::before{
-    animation-delay:-3.4s;
-}
-
-.partnership-node-04::before{
-    animation-delay:-4.6s;
-}
-
-
-/* =========================================================
-   11 — LOWER ENERGY
-   CONTINUES TOWARD SECTION END
-   ========================================================= */
-
-.partnership-node::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:12%;
-    bottom:-26px;
-
-    width:76%;
-    height:70px;
-
-    z-index:2;
-
-    pointer-events:none;
-
-    border-radius:50%;
-
-    background:
-
-        radial-gradient(
-            ellipse,
-            rgba(228,185,95,.09) 0%,
-            rgba(184,137,63,.035) 35%,
-            transparent 72%
-        );
-
-    filter:blur(18px);
-
-    opacity:.55;
-
-}
-
-
-/* =========================================================
-   12 — CORE ENERGY DOMINANCE
-   ========================================================= */
-
-.partnership-core{
-
-    z-index:30;
-
-}
-
-.partnership-core-energy{
-
-    z-index:2;
-
-}
-
-
-/* =========================================================
-   13 — CORE LIGHT
-   ========================================================= */
-
-.partnership-core-light{
-
-    box-shadow:
-
-        0 0 10px rgba(255,250,220,.8),
-        0 0 25px rgba(255,241,184,.65),
-        0 0 55px rgba(228,185,95,.32);
-
-}
-
-
-/* =========================================================
-   14 — FINAL ENERGY PATH
-   CORE SYSTEM → SECTION END
-   ========================================================= */
-
-.partnership-final-energy{
-
-    position:relative;
-
-    z-index:40;
-
-}
-
-.final-energy-line{
-
-    background:
-
-        linear-gradient(
-            180deg,
-            transparent,
-            rgba(228,185,95,.30),
-            rgba(255,241,184,.48),
-            rgba(228,185,95,.22),
-            transparent
-        );
-
-    box-shadow:
-        0 0 12px rgba(228,185,95,.12);
-
-}
-
-
-/* =========================================================
-   15 — UNIFIED ANIMATIONS
-   ========================================================= */
-
-@keyframes partnershipUnifiedSource{
-
-    0%,100%{
-
-        opacity:.55;
-
-        transform:
-            translate(-50%,-50%)
-            scale(.94);
-
-    }
-
-    50%{
-
-        opacity:1;
-
-        transform:
-            translate(-50%,-50%)
-            scale(1.06);
-
-    }
-
-}
-
-
-@keyframes partnershipUnifiedTravel{
-
-    0%{
-
-        left:-14px;
-        opacity:0;
-
-    }
-
-    10%{
-
-        opacity:1;
-
-    }
-
-    88%{
-
-        opacity:1;
-
-    }
-
-    100%{
-
-        left:calc(100% + 14px);
-        opacity:0;
-
-    }
-
-}
-
-
-@keyframes partnershipNodeEnergyBreath{
-
-    0%,100%{
-
-        opacity:.38;
-
-        transform:
-            scale(.92);
-
-    }
-
-    50%{
-
-        opacity:.78;
-
-        transform:
-            scale(1.05);
-
-    }
-
-}
-
-
-/* =========================================================
-   16 — TABLET
-   ========================================================= */
-
-@media (max-width:900px){
-
-    .partnership-energy-network{
-
-        display:block;
-
-        opacity:.65;
-
-    }
-
-    .partnership-energy-bridge{
-
-        opacity:.45;
-
-    }
-
-    .partnership-node::before{
-
-        opacity:.55;
-
-    }
-
-}
-
-
-/* =========================================================
-   17 — MOBILE
-   ========================================================= */
-
-@media (max-width:600px){
-
-    .partnership-energy-network{
-
-        display:block;
-
-        opacity:.42;
-
-    }
-
-    .partnership-energy-bridge{
-
-        opacity:.28;
-
-    }
-
-    .partnership-node::before{
-
-        opacity:.42;
-
-        filter:blur(20px);
-
-    }
-
-    .partnership-node::after{
-
-        opacity:.30;
-
-    }
-
-   }
