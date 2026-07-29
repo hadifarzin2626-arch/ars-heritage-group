@@ -17698,3 +17698,153 @@ GLOBAL ENERGY FROM ARS CORE
         partnershipEnergyTravel
         4.5s linear infinite;
 }
+
+/* =========================================================
+   PARTNERSHIP — MULTI-DIRECTION ENERGY EXTENSION
+   TARGET: EXISTING ENERGY BRIDGES ONLY
+   NO HTML CHANGE
+   NO TYPOGRAPHY CHANGE
+   NO CARD / CORE SIZE CHANGE
+   ========================================================= */
+
+.partnership-energy-bridge{
+    height:2px;
+    opacity:.82;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(184,137,63,.10) 10%,
+            rgba(228,185,95,.42) 32%,
+            rgba(255,241,184,.88) 50%,
+            rgba(228,185,95,.42) 68%,
+            rgba(184,137,63,.10) 90%,
+            transparent 100%
+        );
+
+    box-shadow:
+        0 0 8px rgba(228,185,95,.22),
+        0 0 22px rgba(228,185,95,.14);
+}
+
+
+/* =========================================================
+   ENERGY STREAM — LARGER / LONGER
+   ========================================================= */
+
+.partnership-energy-bridge i{
+
+    width:70px;
+    height:4px;
+
+    left:-18px;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(255,250,220,1) 0%,
+            rgba(255,241,184,.98) 28%,
+            rgba(228,185,95,.65) 58%,
+            transparent 100%
+        );
+
+    box-shadow:
+        0 0 7px rgba(255,241,184,1),
+        0 0 20px rgba(228,185,95,.9),
+        0 0 38px rgba(184,137,63,.45);
+
+}
+
+
+/* =========================================================
+   LEFT / UPPER-LEFT ENERGY
+   ========================================================= */
+
+.bridge-01 i{
+    width:82px;
+    height:4px;
+}
+
+
+/* =========================================================
+   RIGHT / UPPER-RIGHT ENERGY
+   ========================================================= */
+
+.bridge-02 i{
+    width:76px;
+    height:4px;
+}
+
+
+/* =========================================================
+   LEFT / LOWER-LEFT ENERGY
+   ========================================================= */
+
+.bridge-03 i{
+    width:88px;
+    height:4px;
+}
+
+
+/* =========================================================
+   RIGHT / LOWER-RIGHT ENERGY
+   ========================================================= */
+
+.bridge-04 i{
+    width:80px;
+    height:4px;
+}
+
+
+/* =========================================================
+   SECONDARY ENERGY LINK BOOST
+   ========================================================= */
+
+.partnership-energy-link{
+
+    width:7px;
+    height:7px;
+
+    box-shadow:
+        0 0 9px rgba(255,241,184,.9),
+        0 0 22px rgba(228,185,95,.65),
+        0 0 38px rgba(184,137,63,.32);
+
+}
+
+
+/* =========================================================
+   CENTRAL SOURCE — SUBTLE ENERGY PUSH
+   ========================================================= */
+
+.partnership-network::before{
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(228,185,95,.14) 0%,
+            rgba(228,185,95,.065) 25%,
+            rgba(184,137,63,.025) 45%,
+            transparent 72%
+        );
+}
+
+
+/* =========================================================
+   MOBILE / TABLET
+   KEEP ENERGY STREAMS ACTIVE
+   ========================================================= */
+
+@media (max-width:900px){
+
+    .partnership-energy-bridge{
+        opacity:.68;
+    }
+
+    .partnership-energy-bridge i{
+        width:58px;
+        height:3px;
+    }
+
+}
