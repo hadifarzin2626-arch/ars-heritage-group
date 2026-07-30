@@ -19253,7 +19253,176 @@ img{
 */
 
 
+/* =========================================================
+   ARS HOME — HERO WIDTH EXPANSION FIX
+   HERO / ORBITAL UNIVERSE ×2
+   Based on current Home Index
+   ========================================================= */
 
+.hero{
+    width:100%;
+    overflow:hidden;
+}
+
+.hero-wrapper{
+    width:100%;
+    min-height:200vh;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* =========================================================
+   MASTER ORBIT — 2X VISUAL WIDTH
+   ========================================================= */
+
+.ars-orbit{
+    width:min(
+        172vw,
+        2100px
+    );
+
+    aspect-ratio:1 / 1;
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%);
+}
+
+
+/* =========================================================
+   ATMOSPHERIC UNIVERSE — SAME 2X SCALE
+   ========================================================= */
+
+.home-energy-universe{
+    position:absolute;
+
+    width:
+        min(
+            200vw,
+            2400px
+        );
+
+    height:
+        min(
+            200vw,
+            2400px
+        );
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%)
+        translate3d(
+            var(--energy-parallax-x,0px),
+            var(--energy-parallax-y,0px),
+            0
+        );
+
+    pointer-events:none;
+}
+
+
+/* =========================================================
+   PREVENT CONTENT FROM BEING PUSHED BY THE LARGE UNIVERSE
+   ========================================================= */
+
+.hero-content{
+    position:relative;
+    z-index:100;
+
+    width:min(
+        90%,
+        900px
+    );
+
+    margin-left:auto;
+    margin-right:auto;
+}
+
+
+/* =========================================================
+   LARGE SCREEN — FULL PREMIUM SCALE
+   ========================================================= */
+
+@media (min-width:1200px){
+
+    .ars-orbit{
+        width:
+            min(
+                172vw,
+                2100px
+            );
+    }
+
+    .home-energy-universe{
+        width:
+            min(
+                200vw,
+                2400px
+            );
+
+        height:
+            min(
+                200vw,
+                2400px
+            );
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width:1199px) and (min-width:769px){
+
+    .ars-orbit{
+        width:
+            155vw;
+    }
+
+    .home-energy-universe{
+        width:
+            175vw;
+
+        height:
+            175vw;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE — DON'T LET 2X DESKTOP SCALE BREAK THE SCREEN
+   ========================================================= */
+
+@media (max-width:768px){
+
+    .ars-orbit{
+        width:
+            150vw;
+    }
+
+    .home-energy-universe{
+        width:
+            165vw;
+
+        height:
+            165vw;
+    }
+
+    .hero-content{
+        width:
+            calc(100% - 40px);
+    }
+
+}
 
 
 
