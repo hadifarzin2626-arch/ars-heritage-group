@@ -18230,9 +18230,88 @@ REDUCED MOTION
     width:200px !important;
 }
 
+/* =========================================================
+   PARTNERSHIP — 35% SMALLER CARDS
+   ========================================================= */
 
+.partnership-node{
+    width:clamp(159px,16.25vw,215px) !important;
+    min-height:clamp(133px,13vw,166px) !important;
+}
 
+/* =========================================================
+   HERITAGE → HOME
+   ========================================================= */
 
+.heritage-home-return{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:80px auto 40px;
+    position:relative;
+    z-index:50;
+}
+
+.heritage-home-button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:16px;
+
+    padding:16px 28px;
+
+    border:1px solid rgba(228,185,95,.35);
+    border-radius:999px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(228,185,95,.10),
+            rgba(8,15,28,.72)
+        );
+
+    color:#f4dfaa;
+    text-decoration:none;
+
+    font-size:12px;
+    letter-spacing:2px;
+    font-weight:600;
+
+    box-shadow:
+        0 0 18px rgba(228,185,95,.10),
+        inset 0 1px 0 rgba(255,255,255,.06);
+
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease,
+        background .35s ease;
+}
+
+.heritage-home-arrow{
+    font-size:20px;
+    line-height:1;
+    transition:transform .35s ease;
+}
+
+.heritage-home-button:hover{
+    transform:translateY(-3px);
+
+    border-color:rgba(228,185,95,.72);
+
+    box-shadow:
+        0 0 25px rgba(228,185,95,.25),
+        0 0 55px rgba(184,137,63,.12),
+        inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+.heritage-home-button:hover .heritage-home-arrow{
+    transform:translateX(5px);
+}
 
 
 
