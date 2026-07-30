@@ -17266,7 +17266,1064 @@ section:not(.hero)::before{
    V21 — LOCKED
    ۲۸ — GLOBAL AMBIENT INTELLIGENCE
    ========================================================= */
+/* =========================================================
+   V22 — SECTION 29
+   PERFORMANCE & MOBILE INTELLIGENCE
+   ۲۹ — هوش عملکردی و موبایل
+   ========================================================= */
 
+
+/* ---------------------------------------------------------
+   29.1 — GPU OPTIMIZATION
+   ۲۹.۱ — بهینه‌سازی GPU
+   --------------------------------------------------------- */
+
+.ars-home-premium,
+.hero,
+.hero-wrapper,
+.ars-orbit,
+.orbit-core,
+.orbit-item,
+.particle-intelligence,
+.energy-stream,
+.orbital-beacon{
+
+    -webkit-backface-visibility:hidden;
+
+    backface-visibility:hidden;
+
+    -webkit-transform-style:preserve-3d;
+
+    transform-style:preserve-3d;
+
+}
+
+.ars-orbit,
+.orbit-core,
+.orbit-item{
+
+    will-change:
+        transform;
+
+}
+
+.particle-intelligence,
+.energy-stream,
+.orbital-beacon{
+
+    will-change:
+        transform,
+        opacity;
+
+}
+
+
+/* ---------------------------------------------------------
+   29.2 — ANIMATION BUDGET
+   ۲۹.۲ — مدیریت حجم انیمیشن
+   --------------------------------------------------------- */
+
+.ars-orbit{
+
+    contain:
+        layout
+        paint
+        style;
+
+}
+
+.ars-orbit .orbit-item{
+
+    contain:
+        layout
+        paint;
+
+}
+
+.ars-orbit .particle-intelligence,
+.ars-orbit .radiation-spike,
+.ars-orbit .energy-stream,
+.ars-orbit .orbital-beacon{
+
+    contain:
+        paint;
+
+}
+
+
+/* ---------------------------------------------------------
+   29.3 — MOBILE ORBITAL SCALING
+   ۲۹.۳ — مقیاس مداری موبایل
+   --------------------------------------------------------- */
+
+@media (max-width:700px){
+
+    .ars-orbit{
+
+        width:
+            min(
+                94vw,
+                720px
+            );
+
+    }
+
+    .ars-orbit .orbit-item{
+
+        transform-origin:
+            center center;
+
+    }
+
+    .ars-orbit .orbit-item a{
+
+        transform:
+            scale(.88);
+
+    }
+
+    .ars-orbit .orbit-item:hover a{
+
+        transform:
+            scale(1.02);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   29.4 — TOUCH OPTIMIZATION
+   ۲۹.۴ — بهینه‌سازی لمس
+   --------------------------------------------------------- */
+
+@media (hover:none) and (pointer:coarse){
+
+    .ars-orbit .orbit-item{
+
+        cursor:pointer;
+
+        -webkit-tap-highlight-color:
+            transparent;
+
+    }
+
+    .ars-orbit .orbit-item a{
+
+        min-width:
+            44px;
+
+        min-height:
+            44px;
+
+        touch-action:
+            manipulation;
+
+    }
+
+    .ars-orbit .orbit-item:hover{
+
+        filter:
+            none;
+
+    }
+
+    .ars-orbit .orbit-item:hover::before{
+
+        opacity:
+            .72;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   29.5 — REDUCED MOTION
+   ۲۹.۵ — حالت کاهش حرکت
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion:reduce){
+
+    html{
+
+        scroll-behavior:
+            auto;
+
+    }
+
+    *,
+    *::before,
+    *::after{
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            .01ms !important;
+
+        scroll-behavior:
+            auto !important;
+
+    }
+
+    .ars-orbit,
+    .orbit-core,
+    .orbit-item{
+
+        will-change:
+            auto;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   29.6 — SMALL SCREEN DEPTH
+   ۲۹.۶ — حفظ عمق در صفحه کوچک
+   --------------------------------------------------------- */
+
+@media (max-width:480px){
+
+    .ars-orbit{
+
+        width:
+            96vw;
+
+    }
+
+    .ars-orbit .orbit-item a{
+
+        transform:
+            scale(.76);
+
+    }
+
+    .ars-orbit .orbit-item:hover a{
+
+        transform:
+            scale(.82);
+
+    }
+
+    .ars-orbit .orbit-item::before{
+
+        width:
+            135%;
+
+        height:
+            135%;
+
+        filter:
+            blur(11px);
+
+        opacity:
+            .52;
+
+    }
+
+    .ars-orbit .orbit-item::after{
+
+        width:
+            118%;
+
+        height:
+            118%;
+
+        opacity:
+            .58;
+
+    }
+
+    .ars-orbit .particle-intelligence{
+
+        opacity:
+            .55;
+
+    }
+
+    .ars-orbit .energy-stream{
+
+        opacity:
+            .20;
+
+    }
+
+    .ars-orbit .radiation-spike{
+
+        opacity:
+            .20;
+
+    }
+
+    .ars-orbit .orbital-beacon{
+
+        width:
+            3px;
+
+        height:
+            3px;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   29.7 — PERFORMANCE SAFETY LOCK
+   ۲۹.۷ — قفل ایمنی عملکرد
+   --------------------------------------------------------- */
+
+.ars-orbit{
+
+    overflow:
+        visible;
+
+}
+
+.ars-orbit img{
+
+    -webkit-user-drag:none;
+
+    user-select:none;
+
+}
+
+.ars-orbit .particle-intelligence,
+.ars-orbit .energy-stream,
+.ars-orbit .radiation-spike,
+.ars-orbit .orbital-beacon{
+
+    pointer-events:
+        none;
+
+}
+
+
+/* =========================================================
+   V22 — FINAL LOCK 🔒
+   V22 — قفل نهایی
+   ========================================================= */
+
+/*
+   SECTION 29 COMPLETE.
+
+   29.1 — GPU Optimization
+   29.2 — Animation Budget
+   29.3 — Mobile Orbital Scaling
+   29.4 — Touch Optimization
+   29.5 — Reduced Motion
+   29.6 — Small Screen Depth
+   29.7 — Performance Safety Lock
+
+   V22 — LOCKED 🔒
+
+   NEXT:
+   V23 — SECTION 30
+   RESPONSIVE ARCHITECTURE
+*/
+/* =========================================================
+   V23 — SECTION 30
+   RESPONSIVE ARCHITECTURE
+   ۳۰ — معماری Responsive
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   30.1 — TABLET ARCHITECTURE
+   ۳۰.۱ — معماری تبلت
+   --------------------------------------------------------- */
+
+@media (min-width:701px) and (max-width:1100px){
+
+    .hero,
+    .hero-wrapper{
+
+        min-height:
+            200vh;
+
+    }
+
+    .ars-orbit{
+
+        width:
+            min(
+                88vw,
+                820px
+            );
+
+    }
+
+    .orbit-core{
+
+        width:
+            clamp(
+                145px,
+                17vw,
+                195px
+            );
+
+    }
+
+    .ars-orbit .orbit-item a{
+
+        transform:
+            scale(.92);
+
+    }
+
+    .ars-orbit .orbit-item:hover a{
+
+        transform:
+            scale(1.06);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   30.2 — MOBILE ARCHITECTURE
+   ۳۰.۲ — معماری موبایل
+   --------------------------------------------------------- */
+
+@media (max-width:700px){
+
+    .hero,
+    .hero-wrapper{
+
+        min-height:
+            200vh;
+
+    }
+
+    .ars-orbit{
+
+        width:
+            min(
+                94vw,
+                720px
+            );
+
+        max-width:
+            94vw;
+
+    }
+
+    .orbit-core{
+
+        width:
+            clamp(
+                125px,
+                29vw,
+                175px
+            );
+
+    }
+
+    .ars-orbit .orbit-item{
+
+        max-width:
+            100%;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   30.3 — SMALL MOBILE
+   ۳۰.۳ — موبایل کوچک
+   --------------------------------------------------------- */
+
+@media (max-width:480px){
+
+    .hero,
+    .hero-wrapper{
+
+        min-height:
+            185vh;
+
+    }
+
+    .ars-orbit{
+
+        width:
+            96vw;
+
+        max-width:
+            96vw;
+
+    }
+
+    .orbit-core{
+
+        width:
+            clamp(
+                118px,
+                27vw,
+                150px
+            );
+
+    }
+
+    .ars-orbit .orbit-item a{
+
+        transform:
+            scale(.76);
+
+    }
+
+    .ars-orbit .orbit-item:hover a{
+
+        transform:
+            scale(.82);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   30.4 — LARGE DESKTOP
+   ۳۰.۴ — دسکتاپ بزرگ
+   --------------------------------------------------------- */
+
+@media (min-width:1400px){
+
+    .ars-orbit{
+
+        width:
+            min(
+                76vw,
+                1180px
+            );
+
+    }
+
+    .orbit-core{
+
+        width:
+            clamp(
+                175px,
+                12vw,
+                235px
+            );
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   30.5 — ULTRA-WIDE SCREENS
+   ۳۰.۵ — نمایشگرهای فوق عریض
+   --------------------------------------------------------- */
+
+@media (min-width:1900px){
+
+    .ars-orbit{
+
+        width:
+            min(
+                68vw,
+                1320px
+            );
+
+    }
+
+    .hero-wrapper{
+
+        max-width:
+            1800px;
+
+        margin-inline:
+            auto;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   30.6 — RESPONSIVE ORBIT CALIBRATION
+   ۳۰.۶ — کالیبراسیون مداری Responsive
+   --------------------------------------------------------- */
+
+.ars-orbit{
+
+    --orbit-size:
+        clamp(
+            300px,
+            86vw,
+            1050px
+        );
+
+    width:
+        var(--orbit-size);
+
+    height:
+        var(--orbit-size);
+
+}
+
+
+@media (max-width:1100px){
+
+    .ars-orbit{
+
+        --orbit-size:
+            min(
+                88vw,
+                820px
+            );
+
+    }
+
+}
+
+
+@media (max-width:700px){
+
+    .ars-orbit{
+
+        --orbit-size:
+            min(
+                94vw,
+                720px
+            );
+
+    }
+
+}
+
+
+@media (max-width:480px){
+
+    .ars-orbit{
+
+        --orbit-size:
+            96vw;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   30.7 — RESPONSIVE SAFETY CALIBRATION
+   ۳۰.۷ — کالیبراسیون ایمنی Responsive
+   --------------------------------------------------------- */
+
+@media (max-width:700px){
+
+    .ars-orbit,
+    .orbit-core,
+    .ars-orbit .orbit-item{
+
+        -webkit-tap-highlight-color:
+            transparent;
+
+    }
+
+    .ars-orbit img{
+
+        max-width:
+            100%;
+
+        height:
+            auto;
+
+    }
+
+}
+
+@media (orientation:landscape) and (max-width:900px){
+
+    .hero{
+
+        min-height:
+            210vh;
+
+    }
+
+    .ars-orbit{
+
+        width:
+            min(
+                78vh,
+                680px
+            );
+
+        height:
+            min(
+                78vh,
+                680px
+            );
+
+    }
+
+}
+
+
+/* =========================================================
+   V23 — FINAL LOCK 🔒
+   V23 — قفل نهایی
+   ========================================================= */
+
+/*
+   SECTION 30 COMPLETE.
+
+   30.1 — Tablet Architecture
+   30.2 — Mobile Architecture
+   30.3 — Small Mobile
+   30.4 — Large Desktop
+   30.5 — Ultra-Wide Screens
+   30.6 — Responsive Orbit Calibration
+   30.7 — Responsive Safety Calibration
+
+   V23 — LOCKED 🔒
+
+   NEXT:
+   V24 — SECTION 31
+   ACCESSIBILITY & SAFE MOTION
+*/
+/* =========================================================
+   V24 — SECTION 31
+   ACCESSIBILITY & SAFE MOTION
+   ۳۱ — دسترس‌پذیری و حرکت ایمن
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   31.1 — REDUCED MOTION
+   ۳۱.۱ — حرکت کاهش‌یافته
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            .01ms !important;
+
+        scroll-behavior:
+            auto !important;
+
+    }
+
+    .hero-stars,
+    .hero-stars-2,
+    .hero-background::before,
+    .ars-orbit::before,
+    .ars-orbit::after,
+    .particle-intelligence,
+    .radiation-spike,
+    .radiation-core-flash,
+    .energy-stream,
+    .orbital-beacon,
+    .orbit-core,
+    .orbit-item{
+
+        animation:
+            none !important;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   31.2 — CONTRAST CONTROL
+   ۳۱.۲ — کنترل کنتراست
+   --------------------------------------------------------- */
+
+body{
+
+    color:
+        var(--ars-white);
+
+}
+
+.hero h1,
+.hero h2,
+.hero h3,
+.section-title{
+
+    color:
+        var(--ars-white);
+
+    text-shadow:
+
+        0 0 18px
+        rgba(0,0,0,.75);
+
+}
+
+.hero p,
+.section-description{
+
+    color:
+        var(--ars-white-soft);
+
+}
+
+.gold,
+.gold-text{
+
+    color:
+        var(--ars-gold-bright);
+
+}
+
+.blue,
+.blue-text{
+
+    color:
+        var(--ars-blue-bright);
+
+}
+
+
+/* ---------------------------------------------------------
+   31.3 — FOCUS VISIBILITY
+   ۳۱.۳ — نمایش واضح Focus
+   --------------------------------------------------------- */
+
+:focus-visible{
+
+    outline:
+        2px solid
+        var(--ars-blue-bright);
+
+    outline-offset:
+        5px;
+
+    border-radius:
+        8px;
+
+    box-shadow:
+
+        0 0 0 4px
+        rgba(22,140,255,.14),
+
+        0 0 22px
+        rgba(82,182,255,.28);
+
+}
+
+.ars-orbit .orbit-item a:focus-visible{
+
+    outline:
+        2px solid
+        var(--ars-gold-bright);
+
+    outline-offset:
+        6px;
+
+    box-shadow:
+
+        0 0 0 4px
+        rgba(228,185,95,.14),
+
+        0 0 28px
+        rgba(228,185,95,.32),
+
+        0 0 48px
+        rgba(22,140,255,.20);
+
+}
+
+
+/* ---------------------------------------------------------
+   31.4 — TOUCH TARGET PROTECTION
+   ۳۱.۴ — حفاظت از محدوده لمس
+   --------------------------------------------------------- */
+
+.ars-orbit .orbit-item a{
+
+    min-width:
+        44px;
+
+    min-height:
+        44px;
+
+    touch-action:
+        manipulation;
+
+}
+
+button,
+a,
+input,
+select,
+textarea{
+
+    touch-action:
+        manipulation;
+
+}
+
+
+/* ---------------------------------------------------------
+   31.5 — KEYBOARD NAVIGATION
+   ۳۱.۵ — ناوبری با صفحه‌کلید
+   --------------------------------------------------------- */
+
+a,
+button{
+
+    -webkit-tap-highlight-color:
+        transparent;
+
+}
+
+a:focus-visible,
+button:focus-visible{
+
+    position:
+        relative;
+
+    z-index:
+        100;
+
+}
+
+.ars-orbit .orbit-item a{
+
+    cursor:
+        pointer;
+
+}
+
+
+/* ---------------------------------------------------------
+   31.6 — ACCESSIBILITY LAYER
+   ۳۱.۶ — لایه دسترس‌پذیری
+   --------------------------------------------------------- */
+
+[aria-hidden="true"]{
+
+    pointer-events:
+        none;
+
+}
+
+[role="button"]{
+
+    cursor:
+        pointer;
+
+}
+
+img{
+
+    max-width:
+        100%;
+
+}
+
+@media (forced-colors: active){
+
+    *,
+    *::before,
+    *::after{
+
+        box-shadow:
+            none !important;
+
+        text-shadow:
+            none !important;
+
+    }
+
+    :focus-visible{
+
+        outline:
+            2px solid
+            CanvasText;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   31.7 — SAFE MOTION & INTERACTION PROTECTION
+   ۳۱.۷ — حفاظت نهایی حرکت و تعامل
+   --------------------------------------------------------- */
+
+@media (max-width:700px){
+
+    .ars-orbit .orbit-item:hover{
+
+        filter:
+            none;
+
+    }
+
+    .ars-orbit .orbit-item:hover::before{
+
+        transform:
+            translate(-50%,-50%);
+
+    }
+
+}
+
+@media (hover:none) and (pointer:coarse){
+
+    .ars-orbit .orbit-item:hover a{
+
+        transform:
+            none;
+
+    }
+
+    .ars-orbit .orbit-item:hover img{
+
+        transform:
+            none;
+
+    }
+
+}
+
+
+/* =========================================================
+   V24 — FINAL LOCK 🔒
+   V24 — قفل نهایی
+   ========================================================= */
+
+/*
+   SECTION 31 COMPLETE.
+
+   31.1 — Reduced Motion
+   31.2 — Contrast Control
+   31.3 — Focus Visibility
+   31.4 — Touch Target Protection
+   31.5 — Keyboard Navigation
+   31.6 — Accessibility Layer
+   31.7 — Safe Motion & Interaction Protection
+
+   V24 — LOCKED 🔒
+
+   NEXT:
+   V25 — SECTION 32
+   FINAL HOME INTEGRATION
+*/
 
 
 
