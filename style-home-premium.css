@@ -18324,7 +18324,933 @@ img{
    V25 — SECTION 32
    FINAL HOME INTEGRATION
 */
+/* =========================================================
+   V25 — SECTION 32
+   FINAL HOME INTEGRATION
+   ۳۲ — یکپارچه‌سازی نهایی Home
+   ========================================================= */
 
+
+/* ---------------------------------------------------------
+   32.1 — SYSTEM INTEGRATION
+   ۳۲.۱ — یکپارچه‌سازی سیستم
+   --------------------------------------------------------- */
+
+.ars-home-premium{
+
+    position:relative;
+
+    isolation:isolate;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #000103 0%,
+            #010207 45%,
+            #000103 100%
+        );
+
+}
+
+.ars-home-premium > *{
+
+    position:relative;
+
+}
+
+.hero,
+.hero-wrapper,
+.ars-orbit,
+.orbit-core,
+.orbit-item{
+
+    isolation:isolate;
+
+}
+
+
+/* ---------------------------------------------------------
+   32.2 — LAYER PRIORITY
+   ۳۲.۲ — اولویت لایه‌ها
+   --------------------------------------------------------- */
+
+.hero-background{
+
+    z-index:-10;
+
+}
+
+.hero-stars{
+
+    z-index:-8;
+
+}
+
+.hero-stars-2{
+
+    z-index:-7;
+
+}
+
+.particle-intelligence{
+
+    z-index:14;
+
+}
+
+.ars-orbit{
+
+    z-index:20;
+
+}
+
+.orbit-core{
+
+    z-index:50;
+
+}
+
+.orbit-item{
+
+    z-index:30;
+
+}
+
+.orbit-item:hover{
+
+    z-index:80;
+
+}
+
+.orbit-item.is-selected{
+
+    z-index:90;
+
+}
+
+.main-header{
+
+    z-index:1000;
+
+}
+
+
+/* ---------------------------------------------------------
+   32.3 — Z-INDEX ARCHITECTURE
+   ۳۲.۳ — معماری Z-Index
+   --------------------------------------------------------- */
+
+.ars-home-premium{
+
+    --z-background:
+        -10;
+
+    --z-atmosphere:
+        0;
+
+    --z-particles:
+        14;
+
+    --z-orbit:
+        20;
+
+    --z-nodes:
+        30;
+
+    --z-core:
+        50;
+
+    --z-focus:
+        90;
+
+    --z-header:
+        1000;
+
+}
+
+.hero-background{
+
+    z-index:
+        var(--z-background);
+
+}
+
+.particle-intelligence{
+
+    z-index:
+        var(--z-particles);
+
+}
+
+.ars-orbit{
+
+    z-index:
+        var(--z-orbit);
+
+}
+
+.orbit-core{
+
+    z-index:
+        var(--z-core);
+
+}
+
+
+/* ---------------------------------------------------------
+   32.4 — ANIMATION SYNCHRONIZATION
+   ۳۲.۴ — همگام‌سازی انیمیشن‌ها
+   --------------------------------------------------------- */
+
+.ars-orbit{
+
+    animation:
+        homeOrbitalBreath
+        14s
+        ease-in-out
+        infinite;
+
+}
+
+.orbit-core{
+
+    animation:
+        homeCorePresence
+        7s
+        ease-in-out
+        infinite;
+
+}
+
+.orbit-item{
+
+    animation:
+        homeNodePresence
+        9s
+        ease-in-out
+        infinite;
+
+}
+
+@keyframes homeOrbitalBreath{
+
+    0%,
+    100%{
+
+        filter:
+            brightness(.97);
+
+    }
+
+    50%{
+
+        filter:
+            brightness(1.035);
+
+    }
+
+}
+
+@keyframes homeCorePresence{
+
+    0%,
+    100%{
+
+        filter:
+            brightness(.98);
+
+    }
+
+    50%{
+
+        filter:
+            brightness(1.06);
+
+    }
+
+}
+
+@keyframes homeNodePresence{
+
+    0%,
+    100%{
+
+        filter:
+            brightness(.98);
+
+    }
+
+    50%{
+
+        filter:
+            brightness(1.025);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   32.5 — GLOBAL VISUAL CALIBRATION
+   ۳۲.۵ — کالیبراسیون بصری سراسری
+   --------------------------------------------------------- */
+
+.ars-home-premium{
+
+    --integration-blue:
+        rgba(22,140,255,.18);
+
+    --integration-gold:
+        rgba(228,185,95,.12);
+
+    --integration-white:
+        rgba(247,244,237,.08);
+
+}
+
+.ars-orbit{
+
+    filter:
+        drop-shadow(
+            0 0 35px
+            var(--integration-blue)
+        );
+
+}
+
+.orbit-core{
+
+    filter:
+        drop-shadow(
+            0 0 32px
+            var(--integration-gold)
+        )
+
+        drop-shadow(
+            0 0 55px
+            rgba(22,140,255,.08)
+        );
+
+}
+
+.orbit-item{
+
+    filter:
+        drop-shadow(
+            0 0 12px
+            rgba(22,140,255,.055)
+        );
+
+}
+
+
+/* ---------------------------------------------------------
+   32.6 — FINAL CONFLICT PROTECTION
+   ۳۲.۶ — محافظت نهایی در برابر تداخل
+   --------------------------------------------------------- */
+
+.ars-home-premium .ars-orbit{
+
+    margin:
+        0;
+
+    padding:
+        0;
+
+    max-width:
+        none;
+
+}
+
+.ars-home-premium .ars-orbit img{
+
+    border:
+        0;
+
+    outline:
+        0;
+
+}
+
+.ars-home-premium .orbit-item{
+
+    margin:
+        0;
+
+    padding:
+        0;
+
+}
+
+.ars-home-premium .orbit-item a{
+
+    text-decoration:
+        none;
+
+}
+
+.ars-home-premium *,
+.ars-home-premium *::before,
+.ars-home-premium *::after{
+
+    box-sizing:
+        border-box;
+
+}
+
+
+/* ---------------------------------------------------------
+   32.7 — FINAL INTEGRATION CALIBRATION
+   ۳۲.۷ — کالیبراسیون نهایی یکپارچه‌سازی
+   --------------------------------------------------------- */
+
+@media (max-width:700px){
+
+    .ars-orbit{
+
+        animation-duration:
+            18s;
+
+    }
+
+    .orbit-core{
+
+        animation-duration:
+            9s;
+
+    }
+
+    .orbit-item{
+
+        animation-duration:
+            12s;
+
+    }
+
+}
+
+@media (prefers-reduced-motion:reduce){
+
+    .ars-orbit,
+    .orbit-core,
+    .orbit-item{
+
+        animation:
+            none !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   V25 — FINAL LOCK 🔒
+   V25 — قفل نهایی
+   ========================================================= */
+
+/*
+   SECTION 32 COMPLETE.
+
+   32.1 — System Integration
+   32.2 — Layer Priority
+   32.3 — Z-Index Architecture
+   32.4 — Animation Synchronization
+   32.5 — Global Visual Calibration
+   32.6 — Final Conflict Protection
+   32.7 — Final Integration Calibration
+
+   V25 — LOCKED 🔒
+
+   NEXT:
+   V26 — SECTION 33
+   HOME PREMIUM MASTER LOCK
+*/
+
+/* =========================================================
+   V26 — SECTION 33
+   HOME PREMIUM MASTER LOCK
+   ۳۳ — قفل نهایی Master
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   33.1 — FINAL CSS VALIDATION
+   ۳۳.۱ — اعتبارسنجی نهایی CSS
+   --------------------------------------------------------- */
+
+.ars-home-premium{
+
+    position:relative;
+
+    width:100%;
+
+    min-height:100vh;
+
+    margin:0;
+    padding:0;
+
+    overflow-x:hidden;
+
+    isolation:isolate;
+
+}
+
+.ars-home-premium *,
+.ars-home-premium *::before,
+.ars-home-premium *::after{
+
+    box-sizing:border-box;
+
+}
+
+.ars-home-premium img{
+
+    display:block;
+
+    max-width:100%;
+
+    height:auto;
+
+}
+
+.ars-home-premium a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+}
+
+
+/* ---------------------------------------------------------
+   33.2 — LAYER VALIDATION
+   ۳۳.۲ — اعتبارسنجی لایه‌ها
+   --------------------------------------------------------- */
+
+.ars-home-premium{
+
+    --ars-layer-background:-10;
+    --ars-layer-atmosphere:0;
+    --ars-layer-particles:14;
+    --ars-layer-orbit:20;
+    --ars-layer-nodes:30;
+    --ars-layer-core:50;
+    --ars-layer-focus:90;
+    --ars-layer-header:1000;
+
+}
+
+.ars-home-premium .hero-background{
+
+    z-index:
+        var(--ars-layer-background);
+
+}
+
+.ars-home-premium .particle-intelligence{
+
+    z-index:
+        var(--ars-layer-particles);
+
+}
+
+.ars-home-premium .ars-orbit{
+
+    z-index:
+        var(--ars-layer-orbit);
+
+}
+
+.ars-home-premium .orbit-item{
+
+    z-index:
+        var(--ars-layer-nodes);
+
+}
+
+.ars-home-premium .orbit-core{
+
+    z-index:
+        var(--ars-layer-core);
+
+}
+
+.ars-home-premium .orbit-item:hover{
+
+    z-index:
+        var(--ars-layer-focus);
+
+}
+
+.ars-home-premium .orbit-item.is-selected{
+
+    z-index:
+        var(--ars-layer-focus);
+
+}
+
+.ars-home-premium .main-header{
+
+    z-index:
+        var(--ars-layer-header);
+
+}
+
+
+/* ---------------------------------------------------------
+   33.3 — RESPONSIVE VALIDATION
+   ۳۳.۳ — اعتبارسنجی Responsive
+   --------------------------------------------------------- */
+
+@media (max-width:1200px){
+
+    .ars-orbit{
+
+        width:
+            min(88vw,920px);
+
+    }
+
+}
+
+@media (max-width:900px){
+
+    .ars-orbit{
+
+        width:
+            min(92vw,760px);
+
+    }
+
+}
+
+@media (max-width:700px){
+
+    .hero,
+    .hero-wrapper{
+
+        min-height:
+            200vh;
+
+    }
+
+    .ars-orbit{
+
+        width:
+            min(94vw,620px);
+
+    }
+
+    .main-header{
+
+        height:
+            78px;
+
+    }
+
+    .mother-logo{
+
+        width:
+            clamp(
+                78px,
+                17vw,
+                110px
+            );
+
+    }
+
+}
+
+@media (max-width:420px){
+
+    .ars-orbit{
+
+        width:
+            96vw;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   33.4 — ANIMATION VALIDATION
+   ۳۳.۴ — اعتبارسنجی انیمیشن
+   --------------------------------------------------------- */
+
+.ars-home-premium{
+
+    --ars-motion-fast:
+        .45s;
+
+    --ars-motion-medium:
+        .8s;
+
+    --ars-motion-slow:
+        1.2s;
+
+}
+
+.ars-home-premium .orbit-item,
+.ars-home-premium .orbit-core,
+.ars-home-premium .ars-orbit{
+
+    transform-origin:
+        center center;
+
+    will-change:
+        transform;
+
+}
+
+.ars-home-premium .hero-stars,
+.ars-home-premium .hero-stars-2,
+.ars-home-premium .particle-intelligence{
+
+    will-change:
+        transform;
+
+}
+
+@media (prefers-reduced-motion:reduce){
+
+    .ars-home-premium *,
+    .ars-home-premium *::before,
+    .ars-home-premium *::after{
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            .01ms !important;
+
+        scroll-behavior:
+            auto !important;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   33.5 — PERFORMANCE VALIDATION
+   ۳۳.۵ — اعتبارسنجی عملکرد
+   --------------------------------------------------------- */
+
+.ars-home-premium .hero-stars,
+.ars-home-premium .hero-stars-2,
+.ars-home-premium .particle-intelligence,
+.ars-home-premium .radiation-spike,
+.ars-home-premium .energy-stream,
+.ars-home-premium .orbital-beacon{
+
+    pointer-events:
+        none;
+
+}
+
+.ars-home-premium .hero-background,
+.ars-home-premium .ars-orbit{
+
+    contain:
+        layout
+        paint;
+
+}
+
+@media (max-width:700px){
+
+    .ars-home-premium .particle-intelligence{
+
+        opacity:
+            .78;
+
+    }
+
+    .ars-home-premium .energy-stream{
+
+        opacity:
+            .24;
+
+    }
+
+    .ars-home-premium .radiation-spike{
+
+        opacity:
+            .24;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   33.6 — FINAL VISUAL CALIBRATION
+   ۳۳.۶ — کالیبراسیون نهایی بصری
+   --------------------------------------------------------- */
+
+.ars-home-premium{
+
+    color:
+        var(--ars-white);
+
+    background:
+
+        radial-gradient(
+            circle at 50% 38%,
+            rgba(22,140,255,.045),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(228,185,95,.018),
+            transparent 45%
+        ),
+
+        linear-gradient(
+            180deg,
+            #000103 0%,
+            #010207 48%,
+            #000103 100%
+        );
+
+}
+
+.ars-home-premium::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:
+        -1;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 50%,
+            transparent 30%,
+            rgba(0,0,0,.24) 100%
+        );
+
+}
+
+
+/* ---------------------------------------------------------
+   33.7 — FINAL SYSTEM PROTECTION
+   ۳۳.۷ — محافظت نهایی سیستم
+   --------------------------------------------------------- */
+
+.ars-home-premium{
+
+    overflow-x:
+        clip;
+
+}
+
+@supports not (overflow:clip){
+
+    .ars-home-premium{
+
+        overflow-x:
+            hidden;
+
+    }
+
+}
+
+.ars-home-premium .ars-orbit,
+.ars-home-premium .orbit-core,
+.ars-home-premium .orbit-item{
+
+    user-select:
+        none;
+
+}
+
+.ars-home-premium button,
+.ars-home-premium a{
+
+    -webkit-tap-highlight-color:
+        transparent;
+
+}
+
+
+/* =========================================================
+   V26 — ARS HOME PREMIUM CSS
+   MASTER LOCK 🔒
+   V26 — SECTION 33 COMPLETE
+   ========================================================= */
+
+/*
+   33.1 — Final CSS Validation
+   ۳۳.۱ — اعتبارسنجی نهایی CSS
+
+   33.2 — Layer Validation
+   ۳۳.۲ — اعتبارسنجی لایه‌ها
+
+   33.3 — Responsive Validation
+   ۳۳.۳ — اعتبارسنجی Responsive
+
+   33.4 — Animation Validation
+   ۳۳.۴ — اعتبارسنجی انیمیشن
+
+   33.5 — Performance Validation
+   ۳۳.۵ — اعتبارسنجی عملکرد
+
+   33.6 — Final Visual Calibration
+   ۳۳.۶ — کالیبراسیون نهایی بصری
+
+   33.7 — Final System Protection
+   ۳۳.۷ — محافظت نهایی سیستم
+
+
+   ========================================================
+   🔒 ARS HOME PREMIUM CSS — MASTER LOCK
+   🔒 قفل نهایی Master استایل Home Premium
+   ========================================================
+
+   V26 — LOCKED 🔒
+
+   SECTION 33 — LOCKED 🔒
+
+   HOME PREMIUM CSS ROADMAP — COMPLETE 🔒
+
+   V8  → SECTION 15
+   V9  → SECTION 16
+   V10 → SECTION 17
+   V11 → SECTION 18
+   V12 → SECTION 19
+   V13 → SECTION 20
+   V14 → SECTION 21
+   V15 → SECTION 22
+   V16 → SECTION 23
+   V17 → SECTION 24
+   V18 → SECTION 25
+   V19 → SECTION 26
+   V20 → SECTION 27
+   V21 → SECTION 28
+   V22 → SECTION 29
+   V23 → SECTION 30
+   V24 → SECTION 31
+   V25 → SECTION 32
+   V26 → SECTION 33
+
+   🔒 MASTER LOCK — FINAL
+*/
 
 
 
