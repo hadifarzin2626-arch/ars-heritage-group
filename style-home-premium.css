@@ -3810,11 +3810,6896 @@ body::after{
    ۱۲ — ENERGY NETWORK SYSTEM / سیستم شبکه انرژی
    ========================================================= */
 
+/* =========================================================
+   13 — ORBITAL PARTICLE & RADIATION INTELLIGENCE
+   ۱۳ — هوش ذرات و تابش مداری
+   ========================================================= */
 
 
+/* ---------------------------------------------------------
+   13.1 — MASTER PARTICLE INTELLIGENCE FIELD
+   ۱۳.۱ — میدان اصلی هوش ذرات
+   --------------------------------------------------------- */
+
+.ars-orbit .particle-intelligence{
+
+    position:absolute;
+
+    inset:-20%;
+
+    z-index:14;
+
+    pointer-events:none;
+
+    border-radius:50%;
+
+    overflow:visible;
+
+}
 
 
+/* ---------------------------------------------------------
+   13.2 — PARTICLE ATMOSPHERE
+   ۱۳.۲ — اتمسفر ذرات شناور
+   --------------------------------------------------------- */
 
+.ars-orbit .particle-intelligence::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+            circle at 14% 31%,
+            rgba(82,182,255,.95) 0 1px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 21% 63%,
+            rgba(255,241,184,.9) 0 1.5px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 35% 17%,
+            rgba(22,140,255,.85) 0 1px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 48% 7%,
+            rgba(255,255,255,.75) 0 1px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 69% 18%,
+            rgba(228,185,95,.9) 0 1px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 84% 39%,
+            rgba(82,182,255,.85) 0 1.5px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 91% 67%,
+            rgba(255,241,184,.8) 0 1px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 72% 87%,
+            rgba(22,140,255,.85) 0 1px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 47% 94%,
+            rgba(228,185,95,.8) 0 1.5px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 19% 84%,
+            rgba(82,182,255,.8) 0 1px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 7% 58%,
+            rgba(255,255,255,.7) 0 1px,
+            transparent 3px
+        );
+
+    opacity:.68;
+
+    animation:
+        intelligentParticleDrift
+        34s
+        linear
+        infinite;
+
+}
+
+
+/* ---------------------------------------------------------
+   13.3 — SECOND PARTICLE LAYER
+   ۱۳.۳ — لایه دوم ذرات
+   --------------------------------------------------------- */
+
+.ars-orbit .particle-intelligence::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:6%;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+            circle at 11% 48%,
+            rgba(22,140,255,.8) 0 1px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 31% 74%,
+            rgba(255,241,184,.85) 0 1px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 54% 22%,
+            rgba(82,182,255,.8) 0 1px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 79% 53%,
+            rgba(228,185,95,.75) 0 1px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 61% 91%,
+            rgba(255,255,255,.7) 0 1px,
+            transparent 3px
+        );
+
+    opacity:.42;
+
+    animation:
+        intelligentParticleDriftReverse
+        47s
+        linear
+        infinite;
+
+}
+
+
+/* ---------------------------------------------------------
+   13.4 — RADIATION SPIKES
+   ۱۳.۴ — شراره‌های شعاعی
+   --------------------------------------------------------- */
+
+.ars-orbit .radiation-spike{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:
+        38%;
+
+    height:
+        1px;
+
+    transform-origin:
+        left center;
+
+    border-radius:999px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(255,241,184,.7),
+            rgba(228,185,95,.30) 30%,
+            rgba(82,182,255,.16) 62%,
+            transparent
+        );
+
+    box-shadow:
+
+        0 0 6px
+        rgba(255,241,184,.25),
+
+        0 0 18px
+        rgba(22,140,255,.12);
+
+    opacity:.38;
+
+    animation:
+        radiationBreath
+        5s
+        ease-in-out
+        infinite;
+
+}
+
+
+/* ---------------------------------------------------------
+   13.5 — SPIKE ANGLES
+   ۱۳.۵ — زوایای شراره‌ها
+   --------------------------------------------------------- */
+
+.ars-orbit .radiation-spike.spike-1{
+    transform:rotate(17deg);
+}
+
+.ars-orbit .radiation-spike.spike-2{
+    transform:rotate(74deg);
+}
+
+.ars-orbit .radiation-spike.spike-3{
+    transform:rotate(129deg);
+}
+
+.ars-orbit .radiation-spike.spike-4{
+    transform:rotate(186deg);
+}
+
+.ars-orbit .radiation-spike.spike-5{
+    transform:rotate(241deg);
+}
+
+.ars-orbit .radiation-spike.spike-6{
+    transform:rotate(297deg);
+}
+
+.ars-orbit .radiation-spike.spike-7{
+    transform:rotate(343deg);
+}
+
+
+/* ---------------------------------------------------------
+   13.6 — RADIATION CORE FLASH
+   ۱۳.۶ — فلش انرژی مرکزی
+   --------------------------------------------------------- */
+
+.ars-orbit .radiation-core-flash{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:9%;
+    height:9%;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.95) 0%,
+            rgba(255,241,184,.62) 20%,
+            rgba(82,182,255,.22) 48%,
+            transparent 75%
+        );
+
+    filter:
+        blur(4px);
+
+    opacity:.48;
+
+    animation:
+        radiationCoreFlash
+        3.8s
+        ease-in-out
+        infinite;
+
+}
+
+
+/* ---------------------------------------------------------
+   13.7 — ENERGY STREAMS
+   ۱۳.۷ — جریان‌های انرژی شناور
+   --------------------------------------------------------- */
+
+.ars-orbit .energy-stream{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:
+        30%;
+
+    height:
+        2px;
+
+    transform-origin:
+        left center;
+
+    border-radius:999px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(82,182,255,.25),
+            rgba(255,241,184,.62),
+            rgba(22,140,255,.18),
+            transparent
+        );
+
+    filter:
+        blur(.15px);
+
+    opacity:.38;
+
+    overflow:visible;
+
+}
+
+
+/* ---------------------------------------------------------
+   13.8 — STREAM PULSES
+   ۱۳.۸ — پالس‌های جریان انرژی
+   --------------------------------------------------------- */
+
+.ars-orbit .energy-stream i{
+
+    position:absolute;
+
+    left:0;
+    top:50%;
+
+    width:6px;
+    height:6px;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            #ffffff 0%,
+            rgba(255,241,184,.95) 30%,
+            rgba(82,182,255,.75) 62%,
+            transparent 100%
+        );
+
+    box-shadow:
+
+        0 0 7px
+        rgba(255,255,255,.9),
+
+        0 0 18px
+        rgba(82,182,255,.65);
+
+    animation:
+        streamPulseTravel
+        3.2s
+        linear
+        infinite;
+
+}
+
+
+/* ---------------------------------------------------------
+   13.9 — STREAM POSITIONS
+   ۱۳.۹ — مسیرهای جریان
+   --------------------------------------------------------- */
+
+.ars-orbit .energy-stream.stream-1{
+    transform:rotate(28deg);
+}
+
+.ars-orbit .energy-stream.stream-2{
+    transform:rotate(91deg);
+    width:34%;
+}
+
+.ars-orbit .energy-stream.stream-3{
+    transform:rotate(151deg);
+    width:31%;
+}
+
+.ars-orbit .energy-stream.stream-4{
+    transform:rotate(214deg);
+    width:35%;
+}
+
+.ars-orbit .energy-stream.stream-5{
+    transform:rotate(276deg);
+    width:32%;
+}
+
+.ars-orbit .energy-stream.stream-6{
+    transform:rotate(331deg);
+    width:34%;
+}
+
+
+/* ---------------------------------------------------------
+   13.10 — ORBITAL LIGHT BEACONS
+   ۱۳.۱۰ — فانوس‌های نوری مداری
+   --------------------------------------------------------- */
+
+.ars-orbit .orbital-beacon{
+
+    position:absolute;
+
+    width:5px;
+    height:5px;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            #ffffff 0%,
+            rgba(255,241,184,.95) 32%,
+            rgba(82,182,255,.65) 62%,
+            transparent 100%
+        );
+
+    box-shadow:
+
+        0 0 6px
+        rgba(255,255,255,.9),
+
+        0 0 16px
+        rgba(255,241,184,.7),
+
+        0 0 32px
+        rgba(22,140,255,.42);
+
+    animation:
+        beaconPulse
+        2.8s
+        ease-in-out
+        infinite;
+
+}
+
+
+/* ---------------------------------------------------------
+   13.11 — BEACON POSITIONS
+   ۱۳.۱۱ — مختصات فانوس‌های نوری
+   --------------------------------------------------------- */
+
+.ars-orbit .orbital-beacon.beacon-1{
+    left:18%;
+    top:39%;
+}
+
+.ars-orbit .orbital-beacon.beacon-2{
+    left:31%;
+    top:19%;
+}
+
+.ars-orbit .orbital-beacon.beacon-3{
+    left:52%;
+    top:11%;
+}
+
+.ars-orbit .orbital-beacon.beacon-4{
+    left:76%;
+    top:27%;
+}
+
+.ars-orbit .orbital-beacon.beacon-5{
+    left:87%;
+    top:56%;
+}
+
+.ars-orbit .orbital-beacon.beacon-6{
+    left:69%;
+    top:82%;
+}
+
+.ars-orbit .orbital-beacon.beacon-7{
+    left:42%;
+    top:91%;
+}
+
+.ars-orbit .orbital-beacon.beacon-8{
+    left:16%;
+    top:72%;
+}
+
+
+/* ---------------------------------------------------------
+   13.12 — MOTION SYSTEM
+   ۱۳.۱۲ — سیستم حرکتی هوشمند ذرات
+   --------------------------------------------------------- */
+
+@keyframes intelligentParticleDrift{
+
+    from{
+
+        transform:
+            rotate(0deg)
+            scale(1);
+
+    }
+
+    50%{
+
+        transform:
+            rotate(180deg)
+            scale(1.025);
+
+    }
+
+    to{
+
+        transform:
+            rotate(360deg)
+            scale(1);
+
+    }
+
+}
+
+
+@keyframes intelligentParticleDriftReverse{
+
+    from{
+
+        transform:
+            rotate(360deg)
+            scale(1);
+
+    }
+
+    50%{
+
+        transform:
+            rotate(180deg)
+            scale(1.035);
+
+    }
+
+    to{
+
+        transform:
+            rotate(0deg)
+            scale(1);
+
+    }
+
+}
+
+
+@keyframes radiationBreath{
+
+    0%,
+    100%{
+
+        opacity:.18;
+
+        transform-origin:left center;
+
+        scale:.86;
+
+    }
+
+    50%{
+
+        opacity:.65;
+
+        scale:1.08;
+
+    }
+
+}
+
+
+@keyframes radiationCoreFlash{
+
+    0%,
+    100%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(.72);
+
+        opacity:.25;
+
+    }
+
+    50%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(1.28);
+
+        opacity:.8;
+
+    }
+
+}
+
+
+@keyframes streamPulseTravel{
+
+    0%{
+
+        left:0;
+
+        opacity:0;
+
+    }
+
+    10%{
+
+        opacity:1;
+
+    }
+
+    82%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        left:100%;
+
+        opacity:0;
+
+    }
+
+}
+
+
+@keyframes beaconPulse{
+
+    0%,
+    100%{
+
+        transform:scale(.65);
+
+        opacity:.28;
+
+    }
+
+    50%{
+
+        transform:scale(1.5);
+
+        opacity:1;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   13.13 — MOBILE RADIATION CONTROL
+   ۱۳.۱۳ — کنترل تابش در موبایل
+   --------------------------------------------------------- */
+
+@media (max-width:700px){
+
+    .ars-orbit .particle-intelligence{
+
+        inset:-25%;
+
+    }
+
+    .ars-orbit .radiation-spike{
+
+        width:34%;
+
+        opacity:.30;
+
+    }
+
+    .ars-orbit .energy-stream{
+
+        opacity:.28;
+
+    }
+
+    .ars-orbit .orbital-beacon{
+
+        width:4px;
+        height:4px;
+
+    }
+
+}
+
+
+/* =========================================================
+   V6 — LOCKED
+   ۱۳ — ORBITAL PARTICLE & RADIATION INTELLIGENCE
+   ========================================================= */
+
+
+/* =========================================================
+   V7 — ADVANCED NODE INTELLIGENCE
+   ۱۴ — هوش پیشرفته و شخصیت بصری ۱۳ نود
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   14.1 — NODE INTELLIGENCE MASTER
+   ۱۴.۱ — میدان اصلی هوش نودها
+   --------------------------------------------------------- */
+
+.ars-orbit .orbit-item{
+
+    position:absolute;
+
+    isolation:isolate;
+
+    z-index:30;
+
+    transition:
+        transform .9s var(--ars-ease),
+        filter .9s var(--ars-ease);
+
+}
+
+
+/* ---------------------------------------------------------
+   14.2 — NODE ATMOSPHERIC HALO
+   ۱۴.۲ — هاله اتمسفری اختصاصی نود
+   --------------------------------------------------------- */
+
+.ars-orbit .orbit-item::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:175%;
+    height:175%;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    z-index:-3;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(22,140,255,.12) 0%,
+            rgba(22,140,255,.055) 28%,
+            rgba(228,185,95,.035) 45%,
+            transparent 72%
+        );
+
+    filter:
+        blur(18px);
+
+    opacity:.72;
+
+    animation:
+        nodeAtmosphereBreath
+        5.5s
+        ease-in-out
+        infinite;
+
+}
+
+
+/* ---------------------------------------------------------
+   14.3 — NODE RADIATION SHELL
+   ۱۴.۳ — پوسته تابشی اختصاصی نود
+   --------------------------------------------------------- */
+
+.ars-orbit .orbit-item::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:132%;
+    height:132%;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    z-index:-2;
+
+    border:
+        1px solid
+        rgba(82,182,255,.16);
+
+    box-shadow:
+
+        0 0 10px
+        rgba(82,182,255,.15),
+
+        0 0 24px
+        rgba(22,140,255,.10),
+
+        0 0 45px
+        rgba(228,185,95,.055),
+
+        inset 0 0 18px
+        rgba(22,140,255,.045);
+
+    animation:
+        nodeRadiationRotate
+        16s
+        linear
+        infinite;
+
+}
+
+
+/* ---------------------------------------------------------
+   14.4 — NODE LINK / ANCHOR
+   ۱۴.۴ — حلقه لنگر نود
+   --------------------------------------------------------- */
+
+.ars-orbit .orbit-item a{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    width:100%;
+    height:100%;
+
+    border-radius:50%;
+
+    isolation:isolate;
+
+    transition:
+        transform .8s var(--ars-ease),
+        filter .8s var(--ars-ease);
+
+}
+
+
+/* ---------------------------------------------------------
+   14.5 — NODE INNER LIGHT
+   ۱۴.۵ — نور داخلی نود
+   --------------------------------------------------------- */
+
+.ars-orbit .orbit-item a::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-10%;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.055),
+            rgba(22,140,255,.035) 34%,
+            transparent 70%
+        );
+
+    filter:
+        blur(7px);
+
+    opacity:.85;
+
+}
+
+
+/* ---------------------------------------------------------
+   14.6 — NODE SCANNING RING
+   ۱۴.۶ — حلقه اسکن نوری نود
+   --------------------------------------------------------- */
+
+.ars-orbit .orbit-item a::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-15%;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    z-index:3;
+
+    border:
+        1px solid
+        transparent;
+
+    background:
+
+        conic-gradient(
+            from 0deg,
+            transparent 0deg,
+            transparent 285deg,
+            rgba(82,182,255,.0) 300deg,
+            rgba(82,182,255,.72) 322deg,
+            rgba(255,241,184,.95) 336deg,
+            rgba(82,182,255,.0) 350deg,
+            transparent 360deg
+        );
+
+    -webkit-mask:
+        radial-gradient(
+            farthest-side,
+            transparent calc(100% - 2px),
+            #000 calc(100% - 1px)
+        );
+
+    mask:
+        radial-gradient(
+            farthest-side,
+            transparent calc(100% - 2px),
+            #000 calc(100% - 1px)
+        );
+
+    animation:
+        nodeScanRotate
+        4.8s
+        linear
+        infinite;
+
+    opacity:.72;
+
+}
+
+
+/* ---------------------------------------------------------
+   14.7 — NODE IMAGE DEPTH
+   ۱۴.۷ — عمق سه‌بعدی تصویر نود
+   --------------------------------------------------------- */
+
+.ars-orbit .orbit-item img{
+
+    position:relative;
+
+    display:block;
+
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+
+    z-index:5;
+
+    filter:
+
+        drop-shadow(
+            0 0 4px
+            rgba(255,255,255,.22)
+        )
+
+        drop-shadow(
+            0 0 12px
+            rgba(228,185,95,.18)
+        )
+
+        drop-shadow(
+            0 0 28px
+            rgba(22,140,255,.20)
+        );
+
+    transform:
+        translateZ(0);
+
+    transition:
+        transform .8s var(--ars-ease),
+        filter .8s var(--ars-ease);
+
+}
+
+
+/* ---------------------------------------------------------
+   14.8 — NODE ENERGY EDGE
+   ۱۴.۸ — لبه انرژی نود
+   --------------------------------------------------------- */
+
+.ars-orbit .orbit-item a{
+
+    box-shadow:
+
+        0 0 0 1px
+        rgba(228,185,95,.08),
+
+        0 0 12px
+        rgba(22,140,255,.08),
+
+        0 0 30px
+        rgba(22,140,255,.055);
+
+}
+
+
+/* ---------------------------------------------------------
+   14.9 — NODE HOVER INTELLIGENCE
+   ۱۴.۹ — واکنش هوشمند نود
+   --------------------------------------------------------- */
+
+.ars-orbit .orbit-item:hover{
+
+    z-index:80;
+
+    filter:
+        brightness(1.16);
+
+}
+
+
+.ars-orbit .orbit-item:hover a{
+
+    transform:
+        scale(1.14);
+
+}
+
+
+.ars-orbit .orbit-item:hover img{
+
+    transform:
+        scale(1.08);
+
+    filter:
+
+        drop-shadow(
+            0 0 7px
+            rgba(255,255,255,.38)
+        )
+
+        drop-shadow(
+            0 0 20px
+            rgba(255,241,184,.48)
+        )
+
+        drop-shadow(
+            0 0 45px
+            rgba(22,140,255,.48)
+        );
+
+}
+
+
+.ars-orbit .orbit-item:hover::before{
+
+    width:215%;
+    height:215%;
+
+    opacity:1;
+
+    filter:
+        blur(24px);
+
+}
+
+
+.ars-orbit .orbit-item:hover::after{
+
+    width:150%;
+    height:150%;
+
+    border-color:
+        rgba(82,182,255,.30);
+
+    box-shadow:
+
+        0 0 15px
+        rgba(82,182,255,.28),
+
+        0 0 35px
+        rgba(22,140,255,.18),
+
+        0 0 65px
+        rgba(228,185,95,.10);
+
+}
+
+
+/* ---------------------------------------------------------
+   14.10 — NODE ACTIVE STATE
+   ۱۴.۱۰ — حالت فعال نود
+   --------------------------------------------------------- */
+
+.ars-orbit .orbit-item.is-selected{
+
+    z-index:90;
+
+    filter:
+        brightness(1.22);
+
+}
+
+
+.ars-orbit .orbit-item.is-selected a{
+
+    transform:
+        scale(1.17);
+
+}
+
+
+.ars-orbit .orbit-item.is-selected img{
+
+    filter:
+
+        drop-shadow(
+            0 0 8px
+            rgba(255,255,255,.48)
+        )
+
+        drop-shadow(
+            0 0 25px
+            rgba(255,241,184,.62)
+        )
+
+        drop-shadow(
+            0 0 55px
+            rgba(22,140,255,.58)
+        );
+
+}
+
+
+/* ---------------------------------------------------------
+   14.11 — NODE INDIVIDUAL ENERGY PERSONALITIES
+   ۱۴.۱۱ — شخصیت انرژی مستقل نودها
+   --------------------------------------------------------- */
+
+.ars-orbit .orbit-1::before{
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(82,182,255,.16),
+            transparent 70%
+        );
+
+}
+
+.ars-orbit .orbit-2::before{
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(228,185,95,.14),
+            transparent 70%
+        );
+
+}
+
+.ars-orbit .orbit-3::before{
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(168,50,50,.12),
+            rgba(228,185,95,.035),
+            transparent 70%
+        );
+
+}
+
+.ars-orbit .orbit-4::before{
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(82,182,255,.15),
+            rgba(255,241,184,.035),
+            transparent 70%
+        );
+
+}
+
+.ars-orbit .orbit-5::before{
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(79,135,97,.13),
+            rgba(22,140,255,.035),
+            transparent 70%
+        );
+
+}
+
+.ars-orbit .orbit-6::before{
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(22,140,255,.17),
+            rgba(82,182,255,.045),
+            transparent 70%
+        );
+
+}
+
+.ars-orbit .orbit-7::before{
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(228,185,95,.13),
+            rgba(184,137,63,.04),
+            transparent 70%
+        );
+
+}
+
+.ars-orbit .orbit-8::before{
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(82,182,255,.12),
+            rgba(22,140,255,.035),
+            transparent 70%
+        );
+
+}
+
+.ars-orbit .orbit-9::before{
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(228,185,95,.15),
+            rgba(22,140,255,.035),
+            transparent 70%
+        );
+
+}
+
+.ars-orbit .orbit-10::before{
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(22,140,255,.13),
+            rgba(82,182,255,.035),
+            transparent 70%
+        );
+
+}
+
+.ars-orbit .orbit-11::before{
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(184,137,63,.14),
+            rgba(228,185,95,.035),
+            transparent 70%
+        );
+
+}
+
+.ars-orbit .orbit-12::before{
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(79,135,97,.12),
+            rgba(22,140,255,.035),
+            transparent 70%
+        );
+
+}
+
+.ars-orbit .orbit-13::before{
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(82,182,255,.18),
+            rgba(22,140,255,.055),
+            transparent 70%
+        );
+
+}
+
+
+/* ---------------------------------------------------------
+   14.12 — ADVANCED NODE MOTION
+   ۱۴.۱۲ — سیستم حرکتی پیشرفته نودها
+   --------------------------------------------------------- */
+
+@keyframes nodeAtmosphereBreath{
+
+    0%,
+    100%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(.88);
+
+        opacity:.48;
+
+    }
+
+    50%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(1.08);
+
+        opacity:.92;
+
+    }
+
+}
+
+
+@keyframes nodeRadiationRotate{
+
+    from{
+
+        transform:
+            translate(-50%,-50%)
+            rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+            translate(-50%,-50%)
+            rotate(360deg);
+
+    }
+
+}
+
+
+@keyframes nodeScanRotate{
+
+    from{
+
+        transform:
+            rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   14.13 — MOBILE NODE INTELLIGENCE
+   ۱۴.۱۳ — حفظ هوش نودها در موبایل
+   --------------------------------------------------------- */
+
+@media (max-width:700px){
+
+    .ars-orbit .orbit-item::before{
+
+        width:155%;
+        height:155%;
+
+        filter:
+            blur(14px);
+
+        opacity:.62;
+
+    }
+
+    .ars-orbit .orbit-item::after{
+
+        width:125%;
+        height:125%;
+
+        opacity:.72;
+
+    }
+
+    .ars-orbit .orbit-item a::after{
+
+        inset:-13%;
+
+        opacity:.58;
+
+    }
+
+    .ars-orbit .orbit-item:hover a{
+
+        transform:
+            scale(1.08);
+
+    }
+
+    .ars-orbit .orbit-item:hover img{
+
+        transform:
+            scale(1.04);
+
+    }
+
+}
+
+
+/* =========================================================
+   V7 — LOCKED
+   ۱۴ — ADVANCED NODE INTELLIGENCE
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   14.14 — NODE MICRO-PULSE NETWORK
+   ۱۴.۱۴ — شبکه پالس‌های میکرو انرژی نودها
+   --------------------------------------------------------- */
+
+.ars-orbit .orbit-item::marker{
+    display:none;
+}
+
+.ars-orbit .orbit-item{
+    --node-pulse-scale:1;
+    --node-pulse-opacity:.55;
+}
+
+.ars-orbit .orbit-item a{
+    animation:
+        nodeMicroPulse
+        6.5s
+        ease-in-out
+        infinite;
+}
+
+.ars-orbit .orbit-item:nth-child(2) a{
+    animation-delay:-1.1s;
+}
+
+.ars-orbit .orbit-item:nth-child(3) a{
+    animation-delay:-2.2s;
+}
+
+.ars-orbit .orbit-item:nth-child(4) a{
+    animation-delay:-3.3s;
+}
+
+.ars-orbit .orbit-item:nth-child(5) a{
+    animation-delay:-4.4s;
+}
+
+.ars-orbit .orbit-item:nth-child(6) a{
+    animation-delay:-5.5s;
+}
+
+@keyframes nodeMicroPulse{
+
+    0%,
+    100%{
+        filter:
+            brightness(.98)
+            saturate(.96);
+    }
+
+    50%{
+        filter:
+            brightness(1.08)
+            saturate(1.08);
+    }
+/* ---------------------------------------------------------
+   14.15 — NODE ENERGY AURA LAYERS
+   ۱۴.۱۵ — لایه‌های هاله انرژی چندگانه نود
+   --------------------------------------------------------- */
+
+.ars-orbit .orbit-item{
+
+    --aura-strength:.7;
+}
+
+.ars-orbit .orbit-item a{
+
+    box-shadow:
+
+        0 0 0 1px
+        rgba(228,185,95,.08),
+
+        0 0 14px
+        rgba(22,140,255,.10),
+
+        0 0 32px
+        rgba(22,140,255,.075),
+
+        0 0 58px
+        rgba(82,182,255,.045),
+
+        0 0 90px
+        rgba(228,185,95,.025);
+
+}
+
+.ars-orbit .orbit-item:hover a{
+
+    box-shadow:
+
+        0 0 0 1px
+        rgba(255,241,184,.22),
+
+        0 0 18px
+        rgba(255,241,184,.22),
+
+        0 0 38px
+        rgba(82,182,255,.20),
+
+        0 0 72px
+        rgba(22,140,255,.14),
+
+        0 0 120px
+        rgba(228,185,95,.08);
+
+}
+}
+
+
+/* ---------------------------------------------------------
+   14.16 — NODE ENERGY SYNCHRONIZATION
+   ۱۴.۱۶ — همگام‌سازی انرژی میان نودها
+   --------------------------------------------------------- */
+
+.ars-orbit .orbit-item{
+
+    animation:
+        nodeEnergySynchronize
+        8s
+        ease-in-out
+        infinite;
+}
+
+.ars-orbit .orbit-item:nth-child(2){
+    animation-delay:-.6s;
+}
+
+.ars-orbit .orbit-item:nth-child(3){
+    animation-delay:-1.2s;
+}
+
+.ars-orbit .orbit-item:nth-child(4){
+    animation-delay:-1.8s;
+}
+
+.ars-orbit .orbit-item:nth-child(5){
+    animation-delay:-2.4s;
+}
+
+.ars-orbit .orbit-item:nth-child(6){
+    animation-delay:-3s;
+}
+
+.ars-orbit .orbit-item:nth-child(7){
+    animation-delay:-3.6s;
+}
+
+.ars-orbit .orbit-item:nth-child(8){
+    animation-delay:-4.2s;
+}
+
+.ars-orbit .orbit-item:nth-child(9){
+    animation-delay:-4.8s;
+}
+
+.ars-orbit .orbit-item:nth-child(10){
+    animation-delay:-5.4s;
+}
+
+.ars-orbit .orbit-item:nth-child(11){
+    animation-delay:-6s;
+}
+
+.ars-orbit .orbit-item:nth-child(12){
+    animation-delay:-6.6s;
+}
+
+.ars-orbit .orbit-item:nth-child(13){
+    animation-delay:-7.2s;
+}
+
+@keyframes nodeEnergySynchronize{
+
+    0%,
+    100%{
+        filter:
+            brightness(1);
+    }
+
+    50%{
+        filter:
+            brightness(1.045);
+    }
+
+   }
+
+
+/* ---------------------------------------------------------
+   14.17 — NODE INTELLIGENCE FINAL LOCK
+   ۱۴.۱۷ — قفل نهایی هوش پیشرفته نودها
+   --------------------------------------------------------- */
+
+.ars-orbit .orbit-item{
+
+    will-change:
+        transform,
+        filter;
+
+}
+
+.ars-orbit .orbit-item::before,
+.ars-orbit .orbit-item::after,
+.ars-orbit .orbit-item a::before,
+.ars-orbit .orbit-item a::after{
+
+    will-change:
+        transform,
+        opacity,
+        filter;
+
+}
+
+
+/* =========================================================
+   V7 — LOCKED
+   ۱۴ — ADVANCED NODE INTELLIGENCE
+   ۱۴.۱۴ → ۱۴.۱۷ COMPLETE
+   ========================================================= */
+
+/* =========================================================
+   ARS HERITAGE GROUP
+   HOME — PREMIUM INTELLIGENCE UNIVERSE
+   V8 — ORBITAL NODE ENERGY ARCHITECTURE
+   ۱۵ — معماری انرژی مداری نودها
+
+   V8 RANGE:
+   15.1 → 15.10
+
+   STATUS:
+   LOCKED AFTER CREATION
+
+   DEPENDENCY:
+   V1 → V7
+
+   PURPOSE:
+   تبدیل ۱۳ نود به یک شبکه انرژی زنده،
+   چندلایه، عمقی و واکنش‌پذیر بدون تغییر
+   ساختار HTML نودها.
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   15.1 — NODE ENERGY FIELD
+   ۱۵.۱ — میدان انرژی اختصاصی هر نود
+   --------------------------------------------------------- */
+
+.ars-orbit .orbit-item{
+
+    --node-energy:
+        rgba(22,140,255,.22);
+
+    --node-energy-bright:
+        rgba(82,182,255,.62);
+
+    --node-gold:
+        rgba(228,185,95,.34);
+
+    --node-scale:
+        1;
+
+    position:absolute;
+
+    isolation:isolate;
+
+    transform:
+        translateZ(0)
+        scale(var(--node-scale));
+
+    will-change:
+        transform,
+        filter;
+
+}
+
+
+/* ---------------------------------------------------------
+   15.2 — DEEP ENERGY AURA
+   ۱۵.۲ — هاله عمیق انرژی
+   --------------------------------------------------------- */
+
+.ars-orbit .orbit-item .node-energy-aura{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:190%;
+    height:190%;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    z-index:-6;
+
+    background:
+
+        radial-gradient(
+            circle,
+            var(--node-energy-bright) 0%,
+            var(--node-energy) 18%,
+            rgba(22,140,255,.055) 36%,
+            rgba(228,185,95,.025) 52%,
+            transparent 74%
+        );
+
+    filter:
+        blur(20px);
+
+    opacity:.72;
+
+    animation:
+        nodeDeepAura
+        6s
+        ease-in-out
+        infinite;
+
+}
+
+
+/* ---------------------------------------------------------
+   15.3 — ENERGY CORE SHELL
+   ۱۵.۳ — پوسته مرکزی انرژی نود
+   --------------------------------------------------------- */
+
+.ars-orbit .orbit-item .node-energy-core{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:124%;
+    height:124%;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    z-index:-4;
+
+    border:
+
+        1px solid
+        var(--node-energy-bright);
+
+    box-shadow:
+
+        0 0 8px
+        var(--node-energy),
+
+        0 0 20px
+        var(--node-energy),
+
+        0 0 42px
+        rgba(22,140,255,.11),
+
+        inset 0 0 18px
+        rgba(82,182,255,.08);
+
+    opacity:.62;
+
+    animation:
+        nodeEnergyShell
+        13s
+        linear
+        infinite;
+
+}
+
+
+/* ---------------------------------------------------------
+   15.4 — SECONDARY ORBITAL SHELL
+   ۱۵.۴ — پوسته مداری ثانویه
+   --------------------------------------------------------- */
+
+.ars-orbit .orbit-item .node-energy-core::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-12%;
+
+    border-radius:50%;
+
+    border:
+
+        1px dashed
+        var(--node-gold);
+
+    box-shadow:
+
+        0 0 12px
+        var(--node-gold),
+
+        0 0 30px
+        rgba(228,185,95,.08);
+
+    animation:
+        nodeSecondaryShell
+        19s
+        linear
+        infinite reverse;
+
+}
+
+
+/* ---------------------------------------------------------
+   15.5 — ENERGY VECTOR
+   ۱۵.۵ — بردار انرژی
+   --------------------------------------------------------- */
+
+.ars-orbit .orbit-item .node-energy-vector{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:168%;
+    height:1px;
+
+    transform-origin:
+        left center;
+
+    pointer-events:none;
+
+    z-index:-3;
+
+    border-radius:999px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(82,182,255,.06) 12%,
+            var(--node-energy-bright) 34%,
+            rgba(255,241,184,.82) 50%,
+            var(--node-energy) 67%,
+            transparent 100%
+        );
+
+    box-shadow:
+
+        0 0 8px
+        var(--node-energy),
+
+        0 0 20px
+        rgba(82,182,255,.14);
+
+    opacity:.42;
+
+    animation:
+        nodeVectorPulse
+        4.5s
+        ease-in-out
+        infinite;
+
+}
+
+
+/* ---------------------------------------------------------
+   15.6 — ENERGY VECTOR ROTATIONS
+   ۱۵.۶ — چرخش‌های بردار انرژی
+   --------------------------------------------------------- */
+
+.ars-orbit .orbit-item .node-energy-vector.vector-a{
+
+    transform:
+        rotate(32deg);
+
+}
+
+.ars-orbit .orbit-item .node-energy-vector.vector-b{
+
+    transform:
+        rotate(122deg);
+
+}
+
+.ars-orbit .orbit-item .node-energy-vector.vector-c{
+
+    transform:
+        rotate(214deg);
+
+}
+
+.ars-orbit .orbit-item .node-energy-vector.vector-d{
+
+    transform:
+        rotate(304deg);
+
+}
+
+
+/* ---------------------------------------------------------
+   15.7 — NODE ENERGY PARTICLE
+   ۱۵.۷ — ذرات انرژی اختصاصی نود
+   --------------------------------------------------------- */
+
+.ars-orbit .orbit-item .node-energy-particle{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:6px;
+    height:6px;
+
+    margin-left:-3px;
+    margin-top:-3px;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+    background:
+
+        radial-gradient(
+            circle,
+            #ffffff 0%,
+            rgba(255,241,184,.95) 30%,
+            var(--node-energy-bright) 58%,
+            transparent 100%
+        );
+
+    box-shadow:
+
+        0 0 7px
+        rgba(255,255,255,.85),
+
+        0 0 16px
+        var(--node-energy-bright),
+
+        0 0 30px
+        var(--node-energy);
+
+    animation:
+        nodeParticleOrbit
+        7s
+        linear
+        infinite;
+
+}
+
+
+/* ---------------------------------------------------------
+   15.8 — NODE ENERGY IMPACT
+   ۱۵.۸ — موج ضربه انرژی
+   --------------------------------------------------------- */
+
+.ars-orbit .orbit-item .node-energy-impact{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:100%;
+    height:100%;
+
+    transform:
+        translate(-50%,-50%)
+        scale(.72);
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    z-index:-2;
+
+    border:
+
+        1px solid
+        var(--node-energy-bright);
+
+    opacity:0;
+
+    animation:
+        nodeEnergyImpact
+        5.2s
+        ease-out
+        infinite;
+
+}
+
+
+/* ---------------------------------------------------------
+   15.9 — NODE ENERGY HOVER / ACTIVE BOOST
+   ۱۵.۹ — تقویت انرژی هنگام تعامل
+   --------------------------------------------------------- */
+
+.ars-orbit .orbit-item:hover{
+
+    --node-scale:
+        1.08;
+
+    filter:
+        brightness(1.14);
+
+}
+
+
+.ars-orbit .orbit-item:hover .node-energy-aura{
+
+    width:225%;
+    height:225%;
+
+    opacity:1;
+
+    filter:
+        blur(25px);
+
+}
+
+
+.ars-orbit .orbit-item:hover .node-energy-core{
+
+    width:140%;
+    height:140%;
+
+    border-color:
+        rgba(255,241,184,.62);
+
+    box-shadow:
+
+        0 0 12px
+        rgba(255,241,184,.36),
+
+        0 0 28px
+        var(--node-energy-bright),
+
+        0 0 65px
+        var(--node-energy);
+
+}
+
+
+.ars-orbit .orbit-item.is-selected{
+
+    --node-scale:
+        1.13;
+
+    filter:
+        brightness(1.22);
+
+}
+
+
+.ars-orbit .orbit-item.is-selected .node-energy-aura{
+
+    width:240%;
+    height:240%;
+
+    opacity:1;
+
+    filter:
+        blur(28px);
+
+}
+
+
+/* ---------------------------------------------------------
+   15.10 — ENERGY MOTION ENGINE
+   ۱۵.۱۰ — موتور حرکتی انرژی
+   --------------------------------------------------------- */
+
+@keyframes nodeDeepAura{
+
+    0%,
+    100%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(.88);
+
+        opacity:.48;
+
+    }
+
+    50%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(1.12);
+
+        opacity:.92;
+
+    }
+
+}
+
+
+@keyframes nodeEnergyShell{
+
+    from{
+
+        transform:
+            translate(-50%,-50%)
+            rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+            translate(-50%,-50%)
+            rotate(360deg);
+
+    }
+
+}
+
+
+@keyframes nodeSecondaryShell{
+
+    from{
+
+        transform:
+            rotate(0deg)
+            scale(.96);
+
+    }
+
+    50%{
+
+        transform:
+            rotate(180deg)
+            scale(1.04);
+
+    }
+
+    to{
+
+        transform:
+            rotate(360deg)
+            scale(.96);
+
+    }
+
+}
+
+
+@keyframes nodeVectorPulse{
+
+    0%,
+    100%{
+
+        opacity:.16;
+
+        transform-origin:
+            left center;
+
+        scale:.78;
+
+    }
+
+    50%{
+
+        opacity:.72;
+
+        scale:1.08;
+
+    }
+
+}
+
+
+@keyframes nodeParticleOrbit{
+
+    from{
+
+        transform:
+            rotate(0deg)
+            translateX(70px)
+            scale(.72);
+
+    }
+
+    50%{
+
+        transform:
+            rotate(180deg)
+            translateX(70px)
+            scale(1.25);
+
+    }
+
+    to{
+
+        transform:
+            rotate(360deg)
+            translateX(70px)
+            scale(.72);
+
+    }
+
+}
+
+
+@keyframes nodeEnergyImpact{
+
+    0%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(.70);
+
+        opacity:0;
+
+    }
+
+    15%{
+
+        opacity:.72;
+
+    }
+
+    70%{
+
+        opacity:.16;
+
+    }
+
+    100%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(1.85);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   15.11 — MOBILE ENERGY PRESERVATION
+   ۱۵.۱۱ — حفظ انرژی در موبایل
+   --------------------------------------------------------- */
+
+@media (max-width:700px){
+
+    .ars-orbit .orbit-item .node-energy-aura{
+
+        width:170%;
+        height:170%;
+
+        filter:
+            blur(15px);
+
+        opacity:.58;
+
+    }
+
+    .ars-orbit .orbit-item .node-energy-core{
+
+        width:120%;
+        height:120%;
+
+        opacity:.58;
+
+    }
+
+    .ars-orbit .orbit-item .node-energy-vector{
+
+        width:145%;
+
+        opacity:.25;
+
+    }
+
+    .ars-orbit .orbit-item .node-energy-particle{
+
+        width:4px;
+        height:4px;
+
+        margin-left:-2px;
+        margin-top:-2px;
+
+    }
+
+}
+
+
+/* =========================================================
+   V8 — LOCKED
+   ۱۵ — ORBITAL NODE ENERGY ARCHITECTURE
+   ۱۵.۱ → ۱۵.۱۱
+   ========================================================= */
+/* =========================================================
+   ARS HERITAGE GROUP
+   HOME — PREMIUM INTELLIGENCE UNIVERSE
+
+   V9 — ORBITAL NEURAL NETWORK
+   ۱۶ — شبکه عصبی و ارتباط انرژی ۱۳ نود
+
+   RANGE:
+   16.1 → 16.12
+
+   STATUS:
+   LOCKED AFTER CREATION
+
+   DEPENDENCY:
+   V1 → V8
+
+   PURPOSE:
+   ایجاد شبکه ارتباطی چندلایه میان ۱۳ نود
+   بدون وابستگی به CSS صفحات دیگر.
+   ========================================================= */
+
+
+/* =========================================================
+   16.1 — NEURAL NETWORK MASTER FIELD
+   ۱۶.۱ — میدان اصلی شبکه عصبی
+   ========================================================= */
+
+.ars-orbit .neural-network{
+
+    position:absolute;
+
+    inset:-10%;
+
+    z-index:12;
+
+    pointer-events:none;
+
+    border-radius:50%;
+
+    isolation:isolate;
+
+}
+
+
+/* =========================================================
+   16.2 — PRIMARY NEURAL WEB
+   ۱۶.۲ — شبکه اصلی ارتباطی
+   ========================================================= */
+
+.ars-orbit .neural-network::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:3%;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+            ellipse at 50% 50%,
+            transparent 0 22%,
+            rgba(22,140,255,.025) 23%,
+            transparent 39%
+        );
+
+    opacity:.9;
+
+    filter:
+        blur(.2px);
+
+    animation:
+        neuralFieldBreath
+        8s
+        ease-in-out
+        infinite;
+
+}
+
+
+/* =========================================================
+   16.3 — SECONDARY NEURAL WEB
+   ۱۶.۳ — شبکه ثانویه
+   ========================================================= */
+
+.ars-orbit .neural-network::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:8%;
+
+    border-radius:50%;
+
+    border:
+
+        1px solid
+        rgba(82,182,255,.035);
+
+    box-shadow:
+
+        0 0 35px
+        rgba(22,140,255,.025),
+
+        inset 0 0 45px
+        rgba(228,185,95,.018);
+
+    animation:
+        neuralNetworkRotation
+        42s
+        linear
+        infinite;
+
+}
+
+
+/* =========================================================
+   16.4 — NEURAL CONNECTION
+   ۱۶.۴ — مسیر ارتباط عصبی
+   ========================================================= */
+
+.ars-orbit .neural-link{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    height:
+        1px;
+
+    width:
+        42%;
+
+    transform-origin:
+        left center;
+
+    border-radius:999px;
+
+    pointer-events:none;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(22,140,255,.08) 12%,
+            rgba(82,182,255,.20) 34%,
+            rgba(228,185,95,.30) 50%,
+            rgba(82,182,255,.16) 72%,
+            transparent 100%
+        );
+
+    box-shadow:
+
+        0 0 5px
+        rgba(22,140,255,.12),
+
+        0 0 14px
+        rgba(82,182,255,.07);
+
+    opacity:.34;
+
+    overflow:visible;
+
+}
+
+
+/* =========================================================
+   16.5 — MULTI-LEVEL CONNECTION DEPTH
+   ۱۶.۵ — عمق چندلایه مسیرها
+   ========================================================= */
+
+.ars-orbit .neural-link::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:50%;
+
+    width:100%;
+    height:1px;
+
+    transform:
+        translateY(-50%);
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,241,184,.26),
+            rgba(82,182,255,.18),
+            transparent
+        );
+
+    filter:
+        blur(2px);
+
+    opacity:.72;
+
+}
+
+
+.ars-orbit .neural-link::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:50%;
+
+    width:7px;
+    height:7px;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            #ffffff 0%,
+            rgba(255,241,184,.96) 28%,
+            rgba(82,182,255,.78) 58%,
+            transparent 100%
+        );
+
+    box-shadow:
+
+        0 0 6px
+        rgba(255,255,255,.85),
+
+        0 0 15px
+        rgba(255,241,184,.65),
+
+        0 0 28px
+        rgba(22,140,255,.42);
+
+    animation:
+        neuralPulseTravel
+        3.6s
+        linear
+        infinite;
+
+}
+
+
+/* =========================================================
+   16.6 — CONNECTION ROTATION MATRIX
+   ۱۶.۶ — ماتریس چرخش ارتباطات
+   ========================================================= */
+
+.ars-orbit .neural-link.link-1{
+    transform:rotate(8deg);
+    width:46%;
+}
+
+.ars-orbit .neural-link.link-2{
+    transform:rotate(39deg);
+    width:41%;
+}
+
+.ars-orbit .neural-link.link-3{
+    transform:rotate(71deg);
+    width:44%;
+}
+
+.ars-orbit .neural-link.link-4{
+    transform:rotate(103deg);
+    width:39%;
+}
+
+.ars-orbit .neural-link.link-5{
+    transform:rotate(137deg);
+    width:45%;
+}
+
+.ars-orbit .neural-link.link-6{
+    transform:rotate(169deg);
+    width:42%;
+}
+
+.ars-orbit .neural-link.link-7{
+    transform:rotate(201deg);
+    width:46%;
+}
+
+.ars-orbit .neural-link.link-8{
+    transform:rotate(231deg);
+    width:40%;
+}
+
+.ars-orbit .neural-link.link-9{
+    transform:rotate(263deg);
+    width:44%;
+}
+
+.ars-orbit .neural-link.link-10{
+    transform:rotate(295deg);
+    width:41%;
+}
+
+.ars-orbit .neural-link.link-11{
+    transform:rotate(327deg);
+    width:45%;
+}
+
+.ars-orbit .neural-link.link-12{
+    transform:rotate(351deg);
+    width:39%;
+}
+
+
+/* =========================================================
+   16.7 — NETWORK ENERGY NODES
+   ۱۶.۷ — نقاط انرژی شبکه
+   ========================================================= */
+
+.ars-orbit .network-energy-point{
+
+    position:absolute;
+
+    width:5px;
+    height:5px;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    background:
+
+        radial-gradient(
+            circle,
+            #ffffff 0%,
+            rgba(255,241,184,.95) 30%,
+            rgba(82,182,255,.72) 58%,
+            transparent 100%
+        );
+
+    box-shadow:
+
+        0 0 7px
+        rgba(255,255,255,.88),
+
+        0 0 17px
+        rgba(255,241,184,.58),
+
+        0 0 34px
+        rgba(22,140,255,.36);
+
+    animation:
+        networkPointPulse
+        3.2s
+        ease-in-out
+        infinite;
+
+}
+
+
+/* =========================================================
+   16.8 — NETWORK POINT MATRIX
+   ۱۶.۸ — ماتریس نقاط شبکه
+   ========================================================= */
+
+.ars-orbit .network-energy-point.point-1{
+    left:24%;
+    top:35%;
+}
+
+.ars-orbit .network-energy-point.point-2{
+    left:34%;
+    top:24%;
+}
+
+.ars-orbit .network-energy-point.point-3{
+    left:50%;
+    top:17%;
+}
+
+.ars-orbit .network-energy-point.point-4{
+    left:67%;
+    top:25%;
+}
+
+.ars-orbit .network-energy-point.point-5{
+    left:77%;
+    top:39%;
+}
+
+.ars-orbit .network-energy-point.point-6{
+    left:81%;
+    top:56%;
+}
+
+.ars-orbit .network-energy-point.point-7{
+    left:68%;
+    top:73%;
+}
+
+.ars-orbit .network-energy-point.point-8{
+    left:51%;
+    top:82%;
+}
+
+.ars-orbit .network-energy-point.point-9{
+    left:34%;
+    top:74%;
+}
+
+.ars-orbit .network-energy-point.point-10{
+    left:22%;
+    top:60%;
+}
+
+.ars-orbit .network-energy-point.point-11{
+    left:19%;
+    top:47%;
+}
+
+.ars-orbit .network-energy-point.point-12{
+    left:42%;
+    top:31%;
+}
+
+.ars-orbit .network-energy-point.point-13{
+    left:61%;
+    top:62%;
+}
+
+
+/* =========================================================
+   16.9 — DATA PULSE STREAM
+   ۱۶.۹ — جریان پالس داده
+   ========================================================= */
+
+.ars-orbit .data-pulse{
+
+    position:absolute;
+
+    left:0;
+
+    top:50%;
+
+    width:8px;
+    height:8px;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            #ffffff 0%,
+            rgba(82,182,255,.96) 34%,
+            rgba(22,140,255,.68) 60%,
+            transparent 100%
+        );
+
+    box-shadow:
+
+        0 0 7px
+        rgba(255,255,255,.95),
+
+        0 0 18px
+        rgba(82,182,255,.78),
+
+        0 0 35px
+        rgba(22,140,255,.42);
+
+    animation:
+        dataPulseTravel
+        2.8s
+        linear
+        infinite;
+
+}
+
+
+/* =========================================================
+   16.10 — NETWORK SCANNER
+   ۱۶.۱۰ — اسکنر محیط شبکه
+   ========================================================= */
+
+.ars-orbit .network-scanner{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:88%;
+    height:88%;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    background:
+
+        conic-gradient(
+            from 0deg,
+            transparent 0deg,
+            transparent 315deg,
+            rgba(22,140,255,.02) 322deg,
+            rgba(82,182,255,.18) 337deg,
+            rgba(255,241,184,.38) 344deg,
+            rgba(82,182,255,.08) 352deg,
+            transparent 360deg
+        );
+
+    -webkit-mask:
+
+        radial-gradient(
+            farthest-side,
+            transparent calc(100% - 2px),
+            #000 calc(100% - 1px)
+        );
+
+    mask:
+
+        radial-gradient(
+            farthest-side,
+            transparent calc(100% - 2px),
+            #000 calc(100% - 1px)
+        );
+
+    opacity:.58;
+
+    animation:
+        networkScannerRotation
+        7s
+        linear
+        infinite;
+
+}
+
+
+/* =========================================================
+   16.11 — NETWORK SYNCHRONIZATION
+   ۱۶.۱۱ — همگام‌سازی شبکه
+   ========================================================= */
+
+.ars-orbit .network-energy-point:nth-child(3n){
+
+    animation-delay:
+        -.7s;
+
+}
+
+.ars-orbit .network-energy-point:nth-child(4n){
+
+    animation-delay:
+        -1.3s;
+
+}
+
+.ars-orbit .network-energy-point:nth-child(5n){
+
+    animation-delay:
+        -1.9s;
+
+}
+
+.ars-orbit .neural-link:nth-child(2n)::after{
+
+    animation-delay:
+        -.8s;
+
+}
+
+.ars-orbit .neural-link:nth-child(3n)::after{
+
+    animation-delay:
+        -1.5s;
+
+}
+
+
+/* =========================================================
+   16.12 — NETWORK MOTION ENGINE
+   ۱۶.۱۲ — موتور حرکتی شبکه
+   ========================================================= */
+
+@keyframes neuralFieldBreath{
+
+    0%,
+    100%{
+
+        opacity:.42;
+
+        transform:
+            scale(.96);
+
+    }
+
+    50%{
+
+        opacity:.86;
+
+        transform:
+            scale(1.04);
+
+    }
+
+}
+
+
+@keyframes neuralNetworkRotation{
+
+    from{
+
+        transform:
+            translate(-50%,-50%)
+            rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+            translate(-50%,-50%)
+            rotate(360deg);
+
+    }
+
+}
+
+
+@keyframes neuralPulseTravel{
+
+    0%{
+
+        left:0;
+
+        opacity:0;
+
+    }
+
+    8%{
+
+        opacity:1;
+
+    }
+
+    78%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        left:100%;
+
+        opacity:0;
+
+    }
+
+}
+
+
+@keyframes networkPointPulse{
+
+    0%,
+    100%{
+
+        transform:
+            scale(.55);
+
+        opacity:.26;
+
+    }
+
+    50%{
+
+        transform:
+            scale(1.45);
+
+        opacity:1;
+
+    }
+
+}
+
+
+@keyframes dataPulseTravel{
+
+    0%{
+
+        left:0;
+
+        opacity:0;
+
+    }
+
+    12%{
+
+        opacity:1;
+
+    }
+
+    82%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        left:100%;
+
+        opacity:0;
+
+    }
+
+}
+
+
+@keyframes networkScannerRotation{
+
+    from{
+
+        transform:
+            translate(-50%,-50%)
+            rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+            translate(-50%,-50%)
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   V9 — MOBILE NETWORK CONTROL
+   V9 — کنترل شبکه در موبایل
+   ========================================================= */
+
+@media (max-width:700px){
+
+    .ars-orbit .neural-network{
+
+        inset:-7%;
+
+    }
+
+    .ars-orbit .neural-link{
+
+        opacity:.24;
+
+        width:36%;
+
+    }
+
+    .ars-orbit .neural-link::after{
+
+        width:5px;
+        height:5px;
+
+    }
+
+    .ars-orbit .network-energy-point{
+
+        width:4px;
+        height:4px;
+
+    }
+
+    .ars-orbit .network-scanner{
+
+        width:91%;
+        height:91%;
+
+        opacity:.42;
+
+    }
+
+}
+
+
+/* =========================================================
+   V9 — LOCKED
+   ۱۶ — ORBITAL NEURAL NETWORK
+   ۱۶.۱ → ۱۶.۱۲
+   ========================================================= */
+/* =========================================================
+   ARS HERITAGE GROUP
+   HOME — PREMIUM INTELLIGENCE UNIVERSE
+
+   V10 — ORBITAL DEPTH & HOLOGRAPHIC LAYER
+   ۱۷ — لایه عمق مداری و هولوگرافیک
+
+   RANGE:
+   17.1 → 17.12
+
+   STATUS:
+   LOCKED AFTER CREATION
+
+   DEPENDENCY:
+   V1 → V9
+   ========================================================= */
+
+
+/* =========================================================
+   17.1 — HOLOGRAPHIC MASTER FIELD
+   ۱۷.۱ — میدان اصلی هولوگرافیک
+   ========================================================= */
+
+.ars-orbit .holographic-layer{
+
+    position:absolute;
+
+    inset:-16%;
+
+    z-index:16;
+
+    pointer-events:none;
+
+    border-radius:50%;
+
+    isolation:isolate;
+
+}
+
+
+/* =========================================================
+   17.2 — DEEP HOLOGRAPHIC ATMOSPHERE
+   ۱۷.۲ — اتمسفر عمیق هولوگرافیک
+   ========================================================= */
+
+.ars-orbit .holographic-layer::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+            ellipse at 50% 50%,
+            rgba(22,140,255,.07),
+            transparent 31%
+        ),
+
+        radial-gradient(
+            ellipse at 38% 34%,
+            rgba(82,182,255,.045),
+            transparent 27%
+        ),
+
+        radial-gradient(
+            ellipse at 68% 67%,
+            rgba(228,185,95,.035),
+            transparent 31%
+        );
+
+    filter:
+        blur(18px);
+
+    opacity:.82;
+
+    animation:
+        holographicAtmosphere
+        9s
+        ease-in-out
+        infinite;
+
+}
+
+
+/* =========================================================
+   17.3 — HOLOGRAPHIC GRID
+   ۱۷.۳ — شبکه فضایی هولوگرافیک
+   ========================================================= */
+
+.ars-orbit .holographic-layer::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:8%;
+
+    border-radius:50%;
+
+    background:
+
+        repeating-linear-gradient(
+            0deg,
+            transparent 0,
+            transparent 28px,
+            rgba(82,182,255,.018) 29px,
+            transparent 30px
+        ),
+
+        repeating-linear-gradient(
+            90deg,
+            transparent 0,
+            transparent 28px,
+            rgba(82,182,255,.014) 29px,
+            transparent 30px
+        );
+
+    -webkit-mask:
+
+        radial-gradient(
+            circle,
+            #000 0 34%,
+            transparent 74%
+        );
+
+    mask:
+
+        radial-gradient(
+            circle,
+            #000 0 34%,
+            transparent 74%
+        );
+
+    opacity:.52;
+
+    transform:
+        perspective(900px)
+        rotateX(62deg);
+
+    animation:
+        holographicGridDrift
+        18s
+        linear
+        infinite;
+
+}
+
+
+/* =========================================================
+   17.4 — DEPTH RINGS
+   ۱۷.۴ — حلقه‌های عمقی
+   ========================================================= */
+
+.ars-orbit .depth-ring{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    border:
+        1px solid
+        rgba(82,182,255,.075);
+
+    box-shadow:
+
+        0 0 16px
+        rgba(22,140,255,.045),
+
+        inset 0 0 16px
+        rgba(22,140,255,.025);
+
+    transform:
+        translate(-50%,-50%);
+
+}
+
+
+/* =========================================================
+   17.5 — DEPTH RING MATRIX
+   ۱۷.۵ — ماتریس حلقه‌های عمقی
+   ========================================================= */
+
+.ars-orbit .depth-ring.ring-a{
+
+    width:34%;
+    height:34%;
+
+    opacity:.28;
+
+    animation:
+        depthRingFloatA
+        11s
+        ease-in-out
+        infinite;
+
+}
+
+.ars-orbit .depth-ring.ring-b{
+
+    width:49%;
+    height:49%;
+
+    opacity:.22;
+
+    transform:
+        translate(-50%,-50%)
+        rotateX(58deg);
+
+    animation:
+        depthRingFloatB
+        15s
+        linear
+        infinite;
+
+}
+
+.ars-orbit .depth-ring.ring-c{
+
+    width:67%;
+    height:67%;
+
+    opacity:.18;
+
+    transform:
+        translate(-50%,-50%)
+        rotateY(64deg);
+
+    animation:
+        depthRingFloatC
+        22s
+        linear
+        infinite reverse;
+
+}
+
+.ars-orbit .depth-ring.ring-d{
+
+    width:83%;
+    height:83%;
+
+    opacity:.12;
+
+    transform:
+        translate(-50%,-50%)
+        rotateX(72deg)
+        rotateY(12deg);
+
+    animation:
+        depthRingFloatD
+        29s
+        linear
+        infinite;
+
+}
+
+
+/* =========================================================
+   17.6 — HOLOGRAPHIC SCAN PLANE
+   ۱۷.۶ — صفحه اسکن هولوگرافیک
+   ========================================================= */
+
+.ars-orbit .holo-scan-plane{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:86%;
+    height:86%;
+
+    transform:
+        translate(-50%,-50%)
+        rotate(0deg);
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    background:
+
+        conic-gradient(
+            from 0deg,
+            transparent 0deg,
+            transparent 42deg,
+            rgba(82,182,255,.025) 58deg,
+            rgba(82,182,255,.14) 72deg,
+            rgba(255,241,184,.22) 81deg,
+            rgba(82,182,255,.045) 92deg,
+            transparent 110deg,
+            transparent 360deg
+        );
+
+    -webkit-mask:
+
+        radial-gradient(
+            farthest-side,
+            transparent calc(100% - 2px),
+            #000 calc(100% - 1px)
+        );
+
+    mask:
+
+        radial-gradient(
+            farthest-side,
+            transparent calc(100% - 2px),
+            #000 calc(100% - 1px)
+        );
+
+    opacity:.48;
+
+    animation:
+        holographicScan
+        8.5s
+        linear
+        infinite;
+
+}
+
+
+/* =========================================================
+   17.7 — FLOATING HOLOGRAM PARTICLES
+   ۱۷.۷ — ذرات شناور هولوگرافیک
+   ========================================================= */
+
+.ars-orbit .holo-particle{
+
+    position:absolute;
+
+    width:4px;
+    height:4px;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    background:
+
+        radial-gradient(
+            circle,
+            #ffffff 0%,
+            rgba(82,182,255,.95) 35%,
+            rgba(22,140,255,.42) 65%,
+            transparent 100%
+        );
+
+    box-shadow:
+
+        0 0 7px
+        rgba(255,255,255,.82),
+
+        0 0 18px
+        rgba(82,182,255,.58),
+
+        0 0 32px
+        rgba(22,140,255,.25);
+
+    animation:
+        hologramParticleFloat
+        8s
+        ease-in-out
+        infinite;
+
+}
+
+
+/* =========================================================
+   17.8 — PARTICLE POSITIONS
+   ۱۷.۸ — موقعیت ذرات
+   ========================================================= */
+
+.ars-orbit .holo-particle.p1{
+    left:29%;
+    top:29%;
+}
+
+.ars-orbit .holo-particle.p2{
+    left:48%;
+    top:20%;
+}
+
+.ars-orbit .holo-particle.p3{
+    left:71%;
+    top:34%;
+}
+
+.ars-orbit .holo-particle.p4{
+    left:79%;
+    top:57%;
+}
+
+.ars-orbit .holo-particle.p5{
+    left:64%;
+    top:76%;
+}
+
+.ars-orbit .holo-particle.p6{
+    left:42%;
+    top:81%;
+}
+
+.ars-orbit .holo-particle.p7{
+    left:24%;
+    top:67%;
+}
+
+.ars-orbit .holo-particle.p8{
+    left:21%;
+    top:46%;
+}
+
+
+/* =========================================================
+   17.9 — HOLOGRAPHIC DEPTH PULSE
+   ۱۷.۹ — پالس عمقی هولوگرافیک
+   ========================================================= */
+
+.ars-orbit .depth-pulse{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:38%;
+    height:38%;
+
+    transform:
+        translate(-50%,-50%)
+        scale(.7);
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(82,182,255,.20);
+
+    pointer-events:none;
+
+    opacity:0;
+
+    box-shadow:
+
+        0 0 24px
+        rgba(22,140,255,.12),
+
+        inset 0 0 22px
+        rgba(82,182,255,.07);
+
+    animation:
+        holographicDepthPulse
+        6s
+        ease-out
+        infinite;
+
+}
+
+
+/* =========================================================
+   17.10 — HOLOGRAPHIC GLITCH ACCENTS
+   ۱۷.۱۰ — شکست‌های نوری هولوگرافیک
+   ========================================================= */
+
+.ars-orbit .holo-glitch{
+
+    position:absolute;
+
+    pointer-events:none;
+
+    width:11%;
+
+    height:1px;
+
+    border-radius:999px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(82,182,255,.72),
+            rgba(255,241,184,.42),
+            transparent
+        );
+
+    box-shadow:
+
+        0 0 8px
+        rgba(82,182,255,.28);
+
+    opacity:.25;
+
+    animation:
+        holoGlitch
+        4.7s
+        steps(4,end)
+        infinite;
+
+}
+
+.ars-orbit .holo-glitch.g1{
+    left:17%;
+    top:41%;
+    transform:rotate(13deg);
+}
+
+.ars-orbit .holo-glitch.g2{
+    right:16%;
+    top:36%;
+    transform:rotate(-18deg);
+}
+
+.ars-orbit .holo-glitch.g3{
+    left:33%;
+    bottom:21%;
+    transform:rotate(8deg);
+}
+
+.ars-orbit .holo-glitch.g4{
+    right:29%;
+    bottom:28%;
+    transform:rotate(-9deg);
+}
+
+
+/* =========================================================
+   17.11 — HOLOGRAPHIC FOCUS RESPONSE
+   ۱۷.۱۱ — واکنش فوکوس هولوگرافیک
+   ========================================================= */
+
+.ars-orbit:has(.orbit-item:hover) .holographic-layer{
+
+    filter:
+        brightness(1.08);
+
+}
+
+
+.ars-orbit:has(.orbit-item:hover) .holo-scan-plane{
+
+    opacity:.72;
+
+}
+
+
+.ars-orbit:has(.orbit-item.is-selected) .depth-ring{
+
+    border-color:
+        rgba(82,182,255,.15);
+
+    box-shadow:
+
+        0 0 20px
+        rgba(22,140,255,.09),
+
+        inset 0 0 24px
+        rgba(228,185,95,.045);
+
+}
+
+
+/* =========================================================
+   17.12 — HOLOGRAPHIC MOTION ENGINE + MOBILE
+   ۱۷.۱۲ — موتور حرکت و کنترل موبایل
+   ========================================================= */
+
+@keyframes holographicAtmosphere{
+
+    0%,
+    100%{
+
+        transform:
+            scale(.94);
+
+        opacity:.46;
+
+    }
+
+    50%{
+
+        transform:
+            scale(1.08);
+
+        opacity:.88;
+
+    }
+
+}
+
+
+@keyframes holographicGridDrift{
+
+    from{
+
+        transform:
+            perspective(900px)
+            rotateX(62deg)
+            translate3d(0,0,0);
+
+    }
+
+    50%{
+
+        transform:
+            perspective(900px)
+            rotateX(62deg)
+            translate3d(14px,-10px,0);
+
+    }
+
+    to{
+
+        transform:
+            perspective(900px)
+            rotateX(62deg)
+            translate3d(0,0,0);
+
+    }
+
+}
+
+
+@keyframes depthRingFloatA{
+
+    0%,
+    100%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(.94);
+
+    }
+
+    50%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(1.06);
+
+    }
+
+}
+
+
+@keyframes depthRingFloatB{
+
+    from{
+
+        transform:
+            translate(-50%,-50%)
+            rotateX(58deg)
+            rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+            translate(-50%,-50%)
+            rotateX(58deg)
+            rotate(360deg);
+
+    }
+
+}
+
+
+@keyframes depthRingFloatC{
+
+    from{
+
+        transform:
+            translate(-50%,-50%)
+            rotateY(64deg)
+            rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+            translate(-50%,-50%)
+            rotateY(64deg)
+            rotate(360deg);
+
+    }
+
+}
+
+
+@keyframes depthRingFloatD{
+
+    from{
+
+        transform:
+            translate(-50%,-50%)
+            rotateX(72deg)
+            rotateY(12deg)
+            rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+            translate(-50%,-50%)
+            rotateX(72deg)
+            rotateY(12deg)
+            rotate(360deg);
+
+    }
+
+}
+
+
+@keyframes holographicScan{
+
+    from{
+
+        transform:
+            translate(-50%,-50%)
+            rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+            translate(-50%,-50%)
+            rotate(360deg);
+
+    }
+
+}
+
+
+@keyframes hologramParticleFloat{
+
+    0%,
+    100%{
+
+        transform:
+            translate3d(0,0,0)
+            scale(.65);
+
+        opacity:.24;
+
+    }
+
+    50%{
+
+        transform:
+            translate3d(8px,-12px,0)
+            scale(1.35);
+
+        opacity:1;
+
+    }
+
+}
+
+
+@keyframes holographicDepthPulse{
+
+    0%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(.65);
+
+        opacity:0;
+
+    }
+
+    18%{
+
+        opacity:.68;
+
+    }
+
+    72%{
+
+        opacity:.18;
+
+    }
+
+    100%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(1.75);
+
+        opacity:0;
+
+    }
+
+}
+
+
+@keyframes holoGlitch{
+
+    0%,
+    78%{
+
+        opacity:.08;
+
+        transform:
+            translateX(0)
+            scaleX(.7);
+
+    }
+
+    80%{
+
+        opacity:.72;
+
+        transform:
+            translateX(8px)
+            scaleX(1.2);
+
+    }
+
+    83%{
+
+        opacity:.18;
+
+        transform:
+            translateX(-5px)
+            scaleX(.84);
+
+    }
+
+    87%,
+    100%{
+
+        opacity:.08;
+
+    }
+
+}
+
+
+@media (max-width:700px){
+
+    .ars-orbit .holographic-layer{
+
+        inset:-11%;
+
+    }
+
+    .ars-orbit .depth-ring.ring-b{
+
+        opacity:.16;
+
+    }
+
+    .ars-orbit .depth-ring.ring-c{
+
+        opacity:.12;
+
+    }
+
+    .ars-orbit .depth-ring.ring-d{
+
+        opacity:.08;
+
+    }
+
+    .ars-orbit .holo-particle{
+
+        width:3px;
+        height:3px;
+
+    }
+
+    .ars-orbit .holo-glitch{
+
+        opacity:.16;
+
+    }
+
+    .ars-orbit .holo-scan-plane{
+
+        opacity:.34;
+
+    }
+
+}
+
+
+/* =========================================================
+   V10 — LOCKED
+   ۱۷ — ORBITAL DEPTH & HOLOGRAPHIC LAYER
+   ۱۷.۱ → ۱۷.۱۲
+   ========================================================= */
+/* =========================================================
+   ARS HERITAGE GROUP
+   HOME — PREMIUM INTELLIGENCE UNIVERSE
+
+   V11 — ORBITAL DYNAMIC LIGHT & ENERGY RESPONSE
+   ۱۸ — سیستم نور پویا و واکنش انرژی منظومه
+
+   RANGE:
+   18.1 → 18.12
+
+   DEPENDENCY:
+   V1 → V10
+
+   STATUS:
+   LOCKED AFTER CREATION
+
+   PURPOSE:
+   ایجاد یک لایه نورپردازی زنده و واکنش‌گرا
+   برای کل منظومه ۱۳ نودی.
+   ========================================================= */
+
+
+/* =========================================================
+   18.1 — DYNAMIC LIGHT MASTER FIELD
+   ۱۸.۱ — میدان اصلی نور پویا
+   ========================================================= */
+
+.ars-orbit .dynamic-light{
+
+    position:absolute;
+
+    inset:-18%;
+
+    z-index:18;
+
+    pointer-events:none;
+
+    border-radius:50%;
+
+    isolation:isolate;
+
+}
+
+
+/* =========================================================
+   18.2 — CORE LIGHT ATMOSPHERE
+   ۱۸.۲ — اتمسفر نور هسته
+   ========================================================= */
+
+.ars-orbit .dynamic-light::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:72%;
+    height:72%;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.075) 0%,
+            rgba(82,182,255,.075) 18%,
+            rgba(22,140,255,.045) 35%,
+            rgba(228,185,95,.025) 52%,
+            transparent 74%
+        );
+
+    filter:
+        blur(22px);
+
+    opacity:.72;
+
+    animation:
+        dynamicCoreBreath
+        6.5s
+        ease-in-out
+        infinite;
+
+}
+
+
+/* =========================================================
+   18.3 — LARGE RADIANT FIELD
+   ۱۸.۳ — میدان تابشی گسترده
+   ========================================================= */
+
+.ars-orbit .dynamic-light::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:4%;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 50%,
+            transparent 0 20%,
+            rgba(22,140,255,.018) 31%,
+            transparent 49%
+        ),
+
+        radial-gradient(
+            circle at 50% 50%,
+            transparent 0 45%,
+            rgba(228,185,95,.014) 57%,
+            transparent 72%
+        );
+
+    filter:
+        blur(8px);
+
+    animation:
+        dynamicFieldRotate
+        38s
+        linear
+        infinite;
+
+}
+
+
+/* =========================================================
+   18.4 — LIGHT RAY
+   ۱۸.۴ — پرتو نور
+   ========================================================= */
+
+.ars-orbit .light-ray{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:50%;
+
+    height:1px;
+
+    transform-origin:
+        left center;
+
+    border-radius:999px;
+
+    pointer-events:none;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.02),
+            rgba(82,182,255,.16) 25%,
+            rgba(255,241,184,.34) 52%,
+            rgba(22,140,255,.12) 76%,
+            transparent
+        );
+
+    filter:
+        blur(.3px);
+
+    opacity:.28;
+
+    animation:
+        lightRayPulse
+        5.2s
+        ease-in-out
+        infinite;
+
+}
+
+
+/* =========================================================
+   18.5 — LIGHT RAY MATRIX
+   ۱۸.۵ — ماتریس پرتوهای نور
+   ========================================================= */
+
+.ars-orbit .light-ray.r1{
+    transform:rotate(4deg);
+    width:48%;
+}
+
+.ars-orbit .light-ray.r2{
+    transform:rotate(52deg);
+    width:44%;
+}
+
+.ars-orbit .light-ray.r3{
+    transform:rotate(97deg);
+    width:51%;
+}
+
+.ars-orbit .light-ray.r4{
+    transform:rotate(143deg);
+    width:46%;
+}
+
+.ars-orbit .light-ray.r5{
+    transform:rotate(188deg);
+    width:50%;
+}
+
+.ars-orbit .light-ray.r6{
+    transform:rotate(232deg);
+    width:45%;
+}
+
+.ars-orbit .light-ray.r7{
+    transform:rotate(278deg);
+    width:52%;
+}
+
+.ars-orbit .light-ray.r8{
+    transform:rotate(326deg);
+    width:47%;
+}
+
+
+/* =========================================================
+   18.6 — ENERGY WAVE
+   ۱۸.۶ — موج انرژی
+   ========================================================= */
+
+.ars-orbit .energy-wave{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:26%;
+    height:26%;
+
+    transform:
+        translate(-50%,-50%)
+        scale(.5);
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(82,182,255,.18);
+
+    pointer-events:none;
+
+    opacity:0;
+
+    box-shadow:
+
+        0 0 18px
+        rgba(22,140,255,.10),
+
+        inset 0 0 20px
+        rgba(82,182,255,.06);
+
+    animation:
+        energyWaveExpand
+        5.8s
+        ease-out
+        infinite;
+
+}
+
+
+/* =========================================================
+   18.7 — SECONDARY ENERGY WAVE
+   ۱۸.۷ — موج ثانویه انرژی
+   ========================================================= */
+
+.ars-orbit .energy-wave.wave-2{
+
+    animation-delay:
+        -2.9s;
+
+    border-color:
+        rgba(228,185,95,.12);
+
+}
+
+
+/* =========================================================
+   18.8 — NODE LIGHT RESPONSE
+   ۱۸.۸ — واکنش نوری نودها
+   ========================================================= */
+
+.ars-orbit .orbit-item{
+
+    --node-light:
+        rgba(82,182,255,.45);
+
+    transition:
+        filter .8s var(--ars-ease),
+        z-index .2s linear;
+
+}
+
+
+.ars-orbit .orbit-item:hover{
+
+    filter:
+        brightness(1.18)
+        saturate(1.12);
+
+}
+
+
+.ars-orbit .orbit-item:hover::before{
+
+    filter:
+        blur(25px);
+
+    opacity:
+        1;
+
+}
+
+
+/* =========================================================
+   18.9 — NODE LIGHT BEAM
+   ۱۸.۹ — پرتو اختصاصی نود
+   ========================================================= */
+
+.ars-orbit .orbit-item .node-light-beam{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:185%;
+    height:185%;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    background:
+
+        conic-gradient(
+            from 0deg,
+            transparent 0deg,
+            transparent 305deg,
+            var(--node-light) 326deg,
+            rgba(255,241,184,.48) 340deg,
+            transparent 355deg,
+            transparent 360deg
+        );
+
+    -webkit-mask:
+
+        radial-gradient(
+            farthest-side,
+            transparent calc(100% - 2px),
+            #000 calc(100% - 1px)
+        );
+
+    mask:
+
+        radial-gradient(
+            farthest-side,
+            transparent calc(100% - 2px),
+            #000 calc(100% - 1px)
+        );
+
+    opacity:.38;
+
+    animation:
+        nodeLightBeamRotate
+        6.2s
+        linear
+        infinite;
+
+}
+
+
+/* =========================================================
+   18.10 — NODE LIGHT PERSONALITIES
+   ۱۸.۱۰ — شخصیت نوری مستقل نودها
+   ========================================================= */
+
+.ars-orbit .orbit-1{
+    --node-light:rgba(82,182,255,.55);
+}
+
+.ars-orbit .orbit-2{
+    --node-light:rgba(228,185,95,.55);
+}
+
+.ars-orbit .orbit-3{
+    --node-light:rgba(168,50,50,.48);
+}
+
+.ars-orbit .orbit-4{
+    --node-light:rgba(82,182,255,.52);
+}
+
+.ars-orbit .orbit-5{
+    --node-light:rgba(79,135,97,.50);
+}
+
+.ars-orbit .orbit-6{
+    --node-light:rgba(22,140,255,.58);
+}
+
+.ars-orbit .orbit-7{
+    --node-light:rgba(228,185,95,.50);
+}
+
+.ars-orbit .orbit-8{
+    --node-light:rgba(82,182,255,.48);
+}
+
+.ars-orbit .orbit-9{
+    --node-light:rgba(228,185,95,.54);
+}
+
+.ars-orbit .orbit-10{
+    --node-light:rgba(22,140,255,.52);
+}
+
+.ars-orbit .orbit-11{
+    --node-light:rgba(184,137,63,.52);
+}
+
+.ars-orbit .orbit-12{
+    --node-light:rgba(79,135,97,.48);
+}
+
+.ars-orbit .orbit-13{
+    --node-light:rgba(82,182,255,.62);
+}
+
+
+/* =========================================================
+   18.11 — SYSTEM-WIDE ENERGY RESPONSE
+   ۱۸.۱۱ — واکنش انرژی کل منظومه
+   ========================================================= */
+
+.ars-orbit:has(.orbit-item:hover) .dynamic-light::before{
+
+    transform:
+        translate(-50%,-50%)
+        scale(1.16);
+
+    opacity:
+        1;
+
+}
+
+
+.ars-orbit:has(.orbit-item:hover) .light-ray{
+
+    opacity:
+        .52;
+
+}
+
+
+.ars-orbit:has(.orbit-item.is-selected) .energy-wave{
+
+    animation-duration:
+        4.2s;
+
+    border-color:
+        rgba(255,241,184,.25);
+
+}
+
+
+/* =========================================================
+   18.12 — DYNAMIC LIGHT MOTION ENGINE + MOBILE
+   ۱۸.۱۲ — موتور حرکت نور پویا و موبایل
+   ========================================================= */
+
+@keyframes dynamicCoreBreath{
+
+    0%,
+    100%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(.88);
+
+        opacity:.42;
+
+    }
+
+    50%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(1.16);
+
+        opacity:.94;
+
+    }
+
+}
+
+
+@keyframes dynamicFieldRotate{
+
+    from{
+
+        transform:
+            rotate(0deg)
+            scale(1);
+
+    }
+
+    50%{
+
+        transform:
+            rotate(180deg)
+            scale(1.035);
+
+    }
+
+    to{
+
+        transform:
+            rotate(360deg)
+            scale(1);
+
+    }
+
+}
+
+
+@keyframes lightRayPulse{
+
+    0%,
+    100%{
+
+        opacity:.12;
+
+        transform-origin:
+            left center;
+
+        scale:.82;
+
+    }
+
+    50%{
+
+        opacity:.58;
+
+        scale:1.08;
+
+    }
+
+}
+
+
+@keyframes energyWaveExpand{
+
+    0%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(.45);
+
+        opacity:0;
+
+    }
+
+    14%{
+
+        opacity:.65;
+
+    }
+
+    72%{
+
+        opacity:.16;
+
+    }
+
+    100%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(2.25);
+
+        opacity:0;
+
+    }
+
+}
+
+
+@keyframes nodeLightBeamRotate{
+
+    from{
+
+        transform:
+            translate(-50%,-50%)
+            rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+            translate(-50%,-50%)
+            rotate(360deg);
+
+    }
+
+}
+
+
+@media (max-width:700px){
+
+    .ars-orbit .dynamic-light{
+
+        inset:-12%;
+
+    }
+
+    .ars-orbit .light-ray{
+
+        opacity:.20;
+
+    }
+
+    .ars-orbit .energy-wave{
+
+        width:22%;
+        height:22%;
+
+    }
+
+    .ars-orbit .orbit-item .node-light-beam{
+
+        width:165%;
+        height:165%;
+
+        opacity:.28;
+
+    }
+
+}
+
+
+/* =========================================================
+   V12 — HOLOGRAPHIC HUD & SCANNING SYSTEM
+   ۱۹ — سیستم هولوگرافیک HUD و اسکن نوری
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   19.1 — HOLOGRAPHIC MASTER FIELD
+   ۱۹.۱ — میدان اصلی هولوگرافیک
+   --------------------------------------------------------- */
+
+.ars-orbit .holographic-hud{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:100%;
+    height:100%;
+
+    transform:
+        translate(-50%,-50%);
+
+    z-index:18;
+
+    pointer-events:none;
+
+    border-radius:50%;
+
+    isolation:isolate;
+
+}
+
+
+/* ---------------------------------------------------------
+   19.2 — HOLOGRAPHIC CORE GRID
+   ۱۹.۲ — شبکه هولوگرافیک مرکزی
+   --------------------------------------------------------- */
+
+.ars-orbit .holographic-hud::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:72%;
+    height:72%;
+
+    transform:
+        translate(-50%,-50%)
+        rotate(0deg);
+
+    border-radius:50%;
+
+    background:
+
+        repeating-radial-gradient(
+            circle at center,
+            transparent 0,
+            transparent 18px,
+            rgba(82,182,255,.025) 19px,
+            transparent 20px
+        ),
+
+        repeating-conic-gradient(
+            from 0deg,
+            transparent 0deg,
+            transparent 14deg,
+            rgba(82,182,255,.018) 15deg,
+            transparent 16deg
+        );
+
+    opacity:.72;
+
+    mix-blend-mode:
+        screen;
+
+    animation:
+        holographicGridRotate
+        42s
+        linear
+        infinite;
+
+}
+
+
+/* ---------------------------------------------------------
+   19.3 — HUD OUTER SCANNER
+   ۱۹.۳ — اسکنر محیطی بیرونی
+   --------------------------------------------------------- */
+
+.ars-orbit .hud-scanner{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:108%;
+    height:108%;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:
+
+        conic-gradient(
+            from 0deg,
+
+            transparent 0deg,
+
+            transparent 248deg,
+
+            rgba(22,140,255,.0) 270deg,
+
+            rgba(22,140,255,.18) 286deg,
+
+            rgba(82,182,255,.58) 300deg,
+
+            rgba(255,241,184,.82) 307deg,
+
+            rgba(82,182,255,.20) 316deg,
+
+            transparent 330deg,
+
+            transparent 360deg
+        );
+
+    -webkit-mask:
+        radial-gradient(
+            farthest-side,
+            transparent calc(100% - 2px),
+            #000 calc(100% - 1px)
+        );
+
+    mask:
+        radial-gradient(
+            farthest-side,
+            transparent calc(100% - 2px),
+            #000 calc(100% - 1px)
+        );
+
+    opacity:.72;
+
+    filter:
+        blur(.15px);
+
+    animation:
+        hudScannerRotate
+        7.5s
+        linear
+        infinite;
+
+}
+
+
+/* ---------------------------------------------------------
+   19.4 — SECONDARY SCANNING ARC
+   ۱۹.۴ — قوس اسکن ثانویه
+   --------------------------------------------------------- */
+
+.ars-orbit .hud-scanner::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:7%;
+
+    border-radius:50%;
+
+    background:
+
+        conic-gradient(
+            from 180deg,
+
+            transparent 0deg,
+
+            transparent 82deg,
+
+            rgba(228,185,95,.0) 98deg,
+
+            rgba(228,185,95,.30) 112deg,
+
+            rgba(255,241,184,.72) 120deg,
+
+            rgba(82,182,255,.16) 130deg,
+
+            transparent 145deg,
+
+            transparent 360deg
+        );
+
+    -webkit-mask:
+        radial-gradient(
+            farthest-side,
+            transparent calc(100% - 1.5px),
+            #000 calc(100% - .5px)
+        );
+
+    mask:
+        radial-gradient(
+            farthest-side,
+            transparent calc(100% - 1.5px),
+            #000 calc(100% - .5px)
+        );
+
+    animation:
+        hudSecondaryScan
+        11s
+        linear
+        infinite;
+
+}
+
+
+/* ---------------------------------------------------------
+   19.5 — HOLOGRAPHIC CROSS AXIS
+   ۱۹.۵ — محورهای متقاطع هولوگرافیک
+   --------------------------------------------------------- */
+
+.ars-orbit .hud-axis{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:82%;
+    height:1px;
+
+    transform-origin:
+        center center;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(22,140,255,.0) 12%,
+            rgba(82,182,255,.18) 35%,
+            rgba(255,241,184,.32) 50%,
+            rgba(82,182,255,.18) 65%,
+            rgba(22,140,255,.0) 88%,
+            transparent
+        );
+
+    opacity:.28;
+
+    filter:
+        blur(.2px);
+
+}
+
+
+.ars-orbit .hud-axis.axis-x{
+
+    transform:
+        translate(-50%,-50%)
+        rotate(0deg);
+
+}
+
+
+.ars-orbit .hud-axis.axis-y{
+
+    transform:
+        translate(-50%,-50%)
+        rotate(90deg);
+
+}
+
+
+.ars-orbit .hud-axis.axis-a{
+
+    transform:
+        translate(-50%,-50%)
+        rotate(37deg);
+
+    opacity:.16;
+
+}
+
+
+.ars-orbit .hud-axis.axis-b{
+
+    transform:
+        translate(-50%,-50%)
+        rotate(127deg);
+
+    opacity:.16;
+
+}
+
+
+/* ---------------------------------------------------------
+   19.6 — HOLOGRAPHIC DATA MARKERS
+   ۱۹.۶ — نشانگرهای داده هولوگرافیک
+   --------------------------------------------------------- */
+
+.ars-orbit .hud-marker{
+
+    position:absolute;
+
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            #ffffff 0%,
+            rgba(255,241,184,.95) 28%,
+            rgba(82,182,255,.75) 58%,
+            transparent 100%
+        );
+
+    box-shadow:
+
+        0 0 5px
+        rgba(255,255,255,.95),
+
+        0 0 13px
+        rgba(255,241,184,.72),
+
+        0 0 28px
+        rgba(22,140,255,.48);
+
+    opacity:.72;
+
+    animation:
+        hudMarkerPulse
+        3.6s
+        ease-in-out
+        infinite;
+
+}
+
+
+/* ---------------------------------------------------------
+   19.7 — DATA MARKER POSITIONS
+   ۱۹.۷ — موقعیت نشانگرهای داده
+   --------------------------------------------------------- */
+
+.ars-orbit .hud-marker.marker-1{
+    left:25%;
+    top:24%;
+}
+
+.ars-orbit .hud-marker.marker-2{
+    left:51%;
+    top:13%;
+}
+
+.ars-orbit .hud-marker.marker-3{
+    left:77%;
+    top:29%;
+}
+
+.ars-orbit .hud-marker.marker-4{
+    left:87%;
+    top:57%;
+}
+
+.ars-orbit .hud-marker.marker-5{
+    left:70%;
+    top:80%;
+}
+
+.ars-orbit .hud-marker.marker-6{
+    left:43%;
+    top:89%;
+}
+
+.ars-orbit .hud-marker.marker-7{
+    left:17%;
+    top:69%;
+}
+
+.ars-orbit .hud-marker.marker-8{
+    left:11%;
+    top:43%;
+}
+
+
+/* ---------------------------------------------------------
+   19.8 — HOLOGRAPHIC DATA TRAILS
+   ۱۹.۸ — ردهای داده هولوگرافیک
+   --------------------------------------------------------- */
+
+.ars-orbit .hud-trail{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:26%;
+
+    height:1px;
+
+    transform-origin:
+        left center;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(82,182,255,.12),
+            rgba(82,182,255,.42),
+            rgba(255,241,184,.58),
+            transparent
+        );
+
+    box-shadow:
+
+        0 0 8px
+        rgba(82,182,255,.22);
+
+    opacity:.34;
+
+}
+
+
+.ars-orbit .hud-trail.trail-1{
+    transform:rotate(18deg);
+}
+
+.ars-orbit .hud-trail.trail-2{
+    transform:rotate(68deg);
+}
+
+.ars-orbit .hud-trail.trail-3{
+    transform:rotate(116deg);
+}
+
+.ars-orbit .hud-trail.trail-4{
+    transform:rotate(174deg);
+}
+
+.ars-orbit .hud-trail.trail-5{
+    transform:rotate(228deg);
+}
+
+.ars-orbit .hud-trail.trail-6{
+    transform:rotate(291deg);
+}
+
+.ars-orbit .hud-trail.trail-7{
+    transform:rotate(337deg);
+}
+
+
+/* ---------------------------------------------------------
+   19.9 — SCANNING PULSE
+   ۱۹.۹ — پالس اسکن
+   --------------------------------------------------------- */
+
+.ars-orbit .hud-pulse{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:18%;
+    height:18%;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(82,182,255,.24);
+
+    box-shadow:
+
+        0 0 12px
+        rgba(22,140,255,.16),
+
+        inset 0 0 15px
+        rgba(82,182,255,.08);
+
+    opacity:.38;
+
+    animation:
+        hudPulseExpand
+        5.5s
+        ease-out
+        infinite;
+
+}
+
+
+/* ---------------------------------------------------------
+   19.10 — HOLOGRAPHIC CORE RETICLE
+   ۱۹.۱۰ — رتیکل هولوگرافیک مرکزی
+   --------------------------------------------------------- */
+
+.ars-orbit .hud-reticle{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:28%;
+    height:28%;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(255,241,184,.18);
+
+    box-shadow:
+
+        0 0 18px
+        rgba(228,185,95,.12),
+
+        inset 0 0 18px
+        rgba(22,140,255,.08);
+
+    opacity:.42;
+
+    animation:
+        hudReticleRotate
+        18s
+        linear
+        infinite;
+
+}
+
+
+.ars-orbit .hud-reticle::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:13%;
+
+    border-radius:50%;
+
+    border:
+        1px dashed
+        rgba(82,182,255,.22);
+
+}
+
+
+.ars-orbit .hud-reticle::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:5px;
+    height:5px;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:#ffffff;
+
+    box-shadow:
+
+        0 0 8px
+        rgba(255,255,255,.9),
+
+        0 0 20px
+        rgba(82,182,255,.75),
+
+        0 0 34px
+        rgba(255,241,184,.32);
+
+}
+
+
+/* ---------------------------------------------------------
+   19.11 — HOLOGRAPHIC LIGHT SWEEP
+   ۱۹.۱۱ — جاروب نوری هولوگرافیک
+   --------------------------------------------------------- */
+
+.ars-orbit .hud-light-sweep{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:94%;
+    height:2px;
+
+    transform-origin:
+        left center;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(82,182,255,.0) 18%,
+            rgba(82,182,255,.18) 42%,
+            rgba(255,241,184,.70) 50%,
+            rgba(82,182,255,.18) 58%,
+            rgba(82,182,255,.0) 82%,
+            transparent
+        );
+
+    filter:
+        blur(.5px);
+
+    opacity:.26;
+
+    animation:
+        hudLightSweep
+        9s
+        linear
+        infinite;
+
+}
+
+
+/* ---------------------------------------------------------
+   19.12 — HOLOGRAPHIC INTERFERENCE
+   ۱۹.۱۲ — تداخل نوری هولوگرافیک
+   --------------------------------------------------------- */
+
+.ars-orbit .hud-interference{
+
+    position:absolute;
+
+    inset:8%;
+
+    border-radius:50%;
+
+    background:
+
+        repeating-linear-gradient(
+            0deg,
+            transparent 0,
+            transparent 7px,
+            rgba(82,182,255,.012) 8px,
+            transparent 9px
+        );
+
+    mix-blend-mode:
+        screen;
+
+    opacity:.28;
+
+    animation:
+        holographicInterference
+        8s
+        ease-in-out
+        infinite;
+
+}
+
+
+/* ---------------------------------------------------------
+   19.13 — HUD ACTIVE INTELLIGENCE
+   ۱۹.۱۳ — هوش فعال HUD
+   --------------------------------------------------------- */
+
+.ars-orbit.hud-active .hud-scanner{
+
+    opacity:
+        1;
+
+    filter:
+        blur(0);
+
+}
+
+
+.ars-orbit.hud-active .hud-marker{
+
+    opacity:
+        1;
+
+}
+
+
+.ars-orbit.hud-active .hud-pulse{
+
+    animation-duration:
+        2.6s;
+
+}
+
+
+.ars-orbit.hud-active .hud-reticle{
+
+    border-color:
+        rgba(255,241,184,.38);
+
+    box-shadow:
+
+        0 0 22px
+        rgba(255,241,184,.20),
+
+        0 0 48px
+        rgba(22,140,255,.14),
+
+        inset 0 0 25px
+        rgba(82,182,255,.12);
+
+}
+
+
+/* ---------------------------------------------------------
+   19.14 — HOLOGRAPHIC MOTION SYSTEM
+   ۱۹.۱۴ — سیستم حرکتی هولوگرافیک
+   --------------------------------------------------------- */
+
+@keyframes holographicGridRotate{
+
+    from{
+
+        transform:
+            translate(-50%,-50%)
+            rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+            translate(-50%,-50%)
+            rotate(360deg);
+
+    }
+
+}
+
+
+@keyframes hudScannerRotate{
+
+    from{
+
+        transform:
+            translate(-50%,-50%)
+            rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+            translate(-50%,-50%)
+            rotate(360deg);
+
+    }
+
+}
+
+
+@keyframes hudSecondaryScan{
+
+    from{
+
+        transform:
+            rotate(360deg);
+
+    }
+
+    to{
+
+        transform:
+            rotate(0deg);
+
+    }
+
+}
+
+
+@keyframes hudMarkerPulse{
+
+    0%,
+    100%{
+
+        transform:
+            scale(.62);
+
+        opacity:.32;
+
+    }
+
+    50%{
+
+        transform:
+            scale(1.38);
+
+        opacity:1;
+
+    }
+
+}
+
+
+@keyframes hudPulseExpand{
+
+    0%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(.55);
+
+        opacity:.55;
+
+    }
+
+    75%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(2.7);
+
+        opacity:.08;
+
+    }
+
+    100%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(3.2);
+
+        opacity:0;
+
+    }
+
+}
+
+
+@keyframes hudReticleRotate{
+
+    from{
+
+        transform:
+            translate(-50%,-50%)
+            rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+            translate(-50%,-50%)
+            rotate(360deg);
+
+    }
+
+}
+
+
+@keyframes hudLightSweep{
+
+    from{
+
+        transform:
+            rotate(0deg);
+
+        opacity:.08;
+
+    }
+
+    35%{
+
+        opacity:.36;
+
+    }
+
+    70%{
+
+        opacity:.16;
+
+    }
+
+    to{
+
+        transform:
+            rotate(360deg);
+
+        opacity:.08;
+
+    }
+
+}
+
+
+@keyframes holographicInterference{
+
+    0%,
+    100%{
+
+        opacity:.18;
+
+        transform:
+            translateY(0);
+
+    }
+
+    50%{
+
+        opacity:.38;
+
+        transform:
+            translateY(3px);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   19.15 — MOBILE HOLOGRAPHIC PRESERVATION
+   ۱۹.۱۵ — حفظ سیستم هولوگرافیک در موبایل
+   --------------------------------------------------------- */
+
+@media (max-width:700px){
+
+    .ars-orbit .holographic-hud{
+
+        width:100%;
+        height:100%;
+
+    }
+
+    .ars-orbit .holographic-hud::before{
+
+        width:78%;
+        height:78%;
+
+        opacity:.58;
+
+    }
+
+    .ars-orbit .hud-scanner{
+
+        width:106%;
+        height:106%;
+
+        opacity:.58;
+
+    }
+
+    .ars-orbit .hud-reticle{
+
+        width:31%;
+        height:31%;
+
+        opacity:.34;
+
+    }
+
+    .ars-orbit .hud-marker{
+
+        width:6px;
+        height:6px;
+
+    }
+
+    .ars-orbit .hud-trail{
+
+        opacity:.24;
+
+    }
+
+    .ars-orbit .hud-light-sweep{
+
+        opacity:.18;
+
+    }
+
+    .ars-orbit .hud-interference{
+
+        opacity:.18;
+
+    }
+
+}
+
+
+/* =========================================================
+   V12 — LOCKED
+   ۱۹ — HOLOGRAPHIC HUD & SCANNING SYSTEM
+   ۱۹.۱ → ۱۹.۱۵
+   ========================================================= */
+
+/* =========================================================
+   V13 — SECTION 20
+   PARTICLE UNIVERSE & COSMIC FIELD
+   ۲۰ — جهان ذرات و میدان کیهانی
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   20.1 — DEEP SPACE PARTICLE FIELD
+   ۲۰.۱ — میدان ذرات فضای عمیق
+   --------------------------------------------------------- */
+
+.ars-orbit .cosmic-particle-field{
+
+    position:absolute;
+
+    inset:-32%;
+
+    z-index:11;
+
+    pointer-events:none;
+
+    border-radius:50%;
+
+    overflow:visible;
+
+    isolation:isolate;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(0,12,28,.08),
+            transparent 38%
+        ),
+
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(22,140,255,.025),
+            transparent 66%
+        );
+
+    animation:
+        cosmicFieldBreath
+        11s
+        ease-in-out
+        infinite;
+
+}
+
+
+.ars-orbit .cosmic-particle-field::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+            circle at 8% 18%,
+            rgba(82,182,255,.72) 0 1px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 18% 76%,
+            rgba(255,255,255,.55) 0 1px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 29% 34%,
+            rgba(22,140,255,.66) 0 1px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 39% 88%,
+            rgba(228,185,95,.62) 0 1px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 51% 12%,
+            rgba(82,182,255,.58) 0 1px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 64% 31%,
+            rgba(255,241,184,.58) 0 1px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 76% 78%,
+            rgba(22,140,255,.62) 0 1px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 91% 44%,
+            rgba(255,255,255,.52) 0 1px,
+            transparent 3px
+        );
+
+    opacity:.68;
+
+    filter:
+        drop-shadow(
+            0 0 6px
+            rgba(82,182,255,.35)
+        );
+
+    animation:
+        cosmicFieldRotate
+        72s
+        linear
+        infinite;
+
+}
+
+
+.ars-orbit .cosmic-particle-field::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:7%;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 53%,
+            rgba(22,140,255,.42) 0 1px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 34% 11%,
+            rgba(255,241,184,.48) 0 1px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 57% 72%,
+            rgba(82,182,255,.45) 0 1px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 82% 24%,
+            rgba(228,185,95,.42) 0 1px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 88% 86%,
+            rgba(255,255,255,.42) 0 1px,
+            transparent 3px
+        );
+
+    opacity:.46;
+
+    animation:
+        cosmicFieldCounterRotate
+        51s
+        linear
+        infinite;
+
+}
+
+
+/* ---------------------------------------------------------
+   20.2 — MICRO PARTICLES
+   ۲۰.۲ — ذرات میکروسکوپی
+   --------------------------------------------------------- */
+
+.ars-orbit .micro-particle{
+
+    position:absolute;
+
+    width:2px;
+    height:2px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #ffffff 0%,
+            rgba(82,182,255,.88) 42%,
+            transparent 100%
+        );
+
+    box-shadow:
+
+        0 0 4px
+        rgba(255,255,255,.82),
+
+        0 0 10px
+        rgba(82,182,255,.52);
+
+    opacity:.5;
+
+    pointer-events:none;
+
+    animation:
+        microParticleFloat
+        6s
+        ease-in-out
+        infinite;
+
+}
+
+
+.ars-orbit .micro-particle:nth-child(2n){
+
+    animation-duration:7.5s;
+
+    animation-delay:-2s;
+
+}
+
+
+.ars-orbit .micro-particle:nth-child(3n){
+
+    width:3px;
+    height:3px;
+
+    opacity:.72;
+
+    animation-duration:9s;
+
+    animation-delay:-4s;
+
+}
+
+
+/* ---------------------------------------------------------
+   20.3 — MACRO PARTICLES
+   ۲۰.۳ — ذرات بزرگ
+   --------------------------------------------------------- */
+
+.ars-orbit .macro-particle{
+
+    position:absolute;
+
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            #ffffff 0%,
+            rgba(255,241,184,.92) 25%,
+            rgba(228,185,95,.54) 48%,
+            rgba(22,140,255,.16) 68%,
+            transparent 100%
+        );
+
+    box-shadow:
+
+        0 0 8px
+        rgba(255,255,255,.72),
+
+        0 0 20px
+        rgba(255,241,184,.55),
+
+        0 0 42px
+        rgba(22,140,255,.24);
+
+    opacity:.68;
+
+    pointer-events:none;
+
+    animation:
+        macroParticleOrbit
+        13s
+        linear
+        infinite;
+
+}
+
+
+.ars-orbit .macro-particle:nth-child(2n){
+
+    width:11px;
+    height:11px;
+
+    animation-duration:17s;
+
+}
+
+
+.ars-orbit .macro-particle:nth-child(3n){
+
+    width:6px;
+    height:6px;
+
+    animation-duration:21s;
+
+}
+
+
+/* ---------------------------------------------------------
+   20.4 — GOLDEN DUST
+   ۲۰.۴ — غبار طلایی
+   --------------------------------------------------------- */
+
+.ars-orbit .golden-dust{
+
+    position:absolute;
+
+    inset:-4%;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    background:
+
+        radial-gradient(
+            circle at 12% 28%,
+            rgba(255,241,184,.72) 0 1px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 23% 67%,
+            rgba(228,185,95,.68) 0 1px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 41% 18%,
+            rgba(255,241,184,.58) 0 1px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 59% 83%,
+            rgba(184,137,63,.62) 0 1px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 73% 37%,
+            rgba(255,241,184,.64) 0 1px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 91% 71%,
+            rgba(228,185,95,.54) 0 1px,
+            transparent 3px
+        );
+
+    opacity:.52;
+
+    filter:
+        blur(.15px)
+        drop-shadow(
+            0 0 7px
+            rgba(228,185,95,.32)
+        );
+
+    animation:
+        goldenDustFlow
+        28s
+        linear
+        infinite;
+
+}
+
+
+/* ---------------------------------------------------------
+   20.5 — ELECTRIC BLUE PARTICLES
+   ۲۰.۵ — ذرات آبی الکتریکی
+   --------------------------------------------------------- */
+
+.ars-orbit .electric-blue-particles{
+
+    position:absolute;
+
+    inset:-8%;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    background:
+
+        radial-gradient(
+            circle at 17% 42%,
+            rgba(82,182,255,.92) 0 1.5px,
+            transparent 4px
+        ),
+
+        radial-gradient(
+            circle at 32% 81%,
+            rgba(22,140,255,.88) 0 1px,
+            transparent 4px
+        ),
+
+        radial-gradient(
+            circle at 48% 24%,
+            rgba(82,182,255,.78) 0 1.5px,
+            transparent 4px
+        ),
+
+        radial-gradient(
+            circle at 68% 64%,
+            rgba(22,140,255,.9) 0 1px,
+            transparent 4px
+        ),
+
+        radial-gradient(
+            circle at 84% 19%,
+            rgba(82,182,255,.76) 0 1px,
+            transparent 4px
+        ),
+
+        radial-gradient(
+            circle at 92% 82%,
+            rgba(22,140,255,.7) 0 1.5px,
+            transparent 4px
+        );
+
+    opacity:.62;
+
+    filter:
+        drop-shadow(
+            0 0 8px
+            rgba(22,140,255,.48)
+        );
+
+    animation:
+        electricParticleFlow
+        19s
+        linear
+        infinite;
+
+}
+
+
+/* ---------------------------------------------------------
+   20.6 — PARTICLE TRAILS
+   ۲۰.۶ — رد ذرات
+   --------------------------------------------------------- */
+
+.ars-orbit .particle-trail{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:34%;
+
+    height:1px;
+
+    transform-origin:left center;
+
+    border-radius:999px;
+
+    pointer-events:none;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(82,182,255,.10),
+            rgba(82,182,255,.56),
+            rgba(255,241,184,.68),
+            transparent
+        );
+
+    filter:
+        blur(.2px);
+
+    opacity:.36;
+
+}
+
+
+.ars-orbit .particle-trail::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:12%;
+
+    top:50%;
+
+    width:5px;
+    height:5px;
+
+    transform:
+        translateY(-50%);
+
+    border-radius:50%;
+
+    background:#ffffff;
+
+    box-shadow:
+
+        0 0 8px
+        rgba(255,255,255,.9),
+
+        0 0 18px
+        rgba(82,182,255,.72),
+
+        0 0 35px
+        rgba(22,140,255,.42);
+
+    animation:
+        trailPulse
+        2.7s
+        ease-in-out
+        infinite;
+
+}
+
+
+.ars-orbit .particle-trail.trail-1{
+
+    transform:rotate(36deg);
+
+}
+
+.ars-orbit .particle-trail.trail-2{
+
+    transform:rotate(118deg);
+
+    width:29%;
+
+}
+
+.ars-orbit .particle-trail.trail-3{
+
+    transform:rotate(204deg);
+
+    width:38%;
+
+}
+
+.ars-orbit .particle-trail.trail-4{
+
+    transform:rotate(286deg);
+
+    width:31%;
+
+}
+
+
+/* ---------------------------------------------------------
+   20.7 — PARTICLE BURSTS
+   ۲۰.۷ — انفجار ذرات
+   --------------------------------------------------------- */
+
+.ars-orbit .particle-burst{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:3px;
+    height:3px;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    background:#ffffff;
+
+    box-shadow:
+
+        0 0 8px
+        rgba(255,255,255,.9),
+
+        0 0 18px
+        rgba(255,241,184,.72),
+
+        0 0 40px
+        rgba(22,140,255,.48);
+
+    animation:
+        cosmicBurst
+        5.8s
+        ease-out
+        infinite;
+
+}
+
+
+.ars-orbit .particle-burst::before,
+.ars-orbit .particle-burst::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:100%;
+    height:100%;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(82,182,255,.38);
+
+    transform:
+        translate(-50%,-50%)
+        scale(.2);
+
+    opacity:0;
+
+    animation:
+        burstRing
+        5.8s
+        ease-out
+        infinite;
+
+}
+
+
+.ars-orbit .particle-burst::after{
+
+    border-color:
+        rgba(228,185,95,.34);
+
+    animation-delay:
+        1.1s;
+
+}
+
+
+.ars-orbit .particle-burst.burst-1{
+
+    transform:
+        translate(-50%,-50%)
+        translate(190px,-105px);
+
+}
+
+.ars-orbit .particle-burst.burst-2{
+
+    transform:
+        translate(-50%,-50%)
+        translate(-210px,72px);
+
+    animation-delay:
+        1.8s;
+
+}
+
+.ars-orbit .particle-burst.burst-3{
+
+    transform:
+        translate(-50%,-50%)
+        translate(118px,190px);
+
+    animation-delay:
+        3.1s;
+
+}
+
+
+/* ---------------------------------------------------------
+   20.8 — COSMIC DEPTH
+   ۲۰.۸ — عمق کیهانی
+   --------------------------------------------------------- */
+
+.ars-orbit .cosmic-depth{
+
+    position:absolute;
+
+    inset:-24%;
+
+    z-index:-1;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    background:
+
+        radial-gradient(
+            ellipse at 50% 50%,
+            rgba(22,140,255,.075),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            ellipse at 38% 42%,
+            rgba(0,66,130,.075),
+            transparent 48%
+        ),
+
+        radial-gradient(
+            ellipse at 68% 64%,
+            rgba(228,185,95,.028),
+            transparent 52%
+        ),
+
+        radial-gradient(
+            ellipse at center,
+            transparent 34%,
+            rgba(0,0,0,.22) 68%,
+            rgba(0,1,3,.62) 100%
+        );
+
+    filter:
+        blur(14px);
+
+    opacity:.82;
+
+    animation:
+        cosmicDepthBreath
+        14s
+        ease-in-out
+        infinite;
+
+}
+
+
+/* ---------------------------------------------------------
+   20.9 — V13 FINAL LOCK
+   ۲۰.۹ — قفل نهایی V13
+   --------------------------------------------------------- */
+
+@keyframes cosmicFieldBreath{
+
+    0%,
+    100%{
+
+        transform:
+            scale(.97);
+
+        opacity:.68;
+
+    }
+
+    50%{
+
+        transform:
+            scale(1.035);
+
+        opacity:.96;
+
+    }
+
+}
+
+
+@keyframes cosmicFieldRotate{
+
+    from{
+
+        transform:
+            rotate(0deg)
+            scale(1);
+
+    }
+
+    to{
+
+        transform:
+            rotate(360deg)
+            scale(1.025);
+
+    }
+
+}
+
+
+@keyframes cosmicFieldCounterRotate{
+
+    from{
+
+        transform:
+            rotate(360deg);
+
+    }
+
+    to{
+
+        transform:
+            rotate(0deg);
+
+    }
+
+}
+
+
+@keyframes microParticleFloat{
+
+    0%,
+    100%{
+
+        transform:
+            translate3d(0,0,0)
+            scale(.65);
+
+        opacity:.22;
+
+    }
+
+    50%{
+
+        transform:
+            translate3d(8px,-14px,0)
+            scale(1.35);
+
+        opacity:.9;
+
+    }
+
+}
+
+
+@keyframes macroParticleOrbit{
+
+    0%{
+
+        transform:
+            rotate(0deg)
+            translateX(0)
+            scale(.72);
+
+        opacity:.28;
+
+    }
+
+    50%{
+
+        transform:
+            rotate(180deg)
+            translateX(18px)
+            scale(1.18);
+
+        opacity:.95;
+
+    }
+
+    100%{
+
+        transform:
+            rotate(360deg)
+            translateX(0)
+            scale(.72);
+
+        opacity:.28;
+
+    }
+
+}
+
+
+@keyframes goldenDustFlow{
+
+    from{
+
+        transform:
+            rotate(0deg)
+            scale(1);
+
+    }
+
+    50%{
+
+        transform:
+            rotate(180deg)
+            scale(1.035);
+
+    }
+
+    to{
+
+        transform:
+            rotate(360deg)
+            scale(1);
+
+    }
+
+}
+
+
+@keyframes electricParticleFlow{
+
+    from{
+
+        transform:
+            rotate(0deg)
+            translateX(0);
+
+    }
+
+    50%{
+
+        transform:
+            rotate(180deg)
+            translateX(7px);
+
+    }
+
+    to{
+
+        transform:
+            rotate(360deg)
+            translateX(0);
+
+    }
+
+}
+
+
+@keyframes trailPulse{
+
+    0%,
+    100%{
+
+        transform:
+            translateY(-50%)
+            scale(.55);
+
+        opacity:.22;
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-50%)
+            scale(1.55);
+
+        opacity:1;
+
+    }
+
+}
+
+
+@keyframes cosmicBurst{
+
+    0%,
+    72%{
+
+        opacity:.15;
+
+        box-shadow:
+            0 0 5px
+            rgba(255,255,255,.45);
+
+    }
+
+    78%{
+
+        opacity:1;
+
+        box-shadow:
+
+            0 0 10px
+            rgba(255,255,255,1),
+
+            0 0 25px
+            rgba(255,241,184,.85),
+
+            0 0 55px
+            rgba(22,140,255,.65);
+
+    }
+
+    100%{
+
+        opacity:.08;
+
+    }
+
+}
+
+
+@keyframes burstRing{
+
+    0%,
+    72%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(.2);
+
+        opacity:0;
+
+    }
+
+    78%{
+
+        opacity:.9;
+
+    }
+
+    100%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(42);
+
+        opacity:0;
+
+    }
+
+}
+
+
+@keyframes cosmicDepthBreath{
+
+    0%,
+    100%{
+
+        transform:
+            scale(.96);
+
+        opacity:.58;
+
+    }
+
+    50%{
+
+        transform:
+            scale(1.08);
+
+        opacity:.92;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   20.10 — MOBILE COSMIC PRESERVATION
+   ۲۰.۱۰ — حفظ میدان کیهانی در موبایل
+   --------------------------------------------------------- */
+
+@media (max-width:700px){
+
+    .ars-orbit .cosmic-particle-field{
+
+        inset:-38%;
+
+    }
+
+    .ars-orbit .micro-particle{
+
+        width:2px;
+        height:2px;
+
+    }
+
+    .ars-orbit .macro-particle{
+
+        width:6px;
+        height:6px;
+
+    }
+
+    .ars-orbit .particle-trail{
+
+        opacity:.28;
+
+        width:29%;
+
+    }
+
+    .ars-orbit .particle-burst.burst-1{
+
+        transform:
+            translate(-50%,-50%)
+            translate(25vw,-15vw);
+
+    }
+
+    .ars-orbit .particle-burst.burst-2{
+
+        transform:
+            translate(-50%,-50%)
+            translate(-27vw,12vw);
+
+    }
+
+    .ars-orbit .particle-burst.burst-3{
+
+        transform:
+            translate(-50%,-50%)
+            translate(15vw,25vw);
+
+    }
+
+    .ars-orbit .cosmic-depth{
+
+        inset:-30%;
+
+        filter:
+            blur(11px);
+
+    }
+
+}
+
+
+/* =========================================================
+   V13 — LOCKED
+   SECTION 20 — PARTICLE UNIVERSE & COSMIC FIELD
+   ۲۰ — جهان ذرات و میدان کیهانی
+   ========================================================= */
 
 
 
