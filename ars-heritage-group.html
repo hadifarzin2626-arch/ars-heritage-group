@@ -4207,5 +4207,78 @@ function(){
 
 });
 
-</script></body>
+/* =========================================================
+   ARS PARTNERSHIP — INTERACTIVE CORE & NODE SYSTEM
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const core = document.querySelector(".partnership-core");
+
+    const nodes = document.querySelectorAll(
+        ".partnership-node"
+    );
+
+    if (!core || !nodes.length) return;
+
+
+    /* =====================================================
+       CENTRAL CORE CLICK
+       ===================================================== */
+
+    core.addEventListener("click", (event) => {
+
+        event.stopPropagation();
+
+        core.classList.toggle("active");
+
+    });
+
+
+    /* =====================================================
+       PARTNERSHIP NODE CLICK
+       ===================================================== */
+
+    nodes.forEach((node) => {
+
+        node.addEventListener("click", (event) => {
+
+            event.stopPropagation();
+
+            nodes.forEach((item) => {
+
+                if (item !== node) {
+                    item.classList.remove("active");
+                }
+
+            });
+
+            node.classList.toggle("active");
+
+        });
+
+    });
+
+
+    /* =====================================================
+       CLICK OUTSIDE
+       ===================================================== */
+
+    document.addEventListener("click", () => {
+
+        core.classList.remove("active");
+
+        nodes.forEach((node) => {
+
+            node.classList.remove("active");
+
+        });
+
+    });
+
+});
+</script>
+
+
+</body>
     </html>
