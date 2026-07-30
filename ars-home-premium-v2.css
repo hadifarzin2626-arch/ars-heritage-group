@@ -1,0 +1,473 @@
+/* =========================================================
+   ARS HERITAGE GROUP
+   HOME PREMIUM V2
+   FILE: ars-home-premium-v2.css
+
+   =========================================================
+   SECTION 01 — FOUNDATION & BRAND DNA
+   01 — پایه سیستم و DNA برند
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   01.1 — ROOT BRAND DNA
+   ۰۱.۱ — DNA اصلی برند
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2{
+
+    /* =====================================================
+       BRAND PRIMARY COLORS
+       ===================================================== */
+
+    --ars-electric-blue:
+        #168CFF;
+
+    --ars-electric-blue-bright:
+        #52B6FF;
+
+    --ars-deep-navy:
+        #07111F;
+
+    --ars-deep-navy-soft:
+        #0B1728;
+
+    --ars-white:
+        #F7F4ED;
+
+    --ars-white-soft:
+        rgba(247,244,237,.78);
+
+    --ars-white-muted:
+        rgba(247,244,237,.58);
+
+    --ars-real-gold:
+        #D4AF37;
+
+    --ars-gold-bright:
+        #E4B95F;
+
+    --ars-gold-soft:
+        rgba(228,185,95,.62);
+
+    --ars-deep-black:
+        #000103;
+
+    --ars-black-soft:
+        #010207;
+
+    --ars-matte-bronze:
+        #6F4E37;
+
+
+    /* =====================================================
+       ATMOSPHERIC / SHADOW COLORS
+       ===================================================== */
+
+    --ars-shadow-blue:
+        rgba(22,140,255,.24);
+
+    --ars-shadow-red:
+        rgba(185,48,48,.16);
+
+    --ars-shadow-brown:
+        rgba(111,78,55,.16);
+
+    --ars-shadow-yellow:
+        rgba(228,185,95,.14);
+
+
+    /* =====================================================
+       COMPLEMENTARY COLORS
+       ===================================================== */
+
+    --ars-red:
+        #B83232;
+
+    --ars-red-bright:
+        #E05252;
+
+    --ars-blue:
+        #168CFF;
+
+    --ars-yellow:
+        #D9B83F;
+
+    --ars-brown:
+        #795548;
+
+    --ars-green:
+        #3D8B68;
+
+
+    /* =====================================================
+       BRAND LIGHTING
+       ===================================================== */
+
+    --ars-glow-blue:
+        0 0 32px
+        rgba(22,140,255,.28);
+
+    --ars-glow-blue-strong:
+        0 0 58px
+        rgba(22,140,255,.38);
+
+    --ars-glow-gold:
+        0 0 30px
+        rgba(228,185,95,.24);
+
+    --ars-glow-gold-strong:
+        0 0 60px
+        rgba(228,185,95,.34);
+
+    --ars-glow-bronze:
+        0 0 28px
+        rgba(111,78,55,.20);
+
+
+    /* =====================================================
+       SURFACE SYSTEM
+       ===================================================== */
+
+    --ars-surface:
+        rgba(7,17,31,.78);
+
+    --ars-surface-strong:
+        rgba(7,17,31,.90);
+
+    --ars-surface-soft:
+        rgba(11,23,40,.62);
+
+    --ars-glass:
+        rgba(7,17,31,.42);
+
+    --ars-glass-border:
+        rgba(247,244,237,.10);
+
+    --ars-glass-highlight:
+        rgba(247,244,237,.055);
+
+
+    /* =====================================================
+       BORDER SYSTEM
+       ===================================================== */
+
+    --ars-border-blue:
+        rgba(22,140,255,.22);
+
+    --ars-border-gold:
+        rgba(228,185,95,.24);
+
+    --ars-border-white:
+        rgba(247,244,237,.12);
+
+    --ars-border-bronze:
+        rgba(111,78,55,.22);
+
+
+    /* =====================================================
+       DEPTH
+       ===================================================== */
+
+    --ars-depth-black:
+        #000000;
+
+    --ars-depth-1:
+        #000103;
+
+    --ars-depth-2:
+        #010207;
+
+    --ars-depth-3:
+        #030812;
+
+    --ars-depth-4:
+        #07111F;
+
+
+    /* =====================================================
+       MOTION DNA
+       ===================================================== */
+
+    --ars-ease-premium:
+        cubic-bezier(.16,1,.3,1);
+
+    --ars-ease-smooth:
+        cubic-bezier(.22,1,.36,1);
+
+    --ars-ease-soft:
+        cubic-bezier(.4,0,.2,1);
+
+    --ars-motion-fast:
+        .35s;
+
+    --ars-motion-medium:
+        .7s;
+
+    --ars-motion-slow:
+        1.2s;
+
+
+    /* =====================================================
+       RADIUS SYSTEM
+       ===================================================== */
+
+    --ars-radius-small:
+        10px;
+
+    --ars-radius-medium:
+        18px;
+
+    --ars-radius-large:
+        28px;
+
+    --ars-radius-xl:
+        38px;
+
+    --ars-radius-orbit:
+        50%;
+
+
+    /* =====================================================
+       Z-INDEX FOUNDATION
+       ===================================================== */
+
+    --ars-z-background:
+        0;
+
+    --ars-z-atmosphere:
+        5;
+
+    --ars-z-stars:
+        8;
+
+    --ars-z-particles:
+        12;
+
+    --ars-z-orbit:
+        20;
+
+    --ars-z-nodes:
+        30;
+
+    --ars-z-core:
+        50;
+
+    --ars-z-content:
+        100;
+
+    --ars-z-header:
+        1000;
+
+    --ars-z-overlay:
+        2000;
+
+}
+
+
+/* ---------------------------------------------------------
+   01.2 — HOME FOUNDATION
+   ۰۱.۲ — پایه Home
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2{
+
+    position:
+        relative;
+
+    width:
+        100%;
+
+    min-height:
+        100vh;
+
+    margin:
+        0;
+
+    padding:
+        0;
+
+    overflow-x:
+        clip;
+
+    isolation:
+        isolate;
+
+    color:
+        var(--ars-white);
+
+    background:
+
+        radial-gradient(
+            circle at 50% 34%,
+            rgba(22,140,255,.055),
+            transparent 27%
+        ),
+
+        radial-gradient(
+            circle at 50% 52%,
+            rgba(228,185,95,.018),
+            transparent 44%
+        ),
+
+        linear-gradient(
+            180deg,
+            var(--ars-depth-1) 0%,
+            var(--ars-depth-2) 48%,
+            var(--ars-depth-1) 100%
+        );
+
+}
+
+
+/* ---------------------------------------------------------
+   01.3 — UNIVERSAL BOX MODEL
+   ۰۱.۳ — مدل جعبه سراسری
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 *,
+.ars-home-premium-v2 *::before,
+.ars-home-premium-v2 *::after{
+
+    box-sizing:
+        border-box;
+
+}
+
+
+/* ---------------------------------------------------------
+   01.4 — MEDIA FOUNDATION
+   ۰۱.۴ — پایه Media
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 img{
+
+    display:
+        block;
+
+    max-width:
+        100%;
+
+    height:
+        auto;
+
+}
+
+
+/* ---------------------------------------------------------
+   01.5 — LINK FOUNDATION
+   ۰۱.۵ — پایه لینک
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 a{
+
+    color:
+        inherit;
+
+    text-decoration:
+        none;
+
+}
+
+
+/* ---------------------------------------------------------
+   01.6 — TEXT RENDERING
+   ۰۱.۶ — رندرینگ متن
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2{
+
+    text-rendering:
+        optimizeLegibility;
+
+    -webkit-font-smoothing:
+        antialiased;
+
+    -moz-osx-font-smoothing:
+        grayscale;
+
+}
+
+
+/* ---------------------------------------------------------
+   01.7 — SELECTION
+   ۰۱.۷ — انتخاب متن
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 ::selection{
+
+    color:
+        var(--ars-deep-black);
+
+    background:
+        var(--ars-gold-bright);
+
+}
+
+
+/* ---------------------------------------------------------
+   01.8 — SCROLL FOUNDATION
+   ۰۱.۸ — پایه اسکرول
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2{
+
+    scroll-behavior:
+        smooth;
+
+}
+
+
+/* ---------------------------------------------------------
+   01.9 — MOBILE TAP PROTECTION
+   ۰۱.۹ — حفاظت لمس موبایل
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 a,
+.ars-home-premium-v2 button{
+
+    -webkit-tap-highlight-color:
+        transparent;
+
+}
+
+
+/* ---------------------------------------------------------
+   01.10 — REDUCED MOTION FOUNDATION
+   ۰۱.۱۰ — پایه حرکت کاهش‌یافته
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce){
+
+    .ars-home-premium-v2{
+
+        scroll-behavior:
+            auto;
+
+    }
+
+}
+
+
+/* =========================================================
+   SECTION 01 — COMPLETE
+   SECTION 01 — LOCKED 🔒
+
+   Brand DNA
+   Color System
+   Lighting System
+   Surface System
+   Border System
+   Depth System
+   Motion DNA
+   Radius System
+   Z-Index Foundation
+   Home Foundation
+   Media Foundation
+   Text Rendering
+   Selection
+   Scroll Foundation
+   Reduced Motion Foundation
+
+   🔒 V2 FOUNDATION LOCK
+   ========================================================= */
