@@ -19254,177 +19254,819 @@ img{
 
 
 /* =========================================================
-   ARS HOME — HERO WIDTH EXPANSION FIX
-   HERO / ORBITAL UNIVERSE ×2
-   Based on current Home Index
+   ARS HOME PREMIUM — HERO MASTER PATCH
+   LOCKED
    ========================================================= */
 
+/* ---------------------------------------------------------
+   01 — HERO MASTER FRAME
+   --------------------------------------------------------- */
+
 .hero{
-    width:100%;
-    overflow:hidden;
+
+    position:relative !important;
+
+    width:100% !important;
+
+    min-height:200vh !important;
+
+    display:flex !important;
+
+    align-items:center !important;
+
+    justify-content:center !important;
+
+    overflow:hidden !important;
+
+    isolation:isolate !important;
+
 }
+
+
+/* ---------------------------------------------------------
+   02 — HERO WRAPPER
+   --------------------------------------------------------- */
 
 .hero-wrapper{
-    width:100%;
-    min-height:200vh;
-    position:relative;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+
+    position:relative !important;
+
+    width:100% !important;
+
+    min-height:200vh !important;
+
+    display:flex !important;
+
+    align-items:center !important;
+
+    justify-content:center !important;
+
 }
 
+
+/* ---------------------------------------------------------
+   03 — HERO BACKGROUND
+   --------------------------------------------------------- */
+
+.hero-background{
+
+    position:absolute !important;
+
+    inset:0 !important;
+
+    z-index:-5 !important;
+
+    pointer-events:none !important;
+
+}
+
+
+/* ---------------------------------------------------------
+   04 — STAR FIELDS
+   --------------------------------------------------------- */
+
+.hero-stars,
+.hero-stars-2{
+
+    position:absolute !important;
+
+    inset:0 !important;
+
+    display:block !important;
+
+    visibility:visible !important;
+
+    pointer-events:none !important;
+
+}
+
+
 /* =========================================================
-   MASTER ORBIT — 2X VISUAL WIDTH
+   05 — MASTER ORBIT
+   منظومه اصلی — بزرگ، مرکزی و دقیق
    ========================================================= */
 
 .ars-orbit{
-    width:min(
-        172vw,
-        2100px
-    );
 
-    aspect-ratio:1 / 1;
+    position:absolute !important;
 
-    left:50%;
-    top:50%;
+    left:50% !important;
 
-    transform:
-        translate(-50%,-50%);
-}
+    top:50% !important;
 
+    /*
+       نسخه قبلی:
+       max-width:1050px
 
-/* =========================================================
-   ATMOSPHERIC UNIVERSE — SAME 2X SCALE
-   ========================================================= */
-
-.home-energy-universe{
-    position:absolute;
+       نسخه جدید:
+       منظومه به شکل محسوسی بزرگ‌تر می‌شود،
+       اما مرکز هندسی آن همچنان دقیقاً مرکز Hero است.
+    */
 
     width:
         min(
-            200vw,
-            2400px
-        );
+            128vw,
+            1600px
+        ) !important;
 
     height:
         min(
-            200vw,
-            2400px
-        );
+            128vw,
+            1600px
+        ) !important;
 
-    left:50%;
-    top:50%;
+    aspect-ratio:1 / 1 !important;
+
+    margin:0 !important;
+
+    transform:
+        translate(-50%,-50%) !important;
+
+    z-index:20 !important;
+
+    display:block !important;
+
+    visibility:visible !important;
+
+    opacity:1 !important;
+
+    isolation:isolate !important;
+
+    pointer-events:none !important;
+
+}
+
+
+/* ---------------------------------------------------------
+   06 — ORBIT ATMOSPHERE
+   --------------------------------------------------------- */
+
+.ars-orbit::before{
+
+    display:block !important;
+
+    visibility:visible !important;
+
+    opacity:.95 !important;
+
+    pointer-events:none !important;
+
+}
+
+
+.ars-orbit::after{
+
+    display:block !important;
+
+    visibility:visible !important;
+
+    pointer-events:none !important;
+
+}
+
+
+/* =========================================================
+   07 — CENTRAL CORE
+   ========================================================= */
+
+.orbit-core{
+
+    position:absolute !important;
+
+    left:50% !important;
+
+    top:50% !important;
+
+    transform:
+        translate(-50%,-50%) !important;
+
+    display:flex !important;
+
+    visibility:visible !important;
+
+    opacity:1 !important;
+
+    z-index:50 !important;
+
+}
+
+
+/* Core image */
+
+.orbit-core img{
+
+    display:block !important;
+
+    visibility:visible !important;
+
+    opacity:1 !important;
+
+}
+
+
+/* Core energy */
+
+.orbit-core::before,
+.orbit-core::after{
+
+    display:block !important;
+
+    visibility:visible !important;
+
+}
+
+
+/* Core ring */
+
+.orbit-core .core-energy-ring{
+
+    display:block !important;
+
+    visibility:visible !important;
+
+}
+
+
+/* =========================================================
+   08 — INNER ORBIT
+   ========================================================= */
+
+.orbit-inner{
+
+    position:absolute !important;
+
+    left:50% !important;
+
+    top:50% !important;
+
+    width:46% !important;
+
+    height:46% !important;
+
+    transform:
+        translate(-50%,-50%) !important;
+
+    display:block !important;
+
+    visibility:visible !important;
+
+    opacity:1 !important;
+
+    z-index:35 !important;
+
+    pointer-events:none !important;
+
+}
+
+
+/* Inner orbit nodes */
+
+.orbit-inner .orbit-item{
+
+    position:absolute !important;
+
+    display:block !important;
+
+    visibility:visible !important;
+
+    opacity:1 !important;
+
+    pointer-events:auto !important;
+
+}
+
+
+/* Inner cards */
+
+.orbit-inner .orbit-item a{
+
+    display:flex !important;
+
+    visibility:visible !important;
+
+    opacity:1 !important;
+
+}
+
+
+/* Inner logos */
+
+.orbit-inner .orbit-item img{
+
+    display:block !important;
+
+    visibility:visible !important;
+
+    opacity:1 !important;
+
+}
+
+
+/* Inner atmospheric layers */
+
+.orbit-inner .orbit-item a::before,
+.orbit-inner .orbit-item a::after{
+
+    display:block !important;
+
+    visibility:visible !important;
+
+}
+
+
+/* =========================================================
+   09 — OUTER ORBIT
+   ========================================================= */
+
+.orbit-outer{
+
+    position:absolute !important;
+
+    left:50% !important;
+
+    top:50% !important;
+
+    width:72% !important;
+
+    height:72% !important;
+
+    transform:
+        translate(-50%,-50%) !important;
+
+    display:block !important;
+
+    visibility:visible !important;
+
+    opacity:1 !important;
+
+    z-index:30 !important;
+
+    pointer-events:none !important;
+
+}
+
+
+/* Outer nodes */
+
+.orbit-outer .orbit-item{
+
+    position:absolute !important;
+
+    display:block !important;
+
+    visibility:visible !important;
+
+    opacity:1 !important;
+
+    pointer-events:auto !important;
+
+}
+
+
+/* Outer cards */
+
+.orbit-outer .orbit-item a{
+
+    display:flex !important;
+
+    visibility:visible !important;
+
+    opacity:1 !important;
+
+}
+
+
+/* Outer logos */
+
+.orbit-outer .orbit-item img{
+
+    display:block !important;
+
+    visibility:visible !important;
+
+    opacity:1 !important;
+
+}
+
+
+/* Outer atmospheric layers */
+
+.orbit-outer .orbit-item a::before,
+.orbit-outer .orbit-item a::after{
+
+    display:block !important;
+
+    visibility:visible !important;
+
+}
+
+
+/* =========================================================
+   10 — ENERGY NETWORK
+   ========================================================= */
+
+.ars-orbit .energy-network{
+
+    position:absolute !important;
+
+    inset:-18% !important;
+
+    display:block !important;
+
+    visibility:visible !important;
+
+    opacity:1 !important;
+
+    pointer-events:none !important;
+
+}
+
+
+/* Energy rays */
+
+.ars-orbit .energy-ray{
+
+    display:block !important;
+
+    visibility:visible !important;
+
+}
+
+
+/* Energy links */
+
+.ars-orbit .energy-link{
+
+    display:block !important;
+
+    visibility:visible !important;
+
+}
+
+
+/* Energy particles */
+
+.ars-orbit .energy-particles{
+
+    display:block !important;
+
+    visibility:visible !important;
+
+}
+
+
+/* Energy rings */
+
+.ars-orbit .energy-orbit-ring{
+
+    display:block !important;
+
+    visibility:visible !important;
+
+}
+
+
+/* =========================================================
+   11 — PARTICLE INTELLIGENCE
+   ========================================================= */
+
+.ars-orbit .particle-intelligence{
+
+    position:absolute !important;
+
+    inset:-20% !important;
+
+    display:block !important;
+
+    visibility:visible !important;
+
+    opacity:1 !important;
+
+    pointer-events:none !important;
+
+}
+
+
+/* Radiation */
+
+.ars-orbit .radiation-spike{
+
+    display:block !important;
+
+    visibility:visible !important;
+
+}
+
+
+.ars-orbit .radiation-core-flash{
+
+    display:block !important;
+
+    visibility:visible !important;
+
+}
+
+
+.ars-orbit .energy-stream{
+
+    display:block !important;
+
+    visibility:visible !important;
+
+}
+
+
+/* =========================================================
+   12 — FORCE MOTION
+   ========================================================= */
+
+.ars-orbit,
+.orbit-inner,
+.orbit-outer{
+
+    animation-play-state:running !important;
+
+}
+
+
+.hero-stars,
+.hero-stars-2{
+
+    animation-play-state:running !important;
+
+}
+
+
+/* =========================================================
+   13 — PRESERVE THE ORBIT GEOMETRY
+   ========================================================= */
+
+/*
+   مهم:
+   این بخش transformهای اصلی orbit-itemها را دست نمی‌زند.
+   بنابراین زوایا و هندسه 6 + 7 نود قبلی حفظ می‌شود.
+*/
+
+
+.orbit-inner .orbit-1{
 
     transform:
         translate(-50%,-50%)
-        translate3d(
-            var(--energy-parallax-x,0px),
-            var(--energy-parallax-y,0px),
-            0
-        );
+        rotate(0deg)
+        translateY(-165%) !important;
 
-    pointer-events:none;
+}
+
+.orbit-inner .orbit-2{
+
+    transform:
+        translate(-50%,-50%)
+        rotate(60deg)
+        translateY(-165%) !important;
+
+}
+
+.orbit-inner .orbit-3{
+
+    transform:
+        translate(-50%,-50%)
+        rotate(120deg)
+        translateY(-165%) !important;
+
+}
+
+.orbit-inner .orbit-4{
+
+    transform:
+        translate(-50%,-50%)
+        rotate(180deg)
+        translateY(-165%) !important;
+
+}
+
+.orbit-inner .orbit-5{
+
+    transform:
+        translate(-50%,-50%)
+        rotate(240deg)
+        translateY(-165%) !important;
+
+}
+
+.orbit-inner .orbit-6{
+
+    transform:
+        translate(-50%,-50%)
+        rotate(300deg)
+        translateY(-165%) !important;
+
 }
 
 
 /* =========================================================
-   PREVENT CONTENT FROM BEING PUSHED BY THE LARGE UNIVERSE
+   14 — OUTER NODE GEOMETRY
    ========================================================= */
 
-.hero-content{
-    position:relative;
-    z-index:100;
+.orbit-outer .orbit-7{
 
-    width:min(
-        90%,
-        900px
-    );
+    transform:
+        translate(-50%,-50%)
+        rotate(0deg)
+        translateY(-190%) !important;
 
-    margin-left:auto;
-    margin-right:auto;
+}
+
+.orbit-outer .orbit-8{
+
+    transform:
+        translate(-50%,-50%)
+        rotate(51.43deg)
+        translateY(-190%) !important;
+
+}
+
+.orbit-outer .orbit-9{
+
+    transform:
+        translate(-50%,-50%)
+        rotate(102.86deg)
+        translateY(-190%) !important;
+
+}
+
+.orbit-outer .orbit-10{
+
+    transform:
+        translate(-50%,-50%)
+        rotate(154.29deg)
+        translateY(-190%) !important;
+
+}
+
+.orbit-outer .orbit-11{
+
+    transform:
+        translate(-50%,-50%)
+        rotate(205.71deg)
+        translateY(-190%) !important;
+
+}
+
+.orbit-outer .orbit-12{
+
+    transform:
+        translate(-50%,-50%)
+        rotate(257.14deg)
+        translateY(-190%) !important;
+
+}
+
+.orbit-outer .orbit-13{
+
+    transform:
+        translate(-50%,-50%)
+        rotate(308.57deg)
+        translateY(-190%) !important;
+
 }
 
 
 /* =========================================================
-   LARGE SCREEN — FULL PREMIUM SCALE
+   15 — MOBILE
    ========================================================= */
 
-@media (min-width:1200px){
+@media (max-width:700px){
 
-    .ars-orbit{
-        width:
-            min(
-                172vw,
-                2100px
-            );
+    .hero{
+
+        min-height:
+            170vh !important;
+
     }
 
-    .home-energy-universe{
+
+    .hero-wrapper{
+
+        min-height:
+            170vh !important;
+
+    }
+
+
+    .ars-orbit{
+
         width:
             min(
-                200vw,
-                2400px
-            );
+                112vw,
+                760px
+            ) !important;
 
         height:
             min(
-                200vw,
-                2400px
-            );
+                112vw,
+                760px
+            ) !important;
+
+        left:50% !important;
+
+        top:50% !important;
+
+        transform:
+            translate(-50%,-50%) !important;
+
+    }
+
+
+    .orbit-core{
+
+        width:
+            clamp(
+                125px,
+                29vw,
+                175px
+            ) !important;
+
+    }
+
+
+    .orbit-inner{
+
+        width:
+            54% !important;
+
+        height:
+            54% !important;
+
+    }
+
+
+    .orbit-outer{
+
+        width:
+            82% !important;
+
+        height:
+            82% !important;
+
+    }
+
+
+    .orbit-inner .orbit-item{
+
+        width:
+            clamp(
+                62px,
+                17vw,
+                92px
+            ) !important;
+
+    }
+
+
+    .orbit-outer .orbit-item{
+
+        width:
+            clamp(
+                56px,
+                15vw,
+                82px
+            ) !important;
+
     }
 
 }
 
 
 /* =========================================================
-   TABLET
+   16 — ACCESSIBILITY / REDUCED MOTION
    ========================================================= */
 
-@media (max-width:1199px) and (min-width:769px){
+@media (prefers-reduced-motion:reduce){
 
-    .ars-orbit{
-        width:
-            155vw;
-    }
+    .ars-orbit,
+    .orbit-inner,
+    .orbit-outer,
+    .hero-stars,
+    .hero-stars-2,
+    .orbit-core,
+    .orbit-core img,
+    .orbit-inner .orbit-item img,
+    .orbit-outer .orbit-item img{
 
-    .home-energy-universe{
-        width:
-            175vw;
+        animation-duration:
+            .01ms !important;
 
-        height:
-            175vw;
+        animation-iteration-count:
+            1 !important;
+
     }
 
 }
 
 
 /* =========================================================
-   MOBILE — DON'T LET 2X DESKTOP SCALE BREAK THE SCREEN
+   END — HERO MASTER PATCH
    ========================================================= */
-
-@media (max-width:768px){
-
-    .ars-orbit{
-        width:
-            150vw;
-    }
-
-    .home-energy-universe{
-        width:
-            165vw;
-
-        height:
-            165vw;
-    }
-
-    .hero-content{
-        width:
-            calc(100% - 40px);
-    }
-
-}
-
-
 
 
 
