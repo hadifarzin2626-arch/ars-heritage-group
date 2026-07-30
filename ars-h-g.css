@@ -10740,58 +10740,53 @@ animation:
 }
 
 /* =========================================================
-   PARTNERSHIP — MASTER ENERGY ACTIVATION
-   FINAL LIGHT-LAYER OVERRIDE
+   PARTNERSHIP — ENERGY LAYER RESTORATION
+   FINAL SAFE OVERRIDE
    ---------------------------------------------------------
    PURPOSE:
-   • Activate every existing energy layer in the new HTML
-   • ARS CORE is the primary energy source
-   • Bridges connect the Core to the four Partnership Nodes
-   • Secondary links remain visible but subtle
-   • Ambient field + orbital particles remain active
-   • Node energy remains independent and visible
-   • NO typography / layout / card-size changes
-   • NO negative z-index
+   - Restore ARS Core halo / internal energy
+   - Restore bridge energy
+   - Restore node energy
+   - Restore ambient particles
+   - DO NOT CHANGE CARD POSITION
+   - DO NOT CHANGE CARD SIZE
+   - DO NOT CHANGE GRID / FLEX / LAYOUT
    ========================================================= */
 
 
 /* =========================================================
-   01 — MASTER ENERGY FIELD
+   01 — NETWORK ENERGY LAYER
    ========================================================= */
 
-.partnership{
-    position:relative;
-    isolation:isolate;
-}
-
-
-/* =========================================================
-   02 — AMBIENT ENERGY FIELD
-   ========================================================= */
-
-.partnership-energy-field{
+.partnership-energy-network{
     position:absolute;
     inset:0;
-
-    z-index:1;
-
     pointer-events:none;
-
-    overflow:hidden;
+    z-index:8;
 }
 
 
-.partnership-energy-field::before{
+/* =========================================================
+   02 — CENTRAL ARS ENERGY
+   ========================================================= */
 
-    content:"";
-
+.partnership-core-energy{
     position:absolute;
+    inset:0;
+    pointer-events:none;
+    z-index:2;
+}
 
+
+/* ARS atmospheric halo */
+
+.partnership-core-halo{
+    position:absolute;
     left:50%;
-    top:46%;
+    top:50%;
 
-    width:clamp(360px,52vw,760px);
-    height:clamp(360px,52vw,760px);
+    width:125%;
+    height:125%;
 
     transform:translate(-50%,-50%);
 
@@ -10800,529 +10795,276 @@ animation:
     background:
         radial-gradient(
             circle,
-            rgba(255,241,184,.10) 0%,
-            rgba(228,185,95,.075) 20%,
-            rgba(184,137,63,.035) 42%,
+            rgba(228,185,95,.16) 0%,
+            rgba(228,185,95,.09) 24%,
+            rgba(184,137,63,.045) 46%,
             transparent 72%
         );
 
-    filter:blur(28px);
+    filter:blur(24px);
 
     opacity:.9;
 
-    animation:
-        partnershipAmbientEnergy
-        7s ease-in-out
-        infinite;
-}
-
-
-/* =========================================================
-   03 — AMBIENT ENERGY DOTS
-   ========================================================= */
-
-.partnership-energy-dot{
-
-    position:absolute;
-
-    width:3px;
-    height:3px;
-
-    border-radius:50%;
-
-    background:
-        rgba(255,241,184,.85);
-
-    box-shadow:
-        0 0 5px rgba(255,241,184,.8),
-        0 0 14px rgba(228,185,95,.45);
-
-    opacity:.65;
-
     pointer-events:none;
 }
 
 
-/* distributed positions */
-
-.dot-01{left:8%;top:28%;}
-.dot-02{left:18%;top:52%;}
-.dot-03{left:28%;top:20%;}
-.dot-04{left:42%;top:12%;}
-.dot-05{left:58%;top:18%;}
-.dot-06{left:72%;top:27%;}
-.dot-07{left:88%;top:38%;}
-.dot-08{left:82%;top:57%;}
-.dot-09{left:68%;top:72%;}
-.dot-10{left:51%;top:82%;}
-.dot-11{left:31%;top:76%;}
-.dot-12{left:14%;top:66%;}
-
-
-/* =========================================================
-   04 — NETWORK ENERGY LAYER
-   ========================================================= */
-
-.partnership-network{
-
-    position:relative;
-
-    z-index:5;
-
-    isolation:isolate;
-}
-
-
-/* =========================================================
-   05 — ENERGY CONNECTION SYSTEM
-   ========================================================= */
-
-.partnership-energy-network{
-
-    position:absolute;
-
-    inset:0;
-
-    z-index:2;
-
-    pointer-events:none;
-
-    display:block;
-}
-
-
-/* =========================================================
-   06 — PRIMARY ENERGY BRIDGES
-   ========================================================= */
-
-.partnership-energy-bridge{
-
-    position:absolute;
-
-    display:block;
-
-    height:2px;
-
-    transform-origin:left center;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent 0%,
-            rgba(184,137,63,.12) 10%,
-            rgba(228,185,95,.48) 42%,
-            rgba(255,241,184,.82) 50%,
-            rgba(228,185,95,.38) 72%,
-            transparent 100%
-        );
-
-    box-shadow:
-        0 0 5px rgba(228,185,95,.35),
-        0 0 16px rgba(184,137,63,.18);
-
-    opacity:.72;
-
-    overflow:visible;
-}
-
-
-/* moving energy travelling through each bridge */
-
-.partnership-energy-bridge i{
-
-    position:absolute;
-
-    left:0;
-    top:50%;
-
-    width:9px;
-    height:9px;
-
-    transform:
-        translate(-50%,-50%);
-
-    border-radius:50%;
-
-    background:
-        radial-gradient(
-            circle,
-            #fffbe9 0%,
-            rgba(255,241,184,.95) 28%,
-            rgba(228,185,95,.55) 58%,
-            transparent 100%
-        );
-
-    box-shadow:
-        0 0 7px rgba(255,250,220,1),
-        0 0 18px rgba(255,241,184,.85),
-        0 0 34px rgba(228,185,95,.55);
-
-    animation:
-        partnershipEnergyTravel
-        4.8s linear
-        infinite;
-}
-
-
-/* =========================================================
-   07 — SECONDARY ENERGY LINKS
-   ========================================================= */
-
-.partnership-energy-link{
-
-    position:absolute;
-
-    display:block;
-
-    height:1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(228,185,95,.30),
-            transparent
-        );
-
-    box-shadow:
-        0 0 10px rgba(228,185,95,.16);
-
-    opacity:.45;
-
-    pointer-events:none;
-}
-
-
-/* =========================================================
-   08 — CENTRAL ARS CORE ENERGY
-   ========================================================= */
-
-.partnership-core{
-
-    position:relative;
-
-    z-index:10;
-
-    isolation:isolate;
-}
-
-
-/* Core atmospheric halo */
-
-.partnership-core-halo{
-
-    position:absolute;
-
-    left:50%;
-    top:50%;
-
-    width:115%;
-    height:115%;
-
-    transform:
-        translate(-50%,-50%);
-
-    border-radius:50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,241,184,.16) 0%,
-            rgba(228,185,95,.10) 24%,
-            rgba(184,137,63,.045) 45%,
-            transparent 72%
-        );
-
-    filter:blur(20px);
-
-    opacity:.9;
-
-    z-index:0;
-
-    pointer-events:none;
-
-    animation:
-        partnershipCoreHalo
-        5.5s ease-in-out
-        infinite;
-}
-
-
-/* =========================================================
-   09 — CORE LIGHT
-   ========================================================= */
+/* Central ARS light */
 
 .partnership-core-light{
-
     position:absolute;
-
     left:50%;
     top:50%;
 
-    width:90px;
-    height:90px;
+    width:34%;
+    height:34%;
 
-    transform:
-        translate(-50%,-50%);
+    transform:translate(-50%,-50%);
 
     border-radius:50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(255,250,220,.28) 0%,
-            rgba(255,241,184,.13) 28%,
-            rgba(228,185,95,.055) 52%,
+            rgba(255,250,220,.34) 0%,
+            rgba(255,241,184,.18) 20%,
+            rgba(228,185,95,.09) 42%,
             transparent 72%
         );
 
-    filter:blur(8px);
+    filter:blur(18px);
 
-    opacity:.9;
-
-    z-index:1;
+    opacity:.85;
 
     pointer-events:none;
 
     animation:
-        partnershipCoreLight
-        4.8s ease-in-out
+        arsPartnershipCorePulse
+        5s ease-in-out
         infinite;
 }
 
 
 /* =========================================================
-   10 — CORE ORBIT ENERGY
+   03 — CORE ORBITS
    ========================================================= */
 
 .partnership-core-orbit{
-
     position:absolute;
 
     left:50%;
     top:50%;
 
-    transform:
-        translate(-50%,-50%);
+    transform:translate(-50%,-50%);
 
     border-radius:50%;
 
     pointer-events:none;
 
-    z-index:2;
-
     border-color:
-        rgba(228,185,95,.24) !important;
+        rgba(228,185,95,.28) !important;
 
     box-shadow:
-        0 0 8px rgba(228,185,95,.08);
+        0 0 12px rgba(228,185,95,.06);
 }
 
 
 /* =========================================================
-   11 — CORE CONTENT ABOVE ENERGY
+   04 — PRIMARY ENERGY BRIDGES
    ========================================================= */
 
-.partnership-core > span,
-.partnership-core > h3{
+.partnership-energy-bridge{
+    pointer-events:none;
 
-    position:relative;
+    opacity:.95 !important;
 
-    z-index:5;
+    filter:
+        drop-shadow(
+            0 0 7px
+            rgba(228,185,95,.45)
+        )
+        drop-shadow(
+            0 0 18px
+            rgba(184,137,63,.20)
+        );
+}
+
+
+/* Moving energy particle inside bridges */
+
+.partnership-energy-bridge i{
+    display:block;
+
+    opacity:1 !important;
+
+    filter:
+        drop-shadow(
+            0 0 8px
+            rgba(255,250,220,.9)
+        )
+        drop-shadow(
+            0 0 20px
+            rgba(228,185,95,.65)
+        );
 }
 
 
 /* =========================================================
-   12 — NODE ENERGY
+   05 — SECONDARY ENERGY LINKS
    ========================================================= */
 
-.partnership-node{
+.partnership-energy-link{
+    pointer-events:none;
 
-    position:relative;
+    opacity:.72 !important;
 
-    z-index:12;
+    box-shadow:
+        0 0 8px rgba(228,185,95,.30),
+        0 0 18px rgba(184,137,63,.16);
 
-    isolation:isolate;
 }
 
+
+/* =========================================================
+   06 — CARD NODE ENERGY
+   ONLY VISUAL — NO POSITION CHANGES
+   ========================================================= */
 
 .partnership-node-energy{
-
-    position:absolute;
-
-    top:26px;
-    right:28px;
-
-    width:58px;
-    height:58px;
-
-    z-index:4;
-
     pointer-events:none;
+
+    opacity:1 !important;
+
+    filter:
+        drop-shadow(
+            0 0 8px
+            rgba(228,185,95,.38)
+        );
 }
 
 
-/* =========================================================
-   13 — NODE RINGS
-   ========================================================= */
+/* Node rings */
 
+.partnership-node-energy
 .node-energy-ring{
 
-    position:absolute;
-
-    left:50%;
-    top:50%;
-
-    transform:
-        translate(-50%,-50%);
-
-    border-radius:50%;
-
-    border:
-        1px solid
-        rgba(228,185,95,.28);
-
-    box-shadow:
-        0 0 8px rgba(228,185,95,.10);
-
-}
-
-
-.node-energy-ring.ring-outer{
-
-    width:100%;
-    height:100%;
-}
-
-
-.node-energy-ring.ring-inner{
-
-    width:68%;
-    height:68%;
+    opacity:.9 !important;
 
     border-color:
-        rgba(228,185,95,.20);
+        rgba(228,185,95,.30) !important;
+
 }
 
 
-/* =========================================================
-   14 — NODE CORE
-   ========================================================= */
+/* Node energy core */
 
+.partnership-node-energy
 .node-energy-core{
 
-    position:absolute;
-
-    left:50%;
-    top:50%;
-
-    width:11px;
-    height:11px;
-
-    transform:
-        translate(-50%,-50%);
-
-    border-radius:50%;
+    opacity:1 !important;
 
     background:
         radial-gradient(
             circle,
-            #fffdf2 0%,
-            rgba(255,241,184,.95) 32%,
-            rgba(228,185,95,.65) 60%,
+            rgba(255,250,220,1) 0%,
+            rgba(255,241,184,.92) 28%,
+            rgba(228,185,95,.55) 58%,
             transparent 100%
-        );
+        ) !important;
 
     box-shadow:
         0 0 7px rgba(255,250,220,1),
-        0 0 18px rgba(255,241,184,.85),
-        0 0 34px rgba(228,185,95,.55),
-        0 0 50px rgba(184,137,63,.25);
-
-    animation:
-        partnershipNodePulse
-        4s ease-in-out
-        infinite;
+        0 0 16px rgba(255,241,184,.85),
+        0 0 30px rgba(228,185,95,.55),
+        0 0 46px rgba(184,137,63,.22);
 }
 
 
 /* =========================================================
-   15 — ORBITAL PARTICLES
+   07 — AMBIENT ENERGY FIELD
    ========================================================= */
 
-.partnership-orbital-particles{
-
-    position:absolute;
-
-    inset:0;
-
-    z-index:3;
-
+.partnership-energy-field{
     pointer-events:none;
 }
 
+.partnership-energy-dot{
+
+    opacity:.75 !important;
+
+    filter:
+        drop-shadow(
+            0 0 6px
+            rgba(255,241,184,.65)
+        )
+        drop-shadow(
+            0 0 16px
+            rgba(228,185,95,.35)
+        );
+}
+
+
+/* =========================================================
+   08 — ORBITAL PARTICLES
+   ========================================================= */
+
+.partnership-orbital-particles{
+    pointer-events:none;
+
+    z-index:7;
+}
 
 .partnership-particle{
 
-    position:absolute;
-
-    width:3px;
-    height:3px;
-
-    border-radius:50%;
-
-    background:
-        rgba(228,185,95,.8);
+    opacity:.7 !important;
 
     box-shadow:
-        0 0 6px rgba(255,241,184,.7),
-        0 0 14px rgba(228,185,95,.35);
-
-    opacity:.6;
+        0 0 6px rgba(255,241,184,.75),
+        0 0 16px rgba(228,185,95,.35);
 }
 
 
 /* =========================================================
-   16 — ENERGY ANIMATIONS
+   09 — FINAL ENERGY CONNECTION
    ========================================================= */
 
-@keyframes partnershipAmbientEnergy{
+.partnership-final-energy{
+    pointer-events:none;
+}
 
-    0%,100%{
-        opacity:.65;
-        transform:
-            translate(-50%,-50%)
-            scale(.94);
-    }
+.final-energy-line{
 
-    50%{
-        opacity:1;
-        transform:
-            translate(-50%,-50%)
-            scale(1.06);
-    }
+    opacity:.65 !important;
+
+    box-shadow:
+        0 0 8px rgba(228,185,95,.30),
+        0 0 18px rgba(184,137,63,.14);
+}
+
+.final-energy-core{
+
+    opacity:1 !important;
+
+    box-shadow:
+        0 0 8px rgba(255,250,220,.9),
+        0 0 20px rgba(228,185,95,.55);
+}
+
+.final-energy-pulse{
+
+    opacity:.75 !important;
+
+    box-shadow:
+        0 0 12px rgba(255,241,184,.65),
+        0 0 28px rgba(228,185,95,.30);
 }
 
 
-@keyframes partnershipCoreHalo{
+/* =========================================================
+   10 — CORE ENERGY PULSE
+   ========================================================= */
 
-    0%,100%{
-        opacity:.55;
-        transform:
-            translate(-50%,-50%)
-            scale(.94);
-    }
-
-    50%{
-        opacity:1;
-        transform:
-            translate(-50%,-50%)
-            scale(1.07);
-    }
-}
-
-
-@keyframes partnershipCoreLight{
+@keyframes arsPartnershipCorePulse{
 
     0%,100%{
         opacity:.55;
@@ -11335,124 +11077,10 @@ animation:
         opacity:1;
         transform:
             translate(-50%,-50%)
-            scale(1.16);
+            scale(1.08);
     }
+
 }
-
-
-@keyframes partnershipNodePulse{
-
-    0%,100%{
-        opacity:.62;
-        transform:
-            translate(-50%,-50%)
-            scale(.88);
-    }
-
-    50%{
-        opacity:1;
-        transform:
-            translate(-50%,-50%)
-            scale(1.14);
-    }
-}
-
-
-@keyframes partnershipEnergyTravel{
-
-    0%{
-        left:0;
-        opacity:0;
-    }
-
-    8%{
-        opacity:1;
-    }
-
-    50%{
-        opacity:1;
-    }
-
-    92%{
-        opacity:1;
-    }
-
-    100%{
-        left:100%;
-        opacity:0;
-    }
-}
-
-
-/* =========================================================
-   17 — MOBILE ENERGY CONTROL
-   ========================================================= */
-
-@media (max-width:900px){
-
-    .partnership-energy-bridge{
-
-        opacity:.55;
-
-        box-shadow:
-            0 0 5px rgba(228,185,95,.25),
-            0 0 12px rgba(184,137,63,.12);
-    }
-
-    .partnership-core-halo{
-        opacity:.8;
-    }
-
-    .partnership-core-light{
-        opacity:.85;
-    }
-
-    .partnership-node-energy{
-        opacity:.9;
-    }
-}
-
-
-@media (max-width:600px){
-
-    .partnership-energy-bridge{
-
-        opacity:.42;
-    }
-
-    .partnership-energy-link{
-
-        opacity:.25;
-    }
-
-    .partnership-core-halo{
-
-        width:120%;
-        height:120%;
-
-        filter:blur(18px);
-
-        opacity:.72;
-    }
-
-    .partnership-core-light{
-
-        width:70px;
-        height:70px;
-
-        opacity:.78;
-    }
-
-    .partnership-node-energy{
-
-        width:52px;
-        height:52px;
-
-        top:22px;
-        right:22px;
-    }
-}
-
 /* =========================================================
 CONTACT CTA
 ========================================================= */
