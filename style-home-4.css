@@ -12819,117 +12819,95 @@ to {
 
 /* =========================================================
    ARS HERITAGE GROUP — HOME
-   11 — ECOSYSTEM ARCHITECTURE / LAYOUT ENGINE
+   11 — ECOSYSTEM MASTER ARCHITECTURE / LAYOUT
    =========================================================
-   MASTER RESPONSIBILITY
+
+   RESPONSIBILITY
    ---------------------------------------------------------
-   THIS FILE CONTROLS ONLY:
+   ONLY:
+   - Ecosystem section architecture
+   - 14-card master geometry
+   - Core placement
+   - Inner / Outer ecosystem layout zones
+   - Desktop / Tablet / Mobile reflow
+   - Grid spacing
+   - Alignment
+   - Proportions
+   - Responsive structure
 
-   • Ecosystem section architecture
-   • Master 14-card structure
-   • Core card placement
-   • Inner Ecosystem geometry
-   • Outer Ecosystem geometry
-   • Grid proportions
-   • Card spacing
-   • Desktop architecture
-   • Tablet architecture
-   • Mobile architecture
-   • Responsive reflow
-   • Structural containment
+   LOCKED CARD ARCHITECTURE
+   ---------------------------------------------------------
+   01  CORE
+   02–07  INNER ECOSYSTEM — 6 CARDS
+   08–14  OUTER ECOSYSTEM — 7 CARDS
 
-   =========================================================
-   CARD RESPONSIBILITY MAP
+   FILE OWNERSHIP
    ---------------------------------------------------------
    11 → Architecture / Layout
    12 → Core Card
    13 → Specialized Cards / Inner + Outer Identity
    14 → Material Engine
-   15 → Energy / Golden Reveal
+   15 → Energy / Golden Reveal / Energy Bridge
    16 → Motion / Cinematic Animation
 
-   =========================================================
-   HARD RULES
+   IMPORTANT
    ---------------------------------------------------------
-   • NO card visual styling
-   • NO gradients for cards
-   • NO shadows for cards
-   • NO borders for cards
-   • NO hover styling
-   • NO selected styling
-   • NO active styling
-   • NO animation
-   • NO transform
-   • NO energy effects
-   • NO material effects
-   • NO typography reconstruction
-   • NO HTML modification
+   THIS FILE DOES NOT CONTROL:
+   - Card visual appearance
+   - Card materials
+   - Glass effects
+   - Borders
+   - Shadows
+   - Glow
+   - Energy
+   - Golden reveal
+   - Blue reveal
+   - Hover animation
+   - Selected state
+   - Active state
+   - Image effects
+   - Logo effects
+   - Typography styling
+   - Card motion
 
-   =========================================================
-   ARCHITECTURAL MODEL
-   ---------------------------------------------------------
-   01  → Central Core
-
-   02–07 → INNER ECOSYSTEM
-            6 specialized cards
-
-   08–14 → OUTER ECOSYSTEM
-            7 specialized cards
-
-   Energy Bridge between the two ecosystems
-   is NOT created here.
-   It belongs exclusively to Section 15.
-
-   =========================================================
    HTML IS LOCKED.
    ========================================================= */
 
 
 /* =========================================================
-   11.01 — MASTER ECOSYSTEM ROOT
+   11.01 — MASTER ECOSYSTEM SECTION
    ========================================================= */
 
 .ecosystem {
 
     position: relative;
+
     isolation: isolate;
 
     width: 100%;
+
     min-height: 100vh;
 
     box-sizing: border-box;
 
     overflow: hidden;
 
-}
-
-
-/* =========================================================
-   11.02 — STRUCTURAL CONTAINER
-   ---------------------------------------------------------
-   The ecosystem section may contain a global .container.
-   This rule does NOT redefine the global container system.
-   ========================================================= */
-
-.ecosystem > .container {
-
-    position: relative;
-    z-index: 1;
-
-    width: 100%;
-
-    box-sizing: border-box;
+    padding:
+        clamp(120px, 12vw, 190px)
+        0
+        clamp(130px, 13vw, 210px);
 
 }
 
 
 /* =========================================================
-   11.03 — SECTION HEADER STRUCTURE
+   11.02 — SECTION HEADER ARCHITECTURE
    ========================================================= */
 
 .ecosystem .section-header {
 
     position: relative;
+
     z-index: 2;
 
     width:
@@ -12938,27 +12916,81 @@ to {
             950px
         );
 
-    margin-left: auto;
-    margin-right: auto;
+    margin:
+        0 auto
+        clamp(65px, 7vw, 100px);
 
-    box-sizing: border-box;
+    text-align: center;
 
 }
 
 
 /* =========================================================
-   11.04 — MASTER CARD SYSTEM
-   ---------------------------------------------------------
-   The 14 cards remain inside the existing
-   .ars-core-grid.
+   11.03 — SECTION LABEL POSITION
+   ========================================================= */
 
-   No duplicate grid is created.
-   No artificial wrapper is created.
+.ecosystem .section-label {
+
+    display: inline-block;
+
+    margin-bottom: 22px;
+
+}
+
+
+/* =========================================================
+   11.04 — SECTION TITLE GEOMETRY
+   ========================================================= */
+
+.ecosystem .section-header h2 {
+
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    line-height: 1;
+
+    text-wrap: balance;
+
+}
+
+
+/* =========================================================
+   11.05 — SECTION DESCRIPTION GEOMETRY
+   ========================================================= */
+
+.ecosystem .section-header p {
+
+    max-width: 680px;
+
+    margin:
+        28px auto 0;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   11.06 — MASTER CARD SYSTEM
+   =========================================================
+
+   The existing HTML contains all 14 cards
+   inside the master ecosystem grid.
+
+   Architecture:
+
+   01 → Core
+   02–07 → Inner Layer
+   08–14 → Outer Layer
+
+   Visual identity belongs to File 13.
    ========================================================= */
 
 .ecosystem .ars-core-grid {
 
     position: relative;
+
     z-index: 3;
 
     width:
@@ -12967,10 +12999,7 @@ to {
             1380px
         );
 
-    margin-left: auto;
-    margin-right: auto;
-
-    box-sizing: border-box;
+    margin: 0 auto;
 
     display: grid;
 
@@ -12978,12 +13007,6 @@ to {
         repeat(
             4,
             minmax(0, 1fr)
-        );
-
-    grid-auto-rows:
-        minmax(
-            250px,
-            auto
         );
 
     gap:
@@ -12995,38 +13018,37 @@ to {
 
     align-items: stretch;
 
+    box-sizing: border-box;
+
 }
 
 
 /* =========================================================
-   11.05 — GRID CHILD CONTAINMENT
+   11.07 — GRID CHILDREN
    ========================================================= */
 
 .ecosystem .ars-core-grid > article {
 
-    position: relative;
-
     min-width: 0;
-    min-height: 0;
-
-    box-sizing: border-box;
 
     align-self: stretch;
+
+    box-sizing: border-box;
 
 }
 
 
 /* =========================================================
-   11.06 — CENTRAL CORE ARCHITECTURE
-   ---------------------------------------------------------
-   Card 01
+   11.08 — CORE CARD ARCHITECTURAL POSITION
+   =========================================================
 
-   Core owns a 2 × 2 structural footprint.
+   Core owns the central 2 × 2 architectural block.
 
-   Visual appearance is handled exclusively by 12.
+   Visual elevation is NOT controlled here.
    ========================================================= */
 
-.ecosystem .ars-core-grid > .ars-core-card {
+.ecosystem .ars-core-grid
+.ars-core-card {
 
     grid-column:
         span 2;
@@ -13038,10 +13060,42 @@ to {
 
 
 /* =========================================================
-   11.07 — CORE STRUCTURAL HEIGHT
+   11.09 — SPECIALIZED CARD ARCHITECTURAL POSITION
    ========================================================= */
 
-.ecosystem .ars-core-grid > .ars-core-card {
+.ecosystem .ars-core-grid
+.ars-specialized-card {
+
+    grid-column:
+        span 1;
+
+    grid-row:
+        span 1;
+
+}
+
+
+/* =========================================================
+   11.10 — MASTER ROW GEOMETRY
+   ========================================================= */
+
+.ecosystem .ars-core-grid {
+
+    grid-auto-rows:
+        minmax(
+            250px,
+            auto
+        );
+
+}
+
+
+/* =========================================================
+   11.11 — CORE PROPORTION
+   ========================================================= */
+
+.ecosystem .ars-core-grid
+.ars-core-card {
 
     min-height:
         clamp(
@@ -13054,20 +13108,11 @@ to {
 
 
 /* =========================================================
-   11.08 — SPECIALIZED CARD BASE GEOMETRY
-   ---------------------------------------------------------
-   Cards 02–14.
-
-   Their visual identity is handled by 13.
+   11.12 — SPECIALIZED CARD PROPORTION
    ========================================================= */
 
-.ecosystem .ars-core-grid > .ars-specialized-card {
-
-    grid-column:
-        span 1;
-
-    grid-row:
-        span 1;
+.ecosystem .ars-core-grid
+.ars-specialized-card {
 
     min-height:
         clamp(
@@ -13080,72 +13125,17 @@ to {
 
 
 /* =========================================================
-   11.09 — INNER ECOSYSTEM STRUCTURAL IDENTITY
-   ---------------------------------------------------------
-   Cards 02–07
+   11.13 — RESERVED EXPANSION WRAPPER
+   =========================================================
 
-   These selectors establish ONLY structural identity.
+   The reserved .ars-specialized-grid remains inactive.
 
-   No visual styling is applied here.
-
-   13 will use the same structural distinction
-   for Inner / Outer visual treatment.
-   ========================================================= */
-
-.ecosystem .ars-core-grid > .ars-specialized-card:nth-of-type(2),
-.ecosystem .ars-core-grid > .ars-specialized-card:nth-of-type(3),
-.ecosystem .ars-core-grid > .ars-specialized-card:nth-of-type(4),
-.ecosystem .ars-core-grid > .ars-specialized-card:nth-of-type(5),
-.ecosystem .ars-core-grid > .ars-specialized-card:nth-of-type(6),
-.ecosystem .ars-core-grid > .ars-specialized-card:nth-of-type(7) {
-
-    grid-column:
-        span 1;
-
-    grid-row:
-        span 1;
-
-}
-
-
-/* =========================================================
-   11.10 — OUTER ECOSYSTEM STRUCTURAL IDENTITY
-   ---------------------------------------------------------
-   Cards 08–14
-
-   These remain ordinary grid children at architecture level.
-
-   Section 13 owns their visual / identity differentiation.
-   ========================================================= */
-
-.ecosystem .ars-core-grid > .ars-specialized-card:nth-of-type(8),
-.ecosystem .ars-core-grid > .ars-specialized-card:nth-of-type(9),
-.ecosystem .ars-core-grid > .ars-specialized-card:nth-of-type(10),
-.ecosystem .ars-core-grid > .ars-specialized-card:nth-of-type(11),
-.ecosystem .ars-core-grid > .ars-specialized-card:nth-of-type(12),
-.ecosystem .ars-core-grid > .ars-specialized-card:nth-of-type(13),
-.ecosystem .ars-core-grid > .ars-specialized-card:nth-of-type(14) {
-
-    grid-column:
-        span 1;
-
-    grid-row:
-        span 1;
-
-}
-
-
-/* =========================================================
-   11.11 — RESERVED SPECIALIZED GRID
-   ---------------------------------------------------------
-   If present in locked HTML, this layer remains structurally
-   inactive.
-
-   The current 14-card architecture lives in .ars-core-grid.
-
-   No duplicate cards.
    No duplicate layout.
+   No duplicate cards.
    No artificial content.
+
+   Current 14-card architecture remains inside
+   .ars-core-grid.
    ========================================================= */
 
 .ecosystem .ars-specialized-grid {
@@ -13156,7 +13146,7 @@ to {
 
 
 /* =========================================================
-   11.12 — DESKTOP XL
+   11.14 — XL DESKTOP
    ========================================================= */
 
 @media (min-width: 1440px) {
@@ -13169,24 +13159,21 @@ to {
                 1480px
             );
 
-        gap:
-            30px;
+        gap: 30px;
 
     }
 
+    .ecosystem .ars-core-grid
+    .ars-core-card {
 
-    .ecosystem .ars-core-grid > .ars-core-card {
-
-        min-height:
-            650px;
+        min-height: 650px;
 
     }
 
+    .ecosystem .ars-core-grid
+    .ars-specialized-card {
 
-    .ecosystem .ars-core-grid > .ars-specialized-card {
-
-        min-height:
-            310px;
+        min-height: 310px;
 
     }
 
@@ -13194,10 +13181,11 @@ to {
 
 
 /* =========================================================
-   11.13 — STANDARD DESKTOP
+   11.15 — STANDARD DESKTOP
    ========================================================= */
 
-@media (min-width: 1101px) and (max-width: 1439px) {
+@media (min-width: 1101px)
+       and (max-width: 1439px) {
 
     .ecosystem .ars-core-grid {
 
@@ -13209,19 +13197,17 @@ to {
 
     }
 
+    .ecosystem .ars-core-grid
+    .ars-core-card {
 
-    .ecosystem .ars-core-grid > .ars-core-card {
-
-        min-height:
-            560px;
+        min-height: 560px;
 
     }
 
+    .ecosystem .ars-core-grid
+    .ars-specialized-card {
 
-    .ecosystem .ars-core-grid > .ars-specialized-card {
-
-        min-height:
-            270px;
+        min-height: 270px;
 
     }
 
@@ -13229,13 +13215,19 @@ to {
 
 
 /* =========================================================
-   11.14 — TABLET LANDSCAPE
-   ---------------------------------------------------------
-   Core becomes full-width.
-   Specialized cards become two-column.
+   11.16 — TABLET LANDSCAPE
    ========================================================= */
 
 @media (max-width: 1100px) {
+
+    .ecosystem {
+
+        padding:
+            105px
+            0
+            125px;
+
+    }
 
     .ecosystem .ars-core-grid {
 
@@ -13251,33 +13243,37 @@ to {
                 minmax(0, 1fr)
             );
 
-        grid-auto-rows:
-            minmax(
-                250px,
-                auto
-            );
+        gap: 20px;
 
-        gap:
-            20px;
+        grid-auto-rows:
+            auto;
 
     }
 
+    /*
+     * Core becomes full-width.
+     */
 
-    .ecosystem .ars-core-grid > .ars-core-card {
+    .ecosystem .ars-core-grid
+    .ars-core-card {
 
         grid-column:
-            1 / -1;
+            span 2;
 
         grid-row:
             auto;
 
-        min-height:
-            480px;
+        min-height: 480px;
 
     }
 
+    /*
+     * Specialized cards become
+     * two-column architectural units.
+     */
 
-    .ecosystem .ars-core-grid > .ars-specialized-card {
+    .ecosystem .ars-core-grid
+    .ars-specialized-card {
 
         grid-column:
             span 1;
@@ -13285,8 +13281,7 @@ to {
         grid-row:
             auto;
 
-        min-height:
-            300px;
+        min-height: 300px;
 
     }
 
@@ -13294,34 +13289,50 @@ to {
 
 
 /* =========================================================
-   11.15 — TABLET PORTRAIT
+   11.17 — TABLET PORTRAIT
    ========================================================= */
 
 @media (max-width: 820px) {
+
+    .ecosystem {
+
+        padding:
+            95px
+            0
+            110px;
+
+    }
+
+    .ecosystem .section-header {
+
+        width:
+            calc(100% - 36px);
+
+        margin-bottom:
+            55px;
+
+    }
 
     .ecosystem .ars-core-grid {
 
         width:
             calc(100% - 34px);
 
-        gap:
-            17px;
+        gap: 17px;
 
     }
 
+    .ecosystem .ars-core-grid
+    .ars-core-card {
 
-    .ecosystem .ars-core-grid > .ars-core-card {
-
-        min-height:
-            430px;
+        min-height: 430px;
 
     }
 
+    .ecosystem .ars-core-grid
+    .ars-specialized-card {
 
-    .ecosystem .ars-core-grid > .ars-specialized-card {
-
-        min-height:
-            275px;
+        min-height: 275px;
 
     }
 
@@ -13329,25 +13340,47 @@ to {
 
 
 /* =========================================================
-   11.16 — MOBILE MASTER REFLOW
-   ---------------------------------------------------------
-   One-column cinematic architecture.
-
-   Core remains first.
-   Inner and Outer cards remain in HTML order.
-
-   Energy Bridge is NOT generated here.
+   11.18 — MOBILE MASTER REFLOW
    ========================================================= */
 
 @media (max-width: 680px) {
 
     .ecosystem {
 
-        min-height:
-            auto;
+        min-height: auto;
+
+        padding:
+            82px
+            0
+            95px;
 
     }
 
+    .ecosystem .section-header {
+
+        width:
+            calc(100% - 30px);
+
+        margin-bottom:
+            45px;
+
+    }
+
+    .ecosystem .section-header p {
+
+        margin-top: 22px;
+
+        line-height: 1.75;
+
+    }
+
+    /*
+     * Single-column cinematic architecture.
+     *
+     * Core first.
+     * Inner + Outer cards continue
+     * in their existing HTML order.
+     */
 
     .ecosystem .ars-core-grid {
 
@@ -13357,39 +13390,34 @@ to {
         grid-template-columns:
             1fr;
 
-        grid-auto-rows:
-            auto;
-
-        gap:
-            15px;
+        gap: 15px;
 
     }
 
+    .ecosystem .ars-core-grid
+    .ars-core-card,
+    .ecosystem .ars-core-grid
+    .ars-specialized-card {
 
-    .ecosystem .ars-core-grid > .ars-core-card,
-    .ecosystem .ars-core-grid > .ars-specialized-card {
+        grid-column: auto;
 
-        grid-column:
-            auto;
+        grid-row: auto;
 
-        grid-row:
-            auto;
-
-    }
-
-
-    .ecosystem .ars-core-grid > .ars-core-card {
-
-        min-height:
-            410px;
+        min-height: auto;
 
     }
 
+    .ecosystem .ars-core-grid
+    .ars-core-card {
 
-    .ecosystem .ars-core-grid > .ars-specialized-card {
+        min-height: 410px;
 
-        min-height:
-            340px;
+    }
+
+    .ecosystem .ars-core-grid
+    .ars-specialized-card {
+
+        min-height: 340px;
 
     }
 
@@ -13397,34 +13425,50 @@ to {
 
 
 /* =========================================================
-   11.17 — SMALL MOBILE
+   11.19 — SMALL MOBILE
    ========================================================= */
 
 @media (max-width: 480px) {
+
+    .ecosystem {
+
+        padding:
+            72px
+            0
+            82px;
+
+    }
+
+    .ecosystem .section-header {
+
+        width:
+            calc(100% - 26px);
+
+        margin-bottom:
+            38px;
+
+    }
 
     .ecosystem .ars-core-grid {
 
         width:
             calc(100% - 18px);
 
-        gap:
-            13px;
+        gap: 13px;
 
     }
 
+    .ecosystem .ars-core-grid
+    .ars-core-card {
 
-    .ecosystem .ars-core-grid > .ars-core-card {
-
-        min-height:
-            360px;
+        min-height: 360px;
 
     }
 
+    .ecosystem .ars-core-grid
+    .ars-specialized-card {
 
-    .ecosystem .ars-core-grid > .ars-specialized-card {
-
-        min-height:
-            315px;
+        min-height: 315px;
 
     }
 
@@ -13432,10 +13476,19 @@ to {
 
 
 /* =========================================================
-   11.18 — VERY SMALL DEVICES
+   11.20 — VERY SMALL DEVICES
    ========================================================= */
 
 @media (max-width: 360px) {
+
+    .ecosystem {
+
+        padding:
+            65px
+            0
+            75px;
+
+    }
 
     .ecosystem .ars-core-grid {
 
@@ -13444,19 +13497,17 @@ to {
 
     }
 
+    .ecosystem .ars-core-grid
+    .ars-core-card {
 
-    .ecosystem .ars-core-grid > .ars-core-card {
-
-        min-height:
-            330px;
+        min-height: 330px;
 
     }
 
+    .ecosystem .ars-core-grid
+    .ars-specialized-card {
 
-    .ecosystem .ars-core-grid > .ars-specialized-card {
-
-        min-height:
-            290px;
+        min-height: 290px;
 
     }
 
@@ -13464,10 +13515,11 @@ to {
 
 
 /* =========================================================
-   11.19 — TOUCH STRUCTURAL SAFETY
+   11.21 — TOUCH ARCHITECTURE SAFETY
    ========================================================= */
 
-@media (hover: none) and (pointer: coarse) {
+@media (hover: none)
+       and (pointer: coarse) {
 
     .ecosystem .ars-core-grid > article {
 
@@ -13480,11 +13532,13 @@ to {
 
 
 /* =========================================================
-   11.20 — REDUCED MOTION STRUCTURAL SAFETY
-   ---------------------------------------------------------
-   Motion itself belongs to 16.
-   This only prevents structural transitions from
-   accidentally being introduced here.
+   11.22 — REDUCED MOTION ARCHITECTURAL SAFETY
+   =========================================================
+
+   File 11 does not animate cards.
+
+   This only removes any transition that might have
+   been inherited from another layer.
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -13500,11 +13554,11 @@ to {
 
 
 /* =========================================================
-   11.21 — BOX MODEL LOCK
+   11.23 — BOX MODEL LOCK
    ========================================================= */
 
 .ecosystem,
-.ecosystem > .container,
+.ecosystem .container,
 .ecosystem .ars-core-grid,
 .ecosystem .ars-core-grid > article {
 
@@ -13515,126 +13569,88 @@ to {
 
 
 /* =========================================================
-   11.22 — ARCHITECTURAL CONTAINMENT
-   ---------------------------------------------------------
-   Prevents oversized card content from breaking
-   the grid geometry.
-
-   Does NOT hide visual effects from 14–16.
-   ========================================================= */
-
-.ecosystem .ars-core-grid > article {
-
-    min-width:
-        0;
-
-}
-
-
-/* =========================================================
-   11.23 — STRUCTURAL ORDER LOCK
-   ---------------------------------------------------------
-   HTML order is authoritative.
-
-   01 → Core
-   02–07 → Inner Ecosystem
-   08–14 → Outer Ecosystem
-
-   No CSS order manipulation.
-   ========================================================= */
-
-.ecosystem .ars-core-grid > article {
-
-    order:
-        initial;
-
-}
-
-
-/* =========================================================
-   11.24 — NO ARTIFICIAL LAYER DUPLICATION
-   ========================================================= */
-
-.ecosystem .ars-core-grid::before,
-.ecosystem .ars-core-grid::after {
-
-    pointer-events:
-        none;
-
-}
-
-
-/*
-   IMPORTANT:
-
-   These pseudo-elements remain structurally neutral.
-
-   Section 15 owns the Energy Bridge.
-
-   Section 11 does NOT create:
-   • energy lines
-   • glow fields
-   • orbital rings
-   • golden radiation
-   • blue radiation
-   • bridge animations
-*/
-
-
-/* =========================================================
-   11.25 — FINAL ARCHITECTURAL LOCK
+   11.24 — ARCHITECTURAL INTEGRITY LOCK
    =========================================================
 
-   MASTER STRUCTURE:
+   FILE 11 deliberately does NOT define:
 
-   ECOSYSTEM
-       │
-       └── .ars-core-grid
-             │
-             ├── 01  .ars-core-card
-             │       └── 2 × 2 desktop footprint
-             │
-             ├── 02  .ars-specialized-card
-             ├── 03  .ars-specialized-card
-             ├── 04  .ars-specialized-card
-             ├── 05  .ars-specialized-card
-             ├── 06  .ars-specialized-card
-             ├── 07  .ars-specialized-card
-             │       └── INNER ECOSYSTEM
-             │
-             ├── ENERGY BRIDGE
-             │       └── OWNED BY SECTION 15
-             │
-             ├── 08  .ars-specialized-card
-             ├── 09  .ars-specialized-card
-             ├── 10  .ars-specialized-card
-             ├── 11  .ars-specialized-card
-             ├── 12  .ars-specialized-card
-             ├── 13  .ars-specialized-card
-             └── 14  .ars-specialized-card
-                     └── OUTER ECOSYSTEM
+   ::before / ::after card energy
+   background material
+   border
+   border glow
+   box-shadow
+   filter
+   hover
+   active
+   selected
+   energy-fading
+   image effects
+   logo effects
+   CTA effects
+   animation
+   transform
+   card tilt
+   energy bridge
 
-   RESPONSIBILITY BOUNDARY:
+   Those responsibilities belong to Files 12–16.
 
-   11 → WHERE cards live
-   12 → HOW Core looks
-   13 → HOW Inner / Outer cards identify themselves
-   14 → HOW material behaves
-   15 → HOW energy behaves
-   16 → HOW everything moves
+   =========================================================
+   FINAL ARCHITECTURE
 
-   NO OVERLAP.
-   NO DUPLICATE CARD SYSTEM.
-   NO HTML MODIFICATION.
-   NO ENERGY INJECTION.
-   NO MOTION INJECTION.
+   14 CARDS
+
+   01 → CENTRAL CORE
+
+   INNER LAYER
+   02 → ARS Brain
+   03 → ARS Design
+   04 → ARS Company
+   05 → ROSE AI
+   06 → ZHR NAJI
+   07 → ARS Engineering
+
+   OUTER LAYER
+   08 → Philosophy
+   09 → Media Center
+   10 → Partnership
+   11 → Open Door
+   12 → Collection
+   13 → Become ARS
+   14 → Future Lab
+
+   DESKTOP
+   → 4-column master architecture
+   → Core = 2 × 2
+   → Specialized = 1 × 1
+
+   TABLET
+   → 2-column architecture
+   → Core = full width
+
+   MOBILE
+   → 1-column architecture
+   → Core + Specialized cinematic stack
+
+   INNER / OUTER VISUAL IDENTITY
+   → FILE 13
+
+   MATERIAL SYSTEM
+   → FILE 14
+
+   ENERGY + GOLDEN REVEAL
+   → FILE 15
+
+   ENERGY BRIDGE
+   → FILE 15
+
+   MOTION / CINEMATIC ANIMATION
+   → FILE 16
 
    =========================================================
    END OF
-   11 — ECOSYSTEM ARCHITECTURE / LAYOUT ENGINE
+   11 — ECOSYSTEM MASTER ARCHITECTURE / LAYOUT
    ========================================================= */
-/* =========================================================
-   ARS HERITAGE GROUP — HOME
+
    12 — ARS CORE CARD
    =========================================================
    RESPONSIBILITY
