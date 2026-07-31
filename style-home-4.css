@@ -2402,9 +2402,1231 @@ body::after {
    ORBITAL NAVIGATION SYSTEM
    ========================================================= */
 
+/* =========================================================
+   ARS HERITAGE GROUP — HOME
+   PHASE 06 — ORBIT NODE ENERGY
+   =========================================================
+
+   OWNER:
+   .orbit-node-energy
+   .node-energy-halo
+   .node-energy-ring
+   .node-energy-pulse
+   .node-energy-spark
+
+   RESPONSIBILITY:
+   - Node Halo
+   - Node Energy Rings
+   - Node Pulse
+   - Node Sparks
+   - Active Node Energy
+   - Energy Fading
+   - Hover Energy Response
+   - Cinematic Node Radiation
+
+   NOT OWNED HERE:
+   - Orbital Geometry
+   - Home Energy Universe
+   - Hero Core Energy
+   - Ecosystem Core
+   - Energy Bridge
+   - Card Energy
+
+   ========================================================= */
 
 
+/* =========================================================
+   06.01 — NODE ENERGY MASTER
+   ========================================================= */
 
+.orbit-node-energy {
+    position: absolute;
+
+    inset: -34%;
+
+    display: block;
+
+    pointer-events: none;
+
+    border-radius: 50%;
+
+    transform:
+        translateZ(0);
+
+    transform-style: preserve-3d;
+
+    isolation: isolate;
+
+    opacity: .86;
+
+    z-index: 0;
+
+    transition:
+        opacity 500ms cubic-bezier(.16, 1, .3, 1),
+        transform 700ms cubic-bezier(.16, 1, .3, 1);
+}
+
+
+/* =========================================================
+   06.02 — NODE HALO
+   ========================================================= */
+
+.node-energy-halo {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 100%;
+    height: 100%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 220, 120, .30) 0%,
+            rgba(214, 166, 70, .18) 22%,
+            rgba(30, 120, 255, .10) 42%,
+            rgba(0, 0, 0, 0) 72%
+        );
+
+    filter:
+        blur(12px);
+
+    opacity: .72;
+
+    animation:
+        ars-node-halo-breathe
+        4.8s
+        ease-in-out
+        infinite;
+
+    will-change:
+        transform,
+        opacity;
+}
+
+
+/* =========================================================
+   06.03 — NODE ENERGY RINGS
+   ========================================================= */
+
+.node-energy-ring {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 78%;
+    height: 78%;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(212, 168, 76, .62);
+
+    transform:
+        translate(-50%, -50%);
+
+    opacity: .72;
+
+    transform-style: preserve-3d;
+
+    will-change:
+        transform,
+        opacity;
+}
+
+
+/* =========================================================
+   06.04 — PRIMARY ENERGY RING
+   ========================================================= */
+
+.node-ring-01 {
+    width: 82%;
+    height: 82%;
+
+    border-color:
+        rgba(230, 190, 92, .78);
+
+    box-shadow:
+        0 0 8px rgba(230, 190, 92, .22),
+        inset 0 0 8px rgba(230, 190, 92, .10);
+
+    animation:
+        ars-node-ring-rotate
+        8s
+        linear
+        infinite;
+}
+
+
+/* =========================================================
+   06.05 — SECONDARY ENERGY RING
+   ========================================================= */
+
+.node-ring-02 {
+    width: 68%;
+    height: 68%;
+
+    border-color:
+        rgba(115, 177, 255, .52);
+
+    border-style:
+        dashed;
+
+    box-shadow:
+        0 0 10px rgba(45, 130, 255, .18);
+
+    animation:
+        ars-node-ring-rotate-reverse
+        6s
+        linear
+        infinite;
+}
+
+
+/* =========================================================
+   06.06 — TERTIARY ENERGY RING
+   ========================================================= */
+
+.node-ring-03 {
+    width: 94%;
+    height: 94%;
+
+    border-color:
+        rgba(184, 128, 52, .36);
+
+    border-style:
+        dotted;
+
+    opacity: .54;
+
+    animation:
+        ars-node-ring-drift
+        11s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   06.07 — NODE ENERGY PULSE
+   ========================================================= */
+
+.node-energy-pulse {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 28%;
+    height: 28%;
+
+    transform:
+        translate(-50%, -50%)
+        scale(.65);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 238, 173, .90) 0%,
+            rgba(226, 181, 78, .52) 22%,
+            rgba(45, 133, 255, .22) 48%,
+            rgba(0, 0, 0, 0) 72%
+        );
+
+    filter:
+        blur(3px);
+
+    opacity: .74;
+
+    animation:
+        ars-node-pulse
+        3.4s
+        ease-in-out
+        infinite;
+
+    will-change:
+        transform,
+        opacity;
+}
+
+
+/* =========================================================
+   06.08 — NODE SPARKS
+   ========================================================= */
+
+.node-energy-spark {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 4px;
+    height: 4px;
+
+    margin:
+        -2px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 240, 190, .96);
+
+    box-shadow:
+        0 0 6px rgba(255, 218, 120, .78),
+        0 0 14px rgba(55, 142, 255, .42);
+
+    opacity: .82;
+
+    transform-origin:
+        50% 50%;
+
+    will-change:
+        transform,
+        opacity;
+}
+
+
+/* =========================================================
+   06.09 — SPARK 01
+   ========================================================= */
+
+.spark-01 {
+    animation:
+        ars-node-spark-01
+        3.8s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   06.10 — SPARK 02
+   ========================================================= */
+
+.spark-02 {
+    animation:
+        ars-node-spark-02
+        4.6s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   06.11 — SPARK 03
+   ========================================================= */
+
+.spark-03 {
+    animation:
+        ars-node-spark-03
+        5.2s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   06.12 — NODE HOVER ENERGY
+   ========================================================= */
+
+.orbit-item:hover .orbit-node-energy {
+    opacity: 1;
+
+    transform:
+        translateZ(22px)
+        scale(1.12);
+}
+
+
+.orbit-item:hover .node-energy-halo {
+    opacity: .98;
+
+    filter:
+        blur(15px);
+
+    animation-duration:
+        3s;
+}
+
+
+.orbit-item:hover .node-energy-ring {
+    opacity: 1;
+}
+
+
+.orbit-item:hover .node-energy-pulse {
+    opacity: 1;
+
+    animation-duration:
+        2.2s;
+}
+
+
+/* =========================================================
+   06.13 — ACTIVE NODE ENERGY
+   JS CURRENT STATE:
+   .orbit-item.is-active
+   ========================================================= */
+
+.orbit-item.is-active .orbit-node-energy {
+    opacity: 1;
+
+    transform:
+        translateZ(34px)
+        scale(1.18);
+}
+
+
+.orbit-item.is-active .node-energy-halo {
+    opacity: 1;
+
+    filter:
+        blur(18px);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 232, 145, .48) 0%,
+            rgba(224, 174, 70, .24) 24%,
+            rgba(44, 136, 255, .18) 45%,
+            rgba(0, 0, 0, 0) 75%
+        );
+}
+
+
+.orbit-item.is-active .node-energy-ring {
+    opacity: 1;
+
+    border-color:
+        rgba(242, 204, 111, .92);
+
+    box-shadow:
+        0 0 12px rgba(235, 193, 92, .34),
+        0 0 28px rgba(45, 130, 255, .16);
+}
+
+
+.orbit-item.is-active .node-energy-pulse {
+    opacity: 1;
+
+    transform:
+        translate(-50%, -50%)
+        scale(.82);
+
+    animation-duration:
+        1.8s;
+}
+
+
+.orbit-item.is-active .node-energy-spark {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   06.14 — ENERGY FADING
+   JS CURRENT STATE:
+   .energy-fading
+   ========================================================= */
+
+.orbit-item.energy-fading .orbit-node-energy {
+    opacity: .66;
+
+    transform:
+        translateZ(10px)
+        scale(1.04);
+
+    transition:
+        opacity 650ms ease,
+        transform 650ms ease;
+}
+
+
+/* =========================================================
+   06.15 — NODE ENERGY DEPTH
+   ========================================================= */
+
+.orbit-inner .orbit-node-energy {
+    transform-style: preserve-3d;
+}
+
+
+.orbit-outer .orbit-node-energy {
+    transform-style: preserve-3d;
+}
+
+
+/* =========================================================
+   06.16 — NODE HALO BREATHING
+   ========================================================= */
+
+@keyframes ars-node-halo-breathe {
+
+    0%,
+    100% {
+        transform:
+            translate(-50%, -50%)
+            scale(.88);
+
+        opacity: .58;
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.08);
+
+        opacity: .86;
+    }
+}
+
+
+/* =========================================================
+   06.17 — RING ROTATION
+   ========================================================= */
+
+@keyframes ars-node-ring-rotate {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotateZ(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotateZ(360deg);
+    }
+}
+
+
+@keyframes ars-node-ring-rotate-reverse {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotateZ(360deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotateZ(0deg);
+    }
+}
+
+
+/* =========================================================
+   06.18 — RING ATMOSPHERIC DRIFT
+   ========================================================= */
+
+@keyframes ars-node-ring-drift {
+
+    0%,
+    100% {
+        transform:
+            translate(-50%, -50%)
+            scale(.92)
+            rotateZ(0deg);
+
+        opacity: .34;
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.04)
+            rotateZ(180deg);
+
+        opacity: .64;
+    }
+}
+
+
+/* =========================================================
+   06.19 — NODE PULSE
+   ========================================================= */
+
+@keyframes ars-node-pulse {
+
+    0%,
+    100% {
+        transform:
+            translate(-50%, -50%)
+            scale(.48);
+
+        opacity: .42;
+    }
+
+    45% {
+        transform:
+            translate(-50%, -50%)
+            scale(.88);
+
+        opacity: .92;
+    }
+
+    70% {
+        transform:
+            translate(-50%, -50%)
+            scale(.62);
+
+        opacity: .64;
+    }
+}
+
+
+/* =========================================================
+   06.20 — SPARK MOTION 01
+   ========================================================= */
+
+@keyframes ars-node-spark-01 {
+
+    0%,
+    100% {
+        transform:
+            rotate(0deg)
+            translateX(24px)
+            scale(.55);
+
+        opacity: .28;
+    }
+
+    50% {
+        transform:
+            rotate(180deg)
+            translateX(39px)
+            scale(1);
+
+        opacity: .96;
+    }
+}
+
+
+/* =========================================================
+   06.21 — SPARK MOTION 02
+   ========================================================= */
+
+@keyframes ars-node-spark-02 {
+
+    0%,
+    100% {
+        transform:
+            rotate(120deg)
+            translateX(20px)
+            scale(.42);
+
+        opacity: .22;
+    }
+
+    50% {
+        transform:
+            rotate(300deg)
+            translateX(43px)
+            scale(1.08);
+
+        opacity: .9;
+    }
+}
+
+
+/* =========================================================
+   06.22 — SPARK MOTION 03
+   ========================================================= */
+
+@keyframes ars-node-spark-03 {
+
+    0%,
+    100% {
+        transform:
+            rotate(240deg)
+            translateX(26px)
+            scale(.48);
+
+        opacity: .24;
+    }
+
+    50% {
+        transform:
+            rotate(420deg)
+            translateX(36px)
+            scale(.94);
+
+        opacity: .88;
+    }
+}
+
+
+/* =========================================================
+   06.23 — ACTIVE ENERGY ESCALATION
+   ========================================================= */
+
+.orbit-item.is-active .node-ring-01 {
+    animation-duration:
+        4.5s;
+}
+
+
+.orbit-item.is-active .node-ring-02 {
+    animation-duration:
+        3.2s;
+}
+
+
+.orbit-item.is-active .node-ring-03 {
+    animation-duration:
+        6.5s;
+}
+
+
+/* =========================================================
+   06.24 — MOBILE ENERGY CONTROL
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .orbit-node-energy {
+        inset: -30%;
+
+        opacity: .72;
+    }
+
+    .node-energy-halo {
+        filter:
+            blur(9px);
+    }
+
+    .node-energy-ring {
+        border-width:
+            1px;
+    }
+
+    .node-energy-spark {
+        width: 3px;
+        height: 3px;
+
+        margin:
+            -1.5px;
+    }
+
+    .orbit-item:hover .orbit-node-energy,
+    .orbit-item.is-active .orbit-node-energy {
+        transform:
+            translateZ(20px)
+            scale(1.10);
+    }
+
+}
+
+
+/* =========================================================
+   06.25 — SMALL MOBILE ENERGY CONTROL
+   ========================================================= */
+
+@media (max-width: 520px) {
+
+    .orbit-node-energy {
+        inset: -26%;
+
+        opacity: .66;
+    }
+
+    .node-energy-halo {
+        filter:
+            blur(7px);
+    }
+
+    .node-energy-pulse {
+        filter:
+            blur(2px);
+    }
+
+}
+
+
+/* =========================================================
+   06.26 — REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .node-energy-halo,
+    .node-energy-ring,
+    .node-energy-pulse,
+    .node-energy-spark {
+        animation:
+            none;
+    }
+
+    .orbit-node-energy {
+        transition:
+            opacity 300ms ease;
+    }
+
+}
+
+
+/* =========================================================
+   END — PHASE 06
+   ORBIT NODE ENERGY
+   ========================================================= */
+
+/* =========================================================
+   ARS HERITAGE GROUP — HOME
+   PHASE 07 — ORBIT CORE ENERGY
+   =========================================================
+   OWNER:
+       .orbit-core-energy
+       .core-energy-ring
+       .core-energy-halo
+       .core-energy-pulse
+
+   PURPOSE:
+       HERO CENTRAL ORBITAL CORE ENERGY ONLY
+
+   NOT RESPONSIBLE FOR:
+       Navigation
+       Node Energy
+       Ecosystem Core
+       Energy Bridge
+       Cards
+       Hero Atmosphere
+   ========================================================= */
+
+
+/* =========================================================
+   07.01 — CORE ENERGY CONTAINER
+   ========================================================= */
+
+.orbit-core-energy {
+    position: absolute;
+    inset: -18%;
+    z-index: 0;
+
+    pointer-events: none;
+
+    display: block;
+
+    transform: translateZ(0);
+
+    opacity: 0.96;
+
+    filter:
+        drop-shadow(0 0 18px rgba(212, 175, 55, 0.22))
+        drop-shadow(0 0 42px rgba(30, 144, 255, 0.10));
+}
+
+
+/* =========================================================
+   07.02 — CORE ENERGY RINGS
+   ========================================================= */
+
+.core-energy-ring {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(0deg);
+
+    pointer-events: none;
+
+    box-sizing: border-box;
+
+    border: 1px solid
+        rgba(212, 175, 55, 0.34);
+
+    background:
+        radial-gradient(
+            circle at center,
+            transparent 55%,
+            rgba(212, 175, 55, 0.035) 66%,
+            transparent 72%
+        );
+
+    box-shadow:
+        0 0 12px rgba(212, 175, 55, 0.12),
+        inset 0 0 14px rgba(30, 144, 255, 0.055);
+}
+
+
+/* PRIMARY GOLD RING */
+
+.core-ring-01 {
+    width: 100%;
+    height: 100%;
+
+    border-color:
+        rgba(212, 175, 55, 0.48);
+
+    animation:
+        ars-core-ring-rotate-01
+        18s linear infinite;
+}
+
+
+/* SECONDARY BRONZE RING */
+
+.core-ring-02 {
+    width: 84%;
+    height: 84%;
+
+    border-color:
+        rgba(166, 124, 64, 0.38);
+
+    border-style: dashed;
+
+    animation:
+        ars-core-ring-rotate-02
+        26s linear infinite reverse;
+}
+
+
+/* INNER ELECTRIC SIGNATURE RING */
+
+.core-ring-03 {
+    width: 67%;
+    height: 67%;
+
+    border-color:
+        rgba(30, 144, 255, 0.38);
+
+    box-shadow:
+        0 0 18px rgba(30, 144, 255, 0.10),
+        inset 0 0 18px rgba(212, 175, 55, 0.08);
+
+    animation:
+        ars-core-ring-pulse
+        4.8s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   07.03 — CORE HALO
+   ========================================================= */
+
+.core-energy-halo {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 74%;
+    height: 74%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(212, 175, 55, 0.20) 0%,
+            rgba(212, 175, 55, 0.085) 18%,
+            rgba(30, 144, 255, 0.045) 38%,
+            rgba(10, 18, 35, 0.02) 56%,
+            transparent 74%
+        );
+
+    filter: blur(7px);
+
+    opacity: 0.82;
+
+    animation:
+        ars-core-halo-breathe
+        5.5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   07.04 — CORE PULSES
+   ========================================================= */
+
+.core-energy-pulse {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 22%;
+    height: 22%;
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.55);
+
+    pointer-events: none;
+
+    border: 1px solid
+        rgba(212, 175, 55, 0.62);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.28) 0%,
+            rgba(212, 175, 55, 0.17) 24%,
+            rgba(30, 144, 255, 0.06) 52%,
+            transparent 72%
+        );
+
+    box-shadow:
+        0 0 16px rgba(212, 175, 55, 0.20),
+        0 0 34px rgba(30, 144, 255, 0.08);
+
+    opacity: 0;
+}
+
+
+/* CORE PULSE 01 */
+
+.pulse-01 {
+    animation:
+        ars-core-pulse-expand
+        4.2s ease-out
+        infinite;
+}
+
+
+/* CORE PULSE 02 */
+
+.core-energy-pulse.pulse-02 {
+    animation:
+        ars-core-pulse-expand
+        4.2s ease-out
+        1.4s infinite;
+}
+
+
+/* CORE PULSE 03 */
+
+.core-energy-pulse.pulse-03 {
+    animation:
+        ars-core-pulse-expand
+        4.2s ease-out
+        2.8s infinite;
+}
+
+
+/* =========================================================
+   07.05 — CORE REACTION STATE
+   Existing JS state:
+       .core-reacting
+   ========================================================= */
+
+.orbit-core.core-reacting .core-energy-halo {
+    opacity: 1;
+
+    filter: blur(5px);
+
+    transform:
+        translate(-50%, -50%)
+        scale(1.08);
+}
+
+.orbit-core.core-reacting .core-ring-01 {
+    border-color:
+        rgba(255, 215, 90, 0.72);
+
+    box-shadow:
+        0 0 18px rgba(212, 175, 55, 0.28),
+        0 0 42px rgba(30, 144, 255, 0.10);
+}
+
+.orbit-core.core-reacting .core-ring-03 {
+    border-color:
+        rgba(30, 144, 255, 0.64);
+
+    box-shadow:
+        0 0 22px rgba(30, 144, 255, 0.18),
+        inset 0 0 18px rgba(212, 175, 55, 0.12);
+}
+
+
+/* =========================================================
+   07.06 — CORE HOVER STATE
+   Existing JS state:
+       .core-hover
+   ========================================================= */
+
+.orbit-core.core-hover .core-energy-halo {
+    opacity: 1;
+
+    filter: blur(4px);
+
+    transform:
+        translate(-50%, -50%)
+        scale(1.12);
+}
+
+.orbit-core.core-hover .core-ring-01 {
+    border-color:
+        rgba(255, 222, 120, 0.82);
+}
+
+.orbit-core.core-hover .core-ring-03 {
+    border-color:
+        rgba(60, 160, 255, 0.78);
+}
+
+
+/* =========================================================
+   07.07 — CORE SELECTED STATE
+   Existing JS state:
+       .core-selected
+   ========================================================= */
+
+.orbit-core.core-selected .core-energy-halo {
+    opacity: 1;
+
+    filter: blur(3px);
+
+    transform:
+        translate(-50%, -50%)
+        scale(1.16);
+}
+
+.orbit-core.core-selected .core-ring-01 {
+    border-color:
+        rgba(255, 225, 135, 0.92);
+
+    box-shadow:
+        0 0 22px rgba(212, 175, 55, 0.34),
+        0 0 52px rgba(30, 144, 255, 0.14);
+}
+
+.orbit-core.core-selected .core-ring-03 {
+    border-color:
+        rgba(75, 170, 255, 0.88);
+}
+
+
+/* =========================================================
+   07.08 — CORE ENERGY KEYFRAMES
+   ========================================================= */
+
+@keyframes ars-core-ring-rotate-01 {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+}
+
+
+@keyframes ars-core-ring-rotate-02 {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+}
+
+
+@keyframes ars-core-ring-pulse {
+
+    0%,
+    100% {
+        opacity: 0.46;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.98);
+    }
+
+    50% {
+        opacity: 0.82;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.025);
+    }
+}
+
+
+@keyframes ars-core-halo-breathe {
+
+    0%,
+    100% {
+        opacity: 0.58;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.94);
+    }
+
+    50% {
+        opacity: 0.92;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.06);
+    }
+}
+
+
+@keyframes ars-core-pulse-expand {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.45);
+    }
+
+    12% {
+        opacity: 0.62;
+    }
+
+    72% {
+        opacity: 0.12;
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(2.35);
+    }
+}
 
 
 
