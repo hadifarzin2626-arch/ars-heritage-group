@@ -13633,7 +13633,982 @@ to {
    END OF
    11 — ECOSYSTEM ARCHITECTURE / LAYOUT ENGINE
    ========================================================= */
+/* =========================================================
+   ARS HERITAGE GROUP — HOME
+   12 — ARS CORE CARD
+   =========================================================
+   RESPONSIBILITY
+   ---------------------------------------------------------
+   CENTRAL / CORE CARD ONLY
 
+   ARCHITECTURE
+   ---------------------------------------------------------
+   11 → Architecture / Layout
+   12 → Core Card                     ← THIS FILE
+   13 → Specialized Cards
+   14 → Material Engine
+   15 → Energy / Golden Reveal
+   16 → Motion / Cinematic Animation
+
+   CORE IDENTITY
+   ---------------------------------------------------------
+   Heritage       → Gold
+   Intelligence   → Electric Blue
+   Technology     → Deep Navy
+   Luxury         → Black
+   Engineering    → Bronze
+   Precision      → White
+
+   IMPORTANT
+   ---------------------------------------------------------
+   HTML IS LOCKED.
+   NO HTML MODIFICATION.
+
+   THIS FILE DOES NOT CONTROL:
+   - Specialized cards
+   - Material system
+   - Energy bridge
+   - Golden reveal
+   - Cinematic animation
+   - Global card geometry
+
+   Later systems may enhance this card,
+   but this file owns ONLY the Core Card identity.
+
+   ========================================================= */
+
+
+/* =========================================================
+   12.01 — CORE FOUNDATION
+   ========================================================= */
+
+.ars-core-card {
+
+    position: relative;
+    isolation: isolate;
+
+    min-width: 0;
+    min-height: 100%;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10, 15, 23, .975),
+            rgba(3, 7, 13, .99)
+        );
+
+    border:
+        1px solid
+        rgba(212, 175, 55, .42);
+
+    box-shadow:
+
+        inset 0 0 0 1px
+        rgba(255,255,255,.018),
+
+        0 18px 60px
+        rgba(0,0,0,.58),
+
+        0 0 38px
+        rgba(212,175,55,.055),
+
+        0 0 55px
+        rgba(40,170,255,.025);
+
+    color:
+        rgba(255,255,255,.96);
+
+}
+
+
+/* =========================================================
+   12.02 — CORE ATMOSPHERE
+   ---------------------------------------------------------
+   Base identity only.
+   Energy effects remain Section 15.
+   ========================================================= */
+
+.ars-core-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -18%;
+
+    z-index: -2;
+
+    pointer-events: none;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 18%,
+            rgba(212,175,55,.105),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 78% 58%,
+            rgba(40,170,255,.055),
+            transparent 34%
+        ),
+
+        radial-gradient(
+            circle at 20% 82%,
+            rgba(123,78,36,.065),
+            transparent 30%
+        );
+
+    filter:
+        blur(28px);
+
+    opacity:
+        .85;
+
+}
+
+
+/* =========================================================
+   12.03 — CORE LINK
+   ========================================================= */
+
+.ars-core-card
+.ars-card-link {
+
+    position: relative;
+
+    z-index: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+
+    min-height: 100%;
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+/* =========================================================
+   12.04 — CORE IMAGE
+   ========================================================= */
+
+.ars-core-card
+.ars-card-image {
+
+    position: relative;
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+    flex:
+        0 0 auto;
+
+    min-height:
+        280px;
+
+    background:
+        rgba(2,5,10,.9);
+
+}
+
+
+/* =========================================================
+   12.05 — CORE IMAGE BASE ATMOSPHERE
+   ========================================================= */
+
+.ars-core-card
+.ars-card-image::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.02),
+            transparent 35%,
+            rgba(0,0,0,.34) 72%,
+            rgba(2,4,8,.82) 100%
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.20),
+            transparent 48%,
+            rgba(212,175,55,.035)
+        );
+
+}
+
+
+/* =========================================================
+   12.06 — CORE IMAGE LIGHT FIELD
+   ---------------------------------------------------------
+   Static identity lighting.
+   Dynamic image energy belongs to Section 15.
+   ========================================================= */
+
+.ars-core-card
+.ars-card-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    background:
+
+        radial-gradient(
+            ellipse at 50% 32%,
+            rgba(212,175,55,.065),
+            transparent 42%
+        ),
+
+        radial-gradient(
+            ellipse at 82% 58%,
+            rgba(40,170,255,.045),
+            transparent 38%
+        );
+
+    opacity:
+        .8;
+
+}
+
+
+/* =========================================================
+   12.07 — CORE IMAGE
+   ========================================================= */
+
+.ars-core-card
+.ars-card-image img {
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    min-height: 280px;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transform:
+        scale(1.01);
+
+    filter:
+        saturate(.88)
+        contrast(1.07)
+        brightness(.84);
+
+}
+
+
+/* =========================================================
+   12.08 — CORE LOGO PLATFORM
+   ========================================================= */
+
+.ars-core-card
+.ars-card-logo {
+
+    position: relative;
+
+    z-index: 4;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex:
+        0 0 auto;
+
+    width:
+        116px;
+
+    height:
+        116px;
+
+    margin:
+        -52px auto 0;
+
+    padding:
+        17px;
+
+    box-sizing:
+        border-box;
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(11,17,26,.99) 38%,
+            rgba(4,8,14,.96) 72%,
+            rgba(0,0,0,.90) 100%
+        );
+
+    border:
+        1px solid
+        rgba(212,175,55,.58);
+
+    box-shadow:
+
+        0 0 0 1px
+        rgba(255,255,255,.018),
+
+        0 0 22px
+        rgba(212,175,55,.16),
+
+        0 0 38px
+        rgba(40,170,255,.055),
+
+        inset 0 0 24px
+        rgba(0,0,0,.82);
+
+}
+
+
+/* =========================================================
+   12.09 — CORE LOGO RING
+   ========================================================= */
+
+.ars-core-card
+.ars-card-logo::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset:
+        -8px;
+
+    border-radius:
+        inherit;
+
+    border:
+        1px solid
+        rgba(40,170,255,.18);
+
+    box-shadow:
+
+        0 0 16px
+        rgba(40,170,255,.08),
+
+        0 0 28px
+        rgba(212,175,55,.055);
+
+    pointer-events:
+        none;
+
+}
+
+
+/* =========================================================
+   12.10 — CORE LOGO IMAGE
+   ========================================================= */
+
+.ars-core-card
+.ars-card-logo img {
+
+    position: relative;
+
+    z-index: 1;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 0 8px
+            rgba(212,175,55,.20)
+        )
+        drop-shadow(
+            0 0 16px
+            rgba(40,170,255,.055)
+        );
+
+}
+
+
+/* =========================================================
+   12.11 — CORE CONTENT
+   ========================================================= */
+
+.ars-core-card
+.ars-card-content {
+
+    position: relative;
+
+    z-index: 3;
+
+    flex:
+        1 1 auto;
+
+    padding:
+        28px 34px 34px;
+
+    text-align:
+        center;
+
+}
+
+
+/* =========================================================
+   12.12 — CORE CATEGORY
+   ========================================================= */
+
+.ars-core-card
+.ars-card-category {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin:
+        0 0 12px;
+
+    padding:
+        6px 13px;
+
+    border:
+        1px solid
+        rgba(212,175,55,.24);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(212,175,55,.035);
+
+    color:
+        rgba(224,192,112,.92);
+
+    font-size:
+        .68rem;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        .18em;
+
+    line-height:
+        1.2;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+/* =========================================================
+   12.13 — CORE TITLE
+   ========================================================= */
+
+.ars-core-card
+.ars-card-content h3 {
+
+    margin:
+        0 0 14px;
+
+    color:
+        rgba(255,255,255,.97);
+
+    font-size:
+        clamp(
+            1.65rem,
+            2.4vw,
+            2.35rem
+        );
+
+    font-weight:
+        600;
+
+    line-height:
+        1.12;
+
+    letter-spacing:
+        -.025em;
+
+}
+
+
+/* =========================================================
+   12.14 — CORE DESCRIPTION
+   ========================================================= */
+
+.ars-core-card
+.ars-card-content p {
+
+    max-width:
+        620px;
+
+    margin:
+        0 auto 22px;
+
+    color:
+        rgba(207,216,226,.72);
+
+    font-size:
+        .94rem;
+
+    line-height:
+        1.75;
+
+}
+
+
+/* =========================================================
+   12.15 — CORE CTA
+   ========================================================= */
+
+.ars-core-card
+.ars-card-action {
+
+    position:
+        relative;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    color:
+        rgba(232,199,120,.96);
+
+    font-size:
+        .78rem;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        .08em;
+
+}
+
+
+/* =========================================================
+   12.16 — CORE CTA LINE
+   ========================================================= */
+
+.ars-core-card
+.ars-card-action::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom:
+        -7px;
+
+    height:
+        1px;
+
+    transform:
+        scaleX(0);
+
+    transform-origin:
+        center;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(212,175,55,.72),
+            rgba(40,170,255,.50),
+            transparent
+        );
+
+}
+
+
+/* =========================================================
+   12.17 — CORE HOVER
+   ---------------------------------------------------------
+   Conservative base hover.
+   Section 16 may enhance motion.
+   ========================================================= */
+
+@media (hover: hover) {
+
+    .ars-core-card:hover {
+
+        border-color:
+            rgba(225,190,101,.66);
+
+        box-shadow:
+
+            0 24px 72px
+            rgba(0,0,0,.64),
+
+            0 0 0 1px
+            rgba(212,175,55,.08),
+
+            0 0 38px
+            rgba(212,175,55,.10),
+
+            0 0 58px
+            rgba(40,170,255,.04);
+
+    }
+
+    .ars-core-card:hover
+    .ars-card-image img {
+
+        transform:
+            scale(1.055);
+
+        filter:
+            saturate(.98)
+            contrast(1.09)
+            brightness(.90);
+
+    }
+
+    .ars-core-card:hover
+    .ars-card-logo {
+
+        border-color:
+            rgba(232,199,120,.76);
+
+        box-shadow:
+
+            0 0 0 1px
+            rgba(255,255,255,.025),
+
+            0 0 27px
+            rgba(212,175,55,.26),
+
+            0 0 42px
+            rgba(40,170,255,.09),
+
+            inset 0 0 25px
+            rgba(0,0,0,.82);
+
+    }
+
+    .ars-core-card:hover
+    .ars-card-logo img {
+
+        transform:
+            scale(1.025);
+
+    }
+
+    .ars-core-card:hover
+    .ars-card-action {
+
+        color:
+            rgba(255,224,145,1);
+
+    }
+
+    .ars-core-card:hover
+    .ars-card-action::after {
+
+        transform:
+            scaleX(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   12.18 — SELECTED STATE
+   ---------------------------------------------------------
+   State hook only.
+   Full Golden Reveal belongs to Section 15.
+   ========================================================= */
+
+.ars-core-card.is-selected {
+
+    border-color:
+        rgba(238,205,126,.78);
+
+    box-shadow:
+
+        0 26px 82px
+        rgba(0,0,0,.68),
+
+        0 0 0 1px
+        rgba(212,175,55,.12),
+
+        0 0 40px
+        rgba(212,175,55,.15),
+
+        0 0 70px
+        rgba(40,170,255,.055);
+
+}
+
+
+/* =========================================================
+   12.19 — FOCUS
+   ========================================================= */
+
+.ars-core-card:focus-within {
+
+    outline:
+        none;
+
+    border-color:
+        rgba(232,199,120,.72);
+
+    box-shadow:
+
+        0 0 0 2px
+        rgba(212,175,55,.10),
+
+        0 0 34px
+        rgba(212,175,55,.12),
+
+        0 0 55px
+        rgba(40,170,255,.04);
+
+}
+
+
+/* =========================================================
+   12.20 — TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+    .ars-core-card
+    .ars-card-image,
+    .ars-core-card
+    .ars-card-image img {
+
+        min-height:
+            250px;
+
+    }
+
+    .ars-core-card
+    .ars-card-logo {
+
+        width:
+            104px;
+
+        height:
+            104px;
+
+        margin-top:
+            -46px;
+
+        padding:
+            15px;
+
+    }
+
+    .ars-core-card
+    .ars-card-content {
+
+        padding:
+            25px 28px 30px;
+
+    }
+
+}
+
+
+/* =========================================================
+   12.21 — MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .ars-core-card
+    .ars-card-image,
+    .ars-core-card
+    .ars-card-image img {
+
+        min-height:
+            230px;
+
+    }
+
+    .ars-core-card
+    .ars-card-logo {
+
+        width:
+            94px;
+
+        height:
+            94px;
+
+        margin-top:
+            -42px;
+
+        padding:
+            14px;
+
+    }
+
+    .ars-core-card
+    .ars-card-content {
+
+        padding:
+            23px 21px 28px;
+
+    }
+
+    .ars-core-card
+    .ars-card-content h3 {
+
+        font-size:
+            1.55rem;
+
+    }
+
+    .ars-core-card
+    .ars-card-content p {
+
+        font-size:
+            .88rem;
+
+        line-height:
+            1.7;
+
+    }
+
+}
+
+
+/* =========================================================
+   12.22 — SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .ars-core-card
+    .ars-card-image,
+    .ars-core-card
+    .ars-card-image img {
+
+        min-height:
+            205px;
+
+    }
+
+    .ars-core-card
+    .ars-card-logo {
+
+        width:
+            84px;
+
+        height:
+            84px;
+
+        margin-top:
+            -37px;
+
+        padding:
+            12px;
+
+    }
+
+    .ars-core-card
+    .ars-card-content {
+
+        padding:
+            21px 18px 25px;
+
+    }
+
+    .ars-core-card
+    .ars-card-category {
+
+        font-size:
+            .61rem;
+
+        letter-spacing:
+            .14em;
+
+    }
+
+    .ars-core-card
+    .ars-card-content h3 {
+
+        font-size:
+            1.4rem;
+
+    }
+
+}
+
+
+/* =========================================================
+   12.23 — REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ars-core-card,
+    .ars-core-card *,
+    .ars-core-card::before,
+    .ars-core-card::after {
+
+        transition:
+            none !important;
+
+        animation:
+            none !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   END
+   12 — ARS CORE CARD
+   ========================================================= */
 
 
 
