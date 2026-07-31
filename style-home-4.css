@@ -3628,7 +3628,827 @@ body::after {
     }
 }
 
+/* =========================================================
+   ARS HERITAGE GROUP — HOME
+   PHASE 08 — HERO CONTENT
+   PREMIUM REBUILD
+   =========================================================
 
+   OWNERS:
+
+       .hero-content-section
+       .hero-content
+       .hero-label
+       .hero-buttons
+       .btn-primary
+       .btn-secondary
+
+   HOME DNA:
+
+       DEEP BLACK
+       WHITE
+       REAL GOLD
+       MATTE BRONZE
+       DEEP NAVY
+       ELECTRIC BLUE SIGNATURE
+
+   DESIGN PRINCIPLE:
+
+       GOLD
+       = BRAND / PRESTIGE / HERITAGE
+
+       ELECTRIC BLUE
+       = INTELLIGENCE / ENERGY / FUTURE SIGNATURE
+
+       WHITE
+       = SUPPORTING INFORMATION
+
+   IMPORTANT:
+
+       No new Energy System
+       No new Core
+       No new Animation System
+       No new HTML
+       No duplicate selector ownership
+   ========================================================= */
+
+
+/* =========================================================
+   08.01 — HERO CONTENT SECTION
+   ========================================================= */
+
+.hero-content-section {
+
+    position: relative;
+
+    width: 100%;
+
+    padding:
+        clamp(120px, 12vw, 190px)
+        0
+        clamp(130px, 14vw, 210px);
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(2, 3, 6, 0) 0%,
+            rgba(2, 3, 6, 0.62) 18%,
+            rgba(2, 3, 6, 0.92) 48%,
+            rgba(1, 2, 4, 1) 100%
+        );
+}
+
+
+/* =========================================================
+   08.02 — CONTENT COMPOSITION
+   ========================================================= */
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(100%, 1080px);
+
+    margin:
+        0 auto;
+
+    padding:
+        0 24px;
+
+    text-align:
+        center;
+
+    isolation:
+        isolate;
+}
+
+
+/* =========================================================
+   08.03 — HERO LABEL
+   ========================================================= */
+
+.hero-label {
+
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin:
+        0 0 clamp(28px, 3vw, 40px);
+
+    padding:
+        9px 19px;
+
+    border:
+        1px solid
+        rgba(30, 144, 255, 0.42);
+
+    border-radius:
+        999px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(8, 18, 35, 0.78),
+            rgba(4, 8, 16, 0.54)
+        );
+
+    color:
+        rgba(74, 170, 255, 0.96);
+
+    font-size:
+        clamp(0.66rem, 0.7vw, 0.8rem);
+
+    font-weight:
+        650;
+
+    letter-spacing:
+        clamp(0.18em, 0.28vw, 0.31em);
+
+    line-height:
+        1.35;
+
+    text-transform:
+        uppercase;
+
+    white-space:
+        nowrap;
+
+    box-shadow:
+        0 0 22px
+        rgba(30, 144, 255, 0.07),
+
+        inset 0 0 18px
+        rgba(30, 144, 255, 0.035);
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+
+    transition:
+        border-color 320ms ease,
+        box-shadow 320ms ease,
+        color 320ms ease;
+}
+
+
+/* =========================================================
+   08.04 — LABEL SIGNATURE DETAIL
+   ========================================================= */
+
+.hero-label::before {
+
+    content: "";
+
+    width:
+        5px;
+
+    height:
+        5px;
+
+    margin-right:
+        10px;
+
+    border-radius:
+        50%;
+
+    background:
+        #1e90ff;
+
+    box-shadow:
+        0 0 8px
+        rgba(30, 144, 255, 0.72),
+
+        0 0 18px
+        rgba(30, 144, 255, 0.28);
+}
+
+
+/* =========================================================
+   08.05 — HERO MAIN HEADING
+   ========================================================= */
+
+.hero-content h1 {
+
+    width:
+        min(100%, 1050px);
+
+    margin:
+        0 auto;
+
+    color:
+        #d9b44a;
+
+    font-size:
+        clamp(3rem, 6.25vw, 7.1rem);
+
+    font-weight:
+        700;
+
+    line-height:
+        0.96;
+
+    letter-spacing:
+        -0.045em;
+
+    text-wrap:
+        balance;
+
+    text-rendering:
+        geometricPrecision;
+
+    text-shadow:
+
+        0 2px 12px
+        rgba(0, 0, 0, 0.85),
+
+        0 0 28px
+        rgba(212, 175, 55, 0.09),
+
+        0 0 60px
+        rgba(30, 144, 255, 0.025);
+}
+
+
+/* =========================================================
+   08.06 — HEADING LINE ARCHITECTURE
+   =========================================================
+
+   HTML currently uses <br>.
+   We intentionally do NOT introduce extra spans/classes.
+
+   Gold remains the dominant brand language.
+   Electric Blue remains the signature atmosphere.
+   ========================================================= */
+
+.hero-content h1 br {
+
+    display:
+        block;
+}
+
+
+/* =========================================================
+   08.07 — HERO DESCRIPTION
+   ========================================================= */
+
+.hero-content p {
+
+    width:
+        min(100%, 820px);
+
+    margin:
+        clamp(30px, 3.2vw, 44px) auto 0;
+
+    color:
+        rgba(244, 244, 239, 0.74);
+
+    font-size:
+        clamp(0.98rem, 1.12vw, 1.17rem);
+
+    font-weight:
+        400;
+
+    line-height:
+        1.9;
+
+    letter-spacing:
+        0.008em;
+
+    text-wrap:
+        balance;
+
+    text-shadow:
+        0 2px 14px
+        rgba(0, 0, 0, 0.7);
+}
+
+
+/* =========================================================
+   08.08 — CTA ARCHITECTURE
+   ========================================================= */
+
+.hero-buttons {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        14px;
+
+    margin:
+        clamp(38px, 4vw, 52px) auto 0;
+}
+
+
+/* =========================================================
+   08.09 — PRIMARY CTA
+   REAL GOLD / HERITAGE
+   ========================================================= */
+
+.btn-primary {
+
+    position:
+        relative;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-width:
+        230px;
+
+    min-height:
+        56px;
+
+    padding:
+        16px 30px;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        rgba(212, 175, 55, 0.76);
+
+    border-radius:
+        3px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(212, 175, 55, 0.16),
+            rgba(166, 124, 64, 0.08)
+        );
+
+    color:
+        #e8c86a;
+
+    font-size:
+        0.76rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        0.17em;
+
+    line-height:
+        1.2;
+
+    text-decoration:
+        none;
+
+    text-transform:
+        uppercase;
+
+    box-shadow:
+
+        0 14px 36px
+        rgba(0, 0, 0, 0.48),
+
+        0 0 22px
+        rgba(212, 175, 55, 0.08),
+
+        inset 0 0 18px
+        rgba(212, 175, 55, 0.045);
+
+    transition:
+        transform 360ms cubic-bezier(.2,.7,.2,1),
+        border-color 320ms ease,
+        background 320ms ease,
+        color 320ms ease,
+        box-shadow 320ms ease;
+
+    cursor:
+        pointer;
+}
+
+
+/* =========================================================
+   08.10 — PRIMARY GOLD LIGHT
+   ========================================================= */
+
+.btn-primary::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        -130%;
+
+    width:
+        70%;
+
+    height:
+        100%;
+
+    background:
+        linear-gradient(
+            105deg,
+            transparent,
+            rgba(255, 245, 205, 0.18),
+            transparent
+        );
+
+    transform:
+        skewX(-18deg);
+
+    transition:
+        left 720ms cubic-bezier(.2,.7,.2,1);
+
+    pointer-events:
+        none;
+}
+
+
+/* =========================================================
+   08.11 — PRIMARY INTERACTION
+   ========================================================= */
+
+.btn-primary:hover {
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(255, 224, 125, 0.96);
+
+    color:
+        #f7dc8b;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(212, 175, 55, 0.23),
+            rgba(30, 144, 255, 0.045)
+        );
+
+    box-shadow:
+
+        0 18px 44px
+        rgba(0, 0, 0, 0.56),
+
+        0 0 30px
+        rgba(212, 175, 55, 0.15),
+
+        0 0 48px
+        rgba(30, 144, 255, 0.045),
+
+        inset 0 0 20px
+        rgba(212, 175, 55, 0.065);
+}
+
+
+.btn-primary:hover::before {
+
+    left:
+        150%;
+}
+
+
+/* =========================================================
+   08.12 — SECONDARY CTA
+   ELECTRIC BLUE SIGNATURE
+   ========================================================= */
+
+.btn-secondary {
+
+    position:
+        relative;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-width:
+        205px;
+
+    min-height:
+        56px;
+
+    padding:
+        16px 30px;
+
+    border:
+        1px solid
+        rgba(30, 144, 255, 0.46);
+
+    border-radius:
+        3px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(7, 17, 32, 0.82),
+            rgba(5, 10, 20, 0.62)
+        );
+
+    color:
+        rgba(228, 238, 247, 0.88);
+
+    font-size:
+        0.76rem;
+
+    font-weight:
+        650;
+
+    letter-spacing:
+        0.15em;
+
+    line-height:
+        1.2;
+
+    text-decoration:
+        none;
+
+    text-transform:
+        uppercase;
+
+    box-shadow:
+
+        0 14px 34px
+        rgba(0, 0, 0, 0.44),
+
+        0 0 22px
+        rgba(30, 144, 255, 0.055),
+
+        inset 0 0 18px
+        rgba(30, 144, 255, 0.035);
+
+    backdrop-filter:
+        blur(10px);
+
+    -webkit-backdrop-filter:
+        blur(10px);
+
+    transition:
+        transform 360ms cubic-bezier(.2,.7,.2,1),
+        border-color 320ms ease,
+        color 320ms ease,
+        background 320ms ease,
+        box-shadow 320ms ease;
+
+    cursor:
+        pointer;
+}
+
+
+/* =========================================================
+   08.13 — SECONDARY INTERACTION
+   ========================================================= */
+
+.btn-secondary:hover {
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(54, 163, 255, 0.88);
+
+    color:
+        #f4f7fa;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(8, 23, 43, 0.92),
+            rgba(7, 15, 29, 0.78)
+        );
+
+    box-shadow:
+
+        0 18px 44px
+        rgba(0, 0, 0, 0.56),
+
+        0 0 28px
+        rgba(30, 144, 255, 0.12),
+
+        inset 0 0 20px
+        rgba(30, 144, 255, 0.055);
+}
+
+
+/* =========================================================
+   08.14 — FOCUS ACCESSIBILITY
+   ========================================================= */
+
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible {
+
+    outline:
+        1px solid
+        rgba(30, 144, 255, 0.92);
+
+    outline-offset:
+        5px;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(30, 144, 255, 0.08);
+}
+
+
+/* =========================================================
+   08.15 — RESPONSIVE / TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .hero-content-section {
+
+        padding:
+            105px 0
+            145px;
+    }
+
+
+    .hero-content {
+
+        width:
+            min(100%, 760px);
+    }
+
+
+    .hero-content h1 {
+
+        font-size:
+            clamp(2.65rem, 7.4vw, 4.8rem);
+
+        line-height:
+            1;
+    }
+
+
+    .hero-content p {
+
+        width:
+            min(100%, 680px);
+
+        line-height:
+            1.82;
+    }
+}
+
+
+/* =========================================================
+   08.16 — RESPONSIVE / MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .hero-content-section {
+
+        padding:
+            82px 0
+            112px;
+    }
+
+
+    .hero-content {
+
+        padding:
+            0 20px;
+    }
+
+
+    .hero-label {
+
+        max-width:
+            100%;
+
+        padding:
+            8px 14px;
+
+        font-size:
+            0.59rem;
+
+        letter-spacing:
+            0.14em;
+    }
+
+
+    .hero-label::before {
+
+        width:
+            4px;
+
+        height:
+            4px;
+
+        margin-right:
+            8px;
+    }
+
+
+    .hero-content h1 {
+
+        font-size:
+            clamp(2.15rem, 11.5vw, 3.55rem);
+
+        line-height:
+            1.02;
+
+        letter-spacing:
+            -0.035em;
+    }
+
+
+    .hero-content p {
+
+        margin-top:
+            27px;
+
+        font-size:
+            0.93rem;
+
+        line-height:
+            1.78;
+    }
+
+
+    .hero-buttons {
+
+        flex-direction:
+            column;
+
+        gap:
+            12px;
+
+        margin-top:
+            34px;
+    }
+
+
+    .btn-primary,
+    .btn-secondary {
+
+        width:
+            min(100%, 340px);
+
+        min-height:
+            53px;
+    }
+}
+
+
+/* =========================================================
+   08.17 — TOUCH DEVICES
+   ========================================================= */
+
+@media (hover: none) {
+
+    .btn-primary:hover,
+    .btn-secondary:hover {
+
+        transform:
+            none;
+    }
+
+
+    .btn-primary:hover::before {
+
+        left:
+            -130%;
+    }
+   }
 
 
 
