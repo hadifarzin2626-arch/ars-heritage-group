@@ -14831,288 +14831,413 @@ img{
    No Future Override
    No Global Body Override
    ========================================================= */
-/* =========================================================
-   ARS HERITAGE GROUP
-   HOME PREMIUM
-   FILE: style-home-.css
 
-   SECTION 31 — FINAL HOME 2 INTEGRATION LOCK
-   ========================================================= */
-
-
-/* ---------------------------------------------------------
-   31.1 — HOME 2 ROOT LOCK
-   --------------------------------------------------------- */
-
-.ars-home-premium-v2{
-
-    position:
-        relative;
-
-    isolation:
-        isolate;
-
-}
+/* ========================================================= */
+/* ARS HOME 3 — SECTION 31                                  */
+/* FINAL HOME INTEGRATION LOCK                               */
+/* HTML ↔ CSS ↔ JS                                          */
+/* ========================================================= */
 
 
-/* ---------------------------------------------------------
-   31.2 — FINAL HORIZONTAL SAFETY
-   --------------------------------------------------------- */
+/* ========================================================= */
+/* 31.01 — MASTER BOX MODEL                                  */
+/* ========================================================= */
 
-.ars-home-premium-v2{
+.hero,
+.about-ars,
+.mission-vision,
+.ars-philosophy-home,
+.ecosystem,
+.future-roadmap,
+.future-vision,
+.main-footer{
 
-    max-width:
-        100%;
-
-    overflow-x:
-        clip;
+    box-sizing:border-box;
 
 }
 
 
-/* ---------------------------------------------------------
-   31.3 — CONTENT WIDTH SAFETY
-   --------------------------------------------------------- */
+/* ========================================================= */
+/* 31.02 — ORBIT UNIVERSE CONTAINMENT                        */
+/* ========================================================= */
 
-.ars-home-premium-v2
-:where(
-    .hero-content,
-    .future-grid,
-    .ars-core-grid,
-    .footer-bottom
-){
+.hero,
+.hero-wrapper{
 
-    min-width:
-        0;
+    position:relative;
 
-    max-width:
-        100%;
+    isolation:isolate;
 
 }
 
 
-/* ---------------------------------------------------------
-   31.4 — MEDIA SAFETY
-   --------------------------------------------------------- */
+.home-energy-universe,
+.ars-orbit{
 
-.ars-home-premium-v2
-:where(
-    img,
-    video,
-    canvas,
-    svg
-){
+    position:absolute;
 
-    max-width:
-        100%;
+    inset:0;
+
+    pointer-events:none;
 
 }
 
 
-/* ---------------------------------------------------------
-   31.5 — INTERACTION STATE COMPATIBILITY
-   --------------------------------------------------------- */
+/* ========================================================= */
+/* 31.03 — INTERACTIVE ORBIT LAYER                           */
+/* ========================================================= */
 
-.ars-home-premium-v2
-:where(
-    .is-active,
-    .is-selected,
-    .has-active-node,
-    .core-reacting,
-    .core-hover,
-    .core-focus,
-    .core-selected,
-    .home-energy-ready
-){
+.orbit-core,
+.orbit-item{
 
-    position:
-        relative;
+    pointer-events:auto;
 
 }
 
 
-/* ---------------------------------------------------------
-   31.6 — JS STATE SAFETY
-   --------------------------------------------------------- */
+/* ========================================================= */
+/* 31.04 — ORBIT IMAGE SAFETY                                */
+/* ========================================================= */
 
-.ars-home-premium-v2
-:where(
-    .energy-fading,
-    .reduced-motion,
-    .home-mobile-mode
-){
+.orbit-core img,
+.orbit-link img{
 
-    pointer-events:
-        auto;
+    display:block;
 
-}
+    max-width:100%;
 
+    height:auto;
 
-/* ---------------------------------------------------------
-   31.7 — DECORATIVE STATE ISOLATION
-   --------------------------------------------------------- */
+    user-select:none;
 
-.ars-home-premium-v2
-:where(
-    .home-particle,
-    .home-energy-ray,
-    .home-energy-link,
-    .orbit-node-energy,
-    .node-energy-halo,
-    .node-energy-ring,
-    .node-energy-pulse,
-    .node-energy-spark
-){
-
-    pointer-events:
-        none;
+    -webkit-user-drag:none;
 
 }
 
 
-/* ---------------------------------------------------------
-   31.8 — FINAL FOCUS SAFETY
-   --------------------------------------------------------- */
+/* ========================================================= */
+/* 31.05 — CORE / NODE INTERACTION STATES                   */
+/* JS STATES — DO NOT REDEFINE STRUCTURE                     */
+/* ========================================================= */
 
-.ars-home-premium-v2
-:where(
-    a,
-    button,
-    [role="button"],
-    [tabindex]
-):focus-visible{
+.orbit-item.is-active{
 
-    outline:
-        2px solid
-        var(--ars-gold-bright);
+    z-index:20;
 
-    outline-offset:
-        4px;
+}
+
+.orbit-item.energy-fading{
+
+    z-index:15;
+
+}
+
+.home-energy-universe.has-active-node{
+
+    --active-energy-strength:1;
+
+}
+
+.orbit-core.core-hover{
+
+    z-index:30;
+
+}
+
+.orbit-core.core-selected{
+
+    z-index:31;
 
 }
 
 
-/* ---------------------------------------------------------
-   31.9 — FINAL MOTION SAFETY
-   --------------------------------------------------------- */
+/* ========================================================= */
+/* 31.06 — CORE REACTION                                    */
+/* ========================================================= */
 
-@media (prefers-reduced-motion: reduce){
+.orbit-core.core-reacting{
 
-    .ars-home-premium-v2
-    :where(
-        .is-active,
-        .is-selected,
-        .has-active-node,
-        .core-reacting,
-        .core-hover,
-        .core-focus,
-        .core-selected
-    ){
+    transform:
+        translate3d(0,0,0)
+        scale(1.025);
 
-        transition:
-            none !important;
+}
+
+
+/* ========================================================= */
+/* 31.07 — CONTENT PROTECTION                               */
+/* ========================================================= */
+
+.hero-content{
+
+    position:relative;
+
+    z-index:40;
+
+}
+
+
+/* ========================================================= */
+/* 31.08 — INTERACTION SAFETY                               */
+/* ========================================================= */
+
+.hero-content,
+.hero-buttons,
+.btn-primary,
+.btn-secondary{
+
+    pointer-events:auto;
+
+}
+
+
+/* ========================================================= */
+/* 31.09 — GLOBAL IMAGE SAFETY                              */
+/* ========================================================= */
+
+.about-ars img,
+.ars-philosophy-home img,
+.ars-glass-card img{
+
+    max-width:100%;
+
+}
+
+
+/* ========================================================= */
+/* 31.10 — CARD LINK INTEGRITY                              */
+/* ========================================================= */
+
+.ars-card-link{
+
+    display:block;
+
+    width:100%;
+
+    height:100%;
+
+    text-decoration:none;
+
+}
+
+
+/* ========================================================= */
+/* 31.11 — CARD SELECTION                                   */
+/* JS → .is-selected                                        */
+/* ========================================================= */
+
+.ars-glass-card.is-selected{
+
+    position:relative;
+
+    z-index:8;
+
+}
+
+
+/* ========================================================= */
+/* 31.12 — SECTION CONTAINMENT                              */
+/* ========================================================= */
+
+.about-ars,
+.mission-vision,
+.ars-philosophy-home,
+.ecosystem,
+.future-roadmap,
+.future-vision{
+
+    position:relative;
+
+    isolation:isolate;
+
+}
+
+
+/* ========================================================= */
+/* 31.13 — FOOTER CONTAINMENT                               */
+/* ========================================================= */
+
+.main-footer{
+
+    position:relative;
+
+    isolation:isolate;
+
+    overflow:hidden;
+
+}
+
+
+/* ========================================================= */
+/* 31.14 — NO HORIZONTAL PAGE LEAK                          */
+/* ========================================================= */
+
+html,
+body{
+
+    max-width:100%;
+
+}
+
+body{
+
+    overflow-x:hidden;
+
+}
+
+
+/* ========================================================= */
+/* 31.15 — FOCUS VISIBILITY                                 */
+/* ========================================================= */
+
+a:focus-visible{
+
+    outline:2px solid
+        rgba(212,174,92,.9);
+
+    outline-offset:5px;
+
+}
+
+
+/* ========================================================= */
+/* 31.16 — REDUCED MOTION FINAL SAFETY                      */
+/* ========================================================= */
+
+@media (prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        animation-duration:.01ms !important;
+
+        animation-iteration-count:1 !important;
+
+        transition-duration:.01ms !important;
+
+        scroll-behavior:auto !important;
 
     }
 
 }
 
 
-/* ---------------------------------------------------------
-   31.10 — FINAL MOBILE SAFETY
-   --------------------------------------------------------- */
+/* ========================================================= */
+/* 31.17 — JS REDUCED MOTION STATE                          */
+/* ========================================================= */
 
-@media (max-width: 767px){
+.hero.reduced-motion
+.home-energy-universe{
 
-    .ars-home-premium-v2{
+    animation:none;
 
-        overflow-x:
-            clip;
+}
+
+
+.hero.reduced-motion
+.home-particle,
+.hero.reduced-motion
+.home-energy-ray,
+.hero.reduced-motion
+.home-energy-link{
+
+    animation:none;
+
+}
+
+
+/* ========================================================= */
+/* 31.18 — MOBILE FINAL CONTAINMENT                         */
+/* ========================================================= */
+
+@media (max-width:768px){
+
+    .hero{
+
+        overflow:hidden;
 
     }
 
-    .ars-home-premium-v2
-    :where(
-        .hero-content,
-        .future-grid,
-        .ars-core-grid,
-        .footer-bottom
-    ){
+    .hero-wrapper{
 
-        max-width:
-            100%;
+        min-width:0;
+
+        width:100%;
+
+    }
+
+    .hero-content{
+
+        max-width:100%;
+
+    }
+
+    .ars-core-grid{
+
+        width:100%;
+
+        max-width:100%;
 
     }
 
 }
 
 
-/* ---------------------------------------------------------
-   31.11 — FINAL SMALL-MOBILE SAFETY
-   --------------------------------------------------------- */
+/* ========================================================= */
+/* 31.19 — SMALL MOBILE SAFETY                              */
+/* ========================================================= */
 
-@media (max-width: 420px){
+@media (max-width:480px){
 
-    .ars-home-premium-v2
-    :where(
-        h1,
-        h2,
-        h3,
-        p,
-        blockquote
-    ){
+    .hero-content{
 
-        overflow-wrap:
-            break-word;
+        width:min(
+            100%,
+            92vw
+        );
+
+    }
+
+    .hero-buttons{
+
+        max-width:100%;
 
     }
 
 }
 
 
-/* =========================================================
-   31.12 — FINAL ARCHITECTURE LOCK
-   =========================================================
+/* ========================================================= */
+/* 31.20 — FINAL SELECTOR DISCIPLINE                        */
+/* ========================================================= */
 
-   HTML
-       ↓
-   SECTION 01 — FOUNDATION / BRAND DNA
-       ↓
-   SECTION 02 — ARCHITECTURE
-       ↓
-   SECTION 03 — HERO MASTER SPACE / DOUBLE SCALE
-       ↓
-   SECTION 04–17 — HERO UNIVERSE
-       ↓
-   SECTION 18–20 — BRAND SECTIONS
-       ↓
-   SECTION 21–24 — ECOSYSTEM
-       ↓
-   SECTION 25–26 — FUTURE
-       ↓
-   SECTION 27 — FOOTER
-       ↓
-   SECTION 28–30 — RESPONSIVE / ACCESSIBILITY / PERFORMANCE
-       ↓
-   SECTION 31 — FINAL INTEGRATION LOCK
-   ========================================================= */
+/*
+   SECTION 31 intentionally contains:
+
+   NO new orbital geometry
+   NO new card architecture
+   NO new animation
+   NO new keyframes
+   NO new layout system
+   NO duplicate energy system
+   NO replacement of previous sections
+
+   Its only purpose is final containment,
+   interaction safety, accessibility,
+   and HTML ↔ CSS ↔ JS integrity.
+*/
 
 
-/* =========================================================
-   SECTION 31 — COMPLETE
-   SECTION 31 — FINAL LOCK 🔒
+/* ========================================================= */
+/* 31.21 — FINAL HOME 3 LOCK 🔒                             */
+/* ========================================================= */
 
-   HTML ↔ CSS ↔ JS
-   Selector Ownership
-   State Compatibility
-   Responsive Safety
-   Motion Safety
-   Focus Safety
-   Overflow Safety
-   Dependency Isolation
+.home-energy-ready{
 
-   HOME 2 CSS ARCHITECTURE COMPLETE 🔒
-   ========================================================= */
+    visibility:visible;
 
+}
 
 
 
