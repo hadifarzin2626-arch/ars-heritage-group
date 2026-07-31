@@ -18700,264 +18700,39 @@ to {
    ✗ golden reveal
    ✗ energy bridge
    ✗ border radiation
+   
    ========================================================= */
-
-
-
-
-
-
-
 /* =========================================================
-   ARS HOME — HERO CONTENT POSITION FIX
-   =========================================================
-   PURPOSE:
-   - Orbit remains the primary Hero visual
-   - Hero text/buttons are NOT visible in first viewport
-   - Content appears only below the orbital universe
-   - Remove double-Hero / jumping behavior
-   - DO NOT TOUCH ORBIT SYSTEM
-   ========================================================= */
-
-
-/* =========================================================
-   01 — HERO MASTER HEIGHT
+   ARS HOME — HERO ORBITAL SPACE 2.5X
    ========================================================= */
 
 .hero {
-
-    position: relative;
-
-    min-height: 200vh;
-
-    overflow-x: hidden;
-    overflow-y: visible;
-
+    min-height: 250vh !important;
+    width: 100% !important;
 }
-
-
-/* =========================================================
-   02 — HERO WRAPPER
-   ========================================================= */
 
 .hero-wrapper {
-
-    position: relative;
-
-    width: 100%;
-
-    min-height: 200vh;
-
-    height: 200vh;
-
-    isolation: isolate;
-
+    min-height: 250vh !important;
+    height: 250vh !important;
+    width: 100% !important;
 }
 
-
-/* =========================================================
-   03 — HERO CONTENT
-   =========================================================
-   The content is deliberately moved BELOW the orbital
-   universe. It must NOT participate in the first Hero view.
-   ========================================================= */
-
-.hero-content {
-
-    position: absolute !important;
-
-    top: 108vh !important;
+/* Give the orbital system 2.5× horizontal working space */
+.ars-orbit {
+    width: 250vw !important;
+    max-width: none !important;
 
     left: 50% !important;
-
-    right: auto !important;
-
-    width: min(900px, 88vw) !important;
-
-    margin: 0 !important;
-
-    padding: 0 !important;
-
     transform: translateX(-50%) !important;
-
-    z-index: 200 !important;
-
-    text-align: center;
-
-    opacity: 1 !important;
-
-    visibility: visible !important;
-
-    animation: none !important;
-
-    transition: none !important;
-
 }
 
 
-/* =========================================================
-   04 — REMOVE OLD HERO CONTENT MOTION
-   ========================================================= */
 
-.hero-content,
-.hero-content * {
 
-    animation-delay: 0s;
 
-}
 
 
-/* Kill accidental transform inheritance / old motion */
 
-.hero-content {
 
-    will-change: auto !important;
 
-}
 
-
-/* =========================================================
-   05 — LABEL
-   ========================================================= */
-
-.hero-content .hero-label {
-
-    display: inline-block;
-
-    margin-bottom: 24px;
-
-}
-
-
-/* =========================================================
-   06 — HEADING
-   ========================================================= */
-
-.hero-content h1 {
-
-    margin-top: 0;
-
-    margin-bottom: 24px;
-
-}
-
-
-/* =========================================================
-   07 — DESCRIPTION
-   ========================================================= */
-
-.hero-content p {
-
-    max-width: 820px;
-
-    margin-left: auto;
-    margin-right: auto;
-
-}
-
-
-/* =========================================================
-   08 — BUTTONS
-   ========================================================= */
-
-.hero-content .hero-buttons {
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    gap: 18px;
-
-    margin-top: 34px;
-
-}
-
-
-/* =========================================================
-   09 — CRITICAL:
-          DO NOT LET HERO CONTENT AFFECT HERO FLOW
-   ========================================================= */
-
-.hero-content::before,
-.hero-content::after {
-
-    pointer-events: none;
-
-}
-
-
-/* =========================================================
-   10 — ORBIT MUST STAY IN ITS OWN LAYER
-   ========================================================= */
-
-.ars-orbit {
-
-    z-index: 8 !important;
-
-    pointer-events: none;
-
-}
-
-
-/* =========================================================
-   11 — ENERGY UNIVERSE MUST STAY BEHIND ORBIT
-   ========================================================= */
-
-.home-energy-universe {
-
-    z-index: 2 !important;
-
-}
-
-
-/* =========================================================
-   12 — CONTENT SITS ABOVE ORBIT,
-          BUT ONLY AFTER SCROLLING DOWN
-   ========================================================= */
-
-.hero-content {
-
-    z-index: 200 !important;
-
-}
-
-
-/* =========================================================
-   13 — MOBILE
-   ========================================================= */
-
-@media (max-width: 768px) {
-
-    .hero-content {
-
-        top: 102vh !important;
-
-        width: min(92vw, 700px) !important;
-
-    }
-
-    .hero-content .hero-buttons {
-
-        flex-direction: column;
-
-        gap: 14px;
-
-    }
-
-}
-
-
-/* =========================================================
-   END — HERO CONTENT POSITION FIX
-   ========================================================= */
-
-
-
-
-
-
-
-
-/* ===================================================
