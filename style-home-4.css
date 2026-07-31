@@ -1,0 +1,2418 @@
+/* =========================================================
+   ARS HERITAGE GROUP — HOME
+   PREMIUM HOME CSS REBUILD
+   =========================================================
+
+   PHASE 01 — HOME FOUNDATION
+   ---------------------------------------------------------
+   SOURCE OF TRUTH:
+   index.html
+
+   CSS FILE:
+   style-home-4.css
+
+   LOCKED RULES:
+   - Home-specific CSS only
+   - No duplicate systems
+   - No duplicate selectors for the same responsibility
+   - No patchwork
+   - No HTML modification
+   - No JavaScript modification
+   ========================================================= */
+
+
+/* =========================================================
+   01 — GLOBAL RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================================
+   02 — ROOT / HOME DESIGN TOKENS
+   ========================================================= */
+
+:root {
+
+    /* -----------------------------------------------------
+       CORE BRAND PALETTE
+       ----------------------------------------------------- */
+
+    --home-black: #030303;
+    --home-black-deep: #010101;
+    --home-black-soft: #080808;
+
+    --home-white: #f5f3ee;
+    --home-white-soft: #d8d5ce;
+
+    --home-gold: #d6b15a;
+    --home-gold-light: #f1d98a;
+    --home-gold-deep: #8d6927;
+
+    --home-bronze: #7b5b32;
+    --home-bronze-matte: #625039;
+
+    --home-navy: #07111f;
+    --home-navy-deep: #030914;
+
+    --home-electric-blue: #168cff;
+    --home-electric-blue-light: #64c7ff;
+    --home-electric-blue-deep: #0757a0;
+
+
+    /* -----------------------------------------------------
+       CONTROLLED ENERGY ACCENTS
+       ----------------------------------------------------- */
+
+    --home-energy-red: #a92c35;
+    --home-energy-yellow: #d8a52c;
+    --home-energy-green: #3c8061;
+    --home-energy-brown: #68452e;
+    --home-energy-violet: #654f8e;
+
+
+    /* -----------------------------------------------------
+       SURFACES
+       ----------------------------------------------------- */
+
+    --home-surface-dark: rgba(8, 10, 14, 0.72);
+    --home-surface-navy: rgba(5, 14, 28, 0.78);
+
+    --home-glass-dark: rgba(5, 7, 10, 0.58);
+    --home-glass-light: rgba(255, 255, 255, 0.045);
+
+    --home-border-gold: rgba(214, 177, 90, 0.30);
+    --home-border-white: rgba(255, 255, 255, 0.09);
+    --home-border-blue: rgba(22, 140, 255, 0.26);
+
+
+    /* -----------------------------------------------------
+       SHADOW / LIGHT FOUNDATION
+       ----------------------------------------------------- */
+
+    --home-shadow-deep:
+        0 30px 90px rgba(0, 0, 0, 0.72);
+
+    --home-shadow-gold:
+        0 0 45px rgba(214, 177, 90, 0.16);
+
+    --home-shadow-blue:
+        0 0 55px rgba(22, 140, 255, 0.14);
+
+
+    /* -----------------------------------------------------
+       TYPOGRAPHY
+       ----------------------------------------------------- */
+
+    --home-text-primary: var(--home-white);
+    --home-text-secondary: var(--home-white-soft);
+
+    --home-heading-gold: var(--home-gold);
+
+
+    /* -----------------------------------------------------
+       LAYOUT
+       ----------------------------------------------------- */
+
+    --home-container-width: 1440px;
+
+    --home-container-padding: clamp(20px, 4vw, 72px);
+
+    --home-section-space:
+        clamp(100px, 12vw, 190px);
+
+
+    /* -----------------------------------------------------
+       RADIUS
+       ----------------------------------------------------- */
+
+    --home-radius-sm: 10px;
+    --home-radius-md: 18px;
+    --home-radius-lg: 28px;
+    --home-radius-xl: 40px;
+
+
+    /* -----------------------------------------------------
+       MOTION
+       ----------------------------------------------------- */
+
+    --home-ease:
+        cubic-bezier(0.22, 1, 0.36, 1);
+
+    --home-ease-soft:
+        cubic-bezier(0.16, 1, 0.3, 1);
+
+    --home-transition-fast:
+        220ms var(--home-ease);
+
+    --home-transition:
+        500ms var(--home-ease);
+
+    --home-transition-slow:
+        900ms var(--home-ease);
+
+
+    /* -----------------------------------------------------
+       DEPTH
+       ----------------------------------------------------- */
+
+    --home-z-background: 0;
+    --home-z-content: 10;
+    --home-z-overlay: 20;
+    --home-z-header: 100;
+    --home-z-energy: 200;
+}
+
+
+/* =========================================================
+   03 — HTML / BODY FOUNDATION
+   ========================================================= */
+
+html {
+    scroll-behavior: smooth;
+    background: var(--home-black-deep);
+}
+
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(22, 140, 255, 0.035),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 50% 25%,
+            rgba(214, 177, 90, 0.025),
+            transparent 38%
+        ),
+        var(--home-black-deep);
+
+    color: var(--home-text-primary);
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    line-height: 1.6;
+
+    overflow-x: hidden;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* =========================================================
+   04 — MEDIA FOUNDATION
+   ========================================================= */
+
+img,
+picture,
+svg,
+video,
+canvas {
+    display: block;
+    max-width: 100%;
+}
+
+
+img {
+    height: auto;
+}
+
+
+/* =========================================================
+   05 — LINK FOUNDATION
+   ========================================================= */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   06 — BUTTON / FORM FOUNDATION
+   ========================================================= */
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+
+button {
+    border: 0;
+    background: none;
+    color: inherit;
+}
+
+
+/* =========================================================
+   07 — HOME CONTAINER
+   ========================================================= */
+
+.container {
+    width: min(
+        100% - (var(--home-container-padding) * 2),
+        var(--home-container-width)
+    );
+
+    margin-inline: auto;
+}
+
+
+/* =========================================================
+   08 — SECTION FOUNDATION
+   ========================================================= */
+
+section {
+    position: relative;
+    isolation: isolate;
+}
+
+
+.section-header {
+    position: relative;
+    z-index: var(--home-z-content);
+
+    max-width: 900px;
+    margin-inline: auto;
+
+    text-align: center;
+}
+
+
+.section-label {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    color: var(--home-gold);
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+}
+
+
+.section-header h2 {
+    color: var(--home-heading-gold);
+
+    font-size: clamp(
+        2.4rem,
+        5vw,
+        5.5rem
+    );
+
+    font-weight: 600;
+
+    line-height: 0.98;
+
+    letter-spacing: -0.035em;
+
+    text-wrap: balance;
+}
+
+
+.section-header p {
+    max-width: 760px;
+
+    margin: 28px auto 0;
+
+    color: var(--home-text-secondary);
+
+    font-size: clamp(
+        0.95rem,
+        1.3vw,
+        1.12rem
+    );
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   09 — HOME TEXT SELECTION
+   ========================================================= */
+
+::selection {
+    background: rgba(214, 177, 90, 0.28);
+    color: var(--home-white);
+}
+
+
+/* =========================================================
+   10 — HOME SCROLLBAR
+   ========================================================= */
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color:
+        var(--home-gold-deep)
+        var(--home-black-deep);
+}
+
+
+html::-webkit-scrollbar {
+    width: 8px;
+}
+
+
+html::-webkit-scrollbar-track {
+    background: var(--home-black-deep);
+}
+
+
+html::-webkit-scrollbar-thumb {
+    background:
+        linear-gradient(
+            180deg,
+            var(--home-gold),
+            var(--home-bronze),
+            var(--home-gold-deep)
+        );
+
+    border-radius: 999px;
+}
+
+
+html::-webkit-scrollbar-thumb:hover {
+    background:
+        linear-gradient(
+            180deg,
+            var(--home-gold-light),
+            var(--home-gold),
+            var(--home-bronze)
+        );
+}
+
+
+/* =========================================================
+   11 — GLOBAL HOME DEPTH
+   ========================================================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    z-index: var(--home-z-background);
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 20%,
+            rgba(255, 255, 255, 0.018),
+            transparent 42%
+        ),
+        radial-gradient(
+            ellipse at 20% 70%,
+            rgba(22, 140, 255, 0.012),
+            transparent 35%
+        ),
+        radial-gradient(
+            ellipse at 80% 65%,
+            rgba(214, 177, 90, 0.012),
+            transparent 35%
+        );
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   12 — GLOBAL HOME LIGHT VIGNETTE
+   ========================================================= */
+
+body::after {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    z-index: var(--home-z-overlay);
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 48%,
+            rgba(0, 0, 0, 0.32) 100%
+        );
+}
+
+
+/* =========================================================
+   13 — REDUCED MOTION FOUNDATION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* =========================================================
+   14 — MOBILE FOUNDATION
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    :root {
+        --home-container-padding: 20px;
+        --home-section-space: 100px;
+    }
+
+
+    .section-header h2 {
+        font-size: clamp(
+            2rem,
+            10vw,
+            3.4rem
+        );
+    }
+
+
+    .section-header p {
+        font-size: 0.94rem;
+    }
+
+}
+
+
+/* =========================================================
+   END — PHASE 01
+   =========================================================*/
+/* =========================================================
+   ARS HERITAGE GROUP — HOME
+   PREMIUM HOME CSS REBUILD
+   =========================================================
+
+   PHASE 02 — HEADER / GLASS NAVIGATION
+
+   SOURCE OF TRUTH:
+   index.html
+
+   HTML TARGET:
+   .main-header
+   .header-brand
+
+   LOCK:
+   - No HTML modification
+   - No JavaScript modification
+   - No duplicate header system
+   - Header remains Home-specific
+   ========================================================= */
+
+
+/* =========================================================
+   01 — MAIN HEADER
+   ========================================================= */
+
+.main-header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 76px;
+
+    z-index: var(--home-z-header);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(3, 3, 3, 0.82),
+            rgba(3, 3, 3, 0.48)
+        );
+
+    border-bottom:
+        1px solid
+        rgba(214, 177, 90, 0.14);
+
+    backdrop-filter:
+        blur(22px)
+        saturate(125%);
+
+    -webkit-backdrop-filter:
+        blur(22px)
+        saturate(125%);
+
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.28);
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   02 — HEADER GLASS LIGHT
+   ========================================================= */
+
+.main-header::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -1;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(214, 177, 90, 0.025) 35%,
+            rgba(255, 255, 255, 0.035) 50%,
+            rgba(214, 177, 90, 0.025) 65%,
+            transparent 100%
+        );
+}
+
+
+/* =========================================================
+   03 — HEADER GOLDEN EDGE
+   ========================================================= */
+
+.main-header::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: min(420px, 48vw);
+    height: 1px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(214, 177, 90, 0.55),
+            rgba(241, 217, 138, 0.8),
+            rgba(214, 177, 90, 0.55),
+            transparent
+        );
+
+    box-shadow:
+        0 0 18px rgba(214, 177, 90, 0.18);
+}
+
+
+/* =========================================================
+   04 — CENTRAL BRAND HOLDER
+   ========================================================= */
+
+.header-brand {
+    position: relative;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 auto;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.055),
+            rgba(3, 3, 3, 0.45) 68%,
+            transparent 72%
+        );
+
+    border:
+        1px solid
+        rgba(214, 177, 90, 0.24);
+
+    box-shadow:
+        0 0 24px rgba(214, 177, 90, 0.08);
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   05 — BRAND ENERGY RING
+   ========================================================= */
+
+.header-brand::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -7px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(214, 177, 90, 0.10);
+
+    box-shadow:
+        0 0 18px rgba(22, 140, 255, 0.06);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   06 — BRAND ENERGY CORE
+   ========================================================= */
+
+.header-brand::after {
+    content: "";
+
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background:
+        var(--home-gold-light);
+
+    box-shadow:
+        0 0 10px rgba(241, 217, 138, 0.7),
+        0 0 22px rgba(214, 177, 90, 0.25);
+
+    opacity: 0.72;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   07 — HEADER MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .main-header {
+        height: 64px;
+
+        background:
+            linear-gradient(
+                180deg,
+                rgba(3, 3, 3, 0.88),
+                rgba(3, 3, 3, 0.58)
+            );
+
+        backdrop-filter:
+            blur(18px)
+            saturate(120%);
+
+        -webkit-backdrop-filter:
+            blur(18px)
+            saturate(120%);
+    }
+
+
+    .header-brand {
+        width: 42px;
+        height: 42px;
+    }
+
+
+    .main-header::after {
+        width: 180px;
+    }
+
+}
+
+
+/* =========================================================
+   END — PHASE 02
+   ========================================================= */
+/* =========================================================
+   ARS HERITAGE GROUP — HOME
+   PREMIUM HOME CSS REBUILD
+   =========================================================
+
+   PHASE 03 — HERO FOUNDATION + DEEP SPACE ATMOSPHERE
+
+   HTML TARGET:
+   .hero
+   .hero-background
+   .hero-stars
+   .hero-stars-2
+   .hero-wrapper
+
+   LOCK:
+   - index.html remains unchanged
+   - JavaScript remains unchanged
+   - No orbital positioning in this phase
+   - No duplicate hero system
+   ========================================================= */
+
+
+/* =========================================================
+   01 — HERO FOUNDATION
+   ========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 100vh;
+    min-height: 100svh;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 45%,
+            rgba(7, 17, 31, 0.72),
+            transparent 48%
+        ),
+        radial-gradient(
+            ellipse at 50% 10%,
+            rgba(214, 177, 90, 0.035),
+            transparent 35%
+        ),
+        var(--home-black-deep);
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   02 — HERO BACKGROUND
+   ========================================================= */
+
+.hero-background {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: var(--home-z-background);
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(22, 140, 255, 0.065),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(214, 177, 90, 0.045),
+            transparent 44%
+        ),
+        linear-gradient(
+            180deg,
+            #010101 0%,
+            #020407 45%,
+            #010101 100%
+        );
+}
+
+
+/* =========================================================
+   03 — DEEP SPACE VIGNETTE
+   ========================================================= */
+
+.hero-background::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 32%,
+            rgba(0, 0, 0, 0.30) 68%,
+            rgba(0, 0, 0, 0.82) 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   04 — HORIZONTAL SPACE DEPTH
+   ========================================================= */
+
+.hero-background::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 140%;
+    height: 1px;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(-2deg);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(22, 140, 255, 0.025),
+            rgba(214, 177, 90, 0.07),
+            rgba(22, 140, 255, 0.025),
+            transparent
+        );
+
+    filter: blur(1px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   05 — PRIMARY STAR FIELD
+   ========================================================= */
+
+.hero-stars {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    opacity: 0.62;
+
+    background-image:
+        radial-gradient(
+            circle at 12% 18%,
+            rgba(255, 255, 255, 0.65) 0 1px,
+            transparent 1.5px
+        ),
+        radial-gradient(
+            circle at 27% 72%,
+            rgba(214, 177, 90, 0.42) 0 1px,
+            transparent 1.5px
+        ),
+        radial-gradient(
+            circle at 42% 22%,
+            rgba(255, 255, 255, 0.48) 0 1px,
+            transparent 1.5px
+        ),
+        radial-gradient(
+            circle at 58% 81%,
+            rgba(22, 140, 255, 0.55) 0 1px,
+            transparent 1.5px
+        ),
+        radial-gradient(
+            circle at 74% 29%,
+            rgba(255, 255, 255, 0.58) 0 1px,
+            transparent 1.5px
+        ),
+        radial-gradient(
+            circle at 88% 68%,
+            rgba(214, 177, 90, 0.42) 0 1px,
+            transparent 1.5px
+        ),
+        radial-gradient(
+            circle at 18% 89%,
+            rgba(22, 140, 255, 0.35) 0 1px,
+            transparent 1.5px
+        ),
+        radial-gradient(
+            circle at 83% 11%,
+            rgba(255, 255, 255, 0.45) 0 1px,
+            transparent 1.5px
+        );
+
+    background-size:
+        310px 310px,
+        420px 420px,
+        360px 360px,
+        470px 470px,
+        390px 390px,
+        520px 520px,
+        440px 440px,
+        340px 340px;
+
+    animation:
+        heroStarsDrift 24s linear infinite;
+}
+
+
+/* =========================================================
+   06 — SECONDARY STAR FIELD
+   ========================================================= */
+
+.hero-stars-2 {
+    z-index: 2;
+
+    opacity: 0.32;
+
+    transform: scale(1.12);
+
+    filter: blur(0.25px);
+
+    background-image:
+        radial-gradient(
+            circle at 8% 42%,
+            rgba(22, 140, 255, 0.7) 0 1px,
+            transparent 1.8px
+        ),
+        radial-gradient(
+            circle at 34% 8%,
+            rgba(255, 255, 255, 0.7) 0 1px,
+            transparent 1.8px
+        ),
+        radial-gradient(
+            circle at 61% 38%,
+            rgba(214, 177, 90, 0.62) 0 1px,
+            transparent 1.8px
+        ),
+        radial-gradient(
+            circle at 91% 52%,
+            rgba(255, 255, 255, 0.58) 0 1px,
+            transparent 1.8px
+        );
+
+    background-size:
+        520px 520px,
+        610px 610px,
+        560px 560px,
+        680px 680px;
+
+    animation:
+        heroStarsDriftReverse 34s linear infinite;
+}
+
+
+/* =========================================================
+   07 — STAR FIELD MOTION
+   ========================================================= */
+
+@keyframes heroStarsDrift {
+
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(-90px, 55px, 0);
+    }
+}
+
+
+@keyframes heroStarsDriftReverse {
+
+    from {
+        transform:
+            scale(1.12)
+            translate3d(0, 0, 0);
+    }
+
+    to {
+        transform:
+            scale(1.12)
+            translate3d(75px, -45px, 0);
+    }
+}
+
+
+/* =========================================================
+   08 — HERO WRAPPER
+   ========================================================= */
+
+.hero-wrapper {
+    position: relative;
+
+    z-index: var(--home-z-content);
+
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   09 — HERO ATMOSPHERIC LIGHT
+   ========================================================= */
+
+.hero-wrapper::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: min(72vw, 1050px);
+    height: min(72vw, 1050px);
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(22, 140, 255, 0.035),
+            rgba(214, 177, 90, 0.018) 32%,
+            transparent 68%
+        );
+
+    filter: blur(18px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   10 — HERO MOBILE FOUNDATION
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 100svh;
+    }
+
+
+    .hero-stars {
+        opacity: 0.42;
+    }
+
+
+    .hero-stars-2 {
+        opacity: 0.20;
+    }
+
+
+    .hero-wrapper {
+        min-height: 100svh;
+    }
+
+
+    .hero-background::after {
+        width: 190%;
+    }
+
+}
+
+
+/* =========================================================
+   11 — HERO REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-stars,
+    .hero-stars-2 {
+        animation: none;
+    }
+
+}
+
+
+/* =========================================================
+   END — PHASE 03
+   ========================================================= */
+/* =========================================================
+   ARS HERITAGE GROUP — HOME
+   PHASE 04 — HOME ENERGY UNIVERSE
+   =========================================================
+   OWNER:
+       .home-energy-universe
+
+   PURPOSE:
+       Atmospheric / Cinematic / Deep-Space Energy Layer
+
+   IMPORTANT:
+       This system is NOT the Orbital Navigation System.
+       This system is NOT the Energy Bridge System.
+
+       HOME ENERGY UNIVERSE = ATMOSPHERE ONLY
+
+   DO NOT ADD:
+       Orbit Node Logic
+       Core Logic
+       Card Logic
+       Bridge Logic
+       Responsive Rules
+       New Animation Systems
+   ========================================================= */
+
+
+/* =========================================================
+   04.01 — MASTER ENERGY UNIVERSE
+   ========================================================= */
+
+.home-energy-universe {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    isolation: isolate;
+
+    transform:
+        translate3d(
+            var(--energy-parallax-x, 0px),
+            var(--energy-parallax-y, 0px),
+            0
+        );
+
+    will-change: transform;
+
+}
+
+
+/* =========================================================
+   04.02 — DEEP ATMOSPHERIC DEPTH
+   ========================================================= */
+
+.home-energy-depth {
+
+    position: absolute;
+
+    inset: -12%;
+
+    pointer-events: none;
+
+    border-radius: 50%;
+
+    opacity: .55;
+
+    filter: blur(28px);
+
+    transform-origin: center;
+
+}
+
+
+/* =========================================================
+   04.03 — DEPTH LAYERS
+   ========================================================= */
+
+.depth-01 {
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(255,255,255,.055) 0%,
+            rgba(201,166,90,.025) 20%,
+            rgba(8,12,24,.025) 42%,
+            transparent 72%
+        );
+
+    z-index: 1;
+
+}
+
+
+.depth-02 {
+
+    inset: -20%;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 45%,
+            rgba(24,58,96,.16) 0%,
+            rgba(8,18,32,.08) 34%,
+            transparent 70%
+        );
+
+    filter: blur(42px);
+
+    opacity: .72;
+
+    z-index: 2;
+
+}
+
+
+.depth-03 {
+
+    inset: -25%;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 52%,
+            rgba(201,166,90,.08) 0%,
+            rgba(201,166,90,.025) 22%,
+            transparent 64%
+        );
+
+    filter: blur(60px);
+
+    opacity: .58;
+
+    z-index: 3;
+
+}
+
+
+/* =========================================================
+   04.04 — CENTRAL RADIATION FIELD
+   ========================================================= */
+
+.home-radiation-field {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: min(82vw, 1100px);
+    aspect-ratio: 1;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    mix-blend-mode: screen;
+
+}
+
+
+/* =========================================================
+   04.05 — RADIATION CORE
+   ========================================================= */
+
+.radiation-01 {
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.095) 0%,
+            rgba(201,166,90,.065) 8%,
+            rgba(201,166,90,.025) 22%,
+            transparent 62%
+        );
+
+    filter: blur(4px);
+
+    opacity: .82;
+
+}
+
+
+.radiation-02 {
+
+    width: min(105vw, 1450px);
+
+    background:
+        radial-gradient(
+            circle,
+            transparent 0%,
+            rgba(23,70,112,.055) 30%,
+            rgba(23,70,112,.025) 45%,
+            transparent 70%
+        );
+
+    filter: blur(14px);
+
+    opacity: .72;
+
+}
+
+
+.radiation-03 {
+
+    width: min(125vw, 1700px);
+
+    background:
+        conic-gradient(
+            from 0deg,
+            rgba(201,166,90,.00),
+            rgba(201,166,90,.035),
+            rgba(23,104,170,.025),
+            rgba(201,166,90,.00),
+            rgba(201,166,90,.028),
+            rgba(201,166,90,.00)
+        );
+
+    filter: blur(18px);
+
+    opacity: .55;
+
+}
+
+
+/* =========================================================
+   04.06 — LARGE ATMOSPHERIC ORBITAL RINGS
+   ========================================================= */
+
+.home-master-orbit {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    border:
+        1px solid
+        rgba(201,166,90,.10);
+
+    box-shadow:
+        0 0 30px rgba(201,166,90,.025),
+        inset 0 0 30px rgba(23,104,170,.018);
+
+    transform:
+        translate(-50%, -50%);
+
+    mix-blend-mode: screen;
+
+}
+
+
+/* =========================================================
+   04.07 — MASTER ORBIT SCALE
+   ========================================================= */
+
+.master-orbit-01 {
+
+    width: 52%;
+    height: 25%;
+
+    border-color:
+        rgba(201,166,90,.12);
+
+}
+
+
+.master-orbit-02 {
+
+    width: 72%;
+    height: 34%;
+
+    border-color:
+        rgba(255,255,255,.055);
+
+}
+
+
+.master-orbit-03 {
+
+    width: 96%;
+    height: 45%;
+
+    border-color:
+        rgba(23,104,170,.075);
+
+}
+
+
+.master-orbit-04 {
+
+    width: 128%;
+    height: 60%;
+
+    border-color:
+        rgba(201,166,90,.045);
+
+}
+
+
+/* =========================================================
+   04.08 — ENERGY RAY FIELD
+   ========================================================= */
+
+.home-energy-ray {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 1px;
+
+    height: 62%;
+
+    transform-origin:
+        center center;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(255,255,255,.035),
+            rgba(201,166,90,.12),
+            rgba(23,104,170,.045),
+            transparent
+        );
+
+    filter: blur(.4px);
+
+    opacity: .45;
+
+    mix-blend-mode: screen;
+
+}
+
+
+/* =========================================================
+   04.09 — RAY GEOMETRY
+   ========================================================= */
+
+.ray-01 {
+    transform:
+        translate(-50%, -50%)
+        rotate(0deg);
+}
+
+.ray-02 {
+    transform:
+        translate(-50%, -50%)
+        rotate(22deg);
+}
+
+.ray-03 {
+    transform:
+        translate(-50%, -50%)
+        rotate(47deg);
+}
+
+.ray-04 {
+    transform:
+        translate(-50%, -50%)
+        rotate(71deg);
+}
+
+.ray-05 {
+    transform:
+        translate(-50%, -50%)
+        rotate(103deg);
+}
+
+.ray-06 {
+    transform:
+        translate(-50%, -50%)
+        rotate(137deg);
+}
+
+.ray-07 {
+    transform:
+        translate(-50%, -50%)
+        rotate(162deg);
+}
+
+.ray-08 {
+    transform:
+        translate(-50%, -50%)
+        rotate(201deg);
+}
+
+
+/* =========================================================
+   04.10 — SECONDARY ENERGY NETWORK
+   ========================================================= */
+
+.home-energy-link {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 46%;
+    height: 1px;
+
+    transform-origin: left center;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(201,166,90,.00),
+            rgba(201,166,90,.055),
+            rgba(255,255,255,.035),
+            rgba(23,104,170,.045),
+            transparent
+        );
+
+    opacity: .45;
+
+    mix-blend-mode: screen;
+
+}
+
+
+/* =========================================================
+   04.11 — NETWORK GEOMETRY
+   ========================================================= */
+
+.link-01 {
+    transform:
+        rotate(14deg);
+}
+
+.link-02 {
+    transform:
+        rotate(52deg);
+}
+
+.link-03 {
+    transform:
+        rotate(89deg);
+}
+
+.link-04 {
+    transform:
+        rotate(126deg);
+}
+
+.link-05 {
+    transform:
+        rotate(163deg);
+}
+
+.link-06 {
+    transform:
+        rotate(205deg);
+}
+
+
+/* =========================================================
+   04.12 — PARTICLE FIELD
+   ========================================================= */
+
+.home-particle-field {
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   04.13 — PARTICLE BASE
+   ========================================================= */
+
+.home-particle {
+
+    position: absolute;
+
+    width: 2px;
+    height: 2px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.72);
+
+    box-shadow:
+        0 0 7px rgba(255,255,255,.28);
+
+    opacity: .42;
+
+    transform:
+        translate3d(0,0,0);
+
+}
+
+
+/* =========================================================
+   04.14 — PARTICLE DISTRIBUTION
+   ========================================================= */
+
+.p-01 { left: 12%; top: 18%; }
+.p-02 { left: 21%; top: 63%; }
+.p-03 { left: 31%; top: 27%; }
+.p-04 { left: 39%; top: 76%; }
+.p-05 { left: 47%; top: 13%; }
+.p-06 { left: 54%; top: 84%; }
+.p-07 { left: 61%; top: 24%; }
+.p-08 { left: 68%; top: 68%; }
+.p-09 { left: 76%; top: 19%; }
+.p-10 { left: 84%; top: 55%; }
+.p-11 { left: 17%; top: 42%; }
+.p-12 { left: 27%; top: 86%; }
+.p-13 { left: 36%; top: 51%; }
+.p-14 { left: 44%; top: 34%; }
+.p-15 { left: 57%; top: 47%; }
+.p-16 { left: 65%; top: 79%; }
+.p-17 { left: 73%; top: 37%; }
+.p-18 { left: 81%; top: 73%; }
+.p-19 { left: 89%; top: 31%; }
+.p-20 { left: 93%; top: 82%; }
+
+
+/* =========================================================
+   END — PHASE 04
+   ========================================================= */
+
+/* =========================================================
+   ARS HERITAGE GROUP — HOME
+   PHASE 05 — ORBITAL NAVIGATION SYSTEM
+   =========================================================
+   
+   OWNER:
+   .ars-orbit
+   .orbit-core
+   .orbit-core-energy
+   .orbit-inner
+   .orbit-outer
+   .orbit-item
+   .orbit-link
+
+   ARCHITECTURE:
+   1 CENTRAL CORE
+   +
+   6 INNER NODES
+   +
+   7 OUTER NODES
+   =
+   14 DIMENSIONS
+
+   RESPONSIBILITY:
+   - Orbital geometry
+   - Node positioning
+   - Orbit radius
+   - Orbit rotation
+   - Counter rotation
+   - Depth
+   - Responsive orbital composition
+
+   NOT OWNED HERE:
+   - Node Energy
+   - Core Energy
+   - Home Atmospheric Energy
+   - Card Systems
+   - Energy Bridge
+
+   ========================================================= */
+
+
+/* =========================================================
+   05.01 — ORBITAL MASTER STAGE
+   ========================================================= */
+
+.ars-orbit {
+    --orbit-core-size: clamp(190px, 15vw, 270px);
+
+    --orbit-inner-radius: clamp(260px, 24vw, 410px);
+    --orbit-outer-radius: clamp(430px, 38vw, 650px);
+
+    --orbit-inner-node-size: clamp(82px, 7vw, 120px);
+    --orbit-outer-node-size: clamp(72px, 6vw, 108px);
+
+    --orbit-perspective: 1600px;
+
+    position: relative;
+
+    width: min(
+        100%,
+        calc(
+            var(--orbit-outer-radius) * 2
+            + var(--orbit-outer-node-size) * 2
+        )
+    );
+
+    height: min(
+        100%,
+        calc(
+            var(--orbit-outer-radius) * 2
+            + var(--orbit-outer-node-size) * 2
+        )
+    );
+
+    min-width: 760px;
+    min-height: 760px;
+
+    margin-inline: auto;
+
+    display: grid;
+    place-items: center;
+
+    isolation: isolate;
+
+    perspective: var(--orbit-perspective);
+
+    transform-style: preserve-3d;
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   05.02 — CENTRAL ORBITAL CORE
+   ========================================================= */
+
+.orbit-core {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: var(--orbit-core-size);
+    height: var(--orbit-core-size);
+
+    transform:
+        translate3d(-50%, -50%, 120px);
+
+    display: grid;
+    place-items: center;
+
+    isolation: isolate;
+
+    z-index: 50;
+
+    transform-style: preserve-3d;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    will-change: transform;
+}
+
+
+/* =========================================================
+   05.03 — CORE INTERNAL IMAGE
+   ========================================================= */
+
+.orbit-core img {
+    position: relative;
+
+    width: 72%;
+    height: 72%;
+
+    object-fit: contain;
+
+    display: block;
+
+    z-index: 5;
+
+    user-select: none;
+    -webkit-user-drag: none;
+
+    transform: translateZ(30px);
+
+    transition:
+        transform 700ms cubic-bezier(.16, 1, .3, 1);
+}
+
+
+/* =========================================================
+   05.04 — CORE HOVER GEOMETRY
+   ========================================================= */
+
+.orbit-core:hover img {
+    transform:
+        translateZ(48px)
+        scale(1.045);
+}
+
+
+/* =========================================================
+   05.05 — INNER ORBIT
+   ========================================================= */
+
+.orbit-inner {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: calc(
+        var(--orbit-inner-radius) * 2
+    );
+
+    height: calc(
+        var(--orbit-inner-radius) * 2
+    );
+
+    transform:
+        translate3d(-50%, -50%, 35px);
+
+    border-radius: 50%;
+
+    transform-style: preserve-3d;
+
+    z-index: 30;
+
+    pointer-events: none;
+
+    animation:
+        ars-home-inner-orbit
+        42s
+        linear
+        infinite;
+
+    will-change: transform;
+}
+
+
+/* =========================================================
+   05.06 — OUTER ORBIT
+   ========================================================= */
+
+.orbit-outer {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: calc(
+        var(--orbit-outer-radius) * 2
+    );
+
+    height: calc(
+        var(--orbit-outer-radius) * 2
+    );
+
+    transform:
+        translate3d(-50%, -50%, 0);
+
+    border-radius: 50%;
+
+    transform-style: preserve-3d;
+
+    z-index: 20;
+
+    pointer-events: none;
+
+    animation:
+        ars-home-outer-orbit
+        68s
+        linear
+        infinite reverse;
+
+    will-change: transform;
+}
+
+
+/* =========================================================
+   05.07 — UNIVERSAL ORBIT NODE
+   ========================================================= */
+
+.orbit-item {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    display: grid;
+    place-items: center;
+
+    transform-style: preserve-3d;
+
+    pointer-events: auto;
+
+    z-index: 1;
+
+    will-change: transform;
+}
+
+
+/* =========================================================
+   05.08 — INNER NODE GEOMETRY
+   6 NODES
+   ========================================================= */
+
+.orbit-inner .orbit-item {
+    width: var(--orbit-inner-node-size);
+    height: var(--orbit-inner-node-size);
+
+    margin:
+        calc(var(--orbit-inner-node-size) / -2);
+
+    transform:
+        rotate(var(--node-angle))
+        translateX(var(--orbit-inner-radius))
+        rotate(calc(var(--node-angle) * -1));
+}
+
+
+/* =========================================================
+   05.09 — INNER NODE ANGLES
+   ========================================================= */
+
+.orbit-inner .orbit-1 {
+    --node-angle: 0deg;
+}
+
+.orbit-inner .orbit-2 {
+    --node-angle: 60deg;
+}
+
+.orbit-inner .orbit-3 {
+    --node-angle: 120deg;
+}
+
+.orbit-inner .orbit-4 {
+    --node-angle: 180deg;
+}
+
+.orbit-inner .orbit-5 {
+    --node-angle: 240deg;
+}
+
+.orbit-inner .orbit-6 {
+    --node-angle: 300deg;
+}
+
+
+/* =========================================================
+   05.10 — OUTER NODE GEOMETRY
+   7 NODES
+   ========================================================= */
+
+.orbit-outer .orbit-item {
+    width: var(--orbit-outer-node-size);
+    height: var(--orbit-outer-node-size);
+
+    margin:
+        calc(var(--orbit-outer-node-size) / -2);
+
+    transform:
+        rotate(var(--node-angle))
+        translateX(var(--orbit-outer-radius))
+        rotate(calc(var(--node-angle) * -1));
+}
+
+
+/* =========================================================
+   05.11 — OUTER NODE ANGLES
+   7-NODE GEOMETRY
+   ========================================================= */
+
+.orbit-outer .orbit-7 {
+    --node-angle: 0deg;
+}
+
+.orbit-outer .orbit-8 {
+    --node-angle: 51.428571deg;
+}
+
+.orbit-outer .orbit-9 {
+    --node-angle: 102.857142deg;
+}
+
+.orbit-outer .orbit-10 {
+    --node-angle: 154.285713deg;
+}
+
+.orbit-outer .orbit-11 {
+    --node-angle: 205.714284deg;
+}
+
+.orbit-outer .orbit-12 {
+    --node-angle: 257.142855deg;
+}
+
+.orbit-outer .orbit-13 {
+    --node-angle: 308.571426deg;
+}
+
+
+/* =========================================================
+   05.12 — ORBIT LINK
+   ========================================================= */
+
+.orbit-link {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    text-decoration: none;
+
+    transform-style: preserve-3d;
+
+    overflow: visible;
+
+    cursor: pointer;
+
+    transition:
+        transform 650ms cubic-bezier(.16, 1, .3, 1);
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   05.13 — ORBIT LINK HOVER
+   ========================================================= */
+
+.orbit-item:hover .orbit-link {
+    transform:
+        translateZ(35px)
+        scale(1.09);
+}
+
+
+/* =========================================================
+   05.14 — ORBIT LINK IMAGE
+   ========================================================= */
+
+.orbit-link img {
+    position: relative;
+
+    width: 78%;
+    height: 78%;
+
+    object-fit: contain;
+
+    display: block;
+
+    transform:
+        translateZ(18px);
+
+    user-select: none;
+    -webkit-user-drag: none;
+
+    transition:
+        transform 650ms cubic-bezier(.16, 1, .3, 1);
+}
+
+
+/* =========================================================
+   05.15 — NODE HOVER IMAGE
+   ========================================================= */
+
+.orbit-item:hover .orbit-link img {
+    transform:
+        translateZ(30px)
+        scale(1.035);
+}
+
+
+/* =========================================================
+   05.16 — DEPTH HIERARCHY
+   ========================================================= */
+
+.orbit-inner .orbit-item:nth-child(1),
+.orbit-inner .orbit-item:nth-child(3),
+.orbit-inner .orbit-item:nth-child(5) {
+    z-index: 3;
+}
+
+.orbit-inner .orbit-item:nth-child(2),
+.orbit-inner .orbit-item:nth-child(4),
+.orbit-inner .orbit-item:nth-child(6) {
+    z-index: 2;
+}
+
+
+.orbit-outer .orbit-item:nth-child(1),
+.orbit-outer .orbit-item:nth-child(3),
+.orbit-outer .orbit-item:nth-child(5),
+.orbit-outer .orbit-item:nth-child(7) {
+    z-index: 3;
+}
+
+.orbit-outer .orbit-item:nth-child(2),
+.orbit-outer .orbit-item:nth-child(4),
+.orbit-outer .orbit-item:nth-child(6) {
+    z-index: 2;
+}
+
+
+/* =========================================================
+   05.17 — ORBIT ROTATION
+   ========================================================= */
+
+@keyframes ars-home-inner-orbit {
+
+    from {
+        transform:
+            translate3d(-50%, -50%, 35px)
+            rotateZ(0deg);
+    }
+
+    to {
+        transform:
+            translate3d(-50%, -50%, 35px)
+            rotateZ(360deg);
+    }
+}
+
+
+@keyframes ars-home-outer-orbit {
+
+    from {
+        transform:
+            translate3d(-50%, -50%, 0)
+            rotateZ(0deg);
+    }
+
+    to {
+        transform:
+            translate3d(-50%, -50%, 0)
+            rotateZ(360deg);
+    }
+}
+
+
+/* =========================================================
+   05.18 — NODE ORIENTATION PRESERVATION
+   ========================================================= */
+
+.orbit-inner .orbit-item,
+.orbit-outer .orbit-item {
+    backface-visibility: hidden;
+}
+
+
+/* =========================================================
+   05.19 — ORBITAL INTERACTION STATE
+   ========================================================= */
+
+.orbit-item.is-active {
+    z-index: 100;
+}
+
+.orbit-item.is-active .orbit-link {
+    transform:
+        translateZ(48px)
+        scale(1.12);
+}
+
+
+/* =========================================================
+   05.20 — CORE INTERACTION STATE
+   ========================================================= */
+
+.orbit-core.core-hover {
+    z-index: 120;
+}
+
+.orbit-core.core-selected {
+    z-index: 130;
+}
+
+
+/* =========================================================
+   05.21 — HERO ORBITAL RESPONSIVE
+   LARGE TABLET
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .ars-orbit {
+        --orbit-inner-radius: 235px;
+        --orbit-outer-radius: 365px;
+
+        --orbit-core-size: 190px;
+
+        --orbit-inner-node-size: 78px;
+        --orbit-outer-node-size: 70px;
+
+        min-width: 690px;
+        min-height: 690px;
+    }
+
+}
+
+
+/* =========================================================
+   05.22 — TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .ars-orbit {
+        --orbit-inner-radius: 205px;
+        --orbit-outer-radius: 315px;
+
+        --orbit-core-size: 170px;
+
+        --orbit-inner-node-size: 72px;
+        --orbit-outer-node-size: 64px;
+
+        min-width: 600px;
+        min-height: 600px;
+    }
+
+}
+
+
+/* =========================================================
+   05.23 — MOBILE ORBITAL COMPOSITION
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .ars-orbit {
+        --orbit-inner-radius: 145px;
+        --orbit-outer-radius: 225px;
+
+        --orbit-core-size: 135px;
+
+        --orbit-inner-node-size: 58px;
+        --orbit-outer-node-size: 52px;
+
+        min-width: 450px;
+        min-height: 450px;
+
+        transform:
+            scale(.92);
+
+        transform-origin: center center;
+    }
+
+    .orbit-core img {
+        width: 70%;
+        height: 70%;
+    }
+
+    .orbit-link img {
+        width: 76%;
+        height: 76%;
+    }
+
+}
+
+
+/* =========================================================
+   05.24 — SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 520px) {
+
+    .ars-orbit {
+        --orbit-inner-radius: 118px;
+        --orbit-outer-radius: 184px;
+
+        --orbit-core-size: 112px;
+
+        --orbit-inner-node-size: 48px;
+        --orbit-outer-node-size: 43px;
+
+        min-width: 368px;
+        min-height: 368px;
+
+        transform:
+            scale(.88);
+    }
+
+}
+
+
+/* =========================================================
+   05.25 — VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+    .ars-orbit {
+        --orbit-inner-radius: 105px;
+        --orbit-outer-radius: 164px;
+
+        --orbit-core-size: 100px;
+
+        --orbit-inner-node-size: 43px;
+        --orbit-outer-node-size: 39px;
+
+        min-width: 328px;
+        min-height: 328px;
+
+        transform:
+            scale(.84);
+    }
+
+}
+
+
+/* =========================================================
+   END — PHASE 05
+   ORBITAL NAVIGATION SYSTEM
+   ========================================================= */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
