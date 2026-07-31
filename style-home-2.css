@@ -1,7 +1,8 @@
 /* =========================================================
-   ARS HERITAGE GROUP
-   HOME PREMIUM V2
-   FILE: ars-home-premium-v2.css
+      ARS HERITAGE GROUP
+   HOME 2
+   FILE: style-home-.css
+
 
    =========================================================
    SECTION 01 — FOUNDATION & BRAND DNA
@@ -468,3 +469,1658 @@
    Selection
    Scroll Foundation
    Reduced Motion Foundation
+   ========================================================= */
+
+/* =========================================================
+   ARS HERITAGE GROUP
+   HOME 2
+   FILE: style-home-.css
+
+   =========================================================
+   SECTION 02 — GLOBAL COLOR / ATMOSPHERIC PALETTE
+   ۰۲ — سیستم رنگ، نور و اتمسفر Home 2
+
+   DEPENDENCY:
+   SECTION 01 — FOUNDATION & BRAND DNA
+
+   STATUS:
+   SECTION 02 — LOCKED 🔒
+
+   RULE:
+   This section defines atmospheric color behavior only.
+   No layout, orbit geometry, node positioning, card geometry,
+   typography system, or component duplication belongs here.
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   02.1 — HOME ATMOSPHERIC BASE
+   ۰۲.۱ — پایه اتمسفری Home
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2{
+
+    background:
+
+        radial-gradient(
+            ellipse 110% 70% at 50% 36%,
+            rgba(22,140,255,.075),
+            transparent 54%
+        ),
+
+        radial-gradient(
+            ellipse 90% 58% at 50% 48%,
+            rgba(228,185,95,.028),
+            transparent 58%
+        ),
+
+        linear-gradient(
+            180deg,
+            var(--ars-depth-black) 0%,
+            var(--ars-depth-1) 24%,
+            var(--ars-depth-2) 52%,
+            var(--ars-depth-3) 76%,
+            var(--ars-depth-black) 100%
+        );
+
+}
+
+
+/* ---------------------------------------------------------
+   02.2 — DEEP SPACE COLOR FIELD
+   ۰۲.۲ — میدان رنگی عمق فضا
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2::before{
+
+    content:
+        "";
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    z-index:
+        var(--ars-z-background);
+
+    background:
+
+        radial-gradient(
+            circle at 50% 32%,
+            rgba(22,140,255,.045),
+            transparent 23%
+        ),
+
+        radial-gradient(
+            circle at 16% 62%,
+            rgba(111,78,55,.026),
+            transparent 26%
+        ),
+
+        radial-gradient(
+            circle at 84% 68%,
+            rgba(185,48,48,.018),
+            transparent 24%
+        );
+
+    opacity:
+        .95;
+
+}
+
+
+/* ---------------------------------------------------------
+   02.3 — GOLDEN ATMOSPHERIC RESERVE
+   ۰۲.۳ — ذخیره نور طلایی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2::after{
+
+    content:
+        "";
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    z-index:
+        var(--ars-z-atmosphere);
+
+    background:
+
+        radial-gradient(
+            ellipse 46% 30% at 50% 40%,
+            rgba(228,185,95,.022),
+            transparent 72%
+        );
+
+    opacity:
+        .9;
+
+}
+
+
+/* ---------------------------------------------------------
+   02.4 — HERO ATMOSPHERIC COLOR FOUNDATION
+   ۰۲.۴ — پایه رنگی اتمسفر Hero
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero{
+
+    background:
+
+        radial-gradient(
+            ellipse 75% 68% at 50% 45%,
+            rgba(22,140,255,.055),
+            transparent 62%
+        ),
+
+        radial-gradient(
+            ellipse 55% 46% at 50% 48%,
+            rgba(228,185,95,.024),
+            transparent 70%
+        );
+
+}
+
+
+/* ---------------------------------------------------------
+   02.5 — BLUE ENERGY RESERVE
+   ۰۲.۵ — ذخیره انرژی آبی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .home-energy-universe{
+
+    --home-energy-blue:
+        rgba(22,140,255,.82);
+
+    --home-energy-blue-bright:
+        rgba(82,182,255,.96);
+
+    --home-energy-blue-soft:
+        rgba(22,140,255,.28);
+
+    --home-energy-gold:
+        rgba(228,185,95,.78);
+
+    --home-energy-gold-soft:
+        rgba(228,185,95,.24);
+
+}
+
+
+/* ---------------------------------------------------------
+   02.6 — ENERGY DEPTH COLOR
+   ۰۲.۶ — رنگ لایه‌های عمق انرژی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .home-energy-depth{
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(22,140,255,.032),
+            transparent 68%
+        );
+
+    pointer-events:
+        none;
+
+}
+
+
+/* ---------------------------------------------------------
+   02.7 — CENTRAL RADIATION COLOR
+   ۰۲.۷ — رنگ تابش هسته مرکزی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .home-radiation-field{
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(228,185,95,.055) 0%,
+            rgba(22,140,255,.035) 24%,
+            transparent 70%
+        );
+
+    pointer-events:
+        none;
+
+}
+
+
+/* ---------------------------------------------------------
+   02.8 — ENERGY RAY COLOR
+   ۰۲.۸ — رنگ خطوط انرژی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .home-energy-ray{
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(22,140,255,.22),
+            rgba(228,185,95,.18),
+            transparent
+        );
+
+    opacity:
+        .7;
+
+}
+
+
+/* ---------------------------------------------------------
+   02.9 — ENERGY LINK COLOR
+   ۰۲.۹ — رنگ شبکه ارتباط انرژی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .home-energy-link{
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(22,140,255,.34),
+            rgba(228,185,95,.22),
+            transparent
+        );
+
+    box-shadow:
+        0 0 16px
+        rgba(22,140,255,.12);
+
+}
+
+
+/* ---------------------------------------------------------
+   02.10 — PARTICLE COLOR FIELD
+   ۰۲.۱۰ — میدان رنگی ذرات
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .home-particle{
+
+    background:
+        var(--ars-white);
+
+    box-shadow:
+        0 0 8px
+        rgba(82,182,255,.55),
+
+        0 0 18px
+        rgba(22,140,255,.22);
+
+}
+
+
+/* ---------------------------------------------------------
+   02.11 — GOLDEN CORE COLOR RESERVE
+   ۰۲.۱۱ — ذخیره رنگ طلایی هسته
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-core-energy{
+
+    --core-gold:
+        rgba(228,185,95,.95);
+
+    --core-gold-soft:
+        rgba(228,185,95,.42);
+
+    --core-blue:
+        rgba(22,140,255,.82);
+
+}
+
+
+/* ---------------------------------------------------------
+   02.12 — CORE ENERGY HALO
+   ۰۲.۱۲ — هاله انرژی هسته
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .core-energy-halo{
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(228,185,95,.16) 0%,
+            rgba(22,140,255,.08) 26%,
+            transparent 68%
+        );
+
+}
+
+
+/* ---------------------------------------------------------
+   02.13 — CORE RING COLOR
+   ۰۲.۱۳ — رنگ حلقه‌های هسته
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .core-energy-ring{
+
+    border-color:
+        rgba(228,185,95,.52);
+
+    box-shadow:
+
+        0 0 18px
+        rgba(228,185,95,.16),
+
+        inset 0 0 18px
+        rgba(22,140,255,.08);
+
+}
+
+
+/* ---------------------------------------------------------
+   02.14 — NODE ENERGY COLOR
+   ۰۲.۱۴ — رنگ انرژی نودها
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-node-energy{
+
+    --node-blue:
+        rgba(22,140,255,.9);
+
+    --node-blue-bright:
+        rgba(82,182,255,.96);
+
+    --node-gold:
+        rgba(228,185,95,.82);
+
+}
+
+
+/* ---------------------------------------------------------
+   02.15 — NODE HALO
+   ۰۲.۱۵ — هاله نود
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .node-energy-halo{
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(22,140,255,.13),
+            rgba(228,185,95,.035) 34%,
+            transparent 70%
+        );
+
+}
+
+
+/* ---------------------------------------------------------
+   02.16 — NODE RINGS
+   ۰۲.۱۶ — حلقه‌های انرژی نود
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .node-energy-ring{
+
+    border-color:
+        rgba(82,182,255,.34);
+
+    box-shadow:
+
+        0 0 12px
+        rgba(22,140,255,.12),
+
+        inset 0 0 12px
+        rgba(228,185,95,.045);
+
+}
+
+
+/* ---------------------------------------------------------
+   02.17 — NODE PULSE
+   ۰۲.۱۷ — پالس انرژی نود
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .node-energy-pulse{
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(228,185,95,.72),
+            rgba(22,140,255,.28) 32%,
+            transparent 72%
+        );
+
+}
+
+
+/* ---------------------------------------------------------
+   02.18 — NODE SPARKS
+   ۰۲.۱۸ — جرقه‌های انرژی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .node-energy-spark{
+
+    background:
+        var(--ars-gold-bright);
+
+    box-shadow:
+
+        0 0 7px
+        rgba(228,185,95,.72),
+
+        0 0 16px
+        rgba(22,140,255,.24);
+
+}
+
+
+/* ---------------------------------------------------------
+   02.19 — GOLDEN REVEAL COLOR STATE
+   ۰۲.۱۹ — حالت طلایی انتخاب
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-item.is-active{
+
+    --active-energy:
+        rgba(228,185,95,.95);
+
+}
+
+
+.ars-home-premium-v2 .orbit-item.is-active
+.orbit-node-energy{
+
+    filter:
+        brightness(1.22);
+
+}
+
+
+/* ---------------------------------------------------------
+   02.20 — CORE REACTION COLOR
+   ۰۲.۲۰ — واکنش هسته به نود فعال
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-core.core-reacting
+.orbit-core-energy{
+
+    filter:
+        brightness(1.18);
+
+}
+
+
+/* ---------------------------------------------------------
+   02.21 — CORE FOCUS COLOR STATE
+   ۰۲.۲۱ — حالت تمرکز هسته
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-core.core-hover
+.orbit-core-energy{
+
+    filter:
+        brightness(1.26);
+
+}
+
+
+/* ---------------------------------------------------------
+   02.22 — COLOR SAFETY
+   ۰۲.۲۲ — جلوگیری از خروج نور از محدوده
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .home-energy-universe,
+.ars-home-premium-v2 .orbit-core-energy,
+.ars-home-premium-v2 .orbit-node-energy{
+
+    pointer-events:
+        none;
+
+}
+
+
+/* =========================================================
+   SECTION 02 — COMPLETE
+   SECTION 02 — LOCKED 🔒
+
+   Atmospheric Base
+   Deep Space Field
+   Golden Reserve
+   Hero Atmosphere
+   Energy Palette
+   Radiation Colors
+   Ray / Link Colors
+   Particle Colors
+   Core Colors
+   Node Colors
+   Golden Reveal States
+   Core Reaction States
+   ========================================================= */
+/* =========================================================
+   ARS HERITAGE GROUP
+   HOME 2
+   FILE: style-home-.css
+
+   =========================================================
+   SECTION 03 — GLOBAL RESET & STRUCTURAL NORMALIZATION
+   ۰۳ — ریست و نرمال‌سازی ساختاری Home 2
+
+   DEPENDENCY:
+   SECTION 01 — FOUNDATION & BRAND DNA
+   SECTION 02 — GLOBAL COLOR / ATMOSPHERIC PALETTE
+
+   STATUS:
+   SECTION 03 — LOCKED 🔒
+
+   PURPOSE:
+   Normalize the actual HTML structure of the Home page
+   before component and visual systems are built.
+
+   IMPORTANT:
+   No orbit geometry.
+   No node positioning.
+   No card system.
+   No animation system.
+   No duplicated Premium selectors.
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   03.1 — DOCUMENT BODY NORMALIZATION
+   ۰۳.۱ — نرمال‌سازی Body
+   --------------------------------------------------------- */
+
+html,
+body{
+
+    margin:
+        0;
+
+    padding:
+        0;
+
+    width:
+        100%;
+
+    min-height:
+        100%;
+
+}
+
+
+/* ---------------------------------------------------------
+   03.2 — BODY SURFACE
+   ۰۳.۲ — سطح اصلی صفحه
+   --------------------------------------------------------- */
+
+body{
+
+    position:
+        relative;
+
+    min-width:
+        320px;
+
+    background:
+        var(--ars-depth-black);
+
+    color:
+        var(--ars-white);
+
+}
+
+
+/* ---------------------------------------------------------
+   03.3 — PAGE ROOT
+   ۰۳.۳ — ریشه Home 2
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2{
+
+    display:
+        block;
+
+    min-height:
+        100vh;
+
+}
+
+
+/* ---------------------------------------------------------
+   03.4 — SECTION NORMALIZATION
+   ۰۳.۴ — نرمال‌سازی Sectionها
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 section{
+
+    position:
+        relative;
+
+    width:
+        100%;
+
+    margin:
+        0;
+
+}
+
+
+/* ---------------------------------------------------------
+   03.5 — CONTAINER FOUNDATION
+   ۰۳.۵ — پایه Container
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .container{
+
+    position:
+        relative;
+
+    width:
+        min(
+            100% - 48px,
+            1440px
+        );
+
+    margin:
+        0 auto;
+
+}
+
+
+/* ---------------------------------------------------------
+   03.6 — CONTAINER INNER SAFETY
+   ۰۳.۶ — ایمنی داخلی Container
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .container{
+
+    min-width:
+        0;
+
+}
+
+
+/* ---------------------------------------------------------
+   03.7 — HEADING NORMALIZATION
+   ۰۳.۷ — نرمال‌سازی Headingها
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 h1,
+.ars-home-premium-v2 h2,
+.ars-home-premium-v2 h3,
+.ars-home-premium-v2 h4,
+.ars-home-premium-v2 h5,
+.ars-home-premium-v2 h6{
+
+    margin:
+        0;
+
+    padding:
+        0;
+
+}
+
+
+/* ---------------------------------------------------------
+   03.8 — PARAGRAPH NORMALIZATION
+   ۰۳.۸ — نرمال‌سازی Paragraph
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 p{
+
+    margin:
+        0;
+
+}
+
+
+/* ---------------------------------------------------------
+   03.9 — LIST NORMALIZATION
+   ۰۳.۹ — نرمال‌سازی List
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 ul,
+.ars-home-premium-v2 ol{
+
+    margin:
+        0;
+
+    padding:
+        0;
+
+    list-style:
+        none;
+
+}
+
+
+/* ---------------------------------------------------------
+   03.10 — BUTTON NORMALIZATION
+   ۰۳.۱۰ — نرمال‌سازی Button
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 button{
+
+    margin:
+        0;
+
+    padding:
+        0;
+
+    border:
+        0;
+
+    font:
+        inherit;
+
+    color:
+        inherit;
+
+    background:
+        transparent;
+
+}
+
+
+/* ---------------------------------------------------------
+   03.11 — IMAGE INTERACTION SAFETY
+   ۰۳.۱۱ — ایمنی تصاویر
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 img{
+
+    user-select:
+        none;
+
+    -webkit-user-drag:
+        none;
+
+}
+
+
+/* ---------------------------------------------------------
+   03.12 — LINK INTERACTION SAFETY
+   ۰۳.۱۲ — ایمنی لینک‌ها
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 a{
+
+    cursor:
+        pointer;
+
+}
+
+
+/* ---------------------------------------------------------
+   03.13 — GLOBAL FOCUS FOUNDATION
+   ۰۳.۱۳ — پایه Focus
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 :focus-visible{
+
+    outline:
+        2px solid
+        var(--ars-gold-bright);
+
+    outline-offset:
+        4px;
+
+}
+
+
+/* ---------------------------------------------------------
+   03.14 — DECORATIVE ELEMENT SAFETY
+   ۰۳.۱۴ — جلوگیری از دخالت عناصر تزئینی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2
+.home-energy-universe,
+.ars-home-premium-v2
+.home-energy-universe *,
+.ars-home-premium-v2
+.orbit-core-energy,
+.ars-home-premium-v2
+.orbit-node-energy{
+
+    user-select:
+        none;
+
+}
+
+
+/* ---------------------------------------------------------
+   03.15 — SECTION CONTENT ISOLATION
+   ۰۳.۱۵ — ایزولاسیون محتوای Sectionها
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2
+.section-header,
+.ars-home-premium-v2
+.about-content,
+.ars-home-premium-v2
+.philosophy-content,
+.ars-home-premium-v2
+.future-grid,
+.ars-home-premium-v2
+.principles-grid,
+.ars-home-premium-v2
+.ars-core-grid{
+
+    position:
+        relative;
+
+    min-width:
+        0;
+
+}
+
+
+/* ---------------------------------------------------------
+   03.16 — OVERFLOW SAFETY
+   ۰۳.۱۶ — کنترل Overflow
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2
+.section-header,
+.ars-home-premium-v2
+.about-content,
+.ars-home-premium-v2
+.philosophy-content,
+.ars-home-premium-v2
+.future-grid,
+.ars-home-premium-v2
+.principles-grid{
+
+    overflow:
+        visible;
+
+}
+
+
+/* ---------------------------------------------------------
+   03.17 — MOBILE CONTAINER NORMALIZATION
+   ۰۳.۱۷ — Container موبایل
+   --------------------------------------------------------- */
+
+@media (max-width: 768px){
+
+    .ars-home-premium-v2 .container{
+
+        width:
+            min(
+                calc(100% - 32px),
+                1440px
+            );
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   03.18 — SMALL MOBILE NORMALIZATION
+   ۰۳.۱۸ — موبایل کوچک
+   --------------------------------------------------------- */
+
+@media (max-width: 420px){
+
+    .ars-home-premium-v2 .container{
+
+        width:
+            calc(100% - 24px);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   03.19 — REDUCED MOTION STRUCTURAL SAFETY
+   ۰۳.۱۹ — ایمنی ساختاری Reduced Motion
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce){
+
+    .ars-home-premium-v2 *,
+    .ars-home-premium-v2 *::before,
+    .ars-home-premium-v2 *::after{
+
+        scroll-behavior:
+            auto;
+
+    }
+
+}
+
+
+/* =========================================================
+   SECTION 03 — COMPLETE
+   SECTION 03 — LOCKED 🔒
+
+   Body Normalization
+   Root Normalization
+   Section Foundation
+   Container Foundation
+   Typography Reset
+   List Reset
+   Button Reset
+   Image Safety
+   Link Safety
+   Focus Foundation
+   Decorative Isolation
+   Content Isolation
+   Overflow Safety
+   Mobile Foundation
+   Reduced Motion Safety
+
+   NO ORBIT CODE
+   NO NODE CODE
+   NO CARD CODE
+   NO ANIMATION CODE
+   ========================================================= */
+/* =========================================================
+   ARS HERITAGE GROUP
+   HOME 2
+   FILE: style-home-.css
+
+   =========================================================
+   SECTION 04 — TYPOGRAPHY & SECTION HEADER SYSTEM
+   ۰۴ — سیستم تایپوگرافی و هدر سکشن‌ها
+
+   DEPENDENCY:
+   SECTION 01 — FOUNDATION & BRAND DNA
+   SECTION 02 — GLOBAL COLOR / ATMOSPHERIC PALETTE
+   SECTION 03 — GLOBAL STRUCTURAL NORMALIZATION
+
+   STATUS:
+   SECTION 04 — LOCKED 🔒
+
+   RULE:
+   This section controls typography hierarchy and the
+   shared visual language of section headers only.
+
+   NO ORBIT GEOMETRY
+   NO NODE GEOMETRY
+   NO CARD GEOMETRY
+   NO HERO GEOMETRY
+   NO DUPLICATED ANIMATION SYSTEM
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   04.1 — GLOBAL TYPOGRAPHY BASE
+   ۰۴.۱ — پایه تایپوگرافی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2{
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        16px;
+
+    line-height:
+        1.7;
+
+    letter-spacing:
+        .01em;
+
+}
+
+
+/* ---------------------------------------------------------
+   04.2 — BODY TEXT
+   ۰۴.۲ — متن اصلی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 p{
+
+    font-size:
+        1rem;
+
+    line-height:
+        1.85;
+
+    font-weight:
+        400;
+
+    color:
+        var(--ars-white-soft);
+
+}
+
+
+/* ---------------------------------------------------------
+   04.3 — PRIMARY HEADING FOUNDATION
+   ۰۴.۳ — پایه تیترها
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 h1,
+.ars-home-premium-v2 h2,
+.ars-home-premium-v2 h3{
+
+    color:
+        var(--ars-white);
+
+    font-weight:
+        600;
+
+    line-height:
+        1.12;
+
+    letter-spacing:
+        -.025em;
+
+}
+
+
+/* ---------------------------------------------------------
+   04.4 — SECTION HEADER
+   ۰۴.۴ — ساختار هدر سکشن
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .section-header{
+
+    width:
+        min(
+            100%,
+            920px
+        );
+
+    margin:
+        0 auto 72px;
+
+    text-align:
+        center;
+
+}
+
+
+/* ---------------------------------------------------------
+   04.5 — SECTION LABEL
+   ۰۴.۵ — برچسب سکشن
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .section-label{
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-height:
+        30px;
+
+    margin:
+        0 0 18px;
+
+    padding:
+        7px 16px;
+
+    border:
+        1px solid
+        var(--ars-border-gold);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(7,17,31,.52);
+
+    color:
+        var(--ars-gold-bright);
+
+    font-size:
+        .72rem;
+
+    font-weight:
+        600;
+
+    line-height:
+        1;
+
+    letter-spacing:
+        .18em;
+
+    text-transform:
+        uppercase;
+
+    box-shadow:
+        var(--ars-glow-gold);
+
+}
+
+
+/* ---------------------------------------------------------
+   04.6 — SECTION HEADER TITLE
+   ۰۴.۶ — عنوان اصلی سکشن
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .section-header h2{
+
+    max-width:
+        900px;
+
+    margin:
+        0 auto;
+
+    font-size:
+        clamp(
+            2.25rem,
+            4vw,
+            4.4rem
+        );
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        -.045em;
+
+    text-shadow:
+        0 0 34px
+        rgba(22,140,255,.08);
+
+}
+
+
+/* ---------------------------------------------------------
+   04.7 — SECTION HEADER DESCRIPTION
+   ۰۴.۷ — توضیح هدر سکشن
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .section-header > p{
+
+    max-width:
+        760px;
+
+    margin:
+        28px auto 0;
+
+    color:
+        var(--ars-white-muted);
+
+    font-size:
+        clamp(
+            .95rem,
+            1.35vw,
+            1.08rem
+        );
+
+    line-height:
+        1.9;
+
+}
+
+
+/* ---------------------------------------------------------
+   04.8 — SECTION TITLE GOLD ACCENT
+   ۰۴.۸ — تأکید طلایی عنوان
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .section-header h2::after{
+
+    content:
+        "";
+
+    display:
+        block;
+
+    width:
+        84px;
+
+    height:
+        1px;
+
+    margin:
+        28px auto 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--ars-gold-bright),
+            transparent
+        );
+
+    box-shadow:
+        0 0 14px
+        rgba(228,185,95,.22);
+
+}
+
+
+/* ---------------------------------------------------------
+   04.9 — ABOUT / PHILOSOPHY TEXT HEADINGS
+   ۰۴.۹ — تیترهای محتوایی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .about-text h3,
+.ars-home-premium-v2 .philosophy-text h3,
+.ars-home-premium-v2 .principle-card h3,
+.ars-home-premium-v2 .future-item h3{
+
+    font-size:
+        clamp(
+            1.35rem,
+            2vw,
+            1.85rem
+        );
+
+    letter-spacing:
+        -.025em;
+
+}
+
+
+/* ---------------------------------------------------------
+   04.10 — QUOTE TYPOGRAPHY
+   ۰۴.۱۰ — تایپوگرافی نقل‌قول
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 blockquote{
+
+    margin:
+        32px 0 0;
+
+    padding:
+        0 0 0 22px;
+
+    border-left:
+        2px solid
+        var(--ars-gold-bright);
+
+    color:
+        var(--ars-white);
+
+    font-size:
+        clamp(
+            1.15rem,
+            2vw,
+            1.55rem
+        );
+
+    font-weight:
+        500;
+
+    line-height:
+        1.55;
+
+    letter-spacing:
+        -.015em;
+
+    text-shadow:
+        0 0 24px
+        rgba(228,185,95,.08);
+
+}
+
+
+/* ---------------------------------------------------------
+   04.11 — HERO LABEL TYPOGRAPHY
+   ۰۴.۱۱ — تایپوگرافی برچسب Hero
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-label{
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    color:
+        var(--ars-gold-bright);
+
+    font-size:
+        .76rem;
+
+    font-weight:
+        600;
+
+    line-height:
+        1.2;
+
+    letter-spacing:
+        .22em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+/* ---------------------------------------------------------
+   04.12 — HERO PARAGRAPH TYPOGRAPHY
+   ۰۴.۱۲ — متن Hero
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-content > p{
+
+    color:
+        var(--ars-white-soft);
+
+    font-size:
+        clamp(
+            1rem,
+            1.35vw,
+            1.18rem
+        );
+
+    line-height:
+        1.9;
+
+}
+
+
+/* ---------------------------------------------------------
+   04.13 — CARD TYPOGRAPHY RESERVATION
+   ۰۴.۱۳ — پایه تایپوگرافی کارت‌ها
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .ars-card-category{
+
+    color:
+        var(--ars-gold-bright);
+
+    font-size:
+        .68rem;
+
+    font-weight:
+        600;
+
+    line-height:
+        1.2;
+
+    letter-spacing:
+        .16em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+/* ---------------------------------------------------------
+   04.14 — CARD TITLE
+   ۰۴.۱۴ — عنوان کارت
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .ars-card-content h3{
+
+    margin:
+        10px 0 0;
+
+    color:
+        var(--ars-white);
+
+    font-size:
+        clamp(
+            1.25rem,
+            1.8vw,
+            1.7rem
+        );
+
+    font-weight:
+        600;
+
+    line-height:
+        1.2;
+
+}
+
+
+/* ---------------------------------------------------------
+   04.15 — CARD DESCRIPTION
+   ۰۴.۱۵ — توضیح کارت
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .ars-card-content p{
+
+    margin:
+        14px 0 0;
+
+    color:
+        var(--ars-white-muted);
+
+    font-size:
+        .94rem;
+
+    line-height:
+        1.75;
+
+}
+
+
+/* ---------------------------------------------------------
+   04.16 — CARD ACTION
+   ۰۴.۱۶ — متن اقدام کارت
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .ars-card-action{
+
+    display:
+        inline-block;
+
+    margin-top:
+        20px;
+
+    color:
+        var(--ars-gold-bright);
+
+    font-size:
+        .78rem;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        .04em;
+
+}
+
+
+/* ---------------------------------------------------------
+   04.17 — FOOTER TYPOGRAPHY
+   ۰۴.۱۷ — تایپوگرافی Footer
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .main-footer h2{
+
+    color:
+        var(--ars-white);
+
+    font-size:
+        clamp(
+            1.6rem,
+            2.6vw,
+            2.6rem
+        );
+
+}
+
+
+.ars-home-premium-v2 .main-footer p{
+
+    color:
+        var(--ars-white-muted);
+
+}
+
+
+/* ---------------------------------------------------------
+   04.18 — MOBILE TYPOGRAPHY
+   ۰۴.۱۸ — تایپوگرافی موبایل
+   --------------------------------------------------------- */
+
+@media (max-width: 768px){
+
+    .ars-home-premium-v2 .section-header{
+
+        margin-bottom:
+            48px;
+
+    }
+
+    .ars-home-premium-v2 .section-header h2{
+
+        font-size:
+            clamp(
+                2rem,
+                8vw,
+                3rem
+            );
+
+        letter-spacing:
+            -.035em;
+
+    }
+
+    .ars-home-premium-v2 .section-header > p{
+
+        margin-top:
+            20px;
+
+        font-size:
+            .95rem;
+
+        line-height:
+            1.8;
+
+    }
+
+    .ars-home-premium-v2 .section-label{
+
+        font-size:
+            .64rem;
+
+        letter-spacing:
+            .14em;
+
+    }
+
+    .ars-home-premium-v2 blockquote{
+
+        padding-left:
+            16px;
+
+        font-size:
+            1.05rem;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   04.19 — SMALL MOBILE TYPOGRAPHY
+   ۰۴.۱۹ — موبایل کوچک
+   --------------------------------------------------------- */
+
+@media (max-width: 420px){
+
+    .ars-home-premium-v2{
+
+        font-size:
+            15px;
+
+    }
+
+    .ars-home-premium-v2 .section-header h2{
+
+        font-size:
+            1.85rem;
+
+    }
+
+    .ars-home-premium-v2 .section-label{
+
+        max-width:
+            100%;
+
+        text-align:
+            center;
+
+        letter-spacing:
+            .11em;
+
+    }
+
+}
+
+
+/* =========================================================
+   SECTION 04 — COMPLETE
+   SECTION 04 — LOCKED 🔒
+
+   Typography Foundation
+   Section Header
+   Section Label
+   Section Titles
+   Section Description
+   Hero Typography
+   Card Typography
+   Quote Typography
+   Footer Typography
+   Responsive Typography
+
+   NO ORBIT CODE
+   NO NODE CODE
+   NO CARD GEOMETRY
+   NO DUPLICATED ANIMATION
+   ========================================================= */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
