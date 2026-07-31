@@ -471,3 +471,8902 @@
 
    🔒 V2 FOUNDATION LOCK
    ========================================================= */
+/* =========================================================
+   ARS HERITAGE GROUP
+   HOME PAGE
+   PREMIUM V2
+   FILE: style-home-2.css
+
+   =========================================================
+   SECTION 02 — GLOBAL ATMOSPHERE & DEEP SPACE
+   ۰۲ — فضای کیهانی و اتمسفر جهانی
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   02.1 — ATMOSPHERE ROOT
+   ۰۲.۱ — ریشه سیستم اتمسفر
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .ars-home-atmosphere{
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    overflow:
+        hidden;
+
+    pointer-events:
+        none;
+
+    z-index:
+        var(--ars-z-atmosphere);
+
+}
+
+
+/* ---------------------------------------------------------
+   02.2 — DEEP SPACE FIELD
+   ۰۲.۲ — میدان Deep Space
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .ars-home-depth{
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    pointer-events:
+        none;
+
+    z-index:
+        var(--ars-z-background);
+
+    background:
+
+        radial-gradient(
+            ellipse at 50% 38%,
+            rgba(11,23,40,.34),
+            transparent 34%
+        ),
+
+        radial-gradient(
+            ellipse at 16% 24%,
+            rgba(22,140,255,.020),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            ellipse at 84% 72%,
+            rgba(228,185,95,.014),
+            transparent 32%
+        );
+
+}
+
+
+/* ---------------------------------------------------------
+   02.3 — PRIMARY BLUE ATMOSPHERE
+   ۰۲.۳ — اتمسفر اصلی آبی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .ars-atmosphere-blue{
+
+    position:
+        absolute;
+
+    width:
+        72vw;
+
+    height:
+        72vw;
+
+    max-width:
+        1100px;
+
+    max-height:
+        1100px;
+
+    left:
+        50%;
+
+    top:
+        40%;
+
+    border-radius:
+        50%;
+
+    transform:
+        translate3d(-50%,-50%,0);
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(22,140,255,.070) 0%,
+            rgba(22,140,255,.034) 28%,
+            rgba(22,140,255,.010) 50%,
+            transparent 72%
+        );
+
+    filter:
+        blur(22px);
+
+    opacity:
+        .82;
+
+    pointer-events:
+        none;
+
+    will-change:
+        transform,
+        opacity;
+
+    animation:
+        arsV2BlueAtmosphereBreath
+        18s
+        var(--ars-ease-soft)
+        infinite
+        alternate;
+
+}
+
+
+/* ---------------------------------------------------------
+   02.4 — PRIMARY GOLD ATMOSPHERE
+   ۰۲.۴ — اتمسفر اصلی طلایی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .ars-atmosphere-gold{
+
+    position:
+        absolute;
+
+    width:
+        64vw;
+
+    height:
+        64vw;
+
+    max-width:
+        980px;
+
+    max-height:
+        980px;
+
+    left:
+        50%;
+
+    top:
+        54%;
+
+    border-radius:
+        50%;
+
+    transform:
+        translate3d(-50%,-50%,0);
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(228,185,95,.034) 0%,
+            rgba(228,185,95,.017) 30%,
+            rgba(228,185,95,.006) 52%,
+            transparent 72%
+        );
+
+    filter:
+        blur(28px);
+
+    opacity:
+        .76;
+
+    pointer-events:
+        none;
+
+    will-change:
+        transform,
+        opacity;
+
+    animation:
+        arsV2GoldAtmosphereBreath
+        24s
+        var(--ars-ease-soft)
+        infinite
+        alternate;
+
+}
+
+
+/* ---------------------------------------------------------
+   02.5 — SECONDARY BLUE FIELD
+   ۰۲.۵ — میدان ثانویه آبی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .ars-atmosphere-blue-secondary{
+
+    position:
+        absolute;
+
+    width:
+        48vw;
+
+    height:
+        48vw;
+
+    max-width:
+        720px;
+
+    max-height:
+        720px;
+
+    left:
+        18%;
+
+    top:
+        22%;
+
+    border-radius:
+        50%;
+
+    transform:
+        translate3d(-50%,-50%,0);
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(82,182,255,.025),
+            transparent 70%
+        );
+
+    filter:
+        blur(34px);
+
+    opacity:
+        .52;
+
+    pointer-events:
+        none;
+
+    will-change:
+        transform,
+        opacity;
+
+    animation:
+        arsV2SecondaryBlueDrift
+        30s
+        var(--ars-ease-soft)
+        infinite
+        alternate;
+
+}
+
+
+/* ---------------------------------------------------------
+   02.6 — SECONDARY GOLD FIELD
+   ۰۲.۶ — میدان ثانویه طلایی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .ars-atmosphere-gold-secondary{
+
+    position:
+        absolute;
+
+    width:
+        42vw;
+
+    height:
+        42vw;
+
+    max-width:
+        640px;
+
+    max-height:
+        640px;
+
+    left:
+        82%;
+
+    top:
+        76%;
+
+    border-radius:
+        50%;
+
+    transform:
+        translate3d(-50%,-50%,0);
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(228,185,95,.016),
+            transparent 70%
+        );
+
+    filter:
+        blur(38px);
+
+    opacity:
+        .44;
+
+    pointer-events:
+        none;
+
+    will-change:
+        transform,
+        opacity;
+
+    animation:
+        arsV2SecondaryGoldDrift
+        34s
+        var(--ars-ease-soft)
+        infinite
+        alternate;
+
+}
+
+
+/* ---------------------------------------------------------
+   02.7 — ATMOSPHERIC CORE HALO
+   ۰۲.۷ — هاله مرکزی اتمسفر
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .ars-atmosphere-halo{
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        43%;
+
+    width:
+        42vw;
+
+    height:
+        42vw;
+
+    max-width:
+        680px;
+
+    max-height:
+        680px;
+
+    border-radius:
+        50%;
+
+    transform:
+        translate3d(-50%,-50%,0);
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(247,244,237,.018) 0%,
+            rgba(22,140,255,.025) 20%,
+            rgba(228,185,95,.010) 42%,
+            transparent 70%
+        );
+
+    filter:
+        blur(18px);
+
+    opacity:
+        .68;
+
+    pointer-events:
+        none;
+
+    will-change:
+        transform,
+        opacity;
+
+    animation:
+        arsV2AtmosphereHaloBreath
+        14s
+        var(--ars-ease-soft)
+        infinite
+        alternate;
+
+}
+
+
+/* ---------------------------------------------------------
+   02.8 — COSMIC VIGNETTE
+   ۰۲.۸ — وینیت کیهانی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .ars-atmosphere-vignette{
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+
+        radial-gradient(
+            ellipse at center,
+            transparent 30%,
+            rgba(0,0,0,.10) 58%,
+            rgba(0,0,0,.42) 100%
+        );
+
+    opacity:
+        .84;
+
+    pointer-events:
+        none;
+
+}
+
+
+/* ---------------------------------------------------------
+   02.9 — ATMOSPHERIC DEPTH BAND
+   ۰۲.۹ — نوار عمق اتمسفریک
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .ars-atmosphere-depth-band{
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        100%;
+
+    height:
+        46%;
+
+    transform:
+        translate3d(-50%,-50%,0);
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(22,140,255,.006) 18%,
+            rgba(22,140,255,.016) 50%,
+            rgba(228,185,95,.006) 82%,
+            transparent 100%
+        );
+
+    filter:
+        blur(18px);
+
+    opacity:
+        .56;
+
+    pointer-events:
+        none;
+
+    will-change:
+        transform,
+        opacity;
+
+    animation:
+        arsV2AtmosphereDepthBreath
+        20s
+        var(--ars-ease-soft)
+        infinite
+        alternate;
+
+}
+
+
+/* =========================================================
+   SECTION 02 — STAR FIELD
+   سیستم میدان ستاره‌ای
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   02.10 — PRIMARY STAR FIELD
+   ۰۲.۱۰ — میدان ستاره‌ای اصلی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .ars-home-stars{
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    z-index:
+        var(--ars-z-stars);
+
+    opacity:
+        .70;
+
+}
+
+
+/* ---------------------------------------------------------
+   02.11 — PRIMARY STAR LAYER
+   ۰۲.۱۱ — لایه اصلی ستاره‌ها
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .ars-home-stars::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background-image:
+
+        radial-gradient(
+            circle at 12% 18%,
+            rgba(247,244,237,.42) 0 1px,
+            transparent 1.5px
+        ),
+
+        radial-gradient(
+            circle at 28% 32%,
+            rgba(82,182,255,.30) 0 1px,
+            transparent 1.5px
+        ),
+
+        radial-gradient(
+            circle at 46% 14%,
+            rgba(247,244,237,.26) 0 1px,
+            transparent 1.5px
+        ),
+
+        radial-gradient(
+            circle at 68% 24%,
+            rgba(82,182,255,.32) 0 1px,
+            transparent 1.5px
+        ),
+
+        radial-gradient(
+            circle at 86% 16%,
+            rgba(247,244,237,.30) 0 1px,
+            transparent 1.5px
+        ),
+
+        radial-gradient(
+            circle at 18% 68%,
+            rgba(247,244,237,.24) 0 1px,
+            transparent 1.5px
+        ),
+
+        radial-gradient(
+            circle at 42% 82%,
+            rgba(82,182,255,.26) 0 1px,
+            transparent 1.5px
+        ),
+
+        radial-gradient(
+            circle at 76% 72%,
+            rgba(247,244,237,.28) 0 1px,
+            transparent 1.5px
+        );
+
+    background-size:
+        100% 100%;
+
+    opacity:
+        .70;
+
+    animation:
+        arsV2StarFieldBreath
+        16s
+        var(--ars-ease-soft)
+        infinite
+        alternate;
+
+}
+
+
+/* ---------------------------------------------------------
+   02.12 — SECONDARY STAR FIELD
+   ۰۲.۱۲ — میدان ستاره‌ای ثانویه
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .ars-home-stars-secondary{
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    z-index:
+        var(--ars-z-stars);
+
+    opacity:
+        .46;
+
+}
+
+
+/* ---------------------------------------------------------
+   02.13 — SECONDARY STAR LAYER
+   ۰۲.۱۳ — لایه دوم ستاره‌ها
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .ars-home-stars-secondary::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        -2%;
+
+    background-image:
+
+        radial-gradient(
+            circle at 8% 42%,
+            rgba(82,182,255,.22) 0 1px,
+            transparent 1.5px
+        ),
+
+        radial-gradient(
+            circle at 36% 58%,
+            rgba(247,244,237,.20) 0 1px,
+            transparent 1.5px
+        ),
+
+        radial-gradient(
+            circle at 58% 38%,
+            rgba(228,185,95,.22) 0 1px,
+            transparent 1.5px
+        ),
+
+        radial-gradient(
+            circle at 92% 48%,
+            rgba(82,182,255,.20) 0 1px,
+            transparent 1.5px
+        ),
+
+        radial-gradient(
+            circle at 72% 88%,
+            rgba(247,244,237,.16) 0 1px,
+            transparent 1.5px
+        );
+
+    background-size:
+        100% 100%;
+
+    opacity:
+        .64;
+
+    animation:
+        arsV2SecondaryStarsDrift
+        28s
+        var(--ars-ease-soft)
+        infinite
+        alternate;
+
+}
+
+
+/* ---------------------------------------------------------
+   02.14 — BLUE MICRO-STARS
+   ۰۲.۱۴ — ستاره‌های ریز آبی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .ars-home-stars-blue{
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    z-index:
+        var(--ars-z-stars);
+
+    opacity:
+        .34;
+
+}
+
+
+/* ---------------------------------------------------------
+   02.15 — BLUE MICRO-STAR LAYER
+   ۰۲.۱۵ — لایه ستاره‌های ریز آبی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .ars-home-stars-blue::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background-image:
+
+        radial-gradient(
+            circle at 20% 12%,
+            rgba(82,182,255,.24) 0 1px,
+            transparent 1.4px
+        ),
+
+        radial-gradient(
+            circle at 52% 26%,
+            rgba(22,140,255,.22) 0 1px,
+            transparent 1.4px
+        ),
+
+        radial-gradient(
+            circle at 80% 38%,
+            rgba(82,182,255,.20) 0 1px,
+            transparent 1.4px
+        ),
+
+        radial-gradient(
+            circle at 34% 76%,
+            rgba(22,140,255,.20) 0 1px,
+            transparent 1.4px
+        ),
+
+        radial-gradient(
+            circle at 68% 84%,
+            rgba(82,182,255,.18) 0 1px,
+            transparent 1.4px
+        );
+
+    background-size:
+        100% 100%;
+
+    opacity:
+        .62;
+
+    animation:
+        arsV2BlueStarsDrift
+        32s
+        var(--ars-ease-soft)
+        infinite
+        alternate;
+
+}
+
+
+/* =========================================================
+   SECTION 02 — MOTION ENGINE
+   موتور حرکت اتمسفر
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   02.16 — BLUE ATMOSPHERE BREATH
+   ۰۲.۱۶ — تنفس اتمسفر آبی
+   --------------------------------------------------------- */
+
+@keyframes arsV2BlueAtmosphereBreath{
+
+    0%{
+
+        transform:
+            translate3d(-50%,-50%,0)
+            scale(.96);
+
+        opacity:
+            .68;
+
+    }
+
+    100%{
+
+        transform:
+            translate3d(-50%,-50%,0)
+            scale(1.04);
+
+        opacity:
+            .88;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   02.17 — GOLD ATMOSPHERE BREATH
+   ۰۲.۱۷ — تنفس اتمسفر طلایی
+   --------------------------------------------------------- */
+
+@keyframes arsV2GoldAtmosphereBreath{
+
+    0%{
+
+        transform:
+            translate3d(-50%,-50%,0)
+            scale(.97);
+
+        opacity:
+            .62;
+
+    }
+
+    100%{
+
+        transform:
+            translate3d(-50%,-50%,0)
+            scale(1.03);
+
+        opacity:
+            .82;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   02.18 — SECONDARY BLUE DRIFT
+   ۰۲.۱۸ — حرکت میدان ثانویه آبی
+   --------------------------------------------------------- */
+
+@keyframes arsV2SecondaryBlueDrift{
+
+    0%{
+
+        transform:
+            translate3d(-50%,-50%,0)
+            scale(.94);
+
+        opacity:
+            .40;
+
+    }
+
+    100%{
+
+        transform:
+            translate3d(-45%,-54%,0)
+            scale(1.06);
+
+        opacity:
+            .58;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   02.19 — SECONDARY GOLD DRIFT
+   ۰۲.۱۹ — حرکت میدان ثانویه طلایی
+   --------------------------------------------------------- */
+
+@keyframes arsV2SecondaryGoldDrift{
+
+    0%{
+
+        transform:
+            translate3d(-50%,-50%,0)
+            scale(.95);
+
+        opacity:
+            .32;
+
+    }
+
+    100%{
+
+        transform:
+            translate3d(-55%,-46%,0)
+            scale(1.05);
+
+        opacity:
+            .50;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   02.20 — ATMOSPHERE HALO BREATH
+   ۰۲.۲۰ — تنفس هاله مرکزی
+   --------------------------------------------------------- */
+
+@keyframes arsV2AtmosphereHaloBreath{
+
+    0%{
+
+        transform:
+            translate3d(-50%,-50%,0)
+            scale(.96);
+
+        opacity:
+            .50;
+
+    }
+
+    100%{
+
+        transform:
+            translate3d(-50%,-50%,0)
+            scale(1.04);
+
+        opacity:
+            .76;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   02.21 — ATMOSPHERE DEPTH BREATH
+   ۰۲.۲۱ — تنفس عمق اتمسفر
+   --------------------------------------------------------- */
+
+@keyframes arsV2AtmosphereDepthBreath{
+
+    0%{
+
+        transform:
+            translate3d(-50%,-50%,0)
+            scale(.985);
+
+        opacity:
+            .42;
+
+    }
+
+    100%{
+
+        transform:
+            translate3d(-50%,-50%,0)
+            scale(1.015);
+
+        opacity:
+            .64;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   02.22 — STAR FIELD BREATH
+   ۰۲.۲۲ — تنفس میدان ستاره‌ای
+   --------------------------------------------------------- */
+
+@keyframes arsV2StarFieldBreath{
+
+    0%{
+
+        opacity:
+            .48;
+
+    }
+
+    100%{
+
+        opacity:
+            .76;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   02.23 — SECONDARY STAR DRIFT
+   ۰۲.۲۳ — حرکت میدان ستاره‌ای ثانویه
+   --------------------------------------------------------- */
+
+@keyframes arsV2SecondaryStarsDrift{
+
+    0%{
+
+        transform:
+            translate3d(0,0,0);
+
+        opacity:
+            .34;
+
+    }
+
+    100%{
+
+        transform:
+            translate3d(.35%,-.25%,0);
+
+        opacity:
+            .56;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   02.24 — BLUE STAR DRIFT
+   ۰۲.۲۴ — حرکت ستاره‌های آبی
+   --------------------------------------------------------- */
+
+@keyframes arsV2BlueStarsDrift{
+
+    0%{
+
+        transform:
+            translate3d(0,0,0);
+
+        opacity:
+            .28;
+
+    }
+
+    100%{
+
+        transform:
+            translate3d(-.30%,.22%,0);
+
+        opacity:
+            .48;
+
+    }
+
+}
+
+
+/* =========================================================
+   SECTION 02 — RESPONSIVE ATMOSPHERE
+   اتمسفر Responsive
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   02.25 — LARGE DESKTOP CALIBRATION
+   ۰۲.۲۵ — تنظیم نمایشگرهای بزرگ
+   --------------------------------------------------------- */
+
+@media (min-width:1900px){
+
+    .ars-home-premium-v2 .ars-atmosphere-blue{
+
+        width:
+            66vw;
+
+        height:
+            66vw;
+
+    }
+
+    .ars-home-premium-v2 .ars-atmosphere-gold{
+
+        width:
+            58vw;
+
+        height:
+            58vw;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   02.26 — TABLET CALIBRATION
+   ۰۲.۲۶ — تنظیم Tablet
+   --------------------------------------------------------- */
+
+@media (max-width:900px){
+
+    .ars-home-premium-v2 .ars-atmosphere-blue{
+
+        width:
+            92vw;
+
+        height:
+            92vw;
+
+    }
+
+    .ars-home-premium-v2 .ars-atmosphere-gold{
+
+        width:
+            82vw;
+
+        height:
+            82vw;
+
+    }
+
+    .ars-home-premium-v2 .ars-atmosphere-blue-secondary{
+
+        width:
+            58vw;
+
+        height:
+            58vw;
+
+    }
+
+    .ars-home-premium-v2 .ars-atmosphere-gold-secondary{
+
+        width:
+            52vw;
+
+        height:
+            52vw;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   02.27 — MOBILE CALIBRATION
+   ۰۲.۲۷ — تنظیم Mobile
+   --------------------------------------------------------- */
+
+@media (max-width:700px){
+
+    .ars-home-premium-v2 .ars-home-atmosphere{
+
+        min-height:
+            100%;
+
+    }
+
+    .ars-home-premium-v2 .ars-atmosphere-blue{
+
+        width:
+            120vw;
+
+        height:
+            120vw;
+
+        filter:
+            blur(26px);
+
+        opacity:
+            .70;
+
+    }
+
+    .ars-home-premium-v2 .ars-atmosphere-gold{
+
+        width:
+            108vw;
+
+        height:
+            108vw;
+
+        filter:
+            blur(30px);
+
+        opacity:
+            .62;
+
+    }
+
+    .ars-home-premium-v2 .ars-atmosphere-blue-secondary{
+
+        width:
+            74vw;
+
+        height:
+            74vw;
+
+        opacity:
+            .40;
+
+    }
+
+    .ars-home-premium-v2 .ars-atmosphere-gold-secondary{
+
+        width:
+            68vw;
+
+        height:
+            68vw;
+
+        opacity:
+            .32;
+
+    }
+
+    .ars-home-premium-v2 .ars-home-stars{
+
+        opacity:
+            .56;
+
+    }
+
+    .ars-home-premium-v2 .ars-home-stars-secondary{
+
+        opacity:
+            .32;
+
+    }
+
+    .ars-home-premium-v2 .ars-home-stars-blue{
+
+        opacity:
+            .24;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   02.28 — SMALL MOBILE CALIBRATION
+   ۰۲.۲۸ — تنظیم Small Mobile
+   --------------------------------------------------------- */
+
+@media (max-width:480px){
+
+    .ars-home-premium-v2 .ars-atmosphere-blue{
+
+        width:
+            142vw;
+
+        height:
+            142vw;
+
+        filter:
+            blur(28px);
+
+    }
+
+    .ars-home-premium-v2 .ars-atmosphere-gold{
+
+        width:
+            126vw;
+
+        height:
+            126vw;
+
+        filter:
+            blur(32px);
+
+    }
+
+    .ars-home-premium-v2 .ars-atmosphere-blue-secondary,
+    .ars-home-premium-v2 .ars-atmosphere-gold-secondary{
+
+        opacity:
+            .25;
+
+    }
+
+    .ars-home-premium-v2 .ars-home-stars-secondary{
+
+        opacity:
+            .22;
+
+    }
+
+    .ars-home-premium-v2 .ars-home-stars-blue{
+
+        opacity:
+            .18;
+
+    }
+
+}
+
+
+/* =========================================================
+   SECTION 02 — ACCESSIBILITY / SAFE MOTION
+   دسترسی و حرکت ایمن
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce){
+
+    .ars-home-premium-v2 .ars-atmosphere-blue,
+    .ars-home-premium-v2 .ars-atmosphere-gold,
+    .ars-home-premium-v2 .ars-atmosphere-blue-secondary,
+    .ars-home-premium-v2 .ars-atmosphere-gold-secondary,
+    .ars-home-premium-v2 .ars-atmosphere-halo,
+    .ars-home-premium-v2 .ars-atmosphere-depth-band,
+    .ars-home-premium-v2 .ars-home-stars,
+    .ars-home-premium-v2 .ars-home-stars-secondary,
+    .ars-home-premium-v2 .ars-home-stars-blue{
+
+        animation:
+            none;
+
+    }
+
+}
+
+
+/* =========================================================
+   SECTION 02 — COMPLETE
+   SECTION 02 — LOCKED 🔒
+
+   Deep Space
+   Cosmic Depth
+   Primary Blue Atmosphere
+   Primary Gold Atmosphere
+   Secondary Blue Field
+   Secondary Gold Field
+   Central Atmospheric Halo
+   Cosmic Vignette
+   Atmospheric Depth Band
+   Primary Star Field
+   Secondary Star Field
+   Blue Micro-Star Field
+   Premium Ambient Motion
+   Responsive Calibration
+   Reduced Motion
+
+   🔒 V2 ATMOSPHERE LOCK
+   ========================================================= */
+
+/* =========================================================
+   ARS HERITAGE GROUP
+   HOME PAGE
+   PREMIUM V2
+   FILE: style-home-2.css
+
+   =========================================================
+   SECTION 03 — HERO MASTER SPACE
+   ۰۳ — فضای اصلی و گسترده Hero
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   03.1 — HERO FOUNDATION
+   ۰۳.۱ — پایه Hero
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero{
+
+    position:
+        relative;
+
+    width:
+        100%;
+
+    min-height:
+        100vh;
+
+    margin:
+        0;
+
+    padding:
+        0;
+
+    overflow:
+        hidden;
+
+    isolation:
+        isolate;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    background:
+        transparent;
+
+}
+
+
+/* ---------------------------------------------------------
+   03.2 — EXTENDED HERO CANVAS
+   ۰۳.۲ — بوم افقی گسترده Hero
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        50%;
+
+    width:
+        200%;
+
+    height:
+        100%;
+
+    transform:
+        translate3d(-50%,0,0);
+
+    pointer-events:
+        none;
+
+    z-index:
+        var(--ars-z-background);
+
+    background:
+
+        radial-gradient(
+            ellipse at 50% 46%,
+            rgba(22,140,255,.028),
+            transparent 34%
+        ),
+
+        radial-gradient(
+            ellipse at 50% 54%,
+            rgba(228,185,95,.012),
+            transparent 48%
+        );
+
+}
+
+
+/* ---------------------------------------------------------
+   03.3 — HERO BACKGROUND
+   ۰۳.۳ — پس‌زمینه Hero
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-background{
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        50%;
+
+    width:
+        200%;
+
+    height:
+        100%;
+
+    transform:
+        translate3d(-50%,0,0);
+
+    pointer-events:
+        none;
+
+    z-index:
+        var(--ars-z-background);
+
+    background:
+
+        radial-gradient(
+            ellipse at 50% 42%,
+            rgba(22,140,255,.045),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            ellipse at 50% 58%,
+            rgba(228,185,95,.018),
+            transparent 42%
+        );
+
+}
+
+
+/* ---------------------------------------------------------
+   03.4 — HERO BACKGROUND DEPTH
+   ۰۳.۴ — عمق پس‌زمینه Hero
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-background::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+
+        radial-gradient(
+            ellipse at center,
+            transparent 24%,
+            rgba(0,0,0,.08) 56%,
+            rgba(0,0,0,.34) 100%
+        );
+
+    pointer-events:
+        none;
+
+}
+
+
+/* ---------------------------------------------------------
+   03.5 — HERO BACKGROUND LIGHT CORE
+   ۰۳.۵ — هسته نورانی پس‌زمینه
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-background::after{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        46%;
+
+    width:
+        min(72vw,1100px);
+
+    aspect-ratio:
+        1;
+
+    transform:
+        translate3d(-50%,-50%,0);
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(22,140,255,.032) 0%,
+            rgba(22,140,255,.014) 28%,
+            transparent 68%
+        );
+
+    filter:
+        blur(18px);
+
+    opacity:
+        .72;
+
+    pointer-events:
+        none;
+
+    will-change:
+        transform,
+        opacity;
+
+}
+
+
+/* ---------------------------------------------------------
+   03.6 — HERO STARS
+   ۰۳.۶ — ستاره‌های Hero
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-stars{
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        50%;
+
+    width:
+        200%;
+
+    height:
+        100%;
+
+    transform:
+        translate3d(-50%,0,0);
+
+    pointer-events:
+        none;
+
+    z-index:
+        var(--ars-z-stars);
+
+    opacity:
+        .74;
+
+}
+
+
+/* ---------------------------------------------------------
+   03.7 — HERO PRIMARY STAR FIELD
+   ۰۳.۷ — میدان اصلی ستاره‌ای Hero
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-stars::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background-image:
+
+        radial-gradient(
+            circle at 8% 24%,
+            rgba(247,244,237,.34) 0 1px,
+            transparent 1.5px
+        ),
+
+        radial-gradient(
+            circle at 19% 64%,
+            rgba(82,182,255,.24) 0 1px,
+            transparent 1.5px
+        ),
+
+        radial-gradient(
+            circle at 32% 18%,
+            rgba(247,244,237,.26) 0 1px,
+            transparent 1.5px
+        ),
+
+        radial-gradient(
+            circle at 47% 72%,
+            rgba(82,182,255,.28) 0 1px,
+            transparent 1.5px
+        ),
+
+        radial-gradient(
+            circle at 62% 20%,
+            rgba(247,244,237,.24) 0 1px,
+            transparent 1.5px
+        ),
+
+        radial-gradient(
+            circle at 78% 56%,
+            rgba(82,182,255,.25) 0 1px,
+            transparent 1.5px
+        ),
+
+        radial-gradient(
+            circle at 91% 30%,
+            rgba(247,244,237,.30) 0 1px,
+            transparent 1.5px
+        );
+
+    background-size:
+        100% 100%;
+
+    opacity:
+        .70;
+
+}
+
+
+/* ---------------------------------------------------------
+   03.8 — HERO SECONDARY STARS
+   ۰۳.۸ — میدان ثانویه ستاره‌ای Hero
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-stars-2{
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        50%;
+
+    width:
+        200%;
+
+    height:
+        100%;
+
+    transform:
+        translate3d(-50%,0,0);
+
+    pointer-events:
+        none;
+
+    z-index:
+        var(--ars-z-stars);
+
+    opacity:
+        .38;
+
+}
+
+
+/* ---------------------------------------------------------
+   03.9 — HERO SECONDARY STAR LAYER
+   ۰۳.۹ — لایه دوم ستاره‌ها
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-stars-2::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background-image:
+
+        radial-gradient(
+            circle at 14% 46%,
+            rgba(82,182,255,.18) 0 1px,
+            transparent 1.4px
+        ),
+
+        radial-gradient(
+            circle at 38% 38%,
+            rgba(228,185,95,.16) 0 1px,
+            transparent 1.4px
+        ),
+
+        radial-gradient(
+            circle at 58% 62%,
+            rgba(247,244,237,.18) 0 1px,
+            transparent 1.4px
+        ),
+
+        radial-gradient(
+            circle at 84% 42%,
+            rgba(82,182,255,.18) 0 1px,
+            transparent 1.4px
+        );
+
+    background-size:
+        100% 100%;
+
+    opacity:
+        .60;
+
+}
+
+
+/* ---------------------------------------------------------
+   03.10 — HERO WRAPPER
+   ۰۳.۱۰ — محفظه اصلی Hero
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-wrapper{
+
+    position:
+        relative;
+
+    z-index:
+        var(--ars-z-content);
+
+    width:
+        min(1800px, 94vw);
+
+    min-height:
+        100vh;
+
+    margin:
+        0 auto;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+}
+
+
+/* ---------------------------------------------------------
+   03.11 — HERO VISUAL FIELD
+   ۰۳.۱۱ — میدان بصری Hero
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-wrapper::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        180%;
+
+    height:
+        92%;
+
+    transform:
+        translate3d(-50%,-50%,0);
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            ellipse at center,
+            rgba(22,140,255,.018),
+            transparent 58%
+        );
+
+    pointer-events:
+        none;
+
+    z-index:
+        -1;
+
+}
+
+
+/* ---------------------------------------------------------
+   03.12 — HERO CENTER COMPOSITION
+   ۰۳.۱۲ — ترکیب مرکزی Hero
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-wrapper > *{
+
+    position:
+        relative;
+
+}
+
+
+/* ---------------------------------------------------------
+   03.13 — HERO CONTENT SAFETY
+   ۰۳.۱۳ — محافظت محتوای Hero
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-wrapper > :not(
+    .hero-background
+){
+
+    max-width:
+        100%;
+
+}
+
+
+/* ---------------------------------------------------------
+   03.14 — HERO EXTENDED COMPOSITION
+   ۰۳.۱۴ — ترکیب گسترده منظومه
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-wrapper{
+
+    container-type:
+        inline-size;
+
+}
+
+
+/* ---------------------------------------------------------
+   03.15 — HERO EDGE VIGNETTE
+   ۰۳.۱۵ — وینیت لبه‌های Hero
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-wrapper::after{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    background:
+
+        radial-gradient(
+            ellipse at center,
+            transparent 46%,
+            rgba(0,0,0,.12) 78%,
+            rgba(0,0,0,.30) 100%
+        );
+
+    z-index:
+        0;
+
+}
+
+
+/* =========================================================
+   SECTION 03 — HERO RESPONSIVE CALIBRATION
+   تنظیم Responsive فضای Hero
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   03.16 — LARGE DESKTOP
+   ۰۳.۱۶ — Desktop بزرگ
+   --------------------------------------------------------- */
+
+@media (min-width:1400px){
+
+    .ars-home-premium-v2 .hero-wrapper{
+
+        width:
+            min(1900px,94vw);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   03.17 — ULTRA-WIDE
+   ۰۳.۱۷ — نمایشگرهای Ultra-wide
+   --------------------------------------------------------- */
+
+@media (min-width:1900px){
+
+    .ars-home-premium-v2 .hero-wrapper{
+
+        width:
+            min(2200px,92vw);
+
+    }
+
+    .ars-home-premium-v2 .hero-background,
+    .ars-home-premium-v2 .hero-stars,
+    .ars-home-premium-v2 .hero-stars-2{
+
+        width:
+            200%;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   03.18 — TABLET
+   ۰۳.۱۸ — Tablet
+   --------------------------------------------------------- */
+
+@media (max-width:900px){
+
+    .ars-home-premium-v2 .hero{
+
+        min-height:
+            100vh;
+
+    }
+
+    .ars-home-premium-v2 .hero-wrapper{
+
+        width:
+            94vw;
+
+        min-height:
+            100vh;
+
+    }
+
+    .ars-home-premium-v2 .hero-background,
+    .ars-home-premium-v2 .hero-stars,
+    .ars-home-premium-v2 .hero-stars-2{
+
+        width:
+            180%;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   03.19 — MOBILE
+   ۰۳.۱۹ — Mobile
+   --------------------------------------------------------- */
+
+@media (max-width:700px){
+
+    .ars-home-premium-v2 .hero{
+
+        min-height:
+            100vh;
+
+    }
+
+    .ars-home-premium-v2 .hero-wrapper{
+
+        width:
+            96vw;
+
+        min-height:
+            100vh;
+
+    }
+
+    .ars-home-premium-v2 .hero-background,
+    .ars-home-premium-v2 .hero-stars,
+    .ars-home-premium-v2 .hero-stars-2{
+
+        width:
+            160%;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   03.20 — SMALL MOBILE
+   ۰۳.۲۰ — Small Mobile
+   --------------------------------------------------------- */
+
+@media (max-width:480px){
+
+    .ars-home-premium-v2 .hero-wrapper{
+
+        width:
+            97vw;
+
+    }
+
+    .ars-home-premium-v2 .hero-background,
+    .ars-home-premium-v2 .hero-stars,
+    .ars-home-premium-v2 .hero-stars-2{
+
+        width:
+            150%;
+
+    }
+
+}
+
+
+/* =========================================================
+   SECTION 03 — ACCESSIBILITY / SAFE MOTION
+   دسترسی و حرکت ایمن
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce){
+
+    .ars-home-premium-v2 .hero-background::after{
+
+        animation:
+            none;
+
+    }
+
+    .ars-home-premium-v2 .hero-stars,
+    .ars-home-premium-v2 .hero-stars-2{
+
+        animation:
+            none;
+
+    }
+
+}
+
+
+/* =========================================================
+   SECTION 03 — COMPLETE
+   SECTION 03 — LOCKED 🔒
+
+   Hero Foundation
+   Extended Hero Canvas
+   2× Visual Hero Architecture
+   Hero Background
+   Hero Depth
+   Hero Light Core
+   Hero Primary Stars
+   Hero Secondary Stars
+   Hero Wrapper
+   Extended Visual Field
+   Center Composition
+   Edge Vignette
+   Large Desktop Calibration
+   Ultra-wide Calibration
+   Tablet Calibration
+   Mobile Calibration
+   Small Mobile Calibration
+   Reduced Motion Safety
+
+   🔒 V2 HERO MASTER SPACE LOCK
+   ========================================================= */
+
+/* =========================================================
+   ARS HERITAGE GROUP
+   HOME PAGE
+   PREMIUM V2
+   FILE: style-home-2.css
+
+   =========================================================
+   SECTION 04 — CENTRAL CORE ARCHITECTURE
+   ۰۴ — معماری هسته مرکزی
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   04.1 — ORBIT MASTER CONTAINER
+   ۰۴.۱ — محفظه اصلی منظومه
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .ars-orbit{
+
+    position:
+        relative;
+
+    width:
+        min(82vw, 1180px);
+
+    aspect-ratio:
+        1 / 1;
+
+    margin:
+        0 auto;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    isolation:
+        isolate;
+
+    z-index:
+        var(--ars-z-orbit);
+
+    pointer-events:
+        none;
+
+}
+
+
+/* ---------------------------------------------------------
+   04.2 — ORBIT ATMOSPHERE
+   ۰۴.۲ — اتمسفر اطراف منظومه
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .ars-orbit::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        7%;
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(22,140,255,.045) 0%,
+            rgba(22,140,255,.018) 28%,
+            transparent 68%
+        );
+
+    filter:
+        blur(22px);
+
+    opacity:
+        .72;
+
+    pointer-events:
+        none;
+
+}
+
+
+/* ---------------------------------------------------------
+   04.3 — ORBIT DEPTH FIELD
+   ۰۴.۳ — میدان عمق منظومه
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .ars-orbit::after{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        14%;
+
+    border:
+        1px solid
+        rgba(22,140,255,.045);
+
+    border-radius:
+        50%;
+
+    box-shadow:
+        0 0 70px rgba(22,140,255,.035);
+
+    opacity:
+        .74;
+
+    pointer-events:
+        none;
+
+}
+
+
+/* =========================================================
+   SECTION 04 — CORE
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   04.4 — CORE MASTER
+   ۰۴.۴ — هسته مرکزی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-core{
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        clamp(170px, 17vw, 280px);
+
+    aspect-ratio:
+        1 / 1;
+
+    transform:
+        translate3d(-50%,-50%,0);
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    z-index:
+        var(--ars-z-core);
+
+    pointer-events:
+        auto;
+
+    isolation:
+        isolate;
+
+}
+
+
+/* ---------------------------------------------------------
+   04.5 — CORE OUTER ENERGY FIELD
+   ۰۴.۵ — میدان انرژی بیرونی Core
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-core::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        -18%;
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(22,140,255,.055) 0%,
+            rgba(22,140,255,.024) 32%,
+            rgba(228,185,95,.010) 48%,
+            transparent 72%
+        );
+
+    filter:
+        blur(16px);
+
+    opacity:
+        .82;
+
+    pointer-events:
+        none;
+
+    z-index:
+        -1;
+
+}
+
+
+/* ---------------------------------------------------------
+   04.6 — CORE RADIATION SHELL
+   ۰۴.۶ — پوسته تابشی Core
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-core .core-shell{
+
+    position:
+        absolute;
+
+    inset:
+        5%;
+
+    border-radius:
+        50%;
+
+    border:
+        1px solid
+        rgba(247,244,237,.10);
+
+    background:
+
+        radial-gradient(
+            circle at 48% 44%,
+            rgba(22,140,255,.095),
+            rgba(7,17,31,.64) 42%,
+            rgba(0,1,3,.92) 74%
+        );
+
+    box-shadow:
+        var(--ars-glow-blue);
+
+    transform:
+        translateZ(0);
+
+    pointer-events:
+        none;
+
+}
+
+
+/* ---------------------------------------------------------
+   04.7 — GOLDEN CORE RING
+   ۰۴.۷ — حلقه طلایی Core
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-core .core-ring{
+
+    position:
+        absolute;
+
+    inset:
+        1%;
+
+    border-radius:
+        50%;
+
+    border:
+        1px solid
+        rgba(228,185,95,.46);
+
+    box-shadow:
+        0 0 22px
+        rgba(228,185,95,.12);
+
+    pointer-events:
+        none;
+
+    z-index:
+        2;
+
+}
+
+
+/* ---------------------------------------------------------
+   04.8 — INNER ENERGY RING
+   ۰۴.۸ — حلقه انرژی داخلی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-core .core-ring-inner{
+
+    position:
+        absolute;
+
+    inset:
+        10%;
+
+    border-radius:
+        50%;
+
+    border:
+        1px solid
+        rgba(82,182,255,.30);
+
+    box-shadow:
+        inset 0 0 22px
+        rgba(22,140,255,.08);
+
+    pointer-events:
+        none;
+
+    z-index:
+        2;
+
+}
+
+
+/* ---------------------------------------------------------
+   04.9 — SECONDARY ENERGY RING
+   ۰۴.۹ — حلقه انرژی ثانویه
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-core .core-ring-secondary{
+
+    position:
+        absolute;
+
+    inset:
+        16%;
+
+    border-radius:
+        50%;
+
+    border:
+        1px solid
+        rgba(228,185,95,.16);
+
+    opacity:
+        .72;
+
+    pointer-events:
+        none;
+
+    z-index:
+        2;
+
+}
+
+
+/* ---------------------------------------------------------
+   04.10 — CORE ENERGY FIELD
+   ۰۴.۱۰ — میدان انرژی داخلی Core
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-core .core-energy{
+
+    position:
+        absolute;
+
+    inset:
+        22%;
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(82,182,255,.12),
+            rgba(22,140,255,.035) 38%,
+            transparent 72%
+        );
+
+    filter:
+        blur(7px);
+
+    opacity:
+        .86;
+
+    pointer-events:
+        none;
+
+    z-index:
+        3;
+
+}
+
+
+/* ---------------------------------------------------------
+   04.11 — CORE CONTENT LAYER
+   ۰۴.۱۱ — لایه محتوای Core
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-core .core-content{
+
+    position:
+        relative;
+
+    z-index:
+        5;
+
+    width:
+        54%;
+
+    aspect-ratio:
+        1 / 1;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(0,1,3,.58);
+
+    border:
+        1px solid
+        rgba(247,244,237,.08);
+
+    box-shadow:
+        inset 0 0 26px
+        rgba(22,140,255,.08),
+        0 0 24px
+        rgba(22,140,255,.08);
+
+    backdrop-filter:
+        blur(8px);
+
+    -webkit-backdrop-filter:
+        blur(8px);
+
+}
+
+
+/* ---------------------------------------------------------
+   04.12 — CORE LOGO
+   ۰۴.۱۲ — لوگوی مرکزی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-core .core-logo{
+
+    position:
+        relative;
+
+    width:
+        62%;
+
+    max-width:
+        120px;
+
+    height:
+        auto;
+
+    object-fit:
+        contain;
+
+    filter:
+        drop-shadow(
+            0 0 12px
+            rgba(247,244,237,.30)
+        )
+        drop-shadow(
+            0 0 24px
+            rgba(22,140,255,.18)
+        )
+        drop-shadow(
+            0 0 18px
+            rgba(228,185,95,.12)
+        );
+
+    z-index:
+        6;
+
+}
+
+
+/* ---------------------------------------------------------
+   04.13 — CORE LIGHT POINT
+   ۰۴.۱۳ — نقطه نور مرکزی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-core .core-light{
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        7%;
+
+    aspect-ratio:
+        1 / 1;
+
+    transform:
+        translate3d(-50%,-50%,0);
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(247,244,237,.92);
+
+    box-shadow:
+        0 0 12px
+        rgba(247,244,237,.42),
+        0 0 28px
+        rgba(22,140,255,.24);
+
+    opacity:
+        .72;
+
+    z-index:
+        7;
+
+    pointer-events:
+        none;
+
+}
+
+
+/* ---------------------------------------------------------
+   04.14 — CORE INTERACTION
+   ۰۴.۱۴ — تعامل Core
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-core{
+
+    cursor:
+        pointer;
+
+    transition:
+        transform
+        var(--ars-motion-medium)
+        var(--ars-ease-premium);
+
+}
+
+
+/* ---------------------------------------------------------
+   04.15 — CORE HOVER
+   ۰۴.۱۵ — Hover هسته
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-core:hover{
+
+    transform:
+        translate3d(-50%,-50%,0)
+        scale(1.035);
+
+}
+
+
+/* ---------------------------------------------------------
+   04.16 — CORE HOVER FIELD
+   ۰۴.۱۶ — میدان Hover هسته
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-core:hover::before{
+
+    opacity:
+        1;
+
+}
+
+
+/* ---------------------------------------------------------
+   04.17 — CORE FOCUS
+   ۰۴.۱۷ — Focus هسته
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-core:focus-visible{
+
+    outline:
+        2px solid
+        rgba(228,185,95,.78);
+
+    outline-offset:
+        8px;
+
+}
+
+
+/* =========================================================
+   SECTION 04 — CORE MOTION
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   04.18 — CORE ATMOSPHERE BREATH
+   ۰۴.۱۸ — تنفس اتمسفر Core
+   --------------------------------------------------------- */
+
+@keyframes arsV2CoreAtmosphereBreath{
+
+    0%{
+
+        transform:
+            scale(.96);
+
+        opacity:
+            .62;
+
+    }
+
+    100%{
+
+        transform:
+            scale(1.04);
+
+        opacity:
+            .92;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   04.19 — CORE RING ROTATION
+   ۰۴.۱۹ — چرخش حلقه اصلی
+   --------------------------------------------------------- */
+
+@keyframes arsV2CoreRingRotate{
+
+    from{
+
+        transform:
+            rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   04.20 — CORE RING REVERSE
+   ۰۴.۲۰ — چرخش معکوس حلقه
+   --------------------------------------------------------- */
+
+@keyframes arsV2CoreRingRotateReverse{
+
+    from{
+
+        transform:
+            rotate(360deg);
+
+    }
+
+    to{
+
+        transform:
+            rotate(0deg);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   04.21 — CORE LOGO PULSE
+   ۰۴.۲۱ — پالس لوگو
+   --------------------------------------------------------- */
+
+@keyframes arsV2CoreLogoPulse{
+
+    0%{
+
+        transform:
+            scale(.985);
+
+        opacity:
+            .88;
+
+    }
+
+    50%{
+
+        transform:
+            scale(1);
+
+        opacity:
+            1;
+
+    }
+
+    100%{
+
+        transform:
+            scale(.985);
+
+        opacity:
+            .88;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   04.22 — CORE PARTICLE ORBIT
+   ۰۴.۲۲ — مدار ذرات Core
+   --------------------------------------------------------- */
+
+@keyframes arsV2CoreParticleOrbit{
+
+    from{
+
+        transform:
+            rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   SECTION 04 — RESPONSIVE CORE
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   04.23 — TABLET CORE
+   ۰۴.۲۳ — Core در Tablet
+   --------------------------------------------------------- */
+
+@media (max-width:900px){
+
+    .ars-home-premium-v2 .ars-orbit{
+
+        width:
+            min(88vw, 820px);
+
+    }
+
+    .ars-home-premium-v2 .orbit-core{
+
+        width:
+            clamp(150px, 20vw, 220px);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   04.24 — MOBILE CORE
+   ۰۴.۲۴ — Core در Mobile
+   --------------------------------------------------------- */
+
+@media (max-width:700px){
+
+    .ars-home-premium-v2 .ars-orbit{
+
+        width:
+            94vw;
+
+    }
+
+    .ars-home-premium-v2 .orbit-core{
+
+        width:
+            clamp(128px, 27vw, 190px);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   04.25 — SMALL MOBILE CORE
+   ۰۴.۲۵ — Core در Small Mobile
+   --------------------------------------------------------- */
+
+@media (max-width:480px){
+
+    .ars-home-premium-v2 .ars-orbit{
+
+        width:
+            96vw;
+
+    }
+
+    .ars-home-premium-v2 .orbit-core{
+
+        width:
+            clamp(112px, 29vw, 168px);
+
+    }
+
+    .ars-home-premium-v2 .orbit-core .core-logo{
+
+        max-width:
+            82px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SECTION 04 — ACCESSIBILITY / SAFE MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce){
+
+    .ars-home-premium-v2 .orbit-core{
+
+        transition:
+            none;
+
+    }
+
+    .ars-home-premium-v2 .orbit-core:hover{
+
+        transform:
+            translate3d(-50%,-50%,0);
+
+    }
+
+}
+
+
+/* =========================================================
+   SECTION 04 — COMPLETE
+   SECTION 04 — LOCKED 🔒
+
+   Orbit Master Container
+   Orbit Atmosphere
+   Orbit Depth Field
+   Central Core
+   Core Energy Field
+   Core Radiation Shell
+   Golden Ring
+   Inner Energy Ring
+   Secondary Energy Ring
+   Core Content Layer
+   Core Logo
+   Core Light Point
+   Hover Interaction
+   Focus State
+   Core Motion Architecture
+   Responsive Core
+   Reduced Motion Safety
+
+   🔒 V2 CENTRAL CORE LOCK
+   ========================================================= */
+
+/* =========================================================
+   ARS HERITAGE GROUP
+   HOME PAGE
+   PREMIUM V2
+   FILE: style-home-2.css
+
+   =========================================================
+   SECTION 05 — INNER ORBIT SYSTEM
+   ۰۵ — سیستم مدار داخلی
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   05.1 — INNER ORBIT MASTER
+   ۰۵.۱ — مدار داخلی اصلی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-inner{
+
+    position:
+        absolute;
+
+    inset:
+        8%;
+
+    border-radius:
+        50%;
+
+    z-index:
+        var(--ars-z-nodes);
+
+    pointer-events:
+        none;
+
+    transform:
+        translate3d(0,0,0);
+
+    transform-origin:
+        center center;
+
+}
+
+
+/* ---------------------------------------------------------
+   05.2 — INNER ORBIT RING
+   ۰۵.۲ — حلقه مداری داخلی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-inner::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    border:
+        1px solid
+        rgba(22,140,255,.16);
+
+    border-radius:
+        50%;
+
+    box-shadow:
+        0 0 34px
+        rgba(22,140,255,.055),
+        inset 0 0 28px
+        rgba(22,140,255,.025);
+
+    pointer-events:
+        none;
+
+}
+
+
+/* ---------------------------------------------------------
+   05.3 — INNER ORBIT SECONDARY RING
+   ۰۵.۳ — حلقه ثانویه مدار داخلی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-inner::after{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        3.5%;
+
+    border:
+        1px solid
+        rgba(228,185,95,.065);
+
+    border-radius:
+        50%;
+
+    pointer-events:
+        none;
+
+}
+
+
+/* =========================================================
+   INNER NODE FOUNDATION
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   05.4 — INNER NODE MASTER
+   ۰۵.۴ — ساختار پایه Node داخلی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-inner > [class*="orbit-"]{
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        clamp(76px, 8vw, 116px);
+
+    aspect-ratio:
+        1 / 1;
+
+    margin:
+        0;
+
+    border-radius:
+        50%;
+
+    transform:
+        translate3d(-50%,-50%,0);
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    isolation:
+        isolate;
+
+    pointer-events:
+        auto;
+
+    cursor:
+        pointer;
+
+    background:
+
+        radial-gradient(
+            circle at 42% 38%,
+            rgba(11,23,40,.92),
+            rgba(3,8,18,.96) 58%,
+            rgba(0,1,3,.98) 100%
+        );
+
+    border:
+        1px solid
+        rgba(228,185,95,.30);
+
+    box-shadow:
+        0 0 22px
+        rgba(22,140,255,.09),
+        inset 0 0 22px
+        rgba(22,140,255,.045);
+
+    transition:
+        transform
+        var(--ars-motion-medium)
+        var(--ars-ease-premium),
+        border-color
+        var(--ars-motion-medium)
+        var(--ars-ease-soft),
+        box-shadow
+        var(--ars-motion-medium)
+        var(--ars-ease-soft);
+
+}
+
+
+/* ---------------------------------------------------------
+   05.5 — INNER NODE HALO
+   ۰۵.۵ — هاله Node داخلی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-inner > [class*="orbit-"]::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        -22%;
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(22,140,255,.10),
+            rgba(22,140,255,.028) 42%,
+            transparent 72%
+        );
+
+    filter:
+        blur(10px);
+
+    opacity:
+        .64;
+
+    z-index:
+        -1;
+
+    pointer-events:
+        none;
+
+    transition:
+        opacity
+        var(--ars-motion-medium)
+        var(--ars-ease-soft),
+        transform
+        var(--ars-motion-medium)
+        var(--ars-ease-premium);
+
+}
+
+
+/* ---------------------------------------------------------
+   05.6 — INNER NODE ENERGY RING
+   ۰۵.۶ — حلقه انرژی Node داخلی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-inner > [class*="orbit-"]::after{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        8%;
+
+    border-radius:
+        50%;
+
+    border:
+        1px solid
+        rgba(82,182,255,.22);
+
+    box-shadow:
+        0 0 16px
+        rgba(22,140,255,.07);
+
+    pointer-events:
+        none;
+
+    transition:
+        transform
+        var(--ars-motion-medium)
+        var(--ars-ease-premium),
+        border-color
+        var(--ars-motion-medium)
+        var(--ars-ease-soft);
+
+}
+
+
+/* =========================================================
+   INNER NODE CONTENT
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   05.7 — NODE CONTENT
+   ۰۵.۷ — محتوای Node
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-inner > [class*="orbit-"] > *{
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    max-width:
+        62%;
+
+    max-height:
+        62%;
+
+}
+
+
+/* ---------------------------------------------------------
+   05.8 — NODE IMAGE / LOGO
+   ۰۵.۸ — لوگو یا تصویر Node
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-inner > [class*="orbit-"] img{
+
+    width:
+        58%;
+
+    height:
+        auto;
+
+    object-fit:
+        contain;
+
+    filter:
+        drop-shadow(
+            0 0 8px
+            rgba(247,244,237,.18)
+        )
+        drop-shadow(
+            0 0 14px
+            rgba(22,140,255,.14)
+        );
+
+    transition:
+        transform
+        var(--ars-motion-medium)
+        var(--ars-ease-premium),
+        filter
+        var(--ars-motion-medium)
+        var(--ars-ease-soft);
+
+}
+
+
+/* =========================================================
+   NODE POSITIONING
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   05.9 — NODE 01
+   ۰۵.۹ — Node اول
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-inner .orbit-1{
+
+    transform:
+        translate3d(-50%,-50%,0)
+        rotate(0deg)
+        translateX(calc(var(--inner-radius, 40%) * 1));
+
+}
+
+
+/* ---------------------------------------------------------
+   05.10 — NODE 02
+   ۰۵.۱۰ — Node دوم
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-inner .orbit-2{
+
+    transform:
+        translate3d(-50%,-50%,0)
+        rotate(60deg)
+        translateX(calc(var(--inner-radius, 40%) * 1));
+
+}
+
+
+/* ---------------------------------------------------------
+   05.11 — NODE 03
+   ۰۵.۱۱ — Node سوم
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-inner .orbit-3{
+
+    transform:
+        translate3d(-50%,-50%,0)
+        rotate(120deg)
+        translateX(calc(var(--inner-radius, 40%) * 1));
+
+}
+
+
+/* ---------------------------------------------------------
+   05.12 — NODE 04
+   ۰۵.۱۲ — Node چهارم
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-inner .orbit-4{
+
+    transform:
+        translate3d(-50%,-50%,0)
+        rotate(180deg)
+        translateX(calc(var(--inner-radius, 40%) * 1));
+
+}
+
+
+/* ---------------------------------------------------------
+   05.13 — NODE 05
+   ۰۵.۱۳ — Node پنجم
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-inner .orbit-5{
+
+    transform:
+        translate3d(-50%,-50%,0)
+        rotate(240deg)
+        translateX(calc(var(--inner-radius, 40%) * 1));
+
+}
+
+
+/* ---------------------------------------------------------
+   05.14 — NODE 06
+   ۰۵.۱۴ — Node ششم
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-inner .orbit-6{
+
+    transform:
+        translate3d(-50%,-50%,0)
+        rotate(300deg)
+        translateX(calc(var(--inner-radius, 40%) * 1));
+
+}
+
+
+/* =========================================================
+   INNER NODE HOVER / FOCUS
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   05.15 — NODE HOVER
+   ۰۵.۱۵ — Hover Node
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-inner > [class*="orbit-"]:hover{
+
+    border-color:
+        rgba(228,185,95,.72);
+
+    box-shadow:
+        0 0 30px
+        rgba(22,140,255,.16),
+        0 0 12px
+        rgba(228,185,95,.10),
+        inset 0 0 24px
+        rgba(22,140,255,.07);
+
+}
+
+
+/* ---------------------------------------------------------
+   05.16 — NODE HALO HOVER
+   ۰۵.۱۶ — هاله Hover
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-inner > [class*="orbit-"]:hover::before{
+
+    opacity:
+        .94;
+
+    transform:
+        scale(1.08);
+
+}
+
+
+/* ---------------------------------------------------------
+   05.17 — NODE RING HOVER
+   ۰۵.۱۷ — حلقه Hover
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-inner > [class*="orbit-"]:hover::after{
+
+    border-color:
+        rgba(82,182,255,.46);
+
+    transform:
+        scale(1.055);
+
+}
+
+
+/* ---------------------------------------------------------
+   05.18 — NODE IMAGE HOVER
+   ۰۵.۱۸ — تصویر Hover
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-inner > [class*="orbit-"]:hover img{
+
+    transform:
+        scale(1.08);
+
+    filter:
+        drop-shadow(
+            0 0 10px
+            rgba(247,244,237,.30)
+        )
+        drop-shadow(
+            0 0 20px
+            rgba(22,140,255,.24)
+        )
+        drop-shadow(
+            0 0 16px
+            rgba(228,185,95,.16)
+        );
+
+}
+
+
+/* ---------------------------------------------------------
+   05.19 — NODE FOCUS
+   ۰۵.۱۹ — Focus Node
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-inner > [class*="orbit-"]:focus-visible{
+
+    outline:
+        2px solid
+        rgba(228,185,95,.76);
+
+    outline-offset:
+        6px;
+
+}
+
+
+/* =========================================================
+   INNER ORBIT MOTION
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   05.20 — INNER ORBIT ROTATION
+   ۰۵.۲۰ — چرخش مدار داخلی
+   --------------------------------------------------------- */
+
+@keyframes arsV2InnerOrbitRotation{
+
+    from{
+
+        transform:
+            rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   05.21 — INNER ORBIT BREATH
+   ۰۵.۲۱ — تنفس مدار داخلی
+   --------------------------------------------------------- */
+
+@keyframes arsV2InnerOrbitBreath{
+
+    0%,
+    100%{
+
+        opacity:
+            .88;
+
+    }
+
+    50%{
+
+        opacity:
+            1;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   05.22 — INNER RING PULSE
+   ۰۵.۲۲ — پالس حلقه داخلی
+   --------------------------------------------------------- */
+
+@keyframes arsV2InnerRingPulse{
+
+    0%,
+    100%{
+
+        opacity:
+            .48;
+
+    }
+
+    50%{
+
+        opacity:
+            .90;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   05.23 — INNER NODE HALO
+   ۰۵.۲۳ — تنفس هاله Node
+   --------------------------------------------------------- */
+
+@keyframes arsV2InnerNodeHalo{
+
+    0%,
+    100%{
+
+        transform:
+            scale(.96);
+
+        opacity:
+            .50;
+
+    }
+
+    50%{
+
+        transform:
+            scale(1.035);
+
+        opacity:
+            .78;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   05.24 — INNER NODE RING
+   ۰۵.۲۴ — حرکت حلقه Node
+   --------------------------------------------------------- */
+
+@keyframes arsV2InnerNodeRing{
+
+    from{
+
+        transform:
+            rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   05.25 — INNER LOGO BREATH
+   ۰۵.۲۵ — تنفس لوگو
+   --------------------------------------------------------- */
+
+@keyframes arsV2InnerLogoBreath{
+
+    0%,
+    100%{
+
+        transform:
+            scale(.97);
+
+        opacity:
+            .84;
+
+    }
+
+    50%{
+
+        transform:
+            scale(1);
+
+        opacity:
+            1;
+
+    }
+
+}
+
+
+/* =========================================================
+   INNER ORBIT PERFORMANCE
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   05.26 — GPU-SAFE LAYER
+   ۰۵.۲۶ — لایه GPU ایمن
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-inner,
+.ars-home-premium-v2 .orbit-inner > [class*="orbit-"]{
+
+    backface-visibility:
+        hidden;
+
+    -webkit-backface-visibility:
+        hidden;
+
+}
+
+
+/* ---------------------------------------------------------
+   05.27 — INTERACTION LAYER
+   ۰۵.۲۷ — لایه تعامل
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-inner > [class*="orbit-"]{
+
+    touch-action:
+        manipulation;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE INNER ORBIT
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   05.28 — TABLET
+   --------------------------------------------------------- */
+
+@media (max-width:900px){
+
+    .ars-home-premium-v2 .orbit-inner{
+
+        inset:
+            9%;
+
+    }
+
+    .ars-home-premium-v2 .orbit-inner > [class*="orbit-"]{
+
+        width:
+            clamp(66px, 9vw, 96px);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   05.29 — MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width:700px){
+
+    .ars-home-premium-v2 .orbit-inner{
+
+        inset:
+            11%;
+
+    }
+
+    .ars-home-premium-v2 .orbit-inner > [class*="orbit-"]{
+
+        width:
+            clamp(58px, 11vw, 82px);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   05.30 — SMALL MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width:480px){
+
+    .ars-home-premium-v2 .orbit-inner{
+
+        inset:
+            13%;
+
+    }
+
+    .ars-home-premium-v2 .orbit-inner > [class*="orbit-"]{
+
+        width:
+            clamp(52px, 13vw, 72px);
+
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY / SAFE MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce){
+
+    .ars-home-premium-v2 .orbit-inner{
+
+        animation:
+            none;
+
+    }
+
+    .ars-home-premium-v2 .orbit-inner > [class*="orbit-"]{
+
+        transition:
+            none;
+
+    }
+
+    .ars-home-premium-v2 .orbit-inner > [class*="orbit-"]:hover{
+
+        transform:
+            none;
+
+    }
+
+}
+
+
+/* =========================================================
+   SECTION 05 — COMPLETE
+   SECTION 05 — LOCKED 🔒
+
+   Inner Orbit Master
+   Primary Orbit Ring
+   Secondary Orbit Ring
+   Six Inner Nodes
+   Node Halo
+   Node Energy Ring
+   Node Content
+   Node Positioning
+   Hover / Focus
+   Inner Orbit Motion Architecture
+   GPU-Safe Layer
+   Touch Interaction
+   Responsive Calibration
+   Reduced Motion Safety
+
+   🔒 V2 INNER ORBIT SYSTEM LOCK
+   ========================================================= */
+/* =========================================================
+   ARS HERITAGE GROUP
+   HOME PAGE
+   PREMIUM V2
+   FILE: style-home-2.css
+
+   =========================================================
+   SECTION 06 — OUTER ORBIT SYSTEM
+   ۰۶ — سیستم مدار بیرونی
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   06.1 — OUTER ORBIT MASTER
+   ۰۶.۱ — مدار بیرونی اصلی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-outer{
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    border-radius:
+        50%;
+
+    z-index:
+        calc(var(--ars-z-orbit) - 1);
+
+    pointer-events:
+        none;
+
+    transform:
+        translate3d(0,0,0);
+
+    transform-origin:
+        center center;
+
+}
+
+
+/* ---------------------------------------------------------
+   06.2 — OUTER ORBIT PRIMARY RING
+   ۰۶.۲ — حلقه اصلی مدار بیرونی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-outer::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    border:
+        1px solid
+        rgba(22,140,255,.105);
+
+    border-radius:
+        50%;
+
+    box-shadow:
+        0 0 52px
+        rgba(22,140,255,.035),
+        inset 0 0 44px
+        rgba(22,140,255,.018);
+
+    pointer-events:
+        none;
+
+}
+
+
+/* ---------------------------------------------------------
+   06.3 — OUTER ORBIT SECONDARY RING
+   ۰۶.۳ — حلقه ثانویه مدار بیرونی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-outer::after{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        2.8%;
+
+    border:
+        1px solid
+        rgba(228,185,95,.045);
+
+    border-radius:
+        50%;
+
+    pointer-events:
+        none;
+
+}
+
+
+/* =========================================================
+   OUTER NODE FOUNDATION
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   06.4 — OUTER NODE MASTER
+   ۰۶.۴ — ساختار پایه Node بیرونی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-outer > [class*="orbit-"]{
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        clamp(68px, 7vw, 108px);
+
+    aspect-ratio:
+        1 / 1;
+
+    margin:
+        0;
+
+    border-radius:
+        50%;
+
+    transform:
+        translate3d(-50%,-50%,0);
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    isolation:
+        isolate;
+
+    pointer-events:
+        auto;
+
+    cursor:
+        pointer;
+
+    background:
+
+        radial-gradient(
+            circle at 44% 36%,
+            rgba(11,23,40,.84),
+            rgba(3,8,18,.94) 58%,
+            rgba(0,1,3,.98) 100%
+        );
+
+    border:
+        1px solid
+        rgba(228,185,95,.22);
+
+    box-shadow:
+        0 0 20px
+        rgba(22,140,255,.065),
+        inset 0 0 20px
+        rgba(22,140,255,.032);
+
+    transition:
+        transform
+        var(--ars-motion-medium)
+        var(--ars-ease-premium),
+        border-color
+        var(--ars-motion-medium)
+        var(--ars-ease-soft),
+        box-shadow
+        var(--ars-motion-medium)
+        var(--ars-ease-soft);
+
+}
+
+
+/* ---------------------------------------------------------
+   06.5 — OUTER NODE HALO
+   ۰۶.۵ — هاله Node بیرونی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-outer > [class*="orbit-"]::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        -25%;
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(22,140,255,.075),
+            rgba(22,140,255,.018) 44%,
+            transparent 73%
+        );
+
+    filter:
+        blur(11px);
+
+    opacity:
+        .54;
+
+    z-index:
+        -1;
+
+    pointer-events:
+        none;
+
+    transition:
+        opacity
+        var(--ars-motion-medium)
+        var(--ars-ease-soft),
+        transform
+        var(--ars-motion-medium)
+        var(--ars-ease-premium);
+
+}
+
+
+/* ---------------------------------------------------------
+   06.6 — OUTER NODE ENERGY RING
+   ۰۶.۶ — حلقه انرژی Node بیرونی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-outer > [class*="orbit-"]::after{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        9%;
+
+    border-radius:
+        50%;
+
+    border:
+        1px solid
+        rgba(82,182,255,.17);
+
+    box-shadow:
+        0 0 14px
+        rgba(22,140,255,.045);
+
+    pointer-events:
+        none;
+
+    transition:
+        transform
+        var(--ars-motion-medium)
+        var(--ars-ease-premium),
+        border-color
+        var(--ars-motion-medium)
+        var(--ars-ease-soft);
+
+}
+
+
+/* =========================================================
+   OUTER NODE CONTENT
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   06.7 — OUTER NODE CONTENT
+   ۰۶.۷ — محتوای Node بیرونی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-outer > [class*="orbit-"] > *{
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    max-width:
+        62%;
+
+    max-height:
+        62%;
+
+}
+
+
+/* ---------------------------------------------------------
+   06.8 — OUTER NODE IMAGE / LOGO
+   ۰۶.۸ — لوگو یا تصویر Node بیرونی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-outer > [class*="orbit-"] img{
+
+    width:
+        56%;
+
+    height:
+        auto;
+
+    object-fit:
+        contain;
+
+    filter:
+        drop-shadow(
+            0 0 7px
+            rgba(247,244,237,.14)
+        )
+        drop-shadow(
+            0 0 14px
+            rgba(22,140,255,.11)
+        );
+
+    transition:
+        transform
+        var(--ars-motion-medium)
+        var(--ars-ease-premium),
+        filter
+        var(--ars-motion-medium)
+        var(--ars-ease-soft);
+
+}
+
+
+/* =========================================================
+   OUTER NODE POSITIONING
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   06.9 — OUTER NODE 07
+   ۰۶.۹ — Node هفتم
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-outer .orbit-7{
+
+    transform:
+        translate3d(-50%,-50%,0)
+        rotate(0deg)
+        translateX(calc(var(--outer-radius, 48%) * 1));
+
+}
+
+
+/* ---------------------------------------------------------
+   06.10 — OUTER NODE 08
+   ۰۶.۱۰ — Node هشتم
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-outer .orbit-8{
+
+    transform:
+        translate3d(-50%,-50%,0)
+        rotate(51.43deg)
+        translateX(calc(var(--outer-radius, 48%) * 1));
+
+}
+
+
+/* ---------------------------------------------------------
+   06.11 — OUTER NODE 09
+   ۰۶.۱۱ — Node نهم
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-outer .orbit-9{
+
+    transform:
+        translate3d(-50%,-50%,0)
+        rotate(102.86deg)
+        translateX(calc(var(--outer-radius, 48%) * 1));
+
+}
+
+
+/* ---------------------------------------------------------
+   06.12 — OUTER NODE 10
+   ۰۶.۱۲ — Node دهم
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-outer .orbit-10{
+
+    transform:
+        translate3d(-50%,-50%,0)
+        rotate(154.29deg)
+        translateX(calc(var(--outer-radius, 48%) * 1));
+
+}
+
+
+/* ---------------------------------------------------------
+   06.13 — OUTER NODE 11
+   ۰۶.۱۳ — Node یازدهم
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-outer .orbit-11{
+
+    transform:
+        translate3d(-50%,-50%,0)
+        rotate(205.71deg)
+        translateX(calc(var(--outer-radius, 48%) * 1));
+
+}
+
+
+/* ---------------------------------------------------------
+   06.14 — OUTER NODE 12
+   ۰۶.۱۴ — Node دوازدهم
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-outer .orbit-12{
+
+    transform:
+        translate3d(-50%,-50%,0)
+        rotate(257.14deg)
+        translateX(calc(var(--outer-radius, 48%) * 1));
+
+}
+
+
+/* ---------------------------------------------------------
+   06.15 — OUTER NODE 13
+   ۰۶.۱۵ — Node سیزدهم
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-outer .orbit-13{
+
+    transform:
+        translate3d(-50%,-50%,0)
+        rotate(308.57deg)
+        translateX(calc(var(--outer-radius, 48%) * 1));
+
+}
+
+
+/* =========================================================
+   OUTER NODE INTERACTION
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   06.16 — OUTER NODE HOVER
+   ۰۶.۱۶ — Hover Node بیرونی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-outer > [class*="orbit-"]:hover{
+
+    border-color:
+        rgba(228,185,95,.58);
+
+    box-shadow:
+        0 0 28px
+        rgba(22,140,255,.12),
+        0 0 12px
+        rgba(228,185,95,.075),
+        inset 0 0 22px
+        rgba(22,140,255,.055);
+
+}
+
+
+/* ---------------------------------------------------------
+   06.17 — OUTER HALO HOVER
+   ۰۶.۱۷ — هاله Hover
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-outer > [class*="orbit-"]:hover::before{
+
+    opacity:
+        .88;
+
+    transform:
+        scale(1.075);
+
+}
+
+
+/* ---------------------------------------------------------
+   06.18 — OUTER RING HOVER
+   ۰۶.۱۸ — حلقه Hover
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-outer > [class*="orbit-"]:hover::after{
+
+    border-color:
+        rgba(82,182,255,.38);
+
+    transform:
+        scale(1.05);
+
+}
+
+
+/* ---------------------------------------------------------
+   06.19 — OUTER IMAGE HOVER
+   ۰۶.۱۹ — تصویر Hover
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-outer > [class*="orbit-"]:hover img{
+
+    transform:
+        scale(1.075);
+
+    filter:
+        drop-shadow(
+            0 0 9px
+            rgba(247,244,237,.24)
+        )
+        drop-shadow(
+            0 0 18px
+            rgba(22,140,255,.18)
+        )
+        drop-shadow(
+            0 0 14px
+            rgba(228,185,95,.12)
+        );
+
+}
+
+
+/* ---------------------------------------------------------
+   06.20 — OUTER NODE FOCUS
+   ۰۶.۲۰ — Focus Node بیرونی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-outer > [class*="orbit-"]:focus-visible{
+
+    outline:
+        2px solid
+        rgba(228,185,95,.70);
+
+    outline-offset:
+        6px;
+
+}
+
+
+/* =========================================================
+   OUTER ORBIT MOTION
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   06.21 — OUTER ORBIT ROTATION
+   ۰۶.۲۱ — چرخش مدار بیرونی
+   --------------------------------------------------------- */
+
+@keyframes arsV2OuterOrbitRotation{
+
+    from{
+
+        transform:
+            rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   06.22 — OUTER FIELD BREATH
+   ۰۶.۲۲ — تنفس میدان بیرونی
+   --------------------------------------------------------- */
+
+@keyframes arsV2OuterFieldBreath{
+
+    0%,
+    100%{
+
+        opacity:
+            .72;
+
+    }
+
+    50%{
+
+        opacity:
+            .94;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   06.23 — OUTER SHELL ROTATION
+   ۰۶.۲۳ — چرخش پوسته بیرونی
+   --------------------------------------------------------- */
+
+@keyframes arsV2OuterShellRotation{
+
+    from{
+
+        transform:
+            rotate(360deg);
+
+    }
+
+    to{
+
+        transform:
+            rotate(0deg);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   06.24 — OUTER NODE HALO
+   ۰۶.۲۴ — حرکت هاله Node بیرونی
+   --------------------------------------------------------- */
+
+@keyframes arsV2OuterNodeHalo{
+
+    0%,
+    100%{
+
+        transform:
+            scale(.97);
+
+        opacity:
+            .46;
+
+    }
+
+    50%{
+
+        transform:
+            scale(1.025);
+
+        opacity:
+            .70;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   06.25 — OUTER NODE RING
+   ۰۶.۲۵ — حرکت حلقه Node بیرونی
+   --------------------------------------------------------- */
+
+@keyframes arsV2OuterNodeRing{
+
+    from{
+
+        transform:
+            rotate(360deg);
+
+    }
+
+    to{
+
+        transform:
+            rotate(0deg);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   06.26 — OUTER LOGO BREATH
+   ۰۶.۲۶ — تنفس لوگوی Node بیرونی
+   --------------------------------------------------------- */
+
+@keyframes arsV2OuterLogoBreath{
+
+    0%,
+    100%{
+
+        transform:
+            scale(.975);
+
+        opacity:
+            .80;
+
+    }
+
+    50%{
+
+        transform:
+            scale(1);
+
+        opacity:
+            1;
+
+    }
+
+}
+
+
+/* =========================================================
+   OUTER ORBIT PERFORMANCE
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   06.27 — GPU-SAFE OUTER LAYER
+   ۰۶.۲۷ — لایه GPU ایمن
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-outer,
+.ars-home-premium-v2 .orbit-outer > [class*="orbit-"]{
+
+    backface-visibility:
+        hidden;
+
+    -webkit-backface-visibility:
+        hidden;
+
+}
+
+
+/* ---------------------------------------------------------
+   06.28 — OUTER INTERACTION
+   ۰۶.۲۸ — تعامل لمسی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-outer > [class*="orbit-"]{
+
+    touch-action:
+        manipulation;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE OUTER ORBIT
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   06.29 — TABLET
+   --------------------------------------------------------- */
+
+@media (max-width:900px){
+
+    .ars-home-premium-v2 .orbit-outer{
+
+        inset:
+            1%;
+
+    }
+
+    .ars-home-premium-v2 .orbit-outer > [class*="orbit-"]{
+
+        width:
+            clamp(60px, 8vw, 90px);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   06.30 — MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width:700px){
+
+    .ars-home-premium-v2 .orbit-outer{
+
+        inset:
+            2.5%;
+
+    }
+
+    .ars-home-premium-v2 .orbit-outer > [class*="orbit-"]{
+
+        width:
+            clamp(52px, 10vw, 76px);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   06.31 — SMALL MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width:480px){
+
+    .ars-home-premium-v2 .orbit-outer{
+
+        inset:
+            4%;
+
+    }
+
+    .ars-home-premium-v2 .orbit-outer > [class*="orbit-"]{
+
+        width:
+            clamp(46px, 12vw, 68px);
+
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY / SAFE MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce){
+
+    .ars-home-premium-v2 .orbit-outer{
+
+        animation:
+            none;
+
+    }
+
+    .ars-home-premium-v2 .orbit-outer > [class*="orbit-"]{
+
+        transition:
+            none;
+
+    }
+
+}
+
+
+/* =========================================================
+   SECTION 06 — COMPLETE
+   SECTION 06 — LOCKED 🔒
+
+   Outer Orbit Master
+   Primary Orbit Ring
+   Secondary Orbit Ring
+   Seven Outer Nodes
+   Node Halo
+   Node Energy Ring
+   Node Content
+   Node Positioning
+   Hover / Focus
+   Outer Orbit Motion Architecture
+   GPU-Safe Layer
+   Touch Interaction
+   Responsive Calibration
+   Reduced Motion Safety
+
+   🔒 V2 OUTER ORBIT SYSTEM LOCK
+   ========================================================= */
+/* =========================================================
+   ARS HERITAGE GROUP
+   HOME PAGE
+   PREMIUM V2
+   FILE: style-home-2.css
+
+   =========================================================
+   SECTION 07 — ENERGY NETWORK SYSTEM
+   ۰۷ — سیستم شبکه انرژی
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   07.1 — ENERGY NETWORK MASTER
+   ۰۷.۱ — هسته اصلی شبکه انرژی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .energy-network{
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    z-index:
+        var(--ars-z-particles);
+
+    pointer-events:
+        none;
+
+    overflow:
+        visible;
+
+    isolation:
+        isolate;
+
+}
+
+
+/* ---------------------------------------------------------
+   07.2 — GLOBAL ENERGY FIELD
+   ۰۷.۲ — میدان انرژی اصلی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .energy-network::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        5%;
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(22,140,255,.035),
+            transparent 43%
+        );
+
+    filter:
+        blur(18px);
+
+    opacity:
+        .82;
+
+    pointer-events:
+        none;
+
+}
+
+
+/* ---------------------------------------------------------
+   07.3 — SECONDARY ENERGY FIELD
+   ۰۷.۳ — میدان انرژی ثانویه
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .energy-network::after{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        12%;
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(228,185,95,.018),
+            transparent 55%
+        );
+
+    filter:
+        blur(24px);
+
+    opacity:
+        .72;
+
+    pointer-events:
+        none;
+
+}
+
+
+/* =========================================================
+   ENERGY RAY SYSTEM
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   07.4 — ENERGY RAY MASTER
+   ۰۷.۴ — پرتو انرژی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .energy-ray{
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        42%;
+
+    height:
+        1px;
+
+    transform:
+        translate3d(0,-50%,0)
+        rotate(var(--ray-angle,0deg));
+
+    transform-origin:
+        left center;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(228,185,95,0),
+            rgba(228,185,95,.16) 22%,
+            rgba(82,182,255,.28) 58%,
+            rgba(22,140,255,0) 100%
+        );
+
+    opacity:
+        .38;
+
+    filter:
+        drop-shadow(
+            0 0 7px
+            rgba(22,140,255,.16)
+        );
+
+    pointer-events:
+        none;
+
+}
+
+
+/* ---------------------------------------------------------
+   07.5 — ENERGY RAY CORE
+   ۰۷.۵ — هسته نورانی پرتو
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .energy-ray::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    top:
+        50%;
+
+    width:
+        34%;
+
+    height:
+        2px;
+
+    transform:
+        translateY(-50%);
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(228,185,95,0),
+            rgba(228,185,95,.30),
+            rgba(82,182,255,.50),
+            rgba(82,182,255,0)
+        );
+
+    filter:
+        blur(1px);
+
+    opacity:
+        .72;
+
+}
+
+
+/* ---------------------------------------------------------
+   07.6 — ENERGY RAY SOFT AURA
+   ۰۷.۶ — هاله نرم پرتو
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .energy-ray::after{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        4%;
+
+    top:
+        50%;
+
+    width:
+        48%;
+
+    height:
+        10px;
+
+    transform:
+        translateY(-50%);
+
+    background:
+
+        radial-gradient(
+            ellipse,
+            rgba(22,140,255,.075),
+            transparent 72%
+        );
+
+    filter:
+        blur(5px);
+
+    opacity:
+        .70;
+
+}
+
+
+/* =========================================================
+   ENERGY LINK SYSTEM
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   07.7 — ENERGY LINK MASTER
+   ۰۷.۷ — اتصال انرژی بین لایه‌ها
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .energy-link{
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        var(--link-length, 30%);
+
+    height:
+        1px;
+
+    transform:
+        translate3d(0,-50%,0)
+        rotate(var(--link-angle,0deg));
+
+    transform-origin:
+        left center;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(22,140,255,0),
+            rgba(22,140,255,.13) 28%,
+            rgba(228,185,95,.12) 68%,
+            rgba(228,185,95,0)
+        );
+
+    opacity:
+        .34;
+
+    pointer-events:
+        none;
+
+}
+
+
+/* ---------------------------------------------------------
+   07.8 — ENERGY LINK LIGHT CORE
+   ۰۷.۸ — هسته نور اتصال
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .energy-link::after{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        24%;
+
+    top:
+        50%;
+
+    width:
+        18%;
+
+    height:
+        4px;
+
+    transform:
+        translateY(-50%);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(82,182,255,.24);
+
+    filter:
+        blur(3px);
+
+    opacity:
+        .65;
+
+}
+
+
+/* =========================================================
+   ENERGY PARTICLE FIELD
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   07.9 — ENERGY PARTICLES MASTER
+   ۰۷.۹ — میدان ذرات انرژی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .energy-particles{
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    overflow:
+        visible;
+
+}
+
+
+/* ---------------------------------------------------------
+   07.10 — PARTICLE BASE
+   ۰۷.۱۰ — پایه ذرات
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .energy-particles > *{
+
+    position:
+        absolute;
+
+    width:
+        var(--particle-size, 2px);
+
+    height:
+        var(--particle-size, 2px);
+
+    left:
+        var(--particle-x, 50%);
+
+    top:
+        var(--particle-y, 50%);
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(82,182,255,.72);
+
+    box-shadow:
+        0 0 7px
+        rgba(82,182,255,.32);
+
+    opacity:
+        var(--particle-opacity,.55);
+
+    transform:
+        translate3d(-50%,-50%,0);
+
+    pointer-events:
+        none;
+
+}
+
+
+/* ---------------------------------------------------------
+   07.11 — GOLD PARTICLE VARIATION
+   ۰۷.۱۱ — تنوع طلایی ذرات
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .energy-particles > .gold{
+
+    background:
+        rgba(228,185,95,.70);
+
+    box-shadow:
+        0 0 7px
+        rgba(228,185,95,.28);
+
+}
+
+
+/* =========================================================
+   ORBITAL ENERGY RINGS
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   07.12 — ENERGY ORBIT RING
+   ۰۷.۱۲ — حلقه انرژی مداری
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .energy-orbit-ring{
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        var(--energy-ring-size, 72%);
+
+    aspect-ratio:
+        1 / 1;
+
+    transform:
+        translate3d(-50%,-50%,0)
+        rotate(var(--energy-ring-angle,0deg));
+
+    border:
+        1px solid
+        rgba(22,140,255,.075);
+
+    border-radius:
+        50%;
+
+    box-shadow:
+        0 0 24px
+        rgba(22,140,255,.025);
+
+    pointer-events:
+        none;
+
+}
+
+
+/* ---------------------------------------------------------
+   07.13 — ENERGY RING GOLD ACCENT
+   ۰۷.۱۳ — Accent طلایی حلقه
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .energy-orbit-ring::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        -1px;
+
+    border-radius:
+        inherit;
+
+    border:
+        1px solid
+        transparent;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(228,185,95,.16),
+            transparent 30%,
+            transparent 72%,
+            rgba(82,182,255,.16)
+        ) border-box;
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:
+        xor;
+
+    mask-composite:
+        exclude;
+
+    opacity:
+        .62;
+
+}
+
+
+/* ---------------------------------------------------------
+   07.14 — ENERGY RING LIGHT POINT
+   ۰۷.۱۴ — نقطه نور متحرک حلقه
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .energy-orbit-ring::after{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        0;
+
+    width:
+        5px;
+
+    height:
+        5px;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(82,182,255,.78);
+
+    box-shadow:
+        0 0 12px
+        rgba(82,182,255,.36);
+
+    opacity:
+        .70;
+
+}
+
+
+/* =========================================================
+   ENERGY MOTION
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   07.15 — GLOBAL ENERGY BREATH
+   ۰۷.۱۵ — تنفس انرژی
+   --------------------------------------------------------- */
+
+@keyframes arsV2GlobalEnergyBreath{
+
+    0%,
+    100%{
+
+        opacity:
+            .68;
+
+    }
+
+    50%{
+
+        opacity:
+            .92;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   07.16 — ENERGY FIELD EXPANSION
+   ۰۷.۱۶ — انبساط میدان انرژی
+   --------------------------------------------------------- */
+
+@keyframes arsV2EnergyFieldExpansion{
+
+    0%,
+    100%{
+
+        transform:
+            scale(.985);
+
+    }
+
+    50%{
+
+        transform:
+            scale(1.015);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   07.17 — ENERGY PULSE TRAVEL
+   ۰۷.۱۷ — حرکت پالس انرژی
+   --------------------------------------------------------- */
+
+@keyframes arsV2EnergyPulseTravel{
+
+    0%{
+
+        opacity:
+            .08;
+
+        transform:
+            translate3d(-50%,-50%,0)
+            scaleX(.72);
+
+    }
+
+    45%{
+
+        opacity:
+            .52;
+
+    }
+
+    100%{
+
+        opacity:
+            .06;
+
+        transform:
+            translate3d(-50%,-50%,0)
+            scaleX(1.04);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   07.18 — PARTICLE FIELD DRIFT
+   ۰۷.۱۸ — شناوری ذرات
+   --------------------------------------------------------- */
+
+@keyframes arsV2ParticleFieldDrift{
+
+    0%,
+    100%{
+
+        transform:
+            translate3d(0,0,0);
+
+    }
+
+    50%{
+
+        transform:
+            translate3d(0,-5px,0);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   07.19 — ENERGY RING SPIN
+   ۰۷.۱۹ — چرخش حلقه انرژی
+   --------------------------------------------------------- */
+
+@keyframes arsV2EnergyRingSpin{
+
+    from{
+
+        transform:
+            translate3d(-50%,-50%,0)
+            rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+            translate3d(-50%,-50%,0)
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   07.20 — ENERGY RING SPIN REVERSE
+   ۰۷.۲۰ — چرخش معکوس حلقه انرژی
+   --------------------------------------------------------- */
+
+@keyframes arsV2EnergyRingSpinReverse{
+
+    from{
+
+        transform:
+            translate3d(-50%,-50%,0)
+            rotate(360deg);
+
+    }
+
+    to{
+
+        transform:
+            translate3d(-50%,-50%,0)
+            rotate(0deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   ENERGY PERFORMANCE SAFETY
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   07.21 — GPU-SAFE ENERGY LAYERS
+   ۰۷.۲۱ — لایه‌های GPU-safe
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .energy-network,
+.ars-home-premium-v2 .energy-ray,
+.ars-home-premium-v2 .energy-link,
+.ars-home-premium-v2 .energy-particles,
+.ars-home-premium-v2 .energy-orbit-ring{
+
+    backface-visibility:
+        hidden;
+
+    -webkit-backface-visibility:
+        hidden;
+
+}
+
+
+/* ---------------------------------------------------------
+   07.22 — ENERGY POINTER SAFETY
+   ۰۷.۲۲ — ایمنی تعامل
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .energy-network *,
+.ars-home-premium-v2 .energy-network{
+
+    pointer-events:
+        none;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE ENERGY SYSTEM
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   07.23 — TABLET
+   --------------------------------------------------------- */
+
+@media (max-width:900px){
+
+    .ars-home-premium-v2 .energy-ray{
+
+        width:
+            40%;
+
+        opacity:
+            .30;
+
+    }
+
+    .ars-home-premium-v2 .energy-orbit-ring{
+
+        opacity:
+            .82;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   07.24 — MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width:700px){
+
+    .ars-home-premium-v2 .energy-ray{
+
+        width:
+            38%;
+
+        opacity:
+            .22;
+
+    }
+
+    .ars-home-premium-v2 .energy-link{
+
+        opacity:
+            .22;
+
+    }
+
+    .ars-home-premium-v2 .energy-orbit-ring{
+
+        opacity:
+            .66;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   07.25 — SMALL MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width:480px){
+
+    .ars-home-premium-v2 .energy-ray{
+
+        width:
+            34%;
+
+        opacity:
+            .16;
+
+    }
+
+    .ars-home-premium-v2 .energy-link{
+
+        opacity:
+            .15;
+
+    }
+
+    .ars-home-premium-v2 .energy-orbit-ring{
+
+        opacity:
+            .52;
+
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY / SAFE MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce){
+
+    .ars-home-premium-v2 .energy-network,
+    .ars-home-premium-v2 .energy-ray,
+    .ars-home-premium-v2 .energy-link,
+    .ars-home-premium-v2 .energy-particles,
+    .ars-home-premium-v2 .energy-orbit-ring{
+
+        animation:
+            none;
+
+    }
+
+}
+
+
+/* =========================================================
+   SECTION 07 — COMPLETE
+   SECTION 07 — LOCKED 🔒
+
+   Energy Network Master
+   Global Energy Field
+   Secondary Energy Field
+   Energy Rays
+   Energy Links
+   Energy Particle Field
+   Orbital Energy Rings
+   Gold / Blue Energy Accents
+   Energy Motion Architecture
+   GPU-Safe Layers
+   Pointer Safety
+   Responsive Energy Calibration
+   Reduced Motion Safety
+
+   🔒 V2 ENERGY NETWORK SYSTEM LOCK
+   ========================================================= */
+/* =========================================================
+   ARS HERITAGE GROUP
+   HOME PAGE
+   PREMIUM V2
+   FILE: style-home-2.css
+
+   =========================================================
+   SECTION 08 — ORBITAL PARTICLE & RADIATION INTELLIGENCE
+   ۰۸ — هوش ذرات و تابش مداری
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   08.1 — PARTICLE INTELLIGENCE MASTER
+   ۰۸.۱ — هسته سیستم ذرات
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .particle-intelligence{
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    z-index:
+        var(--ars-z-particles);
+
+    pointer-events:
+        none;
+
+    overflow:
+        visible;
+
+    isolation:
+        isolate;
+
+}
+
+
+/* ---------------------------------------------------------
+   08.2 — PARTICLE ATMOSPHERE
+   ۰۸.۲ — اتمسفر ذرات
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .particle-intelligence::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        6%;
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(22,140,255,.025),
+            transparent 42%
+        ),
+
+        radial-gradient(
+            circle at 38% 46%,
+            rgba(228,185,95,.012),
+            transparent 34%
+        );
+
+    filter:
+        blur(16px);
+
+    opacity:
+        .82;
+
+    pointer-events:
+        none;
+
+}
+
+
+/* ---------------------------------------------------------
+   08.3 — PARTICLE DEPTH FIELD
+   ۰۸.۳ — میدان عمقی ذرات
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .particle-intelligence::after{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        16%;
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(82,182,255,.018),
+            transparent 62%
+        );
+
+    filter:
+        blur(22px);
+
+    opacity:
+        .72;
+
+    pointer-events:
+        none;
+
+}
+
+
+/* =========================================================
+   PARTICLE CORE
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   08.4 — PARTICLE MASTER
+   ۰۸.۴ — ذره اصلی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .particle-intelligence > *{
+
+    position:
+        absolute;
+
+    left:
+        var(--particle-x,50%);
+
+    top:
+        var(--particle-y,50%);
+
+    width:
+        var(--particle-size,2px);
+
+    height:
+        var(--particle-size,2px);
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(82,182,255,.72);
+
+    box-shadow:
+        0 0 7px
+        rgba(82,182,255,.28);
+
+    opacity:
+        var(--particle-opacity,.52);
+
+    transform:
+        translate3d(-50%,-50%,0);
+
+    pointer-events:
+        none;
+
+}
+
+
+/* ---------------------------------------------------------
+   08.5 — GOLD INTELLIGENCE PARTICLE
+   ۰۸.۵ — ذره هوش طلایی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .particle-intelligence > .gold{
+
+    background:
+        rgba(228,185,95,.76);
+
+    box-shadow:
+        0 0 8px
+        rgba(228,185,95,.30);
+
+}
+
+
+/* ---------------------------------------------------------
+   08.6 — WHITE PRECISION PARTICLE
+   ۰۸.۶ — ذره سفید Precision
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .particle-intelligence > .white{
+
+    background:
+        rgba(247,244,237,.74);
+
+    box-shadow:
+        0 0 7px
+        rgba(247,244,237,.22);
+
+}
+
+
+/* ---------------------------------------------------------
+   08.7 — MICRO PARTICLE
+   ۰۸.۷ — ذره بسیار ظریف
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .particle-intelligence > .micro{
+
+    width:
+        1px;
+
+    height:
+        1px;
+
+    opacity:
+        .38;
+
+    box-shadow:
+        0 0 4px
+        rgba(82,182,255,.20);
+
+}
+
+
+/* =========================================================
+   RADIATION SYSTEM
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   08.8 — RADIATION SPIKE
+   ۰۸.۸ — شعاع تابشی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .radiation-spike{
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        var(--radiation-length,24%);
+
+    height:
+        1px;
+
+    transform:
+        translate3d(0,-50%,0)
+        rotate(var(--radiation-angle,0deg));
+
+    transform-origin:
+        left center;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(228,185,95,0),
+            rgba(228,185,95,.16) 22%,
+            rgba(82,182,255,.25) 60%,
+            rgba(22,140,255,0)
+        );
+
+    opacity:
+        var(--radiation-opacity,.32);
+
+    filter:
+        drop-shadow(
+            0 0 6px
+            rgba(22,140,255,.13)
+        );
+
+    pointer-events:
+        none;
+
+}
+
+
+/* ---------------------------------------------------------
+   08.9 — RADIATION CORE
+   ۰۸.۹ — هسته تابش
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .radiation-spike::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    top:
+        50%;
+
+    width:
+        38%;
+
+    height:
+        2px;
+
+    transform:
+        translateY(-50%);
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(228,185,95,0),
+            rgba(228,185,95,.28),
+            rgba(82,182,255,.42),
+            rgba(82,182,255,0)
+        );
+
+    filter:
+        blur(1px);
+
+}
+
+
+/* ---------------------------------------------------------
+   08.10 — RADIATION AURA
+   ۰۸.۱۰ — هاله تابش
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .radiation-spike::after{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        5%;
+
+    top:
+        50%;
+
+    width:
+        42%;
+
+    height:
+        8px;
+
+    transform:
+        translateY(-50%);
+
+    background:
+
+        radial-gradient(
+            ellipse,
+            rgba(82,182,255,.065),
+            transparent 72%
+        );
+
+    filter:
+        blur(4px);
+
+}
+
+
+/* =========================================================
+   RADIATION MOTION
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   08.11 — RADIATION SPIKE PULSE
+   ۰۸.۱۱ — پالس شعاع تابشی
+   --------------------------------------------------------- */
+
+@keyframes arsV2RadiationSpikePulse{
+
+    0%,
+    100%{
+
+        opacity:
+            .20;
+
+        transform:
+            translate3d(0,-50%,0)
+            rotate(var(--radiation-angle,0deg))
+            scaleX(.92);
+
+    }
+
+    50%{
+
+        opacity:
+            .52;
+
+        transform:
+            translate3d(0,-50%,0)
+            rotate(var(--radiation-angle,0deg))
+            scaleX(1);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   08.12 — PARTICLE INTELLIGENCE DRIFT
+   ۰۸.۱۲ — حرکت شناور هوشمند ذرات
+   --------------------------------------------------------- */
+
+@keyframes arsV2ParticleIntelligenceDrift{
+
+    0%,
+    100%{
+
+        transform:
+            translate3d(0,0,0);
+
+    }
+
+    50%{
+
+        transform:
+            translate3d(0,-4px,0);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   08.13 — PARTICLE TWINKLE
+   ۰۸.۱۳ — درخشش بسیار ظریف ذرات
+   --------------------------------------------------------- */
+
+@keyframes arsV2ParticleTwinkle{
+
+    0%,
+    100%{
+
+        opacity:
+            .28;
+
+        transform:
+            translate3d(-50%,-50%,0)
+            scale(.92);
+
+    }
+
+    50%{
+
+        opacity:
+            .72;
+
+        transform:
+            translate3d(-50%,-50%,0)
+            scale(1);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   08.14 — GOLD PARTICLE BREATH
+   ۰۸.۱۴ — تنفس ذرات طلایی
+   --------------------------------------------------------- */
+
+@keyframes arsV2GoldParticleBreath{
+
+    0%,
+    100%{
+
+        opacity:
+            .32;
+
+    }
+
+    50%{
+
+        opacity:
+            .76;
+
+    }
+
+}
+
+
+/* =========================================================
+   RADIATION ORBITAL FIELD
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   08.15 — RADIATION FIELD
+   ۰۸.۱۵ — میدان تابشی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .particle-intelligence .radiation-field{
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        var(--radiation-field-size,78%);
+
+    aspect-ratio:
+        1 / 1;
+
+    transform:
+        translate3d(-50%,-50%,0);
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            transparent 53%,
+            rgba(22,140,255,.018) 54%,
+            transparent 56%
+        );
+
+    pointer-events:
+        none;
+
+}
+
+
+/* ---------------------------------------------------------
+   08.16 — RADIATION FIELD INNER GLOW
+   ۰۸.۱۶ — درخشش داخلی میدان
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .particle-intelligence .radiation-field::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        10%;
+
+    border-radius:
+        50%;
+
+    border:
+        1px solid
+        rgba(82,182,255,.035);
+
+    box-shadow:
+        0 0 24px
+        rgba(22,140,255,.018);
+
+}
+
+
+/* =========================================================
+   PARTICLE PERFORMANCE
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   08.17 — GPU SAFE PARTICLE LAYER
+   ۰۸.۱۷ — لایه GPU-safe
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .particle-intelligence,
+.ars-home-premium-v2 .particle-intelligence > *,
+.ars-home-premium-v2 .radiation-spike,
+.ars-home-premium-v2 .particle-intelligence .radiation-field{
+
+    backface-visibility:
+        hidden;
+
+    -webkit-backface-visibility:
+        hidden;
+
+}
+
+
+/* ---------------------------------------------------------
+   08.18 — PARTICLE CONTAINMENT
+   ۰۸.۱۸ — کنترل رندر ذرات
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .particle-intelligence{
+
+    contain:
+        layout
+        paint;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE PARTICLE INTELLIGENCE
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   08.19 — TABLET
+   --------------------------------------------------------- */
+
+@media (max-width:900px){
+
+    .ars-home-premium-v2 .particle-intelligence{
+
+        opacity:
+            .88;
+
+    }
+
+    .ars-home-premium-v2 .radiation-spike{
+
+        opacity:
+            .80;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   08.20 — MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width:700px){
+
+    .ars-home-premium-v2 .particle-intelligence{
+
+        opacity:
+            .68;
+
+    }
+
+    .ars-home-premium-v2 .radiation-spike{
+
+        opacity:
+            .64;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   08.21 — SMALL MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width:480px){
+
+    .ars-home-premium-v2 .particle-intelligence{
+
+        opacity:
+            .48;
+
+    }
+
+    .ars-home-premium-v2 .radiation-spike{
+
+        opacity:
+            .48;
+
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY / SAFE MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce){
+
+    .ars-home-premium-v2 .particle-intelligence,
+    .ars-home-premium-v2 .particle-intelligence > *,
+    .ars-home-premium-v2 .radiation-spike{
+
+        animation:
+            none;
+
+    }
+
+}
+
+
+/* =========================================================
+   SECTION 08 — COMPLETE
+   SECTION 08 — LOCKED 🔒
+
+   Particle Intelligence Master
+   Particle Atmosphere
+   Particle Depth Field
+   Blue / Gold / White Particles
+   Micro Particles
+   Radiation Spikes
+   Radiation Core
+   Radiation Aura
+   Particle Drift
+   Particle Twinkle
+   Gold Particle Breath
+   Radiation Orbital Field
+   GPU-Safe Particle Layer
+   Paint Containment
+   Responsive Calibration
+   Reduced Motion Safety
+
+   🔒 V2 PARTICLE & RADIATION INTELLIGENCE LOCK
+   ========================================================= */
+/* =========================================================
+   ARS HERITAGE GROUP
+   HOME PAGE
+   PREMIUM V2
+   FILE: style-home-2.css
+
+   =========================================================
+   SECTION 09 — ORBITAL BEACON SYSTEM
+   ۰۹ — سیستم Beacon مداری
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   09.1 — ORBITAL BEACON MASTER
+   ۰۹.۱ — هسته Beacon مداری
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbital-beacon{
+
+    position:
+        absolute;
+
+    left:
+        var(--beacon-x,50%);
+
+    top:
+        var(--beacon-y,50%);
+
+    width:
+        var(--beacon-size,8px);
+
+    height:
+        var(--beacon-size,8px);
+
+    transform:
+        translate3d(-50%,-50%,0);
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(82,182,255,.86);
+
+    box-shadow:
+        0 0 8px
+        rgba(82,182,255,.38),
+        0 0 20px
+        rgba(22,140,255,.18);
+
+    opacity:
+        var(--beacon-opacity,.72);
+
+    pointer-events:
+        none;
+
+    isolation:
+        isolate;
+
+}
+
+
+/* ---------------------------------------------------------
+   09.2 — BEACON CORE
+   ۰۹.۲ — هسته نور Beacon
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbital-beacon::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        36%;
+
+    height:
+        36%;
+
+    transform:
+        translate3d(-50%,-50%,0);
+
+    border-radius:
+        50%;
+
+    background:
+        var(--ars-white);
+
+    box-shadow:
+        0 0 5px
+        rgba(247,244,237,.52);
+
+    pointer-events:
+        none;
+
+}
+
+
+/* ---------------------------------------------------------
+   09.3 — BEACON HALO
+   ۰۹.۳ — هاله Beacon
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbital-beacon::after{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        -250%;
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(22,140,255,.10),
+            rgba(22,140,255,.025) 34%,
+            transparent 72%
+        );
+
+    filter:
+        blur(4px);
+
+    opacity:
+        .76;
+
+    pointer-events:
+        none;
+
+}
+
+
+/* =========================================================
+   BEACON TYPES
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   09.4 — GOLD BEACON
+   ۰۹.۴ — Beacon طلایی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbital-beacon.gold{
+
+    background:
+        rgba(228,185,95,.90);
+
+    box-shadow:
+        0 0 8px
+        rgba(228,185,95,.42),
+        0 0 22px
+        rgba(228,185,95,.18);
+
+}
+
+
+/* ---------------------------------------------------------
+   09.5 — WHITE BEACON
+   ۰۹.۵ — Beacon سفید
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbital-beacon.white{
+
+    background:
+        rgba(247,244,237,.90);
+
+    box-shadow:
+        0 0 8px
+        rgba(247,244,237,.30),
+        0 0 18px
+        rgba(247,244,237,.12);
+
+}
+
+
+/* ---------------------------------------------------------
+   09.6 — BLUE BEACON
+   ۰۹.۶ — Beacon آبی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbital-beacon.blue{
+
+    background:
+        rgba(82,182,255,.90);
+
+}
+
+
+/* =========================================================
+   BEACON RING
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   09.7 — BEACON RING
+   ۰۹.۷ — حلقه Beacon
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbital-beacon .beacon-ring{
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        var(--beacon-ring-size,22px);
+
+    height:
+        var(--beacon-ring-size,22px);
+
+    transform:
+        translate3d(-50%,-50%,0);
+
+    border:
+        1px solid
+        rgba(82,182,255,.16);
+
+    border-radius:
+        50%;
+
+    pointer-events:
+        none;
+
+}
+
+
+/* ---------------------------------------------------------
+   09.8 — BEACON RING GOLD
+   ۰۹.۸ — حلقه طلایی Beacon
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbital-beacon.gold .beacon-ring{
+
+    border-color:
+        rgba(228,185,95,.22);
+
+}
+
+
+/* =========================================================
+   BEACON MOTION
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   09.9 — BEACON PULSE
+   ۰۹.۹ — پالس Beacon
+   --------------------------------------------------------- */
+
+@keyframes arsV2BeaconPulse{
+
+    0%,
+    100%{
+
+        transform:
+            translate3d(-50%,-50%,0)
+            scale(.90);
+
+        opacity:
+            .62;
+
+    }
+
+    50%{
+
+        transform:
+            translate3d(-50%,-50%,0)
+            scale(1);
+
+        opacity:
+            .92;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   09.10 — BEACON HALO BREATH
+   ۰۹.۱۰ — تنفس هاله Beacon
+   --------------------------------------------------------- */
+
+@keyframes arsV2BeaconHaloBreath{
+
+    0%,
+    100%{
+
+        transform:
+            scale(.92);
+
+        opacity:
+            .38;
+
+    }
+
+    50%{
+
+        transform:
+            scale(1.08);
+
+        opacity:
+            .72;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   09.11 — BEACON RING PULSE
+   ۰۹.۱۱ — پالس حلقه Beacon
+   --------------------------------------------------------- */
+
+@keyframes arsV2BeaconRingPulse{
+
+    0%,
+    100%{
+
+        transform:
+            translate3d(-50%,-50%,0)
+            scale(.84);
+
+        opacity:
+            .26;
+
+    }
+
+    50%{
+
+        transform:
+            translate3d(-50%,-50%,0)
+            scale(1.14);
+
+        opacity:
+            .66;
+
+    }
+
+}
+
+
+/* =========================================================
+   BEACON PERFORMANCE
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   09.12 — GPU SAFE BEACON
+   ۰۹.۱۲ — Beacon ایمن برای GPU
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbital-beacon,
+.ars-home-premium-v2 .orbital-beacon::before,
+.ars-home-premium-v2 .orbital-beacon::after,
+.ars-home-premium-v2 .beacon-ring{
+
+    backface-visibility:
+        hidden;
+
+    -webkit-backface-visibility:
+        hidden;
+
+}
+
+
+/* ---------------------------------------------------------
+   09.13 — BEACON POINTER SAFETY
+   ۰۹.۱۳ — ایمنی تعامل
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbital-beacon,
+.ars-home-premium-v2 .orbital-beacon *{
+
+    pointer-events:
+        none;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE BEACON SYSTEM
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   09.14 — TABLET
+   --------------------------------------------------------- */
+
+@media (max-width:900px){
+
+    .ars-home-premium-v2 .orbital-beacon{
+
+        opacity:
+            calc(
+                var(--beacon-opacity,.72) * .86
+            );
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   09.15 — MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width:700px){
+
+    .ars-home-premium-v2 .orbital-beacon{
+
+        opacity:
+            calc(
+                var(--beacon-opacity,.72) * .68
+            );
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   09.16 — SMALL MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width:480px){
+
+    .ars-home-premium-v2 .orbital-beacon{
+
+        opacity:
+            calc(
+                var(--beacon-opacity,.72) * .50
+            );
+
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY / SAFE MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce){
+
+    .ars-home-premium-v2 .orbital-beacon,
+    .ars-home-premium-v2 .orbital-beacon::before,
+    .ars-home-premium-v2 .orbital-beacon::after,
+    .ars-home-premium-v2 .beacon-ring{
+
+        animation:
+            none;
+
+    }
+
+}
+
+
+/* =========================================================
+   SECTION 09 — COMPLETE
+   SECTION 09 — LOCKED 🔒
+
+   Orbital Beacon Master
+   Beacon Core
+   Beacon Halo
+   Blue / Gold / White Beacon Variants
+   Beacon Ring
+   Beacon Pulse Architecture
+   Halo Breathing
+   Ring Pulse
+   GPU-Safe Rendering
+   Pointer Safety
+   Responsive Calibration
+   Reduced Motion Safety
+
+   🔒 V2 ORBITAL BEACON SYSTEM LOCK
+   ========================================================= */
+
+/* =========================================================
+   ARS HERITAGE GROUP
+   HOME PAGE
+   PREMIUM V2
+   FILE: style-home-2.css
+
+   =========================================================
+   SECTION 10 — HERO TYPOGRAPHY & CONTENT SYSTEM
+   ۱۰ — سیستم تایپوگرافی و محتوای Hero
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   10.1 — HERO CONTENT ROOT
+   ۱۰.۱ — ریشه محتوای Hero
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-content{
+
+    position:
+        relative;
+
+    z-index:
+        var(--ars-z-content);
+
+    width:
+        min(92%, 1500px);
+
+    margin:
+        0 auto;
+
+    padding:
+        clamp(120px, 13vw, 210px)
+        clamp(24px, 5vw, 90px);
+
+    text-align:
+        center;
+
+    isolation:
+        isolate;
+
+}
+
+
+/* ---------------------------------------------------------
+   10.2 — HERO CONTENT INNER
+   ۱۰.۲ — لایه داخلی محتوا
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-content-inner{
+
+    position:
+        relative;
+
+    width:
+        min(100%, 1180px);
+
+    margin:
+        0 auto;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+}
+
+
+/* ---------------------------------------------------------
+   10.3 — HERO EYEBROW
+   ۱۰.۳ — برچسب بالای Hero
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-eyebrow{
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        10px;
+
+    margin:
+        0 0 22px;
+
+    padding:
+        8px 16px;
+
+    border:
+        1px solid
+        var(--ars-border-gold);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(7,17,31,.42);
+
+    color:
+        var(--ars-gold-bright);
+
+    font-size:
+        clamp(.68rem, .7vw, .82rem);
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        .22em;
+
+    line-height:
+        1.2;
+
+    text-transform:
+        uppercase;
+
+    box-shadow:
+        0 0 24px
+        rgba(228,185,95,.06);
+
+    backdrop-filter:
+        blur(8px);
+
+    -webkit-backdrop-filter:
+        blur(8px);
+
+}
+
+
+/* ---------------------------------------------------------
+   10.4 — EYEBROW LIGHT
+   ۱۰.۴ — نور ظریف Eyebrow
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-eyebrow::before{
+
+    content:
+        "";
+
+    width:
+        5px;
+
+    height:
+        5px;
+
+    flex:
+        0 0 5px;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--ars-electric-blue-bright);
+
+    box-shadow:
+        0 0 10px
+        rgba(82,182,255,.42);
+
+}
+
+
+/* ---------------------------------------------------------
+   10.5 — HERO TITLE
+   ۱۰.۵ — عنوان اصلی Hero
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-title{
+
+    width:
+        min(100%, 1100px);
+
+    margin:
+        0;
+
+    color:
+        var(--ars-white);
+
+    font-size:
+        clamp(3rem, 6.8vw, 7.4rem);
+
+    font-weight:
+        800;
+
+    line-height:
+        .94;
+
+    letter-spacing:
+        -.045em;
+
+    text-wrap:
+        balance;
+
+    text-align:
+        center;
+
+    text-shadow:
+        0 0 34px
+        rgba(22,140,255,.08),
+        0 0 70px
+        rgba(228,185,95,.035);
+
+}
+
+
+/* ---------------------------------------------------------
+   10.6 — HERO TITLE GOLD ACCENT
+   ۱۰.۶ — تأکید طلایی عنوان
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-title .gold{
+
+    color:
+        var(--ars-gold-bright);
+
+    text-shadow:
+        0 0 24px
+        rgba(228,185,95,.12),
+        0 0 52px
+        rgba(228,185,95,.05);
+
+}
+
+
+/* ---------------------------------------------------------
+   10.7 — HERO TITLE BLUE ACCENT
+   ۱۰.۷ — تأکید آبی عنوان
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-title .blue{
+
+    color:
+        var(--ars-electric-blue-bright);
+
+    text-shadow:
+        0 0 24px
+        rgba(82,182,255,.14),
+        0 0 54px
+        rgba(22,140,255,.06);
+
+}
+
+
+/* ---------------------------------------------------------
+   10.8 — HERO TITLE PRECISION LINE
+   ۱۰.۸ — خط Precision عنوان
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-title .precision{
+
+    display:
+        inline-block;
+
+    color:
+        var(--ars-white-soft);
+
+    font-weight:
+        650;
+
+}
+
+
+/* ---------------------------------------------------------
+   10.9 — HERO LEAD
+   ۱۰.۹ — متن توضیحی Hero
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-lead{
+
+    width:
+        min(100%, 780px);
+
+    margin:
+        28px auto 0;
+
+    color:
+        var(--ars-white-soft);
+
+    font-size:
+        clamp(1rem, 1.25vw, 1.28rem);
+
+    font-weight:
+        400;
+
+    line-height:
+        1.8;
+
+    letter-spacing:
+        .012em;
+
+    text-wrap:
+        balance;
+
+    text-align:
+        center;
+
+}
+
+
+/* ---------------------------------------------------------
+   10.10 — HERO LEAD GOLD EMPHASIS
+   ۱۰.۱۰ — تأکید طلایی متن
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-lead .gold{
+
+    color:
+        var(--ars-gold-soft);
+
+}
+
+
+/* ---------------------------------------------------------
+   10.11 — HERO LEAD BLUE EMPHASIS
+   ۱۰.۱۱ — تأکید آبی متن
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-lead .blue{
+
+    color:
+        var(--ars-electric-blue-bright);
+
+}
+
+
+/* =========================================================
+   HERO CONTENT DEPTH
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   10.12 — CONTENT LIGHT FIELD
+   ۱۰.۱۲ — میدان نور محتوا
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-content-inner::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        42%;
+
+    width:
+        min(72vw, 920px);
+
+    height:
+        min(42vw, 500px);
+
+    transform:
+        translate3d(-50%,-50%,0);
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            ellipse,
+            rgba(22,140,255,.035),
+            transparent 64%
+        );
+
+    filter:
+        blur(28px);
+
+    z-index:
+        -1;
+
+    pointer-events:
+        none;
+
+}
+
+
+/* ---------------------------------------------------------
+   10.13 — CONTENT GOLD DEPTH
+   ۱۰.۱۳ — عمق طلایی محتوا
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-content-inner::after{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        55%;
+
+    width:
+        min(58vw, 760px);
+
+    height:
+        min(28vw, 330px);
+
+    transform:
+        translate3d(-50%,-50%,0);
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            ellipse,
+            rgba(228,185,95,.018),
+            transparent 68%
+        );
+
+    filter:
+        blur(30px);
+
+    z-index:
+        -1;
+
+    pointer-events:
+        none;
+
+}
+
+
+/* =========================================================
+   HERO SUPPORT LINE
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   10.14 — HERO SUPPORT
+   ۱۰.۱۴ — خط اطلاعاتی Hero
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-support{
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        12px 22px;
+
+    margin:
+        34px auto 0;
+
+    color:
+        var(--ars-white-muted);
+
+    font-size:
+        clamp(.72rem, .75vw, .86rem);
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        .12em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+/* ---------------------------------------------------------
+   10.15 — HERO SUPPORT ITEM
+   ۱۰.۱۵ — آیتم اطلاعاتی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-support-item{
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    white-space:
+        nowrap;
+
+}
+
+
+/* ---------------------------------------------------------
+   10.16 — HERO SUPPORT DOT
+   ۱۰.۱۶ — نقطه اطلاعاتی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-support-item::before{
+
+    content:
+        "";
+
+    width:
+        4px;
+
+    height:
+        4px;
+
+    flex:
+        0 0 4px;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--ars-electric-blue);
+
+    box-shadow:
+        0 0 9px
+        rgba(22,140,255,.35);
+
+}
+
+
+/* =========================================================
+   HERO REVEAL FOUNDATION
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   10.17 — HERO REVEAL ELEMENT
+   ۱۰.۱۷ — عنصر آماده Reveal
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-reveal{
+
+    opacity:
+        0;
+
+    transform:
+        translate3d(0,24px,0);
+
+    transition:
+        opacity
+        .9s
+        var(--ars-ease-premium),
+
+        transform
+        .9s
+        var(--ars-ease-premium);
+
+}
+
+
+/* ---------------------------------------------------------
+   10.18 — HERO REVEAL ACTIVE
+   ۱۰.۱۸ — Reveal فعال
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-reveal.is-visible{
+
+    opacity:
+        1;
+
+    transform:
+        translate3d(0,0,0);
+
+}
+
+
+/* ---------------------------------------------------------
+   10.19 — HERO TEXT REVEAL
+   ۱۰.۱۹ — Reveal متن
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-text-reveal{
+
+    display:
+        inline-block;
+
+    opacity:
+        0;
+
+    transform:
+        translate3d(0,18px,0);
+
+    transition:
+        opacity
+        .8s
+        var(--ars-ease-premium),
+
+        transform
+        .8s
+        var(--ars-ease-premium);
+
+}
+
+
+/* ---------------------------------------------------------
+   10.20 — HERO TEXT REVEAL ACTIVE
+   ۱۰.۲۰ — Reveal فعال متن
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .hero-text-reveal.is-visible{
+
+    opacity:
+        1;
+
+    transform:
+        translate3d(0,0,0);
+
+}
+
+
+/* =========================================================
+   HERO RESPONSIVE TYPOGRAPHY
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   10.21 — LARGE DESKTOP
+   ۱۰.۲۱ — دسکتاپ بزرگ
+   --------------------------------------------------------- */
+
+@media (min-width:1400px){
+
+    .ars-home-premium-v2 .hero-title{
+
+        font-size:
+            clamp(5.2rem, 6vw, 7.8rem);
+
+    }
+
+    .ars-home-premium-v2 .hero-content{
+
+        width:
+            min(94%, 1680px);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   10.22 — TABLET
+   ۱۰.۲۲ — تبلت
+   --------------------------------------------------------- */
+
+@media (max-width:900px){
+
+    .ars-home-premium-v2 .hero-content{
+
+        width:
+            min(94%, 1100px);
+
+        padding:
+            120px 28px;
+
+    }
+
+    .ars-home-premium-v2 .hero-title{
+
+        font-size:
+            clamp(2.8rem, 8vw, 5rem);
+
+        line-height:
+            .98;
+
+    }
+
+    .ars-home-premium-v2 .hero-lead{
+
+        max-width:
+            680px;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   10.23 — MOBILE
+   ۱۰.۲۳ — موبایل
+   --------------------------------------------------------- */
+
+@media (max-width:700px){
+
+    .ars-home-premium-v2 .hero-content{
+
+        width:
+            100%;
+
+        padding:
+            110px 20px;
+
+    }
+
+    .ars-home-premium-v2 .hero-title{
+
+        width:
+            100%;
+
+        font-size:
+            clamp(2.35rem, 11vw, 4.1rem);
+
+        letter-spacing:
+            -.035em;
+
+    }
+
+    .ars-home-premium-v2 .hero-lead{
+
+        margin-top:
+            22px;
+
+        font-size:
+            .98rem;
+
+        line-height:
+            1.75;
+
+    }
+
+    .ars-home-premium-v2 .hero-support{
+
+        margin-top:
+            28px;
+
+        gap:
+            10px 16px;
+
+        letter-spacing:
+            .08em;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   10.24 — SMALL MOBILE
+   ۱۰.۲۴ — موبایل کوچک
+   --------------------------------------------------------- */
+
+@media (max-width:480px){
+
+    .ars-home-premium-v2 .hero-content{
+
+        padding:
+            96px 16px;
+
+    }
+
+    .ars-home-premium-v2 .hero-eyebrow{
+
+        margin-bottom:
+            18px;
+
+        padding:
+            7px 13px;
+
+        letter-spacing:
+            .16em;
+
+    }
+
+    .ars-home-premium-v2 .hero-title{
+
+        font-size:
+            clamp(2.05rem, 12vw, 3.35rem);
+
+    }
+
+    .ars-home-premium-v2 .hero-lead{
+
+        font-size:
+            .92rem;
+
+    }
+
+    .ars-home-premium-v2 .hero-support{
+
+        font-size:
+            .65rem;
+
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY / SAFE MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce){
+
+    .ars-home-premium-v2 .hero-reveal,
+    .ars-home-premium-v2 .hero-text-reveal{
+
+        opacity:
+            1;
+
+        transform:
+            none;
+
+        transition:
+            none;
+
+    }
+
+}
+
+
+/* =========================================================
+   SECTION 10 — COMPLETE
+   SECTION 10 — LOCKED 🔒
+
+   Hero Content Root
+   Hero Content Inner
+   Hero Eyebrow
+   Hero Title
+   Gold / Blue / Precision Typography
+   Hero Lead
+   Content Light Field
+   Gold Content Depth
+   Hero Support System
+   Reveal Foundation
+   Text Reveal
+   Large Desktop Calibration
+   Tablet Calibration
+   Mobile Calibration
+   Small Mobile Calibration
+   Reduced Motion Safety
+
+   🔒 V2 HERO TYPOGRAPHY & CONTENT LOCK
+   ========================================================= */
+/* =========================================================
+   ARS HERITAGE GROUP
+   HOME PAGE
+   PREMIUM V2
+   FILE: style-home-2.css
+
+   =========================================================
+   SECTION 11 — ORBITAL UNIVERSE ARCHITECTURE
+   ۱۱ — معماری منظومه مداری
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   11.1 — ORBIT MASTER
+   ۱۱.۱ — هسته اصلی منظومه
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .ars-orbit{
+
+    position:
+        relative;
+
+    width:
+        min(92vw, 1480px);
+
+    height:
+        min(92vw, 1480px);
+
+    min-width:
+        620px;
+
+    min-height:
+        620px;
+
+    margin:
+        0 auto;
+
+    transform:
+        translate3d(0,0,0);
+
+    transform-style:
+        preserve-3d;
+
+    perspective:
+        1400px;
+
+    isolation:
+        isolate;
+
+    z-index:
+        var(--ars-z-orbit);
+
+}
+
+
+/* ---------------------------------------------------------
+   11.2 — ORBIT UNIVERSE FIELD
+   ۱۱.۲ — میدان کیهانی منظومه
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .ars-orbit::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        92%;
+
+    height:
+        92%;
+
+    transform:
+        translate3d(-50%,-50%,0)
+        rotateX(68deg);
+
+    border-radius:
+        50%;
+
+    border:
+        1px solid
+        rgba(22,140,255,.055);
+
+    box-shadow:
+
+        0 0 90px
+        rgba(22,140,255,.035),
+
+        inset 0 0 80px
+        rgba(228,185,95,.018);
+
+    pointer-events:
+        none;
+
+}
+
+
+/* ---------------------------------------------------------
+   11.3 — SECONDARY ORBIT FIELD
+   ۱۱.۳ — میدان مداری ثانویه
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .ars-orbit::after{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        72%;
+
+    height:
+        72%;
+
+    transform:
+        translate3d(-50%,-50%,0)
+        rotateY(62deg)
+        rotateZ(-18deg);
+
+    border:
+        1px solid
+        rgba(228,185,95,.045);
+
+    border-radius:
+        50%;
+
+    box-shadow:
+        0 0 55px
+        rgba(228,185,95,.025);
+
+    pointer-events:
+        none;
+
+}
+
+
+/* =========================================================
+   INNER ORBIT — SIX NODES
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   11.4 — INNER ORBIT
+   ۱۱.۴ — مدار داخلی شش‌نودی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-inner{
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        56%;
+
+    height:
+        56%;
+
+    transform:
+        translate3d(-50%,-50%,0);
+
+    transform-style:
+        preserve-3d;
+
+    border-radius:
+        50%;
+
+    pointer-events:
+        none;
+
+}
+
+
+/* ---------------------------------------------------------
+   11.5 — INNER ORBIT RING
+   ۱۱.۵ — حلقه مدار داخلی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-inner::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    border:
+        1px solid
+        rgba(22,140,255,.10);
+
+    border-radius:
+        50%;
+
+    box-shadow:
+
+        0 0 35px
+        rgba(22,140,255,.035),
+
+        inset 0 0 28px
+        rgba(22,140,255,.018);
+
+}
+
+
+/* ---------------------------------------------------------
+   11.6 — INNER SECONDARY RING
+   ۱۱.۶ — حلقه دوم داخلی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-inner::after{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        4.5%;
+
+    border:
+        1px dashed
+        rgba(228,185,95,.055);
+
+    border-radius:
+        50%;
+
+    transform:
+        rotateZ(18deg);
+
+}
+
+
+/* =========================================================
+   OUTER ORBIT — SEVEN NODES
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   11.7 — OUTER ORBIT
+   ۱۱.۷ — مدار بیرونی هفت‌نودی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-outer{
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        78%;
+
+    height:
+        78%;
+
+    transform:
+        translate3d(-50%,-50%,0);
+
+    transform-style:
+        preserve-3d;
+
+    border-radius:
+        50%;
+
+    pointer-events:
+        none;
+
+}
+
+
+/* ---------------------------------------------------------
+   11.8 — OUTER ORBIT PRIMARY RING
+   ۱۱.۸ — حلقه اصلی بیرونی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-outer::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    border:
+        1px solid
+        rgba(228,185,95,.075);
+
+    border-radius:
+        50%;
+
+    box-shadow:
+
+        0 0 50px
+        rgba(228,185,95,.025),
+
+        inset 0 0 50px
+        rgba(22,140,255,.018);
+
+}
+
+
+/* ---------------------------------------------------------
+   11.9 — OUTER SECONDARY RING
+   ۱۱.۹ — حلقه ثانویه بیرونی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-outer::after{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        3.2%;
+
+    border:
+        1px solid
+        rgba(22,140,255,.045);
+
+    border-radius:
+        50%;
+
+    transform:
+        rotateZ(-22deg);
+
+}
+
+
+/* =========================================================
+   ORBITAL NODE FOUNDATION
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   11.10 — NODE MASTER
+   ۱۱.۱۰ — پایه همه نودها
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-item{
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        clamp(76px, 6vw, 108px);
+
+    aspect-ratio:
+        1;
+
+    transform:
+        translate3d(-50%,-50%,0)
+        rotateZ(var(--node-angle,0deg))
+        translateX(var(--node-radius,0px));
+
+    transform-style:
+        preserve-3d;
+
+    pointer-events:
+        auto;
+
+    cursor:
+        pointer;
+
+    z-index:
+        var(--ars-z-nodes);
+
+}
+
+
+/* ---------------------------------------------------------
+   11.11 — NODE SHELL
+   ۱۱.۱۱ — پوسته نود
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-item::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        -7px;
+
+    border:
+        1px solid
+        rgba(82,182,255,.22);
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle at 36% 30%,
+            rgba(247,244,237,.075),
+            transparent 28%
+        );
+
+    box-shadow:
+
+        0 0 18px
+        rgba(22,140,255,.12),
+
+        inset 0 0 22px
+        rgba(22,140,255,.06);
+
+    pointer-events:
+        none;
+
+}
+
+
+/* ---------------------------------------------------------
+   11.12 — NODE ENERGY HALO
+   ۱۱.۱۲ — هاله انرژی نود
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-item::after{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        -25px;
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(22,140,255,.085),
+            transparent 66%
+        );
+
+    filter:
+        blur(7px);
+
+    opacity:
+        .62;
+
+    pointer-events:
+        none;
+
+}
+
+
+/* =========================================================
+   NODE INNER SURFACE
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   11.13 — NODE SURFACE
+   ۱۱.۱۳ — سطح شیشه‌ای نود
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-item > *{
+
+    position:
+        relative;
+
+}
+
+
+/* ---------------------------------------------------------
+   11.14 — NODE GLASS
+   ۱۱.۱۴ — شیشه داخلی نود
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-item .node-surface{
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    border:
+        1px solid
+        rgba(247,244,237,.10);
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            circle at 34% 26%,
+            rgba(247,244,237,.07),
+            transparent 28%
+        ),
+
+        linear-gradient(
+            145deg,
+            rgba(11,23,40,.96),
+            rgba(1,2,7,.94)
+        );
+
+    box-shadow:
+
+        0 12px 36px
+        rgba(0,0,0,.42),
+
+        inset 0 0 24px
+        rgba(22,140,255,.06);
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+
+}
+
+
+/* ---------------------------------------------------------
+   11.15 — NODE ENERGY RING
+   ۱۱.۱۵ — حلقه انرژی نود
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-item .node-ring{
+
+    position:
+        absolute;
+
+    inset:
+        8px;
+
+    border:
+        1px solid
+        rgba(228,185,95,.18);
+
+    border-radius:
+        50%;
+
+    box-shadow:
+        0 0 15px
+        rgba(228,185,95,.055);
+
+    pointer-events:
+        none;
+
+}
+
+
+/* =========================================================
+   NODE DEPTH / TILT
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   11.16 — NODE DEPTH
+   ۱۱.۱۶ — عمق سه‌بعدی نود
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-item{
+
+    --node-depth:
+        0px;
+
+    transform:
+        translate3d(
+            -50%,
+            -50%,
+            var(--node-depth)
+        )
+        rotateZ(var(--node-angle,0deg))
+        translateX(var(--node-radius,0px));
+
+}
+
+
+/* ---------------------------------------------------------
+   11.17 — INNER NODE DEPTH
+   ۱۱.۱۷ — عمق نودهای داخلی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-inner .orbit-item{
+
+    --node-depth:
+        18px;
+
+}
+
+
+/* ---------------------------------------------------------
+   11.18 — OUTER NODE DEPTH
+   ۱۱.۱۸ — عمق نودهای بیرونی
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-outer .orbit-item{
+
+    --node-depth:
+        6px;
+
+}
+
+
+/* =========================================================
+   NODE SELECTION
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   11.19 — NODE HOVER
+   ۱۱.۱۹ — Hover نود
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-item:hover{
+
+    z-index:
+        calc(var(--ars-z-nodes) + 20);
+
+}
+
+
+/* ---------------------------------------------------------
+   11.20 — NODE SELECTED
+   ۱۱.۲۰ — نود انتخاب‌شده
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-item.is-selected{
+
+    z-index:
+        calc(var(--ars-z-nodes) + 30);
+
+}
+
+
+/* ---------------------------------------------------------
+   11.21 — SELECTED ENERGY SHELL
+   ۱۱.۲۱ — پوسته انرژی هنگام انتخاب
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-item.is-selected::before{
+
+    border-color:
+        rgba(228,185,95,.56);
+
+    box-shadow:
+
+        0 0 22px
+        rgba(228,185,95,.26),
+
+        0 0 58px
+        rgba(22,140,255,.16),
+
+        inset 0 0 24px
+        rgba(228,185,95,.08);
+
+}
+
+
+/* ---------------------------------------------------------
+   11.22 — SELECTED ENERGY HALO
+   ۱۱.۲۲ — هاله انرژی انتخاب
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-item.is-selected::after{
+
+    opacity:
+        1;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(228,185,95,.16),
+            rgba(22,140,255,.08) 34%,
+            transparent 70%
+        );
+
+}
+
+
+/* =========================================================
+   NODE MOTION
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   11.23 — NODE BREATH
+   ۱۱.۲۳ — تنفس آرام نود
+   --------------------------------------------------------- */
+
+@keyframes arsV2NodeBreath{
+
+    0%,
+    100%{
+
+        filter:
+            brightness(.96);
+
+    }
+
+    50%{
+
+        filter:
+            brightness(1.08);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   11.24 — NODE ENERGY PULSE
+   ۱۱.۲۴ — پالس انرژی نود
+   --------------------------------------------------------- */
+
+@keyframes arsV2NodeEnergyPulse{
+
+    0%,
+    100%{
+
+        opacity:
+            .48;
+
+        transform:
+            scale(.96);
+
+    }
+
+    50%{
+
+        opacity:
+            .90;
+
+        transform:
+            scale(1.04);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   11.25 — NODE ORBIT AXIS
+   ۱۱.۲۵ — محور چرخش فضایی نود
+   --------------------------------------------------------- */
+
+@keyframes arsV2NodeAxisMotion{
+
+    0%{
+
+        transform:
+            rotateX(0deg)
+            rotateY(0deg)
+            rotateZ(0deg);
+
+    }
+
+    33%{
+
+        transform:
+            rotateX(7deg)
+            rotateY(-10deg)
+            rotateZ(4deg);
+
+    }
+
+    66%{
+
+        transform:
+            rotateX(-5deg)
+            rotateY(8deg)
+            rotateZ(-3deg);
+
+    }
+
+    100%{
+
+        transform:
+            rotateX(0deg)
+            rotateY(0deg)
+            rotateZ(0deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   NODE PERFORMANCE
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   11.26 — GPU SAFE ORBIT
+   ۱۱.۲۶ — مدار GPU-safe
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .ars-orbit,
+.ars-home-premium-v2 .orbit-inner,
+.ars-home-premium-v2 .orbit-outer,
+.ars-home-premium-v2 .orbit-item,
+.ars-home-premium-v2 .node-surface,
+.ars-home-premium-v2 .node-ring{
+
+    backface-visibility:
+        hidden;
+
+    -webkit-backface-visibility:
+        hidden;
+
+}
+
+
+/* ---------------------------------------------------------
+   11.27 — NODE INTERACTION SAFETY
+   ۱۱.۲۷ — ایمنی تعامل
+   --------------------------------------------------------- */
+
+.ars-home-premium-v2 .orbit-inner,
+.ars-home-premium-v2 .orbit-outer{
+
+    pointer-events:
+        none;
+
+}
+
+.ars-home-premium-v2 .orbit-item{
+
+    pointer-events:
+        auto;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE ORBIT CALIBRATION
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   11.28 — LARGE DESKTOP
+   ۱۱.۲۸ — دسکتاپ بزرگ
+   --------------------------------------------------------- */
+
+@media (min-width:1400px){
+
+    .ars-home-premium-v2 .ars-orbit{
+
+        width:
+            min(88vw, 1580px);
+
+        height:
+            min(88vw, 1580px);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   11.29 — TABLET
+   ۱۱.۲۹ — تبلت
+   --------------------------------------------------------- */
+
+@media (max-width:900px){
+
+    .ars-home-premium-v2 .ars-orbit{
+
+        width:
+            760px;
+
+        height:
+            760px;
+
+        min-width:
+            760px;
+
+        min-height:
+            760px;
+
+    }
+
+    .ars-home-premium-v2 .orbit-inner{
+
+        width:
+            55%;
+
+        height:
+            55%;
+
+    }
+
+    .ars-home-premium-v2 .orbit-outer{
+
+        width:
+            77%;
+
+        height:
+            77%;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   11.30 — MOBILE
+   ۱۱.۳۰ — موبایل
+   --------------------------------------------------------- */
+
+@media (max-width:700px){
+
+    .ars-home-premium-v2 .ars-orbit{
+
+        width:
+            650px;
+
+        height:
+            650px;
+
+        min-width:
+            650px;
+
+        min-height:
+            650px;
+
+    }
+
+    .ars-home-premium-v2 .orbit-item{
+
+        width:
+            78px;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   11.31 — SMALL MOBILE
+   ۱۱.۳۱ — موبایل کوچک
+   --------------------------------------------------------- */
+
+@media (max-width:480px){
+
+    .ars-home-premium-v2 .ars-orbit{
+
+        width:
+            560px;
+
+        height:
+            560px;
+
+        min-width:
+            560px;
+
+        min-height:
+            560px;
+
+    }
+
+    .ars-home-premium-v2 .orbit-item{
+
+        width:
+            68px;
+
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY / SAFE MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce){
+
+    .ars-home-premium-v2 .orbit-item,
+    .ars-home-premium-v2 .orbit-item::before,
+    .ars-home-premium-v2 .orbit-item::after{
+
+        animation:
+            none;
+
+    }
+
+}
+
+
+/* =========================================================
+   SECTION 11 — COMPLETE
+   SECTION 11 — LOCKED 🔒
+
+   Orbit Master
+   Secondary Spatial Fields
+   Inner Six-Node Architecture
+   Outer Seven-Node Architecture
+   Node Shell
+   Energy Halo
+   Glass Surface
+   Energy Ring
+   3D Node Depth
+   Hover Elevation
+   Selected State
+   Energy Selection Halo
+   Multi-Axis Motion Foundation
+   GPU-Safe Rendering
+   Responsive Calibration
+   Reduced Motion Safety
+
+   🔒 V2 ORBITAL UNIVERSE ARCHITECTURE LOCK
+   ========================================================= */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
