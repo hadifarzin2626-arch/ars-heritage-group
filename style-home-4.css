@@ -14626,13 +14626,4087 @@ to {
    12 — ARS CORE CARD
    ========================================================= */
 
+/* =========================================================
+   ARS HERITAGE GROUP — HOME
+   13 — SPECIALIZED CARD IDENTITY ENGINE
+   =========================================================
+   RESPONSIBILITY
+   ---------------------------------------------------------
+   Specialized Cards ONLY
+
+   FAMILY A
+   ---------------------------------------------------------
+   INNER ECOSYSTEM
+   6 CARDS
+   Cards 02 → 07
+
+   FAMILY B
+   ---------------------------------------------------------
+   OUTER ECOSYSTEM
+   7 CARDS
+   Cards 08 → 14
+
+   ARCHITECTURE
+   ---------------------------------------------------------
+   Core
+      ↓
+   Inner Ecosystem — 6
+      ↓
+   ENERGY BRIDGE — controlled by 15
+      ↓
+   Outer Ecosystem — 7
+
+   IMPORTANT
+   ---------------------------------------------------------
+   HTML IS LOCKED.
+   NO HTML MODIFICATION.
+
+   THIS FILE DOES NOT CONTROL:
+   ---------------------------------------------------------
+   11 → Layout / Grid Architecture
+   12 → Core Card
+   14 → Material Engine
+   15 → Energy / Golden Reveal
+   16 → Motion / Cinematic Animation
+
+   NO:
+   transform
+   animation
+   filter
+   box-shadow
+   energy glow
+   material rendering
+   ========================================================= */
 
 
+/* =========================================================
+   13.01 — SPECIALIZED CARD ROOT
+   ========================================================= */
+
+.ecosystem .ars-core-grid > .ars-specialized-card {
+
+    position: relative;
+
+    min-width: 0;
+
+    isolation: isolate;
+
+    /*
+     * Visual identity only.
+     * Geometry remains controlled by Section 11.
+     */
+
+}
 
 
+/* =========================================================
+   13.02 — SPECIALIZED CARD LINK
+   ========================================================= */
+
+.ecosystem .ars-specialized-card
+.ars-card-link {
+
+    position: relative;
+
+    z-index: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+
+    height: 100%;
+
+    min-width: 0;
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
 
 
+/* =========================================================
+   13.03 — INNER FAMILY
+   6-CARD INNER ECOSYSTEM
+   ---------------------------------------------------------
+   Grid children:
 
+   02 → 07
+   ========================================================= */
+
+.ecosystem .ars-core-grid
+> .ars-specialized-card:nth-child(n+2):nth-child(-n+7) {
+
+    --ars-card-family:
+        inner;
+
+    --ars-family-accent:
+        rgba(212,175,55,.88);
+
+    --ars-family-accent-soft:
+        rgba(212,175,55,.18);
+
+    --ars-family-secondary:
+        rgba(40,170,255,.48);
+
+    --ars-family-content:
+        rgba(235,239,245,.96);
+
+    --ars-family-muted:
+        rgba(205,214,226,.68);
+
+}
+
+
+/* =========================================================
+   13.04 — OUTER FAMILY
+   7-CARD OUTER ECOSYSTEM
+   ---------------------------------------------------------
+   Grid children:
+
+   08 → 14
+   ========================================================= */
+
+.ecosystem .ars-core-grid
+> .ars-specialized-card:nth-child(n+8):nth-child(-n+14) {
+
+    --ars-card-family:
+        outer;
+
+    --ars-family-accent:
+        rgba(40,170,255,.86);
+
+    --ars-family-accent-soft:
+        rgba(40,170,255,.16);
+
+    --ars-family-secondary:
+        rgba(212,175,55,.46);
+
+    --ars-family-content:
+        rgba(235,239,245,.94);
+
+    --ars-family-muted:
+        rgba(201,213,228,.66);
+
+}
+
+
+/* =========================================================
+   13.05 — INNER IDENTITY
+   ---------------------------------------------------------
+   Inner family represents:
+
+   Intelligence
+   Core capabilities
+   Precision
+   Controlled technology
+   ========================================================= */
+
+.ecosystem .ars-core-grid
+> .ars-specialized-card:nth-child(n+2):nth-child(-n+7)
+.ars-card-category {
+
+    color:
+        var(--ars-family-accent);
+
+    border-color:
+        var(--ars-family-accent-soft);
+
+}
+
+
+/* =========================================================
+   13.06 — OUTER IDENTITY
+   ---------------------------------------------------------
+   Outer family represents:
+
+   Exploration
+   Ecosystem
+   Expansion
+   Future-facing capabilities
+   ========================================================= */
+
+.ecosystem .ars-core-grid
+> .ars-specialized-card:nth-child(n+8):nth-child(-n+14)
+.ars-card-category {
+
+    color:
+        var(--ars-family-accent);
+
+    border-color:
+        var(--ars-family-accent-soft);
+
+}
+
+
+/* =========================================================
+   13.07 — SPECIALIZED IMAGE FRAME
+   ---------------------------------------------------------
+   Structural image identity ONLY.
+   No image animation here.
+   ========================================================= */
+
+.ecosystem .ars-specialized-card
+.ars-card-image {
+
+    position: relative;
+
+    width: 100%;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+}
+
+
+/* =========================================================
+   13.08 — INNER IMAGE IDENTITY
+   ========================================================= */
+
+.ecosystem .ars-core-grid
+> .ars-specialized-card:nth-child(n+2):nth-child(-n+7)
+.ars-card-image {
+
+    /*
+     * Inner family keeps imagery controlled,
+     * concentrated and technology-oriented.
+     */
+
+    min-height:
+        180px;
+
+}
+
+
+/* =========================================================
+   13.09 — OUTER IMAGE IDENTITY
+   ========================================================= */
+
+.ecosystem .ars-core-grid
+> .ars-specialized-card:nth-child(n+8):nth-child(-n+14)
+.ars-card-image {
+
+    /*
+     * Outer family receives slightly more
+     * visual breathing room.
+     */
+
+    min-height:
+        185px;
+
+}
+
+
+/* =========================================================
+   13.10 — SPECIALIZED IMAGE
+   ========================================================= */
+
+.ecosystem .ars-specialized-card
+.ars-card-image img {
+
+    display:
+        block;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    min-width:
+        0;
+
+    object-fit:
+        cover;
+
+}
+
+
+/* =========================================================
+   13.11 — INNER IMAGE CHARACTER
+   ========================================================= */
+
+.ecosystem .ars-core-grid
+> .ars-specialized-card:nth-child(n+2):nth-child(-n+7)
+.ars-card-image img {
+
+    object-position:
+        center;
+
+}
+
+
+/* =========================================================
+   13.12 — OUTER IMAGE CHARACTER
+   ========================================================= */
+
+.ecosystem .ars-core-grid
+> .ars-specialized-card:nth-child(n+8):nth-child(-n+14)
+.ars-card-image img {
+
+    object-position:
+        center;
+
+}
+
+
+/* =========================================================
+   13.13 — SPECIALIZED LOGO PLATFORM
+   ========================================================= */
+
+.ecosystem .ars-specialized-card
+.ars-card-logo {
+
+    position: relative;
+
+    z-index: 3;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+}
+
+
+/* =========================================================
+   13.14 — INNER LOGO IDENTITY
+   ========================================================= */
+
+.ecosystem .ars-core-grid
+> .ars-specialized-card:nth-child(n+2):nth-child(-n+7)
+.ars-card-logo {
+
+    /*
+     * Inner logos remain compact and precise.
+     */
+
+    width:
+        78px;
+
+    height:
+        78px;
+
+    margin:
+        -34px auto 0;
+
+}
+
+
+/* =========================================================
+   13.15 — OUTER LOGO IDENTITY
+   ========================================================= */
+
+.ecosystem .ars-core-grid
+> .ars-specialized-card:nth-child(n+8):nth-child(-n+14)
+.ars-card-logo {
+
+    /*
+     * Outer ecosystem receives slightly
+     * more visual presence.
+     */
+
+    width:
+        84px;
+
+    height:
+        84px;
+
+    margin:
+        -36px auto 0;
+
+}
+
+
+/* =========================================================
+   13.16 — SPECIALIZED LOGO IMAGE
+   ========================================================= */
+
+.ecosystem .ars-specialized-card
+.ars-card-logo img {
+
+    display:
+        block;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        contain;
+
+}
+
+
+/* =========================================================
+   13.17 — SPECIALIZED CONTENT
+   ========================================================= */
+
+.ecosystem .ars-specialized-card
+.ars-card-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    min-width: 0;
+
+}
+
+
+/* =========================================================
+   13.18 — INNER CONTENT
+   ========================================================= */
+
+.ecosystem .ars-core-grid
+> .ars-specialized-card:nth-child(n+2):nth-child(-n+7)
+.ars-card-content {
+
+    padding:
+        20px 22px 25px;
+
+}
+
+
+/* =========================================================
+   13.19 — OUTER CONTENT
+   ========================================================= */
+
+.ecosystem .ars-core-grid
+> .ars-specialized-card:nth-child(n+8):nth-child(-n+14)
+.ars-card-content {
+
+    padding:
+        22px 23px 27px;
+
+}
+
+
+/* =========================================================
+   13.20 — SPECIALIZED CATEGORY
+   ========================================================= */
+
+.ecosystem .ars-specialized-card
+.ars-card-category {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    max-width:
+        100%;
+
+    margin-bottom:
+        10px;
+
+    padding:
+        5px 11px;
+
+    border:
+        1px solid
+        transparent;
+
+    border-radius:
+        999px;
+
+    background:
+        transparent;
+
+    font-size:
+        .63rem;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        .15em;
+
+    line-height:
+        1.3;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+/* =========================================================
+   13.21 — SPECIALIZED TITLE
+   ========================================================= */
+
+.ecosystem .ars-specialized-card
+.ars-card-content h3 {
+
+    margin:
+        0 0 10px;
+
+    color:
+        var(--ars-family-content);
+
+    font-size:
+        clamp(
+            1.05rem,
+            1.45vw,
+            1.38rem
+        );
+
+    font-weight:
+        600;
+
+    line-height:
+        1.2;
+
+    letter-spacing:
+        -.018em;
+
+}
+
+
+/* =========================================================
+   13.22 — SPECIALIZED DESCRIPTION
+   ========================================================= */
+
+.ecosystem .ars-specialized-card
+.ars-card-content p {
+
+    max-width:
+        100%;
+
+    margin:
+        0 0 17px;
+
+    color:
+        var(--ars-family-muted);
+
+    font-size:
+        .82rem;
+
+    line-height:
+        1.7;
+
+}
+
+
+/* =========================================================
+   13.23 — SPECIALIZED CTA
+   ========================================================= */
+
+.ecosystem .ars-specialized-card
+.ars-card-action {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    color:
+        var(--ars-family-accent);
+
+    font-size:
+        .7rem;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        .07em;
+
+}
+
+
+/* =========================================================
+   13.24 — INNER CTA IDENTITY
+   ========================================================= */
+
+.ecosystem .ars-core-grid
+> .ars-specialized-card:nth-child(n+2):nth-child(-n+7)
+.ars-card-action {
+
+    color:
+        rgba(232,199,120,.94);
+
+}
+
+
+/* =========================================================
+   13.25 — OUTER CTA IDENTITY
+   ========================================================= */
+
+.ecosystem .ars-core-grid
+> .ars-specialized-card:nth-child(n+8):nth-child(-n+14)
+.ars-card-action {
+
+    color:
+        rgba(102,201,255,.92);
+
+}
+
+
+/* =========================================================
+   13.26 — FAMILY SEPARATION MARKER
+   ---------------------------------------------------------
+   This creates NO energy effect.
+
+   It only establishes the logical boundary
+   between the two card families.
+
+   Actual Energy Bridge:
+   Section 15 ONLY.
+   ========================================================= */
+
+.ecosystem .ars-core-grid
+> .ars-specialized-card:nth-child(8) {
+
+    --ars-family-boundary:
+        outer;
+
+}
+
+
+/* =========================================================
+   13.27 — INNER FAMILY CONSISTENCY
+   ========================================================= */
+
+.ecosystem .ars-core-grid
+> .ars-specialized-card:nth-child(n+2):nth-child(-n+7)
+.ars-card-link {
+
+    min-height:
+        100%;
+
+}
+
+
+/* =========================================================
+   13.28 — OUTER FAMILY CONSISTENCY
+   ========================================================= */
+
+.ecosystem .ars-core-grid
+> .ars-specialized-card:nth-child(n+8):nth-child(-n+14)
+.ars-card-link {
+
+    min-height:
+        100%;
+
+}
+
+
+/* =========================================================
+   13.29 — TABLET IDENTITY
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .ecosystem .ars-core-grid
+    > .ars-specialized-card
+    .ars-card-image {
+
+        min-height:
+            175px;
+
+    }
+
+    .ecosystem .ars-core-grid
+    > .ars-specialized-card:nth-child(n+2):nth-child(-n+7)
+    .ars-card-logo {
+
+        width:
+            74px;
+
+        height:
+            74px;
+
+        margin-top:
+            -31px;
+
+    }
+
+    .ecosystem .ars-core-grid
+    > .ars-specialized-card:nth-child(n+8):nth-child(-n+14)
+    .ars-card-logo {
+
+        width:
+            78px;
+
+        height:
+            78px;
+
+        margin-top:
+            -33px;
+
+    }
+
+}
+
+
+/* =========================================================
+   13.30 — TABLET PORTRAIT
+   ========================================================= */
+
+@media (max-width: 820px) {
+
+    .ecosystem .ars-specialized-card
+    .ars-card-content {
+
+        padding:
+            19px 19px 23px;
+
+    }
+
+    .ecosystem .ars-specialized-card
+    .ars-card-content h3 {
+
+        font-size:
+            1.08rem;
+
+    }
+
+    .ecosystem .ars-specialized-card
+    .ars-card-content p {
+
+        font-size:
+            .8rem;
+
+    }
+
+}
+
+
+/* =========================================================
+   13.31 — MOBILE
+   ========================================================= */
+
+@media (max-width: 680px) {
+
+    .ecosystem .ars-core-grid
+    > .ars-specialized-card
+    .ars-card-image {
+
+        min-height:
+            190px;
+
+    }
+
+    .ecosystem .ars-core-grid
+    > .ars-specialized-card:nth-child(n+2):nth-child(-n+7)
+    .ars-card-logo {
+
+        width:
+            76px;
+
+        height:
+            76px;
+
+        margin-top:
+            -32px;
+
+    }
+
+    .ecosystem .ars-core-grid
+    > .ars-specialized-card:nth-child(n+8):nth-child(-n+14)
+    .ars-card-logo {
+
+        width:
+            80px;
+
+        height:
+            80px;
+
+        margin-top:
+            -34px;
+
+    }
+
+    .ecosystem .ars-specialized-card
+    .ars-card-content {
+
+        padding:
+            19px 19px 24px;
+
+    }
+
+}
+
+
+/* =========================================================
+   13.32 — SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .ecosystem .ars-core-grid
+    > .ars-specialized-card
+    .ars-card-image {
+
+        min-height:
+            175px;
+
+    }
+
+    .ecosystem .ars-core-grid
+    > .ars-specialized-card:nth-child(n+2):nth-child(-n+7)
+    .ars-card-logo {
+
+        width:
+            68px;
+
+        height:
+            68px;
+
+        margin-top:
+            -29px;
+
+    }
+
+    .ecosystem .ars-core-grid
+    > .ars-specialized-card:nth-child(n+8):nth-child(-n+14)
+    .ars-card-logo {
+
+        width:
+            72px;
+
+        height:
+            72px;
+
+        margin-top:
+            -31px;
+
+    }
+
+    .ecosystem .ars-specialized-card
+    .ars-card-content {
+
+        padding:
+            17px 17px 21px;
+
+    }
+
+    .ecosystem .ars-specialized-card
+    .ars-card-content h3 {
+
+        font-size:
+            1rem;
+
+    }
+
+    .ecosystem .ars-specialized-card
+    .ars-card-content p {
+
+        font-size:
+            .77rem;
+
+        line-height:
+            1.65;
+
+    }
+
+}
+
+
+/* =========================================================
+   13.33 — VERY SMALL DEVICES
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .ecosystem .ars-core-grid
+    > .ars-specialized-card
+    .ars-card-image {
+
+        min-height:
+            160px;
+
+    }
+
+    .ecosystem .ars-core-grid
+    > .ars-specialized-card:nth-child(n+2):nth-child(-n+7)
+    .ars-card-logo {
+
+        width:
+            62px;
+
+        height:
+            62px;
+
+        margin-top:
+            -26px;
+
+    }
+
+    .ecosystem .ars-core-grid
+    > .ars-specialized-card:nth-child(n+8):nth-child(-n+14)
+    .ars-card-logo {
+
+        width:
+            66px;
+
+        height:
+            66px;
+
+        margin-top:
+            -28px;
+
+    }
+
+}
+
+
+/* =========================================================
+   13.34 — TOUCH SAFETY
+   ========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+    .ecosystem .ars-specialized-card
+    .ars-card-link {
+
+        -webkit-tap-highlight-color:
+            transparent;
+
+    }
+
+}
+
+
+/* =========================================================
+   13.35 — ACCESSIBILITY
+   ========================================================= */
+
+.ecosystem .ars-specialized-card
+.ars-card-link:focus-visible {
+
+    outline:
+        2px solid
+        var(--ars-family-accent);
+
+    outline-offset:
+        4px;
+
+}
+
+
+/* =========================================================
+   13.36 — REDUCED MOTION
+   ---------------------------------------------------------
+   Section 13 itself contains no animation.
+   This block exists only to guarantee that
+   future inherited motion cannot alter identity rules.
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ecosystem .ars-specialized-card
+    .ars-card-link {
+
+        scroll-behavior:
+            auto;
+
+    }
+
+}
+
+
+/* =========================================================
+   13.37 — HARD SCOPE LOCK
+   ---------------------------------------------------------
+   Specialized identity only.
+
+   Energy:
+   15
+
+   Material:
+   14
+
+   Motion:
+   16
+
+   Layout:
+   11
+
+   Core:
+   12
+   ========================================================= */
+
+.ecosystem .ars-specialized-card {
+
+    /*
+     * No transform.
+     * No animation.
+     * No filter.
+     * No box-shadow.
+     * No energy pseudo-element.
+     *
+     * These are intentionally absent.
+     */
+
+}
+
+
+/* =========================================================
+   END OF
+   13 — SPECIALIZED CARD IDENTITY ENGINE
+   ========================================================= */
+
+/* =========================================================
+   ARS HERITAGE GROUP — HOME
+   14 — CARD MATERIAL ENGINE
+   =========================================================
+   MASTER MATERIAL SYSTEM
+   ---------------------------------------------------------
+   RESPONSIBILITY:
+
+   • Glass Surface
+   • Material Depth
+   • Surface Transparency
+   • Border Material
+   • Inner / Outer Material Identity
+   • Image Surface Protection
+   • Content Surface Separation
+   • Material Responsive Behavior
+
+   ARCHITECTURE LOCK
+   ---------------------------------------------------------
+   11 → Architecture / Layout
+   12 → Core Card
+   13 → Specialized Identity
+   14 → MATERIAL — THIS FILE
+   15 → Energy / Golden Reveal / Energy Bridge
+   16 → Motion / Cinematic Animation
+
+   IMPORTANT
+   ---------------------------------------------------------
+   HTML IS LOCKED.
+   NO HTML MODIFICATION.
+
+   THIS FILE DOES NOT CONTROL:
+   ---------------------------------------------------------
+   • Grid geometry
+   • Card positioning
+   • Card animation
+   • Hover movement
+   • Selected state
+   • Active state
+   • Energy radiation
+   • Golden reveal
+   • Blue reveal
+   • Energy bridge
+   • Transform animation
+
+   ========================================================= */
+
+
+/* =========================================================
+   14.01 — MATERIAL ROOT
+   ========================================================= */
+
+.ecosystem .ars-core-grid
+> .ars-specialized-card {
+
+    /*
+     * Material variables only.
+     *
+     * These variables are intentionally local to
+     * specialized cards and do not modify layout
+     * or motion variables.
+     */
+
+    --material-bg:
+        rgba(7, 11, 18, .82);
+
+    --material-bg-deep:
+        rgba(3, 6, 11, .94);
+
+    --material-border:
+        rgba(255,255,255,.085);
+
+    --material-border-soft:
+        rgba(255,255,255,.045);
+
+    --material-highlight:
+        rgba(255,255,255,.065);
+
+    --material-inset:
+        rgba(0,0,0,.34);
+
+    --material-opacity:
+        1;
+
+    --material-blur:
+        18px;
+
+}
+
+
+/* =========================================================
+   14.02 — INNER MATERIAL
+   6-CARD INNER ECOSYSTEM
+   ---------------------------------------------------------
+   Cards 02 → 07
+   ========================================================= */
+
+.ecosystem .ars-core-grid
+> .ars-specialized-card:nth-child(n+2):nth-child(-n+7) {
+
+    --material-bg:
+        rgba(8, 13, 21, .84);
+
+    --material-bg-deep:
+        rgba(3, 7, 13, .95);
+
+    --material-border:
+        rgba(212,175,55,.16);
+
+    --material-border-soft:
+        rgba(255,255,255,.045);
+
+    --material-highlight:
+        rgba(212,175,55,.055);
+
+    --material-inset:
+        rgba(0,0,0,.36);
+
+}
+
+
+/* =========================================================
+   14.03 — OUTER MATERIAL
+   7-CARD OUTER ECOSYSTEM
+   ---------------------------------------------------------
+   Cards 08 → 14
+   ========================================================= */
+
+.ecosystem .ars-core-grid
+> .ars-specialized-card:nth-child(n+8):nth-child(-n+14) {
+
+    --material-bg:
+        rgba(6, 12, 21, .84);
+
+    --material-bg-deep:
+        rgba(2, 7, 14, .95);
+
+    --material-border:
+        rgba(40,170,255,.14);
+
+    --material-border-soft:
+        rgba(255,255,255,.045);
+
+    --material-highlight:
+        rgba(40,170,255,.045);
+
+    --material-inset:
+        rgba(0,0,0,.38);
+
+}
+
+
+/* =========================================================
+   14.04 — MATERIAL SURFACE
+   ========================================================= */
+
+.ecosystem .ars-core-grid
+> .ars-specialized-card {
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--material-bg),
+            var(--material-bg-deep)
+        );
+
+    border:
+        1px solid
+        var(--material-border);
+
+    /*
+     * Material shadow only.
+     *
+     * No gold/blue energy glow here.
+     * Energy belongs exclusively to Section 15.
+     */
+
+    box-shadow:
+        inset 0 1px 0
+        var(--material-highlight),
+
+        inset 0 0 0 1px
+        var(--material-inset);
+
+}
+
+
+/* =========================================================
+   14.05 — MATERIAL GLASS FIELD
+   ---------------------------------------------------------
+   Surface layer only.
+   ========================================================= */
+
+.ecosystem .ars-core-grid
+> .ars-specialized-card::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    z-index:
+        0;
+
+    pointer-events:
+        none;
+
+    border-radius:
+        inherit;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.045),
+            transparent 24%,
+            transparent 72%,
+            rgba(255,255,255,.018)
+        );
+
+    opacity:
+        var(--material-opacity);
+
+}
+
+
+/* =========================================================
+   14.06 — MATERIAL EDGE
+   ---------------------------------------------------------
+   Pure material edge.
+   No energy sweep.
+   ========================================================= */
+
+.ecosystem .ars-core-grid
+> .ars-specialized-card::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        1px;
+
+    z-index:
+        0;
+
+    pointer-events:
+        none;
+
+    border:
+        1px solid
+        var(--material-border-soft);
+
+    border-radius:
+        inherit;
+
+    opacity:
+        .75;
+
+}
+
+
+/* =========================================================
+   14.07 — CONTENT LAYERING
+   ========================================================= */
+
+.ecosystem .ars-specialized-card
+.ars-card-link {
+
+    position:
+        relative;
+
+    z-index:
+        1;
+
+}
+
+
+/* =========================================================
+   14.08 — IMAGE MATERIAL PROTECTION
+   ========================================================= */
+
+.ecosystem .ars-specialized-card
+.ars-card-image {
+
+    position:
+        relative;
+
+    z-index:
+        1;
+
+    isolation:
+        isolate;
+
+}
+
+
+/* =========================================================
+   14.09 — IMAGE SURFACE
+   ---------------------------------------------------------
+   No animation.
+   No zoom.
+   No filter transition.
+   ========================================================= */
+
+.ecosystem .ars-specialized-card
+.ars-card-image img {
+
+    position:
+        relative;
+
+    z-index:
+        0;
+
+    display:
+        block;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    backface-visibility:
+        hidden;
+
+}
+
+
+/* =========================================================
+   14.10 — IMAGE MATERIAL VEIL
+   ---------------------------------------------------------
+   A static material layer.
+   ========================================================= */
+
+.ecosystem .ars-specialized-card
+.ars-card-image::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    z-index:
+        2;
+
+    pointer-events:
+        none;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.025),
+            transparent 34%,
+            rgba(0,0,0,.14) 78%,
+            rgba(0,0,0,.32)
+        );
+
+}
+
+
+/* =========================================================
+   14.11 — IMAGE LOWER MATERIAL SEAL
+   ========================================================= */
+
+.ecosystem .ars-specialized-card
+.ars-card-image::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    right:
+        0;
+
+    bottom:
+        0;
+
+    height:
+        28%;
+
+    z-index:
+        3;
+
+    pointer-events:
+        none;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(2,5,10,.52)
+        );
+
+}
+
+
+/* =========================================================
+   14.12 — LOGO MATERIAL PLATFORM
+   ========================================================= */
+
+.ecosystem .ars-specialized-card
+.ars-card-logo {
+
+    position:
+        relative;
+
+    z-index:
+        4;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(10,16,25,.98),
+            rgba(4,8,14,.96) 68%,
+            rgba(2,4,8,.94)
+        );
+
+    border:
+        1px solid
+        var(--material-border);
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255,255,255,.055),
+
+        inset 0 0 18px
+        rgba(0,0,0,.52);
+
+}
+
+
+/* =========================================================
+   14.13 — INNER LOGO MATERIAL
+   ========================================================= */
+
+.ecosystem .ars-core-grid
+> .ars-specialized-card:nth-child(n+2):nth-child(-n+7)
+.ars-card-logo {
+
+    border-color:
+        rgba(212,175,55,.20);
+
+}
+
+
+/* =========================================================
+   14.14 — OUTER LOGO MATERIAL
+   ========================================================= */
+
+.ecosystem .ars-core-grid
+> .ars-specialized-card:nth-child(n+8):nth-child(-n+14)
+.ars-card-logo {
+
+    border-color:
+        rgba(40,170,255,.18);
+
+}
+
+
+/* =========================================================
+   14.15 — LOGO IMAGE SURFACE
+   ========================================================= */
+
+.ecosystem .ars-specialized-card
+.ars-card-logo img {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        block;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        contain;
+
+}
+
+
+/* =========================================================
+   14.16 — CONTENT MATERIAL SEPARATION
+   ========================================================= */
+
+.ecosystem .ars-specialized-card
+.ars-card-content {
+
+    position:
+        relative;
+
+    z-index:
+        4;
+
+}
+
+
+/* =========================================================
+   14.17 — CONTENT TOP SEPARATOR
+   ---------------------------------------------------------
+   Static material line only.
+   ========================================================= */
+
+.ecosystem .ars-specialized-card
+.ars-card-content::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        12%;
+
+    right:
+        12%;
+
+    top:
+        0;
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--material-border),
+            transparent
+        );
+
+    opacity:
+        .65;
+
+}
+
+
+/* =========================================================
+   14.18 — INNER CONTENT MATERIAL
+   ========================================================= */
+
+.ecosystem .ars-core-grid
+> .ars-specialized-card:nth-child(n+2):nth-child(-n+7)
+.ars-card-content {
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(212,175,55,.012),
+            transparent 28%
+        );
+
+}
+
+
+/* =========================================================
+   14.19 — OUTER CONTENT MATERIAL
+   ========================================================= */
+
+.ecosystem .ars-core-grid
+> .ars-specialized-card:nth-child(n+8):nth-child(-n+14)
+.ars-card-content {
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(40,170,255,.012),
+            transparent 28%
+        );
+
+}
+
+
+/* =========================================================
+   14.20 — MATERIAL TEXT HIERARCHY
+   ========================================================= */
+
+.ecosystem .ars-specialized-card
+.ars-card-content h3 {
+
+    position:
+        relative;
+
+    z-index:
+        1;
+
+}
+
+
+/* =========================================================
+   14.21 — MATERIAL CTA SURFACE
+   ========================================================= */
+
+.ecosystem .ars-specialized-card
+.ars-card-action {
+
+    position:
+        relative;
+
+    z-index:
+        1;
+
+}
+
+
+/* =========================================================
+   14.22 — INNER MATERIAL CHARACTER
+   ========================================================= */
+
+.ecosystem .ars-core-grid
+> .ars-specialized-card:nth-child(n+2):nth-child(-n+7) {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10,15,23,.88),
+            rgba(3,7,13,.96)
+        );
+
+}
+
+
+/* =========================================================
+   14.23 — OUTER MATERIAL CHARACTER
+   ========================================================= */
+
+.ecosystem .ars-core-grid
+> .ars-specialized-card:nth-child(n+8):nth-child(-n+14) {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(7,14,23,.88),
+            rgba(2,7,14,.96)
+        );
+
+}
+
+
+/* =========================================================
+   14.24 — MATERIAL STATE
+   ---------------------------------------------------------
+   IMPORTANT:
+
+   These states DO NOT animate.
+   They only slightly change material opacity.
+
+   Energy state belongs to 15.
+   Motion state belongs to 16.
+   ========================================================= */
+
+.ecosystem .ars-specialized-card.is-selected {
+
+    --material-opacity:
+        1;
+
+}
+
+
+.ecosystem .ars-specialized-card.is-active {
+
+    --material-opacity:
+        .98;
+
+}
+
+
+/* =========================================================
+   14.25 — ENERGY-FADING MATERIAL SAFETY
+   ---------------------------------------------------------
+   No energy logic.
+   Only material remains stable while
+   Section 15 performs energy decay.
+   ========================================================= */
+
+.ecosystem .ars-specialized-card.energy-fading {
+
+    --material-opacity:
+        .92;
+
+}
+
+
+/* =========================================================
+   14.26 — TABLET MATERIAL
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .ecosystem .ars-core-grid
+    > .ars-specialized-card {
+
+        --material-blur:
+            14px;
+
+    }
+
+}
+
+
+/* =========================================================
+   14.27 — MOBILE MATERIAL
+   ========================================================= */
+
+@media (max-width: 680px) {
+
+    .ecosystem .ars-core-grid
+    > .ars-specialized-card {
+
+        --material-bg:
+            rgba(6,11,18,.90);
+
+        --material-bg-deep:
+            rgba(2,6,11,.97);
+
+        --material-opacity:
+            1;
+
+    }
+
+}
+
+
+/* =========================================================
+   14.28 — SMALL MOBILE MATERIAL
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .ecosystem .ars-core-grid
+    > .ars-specialized-card {
+
+        --material-border-soft:
+            rgba(255,255,255,.04);
+
+    }
+
+}
+
+
+/* =========================================================
+   14.29 — TOUCH SAFETY
+   ========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+    .ecosystem .ars-core-grid
+    > .ars-specialized-card::before,
+    .ecosystem .ars-core-grid
+    > .ars-specialized-card::after {
+
+        pointer-events:
+            none;
+
+    }
+
+}
+
+
+/* =========================================================
+   14.30 — REDUCED MOTION SAFETY
+   ---------------------------------------------------------
+   Section 14 intentionally has no animations.
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ecosystem .ars-core-grid
+    > .ars-specialized-card {
+
+        transition:
+            none !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   14.31 — HARD MATERIAL SCOPE LOCK
+   ---------------------------------------------------------
+   Deliberately NO:
+
+   transform
+   animation
+   @keyframes
+   filter
+   hover movement
+   hover zoom
+   energy sweep
+   golden reveal
+   blue reveal
+   energy bridge
+   ========================================================= */
+
+.ecosystem .ars-core-grid
+> .ars-specialized-card {
+
+    /*
+     * MATERIAL ONLY.
+     *
+     * Section 15 owns ENERGY.
+     * Section 16 owns MOTION.
+     */
+
+}
+
+
+/* =========================================================
+   END OF
+   14 — CARD MATERIAL ENGINE
+   ========================================================= */
+
+/* =========================================================
+   ARS HERITAGE GROUP — HOME
+   15 — ENERGY / GOLDEN REVEAL ENGINE
+   =========================================================
+   RESPONSIBILITY
+   ---------------------------------------------------------
+   GOLDEN REVEAL
+   BLUE ENERGY
+   ENERGY BRIDGE
+   BORDER RADIATION
+   IMAGE ILLUMINATION
+   LOGO / BRIDGE ILLUMINATION
+   SELECTED STATE
+   ACTIVE STATE
+   ENERGY DECAY
+
+   ARCHITECTURE
+   ---------------------------------------------------------
+   11 = Architecture / Layout
+   12 = Core Card
+   13 = Specialized Cards / Inner + Outer Identity
+   14 = Material Engine
+   15 = Energy / Golden Reveal
+   16 = Motion / Cinematic Animation
+
+   IMPORTANT
+   ---------------------------------------------------------
+   HTML IS NOT MODIFIED.
+
+   THIS FILE DOES NOT CONTROL:
+   - GRID
+   - CARD GEOMETRY
+   - CARD MATERIAL
+   - GLASS SURFACE
+   - PRIMARY TRANSFORM
+   - CINEMATIC MOTION
+
+   THOSE RESPONSIBILITIES BELONG TO:
+   11 / 12 / 13 / 14 / 16
+
+   JS STATES:
+   .is-selected
+   .is-active
+   .energy-fading
+
+   TWO-LAYER SYSTEM
+   ---------------------------------------------------------
+   The energy system visually connects the upper visual
+   layer and lower content layer without taking ownership
+   of their geometry.
+
+   ENERGY BRIDGE
+   ---------------------------------------------------------
+   The bridge is created through the existing card content
+   hierarchy and logo field. No new HTML is required.
+   ========================================================= */
+
+
+/* =========================================================
+   15.01 — ENERGY ROOT
+   ========================================================= */
+
+.ars-glass-card {
+
+    --ars-energy-opacity: 0;
+
+    --ars-energy-gold:
+        rgba(212, 175, 55, 1);
+
+    --ars-energy-gold-soft:
+        rgba(212, 175, 55, .42);
+
+    --ars-energy-blue:
+        rgba(40, 170, 255, 1);
+
+    --ars-energy-blue-soft:
+        rgba(40, 170, 255, .34);
+
+    --ars-energy-white:
+        rgba(255, 255, 255, .82);
+
+    --ars-energy-x:
+        50%;
+
+    --ars-energy-y:
+        50%;
+
+    --ars-energy-radius:
+        68%;
+
+}
+
+
+/* =========================================================
+   15.02 — ENERGY FIELD
+   ---------------------------------------------------------
+   Uses the existing card surface without replacing
+   the Material Engine background.
+   ========================================================= */
+
+.ars-glass-card {
+
+    box-shadow:
+        0 0 0 1px
+        rgba(212, 175, 55, 0)
+        inset;
+
+}
+
+
+/* =========================================================
+   15.03 — SELECTED ENERGY FIELD
+   ========================================================= */
+
+.ars-glass-card.is-selected {
+
+    --ars-energy-opacity: 1;
+
+    box-shadow:
+
+        0 0 0 1px
+        rgba(212, 175, 55, .22),
+
+        0 0 26px
+        rgba(212, 175, 55, .16),
+
+        0 0 62px
+        rgba(212, 175, 55, .10),
+
+        0 24px 70px
+        rgba(0, 0, 0, .48);
+
+}
+
+
+/* =========================================================
+   15.04 — ACTIVE BLUE ENERGY
+   ========================================================= */
+
+.ars-glass-card.is-active {
+
+    --ars-energy-opacity: 1;
+
+    box-shadow:
+
+        0 0 0 1px
+        rgba(40, 170, 255, .16),
+
+        0 0 24px
+        rgba(40, 170, 255, .14),
+
+        0 0 56px
+        rgba(40, 170, 255, .08),
+
+        0 24px 70px
+        rgba(0, 0, 0, .44);
+
+}
+
+
+/* =========================================================
+   15.05 — SELECTED + ACTIVE HYBRID
+   ========================================================= */
+
+.ars-glass-card.is-selected.is-active {
+
+    box-shadow:
+
+        0 0 0 1px
+        rgba(212, 175, 55, .30),
+
+        0 0 28px
+        rgba(212, 175, 55, .20),
+
+        0 0 52px
+        rgba(40, 170, 255, .12),
+
+        0 0 88px
+        rgba(212, 175, 55, .08),
+
+        0 28px 78px
+        rgba(0, 0, 0, .54);
+
+}
+
+
+/* =========================================================
+   15.06 — TWO-LAYER ENERGY BRIDGE
+   ---------------------------------------------------------
+   The bridge belongs to the existing content layer.
+   It does NOT create new layout or geometry.
+
+   The bridge visually connects:
+   IMAGE / UPPER LAYER
+                ↓
+          ENERGY FIELD
+                ↓
+   LOGO / CONTENT TRANSITION
+                ↓
+        LOWER CONTENT LAYER
+   ========================================================= */
+
+.ars-glass-card .ars-card-content {
+
+    position: relative;
+
+}
+
+
+/* =========================================================
+   15.07 — ENERGY BRIDGE FOUNDATION
+   ---------------------------------------------------------
+   A very restrained field at the transition point.
+   ========================================================= */
+
+.ars-glass-card .ars-card-content::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 8%;
+    right: 8%;
+
+    top: 0;
+
+    height: 1px;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(40, 170, 255, .08) 18%,
+            rgba(212, 175, 55, .12) 38%,
+            rgba(255, 255, 255, .18) 50%,
+            rgba(212, 175, 55, .12) 62%,
+            rgba(40, 170, 255, .08) 82%,
+            transparent 100%
+        );
+
+    box-shadow:
+        0 0 14px
+        rgba(212, 175, 55, .08);
+
+    transition:
+        opacity .7s ease,
+        box-shadow .7s ease;
+
+}
+
+
+/* =========================================================
+   15.08 — GOLDEN ENERGY BRIDGE
+   ========================================================= */
+
+.ars-glass-card.is-selected
+.ars-card-content::before {
+
+    opacity: .95;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(40, 170, 255, .10) 14%,
+            rgba(212, 175, 55, .34) 34%,
+            rgba(255, 255, 255, .52) 50%,
+            rgba(212, 175, 55, .34) 66%,
+            rgba(40, 170, 255, .10) 86%,
+            transparent 100%
+        );
+
+    box-shadow:
+        0 0 18px
+        rgba(212, 175, 55, .18),
+
+        0 0 30px
+        rgba(40, 170, 255, .06);
+
+}
+
+
+/* =========================================================
+   15.09 — BLUE ENERGY BRIDGE
+   ========================================================= */
+
+.ars-glass-card.is-active
+.ars-card-content::before {
+
+    opacity: .78;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(40, 170, 255, .34) 32%,
+            rgba(255, 255, 255, .30) 50%,
+            rgba(40, 170, 255, .34) 68%,
+            transparent
+        );
+
+    box-shadow:
+        0 0 16px
+        rgba(40, 170, 255, .14);
+
+}
+
+
+/* =========================================================
+   15.10 — HYBRID ENERGY BRIDGE
+   ========================================================= */
+
+.ars-glass-card.is-selected.is-active
+.ars-card-content::before {
+
+    opacity: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(40, 170, 255, .18) 20%,
+            rgba(212, 175, 55, .42) 38%,
+            rgba(255, 255, 255, .62) 50%,
+            rgba(212, 175, 55, .42) 62%,
+            rgba(40, 170, 255, .18) 80%,
+            transparent
+        );
+
+    box-shadow:
+        0 0 20px
+        rgba(212, 175, 55, .18),
+
+        0 0 34px
+        rgba(40, 170, 255, .08);
+
+}
+
+
+/* =========================================================
+   15.11 — LOGO / BRIDGE ENERGY
+   ========================================================= */
+
+.ars-glass-card .ars-card-logo {
+
+    position: relative;
+
+}
+
+
+/* =========================================================
+   15.12 — GOLDEN LOGO FIELD
+   ========================================================= */
+
+.ars-glass-card.is-selected
+.ars-card-logo {
+
+    filter:
+        drop-shadow(
+            0 0 10px
+            rgba(212, 175, 55, .34)
+        )
+
+        drop-shadow(
+            0 0 22px
+            rgba(212, 175, 55, .12)
+        );
+
+}
+
+
+/* =========================================================
+   15.13 — BLUE LOGO FIELD
+   ========================================================= */
+
+.ars-glass-card.is-active
+.ars-card-logo {
+
+    filter:
+        drop-shadow(
+            0 0 10px
+            rgba(40, 170, 255, .30)
+        )
+
+        drop-shadow(
+            0 0 20px
+            rgba(40, 170, 255, .10)
+        );
+
+}
+
+
+/* =========================================================
+   15.14 — HYBRID LOGO FIELD
+   ========================================================= */
+
+.ars-glass-card.is-selected.is-active
+.ars-card-logo {
+
+    filter:
+        drop-shadow(
+            0 0 10px
+            rgba(212, 175, 55, .42)
+        )
+
+        drop-shadow(
+            0 0 22px
+            rgba(40, 170, 255, .16)
+        );
+
+}
+
+
+/* =========================================================
+   15.15 — LOGO IMAGE ILLUMINATION
+   ========================================================= */
+
+.ars-glass-card
+.ars-card-logo img {
+
+    transition:
+        filter .65s ease;
+
+}
+
+
+.ars-glass-card.is-selected
+.ars-card-logo img {
+
+    filter:
+        brightness(1.08)
+        saturate(1.08)
+        drop-shadow(
+            0 0 10px
+            rgba(212, 175, 55, .32)
+        );
+
+}
+
+
+.ars-glass-card.is-active
+.ars-card-logo img {
+
+    filter:
+        brightness(1.06)
+        saturate(1.06)
+        drop-shadow(
+            0 0 10px
+            rgba(40, 170, 255, .28)
+        );
+
+}
+
+
+/* =========================================================
+   15.16 — IMAGE ENERGY
+   ========================================================= */
+
+.ars-glass-card
+.ars-card-image img {
+
+    transition:
+        filter .75s ease;
+
+}
+
+
+.ars-glass-card.is-selected
+.ars-card-image img {
+
+    filter:
+        brightness(1.08)
+        contrast(1.05)
+        saturate(1.06);
+
+}
+
+
+.ars-glass-card.is-active
+.ars-card-image img {
+
+    filter:
+        brightness(1.055)
+        contrast(1.04)
+        saturate(1.04);
+
+}
+
+
+/* =========================================================
+   15.17 — GOLDEN CATEGORY REVEAL
+   ========================================================= */
+
+.ars-glass-card.is-selected
+.ars-card-category {
+
+    color:
+        rgba(238, 207, 132, .98);
+
+    text-shadow:
+        0 0 12px
+        rgba(212, 175, 55, .22);
+
+}
+
+
+/* =========================================================
+   15.18 — BLUE CATEGORY REVEAL
+   ========================================================= */
+
+.ars-glass-card.is-active
+.ars-card-category {
+
+    text-shadow:
+        0 0 12px
+        rgba(40, 170, 255, .22);
+
+}
+
+
+/* =========================================================
+   15.19 — GOLDEN CTA ENERGY
+   ========================================================= */
+
+.ars-glass-card.is-selected
+.ars-card-action {
+
+    color:
+        rgba(255, 232, 166, .98);
+
+    text-shadow:
+        0 0 13px
+        rgba(212, 175, 55, .28);
+
+}
+
+
+/* =========================================================
+   15.20 — ACTIVE CTA ENERGY
+   ========================================================= */
+
+.ars-glass-card.is-active
+.ars-card-action {
+
+    text-shadow:
+        0 0 13px
+        rgba(40, 170, 255, .24);
+
+}
+
+
+/* =========================================================
+   15.21 — ENERGY SWEEP
+   ---------------------------------------------------------
+   Applied to the existing image layer rather than
+   card pseudo-elements, keeping Material Engine isolated.
+   ========================================================= */
+
+.ars-glass-card
+.ars-card-image {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   15.22 — IMAGE ENERGY SWEEP LAYER
+   ========================================================= */
+
+.ars-glass-card
+.ars-card-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    background:
+        linear-gradient(
+            115deg,
+            transparent 22%,
+            rgba(40, 170, 255, .04) 40%,
+            rgba(255, 255, 255, .16) 49%,
+            rgba(212, 175, 55, .20) 51%,
+            rgba(40, 170, 255, .05) 60%,
+            transparent 78%
+        );
+
+    transform:
+        translateX(-115%);
+
+}
+
+
+/* =========================================================
+   15.23 — SELECTED IMAGE REVEAL
+   ========================================================= */
+
+.ars-glass-card.is-selected
+.ars-card-image::after {
+
+    opacity: 1;
+
+    animation:
+        arsGoldenImageReveal
+        1.35s
+        cubic-bezier(.16, 1, .3, 1)
+        forwards;
+
+}
+
+
+@keyframes arsGoldenImageReveal {
+
+    0% {
+
+        transform:
+            translateX(-115%);
+
+    }
+
+    100% {
+
+        transform:
+            translateX(115%);
+
+    }
+
+}
+
+
+/* =========================================================
+   15.24 — ACTIVE IMAGE REVEAL
+   ========================================================= */
+
+.ars-glass-card.is-active:not(.is-selected)
+.ars-card-image::after {
+
+    opacity: .72;
+
+    background:
+        linear-gradient(
+            115deg,
+            transparent 24%,
+            rgba(40, 170, 255, .06) 43%,
+            rgba(255, 255, 255, .12) 50%,
+            rgba(40, 170, 255, .13) 56%,
+            transparent 76%
+        );
+
+    animation:
+        arsBlueImageReveal
+        1.45s
+        cubic-bezier(.16, 1, .3, 1)
+        forwards;
+
+}
+
+
+@keyframes arsBlueImageReveal {
+
+    0% {
+
+        transform:
+            translateX(-115%);
+
+    }
+
+    100% {
+
+        transform:
+            translateX(115%);
+
+    }
+
+}
+
+
+/* =========================================================
+   15.25 — GOLDEN ENERGY BREATH
+   ---------------------------------------------------------
+   Energy only.
+   No card transform.
+   No layout movement.
+   ========================================================= */
+
+.ars-glass-card.is-selected
+.ars-card-content::before {
+
+    animation:
+        arsGoldenBridgeBreath
+        3.8s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes arsGoldenBridgeBreath {
+
+    0%,
+    100% {
+
+        opacity:
+            .72;
+
+    }
+
+    50% {
+
+        opacity:
+            1;
+
+    }
+
+}
+
+
+/* =========================================================
+   15.26 — BLUE ENERGY BREATH
+   ========================================================= */
+
+.ars-glass-card.is-active:not(.is-selected)
+.ars-card-content::before {
+
+    animation:
+        arsBlueBridgeBreath
+        4.4s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes arsBlueBridgeBreath {
+
+    0%,
+    100% {
+
+        opacity:
+            .58;
+
+    }
+
+    50% {
+
+        opacity:
+            .88;
+
+    }
+
+}
+
+
+/* =========================================================
+   15.27 — CORE ENERGY AUTHORITY
+   ========================================================= */
+
+.ars-core-card.is-selected {
+
+    --ars-energy-opacity: 1;
+
+    box-shadow:
+
+        0 0 0 1px
+        rgba(212, 175, 55, .30),
+
+        0 0 32px
+        rgba(212, 175, 55, .22),
+
+        0 0 76px
+        rgba(212, 175, 55, .12),
+
+        0 28px 82px
+        rgba(0, 0, 0, .58);
+
+}
+
+
+/* =========================================================
+   15.28 — SPECIALIZED INNER GOLD
+   ========================================================= */
+
+.ars-specialized-card.is-selected {
+
+    box-shadow:
+
+        0 0 0 1px
+        rgba(212, 175, 55, .22),
+
+        0 0 24px
+        rgba(212, 175, 55, .15),
+
+        0 0 52px
+        rgba(212, 175, 55, .08),
+
+        0 22px 64px
+        rgba(0, 0, 0, .46);
+
+}
+
+
+/* =========================================================
+   15.29 — SPECIALIZED OUTER BLUE
+   ========================================================= */
+
+.ars-specialized-card.is-active {
+
+    box-shadow:
+
+        0 0 0 1px
+        rgba(40, 170, 255, .14),
+
+        0 0 22px
+        rgba(40, 170, 255, .12),
+
+        0 0 48px
+        rgba(40, 170, 255, .07),
+
+        0 22px 64px
+        rgba(0, 0, 0, .44);
+
+}
+
+
+/* =========================================================
+   15.30 — INNER / OUTER HYBRID
+   ========================================================= */
+
+.ars-specialized-card.is-selected.is-active {
+
+    box-shadow:
+
+        0 0 0 1px
+        rgba(212, 175, 55, .27),
+
+        0 0 26px
+        rgba(212, 175, 55, .18),
+
+        0 0 50px
+        rgba(40, 170, 255, .10),
+
+        0 24px 68px
+        rgba(0, 0, 0, .50);
+
+}
+
+
+/* =========================================================
+   15.31 — POINTER ENERGY FIELD
+   ========================================================= */
+
+@media (hover: hover) {
+
+    .ars-glass-card:hover {
+
+        --ars-energy-x:
+            50%;
+
+        --ars-energy-y:
+            42%;
+
+    }
+
+}
+
+
+/* =========================================================
+   15.32 — HOVER ENERGY
+   ---------------------------------------------------------
+   Hover provides only a restrained energy response.
+   Motion remains owned by File 16.
+   ========================================================= */
+
+@media (hover: hover) {
+
+    .ars-glass-card:hover
+    .ars-card-category {
+
+        text-shadow:
+            0 0 10px
+            rgba(212, 175, 55, .16);
+
+    }
+
+}
+
+
+/* =========================================================
+   15.33 — ENERGY DECAY
+   ========================================================= */
+
+.ars-glass-card.energy-fading {
+
+    box-shadow:
+        0 0 0 1px
+        rgba(212, 175, 55, .06),
+
+        0 0 18px
+        rgba(212, 175, 55, .05),
+
+        0 20px 60px
+        rgba(0, 0, 0, .42);
+
+}
+
+
+/* =========================================================
+   15.34 — ENERGY DECAY BRIDGE
+   ========================================================= */
+
+.ars-glass-card.energy-fading
+.ars-card-content::before {
+
+    opacity:
+        .22;
+
+    animation:
+        none;
+
+}
+
+
+/* =========================================================
+   15.35 — ENERGY DECAY LOGO
+   ========================================================= */
+
+.ars-glass-card.energy-fading
+.ars-card-logo {
+
+    filter:
+        none;
+
+}
+
+
+/* =========================================================
+   15.36 — ENERGY DECAY IMAGE
+   ========================================================= */
+
+.ars-glass-card.energy-fading
+.ars-card-image::after {
+
+    opacity:
+        0;
+
+    animation:
+        none;
+
+}
+
+
+/* =========================================================
+   15.37 — TOUCH ENERGY
+   ========================================================= */
+
+@media (hover: none) {
+
+    .ars-glass-card.is-selected
+    .ars-card-content::before {
+
+        opacity:
+            .82;
+
+    }
+
+    .ars-glass-card.is-active
+    .ars-card-content::before {
+
+        opacity:
+            .62;
+
+    }
+
+}
+
+
+/* =========================================================
+   15.38 — MOBILE ENERGY SCALE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .ars-glass-card.is-selected {
+
+        box-shadow:
+
+            0 0 0 1px
+            rgba(212, 175, 55, .20),
+
+            0 0 22px
+            rgba(212, 175, 55, .12),
+
+            0 18px 52px
+            rgba(0, 0, 0, .46);
+
+    }
+
+    .ars-glass-card.is-active {
+
+        box-shadow:
+
+            0 0 0 1px
+            rgba(40, 170, 255, .12),
+
+            0 0 20px
+            rgba(40, 170, 255, .10),
+
+            0 18px 52px
+            rgba(0, 0, 0, .44);
+
+    }
+
+}
+
+
+/* =========================================================
+   15.39 — REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ars-glass-card
+    .ars-card-content::before,
+    .ars-glass-card
+    .ars-card-image::after {
+
+        animation:
+            none !important;
+
+        transition:
+            none !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   15.40 — ENERGY CONTAINMENT
+   ---------------------------------------------------------
+   No transform ownership.
+   No geometry ownership.
+   No material ownership.
+   ========================================================= */
+
+.ars-glass-card
+.ars-card-content::before,
+.ars-glass-card
+.ars-card-image::after {
+
+    will-change:
+        opacity,
+        transform;
+
+}
+
+
+/* =========================================================
+   END OF
+   15 — ENERGY / GOLDEN REVEAL ENGINE
+   ========================================================= */
+
+/* =========================================================
+   ARS HERITAGE GROUP — HOME
+   16 — MOTION / CINEMATIC ANIMATION ENGINE
+   =========================================================
+   RESPONSIBILITY
+   ---------------------------------------------------------
+   CARD MOTION
+   CINEMATIC ENTRANCE
+   HOVER ELEVATION
+   IMAGE DEPTH MOTION
+   LOGO FLOAT
+   CONTENT MICRO-MOTION
+   CTA MOTION
+   SELECTED DEPTH
+   ACTIVE DEPTH
+   FAMILY A / FAMILY B MOTION
+   STAGGER
+   MOBILE MOTION
+   REDUCED MOTION
+
+   ARCHITECTURE
+   ---------------------------------------------------------
+   11 = Architecture / Layout
+   12 = Core Card
+   13 = Specialized Cards / Inner + Outer Identity
+   14 = Material Engine
+   15 = Energy / Golden Reveal
+   16 = Motion / Cinematic Animation
+
+   IMPORTANT
+   ---------------------------------------------------------
+   HTML IS NOT MODIFIED.
+
+   THIS FILE DOES NOT CONTROL:
+   - GRID
+   - WIDTH / HEIGHT
+   - CARD MATERIAL
+   - GLASS SURFACE
+   - ENERGY / GOLDEN REVEAL
+   - ENERGY BRIDGE
+   - BORDER RADIATION
+
+   THOSE RESPONSIBILITIES BELONG TO:
+   11 / 12 / 13 / 14 / 15
+
+   JS STATES COMPATIBLE:
+   .is-visible
+   .is-selected
+   .is-active
+   .energy-fading
+
+   ========================================================= */
+
+
+/* =========================================================
+   16.01 — MOTION VARIABLES
+   ---------------------------------------------------------
+   Motion variables are isolated from Energy variables.
+   ========================================================= */
+
+.ars-glass-card {
+
+    --ars-motion-y:
+        0px;
+
+    --ars-motion-scale:
+        1;
+
+    --ars-motion-rotate-x:
+        0deg;
+
+    --ars-motion-rotate-y:
+        0deg;
+
+    --ars-motion-image-scale:
+        1;
+
+    --ars-motion-logo-y:
+        0px;
+
+    --ars-motion-content-y:
+        0px;
+
+    --ars-motion-duration:
+        .75s;
+
+    --ars-motion-ease:
+        cubic-bezier(.16, 1, .3, 1);
+
+}
+
+
+/* =========================================================
+   16.02 — BASE MOTION
+   ---------------------------------------------------------
+   File 16 owns the card transform.
+   ========================================================= */
+
+.ars-glass-card {
+
+    transform:
+        translate3d(
+            0,
+            var(--ars-motion-y),
+            0
+        )
+        rotateX(
+            var(--ars-motion-rotate-x)
+        )
+        rotateY(
+            var(--ars-motion-rotate-y)
+        )
+        scale(
+            var(--ars-motion-scale)
+        );
+
+    transform-style:
+        preserve-3d;
+
+    backface-visibility:
+        hidden;
+
+    transition:
+        transform
+            var(--ars-motion-duration)
+            var(--ars-motion-ease);
+
+}
+
+
+/* =========================================================
+   16.03 — CINEMATIC ENTRANCE
+   ========================================================= */
+
+.ars-glass-card {
+
+    opacity:
+        0;
+
+    filter:
+        blur(10px)
+        brightness(.78);
+
+    transform:
+        translate3d(
+            0,
+            42px,
+            0
+        )
+        scale(.975);
+
+}
+
+
+/* =========================================================
+   16.04 — VISIBLE STATE
+   ========================================================= */
+
+.ars-glass-card.is-visible {
+
+    opacity:
+        1;
+
+    filter:
+        blur(0)
+        brightness(1);
+
+    transform:
+        translate3d(
+            0,
+            0,
+            0
+        )
+        scale(1);
+
+    transition:
+        opacity
+            .85s
+            ease,
+
+        filter
+            .9s
+            var(--ars-motion-ease),
+
+        transform
+            .9s
+            var(--ars-motion-ease);
+
+}
+
+
+/* =========================================================
+   16.05 — FALLBACK VISIBILITY
+   ---------------------------------------------------------
+   Prevents invisible cards if reveal JS is absent.
+   ========================================================= */
+
+.ars-glass-card:not(.is-visible) {
+
+    animation:
+        arsMotionFallbackReveal
+        1ms
+        forwards;
+
+}
+
+
+@keyframes arsMotionFallbackReveal {
+
+    to {
+
+        opacity:
+            1;
+
+        filter:
+            none;
+
+    }
+
+}
+
+
+/* =========================================================
+   16.06 — DESKTOP HOVER ELEVATION
+   ========================================================= */
+
+@media (hover: hover) {
+
+    .ars-glass-card:hover {
+
+        --ars-motion-y:
+            -10px;
+
+        --ars-motion-scale:
+            1.012;
+
+        --ars-motion-rotate-x:
+            .18deg;
+
+        --ars-motion-rotate-y:
+            -.18deg;
+
+        z-index:
+            20;
+
+    }
+
+}
+
+
+/* =========================================================
+   16.07 — IMAGE DEPTH
+   ========================================================= */
+
+.ars-card-image img {
+
+    transform:
+        scale(
+            var(--ars-motion-image-scale)
+        );
+
+    transition:
+        transform
+            1.15s
+            var(--ars-motion-ease);
+
+    backface-visibility:
+        hidden;
+
+}
+
+
+/* =========================================================
+   16.08 — IMAGE HOVER CINEMATIC ZOOM
+   ========================================================= */
+
+@media (hover: hover) {
+
+    .ars-glass-card:hover
+    .ars-card-image img {
+
+        --ars-motion-image-scale:
+            1.055;
+
+        transform:
+            scale(1.055);
+
+    }
+
+}
+
+
+/* =========================================================
+   16.09 — IMAGE PARALLAX DEPTH
+   ========================================================= */
+
+@media (hover: hover) {
+
+    .ars-glass-card:hover
+    .ars-card-image {
+
+        transform:
+            translateZ(3px);
+
+    }
+
+}
+
+
+/* =========================================================
+   16.10 — LOGO MOTION
+   ========================================================= */
+
+.ars-card-logo {
+
+    transform:
+        translate3d(
+            0,
+            var(--ars-motion-logo-y),
+            0
+        );
+
+    transition:
+        transform
+            .7s
+            var(--ars-motion-ease);
+
+    backface-visibility:
+        hidden;
+
+}
+
+
+/* =========================================================
+   16.11 — LOGO HOVER FLOAT
+   ========================================================= */
+
+@media (hover: hover) {
+
+    .ars-glass-card:hover
+    .ars-card-logo {
+
+        --ars-motion-logo-y:
+            -5px;
+
+        transform:
+            translate3d(
+                0,
+                -5px,
+                0
+            );
+
+    }
+
+}
+
+
+/* =========================================================
+   16.12 — CONTENT MICRO-LIFT
+   ========================================================= */
+
+.ars-card-content {
+
+    transform:
+        translate3d(
+            0,
+            var(--ars-motion-content-y),
+            0
+        );
+
+    transition:
+        transform
+            .65s
+            var(--ars-motion-ease);
+
+}
+
+
+/* =========================================================
+   16.13 — CONTENT HOVER
+   ========================================================= */
+
+@media (hover: hover) {
+
+    .ars-glass-card:hover
+    .ars-card-content {
+
+        --ars-motion-content-y:
+            -3px;
+
+    }
+
+}
+
+
+/* =========================================================
+   16.14 — CATEGORY MOTION
+   ========================================================= */
+
+.ars-card-category {
+
+    transition:
+        transform
+            .55s
+            var(--ars-motion-ease);
+
+}
+
+
+@media (hover: hover) {
+
+    .ars-glass-card:hover
+    .ars-card-category {
+
+        transform:
+            translateX(3px);
+
+    }
+
+}
+
+
+/* =========================================================
+   16.15 — TITLE MICRO MOTION
+   ========================================================= */
+
+.ars-card-content h3 {
+
+    transition:
+        transform
+            .55s
+            var(--ars-motion-ease);
+
+}
+
+
+@media (hover: hover) {
+
+    .ars-glass-card:hover
+    .ars-card-content h3 {
+
+        transform:
+            translateX(2px);
+
+    }
+
+}
+
+
+/* =========================================================
+   16.16 — CTA CINEMATIC MOTION
+   ========================================================= */
+
+.ars-card-action {
+
+    transition:
+        transform
+            .55s
+            var(--ars-motion-ease),
+
+        letter-spacing
+            .45s
+            ease;
+
+}
+
+
+@media (hover: hover) {
+
+    .ars-glass-card:hover
+    .ars-card-action {
+
+        transform:
+            translateX(6px);
+
+        letter-spacing:
+            .018em;
+
+    }
+
+}
+
+
+/* =========================================================
+   16.17 — SELECTED CARD DEPTH
+   ---------------------------------------------------------
+   Motion only.
+   Energy remains entirely in File 15.
+   ========================================================= */
+
+.ars-glass-card.is-selected {
+
+    --ars-motion-y:
+        -8px;
+
+    --ars-motion-scale:
+        1.012;
+
+    z-index:
+        30;
+
+}
+
+
+/* =========================================================
+   16.18 — SELECTED IMAGE DEPTH
+   ========================================================= */
+
+.ars-glass-card.is-selected
+.ars-card-image img {
+
+    --ars-motion-image-scale:
+        1.065;
+
+    transform:
+        scale(1.065);
+
+}
+
+
+/* =========================================================
+   16.19 — SELECTED LOGO DEPTH
+   ========================================================= */
+
+.ars-glass-card.is-selected
+.ars-card-logo {
+
+    --ars-motion-logo-y:
+        -6px;
+
+    transform:
+        translate3d(
+            0,
+            -6px,
+            0
+        );
+
+}
+
+
+/* =========================================================
+   16.20 — SELECTED CONTENT DEPTH
+   ========================================================= */
+
+.ars-glass-card.is-selected
+.ars-card-content {
+
+    --ars-motion-content-y:
+        -2px;
+
+}
+
+
+/* =========================================================
+   16.21 — SELECTED BREATHING MOTION
+   ---------------------------------------------------------
+   Uses a child wrapper instead of continuously replacing
+   the card transform, preventing transform conflicts.
+   ========================================================= */
+
+.ars-glass-card.is-selected
+.ars-card-content {
+
+    animation:
+        arsSelectedContentBreath
+        4.8s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes arsSelectedContentBreath {
+
+    0%,
+    100% {
+
+        opacity:
+            1;
+
+    }
+
+    50% {
+
+        opacity:
+            .97;
+
+    }
+
+}
+
+
+/* =========================================================
+   16.22 — ACTIVE CARD DEPTH
+   ========================================================= */
+
+.ars-glass-card.is-active {
+
+    z-index:
+        15;
+
+}
+
+
+.ars-glass-card.is-active
+.ars-card-image img {
+
+    --ars-motion-image-scale:
+        1.04;
+
+    transform:
+        scale(1.04);
+
+}
+
+
+/* =========================================================
+   16.23 — SELECTED + ACTIVE PRIORITY
+   ========================================================= */
+
+.ars-glass-card.is-selected.is-active {
+
+    --ars-motion-y:
+        -9px;
+
+    --ars-motion-scale:
+        1.014;
+
+    z-index:
+        35;
+
+}
+
+
+/* =========================================================
+   16.24 — CORE CARD AUTHORITY
+   ---------------------------------------------------------
+   Only motion.
+   Visual styling remains in File 12.
+   ========================================================= */
+
+.ars-core-card {
+
+    --ars-motion-duration:
+        .8s;
+
+}
+
+
+@media (hover: hover) {
+
+    .ars-core-card:hover {
+
+        --ars-motion-y:
+            -13px;
+
+        --ars-motion-scale:
+            1.016;
+
+    }
+
+}
+
+
+.ars-core-card:hover
+.ars-card-image img {
+
+    --ars-motion-image-scale:
+        1.075;
+
+    transform:
+        scale(1.075);
+
+}
+
+
+.ars-core-card:hover
+.ars-card-logo {
+
+    --ars-motion-logo-y:
+        -7px;
+
+    transform:
+        translate3d(
+            0,
+            -7px,
+            0
+        );
+
+}
+
+
+/* =========================================================
+   16.25 — INNER FAMILY MOTION
+   ---------------------------------------------------------
+   Inner ecosystem:
+   Elegant / precise / controlled.
+   ========================================================= */
+
+.ars-specialized-card[data-family="inner"] {
+
+    --ars-motion-duration:
+        .72s;
+
+}
+
+
+@media (hover: hover) {
+
+    .ars-specialized-card[data-family="inner"]:hover {
+
+        --ars-motion-y:
+            -9px;
+
+        --ars-motion-scale:
+            1.008;
+
+    }
+
+}
+
+
+/* =========================================================
+   16.26 — OUTER FAMILY MOTION
+   ---------------------------------------------------------
+   Outer ecosystem:
+   Slightly more expansive / cinematic.
+   ========================================================= */
+
+.ars-specialized-card[data-family="outer"] {
+
+    --ars-motion-duration:
+        .82s;
+
+}
+
+
+@media (hover: hover) {
+
+    .ars-specialized-card[data-family="outer"]:hover {
+
+        --ars-motion-y:
+            -12px;
+
+        --ars-motion-scale:
+            1.012;
+
+    }
+
+    .ars-specialized-card[data-family="outer"]:hover
+    .ars-card-image img {
+
+        --ars-motion-image-scale:
+            1.07;
+
+        transform:
+            scale(1.07);
+
+    }
+
+}
+
+
+/* =========================================================
+   16.27 — FAMILY FALLBACK
+   ---------------------------------------------------------
+   If family data attributes are not present yet,
+   no destructive nth-child geometry is introduced.
+
+   Identity remains owned by File 13.
+   ========================================================= */
+
+.ars-specialized-card {
+
+    transform-style:
+        preserve-3d;
+
+}
+
+
+/* =========================================================
+   16.28 — STAGGER
+   ---------------------------------------------------------
+   Entrance timing only.
+   No layout dependency.
+   ========================================================= */
+
+.ars-glass-card:nth-child(1) {
+    transition-delay: .04s;
+}
+
+.ars-glass-card:nth-child(2) {
+    transition-delay: .09s;
+}
+
+.ars-glass-card:nth-child(3) {
+    transition-delay: .14s;
+}
+
+.ars-glass-card:nth-child(4) {
+    transition-delay: .19s;
+}
+
+.ars-glass-card:nth-child(5) {
+    transition-delay: .24s;
+}
+
+.ars-glass-card:nth-child(6) {
+    transition-delay: .29s;
+}
+
+.ars-glass-card:nth-child(7) {
+    transition-delay: .34s;
+}
+
+.ars-glass-card:nth-child(8) {
+    transition-delay: .39s;
+}
+
+.ars-glass-card:nth-child(9) {
+    transition-delay: .44s;
+}
+
+.ars-glass-card:nth-child(10) {
+    transition-delay: .49s;
+}
+
+.ars-glass-card:nth-child(11) {
+    transition-delay: .54s;
+}
+
+.ars-glass-card:nth-child(12) {
+    transition-delay: .59s;
+}
+
+.ars-glass-card:nth-child(13) {
+    transition-delay: .64s;
+}
+
+.ars-glass-card:nth-child(14) {
+    transition-delay: .69s;
+}
+
+
+/* =========================================================
+   16.29 — HOVER FOCUS
+   ---------------------------------------------------------
+   No energy values here.
+   ========================================================= */
+
+@media (hover: hover) {
+
+    .ars-glass-card:hover
+    .ars-card-content h3 {
+
+        transform:
+            translateX(2px);
+
+    }
+
+}
+
+
+/* =========================================================
+   16.30 — NEIGHBOR FOCUS
+   ---------------------------------------------------------
+   Only opacity/filter response.
+   No geometry changes.
+   ========================================================= */
+
+@media (hover: hover) {
+
+    .ars-core-grid:has(.ars-glass-card:hover)
+    .ars-glass-card:not(:hover) {
+
+        filter:
+            brightness(.94);
+
+        transition:
+            filter
+            .55s
+            ease;
+
+    }
+
+}
+
+
+/* =========================================================
+   16.31 — TOUCH MODE
+   ========================================================= */
+
+@media (hover: none) {
+
+    .ars-glass-card {
+
+        transform:
+            none;
+
+    }
+
+    .ars-glass-card:active {
+
+        transform:
+            translate3d(
+                0,
+                -4px,
+                0
+            )
+            scale(1.004);
+
+    }
+
+    .ars-glass-card.is-selected {
+
+        transform:
+            translate3d(
+                0,
+                -4px,
+                0
+            )
+            scale(1.004);
+
+    }
+
+}
+
+
+/* =========================================================
+   16.32 — TABLET MOTION
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+    .ars-glass-card {
+
+        --ars-motion-duration:
+            .65s;
+
+    }
+
+    .ars-glass-card.is-selected {
+
+        --ars-motion-y:
+            -6px;
+
+        --ars-motion-scale:
+            1.008;
+
+    }
+
+}
+
+
+/* =========================================================
+   16.33 — MOBILE MOTION SAFETY
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .ars-glass-card {
+
+        filter:
+            none;
+
+    }
+
+    .ars-glass-card:hover {
+
+        transform:
+            none;
+
+    }
+
+    .ars-glass-card.is-selected {
+
+        transform:
+            translate3d(
+                0,
+                -4px,
+                0
+            )
+            scale(1.004);
+
+    }
+
+    .ars-card-image img {
+
+        transition:
+            transform
+            .85s
+            var(--ars-motion-ease);
+
+    }
+
+}
+
+
+/* =========================================================
+   16.34 — SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .ars-glass-card.is-selected {
+
+        transform:
+            translate3d(
+                0,
+                -3px,
+                0
+            )
+            scale(1.002);
+
+    }
+
+}
+
+
+/* =========================================================
+   16.35 — ENERGY FADING SAFETY
+   ---------------------------------------------------------
+   File 15 controls energy decay.
+   File 16 only removes cinematic emphasis.
+   ========================================================= */
+
+.ars-glass-card.energy-fading {
+
+    --ars-motion-scale:
+        1;
+
+}
+
+
+.ars-glass-card.energy-fading
+.ars-card-content {
+
+    animation:
+        none;
+
+}
+
+
+/* =========================================================
+   16.36 — REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ars-glass-card,
+    .ars-glass-card *,
+    .ars-card-image img,
+    .ars-card-logo,
+    .ars-card-content,
+    .ars-card-category,
+    .ars-card-action {
+
+        animation:
+            none !important;
+
+        transition:
+            none !important;
+
+    }
+
+    .ars-glass-card {
+
+        opacity:
+            1 !important;
+
+        filter:
+            none !important;
+
+        transform:
+            none !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   16.37 — GPU / RENDER SAFETY
+   ========================================================= */
+
+.ars-glass-card,
+.ars-card-image img,
+.ars-card-logo {
+
+    backface-visibility:
+        hidden;
+
+    -webkit-font-smoothing:
+        antialiased;
+
+}
+
+
+/* =========================================================
+   16.38 — FINAL MOTION OWNERSHIP LOCK
+   ---------------------------------------------------------
+   File 16 owns:
+   ✓ transform
+   ✓ motion timing
+   ✓ entrance
+   ✓ hover movement
+   ✓ image zoom
+   ✓ logo float
+   ✓ content micro-motion
+   ✓ selected depth
+   ✓ active depth
+   ✓ family motion
+   ✓ responsive motion
+   ✓ reduced motion
+
+   File 16 DOES NOT own:
+   ✗ grid
+   ✗ card dimensions
+   ✗ material
+   ✗ glass
+   ✗ energy
+   ✗ golden reveal
+   ✗ energy bridge
+   ✗ border radiation
+   ========================================================= */
+
+
+/* =========================================================
+   END OF
+   16 — MOTION / CINEMATIC ANIMATION ENGINE
+   ========================================================= */
 
 
 
