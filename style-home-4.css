@@ -18718,3 +18718,574 @@ to {
 
 
 
+
+
+
+/* =========================================================
+   ARS HERITAGE GROUP — HERO CONTENT STABILIZATION PATCH
+   =========================================================
+   PURPOSE:
+   • Keep Hero text outside the orbital interaction zone
+   • Prevent text from entering / crossing the orbit system
+   • Prevent accidental visual disappearance
+   • Preserve existing orbital universe
+   • No HTML restructuring
+   ========================================================= */
+
+
+/* =========================================================
+   HC.01 — HERO CONTENT MASTER
+   ========================================================= */
+
+.hero-content {
+
+    position: absolute;
+
+    top: clamp(105px, 11vh, 145px);
+
+    left: 50%;
+
+    width: min(
+        900px,
+        calc(100% - 48px)
+    );
+
+    transform:
+        translateX(-50%);
+
+    z-index: 200;
+
+    isolation: isolate;
+
+    text-align: center;
+
+    pointer-events: auto;
+
+    opacity: 1;
+
+    visibility: visible;
+
+    display: block;
+
+}
+
+
+/* =========================================================
+   HC.02 — CONTENT DEPTH ISOLATION
+   ========================================================= */
+
+.hero-content::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -40px;
+
+    left: 50%;
+
+    width: 125%;
+
+    height: 125%;
+
+    transform:
+        translateX(-50%);
+
+    z-index: -1;
+
+    pointer-events: none;
+
+    background:
+
+        radial-gradient(
+            ellipse at center,
+            rgba(2,7,13,.82) 0%,
+            rgba(2,7,13,.55) 34%,
+            rgba(2,7,13,.18) 58%,
+            transparent 76%
+        );
+
+    filter:
+        blur(18px);
+
+    opacity: .92;
+
+}
+
+
+/* =========================================================
+   HC.03 — HERO EYEBROW
+   ========================================================= */
+
+.hero-content .hero-eyebrow {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin:
+        0 0 18px;
+
+    color:
+        var(--home-text-gold);
+
+    font-size:
+        clamp(12px, 1.1vw, 17px);
+
+    font-weight:
+        500;
+
+    line-height:
+        1.4;
+
+    letter-spacing:
+        .16em;
+
+    text-transform:
+        uppercase;
+
+    opacity:
+        1;
+
+}
+
+
+/* =========================================================
+   HC.04 — HERO MAIN TITLE
+   ========================================================= */
+
+.hero-content h1 {
+
+    position: relative;
+
+    z-index: 3;
+
+    max-width:
+        900px;
+
+    margin:
+        0 auto;
+
+    color:
+        var(--home-white);
+
+    font-size:
+        clamp(
+            42px,
+            5.8vw,
+            86px
+        );
+
+    font-weight:
+        700;
+
+    line-height:
+        .98;
+
+    letter-spacing:
+        -.045em;
+
+    text-align:
+        center;
+
+    text-wrap:
+        balance;
+
+    opacity:
+        1;
+
+    visibility:
+        visible;
+
+    text-shadow:
+
+        0 3px 24px
+        rgba(0,0,0,.72),
+
+        0 0 55px
+        rgba(0,168,255,.045);
+
+}
+
+
+/* =========================================================
+   HC.05 — HERO TITLE SPANS
+   ========================================================= */
+
+.hero-content h1 span {
+
+    position: relative;
+
+    z-index: 4;
+
+    opacity:
+        1;
+
+    visibility:
+        visible;
+
+}
+
+
+/* =========================================================
+   HC.06 — HERO DESCRIPTION
+   ========================================================= */
+
+.hero-content p {
+
+    position: relative;
+
+    z-index: 3;
+
+    max-width:
+        760px;
+
+    margin:
+        30px auto 0;
+
+    color:
+        var(--home-text-muted);
+
+    font-size:
+        clamp(
+            15px,
+            1.35vw,
+            19px
+        );
+
+    font-weight:
+        400;
+
+    line-height:
+        1.85;
+
+    text-align:
+        center;
+
+    opacity:
+        1;
+
+    visibility:
+        visible;
+
+    text-shadow:
+        0 2px 15px
+        rgba(0,0,0,.55);
+
+}
+
+
+/* =========================================================
+   HC.07 — HERO ACTION AREA
+   ========================================================= */
+
+.hero-content .hero-actions {
+
+    position: relative;
+
+    z-index: 5;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        16px;
+
+    margin-top:
+        36px;
+
+    opacity:
+        1;
+
+    visibility:
+        visible;
+
+}
+
+
+/* =========================================================
+   HC.08 — HERO BUTTON SAFETY
+   ========================================================= */
+
+.hero-content .hero-actions a,
+.hero-content .hero-actions button {
+
+    position: relative;
+
+    z-index: 10;
+
+    opacity:
+        1;
+
+    visibility:
+        visible;
+
+}
+
+
+/* =========================================================
+   HC.09 — STOP ACCIDENTAL REVEAL STATES
+   ========================================================= */
+
+/*
+   IMPORTANT:
+   This prevents generic reveal classes from making the
+   Hero content permanently invisible.
+*/
+
+.hero-content.is-hidden,
+.hero-content.hidden,
+.hero-content.fade-out {
+
+    opacity:
+        1;
+
+    visibility:
+        visible;
+
+}
+
+
+/* =========================================================
+   HC.10 — HERO CONTENT ABOVE ORBIT
+   ========================================================= */
+
+.hero .hero-content {
+
+    z-index:
+        200;
+
+}
+
+
+/* =========================================================
+   HC.11 — ORBIT BELOW CONTENT
+   ========================================================= */
+
+.hero .ars-orbit {
+
+    z-index:
+        8;
+
+}
+
+
+/* =========================================================
+   HC.12 — CONTENT DOES NOT PARTICIPATE IN ORBIT
+   ========================================================= */
+
+.hero-content,
+.hero-content * {
+
+    transform-style:
+        flat;
+
+}
+
+
+/* =========================================================
+   HC.13 — DESKTOP POSITION
+   ========================================================= */
+
+@media (min-width: 769px) {
+
+    .hero-content {
+
+        top:
+            clamp(
+                100px,
+                10vh,
+                145px
+            );
+
+    }
+
+}
+
+
+/* =========================================================
+   HC.14 — TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+    .hero-content {
+
+        width:
+            min(
+                820px,
+                calc(100% - 40px)
+            );
+
+        top:
+            105px;
+
+    }
+
+    .hero-content h1 {
+
+        font-size:
+            clamp(
+                40px,
+                7vw,
+                68px
+            );
+
+    }
+
+}
+
+
+/* =========================================================
+   HC.15 — MOBILE HERO CONTENT
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .hero-content {
+
+        position:
+            absolute;
+
+        top:
+            90px;
+
+        left:
+            50%;
+
+        width:
+            calc(100% - 30px);
+
+        transform:
+            translateX(-50%);
+
+    }
+
+    .hero-content h1 {
+
+        font-size:
+            clamp(
+                38px,
+                10vw,
+                56px
+            );
+
+        line-height:
+            1.02;
+
+        letter-spacing:
+            -.04em;
+
+    }
+
+    .hero-content p {
+
+        margin-top:
+            22px;
+
+        font-size:
+            15px;
+
+        line-height:
+            1.75;
+
+    }
+
+    .hero-content .hero-actions {
+
+        margin-top:
+            28px;
+
+        gap:
+            12px;
+
+    }
+
+}
+
+
+/* =========================================================
+   HC.16 — SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .hero-content {
+
+        top:
+            78px;
+
+        width:
+            calc(100% - 24px);
+
+    }
+
+    .hero-content .hero-eyebrow {
+
+        font-size:
+            10px;
+
+        letter-spacing:
+            .13em;
+
+    }
+
+    .hero-content h1 {
+
+        font-size:
+            clamp(
+                34px,
+                11vw,
+                48px
+            );
+
+    }
+
+    .hero-content p {
+
+        font-size:
+            14px;
+
+        line-height:
+            1.7;
+
+    }
+
+}
+
+
+/* =========================================================
+   HC.17 — FINAL HERO CONTENT LOCK
+   ========================================================= */
+
+/*
+   HERO CONTENT IS NOW:
+
+   ✓ Outside the orbital center
+   ✓ Above the orbital layer
+   ✓ Permanently visible
+   ✓ Independent from orbit transforms
+   ✓ Protected against generic hidden states
+   ✓ Responsive
+   ✓ No HTML changes
+   ✓ No orbit-system rewrite
+*/
+
+
+
+
+
+
+
+
+
+
