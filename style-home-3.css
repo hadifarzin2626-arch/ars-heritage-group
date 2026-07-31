@@ -24379,9 +24379,2391 @@ section > .container {
    25 — Final Override
 */
 
+/* =========================================================
+   ARS HERITAGE GROUP — HOME
+   24 — PERFORMANCE / MOTION SAFETY
+   =========================================================
+   PERFORMANCE SAFETY LAYER
+   GPU-SAFE TRANSFORMS
+   BLUR CONTROL
+   WILL-CHANGE DISCIPLINE
+   MOTION CONTAINMENT
+   TOUCH SAFETY
+   MOBILE OPTIMIZATION
+   REDUCED MOTION
+   OVERFLOW SAFETY
+   LAYOUT THRASHING PREVENTION
+   ========================================================= */
 
 
+/* =========================================================
+   24.01 — GLOBAL MOTION BASELINE
+   ========================================================= */
 
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* =========================================================
+   24.02 — GPU SAFE TRANSFORM POLICY
+   ========================================================= */
+
+.hero,
+.home-energy-universe,
+.ars-orbit,
+.orbit-core,
+.orbit-item,
+.ars-glass-card,
+.ars-card-image,
+.ars-card-logo,
+.energy-bridge,
+.home-energy-ray,
+.home-master-orbit,
+.home-radiation-field {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+
+/* =========================================================
+   24.03 — TRANSFORM CONTAINMENT
+   ========================================================= */
+
+.orbit-item,
+.orbit-core,
+.ars-glass-card,
+.future-item,
+.principle-card {
+    transform-style: preserve-3d;
+}
+
+
+/* =========================================================
+   24.04 — GPU ACCELERATION
+   ========================================================= */
+
+.orbit-item,
+.orbit-core,
+.ars-glass-card {
+    transform: translateZ(0);
+}
+
+
+/* =========================================================
+   24.05 — ANIMATION CONTAINMENT
+   ========================================================= */
+
+.home-energy-universe,
+.ars-orbit,
+.ars-core-grid,
+.ars-specialized-grid,
+.energy-bridge,
+.future-grid,
+.principles-grid {
+    contain: layout paint;
+}
+
+
+/* =========================================================
+   24.06 — CARD CONTENT CONTAINMENT
+   ========================================================= */
+
+.ars-glass-card {
+    contain: layout paint;
+}
+
+
+/* =========================================================
+   24.07 — IMAGE RENDERING
+   ========================================================= */
+
+.ars-card-image img,
+.ars-card-logo img,
+.concept-logo img,
+.orbit-link img,
+.orbit-core img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+
+/* =========================================================
+   24.08 — IMAGE PERFORMANCE
+   ========================================================= */
+
+.ars-card-image,
+.ars-card-logo {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   24.09 — WILL-CHANGE DISCIPLINE
+   ========================================================= */
+
+/*
+   will-change فقط روی عناصر واقعاً متحرک.
+   روی همه‌ی DOM اعمال نمی‌شود.
+*/
+
+.orbit-item:hover,
+.orbit-core:hover,
+.ars-glass-card:hover,
+.ars-glass-card.is-selected {
+    will-change: transform;
+}
+
+
+/* =========================================================
+   24.10 — ENERGY LAYERS
+   ========================================================= */
+
+.home-energy-ray,
+.home-master-orbit,
+.home-radiation-field,
+.home-energy-link,
+.home-particle,
+.core-energy-ring,
+.core-energy-halo,
+.core-energy-pulse,
+.node-energy-halo,
+.node-energy-ring,
+.node-energy-pulse,
+.node-energy-spark {
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   24.11 — ATMOSPHERIC LAYERS
+   ========================================================= */
+
+.home-energy-universe,
+.hero-background,
+.hero-stars,
+.hero-stars-2 {
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   24.12 — POINTER SAFETY
+   ========================================================= */
+
+.orbit-link,
+.orbit-core,
+.ars-card-link,
+.btn-primary,
+.btn-secondary {
+    touch-action: manipulation;
+}
+
+
+/* =========================================================
+   24.13 — CLICK TARGET SAFETY
+   ========================================================= */
+
+.orbit-link,
+.orbit-core,
+.ars-card-link {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   24.14 — OVERFLOW SAFETY
+   ========================================================= */
+
+.hero,
+.about-ars,
+.mission-vision,
+.ars-philosophy-home,
+.ecosystem,
+.future-roadmap,
+.future-vision,
+.main-footer {
+    overflow-x: clip;
+}
+
+
+/* =========================================================
+   24.15 — FALLBACK FOR BROWSERS
+   ========================================================= */
+
+@supports not (overflow: clip) {
+
+    .hero,
+    .about-ars,
+    .mission-vision,
+    .ars-philosophy-home,
+    .ecosystem,
+    .future-roadmap,
+    .future-vision,
+    .main-footer {
+        overflow-x: hidden;
+    }
+
+}
+
+
+/* =========================================================
+   24.16 — BLUR DISCIPLINE
+   ========================================================= */
+
+/*
+   Blurهای بسیار سنگین در لایه‌های متعدد
+   باعث فشار GPU می‌شوند.
+
+   این قانون اجازه می‌دهد سیستم‌های قبلی
+   همچنان ظاهر سینمایی خود را حفظ کنند
+   ولی از blur غیرضروری جلوگیری شود.
+*/
+
+.ars-glass-card,
+.principle-card,
+.future-item {
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   24.17 — ISOLATION
+   ========================================================= */
+
+.hero,
+.ecosystem,
+.future-roadmap,
+.future-vision,
+.main-footer {
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   24.18 — ENERGY PARTICLE SAFETY
+   ========================================================= */
+
+.home-particle {
+    contain: strict;
+}
+
+
+/* =========================================================
+   24.19 — ORBITAL PARTICLE SAFETY
+   ========================================================= */
+
+.home-particle-field {
+    contain: layout paint;
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   24.20 — CARD SHADOW SAFETY
+   ========================================================= */
+
+.ars-glass-card,
+.principle-card,
+.future-item {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   24.21 — REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .home-energy-universe,
+    .ars-orbit,
+    .orbit-item,
+    .orbit-core,
+    .ars-glass-card {
+        transform: none !important;
+    }
+
+}
+
+
+/* =========================================================
+   24.22 — MOBILE PERFORMANCE MODE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /*
+       Mobile:
+       visual richness حفظ می‌شود
+       اما animation complexity کاهش می‌یابد.
+    */
+
+    .home-energy-universe {
+        pointer-events: none;
+    }
+
+    .home-particle {
+        animation-duration: 12s;
+    }
+
+    .orbit-item,
+    .orbit-core,
+    .ars-glass-card {
+        transform: translateZ(0);
+    }
+
+}
+
+
+/* =========================================================
+   24.23 — SMALL MOBILE SAFETY
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .home-particle:nth-child(n + 13) {
+        display: none;
+    }
+
+    .home-energy-link:nth-child(n + 4) {
+        opacity: 0.35;
+    }
+
+}
+
+
+/* =========================================================
+   24.24 — LOW POWER DEVICE SAFETY
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .home-particle-field {
+        opacity: 0.55;
+    }
+
+    .home-energy-ray {
+        opacity: 0.45;
+    }
+
+    .home-master-orbit {
+        opacity: 0.55;
+    }
+
+}
+
+
+/* =========================================================
+   24.25 — TOUCH DEVICES
+   ========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+    /*
+       Hover-only motion روی موبایل فعال نمی‌ماند.
+    */
+
+    .ars-glass-card:hover,
+    .orbit-item:hover,
+    .orbit-core:hover {
+        will-change: auto;
+    }
+
+    .ars-glass-card {
+        transition-property: transform, opacity;
+    }
+
+}
+
+
+/* =========================================================
+   24.26 — HOVER DEVICES
+   ========================================================= */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .ars-glass-card:hover,
+    .orbit-item:hover,
+    .orbit-core:hover {
+        will-change: transform;
+    }
+
+}
+
+
+/* =========================================================
+   24.27 — HIDDEN PERFORMANCE STATE
+   ========================================================= */
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   24.28 — ANIMATION SAFETY
+   ========================================================= */
+
+@keyframes ars-safe-placeholder {
+    from {
+        opacity: 0.999;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   24.29 — SECTION PAINT ISOLATION
+   ========================================================= */
+
+.about-ars,
+.mission-vision,
+.ars-philosophy-home,
+.ecosystem,
+.future-roadmap,
+.future-vision {
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   24.30 — FOOTER PERFORMANCE
+   ========================================================= */
+
+.main-footer {
+    isolation: isolate;
+    contain: paint;
+}
+
+
+/* =========================================================
+   24.31 — ENERGY BRIDGE PERFORMANCE
+   ========================================================= */
+
+/*
+   Energy Bridge بین دو خانواده‌ی کارت:
+   Family A — 6 Cards
+   Family B — 7 Cards
+
+   Bridge مستقل از layout کارت‌ها باقی می‌ماند.
+*/
+
+.energy-bridge {
+    isolation: isolate;
+    contain: layout paint;
+    pointer-events: none;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+
+/* =========================================================
+   24.32 — SIX-CARD FAMILY
+   ========================================================= */
+
+.ecosystem-family-six {
+    contain: layout paint;
+}
+
+
+/* =========================================================
+   24.33 — SEVEN-CARD FAMILY
+   ========================================================= */
+
+.ecosystem-family-seven {
+    contain: layout paint;
+}
+
+
+/* =========================================================
+   24.34 — FAMILY MOTION ISOLATION
+   ========================================================= */
+
+.ecosystem-family-six .ars-glass-card,
+.ecosystem-family-seven .ars-glass-card {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+
+/* =========================================================
+   24.35 — PREVENT LAYOUT THRASHING
+   ========================================================= */
+
+.ars-glass-card,
+.orbit-item,
+.orbit-core,
+.energy-bridge {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   24.36 — FINAL GPU RULE
+   ========================================================= */
+
+.orbit-item,
+.orbit-core,
+.ars-glass-card,
+.energy-bridge {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+
+/* =========================================================
+   24.37 — PERFORMANCE MASTER LOCK
+   ========================================================= */
+
+/*
+   DO NOT:
+
+   - animate width
+   - animate height
+   - animate top
+   - animate left
+   - animate margin
+   - animate padding
+
+   Prefer:
+
+   transform
+   opacity
+   filter (limited)
+*/
+
+.ars-glass-card,
+.orbit-item,
+.orbit-core,
+.energy-bridge {
+    transition-property:
+        transform,
+        opacity,
+        filter;
+}
+
+
+/* =========================================================
+   24.38 — FINAL MOTION SAFETY
+   ========================================================= */
+
+.home-energy-ready .home-energy-universe,
+.home-energy-ready .ars-orbit {
+    transform: translateZ(0);
+}
+
+
+/* =========================================================
+   24.39 — PERFORMANCE END
+   =========================================================
+   24 COMPLETE
+   ========================================================= */
+
+/* =========================================================
+   ARS HERITAGE GROUP — HOME
+   25 — FINAL HOME MASTER OVERRIDE
+   =========================================================
+   FINAL SYSTEM RECONCILIATION
+   =========================================================
+
+   DNA
+   HERO
+   DEEP ENERGY UNIVERSE
+   ORBITAL SYSTEM
+   NODE ENERGY
+   HERO CONTENT
+   HERO BUTTONS
+
+   ABOUT
+   MISSION / VISION / VALUES
+   PHILOSOPHY
+
+   ECOSYSTEM
+   CORE CARD
+   6-CARD FAMILY
+   ENERGY BRIDGE
+   7-CARD FAMILY
+
+   MATERIAL ENGINE
+   GOLDEN REVEAL
+   CINEMATIC ANIMATION
+   IMAGE / LOGO / CONTENT
+
+   ROADMAP
+   FUTURE VISION
+   FOOTER
+
+   SECTION TRANSITIONS
+   SCROLL REVEAL
+   RESPONSIVE
+   PERFORMANCE
+
+   =========================================================
+   FINAL MASTER LOCK
+   ========================================================= */
+
+
+/* =========================================================
+   25.01 — MASTER ROOT
+   ========================================================= */
+
+:root {
+
+    --ars-master-gold:
+        var(--ars-gold, #d6b36a);
+
+    --ars-master-blue:
+        var(--ars-electric-blue, #27a9ff);
+
+    --ars-master-navy:
+        var(--ars-deep-navy, #07111f);
+
+    --ars-master-black:
+        var(--ars-black, #020305);
+
+    --ars-master-bronze:
+        var(--ars-bronze, #76563a);
+
+    --ars-master-white:
+        var(--ars-white, #f5f7fa);
+
+    --ars-master-transition:
+        cubic-bezier(.22, .61, .36, 1);
+
+    --ars-master-fast:
+        320ms var(--ars-master-transition);
+
+    --ars-master-medium:
+        650ms var(--ars-master-transition);
+
+    --ars-master-slow:
+        1100ms var(--ars-master-transition);
+
+}
+
+
+/* =========================================================
+   25.02 — GLOBAL MASTER RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+html {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+body {
+    margin: 0;
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+    background:
+        var(--ars-master-black);
+    color:
+        var(--ars-master-white);
+}
+
+
+/* =========================================================
+   25.03 — MASTER SECTION DEPTH
+   ========================================================= */
+
+.hero,
+.about-ars,
+.mission-vision,
+.ars-philosophy-home,
+.ecosystem,
+.future-roadmap,
+.future-vision,
+.main-footer {
+
+    position: relative;
+
+    isolation: isolate;
+
+}
+
+
+/* =========================================================
+   25.04 — CINEMATIC SECTION CONTINUITY
+   ========================================================= */
+
+.about-ars,
+.mission-vision,
+.ars-philosophy-home,
+.ecosystem,
+.future-roadmap,
+.future-vision {
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(2,3,5,.96),
+            rgba(5,10,18,.98)
+        );
+
+}
+
+
+/* =========================================================
+   25.05 — SECTION ATMOSPHERIC TRANSITION
+   ========================================================= */
+
+.about-ars::before,
+.mission-vision::before,
+.ars-philosophy-home::before,
+.ecosystem::before,
+.future-roadmap::before,
+.future-vision::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset:
+        0 0 auto 0;
+
+    height:
+        180px;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(39,169,255,.045),
+            transparent
+        );
+
+    opacity:
+        .9;
+
+    z-index:
+        -1;
+
+}
+
+
+/* =========================================================
+   25.06 — MASTER SECTION HEADER
+   ========================================================= */
+
+.section-header {
+    position: relative;
+    z-index: 2;
+}
+
+
+.section-label {
+    position: relative;
+    display: inline-block;
+
+    letter-spacing:
+        .24em;
+
+    text-transform:
+        uppercase;
+
+    font-size:
+        .72rem;
+
+    color:
+        var(--ars-master-gold);
+
+}
+
+
+.section-label::after {
+
+    content: "";
+
+    display: block;
+
+    width:
+        48px;
+
+    height:
+        1px;
+
+    margin-top:
+        10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--ars-master-gold),
+            var(--ars-master-blue),
+            transparent
+        );
+
+}
+
+
+/* =========================================================
+   25.07 — MASTER HEADINGS
+   ========================================================= */
+
+.section-header h2 {
+
+    position: relative;
+
+    color:
+        var(--ars-master-white);
+
+    text-wrap:
+        balance;
+
+}
+
+
+.section-header h2::selection,
+.section-label::selection {
+
+    background:
+        var(--ars-master-gold);
+
+    color:
+        #000;
+
+}
+
+
+/* =========================================================
+   25.08 — HERO MASTER PRIORITY
+   ========================================================= */
+
+.hero {
+
+    min-height:
+        100vh;
+
+    position:
+        relative;
+
+    isolation:
+        isolate;
+
+}
+
+
+.hero-background,
+.home-energy-universe,
+.ars-orbit,
+.hero-content {
+
+    position:
+        relative;
+
+}
+
+
+/* =========================================================
+   25.09 — HERO LAYER ORDER
+   ========================================================= */
+
+.hero-background {
+    z-index:
+        0;
+}
+
+
+.home-energy-universe {
+    z-index:
+        1;
+}
+
+
+.ars-orbit {
+    z-index:
+        3;
+}
+
+
+.hero-content {
+    z-index:
+        5;
+}
+
+
+/* =========================================================
+   25.10 — HERO CONTENT PROTECTION
+   ========================================================= */
+
+.hero-content {
+
+    isolation:
+        isolate;
+
+}
+
+
+.hero-content h1,
+.hero-content p,
+.hero-label,
+.hero-buttons {
+
+    position:
+        relative;
+
+    z-index:
+        6;
+
+}
+
+
+/* =========================================================
+   25.11 — ORBIT MASTER PROTECTION
+   ========================================================= */
+
+.ars-orbit {
+
+    pointer-events:
+        none;
+
+}
+
+
+.orbit-core,
+.orbit-item,
+.orbit-link {
+
+    pointer-events:
+        auto;
+
+}
+
+
+/* =========================================================
+   25.12 — CENTRAL CORE PRIORITY
+   ========================================================= */
+
+.orbit-core {
+
+    position:
+        relative;
+
+    z-index:
+        20;
+
+}
+
+
+.orbit-core::after {
+
+    content: "";
+
+    position:
+        absolute;
+
+    inset:
+        -16px;
+
+    border-radius:
+        50%;
+
+    pointer-events:
+        none;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(214,179,106,.10),
+            transparent 68%
+        );
+
+    opacity:
+        .75;
+
+    z-index:
+        -1;
+
+}
+
+
+/* =========================================================
+   25.13 — NODE MASTER PRIORITY
+   ========================================================= */
+
+.orbit-item {
+
+    position:
+        relative;
+
+    z-index:
+        10;
+
+}
+
+
+.orbit-item.is-active {
+
+    z-index:
+        30;
+
+}
+
+
+/* =========================================================
+   25.14 — ACTIVE NODE ENERGY
+   ========================================================= */
+
+.orbit-item.is-active .orbit-node-energy {
+
+    filter:
+        brightness(1.18)
+        saturate(1.18);
+
+}
+
+
+.orbit-item.is-active .orbit-link {
+
+    filter:
+        brightness(1.12)
+        drop-shadow(
+            0 0 18px
+            rgba(39,169,255,.35)
+        );
+
+}
+
+
+/* =========================================================
+   25.15 — CORE REACTION
+   ========================================================= */
+
+.orbit-core.core-reacting {
+
+    filter:
+        brightness(1.08)
+        drop-shadow(
+            0 0 28px
+            rgba(214,179,106,.25)
+        );
+
+}
+
+
+/* =========================================================
+   25.16 — CARD MASTER SURFACE
+   ========================================================= */
+
+.ars-glass-card {
+
+    position:
+        relative;
+
+    isolation:
+        isolate;
+
+    overflow:
+        hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10,16,25,.92),
+            rgba(2,5,9,.96)
+        );
+
+    border:
+        1px solid
+        rgba(214,179,106,.16);
+
+    box-shadow:
+        0 20px 70px
+        rgba(0,0,0,.40);
+
+}
+
+
+/* =========================================================
+   25.17 — CORE CARD FINAL PRIORITY
+   ========================================================= */
+
+.ars-core-card {
+
+    border-color:
+        rgba(214,179,106,.38);
+
+    box-shadow:
+        0 25px 90px
+        rgba(0,0,0,.55),
+        0 0 45px
+        rgba(214,179,106,.10),
+        0 0 80px
+        rgba(39,169,255,.05);
+
+}
+
+
+/* =========================================================
+   25.18 — SPECIALIZED CARD FINAL PRIORITY
+   ========================================================= */
+
+.ars-specialized-card {
+
+    border-color:
+        rgba(39,169,255,.12);
+
+}
+
+
+.ars-specialized-card:hover {
+
+    border-color:
+        rgba(214,179,106,.30);
+
+}
+
+
+/* =========================================================
+   25.19 — SIX-CARD FAMILY
+   ========================================================= */
+
+.ecosystem-family-six {
+
+    position:
+        relative;
+
+    z-index:
+        3;
+
+}
+
+
+/*
+   خانواده اول:
+   ARS Brain
+   ARS Design
+   ARS Company
+   ROSE AI
+   ZHR NAJI
+   ARS Engineering
+*/
+
+
+.ecosystem-family-six .ars-glass-card {
+
+    border-color:
+        rgba(39,169,255,.16);
+
+}
+
+
+.ecosystem-family-six .ars-glass-card:hover {
+
+    border-color:
+        rgba(214,179,106,.38);
+
+}
+
+
+/* =========================================================
+   25.20 — ENERGY BRIDGE FINAL
+   ========================================================= */
+
+.energy-bridge {
+
+    position:
+        relative;
+
+    z-index:
+        8;
+
+    min-height:
+        120px;
+
+    pointer-events:
+        none;
+
+    isolation:
+        isolate;
+
+}
+
+
+/* =========================================================
+   25.21 — ENERGY BRIDGE ATMOSPHERE
+   ========================================================= */
+
+.energy-bridge::before {
+
+    content: "";
+
+    position:
+        absolute;
+
+    left:
+        8%;
+
+    right:
+        8%;
+
+    top:
+        50%;
+
+    height:
+        1px;
+
+    transform:
+        translateY(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(39,169,255,.18),
+            rgba(214,179,106,.65),
+            rgba(39,169,255,.18),
+            transparent
+        );
+
+    box-shadow:
+        0 0 22px
+        rgba(39,169,255,.16);
+
+}
+
+
+/* =========================================================
+   25.22 — ENERGY BRIDGE CORE
+   ========================================================= */
+
+.energy-bridge::after {
+
+    content: "";
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        9px;
+
+    height:
+        9px;
+
+    border-radius:
+        50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    background:
+        var(--ars-master-gold);
+
+    box-shadow:
+        0 0 12px
+        var(--ars-master-gold),
+        0 0 32px
+        rgba(39,169,255,.45);
+
+    animation:
+        ars-energy-bridge-pulse
+        3.6s ease-in-out infinite;
+
+}
+
+
+@keyframes ars-energy-bridge-pulse {
+
+    0%,
+    100% {
+        opacity:
+            .55;
+
+        transform:
+            translate(-50%, -50%)
+            scale(.8);
+    }
+
+    50% {
+        opacity:
+            1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.35);
+    }
+
+}
+
+
+/* =========================================================
+   25.23 — SEVEN-CARD FAMILY
+   ========================================================= */
+
+.ecosystem-family-seven {
+
+    position:
+        relative;
+
+    z-index:
+        3;
+
+}
+
+
+.ecosystem-family-seven .ars-glass-card {
+
+    border-color:
+        rgba(214,179,106,.14);
+
+}
+
+
+.ecosystem-family-seven .ars-glass-card:hover {
+
+    border-color:
+        rgba(39,169,255,.34);
+
+}
+
+
+/* =========================================================
+   25.24 — FAMILY VISUAL DIFFERENTIATION
+   ========================================================= */
+
+.ecosystem-family-six::before,
+.ecosystem-family-seven::before {
+
+    content: "";
+
+    position:
+        absolute;
+
+    inset:
+        -30px;
+
+    pointer-events:
+        none;
+
+    z-index:
+        -1;
+
+    opacity:
+        .5;
+
+}
+
+
+.ecosystem-family-six::before {
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(39,169,255,.045),
+            transparent 65%
+        );
+
+}
+
+
+.ecosystem-family-seven::before {
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(214,179,106,.045),
+            transparent 65%
+        );
+
+}
+
+
+/* =========================================================
+   25.25 — CARD LINK PROTECTION
+   ========================================================= */
+
+.ars-card-link {
+
+    display:
+        block;
+
+    height:
+        100%;
+
+    color:
+        inherit;
+
+    text-decoration:
+        none;
+
+}
+
+
+/* =========================================================
+   25.26 — CARD ACTION FINAL
+   ========================================================= */
+
+.ars-card-action {
+
+    position:
+        relative;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        6px;
+
+    color:
+        var(--ars-master-gold);
+
+    transition:
+        transform
+        var(--ars-master-fast),
+        color
+        var(--ars-master-fast);
+
+}
+
+
+.ars-glass-card:hover .ars-card-action {
+
+    transform:
+        translateX(5px);
+
+    color:
+        var(--ars-master-white);
+
+}
+
+
+/* =========================================================
+   25.27 — CARD IMAGE FINAL
+   ========================================================= */
+
+.ars-card-image {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+}
+
+
+.ars-card-image::after {
+
+    content: "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 35%,
+            rgba(2,3,5,.55)
+        );
+
+}
+
+
+.ars-card-image img {
+
+    transition:
+        transform
+        900ms var(--ars-master-transition),
+        filter
+        700ms var(--ars-master-transition);
+
+}
+
+
+.ars-glass-card:hover
+.ars-card-image img {
+
+    transform:
+        scale(1.045);
+
+    filter:
+        brightness(1.08)
+        saturate(1.06);
+
+}
+
+
+/* =========================================================
+   25.28 — CARD LOGO FINAL
+   ========================================================= */
+
+.ars-card-logo {
+
+    position:
+        relative;
+
+    z-index:
+        3;
+
+}
+
+
+.ars-card-logo img {
+
+    transition:
+        transform
+        var(--ars-master-medium),
+        filter
+        var(--ars-master-medium);
+
+}
+
+
+.ars-glass-card:hover
+.ars-card-logo img {
+
+    transform:
+        translateY(-2px);
+
+    filter:
+        brightness(1.08)
+        drop-shadow(
+            0 0 14px
+            rgba(214,179,106,.20)
+        );
+
+}
+
+
+/* =========================================================
+   25.29 — GOLDEN SELECTED STATE
+   ========================================================= */
+
+.ars-glass-card.is-selected {
+
+    border-color:
+        rgba(214,179,106,.72);
+
+    box-shadow:
+        0 25px 80px
+        rgba(0,0,0,.50),
+        0 0 32px
+        rgba(214,179,106,.18),
+        0 0 70px
+        rgba(39,169,255,.07);
+
+}
+
+
+.ars-glass-card.is-selected
+.ars-card-image img {
+
+    filter:
+        brightness(1.12)
+        saturate(1.10);
+
+}
+
+
+/* =========================================================
+   25.30 — SECTION CONTENT WIDTH
+   ========================================================= */
+
+.container {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+}
+
+
+/* =========================================================
+   25.31 — ABOUT FINAL
+   ========================================================= */
+
+.about-ars {
+
+    position:
+        relative;
+
+}
+
+
+.about-text {
+
+    position:
+        relative;
+
+    max-width:
+        900px;
+
+}
+
+
+.about-text blockquote {
+
+    position:
+        relative;
+
+    color:
+        var(--ars-master-gold);
+
+    border-left:
+        1px solid
+        var(--ars-master-gold);
+
+    padding-left:
+        24px;
+
+    text-shadow:
+        0 0 20px
+        rgba(214,179,106,.14);
+
+}
+
+
+/* =========================================================
+   25.32 — MISSION CARDS
+   ========================================================= */
+
+.principle-card {
+
+    position:
+        relative;
+
+    isolation:
+        isolate;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(8,15,25,.86),
+            rgba(2,4,8,.96)
+        );
+
+    border:
+        1px solid
+        rgba(214,179,106,.16);
+
+    transition:
+        transform
+        var(--ars-master-medium),
+        border-color
+        var(--ars-master-medium),
+        box-shadow
+        var(--ars-master-medium);
+
+}
+
+
+.principle-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(39,169,255,.30);
+
+    box-shadow:
+        0 22px 60px
+        rgba(0,0,0,.45),
+        0 0 28px
+        rgba(39,169,255,.07);
+
+}
+
+
+/* =========================================================
+   25.33 — PHILOSOPHY FINAL
+   ========================================================= */
+
+.ars-philosophy-home {
+
+    overflow:
+        hidden;
+
+}
+
+
+.concept-logo {
+
+    position:
+        relative;
+
+    isolation:
+        isolate;
+
+}
+
+
+.concept-glow {
+
+    pointer-events:
+        none;
+
+}
+
+
+/* =========================================================
+   25.34 — PHILOSOPHY QUOTE
+   ========================================================= */
+
+.philosophy-text blockquote {
+
+    color:
+        var(--ars-master-gold);
+
+    text-shadow:
+        0 0 25px
+        rgba(214,179,106,.16);
+
+}
+
+
+/* =========================================================
+   25.35 — ROADMAP
+   ========================================================= */
+
+.future-roadmap {
+
+    position:
+        relative;
+
+}
+
+
+.engineering-quote {
+
+    position:
+        relative;
+
+    isolation:
+        isolate;
+
+}
+
+
+.engineering-quote h2 {
+
+    color:
+        var(--ars-master-gold);
+
+}
+
+
+/* =========================================================
+   25.36 — FUTURE VISION
+   ========================================================= */
+
+.future-item {
+
+    position:
+        relative;
+
+    isolation:
+        isolate;
+
+    transition:
+        transform
+        var(--ars-master-medium),
+        border-color
+        var(--ars-master-medium);
+
+}
+
+
+.future-item:hover {
+
+    transform:
+        translateY(-6px);
+
+}
+
+
+/* =========================================================
+   25.37 — FOOTER FINAL ENERGY HORIZON
+   ========================================================= */
+
+.main-footer {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #030508,
+            #010203
+        );
+
+    border-top:
+        1px solid
+        rgba(214,179,106,.18);
+
+}
+
+
+.main-footer::before {
+
+    content: "";
+
+    position:
+        absolute;
+
+    left:
+        10%;
+
+    right:
+        10%;
+
+    top:
+        0;
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--ars-master-gold),
+            var(--ars-master-blue),
+            var(--ars-master-gold),
+            transparent
+        );
+
+    box-shadow:
+        0 0 25px
+        rgba(39,169,255,.20);
+
+}
+
+
+.main-footer::after {
+
+    content: "";
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        0;
+
+    width:
+        500px;
+
+    height:
+        180px;
+
+    transform:
+        translateX(-50%);
+
+    pointer-events:
+        none;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(39,169,255,.07),
+            transparent 70%
+        );
+
+}
+
+
+/* =========================================================
+   25.38 — FOOTER TYPOGRAPHY
+   ========================================================= */
+
+.main-footer h2 {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    color:
+        var(--ars-master-gold);
+
+}
+
+
+.footer-bottom {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    margin-top:
+        30px;
+
+    padding-top:
+        20px;
+
+    border-top:
+        1px solid
+        rgba(214,179,106,.12);
+
+    color:
+        rgba(245,247,250,.48);
+
+}
+
+
+/* =========================================================
+   25.39 — SCROLL REVEAL MASTER
+   ========================================================= */
+
+.reveal,
+.scroll-reveal {
+
+    will-change:
+        opacity,
+        transform;
+
+}
+
+
+.home-energy-ready
+.reveal,
+.home-energy-ready
+.scroll-reveal {
+
+    transition:
+        opacity
+        900ms var(--ars-master-transition),
+        transform
+        900ms var(--ars-master-transition),
+        filter
+        900ms var(--ars-master-transition);
+
+}
+
+
+/* =========================================================
+   25.40 — BUTTON MASTER
+   ========================================================= */
+
+.btn-primary,
+.btn-secondary {
+
+    position:
+        relative;
+
+    isolation:
+        isolate;
+
+    overflow:
+        hidden;
+
+    transition:
+        transform
+        var(--ars-master-fast),
+        box-shadow
+        var(--ars-master-fast),
+        border-color
+        var(--ars-master-fast);
+
+}
+
+
+.btn-primary:hover,
+.btn-secondary:hover {
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+/* =========================================================
+   25.41 — MASTER RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .ars-core-grid {
+
+        gap:
+            24px;
+
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .hero {
+
+        min-height:
+            100svh;
+
+    }
+
+    .hero-content {
+
+        position:
+            relative;
+
+        z-index:
+            10;
+
+    }
+
+    .ars-orbit {
+
+        transform-origin:
+            center center;
+
+    }
+
+    .energy-bridge {
+
+        min-height:
+            90px;
+
+    }
+
+    .section-header h2 {
+
+        text-wrap:
+            balance;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .energy-bridge {
+
+        min-height:
+            70px;
+
+    }
+
+    .section-label {
+
+        letter-spacing:
+            .18em;
+
+    }
+
+}
+
+
+/* =========================================================
+   25.42 — TOUCH MASTER
+   ========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+    .ars-glass-card:hover {
+
+        transform:
+            none;
+
+    }
+
+    .principle-card:hover,
+    .future-item:hover {
+
+        transform:
+            none;
+
+    }
+
+}
+
+
+/* =========================================================
+   25.43 — REDUCED MOTION MASTER
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            .01ms !important;
+
+        scroll-behavior:
+            auto !important;
+
+    }
+
+    .energy-bridge::after {
+
+        animation:
+            none;
+
+    }
+
+    .ars-glass-card:hover
+    .ars-card-image img {
+
+        transform:
+            none;
+
+    }
+
+}
+
+
+/* =========================================================
+   25.44 — FINAL Z-INDEX HIERARCHY
+   ========================================================= */
+
+.hero-background {
+    z-index: 0;
+}
+
+.home-energy-universe {
+    z-index: 1;
+}
+
+.ars-orbit {
+    z-index: 3;
+}
+
+.orbit-item {
+    z-index: 10;
+}
+
+.orbit-core {
+    z-index: 20;
+}
+
+.orbit-item.is-active {
+    z-index: 30;
+}
+
+.hero-content {
+    z-index: 40;
+}
+
+
+/* =========================================================
+   25.45 — FINAL OVERFLOW LOCK
+   ========================================================= */
+
+html,
+body {
+
+    overflow-x:
+        hidden;
+
+}
+
+
+img,
+svg,
+video {
+
+    max-width:
+        100%;
+
+}
+
+
+/* =========================================================
+   25.46 — FINAL INTERACTION SAFETY
+   ========================================================= */
+
+[aria-hidden="true"] {
+
+    pointer-events:
+        none;
+
+}
+
+
+/* =========================================================
+   25.47 — FINAL PERFORMANCE LOCK
+   ========================================================= */
+
+.home-energy-universe,
+.ars-orbit,
+.energy-bridge,
+.ars-glass-card,
+.orbit-item,
+.orbit-core {
+
+    backface-visibility:
+        hidden;
+
+    -webkit-backface-visibility:
+        hidden;
+
+}
+
+
+/* =========================================================
+   25.48 — FINAL ARS VISUAL DNA
+   ========================================================= */
+
+.ars-glass-card,
+.principle-card,
+.future-item {
+
+    --ars-local-gold:
+        var(--ars-master-gold);
+
+    --ars-local-blue:
+        var(--ars-master-blue);
+
+    --ars-local-navy:
+        var(--ars-master-navy);
+
+}
+
+
+/* =========================================================
+   25.49 — FINAL HOME IDENTITY
+   ========================================================= */
+
+.hero,
+.ecosystem,
+.main-footer {
+
+    color:
+        var(--ars-master-white);
+
+}
+
+
+.hero strong,
+.section-header h2,
+.ars-card-action,
+.engineering-quote h2 {
+
+    text-shadow:
+        0 0 22px
+        rgba(214,179,106,.08);
+
+}
+
+
+/* =========================================================
+   25.50 — FINAL MASTER STATE
+   ========================================================= */
+
+.home-energy-ready {
+
+    --ars-home-final:
+        1;
+
+}
+
+
+/* =========================================================
+   25.51 — MASTER BUILD COMPLETE
+   =========================================================
+
+   ARS HOME MASTER SYSTEM
+
+   DNA
+   HERO
+   UNIVERSE
+   ORBIT
+   NODES
+   CONTENT
+   BUTTONS
+
+   ABOUT
+   MISSION
+   VISION
+   VALUES
+   PHILOSOPHY
+
+   ECOSYSTEM
+   CORE
+   FAMILY 01 — 6 CARDS
+   ENERGY BRIDGE
+   FAMILY 02 — 7 CARDS
+
+   MATERIAL
+   GOLDEN REVEAL
+   CINEMATIC MOTION
+   CONTENT / IMAGE / LOGO
+
+   ROADMAP
+   FUTURE
+   FOOTER
+
+   TRANSITIONS
+   SCROLL REVEAL
+   RESPONSIVE
+   PERFORMANCE
+
+   =========================================================
+   🔒 ARS HOME — FINAL MASTER LOCK
+   ========================================================= */
 
 
 
