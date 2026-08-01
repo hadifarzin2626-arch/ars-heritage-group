@@ -1288,556 +1288,390 @@ a {
 
 
 /* =========================================================
-ARS HERITAGE GROUP — HOME
-PREMIUM TITLES / GLASS LABEL SYSTEM
-PHASE 01 FOUNDATION — VISUAL TITLE REFINEMENT
-========================================================= */
+   ARS HOME — PREMIUM TITLES & GLASS LABELS
+   FINAL REFINEMENT
+   PHASE 09 / 10 COMPATIBLE
+   ========================================================= */
 
 :root {
-  --ars-title-gold: #e2c36a;
-  --ars-title-gold-hi: #f1d98a;
-  --ars-title-blue: #00a6e8;
-  --ars-title-blue-hi: #35c8ff;
-
-  --ars-title-glass:
+  --ars-premium-gold:
     linear-gradient(
       135deg,
-      rgb(20 31 43 / .52),
-      rgb(5 10 16 / .30)
+      #9b741f 0%,
+      #c49a36 24%,
+      #f0d27a 50%,
+      #c69b38 76%,
+      #8d671b 100%
     );
 
-  --ars-title-border:
-    rgb(226 195 106 / .28);
+  --ars-premium-blue: rgb(0 166 232 / .22);
+  --ars-premium-blue-strong: rgb(0 190 255 / .32);
+  --ars-premium-blue-glow: rgb(0 166 232 / .42);
 
-  --ars-title-blue-glow:
-    0 0 18px rgb(0 166 232 / .18),
-    0 0 38px rgb(0 166 232 / .08);
-
-  --ars-title-gold-glow:
-    0 0 18px rgb(226 195 106 / .14),
-    0 0 36px rgb(226 195 106 / .07);
+  --ars-premium-glass:
+    linear-gradient(
+      145deg,
+      rgb(11 18 27 / .72),
+      rgb(3 7 12 / .86)
+    );
 }
 
+/* =========================================================
+   01 — ALL HOME SECTION LABELS
+   ========================================================= */
+
+.about > *,
+.mission-vision > *,
+.ars-philosophy-home > *,
+.ecosystem > *,
+.ars-ecosystem-universe > *,
+.future-roadmap > *,
+.future-vision > * {
+  --ars-label-glass: var(--ars-premium-glass);
+}
 
 /* =========================================================
-01 — SECTION TITLE INTELLIGENCE FRAME
-========================================================= */
+   02 — PREMIUM GLASS LABEL / SECTION TITLE
+   ========================================================= */
 
-.about h2,
+.ars-section-label,
+.section-label,
+.section-eyebrow,
+.home-section-label,
+.mission-vision .section-title,
+.about .section-title,
+.ars-philosophy-home .section-title,
+.ecosystem .section-title,
+.future-roadmap .section-title,
+.future-vision .section-title {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 54px;
+  padding: 10px 34px;
+
+  border: 1px solid rgb(201 157 55 / .34);
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgb(18 27 38 / .58),
+      rgb(4 9 15 / .78)
+    );
+
+  color: #d9b85a;
+
+  font-size: clamp(.68rem, .72vw, .78rem);
+  font-weight: 650;
+  letter-spacing: .24em;
+  line-height: 1;
+  text-transform: uppercase;
+
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / .075),
+    inset 0 -1px 0 rgb(0 0 0 / .42),
+    0 0 0 1px rgb(0 166 232 / .035),
+    0 0 22px rgb(0 166 232 / .12),
+    0 10px 34px rgb(0 0 0 / .34);
+
+  backdrop-filter: blur(18px) saturate(135%);
+  -webkit-backdrop-filter: blur(18px) saturate(135%);
+}
+
+/* subtle blue optical edge */
+
+.ars-section-label::before,
+.section-label::before,
+.section-eyebrow::before,
+.home-section-label::before,
+.mission-vision .section-title::before,
+.about .section-title::before,
+.ars-philosophy-home .section-title::before,
+.ecosystem .section-title::before,
+.future-roadmap .section-title::before,
+.future-vision .section-title::before {
+  content: "";
+  position: absolute;
+
+  left: 18%;
+  right: 18%;
+  bottom: -8px;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgb(0 166 232 / .28),
+      rgb(0 200 255 / .72),
+      rgb(0 166 232 / .28),
+      transparent
+    );
+
+  box-shadow:
+    0 0 8px rgb(0 166 232 / .38),
+    0 0 18px rgb(0 166 232 / .22);
+
+  opacity: .95;
+}
+
+/* =========================================================
+   03 — PREMIUM GOLD TYPOGRAPHY
+   ========================================================= */
+
+.ars-section-label,
+.section-label,
+.section-eyebrow,
+.home-section-label,
+.mission-vision .section-title,
+.about .section-title,
+.ars-philosophy-home .section-title,
+.ecosystem .section-title,
+.future-roadmap .section-title,
+.future-vision .section-title {
+  background-clip: padding-box;
+  text-shadow:
+    0 0 12px rgb(226 195 106 / .12),
+    0 0 22px rgb(0 166 232 / .08);
+}
+
+/* =========================================================
+   04 — LARGE GOLD HEADLINES
+   ========================================================= */
+
+.mission-vision h1,
 .mission-vision h2,
+.about h1,
+.about h2,
+.ars-philosophy-home h1,
 .ars-philosophy-home h2,
+.ecosystem h1,
 .ecosystem h2,
-.ars-ecosystem-universe h2,
+.future-roadmap h1,
 .future-roadmap h2,
+.future-vision h1,
 .future-vision h2 {
-
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-
-  width: fit-content;
-  max-width: 100%;
-
-  margin-left: auto;
-  margin-right: auto;
-
-  padding:
-    9px 18px
-    10px 20px;
-
-  color: var(--ars-title-gold-hi);
-
-  background: var(--ars-title-glass);
-
-  border: 1px solid var(--ars-title-border);
-  border-radius: 999px;
-
-  box-shadow:
-    0 14px 40px rgb(0 0 0 / .30),
-    var(--ars-title-gold-glow),
-    var(--ars-title-blue-glow);
-
-  backdrop-filter:
-    blur(16px)
-    saturate(135%);
-
-  -webkit-backdrop-filter:
-    blur(16px)
-    saturate(135%);
-
-  text-shadow:
-    0 0 16px rgb(226 195 106 / .18);
-
-  letter-spacing: .045em;
-
-  isolation: isolate;
+  font-weight: 560;
+  letter-spacing: -.028em;
 }
 
-
 /* =========================================================
-02 — ELECTRIC BLUE EYE
-========================================================= */
+   05 — MISSION / VISION MICRO LABELS
+   ========================================================= */
 
-.about h2::before,
-.mission-vision h2::before,
-.ars-philosophy-home h2::before,
-.ecosystem h2::before,
-.ars-ecosystem-universe h2::before,
-.future-roadmap h2::before,
-.future-vision h2::before {
-
-  content: "";
-
-  width: 7px;
-  height: 7px;
-
-  flex: 0 0 7px;
-
-  border-radius: 50%;
-
-  background:
-    radial-gradient(
-      circle at 35% 35%,
-      #8ee5ff 0 18%,
-      #35c8ff 28%,
-      #00a6e8 62%,
-      #07507a 100%
-    );
-
-  box-shadow:
-    0 0 5px rgb(53 200 255 / .90),
-    0 0 13px rgb(0 166 232 / .75),
-    0 0 27px rgb(0 166 232 / .42);
-
-  animation:
-    ars-title-eye-pulse 3.8s
-    var(--ars-ease-standard)
-    infinite;
-}
-
-
-/* =========================================================
-03 — BLUE ENERGY LINE
-========================================================= */
-
-.about h2::after,
-.mission-vision h2::after,
-.ars-philosophy-home h2::after,
-.ecosystem h2::after,
-.ars-ecosystem-universe h2::after,
-.future-roadmap h2::after,
-.future-vision h2::after {
-
-  content: "";
-
-  position: absolute;
-
-  left: 22px;
-  right: 22px;
-  bottom: -5px;
-
-  height: 1px;
-
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      rgb(0 166 232 / .25),
-      rgb(53 200 255 / .90),
-      rgb(0 166 232 / .25),
-      transparent
-    );
-
-  box-shadow:
-    0 0 9px rgb(0 166 232 / .70),
-    0 0 20px rgb(0 166 232 / .28);
-
-  opacity: .92;
-}
-
-
-/* =========================================================
-04 — CARD TITLES
-========================================================= */
-
-.ars-card-content h3,
-.principle-card h3,
-.future-item h3 {
-
+.mission-vision h3,
+.mission-vision .card-title,
+.mission-vision .eyebrow,
+.mission-vision .label {
   position: relative;
 
   display: inline-flex;
   align-items: center;
 
-  width: fit-content;
-  max-width: 100%;
+  min-height: 48px;
+  padding: 9px 26px;
 
-  margin-top: 2px;
-  margin-bottom: 4px;
-
-  padding:
-    7px 13px
-    8px 15px;
-
-  color: var(--ars-title-gold-hi);
-
-  background:
-    linear-gradient(
-      135deg,
-      rgb(20 31 43 / .46),
-      rgb(5 10 16 / .28)
-    );
-
-  border:
-    1px solid
-    rgb(226 195 106 / .20);
-
-  border-radius: 999px;
-
-  box-shadow:
-    0 8px 25px rgb(0 0 0 / .24),
-    0 0 18px rgb(0 166 232 / .08);
-
-  backdrop-filter: blur(13px);
-  -webkit-backdrop-filter: blur(13px);
-
-  text-shadow:
-    0 0 14px rgb(226 195 106 / .17);
-}
-
-
-/* =========================================================
-05 — CARD TITLE BLUE UNDERLINE
-========================================================= */
-
-.ars-card-content h3::after,
-.principle-card h3::after,
-.future-item h3::after {
-
-  content: "";
-
-  position: absolute;
-
-  left: 14%;
-  right: 14%;
-  bottom: -4px;
-
-  height: 1px;
-
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      var(--ars-title-blue-hi),
-      transparent
-    );
-
-  box-shadow:
-    0 0 8px rgb(0 166 232 / .75),
-    0 0 18px rgb(0 166 232 / .25);
-}
-
-
-/* =========================================================
-06 — CARD CATEGORY
-========================================================= */
-
-.ars-card-category {
-
-  position: relative;
-
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-
-  padding:
-    5px 10px
-    6px 12px;
-
-  border:
-    1px solid
-    rgb(0 166 232 / .20);
-
-  border-radius: 999px;
-
-  background:
-    rgb(0 166 232 / .045);
-
-  box-shadow:
-    0 0 16px rgb(0 166 232 / .07);
-
-  color: var(--ars-title-blue-hi);
-
-  text-shadow:
-    0 0 10px rgb(0 166 232 / .30);
-}
-
-.ars-card-category::before {
-
-  content: "";
-
-  width: 5px;
-  height: 5px;
-
-  border-radius: 50%;
-
-  background: var(--ars-title-blue-hi);
-
-  box-shadow:
-    0 0 7px rgb(53 200 255 / .85),
-    0 0 15px rgb(0 166 232 / .55);
-
-  animation:
-    ars-title-eye-pulse 3s
-    var(--ars-ease-standard)
-    infinite;
-}
-
-
-/* =========================================================
-07 — GOLD TEXT SYSTEM
-========================================================= */
-
-.ars-card-action,
-.engineering-quote {
-
-  color: var(--ars-title-gold-hi);
-
-  text-shadow:
-    0 0 12px rgb(226 195 106 / .16),
-    0 0 26px rgb(226 195 106 / .07);
-}
-
-
-/* =========================================================
-08 — HERO LABEL
-========================================================= */
-
-.hero-label {
-
-  position: relative;
-
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-
-  padding:
-    6px 12px
-    7px 14px;
-
-  border:
-    1px solid
-    rgb(226 195 106 / .20);
-
+  border: 1px solid rgb(201 157 55 / .27);
   border-radius: 999px;
 
   background:
     linear-gradient(
-      135deg,
-      rgb(226 195 106 / .07),
-      rgb(0 166 232 / .035)
+      145deg,
+      rgb(13 22 32 / .64),
+      rgb(3 8 14 / .82)
     );
 
-  box-shadow:
-    0 0 22px rgb(0 166 232 / .07),
-    0 0 18px rgb(226 195 106 / .06);
+  color: #d8b65a;
 
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-
-  color: var(--ars-title-gold-hi);
-
-  text-shadow:
-    0 0 12px rgb(226 195 106 / .20);
-}
-
-.hero-label::before {
-
-  content: "";
-
-  width: 6px;
-  height: 6px;
-
-  border-radius: 50%;
-
-  background: var(--ars-title-blue-hi);
+  font-size: clamp(.78rem, .9vw, .94rem);
+  font-weight: 620;
+  letter-spacing: .07em;
 
   box-shadow:
-    0 0 7px rgb(53 200 255 / .95),
-    0 0 17px rgb(0 166 232 / .65);
+    inset 0 1px 0 rgb(255 255 255 / .055),
+    0 0 0 1px rgb(0 166 232 / .035),
+    0 0 20px rgb(0 166 232 / .14),
+    0 12px 30px rgb(0 0 0 / .32);
 
-  animation:
-    ars-title-eye-pulse 3.5s
-    var(--ars-ease-standard)
-    infinite;
-}
-
-
-/* =========================================================
-09 — MAIN GOLD BUTTON REFINEMENT
-========================================================= */
-
-.btn-primary {
-
-  position: relative;
-
-  overflow: hidden;
-
-  border:
-    1px solid
-    rgb(241 217 138 / .55);
-
-  box-shadow:
-    0 10px 30px rgb(226 195 106 / .16),
-    0 0 24px rgb(0 166 232 / .06);
-
-  text-shadow:
-    0 1px 1px rgb(0 0 0 / .20);
-}
-
-.btn-primary::after {
-
-  content: "";
-
-  position: absolute;
-
-  top: 0;
-  bottom: 0;
-  left: -120%;
-
-  width: 55%;
-
-  transform: skewX(-22deg);
-
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      rgb(255 255 255 / .28),
-      transparent
-    );
+  backdrop-filter: blur(16px) saturate(135%);
+  -webkit-backdrop-filter: blur(16px) saturate(135%);
 
   transition:
-    left 850ms
-    var(--ars-ease-luxury);
+    transform 420ms var(--ars-ease-luxury),
+    border-color 420ms var(--ars-ease-standard),
+    box-shadow 420ms var(--ars-ease-standard);
 }
-
-.btn-primary:hover::after {
-  left: 150%;
-}
-
 
 /* =========================================================
-10 — SECONDARY GLASS BUTTON
-========================================================= */
+   06 — BLUE ENERGY LINE UNDER SMALL LABELS
+   ========================================================= */
 
-.btn-secondary {
-
-  position: relative;
-
-  overflow: hidden;
-
-  border:
-    1px solid
-    rgb(226 195 106 / .30);
-
-  box-shadow:
-    0 10px 32px rgb(0 0 0 / .28),
-    0 0 22px rgb(0 166 232 / .07);
-}
-
-.btn-secondary::before {
-
+.mission-vision h3::after,
+.mission-vision .card-title::after,
+.mission-vision .eyebrow::after,
+.mission-vision .label::after {
   content: "";
 
   position: absolute;
-  inset: 0;
+
+  left: 20%;
+  right: 20%;
+  bottom: -10px;
+
+  height: 1px;
 
   background:
     linear-gradient(
-      120deg,
-      transparent 20%,
-      rgb(0 166 232 / .06),
-      transparent 80%
+      90deg,
+      transparent,
+      rgb(0 166 232 / .45),
+      rgb(0 205 255 / .92),
+      rgb(0 166 232 / .45),
+      transparent
     );
 
-  opacity: .7;
-
-  pointer-events: none;
+  box-shadow:
+    0 0 7px rgb(0 190 255 / .55),
+    0 0 18px rgb(0 166 232 / .30);
 }
 
-
 /* =========================================================
-11 — PREMIUM TITLE MICRO MOTION
-========================================================= */
+   07 — PREMIUM GLASS CARDS
+   ========================================================= */
 
-@keyframes ars-title-eye-pulse {
+.principle-card,
+.ars-glass-card,
+.ars-specialized-card,
+.ars-system-card {
+  background:
+    linear-gradient(
+      145deg,
+      rgb(10 18 28 / .68),
+      rgb(3 7 12 / .88) 72%
+    );
 
-  0%,
-  100% {
-    opacity: .68;
-    transform: scale(.88);
-    filter: brightness(.92);
-  }
+  border-color: rgb(201 157 55 / .18);
 
-  50% {
-    opacity: 1;
-    transform: scale(1.12);
-    filter: brightness(1.25);
-  }
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / .035),
+    inset 0 -1px 0 rgb(0 0 0 / .42),
+    0 24px 70px rgb(0 0 0 / .52),
+    0 0 34px rgb(0 166 232 / .115);
 }
 
+/* =========================================================
+   08 — STRONGER ELECTRIC BLUE PRESENCE
+   ========================================================= */
+
+.mission-vision .section-title,
+.mission-vision h3,
+.mission-vision .card-title,
+.mission-vision .eyebrow,
+.mission-vision .label,
+.ars-section-label,
+.section-label,
+.section-eyebrow,
+.home-section-label {
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / .06),
+    inset 0 -1px 0 rgb(0 0 0 / .38),
+    0 0 0 1px rgb(0 166 232 / .045),
+    0 0 26px rgb(0 166 232 / .17),
+    0 0 58px rgb(0 166 232 / .075),
+    0 12px 34px rgb(0 0 0 / .38);
+}
 
 /* =========================================================
-12 — MOBILE REFINEMENT
-========================================================= */
+   09 — PREMIUM HOVER
+   ========================================================= */
+
+.mission-vision h3:hover,
+.mission-vision .card-title:hover,
+.mission-vision .eyebrow:hover,
+.mission-vision .label:hover,
+.ars-section-label:hover,
+.section-label:hover,
+.section-eyebrow:hover,
+.home-section-label:hover {
+  transform: translateY(-2px);
+
+  border-color: rgb(218 177 73 / .48);
+
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / .09),
+    0 0 0 1px rgb(0 166 232 / .08),
+    0 0 30px rgb(0 190 255 / .25),
+    0 0 65px rgb(0 166 232 / .10),
+    0 16px 38px rgb(0 0 0 / .44);
+}
+
+/* =========================================================
+   10 — MOBILE PROPORTIONS
+   ========================================================= */
 
 @media (max-width: 760px) {
 
-  .about h2,
-  .mission-vision h2,
-  .ars-philosophy-home h2,
-  .ecosystem h2,
-  .ars-ecosystem-universe h2,
-  .future-roadmap h2,
-  .future-vision h2 {
+  .ars-section-label,
+  .section-label,
+  .section-eyebrow,
+  .home-section-label,
+  .mission-vision .section-title,
+  .about .section-title,
+  .ars-philosophy-home .section-title,
+  .ecosystem .section-title,
+  .future-roadmap .section-title,
+  .future-vision .section-title {
+    min-height: 48px;
+    padding: 9px 25px;
 
-    padding:
-      8px 14px
-      9px 16px;
-
-    letter-spacing: .025em;
+    font-size: .66rem;
+    letter-spacing: .20em;
   }
 
-  .ars-card-content h3,
-  .principle-card h3,
-  .future-item h3 {
+  .mission-vision h3,
+  .mission-vision .card-title,
+  .mission-vision .eyebrow,
+  .mission-vision .label {
+    min-height: 43px;
+    padding: 8px 22px;
 
-    padding:
-      6px 11px
-      7px 13px;
+    font-size: .78rem;
+  }
+
+  .mission-vision h1,
+  .mission-vision h2 {
+    font-size: clamp(1.65rem, 7vw, 2.35rem);
   }
 }
 
-
 /* =========================================================
-13 — REDUCED MOTION
-========================================================= */
+   11 — EXTRA SMALL DEVICES
+   ========================================================= */
 
-@media (prefers-reduced-motion: reduce) {
+@media (max-width: 480px) {
 
-  .about h2::before,
-  .mission-vision h2::before,
-  .ars-philosophy-home h2::before,
-  .ecosystem h2::before,
-  .ars-ecosystem-universe h2::before,
-  .future-roadmap h2::before,
-  .future-vision h2::before,
-  .ars-card-category::before,
-  .hero-label::before {
+  .ars-section-label,
+  .section-label,
+  .section-eyebrow,
+  .home-section-label,
+  .mission-vision .section-title {
+    padding-inline: 21px;
+    min-height: 45px;
+    font-size: .62rem;
+    letter-spacing: .17em;
+  }
 
-    animation: none;
+  .mission-vision h3,
+  .mission-vision .card-title,
+  .mission-vision .eyebrow,
+  .mission-vision .label {
+    padding-inline: 19px;
+    min-height: 41px;
+    font-size: .74rem;
   }
   }
 
