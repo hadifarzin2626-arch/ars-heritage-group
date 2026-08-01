@@ -1285,6 +1285,352 @@ a {
     transition-duration: 1ms !important;
   }
 }
+
+
+/* =========================================================
+   ARS HERITAGE GROUP — PREMIUM HEADING SYSTEM
+   PHASE 09/10/11 COMPATIBLE — FINAL VISUAL OVERRIDE
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   01 — MASTER HEADING DNA
+   --------------------------------------------------------- */
+
+:root {
+    --ars-heading-gold: #d9b76a;
+    --ars-heading-gold-bright: #f0d58a;
+    --ars-heading-gold-soft: #b9954f;
+
+    --ars-electric-blue: #00aaff;
+    --ars-electric-blue-bright: #32c8ff;
+
+    --ars-heading-glass:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.045),
+            rgba(255,255,255,.012)
+        );
+
+    --ars-heading-border:
+        rgba(217,183,106,.42);
+
+    --ars-heading-shadow:
+        0 12px 36px rgba(0,0,0,.28),
+        inset 0 1px 0 rgba(255,255,255,.08);
+
+    --ars-blue-glow:
+        0 0 8px rgba(0,170,255,.65),
+        0 0 22px rgba(0,170,255,.22);
+}
+
+
+/* ---------------------------------------------------------
+   02 — PREMIUM SECTION LABEL / HEADING KEY
+   --------------------------------------------------------- */
+
+.ars-section-label,
+.ars-section-title,
+.section-label,
+.section-title,
+.ars-heading-key,
+.ars-heading-badge {
+
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 54px;
+    padding: 0 34px;
+
+    border: 1px solid var(--ars-heading-border);
+    border-radius: 999px;
+
+    background: var(--ars-heading-glass);
+
+    box-shadow: var(--ars-heading-shadow);
+
+    backdrop-filter: blur(18px) saturate(135%);
+    -webkit-backdrop-filter: blur(18px) saturate(135%);
+
+    color: var(--ars-heading-gold-bright);
+
+    font-weight: 700;
+    letter-spacing: .19em;
+    text-transform: uppercase;
+
+    text-shadow:
+        0 1px 1px rgba(0,0,0,.45),
+        0 0 14px rgba(217,183,106,.12);
+
+    overflow: hidden;
+
+    transition:
+        transform .45s cubic-bezier(.16,1,.3,1),
+        border-color .45s ease,
+        box-shadow .45s ease,
+        background .45s ease;
+}
+
+
+/* ---------------------------------------------------------
+   03 — LIVING ELECTRIC BLUE POINT
+   --------------------------------------------------------- */
+
+.ars-section-label::before,
+.ars-section-title::before,
+.section-label::before,
+.section-title::before,
+.ars-heading-key::before,
+.ars-heading-badge::before {
+
+    content: "";
+
+    width: 7px;
+    height: 7px;
+
+    margin-right: 14px;
+
+    flex: 0 0 auto;
+
+    border-radius: 50%;
+
+    background: var(--ars-electric-blue-bright);
+
+    box-shadow: var(--ars-blue-glow);
+
+    animation: arsHeadingPulse 2.8s ease-in-out infinite;
+}
+
+
+/* ---------------------------------------------------------
+   04 — ELECTRIC ENERGY LINE
+   --------------------------------------------------------- */
+
+.ars-section-label::after,
+.ars-section-title::after,
+.section-label::after,
+.section-title::after,
+.ars-heading-key::after,
+.ars-heading-badge::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 7px;
+
+    width: 58px;
+    height: 1px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--ars-electric-blue),
+            transparent
+        );
+
+    box-shadow:
+        0 0 7px rgba(0,170,255,.75),
+        0 0 18px rgba(0,170,255,.28);
+
+    opacity: .9;
+}
+
+
+/* ---------------------------------------------------------
+   05 — PREMIUM HOVER
+   --------------------------------------------------------- */
+
+.ars-section-label:hover,
+.ars-section-title:hover,
+.section-label:hover,
+.section-title:hover,
+.ars-heading-key:hover,
+.ars-heading-badge:hover {
+
+    transform: translateY(-2px);
+
+    border-color:
+        rgba(240,213,138,.72);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(217,183,106,.09),
+            rgba(0,170,255,.035)
+        );
+
+    box-shadow:
+        0 18px 48px rgba(0,0,0,.34),
+        0 0 26px rgba(0,170,255,.08),
+        inset 0 1px 0 rgba(255,255,255,.11);
+}
+
+
+/* ---------------------------------------------------------
+   06 — MAJOR HEADINGS
+   --------------------------------------------------------- */
+
+.ars-section h1,
+.ars-section h2,
+.ars-section h3,
+section h1,
+section h2,
+section h3 {
+
+    text-shadow:
+        0 1px 2px rgba(0,0,0,.55),
+        0 0 24px rgba(217,183,106,.08);
+}
+
+
+/* ---------------------------------------------------------
+   07 — GOLDEN TEXT SYSTEM
+   --------------------------------------------------------- */
+
+.ars-gold-heading,
+.ars-gold-title,
+.ars-premium-heading {
+
+    color: var(--ars-heading-gold-bright);
+
+    text-shadow:
+        0 1px 2px rgba(0,0,0,.5),
+        0 0 18px rgba(217,183,106,.12);
+}
+
+
+/* ---------------------------------------------------------
+   08 — PREMIUM KEYBOARD / CLICK FEEDBACK
+   --------------------------------------------------------- */
+
+.ars-section-label:active,
+.ars-section-title:active,
+.section-label:active,
+.section-title:active,
+.ars-heading-key:active,
+.ars-heading-badge:active {
+
+    transform: translateY(0) scale(.985);
+
+    box-shadow:
+        0 6px 18px rgba(0,0,0,.32),
+        0 0 18px rgba(0,170,255,.18);
+}
+
+
+/* ---------------------------------------------------------
+   09 — ELECTRIC PULSE
+   --------------------------------------------------------- */
+
+@keyframes arsHeadingPulse {
+
+    0%,
+    100% {
+        opacity: .72;
+        transform: scale(.92);
+        box-shadow:
+            0 0 5px rgba(0,170,255,.55),
+            0 0 14px rgba(0,170,255,.18);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.08);
+        box-shadow:
+            0 0 9px rgba(0,170,255,.9),
+            0 0 25px rgba(0,170,255,.32);
+    }
+}
+
+
+/* ---------------------------------------------------------
+   10 — RESPONSIVE
+   --------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+    .ars-section-label,
+    .ars-section-title,
+    .section-label,
+    .section-title,
+    .ars-heading-key,
+    .ars-heading-badge {
+
+        min-height: 48px;
+        padding: 0 23px;
+
+        font-size: .78rem;
+        letter-spacing: .15em;
+    }
+
+    .ars-section-label::before,
+    .ars-section-title::before,
+    .section-label::before,
+    .section-title::before,
+    .ars-heading-key::before,
+    .ars-heading-badge::before {
+
+        width: 6px;
+        height: 6px;
+
+        margin-right: 10px;
+    }
+
+    .ars-section-label::after,
+    .ars-section-title::after,
+    .section-label::after,
+    .section-title::after,
+    .ars-heading-key::after,
+    .ars-heading-badge::after {
+
+        width: 44px;
+        bottom: 6px;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   11 — REDUCED MOTION
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ars-section-label::before,
+    .ars-section-title::before,
+    .section-label::before,
+    .section-title::before,
+    .ars-heading-key::before,
+    .ars-heading-badge::before {
+
+        animation: none;
+    }
+
+    .ars-section-label,
+    .ars-section-title,
+    .section-label,
+    .section-title,
+    .ars-heading-key,
+    .ars-heading-badge {
+
+        transition: none;
+    }
+}
+
+
+/* =========================================================
+   ARS — PREMIUM HEADING SYSTEM — LOCKED
+   ========================================================= */
+
+
+
+
 /* ============================================================
    ARS HERITAGE GROUP
    HOME 4 — PHASE 02
