@@ -8745,7 +8745,1480 @@ a {
 
 }
 
+/* ============================================================
+   ARS HERITAGE GROUP — HOME
+   PREMIUM MASTER CSS
 
+   PHASE 05 — PREMIUM HERO CONTENT INTELLIGENCE
+
+   DNA
+   Precision × Technology × Luxury
+
+   PURPOSE
+   Intelligent Content Orchestration inside Hero
+
+   THIS PHASE OWNS:
+   - Content hierarchy
+   - Reading priority
+   - Content states
+   - Intelligent reveal sequencing
+   - Headline intelligence
+   - Supporting-copy intelligence
+   - CTA priority intelligence
+   - Metadata intelligence
+   - Scroll-aware content behavior
+   - Responsive content recomposition
+   - Focus / interaction states
+   - Cinematic content pacing
+
+   THIS PHASE DOES NOT OWN:
+   - Hero geometry
+   - Hero layout
+   - Hero atmosphere
+   - Orbit
+   - Energy Universe
+   - Background system
+   - Global DNA
+   - Global typography tokens
+
+   ABSOLUTE RULE:
+   CONTENT INTELLIGENCE ≠ HERO STRUCTURE
+
+   STATUS:
+   PREMIUM / WORLD-CLASS
+   ============================================================ */
+
+
+/* ============================================================
+   05.01 — HERO CONTENT INTELLIGENCE ROOT
+   ============================================================ */
+
+.hero-content-intelligence {
+
+    --hci-content-max:
+        760px;
+
+    --hci-reading-width:
+        680px;
+
+    --hci-kicker-width:
+        420px;
+
+    --hci-copy-width:
+        590px;
+
+    --hci-cta-gap:
+        14px;
+
+    --hci-reveal-distance:
+        24px;
+
+    --hci-content-opacity:
+        1;
+
+    --hci-focus-opacity:
+        1;
+
+    position:
+        relative;
+
+    z-index:
+        5;
+
+    width:
+        min(
+            100%,
+            var(--hci-content-max)
+        );
+
+    isolation:
+        isolate;
+
+}
+
+
+/* ============================================================
+   05.02 — CONTENT READING FIELD
+   ============================================================ */
+
+.hero-content-intelligence::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        -80px -120px;
+
+    z-index:
+        -1;
+
+    pointer-events:
+        none;
+
+    background:
+        radial-gradient(
+            ellipse at 20% 40%,
+            rgba(255,255,255,.025),
+            transparent 58%
+        );
+
+    opacity:
+        .7;
+
+}
+
+
+/* ============================================================
+   05.03 — CONTENT STACK
+   ============================================================ */
+
+.hero-content-stack {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        flex-start;
+
+    width:
+        100%;
+
+    max-width:
+        var(--hci-content-max);
+
+}
+
+
+/* ============================================================
+   05.04 — INTELLIGENT CONTENT KICKER
+   ============================================================ */
+
+.hero-content-kicker {
+
+    position:
+        relative;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        11px;
+
+    width:
+        fit-content;
+
+    max-width:
+        var(--hci-kicker-width);
+
+    margin-bottom:
+        20px;
+
+    color:
+        var(--ars-text-gold);
+
+    font-family:
+        var(--ars-font-body);
+
+    font-size:
+        9px;
+
+    font-weight:
+        600;
+
+    line-height:
+        1.4;
+
+    letter-spacing:
+        .28em;
+
+    text-transform:
+        uppercase;
+
+    white-space:
+        nowrap;
+
+}
+
+
+/* Intelligent signal marker */
+
+.hero-content-kicker::before {
+
+    content:
+        "";
+
+    width:
+        22px;
+
+    height:
+        1px;
+
+    flex:
+        0 0 auto;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--ars-color-gold)
+        );
+
+    box-shadow:
+        0 0 12px
+        rgba(198,164,90,.24);
+
+}
+
+
+/* Live intelligence indicator */
+
+.hero-content-kicker::after {
+
+    content:
+        "";
+
+    width:
+        4px;
+
+    height:
+        4px;
+
+    flex:
+        0 0 auto;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--ars-color-electric-blue);
+
+    box-shadow:
+        0 0 8px
+        rgba(22,135,255,.65);
+
+    animation:
+        hciSignalPulse
+        3.2s
+        ease-in-out
+        infinite;
+
+}
+
+
+/* ============================================================
+   05.05 — INTELLIGENT EYEBROW
+   ============================================================ */
+
+.hero-content-eyebrow {
+
+    display:
+        block;
+
+    max-width:
+        var(--hci-reading-width);
+
+    margin-bottom:
+        12px;
+
+    color:
+        var(--ars-text-secondary);
+
+    font-size:
+        10px;
+
+    font-weight:
+        500;
+
+    line-height:
+        1.6;
+
+    letter-spacing:
+        .18em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+/* ============================================================
+   05.06 — HERO HEADLINE INTELLIGENCE
+   ============================================================ */
+
+.hero-content-title {
+
+    position:
+        relative;
+
+    width:
+        100%;
+
+    max-width:
+        var(--hci-reading-width);
+
+    margin:
+        0;
+
+    color:
+        var(--ars-text-primary);
+
+    font-family:
+        var(--ars-font-display);
+
+    font-size:
+        clamp(
+            3rem,
+            6vw,
+            6.8rem
+        );
+
+    font-weight:
+        500;
+
+    line-height:
+        .98;
+
+    letter-spacing:
+        -.055em;
+
+    text-wrap:
+        balance;
+
+}
+
+
+/* Headline intelligent emphasis */
+
+.hero-content-title .intelligence-word {
+
+    position:
+        relative;
+
+    display:
+        inline-block;
+
+    color:
+        var(--ars-color-white);
+
+}
+
+
+.hero-content-title .intelligence-word::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    right:
+        0;
+
+    bottom:
+        -.08em;
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--ars-color-gold),
+            transparent
+        );
+
+    opacity:
+        .48;
+
+}
+
+
+/* ============================================================
+   05.07 — HEADLINE SECONDARY LAYER
+   ============================================================ */
+
+.hero-content-title-secondary {
+
+    display:
+        block;
+
+    margin-top:
+        .08em;
+
+    color:
+        rgba(245,244,239,.48);
+
+    font-size:
+        .52em;
+
+    font-weight:
+        300;
+
+    line-height:
+        1.05;
+
+    letter-spacing:
+        -.025em;
+
+}
+
+
+/* ============================================================
+   05.08 — INTELLIGENT VALUE STATEMENT
+   ============================================================ */
+
+.hero-content-value {
+
+    width:
+        100%;
+
+    max-width:
+        var(--hci-copy-width);
+
+    margin:
+        28px 0 0;
+
+    color:
+        var(--ars-text-secondary);
+
+    font-size:
+        clamp(
+            .95rem,
+            1.2vw,
+            1.12rem
+        );
+
+    font-weight:
+        400;
+
+    line-height:
+        1.85;
+
+    letter-spacing:
+        -.005em;
+
+}
+
+
+/* Intelligent emphasis inside value statement */
+
+.hero-content-value strong {
+
+    color:
+        var(--ars-color-white);
+
+    font-weight:
+        500;
+
+}
+
+
+/* ============================================================
+   05.09 — CONTENT SIGNAL LINE
+   ============================================================ */
+
+.hero-content-signal {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    margin-top:
+        24px;
+
+    color:
+        var(--ars-text-muted);
+
+    font-size:
+        8px;
+
+    font-weight:
+        500;
+
+    letter-spacing:
+        .22em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.hero-content-signal::before {
+
+    content:
+        "";
+
+    width:
+        34px;
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--ars-color-electric-blue),
+            transparent
+        );
+
+}
+
+
+/* ============================================================
+   05.10 — CTA INTELLIGENCE FIELD
+   ============================================================ */
+
+.hero-content-actions {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        var(--hci-cta-gap);
+
+    margin-top:
+        34px;
+
+}
+
+
+/* ============================================================
+   05.11 — PRIMARY INTELLIGENT CTA
+   ============================================================ */
+
+.hero-content-primary-cta {
+
+    position:
+        relative;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-width:
+        164px;
+
+    min-height:
+        52px;
+
+    padding:
+        0 25px;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        rgba(198,164,90,.52);
+
+    border-radius:
+        var(--ars-radius-small);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(198,164,90,.13),
+            rgba(7,13,20,.42)
+        );
+
+    color:
+        var(--ars-color-white);
+
+    font-size:
+        10px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        .16em;
+
+    text-transform:
+        uppercase;
+
+    box-shadow:
+        inset 0 0 24px
+        rgba(198,164,90,.025);
+
+    transition:
+        transform .5s var(--ars-ease-smooth),
+        border-color .4s ease,
+        box-shadow .4s ease,
+        background .4s ease;
+
+}
+
+
+.hero-content-primary-cta::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        -120%;
+
+    width:
+        75%;
+
+    height:
+        100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.18),
+            transparent
+        );
+
+    transform:
+        skewX(-20deg);
+
+    transition:
+        left .8s var(--ars-ease-smooth);
+
+}
+
+
+.hero-content-primary-cta:hover {
+
+    transform:
+        translateY(-2px);
+
+    border-color:
+        var(--ars-color-gold);
+
+    background:
+        rgba(198,164,90,.10);
+
+    box-shadow:
+        var(--ars-glow-gold);
+
+}
+
+
+.hero-content-primary-cta:hover::before {
+
+    left:
+        140%;
+
+}
+
+
+/* ============================================================
+   05.12 — SECONDARY INTELLIGENT CTA
+   ============================================================ */
+
+.hero-content-secondary-cta {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-height:
+        52px;
+
+    padding:
+        0 21px;
+
+    border:
+        1px solid
+        rgba(245,244,239,.12);
+
+    border-radius:
+        var(--ars-radius-small);
+
+    background:
+        rgba(255,255,255,.018);
+
+    color:
+        var(--ars-text-secondary);
+
+    font-size:
+        9px;
+
+    font-weight:
+        500;
+
+    letter-spacing:
+        .14em;
+
+    text-transform:
+        uppercase;
+
+    transition:
+        transform .4s var(--ars-ease-smooth),
+        color .3s ease,
+        border-color .3s ease,
+        background .3s ease;
+
+}
+
+
+.hero-content-secondary-cta:hover {
+
+    transform:
+        translateY(-2px);
+
+    color:
+        var(--ars-color-white);
+
+    border-color:
+        rgba(22,135,255,.32);
+
+    background:
+        rgba(22,135,255,.045);
+
+}
+
+
+/* ============================================================
+   05.13 — INTELLIGENT METADATA
+   ============================================================ */
+
+.hero-content-meta {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(
+                90px,
+                1fr
+            )
+        );
+
+    width:
+        min(
+            100%,
+            620px
+        );
+
+    margin-top:
+        42px;
+
+    border-top:
+        1px solid
+        var(--ars-border-dark);
+
+    border-bottom:
+        1px solid
+        var(--ars-border-dark);
+
+}
+
+
+.hero-content-meta-item {
+
+    position:
+        relative;
+
+    min-height:
+        72px;
+
+    padding:
+        15px 18px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+}
+
+
+.hero-content-meta-item:not(:last-child)::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        18px;
+
+    right:
+        0;
+
+    width:
+        1px;
+
+    height:
+        36px;
+
+    background:
+        rgba(255,255,255,.08);
+
+}
+
+
+.hero-content-meta-label {
+
+    margin-bottom:
+        5px;
+
+    color:
+        var(--ars-text-muted);
+
+    font-size:
+        7px;
+
+    letter-spacing:
+        .18em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.hero-content-meta-value {
+
+    color:
+        var(--ars-text-primary);
+
+    font-size:
+        11px;
+
+    font-weight:
+        500;
+
+    letter-spacing:
+        .025em;
+
+}
+
+
+/* ============================================================
+   05.14 — INTELLIGENT CONTENT STATES
+   ============================================================ */
+
+.hero-content-intelligence
+[data-content-state] {
+
+    opacity:
+        1;
+
+    transform:
+        translate3d(0,0,0);
+
+    transition:
+        opacity
+        .8s
+        var(--ars-ease-smooth),
+
+        transform
+        .8s
+        var(--ars-ease-smooth);
+
+}
+
+
+/* Initial intelligence state */
+
+.hero-content-intelligence[data-intelligence-state="initial"]
+[data-content-state="reveal"] {
+
+    opacity:
+        0;
+
+    transform:
+        translate3d(
+            0,
+            var(--hci-reveal-distance),
+            0
+        );
+
+}
+
+
+/* Active state */
+
+.hero-content-intelligence[data-intelligence-state="active"]
+[data-content-state="reveal"] {
+
+    opacity:
+        1;
+
+    transform:
+        translate3d(0,0,0);
+
+}
+
+
+/* ============================================================
+   05.15 — SEQUENCED CONTENT REVEAL
+   ============================================================ */
+
+.hero-content-kicker {
+    transition-delay:
+        80ms;
+}
+
+
+.hero-content-eyebrow {
+    transition-delay:
+        160ms;
+}
+
+
+.hero-content-title {
+    transition-delay:
+        260ms;
+}
+
+
+.hero-content-value {
+    transition-delay:
+        390ms;
+}
+
+
+.hero-content-signal {
+    transition-delay:
+        500ms;
+}
+
+
+.hero-content-actions {
+    transition-delay:
+        620ms;
+}
+
+
+.hero-content-meta {
+    transition-delay:
+        760ms;
+}
+
+
+/* ============================================================
+   05.16 — FOCUS INTELLIGENCE
+   ============================================================ */
+
+.hero-content-intelligence[data-content-focus="primary"]
+.hero-content-secondary-cta,
+.hero-content-intelligence[data-content-focus="primary"]
+.hero-content-meta {
+
+    opacity:
+        .52;
+
+}
+
+
+.hero-content-intelligence[data-content-focus="primary"]
+.hero-content-primary-cta {
+
+    border-color:
+        rgba(198,164,90,.72);
+
+    box-shadow:
+        var(--ars-glow-gold);
+
+}
+
+
+.hero-content-intelligence[data-content-focus="secondary"]
+.hero-content-primary-cta {
+
+    opacity:
+        .72;
+
+}
+
+
+/* ============================================================
+   05.17 — SCROLL INTELLIGENCE
+   ============================================================ */
+
+.hero-content-intelligence[data-scroll-state="departing"] {
+
+    --hci-content-opacity:
+        .72;
+
+}
+
+
+.hero-content-intelligence[data-scroll-state="departing"]
+.hero-content-title {
+
+    transform:
+        translate3d(
+            0,
+            -8px,
+            0
+        );
+
+}
+
+
+.hero-content-intelligence[data-scroll-state="departing"]
+.hero-content-value {
+
+    opacity:
+        .72;
+
+}
+
+
+.hero-content-intelligence[data-scroll-state="departed"] {
+
+    pointer-events:
+        none;
+
+    opacity:
+        .18;
+
+}
+
+
+/* ============================================================
+   05.18 — INTELLIGENT ACTIVE SIGNAL
+   ============================================================ */
+
+.hero-content-intelligence[data-intelligence-state="active"]
+.hero-content-signal::before {
+
+    animation:
+        hciSignalSweep
+        3.8s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes hciSignalSweep {
+
+    0%,
+    100% {
+
+        width:
+            24px;
+
+        opacity:
+            .35;
+
+    }
+
+    50% {
+
+        width:
+            52px;
+
+        opacity:
+            1;
+
+    }
+
+}
+
+
+/* ============================================================
+   05.19 — SIGNAL PULSE
+   ============================================================ */
+
+@keyframes hciSignalPulse {
+
+    0%,
+    100% {
+
+        opacity:
+            .35;
+
+        transform:
+            scale(.75);
+
+    }
+
+    50% {
+
+        opacity:
+            1;
+
+        transform:
+            scale(1.35);
+
+    }
+
+}
+
+
+/* ============================================================
+   05.20 — RESPONSIVE CONTENT INTELLIGENCE
+   ============================================================ */
+
+@media (max-width: 1100px) {
+
+    .hero-content-title {
+
+        font-size:
+            clamp(
+                2.8rem,
+                7vw,
+                5.4rem
+            );
+
+    }
+
+    .hero-content-value {
+
+        max-width:
+            560px;
+
+    }
+
+}
+
+
+/* ============================================================
+   05.21 — TABLET RECOMPOSITION
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    .hero-content-intelligence {
+
+        width:
+            100%;
+
+        max-width:
+            680px;
+
+    }
+
+
+    .hero-content-kicker {
+
+        margin-bottom:
+            16px;
+
+        font-size:
+            8px;
+
+    }
+
+
+    .hero-content-title {
+
+        font-size:
+            clamp(
+                2.45rem,
+                10vw,
+                4.5rem
+            );
+
+        line-height:
+            1;
+
+    }
+
+
+    .hero-content-value {
+
+        margin-top:
+            22px;
+
+        font-size:
+            .94rem;
+
+        line-height:
+            1.75;
+
+    }
+
+
+    .hero-content-actions {
+
+        margin-top:
+            28px;
+
+    }
+
+
+    .hero-content-meta {
+
+        grid-template-columns:
+            repeat(
+                3,
+                minmax(0,1fr)
+            );
+
+        margin-top:
+            32px;
+
+    }
+
+}
+
+
+/* ============================================================
+   05.22 — MOBILE CONTENT INTELLIGENCE
+   ============================================================ */
+
+@media (max-width: 540px) {
+
+    .hero-content-stack {
+
+        align-items:
+            flex-start;
+
+    }
+
+
+    .hero-content-kicker {
+
+        max-width:
+            100%;
+
+        white-space:
+            normal;
+
+        line-height:
+            1.6;
+
+    }
+
+
+    .hero-content-title {
+
+        font-size:
+            clamp(
+                2.25rem,
+                13vw,
+                3.6rem
+            );
+
+        letter-spacing:
+            -.06em;
+
+    }
+
+
+    .hero-content-title-secondary {
+
+        font-size:
+            .54em;
+
+    }
+
+
+    .hero-content-value {
+
+        max-width:
+            100%;
+
+        font-size:
+            .9rem;
+
+    }
+
+
+    .hero-content-actions {
+
+        width:
+            100%;
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+    }
+
+
+    .hero-content-primary-cta,
+    .hero-content-secondary-cta {
+
+        width:
+            100%;
+
+    }
+
+
+    .hero-content-meta {
+
+        width:
+            100%;
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .hero-content-meta-item {
+
+        min-height:
+            62px;
+
+        padding:
+            13px 14px;
+
+    }
+
+
+    .hero-content-meta-item:not(:last-child)::after {
+
+        top:
+            auto;
+
+        right:
+            14px;
+
+        bottom:
+            0;
+
+        width:
+            calc(100% - 28px);
+
+        height:
+            1px;
+
+    }
+
+}
+
+
+/* ============================================================
+   05.23 — TOUCH / POINTER INTELLIGENCE
+   ============================================================ */
+
+@media (hover: none) {
+
+    .hero-content-primary-cta:hover,
+    .hero-content-secondary-cta:hover {
+
+        transform:
+            none;
+
+    }
+
+
+    .hero-content-primary-cta::before {
+
+        display:
+            none;
+
+    }
+
+}
+
+
+/* ============================================================
+   05.24 — ACCESSIBILITY
+   ============================================================ */
+
+.hero-content-intelligence
+a:focus-visible {
+
+    outline:
+        1px solid
+        var(--ars-color-electric-blue);
+
+    outline-offset:
+        5px;
+
+}
+
+
+/* ============================================================
+   05.25 — REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-content-intelligence *,
+    .hero-content-intelligence *::before,
+    .hero-content-intelligence *::after {
+
+        animation:
+            none !important;
+
+        transition:
+            none !important;
+
+    }
+
+
+    .hero-content-intelligence[data-intelligence-state="initial"]
+    [data-content-state="reveal"] {
+
+        opacity:
+            1;
+
+        transform:
+            none;
+
+    }
+
+}
+
+
+/* ============================================================
+   END — PHASE 05
+   PREMIUM HERO CONTENT INTELLIGENCE
+
+   OWNER:
+   HERO CONTENT INTELLIGENCE
+
+   NOT OWNER:
+   HERO SYSTEM
+   HERO ATMOSPHERE
+   ENERGY UNIVERSE
+   ORBIT
+   GLOBAL FOUNDATION
+   ============================================================ */
 
 
 
