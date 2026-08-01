@@ -1,548 +1,566 @@
 /* =========================================================
    ARS HERITAGE GROUP — HOME
-   PREMIUM INTELLIGENCE UNIVERSE
-   =========================================================
-   MASTER CSS — STYLE HOME 4
-   VISUAL DNA / COLOR ARCHITECTURE
-   =========================================================
+   PREMIUM MASTER CSS
+   style-home-4.css
 
-   DESIGN LANGUAGE:
+   PHASE 01 — FOUNDATION / HOME DNA
 
-   Heritage × Luxury × Engineering × Intelligence
-   Obsidian × Navy × Gold × Bronze × Electric Blue
+   STATUS:
+   FROZEN ARCHITECTURE
+
+   OWNER:
+   FOUNDATION
+
+   RESPONSIBILITY:
+   - Global reset
+   - Box sizing
+   - Root tokens
+   - Color DNA
+   - Depth DNA
+   - Typography foundation
+   - Page background
+   - Base links
+   - Base images
+   - Container
+   - Selection
+   - Scroll behavior
+
+   ABSOLUTE RULE:
+   ONE TOKEN = ONE DEFINITION
+   ONE FOUNDATION = ONE OWNER
+
+   NO:
+   - Orbit
+   - Node
+   - Core
+   - Bridge
+   - Card
+   - Hero animation
+   - Section-specific styling
    ========================================================= */
 
 
 /* =========================================================
-   01 — HOME MASTER VISUAL DNA
+   01.01 — GLOBAL BOX MODEL
    ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
 
 /* =========================================================
-   01.1 — OBSIDIAN BLACK
-   PRIMARY DEPTH
+   01.02 — ROOT
+   ========================================================= */
+
+html {
+    scroll-behavior: smooth;
+
+    background: var(--ars-color-black);
+
+    color-scheme: dark;
+}
+
+
+/* =========================================================
+   01.03 — HOME DESIGN TOKENS
    ========================================================= */
 
 :root {
 
-    --home-black-obsidian:
-        #030405;
+    /* -----------------------------------------------------
+       CORE COLOR DNA
+       ----------------------------------------------------- */
 
-    --home-black-deep:
+    --ars-color-black:
         #050607;
 
-    --home-black-void:
-        #010203;
+    --ars-color-near-black:
+        #090b0e;
 
-    --home-black-carbon:
-        #080a0c;
+    --ars-color-deep-black:
+        #020304;
 
-    --home-black-warm:
-        #0b0806;
 
+    /* -----------------------------------------------------
+       WHITE / TYPOGRAPHY DNA
+       ----------------------------------------------------- */
 
-    /* =====================================================
-       01.2 — DEEP NAVY
-       PREMIUM TECHNOLOGY DEPTH
-       ===================================================== */
+    --ars-color-white:
+        #f5f4ef;
 
-    --home-navy-void:
-        #050b14;
+    --ars-color-soft-white:
+        #deded8;
 
-    --home-navy-deep:
-        #07111f;
+    --ars-color-muted-white:
+        rgba(245, 244, 239, 0.68);
 
-    --home-navy:
-        #0a1627;
 
-    --home-navy-rich:
-        #0d1b2f;
+    /* -----------------------------------------------------
+       REAL GOLD — PRIMARY IDENTITY
+       ----------------------------------------------------- */
 
-    --home-navy-glass:
-        rgba(8, 20, 38, .72);
+    --ars-color-gold:
+        #c6a45a;
 
+    --ars-color-gold-bright:
+        #dfc27a;
 
-    /* =====================================================
-       01.3 — TRUE GOLD
-       ARS HERITAGE / LUXURY SIGNATURE
-       ===================================================== */
+    --ars-color-gold-soft:
+        #a98948;
 
-    --home-gold-deep:
-        #8f681c;
+    --ars-color-gold-muted:
+        #806b3f;
 
-    --home-gold-dark:
-        #a87920;
 
-    --home-gold:
-        #c9a227;
+    /* -----------------------------------------------------
+       MATTE BRONZE — SECONDARY LUXURY DEPTH
+       ----------------------------------------------------- */
 
-    --home-gold-rich:
-        #d6b64a;
+    --ars-color-bronze:
+        #756044;
 
-    --home-gold-light:
-        #ecd98a;
+    --ars-color-bronze-soft:
+        #554936;
 
-    --home-gold-white:
-        #fff1b5;
 
+    /* -----------------------------------------------------
+       DEEP NAVY — TECHNOLOGY DEPTH
+       ----------------------------------------------------- */
 
-    /* =====================================================
-       01.4 — MATTE BRONZE
-       ENGINEERING / MATERIAL SIGNATURE
-       ===================================================== */
+    --ars-color-deep-navy:
+        #071321;
 
-    --home-bronze-deep:
-        #4c321e;
+    --ars-color-navy:
+        #0a1b2d;
 
-    --home-bronze-dark:
-        #68462a;
+    --ars-color-navy-soft:
+        #10263c;
 
-    --home-bronze:
-        #815a37;
 
-    --home-bronze-matte:
-        #9a7048;
+    /* -----------------------------------------------------
+       ELECTRIC BLUE — ARS SIGNATURE ENERGY
+       ----------------------------------------------------- */
 
-    --home-bronze-light:
-        #b58a5d;
+    --ars-color-electric-blue:
+        #1687ff;
 
+    --ars-color-electric-blue-bright:
+        #42a5ff;
 
-    /* =====================================================
-       01.5 — ELECTRIC BLUE
-       ARS INTELLIGENCE SIGNATURE
-       ===================================================== */
+    --ars-color-electric-blue-deep:
+        #0755a8;
 
-    --home-blue-deep:
-        #002b52;
 
-    --home-blue-dark:
-        #004b82;
+    /* -----------------------------------------------------
+       CONTROLLED ENERGY MIXES
+       
+       These are atmospheric utilities.
+       They are NOT additional brand colors.
+       ----------------------------------------------------- */
 
-    --home-blue:
-        #0077c8;
+    --ars-energy-gold:
+        rgba(198, 164, 90, 0.42);
 
-    --home-blue-electric:
-        #00a8ff;
+    --ars-energy-blue:
+        rgba(22, 135, 255, 0.38);
 
-    --home-blue-bright:
-        #35c3ff;
+    --ars-energy-white:
+        rgba(245, 244, 239, 0.12);
 
-    --home-blue-white:
-        #b9edff;
 
+    /* -----------------------------------------------------
+       GLASS DNA
+       ----------------------------------------------------- */
 
-    /* =====================================================
-       01.6 — PREMIUM WHITE
-       PRECISION / TYPOGRAPHY / CORE LIGHT
-       ===================================================== */
+    --ars-glass-dark:
+        rgba(7, 10, 13, 0.68);
 
-    --home-white:
-        #ffffff;
+    --ars-glass-navy:
+        rgba(7, 19, 33, 0.64);
 
-    --home-white-soft:
-        #f4f5f6;
+    --ars-glass-light:
+        rgba(255, 255, 255, 0.035);
 
-    --home-white-silver:
-        #dfe4e8;
 
-    --home-white-muted:
-        #aeb8c2;
+    /* -----------------------------------------------------
+       BORDER DNA
+       ----------------------------------------------------- */
 
-    --home-white-blue:
-        #d9f5ff;
+    --ars-border-dark:
+        rgba(255, 255, 255, 0.075);
 
+    --ars-border-light:
+        rgba(255, 255, 255, 0.12);
 
-    /* =====================================================
-       01.7 — DEEP RED
-       HIDDEN ENERGY / WARNING / SHADOW
-       ===================================================== */
+    --ars-border-gold:
+        rgba(198, 164, 90, 0.34);
 
-    --home-red-deep:
-        #260607;
+    --ars-border-blue:
+        rgba(22, 135, 255, 0.28);
 
-    --home-red-dark:
-        #4a0c0e;
 
-    --home-red:
-        #761519;
+    /* -----------------------------------------------------
+       TEXT HIERARCHY
+       ----------------------------------------------------- */
 
-    --home-red-energy:
-        #a51e23;
+    --ars-text-primary:
+        #f5f4ef;
 
-    --home-red-glow:
-        #d52d32;
+    --ars-text-secondary:
+        rgba(245, 244, 239, 0.72);
 
+    --ars-text-muted:
+        rgba(245, 244, 239, 0.48);
 
-    /* =====================================================
-       01.8 — HERITAGE BROWN
-       WARM SHADOW / MATERIAL DEPTH
-       ===================================================== */
+    --ars-text-gold:
+        #c6a45a;
 
-    --home-brown-void:
-        #100a06;
+    --ars-text-blue:
+        #1687ff;
 
-    --home-brown-deep:
-        #1b1009;
 
-    --home-brown:
-        #2b180d;
+    /* -----------------------------------------------------
+       DEPTH SYSTEM
+       ----------------------------------------------------- */
 
-    --home-brown-rich:
-        #402413;
+    --ars-shadow-deep:
+        0 30px 90px rgba(0, 0, 0, 0.58);
 
-    --home-brown-warm:
-        #5a351d;
+    --ars-shadow-medium:
+        0 18px 55px rgba(0, 0, 0, 0.42);
 
+    --ars-shadow-soft:
+        0 10px 35px rgba(0, 0, 0, 0.28);
 
-    /* =====================================================
-       01.9 — TRANSPARENT ENERGY COLORS
-       ===================================================== */
 
-    --home-gold-energy:
-        rgba(201, 162, 39, .72);
+    /* -----------------------------------------------------
+       ATMOSPHERIC GLOW
+       ----------------------------------------------------- */
 
-    --home-gold-soft:
-        rgba(201, 162, 39, .28);
+    --ars-glow-gold:
+        0 0 40px rgba(198, 164, 90, 0.12);
 
-    --home-blue-energy:
-        rgba(0, 168, 255, .72);
+    --ars-glow-blue:
+        0 0 45px rgba(22, 135, 255, 0.10);
 
-    --home-blue-soft:
-        rgba(0, 168, 255, .24);
+    --ars-glow-gold-strong:
+        0 0 70px rgba(198, 164, 90, 0.18);
 
-    --home-bronze-energy:
-        rgba(154, 112, 72, .42);
+    --ars-glow-blue-strong:
+        0 0 70px rgba(22, 135, 255, 0.16);
 
-    --home-red-energy:
-        rgba(165, 30, 35, .32);
 
+    /* -----------------------------------------------------
+       RADIUS SYSTEM
+       ----------------------------------------------------- */
 
-    /* =====================================================
-       01.10 — MASTER BACKGROUND GRADIENTS
-       ===================================================== */
+    --ars-radius-small:
+        8px;
 
-    --home-bg-main:
+    --ars-radius-medium:
+        16px;
 
-        radial-gradient(
-            circle at 50% 42%,
-            #101d2b 0%,
-            #08111d 25%,
-            #050a11 48%,
-            #020405 75%,
-            #010203 100%
-        );
+    --ars-radius-large:
+        24px;
 
+    --ars-radius-pill:
+        999px;
 
-    --home-bg-luxury:
 
-        radial-gradient(
-            circle at 50% 50%,
-            rgba(201,162,39,.12) 0%,
-            rgba(129,90,55,.06) 22%,
-            rgba(0,168,255,.035) 42%,
-            transparent 70%
-        );
+    /* -----------------------------------------------------
+       CONTENT WIDTH
+       ----------------------------------------------------- */
 
+    --ars-content-width:
+        1440px;
 
-    --home-bg-intelligence:
+    --ars-content-padding:
+        clamp(1.25rem, 4vw, 4.5rem);
 
-        radial-gradient(
-            circle at 50% 45%,
-            rgba(0,168,255,.10) 0%,
-            rgba(0,119,200,.055) 28%,
-            transparent 68%
-        );
 
+    /* -----------------------------------------------------
+       TYPOGRAPHY DNA
+       ----------------------------------------------------- */
 
-    --home-bg-shadow:
+    --ars-font-display:
+        "Inter", "Helvetica Neue", Arial, sans-serif;
 
-        radial-gradient(
-            circle at 50% 100%,
-            rgba(76,32,30,.12),
-            transparent 62%
-        );
+    --ars-font-body:
+        "Inter", "Helvetica Neue", Arial, sans-serif;
 
+    --ars-letter-tight:
+        -0.035em;
 
-    /* =====================================================
-       01.11 — GLASS SYSTEM
-       ===================================================== */
-
-    --home-glass-dark:
-        rgba(3, 8, 14, .76);
-
-    --home-glass-navy:
-        rgba(7, 17, 31, .72);
-
-    --home-glass-light:
-        rgba(20, 34, 51, .48);
-
-    --home-glass-border:
-        rgba(201, 162, 39, .22);
-
-    --home-glass-border-blue:
-        rgba(0, 168, 255, .24);
-
-
-    /* =====================================================
-       01.12 — MASTER SHADOW SYSTEM
-       ===================================================== */
-
-    --home-shadow-black:
-        0 30px 90px rgba(0,0,0,.72);
-
-    --home-shadow-gold:
-        0 0 55px rgba(201,162,39,.20);
-
-    --home-shadow-blue:
-        0 0 55px rgba(0,168,255,.18);
-
-    --home-shadow-bronze:
-        0 0 45px rgba(129,90,55,.18);
-
-    --home-shadow-red:
-        0 0 50px rgba(118,21,25,.14);
-
-
-    /* =====================================================
-       01.13 — GOLD + BLUE HYBRID ENERGY
-       ===================================================== */
-
-    --home-energy-hybrid:
-
-        linear-gradient(
-            135deg,
-            rgba(201,162,39,.95),
-            rgba(236,217,138,.8) 35%,
-            rgba(0,168,255,.9) 70%,
-            rgba(53,195,255,.7)
-        );
-
-
-    /* =====================================================
-       01.14 — MASTER METALLIC GOLD
-       ===================================================== */
-
-    --home-metal-gold:
-
-        linear-gradient(
-            135deg,
-            #765117 0%,
-            #a87920 20%,
-            #d6b64a 42%,
-            #fff1b5 52%,
-            #c9a227 67%,
-            #8f681c 100%
-        );
-
-
-    /* =====================================================
-       01.15 — MASTER BRONZE METAL
-       ===================================================== */
-
-    --home-metal-bronze:
-
-        linear-gradient(
-            135deg,
-            #3d2818,
-            #68462a 30%,
-            #9a7048 52%,
-            #5c3c24 75%,
-            #2b1a0e
-        );
-
-
-    /* =====================================================
-       01.16 — ELECTRIC BLUE CORE
-       ===================================================== */
-
-    --home-electric-core:
-
-        radial-gradient(
-            circle,
-            #ffffff 0%,
-            #b9edff 8%,
-            #35c3ff 20%,
-            #00a8ff 38%,
-            #004b82 65%,
-            transparent 100%
-        );
-
-
-    /* =====================================================
-       01.17 — GOLDEN CORE
-       ===================================================== */
-
-    --home-golden-core:
-
-        radial-gradient(
-            circle,
-            #fff8d6 0%,
-            #ecd98a 10%,
-            #d6b64a 25%,
-            #c9a227 45%,
-            #8f681c 68%,
-            transparent 100%
-        );
-
-
-    /* =====================================================
-       01.18 — MASTER ENERGY BLEND
-       ===================================================== */
-
-    --home-master-energy:
-
-        radial-gradient(
-            circle at center,
-            rgba(255,255,255,.95) 0%,
-            rgba(236,217,138,.85) 5%,
-            rgba(201,162,39,.65) 15%,
-            rgba(0,168,255,.38) 32%,
-            rgba(0,75,130,.20) 48%,
-            transparent 72%
-        );
-
-
-    /* =====================================================
-       01.19 — TYPOGRAPHY COLOR DNA
-       ===================================================== */
-
-    --home-text-primary:
-        #ffffff;
-
-    --home-text-secondary:
-        #dfe4e8;
-
-    --home-text-muted:
-        #aeb8c2;
-
-    --home-text-gold:
-        #ecd98a;
-
-    --home-text-blue:
-        #35c3ff;
-
-    --home-text-bronze:
-        #b58a5d;
-
-
-    /* =====================================================
-       01.20 — INTERACTION STATES
-       ===================================================== */
-
-    --home-hover-gold:
-        #ecd98a;
-
-    --home-hover-blue:
-        #35c3ff;
-
-    --home-active-gold:
-        #fff1b5;
-
-    --home-active-blue:
-        #b9edff;
-
-
-    /* =====================================================
-       01.21 — MASTER RADIATION
-       ===================================================== */
-
-    --home-radiation-gold:
-
-        radial-gradient(
-            ellipse,
-            rgba(201,162,39,.24),
-            rgba(201,162,39,.08) 35%,
-            transparent 72%
-        );
-
-
-    --home-radiation-blue:
-
-        radial-gradient(
-            ellipse,
-            rgba(0,168,255,.20),
-            rgba(0,119,200,.07) 36%,
-            transparent 72%
-        );
-
-
-    /* =====================================================
-       01.22 — MASTER BORDER SYSTEM
-       ===================================================== */
-
-    --home-border-gold:
-        rgba(201,162,39,.32);
-
-    --home-border-gold-strong:
-        rgba(236,217,138,.65);
-
-    --home-border-blue:
-        rgba(0,168,255,.30);
-
-    --home-border-blue-strong:
-        rgba(53,195,255,.72);
-
-    --home-border-bronze:
-        rgba(154,112,72,.35);
-
-
-    /* =====================================================
-       01.23 — MASTER Z-DEPTH
-       ===================================================== */
-
-    --home-depth-01:
+    --ars-letter-normal:
         0;
 
-    --home-depth-02:
-        10;
-
-    --home-depth-03:
-        20;
-
-    --home-depth-04:
-        30;
-
-    --home-depth-05:
-        40;
-
-    --home-depth-core:
-        100;
+    --ars-letter-wide:
+        0.12em;
 
 
-    /* =====================================================
-       01.24 — MASTER TRANSITION DNA
-       ===================================================== */
+    /* -----------------------------------------------------
+       MOTION FOUNDATION
+       
+       Timing tokens only.
+       Actual animations belong to Phase 23.
+       ----------------------------------------------------- */
 
-    --home-ease-premium:
-        cubic-bezier(.16,1,.3,1);
+    --ars-duration-fast:
+        220ms;
 
-    --home-ease-energy:
-        cubic-bezier(.22,1,.36,1);
+    --ars-duration-standard:
+        420ms;
 
-    --home-ease-soft:
-        cubic-bezier(.25,.8,.25,1);
+    --ars-duration-slow:
+        760ms;
 
-    --home-ease-cinematic:
-        cubic-bezier(.19,1,.22,1);
+    --ars-ease-standard:
+        cubic-bezier(0.2, 0.8, 0.2, 1);
+
+    --ars-ease-smooth:
+        cubic-bezier(0.16, 1, 0.3, 1);
+}
 
 
-    /* =====================================================
-       01.25 — MASTER GLOW INTENSITY
-       ===================================================== */
+/* =========================================================
+   01.04 — BODY RESET
+   ========================================================= */
 
-    --home-glow-low:
-        .18;
+body {
+    min-width: 320px;
+    min-height: 100vh;
 
-    --home-glow-medium:
-        .35;
+    margin: 0;
 
-    --home-glow-high:
-        .58;
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            rgba(7, 19, 33, 0.82) 0%,
+            rgba(5, 6, 7, 0.94) 34%,
+            var(--ars-color-deep-black) 72%
+        );
 
-    --home-glow-extreme:
-        .82;
+    color: var(--ars-text-primary);
 
-  }
+    font-family: var(--ars-font-body);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   01.05 — BASE TYPOGRAPHY
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin-top: 0;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--ars-font-display);
+
+    color: var(--ars-text-primary);
+
+    font-weight: 600;
+
+    letter-spacing: var(--ars-letter-tight);
+}
+
+
+p {
+    color: var(--ars-text-secondary);
+}
+
+
+/* =========================================================
+   01.06 — BASE LINKS
+   ========================================================= */
+
+a {
+    color: inherit;
+
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   01.07 — BASE IMAGES
+   ========================================================= */
+
+img,
+svg,
+video,
+canvas {
+    display: block;
+
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   01.08 — BUTTON / FORM FOUNDATION
+   ========================================================= */
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+
+button {
+    border: 0;
+
+    background: none;
+
+    color: inherit;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   01.09 — LIST RESET
+   ========================================================= */
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+
+/* =========================================================
+   01.10 — HOME CONTENT CONTAINER
+   ========================================================= */
+
+.container {
+    width: min(
+        calc(100% - (var(--ars-content-padding) * 2)),
+        var(--ars-content-width)
+    );
+
+    margin-inline: auto;
+}
+
+
+/* =========================================================
+   01.11 — TEXT SELECTION
+   ========================================================= */
+
+::selection {
+    background: rgba(198, 164, 90, 0.28);
+
+    color: var(--ars-color-white);
+}
+
+
+/* =========================================================
+   01.12 — SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+
+::-webkit-scrollbar-track {
+    background: var(--ars-color-deep-black);
+}
+
+
+::-webkit-scrollbar-thumb {
+    background:
+        linear-gradient(
+            180deg,
+            var(--ars-color-gold-muted),
+            var(--ars-color-bronze)
+        );
+
+    border-radius: var(--ars-radius-pill);
+
+    border: 2px solid var(--ars-color-deep-black);
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background:
+        linear-gradient(
+            180deg,
+            var(--ars-color-gold),
+            var(--ars-color-gold-soft)
+        );
+}
+
+
+/* =========================================================
+   01.13 — FIREFOX SCROLLBAR
+   ========================================================= */
+
+html {
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        var(--ars-color-bronze)
+        var(--ars-color-deep-black);
+}
+
+
+/* =========================================================
+   01.14 — FOCUS FOUNDATION
+   ========================================================= */
+
+:focus-visible {
+    outline: 1px solid var(--ars-color-electric-blue);
+
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   01.15 — MOBILE FOUNDATION
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    :root {
+        --ars-content-padding:
+            1.15rem;
+    }
+
+    body {
+        font-size: 15px;
+    }
+}
+
+
+/* =========================================================
+   END — PHASE 01 FOUNDATION
+   ========================================================= */
 
 /* =========================================================
    ARS HERITAGE GROUP — HOME
