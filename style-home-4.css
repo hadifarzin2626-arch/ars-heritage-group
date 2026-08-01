@@ -6559,8 +6559,2191 @@ a {
    PREMIUM HERO SYSTEM
    ============================================================ */
 
+/* ============================================================
+   ARS HERITAGE GROUP
+   HOME — PREMIUM HERO ATMOSPHERE
+   ============================================================
+
+   ATMOSPHERE DNA
+   Spatial Depth × Controlled Radiation × Precision Light
+   Luxury × Technology × Cinematic Restraint
+
+   IMPORTANT
+   This layer belongs ONLY to the HERO.
+
+   It does NOT replace:
+   - Hero Structure
+   - Hero System
+   - Global Energy Universe
+   - Header
+
+   ============================================================ */
 
 
+/* ============================================================
+   01 — HERO ATMOSPHERE ROOT
+   ============================================================ */
+
+.hero-atmosphere {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    z-index:
+        0;
+
+    pointer-events:
+        none;
+
+    overflow:
+        hidden;
+
+    isolation:
+        isolate;
+
+}
+
+
+/* ============================================================
+   02 — DEEP SPATIAL FIELD
+   ============================================================ */
+
+.hero-atmosphere::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        -12%;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 42%,
+            rgba(47,168,255,.075) 0%,
+            rgba(47,168,255,.035) 19%,
+            rgba(10,35,58,.018) 38%,
+            transparent 67%
+        );
+
+    opacity:
+        .92;
+
+    transform:
+        translateZ(0);
+
+}
+
+
+/* ============================================================
+   03 — CINEMATIC VIGNETTE
+   ============================================================ */
+
+.hero-atmosphere::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 35%,
+            rgba(2,7,13,.18) 62%,
+            rgba(1,4,8,.72) 100%
+        );
+
+    opacity:
+        .9;
+
+}
+
+
+/* ============================================================
+   04 — CENTRAL HERO LIGHT
+   ============================================================ */
+
+.hero-atmosphere-light {
+
+    position:
+        absolute;
+
+    width:
+        min(58vw, 900px);
+
+    height:
+        min(42vw, 620px);
+
+    left:
+        50%;
+
+    top:
+        42%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(47,168,255,.075) 0%,
+            rgba(47,168,255,.035) 24%,
+            rgba(47,168,255,.012) 48%,
+            transparent 72%
+        );
+
+    filter:
+        blur(18px);
+
+    opacity:
+        .9;
+
+    animation:
+        arsHeroAtmosphereBreath
+        9s ease-in-out infinite;
+
+}
+
+
+@keyframes arsHeroAtmosphereBreath {
+
+    0%,
+    100% {
+
+        opacity:
+            .68;
+
+        transform:
+            translate(-50%, -50%)
+            scale(.96);
+
+    }
+
+    50% {
+
+        opacity:
+            1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.04);
+
+    }
+
+}
+
+
+/* ============================================================
+   05 — HORIZON RADIATION
+   ============================================================ */
+
+.hero-atmosphere-horizon {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        48%;
+
+    width:
+        min(92vw, 1500px);
+
+    height:
+        1px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(47,168,255,.015) 18%,
+            rgba(47,168,255,.14) 40%,
+            rgba(105,199,255,.26) 50%,
+            rgba(47,168,255,.14) 60%,
+            rgba(47,168,255,.015) 82%,
+            transparent 100%
+        );
+
+    opacity:
+        .72;
+
+    filter:
+        blur(.15px);
+
+}
+
+
+/* ============================================================
+   06 — HORIZON GLOW
+   ============================================================ */
+
+.hero-atmosphere-horizon::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        34%;
+
+    height:
+        70px;
+
+    transform:
+        translate(-50%, -50%);
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(47,168,255,.10),
+            transparent 70%
+        );
+
+    filter:
+        blur(12px);
+
+}
+
+
+/* ============================================================
+   07 — PRECISION LIGHT RAYS
+   ============================================================ */
+
+.hero-atmosphere-ray {
+
+    position:
+        absolute;
+
+    height:
+        1px;
+
+    transform-origin:
+        center;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(47,168,255,.13),
+            transparent
+        );
+
+    opacity:
+        .45;
+
+}
+
+
+.hero-atmosphere-ray.ray-01 {
+
+    width:
+        46%;
+
+    left:
+        -7%;
+
+    top:
+        31%;
+
+    transform:
+        rotate(13deg);
+
+}
+
+
+.hero-atmosphere-ray.ray-02 {
+
+    width:
+        39%;
+
+    right:
+        -4%;
+
+    top:
+        27%;
+
+    transform:
+        rotate(-12deg);
+
+}
+
+
+.hero-atmosphere-ray.ray-03 {
+
+    width:
+        30%;
+
+    left:
+        8%;
+
+    bottom:
+        22%;
+
+    transform:
+        rotate(-9deg);
+
+    opacity:
+        .26;
+
+}
+
+
+.hero-atmosphere-ray.ray-04 {
+
+    width:
+        28%;
+
+    right:
+        8%;
+
+    bottom:
+        19%;
+
+    transform:
+        rotate(10deg);
+
+    opacity:
+        .22;
+
+}
+
+
+/* ============================================================
+   08 — MICRO PARTICLE FIELD
+   ============================================================ */
+
+.hero-atmosphere-particles {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    opacity:
+        .52;
+
+}
+
+
+.hero-atmosphere-particles::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        8%;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(130,205,255,.48) 0 1px,
+            transparent 1.5px
+        );
+
+    background-size:
+        137px 163px;
+
+    background-position:
+        17px 31px;
+
+    opacity:
+        .13;
+
+    mask-image:
+        radial-gradient(
+            ellipse at center,
+            black 0%,
+            transparent 70%
+        );
+
+    -webkit-mask-image:
+        radial-gradient(
+            ellipse at center,
+            black 0%,
+            transparent 70%
+        );
+
+    animation:
+        arsHeroParticleDrift
+        22s linear infinite;
+
+}
+
+
+@keyframes arsHeroParticleDrift {
+
+    from {
+
+        transform:
+            translate3d(0,0,0);
+
+    }
+
+    to {
+
+        transform:
+            translate3d(18px,-12px,0);
+
+    }
+
+}
+
+
+/* ============================================================
+   09 — HERO ORBIT
+   ============================================================ */
+
+.hero-atmosphere-orbit {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        43%;
+
+    width:
+        min(44vw, 700px);
+
+    height:
+        min(44vw, 700px);
+
+    transform:
+        translate(-50%, -50%)
+        rotate(-16deg);
+
+    border:
+        1px solid rgba(47,168,255,.055);
+
+    border-radius:
+        50%;
+
+    opacity:
+        .55;
+
+}
+
+
+.hero-atmosphere-orbit::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        10%;
+
+    border:
+        1px solid rgba(105,199,255,.035);
+
+    border-radius:
+        50%;
+
+}
+
+
+.hero-atmosphere-orbit::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        4px;
+
+    height:
+        4px;
+
+    top:
+        8%;
+
+    left:
+        17%;
+
+    border-radius:
+        50%;
+
+    background:
+        #69C7FF;
+
+    box-shadow:
+        0 0 10px #2FA8FF,
+        0 0 26px rgba(47,168,255,.55);
+
+    opacity:
+        .7;
+
+}
+
+
+/* ============================================================
+   10 — PRECISION SIGNAL
+   ============================================================ */
+
+.hero-atmosphere-signal {
+
+    position:
+        absolute;
+
+    width:
+        6px;
+
+    height:
+        6px;
+
+    border-radius:
+        50%;
+
+    background:
+        #69C7FF;
+
+    box-shadow:
+        0 0 8px rgba(47,168,255,.9),
+        0 0 24px rgba(47,168,255,.42);
+
+    opacity:
+        .65;
+
+}
+
+
+.hero-atmosphere-signal.signal-01 {
+
+    left:
+        24%;
+
+    top:
+        36%;
+
+}
+
+
+.hero-atmosphere-signal.signal-02 {
+
+    right:
+        21%;
+
+    top:
+        57%;
+
+    transform:
+        scale(.65);
+
+    opacity:
+        .42;
+
+}
+
+
+.hero-atmosphere-signal.signal-03 {
+
+    left:
+        35%;
+
+    bottom:
+        18%;
+
+    transform:
+        scale(.45);
+
+    opacity:
+        .28;
+
+}
+
+
+/* ============================================================
+   11 — TOP / BOTTOM LIGHT CONTROL
+   ============================================================ */
+
+.hero-atmosphere-top-fade {
+
+    position:
+        absolute;
+
+    inset:
+        0 0 auto;
+
+    height:
+        25%;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(2,7,13,.45),
+            transparent
+        );
+
+}
+
+
+.hero-atmosphere-bottom-fade {
+
+    position:
+        absolute;
+
+    inset:
+        auto 0 0;
+
+    height:
+        32%;
+
+    background:
+        linear-gradient(
+            0deg,
+            rgba(2,7,13,.72),
+            transparent
+        );
+
+}
+
+
+/* ============================================================
+   12 — CONTENT PROTECTION FIELD
+   ============================================================ */
+
+.hero-atmosphere-content-field {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        min(70vw, 1050px);
+
+    height:
+        min(58vh, 620px);
+
+    transform:
+        translate(-50%, -50%);
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(3,9,16,.06),
+            transparent 68%
+        );
+
+    opacity:
+        .7;
+
+}
+
+
+/* ============================================================
+   13 — PREMIUM DEPTH LAYER
+   ============================================================ */
+
+.hero-atmosphere-depth {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+        linear-gradient(
+            115deg,
+            rgba(3,9,16,.16),
+            transparent 28%,
+            transparent 70%,
+            rgba(3,9,16,.20)
+        );
+
+    opacity:
+        .75;
+
+}
+
+
+/* ============================================================
+   14 — SCROLL RESPONSE
+   ============================================================ */
+
+.main-header.is-scrolled
+~ .hero .hero-atmosphere-light {
+
+    opacity:
+        .78;
+
+}
+
+
+/*
+   If the actual Hero is controlled through a page-level
+   scroll class, the following optional state can be used:
+
+   .home.is-scrolling .hero-atmosphere-light { ... }
+
+   Keep this hook available for future JS integration.
+*/
+
+
+/* ============================================================
+   15 — RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1100px) {
+
+    .hero-atmosphere-orbit {
+
+        width:
+            58vw;
+
+        height:
+            58vw;
+
+    }
+
+    .hero-atmosphere-light {
+
+        width:
+            72vw;
+
+        height:
+            55vw;
+
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .hero-atmosphere-light {
+
+        width:
+            115vw;
+
+        height:
+            82vw;
+
+        top:
+            43%;
+
+    }
+
+
+    .hero-atmosphere-horizon {
+
+        width:
+            150vw;
+
+    }
+
+
+    .hero-atmosphere-orbit {
+
+        width:
+            105vw;
+
+        height:
+            105vw;
+
+        opacity:
+            .35;
+
+    }
+
+
+    .hero-atmosphere-ray {
+
+        opacity:
+            .22;
+
+    }
+
+
+    .hero-atmosphere-particles {
+
+        opacity:
+            .32;
+
+    }
+
+
+    .hero-atmosphere-signal.signal-01 {
+
+        left:
+            14%;
+
+    }
+
+
+    .hero-atmosphere-signal.signal-02 {
+
+        right:
+            12%;
+
+    }
+
+}
+
+
+/* ============================================================
+   16 — SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 480px) {
+
+    .hero-atmosphere-light {
+
+        width:
+            140vw;
+
+        height:
+            100vw;
+
+    }
+
+
+    .hero-atmosphere-orbit {
+
+        width:
+            125vw;
+
+        height:
+            125vw;
+
+        opacity:
+            .26;
+
+    }
+
+
+    .hero-atmosphere-ray.ray-03,
+    .hero-atmosphere-ray.ray-04 {
+
+        display:
+            none;
+
+    }
+
+
+    .hero-atmosphere-particles {
+
+        opacity:
+            .22;
+
+    }
+
+}
+
+
+/* ============================================================
+   17 — REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-atmosphere-light,
+    .hero-atmosphere-particles::before {
+
+        animation:
+            none !important;
+
+    }
+
+}
+/* ============================================================
+   ARS HERITAGE GROUP
+   HOME — PREMIUM HERO CONTENT SYSTEM
+   ============================================================
+
+   CONTENT DNA
+   Precision × Authority × Intelligence × Luxury
+
+   PURPOSE
+   Premium Hero Content Architecture
+
+   INCLUDES
+   - Kicker / Eyebrow
+   - Main Headline
+   - Accent Intelligence
+   - Supporting Statement
+   - CTA System
+   - Secondary Action
+   - Supporting Meta
+   - Content Reveal
+   - Responsive Hierarchy
+
+   IMPORTANT
+   This system controls HERO CONTENT only.
+
+   It does NOT replace:
+   - Hero Structure
+   - Hero Atmosphere
+   - Hero Orbit
+   - Energy Universe
+   - Header
+
+   ============================================================ */
+
+
+/* ============================================================
+   01 — CONTENT SYSTEM ROOT
+   ============================================================ */
+
+.hero-content-system {
+
+    position:
+        relative;
+
+    z-index:
+        10;
+
+    width:
+        min(
+            calc(100% - 56px),
+            1640px
+        );
+
+    min-height:
+        100%;
+
+    margin:
+        0 auto;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    pointer-events:
+        none;
+
+}
+
+
+.hero-content-system-inner {
+
+    width:
+        min(
+            100%,
+            920px
+        );
+
+    padding:
+        150px 0 100px;
+
+    pointer-events:
+        auto;
+
+}
+
+
+/* ============================================================
+   02 — CONTENT ALIGNMENT
+   ============================================================ */
+
+.hero-content-system.align-left
+.hero-content-system-inner {
+
+    margin-right:
+        auto;
+
+}
+
+
+.hero-content-system.align-center {
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+}
+
+
+.hero-content-system.align-center
+.hero-content-system-inner {
+
+    margin:
+        0 auto;
+
+}
+
+
+/* ============================================================
+   03 — PREMIUM KICKER
+   ============================================================ */
+
+.hero-content-kicker {
+
+    position:
+        relative;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        11px;
+
+    margin-bottom:
+        25px;
+
+    color:
+        rgba(164,213,246,.78);
+
+    font-size:
+        9px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        .34em;
+
+    line-height:
+        1;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.hero-content-kicker::before {
+
+    content:
+        "";
+
+    width:
+        25px;
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(105,199,255,.85)
+        );
+
+    box-shadow:
+        0 0 9px rgba(47,168,255,.35);
+
+}
+
+
+.hero-content-kicker::after {
+
+    content:
+        "";
+
+    width:
+        4px;
+
+    height:
+        4px;
+
+    margin-left:
+        1px;
+
+    border-radius:
+        50%;
+
+    background:
+        #69C7FF;
+
+    box-shadow:
+        0 0 8px rgba(47,168,255,.85),
+        0 0 18px rgba(47,168,255,.35);
+
+}
+
+
+.hero-content-system.align-center
+.hero-content-kicker {
+
+    justify-content:
+        center;
+
+}
+
+
+/* ============================================================
+   04 — HEADLINE WRAPPER
+   ============================================================ */
+
+.hero-content-heading {
+
+    margin:
+        0;
+
+    max-width:
+        980px;
+
+    color:
+        #F5F9FD;
+
+    font-size:
+        clamp(
+            48px,
+            6.2vw,
+            104px
+        );
+
+    font-weight:
+        300;
+
+    line-height:
+        .98;
+
+    letter-spacing:
+        -.055em;
+
+    text-wrap:
+        balance;
+
+}
+
+
+/* ============================================================
+   05 — HEADLINE PRIMARY
+   ============================================================ */
+
+.hero-content-heading .heading-primary {
+
+    display:
+        block;
+
+    color:
+        #F6FAFF;
+
+}
+
+
+/* ============================================================
+   06 — HEADLINE ACCENT
+   ============================================================ */
+
+.hero-content-heading .heading-accent {
+
+    display:
+        block;
+
+    margin-top:
+        .04em;
+
+    color:
+        transparent;
+
+    background:
+        linear-gradient(
+            105deg,
+            #F4F9FE 0%,
+            #DDEAF5 42%,
+            #69C7FF 72%,
+            #2FA8FF 100%
+        );
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    filter:
+        drop-shadow(
+            0 0 22px rgba(47,168,255,.08)
+        );
+
+}
+
+
+/* ============================================================
+   07 — PRECISION UNDERLINE
+   ============================================================ */
+
+.hero-content-heading .heading-accent::after {
+
+    content:
+        "";
+
+    display:
+        block;
+
+    width:
+        min(180px, 26vw);
+
+    height:
+        1px;
+
+    margin-top:
+        18px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(47,168,255,.85),
+            rgba(105,199,255,.20),
+            transparent
+        );
+
+    box-shadow:
+        0 0 12px rgba(47,168,255,.20);
+
+}
+
+
+/* ============================================================
+   08 — SUPPORTING STATEMENT
+   ============================================================ */
+
+.hero-content-description {
+
+    max-width:
+        650px;
+
+    margin:
+        31px 0 0;
+
+    color:
+        rgba(211,224,237,.68);
+
+    font-size:
+        clamp(
+            13px,
+            1.15vw,
+            17px
+        );
+
+    font-weight:
+        350;
+
+    line-height:
+        1.85;
+
+    letter-spacing:
+        .015em;
+
+}
+
+
+.hero-content-system.align-center
+.hero-content-description {
+
+    margin-left:
+        auto;
+
+    margin-right:
+        auto;
+
+}
+
+
+/* ============================================================
+   09 — INTELLIGENCE LINE
+   ============================================================ */
+
+.hero-content-intelligence {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        13px;
+
+    margin-top:
+        25px;
+
+    color:
+        rgba(150,197,226,.55);
+
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        monospace;
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        .18em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.hero-content-intelligence::before {
+
+    content:
+        "";
+
+    width:
+        38px;
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(47,168,255,.65),
+            transparent
+        );
+
+}
+
+
+.hero-content-system.align-center
+.hero-content-intelligence {
+
+    justify-content:
+        center;
+
+}
+
+
+/* ============================================================
+   10 — CTA SYSTEM
+   ============================================================ */
+
+.hero-content-actions {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        13px;
+
+    margin-top:
+        38px;
+
+}
+
+
+.hero-content-system.align-center
+.hero-content-actions {
+
+    justify-content:
+        center;
+
+}
+
+
+/* ============================================================
+   11 — PRIMARY CTA
+   ============================================================ */
+
+.hero-content-primary-cta {
+
+    position:
+        relative;
+
+    min-width:
+        166px;
+
+    height:
+        52px;
+
+    padding:
+        0 25px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        15px;
+
+    overflow:
+        hidden;
+
+    color:
+        #EFF8FF;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(47,168,255,.16),
+            rgba(8,24,39,.48)
+        );
+
+    border:
+        1px solid rgba(47,168,255,.43);
+
+    border-radius:
+        4px;
+
+    text-decoration:
+        none;
+
+    box-shadow:
+        inset 0 0 24px rgba(47,168,255,.025),
+        0 12px 40px rgba(0,0,0,.18);
+
+    transition:
+        transform .45s cubic-bezier(.22,1,.36,1),
+        border-color .4s ease,
+        background .4s ease,
+        box-shadow .4s ease;
+
+}
+
+
+.hero-content-primary-cta::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+        linear-gradient(
+            105deg,
+            transparent 20%,
+            rgba(255,255,255,.13) 48%,
+            transparent 72%
+        );
+
+    transform:
+        translateX(-130%);
+
+    transition:
+        transform .8s cubic-bezier(.22,1,.36,1);
+
+}
+
+
+.hero-content-primary-cta:hover {
+
+    transform:
+        translateY(-2px);
+
+    border-color:
+        rgba(105,199,255,.75);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(47,168,255,.22),
+            rgba(8,24,39,.58)
+        );
+
+    box-shadow:
+        0 16px 48px rgba(0,0,0,.24),
+        0 0 30px rgba(47,168,255,.08),
+        inset 0 0 22px rgba(47,168,255,.05);
+
+}
+
+
+.hero-content-primary-cta:hover::before {
+
+    transform:
+        translateX(130%);
+
+}
+
+
+.hero-content-primary-cta-label {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    font-size:
+        9px;
+
+    font-weight:
+        650;
+
+    letter-spacing:
+        .18em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.hero-content-primary-cta-signal {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    width:
+        5px;
+
+    height:
+        5px;
+
+    border-radius:
+        50%;
+
+    background:
+        #69C7FF;
+
+    box-shadow:
+        0 0 8px #2FA8FF,
+        0 0 18px rgba(47,168,255,.5);
+
+}
+
+
+/* ============================================================
+   12 — SECONDARY CTA
+   ============================================================ */
+
+.hero-content-secondary-cta {
+
+    min-width:
+        146px;
+
+    height:
+        52px;
+
+    padding:
+        0 22px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    color:
+        rgba(229,239,248,.72);
+
+    background:
+        rgba(5,13,22,.22);
+
+    border:
+        1px solid rgba(145,190,225,.15);
+
+    border-radius:
+        4px;
+
+    text-decoration:
+        none;
+
+    font-size:
+        9px;
+
+    font-weight:
+        550;
+
+    letter-spacing:
+        .16em;
+
+    text-transform:
+        uppercase;
+
+    transition:
+        color .35s ease,
+        border-color .35s ease,
+        background .35s ease,
+        transform .35s ease;
+
+}
+
+
+.hero-content-secondary-cta:hover {
+
+    color:
+        #F4FAFF;
+
+    border-color:
+        rgba(105,199,255,.35);
+
+    background:
+        rgba(47,168,255,.055);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* ============================================================
+   13 — SUPPORTING META
+   ============================================================ */
+
+.hero-content-meta {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        22px;
+
+    margin-top:
+        34px;
+
+    color:
+        rgba(167,193,215,.45);
+
+    font-size:
+        8px;
+
+    font-weight:
+        500;
+
+    letter-spacing:
+        .16em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.hero-content-system.align-center
+.hero-content-meta {
+
+    justify-content:
+        center;
+
+}
+
+
+.hero-content-meta-item {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+}
+
+
+.hero-content-meta-item::before {
+
+    content:
+        "";
+
+    width:
+        3px;
+
+    height:
+        3px;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(105,199,255,.65);
+
+    box-shadow:
+        0 0 7px rgba(47,168,255,.45);
+
+}
+
+
+/* ============================================================
+   14 — CONTENT DIVIDER
+   ============================================================ */
+
+.hero-content-divider {
+
+    width:
+        min(420px, 45vw);
+
+    height:
+        1px;
+
+    margin-top:
+        32px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(47,168,255,.28),
+            rgba(130,180,220,.07),
+            transparent
+        );
+
+}
+
+
+.hero-content-system.align-center
+.hero-content-divider {
+
+    margin-left:
+        auto;
+
+    margin-right:
+        auto;
+
+}
+
+
+/* ============================================================
+   15 — REVEAL ARCHITECTURE
+   ============================================================ */
+
+.hero-content-kicker,
+.hero-content-heading,
+.hero-content-description,
+.hero-content-intelligence,
+.hero-content-actions,
+.hero-content-meta {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(24px);
+
+    animation:
+        arsHeroContentReveal
+        .9s cubic-bezier(.22,1,.36,1)
+        forwards;
+
+}
+
+
+.hero-content-kicker {
+
+    animation-delay:
+        .10s;
+
+}
+
+
+.hero-content-heading {
+
+    animation-delay:
+        .22s;
+
+}
+
+
+.hero-content-description {
+
+    animation-delay:
+        .36s;
+
+}
+
+
+.hero-content-intelligence {
+
+    animation-delay:
+        .46s;
+
+}
+
+
+.hero-content-actions {
+
+    animation-delay:
+        .56s;
+
+}
+
+
+.hero-content-meta {
+
+    animation-delay:
+        .68s;
+
+}
+
+
+@keyframes arsHeroContentReveal {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(24px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* ============================================================
+   16 — PREMIUM CONTENT HOVER RESPONSE
+   ============================================================ */
+
+.hero-content-system-inner {
+
+    transition:
+        transform .8s cubic-bezier(.22,1,.36,1);
+
+}
+
+
+.hero-content-system-inner:hover {
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+/* ============================================================
+   17 — TABLET
+   ============================================================ */
+
+@media (max-width: 1100px) {
+
+    .hero-content-system {
+
+        width:
+            calc(100% - 42px);
+
+    }
+
+
+    .hero-content-system-inner {
+
+        width:
+            min(100%, 820px);
+
+        padding:
+            135px 0 90px;
+
+    }
+
+
+    .hero-content-heading {
+
+        font-size:
+            clamp(
+                44px,
+                7vw,
+                76px
+            );
+
+    }
+
+}
+
+
+/* ============================================================
+   18 — MOBILE
+   ============================================================ */
+
+@media (max-width: 700px) {
+
+    .hero-content-system {
+
+        width:
+            calc(100% - 30px);
+
+        align-items:
+            center;
+
+    }
+
+
+    .hero-content-system-inner {
+
+        padding:
+            120px 0 75px;
+
+    }
+
+
+    .hero-content-kicker {
+
+        margin-bottom:
+            20px;
+
+        font-size:
+            8px;
+
+        letter-spacing:
+            .27em;
+
+    }
+
+
+    .hero-content-heading {
+
+        font-size:
+            clamp(
+                38px,
+                11vw,
+                58px
+            );
+
+        line-height:
+            1.01;
+
+        letter-spacing:
+            -.045em;
+
+    }
+
+
+    .hero-content-description {
+
+        margin-top:
+            24px;
+
+        max-width:
+            560px;
+
+        font-size:
+            12px;
+
+        line-height:
+            1.75;
+
+    }
+
+
+    .hero-content-actions {
+
+        margin-top:
+            30px;
+
+        flex-wrap:
+            wrap;
+
+    }
+
+
+    .hero-content-primary-cta,
+    .hero-content-secondary-cta {
+
+        height:
+            49px;
+
+    }
+
+
+    .hero-content-meta {
+
+        margin-top:
+            27px;
+
+        gap:
+            13px;
+
+        line-height:
+            1.7;
+
+    }
+
+}
+
+
+/* ============================================================
+   19 — SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 480px) {
+
+    .hero-content-system {
+
+        width:
+            calc(100% - 24px);
+
+    }
+
+
+    .hero-content-system-inner {
+
+        padding:
+            108px 0 62px;
+
+    }
+
+
+    .hero-content-heading {
+
+        font-size:
+            clamp(
+                34px,
+                12.5vw,
+                50px
+            );
+
+    }
+
+
+    .hero-content-description {
+
+        font-size:
+            11.5px;
+
+    }
+
+
+    .hero-content-actions {
+
+        width:
+            100%;
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+    }
+
+
+    .hero-content-primary-cta,
+    .hero-content-secondary-cta {
+
+        width:
+            100%;
+
+    }
+
+
+    .hero-content-meta {
+
+        font-size:
+            7px;
+
+        justify-content:
+            flex-start;
+
+    }
+
+
+    .hero-content-divider {
+
+        width:
+            70%;
+
+    }
+
+}
+
+
+/* ============================================================
+   20 — REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-content-kicker,
+    .hero-content-heading,
+    .hero-content-description,
+    .hero-content-intelligence,
+    .hero-content-actions,
+    .hero-content-meta {
+
+        opacity:
+            1;
+
+        transform:
+            none;
+
+        animation:
+            none;
+
+    }
+
+
+    .hero-content-primary-cta,
+    .hero-content-secondary-cta,
+    .hero-content-system-inner {
+
+        transition:
+            none;
+
+    }
+
+}
 
 
 
