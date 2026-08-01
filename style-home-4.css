@@ -1288,346 +1288,558 @@ a {
 
 
 /* =========================================================
-   ARS HERITAGE GROUP — PREMIUM HEADING SYSTEM
-   PHASE 09/10/11 COMPATIBLE — FINAL VISUAL OVERRIDE
-   ========================================================= */
-
-/* ---------------------------------------------------------
-   01 — MASTER HEADING DNA
-   --------------------------------------------------------- */
+ARS HERITAGE GROUP — HOME
+PREMIUM TITLES / GLASS LABEL SYSTEM
+PHASE 01 FOUNDATION — VISUAL TITLE REFINEMENT
+========================================================= */
 
 :root {
-    --ars-heading-gold: #d9b76a;
-    --ars-heading-gold-bright: #f0d58a;
-    --ars-heading-gold-soft: #b9954f;
-
-    --ars-electric-blue: #00aaff;
-    --ars-electric-blue-bright: #32c8ff;
-
-    --ars-heading-glass:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,.045),
-            rgba(255,255,255,.012)
-        );
-
-    --ars-heading-border:
-        rgba(217,183,106,.42);
-
-    --ars-heading-shadow:
-        0 12px 36px rgba(0,0,0,.28),
-        inset 0 1px 0 rgba(255,255,255,.08);
-
-    --ars-blue-glow:
-        0 0 8px rgba(0,170,255,.65),
-        0 0 22px rgba(0,170,255,.22);
-}
-
-
-/* ---------------------------------------------------------
-   02 — PREMIUM SECTION LABEL / HEADING KEY
-   --------------------------------------------------------- */
-
-.ars-section-label,
-.ars-section-title,
-.section-label,
-.section-title,
-.ars-heading-key,
-.ars-heading-badge {
-
-    position: relative;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    min-height: 54px;
-    padding: 0 34px;
-
-    border: 1px solid var(--ars-heading-border);
-    border-radius: 999px;
-
-    background: var(--ars-heading-glass);
-
-    box-shadow: var(--ars-heading-shadow);
-
-    backdrop-filter: blur(18px) saturate(135%);
-    -webkit-backdrop-filter: blur(18px) saturate(135%);
-
-    color: var(--ars-heading-gold-bright);
-
-    font-weight: 700;
-    letter-spacing: .19em;
-    text-transform: uppercase;
-
-    text-shadow:
-        0 1px 1px rgba(0,0,0,.45),
-        0 0 14px rgba(217,183,106,.12);
-
-    overflow: hidden;
-
-    transition:
-        transform .45s cubic-bezier(.16,1,.3,1),
-        border-color .45s ease,
-        box-shadow .45s ease,
-        background .45s ease;
-}
-
-
-/* ---------------------------------------------------------
-   03 — LIVING ELECTRIC BLUE POINT
-   --------------------------------------------------------- */
-
-.ars-section-label::before,
-.ars-section-title::before,
-.section-label::before,
-.section-title::before,
-.ars-heading-key::before,
-.ars-heading-badge::before {
-
-    content: "";
-
-    width: 7px;
-    height: 7px;
-
-    margin-right: 14px;
-
-    flex: 0 0 auto;
-
-    border-radius: 50%;
-
-    background: var(--ars-electric-blue-bright);
-
-    box-shadow: var(--ars-blue-glow);
-
-    animation: arsHeadingPulse 2.8s ease-in-out infinite;
-}
-
-
-/* ---------------------------------------------------------
-   04 — ELECTRIC ENERGY LINE
-   --------------------------------------------------------- */
-
-.ars-section-label::after,
-.ars-section-title::after,
-.section-label::after,
-.section-title::after,
-.ars-heading-key::after,
-.ars-heading-badge::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    bottom: 7px;
-
-    width: 58px;
-    height: 1px;
-
-    transform: translateX(-50%);
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            var(--ars-electric-blue),
-            transparent
-        );
-
-    box-shadow:
-        0 0 7px rgba(0,170,255,.75),
-        0 0 18px rgba(0,170,255,.28);
-
-    opacity: .9;
-}
-
-
-/* ---------------------------------------------------------
-   05 — PREMIUM HOVER
-   --------------------------------------------------------- */
-
-.ars-section-label:hover,
-.ars-section-title:hover,
-.section-label:hover,
-.section-title:hover,
-.ars-heading-key:hover,
-.ars-heading-badge:hover {
-
-    transform: translateY(-2px);
-
-    border-color:
-        rgba(240,213,138,.72);
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(217,183,106,.09),
-            rgba(0,170,255,.035)
-        );
-
-    box-shadow:
-        0 18px 48px rgba(0,0,0,.34),
-        0 0 26px rgba(0,170,255,.08),
-        inset 0 1px 0 rgba(255,255,255,.11);
-}
-
-
-/* ---------------------------------------------------------
-   06 — MAJOR HEADINGS
-   --------------------------------------------------------- */
-
-.ars-section h1,
-.ars-section h2,
-.ars-section h3,
-section h1,
-section h2,
-section h3 {
-
-    text-shadow:
-        0 1px 2px rgba(0,0,0,.55),
-        0 0 24px rgba(217,183,106,.08);
-}
-
-
-/* ---------------------------------------------------------
-   07 — GOLDEN TEXT SYSTEM
-   --------------------------------------------------------- */
-
-.ars-gold-heading,
-.ars-gold-title,
-.ars-premium-heading {
-
-    color: var(--ars-heading-gold-bright);
-
-    text-shadow:
-        0 1px 2px rgba(0,0,0,.5),
-        0 0 18px rgba(217,183,106,.12);
-}
-
-
-/* ---------------------------------------------------------
-   08 — PREMIUM KEYBOARD / CLICK FEEDBACK
-   --------------------------------------------------------- */
-
-.ars-section-label:active,
-.ars-section-title:active,
-.section-label:active,
-.section-title:active,
-.ars-heading-key:active,
-.ars-heading-badge:active {
-
-    transform: translateY(0) scale(.985);
-
-    box-shadow:
-        0 6px 18px rgba(0,0,0,.32),
-        0 0 18px rgba(0,170,255,.18);
-}
-
-
-/* ---------------------------------------------------------
-   09 — ELECTRIC PULSE
-   --------------------------------------------------------- */
-
-@keyframes arsHeadingPulse {
-
-    0%,
-    100% {
-        opacity: .72;
-        transform: scale(.92);
-        box-shadow:
-            0 0 5px rgba(0,170,255,.55),
-            0 0 14px rgba(0,170,255,.18);
-    }
-
-    50% {
-        opacity: 1;
-        transform: scale(1.08);
-        box-shadow:
-            0 0 9px rgba(0,170,255,.9),
-            0 0 25px rgba(0,170,255,.32);
-    }
-}
-
-
-/* ---------------------------------------------------------
-   10 — RESPONSIVE
-   --------------------------------------------------------- */
-
-@media (max-width: 768px) {
-
-    .ars-section-label,
-    .ars-section-title,
-    .section-label,
-    .section-title,
-    .ars-heading-key,
-    .ars-heading-badge {
-
-        min-height: 48px;
-        padding: 0 23px;
-
-        font-size: .78rem;
-        letter-spacing: .15em;
-    }
-
-    .ars-section-label::before,
-    .ars-section-title::before,
-    .section-label::before,
-    .section-title::before,
-    .ars-heading-key::before,
-    .ars-heading-badge::before {
-
-        width: 6px;
-        height: 6px;
-
-        margin-right: 10px;
-    }
-
-    .ars-section-label::after,
-    .ars-section-title::after,
-    .section-label::after,
-    .section-title::after,
-    .ars-heading-key::after,
-    .ars-heading-badge::after {
-
-        width: 44px;
-        bottom: 6px;
-    }
-}
-
-
-/* ---------------------------------------------------------
-   11 — REDUCED MOTION
-   --------------------------------------------------------- */
-
-@media (prefers-reduced-motion: reduce) {
-
-    .ars-section-label::before,
-    .ars-section-title::before,
-    .section-label::before,
-    .section-title::before,
-    .ars-heading-key::before,
-    .ars-heading-badge::before {
-
-        animation: none;
-    }
-
-    .ars-section-label,
-    .ars-section-title,
-    .section-label,
-    .section-title,
-    .ars-heading-key,
-    .ars-heading-badge {
-
-        transition: none;
-    }
+  --ars-title-gold: #e2c36a;
+  --ars-title-gold-hi: #f1d98a;
+  --ars-title-blue: #00a6e8;
+  --ars-title-blue-hi: #35c8ff;
+
+  --ars-title-glass:
+    linear-gradient(
+      135deg,
+      rgb(20 31 43 / .52),
+      rgb(5 10 16 / .30)
+    );
+
+  --ars-title-border:
+    rgb(226 195 106 / .28);
+
+  --ars-title-blue-glow:
+    0 0 18px rgb(0 166 232 / .18),
+    0 0 38px rgb(0 166 232 / .08);
+
+  --ars-title-gold-glow:
+    0 0 18px rgb(226 195 106 / .14),
+    0 0 36px rgb(226 195 106 / .07);
 }
 
 
 /* =========================================================
-   ARS — PREMIUM HEADING SYSTEM — LOCKED
-   ========================================================= */
+01 — SECTION TITLE INTELLIGENCE FRAME
+========================================================= */
 
+.about h2,
+.mission-vision h2,
+.ars-philosophy-home h2,
+.ecosystem h2,
+.ars-ecosystem-universe h2,
+.future-roadmap h2,
+.future-vision h2 {
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+
+  width: fit-content;
+  max-width: 100%;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  padding:
+    9px 18px
+    10px 20px;
+
+  color: var(--ars-title-gold-hi);
+
+  background: var(--ars-title-glass);
+
+  border: 1px solid var(--ars-title-border);
+  border-radius: 999px;
+
+  box-shadow:
+    0 14px 40px rgb(0 0 0 / .30),
+    var(--ars-title-gold-glow),
+    var(--ars-title-blue-glow);
+
+  backdrop-filter:
+    blur(16px)
+    saturate(135%);
+
+  -webkit-backdrop-filter:
+    blur(16px)
+    saturate(135%);
+
+  text-shadow:
+    0 0 16px rgb(226 195 106 / .18);
+
+  letter-spacing: .045em;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+02 — ELECTRIC BLUE EYE
+========================================================= */
+
+.about h2::before,
+.mission-vision h2::before,
+.ars-philosophy-home h2::before,
+.ecosystem h2::before,
+.ars-ecosystem-universe h2::before,
+.future-roadmap h2::before,
+.future-vision h2::before {
+
+  content: "";
+
+  width: 7px;
+  height: 7px;
+
+  flex: 0 0 7px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 35%,
+      #8ee5ff 0 18%,
+      #35c8ff 28%,
+      #00a6e8 62%,
+      #07507a 100%
+    );
+
+  box-shadow:
+    0 0 5px rgb(53 200 255 / .90),
+    0 0 13px rgb(0 166 232 / .75),
+    0 0 27px rgb(0 166 232 / .42);
+
+  animation:
+    ars-title-eye-pulse 3.8s
+    var(--ars-ease-standard)
+    infinite;
+}
+
+
+/* =========================================================
+03 — BLUE ENERGY LINE
+========================================================= */
+
+.about h2::after,
+.mission-vision h2::after,
+.ars-philosophy-home h2::after,
+.ecosystem h2::after,
+.ars-ecosystem-universe h2::after,
+.future-roadmap h2::after,
+.future-vision h2::after {
+
+  content: "";
+
+  position: absolute;
+
+  left: 22px;
+  right: 22px;
+  bottom: -5px;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgb(0 166 232 / .25),
+      rgb(53 200 255 / .90),
+      rgb(0 166 232 / .25),
+      transparent
+    );
+
+  box-shadow:
+    0 0 9px rgb(0 166 232 / .70),
+    0 0 20px rgb(0 166 232 / .28);
+
+  opacity: .92;
+}
+
+
+/* =========================================================
+04 — CARD TITLES
+========================================================= */
+
+.ars-card-content h3,
+.principle-card h3,
+.future-item h3 {
+
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  width: fit-content;
+  max-width: 100%;
+
+  margin-top: 2px;
+  margin-bottom: 4px;
+
+  padding:
+    7px 13px
+    8px 15px;
+
+  color: var(--ars-title-gold-hi);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgb(20 31 43 / .46),
+      rgb(5 10 16 / .28)
+    );
+
+  border:
+    1px solid
+    rgb(226 195 106 / .20);
+
+  border-radius: 999px;
+
+  box-shadow:
+    0 8px 25px rgb(0 0 0 / .24),
+    0 0 18px rgb(0 166 232 / .08);
+
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+
+  text-shadow:
+    0 0 14px rgb(226 195 106 / .17);
+}
+
+
+/* =========================================================
+05 — CARD TITLE BLUE UNDERLINE
+========================================================= */
+
+.ars-card-content h3::after,
+.principle-card h3::after,
+.future-item h3::after {
+
+  content: "";
+
+  position: absolute;
+
+  left: 14%;
+  right: 14%;
+  bottom: -4px;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--ars-title-blue-hi),
+      transparent
+    );
+
+  box-shadow:
+    0 0 8px rgb(0 166 232 / .75),
+    0 0 18px rgb(0 166 232 / .25);
+}
+
+
+/* =========================================================
+06 — CARD CATEGORY
+========================================================= */
+
+.ars-card-category {
+
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding:
+    5px 10px
+    6px 12px;
+
+  border:
+    1px solid
+    rgb(0 166 232 / .20);
+
+  border-radius: 999px;
+
+  background:
+    rgb(0 166 232 / .045);
+
+  box-shadow:
+    0 0 16px rgb(0 166 232 / .07);
+
+  color: var(--ars-title-blue-hi);
+
+  text-shadow:
+    0 0 10px rgb(0 166 232 / .30);
+}
+
+.ars-card-category::before {
+
+  content: "";
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: var(--ars-title-blue-hi);
+
+  box-shadow:
+    0 0 7px rgb(53 200 255 / .85),
+    0 0 15px rgb(0 166 232 / .55);
+
+  animation:
+    ars-title-eye-pulse 3s
+    var(--ars-ease-standard)
+    infinite;
+}
+
+
+/* =========================================================
+07 — GOLD TEXT SYSTEM
+========================================================= */
+
+.ars-card-action,
+.engineering-quote {
+
+  color: var(--ars-title-gold-hi);
+
+  text-shadow:
+    0 0 12px rgb(226 195 106 / .16),
+    0 0 26px rgb(226 195 106 / .07);
+}
+
+
+/* =========================================================
+08 — HERO LABEL
+========================================================= */
+
+.hero-label {
+
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  padding:
+    6px 12px
+    7px 14px;
+
+  border:
+    1px solid
+    rgb(226 195 106 / .20);
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgb(226 195 106 / .07),
+      rgb(0 166 232 / .035)
+    );
+
+  box-shadow:
+    0 0 22px rgb(0 166 232 / .07),
+    0 0 18px rgb(226 195 106 / .06);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  color: var(--ars-title-gold-hi);
+
+  text-shadow:
+    0 0 12px rgb(226 195 106 / .20);
+}
+
+.hero-label::before {
+
+  content: "";
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: var(--ars-title-blue-hi);
+
+  box-shadow:
+    0 0 7px rgb(53 200 255 / .95),
+    0 0 17px rgb(0 166 232 / .65);
+
+  animation:
+    ars-title-eye-pulse 3.5s
+    var(--ars-ease-standard)
+    infinite;
+}
+
+
+/* =========================================================
+09 — MAIN GOLD BUTTON REFINEMENT
+========================================================= */
+
+.btn-primary {
+
+  position: relative;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgb(241 217 138 / .55);
+
+  box-shadow:
+    0 10px 30px rgb(226 195 106 / .16),
+    0 0 24px rgb(0 166 232 / .06);
+
+  text-shadow:
+    0 1px 1px rgb(0 0 0 / .20);
+}
+
+.btn-primary::after {
+
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  left: -120%;
+
+  width: 55%;
+
+  transform: skewX(-22deg);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgb(255 255 255 / .28),
+      transparent
+    );
+
+  transition:
+    left 850ms
+    var(--ars-ease-luxury);
+}
+
+.btn-primary:hover::after {
+  left: 150%;
+}
+
+
+/* =========================================================
+10 — SECONDARY GLASS BUTTON
+========================================================= */
+
+.btn-secondary {
+
+  position: relative;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgb(226 195 106 / .30);
+
+  box-shadow:
+    0 10px 32px rgb(0 0 0 / .28),
+    0 0 22px rgb(0 166 232 / .07);
+}
+
+.btn-secondary::before {
+
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent 20%,
+      rgb(0 166 232 / .06),
+      transparent 80%
+    );
+
+  opacity: .7;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+11 — PREMIUM TITLE MICRO MOTION
+========================================================= */
+
+@keyframes ars-title-eye-pulse {
+
+  0%,
+  100% {
+    opacity: .68;
+    transform: scale(.88);
+    filter: brightness(.92);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.12);
+    filter: brightness(1.25);
+  }
+}
+
+
+/* =========================================================
+12 — MOBILE REFINEMENT
+========================================================= */
+
+@media (max-width: 760px) {
+
+  .about h2,
+  .mission-vision h2,
+  .ars-philosophy-home h2,
+  .ecosystem h2,
+  .ars-ecosystem-universe h2,
+  .future-roadmap h2,
+  .future-vision h2 {
+
+    padding:
+      8px 14px
+      9px 16px;
+
+    letter-spacing: .025em;
+  }
+
+  .ars-card-content h3,
+  .principle-card h3,
+  .future-item h3 {
+
+    padding:
+      6px 11px
+      7px 13px;
+  }
+}
+
+
+/* =========================================================
+13 — REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .about h2::before,
+  .mission-vision h2::before,
+  .ars-philosophy-home h2::before,
+  .ecosystem h2::before,
+  .ars-ecosystem-universe h2::before,
+  .future-roadmap h2::before,
+  .future-vision h2::before,
+  .ars-card-category::before,
+  .hero-label::before {
+
+    animation: none;
+  }
+  }
 
 
 
