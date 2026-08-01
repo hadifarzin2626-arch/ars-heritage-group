@@ -1285,3 +1285,3749 @@ a {
     transition-duration: 1ms !important;
   }
 }
+/* ============================================================
+   ARS HERITAGE GROUP
+   HOME 4 — PHASE 02
+   PREMIUM GLOBAL HEADER
+   ============================================================
+
+   DNA
+   Precision × Technology × Luxury
+
+   PHASE 02 SYSTEM
+   Premium Global Header
+   Floating Hero State
+   Precision Glass Scroll State
+   Mega Navigation
+   Search Layer
+   Mobile Navigation
+
+   ============================================================ */
+
+
+/* ============================================================
+   01 — HEADER ROOT
+   ============================================================ */
+
+.main-header {
+
+    --header-height: 88px;
+
+    --ars-blue: #2FA8FF;
+    --ars-blue-bright: #69C7FF;
+    --ars-blue-deep: #0876C9;
+
+    --header-white: rgba(245, 249, 255, .96);
+    --header-muted: rgba(205, 219, 235, .68);
+
+    --header-glass: rgba(7, 13, 22, .58);
+    --header-border: rgba(110, 180, 235, .14);
+
+    --header-shadow:
+        0 24px 70px rgba(0, 0, 0, .38);
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: var(--header-height);
+
+    z-index: 9000;
+
+    color: var(--header-white);
+
+    isolation: isolate;
+
+    transition:
+        height .55s cubic-bezier(.22,1,.36,1),
+        background .55s cubic-bezier(.22,1,.36,1),
+        box-shadow .55s cubic-bezier(.22,1,.36,1),
+        border-color .55s ease;
+}
+
+
+/* ============================================================
+   02 — HEADER ENERGY ATMOSPHERE
+   ============================================================ */
+
+.header-energy {
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+    overflow: hidden;
+
+    opacity: .78;
+}
+
+
+.header-energy::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 520px;
+    height: 1px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(47,168,255,.55),
+            transparent
+        );
+
+    filter: blur(.4px);
+}
+
+
+.header-energy::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    width: 260px;
+    height: 120px;
+
+    transform: translateX(-50%);
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(47,168,255,.09),
+            transparent 70%
+        );
+}
+
+
+.header-energy-line {
+
+    position: absolute;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(47,168,255,.18),
+            transparent
+        );
+
+    opacity: .65;
+}
+
+
+.header-energy-line.line-01 {
+
+    width: 34%;
+    left: 4%;
+    top: 87%;
+}
+
+
+.header-energy-line.line-02 {
+
+    width: 22%;
+    right: 5%;
+    top: 87%;
+}
+
+
+.header-energy-pulse {
+
+    position: absolute;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    top: calc(87% - 1px);
+    left: 38%;
+
+    background: var(--ars-blue-bright);
+
+    box-shadow:
+        0 0 8px var(--ars-blue),
+        0 0 22px rgba(47,168,255,.55);
+
+    animation:
+        arsHeaderPulse 3.8s ease-in-out infinite;
+}
+
+
+@keyframes arsHeaderPulse {
+
+    0%,
+    100% {
+
+        opacity: .35;
+        transform: scale(.7);
+    }
+
+    50% {
+
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+
+
+/* ============================================================
+   03 — HEADER INNER
+   ============================================================ */
+
+.header-inner {
+
+    position: relative;
+
+    width:
+        min(
+            calc(100% - 56px),
+            1640px
+        );
+
+    height: 100%;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        auto 1fr auto;
+
+    align-items: center;
+
+    column-gap: 44px;
+
+    z-index: 2;
+}
+
+
+/* ============================================================
+   04 — BRAND
+   ============================================================ */
+
+.header-brand {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    min-width: max-content;
+
+    color: inherit;
+
+    text-decoration: none;
+
+    position: relative;
+}
+
+
+.header-brand-mark {
+
+    position: relative;
+
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+
+    place-items: center;
+}
+
+
+.header-brand-mark::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -5px;
+
+    border:
+        1px solid rgba(47,168,255,.18);
+
+    border-radius: 50%;
+
+    transform: rotate(18deg);
+
+    transition:
+        transform .7s cubic-bezier(.22,1,.36,1),
+        border-color .4s ease,
+        box-shadow .4s ease;
+}
+
+
+.header-brand-mark::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    right: -4px;
+    top: 6px;
+
+    background: var(--ars-blue-bright);
+
+    box-shadow:
+        0 0 10px var(--ars-blue),
+        0 0 20px rgba(47,168,255,.6);
+}
+
+
+.header-brand-mark img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+
+    filter:
+        drop-shadow(
+            0 0 10px rgba(47,168,255,.16)
+        );
+}
+
+
+.header-brand:hover .header-brand-mark::before {
+
+    transform: rotate(198deg);
+
+    border-color:
+        rgba(47,168,255,.42);
+
+    box-shadow:
+        0 0 22px rgba(47,168,255,.08);
+}
+
+
+.header-brand-name {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    line-height: 1;
+}
+
+
+.header-brand-primary {
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    letter-spacing: .34em;
+
+    color: #F5F9FF;
+}
+
+
+.header-brand-secondary {
+
+    margin-top: 6px;
+
+    font-size: 7px;
+
+    font-weight: 500;
+
+    letter-spacing: .29em;
+
+    color: rgba(190,210,230,.58);
+}
+
+
+/* ============================================================
+   05 — PRIMARY NAVIGATION
+   ============================================================ */
+
+.main-navigation {
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.nav-list {
+
+    list-style: none;
+
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: clamp(20px, 2.1vw, 40px);
+}
+
+
+.nav-item {
+
+    position: relative;
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+.nav-link {
+
+    position: relative;
+
+    height: 100%;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    color: rgba(228,237,247,.74);
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    letter-spacing: .12em;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+
+    transition: color .35s ease;
+}
+
+
+.nav-link::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 17px;
+
+    width: 0;
+    height: 1px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--ars-blue-bright),
+            transparent
+        );
+
+    box-shadow:
+        0 0 10px rgba(47,168,255,.7);
+
+    transition:
+        width .45s cubic-bezier(.22,1,.36,1);
+}
+
+
+.nav-link:hover {
+
+    color: #FFFFFF;
+}
+
+
+.nav-link:hover::after {
+
+    width: 100%;
+}
+
+
+.nav-link-indicator {
+
+    width: 4px;
+    height: 4px;
+
+    margin-left: 8px;
+
+    border-right:
+        1px solid rgba(170,200,225,.65);
+
+    border-bottom:
+        1px solid rgba(170,200,225,.65);
+
+    transform:
+        rotate(45deg)
+        translateY(-2px);
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease;
+}
+
+
+.nav-item:hover .nav-link-indicator {
+
+    transform:
+        rotate(225deg)
+        translateY(-1px);
+
+    border-color:
+        var(--ars-blue-bright);
+}
+
+
+/* ============================================================
+   06 — MEGA NAVIGATION
+   ============================================================ */
+
+.nav-mega-panel {
+
+    position: fixed;
+
+    top: var(--header-height);
+    left: 50%;
+
+    width:
+        min(
+            calc(100% - 64px),
+            1180px
+        );
+
+    transform:
+        translate(-50%, -10px);
+
+    padding: 1px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(80,170,230,.22),
+            rgba(255,255,255,.04) 42%,
+            rgba(20,70,110,.20)
+        );
+
+    border-radius:
+        0 0 20px 20px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity .35s ease,
+        transform .45s cubic-bezier(.22,1,.36,1),
+        visibility .35s ease;
+}
+
+
+.nav-mega-panel::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 1px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(8,16,27,.96),
+            rgba(6,13,23,.93)
+        );
+
+    border-radius:
+        0 0 19px 19px;
+
+    z-index: -1;
+}
+
+
+.nav-item:hover .nav-mega-panel,
+.nav-item:focus-within .nav-mega-panel {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform:
+        translate(-50%, 0);
+}
+
+
+.nav-mega-inner {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(260px, .8fr)
+        1.5fr;
+
+    gap: 48px;
+
+    padding:
+        40px 46px 44px;
+}
+
+
+.nav-mega-intro {
+
+    padding-right: 25px;
+
+    border-right:
+        1px solid rgba(130,180,220,.10);
+}
+
+
+.nav-mega-kicker {
+
+    display: block;
+
+    margin-bottom: 14px;
+
+    color: var(--ars-blue-bright);
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    letter-spacing: .28em;
+}
+
+
+.nav-mega-intro h2 {
+
+    margin: 0 0 15px;
+
+    color: #F4F8FC;
+
+    font-size:
+        clamp(22px, 2vw, 30px);
+
+    font-weight: 500;
+
+    line-height: 1.18;
+
+    letter-spacing: -.025em;
+}
+
+
+.nav-mega-intro p {
+
+    margin: 0;
+
+    max-width: 330px;
+
+    color:
+        rgba(195,211,226,.56);
+
+    font-size: 11px;
+
+    line-height: 1.8;
+}
+
+
+.nav-mega-links {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0,1fr));
+
+    gap: 8px;
+}
+
+
+.nav-mega-links a {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    padding: 15px 17px;
+
+    color: #F1F6FB;
+
+    text-decoration: none;
+
+    border: 1px solid transparent;
+
+    border-radius: 9px;
+
+    overflow: hidden;
+
+    transition:
+        background .35s ease,
+        border-color .35s ease,
+        transform .35s ease;
+}
+
+
+.nav-mega-links a::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 1px;
+
+    background: var(--ars-blue);
+
+    transform: scaleY(0);
+
+    transform-origin: bottom;
+
+    transition:
+        transform .4s cubic-bezier(.22,1,.36,1);
+}
+
+
+.nav-mega-links a:hover {
+
+    background:
+        rgba(35,115,170,.08);
+
+    border-color:
+        rgba(47,168,255,.13);
+
+    transform:
+        translateX(3px);
+}
+
+
+.nav-mega-links a:hover::before {
+
+    transform: scaleY(1);
+}
+
+
+.nav-mega-links span {
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: .04em;
+}
+
+
+.nav-mega-links small {
+
+    color:
+        rgba(185,205,225,.48);
+
+    font-size: 9px;
+
+    letter-spacing: .04em;
+}
+
+
+/* ============================================================
+   07 — HEADER ACTIONS
+   ============================================================ */
+
+.header-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.header-action {
+
+    width: 40px;
+    height: 40px;
+
+    padding: 0;
+
+    border:
+        1px solid rgba(145,190,225,.13);
+
+    border-radius: 50%;
+
+    background:
+        rgba(8,17,29,.18);
+
+    color: #DCEAF6;
+
+    display: grid;
+
+    place-items: center;
+
+    cursor: pointer;
+
+    transition:
+        border-color .35s ease,
+        background .35s ease,
+        box-shadow .35s ease,
+        transform .35s ease;
+}
+
+
+.header-action:hover {
+
+    border-color:
+        rgba(47,168,255,.38);
+
+    background:
+        rgba(47,168,255,.07);
+
+    box-shadow:
+        0 0 24px rgba(47,168,255,.08);
+
+    transform:
+        translateY(-1px);
+}
+
+
+.header-action-icon {
+
+    width: 16px;
+    height: 16px;
+}
+
+
+.header-action-icon svg {
+
+    width: 100%;
+    height: 100%;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 1.35;
+
+    stroke-linecap: round;
+}
+
+
+/* ============================================================
+   08 — ENTER ARS CTA
+   ============================================================ */
+
+.header-cta {
+
+    position: relative;
+
+    min-width: 108px;
+    height: 40px;
+
+    padding: 0 19px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    color: #EAF6FF;
+
+    text-decoration: none;
+
+    border:
+        1px solid rgba(47,168,255,.34);
+
+    border-radius: 5px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(47,168,255,.10),
+            rgba(7,19,31,.34)
+        );
+
+    box-shadow:
+        inset 0 0 20px rgba(47,168,255,.025);
+
+    transition:
+        border-color .4s ease,
+        background .4s ease,
+        box-shadow .4s ease,
+        transform .4s ease;
+}
+
+
+.header-cta::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 80%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.13),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    transition:
+        left .75s cubic-bezier(.22,1,.36,1);
+}
+
+
+.header-cta:hover {
+
+    border-color:
+        rgba(105,199,255,.72);
+
+    background:
+        rgba(25,110,170,.12);
+
+    box-shadow:
+        0 0 30px rgba(47,168,255,.10),
+        inset 0 0 18px rgba(47,168,255,.04);
+
+    transform:
+        translateY(-1px);
+}
+
+
+.header-cta:hover::before {
+
+    left: 140%;
+}
+
+
+.header-cta-label {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 9px;
+
+    font-weight: 650;
+
+    letter-spacing: .17em;
+
+    text-transform: uppercase;
+}
+
+
+.header-cta-energy {
+
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    top: 50%;
+    right: 9px;
+
+    transform: translateY(-50%);
+
+    border-radius: 50%;
+
+    background: var(--ars-blue-bright);
+
+    box-shadow:
+        0 0 8px var(--ars-blue);
+
+    opacity: .75;
+}
+
+
+/* ============================================================
+   09 — SEARCH PANEL
+   ============================================================ */
+
+.ars-search-panel {
+
+    position: fixed;
+
+    top: var(--header-height);
+    left: 0;
+
+    width: 100%;
+
+    padding:
+        34px 28px 42px;
+
+    background:
+        rgba(5,11,19,.97);
+
+    border-top:
+        1px solid rgba(47,168,255,.10);
+
+    border-bottom:
+        1px solid rgba(47,168,255,.08);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.48);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform:
+        translateY(-12px);
+
+    transition:
+        opacity .35s ease,
+        transform .45s cubic-bezier(.22,1,.36,1),
+        visibility .35s ease;
+}
+
+
+.main-header.search-open .ars-search-panel {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateY(0);
+}
+
+
+.ars-search-inner {
+
+    width:
+        min(100%, 1100px);
+
+    margin: 0 auto;
+}
+
+
+.ars-search-kicker {
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: var(--ars-blue-bright);
+
+    font-size: 8px;
+
+    letter-spacing: .28em;
+}
+
+
+.ars-search-form {
+
+    display: flex;
+
+    align-items: center;
+
+    border-bottom:
+        1px solid rgba(155,195,225,.18);
+}
+
+
+.ars-search-form input {
+
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 14px 0;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+
+    color: #F5FAFF;
+
+    font-family: inherit;
+
+    font-size:
+        clamp(18px, 3vw, 30px);
+
+    font-weight: 300;
+}
+
+
+.ars-search-form input::placeholder {
+
+    color:
+        rgba(190,210,230,.28);
+}
+
+
+.ars-search-form button {
+
+    width: 52px;
+    height: 52px;
+
+    border: 0;
+
+    background: transparent;
+
+    color: var(--ars-blue-bright);
+
+    font-size: 24px;
+
+    cursor: pointer;
+}
+
+
+/* ============================================================
+   10 — MOBILE MENU BUTTON
+   ============================================================ */
+
+.header-menu-toggle {
+
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+
+    border:
+        1px solid rgba(145,190,225,.14);
+
+    border-radius: 50%;
+
+    background:
+        rgba(8,17,29,.18);
+
+    cursor: pointer;
+
+    place-items: center;
+}
+
+
+.menu-line {
+
+    position: absolute;
+
+    width: 15px;
+    height: 1px;
+
+    background: #DCEAF6;
+
+    transition:
+        transform .4s ease,
+        opacity .3s ease;
+}
+
+
+.menu-line.line-01 {
+
+    transform:
+        translateY(-5px);
+}
+
+
+.menu-line.line-02 {
+
+    transform:
+        translateY(0);
+}
+
+
+.menu-line.line-03 {
+
+    transform:
+        translateY(5px);
+}
+
+
+.main-header.mobile-open
+.menu-line.line-01 {
+
+    transform:
+        rotate(45deg);
+}
+
+
+.main-header.mobile-open
+.menu-line.line-02 {
+
+    opacity: 0;
+}
+
+
+.main-header.mobile-open
+.menu-line.line-03 {
+
+    transform:
+        rotate(-45deg);
+}
+
+
+/* ============================================================
+   11 — MOBILE NAVIGATION
+   ============================================================ */
+
+.mobile-navigation {
+
+    display: none;
+}
+
+
+/* ============================================================
+   12 — PRECISION GLASS SCROLL STATE
+   ============================================================ */
+
+.main-header.is-scrolled {
+
+    --header-height: 72px;
+
+    background:
+        rgba(5,11,19,.74);
+
+    border-bottom:
+        1px solid rgba(110,180,235,.10);
+
+    box-shadow:
+        var(--header-shadow);
+
+    backdrop-filter:
+        blur(20px)
+        saturate(135%);
+
+    -webkit-backdrop-filter:
+        blur(20px)
+        saturate(135%);
+}
+
+
+.main-header.is-scrolled
+.header-energy {
+
+    opacity: .38;
+}
+
+
+.main-header.is-scrolled
+.header-brand-mark {
+
+    transform: scale(.9);
+}
+
+
+.main-header.is-scrolled
+.nav-link::after {
+
+    bottom: 12px;
+}
+
+
+/* ============================================================
+   13 — ACCESSIBILITY
+   ============================================================ */
+
+.sr-only {
+
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    padding: 0;
+    margin: -1px;
+
+    overflow: hidden;
+
+    clip: rect(0,0,0,0);
+
+    white-space: nowrap;
+
+    border: 0;
+}
+
+
+/* ============================================================
+   14 — LARGE DISPLAY
+   ============================================================ */
+
+@media (min-width: 1500px) {
+
+    .header-inner {
+
+        column-gap: 65px;
+    }
+
+    .nav-list {
+
+        gap: 42px;
+    }
+}
+
+
+/* ============================================================
+   15 — TABLET
+   ============================================================ */
+
+@media (max-width: 1180px) {
+
+    .header-inner {
+
+        width:
+            calc(100% - 40px);
+
+        column-gap: 24px;
+    }
+
+    .nav-list {
+
+        gap: 18px;
+    }
+
+    .nav-link {
+
+        font-size: 10px;
+    }
+
+    .header-cta {
+
+        min-width: 94px;
+    }
+}
+
+
+/* ============================================================
+   16 — MOBILE
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .main-header {
+
+        --header-height: 76px;
+    }
+
+    .header-inner {
+
+        width:
+            calc(100% - 30px);
+
+        grid-template-columns:
+            auto 1fr auto;
+    }
+
+    .main-navigation {
+
+        display: none;
+    }
+
+    .header-actions {
+
+        justify-content: flex-end;
+    }
+
+    .header-search {
+
+        display: none;
+    }
+
+    .header-cta {
+
+        min-width: 96px;
+        height: 38px;
+    }
+
+    .header-menu-toggle {
+
+        position: relative;
+
+        display: grid;
+    }
+
+    .mobile-navigation {
+
+        display: block;
+
+        position: fixed;
+
+        inset:
+            var(--header-height) 0 0;
+
+        background:
+            linear-gradient(
+                145deg,
+                rgba(5,11,19,.985),
+                rgba(8,18,29,.975)
+            );
+
+        overflow: auto;
+
+        opacity: 0;
+        visibility: hidden;
+
+        transform:
+            translateY(-12px);
+
+        transition:
+            opacity .4s ease,
+            transform .5s cubic-bezier(.22,1,.36,1),
+            visibility .4s ease;
+    }
+
+    .main-header.mobile-open
+    .mobile-navigation {
+
+        opacity: 1;
+
+        visibility: visible;
+
+        transform:
+            translateY(0);
+    }
+
+    .mobile-navigation-inner {
+
+        width:
+            min(
+                calc(100% - 42px),
+                600px
+            );
+
+        margin: 0 auto;
+
+        padding:
+            34px 0 60px;
+    }
+
+    .mobile-navigation-header {
+
+        padding-bottom: 28px;
+
+        margin-bottom: 10px;
+
+        border-bottom:
+            1px solid rgba(130,180,220,.10);
+    }
+
+    .mobile-navigation-kicker {
+
+        display: block;
+
+        margin-bottom: 9px;
+
+        color:
+            var(--ars-blue-bright);
+
+        font-size: 8px;
+
+        letter-spacing: .25em;
+    }
+
+    .mobile-navigation-title {
+
+        color: #F5F9FD;
+
+        font-size: 26px;
+
+        font-weight: 300;
+
+        letter-spacing: -.02em;
+    }
+
+    .mobile-nav-list {
+
+        list-style: none;
+
+        margin: 0;
+        padding: 0;
+    }
+
+    .mobile-nav-list li {
+
+        border-bottom:
+            1px solid rgba(130,180,220,.08);
+    }
+
+    .mobile-nav-list a {
+
+        min-height: 64px;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 18px;
+
+        color:
+            rgba(232,240,248,.88);
+
+        text-decoration: none;
+
+        font-size: 15px;
+
+        letter-spacing: .03em;
+
+        transition:
+            color .3s ease,
+            padding-left .35s ease;
+    }
+
+    .mobile-nav-list a span {
+
+        color:
+            rgba(47,168,255,.55);
+
+        font-family: monospace;
+
+        font-size: 9px;
+    }
+
+    .mobile-nav-list a:hover {
+
+        color: #FFFFFF;
+
+        padding-left: 8px;
+    }
+
+    .mobile-navigation-footer {
+
+        margin-top: 36px;
+    }
+
+    .mobile-navigation-cta {
+
+        display: flex;
+
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 17px 20px;
+
+        border:
+            1px solid rgba(47,168,255,.28);
+
+        border-radius: 5px;
+
+        color: #EAF6FF;
+
+        text-decoration: none;
+
+        font-size: 10px;
+
+        letter-spacing: .16em;
+
+        text-transform: uppercase;
+    }
+}
+
+
+/* ============================================================
+   17 — SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 480px) {
+
+    .header-inner {
+
+        width:
+            calc(100% - 22px);
+    }
+
+    .header-brand-secondary {
+
+        display: none;
+    }
+
+    .header-brand-primary {
+
+        font-size: 14px;
+    }
+
+    .header-brand-mark {
+
+        width: 38px;
+        height: 38px;
+    }
+
+    .header-cta {
+
+        min-width: 84px;
+
+        padding:
+            0 13px;
+    }
+
+    .header-cta-label {
+
+        font-size: 8px;
+    }
+}
+
+
+/* ============================================================
+   18 — REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .main-header *,
+    .main-header *::before,
+    .main-header *::after {
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:
+            auto !important;
+
+        transition-duration:
+            .01ms !important;
+    }
+}
+
+
+/* ============================================================
+   END — HOME 4 / PHASE 02
+   ============================================================*/ 
+/* ============================================================
+   ARS HERITAGE GROUP
+   HOME — PHASE 03
+   PREMIUM HERO STRUCTURE
+   ============================================================
+
+   DNA
+   Precision × Technology × Luxury
+
+   PURPOSE
+   ------------------------------------------------------------
+   Structural architecture of the Home Hero.
+
+   This phase defines:
+   • Hero geometry
+   • Hero content architecture
+   • Hero vertical rhythm
+   • Hero media zone
+   • Hero copy zone
+   • Hero CTA zone
+   • Hero lower intelligence zone
+   • Hero transition into next section
+   • Responsive structural behavior
+
+   IMPORTANT
+   ------------------------------------------------------------
+   This is STRUCTURE only.
+
+   Advanced:
+   • Energy effects
+   • Parallax
+   • Dynamic radiation
+   • Motion systems
+   • Particle fields
+   • Advanced glow
+   • Intelligence animations
+
+   belong to the HERO SYSTEM phase.
+
+   ============================================================ */
+
+
+/* ============================================================
+   01 — HERO ROOT
+   ============================================================ */
+
+.ars-hero {
+
+    position:
+        relative;
+
+    width:
+        100%;
+
+    min-height:
+        max(
+            760px,
+            100svh
+        );
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    overflow:
+        hidden;
+
+    isolation:
+        isolate;
+
+    padding:
+        140px 0 90px;
+
+}
+
+
+/* ============================================================
+   02 — HERO INNER CONTAINER
+   ============================================================ */
+
+.ars-hero-inner {
+
+    position:
+        relative;
+
+    width:
+        min(
+            calc(100% - 80px),
+            1640px
+        );
+
+    min-height:
+        620px;
+
+    margin:
+        0 auto;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(0, 1.05fr)
+        minmax(420px, .95fr);
+
+    align-items:
+        center;
+
+    gap:
+        clamp(50px, 6vw, 120px);
+
+    z-index:
+        3;
+
+}
+
+
+/* ============================================================
+   03 — HERO CONTENT COLUMN
+   ============================================================ */
+
+.ars-hero-content {
+
+    position:
+        relative;
+
+    z-index:
+        5;
+
+    max-width:
+        760px;
+
+}
+
+
+/* ============================================================
+   04 — HERO KICKER
+   ============================================================ */
+
+.ars-hero-kicker {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    margin:
+        0 0 24px;
+
+    color:
+        rgba(105,199,255,.82);
+
+    font-size:
+        9px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        .32em;
+
+    line-height:
+        1;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.ars-hero-kicker::before {
+
+    content:
+        "";
+
+    width:
+        28px;
+
+    height:
+        1px;
+
+    background:
+        currentColor;
+
+    opacity:
+        .7;
+
+}
+
+
+/* ============================================================
+   05 — HERO PRIMARY TITLE
+   ============================================================ */
+
+.ars-hero-title {
+
+    margin:
+        0;
+
+    max-width:
+        760px;
+
+    color:
+        #F5F9FF;
+
+    font-size:
+        clamp(
+            52px,
+            6vw,
+            96px
+        );
+
+    font-weight:
+        300;
+
+    line-height:
+        .98;
+
+    letter-spacing:
+        -.045em;
+
+    text-wrap:
+        balance;
+
+}
+
+
+/* ============================================================
+   06 — HERO TITLE EMPHASIS
+   ============================================================ */
+
+.ars-hero-title strong {
+
+    display:
+        inline;
+
+    font-weight:
+        500;
+
+    color:
+        #FFFFFF;
+
+}
+
+
+/* ============================================================
+   07 — HERO LEAD
+   ============================================================ */
+
+.ars-hero-lead {
+
+    max-width:
+        620px;
+
+    margin:
+        28px 0 0;
+
+    color:
+        rgba(205,220,235,.66);
+
+    font-size:
+        clamp(
+            14px,
+            1.15vw,
+            17px
+        );
+
+    font-weight:
+        300;
+
+    line-height:
+        1.85;
+
+    letter-spacing:
+        .015em;
+
+}
+
+
+/* ============================================================
+   08 — HERO ACTION ZONE
+   ============================================================ */
+
+.ars-hero-actions {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        14px;
+
+    margin:
+        38px 0 0;
+
+}
+
+
+/* ============================================================
+   09 — HERO PRIMARY CTA
+   ============================================================ */
+
+.ars-hero-primary {
+
+    position:
+        relative;
+
+    min-width:
+        156px;
+
+    min-height:
+        48px;
+
+    padding:
+        0 25px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    color:
+        #ECF8FF;
+
+    text-decoration:
+        none;
+
+    border:
+        1px solid rgba(47,168,255,.40);
+
+    border-radius:
+        4px;
+
+    background:
+        rgba(15,56,82,.18);
+
+    font-size:
+        10px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        .18em;
+
+    text-transform:
+        uppercase;
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        background .35s ease;
+
+}
+
+
+.ars-hero-primary:hover {
+
+    transform:
+        translateY(-2px);
+
+    border-color:
+        rgba(105,199,255,.72);
+
+    background:
+        rgba(47,168,255,.10);
+
+}
+
+
+/* ============================================================
+   10 — HERO SECONDARY CTA
+   ============================================================ */
+
+.ars-hero-secondary {
+
+    min-height:
+        48px;
+
+    padding:
+        0 22px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    color:
+        rgba(225,237,247,.70);
+
+    text-decoration:
+        none;
+
+    border:
+        1px solid rgba(160,190,215,.14);
+
+    border-radius:
+        4px;
+
+    background:
+        rgba(255,255,255,.015);
+
+    font-size:
+        10px;
+
+    font-weight:
+        500;
+
+    letter-spacing:
+        .15em;
+
+    text-transform:
+        uppercase;
+
+    transition:
+        color .35s ease,
+        border-color .35s ease,
+        background .35s ease;
+
+}
+
+
+.ars-hero-secondary:hover {
+
+    color:
+        #FFFFFF;
+
+    border-color:
+        rgba(160,200,230,.30);
+
+    background:
+        rgba(255,255,255,.035);
+
+}
+
+
+/* ============================================================
+   11 — HERO MEDIA / INTELLIGENCE ZONE
+   ============================================================ */
+
+.ars-hero-visual {
+
+    position:
+        relative;
+
+    width:
+        100%;
+
+    min-height:
+        540px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    z-index:
+        4;
+
+}
+
+
+/* ============================================================
+   12 — HERO VISUAL FRAME
+   ============================================================ */
+
+.ars-hero-frame {
+
+    position:
+        relative;
+
+    width:
+        min(
+            100%,
+            680px
+        );
+
+    aspect-ratio:
+        1 / .82;
+
+    border:
+        1px solid rgba(120,175,215,.13);
+
+    border-radius:
+        18px;
+
+    background:
+        rgba(8,16,27,.18);
+
+    overflow:
+        hidden;
+
+}
+
+
+/* ============================================================
+   13 — HERO VISUAL INNER
+   ============================================================ */
+
+.ars-hero-frame-inner {
+
+    position:
+        absolute;
+
+    inset:
+        18px;
+
+    border:
+        1px solid rgba(110,180,225,.08);
+
+    border-radius:
+        12px;
+
+}
+
+
+/* ============================================================
+   14 — HERO FRAME CORNERS
+   ============================================================ */
+
+.ars-hero-frame::before,
+.ars-hero-frame::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        38px;
+
+    height:
+        38px;
+
+    pointer-events:
+        none;
+
+}
+
+
+.ars-hero-frame::before {
+
+    top:
+        -1px;
+
+    left:
+        -1px;
+
+    border-top:
+        1px solid rgba(105,199,255,.45);
+
+    border-left:
+        1px solid rgba(105,199,255,.45);
+
+}
+
+
+.ars-hero-frame::after {
+
+    right:
+        -1px;
+
+    bottom:
+        -1px;
+
+    border-right:
+        1px solid rgba(105,199,255,.45);
+
+    border-bottom:
+        1px solid rgba(105,199,255,.45);
+
+}
+
+
+/* ============================================================
+   15 — HERO VISUAL PLACEHOLDER
+   ============================================================ */
+
+.ars-hero-media {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    overflow:
+        hidden;
+
+}
+
+
+/* ============================================================
+   16 — HERO MEDIA IMAGE
+   ============================================================ */
+
+.ars-hero-media img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    display:
+        block;
+
+}
+
+
+/* ============================================================
+   17 — HERO LOWER INFORMATION STRIP
+   ============================================================ */
+
+.ars-hero-meta {
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    bottom:
+        42px;
+
+    width:
+        100%;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        30px;
+
+    z-index:
+        6;
+
+}
+
+
+.ars-hero-meta-item {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        11px;
+
+    color:
+        rgba(190,210,228,.48);
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        .18em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.ars-hero-meta-dot {
+
+    width:
+        4px;
+
+    height:
+        4px;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(105,199,255,.70);
+
+}
+
+
+/* ============================================================
+   18 — HERO SCROLL INDICATOR
+   ============================================================ */
+
+.ars-hero-scroll {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    bottom:
+        24px;
+
+    transform:
+        translateX(-50%);
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    gap:
+        9px;
+
+    color:
+        rgba(190,210,228,.42);
+
+    font-size:
+        7px;
+
+    letter-spacing:
+        .28em;
+
+    text-transform:
+        uppercase;
+
+    z-index:
+        7;
+
+}
+
+
+.ars-hero-scroll-line {
+
+    width:
+        1px;
+
+    height:
+        30px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(105,199,255,.65),
+            transparent
+        );
+
+}
+
+
+/* ============================================================
+   19 — HERO STRUCTURAL DIVIDER
+   ============================================================ */
+
+.ars-hero-divider {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    bottom:
+        0;
+
+    width:
+        min(
+            calc(100% - 80px),
+            1640px
+        );
+
+    height:
+        1px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(120,180,220,.13),
+            transparent
+        );
+
+}
+
+
+/* ============================================================
+   20 — TABLET
+   ============================================================ */
+
+@media (max-width: 1180px) {
+
+    .ars-hero {
+
+        min-height:
+            auto;
+
+        padding:
+            130px 0 80px;
+
+    }
+
+
+    .ars-hero-inner {
+
+        width:
+            calc(100% - 56px);
+
+        min-height:
+            auto;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(360px, .8fr);
+
+        gap:
+            40px;
+
+    }
+
+
+    .ars-hero-title {
+
+        font-size:
+            clamp(
+                46px,
+                6vw,
+                76px
+            );
+
+    }
+
+
+    .ars-hero-visual {
+
+        min-height:
+            460px;
+
+    }
+
+}
+
+
+/* ============================================================
+   21 — MOBILE STRUCTURE
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .ars-hero {
+
+        min-height:
+            auto;
+
+        padding:
+            120px 0 90px;
+
+    }
+
+
+    .ars-hero-inner {
+
+        width:
+            calc(100% - 36px);
+
+        display:
+            flex;
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+        gap:
+            55px;
+
+    }
+
+
+    .ars-hero-content {
+
+        max-width:
+            100%;
+
+    }
+
+
+    .ars-hero-title {
+
+        max-width:
+            700px;
+
+        font-size:
+            clamp(
+                42px,
+                10vw,
+                66px
+            );
+
+        line-height:
+            1;
+
+    }
+
+
+    .ars-hero-lead {
+
+        max-width:
+            600px;
+
+        font-size:
+            14px;
+
+        line-height:
+            1.8;
+
+    }
+
+
+    .ars-hero-visual {
+
+        min-height:
+            auto;
+
+    }
+
+
+    .ars-hero-frame {
+
+        width:
+            100%;
+
+        max-width:
+            680px;
+
+        margin:
+            0 auto;
+
+    }
+
+
+    .ars-hero-meta {
+
+        position:
+            relative;
+
+        left:
+            auto;
+
+        bottom:
+            auto;
+
+        margin-top:
+            20px;
+
+        flex-wrap:
+            wrap;
+
+    }
+
+
+    .ars-hero-scroll {
+
+        display:
+            none;
+
+    }
+
+}
+
+
+/* ============================================================
+   22 — SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 480px) {
+
+    .ars-hero {
+
+        padding:
+            108px 0 70px;
+
+    }
+
+
+    .ars-hero-inner {
+
+        width:
+            calc(100% - 28px);
+
+        gap:
+            42px;
+
+    }
+
+
+    .ars-hero-kicker {
+
+        margin-bottom:
+            19px;
+
+        font-size:
+            8px;
+
+    }
+
+
+    .ars-hero-title {
+
+        font-size:
+            clamp(
+                38px,
+                11vw,
+                54px
+            );
+
+    }
+
+
+    .ars-hero-lead {
+
+        margin-top:
+            22px;
+
+        font-size:
+            13px;
+
+    }
+
+
+    .ars-hero-actions {
+
+        margin-top:
+            30px;
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+    }
+
+
+    .ars-hero-primary,
+    .ars-hero-secondary {
+
+        width:
+            100%;
+
+    }
+
+
+    .ars-hero-frame {
+
+        border-radius:
+            13px;
+
+    }
+
+
+    .ars-hero-frame-inner {
+
+        inset:
+            11px;
+
+        border-radius:
+            8px;
+
+    }
+
+
+    .ars-hero-meta {
+
+        gap:
+            14px;
+
+    }
+
+
+    .ars-hero-meta-item {
+
+        font-size:
+            7px;
+
+    }
+
+
+    .ars-hero-divider {
+
+        width:
+            calc(100% - 28px);
+
+    }
+
+}
+
+
+/* ============================================================
+   23 — REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ars-hero *,
+    .ars-hero *::before,
+    .ars-hero *::after {
+
+        transition:
+            none !important;
+
+        animation:
+            none !important;
+
+    }
+
+}
+
+/* ============================================================
+   ARS HERITAGE GROUP
+   HOME — PHASE 04
+   PREMIUM HOME ENERGY UNIVERSE
+   ============================================================
+
+   DNA
+   Precision × Technology × Luxury
+
+   SYSTEM
+   ------------------------------------------------------------
+   • Deep Space Atmosphere
+   • Global Energy Field
+   • Precision Radiation
+   • Ambient Horizon
+   • Peripheral Energy
+   • Controlled Blue Signature
+   • Section-to-Section Continuity
+   • Zero Visual Noise
+   • Performance Conscious
+
+   IMPORTANT
+   ------------------------------------------------------------
+   This is a GLOBAL HOME ENERGY LAYER.
+
+   It does NOT replace:
+   • Header
+   • Hero Structure
+   • Section-specific systems
+
+   It provides the atmospheric intelligence layer
+   underneath the Home experience.
+
+   ============================================================ */
+
+
+/* ============================================================
+   01 — HOME ENERGY UNIVERSE ROOT
+   ============================================================ */
+
+.ars-home {
+
+    --ars-energy-blue:
+        #2FA8FF;
+
+    --ars-energy-bright:
+        #69C7FF;
+
+    --ars-energy-deep:
+        #0876C9;
+
+    --ars-energy-white:
+        rgba(245,249,255,.96);
+
+    --ars-energy-opacity:
+        .82;
+
+    position:
+        relative;
+
+    isolation:
+        isolate;
+
+    overflow-x:
+        clip;
+
+}
+
+
+/* ============================================================
+   02 — GLOBAL ENERGY CANVAS
+   ============================================================ */
+
+.ars-home-energy {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    z-index:
+        -10;
+
+    pointer-events:
+        none;
+
+    overflow:
+        hidden;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(20,72,112,.14),
+            transparent 42%
+        );
+
+}
+
+
+/* ============================================================
+   03 — PRIMARY ENERGY FIELD
+   ============================================================ */
+
+.ars-home-energy::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        -20%;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 18%,
+            rgba(47,168,255,.075),
+            transparent 30%
+        ),
+        radial-gradient(
+            ellipse at 18% 45%,
+            rgba(47,168,255,.025),
+            transparent 30%
+        ),
+        radial-gradient(
+            ellipse at 82% 65%,
+            rgba(47,168,255,.022),
+            transparent 30%
+        );
+
+    filter:
+        blur(20px);
+
+    opacity:
+        .95;
+
+}
+
+
+/* ============================================================
+   04 — PRECISION HORIZON
+   ============================================================ */
+
+.ars-home-energy::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        16vh;
+
+    left:
+        50%;
+
+    width:
+        min(
+            92vw,
+            1500px
+        );
+
+    height:
+        1px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(105,199,255,.10),
+            rgba(105,199,255,.30),
+            rgba(105,199,255,.10),
+            transparent
+        );
+
+    box-shadow:
+        0 0 22px rgba(47,168,255,.10);
+
+    opacity:
+        .8;
+
+}
+
+
+/* ============================================================
+   05 — ENERGY ORBIT
+   ============================================================ */
+
+.ars-energy-orbit {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        18%;
+
+    width:
+        min(
+            72vw,
+            1100px
+        );
+
+    aspect-ratio:
+        2.2 / 1;
+
+    transform:
+        translateX(-50%);
+
+    border:
+        1px solid rgba(47,168,255,.045);
+
+    border-radius:
+        50%;
+
+    opacity:
+        .8;
+
+}
+
+
+/* ============================================================
+   06 — SECONDARY ORBIT
+   ============================================================ */
+
+.ars-energy-orbit::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        13% 7%;
+
+    border:
+        1px solid rgba(105,199,255,.035);
+
+    border-radius:
+        50%;
+
+}
+
+
+.ars-energy-orbit::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        28% 18%;
+
+    border:
+        1px solid rgba(47,168,255,.028);
+
+    border-radius:
+        50%;
+
+}
+
+
+/* ============================================================
+   07 — ENERGY AXIS
+   ============================================================ */
+
+.ars-energy-axis {
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    bottom:
+        0;
+
+    left:
+        50%;
+
+    width:
+        1px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 0%,
+            rgba(47,168,255,.035) 15%,
+            rgba(47,168,255,.055) 50%,
+            rgba(47,168,255,.025) 82%,
+            transparent 100%
+        );
+
+    opacity:
+        .75;
+
+}
+
+
+/* ============================================================
+   08 — PERIPHERAL ENERGY LEFT
+   ============================================================ */
+
+.ars-energy-left {
+
+    position:
+        absolute;
+
+    left:
+        -12vw;
+
+    top:
+        28%;
+
+    width:
+        34vw;
+
+    max-width:
+        520px;
+
+    aspect-ratio:
+        1;
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(47,168,255,.055),
+            transparent 68%
+        );
+
+    filter:
+        blur(24px);
+
+}
+
+
+/* ============================================================
+   09 — PERIPHERAL ENERGY RIGHT
+   ============================================================ */
+
+.ars-energy-right {
+
+    position:
+        absolute;
+
+    right:
+        -13vw;
+
+    top:
+        54%;
+
+    width:
+        38vw;
+
+    max-width:
+        580px;
+
+    aspect-ratio:
+        1;
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(47,168,255,.045),
+            transparent 68%
+        );
+
+    filter:
+        blur(28px);
+
+}
+
+
+/* ============================================================
+   10 — PRECISION GRID
+   ============================================================ */
+
+.ars-energy-grid {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background-image:
+        linear-gradient(
+            rgba(120,180,220,.018) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(120,180,220,.018) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        90px 90px;
+
+    mask-image:
+        radial-gradient(
+            ellipse at center,
+            black 0%,
+            rgba(0,0,0,.65) 38%,
+            transparent 82%
+        );
+
+    -webkit-mask-image:
+        radial-gradient(
+            ellipse at center,
+            black 0%,
+            rgba(0,0,0,.65) 38%,
+            transparent 82%
+        );
+
+    opacity:
+        .65;
+
+}
+
+
+/* ============================================================
+   11 — ENERGY NODES
+   ============================================================ */
+
+.ars-energy-node {
+
+    position:
+        absolute;
+
+    width:
+        3px;
+
+    height:
+        3px;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--ars-energy-bright);
+
+    box-shadow:
+        0 0 8px var(--ars-energy-blue),
+        0 0 20px rgba(47,168,255,.30);
+
+    opacity:
+        .55;
+
+}
+
+
+/* ============================================================
+   12 — NODE POSITIONS
+   ============================================================ */
+
+.ars-energy-node.node-01 {
+
+    left:
+        21%;
+
+    top:
+        22%;
+
+}
+
+
+.ars-energy-node.node-02 {
+
+    left:
+        74%;
+
+    top:
+        31%;
+
+}
+
+
+.ars-energy-node.node-03 {
+
+    left:
+        12%;
+
+    top:
+        68%;
+
+}
+
+
+.ars-energy-node.node-04 {
+
+    right:
+        17%;
+
+    top:
+        73%;
+
+}
+
+
+.ars-energy-node.node-05 {
+
+    left:
+        50%;
+
+    top:
+        43%;
+
+}
+
+
+/* ============================================================
+   13 — ENERGY CONNECTOR
+   ============================================================ */
+
+.ars-energy-connector {
+
+    position:
+        absolute;
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(47,168,255,.16),
+            transparent
+        );
+
+    transform-origin:
+        left center;
+
+    opacity:
+        .45;
+
+}
+
+
+/* ============================================================
+   14 — CONNECTOR POSITIONS
+   ============================================================ */
+
+.ars-energy-connector.connector-01 {
+
+    width:
+        28vw;
+
+    max-width:
+        420px;
+
+    left:
+        21%;
+
+    top:
+        22%;
+
+    transform:
+        rotate(17deg);
+
+}
+
+
+.ars-energy-connector.connector-02 {
+
+    width:
+        24vw;
+
+    max-width:
+        360px;
+
+    left:
+        50%;
+
+    top:
+        43%;
+
+    transform:
+        rotate(-17deg);
+
+}
+
+
+/* ============================================================
+   15 — ENERGY VIGNETTE
+   ============================================================ */
+
+.ars-energy-vignette {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 38%,
+            rgba(0,0,0,.16) 100%
+        );
+
+}
+
+
+/* ============================================================
+   16 — ENERGY SECTION BRIDGE
+   ============================================================ */
+
+.ars-energy-bridge {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    bottom:
+        -1px;
+
+    width:
+        min(
+            90vw,
+            1500px
+        );
+
+    height:
+        90px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        radial-gradient(
+            ellipse at center bottom,
+            rgba(47,168,255,.065),
+            transparent 68%
+        );
+
+    pointer-events:
+        none;
+
+}
+
+
+/* ============================================================
+   17 — CONTENT ABOVE ENERGY
+   ============================================================ */
+
+.ars-home > *:not(.ars-home-energy) {
+
+    position:
+        relative;
+
+    z-index:
+        1;
+
+}
+
+
+/* ============================================================
+   18 — HERO ENERGY COMPATIBILITY
+   ============================================================ */
+
+.ars-hero {
+
+    background:
+        transparent;
+
+}
+
+
+/* ============================================================
+   19 — SECTION ENERGY CONTINUITY
+   ============================================================ */
+
+.ars-home section {
+
+    position:
+        relative;
+
+}
+
+
+/* ============================================================
+   20 — LARGE DISPLAY REFINEMENT
+   ============================================================ */
+
+@media (min-width: 1600px) {
+
+    .ars-energy-grid {
+
+        background-size:
+            110px 110px;
+
+    }
+
+    .ars-energy-orbit {
+
+        width:
+            1050px;
+
+    }
+
+}
+
+
+/* ============================================================
+   21 — TABLET
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .ars-home-energy::after {
+
+        top:
+            13vh;
+
+        width:
+            115vw;
+
+    }
+
+
+    .ars-energy-orbit {
+
+        width:
+            105vw;
+
+        top:
+            18%;
+
+        opacity:
+            .55;
+
+    }
+
+
+    .ars-energy-grid {
+
+        background-size:
+            65px 65px;
+
+        opacity:
+            .42;
+
+    }
+
+
+    .ars-energy-left {
+
+        width:
+            55vw;
+
+        left:
+            -25vw;
+
+    }
+
+
+    .ars-energy-right {
+
+        width:
+            60vw;
+
+        right:
+            -28vw;
+
+    }
+
+
+    .ars-energy-connector {
+
+        opacity:
+            .25;
+
+    }
+
+}
+
+
+/* ============================================================
+   22 — SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 480px) {
+
+    .ars-home-energy {
+
+        opacity:
+            .82;
+
+    }
+
+
+    .ars-home-energy::after {
+
+        top:
+            11vh;
+
+        width:
+            130vw;
+
+    }
+
+
+    .ars-energy-axis {
+
+        opacity:
+            .35;
+
+    }
+
+
+    .ars-energy-orbit {
+
+        width:
+            145vw;
+
+        top:
+            20%;
+
+        opacity:
+            .38;
+
+    }
+
+
+    .ars-energy-grid {
+
+        background-size:
+            55px 55px;
+
+        opacity:
+            .28;
+
+    }
+
+
+    .ars-energy-node {
+
+        width:
+            2px;
+
+        height:
+            2px;
+
+        opacity:
+            .35;
+
+    }
+
+
+    .ars-energy-connector {
+
+        display:
+            none;
+
+    }
+
+
+    .ars-energy-left,
+    .ars-energy-right {
+
+        filter:
+            blur(32px);
+
+        opacity:
+            .65;
+
+    }
+
+
+    .ars-energy-vignette {
+
+        background:
+            radial-gradient(
+                ellipse at center,
+                transparent 30%,
+                rgba(0,0,0,.20) 100%
+            );
+
+    }
+
+}
+
+
+/* ============================================================
+   23 — REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ars-home-energy *,
+    .ars-home-energy *::before,
+    .ars-home-energy *::after {
+
+        animation:
+            none !important;
+
+        transition:
+            none !important;
+
+    }
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
