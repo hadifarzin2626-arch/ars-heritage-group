@@ -8747,45 +8747,48 @@ a {
 
 /* ============================================================
    ARS HERITAGE GROUP — HOME
-   PREMIUM MASTER CSS
+   PREMIUM HERO CONTENT INTELLIGENCE
+   PHASE 05
 
-   PHASE 05 — PREMIUM HERO CONTENT INTELLIGENCE
+   VISUAL DNA
+   Luxury Glass × Automotive Intelligence × Precision
 
-   DNA
-   Precision × Technology × Luxury
+   OWNER
+   HERO CONTENT INTELLIGENCE
 
-   PURPOSE
-   Intelligent Content Orchestration inside Hero
+   DEPENDS ON
+   PHASE 01 — HOME FOUNDATION
+   PHASE 04 — PREMIUM HERO SYSTEM
 
-   THIS PHASE OWNS:
-   - Content hierarchy
-   - Reading priority
-   - Content states
-   - Intelligent reveal sequencing
-   - Headline intelligence
-   - Supporting-copy intelligence
-   - CTA priority intelligence
-   - Metadata intelligence
-   - Scroll-aware content behavior
-   - Responsive content recomposition
-   - Focus / interaction states
-   - Cinematic content pacing
+   ============================================================
 
-   THIS PHASE DOES NOT OWN:
-   - Hero geometry
-   - Hero layout
-   - Hero atmosphere
+   RESPONSIBILITY
+
+   - Hero content intelligence layer
+   - Premium glass content surfaces
+   - Micro identity labels
+   - Intelligent typography hierarchy
+   - Premium CTA system
+   - Gold luxury framing
+   - Electric blue intelligence accents
+   - Glass depth / reflection
+   - Micro interaction
+   - Responsive content behavior
+
+   ABSOLUTE RULE
+
+   This layer does NOT redefine Foundation tokens.
+
+   NO:
+   - Global reset
+   - New global colors
+   - New root tokens
    - Orbit
-   - Energy Universe
-   - Background system
-   - Global DNA
-   - Global typography tokens
+   - Hero Core
+   - Hero Atmosphere
+   - Energy Bridge
+   - Ecosystem Cards
 
-   ABSOLUTE RULE:
-   CONTENT INTELLIGENCE ≠ HERO STRUCTURE
-
-   STATUS:
-   PREMIUM / WORLD-CLASS
    ============================================================ */
 
 
@@ -8795,30 +8798,6 @@ a {
 
 .hero-content-intelligence {
 
-    --hci-content-max:
-        760px;
-
-    --hci-reading-width:
-        680px;
-
-    --hci-kicker-width:
-        420px;
-
-    --hci-copy-width:
-        590px;
-
-    --hci-cta-gap:
-        14px;
-
-    --hci-reveal-distance:
-        24px;
-
-    --hci-content-opacity:
-        1;
-
-    --hci-focus-opacity:
-        1;
-
     position:
         relative;
 
@@ -8827,21 +8806,63 @@ a {
 
     width:
         min(
-            100%,
-            var(--hci-content-max)
+            calc(100% - (var(--ars-content-padding) * 2)),
+            var(--ars-content-width)
         );
 
-    isolation:
-        isolate;
+    margin-inline:
+        auto;
 
 }
 
 
 /* ============================================================
-   05.02 — CONTENT READING FIELD
+   05.02 — INTELLIGENCE CONTENT FRAME
    ============================================================ */
 
-.hero-content-intelligence::before {
+.hero-content-intelligence__frame {
+
+    position:
+        relative;
+
+    padding:
+        clamp(1.5rem, 3vw, 3.5rem);
+
+    border:
+        1px solid rgba(198,164,90,.16);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.038),
+            rgba(7,19,33,.22) 42%,
+            rgba(5,7,10,.38)
+        );
+
+    backdrop-filter:
+        blur(18px)
+        saturate(125%);
+
+    -webkit-backdrop-filter:
+        blur(18px)
+        saturate(125%);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.055),
+        inset 0 0 60px rgba(255,255,255,.012),
+        0 30px 90px rgba(0,0,0,.30);
+
+    overflow:
+        hidden;
+
+}
+
+
+/* ============================================================
+   05.03 — GLASS FRAME INNER EDGE
+   ============================================================ */
+
+.hero-content-intelligence__frame::before {
 
     content:
         "";
@@ -8850,56 +8871,100 @@ a {
         absolute;
 
     inset:
-        -80px -120px;
-
-    z-index:
-        -1;
+        1px;
 
     pointer-events:
         none;
 
-    background:
-        radial-gradient(
-            ellipse at 20% 40%,
-            rgba(255,255,255,.025),
-            transparent 58%
-        );
-
-    opacity:
-        .7;
+    border:
+        1px solid rgba(255,255,255,.035);
 
 }
 
 
 /* ============================================================
-   05.03 — CONTENT STACK
+   05.04 — GOLD MICRO CORNER
    ============================================================ */
 
-.hero-content-stack {
+.hero-content-intelligence__frame::after {
 
-    display:
-        flex;
+    content:
+        "";
 
-    flex-direction:
-        column;
+    position:
+        absolute;
 
-    align-items:
-        flex-start;
+    top:
+        0;
+
+    left:
+        0;
 
     width:
-        100%;
+        110px;
 
-    max-width:
-        var(--hci-content-max);
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--ars-color-gold),
+            rgba(198,164,90,.18),
+            transparent
+        );
+
+    box-shadow:
+        0 0 18px rgba(198,164,90,.18);
 
 }
 
 
 /* ============================================================
-   05.04 — INTELLIGENT CONTENT KICKER
+   05.05 — CONTENT GRID
    ============================================================ */
 
-.hero-content-kicker {
+.hero-content-intelligence__grid {
+
+    position:
+        relative;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(260px, .65fr);
+
+    align-items:
+        end;
+
+    gap:
+        clamp(2rem, 6vw, 7rem);
+
+}
+
+
+/* ============================================================
+   05.06 — CONTENT MAIN
+   ============================================================ */
+
+.hero-content-intelligence__main {
+
+    position:
+        relative;
+
+    max-width:
+        820px;
+
+}
+
+
+/* ============================================================
+   05.07 — MICRO IDENTITY LABEL
+   ============================================================ */
+
+.hero-content-intelligence__label {
 
     position:
         relative;
@@ -8911,172 +8976,150 @@ a {
         center;
 
     gap:
-        11px;
+        12px;
 
-    width:
-        fit-content;
+    min-height:
+        38px;
 
-    max-width:
-        var(--hci-kicker-width);
+    padding:
+        0 18px;
 
     margin-bottom:
-        20px;
+        clamp(1.5rem, 3vw, 2.5rem);
+
+    border:
+        1px solid rgba(198,164,90,.30);
+
+    border-radius:
+        var(--ars-radius-pill);
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(198,164,90,.055),
+            rgba(7,19,33,.26)
+        );
+
+    backdrop-filter:
+        blur(14px)
+        saturate(125%);
+
+    -webkit-backdrop-filter:
+        blur(14px)
+        saturate(125%);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.045),
+        0 0 28px rgba(198,164,90,.035);
 
     color:
-        var(--ars-text-gold);
-
-    font-family:
-        var(--ars-font-body);
+        var(--ars-color-gold-bright);
 
     font-size:
         9px;
 
     font-weight:
-        600;
-
-    line-height:
-        1.4;
+        650;
 
     letter-spacing:
-        .28em;
+        .24em;
 
     text-transform:
         uppercase;
 
-    white-space:
-        nowrap;
-
 }
 
 
-/* Intelligent signal marker */
+/* ============================================================
+   05.08 — LABEL ENERGY NODE
+   ============================================================ */
 
-.hero-content-kicker::before {
+.hero-content-intelligence__label::before {
 
     content:
         "";
 
     width:
-        22px;
+        5px;
 
     height:
-        1px;
+        5px;
 
     flex:
-        0 0 auto;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            var(--ars-color-gold)
-        );
-
-    box-shadow:
-        0 0 12px
-        rgba(198,164,90,.24);
-
-}
-
-
-/* Live intelligence indicator */
-
-.hero-content-kicker::after {
-
-    content:
-        "";
-
-    width:
-        4px;
-
-    height:
-        4px;
-
-    flex:
-        0 0 auto;
+        0 0 5px;
 
     border-radius:
         50%;
 
     background:
-        var(--ars-color-electric-blue);
+        var(--ars-color-electric-blue-bright);
 
     box-shadow:
-        0 0 8px
-        rgba(22,135,255,.65);
-
-    animation:
-        hciSignalPulse
-        3.2s
-        ease-in-out
-        infinite;
+        0 0 8px rgba(66,165,255,.75),
+        0 0 20px rgba(22,135,255,.38);
 
 }
 
 
 /* ============================================================
-   05.05 — INTELLIGENT EYEBROW
+   05.09 — LABEL BLUE SIGNAL
    ============================================================ */
 
-.hero-content-eyebrow {
+.hero-content-intelligence__label::after {
 
-    display:
-        block;
-
-    max-width:
-        var(--hci-reading-width);
-
-    margin-bottom:
-        12px;
-
-    color:
-        var(--ars-text-secondary);
-
-    font-size:
-        10px;
-
-    font-weight:
-        500;
-
-    line-height:
-        1.6;
-
-    letter-spacing:
-        .18em;
-
-    text-transform:
-        uppercase;
-
-}
-
-
-/* ============================================================
-   05.06 — HERO HEADLINE INTELLIGENCE
-   ============================================================ */
-
-.hero-content-title {
+    content:
+        "";
 
     position:
-        relative;
+        absolute;
 
-    width:
-        100%;
+    left:
+        30px;
+
+    right:
+        30px;
+
+    bottom:
+        -1px;
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(22,135,255,.42),
+            transparent
+        );
+
+    opacity:
+        .65;
+
+}
+
+
+/* ============================================================
+   05.10 — INTELLIGENT HEADLINE
+   ============================================================ */
+
+.hero-content-intelligence__title {
 
     max-width:
-        var(--hci-reading-width);
+        900px;
 
     margin:
         0;
 
     color:
-        var(--ars-text-primary);
+        var(--ars-color-white);
 
     font-family:
         var(--ars-font-display);
 
     font-size:
         clamp(
-            3rem,
+            2.8rem,
             6vw,
             6.8rem
         );
@@ -9096,153 +9139,90 @@ a {
 }
 
 
-/* Headline intelligent emphasis */
+/* ============================================================
+   05.11 — HEADLINE LUXURY EMPHASIS
+   ============================================================ */
 
-.hero-content-title .intelligence-word {
-
-    position:
-        relative;
-
-    display:
-        inline-block;
+.hero-content-intelligence__title .gold {
 
     color:
-        var(--ars-color-white);
+        var(--ars-color-gold-bright);
 
-}
-
-
-.hero-content-title .intelligence-word::after {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    left:
-        0;
-
-    right:
-        0;
-
-    bottom:
-        -.08em;
-
-    height:
-        1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            var(--ars-color-gold),
-            transparent
-        );
-
-    opacity:
-        .48;
+    text-shadow:
+        0 0 35px rgba(198,164,90,.08);
 
 }
 
 
 /* ============================================================
-   05.07 — HEADLINE SECONDARY LAYER
+   05.12 — HEADLINE INTELLIGENCE EMPHASIS
    ============================================================ */
 
-.hero-content-title-secondary {
-
-    display:
-        block;
-
-    margin-top:
-        .08em;
+.hero-content-intelligence__title .blue {
 
     color:
-        rgba(245,244,239,.48);
+        var(--ars-color-electric-blue-bright);
 
-    font-size:
-        .52em;
-
-    font-weight:
-        300;
-
-    line-height:
-        1.05;
-
-    letter-spacing:
-        -.025em;
+    text-shadow:
+        0 0 35px rgba(22,135,255,.10);
 
 }
 
 
 /* ============================================================
-   05.08 — INTELLIGENT VALUE STATEMENT
+   05.13 — LEAD CONTENT
    ============================================================ */
 
-.hero-content-value {
-
-    width:
-        100%;
+.hero-content-intelligence__lead {
 
     max-width:
-        var(--hci-copy-width);
+        680px;
 
     margin:
-        28px 0 0;
+        clamp(1.5rem, 3vw, 2.5rem) 0 0;
 
     color:
         var(--ars-text-secondary);
 
     font-size:
         clamp(
-            .95rem,
-            1.2vw,
-            1.12rem
+            1rem,
+            1.45vw,
+            1.25rem
         );
 
     font-weight:
-        400;
+        350;
 
     line-height:
         1.85;
 
     letter-spacing:
-        -.005em;
-
-}
-
-
-/* Intelligent emphasis inside value statement */
-
-.hero-content-value strong {
-
-    color:
-        var(--ars-color-white);
-
-    font-weight:
-        500;
+        -.01em;
 
 }
 
 
 /* ============================================================
-   05.09 — CONTENT SIGNAL LINE
+   05.14 — INTELLIGENCE META
    ============================================================ */
 
-.hero-content-signal {
+.hero-content-intelligence__meta {
 
     display:
         flex;
+
+    flex-wrap:
+        wrap;
 
     align-items:
         center;
 
     gap:
-        12px;
+        10px 18px;
 
     margin-top:
-        24px;
+        1.75rem;
 
     color:
         var(--ars-text-muted);
@@ -9250,11 +9230,8 @@ a {
     font-size:
         8px;
 
-    font-weight:
-        500;
-
     letter-spacing:
-        .22em;
+        .19em;
 
     text-transform:
         uppercase;
@@ -9262,56 +9239,73 @@ a {
 }
 
 
-.hero-content-signal::before {
+/* ============================================================
+   05.15 — META SIGNAL
+   ============================================================ */
+
+.hero-content-intelligence__meta span {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+}
+
+
+.hero-content-intelligence__meta span::before {
 
     content:
         "";
 
     width:
-        34px;
+        3px;
 
     height:
-        1px;
+        3px;
+
+    border-radius:
+        50%;
 
     background:
-        linear-gradient(
-            90deg,
-            var(--ars-color-electric-blue),
-            transparent
-        );
+        var(--ars-color-electric-blue);
+
+    box-shadow:
+        0 0 8px rgba(22,135,255,.55);
 
 }
 
 
 /* ============================================================
-   05.10 — CTA INTELLIGENCE FIELD
+   05.16 — ACTION INTELLIGENCE
    ============================================================ */
 
-.hero-content-actions {
+.hero-content-intelligence__actions {
 
     display:
         flex;
-
-    align-items:
-        center;
 
     flex-wrap:
         wrap;
 
     gap:
-        var(--hci-cta-gap);
+        12px;
 
     margin-top:
-        34px;
+        clamp(2rem, 4vw, 3.25rem);
 
 }
 
 
 /* ============================================================
-   05.11 — PRIMARY INTELLIGENT CTA
+   05.17 — PREMIUM GLASS CTA
    ============================================================ */
 
-.hero-content-primary-cta {
+.hero-content-intelligence__cta {
 
     position:
         relative;
@@ -9325,61 +9319,72 @@ a {
     justify-content:
         center;
 
-    min-width:
-        164px;
-
     min-height:
         52px;
 
     padding:
-        0 25px;
+        0 26px;
 
     overflow:
         hidden;
 
     border:
-        1px solid
-        rgba(198,164,90,.52);
+        1px solid rgba(198,164,90,.42);
 
     border-radius:
-        var(--ars-radius-small);
+        5px;
 
     background:
         linear-gradient(
             135deg,
-            rgba(198,164,90,.13),
-            rgba(7,13,20,.42)
+            rgba(198,164,90,.19),
+            rgba(198,164,90,.065) 48%,
+            rgba(7,19,33,.34)
         );
+
+    backdrop-filter:
+        blur(16px)
+        saturate(140%);
+
+    -webkit-backdrop-filter:
+        blur(16px)
+        saturate(140%);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.11),
+        inset 0 -1px 0 rgba(0,0,0,.28),
+        0 12px 40px rgba(0,0,0,.20),
+        0 0 30px rgba(198,164,90,.045);
 
     color:
         var(--ars-color-white);
 
     font-size:
-        10px;
+        9px;
 
     font-weight:
-        600;
+        650;
 
     letter-spacing:
-        .16em;
+        .18em;
 
     text-transform:
         uppercase;
 
-    box-shadow:
-        inset 0 0 24px
-        rgba(198,164,90,.025);
-
     transition:
-        transform .5s var(--ars-ease-smooth),
-        border-color .4s ease,
-        box-shadow .4s ease,
-        background .4s ease;
+        transform var(--ars-duration-standard) var(--ars-ease-smooth),
+        border-color var(--ars-duration-standard) ease,
+        box-shadow var(--ars-duration-standard) ease,
+        background var(--ars-duration-standard) ease;
 
 }
 
 
-.hero-content-primary-cta::before {
+/* ============================================================
+   05.18 — CTA GLASS REFLECTION
+   ============================================================ */
+
+.hero-content-intelligence__cta::before {
 
     content:
         "";
@@ -9391,7 +9396,7 @@ a {
         0;
 
     left:
-        -120%;
+        -130%;
 
     width:
         75%;
@@ -9403,7 +9408,7 @@ a {
         linear-gradient(
             90deg,
             transparent,
-            rgba(255,255,255,.18),
+            rgba(255,255,255,.16),
             transparent
         );
 
@@ -9411,170 +9416,212 @@ a {
         skewX(-20deg);
 
     transition:
-        left .8s var(--ars-ease-smooth);
+        left .9s cubic-bezier(.16,1,.3,1);
 
 }
 
 
-.hero-content-primary-cta:hover {
+/* ============================================================
+   05.19 — CTA GOLD MICRO EDGE
+   ============================================================ */
 
-    transform:
-        translateY(-2px);
+.hero-content-intelligence__cta::after {
 
-    border-color:
-        var(--ars-color-gold);
+    content:
+        "";
 
-    background:
-        rgba(198,164,90,.10);
-
-    box-shadow:
-        var(--ars-glow-gold);
-
-}
-
-
-.hero-content-primary-cta:hover::before {
+    position:
+        absolute;
 
     left:
-        140%;
+        18px;
+
+    right:
+        18px;
+
+    bottom:
+        5px;
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(223,194,122,.55),
+            transparent
+        );
+
+    opacity:
+        .45;
 
 }
 
 
 /* ============================================================
-   05.12 — SECONDARY INTELLIGENT CTA
+   05.20 — CTA HOVER
    ============================================================ */
 
-.hero-content-secondary-cta {
-
-    display:
-        inline-flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    min-height:
-        52px;
-
-    padding:
-        0 21px;
-
-    border:
-        1px solid
-        rgba(245,244,239,.12);
-
-    border-radius:
-        var(--ars-radius-small);
-
-    background:
-        rgba(255,255,255,.018);
-
-    color:
-        var(--ars-text-secondary);
-
-    font-size:
-        9px;
-
-    font-weight:
-        500;
-
-    letter-spacing:
-        .14em;
-
-    text-transform:
-        uppercase;
-
-    transition:
-        transform .4s var(--ars-ease-smooth),
-        color .3s ease,
-        border-color .3s ease,
-        background .3s ease;
-
-}
-
-
-.hero-content-secondary-cta:hover {
+.hero-content-intelligence__cta:hover {
 
     transform:
-        translateY(-2px);
-
-    color:
-        var(--ars-color-white);
+        translateY(-3px);
 
     border-color:
-        rgba(22,135,255,.32);
+        rgba(223,194,122,.68);
 
     background:
-        rgba(22,135,255,.045);
+        linear-gradient(
+            135deg,
+            rgba(198,164,90,.25),
+            rgba(198,164,90,.08),
+            rgba(7,19,33,.40)
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.14),
+        0 18px 50px rgba(0,0,0,.30),
+        0 0 40px rgba(198,164,90,.10);
+
+}
+
+
+.hero-content-intelligence__cta:hover::before {
+
+    left:
+        145%;
 
 }
 
 
 /* ============================================================
-   05.13 — INTELLIGENT METADATA
+   05.21 — SECONDARY GLASS CTA
    ============================================================ */
 
-.hero-content-meta {
+.hero-content-intelligence__cta--secondary {
 
-    display:
-        grid;
+    border-color:
+        rgba(22,135,255,.25);
 
-    grid-template-columns:
-        repeat(
-            3,
-            minmax(
-                90px,
-                1fr
-            )
+    background:
+        linear-gradient(
+            135deg,
+            rgba(22,135,255,.075),
+            rgba(7,19,33,.30)
         );
 
-    width:
-        min(
-            100%,
-            620px
-        );
-
-    margin-top:
-        42px;
-
-    border-top:
-        1px solid
-        var(--ars-border-dark);
-
-    border-bottom:
-        1px solid
-        var(--ars-border-dark);
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.045),
+        0 12px 40px rgba(0,0,0,.18);
 
 }
 
 
-.hero-content-meta-item {
+/* ============================================================
+   05.22 — SECONDARY HOVER
+   ============================================================ */
+
+.hero-content-intelligence__cta--secondary:hover {
+
+    border-color:
+        rgba(66,165,255,.55);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.08),
+        0 18px 50px rgba(0,0,0,.30),
+        0 0 40px rgba(22,135,255,.09);
+
+}
+
+
+/* ============================================================
+   05.23 — CTA ARROW
+   ============================================================ */
+
+.hero-content-intelligence__cta-arrow {
+
+    margin-left:
+        14px;
+
+    color:
+        var(--ars-color-gold-bright);
+
+    transition:
+        transform var(--ars-duration-standard)
+        var(--ars-ease-smooth);
+
+}
+
+
+.hero-content-intelligence__cta--secondary
+.hero-content-intelligence__cta-arrow {
+
+    color:
+        var(--ars-color-electric-blue-bright);
+
+}
+
+
+.hero-content-intelligence__cta:hover
+.hero-content-intelligence__cta-arrow {
+
+    transform:
+        translateX(5px);
+
+}
+
+
+/* ============================================================
+   05.24 — INTELLIGENCE SIDE PANEL
+   ============================================================ */
+
+.hero-content-intelligence__panel {
 
     position:
         relative;
 
     min-height:
-        72px;
+        250px;
 
     padding:
-        15px 18px;
+        28px;
 
-    display:
-        flex;
+    border:
+        1px solid rgba(255,255,255,.075);
 
-    flex-direction:
-        column;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.035),
+            rgba(7,19,33,.30) 55%,
+            rgba(5,7,10,.40)
+        );
 
-    justify-content:
-        center;
+    backdrop-filter:
+        blur(22px)
+        saturate(135%);
+
+    -webkit-backdrop-filter:
+        blur(22px)
+        saturate(135%);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.055),
+        inset 0 0 45px rgba(22,135,255,.018),
+        var(--ars-shadow-medium);
+
+    overflow:
+        hidden;
 
 }
 
 
-.hero-content-meta-item:not(:last-child)::after {
+/* ============================================================
+   05.25 — PANEL GOLD CORNER
+   ============================================================ */
+
+.hero-content-intelligence__panel::before {
 
     content:
         "";
@@ -9583,27 +9630,286 @@ a {
         absolute;
 
     top:
-        18px;
+        0;
 
-    right:
+    left:
         0;
 
     width:
-        1px;
+        70px;
 
     height:
-        36px;
+        1px;
 
     background:
-        rgba(255,255,255,.08);
+        linear-gradient(
+            90deg,
+            var(--ars-color-gold),
+            transparent
+        );
 
 }
 
 
-.hero-content-meta-label {
+/* ============================================================
+   05.26 — PANEL BLUE ENERGY
+   ============================================================ */
+
+.hero-content-intelligence__panel::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        150px;
+
+    height:
+        150px;
+
+    right:
+        -65px;
+
+    bottom:
+        -75px;
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(22,135,255,.12),
+            transparent 70%
+        );
+
+    filter:
+        blur(8px);
+
+    pointer-events:
+        none;
+
+}
+
+
+/* ============================================================
+   05.27 — PANEL KICKER
+   ============================================================ */
+
+.hero-content-intelligence__panel-kicker {
+
+    display:
+        block;
 
     margin-bottom:
-        5px;
+        14px;
+
+    color:
+        var(--ars-color-gold);
+
+    font-size:
+        8px;
+
+    font-weight:
+        650;
+
+    letter-spacing:
+        .25em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+/* ============================================================
+   05.28 — PANEL TITLE
+   ============================================================ */
+
+.hero-content-intelligence__panel-title {
+
+    margin:
+        0;
+
+    color:
+        var(--ars-color-white);
+
+    font-size:
+        clamp(1.25rem, 2vw, 1.8rem);
+
+    font-weight:
+        450;
+
+    line-height:
+        1.2;
+
+    letter-spacing:
+        -.025em;
+
+}
+
+
+/* ============================================================
+   05.29 — PANEL DESCRIPTION
+   ============================================================ */
+
+.hero-content-intelligence__panel-text {
+
+    margin:
+        14px 0 0;
+
+    color:
+        var(--ars-text-muted);
+
+    font-size:
+        11px;
+
+    line-height:
+        1.75;
+
+}
+
+
+/* ============================================================
+   05.30 — PANEL SIGNAL LINE
+   ============================================================ */
+
+.hero-content-intelligence__signal {
+
+    position:
+        absolute;
+
+    left:
+        28px;
+
+    right:
+        28px;
+
+    bottom:
+        25px;
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(22,135,255,.52),
+            transparent
+        );
+
+}
+
+
+.hero-content-intelligence__signal::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        4px;
+
+    height:
+        4px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius:
+        50%;
+
+    background:
+        var(--ars-color-electric-blue-bright);
+
+    box-shadow:
+        0 0 10px rgba(66,165,255,.75),
+        0 0 24px rgba(22,135,255,.38);
+
+}
+
+
+/* ============================================================
+   05.31 — PREMIUM GLASS MINI CARDS
+   ============================================================ */
+
+.hero-content-intelligence__mini-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0,1fr));
+
+    gap:
+        8px;
+
+    margin-top:
+        22px;
+
+}
+
+
+.hero-content-intelligence__mini {
+
+    position:
+        relative;
+
+    min-height:
+        76px;
+
+    padding:
+        14px;
+
+    border:
+        1px solid rgba(255,255,255,.065);
+
+    background:
+        rgba(255,255,255,.018);
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+
+    transition:
+        border-color .35s ease,
+        background .35s ease,
+        transform .35s var(--ars-ease-smooth);
+
+}
+
+
+.hero-content-intelligence__mini:hover {
+
+    transform:
+        translateY(-2px);
+
+    border-color:
+        rgba(198,164,90,.25);
+
+    background:
+        rgba(198,164,90,.035);
+
+}
+
+
+.hero-content-intelligence__mini-label {
+
+    display:
+        block;
 
     color:
         var(--ars-text-muted);
@@ -9612,7 +9918,7 @@ a {
         7px;
 
     letter-spacing:
-        .18em;
+        .16em;
 
     text-transform:
         uppercase;
@@ -9620,300 +9926,102 @@ a {
 }
 
 
-.hero-content-meta-value {
+.hero-content-intelligence__mini-value {
+
+    display:
+        block;
+
+    margin-top:
+        7px;
 
     color:
-        var(--ars-text-primary);
+        var(--ars-color-soft-white);
 
     font-size:
         11px;
 
     font-weight:
-        500;
-
-    letter-spacing:
-        .025em;
+        550;
 
 }
 
 
 /* ============================================================
-   05.14 — INTELLIGENT CONTENT STATES
+   05.32 — CONTENT REVEAL STATES
    ============================================================ */
 
-.hero-content-intelligence
-[data-content-state] {
-
-    opacity:
-        1;
-
-    transform:
-        translate3d(0,0,0);
-
-    transition:
-        opacity
-        .8s
-        var(--ars-ease-smooth),
-
-        transform
-        .8s
-        var(--ars-ease-smooth);
-
-}
-
-
-/* Initial intelligence state */
-
-.hero-content-intelligence[data-intelligence-state="initial"]
-[data-content-state="reveal"] {
+.hero-content-intelligence [data-intelligence-reveal] {
 
     opacity:
         0;
 
     transform:
-        translate3d(
-            0,
-            var(--hci-reveal-distance),
-            0
-        );
+        translateY(24px);
+
+    transition:
+        opacity .9s var(--ars-ease-smooth),
+        transform 1s var(--ars-ease-smooth);
 
 }
 
 
-/* Active state */
-
-.hero-content-intelligence[data-intelligence-state="active"]
-[data-content-state="reveal"] {
+.hero-content-intelligence.is-visible
+[data-intelligence-reveal] {
 
     opacity:
         1;
 
     transform:
-        translate3d(0,0,0);
+        translateY(0);
 
 }
 
 
-/* ============================================================
-   05.15 — SEQUENCED CONTENT REVEAL
-   ============================================================ */
+.hero-content-intelligence.is-visible
+[data-intelligence-reveal="2"] {
 
-.hero-content-kicker {
     transition-delay:
-        80ms;
+        100ms;
+
 }
 
 
-.hero-content-eyebrow {
+.hero-content-intelligence.is-visible
+[data-intelligence-reveal="3"] {
+
     transition-delay:
-        160ms;
+        180ms;
+
 }
 
 
-.hero-content-title {
+.hero-content-intelligence.is-visible
+[data-intelligence-reveal="4"] {
+
     transition-delay:
         260ms;
-}
-
-
-.hero-content-value {
-    transition-delay:
-        390ms;
-}
-
-
-.hero-content-signal {
-    transition-delay:
-        500ms;
-}
-
-
-.hero-content-actions {
-    transition-delay:
-        620ms;
-}
-
-
-.hero-content-meta {
-    transition-delay:
-        760ms;
-}
-
-
-/* ============================================================
-   05.16 — FOCUS INTELLIGENCE
-   ============================================================ */
-
-.hero-content-intelligence[data-content-focus="primary"]
-.hero-content-secondary-cta,
-.hero-content-intelligence[data-content-focus="primary"]
-.hero-content-meta {
-
-    opacity:
-        .52;
-
-}
-
-
-.hero-content-intelligence[data-content-focus="primary"]
-.hero-content-primary-cta {
-
-    border-color:
-        rgba(198,164,90,.72);
-
-    box-shadow:
-        var(--ars-glow-gold);
-
-}
-
-
-.hero-content-intelligence[data-content-focus="secondary"]
-.hero-content-primary-cta {
-
-    opacity:
-        .72;
 
 }
 
 
 /* ============================================================
-   05.17 — SCROLL INTELLIGENCE
+   05.33 — RESPONSIVE TABLET
    ============================================================ */
 
-.hero-content-intelligence[data-scroll-state="departing"] {
+@media (max-width: 1000px) {
 
-    --hci-content-opacity:
-        .72;
+    .hero-content-intelligence__grid {
 
-}
-
-
-.hero-content-intelligence[data-scroll-state="departing"]
-.hero-content-title {
-
-    transform:
-        translate3d(
-            0,
-            -8px,
-            0
-        );
-
-}
-
-
-.hero-content-intelligence[data-scroll-state="departing"]
-.hero-content-value {
-
-    opacity:
-        .72;
-
-}
-
-
-.hero-content-intelligence[data-scroll-state="departed"] {
-
-    pointer-events:
-        none;
-
-    opacity:
-        .18;
-
-}
-
-
-/* ============================================================
-   05.18 — INTELLIGENT ACTIVE SIGNAL
-   ============================================================ */
-
-.hero-content-intelligence[data-intelligence-state="active"]
-.hero-content-signal::before {
-
-    animation:
-        hciSignalSweep
-        3.8s
-        ease-in-out
-        infinite;
-
-}
-
-
-@keyframes hciSignalSweep {
-
-    0%,
-    100% {
-
-        width:
-            24px;
-
-        opacity:
-            .35;
+        grid-template-columns:
+            1fr;
 
     }
 
-    50% {
 
-        width:
-            52px;
-
-        opacity:
-            1;
-
-    }
-
-}
-
-
-/* ============================================================
-   05.19 — SIGNAL PULSE
-   ============================================================ */
-
-@keyframes hciSignalPulse {
-
-    0%,
-    100% {
-
-        opacity:
-            .35;
-
-        transform:
-            scale(.75);
-
-    }
-
-    50% {
-
-        opacity:
-            1;
-
-        transform:
-            scale(1.35);
-
-    }
-
-}
-
-
-/* ============================================================
-   05.20 — RESPONSIVE CONTENT INTELLIGENCE
-   ============================================================ */
-
-@media (max-width: 1100px) {
-
-    .hero-content-title {
-
-        font-size:
-            clamp(
-                2.8rem,
-                7vw,
-                5.4rem
-            );
-
-    }
-
-    .hero-content-value {
+    .hero-content-intelligence__panel {
 
         max-width:
-            560px;
+            620px;
 
     }
 
@@ -9921,55 +10029,43 @@ a {
 
 
 /* ============================================================
-   05.21 — TABLET RECOMPOSITION
+   05.34 — RESPONSIVE MOBILE
    ============================================================ */
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
 
     .hero-content-intelligence {
 
         width:
-            100%;
-
-        max-width:
-            680px;
+            calc(100% - 2rem);
 
     }
 
 
-    .hero-content-kicker {
+    .hero-content-intelligence__frame {
 
-        margin-bottom:
-            16px;
-
-        font-size:
-            8px;
+        padding:
+            1.25rem;
 
     }
 
 
-    .hero-content-title {
+    .hero-content-intelligence__title {
 
         font-size:
             clamp(
-                2.45rem,
-                10vw,
+                2.5rem,
+                13vw,
                 4.5rem
             );
-
-        line-height:
-            1;
 
     }
 
 
-    .hero-content-value {
-
-        margin-top:
-            22px;
+    .hero-content-intelligence__lead {
 
         font-size:
-            .94rem;
+            .98rem;
 
         line-height:
             1.75;
@@ -9977,96 +10073,7 @@ a {
     }
 
 
-    .hero-content-actions {
-
-        margin-top:
-            28px;
-
-    }
-
-
-    .hero-content-meta {
-
-        grid-template-columns:
-            repeat(
-                3,
-                minmax(0,1fr)
-            );
-
-        margin-top:
-            32px;
-
-    }
-
-}
-
-
-/* ============================================================
-   05.22 — MOBILE CONTENT INTELLIGENCE
-   ============================================================ */
-
-@media (max-width: 540px) {
-
-    .hero-content-stack {
-
-        align-items:
-            flex-start;
-
-    }
-
-
-    .hero-content-kicker {
-
-        max-width:
-            100%;
-
-        white-space:
-            normal;
-
-        line-height:
-            1.6;
-
-    }
-
-
-    .hero-content-title {
-
-        font-size:
-            clamp(
-                2.25rem,
-                13vw,
-                3.6rem
-            );
-
-        letter-spacing:
-            -.06em;
-
-    }
-
-
-    .hero-content-title-secondary {
-
-        font-size:
-            .54em;
-
-    }
-
-
-    .hero-content-value {
-
-        max-width:
-            100%;
-
-        font-size:
-            .9rem;
-
-    }
-
-
-    .hero-content-actions {
-
-        width:
-            100%;
+    .hero-content-intelligence__actions {
 
         flex-direction:
             column;
@@ -10077,8 +10084,7 @@ a {
     }
 
 
-    .hero-content-primary-cta,
-    .hero-content-secondary-cta {
+    .hero-content-intelligence__cta {
 
         width:
             100%;
@@ -10086,94 +10092,56 @@ a {
     }
 
 
-    .hero-content-meta {
+    .hero-content-intelligence__panel {
 
-        width:
-            100%;
+        min-height:
+            220px;
+
+        padding:
+            22px;
+
+    }
+
+}
+
+
+/* ============================================================
+   05.35 — SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 430px) {
+
+    .hero-content-intelligence__label {
+
+        font-size:
+            7px;
+
+        letter-spacing:
+            .18em;
+
+    }
+
+
+    .hero-content-intelligence__title {
+
+        font-size:
+            2.45rem;
+
+    }
+
+
+    .hero-content-intelligence__mini-grid {
 
         grid-template-columns:
             1fr;
 
     }
 
-
-    .hero-content-meta-item {
-
-        min-height:
-            62px;
-
-        padding:
-            13px 14px;
-
-    }
-
-
-    .hero-content-meta-item:not(:last-child)::after {
-
-        top:
-            auto;
-
-        right:
-            14px;
-
-        bottom:
-            0;
-
-        width:
-            calc(100% - 28px);
-
-        height:
-            1px;
-
-    }
-
 }
 
 
 /* ============================================================
-   05.23 — TOUCH / POINTER INTELLIGENCE
-   ============================================================ */
-
-@media (hover: none) {
-
-    .hero-content-primary-cta:hover,
-    .hero-content-secondary-cta:hover {
-
-        transform:
-            none;
-
-    }
-
-
-    .hero-content-primary-cta::before {
-
-        display:
-            none;
-
-    }
-
-}
-
-
-/* ============================================================
-   05.24 — ACCESSIBILITY
-   ============================================================ */
-
-.hero-content-intelligence
-a:focus-visible {
-
-    outline:
-        1px solid
-        var(--ars-color-electric-blue);
-
-    outline-offset:
-        5px;
-
-}
-
-
-/* ============================================================
-   05.25 — REDUCED MOTION
+   05.36 — REDUCED MOTION
    ============================================================ */
 
 @media (prefers-reduced-motion: reduce) {
@@ -10191,8 +10159,8 @@ a:focus-visible {
     }
 
 
-    .hero-content-intelligence[data-intelligence-state="initial"]
-    [data-content-state="reveal"] {
+    .hero-content-intelligence
+    [data-intelligence-reveal] {
 
         opacity:
             1;
@@ -10208,16 +10176,6 @@ a:focus-visible {
 /* ============================================================
    END — PHASE 05
    PREMIUM HERO CONTENT INTELLIGENCE
-
-   OWNER:
-   HERO CONTENT INTELLIGENCE
-
-   NOT OWNER:
-   HERO SYSTEM
-   HERO ATMOSPHERE
-   ENERGY UNIVERSE
-   ORBIT
-   GLOBAL FOUNDATION
    ============================================================ */
 
 
@@ -10227,3 +10185,8 @@ a:focus-visible {
 
 
 
+
+
+
+
+    
