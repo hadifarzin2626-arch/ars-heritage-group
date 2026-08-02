@@ -1,0 +1,128 @@
+/* =========================================================
+   ARS GOLD SYSTEM
+   PHASE 02-A
+   ORBITAL FIELD + ATMOSPHERIC HALO
+   ========================================================= */
+
+.ars-gold-system {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: visible;
+}
+
+
+/* =========================================================
+   CENTRAL ORBITAL FIELD
+   ========================================================= */
+
+.ars-gold-orbit {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    width: 72%;
+    height: 72%;
+
+    transform: translate(-50%, -50%);
+
+    border: 1px solid rgba(214, 178, 88, 0.22);
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 30px rgba(214, 178, 88, 0.035),
+        inset 0 0 40px rgba(214, 178, 88, 0.025);
+
+    pointer-events: none;
+}
+
+
+.ars-gold-orbit-01 {
+    width: 42%;
+    height: 42%;
+}
+
+
+.ars-gold-orbit-02 {
+    width: 62%;
+    height: 62%;
+}
+
+
+.ars-gold-orbit-03 {
+    width: 82%;
+    height: 82%;
+}
+
+
+/* =========================================================
+   ATMOSPHERIC HALO
+   ========================================================= */
+
+.ars-gold-system::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 80%;
+    height: 80%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(214, 178, 88, 0.055) 0%,
+            rgba(214, 178, 88, 0.025) 28%,
+            rgba(214, 178, 88, 0.008) 48%,
+            transparent 72%
+        );
+
+    filter: blur(18px);
+
+    opacity: .9;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   OUTER ATMOSPHERIC FIELD
+   ========================================================= */
+
+.ars-gold-system::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 110%;
+    height: 110%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            transparent 35%,
+            rgba(214, 178, 88, 0.018) 52%,
+            transparent 72%
+        );
+
+    filter: blur(8px);
+
+    pointer-events: none;
+}
