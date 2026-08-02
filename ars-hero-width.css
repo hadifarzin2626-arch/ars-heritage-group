@@ -1,22 +1,28 @@
 /* =========================================================
-   ARS HERO — EXTREME WIDTH EXPANSION
-   WIDTH ONLY — INTERNAL HERO DNA UNTOUCHED
+   ARS HERO — VIEWPORT WIDTH EXPANSION
+   HERO CONTAINER ONLY
+   DO NOT SCALE / RESIZE GOLD SYSTEM
    ========================================================= */
 
 
 /* =========================================================
-   MASTER HERO
+   HERO
    ========================================================= */
 
 .ars-hero {
     width: 100%;
     max-width: none;
+
+    position: relative;
+
     overflow: hidden;
 }
 
 
 /* =========================================================
    HERO FIELD
+   Expand the visual field horizontally
+   WITHOUT enlarging the Gold System
    ========================================================= */
 
 .ars-hero-field {
@@ -33,32 +39,30 @@
 
 
 /* =========================================================
-   GOLD INTELLIGENCE SYSTEM
+   GOLD SYSTEM
+   IMPORTANT:
+   Keep original dimensions.
+   Do NOT give it 300vw.
    ========================================================= */
 
 .ars-gold-system {
-    width: 300vw;
+    width: auto;
     max-width: none;
 
     position: relative;
 
-    left: 50%;
-    transform: translateX(-50%);
+    left: auto;
+    transform: none;
 
     overflow: visible;
 }
 
 
 /* =========================================================
-   MOBILE — SMALL
+   MOBILE SMALL
    ========================================================= */
 
 @media (max-width: 480px) {
-
-    .ars-hero {
-        width: 100%;
-        overflow: hidden;
-    }
 
     .ars-hero-field {
         width: 300vw;
@@ -66,24 +70,19 @@
         transform: translateX(-50%);
     }
 
-    .ars-gold-system {
-        width: 300vw;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
 }
 
 
 /* =========================================================
-   MOBILE — LARGE
+   MOBILE LARGE
    ========================================================= */
 
 @media (min-width: 481px) and (max-width: 767px) {
 
-    .ars-hero-field,
-    .ars-gold-system {
+    .ars-hero-field {
         width: 300vw;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
 }
@@ -95,9 +94,10 @@
 
 @media (min-width: 768px) and (max-width: 1199px) {
 
-    .ars-hero-field,
-    .ars-gold-system {
+    .ars-hero-field {
         width: 300vw;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
 }
@@ -109,17 +109,17 @@
 
 @media (min-width: 1200px) {
 
-    .ars-hero-field,
-    .ars-gold-system {
+    .ars-hero-field {
         width: 300vw;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
 }
 
 
 /* =========================================================
-   SAFETY
-   Prevent horizontal page scrolling
+   GLOBAL HORIZONTAL SCROLL PROTECTION
    ========================================================= */
 
 html,
