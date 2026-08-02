@@ -17102,20 +17102,31 @@ select {
     }
 }
 
-
-
 /* =========================================================
-   ARS HOME — HERO WIDTH EXPANSION ONLY
-   WIDTH ONLY — 2.5×
-   NO NODE / CORE / GOLD / HEIGHT MODIFICATION
+   ARS HOME — HERO VIEWPORT EXPANSION
+   ONLY HERO — NO HORIZONTAL PAGE SCROLL
    ========================================================= */
 
-.ars-hero {
-    width: 250%;
-    max-width: none;
+html,
+body {
+    overflow-x: hidden;
 }
 
+.ars-hero {
+    position: relative;
+    width: 100%;
+    max-width: none;
+    overflow: hidden;
+}
 
+/* Expand the visual field inside the Hero */
+.ars-hero-field {
+    position: relative;
+    width: 250%;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: visible;
+}
 
 
 
