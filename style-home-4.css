@@ -16227,3 +16227,894 @@ select {
     }
 
 }
+
+
+
+/* =========================================================
+   ARS INDUSTRIAL GOLD SIX NODE
+   TEST SYSTEM — COMPLETELY INDEPENDENT
+   ========================================================= */
+
+.ars-six-node-test {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    /*
+     * ONLY THE SYSTEM SIZE
+     * HERO IS NOT TOUCHED
+     */
+    width: 760px;
+    height: 760px;
+
+    transform:
+        translate(-50%, -50%);
+
+    pointer-events: none;
+
+    z-index: 50;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   CENTRAL CORE
+   ========================================================= */
+
+.six-node-core {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 150px;
+    height: 150px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    z-index: 20;
+}
+
+
+/* =========================================================
+   CORE ATMOSPHERE
+   ========================================================= */
+
+.six-node-core::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -100px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(226,184,92,.18),
+            rgba(197,145,48,.08) 30%,
+            transparent 70%
+        );
+
+    filter: blur(22px);
+
+    animation:
+        six-core-breathe
+        5s
+        ease-in-out
+        infinite;
+}
+
+
+.six-core-energy {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 78%;
+    height: 78%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 38% 35%,
+            #fff1c7 0%,
+            rgba(244,207,128,.8) 14%,
+            rgba(184,128,38,.35) 42%,
+            transparent 72%
+        );
+
+    filter: blur(3px);
+
+    box-shadow:
+        0 0 30px rgba(225,178,77,.45),
+        0 0 80px rgba(198,143,40,.18);
+
+    animation:
+        six-core-energy
+        3.5s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   CORE CENTER
+   ========================================================= */
+
+.six-core-center {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 44%;
+    height: 44%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #fff8dc,
+            #e9c77e 18%,
+            #a76d20 48%,
+            #17130c 78%
+        );
+
+    border:
+        2px solid rgba(247,213,144,.72);
+
+    box-shadow:
+        0 0 15px rgba(240,198,111,.8),
+        0 0 40px rgba(220,165,60,.42),
+        0 0 90px rgba(190,130,30,.18),
+        inset 0 0 20px rgba(255,232,170,.2);
+}
+
+
+.six-core-center span {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 12px;
+    height: 12px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: #fff6d6;
+
+    box-shadow:
+        0 0 10px #f6d993,
+        0 0 30px rgba(241,193,92,.95),
+        0 0 55px rgba(220,156,42,.65);
+}
+
+
+/* =========================================================
+   CORE RINGS
+   ========================================================= */
+
+.six-core-ring {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%);
+}
+
+
+.six-core-ring.ring-01 {
+
+    width: 110%;
+    height: 110%;
+
+    border:
+        2px solid rgba(238,201,126,.45);
+
+    border-left-color:
+        transparent;
+
+    animation:
+        six-ring-spin
+        9s
+        linear
+        infinite;
+}
+
+
+.six-core-ring.ring-02 {
+
+    width: 140%;
+    height: 140%;
+
+    border:
+        1px solid rgba(213,163,72,.32);
+
+    border-right-color:
+        rgba(255,218,139,.65);
+
+    animation:
+        six-ring-spin-reverse
+        15s
+        linear
+        infinite;
+}
+
+
+.six-core-ring.ring-03 {
+
+    width: 175%;
+    height: 175%;
+
+    border:
+        1px dashed rgba(213,164,76,.18);
+
+    animation:
+        six-ring-spin
+        23s
+        linear
+        infinite;
+}
+
+
+/* =========================================================
+   ENERGY CONNECTIONS
+   ========================================================= */
+
+.six-energy {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 5px;
+    height: 310px;
+
+    transform-origin:
+        50% 100%;
+
+    background:
+        linear-gradient(
+            to top,
+            #f0c86e 0%,
+            #d9a947 25%,
+            rgba(188,126,27,.55) 60%,
+            transparent 100%
+        );
+
+    border-radius: 999px;
+
+    box-shadow:
+        0 0 5px rgba(244,205,126,.85),
+        0 0 15px rgba(226,174,70,.55),
+        0 0 35px rgba(205,144,39,.25);
+
+    opacity: .9;
+
+    z-index: 8;
+}
+
+
+/* =========================================================
+   SIX ENERGY DIRECTIONS
+   ========================================================= */
+
+.six-energy-01 {
+    transform:
+        translate(-50%, -100%)
+        rotate(0deg);
+}
+
+.six-energy-02 {
+    transform:
+        translate(-50%, -100%)
+        rotate(60deg);
+}
+
+.six-energy-03 {
+    transform:
+        translate(-50%, -100%)
+        rotate(120deg);
+}
+
+.six-energy-04 {
+    transform:
+        translate(-50%, -100%)
+        rotate(180deg);
+}
+
+.six-energy-05 {
+    transform:
+        translate(-50%, -100%)
+        rotate(240deg);
+}
+
+.six-energy-06 {
+    transform:
+        translate(-50%, -100%)
+        rotate(300deg);
+}
+
+
+/* =========================================================
+   ENERGY TRAVEL
+   ========================================================= */
+
+.six-energy::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    width: 11px;
+    height: 11px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    background: #fff0bd;
+
+    box-shadow:
+        0 0 10px #f7d98c,
+        0 0 25px #e6b85e,
+        0 0 50px rgba(227,168,56,.75);
+
+    animation:
+        six-energy-flow
+        2.4s
+        linear
+        infinite;
+}
+
+
+.six-energy-02::after {
+    animation-delay: -.4s;
+}
+
+.six-energy-03::after {
+    animation-delay: -.8s;
+}
+
+.six-energy-04::after {
+    animation-delay: -1.2s;
+}
+
+.six-energy-05::after {
+    animation-delay: -1.6s;
+}
+
+.six-energy-06::after {
+    animation-delay: -2s;
+}
+
+
+/* =========================================================
+   NODE MASTER
+   ========================================================= */
+
+.six-test-node {
+
+    position: absolute;
+
+    width: 96px;
+    height: 96px;
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 30;
+}
+
+
+/* =========================================================
+   NODE POSITIONS
+   ========================================================= */
+
+.six-test-node.node-01 {
+    left: 50%;
+    top: 7%;
+}
+
+.six-test-node.node-02 {
+    left: 87.5%;
+    top: 28%;
+}
+
+.six-test-node.node-03 {
+    left: 87.5%;
+    top: 72%;
+}
+
+.six-test-node.node-04 {
+    left: 50%;
+    top: 93%;
+}
+
+.six-test-node.node-05 {
+    left: 12.5%;
+    top: 72%;
+}
+
+.six-test-node.node-06 {
+    left: 12.5%;
+    top: 28%;
+}
+
+
+/* =========================================================
+   INDUSTRIAL NODE SHELL
+   ========================================================= */
+
+.six-node-shell {
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 38% 32%,
+            rgba(81,70,45,.95),
+            rgba(24,22,17,.98) 52%,
+            #080807 78%
+        );
+
+    border:
+        2px solid rgba(217,174,86,.5);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.65),
+        0 0 20px rgba(212,159,51,.18),
+        inset 0 0 25px rgba(235,191,105,.08);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   INDUSTRIAL RINGS
+   ========================================================= */
+
+.node-ring {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    pointer-events: none;
+}
+
+
+.node-ring.ring-a {
+
+    width: 72%;
+    height: 72%;
+
+    border:
+        2px solid rgba(244,205,127,.52);
+
+    border-right-color:
+        transparent;
+
+    animation:
+        six-node-spin
+        6s
+        linear
+        infinite;
+}
+
+
+.node-ring.ring-b {
+
+    width: 88%;
+    height: 88%;
+
+    border:
+        1px solid rgba(210,161,70,.3);
+
+    border-left-color:
+        rgba(247,213,141,.55);
+
+    animation:
+        six-node-spin-reverse
+        10s
+        linear
+        infinite;
+}
+
+
+.node-ring.ring-c {
+
+    width: 108%;
+    height: 108%;
+
+    border:
+        1px dashed rgba(218,172,83,.22);
+
+    animation:
+        six-node-spin
+        17s
+        linear
+        infinite;
+}
+
+
+/* =========================================================
+   NODE CORE
+   ========================================================= */
+
+.node-core {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 26%;
+    height: 26%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #fff1c5,
+            #e0b05b 25%,
+            #8d5818 52%,
+            transparent 75%
+        );
+
+    box-shadow:
+        0 0 10px rgba(248,212,135,.8),
+        0 0 25px rgba(225,170,70,.5),
+        0 0 45px rgba(202,139,37,.22);
+
+    animation:
+        six-node-pulse
+        3.2s
+        ease-in-out
+        infinite;
+}
+
+
+.node-core span {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 6px;
+    height: 6px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: #fff6d9;
+
+    box-shadow:
+        0 0 8px #f5d58f,
+        0 0 20px #e7b75f;
+}
+
+
+/* =========================================================
+   NODE SCAN
+   ========================================================= */
+
+.node-scan {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 120%;
+    height: 2px;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(25deg);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,218,142,.75),
+            transparent
+        );
+
+    filter:
+        drop-shadow(
+            0 0 7px rgba(240,193,101,.7)
+        );
+
+    animation:
+        six-node-scan
+        3.5s
+        linear
+        infinite;
+}
+
+
+/* =========================================================
+   KEYFRAMES
+   ========================================================= */
+
+@keyframes six-ring-spin {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+}
+
+
+@keyframes six-ring-spin-reverse {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+}
+
+
+@keyframes six-node-spin {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+}
+
+
+@keyframes six-node-pulse {
+
+    0%,100% {
+        transform:
+            translate(-50%, -50%)
+            scale(.88);
+        opacity: .7;
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.15);
+        opacity: 1;
+    }
+}
+
+
+@keyframes six-core-breathe {
+
+    0%,100% {
+        opacity: .45;
+        transform: scale(.9);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.08);
+    }
+}
+
+
+@keyframes six-core-energy {
+
+    0%,100% {
+        opacity: .55;
+        transform:
+            translate(-50%, -50%)
+            scale(.9);
+    }
+
+    50% {
+        opacity: 1;
+        transform:
+            translate(-50%, -50%)
+            scale(1.08);
+    }
+}
+
+
+@keyframes six-energy-flow {
+
+    0% {
+        top: 100%;
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 0%;
+        opacity: 0;
+    }
+}
+
+
+@keyframes six-node-scan {
+
+    0% {
+        opacity: 0;
+        transform:
+            translate(-50%, -50%)
+            rotate(25deg)
+            translateX(-60%);
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translate(-50%, -50%)
+            rotate(25deg)
+            translateX(60%);
+    }
+}
+
+
+/* =========================================================
+   MOBILE TEST SCALE
+   ONLY THE SYSTEM CHANGES
+   HERO REMAINS UNTOUCHED
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .ars-six-node-test {
+        width: 680px;
+        height: 680px;
+    }
+
+    .six-test-node {
+        width: 78px;
+        height: 78px;
+    }
+
+    .six-node-core {
+        width: 125px;
+        height: 125px;
+    }
+
+    .six-energy {
+        height: 275px;
+    }
+}
+
+
+@media (max-width: 430px) {
+
+    .ars-six-node-test {
+        width: 600px;
+        height: 600px;
+    }
+
+    .six-test-node {
+        width: 68px;
+        height: 68px;
+    }
+
+    .six-node-core {
+        width: 110px;
+        height: 110px;
+    }
+
+    .six-energy {
+        height: 240px;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
