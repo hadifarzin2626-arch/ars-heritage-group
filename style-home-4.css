@@ -17162,5 +17162,52 @@ to {
     }
       }
 
+/* =========================================================
+   ARS DUAL CONSTELLATION — LAYER TEST
+   ========================================================= */
 
+.ars-hero {
+    position: relative !important;
+    isolation: isolate !important;
+}
+
+.ars-hero-field {
+    position: relative !important;
+    isolation: isolate !important;
+}
+
+/* GOLD — FORCE ABOVE BLUE */
+
+.ars-hero .ars-gold-system {
+    position: absolute !important;
+
+    z-index: 200 !important;
+
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    overflow: visible !important;
+
+    pointer-events: none !important;
+}
+
+/* BLUE — KEEP BELOW GOLD */
+
+.ars-hero .ars-blue-system {
+    position: absolute !important;
+
+    z-index: 100 !important;
+
+    overflow: visible !important;
+}
+
+/* GOLD CHILDREN */
+
+.ars-hero .ars-gold-system .ars-gold-core,
+.ars-hero .ars-gold-system .ars-gold-orbit,
+.ars-hero .ars-gold-system .gold-energy-network,
+.ars-hero .ars-gold-system .gold-node {
+    visibility: visible !important;
+}
 
