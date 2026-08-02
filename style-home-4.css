@@ -15733,19 +15733,39 @@ select {
    ========================================================= */
 
 /* =========================================================
-   ARS HERITAGE GROUP — HOME HERO
-   MASTER INTELLIGENCE ARCHITECTURE
-   VIRTUAL AI VEHICLE + ORBITAL ECOSYSTEM
-   PREMIUM INDUSTRIAL / TECHNOLOGY EDITION
+   ARS HERITAGE GROUP
+   GOLD INTELLIGENCE CONSTELLATION
+   SYSTEM 01 — SIX NODE ARCHITECTURE
+   PREMIUM INDUSTRIAL / AUTOMOTIVE INTELLIGENCE
+   =========================================================
+
+   DESIGN DNA
+   ---------------------------------------------------------
+   Precision
+   Luxury
+   Automotive Intelligence
+   Orbital Engineering
+   Controlled Gold Energy
+   Deep Spatial Illumination
+
+   IMPORTANT
+   ---------------------------------------------------------
+   This stylesheet is completely isolated to:
+   .ars-hero
+   .ars-gold-system
+
+   It does NOT style body, typography, buttons,
+   navigation, or other pages.
    ========================================================= */
 
 
 /* =========================================================
-   01 — HERO FOUNDATION
+   01 — HERO HOST
    ========================================================= */
 
-.hero {
+.ars-hero {
     position: relative;
+
     width: 100%;
     min-height: 100vh;
     min-height: 100svh;
@@ -15756,1862 +15776,103 @@ select {
 
     background:
         radial-gradient(
-            circle at 50% 46%,
-            rgba(30, 55, 78, 0.18),
-            transparent 34%
+            circle at 70% 50%,
+            rgba(190, 145, 55, .035),
+            transparent 28%
         ),
         radial-gradient(
             circle at 50% 50%,
-            rgba(10, 35, 55, 0.24),
-            transparent 62%
-        ),
-        #02070b;
+            rgba(135, 160, 175, .018),
+            transparent 52%
+        );
+
+    color: #eef2f4;
 }
 
 
-.hero .container {
-    position: relative;
-    z-index: 20;
+/* =========================================================
+   02 — HERO FIELD
+   ========================================================= */
 
-    width: 100%;
-    max-width: 1800px;
-
-    margin: 0 auto;
-}
-
-
-.hero-wrapper {
+.ars-hero-field {
     position: relative;
 
     width: 100%;
     min-height: 100vh;
     min-height: 100svh;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    overflow: visible;
-}
-
-
-/* =========================================================
-   02 — HERO BACKGROUND
-   ========================================================= */
-
-.hero-background {
-    position: absolute;
-    inset: 0;
-
-    z-index: -30;
-
-    background:
-        radial-gradient(
-            ellipse at center,
-            rgba(25, 60, 82, 0.20),
-            transparent 45%
-        ),
-        linear-gradient(
-            180deg,
-            #010406 0%,
-            #02090e 48%,
-            #010406 100%
-        );
-}
-
-
-.hero-background::before {
-    content: "";
-
-    position: absolute;
-    inset: -20%;
-
-    background:
-        radial-gradient(
-            ellipse at 50% 52%,
-            rgba(65, 130, 165, 0.08),
-            transparent 30%
-        );
-
-    filter: blur(45px);
-
-    animation:
-        heroAtmosphere 12s ease-in-out infinite alternate;
-}
-
-
-.hero-background::after {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent 0%,
-            rgba(255,255,255,0.015) 50%,
-            transparent 100%
-        );
-
-    opacity: .45;
-}
-
-
-@keyframes heroAtmosphere {
-
-    0% {
-        transform: scale(.96);
-        opacity: .65;
-    }
-
-    100% {
-        transform: scale(1.06);
-        opacity: 1;
-    }
-}
-
-
-/* =========================================================
-   03 — STAR / MICRO PARTICLE BACKGROUND
-   ========================================================= */
-
-.hero-stars,
-.hero-stars-2 {
-    position: absolute;
-    inset: 0;
-
-    z-index: -20;
+    overflow: hidden;
 
     pointer-events: none;
-
-    opacity: .55;
-}
-
-
-.hero-stars {
-    background-image:
-        radial-gradient(circle, rgba(255,255,255,.65) 0 1px, transparent 1.5px),
-        radial-gradient(circle, rgba(130,190,220,.35) 0 1px, transparent 1.5px);
-
-    background-size:
-        180px 180px,
-        260px 260px;
-
-    background-position:
-        20px 40px,
-        100px 90px;
-
-    animation:
-        starDrift 38s linear infinite;
-}
-
-
-.hero-stars-2 {
-    opacity: .28;
-
-    background-image:
-        radial-gradient(circle, rgba(255,255,255,.8) 0 1px, transparent 1.4px);
-
-    background-size: 320px 320px;
-
-    animation:
-        starDriftReverse 65s linear infinite;
-}
-
-
-@keyframes starDrift {
-
-    from {
-        transform: translate3d(0,0,0);
-    }
-
-    to {
-        transform: translate3d(-80px,45px,0);
-    }
-}
-
-
-@keyframes starDriftReverse {
-
-    from {
-        transform: translate3d(0,0,0);
-    }
-
-    to {
-        transform: translate3d(65px,-35px,0);
-    }
 }
 
 
 /* =========================================================
-   04 — MASTER ENERGY UNIVERSE
+   03 — GOLD SYSTEM MASTER CONTAINER
    ========================================================= */
 
-.home-energy-universe {
+.ars-gold-system {
     position: absolute;
 
+    left: 73%;
     top: 50%;
-    left: 50%;
 
-    width: min(1500px, 96vw);
-    height: min(1500px, 96vw);
+    width: min(520px, 46vw);
+    aspect-ratio: 1 / 1;
 
     transform: translate(-50%, -50%);
 
-    z-index: 1;
+    z-index: 10;
 
     pointer-events: none;
 
-    perspective: 1400px;
+    isolation: isolate;
 }
 
 
 /* =========================================================
-   05 — DEEP ENERGY DEPTH
+   04 — MASTER GOLD ATMOSPHERE
    ========================================================= */
 
-.home-energy-depth {
+.ars-gold-system::before {
+    content: "";
+
     position: absolute;
 
     left: 50%;
     top: 50%;
 
-    transform: translate(-50%, -50%);
+    width: 115%;
+    height: 115%;
+
+    transform:
+        translate(-50%, -50%);
 
     border-radius: 50%;
 
-    pointer-events: none;
-}
-
-
-.depth-01 {
-    width: 88%;
-    height: 88%;
-
     background:
         radial-gradient(
             circle,
-            rgba(70,150,190,.07),
-            transparent 62%
-        );
-
-    filter: blur(30px);
-
-    animation:
-        depthPulse01 9s ease-in-out infinite;
-}
-
-
-.depth-02 {
-    width: 65%;
-    height: 65%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(120,190,220,.08),
-            transparent 60%
+            rgba(212, 171, 88, .075) 0%,
+            rgba(192, 145, 52, .035) 22%,
+            rgba(151, 112, 46, .018) 40%,
+            transparent 70%
         );
 
     filter: blur(20px);
 
-    animation:
-        depthPulse02 7s ease-in-out infinite alternate;
-}
-
-
-.depth-03 {
-    width: 42%;
-    height: 42%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(160,220,245,.08),
-            transparent 55%
-        );
-
-    filter: blur(15px);
+    opacity: .8;
 
     animation:
-        depthPulse03 5s ease-in-out infinite alternate;
-}
-
-
-@keyframes depthPulse01 {
-
-    0%,100% {
-        transform: translate(-50%,-50%) scale(.96);
-        opacity: .45;
-    }
-
-    50% {
-        transform: translate(-50%,-50%) scale(1.04);
-        opacity: .8;
-    }
-}
-
-
-@keyframes depthPulse02 {
-
-    from {
-        transform: translate(-50%,-50%) scale(.94);
-    }
-
-    to {
-        transform: translate(-50%,-50%) scale(1.08);
-    }
-}
-
-
-@keyframes depthPulse03 {
-
-    from {
-        opacity: .35;
-        transform: translate(-50%,-50%) scale(.92);
-    }
-
-    to {
-        opacity: .9;
-        transform: translate(-50%,-50%) scale(1.08);
-    }
+        ars-gold-atmosphere 8s ease-in-out infinite;
 }
 
 
 /* =========================================================
-   06 — CENTRAL RADIATION FIELD
+   05 — SECONDARY GOLD FIELD
    ========================================================= */
 
-.home-radiation-field {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    mix-blend-mode: screen;
-}
-
-
-.radiation-01 {
-    width: 70%;
-    height: 70%;
-
-    background:
-        repeating-conic-gradient(
-            from 0deg,
-            transparent 0deg,
-            rgba(80,170,210,.07) 1deg,
-            transparent 4deg,
-            transparent 11deg
-        );
-
-    mask-image:
-        radial-gradient(
-            circle,
-            transparent 0 34%,
-            #000 55%,
-            transparent 75%
-        );
-
-    animation:
-        radiationRotate01 55s linear infinite;
-}
-
-
-.radiation-02 {
-    width: 55%;
-    height: 55%;
-
-    background:
-        repeating-conic-gradient(
-            from 25deg,
-            transparent 0deg,
-            rgba(130,210,240,.09) 1deg,
-            transparent 3deg,
-            transparent 15deg
-        );
-
-    mask-image:
-        radial-gradient(
-            circle,
-            transparent 0 35%,
-            #000 52%,
-            transparent 72%
-        );
-
-    animation:
-        radiationRotate02 38s linear infinite reverse;
-}
-
-
-.radiation-03 {
-    width: 40%;
-    height: 40%;
-
-    background:
-        repeating-conic-gradient(
-            from 90deg,
-            transparent 0deg,
-            rgba(200,235,245,.12) 1deg,
-            transparent 2deg,
-            transparent 20deg
-        );
-
-    mask-image:
-        radial-gradient(
-            circle,
-            transparent 0 40%,
-            #000 56%,
-            transparent 70%
-        );
-
-    animation:
-        radiationRotate01 24s linear infinite;
-}
-
-
-@keyframes radiationRotate01 {
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-}
-
-
-@keyframes radiationRotate02 {
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(-360deg);
-    }
-}
-
-
-/* =========================================================
-   07 — MASTER ORBITAL FIELD
-   ========================================================= */
-
-.home-master-orbit {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    border: 1px solid rgba(110,190,220,.10);
-
-    border-radius: 50%;
-
-    transform:
-        translate(-50%, -50%)
-        rotateX(67deg);
-
-    box-shadow:
-        0 0 35px rgba(80,160,195,.05),
-        inset 0 0 25px rgba(80,160,195,.035);
-}
-
-
-.master-orbit-01 {
-    width: 52%;
-    height: 52%;
-
-    animation:
-        orbitRotate01 32s linear infinite;
-}
-
-
-.master-orbit-02 {
-    width: 66%;
-    height: 66%;
-
-    border-color: rgba(100,180,215,.08);
-
-    animation:
-        orbitRotate02 45s linear infinite reverse;
-}
-
-
-.master-orbit-03 {
-    width: 79%;
-    height: 79%;
-
-    border-style: dashed;
-    border-color: rgba(100,170,200,.055);
-
-    animation:
-        orbitRotate01 70s linear infinite;
-}
-
-
-.master-orbit-04 {
-    width: 93%;
-    height: 93%;
-
-    border-color: rgba(100,160,190,.035);
-
-    animation:
-        orbitRotate02 100s linear infinite reverse;
-}
-
-
-@keyframes orbitRotate01 {
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotateX(67deg)
-            rotateZ(360deg);
-    }
-}
-
-
-@keyframes orbitRotate02 {
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotateX(67deg)
-            rotateZ(-360deg);
-    }
-}
-
-
-/* =========================================================
-   08 — ENERGY RAYS
-   ========================================================= */
-
-.home-energy-ray {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 1px;
-    height: 48%;
-
-    transform-origin: 50% 0;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(160,220,240,.0),
-            rgba(120,205,235,.22),
-            rgba(120,205,235,.0)
-        );
-
-    opacity: .35;
-
-    filter: blur(.3px);
-}
-
-
-.ray-01 { transform: translate(-50%,0) rotate(0deg); }
-.ray-02 { transform: translate(-50%,0) rotate(45deg); }
-.ray-03 { transform: translate(-50%,0) rotate(90deg); }
-.ray-04 { transform: translate(-50%,0) rotate(135deg); }
-.ray-05 { transform: translate(-50%,0) rotate(180deg); }
-.ray-06 { transform: translate(-50%,0) rotate(225deg); }
-.ray-07 { transform: translate(-50%,0) rotate(270deg); }
-.ray-08 { transform: translate(-50%,0) rotate(315deg); }
-
-
-/* =========================================================
-   09 — ENERGY NETWORK
-   ========================================================= */
-
-.home-energy-link {
-    position: absolute;
-
-    width: 28%;
-    height: 1px;
-
-    left: 50%;
-    top: 50%;
-
-    transform-origin: left center;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(100,200,230,.0),
-            rgba(100,200,230,.16),
-            rgba(100,200,230,.0)
-        );
-
-    opacity: .4;
-}
-
-
-.link-01 { transform: rotate(12deg); }
-.link-02 { transform: rotate(73deg); }
-.link-03 { transform: rotate(138deg); }
-.link-04 { transform: rotate(198deg); }
-.link-05 { transform: rotate(256deg); }
-.link-06 { transform: rotate(321deg); }
-
-
-/* =========================================================
-   10 — PARTICLE INTELLIGENCE FIELD
-   ========================================================= */
-
-.home-particle-field {
-    position: absolute;
-    inset: 0;
-}
-
-
-.home-particle {
-    position: absolute;
-
-    width: 2px;
-    height: 2px;
-
-    border-radius: 50%;
-
-    background: rgba(175,225,240,.75);
-
-    box-shadow:
-        0 0 7px rgba(130,210,235,.7);
-
-    animation:
-        particleFloat 6s ease-in-out infinite alternate;
-}
-
-
-.p-01 { left:12%; top:34%; animation-delay:-1s; }
-.p-02 { left:18%; top:61%; animation-delay:-3s; }
-.p-03 { left:25%; top:21%; animation-delay:-2s; }
-.p-04 { left:31%; top:78%; animation-delay:-4s; }
-.p-05 { left:39%; top:14%; animation-delay:-1.5s; }
-.p-06 { left:46%; top:25%; animation-delay:-3.5s; }
-.p-07 { left:55%; top:13%; animation-delay:-2.5s; }
-.p-08 { left:64%; top:26%; animation-delay:-4.5s; }
-.p-09 { left:73%; top:18%; animation-delay:-2s; }
-.p-10 { left:84%; top:37%; animation-delay:-5s; }
-.p-11 { left:88%; top:59%; animation-delay:-1.8s; }
-.p-12 { left:78%; top:76%; animation-delay:-3.2s; }
-.p-13 { left:68%; top:85%; animation-delay:-2.2s; }
-.p-14 { left:57%; top:91%; animation-delay:-4.2s; }
-.p-15 { left:44%; top:86%; animation-delay:-1.2s; }
-.p-16 { left:32%; top:89%; animation-delay:-3.8s; }
-.p-17 { left:20%; top:76%; animation-delay:-2.8s; }
-.p-18 { left:9%; top:58%; animation-delay:-4.8s; }
-.p-19 { left:28%; top:48%; animation-delay:-1.7s; }
-.p-20 { left:74%; top:48%; animation-delay:-3.7s; }
-
-
-@keyframes particleFloat {
-
-    from {
-        transform: translateY(-5px) scale(.7);
-        opacity: .25;
-    }
-
-    to {
-        transform: translateY(7px) scale(1.35);
-        opacity: .9;
-    }
-}
-
-
-/* =========================================================
-   11 — MASTER INTELLIGENCE SYSTEM
-   ========================================================= */
-
-.ars-intelligence-system {
-    position: relative;
-
-    width: min(1450px, 94vw);
-    height: min(1450px, 94vw);
-
-    z-index: 10;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    transform-style: preserve-3d;
-}
-
-
-/* =========================================================
-   12 — VIRTUAL AI VEHICLE
-   ========================================================= */
-
-.ars-vehicle-intelligence {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 72%;
-    height: 42%;
-
-    transform:
-        translate(-50%, -50%)
-        translateZ(-140px);
-
-    z-index: -5;
-
-    pointer-events: none;
-
-    opacity: .92;
-}
-
-
-.vehicle-energy-field {
-    position: absolute;
-
-    inset: -30%;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            ellipse at center,
-            rgba(80,170,210,.20),
-            rgba(40,100,135,.08) 35%,
-            transparent 70%
-        );
-
-    filter: blur(30px);
-
-    animation:
-        vehicleFieldPulse 6s ease-in-out infinite alternate;
-}
-
-
-.vehicle-energy-halo {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 88%;
-    height: 70%;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    border:
-        1px solid rgba(120,210,235,.12);
-
-    box-shadow:
-        0 0 60px rgba(80,180,215,.12),
-        inset 0 0 45px rgba(80,180,215,.08);
-
-    filter: blur(.4px);
-
-    animation:
-        vehicleHaloPulse 8s ease-in-out infinite;
-}
-
-
-.vehicle-intelligence-frame {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 78%;
-    height: 65%;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 48% 52% 44% 56%;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent 0%,
-            rgba(110,190,220,.025) 18%,
-            rgba(180,230,245,.08) 50%,
-            rgba(110,190,220,.025) 82%,
-            transparent 100%
-        );
-
-    border:
-        1px solid rgba(120,205,230,.09);
-
-    box-shadow:
-        0 0 50px rgba(70,170,205,.09),
-        inset 0 0 60px rgba(70,170,205,.055);
-
-    overflow: hidden;
-
-    animation:
-        vehicleFloat 7s ease-in-out infinite;
-}
-
-
-/* =========================================================
-   VEHICLE SCAN
-   ========================================================= */
-
-.vehicle-intelligence-frame::before {
-    content: "";
-
-    position: absolute;
-
-    left: -10%;
-    right: -10%;
-    top: 50%;
-
-    height: 1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(170,225,240,.55),
-            transparent
-        );
-
-    box-shadow:
-        0 0 15px rgba(120,215,240,.35);
-
-    animation:
-        vehicleScan 4.5s ease-in-out infinite;
-}
-
-
-.vehicle-intelligence-frame::after {
-    content: "";
-
-    position: absolute;
-    inset: 8%;
-
-    border-radius: inherit;
-
-    background:
-        repeating-linear-gradient(
-            0deg,
-            transparent 0 5px,
-            rgba(130,205,225,.025) 6px
-        );
-
-    opacity: .55;
-}
-
-
-.vehicle-data-field {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 92%;
-    height: 48%;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-top:
-        1px solid rgba(140,220,240,.08);
-
-    border-bottom:
-        1px solid rgba(140,220,240,.08);
-
-    mask-image:
-        linear-gradient(
-            90deg,
-            transparent,
-            #000 20%,
-            #000 80%,
-            transparent
-        );
-
-    animation:
-        vehicleDataPulse 5s ease-in-out infinite;
-}
-
-
-@keyframes vehicleFieldPulse {
-
-    from {
-        transform: scale(.94);
-        opacity: .55;
-    }
-
-    to {
-        transform: scale(1.06);
-        opacity: 1;
-    }
-}
-
-
-@keyframes vehicleHaloPulse {
-
-    0%,100% {
-        opacity: .35;
-        transform: translate(-50%,-50%) scale(.96);
-    }
-
-    50% {
-        opacity: .8;
-        transform: translate(-50%,-50%) scale(1.04);
-    }
-}
-
-
-@keyframes vehicleFloat {
-
-    0%,100% {
-        transform:
-            translate(-50%,-50%)
-            translateY(0);
-    }
-
-    50% {
-        transform:
-            translate(-50%,-50%)
-            translateY(-8px);
-    }
-}
-
-
-@keyframes vehicleScan {
-
-    0% {
-        transform: translateY(-100px);
-        opacity: 0;
-    }
-
-    20% {
-        opacity: .9;
-    }
-
-    80% {
-        opacity: .9;
-    }
-
-    100% {
-        transform: translateY(100px);
-        opacity: 0;
-    }
-}
-
-
-@keyframes vehicleDataPulse {
-
-    0%,100% {
-        opacity: .25;
-    }
-
-    50% {
-        opacity: .75;
-    }
-}
-
-
-/* =========================================================
-   13 — MASTER ARS ORBIT
-   ========================================================= */
-
-.ars-master-orbit {
-    position: relative;
-
-    width: 100%;
-    height: 100%;
-
-    transform-style: preserve-3d;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-/* =========================================================
-   14 — MASTER RINGS
-   ========================================================= */
-
-.ars-master-ring {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    pointer-events: none;
-}
-
-
-.master-ring-01 {
-    width: 37%;
-    height: 37%;
-
-    border:
-        1px solid rgba(145,215,235,.22);
-
-    box-shadow:
-        0 0 30px rgba(80,180,215,.09);
-
-    animation:
-        masterRing01 28s linear infinite;
-}
-
-
-.master-ring-02 {
-    width: 51%;
-    height: 51%;
-
-    border:
-        1px dashed rgba(110,190,220,.14);
-
-    animation:
-        masterRing02 42s linear infinite reverse;
-}
-
-
-.master-ring-03 {
-    width: 67%;
-    height: 67%;
-
-    border:
-        1px solid rgba(100,180,210,.07);
-
-    animation:
-        masterRing01 58s linear infinite;
-}
-
-
-@keyframes masterRing01 {
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-}
-
-
-@keyframes masterRing02 {
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(-360deg);
-    }
-}
-
-
-/* =========================================================
-   15 — MASTER ENERGY CORE
-   ========================================================= */
-
-.ars-master-energy {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 25%;
-    height: 25%;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    pointer-events: none;
-}
-
-
-.master-energy-core {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 46%;
-    height: 46%;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(220,245,250,.95) 0 3%,
-            rgba(130,215,235,.45) 12%,
-            rgba(70,170,205,.18) 35%,
-            transparent 72%
-        );
-
-    filter:
-        blur(.3px)
-        drop-shadow(0 0 22px rgba(100,210,235,.7));
-
-    animation:
-        masterCorePulse 3.5s ease-in-out infinite;
-}
-
-
-@keyframes masterCorePulse {
-
-    0%,100% {
-        transform: translate(-50%,-50%) scale(.84);
-        opacity: .65;
-    }
-
-    50% {
-        transform: translate(-50%,-50%) scale(1.18);
-        opacity: 1;
-    }
-}
-
-
-.master-energy-pulse {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 100%;
-    height: 100%;
-
-    transform:
-        translate(-50%, -50%)
-        scale(.15);
-
-    border:
-        1px solid rgba(130,220,240,.45);
-
-    border-radius: 50%;
-
-    animation:
-        masterPulseExpand 4s ease-out infinite;
-}
-
-
-.master-energy-pulse.pulse-02 {
-    animation-delay: 1.3s;
-}
-
-
-.master-energy-pulse.pulse-03 {
-    animation-delay: 2.6s;
-}
-
-
-@keyframes masterPulseExpand {
-
-    0% {
-        transform:
-            translate(-50%,-50%)
-            scale(.15);
-
-        opacity: .8;
-    }
-
-    100% {
-        transform:
-            translate(-50%,-50%)
-            scale(1.5);
-
-        opacity: 0;
-    }
-}
-
-
-/* =========================================================
-   16 — ARS HERITAGE MASTER CORE
-   ========================================================= */
-
-.orbit-core {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 15%;
-    aspect-ratio: 1;
-
-    transform:
-        translate(-50%, -50%);
-
-    z-index: 30;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    text-decoration: none;
-
-    transition:
-        transform .65s cubic-bezier(.2,.8,.2,1),
-        filter .5s ease;
-}
-
-
-.ars-heritage-master-core:hover {
-    transform:
-        translate(-50%, -50%)
-        scale(1.08);
-
-    filter:
-        drop-shadow(0 0 30px rgba(130,220,240,.35));
-}
-
-
-.ars-heritage-master-core img {
-    position: relative;
-
-    z-index: 10;
-
-    width: 58%;
-    height: auto;
-
-    object-fit: contain;
-
-    filter:
-        drop-shadow(0 0 10px rgba(180,230,240,.20))
-        drop-shadow(0 0 25px rgba(80,180,215,.20));
-}
-
-
-/* =========================================================
-   17 — CORE ENERGY RINGS
-   ========================================================= */
-
-.orbit-core-energy {
-    position: absolute;
-    inset: -15%;
-
-    border-radius: 50%;
-}
-
-
-.core-energy-ring {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    border-radius: 50%;
-
-    border:
-        1px solid rgba(130,215,235,.28);
-}
-
-
-.core-ring-01 {
-    width: 90%;
-    height: 90%;
-
-    transform:
-        translate(-50%,-50%);
-
-    animation:
-        coreRingRotate 12s linear infinite;
-}
-
-
-.core-ring-02 {
-    width: 112%;
-    height: 112%;
-
-    transform:
-        translate(-50%,-50%)
-        rotate(45deg);
-
-    border-style: dashed;
-
-    animation:
-        coreRingRotateReverse 19s linear infinite;
-}
-
-
-.core-ring-03 {
-    width: 132%;
-    height: 132%;
-
-    transform:
-        translate(-50%,-50%);
-
-    border-color: rgba(100,190,220,.12);
-
-    animation:
-        coreRingRotate 30s linear infinite;
-}
-
-
-.core-ring-04 {
-    width: 154%;
-    height: 154%;
-
-    transform:
-        translate(-50%,-50%);
-
-    border-color: rgba(100,180,210,.06);
-
-    animation:
-        coreRingRotateReverse 44s linear infinite;
-}
-
-
-@keyframes coreRingRotate {
-
-    to {
-        transform:
-            translate(-50%,-50%)
-            rotate(360deg);
-    }
-}
-
-
-@keyframes coreRingRotateReverse {
-
-    to {
-        transform:
-            translate(-50%,-50%)
-            rotate(-360deg);
-    }
-}
-
-
-.core-energy-halo {
-    position: absolute;
-
-    inset: -35%;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(90,190,220,.16),
-            transparent 65%
-        );
-
-    filter: blur(15px);
-
-    animation:
-        haloBreath 4s ease-in-out infinite;
-}
-
-
-@keyframes haloBreath {
-
-    0%,100% {
-        transform: scale(.85);
-        opacity: .4;
-    }
-
-    50% {
-        transform: scale(1.12);
-        opacity: .85;
-    }
-}
-
-
-.core-energy-pulse {
-    position: absolute;
-
-    inset: 5%;
-
-    border-radius: 50%;
-
-    border:
-        1px solid rgba(170,230,240,.22);
-
-    animation:
-        corePulse 3s ease-out infinite;
-}
-
-
-.core-energy-pulse.pulse-02 {
-    animation-delay: 1s;
-}
-
-
-.core-energy-pulse.pulse-03 {
-    animation-delay: 2s;
-}
-
-
-@keyframes corePulse {
-
-    0% {
-        transform: scale(.8);
-        opacity: .7;
-    }
-
-    100% {
-        transform: scale(1.7);
-        opacity: 0;
-    }
-}
-
-
-/* =========================================================
-   18 — INNER / OUTER ORBITS
-   ========================================================= */
-
-.orbit-inner,
-.orbit-outer {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 100%;
-    height: 100%;
-
-    transform:
-        translate(-50%, -50%);
-
-    transform-style: preserve-3d;
-
-    pointer-events: none;
-}
-
-
-.orbit-inner {
-    z-index: 20;
-}
-
-
-.orbit-outer {
-    z-index: 15;
-}
-
-
-/* =========================================================
-   19 — NODE POSITIONING
-   ========================================================= */
-
-.orbit-item {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 8%;
-    aspect-ratio: 1;
-
-    margin:
-        calc(-4%)
-        0
-        0
-        calc(-4%);
-
-    pointer-events: auto;
-}
-
-
-.orbit-inner .orbit-1 {
-    transform: rotate(0deg) translateY(-245%);
-}
-
-
-.orbit-inner .orbit-2 {
-    transform: rotate(60deg) translateY(-245%);
-}
-
-
-.orbit-inner .orbit-3 {
-    transform: rotate(120deg) translateY(-245%);
-}
-
-
-.orbit-inner .orbit-4 {
-    transform: rotate(180deg) translateY(-245%);
-}
-
-
-.orbit-inner .orbit-5 {
-    transform: rotate(240deg) translateY(-245%);
-}
-
-
-.orbit-inner .orbit-6 {
-    transform: rotate(300deg) translateY(-245%);
-}
-
-
-.orbit-outer .orbit-7 {
-    transform: rotate(0deg) translateY(-355%);
-}
-
-
-.orbit-outer .orbit-8 {
-    transform: rotate(51.43deg) translateY(-355%);
-}
-
-
-.orbit-outer .orbit-9 {
-    transform: rotate(102.86deg) translateY(-355%);
-}
-
-
-.orbit-outer .orbit-10 {
-    transform: rotate(154.29deg) translateY(-355%);
-}
-
-
-.orbit-outer .orbit-11 {
-    transform: rotate(205.72deg) translateY(-355%);
-}
-
-
-.orbit-outer .orbit-12 {
-    transform: rotate(257.15deg) translateY(-355%);
-}
-
-
-.orbit-outer .orbit-13 {
-    transform: rotate(308.58deg) translateY(-355%);
-}
-
-
-/* =========================================================
-   20 — NODE ENERGY SYSTEM
-   ========================================================= */
-
-.orbit-node-energy {
-    position: absolute;
-
-    inset: -35%;
-
-    border-radius: 50%;
-
-    pointer-events: none;
-
-    transition:
-        transform .5s ease,
-        opacity .5s ease;
-}
-
-
-.node-energy-halo {
-    position: absolute;
-
-    inset: 5%;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(90,195,225,.15),
-            transparent 68%
-        );
-
-    filter: blur(8px);
-
-    animation:
-        nodeHalo 4s ease-in-out infinite;
-}
-
-
-.node-energy-ring {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    border-radius: 50%;
-
-    border:
-        1px solid rgba(130,215,235,.24);
-}
-
-
-.node-ring-01 {
-    width: 70%;
-    height: 70%;
-
-    transform:
-        translate(-50%,-50%);
-
-    animation:
-        nodeRing01 8s linear infinite;
-}
-
-
-.node-ring-02 {
-    width: 100%;
-    height: 100%;
-
-    transform:
-        translate(-50%,-50%);
-
-    border-style: dashed;
-
-    animation:
-        nodeRing02 13s linear infinite reverse;
-}
-
-
-.node-ring-03 {
-    width: 135%;
-    height: 135%;
-
-    transform:
-        translate(-50%,-50%);
-
-    border-color: rgba(100,190,220,.10);
-
-    animation:
-        nodeRing01 19s linear infinite;
-}
-
-
-@keyframes nodeRing01 {
-
-    to {
-        transform:
-            translate(-50%,-50%)
-            rotate(360deg);
-    }
-}
-
-
-@keyframes nodeRing02 {
-
-    to {
-        transform:
-            translate(-50%,-50%)
-            rotate(-360deg);
-    }
-}
-
-
-@keyframes nodeHalo {
-
-    0%,100% {
-        transform: scale(.86);
-        opacity: .35;
-    }
-
-    50% {
-        transform: scale(1.08);
-        opacity: .85;
-    }
-}
-
-
-.node-energy-pulse {
-    position: absolute;
-
-    inset: 15%;
-
-    border-radius: 50%;
-
-    border:
-        1px solid rgba(170,230,240,.25);
-
-    animation:
-        nodePulse 3.8s ease-out infinite;
-}
-
-
-@keyframes nodePulse {
-
-    0% {
-        transform: scale(.7);
-        opacity: .75;
-    }
-
-    100% {
-        transform: scale(1.55);
-        opacity: 0;
-    }
-}
-
-
-/* =========================================================
-   21 — NODE SPARKS
-   ========================================================= */
-
-.node-energy-spark {
-    position: absolute;
-
-    width: 3px;
-    height: 3px;
-
-    border-radius: 50%;
-
-    background: rgba(190,235,245,.9);
-
-    box-shadow:
-        0 0 9px rgba(120,215,240,.8);
-}
-
-
-.spark-01 {
-    left: 50%;
-    top: -4%;
-
-    animation:
-        sparkOrbit01 4s linear infinite;
-}
-
-
-.spark-02 {
-    left: 94%;
-    top: 50%;
-
-    animation:
-        sparkOrbit02 5.5s linear infinite;
-}
-
-
-.spark-03 {
-    left: 25%;
-    top: 92%;
-
-    animation:
-        sparkOrbit01 6.5s linear infinite reverse;
-}
-
-
-@keyframes sparkOrbit01 {
-
-    to {
-        transform:
-            rotate(360deg)
-            translateX(25px);
-    }
-}
-
-
-@keyframes sparkOrbit02 {
-
-    to {
-        transform:
-            rotate(-360deg)
-            translateX(20px);
-    }
-}
-
-
-/* =========================================================
-   22 — NODE LINKS
-   ========================================================= */
-
-.orbit-link {
-    position: absolute;
-
-    inset: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    text-decoration: none;
-
-    z-index: 10;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(8,20,28,.94) 0 48%,
-            rgba(8,20,28,.55) 65%,
-            transparent 72%
-        );
-
-    border:
-        1px solid rgba(120,205,230,.16);
-
-    box-shadow:
-        0 0 16px rgba(80,180,215,.08),
-        inset 0 0 18px rgba(80,180,215,.06);
-
-    transition:
-        transform .55s cubic-bezier(.2,.8,.2,1),
-        border-color .45s ease,
-        box-shadow .45s ease,
-        background .45s ease;
-}
-
-
-.orbit-link img {
-    width: 58%;
-    height: 58%;
-
-    object-fit: contain;
-
-    filter:
-        brightness(.92)
-        drop-shadow(0 0 7px rgba(140,215,235,.12));
-
-    transition:
-        transform .5s cubic-bezier(.2,.8,.2,1),
-        filter .5s ease;
-}
-
-
-/* =========================================================
-   23 — PREMIUM NODE HOVER
-   ========================================================= */
-
-.orbit-item:hover .orbit-link {
-    transform: scale(1.16);
-
-    border-color:
-        rgba(170,230,245,.55);
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(30,65,80,.95),
-            rgba(5,16,23,.82) 68%,
-            transparent 72%
-        );
-
-    box-shadow:
-        0 0 25px rgba(90,200,230,.25),
-        0 0 55px rgba(70,170,205,.12),
-        inset 0 0 25px rgba(130,220,240,.13);
-}
-
-
-.orbit-item:hover .orbit-link img {
-    transform: scale(1.08);
-
-    filter:
-        brightness(1.15)
-        drop-shadow(0 0 12px rgba(150,225,240,.35))
-        drop-shadow(0 0 25px rgba(80,190,220,.22));
-}
-
-
-.orbit-item:hover .orbit-node-energy {
-    transform: scale(1.22);
-
-    opacity: 1;
-}
-
-
-/* =========================================================
-   24 — ENERGY CONNECTION TO VEHICLE
-   ========================================================= */
-
-.orbit-item::before {
+.ars-gold-system::after {
     content: "";
 
     position: absolute;
@@ -17619,144 +15880,895 @@ select {
     left: 50%;
     top: 50%;
 
-    width: 1px;
-    height: 220%;
-
-    transform-origin: center bottom;
+    width: 150%;
+    height: 150%;
 
     transform:
-        translate(-50%, -100%);
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(110,210,235,0),
-            rgba(110,210,235,.08),
-            rgba(170,230,245,.25)
-        );
-
-    opacity: 0;
-
-    transition:
-        opacity .5s ease;
-
-    pointer-events: none;
-}
-
-
-.orbit-item:hover::before {
-    opacity: 1;
-}
-
-
-/* =========================================================
-   25 — ENERGY TRANSFER BEAM
-   ========================================================= */
-
-.orbit-item::after {
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 5px;
-    height: 18px;
+        translate(-50%, -50%);
 
     border-radius: 50%;
 
     background:
         radial-gradient(
             ellipse,
-            rgba(210,245,250,1),
-            rgba(100,210,235,.6),
-            transparent 70%
+            rgba(210, 169, 84, .025),
+            transparent 62%
         );
 
-    filter:
-        blur(.4px)
-        drop-shadow(0 0 10px rgba(100,220,240,.8));
+    filter: blur(30px);
 
-    opacity: 0;
+    opacity: .65;
+
+    z-index: -2;
+
+    animation:
+        ars-gold-field-breathe 11s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   06 — MASTER ORBITAL FIELD
+   ========================================================= */
+
+.ars-gold-orbit {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    border-radius: 50%;
 
     transform:
-        translate(-50%,-50%);
+        translate(-50%, -50%);
 
     pointer-events: none;
 }
 
 
-.orbit-item:hover::after {
-    opacity: 1;
+/* =========================================================
+   ORBIT 01
+   ========================================================= */
+
+.ars-gold-orbit-01 {
+
+    width: 74%;
+    height: 74%;
+
+    border:
+        1px solid rgba(207, 166, 82, .17);
+
+    box-shadow:
+        0 0 20px rgba(190, 145, 54, .035),
+        inset 0 0 20px rgba(206, 165, 82, .018);
 
     animation:
-        energyTransfer 1.25s cubic-bezier(.4,0,.2,1) infinite;
-}
-
-
-@keyframes energyTransfer {
-
-    0% {
-        transform:
-            translate(-50%, 280%)
-            scale(.4);
-
-        opacity: 0;
-    }
-
-    20% {
-        opacity: 1;
-    }
-
-    100% {
-        transform:
-            translate(-50%, -280%)
-            scale(1.2);
-
-        opacity: 0;
-    }
+        ars-gold-orbit-clockwise
+        32s
+        linear
+        infinite;
 }
 
 
 /* =========================================================
-   26 — MASTER CORE HOVER ENERGY
+   ORBIT 02
    ========================================================= */
 
-.ars-heritage-master-core::after {
+.ars-gold-orbit-02 {
+
+    width: 92%;
+    height: 92%;
+
+    border:
+        1px solid rgba(195, 153, 70, .09);
+
+    border-left-color:
+        rgba(224, 187, 105, .25);
+
+    border-bottom-color:
+        rgba(174, 128, 44, .04);
+
+    animation:
+        ars-gold-orbit-counter
+        48s
+        linear
+        infinite;
+}
+
+
+/* =========================================================
+   ORBIT 03
+   ========================================================= */
+
+.ars-gold-orbit-03 {
+
+    width: 112%;
+    height: 112%;
+
+    border:
+        1px dashed rgba(195, 156, 78, .055);
+
+    opacity: .65;
+
+    animation:
+        ars-gold-orbit-clockwise
+        68s
+        linear
+        infinite;
+}
+
+
+/* =========================================================
+   07 — ORBITAL MICRO MARKS
+   ========================================================= */
+
+.ars-gold-orbit-01::before,
+.ars-gold-orbit-02::before,
+.ars-gold-orbit-03::before {
+
     content: "";
 
     position: absolute;
-    inset: -60%;
+
+    left: 50%;
+    top: -2px;
+
+    width: 4px;
+    height: 4px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(230, 198, 124, .85);
+
+    box-shadow:
+        0 0 8px rgba(224, 183, 92, .5),
+        0 0 20px rgba(203, 155, 57, .22);
+}
+
+
+/* =========================================================
+   08 — CENTRAL GOLD CORE
+   ========================================================= */
+
+.ars-gold-core {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 30%;
+    aspect-ratio: 1;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    z-index: 30;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CORE HALO
+   ========================================================= */
+
+.gold-core-halo {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 180%;
+    height: 180%;
+
+    transform:
+        translate(-50%, -50%);
 
     border-radius: 50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(140,220,240,.12),
-            transparent 62%
+            rgba(224, 186, 103, .12) 0%,
+            rgba(199, 151, 58, .055) 25%,
+            transparent 68%
         );
 
-    filter: blur(15px);
+    filter: blur(12px);
 
-    opacity: 0;
-
-    transition:
-        opacity .5s ease;
-}
-
-
-.ars-heritage-master-core:hover::after {
-    opacity: 1;
+    animation:
+        ars-core-gold-breathe
+        5s
+        ease-in-out
+        infinite;
 }
 
 
 /* =========================================================
-   27 — INDUSTRIAL SCANLINES
+   CORE ENERGY
    ========================================================= */
 
-.ars-intelligence-system::before {
+.gold-core-energy {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 78%;
+    height: 78%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 45% 40%,
+            rgba(255, 224, 155, .28),
+            rgba(220, 178, 88, .12) 25%,
+            rgba(158, 111, 37, .035) 48%,
+            transparent 72%
+        );
+
+    filter: blur(3px);
+
+    animation:
+        ars-core-energy-pulse
+        4.5s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   CORE CENTER
+   ========================================================= */
+
+.gold-core-center {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 34%;
+    aspect-ratio: 1;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 42% 38%,
+            rgba(255, 236, 190, .95),
+            rgba(216, 171, 83, .72) 22%,
+            rgba(122, 80, 24, .42) 50%,
+            rgba(24, 20, 13, .8) 75%
+        );
+
+    border:
+        1px solid rgba(244, 213, 148, .58);
+
+    box-shadow:
+        0 0 12px rgba(232, 190, 102, .4),
+        0 0 35px rgba(207, 157, 58, .2),
+        0 0 70px rgba(194, 143, 44, .09),
+        inset 0 0 15px rgba(255, 224, 160, .16);
+
+    animation:
+        ars-core-center-breathe
+        4s
+        ease-in-out
+        infinite;
+}
+
+
+.gold-core-point {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 7px;
+    height: 7px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        #fff3cf;
+
+    box-shadow:
+        0 0 7px #f4d28a,
+        0 0 18px rgba(238, 194, 102, .8),
+        0 0 38px rgba(212, 163, 67, .42);
+}
+
+
+/* =========================================================
+   09 — CORE ORBITS
+   ========================================================= */
+
+.gold-core-orbit {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    pointer-events: none;
+}
+
+
+.gold-core-orbit-01 {
+
+    width: 112%;
+    height: 112%;
+
+    border:
+        1px solid rgba(230, 191, 111, .18);
+
+    border-right-color:
+        rgba(236, 201, 131, .48);
+
+    animation:
+        ars-core-orbit-01
+        11s
+        linear
+        infinite;
+}
+
+
+.gold-core-orbit-02 {
+
+    width: 138%;
+    height: 138%;
+
+    border:
+        1px solid rgba(206, 163, 76, .1);
+
+    border-left-color:
+        rgba(238, 199, 122, .32);
+
+    animation:
+        ars-core-orbit-02
+        17s
+        linear
+        infinite;
+}
+
+
+.gold-core-orbit-03 {
+
+    width: 164%;
+    height: 164%;
+
+    border:
+        1px dashed rgba(206, 164, 78, .07);
+
+    animation:
+        ars-core-orbit-03
+        24s
+        linear
+        infinite reverse;
+}
+
+
+/* =========================================================
+   10 — ENERGY NETWORK
+   ========================================================= */
+
+.gold-energy-network {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 5;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   ENERGY LINES
+   ========================================================= */
+
+.gold-energy-line {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 1px;
+
+    height: 37%;
+
+    transform-origin:
+        50% 100%;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(225, 183, 92, .42),
+            rgba(217, 174, 81, .16),
+            rgba(202, 158, 64, .035),
+            transparent
+        );
+
+    opacity: .7;
+
+    filter:
+        drop-shadow(
+            0 0 5px rgba(215, 169, 75, .2)
+        );
+}
+
+
+/* =========================================================
+   SIX RADIAL CONNECTIONS
+   ========================================================= */
+
+.gold-line-01 {
+    transform:
+        translate(-50%, -100%)
+        rotate(0deg);
+}
+
+.gold-line-02 {
+    transform:
+        translate(-50%, -100%)
+        rotate(60deg);
+}
+
+.gold-line-03 {
+    transform:
+        translate(-50%, -100%)
+        rotate(120deg);
+}
+
+.gold-line-04 {
+    transform:
+        translate(-50%, -100%)
+        rotate(180deg);
+}
+
+.gold-line-05 {
+    transform:
+        translate(-50%, -100%)
+        rotate(240deg);
+}
+
+.gold-line-06 {
+    transform:
+        translate(-50%, -100%)
+        rotate(300deg);
+}
+
+
+/* =========================================================
+   ENERGY TRAVEL PARTICLES
+   ========================================================= */
+
+.gold-energy-line::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    width: 5px;
+    height: 5px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 224, 150, .95);
+
+    box-shadow:
+        0 0 8px rgba(241, 199, 113, .75),
+        0 0 20px rgba(216, 166, 70, .38);
+
+    animation:
+        ars-energy-travel
+        3.8s
+        ease-in-out
+        infinite;
+}
+
+
+.gold-line-02::after {
+    animation-delay: -.6s;
+}
+
+.gold-line-03::after {
+    animation-delay: -1.2s;
+}
+
+.gold-line-04::after {
+    animation-delay: -1.8s;
+}
+
+.gold-line-05::after {
+    animation-delay: -2.4s;
+}
+
+.gold-line-06::after {
+    animation-delay: -3s;
+}
+
+
+/* =========================================================
+   11 — GOLD NODE MASTER
+   ========================================================= */
+
+.gold-node {
+
+    position: absolute;
+
+    width: 74px;
+    height: 74px;
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 40;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   SIX NODE POSITIONS
+   ========================================================= */
+
+.gold-node-01 {
+    left: 50%;
+    top: 8%;
+}
+
+.gold-node-02 {
+    left: 86.4%;
+    top: 29%;
+}
+
+.gold-node-03 {
+    left: 86.4%;
+    top: 71%;
+}
+
+.gold-node-04 {
+    left: 50%;
+    top: 92%;
+}
+
+.gold-node-05 {
+    left: 13.6%;
+    top: 71%;
+}
+
+.gold-node-06 {
+    left: 13.6%;
+    top: 29%;
+}
+
+
+/* =========================================================
+   12 — NODE ENERGY FIELD
+   ========================================================= */
+
+.gold-node-energy {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 175%;
+    height: 175%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   NODE HALO
+   ========================================================= */
+
+.gold-node-halo {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 100%;
+    height: 100%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(226, 187, 102, .13),
+            rgba(200, 150, 54, .04) 42%,
+            transparent 70%
+        );
+
+    filter: blur(8px);
+
+    animation:
+        ars-node-halo
+        4.8s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   13 — NODE ORBITS
+   ========================================================= */
+
+.gold-node-orbit {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    pointer-events: none;
+}
+
+
+.gold-node-orbit-01 {
+
+    width: 100%;
+    height: 100%;
+
+    border:
+        1px solid rgba(226, 188, 108, .16);
+
+    border-right-color:
+        rgba(238, 203, 132, .45);
+
+    animation:
+        ars-node-orbit-clockwise
+        9s
+        linear
+        infinite;
+}
+
+
+.gold-node-orbit-02 {
+
+    width: 126%;
+    height: 126%;
+
+    border:
+        1px dashed rgba(207, 164, 76, .08);
+
+    border-left-color:
+        rgba(226, 184, 95, .25);
+
+    animation:
+        ars-node-orbit-counter
+        14s
+        linear
+        infinite;
+}
+
+
+/* =========================================================
+   14 — NODE PULSE
+   ========================================================= */
+
+.gold-node-pulse {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 75%;
+    height: 75%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(230, 194, 119, .22);
+
+    opacity: 0;
+
+    animation:
+        ars-node-pulse
+        4.5s
+        ease-out
+        infinite;
+}
+
+
+/* =========================================================
+   15 — NODE LINK
+   ========================================================= */
+
+.gold-node-link {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    text-decoration: none;
+
+    pointer-events: auto;
+
+    background:
+        radial-gradient(
+            circle at 42% 36%,
+            rgba(57, 48, 31, .94),
+            rgba(16, 15, 12, .98) 68%
+        );
+
+    border:
+        1px solid rgba(211, 174, 96, .24);
+
+    box-shadow:
+        0 12px 32px rgba(0,0,0,.55),
+        0 0 15px rgba(193, 145, 51, .06),
+        inset 0 0 20px rgba(227, 190, 110, .035);
+
+    transition:
+        transform .5s cubic-bezier(.2,.8,.2,1),
+        border-color .4s ease,
+        box-shadow .4s ease;
+}
+
+
+/* =========================================================
+   NODE INNER CORE
+   ========================================================= */
+
+.gold-node-core {
+
+    width: 24%;
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 232, 178, .98),
+            rgba(221, 177, 85, .72) 28%,
+            rgba(158, 106, 32, .3) 58%,
+            transparent 75%
+        );
+
+    box-shadow:
+        0 0 8px rgba(239, 201, 120, .65),
+        0 0 20px rgba(211, 163, 67, .3);
+
+    animation:
+        ars-node-core-breathe
+        3.8s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   16 — NODE HOVER
+   ========================================================= */
+
+.gold-node-link:hover {
+
+    transform:
+        scale(1.15);
+
+    border-color:
+        rgba(242, 210, 148, .62);
+
+    box-shadow:
+        0 16px 42px rgba(0,0,0,.62),
+        0 0 22px rgba(218, 171, 77, .2),
+        0 0 55px rgba(198, 147, 48, .08),
+        inset 0 0 25px rgba(237, 202, 130, .07);
+}
+
+
+.gold-node-link:hover .gold-node-core {
+
+    transform:
+        scale(1.22);
+
+    box-shadow:
+        0 0 10px rgba(255, 223, 150, .8),
+        0 0 28px rgba(224, 177, 81, .45),
+        0 0 50px rgba(203, 149, 48, .18);
+}
+
+
+/* =========================================================
+   17 — NODE MICRO LIGHT
+   ========================================================= */
+
+.gold-node-link::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 18%;
+    top: 18%;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 239, 201, .9);
+
+    box-shadow:
+        0 0 8px rgba(242, 202, 123, .65);
+
+    opacity: .8;
+}
+
+
+/* =========================================================
+   18 — GOLD SYSTEM DATA POINTS
+   ========================================================= */
+
+.ars-gold-system .gold-node::after {
+
     content: "";
 
     position: absolute;
@@ -17764,304 +16776,464 @@ select {
     left: 50%;
     top: 50%;
 
-    width: 80%;
-    height: 1px;
+    width: 3px;
+    height: 3px;
 
     transform:
-        translate(-50%,-50%);
+        translate(-50%, -50%);
+
+    border-radius: 50%;
 
     background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(120,210,235,.08),
-            transparent
-        );
+        rgba(241, 204, 131, .8);
 
     box-shadow:
-        0 -80px 0 rgba(120,210,235,.025),
-        0 80px 0 rgba(120,210,235,.025);
+        0 0 8px rgba(224, 180, 85, .5);
 
-    pointer-events: none;
-
-    z-index: 2;
+    opacity: .5;
 }
 
 
 /* =========================================================
-   28 — DEPTH VIGNETTE
+   19 — PRECISION OUTER TICKS
    ========================================================= */
 
-.hero::after {
+.ars-gold-orbit-03::after {
+
     content: "";
 
     position: absolute;
-    inset: 0;
 
-    z-index: 100;
+    left: 50%;
+    top: 50%;
 
-    pointer-events: none;
+    width: 100%;
+    height: 100%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
 
     background:
-        radial-gradient(
-            ellipse at center,
-            transparent 40%,
-            rgba(0,0,0,.15) 68%,
-            rgba(0,0,0,.55) 100%
+        repeating-conic-gradient(
+            from 0deg,
+            rgba(224, 184, 101, .12) 0deg 1deg,
+            transparent 1deg 30deg
         );
+
+    mask-image:
+        radial-gradient(
+            transparent 70%,
+            #000 71%
+        );
+
+    -webkit-mask-image:
+        radial-gradient(
+            transparent 70%,
+            #000 71%
+        );
+
+    opacity: .32;
 }
 
 
 /* =========================================================
-   29 — RESPONSIVE / TABLET
+   20 — KEYFRAMES
+   ========================================================= */
+
+@keyframes ars-gold-atmosphere {
+
+    0%,100% {
+        opacity: .55;
+        transform:
+            translate(-50%, -50%)
+            scale(.94);
+    }
+
+    50% {
+        opacity: 1;
+        transform:
+            translate(-50%, -50%)
+            scale(1.05);
+    }
+}
+
+
+@keyframes ars-gold-field-breathe {
+
+    0%,100% {
+        opacity: .4;
+        transform:
+            translate(-50%, -50%)
+            scale(.96);
+    }
+
+    50% {
+        opacity: .75;
+        transform:
+            translate(-50%, -50%)
+            scale(1.04);
+    }
+}
+
+
+@keyframes ars-gold-orbit-clockwise {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+}
+
+
+@keyframes ars-gold-orbit-counter {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+}
+
+
+@keyframes ars-core-gold-breathe {
+
+    0%,100% {
+        opacity: .45;
+        transform:
+            translate(-50%, -50%)
+            scale(.92);
+    }
+
+    50% {
+        opacity: 1;
+        transform:
+            translate(-50%, -50%)
+            scale(1.08);
+    }
+}
+
+
+@keyframes ars-core-energy-pulse {
+
+    0%,100% {
+        opacity: .45;
+        transform:
+            translate(-50%, -50%)
+            scale(.9);
+    }
+
+    50% {
+        opacity: 1;
+        transform:
+            translate(-50%, -50%)
+            scale(1.08);
+    }
+}
+
+
+@keyframes ars-core-center-breathe {
+
+    0%,100% {
+        transform:
+            translate(-50%, -50%)
+            scale(.94);
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.06);
+    }
+}
+
+
+@keyframes ars-core-orbit-01 {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+}
+
+
+@keyframes ars-core-orbit-02 {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+}
+
+
+@keyframes ars-core-orbit-03 {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+}
+
+
+@keyframes ars-energy-travel {
+
+    0% {
+        opacity: 0;
+        top: 100%;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: .9;
+    }
+
+    100% {
+        opacity: 0;
+        top: 0%;
+    }
+}
+
+
+@keyframes ars-node-halo {
+
+    0%,100% {
+        opacity: .4;
+        transform:
+            translate(-50%, -50%)
+            scale(.9);
+    }
+
+    50% {
+        opacity: 1;
+        transform:
+            translate(-50%, -50%)
+            scale(1.1);
+    }
+}
+
+
+@keyframes ars-node-orbit-clockwise {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+}
+
+
+@keyframes ars-node-orbit-counter {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+}
+
+
+@keyframes ars-node-pulse {
+
+    0% {
+        opacity: .35;
+
+        transform:
+            translate(-50%, -50%)
+            scale(.7);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.65);
+    }
+}
+
+
+@keyframes ars-node-core-breathe {
+
+    0%,100% {
+        opacity: .65;
+
+        transform:
+            scale(.9);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            scale(1.12);
+    }
+}
+
+
+/* =========================================================
+   21 — TABLET
    ========================================================= */
 
 @media (max-width: 1100px) {
 
-    .ars-intelligence-system {
-        width: 94vw;
-        height: 94vw;
+    .ars-gold-system {
+
+        left: 72%;
+
+        width: min(470px, 52vw);
     }
 
-    .orbit-item {
-        width: 9%;
-        margin:
-            calc(-4.5%)
-            0
-            0
-            calc(-4.5%);
-    }
+    .gold-node {
 
-    .orbit-inner .orbit-1,
-    .orbit-inner .orbit-2,
-    .orbit-inner .orbit-3,
-    .orbit-inner .orbit-4,
-    .orbit-inner .orbit-5,
-    .orbit-inner .orbit-6 {
-        transform:
-            rotate(var(--orbit-angle))
-            translateY(-235%);
-    }
-
-    .orbit-outer .orbit-7,
-    .orbit-outer .orbit-8,
-    .orbit-outer .orbit-9,
-    .orbit-outer .orbit-10,
-    .orbit-outer .orbit-11,
-    .orbit-outer .orbit-12,
-    .orbit-outer .orbit-13 {
-        transform:
-            rotate(var(--orbit-angle))
-            translateY(-335%);
+        width: 66px;
+        height: 66px;
     }
 }
 
 
 /* =========================================================
-   30 — MOBILE
+   22 — MOBILE
    ========================================================= */
 
 @media (max-width: 700px) {
 
-    .hero {
-        min-height: 92svh;
+    .ars-hero {
+
+        min-height: 760px;
     }
 
-    .hero-wrapper {
-        min-height: 92svh;
+    .ars-hero-field {
+
+        min-height: 760px;
     }
 
-    .home-energy-universe {
-        width: 150vw;
-        height: 150vw;
+    .ars-gold-system {
+
+        left: 50%;
+        top: 58%;
+
+        width: min(430px, 82vw);
     }
 
-    .ars-intelligence-system {
-        width: 150vw;
-        height: 150vw;
+    .gold-node {
 
-        transform:
-            scale(.82);
+        width: 55px;
+        height: 55px;
     }
 
-    .ars-vehicle-intelligence {
-        width: 82%;
-        height: 42%;
+    .ars-gold-orbit-03 {
 
-        transform:
-            translate(-50%,-50%)
-            translateZ(-100px);
+        opacity: .55;
     }
 
-    .orbit-core {
-        width: 18%;
-    }
+    .gold-energy-line {
 
-    .orbit-item {
-        width: 10%;
-        margin:
-            calc(-5%)
-            0
-            0
-            calc(-5%);
-    }
-
-    .orbit-inner .orbit-1 {
-        transform: rotate(0deg) translateY(-220%);
-    }
-
-    .orbit-inner .orbit-2 {
-        transform: rotate(60deg) translateY(-220%);
-    }
-
-    .orbit-inner .orbit-3 {
-        transform: rotate(120deg) translateY(-220%);
-    }
-
-    .orbit-inner .orbit-4 {
-        transform: rotate(180deg) translateY(-220%);
-    }
-
-    .orbit-inner .orbit-5 {
-        transform: rotate(240deg) translateY(-220%);
-    }
-
-    .orbit-inner .orbit-6 {
-        transform: rotate(300deg) translateY(-220%);
-    }
-
-    .orbit-outer .orbit-7 {
-        transform: rotate(0deg) translateY(-310%);
-    }
-
-    .orbit-outer .orbit-8 {
-        transform: rotate(51.43deg) translateY(-310%);
-    }
-
-    .orbit-outer .orbit-9 {
-        transform: rotate(102.86deg) translateY(-310%);
-    }
-
-    .orbit-outer .orbit-10 {
-        transform: rotate(154.29deg) translateY(-310%);
-    }
-
-    .orbit-outer .orbit-11 {
-        transform: rotate(205.72deg) translateY(-310%);
-    }
-
-    .orbit-outer .orbit-12 {
-        transform: rotate(257.15deg) translateY(-310%);
-    }
-
-    .orbit-outer .orbit-13 {
-        transform: rotate(308.58deg) translateY(-310%);
-    }
-
-    .home-energy-ray {
-        opacity: .22;
-    }
-
-    .home-master-orbit {
-        opacity: .65;
-    }
-
-    .vehicle-energy-field {
-        filter: blur(22px);
+        opacity: .5;
     }
 }
 
 
 /* =========================================================
-   31 — REDUCED MOTION
+   23 — SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+    .ars-gold-system {
+
+        width: 86vw;
+
+        top: 58%;
+    }
+
+    .gold-node {
+
+        width: 47px;
+        height: 47px;
+    }
+
+    .gold-core-center {
+
+        width: 38%;
+    }
+
+    .ars-gold-orbit-03 {
+
+        opacity: .35;
+    }
+}
+
+
+/* =========================================================
+   24 — REDUCED MOTION
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
-    *,
-    *::before,
-    *::after {
-        animation-duration: .001ms !important;
+    .ars-gold-system *,
+    .ars-gold-system *::before,
+    .ars-gold-system *::after {
+
+        animation-duration: .01ms !important;
+
         animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
     }
 }
 
+
 /* =========================================================
-   ARS NODE VISIBILITY — DEBUG FIX
+   END — ARS GOLD INTELLIGENCE SYSTEM
    ========================================================= */
-
-.ars-master-orbit {
-    position: absolute !important;
-    left: 50% !important;
-    top: 50% !important;
-
-    width: min(46vw, 690px) !important;
-    height: min(46vw, 690px) !important;
-
-    transform: translate(-50%, -50%) !important;
-
-    z-index: 100 !important;
-
-    overflow: visible !important;
-}
-
-.orbit-inner,
-.orbit-outer {
-    position: absolute !important;
-
-    display: block !important;
-
-    overflow: visible !important;
-
-    pointer-events: none !important;
-
-    z-index: 200 !important;
-}
-
-.orbit-inner {
-    inset: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-}
-
-.orbit-outer {
-    left: -18% !important;
-    top: -18% !important;
-
-    width: 136% !important;
-    height: 136% !important;
-
-    right: auto !important;
-    bottom: auto !important;
-}
-
-.orbit-inner .orbit-item,
-.orbit-outer .orbit-item {
-    position: absolute !important;
-
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-
-    z-index: 300 !important;
-
-    pointer-events: auto !important;
-}
-
-.orbit-inner .orbit-link,
-.orbit-outer .orbit-link {
-    display: flex !important;
-
-    visibility: visible !important;
-    opacity: 1 !important;
-
-    z-index: 301 !important;
-}
-
-
-
-
 
 
 
