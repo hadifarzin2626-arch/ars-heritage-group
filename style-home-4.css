@@ -16049,7 +16049,1508 @@ select {
 
    ========================================================= */
 
+/* =========================================================
+   ARS HERITAGE GROUP
+   GOLD INTELLIGENCE CONSTELLATION
+   SYSTEM 01 — SIX NODE ARCHITECTURE
+   PREMIUM INDUSTRIAL / AUTOMOTIVE INTELLIGENCE
+   =========================================================
 
+   DESIGN DNA
+   ---------------------------------------------------------
+   Precision
+   Luxury
+   Automotive Intelligence
+   Orbital Engineering
+   Controlled Gold Energy
+   Deep Spatial Illumination
+
+   IMPORTANT
+   ---------------------------------------------------------
+   This stylesheet is completely isolated to:
+   .ars-hero
+   .ars-gold-system
+
+   It does NOT style body, typography, buttons,
+   navigation, or other pages.
+   ========================================================= */
+
+
+/* =========================================================
+   01 — HERO HOST
+   ========================================================= */
+
+.ars-hero {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+    background:
+        radial-gradient(
+            circle at 70% 50%,
+            rgba(190, 145, 55, .035),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(135, 160, 175, .018),
+            transparent 52%
+        );
+
+    color: #eef2f4;
+}
+
+
+/* =========================================================
+   02 — HERO FIELD
+   ========================================================= */
+
+.ars-hero-field {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   03 — GOLD SYSTEM MASTER CONTAINER
+   ========================================================= */
+
+.ars-gold-system {
+    position: absolute;
+
+    left: 73%;
+    top: 50%;
+
+    width: min(520px, 46vw);
+    aspect-ratio: 1 / 1;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 10;
+
+    pointer-events: none;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   04 — MASTER GOLD ATMOSPHERE
+   ========================================================= */
+
+.ars-gold-system::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 115%;
+    height: 115%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(212, 171, 88, .075) 0%,
+            rgba(192, 145, 52, .035) 22%,
+            rgba(151, 112, 46, .018) 40%,
+            transparent 70%
+        );
+
+    filter: blur(20px);
+
+    opacity: .8;
+
+    animation:
+        ars-gold-atmosphere 8s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   05 — SECONDARY GOLD FIELD
+   ========================================================= */
+
+.ars-gold-system::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 150%;
+    height: 150%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(210, 169, 84, .025),
+            transparent 62%
+        );
+
+    filter: blur(30px);
+
+    opacity: .65;
+
+    z-index: -2;
+
+    animation:
+        ars-gold-field-breathe 11s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   06 — MASTER ORBITAL FIELD
+   ========================================================= */
+
+.ars-gold-orbit {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   ORBIT 01
+   ========================================================= */
+
+.ars-gold-orbit-01 {
+
+    width: 74%;
+    height: 74%;
+
+    border:
+        1px solid rgba(207, 166, 82, .17);
+
+    box-shadow:
+        0 0 20px rgba(190, 145, 54, .035),
+        inset 0 0 20px rgba(206, 165, 82, .018);
+
+    animation:
+        ars-gold-orbit-clockwise
+        32s
+        linear
+        infinite;
+}
+
+
+/* =========================================================
+   ORBIT 02
+   ========================================================= */
+
+.ars-gold-orbit-02 {
+
+    width: 92%;
+    height: 92%;
+
+    border:
+        1px solid rgba(195, 153, 70, .09);
+
+    border-left-color:
+        rgba(224, 187, 105, .25);
+
+    border-bottom-color:
+        rgba(174, 128, 44, .04);
+
+    animation:
+        ars-gold-orbit-counter
+        48s
+        linear
+        infinite;
+}
+
+
+/* =========================================================
+   ORBIT 03
+   ========================================================= */
+
+.ars-gold-orbit-03 {
+
+    width: 112%;
+    height: 112%;
+
+    border:
+        1px dashed rgba(195, 156, 78, .055);
+
+    opacity: .65;
+
+    animation:
+        ars-gold-orbit-clockwise
+        68s
+        linear
+        infinite;
+}
+
+
+/* =========================================================
+   07 — ORBITAL MICRO MARKS
+   ========================================================= */
+
+.ars-gold-orbit-01::before,
+.ars-gold-orbit-02::before,
+.ars-gold-orbit-03::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: -2px;
+
+    width: 4px;
+    height: 4px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(230, 198, 124, .85);
+
+    box-shadow:
+        0 0 8px rgba(224, 183, 92, .5),
+        0 0 20px rgba(203, 155, 57, .22);
+}
+
+
+/* =========================================================
+   08 — CENTRAL GOLD CORE
+   ========================================================= */
+
+.ars-gold-core {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 30%;
+    aspect-ratio: 1;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    z-index: 30;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CORE HALO
+   ========================================================= */
+
+.gold-core-halo {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 180%;
+    height: 180%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(224, 186, 103, .12) 0%,
+            rgba(199, 151, 58, .055) 25%,
+            transparent 68%
+        );
+
+    filter: blur(12px);
+
+    animation:
+        ars-core-gold-breathe
+        5s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   CORE ENERGY
+   ========================================================= */
+
+.gold-core-energy {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 78%;
+    height: 78%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 45% 40%,
+            rgba(255, 224, 155, .28),
+            rgba(220, 178, 88, .12) 25%,
+            rgba(158, 111, 37, .035) 48%,
+            transparent 72%
+        );
+
+    filter: blur(3px);
+
+    animation:
+        ars-core-energy-pulse
+        4.5s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   CORE CENTER
+   ========================================================= */
+
+.gold-core-center {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 34%;
+    aspect-ratio: 1;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 42% 38%,
+            rgba(255, 236, 190, .95),
+            rgba(216, 171, 83, .72) 22%,
+            rgba(122, 80, 24, .42) 50%,
+            rgba(24, 20, 13, .8) 75%
+        );
+
+    border:
+        1px solid rgba(244, 213, 148, .58);
+
+    box-shadow:
+        0 0 12px rgba(232, 190, 102, .4),
+        0 0 35px rgba(207, 157, 58, .2),
+        0 0 70px rgba(194, 143, 44, .09),
+        inset 0 0 15px rgba(255, 224, 160, .16);
+
+    animation:
+        ars-core-center-breathe
+        4s
+        ease-in-out
+        infinite;
+}
+
+
+.gold-core-point {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 7px;
+    height: 7px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        #fff3cf;
+
+    box-shadow:
+        0 0 7px #f4d28a,
+        0 0 18px rgba(238, 194, 102, .8),
+        0 0 38px rgba(212, 163, 67, .42);
+}
+
+
+/* =========================================================
+   09 — CORE ORBITS
+   ========================================================= */
+
+.gold-core-orbit {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    pointer-events: none;
+}
+
+
+.gold-core-orbit-01 {
+
+    width: 112%;
+    height: 112%;
+
+    border:
+        1px solid rgba(230, 191, 111, .18);
+
+    border-right-color:
+        rgba(236, 201, 131, .48);
+
+    animation:
+        ars-core-orbit-01
+        11s
+        linear
+        infinite;
+}
+
+
+.gold-core-orbit-02 {
+
+    width: 138%;
+    height: 138%;
+
+    border:
+        1px solid rgba(206, 163, 76, .1);
+
+    border-left-color:
+        rgba(238, 199, 122, .32);
+
+    animation:
+        ars-core-orbit-02
+        17s
+        linear
+        infinite;
+}
+
+
+.gold-core-orbit-03 {
+
+    width: 164%;
+    height: 164%;
+
+    border:
+        1px dashed rgba(206, 164, 78, .07);
+
+    animation:
+        ars-core-orbit-03
+        24s
+        linear
+        infinite reverse;
+}
+
+
+/* =========================================================
+   10 — ENERGY NETWORK
+   ========================================================= */
+
+.gold-energy-network {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 5;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   ENERGY LINES
+   ========================================================= */
+
+.gold-energy-line {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 1px;
+
+    height: 37%;
+
+    transform-origin:
+        50% 100%;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(225, 183, 92, .42),
+            rgba(217, 174, 81, .16),
+            rgba(202, 158, 64, .035),
+            transparent
+        );
+
+    opacity: .7;
+
+    filter:
+        drop-shadow(
+            0 0 5px rgba(215, 169, 75, .2)
+        );
+}
+
+
+/* =========================================================
+   SIX RADIAL CONNECTIONS
+   ========================================================= */
+
+.gold-line-01 {
+    transform:
+        translate(-50%, -100%)
+        rotate(0deg);
+}
+
+.gold-line-02 {
+    transform:
+        translate(-50%, -100%)
+        rotate(60deg);
+}
+
+.gold-line-03 {
+    transform:
+        translate(-50%, -100%)
+        rotate(120deg);
+}
+
+.gold-line-04 {
+    transform:
+        translate(-50%, -100%)
+        rotate(180deg);
+}
+
+.gold-line-05 {
+    transform:
+        translate(-50%, -100%)
+        rotate(240deg);
+}
+
+.gold-line-06 {
+    transform:
+        translate(-50%, -100%)
+        rotate(300deg);
+}
+
+
+/* =========================================================
+   ENERGY TRAVEL PARTICLES
+   ========================================================= */
+
+.gold-energy-line::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    width: 5px;
+    height: 5px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 224, 150, .95);
+
+    box-shadow:
+        0 0 8px rgba(241, 199, 113, .75),
+        0 0 20px rgba(216, 166, 70, .38);
+
+    animation:
+        ars-energy-travel
+        3.8s
+        ease-in-out
+        infinite;
+}
+
+
+.gold-line-02::after {
+    animation-delay: -.6s;
+}
+
+.gold-line-03::after {
+    animation-delay: -1.2s;
+}
+
+.gold-line-04::after {
+    animation-delay: -1.8s;
+}
+
+.gold-line-05::after {
+    animation-delay: -2.4s;
+}
+
+.gold-line-06::after {
+    animation-delay: -3s;
+}
+
+
+/* =========================================================
+   11 — GOLD NODE MASTER
+   ========================================================= */
+
+.gold-node {
+
+    position: absolute;
+
+    width: 74px;
+    height: 74px;
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 40;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   SIX NODE POSITIONS
+   ========================================================= */
+
+.gold-node-01 {
+    left: 50%;
+    top: 8%;
+}
+
+.gold-node-02 {
+    left: 86.4%;
+    top: 29%;
+}
+
+.gold-node-03 {
+    left: 86.4%;
+    top: 71%;
+}
+
+.gold-node-04 {
+    left: 50%;
+    top: 92%;
+}
+
+.gold-node-05 {
+    left: 13.6%;
+    top: 71%;
+}
+
+.gold-node-06 {
+    left: 13.6%;
+    top: 29%;
+}
+
+
+/* =========================================================
+   12 — NODE ENERGY FIELD
+   ========================================================= */
+
+.gold-node-energy {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 175%;
+    height: 175%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   NODE HALO
+   ========================================================= */
+
+.gold-node-halo {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 100%;
+    height: 100%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(226, 187, 102, .13),
+            rgba(200, 150, 54, .04) 42%,
+            transparent 70%
+        );
+
+    filter: blur(8px);
+
+    animation:
+        ars-node-halo
+        4.8s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   13 — NODE ORBITS
+   ========================================================= */
+
+.gold-node-orbit {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    pointer-events: none;
+}
+
+
+.gold-node-orbit-01 {
+
+    width: 100%;
+    height: 100%;
+
+    border:
+        1px solid rgba(226, 188, 108, .16);
+
+    border-right-color:
+        rgba(238, 203, 132, .45);
+
+    animation:
+        ars-node-orbit-clockwise
+        9s
+        linear
+        infinite;
+}
+
+
+.gold-node-orbit-02 {
+
+    width: 126%;
+    height: 126%;
+
+    border:
+        1px dashed rgba(207, 164, 76, .08);
+
+    border-left-color:
+        rgba(226, 184, 95, .25);
+
+    animation:
+        ars-node-orbit-counter
+        14s
+        linear
+        infinite;
+}
+
+
+/* =========================================================
+   14 — NODE PULSE
+   ========================================================= */
+
+.gold-node-pulse {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 75%;
+    height: 75%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(230, 194, 119, .22);
+
+    opacity: 0;
+
+    animation:
+        ars-node-pulse
+        4.5s
+        ease-out
+        infinite;
+}
+
+
+/* =========================================================
+   15 — NODE LINK
+   ========================================================= */
+
+.gold-node-link {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    text-decoration: none;
+
+    pointer-events: auto;
+
+    background:
+        radial-gradient(
+            circle at 42% 36%,
+            rgba(57, 48, 31, .94),
+            rgba(16, 15, 12, .98) 68%
+        );
+
+    border:
+        1px solid rgba(211, 174, 96, .24);
+
+    box-shadow:
+        0 12px 32px rgba(0,0,0,.55),
+        0 0 15px rgba(193, 145, 51, .06),
+        inset 0 0 20px rgba(227, 190, 110, .035);
+
+    transition:
+        transform .5s cubic-bezier(.2,.8,.2,1),
+        border-color .4s ease,
+        box-shadow .4s ease;
+}
+
+
+/* =========================================================
+   NODE INNER CORE
+   ========================================================= */
+
+.gold-node-core {
+
+    width: 24%;
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 232, 178, .98),
+            rgba(221, 177, 85, .72) 28%,
+            rgba(158, 106, 32, .3) 58%,
+            transparent 75%
+        );
+
+    box-shadow:
+        0 0 8px rgba(239, 201, 120, .65),
+        0 0 20px rgba(211, 163, 67, .3);
+
+    animation:
+        ars-node-core-breathe
+        3.8s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   16 — NODE HOVER
+   ========================================================= */
+
+.gold-node-link:hover {
+
+    transform:
+        scale(1.15);
+
+    border-color:
+        rgba(242, 210, 148, .62);
+
+    box-shadow:
+        0 16px 42px rgba(0,0,0,.62),
+        0 0 22px rgba(218, 171, 77, .2),
+        0 0 55px rgba(198, 147, 48, .08),
+        inset 0 0 25px rgba(237, 202, 130, .07);
+}
+
+
+.gold-node-link:hover .gold-node-core {
+
+    transform:
+        scale(1.22);
+
+    box-shadow:
+        0 0 10px rgba(255, 223, 150, .8),
+        0 0 28px rgba(224, 177, 81, .45),
+        0 0 50px rgba(203, 149, 48, .18);
+}
+
+
+/* =========================================================
+   17 — NODE MICRO LIGHT
+   ========================================================= */
+
+.gold-node-link::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 18%;
+    top: 18%;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 239, 201, .9);
+
+    box-shadow:
+        0 0 8px rgba(242, 202, 123, .65);
+
+    opacity: .8;
+}
+
+
+/* =========================================================
+   18 — GOLD SYSTEM DATA POINTS
+   ========================================================= */
+
+.ars-gold-system .gold-node::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 3px;
+    height: 3px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(241, 204, 131, .8);
+
+    box-shadow:
+        0 0 8px rgba(224, 180, 85, .5);
+
+    opacity: .5;
+}
+
+
+/* =========================================================
+   19 — PRECISION OUTER TICKS
+   ========================================================= */
+
+.ars-gold-orbit-03::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 100%;
+    height: 100%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        repeating-conic-gradient(
+            from 0deg,
+            rgba(224, 184, 101, .12) 0deg 1deg,
+            transparent 1deg 30deg
+        );
+
+    mask-image:
+        radial-gradient(
+            transparent 70%,
+            #000 71%
+        );
+
+    -webkit-mask-image:
+        radial-gradient(
+            transparent 70%,
+            #000 71%
+        );
+
+    opacity: .32;
+}
+
+
+/* =========================================================
+   20 — KEYFRAMES
+   ========================================================= */
+
+@keyframes ars-gold-atmosphere {
+
+    0%,100% {
+        opacity: .55;
+        transform:
+            translate(-50%, -50%)
+            scale(.94);
+    }
+
+    50% {
+        opacity: 1;
+        transform:
+            translate(-50%, -50%)
+            scale(1.05);
+    }
+}
+
+
+@keyframes ars-gold-field-breathe {
+
+    0%,100% {
+        opacity: .4;
+        transform:
+            translate(-50%, -50%)
+            scale(.96);
+    }
+
+    50% {
+        opacity: .75;
+        transform:
+            translate(-50%, -50%)
+            scale(1.04);
+    }
+}
+
+
+@keyframes ars-gold-orbit-clockwise {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+}
+
+
+@keyframes ars-gold-orbit-counter {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+}
+
+
+@keyframes ars-core-gold-breathe {
+
+    0%,100% {
+        opacity: .45;
+        transform:
+            translate(-50%, -50%)
+            scale(.92);
+    }
+
+    50% {
+        opacity: 1;
+        transform:
+            translate(-50%, -50%)
+            scale(1.08);
+    }
+}
+
+
+@keyframes ars-core-energy-pulse {
+
+    0%,100% {
+        opacity: .45;
+        transform:
+            translate(-50%, -50%)
+            scale(.9);
+    }
+
+    50% {
+        opacity: 1;
+        transform:
+            translate(-50%, -50%)
+            scale(1.08);
+    }
+}
+
+
+@keyframes ars-core-center-breathe {
+
+    0%,100% {
+        transform:
+            translate(-50%, -50%)
+            scale(.94);
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.06);
+    }
+}
+
+
+@keyframes ars-core-orbit-01 {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+}
+
+
+@keyframes ars-core-orbit-02 {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+}
+
+
+@keyframes ars-core-orbit-03 {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+}
+
+
+@keyframes ars-energy-travel {
+
+    0% {
+        opacity: 0;
+        top: 100%;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: .9;
+    }
+
+    100% {
+        opacity: 0;
+        top: 0%;
+    }
+}
+
+
+@keyframes ars-node-halo {
+
+    0%,100% {
+        opacity: .4;
+        transform:
+            translate(-50%, -50%)
+            scale(.9);
+    }
+
+    50% {
+        opacity: 1;
+        transform:
+            translate(-50%, -50%)
+            scale(1.1);
+    }
+}
+
+
+@keyframes ars-node-orbit-clockwise {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+}
+
+
+@keyframes ars-node-orbit-counter {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+}
+
+
+@keyframes ars-node-pulse {
+
+    0% {
+        opacity: .35;
+
+        transform:
+            translate(-50%, -50%)
+            scale(.7);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.65);
+    }
+}
+
+
+@keyframes ars-node-core-breathe {
+
+    0%,100% {
+        opacity: .65;
+
+        transform:
+            scale(.9);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            scale(1.12);
+    }
+}
+
+
+/* =========================================================
+   21 — TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .ars-gold-system {
+
+        left: 72%;
+
+        width: min(470px, 52vw);
+    }
+
+    .gold-node {
+
+        width: 66px;
+        height: 66px;
+    }
+}
+
+
+/* =========================================================
+   22 — MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .ars-hero {
+
+        min-height: 760px;
+    }
+
+    .ars-hero-field {
+
+        min-height: 760px;
+    }
+
+    .ars-gold-system {
+
+        left: 50%;
+        top: 58%;
+
+        width: min(430px, 82vw);
+    }
+
+    .gold-node {
+
+        width: 55px;
+        height: 55px;
+    }
+
+    .ars-gold-orbit-03 {
+
+        opacity: .55;
+    }
+
+    .gold-energy-line {
+
+        opacity: .5;
+    }
+}
+
+
+/* =========================================================
+   23 — SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+    .ars-gold-system {
+
+        width: 86vw;
+
+        top: 58%;
+    }
+
+    .gold-node {
+
+        width: 47px;
+        height: 47px;
+    }
+
+    .gold-core-center {
+
+        width: 38%;
+    }
+
+    .ars-gold-orbit-03 {
+
+        opacity: .35;
+    }
+}
+
+
+/* =========================================================
+   24 — REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ars-gold-system *,
+    .ars-gold-system *::before,
+    .ars-gold-system *::after {
+
+        animation-duration: .01ms !important;
+
+        animation-iteration-count: 1 !important;
+    }
+}
+
+
+/* =========================================================
+   END — ARS GOLD INTELLIGENCE SYSTEM
+   ========================================================= */
 
 
 
