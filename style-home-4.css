@@ -17551,142 +17551,177 @@ select {
 /* =========================================================
    END — ARS GOLD INTELLIGENCE SYSTEM
    ========================================================= */
-
-
-/* =========================================================
-   ARS HERO — ULTRA WIDE FIELD
-   WIDTH ONLY
-   DO NOT MODIFY NODE SYSTEM
-   ========================================================= */
+/* ============================================================
+   ARS HERITAGE GROUP
+   HERO ARCHITECTURE — MASTER WIDTH
+   ONLY HERO WIDTH
+   ============================================================ */
 
 .ars-hero {
-    width: 100%;
-    max-width: none !important;
-
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-
-    overflow: hidden;
-}
-
-.ars-hero-field {
-    width: 300vw !important;
-    max-width: none !important;
-
-    margin-left: -100vw !important;
-    margin-right: 0 !important;
 
     position: relative;
-    left: 0;
 
-    overflow: visible !important;
+    /* HERO ITSELF = FULL VIEWPORT */
+    width: 100vw;
+    max-width: 100vw;
+
+    /* CENTER THE HERO WITHOUT TOUCHING HEADER */
+    margin-left: 50%;
+    transform: translateX(-50%);
+
+    min-height:
+        max(
+            760px,
+            100svh
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+    padding:
+        140px 0 90px;
+
 }
 
 
-/* =========================================================
-   MOBILE — SMALL
-   ========================================================= */
+/* ============================================================
+   HERO INNER
+   WIDTH OF HERO CONTENT AREA
+   ============================================================ */
+
+.ars-hero-inner {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: none;
+
+    margin: 0 auto;
+
+    min-height: 620px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.05fr)
+        minmax(420px, .95fr);
+
+    align-items: center;
+
+    gap:
+        clamp(50px, 6vw, 120px);
+
+    z-index: 3;
+
+}
+
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 1180px) {
+
+    .ars-hero {
+
+        width: 100vw;
+        max-width: 100vw;
+
+        margin-left: 50%;
+        transform: translateX(-50%);
+
+        padding:
+            130px 0 80px;
+
+    }
+
+    .ars-hero-inner {
+
+        width: 100%;
+        max-width: none;
+
+        min-height: auto;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(360px, .8fr);
+
+        gap: 40px;
+
+    }
+
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .ars-hero {
+
+        width: 100vw;
+        max-width: 100vw;
+
+        margin-left: 50%;
+        transform: translateX(-50%);
+
+        padding:
+            120px 0 90px;
+
+    }
+
+    .ars-hero-inner {
+
+        width: 100%;
+        max-width: none;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 55px;
+
+    }
+
+}
+
+
+/* ============================================================
+   SMALL MOBILE
+   ============================================================ */
 
 @media (max-width: 480px) {
 
     .ars-hero {
-        width: 100vw !important;
-        max-width: none !important;
-        overflow: hidden !important;
+
+        width: 100vw;
+        max-width: 100vw;
+
+        margin-left: 50%;
+        transform: translateX(-50%);
+
+        padding:
+            108px 0 70px;
+
     }
 
-    .ars-hero-field {
-        width: 300vw !important;
-        max-width: none !important;
+    .ars-hero-inner {
 
-        margin-left: -100vw !important;
-        margin-right: 0 !important;
+        width: 100%;
+        max-width: none;
 
-        overflow: visible !important;
-    }
+        gap: 42px;
 
-}
-
-
-/* =========================================================
-   MOBILE — LARGE
-   ========================================================= */
-
-@media (min-width: 481px) and (max-width: 767px) {
-
-    .ars-hero {
-        width: 100vw !important;
-        max-width: none !important;
-        overflow: hidden !important;
-    }
-
-    .ars-hero-field {
-        width: 300vw !important;
-        max-width: none !important;
-
-        margin-left: -100vw !important;
-
-        overflow: visible !important;
     }
 
 }
-
-
-/* =========================================================
-   TABLET
-   ========================================================= */
-
-@media (min-width: 768px) and (max-width: 1199px) {
-
-    .ars-hero {
-        width: 100vw !important;
-        max-width: none !important;
-        overflow: hidden !important;
-    }
-
-    .ars-hero-field {
-        width: 300vw !important;
-        max-width: none !important;
-
-        margin-left: -100vw !important;
-
-        overflow: visible !important;
-    }
-
-}
-
-
-/* =========================================================
-   DESKTOP
-   ========================================================= */
-
-@media (min-width: 1200px) {
-
-    .ars-hero {
-        width: 100vw !important;
-        max-width: none !important;
-        overflow: hidden !important;
-    }
-
-    .ars-hero-field {
-        width: 300vw !important;
-        max-width: none !important;
-
-        margin-left: -100vw !important;
-
-        overflow: visible !important;
-    }
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
