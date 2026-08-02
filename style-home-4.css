@@ -3376,6 +3376,8 @@ a {
 
 /* ============================================================
    01 — HERO ROOT
+   VIEWPORT WIDTH LOCK
+   WIDTH ONLY — DO NOT TOUCH INNER SYSTEMS
    ============================================================ */
 
 .ars-hero {
@@ -3384,13 +3386,19 @@ a {
         relative;
 
     width:
-        100%;
+        100vw;
+
+    max-width:
+        100vw;
 
     min-height:
         max(
             760px,
             100svh
         );
+
+    margin-left:
+        calc(50% - 50vw);
 
     display:
         flex;
@@ -3408,7 +3416,6 @@ a {
         140px 0 90px;
 
 }
-
 
 /* ============================================================
    02 — HERO INNER CONTAINER
