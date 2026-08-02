@@ -17987,7 +17987,77 @@ select {
     }
 }
 
+/* =========================================================
+   ARS NODE VISIBILITY — DEBUG FIX
+   ========================================================= */
 
+.ars-master-orbit {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+
+    width: min(46vw, 690px) !important;
+    height: min(46vw, 690px) !important;
+
+    transform: translate(-50%, -50%) !important;
+
+    z-index: 100 !important;
+
+    overflow: visible !important;
+}
+
+.orbit-inner,
+.orbit-outer {
+    position: absolute !important;
+
+    display: block !important;
+
+    overflow: visible !important;
+
+    pointer-events: none !important;
+
+    z-index: 200 !important;
+}
+
+.orbit-inner {
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.orbit-outer {
+    left: -18% !important;
+    top: -18% !important;
+
+    width: 136% !important;
+    height: 136% !important;
+
+    right: auto !important;
+    bottom: auto !important;
+}
+
+.orbit-inner .orbit-item,
+.orbit-outer .orbit-item {
+    position: absolute !important;
+
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    z-index: 300 !important;
+
+    pointer-events: auto !important;
+}
+
+.orbit-inner .orbit-link,
+.orbit-outer .orbit-link {
+    display: flex !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    z-index: 301 !important;
+}
 
 
 
