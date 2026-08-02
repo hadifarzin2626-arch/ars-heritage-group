@@ -3330,54 +3330,58 @@ a {
 
 }
 
-
-
 /* ============================================================
    ARS HERITAGE GROUP
    HOME — PHASE 03
-   PREMIUM HERO STRUCTURE
+   PREMIUM HERO MASTER ARCHITECTURE
    ============================================================
 
    DNA
-   Precision × Technology × Luxury
-
-   PURPOSE
    ------------------------------------------------------------
-   Structural architecture of the Home Hero.
+   Precision × Technology × Luxury
+   80% Gold Intelligence
+   20% Electric Blue Signature
 
-   This phase defines:
+   RESPONSIBILITY
+   ------------------------------------------------------------
+   HERO STRUCTURE ONLY
+
+   This phase owns:
    • Hero geometry
-   • Hero content architecture
-   • Hero vertical rhythm
-   • Hero media zone
-   • Hero copy zone
-   • Hero CTA zone
-   • Hero lower intelligence zone
-   • Hero transition into next section
-   • Responsive structural behavior
+   • Hero viewport architecture
+   • Ultra-wide internal design field
+   • Hero atmospheric layers
+   • Gold / Electric Blue light circuits
+   • Vehicle background mounting zone
+   • Future intelligence-system mounting space
+   • Responsive Hero geometry
+
+   THIS PHASE DOES NOT OWN:
+   • Six-node system
+   • Seven-node system
+   • Ten-node system
+   • Gold node components
+   • Node animations
+   • Node positioning
+   • Global page scrolling
+   • Body / HTML overflow
+   • Other Home sections
+   • Other phases
 
    IMPORTANT
    ------------------------------------------------------------
-   This is STRUCTURE only.
+   This stylesheet is intentionally isolated to:
+   .ars-hero
+   and its direct Hero architecture.
 
-   Advanced:
-   • Energy effects
-   • Parallax
-   • Dynamic radiation
-   • Motion systems
-   • Particle fields
-   • Advanced glow
-   • Intelligence animations
-
-   belong to the HERO SYSTEM phase.
-
+   No global layout rules are used.
+   No html/body rules are used.
+   No global overflow rules are used.
    ============================================================ */
 
 
 /* ============================================================
    01 — HERO ROOT
-   VIEWPORT WIDTH LOCK
-   WIDTH ONLY — DO NOT TOUCH INNER SYSTEMS
    ============================================================ */
 
 .ars-hero {
@@ -3386,19 +3390,13 @@ a {
         relative;
 
     width:
-        100vw;
-
-    max-width:
-        100vw;
+        100%;
 
     min-height:
         max(
             760px,
             100svh
         );
-
-    margin-left:
-        calc(50% - 50vw);
 
     display:
         flex;
@@ -3413,12 +3411,142 @@ a {
         isolate;
 
     padding:
-        140px 0 90px;
+        110px 0 90px;
+
+    background:
+        #04070b;
+
+    color:
+        #f4f7fb;
 
 }
 
+
 /* ============================================================
-   02 — HERO INNER CONTAINER
+   02 — HERO MASTER FIELD
+   ============================================================ */
+
+.ars-hero-field {
+
+    position:
+        relative;
+
+    width:
+        100%;
+
+    min-height:
+        max(
+            620px,
+            calc(100svh - 120px)
+        );
+
+    overflow:
+        hidden;
+
+    isolation:
+        isolate;
+
+}
+
+
+/* ============================================================
+   03 — ULTRA-WIDE DESIGN FIELD
+   ============================================================ */
+
+.ars-hero-field::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        min(
+            300vw,
+            5200px
+        );
+
+    height:
+        min(
+            150vw,
+            2600px
+        );
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            ellipse at 50% 50%,
+            rgba(198,155,68,.075) 0%,
+            rgba(198,155,68,.035) 22%,
+            transparent 54%
+        ),
+
+        radial-gradient(
+            ellipse at 68% 48%,
+            rgba(70,184,255,.035) 0%,
+            transparent 38%
+        );
+
+    pointer-events:
+        none;
+
+    z-index:
+        0;
+
+}
+
+
+/* ============================================================
+   04 — HERO DEEP ATMOSPHERE
+   ============================================================ */
+
+.ars-hero-field::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+
+        radial-gradient(
+            ellipse at 52% 48%,
+            transparent 22%,
+            rgba(0,0,0,.10) 58%,
+            rgba(0,0,0,.55) 100%
+        );
+
+    pointer-events:
+        none;
+
+    z-index:
+        1;
+
+}
+
+
+/* ============================================================
+   05 — HERO INTERNAL ARCHITECTURE
    ============================================================ */
 
 .ars-hero-inner {
@@ -3427,29 +3555,166 @@ a {
         relative;
 
     width:
-        min(
-            calc(100% - 80px),
-            1640px
-        );
+        100%;
+
+    max-width:
+        none;
 
     min-height:
-        620px;
+        max(
+            620px,
+            calc(100svh - 120px)
+        );
 
     margin:
         0 auto;
 
-    display:
-        grid;
+    z-index:
+        10;
 
-    grid-template-columns:
-        minmax(0, 1.05fr)
-        minmax(420px, .95fr);
+}
+
+
+/* ============================================================
+   06 — FUTURE VEHICLE BACKGROUND MOUNT
+   ============================================================
+
+   RESERVED FOR FUTURE VEHICLE IMAGE.
+
+   No image is forced here yet.
+
+   Future structure may be:
+
+   <div class="ars-hero-vehicle">
+       <img ...>
+   </div>
+
+   This layer intentionally remains behind all intelligence
+   systems.
+   ============================================================ */
+
+.ars-hero-vehicle {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    display:
+        flex;
 
     align-items:
         center;
 
-    gap:
-        clamp(50px, 6vw, 120px);
+    justify-content:
+        center;
+
+    overflow:
+        hidden;
+
+    pointer-events:
+        none;
+
+    z-index:
+        2;
+
+}
+
+
+/* ============================================================
+   07 — VEHICLE IMAGE RESERVED STYLE
+   ============================================================ */
+
+.ars-hero-vehicle img {
+
+    width:
+        min(
+            180vw,
+            3200px
+        );
+
+    max-width:
+        none;
+
+    height:
+        auto;
+
+    object-fit:
+        contain;
+
+    opacity:
+        .18;
+
+    filter:
+        saturate(.72)
+        brightness(.68)
+        contrast(1.12);
+
+    mix-blend-mode:
+        screen;
+
+    transform:
+        translateY(
+            2%
+        );
+
+}
+
+
+/* ============================================================
+   08 — GOLD INTELLIGENCE FIELD
+   ============================================================ */
+
+.ars-hero-inner::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        min(
+            220vw,
+            3800px
+        );
+
+    height:
+        min(
+            110vw,
+            1900px
+        );
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            ellipse at 50% 50%,
+            rgba(220,177,87,.075),
+            rgba(201,153,62,.025) 32%,
+            transparent 66%
+        );
+
+    filter:
+        blur(10px);
+
+    pointer-events:
+        none;
 
     z-index:
         3;
@@ -3458,7 +3723,444 @@ a {
 
 
 /* ============================================================
-   03 — HERO CONTENT COLUMN
+   09 — GOLD ORBITAL ATMOSPHERE
+   ============================================================ */
+
+.ars-hero-inner::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        min(
+            180vw,
+            3100px
+        );
+
+    height:
+        min(
+            90vw,
+            1550px
+        );
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    border:
+        1px solid rgba(
+            207,
+            165,
+            76,
+            .08
+        );
+
+    border-radius:
+        50%;
+
+    box-shadow:
+
+        0 0 90px
+        rgba(
+            198,
+            151,
+            59,
+            .035
+        ),
+
+        inset 0 0 100px
+        rgba(
+            198,
+            151,
+            59,
+            .025
+        );
+
+    pointer-events:
+        none;
+
+    z-index:
+        4;
+
+}
+
+
+/* ============================================================
+   10 — HERO LIGHT CIRCUIT FIELD
+   ============================================================ */
+
+.ars-hero-light-field {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    overflow:
+        hidden;
+
+    pointer-events:
+        none;
+
+    z-index:
+        5;
+
+}
+
+
+/* ============================================================
+   11 — GOLD CIRCUIT A
+   ============================================================ */
+
+.ars-hero-light-field::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        -8%;
+
+    top:
+        38%;
+
+    width:
+        116%;
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(213,170,80,.03) 12%,
+            rgba(226,188,104,.22) 30%,
+            rgba(242,207,133,.52) 48%,
+            rgba(219,175,81,.17) 67%,
+            transparent 100%
+        );
+
+    transform:
+        rotate(
+            -6deg
+        );
+
+    filter:
+        drop-shadow(
+            0 0 8px
+            rgba(217,171,73,.25)
+        );
+
+    opacity:
+        .72;
+
+}
+
+
+/* ============================================================
+   12 — BLUE SIGNATURE CIRCUIT
+   ============================================================ */
+
+.ars-hero-light-field::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    right:
+        -10%;
+
+    top:
+        63%;
+
+    width:
+        115%;
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(54,177,255,.025) 16%,
+            rgba(65,193,255,.16) 40%,
+            rgba(93,208,255,.38) 56%,
+            rgba(57,176,255,.10) 72%,
+            transparent
+        );
+
+    transform:
+        rotate(
+            7deg
+        );
+
+    filter:
+        drop-shadow(
+            0 0 9px
+            rgba(48,181,255,.25)
+        );
+
+    opacity:
+        .62;
+
+}
+
+
+/* ============================================================
+   13 — IRREGULAR GOLD CIRCUITS
+   ============================================================ */
+
+.ars-hero-field .ars-hero-circuit {
+
+    position:
+        absolute;
+
+    height:
+        1px;
+
+    transform-origin:
+        left center;
+
+    pointer-events:
+        none;
+
+    z-index:
+        6;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(219,176,84,.12),
+            rgba(240,204,128,.55),
+            rgba(202,153,58,.10),
+            transparent
+        );
+
+    box-shadow:
+        0 0 9px
+        rgba(213,165,68,.25);
+
+    opacity:
+        .72;
+
+}
+
+
+/* ============================================================
+   14 — CIRCUIT 01
+   ============================================================ */
+
+.ars-hero-circuit-01 {
+
+    width:
+        38%;
+
+    left:
+        5%;
+
+    top:
+        28%;
+
+    transform:
+        rotate(
+            18deg
+        );
+
+}
+
+
+/* ============================================================
+   15 — CIRCUIT 02
+   ============================================================ */
+
+.ars-hero-circuit-02 {
+
+    width:
+        31%;
+
+    left:
+        21%;
+
+    top:
+        67%;
+
+    transform:
+        rotate(
+            -11deg
+        );
+
+}
+
+
+/* ============================================================
+   16 — CIRCUIT 03
+   ============================================================ */
+
+.ars-hero-circuit-03 {
+
+    width:
+        42%;
+
+    left:
+        47%;
+
+    top:
+        24%;
+
+    transform:
+        rotate(
+            8deg
+        );
+
+}
+
+
+/* ============================================================
+   17 — CIRCUIT 04
+   ============================================================ */
+
+.ars-hero-circuit-04 {
+
+    width:
+        34%;
+
+    right:
+        4%;
+
+    top:
+        72%;
+
+    transform:
+        rotate(
+            -17deg
+        );
+
+}
+
+
+/* ============================================================
+   18 — CIRCUIT 05
+   ============================================================ */
+
+.ars-hero-circuit-05 {
+
+    width:
+        27%;
+
+    left:
+        58%;
+
+    top:
+        79%;
+
+    transform:
+        rotate(
+            13deg
+        );
+
+}
+
+
+/* ============================================================
+   19 — ELECTRIC BLUE MICRO CIRCUIT
+   ============================================================ */
+
+.ars-hero-blue-circuit {
+
+    position:
+        absolute;
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(61,190,255,.10),
+            rgba(99,215,255,.46),
+            transparent
+        );
+
+    box-shadow:
+        0 0 10px
+        rgba(53,184,255,.28);
+
+    pointer-events:
+        none;
+
+    z-index:
+        7;
+
+    opacity:
+        .72;
+
+}
+
+
+/* ============================================================
+   20 — BLUE CIRCUIT POSITIONS
+   ============================================================ */
+
+.ars-hero-blue-circuit-01 {
+
+    width:
+        24%;
+
+    left:
+        10%;
+
+    top:
+        48%;
+
+    transform:
+        rotate(
+            -24deg
+        );
+
+}
+
+
+.ars-hero-blue-circuit-02 {
+
+    width:
+        19%;
+
+    right:
+        13%;
+
+    top:
+        32%;
+
+    transform:
+        rotate(
+            16deg
+        );
+
+}
+
+
+/* ============================================================
+   21 — HERO CONTENT MOUNT
    ============================================================ */
 
 .ars-hero-content {
@@ -3467,16 +4169,22 @@ a {
         relative;
 
     z-index:
-        5;
+        20;
 
-    max-width:
-        760px;
+    width:
+        min(
+            92vw,
+            760px
+        );
+
+    margin:
+        0;
 
 }
 
 
 /* ============================================================
-   04 — HERO KICKER
+   22 — HERO LABEL
    ============================================================ */
 
 .ars-hero-kicker {
@@ -3494,7 +4202,12 @@ a {
         0 0 24px;
 
     color:
-        rgba(105,199,255,.82);
+        rgba(
+            105,
+            199,
+            255,
+            .82
+        );
 
     font-size:
         9px;
@@ -3514,28 +4227,8 @@ a {
 }
 
 
-.ars-hero-kicker::before {
-
-    content:
-        "";
-
-    width:
-        28px;
-
-    height:
-        1px;
-
-    background:
-        currentColor;
-
-    opacity:
-        .7;
-
-}
-
-
 /* ============================================================
-   05 — HERO PRIMARY TITLE
+   23 — HERO TITLE
    ============================================================ */
 
 .ars-hero-title {
@@ -3544,10 +4237,10 @@ a {
         0;
 
     max-width:
-        760px;
+        900px;
 
     color:
-        #F5F9FF;
+        #f5f9ff;
 
     font-size:
         clamp(
@@ -3572,37 +4265,39 @@ a {
 
 
 /* ============================================================
-   06 — HERO TITLE EMPHASIS
+   24 — HERO TITLE GOLD EMPHASIS
    ============================================================ */
 
 .ars-hero-title strong {
-
-    display:
-        inline;
 
     font-weight:
         500;
 
     color:
-        #FFFFFF;
+        #fff;
 
 }
 
 
 /* ============================================================
-   07 — HERO LEAD
+   25 — HERO LEAD
    ============================================================ */
 
 .ars-hero-lead {
 
     max-width:
-        620px;
+        660px;
 
     margin:
         28px 0 0;
 
     color:
-        rgba(205,220,235,.66);
+        rgba(
+            205,
+            220,
+            235,
+            .66
+        );
 
     font-size:
         clamp(
@@ -3624,7 +4319,7 @@ a {
 
 
 /* ============================================================
-   08 — HERO ACTION ZONE
+   26 — HERO ACTIONS
    ============================================================ */
 
 .ars-hero-actions {
@@ -3648,7 +4343,7 @@ a {
 
 
 /* ============================================================
-   09 — HERO PRIMARY CTA
+   27 — PRIMARY CTA
    ============================================================ */
 
 .ars-hero-primary {
@@ -3675,19 +4370,30 @@ a {
         center;
 
     color:
-        #ECF8FF;
+        #ecf8ff;
 
     text-decoration:
         none;
 
     border:
-        1px solid rgba(47,168,255,.40);
+        1px solid
+        rgba(
+            47,
+            168,
+            255,
+            .40
+        );
 
     border-radius:
         4px;
 
     background:
-        rgba(15,56,82,.18);
+        rgba(
+            15,
+            56,
+            82,
+            .18
+        );
 
     font-size:
         10px;
@@ -3701,30 +4407,11 @@ a {
     text-transform:
         uppercase;
 
-    transition:
-        transform .35s ease,
-        border-color .35s ease,
-        background .35s ease;
-
-}
-
-
-.ars-hero-primary:hover {
-
-    transform:
-        translateY(-2px);
-
-    border-color:
-        rgba(105,199,255,.72);
-
-    background:
-        rgba(47,168,255,.10);
-
 }
 
 
 /* ============================================================
-   10 — HERO SECONDARY CTA
+   28 — SECONDARY CTA
    ============================================================ */
 
 .ars-hero-secondary {
@@ -3745,19 +4432,35 @@ a {
         center;
 
     color:
-        rgba(225,237,247,.70);
+        rgba(
+            225,
+            237,
+            247,
+            .70
+        );
 
     text-decoration:
         none;
 
     border:
-        1px solid rgba(160,190,215,.14);
+        1px solid
+        rgba(
+            160,
+            190,
+            215,
+            .14
+        );
 
     border-radius:
         4px;
 
     background:
-        rgba(255,255,255,.015);
+        rgba(
+            255,
+            255,
+            255,
+            .015
+        );
 
     font-size:
         10px;
@@ -3771,363 +4474,11 @@ a {
     text-transform:
         uppercase;
 
-    transition:
-        color .35s ease,
-        border-color .35s ease,
-        background .35s ease;
-
-}
-
-
-.ars-hero-secondary:hover {
-
-    color:
-        #FFFFFF;
-
-    border-color:
-        rgba(160,200,230,.30);
-
-    background:
-        rgba(255,255,255,.035);
-
 }
 
 
 /* ============================================================
-   11 — HERO MEDIA / INTELLIGENCE ZONE
-   ============================================================ */
-
-.ars-hero-visual {
-
-    position:
-        relative;
-
-    width:
-        100%;
-
-    min-height:
-        540px;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    z-index:
-        4;
-
-}
-
-
-/* ============================================================
-   12 — HERO VISUAL FRAME
-   ============================================================ */
-
-.ars-hero-frame {
-
-    position:
-        relative;
-
-    width:
-        min(
-            100%,
-            680px
-        );
-
-    aspect-ratio:
-        1 / .82;
-
-    border:
-        1px solid rgba(120,175,215,.13);
-
-    border-radius:
-        18px;
-
-    background:
-        rgba(8,16,27,.18);
-
-    overflow:
-        hidden;
-
-}
-
-
-/* ============================================================
-   13 — HERO VISUAL INNER
-   ============================================================ */
-
-.ars-hero-frame-inner {
-
-    position:
-        absolute;
-
-    inset:
-        18px;
-
-    border:
-        1px solid rgba(110,180,225,.08);
-
-    border-radius:
-        12px;
-
-}
-
-
-/* ============================================================
-   14 — HERO FRAME CORNERS
-   ============================================================ */
-
-.ars-hero-frame::before,
-.ars-hero-frame::after {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    width:
-        38px;
-
-    height:
-        38px;
-
-    pointer-events:
-        none;
-
-}
-
-
-.ars-hero-frame::before {
-
-    top:
-        -1px;
-
-    left:
-        -1px;
-
-    border-top:
-        1px solid rgba(105,199,255,.45);
-
-    border-left:
-        1px solid rgba(105,199,255,.45);
-
-}
-
-
-.ars-hero-frame::after {
-
-    right:
-        -1px;
-
-    bottom:
-        -1px;
-
-    border-right:
-        1px solid rgba(105,199,255,.45);
-
-    border-bottom:
-        1px solid rgba(105,199,255,.45);
-
-}
-
-
-/* ============================================================
-   15 — HERO VISUAL PLACEHOLDER
-   ============================================================ */
-
-.ars-hero-media {
-
-    position:
-        absolute;
-
-    inset:
-        0;
-
-    display:
-        grid;
-
-    place-items:
-        center;
-
-    overflow:
-        hidden;
-
-}
-
-
-/* ============================================================
-   16 — HERO MEDIA IMAGE
-   ============================================================ */
-
-.ars-hero-media img {
-
-    width:
-        100%;
-
-    height:
-        100%;
-
-    object-fit:
-        cover;
-
-    display:
-        block;
-
-}
-
-
-/* ============================================================
-   17 — HERO LOWER INFORMATION STRIP
-   ============================================================ */
-
-.ars-hero-meta {
-
-    position:
-        absolute;
-
-    left:
-        0;
-
-    bottom:
-        42px;
-
-    width:
-        100%;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        space-between;
-
-    gap:
-        30px;
-
-    z-index:
-        6;
-
-}
-
-
-.ars-hero-meta-item {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap:
-        11px;
-
-    color:
-        rgba(190,210,228,.48);
-
-    font-size:
-        8px;
-
-    letter-spacing:
-        .18em;
-
-    text-transform:
-        uppercase;
-
-}
-
-
-.ars-hero-meta-dot {
-
-    width:
-        4px;
-
-    height:
-        4px;
-
-    border-radius:
-        50%;
-
-    background:
-        rgba(105,199,255,.70);
-
-}
-
-
-/* ============================================================
-   18 — HERO SCROLL INDICATOR
-   ============================================================ */
-
-.ars-hero-scroll {
-
-    position:
-        absolute;
-
-    left:
-        50%;
-
-    bottom:
-        24px;
-
-    transform:
-        translateX(-50%);
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    align-items:
-        center;
-
-    gap:
-        9px;
-
-    color:
-        rgba(190,210,228,.42);
-
-    font-size:
-        7px;
-
-    letter-spacing:
-        .28em;
-
-    text-transform:
-        uppercase;
-
-    z-index:
-        7;
-
-}
-
-
-.ars-hero-scroll-line {
-
-    width:
-        1px;
-
-    height:
-        30px;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(105,199,255,.65),
-            transparent
-        );
-
-}
-
-
-/* ============================================================
-   19 — HERO STRUCTURAL DIVIDER
+   29 — HERO DIVIDER
    ============================================================ */
 
 .ars-hero-divider {
@@ -4142,30 +4493,43 @@ a {
         0;
 
     width:
-        min(
-            calc(100% - 80px),
-            1640px
-        );
+        calc(100% - 40px);
 
     height:
         1px;
 
     transform:
-        translateX(-50%);
+        translateX(
+            -50%
+        );
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            rgba(120,180,220,.13),
+            rgba(
+                213,
+                170,
+                84,
+                .16
+            ),
+            rgba(
+                82,
+                190,
+                255,
+                .10
+            ),
             transparent
         );
+
+    z-index:
+        30;
 
 }
 
 
 /* ============================================================
-   20 — TABLET
+   30 — TABLET
    ============================================================ */
 
 @media (max-width: 1180px) {
@@ -4173,48 +4537,40 @@ a {
     .ars-hero {
 
         min-height:
-            auto;
+            760px;
 
         padding:
-            130px 0 80px;
+            100px 0 80px;
+
+    }
+
+
+    .ars-hero-field {
+
+        min-height:
+            650px;
 
     }
 
 
     .ars-hero-inner {
 
-        width:
-            calc(100% - 56px);
-
         min-height:
-            auto;
-
-        grid-template-columns:
-            minmax(0, 1fr)
-            minmax(360px, .8fr);
-
-        gap:
-            40px;
+            650px;
 
     }
 
 
-    .ars-hero-title {
+    .ars-hero-content {
 
-        font-size:
-            clamp(
-                46px,
-                6vw,
-                76px
+        width:
+            min(
+                88vw,
+                700px
             );
 
-    }
-
-
-    .ars-hero-visual {
-
-        min-height:
-            460px;
+        margin-left:
+            5vw;
 
     }
 
@@ -4222,7 +4578,7 @@ a {
 
 
 /* ============================================================
-   21 — MOBILE STRUCTURE
+   31 — MOBILE
    ============================================================ */
 
 @media (max-width: 900px) {
@@ -4230,46 +4586,45 @@ a {
     .ars-hero {
 
         min-height:
-            auto;
+            760px;
 
         padding:
-            120px 0 90px;
+            90px 0 70px;
+
+    }
+
+
+    .ars-hero-field {
+
+        min-height:
+            680px;
 
     }
 
 
     .ars-hero-inner {
 
-        width:
-            calc(100% - 36px);
-
-        display:
-            flex;
-
-        flex-direction:
-            column;
-
-        align-items:
-            stretch;
-
-        gap:
-            55px;
+        min-height:
+            680px;
 
     }
 
 
     .ars-hero-content {
 
-        max-width:
-            100%;
+        width:
+            calc(100% - 36px);
+
+        margin:
+            0 auto;
+
+        padding-top:
+            25px;
 
     }
 
 
     .ars-hero-title {
-
-        max-width:
-            700px;
 
         font-size:
             clamp(
@@ -4278,72 +4633,43 @@ a {
                 66px
             );
 
-        line-height:
-            1;
-
     }
 
 
-    .ars-hero-lead {
+    /*
+       The Ultra-Wide field remains alive,
+       but the viewport remains the visible window.
+    */
 
-        max-width:
-            600px;
-
-        font-size:
-            14px;
-
-        line-height:
-            1.8;
-
-    }
-
-
-    .ars-hero-visual {
-
-        min-height:
-            auto;
-
-    }
-
-
-    .ars-hero-frame {
+    .ars-hero-field::before {
 
         width:
-            100%;
+            300vw;
 
-        max-width:
-            680px;
-
-        margin:
-            0 auto;
+        height:
+            170vw;
 
     }
 
 
-    .ars-hero-meta {
+    .ars-hero-inner::before {
 
-        position:
-            relative;
+        width:
+            260vw;
 
-        left:
-            auto;
-
-        bottom:
-            auto;
-
-        margin-top:
-            20px;
-
-        flex-wrap:
-            wrap;
+        height:
+            150vw;
 
     }
 
 
-    .ars-hero-scroll {
+    .ars-hero-inner::after {
 
-        display:
-            none;
+        width:
+            220vw;
+
+        height:
+            130vw;
 
     }
 
@@ -4351,37 +4677,42 @@ a {
 
 
 /* ============================================================
-   22 — SMALL MOBILE
+   32 — SMALL MOBILE
    ============================================================ */
 
 @media (max-width: 480px) {
 
     .ars-hero {
 
+        min-height:
+            700px;
+
         padding:
-            108px 0 70px;
+            78px 0 60px;
+
+    }
+
+
+    .ars-hero-field {
+
+        min-height:
+            640px;
 
     }
 
 
     .ars-hero-inner {
 
-        width:
-            calc(100% - 28px);
-
-        gap:
-            42px;
+        min-height:
+            640px;
 
     }
 
 
-    .ars-hero-kicker {
+    .ars-hero-content {
 
-        margin-bottom:
-            19px;
-
-        font-size:
-            8px;
+        width:
+            calc(100% - 28px);
 
     }
 
@@ -4400,19 +4731,16 @@ a {
 
     .ars-hero-lead {
 
-        margin-top:
-            22px;
-
         font-size:
             13px;
+
+        line-height:
+            1.8;
 
     }
 
 
     .ars-hero-actions {
-
-        margin-top:
-            30px;
 
         flex-direction:
             column;
@@ -4432,45 +4760,13 @@ a {
     }
 
 
-    .ars-hero-frame {
-
-        border-radius:
-            13px;
-
-    }
-
-
-    .ars-hero-frame-inner {
-
-        inset:
-            11px;
-
-        border-radius:
-            8px;
-
-    }
-
-
-    .ars-hero-meta {
-
-        gap:
-            14px;
-
-    }
-
-
-    .ars-hero-meta-item {
-
-        font-size:
-            7px;
-
-    }
-
-
-    .ars-hero-divider {
+    .ars-hero-vehicle img {
 
         width:
-            calc(100% - 28px);
+            240vw;
+
+        opacity:
+            .12;
 
     }
 
@@ -4478,26 +4774,49 @@ a {
 
 
 /* ============================================================
-   23 — REDUCED MOTION
+   33 — REDUCED MOTION
    ============================================================ */
 
 @media (prefers-reduced-motion: reduce) {
 
-    .ars-hero *,
+    .ars-hero,
+    .ars-hero * ,
     .ars-hero *::before,
     .ars-hero *::after {
 
-        transition:
+        animation:
             none !important;
 
-        animation:
+        transition:
             none !important;
 
     }
 
 }
 
-   
+
+/* ============================================================
+   PHASE 03 OWNERSHIP LOCK
+   ============================================================
+
+   This phase intentionally does NOT contain:
+
+   .ars-gold-system
+   .gold-node
+   .gold-core
+   .gold-energy-line
+   .gold-node-link
+   .gold-node-orbit
+   .seven-node classes
+   .ten-node classes
+
+   Those systems remain independent.
+
+   PHASE 03 = HERO MASTER ENVIRONMENT ONLY.
+
+   ============================================================ */
+
+
 
 /* ============================================================
    ARS HERITAGE GROUP
@@ -15729,1508 +16048,19 @@ select {
    PRODUCTION READY CSS LAYER
 
    ========================================================= */
-/* =========================================================
-   ARS HERITAGE GROUP
-   GOLD INTELLIGENCE CONSTELLATION
-   SYSTEM 01 — SIX NODE ARCHITECTURE
-   PREMIUM INDUSTRIAL / AUTOMOTIVE INTELLIGENCE
-   =========================================================
 
-   DESIGN DNA
-   ---------------------------------------------------------
-   Precision
-   Luxury
-   Automotive Intelligence
-   Orbital Engineering
-   Controlled Gold Energy
-   Deep Spatial Illumination
 
-   IMPORTANT
-   ---------------------------------------------------------
-   This stylesheet is completely isolated to:
-   .ars-hero
-   .ars-gold-system
 
-   It does NOT style body, typography, buttons,
-   navigation, or other pages.
-   ========================================================= */
 
 
-/* =========================================================
-   01 — HERO HOST
-   ========================================================= */
 
-.ars-hero {
-    position: relative;
 
-    width: 100%;
-    min-height: 100vh;
-    min-height: 100svh;
 
-    overflow: hidden;
 
-    isolation: isolate;
 
-    background:
-        radial-gradient(
-            circle at 70% 50%,
-            rgba(190, 145, 55, .035),
-            transparent 28%
-        ),
-        radial-gradient(
-            circle at 50% 50%,
-            rgba(135, 160, 175, .018),
-            transparent 52%
-        );
 
-    color: #eef2f4;
-}
 
 
-/* =========================================================
-   02 — HERO FIELD
-   ========================================================= */
-
-.ars-hero-field {
-    position: relative;
-
-    width: 100%;
-    min-height: 100vh;
-    min-height: 100svh;
-
-    overflow: hidden;
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   03 — GOLD SYSTEM MASTER CONTAINER
-   ========================================================= */
-
-.ars-gold-system {
-    position: absolute;
-
-    left: 73%;
-    top: 50%;
-
-    width: min(520px, 46vw);
-    aspect-ratio: 1 / 1;
-
-    transform: translate(-50%, -50%);
-
-    z-index: 10;
-
-    pointer-events: none;
-
-    isolation: isolate;
-}
-
-
-/* =========================================================
-   04 — MASTER GOLD ATMOSPHERE
-   ========================================================= */
-
-.ars-gold-system::before {
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 115%;
-    height: 115%;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(212, 171, 88, .075) 0%,
-            rgba(192, 145, 52, .035) 22%,
-            rgba(151, 112, 46, .018) 40%,
-            transparent 70%
-        );
-
-    filter: blur(20px);
-
-    opacity: .8;
-
-    animation:
-        ars-gold-atmosphere 8s ease-in-out infinite;
-}
-
-
-/* =========================================================
-   05 — SECONDARY GOLD FIELD
-   ========================================================= */
-
-.ars-gold-system::after {
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 150%;
-    height: 150%;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            ellipse,
-            rgba(210, 169, 84, .025),
-            transparent 62%
-        );
-
-    filter: blur(30px);
-
-    opacity: .65;
-
-    z-index: -2;
-
-    animation:
-        ars-gold-field-breathe 11s ease-in-out infinite;
-}
-
-
-/* =========================================================
-   06 — MASTER ORBITAL FIELD
-   ========================================================= */
-
-.ars-gold-orbit {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    border-radius: 50%;
-
-    transform:
-        translate(-50%, -50%);
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   ORBIT 01
-   ========================================================= */
-
-.ars-gold-orbit-01 {
-
-    width: 74%;
-    height: 74%;
-
-    border:
-        1px solid rgba(207, 166, 82, .17);
-
-    box-shadow:
-        0 0 20px rgba(190, 145, 54, .035),
-        inset 0 0 20px rgba(206, 165, 82, .018);
-
-    animation:
-        ars-gold-orbit-clockwise
-        32s
-        linear
-        infinite;
-}
-
-
-/* =========================================================
-   ORBIT 02
-   ========================================================= */
-
-.ars-gold-orbit-02 {
-
-    width: 92%;
-    height: 92%;
-
-    border:
-        1px solid rgba(195, 153, 70, .09);
-
-    border-left-color:
-        rgba(224, 187, 105, .25);
-
-    border-bottom-color:
-        rgba(174, 128, 44, .04);
-
-    animation:
-        ars-gold-orbit-counter
-        48s
-        linear
-        infinite;
-}
-
-
-/* =========================================================
-   ORBIT 03
-   ========================================================= */
-
-.ars-gold-orbit-03 {
-
-    width: 112%;
-    height: 112%;
-
-    border:
-        1px dashed rgba(195, 156, 78, .055);
-
-    opacity: .65;
-
-    animation:
-        ars-gold-orbit-clockwise
-        68s
-        linear
-        infinite;
-}
-
-
-/* =========================================================
-   07 — ORBITAL MICRO MARKS
-   ========================================================= */
-
-.ars-gold-orbit-01::before,
-.ars-gold-orbit-02::before,
-.ars-gold-orbit-03::before {
-
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    top: -2px;
-
-    width: 4px;
-    height: 4px;
-
-    transform:
-        translateX(-50%);
-
-    border-radius: 50%;
-
-    background:
-        rgba(230, 198, 124, .85);
-
-    box-shadow:
-        0 0 8px rgba(224, 183, 92, .5),
-        0 0 20px rgba(203, 155, 57, .22);
-}
-
-
-/* =========================================================
-   08 — CENTRAL GOLD CORE
-   ========================================================= */
-
-.ars-gold-core {
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 30%;
-    aspect-ratio: 1;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    z-index: 30;
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   CORE HALO
-   ========================================================= */
-
-.gold-core-halo {
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 180%;
-    height: 180%;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(224, 186, 103, .12) 0%,
-            rgba(199, 151, 58, .055) 25%,
-            transparent 68%
-        );
-
-    filter: blur(12px);
-
-    animation:
-        ars-core-gold-breathe
-        5s
-        ease-in-out
-        infinite;
-}
-
-
-/* =========================================================
-   CORE ENERGY
-   ========================================================= */
-
-.gold-core-energy {
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 78%;
-    height: 78%;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle at 45% 40%,
-            rgba(255, 224, 155, .28),
-            rgba(220, 178, 88, .12) 25%,
-            rgba(158, 111, 37, .035) 48%,
-            transparent 72%
-        );
-
-    filter: blur(3px);
-
-    animation:
-        ars-core-energy-pulse
-        4.5s
-        ease-in-out
-        infinite;
-}
-
-
-/* =========================================================
-   CORE CENTER
-   ========================================================= */
-
-.gold-core-center {
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 34%;
-    aspect-ratio: 1;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle at 42% 38%,
-            rgba(255, 236, 190, .95),
-            rgba(216, 171, 83, .72) 22%,
-            rgba(122, 80, 24, .42) 50%,
-            rgba(24, 20, 13, .8) 75%
-        );
-
-    border:
-        1px solid rgba(244, 213, 148, .58);
-
-    box-shadow:
-        0 0 12px rgba(232, 190, 102, .4),
-        0 0 35px rgba(207, 157, 58, .2),
-        0 0 70px rgba(194, 143, 44, .09),
-        inset 0 0 15px rgba(255, 224, 160, .16);
-
-    animation:
-        ars-core-center-breathe
-        4s
-        ease-in-out
-        infinite;
-}
-
-
-.gold-core-point {
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 7px;
-    height: 7px;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-        #fff3cf;
-
-    box-shadow:
-        0 0 7px #f4d28a,
-        0 0 18px rgba(238, 194, 102, .8),
-        0 0 38px rgba(212, 163, 67, .42);
-}
-
-
-/* =========================================================
-   09 — CORE ORBITS
-   ========================================================= */
-
-.gold-core-orbit {
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    border-radius: 50%;
-
-    transform:
-        translate(-50%, -50%);
-
-    pointer-events: none;
-}
-
-
-.gold-core-orbit-01 {
-
-    width: 112%;
-    height: 112%;
-
-    border:
-        1px solid rgba(230, 191, 111, .18);
-
-    border-right-color:
-        rgba(236, 201, 131, .48);
-
-    animation:
-        ars-core-orbit-01
-        11s
-        linear
-        infinite;
-}
-
-
-.gold-core-orbit-02 {
-
-    width: 138%;
-    height: 138%;
-
-    border:
-        1px solid rgba(206, 163, 76, .1);
-
-    border-left-color:
-        rgba(238, 199, 122, .32);
-
-    animation:
-        ars-core-orbit-02
-        17s
-        linear
-        infinite;
-}
-
-
-.gold-core-orbit-03 {
-
-    width: 164%;
-    height: 164%;
-
-    border:
-        1px dashed rgba(206, 164, 78, .07);
-
-    animation:
-        ars-core-orbit-03
-        24s
-        linear
-        infinite reverse;
-}
-
-
-/* =========================================================
-   10 — ENERGY NETWORK
-   ========================================================= */
-
-.gold-energy-network {
-
-    position: absolute;
-
-    inset: 0;
-
-    z-index: 5;
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   ENERGY LINES
-   ========================================================= */
-
-.gold-energy-line {
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 1px;
-
-    height: 37%;
-
-    transform-origin:
-        50% 100%;
-
-    background:
-        linear-gradient(
-            to top,
-            rgba(225, 183, 92, .42),
-            rgba(217, 174, 81, .16),
-            rgba(202, 158, 64, .035),
-            transparent
-        );
-
-    opacity: .7;
-
-    filter:
-        drop-shadow(
-            0 0 5px rgba(215, 169, 75, .2)
-        );
-}
-
-
-/* =========================================================
-   SIX RADIAL CONNECTIONS
-   ========================================================= */
-
-.gold-line-01 {
-    transform:
-        translate(-50%, -100%)
-        rotate(0deg);
-}
-
-.gold-line-02 {
-    transform:
-        translate(-50%, -100%)
-        rotate(60deg);
-}
-
-.gold-line-03 {
-    transform:
-        translate(-50%, -100%)
-        rotate(120deg);
-}
-
-.gold-line-04 {
-    transform:
-        translate(-50%, -100%)
-        rotate(180deg);
-}
-
-.gold-line-05 {
-    transform:
-        translate(-50%, -100%)
-        rotate(240deg);
-}
-
-.gold-line-06 {
-    transform:
-        translate(-50%, -100%)
-        rotate(300deg);
-}
-
-
-/* =========================================================
-   ENERGY TRAVEL PARTICLES
-   ========================================================= */
-
-.gold-energy-line::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    top: 0;
-
-    width: 5px;
-    height: 5px;
-
-    transform:
-        translateX(-50%);
-
-    border-radius: 50%;
-
-    background:
-        rgba(255, 224, 150, .95);
-
-    box-shadow:
-        0 0 8px rgba(241, 199, 113, .75),
-        0 0 20px rgba(216, 166, 70, .38);
-
-    animation:
-        ars-energy-travel
-        3.8s
-        ease-in-out
-        infinite;
-}
-
-
-.gold-line-02::after {
-    animation-delay: -.6s;
-}
-
-.gold-line-03::after {
-    animation-delay: -1.2s;
-}
-
-.gold-line-04::after {
-    animation-delay: -1.8s;
-}
-
-.gold-line-05::after {
-    animation-delay: -2.4s;
-}
-
-.gold-line-06::after {
-    animation-delay: -3s;
-}
-
-
-/* =========================================================
-   11 — GOLD NODE MASTER
-   ========================================================= */
-
-.gold-node {
-
-    position: absolute;
-
-    width: 74px;
-    height: 74px;
-
-    transform:
-        translate(-50%, -50%);
-
-    z-index: 40;
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   SIX NODE POSITIONS
-   ========================================================= */
-
-.gold-node-01 {
-    left: 50%;
-    top: 8%;
-}
-
-.gold-node-02 {
-    left: 86.4%;
-    top: 29%;
-}
-
-.gold-node-03 {
-    left: 86.4%;
-    top: 71%;
-}
-
-.gold-node-04 {
-    left: 50%;
-    top: 92%;
-}
-
-.gold-node-05 {
-    left: 13.6%;
-    top: 71%;
-}
-
-.gold-node-06 {
-    left: 13.6%;
-    top: 29%;
-}
-
-
-/* =========================================================
-   12 — NODE ENERGY FIELD
-   ========================================================= */
-
-.gold-node-energy {
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 175%;
-    height: 175%;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   NODE HALO
-   ========================================================= */
-
-.gold-node-halo {
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 100%;
-    height: 100%;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(226, 187, 102, .13),
-            rgba(200, 150, 54, .04) 42%,
-            transparent 70%
-        );
-
-    filter: blur(8px);
-
-    animation:
-        ars-node-halo
-        4.8s
-        ease-in-out
-        infinite;
-}
-
-
-/* =========================================================
-   13 — NODE ORBITS
-   ========================================================= */
-
-.gold-node-orbit {
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    border-radius: 50%;
-
-    transform:
-        translate(-50%, -50%);
-
-    pointer-events: none;
-}
-
-
-.gold-node-orbit-01 {
-
-    width: 100%;
-    height: 100%;
-
-    border:
-        1px solid rgba(226, 188, 108, .16);
-
-    border-right-color:
-        rgba(238, 203, 132, .45);
-
-    animation:
-        ars-node-orbit-clockwise
-        9s
-        linear
-        infinite;
-}
-
-
-.gold-node-orbit-02 {
-
-    width: 126%;
-    height: 126%;
-
-    border:
-        1px dashed rgba(207, 164, 76, .08);
-
-    border-left-color:
-        rgba(226, 184, 95, .25);
-
-    animation:
-        ars-node-orbit-counter
-        14s
-        linear
-        infinite;
-}
-
-
-/* =========================================================
-   14 — NODE PULSE
-   ========================================================= */
-
-.gold-node-pulse {
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 75%;
-    height: 75%;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    border:
-        1px solid rgba(230, 194, 119, .22);
-
-    opacity: 0;
-
-    animation:
-        ars-node-pulse
-        4.5s
-        ease-out
-        infinite;
-}
-
-
-/* =========================================================
-   15 — NODE LINK
-   ========================================================= */
-
-.gold-node-link {
-
-    position: absolute;
-
-    inset: 0;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    text-decoration: none;
-
-    pointer-events: auto;
-
-    background:
-        radial-gradient(
-            circle at 42% 36%,
-            rgba(57, 48, 31, .94),
-            rgba(16, 15, 12, .98) 68%
-        );
-
-    border:
-        1px solid rgba(211, 174, 96, .24);
-
-    box-shadow:
-        0 12px 32px rgba(0,0,0,.55),
-        0 0 15px rgba(193, 145, 51, .06),
-        inset 0 0 20px rgba(227, 190, 110, .035);
-
-    transition:
-        transform .5s cubic-bezier(.2,.8,.2,1),
-        border-color .4s ease,
-        box-shadow .4s ease;
-}
-
-
-/* =========================================================
-   NODE INNER CORE
-   ========================================================= */
-
-.gold-node-core {
-
-    width: 24%;
-    aspect-ratio: 1;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255, 232, 178, .98),
-            rgba(221, 177, 85, .72) 28%,
-            rgba(158, 106, 32, .3) 58%,
-            transparent 75%
-        );
-
-    box-shadow:
-        0 0 8px rgba(239, 201, 120, .65),
-        0 0 20px rgba(211, 163, 67, .3);
-
-    animation:
-        ars-node-core-breathe
-        3.8s
-        ease-in-out
-        infinite;
-}
-
-
-/* =========================================================
-   16 — NODE HOVER
-   ========================================================= */
-
-.gold-node-link:hover {
-
-    transform:
-        scale(1.15);
-
-    border-color:
-        rgba(242, 210, 148, .62);
-
-    box-shadow:
-        0 16px 42px rgba(0,0,0,.62),
-        0 0 22px rgba(218, 171, 77, .2),
-        0 0 55px rgba(198, 147, 48, .08),
-        inset 0 0 25px rgba(237, 202, 130, .07);
-}
-
-
-.gold-node-link:hover .gold-node-core {
-
-    transform:
-        scale(1.22);
-
-    box-shadow:
-        0 0 10px rgba(255, 223, 150, .8),
-        0 0 28px rgba(224, 177, 81, .45),
-        0 0 50px rgba(203, 149, 48, .18);
-}
-
-
-/* =========================================================
-   17 — NODE MICRO LIGHT
-   ========================================================= */
-
-.gold-node-link::before {
-
-    content: "";
-
-    position: absolute;
-
-    left: 18%;
-    top: 18%;
-
-    width: 4px;
-    height: 4px;
-
-    border-radius: 50%;
-
-    background:
-        rgba(255, 239, 201, .9);
-
-    box-shadow:
-        0 0 8px rgba(242, 202, 123, .65);
-
-    opacity: .8;
-}
-
-
-/* =========================================================
-   18 — GOLD SYSTEM DATA POINTS
-   ========================================================= */
-
-.ars-gold-system .gold-node::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 3px;
-    height: 3px;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-        rgba(241, 204, 131, .8);
-
-    box-shadow:
-        0 0 8px rgba(224, 180, 85, .5);
-
-    opacity: .5;
-}
-
-
-/* =========================================================
-   19 — PRECISION OUTER TICKS
-   ========================================================= */
-
-.ars-gold-orbit-03::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 100%;
-    height: 100%;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-        repeating-conic-gradient(
-            from 0deg,
-            rgba(224, 184, 101, .12) 0deg 1deg,
-            transparent 1deg 30deg
-        );
-
-    mask-image:
-        radial-gradient(
-            transparent 70%,
-            #000 71%
-        );
-
-    -webkit-mask-image:
-        radial-gradient(
-            transparent 70%,
-            #000 71%
-        );
-
-    opacity: .32;
-}
-
-
-/* =========================================================
-   20 — KEYFRAMES
-   ========================================================= */
-
-@keyframes ars-gold-atmosphere {
-
-    0%,100% {
-        opacity: .55;
-        transform:
-            translate(-50%, -50%)
-            scale(.94);
-    }
-
-    50% {
-        opacity: 1;
-        transform:
-            translate(-50%, -50%)
-            scale(1.05);
-    }
-}
-
-
-@keyframes ars-gold-field-breathe {
-
-    0%,100% {
-        opacity: .4;
-        transform:
-            translate(-50%, -50%)
-            scale(.96);
-    }
-
-    50% {
-        opacity: .75;
-        transform:
-            translate(-50%, -50%)
-            scale(1.04);
-    }
-}
-
-
-@keyframes ars-gold-orbit-clockwise {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-}
-
-
-@keyframes ars-gold-orbit-counter {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-}
-
-
-@keyframes ars-core-gold-breathe {
-
-    0%,100% {
-        opacity: .45;
-        transform:
-            translate(-50%, -50%)
-            scale(.92);
-    }
-
-    50% {
-        opacity: 1;
-        transform:
-            translate(-50%, -50%)
-            scale(1.08);
-    }
-}
-
-
-@keyframes ars-core-energy-pulse {
-
-    0%,100% {
-        opacity: .45;
-        transform:
-            translate(-50%, -50%)
-            scale(.9);
-    }
-
-    50% {
-        opacity: 1;
-        transform:
-            translate(-50%, -50%)
-            scale(1.08);
-    }
-}
-
-
-@keyframes ars-core-center-breathe {
-
-    0%,100% {
-        transform:
-            translate(-50%, -50%)
-            scale(.94);
-    }
-
-    50% {
-        transform:
-            translate(-50%, -50%)
-            scale(1.06);
-    }
-}
-
-
-@keyframes ars-core-orbit-01 {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-}
-
-
-@keyframes ars-core-orbit-02 {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-}
-
-
-@keyframes ars-core-orbit-03 {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-}
-
-
-@keyframes ars-energy-travel {
-
-    0% {
-        opacity: 0;
-        top: 100%;
-    }
-
-    15% {
-        opacity: 1;
-    }
-
-    70% {
-        opacity: .9;
-    }
-
-    100% {
-        opacity: 0;
-        top: 0%;
-    }
-}
-
-
-@keyframes ars-node-halo {
-
-    0%,100% {
-        opacity: .4;
-        transform:
-            translate(-50%, -50%)
-            scale(.9);
-    }
-
-    50% {
-        opacity: 1;
-        transform:
-            translate(-50%, -50%)
-            scale(1.1);
-    }
-}
-
-
-@keyframes ars-node-orbit-clockwise {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-}
-
-
-@keyframes ars-node-orbit-counter {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-}
-
-
-@keyframes ars-node-pulse {
-
-    0% {
-        opacity: .35;
-
-        transform:
-            translate(-50%, -50%)
-            scale(.7);
-    }
-
-    100% {
-        opacity: 0;
-
-        transform:
-            translate(-50%, -50%)
-            scale(1.65);
-    }
-}
-
-
-@keyframes ars-node-core-breathe {
-
-    0%,100% {
-        opacity: .65;
-
-        transform:
-            scale(.9);
-    }
-
-    50% {
-        opacity: 1;
-
-        transform:
-            scale(1.12);
-    }
-}
-
-
-/* =========================================================
-   21 — TABLET
-   ========================================================= */
-
-@media (max-width: 1100px) {
-
-    .ars-gold-system {
-
-        left: 72%;
-
-        width: min(470px, 52vw);
-    }
-
-    .gold-node {
-
-        width: 66px;
-        height: 66px;
-    }
-}
-
-
-/* =========================================================
-   22 — MOBILE
-   ========================================================= */
-
-@media (max-width: 700px) {
-
-    .ars-hero {
-
-        min-height: 760px;
-    }
-
-    .ars-hero-field {
-
-        min-height: 760px;
-    }
-
-    .ars-gold-system {
-
-        left: 50%;
-        top: 58%;
-
-        width: min(430px, 82vw);
-    }
-
-    .gold-node {
-
-        width: 55px;
-        height: 55px;
-    }
-
-    .ars-gold-orbit-03 {
-
-        opacity: .55;
-    }
-
-    .gold-energy-line {
-
-        opacity: .5;
-    }
-}
-
-
-/* =========================================================
-   23 — SMALL MOBILE
-   ========================================================= */
-
-@media (max-width: 430px) {
-
-    .ars-gold-system {
-
-        width: 86vw;
-
-        top: 58%;
-    }
-
-    .gold-node {
-
-        width: 47px;
-        height: 47px;
-    }
-
-    .gold-core-center {
-
-        width: 38%;
-    }
-
-    .ars-gold-orbit-03 {
-
-        opacity: .35;
-    }
-}
-
-
-/* =========================================================
-   24 — REDUCED MOTION
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    .ars-gold-system *,
-    .ars-gold-system *::before,
-    .ars-gold-system *::after {
-
-        animation-duration: .01ms !important;
-
-        animation-iteration-count: 1 !important;
-    }
-}
-
-
-/* =========================================================
-   END — ARS GOLD INTELLIGENCE SYSTEM
-   ========================================================= */
 
 
 
