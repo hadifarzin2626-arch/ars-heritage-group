@@ -18006,7 +18006,66 @@ code {
     /* هندسه داخلی دست‌نخورده */
 }
 
+/* =========================================================
+   ARS HERO — MASTER GEOMETRY
+   PHASE 01 — POSITION ONLY
+   ========================================================= */
 
+.ars-hero-master-geometry {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 100%;
+    height: 100%;
+
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   GOLD — UPPER POSITION
+   ========================================================= */
+
+.ars-hero-master-geometry .ars-gold-system {
+    top: 20%;
+}
+
+
+/* =========================================================
+   HERITAGE CENTER — TRUE CENTER
+   ========================================================= */
+
+.ars-hero-master-geometry .ars-heritage-center {
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+
+/* =========================================================
+   BLUE — LOWER POSITION
+   ========================================================= */
+
+.ars-hero-master-geometry .ars-blue-system {
+    top: 80%;
+}
+
+
+/* =========================================================
+   KEEP INTERNAL SYSTEM GEOMETRY INTACT
+   ========================================================= */
+
+.ars-hero-master-geometry .ars-gold-system,
+.ars-hero-master-geometry .ars-blue-system {
+    pointer-events: auto;
+}
 
 
 
