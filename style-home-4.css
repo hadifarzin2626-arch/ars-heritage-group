@@ -17859,7 +17859,79 @@ code {
 /* =========================================================
    END — GEOMETRY CORRECTION
    ========================================================= */
+/* =========================================================
+   ARS HERO — THREE SYSTEM GEOMETRY CORRECTION
+   POSITION ONLY — NO SCALE / NO COLOR / NO ANIMATION
+   ========================================================= */
 
+/* ---------------------------------------------------------
+   01 — YELLOW SYSTEM
+   LOCKED
+   DO NOT MOVE
+   --------------------------------------------------------- */
+
+/*
+.yellow-system {
+    left: var(--yellow-original-left);
+    top: var(--yellow-original-top);
+}
+*/
+
+
+/* ---------------------------------------------------------
+   02 — BLUE SYSTEM
+   FIRST MOVE: DOWN
+   --------------------------------------------------------- */
+
+.blue-system {
+    transform: translateY(70px);
+}
+
+
+/* ---------------------------------------------------------
+   03 — SINGLE-NODE SYSTEM
+   CENTER BETWEEN BLUE + YELLOW
+   --------------------------------------------------------- */
+
+.single-node-system {
+    transform: translate(-50%, 0);
+}
+
+
+/* =========================================================
+   COLLISION ADJUSTMENT — ONLY IF REQUIRED
+   ========================================================= */
+
+/*
+   اگر بعد از تست هنوز برخورد وجود داشت،
+   این بخش را فعال می‌کنیم:
+*/
+
+/*
+.yellow-system {
+    transform: translateX(-45px);
+}
+
+.blue-system {
+    transform: translate(45px, 70px);
+}
+*/
+
+
+/* =========================================================
+   FINAL DIAGONAL SEPARATION
+   فقط در صورت باقی ماندن Collision
+   ========================================================= */
+
+/*
+.yellow-system {
+    transform: translateX(-70px);
+}
+
+.blue-system {
+    transform: translate(70px, 70px);
+}
+*/
 
 
 
