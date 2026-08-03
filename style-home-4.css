@@ -14261,8 +14261,7 @@ summary {
 
 button,
 input,
-textarea,
-select {
+t--ars-ease-luxury
   font: inherit;
 }
 
@@ -17483,5 +17482,231 @@ code {
 /* =========================================================
    END — ARS PREMIUM HERO
    ========================================================= */
+/* =========================================================
+   ARS HERO — SIZE CONTROL
+   PREMIUM SCALE REVISION
+   ========================================================= */
 
+
+/* =========================================================
+   ORBITAL SYSTEMS
+   GOLD  : 06 NODES
+   BLUE  : 07 NODES
+   REDUCED TO APPROX. 50%
+   ========================================================= */
+
+.ars-orbital-system {
+    position: relative;
+
+    width: min(39vw, 360px);
+    aspect-ratio: 1;
+
+    flex: 0 0 auto;
+
+    z-index: 5;
+
+    margin-inline: auto;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   GOLD SYSTEM
+   ========================================================= */
+
+.ars-gold-system {
+    margin-bottom: clamp(-18px, -2vw, -10px);
+
+    color: #ffc044;
+
+    --system-color: 255, 182, 45;
+    --system-bright: #ffe39a;
+}
+
+
+/* =========================================================
+   BLUE SYSTEM
+   ========================================================= */
+
+.ars-blue-system {
+    margin-top: clamp(-18px, -2vw, -10px);
+
+    color: #1ca9ff;
+
+    --system-color: 15, 157, 255;
+    --system-bright: #8cdbff;
+}
+
+
+/* =========================================================
+   CENTRAL HERITAGE GROUP
+   REDUCED APPROX. 20%
+   ========================================================= */
+
+.ars-heritage-center {
+    position: relative;
+
+    width: min(38vw, 416px);
+    aspect-ratio: 1;
+
+    flex: 0 0 auto;
+
+    z-index: 12;
+
+    margin:
+        clamp(-65px, -6vw, -35px)
+        auto;
+
+    color: #ffd36b;
+
+    --heritage-color: 255, 196, 72;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .ars-orbital-system {
+        width: min(44vw, 330px);
+    }
+
+    .ars-heritage-center {
+        width: min(48vw, 375px);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   06 NODE + 07 NODE
+   APPROX. HALF OF PREVIOUS MOBILE SIZE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .ars-hero-field {
+        min-height: auto;
+
+        padding-top: 28px;
+        padding-bottom: 65px;
+    }
+
+
+    .ars-orbital-system {
+        width: min(54vw, 300px);
+    }
+
+
+    .ars-gold-system {
+        margin-bottom: -22px;
+    }
+
+
+    .ars-blue-system {
+        margin-top: -22px;
+    }
+
+
+    /* =============================================
+       CENTRAL SINGLE NODE
+       ONLY 20% SMALLER
+       ============================================= */
+
+    .ars-heritage-center {
+        width: min(54vw, 315px);
+
+        margin-top: -3px;
+        margin-bottom: -3px;
+    }
+
+
+    /* =============================================
+       NODE SIZE
+       ============================================= */
+
+    .ars-system-node {
+        width: clamp(58px, 14vw, 78px);
+    }
+
+
+    /* =============================================
+       SYSTEM CORE
+       ============================================= */
+
+    .ars-system-core {
+        width: clamp(125px, 27vw, 185px);
+    }
+
+
+    /* =============================================
+       NODE TYPOGRAPHY
+       ============================================= */
+
+    .node-content small {
+        font-size: clamp(12px, 3.2vw, 17px);
+    }
+
+    .node-content strong {
+        font-size: clamp(6px, 1.8vw, 9px);
+    }
+
+    .node-content em {
+        font-size: clamp(5px, 1.35vw, 7px);
+    }
+
+
+    /* =============================================
+       HERITAGE TYPOGRAPHY
+       ============================================= */
+
+    .heritage-body strong {
+        font-size: clamp(30px, 8vw, 50px);
+    }
+
+    .heritage-body small {
+        font-size: clamp(7px, 1.9vw, 10px);
+    }
+
+
+    .ars-hero-brand {
+        bottom: 18px;
+    }
+
+    .ars-hero-brand span {
+        font-size: 7px;
+        letter-spacing: 0.2em;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+    .ars-orbital-system {
+        width: 58vw;
+    }
+
+    .ars-heritage-center {
+        width: 58vw;
+    }
+
+    .ars-system-node {
+        width: 58px;
+    }
+
+    .ars-system-core {
+        width: 135px;
+    }
+
+    .ars-hero-field {
+        padding-inline: 0;
+    }
+  }
 
