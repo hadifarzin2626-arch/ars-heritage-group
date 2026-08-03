@@ -15711,816 +15711,185 @@ code {
    =========================================================
    END — PHASE 18
    ========================================================= */
-/* =========================================================
-   ARS HERITAGE GROUP — HOME
-   PHASE 19 — PRODUCTION READINESS & FINAL RELEASE
-   =========================================================
-
-   STATUS:
-   🔒 FINAL RELEASE / PRODUCTION LOCK
-
-   PURPOSE:
-   Final production-readiness layer for the completed
-   ARS HOME CSS architecture.
-
-   ARCHITECTURE:
-   PHASE 01–18 remain authoritative.
-
-   THIS PHASE:
-   - Does not redesign the Home
-   - Does not create new visual systems
-   - Does not create new components
-   - Does not replace responsive architecture
-   - Does not replace accessibility architecture
-   - Does not replace performance architecture
-   - Does not replace security architecture
-   - Does not duplicate interaction systems
-
-   ROLE:
-   Final release protection + production-safe defaults.
-
-   ========================================================= */
-
 
 /* =========================================================
-   01 — FINAL DOCUMENT BASELINE
+   ARS HOME — PHASE 19
+   PREMIUM VERTICAL CONSTELLATION
    ========================================================= */
 
-html {
-  min-width: 320px;
-  max-width: 100%;
-  overflow-x: hidden;
-}
+.ars-p19 {
 
-body {
-  min-width: 320px;
-  max-width: 100%;
-  margin: 0;
-  overflow-x: hidden;
-}
+    --p19-blue: #42baff;
+    --p19-blue-soft: rgba(66,186,255,.35);
 
+    --p19-gold: #ffc84a;
+    --p19-gold-soft: rgba(255,200,74,.35);
 
-/* =========================================================
-   02 — FINAL MEDIA RELEASE SAFETY
-   ========================================================= */
-
-img,
-svg,
-video,
-canvas,
-iframe {
-  max-width: 100%;
-}
-
-img,
-video {
-  height: auto;
-}
-
-iframe {
-  border: 0;
-}
-
-
-/* =========================================================
-   03 — FINAL CONTENT BOUNDARY
-   ========================================================= */
-
-main,
-section,
-article,
-aside,
-header,
-footer,
-nav {
-  min-width: 0;
-  max-width: 100%;
-}
-
-
-/* =========================================================
-   04 — FINAL TEXT SAFETY
-   ========================================================= */
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-a,
-span,
-button {
-  overflow-wrap: break-word;
-}
-
-
-/* =========================================================
-   05 — FINAL CARD BOUNDARY
-   ========================================================= */
-
-.ars-glass-card,
-.ars-specialized-card,
-.ars-system-card,
-.principle-card,
-.future-item {
-  min-width: 0;
-  max-width: 100%;
-}
-
-
-/* =========================================================
-   06 — FINAL INTERACTION SAFETY
-   ========================================================= */
-
-button,
-a,
-input,
-textarea,
-select,
-summary {
-  touch-action: manipulation;
-}
-
-button,
-input,
-textarea,
-select {
-  font: inherit;
-}
-
-
-/* =========================================================
-   07 — FINAL DECORATIVE LAYER ISOLATION
-   ========================================================= */
-
-.home-energy-universe,
-.home-energy-depth,
-.home-radiation-field,
-.home-master-orbit,
-.home-energy-ray,
-.home-energy-link,
-.home-particle-field,
-.home-particle,
-.hero-background,
-.hero-stars,
-.hero-stars-2,
-.ars-energy-bridge-field,
-.ars-energy-wave,
-.ars-energy-pulse,
-.ars-energy-particle,
-.ars-heritage-core-energy,
-.heritage-core-ring,
-.heritage-core-halo,
-.heritage-core-pulse {
-  pointer-events: none;
-}
-
-
-/* =========================================================
-   08 — FINAL FOCUS INTEGRITY
-   ========================================================= */
-
-:focus-visible {
-  outline:
-    2px solid rgb(0 190 255 / .88);
-
-  outline-offset: 4px;
-}
-
-
-/* =========================================================
-   09 — FINAL REDUCED-MOTION RELEASE SAFETY
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: .01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: .01ms !important;
-  }
-}
-
-
-/* =========================================================
-   10 — FINAL MOBILE RELEASE GUARD
-   ========================================================= */
-
-@media (max-width: 760px) {
-
-  html,
-  body {
-    overflow-x: hidden;
-  }
-
-  img,
-  svg,
-  video,
-  canvas,
-  iframe {
-    max-width: 100%;
-  }
-
-  .ars-glass-card,
-  .ars-specialized-card,
-  .ars-system-card,
-  .principle-card,
-  .future-item {
-    max-width: 100%;
-  }
-}
-
-
-/* =========================================================
-   11 — FINAL SMALL-SCREEN GUARD
-   ========================================================= */
-
-@media (max-width: 480px) {
-
-  html,
-  body {
-    min-width: 320px;
-  }
-
-  .hero-content,
-  .about-wrapper,
-  .about-content,
-  .philosophy-content,
-  .ars-six-grid,
-  .ars-seven-grid,
-  .future-grid,
-  .principles-grid {
-    min-width: 0;
-    max-width: 100%;
-  }
-}
-
-
-/* =========================================================
-   12 — FINAL FORCED-COLOR RELEASE
-   ========================================================= */
-
-@media (forced-colors: active) {
-
-  :focus-visible {
-    outline-color: Highlight;
-  }
-}
-
-
-/* =========================================================
-   13 — FINAL PRINT RELEASE
-   ========================================================= */
-
-@media print {
-
-  html,
-  body {
-    overflow: visible;
-    background: #fff !important;
-  }
-
-  .home-energy-universe,
-  .hero-background,
-  .hero-stars,
-  .hero-stars-2 {
-    display: none !important;
-  }
-}
-
-
-/* =========================================================
-   14 — FINAL HIDDEN-ELEMENT INTEGRITY
-   ========================================================= */
-
-[hidden] {
-  display: none !important;
-}
-
-
-/* =========================================================
-   15 — FINAL RELEASE ARCHITECTURE LOCK
-   =========================================================
-
-   PHASE 19 DOES NOT:
-   ✕ redesign
-   ✕ recolor
-   ✕ resize existing visual systems
-   ✕ create new cards
-   ✕ create new buttons
-   ✕ create new animations
-   ✕ create new typography
-   ✕ create new responsive breakpoints
-   ✕ create new accessibility systems
-   ✕ create new SEO systems
-   ✕ create new performance systems
-   ✕ create new security systems
-
-   PHASE 19 ONLY:
-   ✓ final production boundary protection
-   ✓ final media safety
-   ✓ final content-flow protection
-   ✓ final interaction safety
-   ✓ final focus integrity
-   ✓ final reduced-motion safety
-   ✓ final mobile release guard
-   ✓ final small-screen guard
-   ✓ final forced-color resilience
-   ✓ final print resilience
-   ✓ final hidden-element integrity
-
-   =========================================================
-   16 — PRODUCTION RELEASE LOCK
-   =========================================================
-
-   ARS HERITAGE GROUP — HOME
-   PHASE 19 COMPLETE
-
-   RELEASE STATUS:
-   PRODUCTION READY CSS LAYER
-
-   ========================================================= */
-
-/* =========================================================
-   ARS HERITAGE GROUP
-   GOLD INTELLIGENCE CONSTELLATION
-   SYSTEM 01 — SIX NODE ARCHITECTURE
-   PREMIUM INDUSTRIAL / AUTOMOTIVE INTELLIGENCE
-   =========================================================
-
-   DESIGN DNA
-   ---------------------------------------------------------
-   Precision
-   Luxury
-   Automotive Intelligence
-   Orbital Engineering
-   Controlled Gold Energy
-   Deep Spatial Illumination
-
-   IMPORTANT
-   ---------------------------------------------------------
-   This stylesheet is completely isolated to:
-   .ars-hero
-   .ars-gold-system
-
-   It does NOT style body, typography, buttons,
-   navigation, or other pages.
-   ========================================================= */
-
-
-/* =========================================================
-   01 — HERO HOST
-   ========================================================= */
-
-.ars-hero {
     position: relative;
 
-    width: 100%;
-    min-height: 100vh;
-    min-height: 100svh;
+    width: min(100%, 980px);
 
-    overflow: hidden;
+    margin: 0 auto;
+
+    padding: 40px 20px 80px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 26px;
 
     isolation: isolate;
 
-    background:
-        radial-gradient(
-            circle at 70% 50%,
-            rgba(190, 145, 55, .035),
-            transparent 28%
-        ),
-        radial-gradient(
-            circle at 50% 50%,
-            rgba(135, 160, 175, .018),
-            transparent 52%
-        );
-
-    color: #eef2f4;
 }
 
 
 /* =========================================================
-   02 — HERO FIELD
+   SIDE SYSTEMS
    ========================================================= */
 
-.ars-hero-field {
+.ars-p19-system {
+
     position: relative;
 
-    width: 100%;
-    min-height: 100vh;
-    min-height: 100svh;
+    width: min(100%, 430px);
 
-    overflow: hidden;
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   03 — GOLD SYSTEM MASTER CONTAINER
-   ========================================================= */
-.ars-gold-system {
-    position: absolute;
-
-    left: 55%;
-    top: 50%;
-
-    width: min(520px, 46vw);
     aspect-ratio: 1 / 1;
 
-    transform: translate(-50%, -50%);
+    flex: 0 0 auto;
 
-    z-index: 10;
-
-    pointer-events: none;
-
-    isolation: isolate;
 }
 
 
-
 /* =========================================================
-   04 — MASTER GOLD ATMOSPHERE
+   SYSTEM LABEL
    ========================================================= */
 
-.ars-gold-system::before {
+.ars-p19-system-label {
+
+    position: absolute;
+
+    top: -18px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 100;
+
+    text-align: center;
+
+    white-space: nowrap;
+
+    letter-spacing: .14em;
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+}
+
+
+.ars-p19-system-label span {
+
+    display: block;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+}
+
+
+.ars-p19-system-label small {
+
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 8px;
+
+    letter-spacing: .24em;
+
+    opacity: .55;
+
+}
+
+
+/* BLUE */
+
+.ars-p19-blue .ars-p19-system-label {
+    color: var(--p19-blue);
+}
+
+
+/* GOLD */
+
+.ars-p19-gold .ars-p19-system-label {
+    color: var(--p19-gold);
+}
+
+
+/* =========================================================
+   FIELD
+   ========================================================= */
+
+.ars-p19-field {
+
+    position: absolute;
+
+    inset: 7%;
+
+    border-radius: 50%;
+
+}
+
+
+/* =========================================================
+   ATMOSPHERE
+   ========================================================= */
+
+.ars-p19-field::before {
+
     content: "";
 
     position: absolute;
 
-    left: 50%;
-    top: 50%;
-
-    width: 115%;
-    height: 115%;
-
-    transform:
-        translate(-50%, -50%);
+    inset: -15%;
 
     border-radius: 50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(212, 171, 88, .075) 0%,
-            rgba(192, 145, 52, .035) 22%,
-            rgba(151, 112, 46, .018) 40%,
-            transparent 70%
-        );
-
-    filter: blur(20px);
-
-    opacity: .8;
-
-    animation:
-        ars-gold-atmosphere 8s ease-in-out infinite;
-}
-
-
-/* =========================================================
-   05 — SECONDARY GOLD FIELD
-   ========================================================= */
-
-.ars-gold-system::after {
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 150%;
-    height: 150%;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            ellipse,
-            rgba(210, 169, 84, .025),
-            transparent 62%
-        );
-
-    filter: blur(30px);
-
-    opacity: .65;
-
-    z-index: -2;
-
-    animation:
-        ars-gold-field-breathe 11s ease-in-out infinite;
-}
-
-
-/* =========================================================
-   06 — MASTER ORBITAL FIELD
-   ========================================================= */
-
-.ars-gold-orbit {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    border-radius: 50%;
-
-    transform:
-        translate(-50%, -50%);
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   ORBIT 01
-   ========================================================= */
-
-.ars-gold-orbit-01 {
-
-    width: 74%;
-    height: 74%;
-
-    border:
-        1px solid rgba(207, 166, 82, .17);
-
-    box-shadow:
-        0 0 20px rgba(190, 145, 54, .035),
-        inset 0 0 20px rgba(206, 165, 82, .018);
-
-    animation:
-        ars-gold-orbit-clockwise
-        32s
-        linear
-        infinite;
-}
-
-
-/* =========================================================
-   ORBIT 02
-   ========================================================= */
-
-.ars-gold-orbit-02 {
-
-    width: 92%;
-    height: 92%;
-
-    border:
-        1px solid rgba(195, 153, 70, .09);
-
-    border-left-color:
-        rgba(224, 187, 105, .25);
-
-    border-bottom-color:
-        rgba(174, 128, 44, .04);
-
-    animation:
-        ars-gold-orbit-counter
-        48s
-        linear
-        infinite;
-}
-
-
-/* =========================================================
-   ORBIT 03
-   ========================================================= */
-
-.ars-gold-orbit-03 {
-
-    width: 112%;
-    height: 112%;
-
-    border:
-        1px dashed rgba(195, 156, 78, .055);
-
-    opacity: .65;
-
-    animation:
-        ars-gold-orbit-clockwise
-        68s
-        linear
-        infinite;
-}
-
-
-/* =========================================================
-   07 — ORBITAL MICRO MARKS
-   ========================================================= */
-
-.ars-gold-orbit-01::before,
-.ars-gold-orbit-02::before,
-.ars-gold-orbit-03::before {
-
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    top: -2px;
-
-    width: 4px;
-    height: 4px;
-
-    transform:
-        translateX(-50%);
-
-    border-radius: 50%;
-
-    background:
-        rgba(230, 198, 124, .85);
-
-    box-shadow:
-        0 0 8px rgba(224, 183, 92, .5),
-        0 0 20px rgba(203, 155, 57, .22);
-}
-
-
-/* =========================================================
-   08 — CENTRAL GOLD CORE
-   ========================================================= */
-
-.ars-gold-core {
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 30%;
-    aspect-ratio: 1;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    z-index: 30;
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   CORE HALO
-   ========================================================= */
-
-.gold-core-halo {
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 180%;
-    height: 180%;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(224, 186, 103, .12) 0%,
-            rgba(199, 151, 58, .055) 25%,
+            rgba(55,170,255,.10),
             transparent 68%
         );
 
-    filter: blur(12px);
+    filter: blur(22px);
 
-    animation:
-        ars-core-gold-breathe
-        5s
-        ease-in-out
-        infinite;
+    pointer-events: none;
+
 }
 
 
-/* =========================================================
-   CORE ENERGY
-   ========================================================= */
-
-.gold-core-energy {
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 78%;
-    height: 78%;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
+.ars-p19-gold .ars-p19-field::before {
 
     background:
         radial-gradient(
-            circle at 45% 40%,
-            rgba(255, 224, 155, .28),
-            rgba(220, 178, 88, .12) 25%,
-            rgba(158, 111, 37, .035) 48%,
-            transparent 72%
+            circle,
+            rgba(255,190,55,.10),
+            transparent 68%
         );
 
-    filter: blur(3px);
-
-    animation:
-        ars-core-energy-pulse
-        4.5s
-        ease-in-out
-        infinite;
 }
 
 
 /* =========================================================
-   CORE CENTER
+   ORBITS
    ========================================================= */
 
-.gold-core-center {
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 34%;
-    aspect-ratio: 1;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle at 42% 38%,
-            rgba(255, 236, 190, .95),
-            rgba(216, 171, 83, .72) 22%,
-            rgba(122, 80, 24, .42) 50%,
-            rgba(24, 20, 13, .8) 75%
-        );
-
-    border:
-        1px solid rgba(244, 213, 148, .58);
-
-    box-shadow:
-        0 0 12px rgba(232, 190, 102, .4),
-        0 0 35px rgba(207, 157, 58, .2),
-        0 0 70px rgba(194, 143, 44, .09),
-        inset 0 0 15px rgba(255, 224, 160, .16);
-
-    animation:
-        ars-core-center-breathe
-        4s
-        ease-in-out
-        infinite;
-}
-
-
-.gold-core-point {
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 7px;
-    height: 7px;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-        #fff3cf;
-
-    box-shadow:
-        0 0 7px #f4d28a,
-        0 0 18px rgba(238, 194, 102, .8),
-        0 0 38px rgba(212, 163, 67, .42);
-}
-
-
-/* =========================================================
-   09 — CORE ORBITS
-   ========================================================= */
-
-.gold-core-orbit {
+.ars-p19-orbit {
 
     position: absolute;
 
@@ -16533,93 +15902,187 @@ select {
         translate(-50%, -50%);
 
     pointer-events: none;
+
 }
 
 
-.gold-core-orbit-01 {
+.ars-p19-orbit-a {
 
-    width: 112%;
-    height: 112%;
-
-    border:
-        1px solid rgba(230, 191, 111, .18);
-
-    border-right-color:
-        rgba(236, 201, 131, .48);
-
-    animation:
-        ars-core-orbit-01
-        11s
-        linear
-        infinite;
-}
-
-
-.gold-core-orbit-02 {
-
-    width: 138%;
-    height: 138%;
+    width: 68%;
+    height: 68%;
 
     border:
-        1px solid rgba(206, 163, 76, .1);
-
-    border-left-color:
-        rgba(238, 199, 122, .32);
+        1px solid rgba(255,255,255,.12);
 
     animation:
-        ars-core-orbit-02
-        17s
-        linear
-        infinite;
-}
-
-
-.gold-core-orbit-03 {
-
-    width: 164%;
-    height: 164%;
-
-    border:
-        1px dashed rgba(206, 164, 78, .07);
-
-    animation:
-        ars-core-orbit-03
+        p19-orbit-a
         24s
         linear
+        infinite;
+
+}
+
+
+.ars-p19-orbit-b {
+
+    width: 84%;
+    height: 84%;
+
+    border:
+        1px solid rgba(255,255,255,.07);
+
+    animation:
+        p19-orbit-b
+        34s
+        linear
+        infinite;
+
+}
+
+
+.ars-p19-orbit-c {
+
+    width: 102%;
+    height: 102%;
+
+    border:
+        1px dashed rgba(255,255,255,.055);
+
+    animation:
+        p19-orbit-a
+        55s
+        linear
         infinite reverse;
+
 }
 
 
 /* =========================================================
-   10 — ENERGY NETWORK
+   CENTER FIELD
    ========================================================= */
 
-.gold-energy-network {
+.ars-p19-center {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 29%;
+    aspect-ratio: 1;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(10,20,29,.98),
+            rgba(2,7,12,.98) 72%
+        );
+
+    border:
+        1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+        inset 0 0 30px rgba(255,255,255,.025),
+        0 0 35px rgba(0,0,0,.7);
+
+    z-index: 30;
+
+}
+
+
+.ars-p19-center-ring {
+
+    position: absolute;
+
+    inset: -8%;
+
+    border-radius: 50%;
+
+    border:
+        1px solid currentColor;
+
+    opacity: .45;
+
+    animation:
+        p19-orbit-a
+        14s
+        linear
+        infinite;
+
+}
+
+
+.ars-p19-blue .ars-p19-center {
+    color: var(--p19-blue);
+}
+
+
+.ars-p19-gold .ars-p19-center {
+    color: var(--p19-gold);
+}
+
+
+.ars-p19-center-title {
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    letter-spacing: .12em;
+
+}
+
+
+.ars-p19-center-subtitle {
+
+    margin-top: 5px;
+
+    font-size: 7px;
+
+    letter-spacing: .28em;
+
+    opacity: .5;
+
+}
+
+
+/* =========================================================
+   ENERGY SPOKES
+   ========================================================= */
+
+.ars-p19-energy-spokes {
 
     position: absolute;
 
     inset: 0;
 
-    z-index: 5;
+    z-index: 8;
 
-    pointer-events: none;
 }
 
 
-/* =========================================================
-   ENERGY LINES
-   ========================================================= */
-
-.gold-energy-line {
+.ars-p19-energy-spokes i {
 
     position: absolute;
 
     left: 50%;
     top: 50%;
 
-    width: 1px;
+    width: 2px;
 
-    height: 37%;
+    height: 35%;
 
     transform-origin:
         50% 100%;
@@ -16627,1366 +16090,65 @@ select {
     background:
         linear-gradient(
             to top,
-            rgba(225, 183, 92, .42),
-            rgba(217, 174, 81, .16),
-            rgba(202, 158, 64, .035),
+            currentColor,
             transparent
         );
 
-    opacity: .7;
+    opacity: .65;
 
-    filter:
-        drop-shadow(
-            0 0 5px rgba(215, 169, 75, .2)
-        );
+    box-shadow:
+        0 0 9px currentColor;
+
 }
 
 
-/* =========================================================
-   SIX RADIAL CONNECTIONS
-   ========================================================= */
+.ars-p19-blue .ars-p19-energy-spokes {
+    color: var(--p19-blue);
+}
 
-.gold-line-01 {
+
+.ars-p19-gold .ars-p19-energy-spokes {
+    color: var(--p19-gold);
+}
+
+
+.ars-p19-energy-spokes i:nth-child(1) {
     transform:
         translate(-50%, -100%)
         rotate(0deg);
 }
 
-.gold-line-02 {
-    transform:
-        translate(-50%, -100%)
-        rotate(60deg);
-}
-
-.gold-line-03 {
-    transform:
-        translate(-50%, -100%)
-        rotate(120deg);
-}
-
-.gold-line-04 {
-    transform:
-        translate(-50%, -100%)
-        rotate(180deg);
-}
-
-.gold-line-05 {
-    transform:
-        translate(-50%, -100%)
-        rotate(240deg);
-}
-
-.gold-line-06 {
-    transform:
-        translate(-50%, -100%)
-        rotate(300deg);
-}
-
-
-/* =========================================================
-   ENERGY TRAVEL PARTICLES
-   ========================================================= */
-
-.gold-energy-line::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    top: 0;
-
-    width: 5px;
-    height: 5px;
-
-    transform:
-        translateX(-50%);
-
-    border-radius: 50%;
-
-    background:
-        rgba(255, 224, 150, .95);
-
-    box-shadow:
-        0 0 8px rgba(241, 199, 113, .75),
-        0 0 20px rgba(216, 166, 70, .38);
-
-    animation:
-        ars-energy-travel
-        3.8s
-        ease-in-out
-        infinite;
-}
-
-
-.gold-line-02::after {
-    animation-delay: -.6s;
-}
-
-.gold-line-03::after {
-    animation-delay: -1.2s;
-}
-
-.gold-line-04::after {
-    animation-delay: -1.8s;
-}
-
-.gold-line-05::after {
-    animation-delay: -2.4s;
-}
-
-.gold-line-06::after {
-    animation-delay: -3s;
-}
-
-
-/* =========================================================
-   11 — GOLD NODE MASTER
-   ========================================================= */
-
-.gold-node {
-
-    position: absolute;
-
-    width: 74px;
-    height: 74px;
-
-    transform:
-        translate(-50%, -50%);
-
-    z-index: 40;
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   SIX NODE POSITIONS
-   ========================================================= */
-
-.gold-node-01 {
-    left: 50%;
-    top: 8%;
-}
-
-.gold-node-02 {
-    left: 86.4%;
-    top: 29%;
-}
-
-.gold-node-03 {
-    left: 86.4%;
-    top: 71%;
-}
-
-.gold-node-04 {
-    left: 50%;
-    top: 92%;
-}
-
-.gold-node-05 {
-    left: 13.6%;
-    top: 71%;
-}
-
-.gold-node-06 {
-    left: 13.6%;
-    top: 29%;
-}
-
-
-/* =========================================================
-   12 — NODE ENERGY FIELD
-   ========================================================= */
-
-.gold-node-energy {
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 175%;
-    height: 175%;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   NODE HALO
-   ========================================================= */
-
-.gold-node-halo {
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 100%;
-    height: 100%;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(226, 187, 102, .13),
-            rgba(200, 150, 54, .04) 42%,
-            transparent 70%
-        );
-
-    filter: blur(8px);
-
-    animation:
-        ars-node-halo
-        4.8s
-        ease-in-out
-        infinite;
-}
-
-
-/* =========================================================
-   13 — NODE ORBITS
-   ========================================================= */
-
-.gold-node-orbit {
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    border-radius: 50%;
-
-    transform:
-        translate(-50%, -50%);
-
-    pointer-events: none;
-}
-
-
-.gold-node-orbit-01 {
-
-    width: 100%;
-    height: 100%;
-
-    border:
-        1px solid rgba(226, 188, 108, .16);
-
-    border-right-color:
-        rgba(238, 203, 132, .45);
-
-    animation:
-        ars-node-orbit-clockwise
-        9s
-        linear
-        infinite;
-}
-
-
-.gold-node-orbit-02 {
-
-    width: 126%;
-    height: 126%;
-
-    border:
-        1px dashed rgba(207, 164, 76, .08);
-
-    border-left-color:
-        rgba(226, 184, 95, .25);
-
-    animation:
-        ars-node-orbit-counter
-        14s
-        linear
-        infinite;
-}
-
-
-/* =========================================================
-   14 — NODE PULSE
-   ========================================================= */
-
-.gold-node-pulse {
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 75%;
-    height: 75%;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    border:
-        1px solid rgba(230, 194, 119, .22);
-
-    opacity: 0;
-
-    animation:
-        ars-node-pulse
-        4.5s
-        ease-out
-        infinite;
-}
-
-
-/* =========================================================
-   15 — NODE LINK
-   ========================================================= */
-
-.gold-node-link {
-
-    position: absolute;
-
-    inset: 0;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    text-decoration: none;
-
-    pointer-events: auto;
-
-    background:
-        radial-gradient(
-            circle at 42% 36%,
-            rgba(57, 48, 31, .94),
-            rgba(16, 15, 12, .98) 68%
-        );
-
-    border:
-        1px solid rgba(211, 174, 96, .24);
-
-    box-shadow:
-        0 12px 32px rgba(0,0,0,.55),
-        0 0 15px rgba(193, 145, 51, .06),
-        inset 0 0 20px rgba(227, 190, 110, .035);
-
-    transition:
-        transform .5s cubic-bezier(.2,.8,.2,1),
-        border-color .4s ease,
-        box-shadow .4s ease;
-}
-
-
-/* =========================================================
-   NODE INNER CORE
-   ========================================================= */
-
-.gold-node-core {
-
-    width: 24%;
-    aspect-ratio: 1;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255, 232, 178, .98),
-            rgba(221, 177, 85, .72) 28%,
-            rgba(158, 106, 32, .3) 58%,
-            transparent 75%
-        );
-
-    box-shadow:
-        0 0 8px rgba(239, 201, 120, .65),
-        0 0 20px rgba(211, 163, 67, .3);
-
-    animation:
-        ars-node-core-breathe
-        3.8s
-        ease-in-out
-        infinite;
-}
-
-
-/* =========================================================
-   16 — NODE HOVER
-   ========================================================= */
-
-.gold-node-link:hover {
-
-    transform:
-        scale(1.15);
-
-    border-color:
-        rgba(242, 210, 148, .62);
-
-    box-shadow:
-        0 16px 42px rgba(0,0,0,.62),
-        0 0 22px rgba(218, 171, 77, .2),
-        0 0 55px rgba(198, 147, 48, .08),
-        inset 0 0 25px rgba(237, 202, 130, .07);
-}
-
-
-.gold-node-link:hover .gold-node-core {
-
-    transform:
-        scale(1.22);
-
-    box-shadow:
-        0 0 10px rgba(255, 223, 150, .8),
-        0 0 28px rgba(224, 177, 81, .45),
-        0 0 50px rgba(203, 149, 48, .18);
-}
-
-
-/* =========================================================
-   17 — NODE MICRO LIGHT
-   ========================================================= */
-
-.gold-node-link::before {
-
-    content: "";
-
-    position: absolute;
-
-    left: 18%;
-    top: 18%;
-
-    width: 4px;
-    height: 4px;
-
-    border-radius: 50%;
-
-    background:
-        rgba(255, 239, 201, .9);
-
-    box-shadow:
-        0 0 8px rgba(242, 202, 123, .65);
-
-    opacity: .8;
-}
-
-
-/* =========================================================
-   18 — GOLD SYSTEM DATA POINTS
-   ========================================================= */
-
-.ars-gold-system .gold-node::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 3px;
-    height: 3px;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-        rgba(241, 204, 131, .8);
-
-    box-shadow:
-        0 0 8px rgba(224, 180, 85, .5);
-
-    opacity: .5;
-}
-
-
-/* =========================================================
-   19 — PRECISION OUTER TICKS
-   ========================================================= */
-
-.ars-gold-orbit-03::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 100%;
-    height: 100%;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-        repeating-conic-gradient(
-            from 0deg,
-            rgba(224, 184, 101, .12) 0deg 1deg,
-            transparent 1deg 30deg
-        );
-
-    mask-image:
-        radial-gradient(
-            transparent 70%,
-            #000 71%
-        );
-
-    -webkit-mask-image:
-        radial-gradient(
-            transparent 70%,
-            #000 71%
-        );
-
-    opacity: .32;
-}
-
-
-/* =========================================================
-   20 — KEYFRAMES
-   ========================================================= */
-
-@keyframes ars-gold-atmosphere {
-
-    0%,100% {
-        opacity: .55;
-        transform:
-            translate(-50%, -50%)
-            scale(.94);
-    }
-
-    50% {
-        opacity: 1;
-        transform:
-            translate(-50%, -50%)
-            scale(1.05);
-    }
-}
-
-
-@keyframes ars-gold-field-breathe {
-
-    0%,100% {
-        opacity: .4;
-        transform:
-            translate(-50%, -50%)
-            scale(.96);
-    }
-
-    50% {
-        opacity: .75;
-        transform:
-            translate(-50%, -50%)
-            scale(1.04);
-    }
-}
-
-
-@keyframes ars-gold-orbit-clockwise {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-}
-
-
-@keyframes ars-gold-orbit-counter {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-}
-
-
-@keyframes ars-core-gold-breathe {
-
-    0%,100% {
-        opacity: .45;
-        transform:
-            translate(-50%, -50%)
-            scale(.92);
-    }
-
-    50% {
-        opacity: 1;
-        transform:
-            translate(-50%, -50%)
-            scale(1.08);
-    }
-}
-
-
-@keyframes ars-core-energy-pulse {
-
-    0%,100% {
-        opacity: .45;
-        transform:
-            translate(-50%, -50%)
-            scale(.9);
-    }
-
-    50% {
-        opacity: 1;
-        transform:
-            translate(-50%, -50%)
-            scale(1.08);
-    }
-}
-
-
-@keyframes ars-core-center-breathe {
-
-    0%,100% {
-        transform:
-            translate(-50%, -50%)
-            scale(.94);
-    }
-
-    50% {
-        transform:
-            translate(-50%, -50%)
-            scale(1.06);
-    }
-}
-
-
-@keyframes ars-core-orbit-01 {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-}
-
-
-@keyframes ars-core-orbit-02 {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-}
-
-
-@keyframes ars-core-orbit-03 {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-}
-
-
-@keyframes ars-energy-travel {
-
-    0% {
-        opacity: 0;
-        top: 100%;
-    }
-
-    15% {
-        opacity: 1;
-    }
-
-    70% {
-        opacity: .9;
-    }
-
-    100% {
-        opacity: 0;
-        top: 0%;
-    }
-}
-
-
-@keyframes ars-node-halo {
-
-    0%,100% {
-        opacity: .4;
-        transform:
-            translate(-50%, -50%)
-            scale(.9);
-    }
-
-    50% {
-        opacity: 1;
-        transform:
-            translate(-50%, -50%)
-            scale(1.1);
-    }
-}
-
-
-@keyframes ars-node-orbit-clockwise {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-}
-
-
-@keyframes ars-node-orbit-counter {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-}
-
-
-@keyframes ars-node-pulse {
-
-    0% {
-        opacity: .35;
-
-        transform:
-            translate(-50%, -50%)
-            scale(.7);
-    }
-
-    100% {
-        opacity: 0;
-
-        transform:
-            translate(-50%, -50%)
-            scale(1.65);
-    }
-}
-
-
-@keyframes ars-node-core-breathe {
-
-    0%,100% {
-        opacity: .65;
-
-        transform:
-            scale(.9);
-    }
-
-    50% {
-        opacity: 1;
-
-        transform:
-            scale(1.12);
-    }
-}
-
-
-/* =========================================================
-   21 — TABLET
-   ========================================================= */
-
-@media (max-width: 1100px) {
-
-    .ars-gold-system {
-
-        left: 72%;
-
-        width: min(470px, 52vw);
-    }
-
-    .gold-node {
-
-        width: 66px;
-        height: 66px;
-    }
-}
-
-
-/* =========================================================
-   22 — MOBILE
-   ========================================================= */
-
-@media (max-width: 700px) {
-
-    .ars-hero {
-
-        min-height: 760px;
-    }
-
-    .ars-hero-field {
-
-        min-height: 760px;
-    }
-
-    .ars-gold-system {
-
-        left: 50%;
-        top: 58%;
-
-        width: min(430px, 82vw);
-    }
-
-    .gold-node {
-
-        width: 55px;
-        height: 55px;
-    }
-
-    .ars-gold-orbit-03 {
-
-        opacity: .55;
-    }
-
-    .gold-energy-line {
-
-        opacity: .5;
-    }
-}
-
-
-/* =========================================================
-   23 — SMALL MOBILE
-   ========================================================= */
-
-@media (max-width: 430px) {
-
-    .ars-gold-system {
-
-        width: 86vw;
-
-        top: 58%;
-    }
-
-    .gold-node {
-
-        width: 47px;
-        height: 47px;
-    }
-
-    .gold-core-center {
-
-        width: 38%;
-    }
-
-    .ars-gold-orbit-03 {
-
-        opacity: .35;
-    }
-}
-
-
-/* =========================================================
-   24 — REDUCED MOTION
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    .ars-gold-system *,
-    .ars-gold-system *::before,
-    .ars-gold-system *::after {
-
-        animation-duration: .01ms !important;
-
-        animation-iteration-count: 1 !important;
-    }
-}
-
-
-/* =========================================================
-   END — ARS GOLD INTELLIGENCE SYSTEM
-   ========================================================= */
-
-/* =========================================================
-   ARS BLUE INTELLIGENCE SYSTEM
-   SYSTEM 02 — SEVEN NODE
-   INDEPENDENT TEST BUILD
-   ========================================================= */
-.ars-blue-system {
-    position: absolute;
-
-    left: 25%;
-    top: 50%;
-
-    width: 420px;
-    aspect-ratio: 1 / 1;
-
-    transform: translate(-50%, -50%);
-
-    z-index: 20;
-
-    pointer-events: none;
-
-    isolation: isolate;
-}
-
-/* =========================================================
-   BLUE ATMOSPHERE
-   ========================================================= */
-
-.ars-blue-system::before {
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 120%;
-    height: 120%;
-
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(40,150,255,.12),
-            rgba(30,110,220,.045) 35%,
-            transparent 70%
-        );
-
-    filter: blur(22px);
-
-    animation: blue-system-breathe 7s ease-in-out infinite;
-}
-
-
-.ars-blue-system::after {
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 155%;
-    height: 155%;
-
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            ellipse,
-            rgba(50,145,255,.035),
-            transparent 68%
-        );
-
-    filter: blur(30px);
-
-    z-index: -2;
-}
-
-
-/* =========================================================
-   BLUE ORBITS
-   ========================================================= */
-
-.ars-blue-orbit {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    border-radius: 50%;
-
-    transform: translate(-50%, -50%);
-}
-
-
-.blue-orbit-01 {
-    width: 74%;
-    height: 74%;
-
-    border:
-        1px solid rgba(61,169,255,.25);
-
-    box-shadow:
-        0 0 22px rgba(30,145,255,.08);
-
-    animation:
-        blue-orbit-clockwise
-        28s
-        linear
-        infinite;
-}
-
-
-.blue-orbit-02 {
-    width: 94%;
-    height: 94%;
-
-    border:
-        1px solid rgba(38,135,235,.14);
-
-    border-left-color:
-        rgba(73,181,255,.35);
-
-    animation:
-        blue-orbit-counter
-        43s
-        linear
-        infinite;
-}
-
-
-.blue-orbit-03 {
-    width: 114%;
-    height: 114%;
-
-    border:
-        1px dashed rgba(49,148,244,.10);
-
-    animation:
-        blue-orbit-clockwise
-        65s
-        linear
-        infinite;
-}
-
-
-/* =========================================================
-   CENTRAL BLUE CORE
-   ========================================================= */
-
-.ars-blue-core {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 29%;
-
-    aspect-ratio: 1 / 1;
-
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    z-index: 30;
-}
-
-
-/* =========================================================
-   CORE HALO
-   ========================================================= */
-
-.blue-core-halo {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 185%;
-    height: 185%;
-
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(68,177,255,.18),
-            rgba(36,128,220,.06) 32%,
-            transparent 70%
-        );
-
-    filter: blur(13px);
-
-    animation:
-        blue-core-breathe
-        4.5s
-        ease-in-out
-        infinite;
-}
-
-
-.blue-core-energy {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 82%;
-    height: 82%;
-
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle at 42% 38%,
-            rgba(185,230,255,.95),
-            rgba(61,166,255,.58) 24%,
-            rgba(21,86,168,.20) 50%,
-            transparent 73%
-        );
-
-    filter: blur(3px);
-}
-
-
-.blue-core-center {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 35%;
-
-    aspect-ratio: 1;
-
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle at 40% 35%,
-            #dff6ff,
-            #55baff 22%,
-            #1674c8 52%,
-            #071827 78%
-        );
-
-    border:
-        1px solid rgba(156,220,255,.75);
-
-    box-shadow:
-        0 0 14px rgba(72,180,255,.75),
-        0 0 38px rgba(30,140,255,.42),
-        0 0 75px rgba(22,105,205,.20),
-        inset 0 0 18px rgba(193,236,255,.25);
-}
-
-
-.blue-core-point {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 7px;
-    height: 7px;
-
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background: #e9f9ff;
-
-    box-shadow:
-        0 0 8px #8edcff,
-        0 0 22px rgba(70,178,255,.9),
-        0 0 42px rgba(30,135,255,.55);
-}
-
-
-/* =========================================================
-   CORE ORBITS
-   ========================================================= */
-
-.blue-core-orbit {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    border-radius: 50%;
-
-    transform: translate(-50%, -50%);
-}
-
-
-.blue-core-orbit-01 {
-    width: 112%;
-    height: 112%;
-
-    border:
-        1px solid rgba(91,193,255,.22);
-
-    border-right-color:
-        rgba(124,211,255,.62);
-
-    animation:
-        blue-core-orbit-a
-        10s
-        linear
-        infinite;
-}
-
-
-.blue-core-orbit-02 {
-    width: 140%;
-    height: 140%;
-
-    border:
-        1px solid rgba(57,157,242,.14);
-
-    border-left-color:
-        rgba(86,190,255,.42);
-
-    animation:
-        blue-core-orbit-b
-        16s
-        linear
-        infinite;
-}
-
-
-.blue-core-orbit-03 {
-    width: 168%;
-    height: 168%;
-
-    border:
-        1px dashed rgba(55,158,245,.10);
-
-    animation:
-        blue-core-orbit-a
-        23s
-        linear
-        infinite reverse;
-}
-
-
-/* =========================================================
-   THICK BLUE ENERGY NETWORK
-   ========================================================= */
-
-.blue-energy-network {
-    position: absolute;
-
-    inset: 0;
-
-    z-index: 5;
-}
-
-
-.blue-energy-line {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 3px;
-    height: 38%;
-
-    transform-origin: 50% 100%;
-
-    background:
-        linear-gradient(
-            to top,
-            rgba(55,174,255,.78),
-            rgba(42,145,239,.42),
-            rgba(42,126,220,.12),
-            transparent
-        );
-
-    box-shadow:
-        0 0 8px rgba(48,163,255,.32),
-        0 0 18px rgba(28,129,225,.14);
-
-    opacity: .85;
-}
-
-
-.blue-line-01 {
-    transform:
-        translate(-50%, -100%)
-        rotate(0deg);
-}
-
-.blue-line-02 {
+.ars-p19-energy-spokes i:nth-child(2) {
     transform:
         translate(-50%, -100%)
         rotate(51.43deg);
 }
 
-.blue-line-03 {
+.ars-p19-energy-spokes i:nth-child(3) {
     transform:
         translate(-50%, -100%)
         rotate(102.86deg);
 }
 
-.blue-line-04 {
+.ars-p19-energy-spokes i:nth-child(4) {
     transform:
         translate(-50%, -100%)
         rotate(154.29deg);
 }
 
-.blue-line-05 {
+.ars-p19-energy-spokes i:nth-child(5) {
     transform:
         translate(-50%, -100%)
         rotate(205.72deg);
 }
 
-.blue-line-06 {
+.ars-p19-energy-spokes i:nth-child(6) {
     transform:
         translate(-50%, -100%)
         rotate(257.15deg);
 }
 
-.blue-line-07 {
+.ars-p19-energy-spokes i:nth-child(7) {
     transform:
         translate(-50%, -100%)
         rotate(308.58deg);
@@ -17994,271 +16156,559 @@ select {
 
 
 /* =========================================================
-   ENERGY PARTICLES
+   NODES
    ========================================================= */
 
-.blue-energy-line::after {
-    content: "";
+.ars-p19-node {
 
     position: absolute;
 
-    left: 50%;
-    top: 100%;
+    width: 62px;
+    height: 62px;
 
-    width: 6px;
-    height: 6px;
+    padding: 0;
 
-    transform: translateX(-50%);
+    border: 0;
+
+    background: transparent;
+
+    color: inherit;
+
+    cursor: pointer;
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 60;
+
+}
+
+
+.ars-p19-node-rim {
+
+    position: absolute;
+
+    inset: 0;
 
     border-radius: 50%;
 
-    background: #a8e6ff;
+    border:
+        1px solid currentColor;
+
+    opacity: .65;
 
     box-shadow:
-        0 0 9px #65caff,
-        0 0 24px rgba(45,165,255,.85),
-        0 0 45px rgba(35,130,230,.42);
+        0 0 13px currentColor;
 
     animation:
-        blue-energy-travel
-        3.2s
-        ease-in-out
-        infinite;
-}
-
-
-.blue-line-02::after { animation-delay: -.45s; }
-.blue-line-03::after { animation-delay: -.9s; }
-.blue-line-04::after { animation-delay: -1.35s; }
-.blue-line-05::after { animation-delay: -1.8s; }
-.blue-line-06::after { animation-delay: -2.25s; }
-.blue-line-07::after { animation-delay: -2.7s; }
-
-
-/* =========================================================
-   SEVEN NODES
-   ========================================================= */
-
-.blue-node {
-    position: absolute;
-
-    width: 58px;
-    height: 58px;
-
-    transform: translate(-50%, -50%);
-
-    z-index: 40;
-}
-
-
-.blue-node-01 {
-    left: 50%;
-    top: 7%;
-}
-
-.blue-node-02 {
-    left: 83.7%;
-    top: 18.7%;
-}
-
-.blue-node-03 {
-    left: 95%;
-    top: 50%;
-}
-
-.blue-node-04 {
-    left: 72.5%;
-    top: 89%;
-}
-
-.blue-node-05 {
-    left: 27.5%;
-    top: 89%;
-}
-
-.blue-node-06 {
-    left: 5%;
-    top: 50%;
-}
-
-.blue-node-07 {
-    left: 16.3%;
-    top: 18.7%;
-}
-
-
-/* =========================================================
-   NODE ENERGY
-   ========================================================= */
-
-.blue-node-energy {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 175%;
-    height: 175%;
-
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
-}
-
-
-.blue-node-halo {
-    position: absolute;
-
-    inset: 0;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(57,173,255,.20),
-            rgba(28,118,211,.055) 45%,
-            transparent 72%
-        );
-
-    filter: blur(8px);
-
-    animation:
-        blue-node-halo
-        4.5s
-        ease-in-out
-        infinite;
-}
-
-
-.blue-node-orbit {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    border-radius: 50%;
-
-    transform: translate(-50%, -50%);
-}
-
-
-.blue-node-orbit-01 {
-    width: 100%;
-    height: 100%;
-
-    border:
-        1px solid rgba(91,196,255,.30);
-
-    border-right-color:
-        rgba(136,219,255,.72);
-
-    animation:
-        blue-node-orbit-a
-        8s
+        p19-node-rotate
+        9s
         linear
         infinite;
+
 }
 
 
-.blue-node-orbit-02 {
-    width: 128%;
-    height: 128%;
+.ars-p19-node-ring {
 
-    border:
-        1px dashed rgba(59,160,245,.16);
-
-    border-left-color:
-        rgba(79,184,255,.42);
-
-    animation:
-        blue-node-orbit-b
-        13s
-        linear
-        infinite;
-}
-
-
-/* =========================================================
-   NODE LINK
-   ========================================================= */
-
-.blue-node-link {
     position: absolute;
 
-    inset: 0;
+    inset: 7%;
+
+    border-radius: 50%;
+
+    border:
+        1px solid currentColor;
+
+    opacity: .28;
+
+}
+
+
+.ars-p19-node-core {
+
+    position: absolute;
+
+    inset: 13%;
+
+    border-radius: 50%;
 
     display: flex;
+
+    flex-direction: column;
 
     align-items: center;
     justify-content: center;
 
-    border-radius: 50%;
-
     background:
         radial-gradient(
-            circle at 42% 36%,
-            rgba(19,45,68,.96),
-            rgba(5,13,21,.99) 70%
+            circle at 40% 35%,
+            rgba(30,50,65,.98),
+            rgba(3,9,15,.99) 72%
         );
 
     border:
-        1px solid rgba(72,174,255,.42);
+        1px solid rgba(255,255,255,.18);
 
     box-shadow:
-        0 10px 28px rgba(0,0,0,.58),
-        0 0 18px rgba(31,139,235,.16),
-        inset 0 0 20px rgba(75,181,255,.07);
+        inset 0 0 15px rgba(255,255,255,.035),
+        0 8px 22px rgba(0,0,0,.65);
 
-    pointer-events: auto;
-
-    transition:
-        transform .45s ease,
-        border-color .35s ease,
-        box-shadow .35s ease;
 }
 
 
-.blue-node-link:hover {
-    transform: scale(1.15);
+.ars-p19-node-core b {
 
-    border-color:
-        rgba(135,220,255,.85);
+    font-size: 15px;
 
-    box-shadow:
-        0 15px 40px rgba(0,0,0,.65),
-        0 0 25px rgba(48,165,255,.32),
-        0 0 55px rgba(31,126,220,.16),
-        inset 0 0 25px rgba(112,208,255,.12);
+    font-weight: 400;
+
+    line-height: 1;
+
 }
 
 
-.blue-node-core {
-    width: 25%;
+.ars-p19-node-core em {
 
-    aspect-ratio: 1;
+    margin-top: 5px;
+
+    font-style: normal;
+
+    font-size: 6px;
+
+    letter-spacing: .08em;
+
+    opacity: .8;
+
+    white-space: nowrap;
+
+}
+
+
+/* BLUE NODE */
+
+.ars-p19-blue .ars-p19-node {
+    color: var(--p19-blue);
+}
+
+
+/* GOLD NODE */
+
+.ars-p19-gold .ars-p19-node {
+    color: var(--p19-gold);
+}
+
+
+/* =========================================================
+   7 NODE GEOMETRY
+   ========================================================= */
+
+.ars-p19-blue .ars-p19-node-01 {
+    left: 50%;
+    top: 5%;
+}
+
+.ars-p19-blue .ars-p19-node-02 {
+    left: 86%;
+    top: 22%;
+}
+
+.ars-p19-blue .ars-p19-node-03 {
+    left: 91%;
+    top: 68%;
+}
+
+.ars-p19-blue .ars-p19-node-04 {
+    left: 50%;
+    top: 95%;
+}
+
+.ars-p19-blue .ars-p19-node-05 {
+    left: 9%;
+    top: 68%;
+}
+
+.ars-p19-blue .ars-p19-node-06 {
+    left: 14%;
+    top: 22%;
+}
+
+.ars-p19-blue .ars-p19-node-07 {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(.82);
+}
+
+
+/* =========================================================
+   6 NODE GEOMETRY
+   ========================================================= */
+
+.ars-p19-gold .ars-p19-node-01 {
+    left: 50%;
+    top: 5%;
+}
+
+.ars-p19-gold .ars-p19-node-02 {
+    left: 89%;
+    top: 28%;
+}
+
+.ars-p19-gold .ars-p19-node-03 {
+    left: 78%;
+    top: 88%;
+}
+
+.ars-p19-gold .ars-p19-node-04 {
+    left: 22%;
+    top: 88%;
+}
+
+.ars-p19-gold .ars-p19-node-05 {
+    left: 11%;
+    top: 28%;
+}
+
+.ars-p19-gold .ars-p19-node-06 {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(.82);
+}
+
+
+/* =========================================================
+   CENTRAL ARS CORE
+   ========================================================= */
+
+.ars-p19-core-system {
+
+    position: relative;
+
+    width: 250px;
+    height: 250px;
+
+    flex: 0 0 auto;
+
+    display: grid;
+
+    place-items: center;
+
+    z-index: 100;
+
+}
+
+
+.ars-p19-core {
+
+    position: relative;
+
+    width: 100%;
+    height: 100%;
 
     border-radius: 50%;
+
+    display: grid;
+
+    place-items: center;
+
+}
+
+
+.ars-p19-core-face {
+
+    position: relative;
+
+    width: 58%;
+    height: 58%;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
 
     background:
         radial-gradient(
             circle,
-            #e2f8ff,
-            #58c0ff 30%,
-            #167acb 58%,
-            transparent 78%
+            #17202a,
+            #050a0f 72%
+        );
+
+    border:
+        1px solid rgba(255,205,100,.75);
+
+    box-shadow:
+        0 0 30px rgba(255,190,60,.35),
+        0 0 80px rgba(255,170,30,.16),
+        inset 0 0 35px rgba(255,195,70,.08);
+
+    z-index: 30;
+
+}
+
+
+.ars-p19-core-face strong {
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 42px;
+
+    line-height: 1;
+
+    letter-spacing: -.05em;
+
+    color: #ffd36a;
+
+}
+
+
+.ars-p19-core-face small {
+
+    margin-top: 9px;
+
+    font-size: 7px;
+
+    letter-spacing: .22em;
+
+    color: #ffd36a;
+
+    opacity: .8;
+
+}
+
+
+.ars-p19-core-face i {
+
+    position: absolute;
+
+    inset: -7%;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(255,210,100,.35);
+
+    animation:
+        p19-core-spin
+        12s
+        linear
+        infinite;
+
+}
+
+
+.ars-p19-core-ring {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+}
+
+
+.core-ring-01 {
+
+    width: 78%;
+    height: 78%;
+
+    border:
+        2px solid rgba(255,210,100,.45);
+
+}
+
+
+.core-ring-02 {
+
+    width: 94%;
+    height: 94%;
+
+    border:
+        1px solid rgba(75,190,255,.35);
+
+    animation:
+        p19-core-spin
+        18s
+        linear
+        infinite reverse;
+
+}
+
+
+.core-ring-03 {
+
+    width: 112%;
+    height: 112%;
+
+    border:
+        1px dashed rgba(255,210,100,.25);
+
+    animation:
+        p19-core-spin
+        28s
+        linear
+        infinite;
+
+}
+
+
+/* =========================================================
+   MECHANICAL CORE SEGMENTS
+   ========================================================= */
+
+.ars-p19-core-mechanical {
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 50%;
+
+}
+
+
+.ars-p19-core-mechanical span {
+
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    width: 2px;
+    height: 22px;
+
+    transform-origin:
+        50% 125px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #ffd36a,
+            transparent
         );
 
     box-shadow:
-        0 0 10px rgba(113,207,255,.9),
-        0 0 25px rgba(43,161,255,.48),
-        0 0 45px rgba(27,119,218,.22);
+        0 0 9px #ffc84a;
+
+}
+
+
+.ars-p19-core-mechanical span:nth-child(1) {
+    transform: translateX(-50%) rotate(0deg);
+}
+
+.ars-p19-core-mechanical span:nth-child(2) {
+    transform: translateX(-50%) rotate(60deg);
+}
+
+.ars-p19-core-mechanical span:nth-child(3) {
+    transform: translateX(-50%) rotate(120deg);
+}
+
+.ars-p19-core-mechanical span:nth-child(4) {
+    transform: translateX(-50%) rotate(180deg);
+}
+
+.ars-p19-core-mechanical span:nth-child(5) {
+    transform: translateX(-50%) rotate(240deg);
+}
+
+.ars-p19-core-mechanical span:nth-child(6) {
+    transform: translateX(-50%) rotate(300deg);
+}
+
+
+/* =========================================================
+   ENERGY BETWEEN SYSTEMS
+   ========================================================= */
+
+.ars-p19-core-energy {
+
+    position: absolute;
+
+    inset: -30px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(255,190,60,.10),
+            transparent 62%
+        );
+
+    filter: blur(18px);
 
     animation:
-        blue-node-core
-        3.6s
+        p19-core-breathe
+        4s
         ease-in-out
         infinite;
+
+}
+
+
+/* =========================================================
+   INTERACTION
+   ========================================================= */
+
+.ars-p19-node:hover {
+
+    z-index: 200;
+
+}
+
+
+.ars-p19-node:hover .ars-p19-node-core {
+
+    transform: scale(1.12);
+
+    box-shadow:
+        0 0 28px currentColor,
+        inset 0 0 25px rgba(255,255,255,.08);
+
+}
+
+
+.ars-p19-node.is-active {
+
+    z-index: 500;
+
+}
+
+
+.ars-p19-node.is-active .ars-p19-node-rim {
+
+    animation:
+        p19-node-active-spin
+        2.2s
+        linear
+        infinite;
+
+}
+
+
+.ars-p19-node.is-active .ars-p19-node-core {
+
+    transform:
+        scale(1.3)
+        rotate(8deg);
+
+    box-shadow:
+        0 0 35px currentColor,
+        0 0 90px currentColor,
+        inset 0 0 30px rgba(255,255,255,.12);
+
 }
 
 
@@ -18266,188 +16716,177 @@ select {
    ANIMATIONS
    ========================================================= */
 
-@keyframes blue-system-breathe {
+@keyframes p19-orbit-a {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+}
+
+
+@keyframes p19-orbit-b {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+}
+
+
+@keyframes p19-node-rotate {
+
+    from {
+        transform:
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+
+@keyframes p19-node-active-spin {
+
+    from {
+        transform:
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+
+@keyframes p19-core-spin {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+}
+
+
+@keyframes p19-core-breathe {
 
     0%,100% {
         opacity: .45;
-        transform:
-            translate(-50%, -50%)
-            scale(.94);
-    }
-
-    50% {
-        opacity: 1;
-        transform:
-            translate(-50%, -50%)
-            scale(1.06);
-    }
-}
-
-
-@keyframes blue-orbit-clockwise {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-}
-
-
-@keyframes blue-orbit-counter {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-}
-
-
-@keyframes blue-core-breathe {
-
-    0%,100% {
-        opacity: .45;
-        transform:
-            translate(-50%, -50%)
-            scale(.9);
-    }
-
-    50% {
-        opacity: 1;
-        transform:
-            translate(-50%, -50%)
-            scale(1.08);
-    }
-}
-
-
-@keyframes blue-core-orbit-a {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-}
-
-
-@keyframes blue-core-orbit-b {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-}
-
-
-@keyframes blue-energy-travel {
-
-    0% {
-        top: 100%;
-        opacity: 0;
-    }
-
-    15% {
-        opacity: 1;
-    }
-
-    75% {
-        opacity: .95;
-    }
-
-    100% {
-        top: 0%;
-        opacity: 0;
-    }
-}
-
-
-@keyframes blue-node-halo {
-
-    0%,100% {
-        opacity: .35;
-        transform:
-            translate(-50%, -50%)
-            scale(.9);
-    }
-
-    50% {
-        opacity: 1;
-        transform:
-            translate(-50%, -50%)
-            scale(1.1);
-    }
-}
-
-
-@keyframes blue-node-orbit-a {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-}
-
-
-@keyframes blue-node-orbit-b {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-}
-
-
-@keyframes blue-node-core {
-
-    0%,100% {
         transform: scale(.9);
-        opacity: .65;
     }
 
     50% {
-        transform: scale(1.15);
         opacity: 1;
+        transform: scale(1.08);
     }
-          }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .ars-p19 {
+
+        width: 100%;
+
+        padding:
+            35px 10px 60px;
+
+        gap: 20px;
+
+    }
+
+
+    .ars-p19-system {
+
+        width: min(100%, 350px);
+
+    }
+
+
+    .ars-p19-node {
+
+        width: 54px;
+        height: 54px;
+
+    }
+
+
+    .ars-p19-core-system {
+
+        width: 190px;
+        height: 190px;
+
+    }
+
+
+    .ars-p19-core-face strong {
+
+        font-size: 32px;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ars-p19 *,
+    .ars-p19 *::before,
+    .ars-p19 *::after {
+
+        animation-duration: .01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
 
