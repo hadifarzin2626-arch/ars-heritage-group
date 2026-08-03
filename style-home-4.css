@@ -16880,292 +16880,734 @@ code {
 
 }
 
+
 /* =========================================================
-   ARS HOME — PHASE 19
-   MASTER HERO CONSTELLATION
-   GOLD 6 + CENTRAL 1 + BLUE 7
-   TEST / ISOLATED BUILD
+   ARS HERITAGE GROUP — PHASE 19
+   PREMIUM DUAL INTELLIGENCE ARCHITECTURE
+   =========================================================
+
+   GOLD  → ARS ECOSYSTEM
+   CORE  → ARS HERITAGE GROUP
+   BLUE  → ARS UNIVERSE
+
+   06 GOLD NODES
+   01 CENTRAL HERITAGE CORE
+   07 BLUE NODES
+
+   RESPONSIBILITY:
+   HERO INTERNAL VISUAL ARCHITECTURE ONLY
+
+   DOES NOT CONTROL:
+   body / html / global scroll / other sections
    ========================================================= */
 
 
 /* =========================================================
-   01 — MASTER HERO FIELD
+   01 — HERO FIELD FOUNDATION
    ========================================================= */
 
 .ars-hero-field {
+
     position: relative;
+
     width: 100%;
-    min-height: 900px;
-    overflow: visible;
-    isolation: isolate;
-}
+    min-height: 100%;
 
-
-/* =========================================================
-   02 — GOLD SYSTEM — LEFT
-   ========================================================= */
-
-.ars-gold-system {
-    position: absolute !important;
-
-    left: 23% !important;
-    top: 50% !important;
-
-    width: min(420px, 30vw);
-    aspect-ratio: 1 / 1;
-
-    transform: translate(-50%, -50%);
-
-    z-index: 30;
-
-    pointer-events: none;
+    overflow: hidden;
 
     isolation: isolate;
 }
 
 
 /* =========================================================
-   GOLD ATMOSPHERE
+   02 — MASTER ATMOSPHERE
    ========================================================= */
 
-.ars-gold-system::before {
-    content: "";
+.ars-hero-atmosphere {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+}
+
+
+.ars-hero-atmosphere-layer {
 
     position: absolute;
 
     left: 50%;
     top: 50%;
 
-    width: 145%;
-    height: 145%;
+    width: 1100px;
+    height: 1100px;
 
-    transform: translate(-50%, -50%);
+    transform:
+        translate(-50%, -50%);
 
     border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+.atmosphere-01 {
 
     background:
         radial-gradient(
             circle,
-            rgba(255,198,72,.12),
-            rgba(210,145,30,.045) 38%,
-            transparent 72%
+            rgba(255,190,60,.055),
+            transparent 58%
         );
 
-    filter: blur(25px);
+    filter: blur(60px);
 
-    z-index: -2;
-
-    pointer-events: none;
+    animation:
+        ars-atmosphere-breathe
+        12s
+        ease-in-out
+        infinite;
 }
 
 
-.ars-gold-system::after {
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 180%;
-    height: 180%;
-
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
+.atmosphere-02 {
 
     background:
         radial-gradient(
             circle,
-            rgba(255,191,58,.035),
-            transparent 68%
+            rgba(45,155,255,.045),
+            transparent 60%
         );
 
-    filter: blur(35px);
-
-    z-index: -3;
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   GOLD ORBITAL FIELD
-   ========================================================= */
-
-.ars-gold-orbit {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    border-radius: 50%;
-
-    transform: translate(-50%, -50%);
-
-    pointer-events: none;
-}
-
-
-.ars-gold-orbit-01 {
-    width: 68%;
-    height: 68%;
-
-    border: 1px solid rgba(255,205,92,.28);
-
-    box-shadow:
-        0 0 22px rgba(245,180,45,.08);
+    filter: blur(80px);
 
     animation:
-        p19-gold-orbit-a
-        26s
-        linear
-        infinite;
-}
-
-
-.ars-gold-orbit-02 {
-    width: 88%;
-    height: 88%;
-
-    border: 1px solid rgba(235,174,48,.16);
-
-    border-right-color:
-        rgba(255,211,101,.42);
-
-    animation:
-        p19-gold-orbit-b
-        39s
-        linear
-        infinite;
-}
-
-
-.ars-gold-orbit-03 {
-    width: 108%;
-    height: 108%;
-
-    border: 1px dashed rgba(238,179,53,.11);
-
-    animation:
-        p19-gold-orbit-a
-        58s
-        linear
+        ars-atmosphere-breathe
+        16s
+        ease-in-out
         infinite reverse;
 }
 
 
-/* =========================================================
-   GOLD CORE
-   ========================================================= */
+.atmosphere-03 {
 
-.ars-gold-core {
-    position: absolute;
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.018),
+            transparent 64%
+        );
 
-    left: 50%;
-    top: 50%;
-
-    width: 27%;
-    aspect-ratio: 1 / 1;
-
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    z-index: 40;
+    filter: blur(40px);
 }
 
 
-.gold-core-halo {
+/* =========================================================
+   03 — MASTER ENERGY AXIS
+   ========================================================= */
+
+.ars-master-energy-axis {
+
     position: absolute;
 
     left: 50%;
     top: 50%;
 
-    width: 190%;
-    height: 190%;
+    width: 2px;
+    height: 88%;
 
-    transform: translate(-50%, -50%);
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+.ars-axis-glow {
+
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    width: 18px;
+    height: 100%;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(255,190,65,.18) 18%,
+            rgba(255,220,130,.35) 48%,
+            rgba(72,175,255,.35) 53%,
+            rgba(40,145,255,.16) 82%,
+            transparent
+        );
+
+    filter: blur(9px);
+}
+
+
+.ars-axis-line {
+
+    position: absolute;
+
+    left: 50%;
+    top: 4%;
+
+    width: 1px;
+    height: 92%;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(255,210,100,.24),
+            rgba(255,235,170,.5),
+            rgba(80,190,255,.42),
+            rgba(55,160,255,.18),
+            transparent
+        );
+
+    box-shadow:
+        0 0 10px rgba(100,185,255,.2);
+}
+
+
+.ars-axis-pulse {
+
+    position: absolute;
+
+    left: 50%;
+
+    width: 7px;
+    height: 7px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    background: #f7fbff;
+
+    box-shadow:
+        0 0 8px #ffffff,
+        0 0 20px rgba(255,205,100,.85),
+        0 0 35px rgba(70,175,255,.55);
+
+    animation:
+        ars-axis-travel
+        5s
+        linear
+        infinite;
+}
+
+
+.axis-pulse-01 {
+    animation-delay: 0s;
+}
+
+.axis-pulse-02 {
+    animation-delay: -1.7s;
+}
+
+.axis-pulse-03 {
+    animation-delay: -3.4s;
+}
+
+
+/* =========================================================
+   04 — GOLD SYSTEM
+   ========================================================= */
+
+.ars-gold-system {
+
+    position: absolute;
+
+    left: 50%;
+    top: 23%;
+
+    width: min(420px, 38vw);
+
+    aspect-ratio: 1 / 1;
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 10;
+
+    isolation: isolate;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   05 — GOLD ATMOSPHERE
+   ========================================================= */
+
+.ars-gold-atmosphere {
+
+    position: absolute;
+
+    inset: -18%;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+.gold-atmosphere-ring {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%);
+}
+
+
+.gold-atmosphere-ring-01 {
+
+    width: 82%;
+    height: 82%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,205,90,.13),
+            rgba(255,180,40,.035) 45%,
+            transparent 72%
+        );
+
+    filter: blur(18px);
+
+    animation:
+        ars-gold-breathe
+        5s
+        ease-in-out
+        infinite;
+}
+
+
+.gold-atmosphere-ring-02 {
+
+    width: 120%;
+    height: 120%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,190,60,.055),
+            transparent 66%
+        );
+
+    filter: blur(30px);
+
+    animation:
+        ars-gold-breathe
+        8s
+        ease-in-out
+        infinite reverse;
+}
+
+
+.gold-atmosphere-ring-03 {
+
+    width: 150%;
+    height: 150%;
+
+    border:
+        1px solid rgba(255,200,80,.035);
+
+    filter: blur(2px);
+}
+
+
+/* =========================================================
+   06 — GOLD ORBITAL FIELD
+   ========================================================= */
+
+.ars-gold-orbital-field {
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+}
+
+
+.gold-orbit {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%);
+}
+
+
+.gold-orbit-01 {
+
+    width: 50%;
+    height: 50%;
+
+    border:
+        1px solid rgba(255,215,120,.28);
+
+    box-shadow:
+        0 0 18px rgba(255,190,70,.08);
+
+    animation:
+        ars-orbit-clockwise
+        15s
+        linear
+        infinite;
+}
+
+
+.gold-orbit-02 {
+
+    width: 72%;
+    height: 72%;
+
+    border:
+        1px solid rgba(255,200,90,.16);
+
+    border-right-color:
+        rgba(255,225,145,.5);
+
+    animation:
+        ars-orbit-counter
+        23s
+        linear
+        infinite;
+}
+
+
+.gold-orbit-03 {
+
+    width: 92%;
+    height: 92%;
+
+    border:
+        1px dashed rgba(255,205,100,.09);
+
+    animation:
+        ars-orbit-clockwise
+        34s
+        linear
+        infinite;
+}
+
+
+/* =========================================================
+   07 — GOLD ENERGY NETWORK
+   ========================================================= */
+
+.ars-gold-energy-network {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 3;
+
+    pointer-events: none;
+}
+
+
+.gold-energy-line {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 2px;
+    height: 35%;
+
+    transform-origin:
+        50% 100%;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(255,218,125,.72),
+            rgba(255,190,65,.35),
+            rgba(255,170,35,.08),
+            transparent
+        );
+
+    box-shadow:
+        0 0 8px rgba(255,200,80,.25),
+        0 0 18px rgba(255,175,45,.1);
+
+    opacity: .9;
+}
+
+
+.gold-line-01 {
+    transform:
+        translate(-50%, -100%)
+        rotate(0deg);
+}
+
+.gold-line-02 {
+    transform:
+        translate(-50%, -100%)
+        rotate(60deg);
+}
+
+.gold-line-03 {
+    transform:
+        translate(-50%, -100%)
+        rotate(120deg);
+}
+
+.gold-line-04 {
+    transform:
+        translate(-50%, -100%)
+        rotate(180deg);
+}
+
+.gold-line-05 {
+    transform:
+        translate(-50%, -100%)
+        rotate(240deg);
+}
+
+.gold-line-06 {
+    transform:
+        translate(-50%, -100%)
+        rotate(300deg);
+}
+
+
+/* =========================================================
+   08 — GOLD PARTICLES
+   ========================================================= */
+
+.gold-particle {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #ffe7a1;
+
+    box-shadow:
+        0 0 8px #ffd36a,
+        0 0 20px rgba(255,190,65,.8),
+        0 0 35px rgba(255,165,30,.3);
+
+    animation:
+        ars-gold-particle
+        4s
+        linear
+        infinite;
+}
+
+
+.gold-particle-01 { transform: rotate(0deg) translateY(-170px); }
+.gold-particle-02 { transform: rotate(60deg) translateY(-170px); animation-delay:-.7s; }
+.gold-particle-03 { transform: rotate(120deg) translateY(-170px); animation-delay:-1.4s; }
+.gold-particle-04 { transform: rotate(180deg) translateY(-170px); animation-delay:-2.1s; }
+.gold-particle-05 { transform: rotate(240deg) translateY(-170px); animation-delay:-2.8s; }
+.gold-particle-06 { transform: rotate(300deg) translateY(-170px); animation-delay:-3.5s; }
+
+
+/* =========================================================
+   09 — UNIVERSAL SYSTEM CORE
+   ========================================================= */
+
+.ars-system-core {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 28%;
+    aspect-ratio: 1 / 1;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 30;
+
+    cursor: pointer;
+
+    pointer-events: auto;
+
+    isolation: isolate;
+
+    outline: none;
+}
+
+
+.ars-system-core-halo {
+
+    position: absolute;
+
+    inset: -45%;
 
     border-radius: 50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(255,207,93,.20),
-            rgba(220,157,36,.06) 34%,
-            transparent 72%
+            rgba(255,205,90,.17),
+            rgba(255,185,50,.055) 38%,
+            transparent 70%
         );
 
-    filter: blur(14px);
+    filter: blur(18px);
+
+    z-index: -3;
 
     animation:
-        p19-core-breathe
+        ars-core-breathe
         4.5s
         ease-in-out
         infinite;
 }
 
 
-.gold-core-energy {
+.ars-system-core-ring {
+
     position: absolute;
 
     left: 50%;
     top: 50%;
 
-    width: 82%;
-    height: 82%;
-
-    transform: translate(-50%, -50%);
-
     border-radius: 50%;
 
-    background:
-        radial-gradient(
-            circle at 42% 38%,
-            rgba(255,241,191,.96),
-            rgba(255,201,74,.62) 25%,
-            rgba(179,113,15,.20) 52%,
-            transparent 74%
-        );
+    transform:
+        translate(-50%, -50%);
 
-    filter: blur(3px);
+    pointer-events: none;
 }
 
 
-.gold-core-center {
+.ars-system-core .core-ring-01 {
+
+    width: 112%;
+    height: 112%;
+
+    border:
+        1px solid rgba(255,220,135,.4);
+
+    border-right-color:
+        rgba(255,245,195,.85);
+
+    animation:
+        ars-orbit-clockwise
+        9s
+        linear
+        infinite;
+}
+
+
+.ars-system-core .core-ring-02 {
+
+    width: 138%;
+    height: 138%;
+
+    border:
+        1px solid rgba(255,200,90,.15);
+
+    border-left-color:
+        rgba(255,220,130,.5);
+
+    animation:
+        ars-orbit-counter
+        15s
+        linear
+        infinite;
+}
+
+
+.ars-system-core .core-ring-03 {
+
+    width: 168%;
+    height: 168%;
+
+    border:
+        1px dashed rgba(255,210,110,.09);
+
+    animation:
+        ars-orbit-clockwise
+        24s
+        linear
+        infinite;
+}
+
+
+.ars-system-core-energy {
+
     position: absolute;
 
-    left: 50%;
-    top: 50%;
-
-    width: 36%;
-    aspect-ratio: 1;
-
-    transform: translate(-50%, -50%);
+    inset: 10%;
 
     border-radius: 50%;
 
     background:
         radial-gradient(
-            circle at 40% 35%,
-            #fff7d8,
-            #ffd66b 23%,
-            #b87a18 55%,
-            #171006 79%
+            circle at 38% 34%,
+            rgba(255,249,220,.98),
+            rgba(255,215,120,.72) 24%,
+            rgba(196,130,30,.34) 50%,
+            rgba(25,18,7,.95) 76%
         );
 
-    border: 1px solid rgba(255,225,139,.78);
+    filter: blur(2px);
 
     box-shadow:
-        0 0 15px rgba(255,206,91,.82),
-        0 0 38px rgba(232,166,37,.45),
-        0 0 75px rgba(194,128,18,.20),
-        inset 0 0 18px rgba(255,238,173,.25);
+        0 0 20px rgba(255,210,110,.65),
+        0 0 45px rgba(255,180,45,.3),
+        inset 0 0 25px rgba(255,240,190,.18);
 }
 
 
-.gold-core-point {
+.ars-system-core-point {
+
     position: absolute;
 
     left: 50%;
@@ -17174,322 +17616,256 @@ code {
     width: 7px;
     height: 7px;
 
-    transform: translate(-50%, -50%);
+    transform:
+        translate(-50%, -50%);
 
     border-radius: 50%;
 
-    background: #fff8df;
+    background: #fffdf5;
 
     box-shadow:
-        0 0 8px #ffe59b,
-        0 0 22px rgba(255,208,91,.95),
-        0 0 42px rgba(229,164,30,.55);
+        0 0 9px #fff,
+        0 0 22px rgba(255,220,130,.95),
+        0 0 45px rgba(255,180,50,.6);
+
+    z-index: 5;
 }
 
 
-/* =========================================================
-   GOLD CORE ORBITS
-   ========================================================= */
+.ars-system-core-label {
 
-.gold-core-orbit {
-    position: absolute;
+    position: relative;
 
-    left: 50%;
-    top: 50%;
+    z-index: 10;
 
-    border-radius: 50%;
+    display: flex;
 
-    transform: translate(-50%, -50%);
-}
+    flex-direction: column;
 
+    align-items: center;
+    justify-content: center;
 
-.gold-core-orbit-01 {
-    width: 112%;
-    height: 112%;
+    text-align: center;
 
-    border: 1px solid rgba(255,218,112,.23);
+    color: #fff8e5;
 
-    border-right-color:
-        rgba(255,231,153,.66);
-
-    animation:
-        p19-core-orbit-a
-        10s
-        linear
-        infinite;
-}
-
-
-.gold-core-orbit-02 {
-    width: 142%;
-    height: 142%;
-
-    border: 1px solid rgba(233,173,42,.14);
-
-    border-left-color:
-        rgba(255,211,100,.43);
-
-    animation:
-        p19-core-orbit-b
-        16s
-        linear
-        infinite;
-}
-
-
-.gold-core-orbit-03 {
-    width: 170%;
-    height: 170%;
-
-    border: 1px dashed rgba(226,163,36,.10);
-
-    animation:
-        p19-core-orbit-a
-        23s
-        linear
-        infinite reverse;
-}
-
-
-/* =========================================================
-   GOLD NODES
-   ========================================================= */
-
-.gold-node {
-    position: absolute;
-
-    width: 58px;
-    height: 58px;
-
-    transform: translate(-50%, -50%);
-
-    z-index: 80;
-
-    display: block;
-
-    text-decoration: none;
-
-    pointer-events: auto;
-}
-
-
-/* HEXAGONAL / SIX NODE GEOMETRY */
-
-.gold-node-01 {
-    left: 50%;
-    top: 5%;
-}
-
-.gold-node-02 {
-    left: 89%;
-    top: 27%;
-}
-
-.gold-node-03 {
-    left: 89%;
-    top: 73%;
-}
-
-.gold-node-04 {
-    left: 50%;
-    top: 95%;
-}
-
-.gold-node-05 {
-    left: 11%;
-    top: 73%;
-}
-
-.gold-node-06 {
-    left: 11%;
-    top: 27%;
-}
-
-
-/* =========================================================
-   GOLD NODE ENERGY
-   ========================================================= */
-
-.gold-node-energy {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 175%;
-    height: 175%;
-
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
+    text-shadow:
+        0 0 8px rgba(255,220,130,.65);
 
     pointer-events: none;
 }
 
 
-.gold-node-halo {
-    position: absolute;
+.ars-system-core-label small {
 
-    inset: 0;
+    font-size: 9px;
 
-    border-radius: 50%;
+    letter-spacing: .25em;
 
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,204,81,.20),
-            rgba(202,135,17,.055) 45%,
-            transparent 72%
-        );
-
-    filter: blur(8px);
-
-    animation:
-        p19-node-halo
-        4.5s
-        ease-in-out
-        infinite;
+    opacity: .7;
 }
 
 
-.gold-node-orbit {
-    position: absolute;
+.ars-system-core-label strong {
 
-    left: 50%;
-    top: 50%;
+    margin-top: 4px;
 
-    border-radius: 50%;
+    font-size: clamp(9px, 1vw, 13px);
 
-    transform: translate(-50%, -50%);
-}
+    letter-spacing: .14em;
 
-
-.gold-node-orbit-01 {
-    width: 100%;
-    height: 100%;
-
-    border: 1px solid rgba(255,211,105,.32);
-
-    border-right-color:
-        rgba(255,232,153,.72);
-
-    animation:
-        p19-node-orbit-a
-        8s
-        linear
-        infinite;
-}
-
-
-.gold-node-orbit-02 {
-    width: 128%;
-    height: 128%;
-
-    border: 1px dashed rgba(232,170,39,.16);
-
-    border-left-color:
-        rgba(255,213,101,.43);
-
-    animation:
-        p19-node-orbit-b
-        13s
-        linear
-        infinite;
+    font-weight: 600;
 }
 
 
 /* =========================================================
-   GOLD NODE LINK
+   10 — GOLD NODE ARCHITECTURE
    ========================================================= */
 
-.gold-node-link {
+.ars-intelligence-node {
+
     position: absolute;
 
-    inset: 0;
+    width: 52px;
+    height: 52px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    text-decoration: none;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    border-radius: 50%;
+    z-index: 40;
 
-    background:
-        radial-gradient(
-            circle at 42% 36%,
-            rgba(52,42,20,.96),
-            rgba(9,8,5,.99) 70%
-        );
+    pointer-events: auto;
 
-    border: 1px solid rgba(239,187,65,.45);
-
-    box-shadow:
-        0 10px 28px rgba(0,0,0,.58),
-        0 0 18px rgba(238,177,39,.16),
-        inset 0 0 20px rgba(255,208,91,.07);
+    isolation: isolate;
 
     transition:
-        transform .45s ease,
-        border-color .35s ease,
-        box-shadow .35s ease;
-
-    overflow: visible;
+        transform .45s cubic-bezier(.16,1,.3,1),
+        filter .45s ease;
 }
 
 
-.gold-node:hover .gold-node-link {
-    transform: scale(1.15);
+.ars-intelligence-node:hover {
 
-    border-color:
-        rgba(255,231,153,.90);
+    transform:
+        translate(-50%, -50%)
+        scale(1.18);
 
-    box-shadow:
-        0 15px 40px rgba(0,0,0,.65),
-        0 0 25px rgba(255,205,82,.34),
-        0 0 55px rgba(229,159,27,.17),
-        inset 0 0 25px rgba(255,222,125,.12);
+    z-index: 60;
 }
 
 
-.gold-node-core {
-    width: 25%;
-    aspect-ratio: 1;
+.ars-node-halo {
+
+    position: absolute;
+
+    inset: -55%;
 
     border-radius: 50%;
 
     background:
         radial-gradient(
             circle,
-            #fff6d5,
-            #ffd46b 30%,
-            #b47718 58%,
-            transparent 78%
+            rgba(255,205,90,.18),
+            rgba(255,180,40,.04) 45%,
+            transparent 72%
         );
 
-    box-shadow:
-        0 0 10px rgba(255,222,133,.95),
-        0 0 25px rgba(244,183,53,.50),
-        0 0 45px rgba(205,137,19,.23);
+    filter: blur(8px);
 
     animation:
-        p19-node-core
-        3.6s
+        ars-node-halo
+        4s
         ease-in-out
         infinite;
 }
 
 
-/* =========================================================
-   GOLD LABEL
-   ========================================================= */
+.ars-node-orbit {
 
-.gold-node-label {
     position: absolute;
 
     left: 50%;
-    top: calc(100% + 12px);
+    top: 50%;
 
-    transform: translateX(-50%);
+    width: 135%;
+    height: 135%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(255,220,130,.22);
+
+    border-right-color:
+        rgba(255,240,180,.65);
+
+    animation:
+        ars-orbit-clockwise
+        7s
+        linear
+        infinite;
+}
+
+
+.ars-node-rim {
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 50%;
+
+    background:
+        conic-gradient(
+            from 0deg,
+            rgba(255,210,105,.2),
+            rgba(255,245,195,.9),
+            rgba(176,110,20,.3),
+            rgba(255,220,125,.15),
+            rgba(255,245,195,.8)
+        );
+
+    box-shadow:
+        0 0 12px rgba(255,200,85,.32),
+        0 0 28px rgba(255,170,35,.12);
+
+    animation:
+        ars-rim-rotate
+        8s
+        linear
+        infinite;
+}
+
+
+.ars-node-ring {
+
+    position: absolute;
+
+    inset: 4px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(255,225,150,.35);
+
+    background:
+        radial-gradient(
+            circle at 38% 32%,
+            rgba(64,52,30,.95),
+            rgba(8,9,10,.98) 70%
+        );
+
+    box-shadow:
+        inset 0 0 14px rgba(255,200,80,.09);
+
+    z-index: 2;
+}
+
+
+.ars-node-core {
+
+    position: absolute;
+
+    width: 15%;
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+
+    background: #fff4ca;
+
+    box-shadow:
+        0 0 7px #fff,
+        0 0 18px rgba(255,210,100,.9),
+        0 0 32px rgba(255,170,35,.5);
+
+    z-index: 5;
+
+    animation:
+        ars-node-core
+        3.2s
+        ease-in-out
+        infinite;
+}
+
+
+.ars-node-content {
+
+    position: relative;
+
+    z-index: 8;
+
+    width: 90%;
 
     display: flex;
 
@@ -17497,116 +17873,154 @@ code {
 
     align-items: center;
 
-    white-space: nowrap;
+    justify-content: center;
 
     text-align: center;
 
-    pointer-events: none;
+    color: #fff5d6;
 
     text-shadow:
-        0 0 10px rgba(0,0,0,.95),
-        0 0 18px rgba(0,0,0,.95);
+        0 0 7px rgba(255,210,110,.65);
+
+    pointer-events: none;
 }
 
 
-.gold-node-label b {
-    font-family:
-        Arial,
-        sans-serif;
+.ars-node-content small {
 
-    font-size: 9px;
+    font-size: 7px;
 
-    letter-spacing: .20em;
+    line-height: 1;
 
-    color:
-        rgba(255,218,117,.72);
+    opacity: .58;
+
+    letter-spacing: .16em;
 }
 
 
-.gold-node-label em {
-    margin-top: 3px;
+.ars-node-content strong {
 
-    font-family:
-        Arial,
-        sans-serif;
+    margin-top: 4px;
 
-    font-size: 9px;
+    font-size: 7px;
 
-    font-style: normal;
-
-    font-weight: 600;
+    line-height: 1.1;
 
     letter-spacing: .08em;
 
-    color:
-        rgba(255,238,185,.90);
+    white-space: nowrap;
+
+    font-weight: 700;
 }
 
 
-/* =========================================================
-   03 — CENTRAL SIGNATURE
-   ========================================================= */
+.ars-node-content em {
 
-.ars-heritage-core {
-    position: absolute !important;
+    margin-top: 2px;
 
-    left: 50% !important;
-    top: 50% !important;
+    font-size: 6px;
 
-    width: min(250px, 18vw);
-    aspect-ratio: 1 / 1;
+    font-style: normal;
 
+    letter-spacing: .1em;
+
+    opacity: .78;
+}
+
+
+/* GOLD NODE POSITIONS */
+
+.ars-gold-node-01 {
+    left: 50%;
+    top: 7%;
+}
+
+.ars-gold-node-02 {
+    left: 93%;
+    top: 30%;
+}
+
+.ars-gold-node-03 {
+    left: 76%;
+    top: 86%;
+}
+
+.ars-gold-node-04 {
+    left: 24%;
+    top: 86%;
+}
+
+.ars-gold-node-05 {
+    left: 7%;
+    top: 30%;
+}
+
+.ars-gold-node-06 {
+    left: 50%;
+    top: 50%;
     transform: translate(-50%, -50%);
-
-    z-index: 100;
-
-    display: block;
-
-    pointer-events: none;
-
-    isolation: isolate;
 }
 
 
 /* =========================================================
-   CENTRAL ENERGY
+   11 — HERITAGE GROUP CENTRAL CORE
    ========================================================= */
 
-.ars-heritage-core-energy {
-    position: absolute;
+.ars-heritage-group-core {
 
-    inset: 0;
-
-    border-radius: 50%;
-}
-
-
-.heritage-core-halo {
     position: absolute;
 
     left: 50%;
     top: 50%;
 
-    width: 180%;
-    height: 180%;
+    width: min(145px, 13vw);
 
-    transform: translate(-50%, -50%);
+    aspect-ratio: 1 / 1;
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 100;
+
+    isolation: isolate;
+
+    pointer-events: auto;
+}
+
+
+.ars-heritage-core-field {
+
+    position: absolute;
+
+    inset: -35%;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+.heritage-core-atmosphere {
+
+    position: absolute;
+
+    inset: 0;
 
     border-radius: 50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(255,244,205,.20),
-            rgba(255,202,76,.09) 28%,
-            rgba(48,151,255,.045) 50%,
-            transparent 72%
+            rgba(255,230,170,.14),
+            rgba(255,200,90,.04) 42%,
+            rgba(55,150,235,.04) 65%,
+            transparent 75%
         );
 
-    filter: blur(22px);
+    filter: blur(18px);
 
     animation:
-        p19-central-breathe
+        ars-core-breathe
         5s
         ease-in-out
         infinite;
@@ -17614,6 +18028,7 @@ code {
 
 
 .heritage-core-ring {
+
     position: absolute;
 
     left: 50%;
@@ -17621,301 +18036,362 @@ code {
 
     border-radius: 50%;
 
-    transform: translate(-50%, -50%);
-
-    border-style: solid;
+    transform:
+        translate(-50%, -50%);
 }
 
 
-.heritage-core-ring.ring-01 {
-    width: 54%;
-    height: 54%;
+.heritage-ring-01 {
 
-    border-width: 1px;
+    width: 76%;
+    height: 76%;
 
-    border-color:
-        rgba(255,227,140,.72);
-
-    box-shadow:
-        0 0 20px rgba(255,207,91,.25);
+    border:
+        1px solid rgba(255,235,180,.38);
 
     animation:
-        p19-central-ring-a
-        9s
+        ars-orbit-clockwise
+        12s
         linear
         infinite;
 }
 
 
-.heritage-core-ring.ring-02 {
-    width: 72%;
-    height: 72%;
+.heritage-ring-02 {
 
-    border-width: 1px;
+    width: 108%;
+    height: 108%;
 
-    border-color:
-        rgba(255,214,108,.34);
+    border:
+        1px solid rgba(255,215,125,.2);
 
-    border-left-color:
-        rgba(104,190,255,.52);
+    border-right-color:
+        rgba(255,240,190,.75);
 
     animation:
-        p19-central-ring-b
-        14s
+        ars-orbit-counter
+        18s
         linear
         infinite;
 }
 
 
-.heritage-core-ring.ring-03 {
-    width: 92%;
-    height: 92%;
+.heritage-ring-03 {
 
-    border-width: 1px;
+    width: 142%;
+    height: 142%;
 
-    border-style: dashed;
-
-    border-color:
-        rgba(255,207,87,.18);
+    border:
+        1px dashed rgba(90,175,240,.18);
 
     animation:
-        p19-central-ring-a
-        22s
+        ars-orbit-clockwise
+        27s
         linear
-        infinite reverse;
+        infinite;
 }
 
 
 .heritage-core-pulse {
+
     position: absolute;
 
     left: 50%;
     top: 50%;
 
-    width: 42%;
-    height: 42%;
+    width: 35%;
+    height: 35%;
 
-    transform: translate(-50%, -50%) scale(.65);
+    transform:
+        translate(-50%, -50%);
 
     border-radius: 50%;
 
-    border: 1px solid rgba(255,224,137,.30);
-
-    opacity: 0;
+    border:
+        1px solid rgba(255,230,160,.5);
 
     animation:
-        p19-central-pulse
-        4.8s
+        ars-heritage-pulse
+        3.8s
         ease-out
         infinite;
 }
 
 
-.heritage-core-pulse.pulse-02 {
-    animation-delay: 1.6s;
+.heritage-pulse-02 {
+    animation-delay: -1.25s;
 }
 
-.heritage-core-pulse.pulse-03 {
-    animation-delay: 3.2s;
+.heritage-pulse-03 {
+    animation-delay: -2.5s;
 }
 
 
-.ars-heritage-core-center {
+.ars-heritage-group-core-body {
+
     position: absolute;
 
-    left: 50%;
-    top: 50%;
-
-    width: 38%;
-    aspect-ratio: 1 / 1;
-
-    transform: translate(-50%, -50%);
+    inset: 15%;
 
     border-radius: 50%;
 
     display: flex;
-
-    flex-direction: column;
 
     align-items: center;
     justify-content: center;
 
     background:
         radial-gradient(
-            circle at 40% 35%,
-            #fff9df,
-            #ffd56b 20%,
-            #a96d12 48%,
-            #080706 78%
+            circle at 38% 32%,
+            rgba(255,248,220,.98),
+            rgba(255,216,125,.8) 18%,
+            rgba(67,55,32,.95) 48%,
+            rgba(4,8,12,.99) 76%
         );
 
     border:
-        1px solid rgba(255,229,153,.85);
+        1px solid rgba(255,235,175,.75);
 
     box-shadow:
-        0 0 20px rgba(255,213,105,.85),
-        0 0 55px rgba(238,174,42,.45),
-        0 0 100px rgba(70,148,218,.18),
-        inset 0 0 25px rgba(255,245,201,.28);
+        0 0 20px rgba(255,220,130,.6),
+        0 0 55px rgba(255,180,55,.28),
+        0 0 100px rgba(50,145,230,.12),
+        inset 0 0 28px rgba(255,240,185,.22);
+
+    overflow: hidden;
+}
+
+
+.heritage-core-inner {
+
+    position: absolute;
+
+    inset: 9%;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(255,250,225,.32);
+
+    box-shadow:
+        inset 0 0 20px rgba(255,225,145,.15);
+}
+
+
+.heritage-core-light {
+
+    position: absolute;
+
+    width: 35%;
+    height: 35%;
+
+    left: 20%;
+    top: 14%;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,245,.65);
+
+    filter: blur(13px);
 }
 
 
 .heritage-core-point {
-    position: absolute;
-
-    width: 7px;
-    height: 7px;
-
-    border-radius: 50%;
-
-    background: #fff;
-
-    box-shadow:
-        0 0 10px #fff0b2,
-        0 0 28px rgba(255,212,102,.95),
-        0 0 55px rgba(255,180,35,.65);
-}
-
-
-.ars-heritage-core-title {
-    position: relative;
-
-    z-index: 3;
-
-    margin-top: 25px;
-
-    font-family:
-        Arial,
-        sans-serif;
-
-    font-size: 15px;
-
-    font-weight: 700;
-
-    letter-spacing: .22em;
-
-    color: #fff7dd;
-
-    text-shadow:
-        0 0 12px rgba(255,217,112,.70);
-}
-
-
-.ars-heritage-core-subtitle {
-    position: relative;
-
-    z-index: 3;
-
-    margin-top: 3px;
-
-    font-family:
-        Arial,
-        sans-serif;
-
-    font-size: 5px;
-
-    letter-spacing: .18em;
-
-    color:
-        rgba(255,239,190,.78);
-}
-
-
-/* =========================================================
-   04 — BLUE SYSTEM — RIGHT
-   ========================================================= */
-
-.ars-blue-system {
-    position: absolute !important;
-
-    left: 77% !important;
-    top: 50% !important;
-
-    width: min(420px, 30vw);
-    aspect-ratio: 1 / 1;
-
-    transform: translate(-50%, -50%);
-
-    z-index: 30;
-
-    pointer-events: none;
-
-    isolation: isolate;
-}
-
-
-/* =========================================================
-   BLUE ATMOSPHERE
-   ========================================================= */
-
-.ars-blue-system::before {
-    content: "";
 
     position: absolute;
 
     left: 50%;
     top: 50%;
 
-    width: 145%;
-    height: 145%;
+    width: 5px;
+    height: 5px;
 
-    transform: translate(-50%, -50%);
+    transform:
+        translate(-50%, -50%);
 
     border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+        0 0 10px white,
+        0 0 24px rgba(255,220,140,.95),
+        0 0 45px rgba(60,160,240,.55);
+}
+
+
+.heritage-core-label {
+
+    position: relative;
+
+    z-index: 10;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    color: #fffaf0;
+
+    text-shadow:
+        0 0 9px rgba(255,225,145,.8);
+
+    pointer-events: none;
+}
+
+
+.heritage-core-label small {
+
+    font-size: 6px;
+
+    letter-spacing: .22em;
+
+    opacity: .65;
+}
+
+
+.heritage-core-label strong {
+
+    margin-top: 4px;
+
+    font-size: 19px;
+
+    letter-spacing: .1em;
+
+    line-height: 1;
+}
+
+
+.heritage-core-label span {
+
+    margin-top: 5px;
+
+    font-size: 6px;
+
+    letter-spacing: .13em;
+
+    white-space: nowrap;
+
+    opacity: .9;
+}
+
+
+/* =========================================================
+   12 — BLUE SYSTEM
+   ========================================================= */
+
+.ars-blue-system {
+
+    position: absolute;
+
+    left: 50%;
+    top: 77%;
+
+    width: min(420px, 38vw);
+
+    aspect-ratio: 1 / 1;
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 10;
+
+    isolation: isolate;
+
+    pointer-events: none;
+}
+
+
+.ars-blue-atmosphere {
+
+    position: absolute;
+
+    inset: -18%;
+
+    border-radius: 50%;
+}
+
+
+.blue-atmosphere-ring {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%);
+}
+
+
+.blue-atmosphere-ring-01 {
+
+    width: 82%;
+    height: 82%;
 
     background:
         radial-gradient(
             circle,
-            rgba(40,150,255,.12),
-            rgba(30,110,220,.045) 35%,
-            transparent 70%
+            rgba(65,175,255,.14),
+            rgba(25,120,220,.04) 48%,
+            transparent 72%
         );
 
-    filter: blur(22px);
+    filter: blur(18px);
 
     animation:
-        p19-blue-breathe
-        7s
+        ars-blue-breathe
+        5s
         ease-in-out
         infinite;
-
-    z-index: -2;
 }
 
 
-.ars-blue-system::after {
-    content: "";
+.blue-atmosphere-ring-02 {
 
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 180%;
-    height: 180%;
-
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
+    width: 120%;
+    height: 120%;
 
     background:
         radial-gradient(
-            ellipse,
-            rgba(50,145,255,.035),
-            transparent 68%
+            circle,
+            rgba(50,150,255,.05),
+            transparent 65%
         );
 
     filter: blur(30px);
+}
 
-    z-index: -3;
+
+.blue-atmosphere-ring-03 {
+
+    width: 150%;
+    height: 150%;
+
+    border:
+        1px solid rgba(70,170,255,.035);
 }
 
 
 /* =========================================================
-   BLUE ORBITS
+   13 — BLUE ORBITS
    ========================================================= */
 
-.ars-blue-orbit {
+.ars-blue-orbital-field {
+
+    position: absolute;
+
+    inset: 0;
+}
+
+
+.blue-orbit {
+
     position: absolute;
 
     left: 50%;
@@ -17923,944 +18399,440 @@ code {
 
     border-radius: 50%;
 
-    transform: translate(-50%, -50%);
-
-    pointer-events: none;
+    transform:
+        translate(-50%, -50%);
 }
 
 
 .blue-orbit-01 {
-    width: 68%;
-    height: 68%;
 
-    border: 1px solid rgba(61,169,255,.25);
+    width: 50%;
+    height: 50%;
+
+    border:
+        1px solid rgba(75,180,255,.3);
 
     box-shadow:
-        0 0 22px rgba(30,145,255,.08);
+        0 0 18px rgba(30,150,255,.1);
 
     animation:
-        p19-blue-orbit-a
-        28s
+        ars-orbit-clockwise
+        15s
         linear
         infinite;
 }
 
 
 .blue-orbit-02 {
-    width: 88%;
-    height: 88%;
 
-    border: 1px solid rgba(38,135,235,.14);
+    width: 72%;
+    height: 72%;
+
+    border:
+        1px solid rgba(55,155,245,.16);
 
     border-left-color:
-        rgba(73,181,255,.35);
+        rgba(100,205,255,.55);
 
     animation:
-        p19-blue-orbit-b
-        43s
+        ars-orbit-counter
+        23s
         linear
         infinite;
 }
 
 
 .blue-orbit-03 {
-    width: 108%;
-    height: 108%;
 
-    border: 1px dashed rgba(49,148,244,.10);
-
-    animation:
-        p19-blue-orbit-a
-        65s
-        linear
-        infinite reverse;
-}
-
-
-/* =========================================================
-   BLUE CORE
-   ========================================================= */
-
-.ars-blue-core {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 27%;
-
-    aspect-ratio: 1 / 1;
-
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    z-index: 40;
-}
-
-
-.blue-core-halo {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 185%;
-    height: 185%;
-
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(68,177,255,.18),
-            rgba(36,128,220,.06) 32%,
-            transparent 70%
-        );
-
-    filter: blur(13px);
-
-    animation:
-        p19-blue-core-breathe
-        4.5s
-        ease-in-out
-        infinite;
-}
-
-
-.blue-core-energy {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 82%;
-    height: 82%;
-
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle at 42% 38%,
-            rgba(185,230,255,.95),
-            rgba(61,166,255,.58) 24%,
-            rgba(21,86,168,.20) 50%,
-            transparent 73%
-        );
-
-    filter: blur(3px);
-}
-
-
-.blue-core-center {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 36%;
-
-    aspect-ratio: 1;
-
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle at 40% 35%,
-            #dff6ff,
-            #55baff 22%,
-            #1674c8 52%,
-            #071827 78%
-        );
+    width: 92%;
+    height: 92%;
 
     border:
-        1px solid rgba(156,220,255,.75);
-
-    box-shadow:
-        0 0 14px rgba(72,180,255,.75),
-        0 0 38px rgba(30,140,255,.42),
-        0 0 75px rgba(22,105,205,.20),
-        inset 0 0 18px rgba(193,236,255,.25);
-}
-
-
-.blue-core-point {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 7px;
-    height: 7px;
-
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background: #e9f9ff;
-
-    box-shadow:
-        0 0 8px #8edcff,
-        0 0 22px rgba(70,178,255,.9),
-        0 0 42px rgba(30,135,255,.55);
-}
-
-
-/* =========================================================
-   BLUE CORE ORBITS
-   ========================================================= */
-
-.blue-core-orbit {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    border-radius: 50%;
-
-    transform: translate(-50%, -50%);
-}
-
-
-.blue-core-orbit-01 {
-    width: 112%;
-    height: 112%;
-
-    border: 1px solid rgba(91,193,255,.22);
-
-    border-right-color:
-        rgba(124,211,255,.62);
+        1px dashed rgba(55,155,245,.09);
 
     animation:
-        p19-blue-core-orbit-a
-        10s
+        ars-orbit-clockwise
+        34s
         linear
         infinite;
 }
 
 
-.blue-core-orbit-02 {
-    width: 140%;
-    height: 140%;
-
-    border: 1px solid rgba(57,157,242,.14);
-
-    border-left-color:
-        rgba(86,190,255,.42);
-
-    animation:
-        p19-blue-core-orbit-b
-        16s
-        linear
-        infinite;
-}
-
-
-.blue-core-orbit-03 {
-    width: 168%;
-    height: 168%;
-
-    border: 1px dashed rgba(55,158,245,.10);
-
-    animation:
-        p19-blue-core-orbit-a
-        23s
-        linear
-        infinite reverse;
-}
-
-
 /* =========================================================
-   BLUE NODES
+   14 — BLUE ENERGY NETWORK
    ========================================================= */
 
-.blue-node {
-    position: absolute;
+.ars-blue-energy-network {
 
-    width: 58px;
-    height: 58px;
-
-    transform: translate(-50%, -50%);
-
-    z-index: 80;
-
-    display: block;
-
-    text-decoration: none;
-
-    pointer-events: auto;
-}
-
-
-/* SEVEN NODE GEOMETRY */
-
-.blue-node-01 {
-    left: 50%;
-    top: 5%;
-}
-
-.blue-node-02 {
-    left: 83.7%;
-    top: 18.7%;
-}
-
-.blue-node-03 {
-    left: 95%;
-    top: 50%;
-}
-
-.blue-node-04 {
-    left: 72.5%;
-    top: 89%;
-}
-
-.blue-node-05 {
-    left: 27.5%;
-    top: 89%;
-}
-
-.blue-node-06 {
-    left: 5%;
-    top: 50%;
-}
-
-.blue-node-07 {
-    left: 16.3%;
-    top: 18.7%;
-}
-
-
-/* =========================================================
-   BLUE NODE ENERGY
-   ========================================================= */
-
-.blue-node-energy {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 175%;
-    height: 175%;
-
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    pointer-events: none;
-}
-
-
-.blue-node-halo {
     position: absolute;
 
     inset: 0;
 
+    z-index: 3;
+}
+
+
+.blue-energy-line {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 2px;
+    height: 35%;
+
+    transform-origin:
+        50% 100%;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(70,190,255,.78),
+            rgba(45,150,240,.4),
+            rgba(35,125,220,.08),
+            transparent
+        );
+
+    box-shadow:
+        0 0 8px rgba(50,170,255,.3),
+        0 0 18px rgba(30,130,230,.12);
+}
+
+
+.blue-line-01 {
+    transform:
+        translate(-50%, -100%)
+        rotate(0deg);
+}
+
+.blue-line-02 {
+    transform:
+        translate(-50%, -100%)
+        rotate(51.43deg);
+}
+
+.blue-line-03 {
+    transform:
+        translate(-50%, -100%)
+        rotate(102.86deg);
+}
+
+.blue-line-04 {
+    transform:
+        translate(-50%, -100%)
+        rotate(154.29deg);
+}
+
+.blue-line-05 {
+    transform:
+        translate(-50%, -100%)
+        rotate(205.72deg);
+}
+
+.blue-line-06 {
+    transform:
+        translate(-50%, -100%)
+        rotate(257.15deg);
+}
+
+.blue-line-07 {
+    transform:
+        translate(-50%, -100%)
+        rotate(308.58deg);
+}
+
+
+/* =========================================================
+   15 — BLUE PARTICLES
+   ========================================================= */
+
+.blue-particle {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 5px;
+    height: 5px;
+
     border-radius: 50%;
+
+    background: #bcecff;
+
+    box-shadow:
+        0 0 8px #6ed2ff,
+        0 0 20px rgba(50,175,255,.85),
+        0 0 36px rgba(30,135,235,.38);
+
+    animation:
+        ars-blue-particle
+        4.2s
+        linear
+        infinite;
+}
+
+
+.blue-particle-01 { transform: rotate(0deg) translateY(-170px); }
+.blue-particle-02 { transform: rotate(51deg) translateY(-170px); animation-delay:-.6s; }
+.blue-particle-03 { transform: rotate(102deg) translateY(-170px); animation-delay:-1.2s; }
+.blue-particle-04 { transform: rotate(154deg) translateY(-170px); animation-delay:-1.8s; }
+.blue-particle-05 { transform: rotate(205deg) translateY(-170px); animation-delay:-2.4s; }
+.blue-particle-06 { transform: rotate(257deg) translateY(-170px); animation-delay:-3s; }
+.blue-particle-07 { transform: rotate(308deg) translateY(-170px); animation-delay:-3.6s; }
+
+
+/* =========================================================
+   16 — BLUE NODE VISUALS
+   ========================================================= */
+
+.ars-blue-node .ars-node-halo {
 
     background:
         radial-gradient(
             circle,
-            rgba(57,173,255,.20),
-            rgba(28,118,211,.055) 45%,
+            rgba(55,175,255,.2),
+            rgba(30,125,220,.04) 45%,
             transparent 72%
         );
-
-    filter: blur(8px);
-
-    animation:
-        p19-node-halo
-        4.5s
-        ease-in-out
-        infinite;
 }
 
 
-.blue-node-orbit {
+.ars-blue-node .ars-node-orbit {
+
+    border-color:
+        rgba(80,185,255,.25);
+
+    border-right-color:
+        rgba(135,220,255,.72);
+}
+
+
+.ars-blue-node .ars-node-rim {
+
+    background:
+        conic-gradient(
+            from 0deg,
+            rgba(50,160,245,.18),
+            rgba(170,230,255,.85),
+            rgba(15,75,135,.3),
+            rgba(70,180,255,.2),
+            rgba(180,235,255,.78)
+        );
+
+    box-shadow:
+        0 0 12px rgba(45,165,255,.35),
+        0 0 30px rgba(30,130,230,.12);
+}
+
+
+.ars-blue-node .ars-node-ring {
+
+    border-color:
+        rgba(90,190,255,.4);
+
+    background:
+        radial-gradient(
+            circle at 40% 32%,
+            rgba(20,48,70,.98),
+            rgba(4,11,18,.99) 70%
+        );
+
+    box-shadow:
+        inset 0 0 15px rgba(75,185,255,.1);
+}
+
+
+.ars-blue-node .ars-node-core {
+
+    background: #dff8ff;
+
+    box-shadow:
+        0 0 8px #fff,
+        0 0 19px rgba(90,200,255,.95),
+        0 0 35px rgba(30,140,240,.6);
+}
+
+
+.ars-blue-node .ars-node-content {
+
+    color: #e5f8ff;
+
+    text-shadow:
+        0 0 8px rgba(80,190,255,.75);
+}
+
+
+/* BLUE NODE POSITIONS */
+
+.ars-blue-node-01 {
+    left: 50%;
+    top: 6%;
+}
+
+.ars-blue-node-02 {
+    left: 82%;
+    top: 17%;
+}
+
+.ars-blue-node-03 {
+    left: 94%;
+    top: 50%;
+}
+
+.ars-blue-node-04 {
+    left: 72%;
+    top: 88%;
+}
+
+.ars-blue-node-05 {
+    left: 28%;
+    top: 88%;
+}
+
+.ars-blue-node-06 {
+    left: 6%;
+    top: 50%;
+}
+
+.ars-blue-node-07 {
+    left: 18%;
+    top: 17%;
+}
+
+
+/* =========================================================
+   17 — HERO BRAND
+   ========================================================= */
+
+.ars-hero-brand {
+
     position: absolute;
 
     left: 50%;
     top: 50%;
 
-    border-radius: 50%;
+    transform:
+        translate(-50%, -50%);
 
-    transform: translate(-50%, -50%);
-}
-
-
-.blue-node-orbit-01 {
-    width: 100%;
-    height: 100%;
-
-    border: 1px solid rgba(91,196,255,.30);
-
-    border-right-color:
-        rgba(136,219,255,.72);
-
-    animation:
-        p19-node-orbit-a
-        8s
-        linear
-        infinite;
-}
-
-
-.blue-node-orbit-02 {
-    width: 128%;
-    height: 128%;
-
-    border: 1px dashed rgba(59,160,245,.16);
-
-    border-left-color:
-        rgba(79,184,255,.42);
-
-    animation:
-        p19-node-orbit-b
-        13s
-        linear
-        infinite;
-}
-
-
-/* =========================================================
-   BLUE NODE LINK
-   ========================================================= */
-
-.blue-node-link {
-    position: absolute;
-
-    inset: 0;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle at 42% 36%,
-            rgba(19,45,68,.96),
-            rgba(5,13,21,.99) 70%
-        );
-
-    border:
-        1px solid rgba(72,174,255,.42);
-
-    box-shadow:
-        0 10px 28px rgba(0,0,0,.58),
-        0 0 18px rgba(31,139,235,.16),
-        inset 0 0 20px rgba(75,181,255,.07);
-
-    transition:
-        transform .45s ease,
-        border-color .35s ease,
-        box-shadow .35s ease;
-
-    overflow: visible;
-}
-
-
-.blue-node:hover .blue-node-link {
-    transform: scale(1.15);
-
-    border-color:
-        rgba(135,220,255,.85);
-
-    box-shadow:
-        0 15px 40px rgba(0,0,0,.65),
-        0 0 25px rgba(48,165,255,.32),
-        0 0 55px rgba(31,126,220,.16),
-        inset 0 0 25px rgba(112,208,255,.12);
-}
-
-
-.blue-node-core {
-    width: 25%;
-
-    aspect-ratio: 1;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            #e2f8ff,
-            #58c0ff 30%,
-            #167acb 58%,
-            transparent 78%
-        );
-
-    box-shadow:
-        0 0 10px rgba(113,207,255,.9),
-        0 0 25px rgba(43,161,255,.48),
-        0 0 45px rgba(27,119,218,.22);
-
-    animation:
-        p19-node-core
-        3.6s
-        ease-in-out
-        infinite;
-}
-
-
-/* =========================================================
-   BLUE LABEL
-   ========================================================= */
-
-.blue-node-label {
-    position: absolute;
-
-    left: 50%;
-    top: calc(100% + 12px);
-
-    transform: translateX(-50%);
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    white-space: nowrap;
+    z-index: 150;
 
     text-align: center;
 
     pointer-events: none;
 
+    opacity: .82;
+}
+
+
+.ars-hero-brand-overline {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 8px;
+
+    letter-spacing: .34em;
+
+    color:
+        rgba(255,255,255,.55);
+}
+
+
+.ars-hero-brand h1 {
+
+    margin: 0;
+
+    font-size:
+        clamp(20px, 2.4vw, 34px);
+
+    font-weight: 500;
+
+    letter-spacing: .12em;
+
+    color:
+        rgba(255,255,255,.9);
+
     text-shadow:
-        0 0 10px rgba(0,0,0,.95),
-        0 0 18px rgba(0,0,0,.95);
+        0 0 18px rgba(255,255,255,.12);
 }
 
 
-.blue-node-label b {
-    font-family:
-        Arial,
-        sans-serif;
+.ars-hero-brand p {
 
-    font-size: 9px;
+    margin:
+        9px 0 0;
 
-    letter-spacing: .20em;
+    font-size: 8px;
 
-    color:
-        rgba(126,210,255,.72);
-}
-
-
-.blue-node-label em {
-    margin-top: 3px;
-
-    font-family:
-        Arial,
-        sans-serif;
-
-    font-size: 9px;
-
-    font-style: normal;
-
-    font-weight: 600;
-
-    letter-spacing: .06em;
+    letter-spacing: .18em;
 
     color:
-        rgba(210,241,255,.92);
+        rgba(255,255,255,.42);
 }
 
 
 /* =========================================================
-   05 — ENERGY BRIDGE
-   GOLD → CENTRAL ← BLUE
+   18 — HERO PARTICLES
    ========================================================= */
 
-.ars-hero-energy-bridge {
+.ars-hero-particle-field {
+
     position: absolute;
 
-    left: 50%;
-    top: 50%;
+    inset: 0;
 
-    width: 54%;
-
-    height: 180px;
-
-    transform: translate(-50%, -50%);
-
-    z-index: 15;
+    z-index: 1;
 
     pointer-events: none;
 }
 
 
-.energy-bridge-line {
+.hero-particle {
+
     position: absolute;
 
-    top: 50%;
-
+    width: 2px;
     height: 2px;
-
-    transform: translateY(-50%);
-
-    border-radius: 999px;
-}
-
-
-.bridge-gold {
-    left: 0;
-
-    width: 50%;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,202,74,.08),
-            rgba(255,215,105,.55),
-            rgba(255,232,153,.82)
-        );
-
-    box-shadow:
-        0 0 10px rgba(255,202,74,.25),
-        0 0 25px rgba(255,180,35,.10);
-}
-
-
-.bridge-blue {
-    right: 0;
-
-    width: 50%;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(136,219,255,.82),
-            rgba(66,174,255,.52),
-            rgba(30,130,230,.08),
-            transparent
-        );
-
-    box-shadow:
-        0 0 10px rgba(62,174,255,.25),
-        0 0 25px rgba(30,135,230,.10);
-}
-
-
-.energy-bridge-particle {
-    position: absolute;
-
-    top: 50%;
-
-    width: 6px;
-    height: 6px;
-
-    transform: translate(-50%, -50%);
 
     border-radius: 50%;
 
-    background: #fff;
+    background:
+        rgba(255,255,255,.65);
 
     box-shadow:
-        0 0 8px currentColor,
-        0 0 22px currentColor,
-        0 0 42px currentColor;
+        0 0 8px rgba(255,255,255,.35);
 
     animation:
-        p19-bridge-travel
-        4s
-        linear
+        ars-floating-particle
+        8s
+        ease-in-out
         infinite;
 }
 
 
-.particle-01 {
-    left: 25%;
-    color: #ffd96d;
-}
-
-
-.particle-02 {
-    left: 50%;
-    color: #fff0bd;
-
-    animation-delay: -1.3s;
-}
-
-
-.particle-03 {
-    left: 75%;
-    color: #78ceff;
-
-    animation-delay: -2.6s;
-}
+.hero-particle-01 { left:18%; top:21%; }
+.hero-particle-02 { left:82%; top:18%; animation-delay:-1s; }
+.hero-particle-03 { left:11%; top:61%; animation-delay:-2s; }
+.hero-particle-04 { left:89%; top:66%; animation-delay:-3s; }
+.hero-particle-05 { left:31%; top:11%; animation-delay:-4s; }
+.hero-particle-06 { left:69%; top:12%; animation-delay:-5s; }
+.hero-particle-07 { left:25%; top:90%; animation-delay:-6s; }
+.hero-particle-08 { left:76%; top:91%; animation-delay:-7s; }
+.hero-particle-09 { left:7%; top:42%; animation-delay:-2.5s; }
+.hero-particle-10 { left:93%; top:43%; animation-delay:-5.5s; }
 
 
 /* =========================================================
-   06 — RESPONSIVE
+   19 — ANIMATIONS
    ========================================================= */
 
-@media (max-width: 1200px) {
-
-    .ars-gold-system,
-    .ars-blue-system {
-        width: 330px;
-    }
-
-    .ars-gold-system {
-        left: 22% !important;
-    }
-
-    .ars-blue-system {
-        left: 78% !important;
-    }
-
-    .ars-heritage-core {
-        width: 190px;
-    }
-
-    .gold-node,
-    .blue-node {
-        width: 50px;
-        height: 50px;
-    }
-}
-
-
-@media (max-width: 900px) {
-
-    .ars-hero-field {
-        min-height: 1050px;
-    }
-
-    .ars-gold-system {
-        left: 28% !important;
-        top: 35% !important;
-
-        width: 310px;
-    }
-
-    .ars-blue-system {
-        left: 72% !important;
-        top: 65% !important;
-
-        width: 310px;
-    }
-
-    .ars-heritage-core {
-        left: 50% !important;
-        top: 50% !important;
-
-        width: 170px;
-    }
-
-    .ars-hero-energy-bridge {
-        width: 42%;
-    }
-}
-
-
-@media (max-width: 650px) {
-
-    .ars-hero-field {
-        min-height: 1180px;
-    }
-
-    .ars-gold-system {
-        left: 50% !important;
-        top: 28% !important;
-
-        width: 300px;
-    }
-
-    .ars-heritage-core {
-        left: 50% !important;
-        top: 50% !important;
-
-        width: 150px;
-    }
-
-    .ars-blue-system {
-        left: 50% !important;
-        top: 73% !important;
-
-        width: 300px;
-    }
-
-    .ars-hero-energy-bridge {
-        display: none;
-    }
-
-    .gold-node,
-    .blue-node {
-        width: 48px;
-        height: 48px;
-    }
-
-    .gold-node-label em,
-    .blue-node-label em {
-        font-size: 7px;
-    }
-}
-
-
-/* =========================================================
-   07 — PHASE 19 ANIMATIONS
-   ========================================================= */
-
-@keyframes p19-gold-orbit-a {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-}
-
-
-@keyframes p19-gold-orbit-b {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-}
-
-
-@keyframes p19-core-breathe {
+@keyframes ars-atmosphere-breathe {
 
     0%,100% {
         opacity: .45;
-
-        transform:
-            translate(-50%, -50%)
-            scale(.90);
-    }
-
-    50% {
-        opacity: 1;
-
-        transform:
-            translate(-50%, -50%)
-            scale(1.08);
-    }
-}
-
-
-@keyframes p19-core-orbit-a {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-}
-
-
-@keyframes p19-core-orbit-b {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-}
-
-
-@keyframes p19-node-halo {
-
-    0%,100% {
-        opacity: .35;
-        transform: scale(.90);
-    }
-
-    50% {
-        opacity: 1;
-        transform: scale(1.10);
-    }
-}
-
-
-@keyframes p19-node-orbit-a {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-}
-
-
-@keyframes p19-node-orbit-b {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-}
-
-
-@keyframes p19-node-core {
-
-    0%,100% {
-        transform: scale(.90);
-        opacity: .65;
-    }
-
-    50% {
-        transform: scale(1.15);
-        opacity: 1;
-    }
-}
-
-
-@keyframes p19-blue-breathe {
-
-    0%,100% {
-        opacity: .45;
-
         transform:
             translate(-50%, -50%)
             scale(.94);
@@ -18868,7 +18840,6 @@ code {
 
     50% {
         opacity: 1;
-
         transform:
             translate(-50%, -50%)
             scale(1.06);
@@ -18876,97 +18847,13 @@ code {
 }
 
 
-@keyframes p19-blue-orbit-a {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-}
-
-
-@keyframes p19-blue-orbit-b {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-}
-
-
-@keyframes p19-blue-core-breathe {
-
-    0%,100% {
-        opacity: .45;
-
-        transform:
-            translate(-50%, -50%)
-            scale(.90);
-    }
-
-    50% {
-        opacity: 1;
-
-        transform:
-            translate(-50%, -50%)
-            scale(1.08);
-    }
-}
-
-
-@keyframes p19-blue-core-orbit-a {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-}
-
-
-@keyframes p19-blue-core-orbit-b {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-}
-
-
-@keyframes p19-central-breathe {
+@keyframes ars-gold-breathe {
 
     0%,100% {
         opacity: .45;
         transform:
             translate(-50%, -50%)
-            scale(.92);
+            scale(.94);
     }
 
     50% {
@@ -18978,95 +18865,387 @@ code {
 }
 
 
-@keyframes p19-central-ring-a {
+@keyframes ars-blue-breathe {
 
-    from {
+    0%,100% {
+        opacity: .45;
         transform:
             translate(-50%, -50%)
-            rotate(0deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-}
-
-
-@keyframes p19-central-ring-b {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-}
-
-
-@keyframes p19-central-pulse {
-
-    0% {
-        opacity: 0;
-
-        transform:
-            translate(-50%, -50%)
-            scale(.55);
-    }
-
-    20% {
-        opacity: .55;
-    }
-
-    100% {
-        opacity: 0;
-
-        transform:
-            translate(-50%, -50%)
-            scale(1.85);
-    }
-}
-
-
-@keyframes p19-bridge-travel {
-
-    0% {
-        opacity: 0;
-    }
-
-    10% {
-        opacity: 1;
+            scale(.94);
     }
 
     50% {
         opacity: 1;
+        transform:
+            translate(-50%, -50%)
+            scale(1.07);
+    }
+}
+
+
+@keyframes ars-core-breathe {
+
+    0%,100% {
+        opacity: .5;
+        transform:
+            translate(-50%, -50%)
+            scale(.94);
     }
 
-    90% {
-        opacity: .15;
+    50% {
+        opacity: 1;
+        transform:
+            translate(-50%, -50%)
+            scale(1.07);
+    }
+}
+
+
+@keyframes ars-orbit-clockwise {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+}
+
+
+@keyframes ars-orbit-counter {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+}
+
+
+@keyframes ars-rim-rotate {
+
+    from {
+        transform:
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+}
+
+
+@keyframes ars-node-halo {
+
+    0%,100% {
+        opacity: .35;
+        transform: scale(.88);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.08);
+    }
+}
+
+
+@keyframes ars-node-core {
+
+    0%,100% {
+        transform: scale(.82);
+        opacity: .65;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+}
+
+
+@keyframes ars-gold-particle {
+
+    0% {
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: .85;
     }
 
     100% {
         opacity: 0;
+    }
+}
+
+
+@keyframes ars-blue-particle {
+
+    0% {
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: .9;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+@keyframes ars-axis-travel {
+
+    0% {
+        top: 4%;
+        opacity: 0;
+    }
+
+    12% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: .9;
+    }
+
+    100% {
+        top: 94%;
+        opacity: 0;
+    }
+}
+
+
+@keyframes ars-heritage-pulse {
+
+    0% {
+        width: 35%;
+        height: 35%;
+        opacity: .65;
+    }
+
+    100% {
+        width: 145%;
+        height: 145%;
+        opacity: 0;
+    }
+}
+
+
+@keyframes ars-floating-particle {
+
+    0%,100% {
+        opacity: .2;
+        transform: translate3d(0,0,0);
+    }
+
+    50% {
+        opacity: .85;
+        transform: translate3d(0,-9px,0);
     }
 }
 
 
 /* =========================================================
-   PHASE 19 END
+   20 — DESKTOP REFINEMENT
    ========================================================= */
 
+@media (min-width: 1400px) {
+
+    .ars-gold-system,
+    .ars-blue-system {
+
+        width: 440px;
+    }
+
+    .ars-intelligence-node {
+
+        width: 56px;
+        height: 56px;
+    }
+
+    .ars-heritage-group-core {
+
+        width: 155px;
+    }
+}
 
 
+/* =========================================================
+   21 — TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .ars-gold-system {
+
+        width: min(360px, 44vw);
+
+        top: 24%;
+    }
+
+    .ars-blue-system {
+
+        width: min(360px, 44vw);
+
+        top: 76%;
+    }
+
+    .ars-intelligence-node {
+
+        width: 48px;
+        height: 48px;
+    }
+
+    .ars-heritage-group-core {
+
+        width: 125px;
+    }
+
+    .ars-hero-brand {
+
+        display: none;
+    }
+}
 
 
+/* =========================================================
+   22 — MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .ars-gold-system,
+    .ars-blue-system {
+
+        width: min(310px, 78vw);
+    }
+
+    .ars-gold-system {
+
+        top: 24%;
+    }
+
+    .ars-blue-system {
+
+        top: 76%;
+    }
+
+    .ars-intelligence-node {
+
+        width: 43px;
+        height: 43px;
+    }
+
+    .ars-node-content strong {
+
+        font-size: 6px;
+    }
+
+    .ars-node-content em {
+
+        font-size: 5px;
+    }
+
+    .ars-heritage-group-core {
+
+        width: 108px;
+    }
+
+    .heritage-core-label strong {
+
+        font-size: 15px;
+    }
+
+    .ars-hero-brand {
+
+        display: none;
+    }
+
+    .ars-master-energy-axis {
+
+        height: 91%;
+    }
+}
 
 
+/* =========================================================
+   23 — SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+    .ars-gold-system,
+    .ars-blue-system {
+
+        width: 275px;
+    }
+
+    .ars-intelligence-node {
+
+        width: 39px;
+        height: 39px;
+    }
+
+    .ars-heritage-group-core {
+
+        width: 96px;
+    }
+
+    .heritage-core-label small {
+
+        font-size: 5px;
+    }
+
+    .heritage-core-label strong {
+
+        font-size: 13px;
+    }
+
+    .heritage-core-label span {
+
+        font-size: 5px;
+    }
+}
 
 
+/* =========================================================
+   24 — REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ars-hero-field *,
+    .ars-hero-field *::before,
+    .ars-hero-field *::after {
+
+        animation-duration: .01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
+    }
+  }
+
+            
