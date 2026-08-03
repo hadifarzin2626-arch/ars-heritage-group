@@ -17933,7 +17933,78 @@ code {
 }
 */
 
+/* =========================================================
+   ARS HERO — THREE SYSTEMS
+   MASTER CENTER POSITION
+   ========================================================= */
 
+/*
+   هدف:
+   کل سه سیستم با هم پایین بیایند.
+   هندسه داخلی هیچ سیستم تغییر نمی‌کند.
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   MASTER GROUP
+   --------------------------------------------------------- */
+
+.hero-systems,
+.systems-container,
+.energy-systems,
+.ecosystem-systems {
+    position: absolute;
+
+    /* مرکز افقی */
+    left: 50%;
+
+    /* مرکز عمودی */
+    top: 50%;
+
+    /*
+       فقط جابه‌جایی کل مجموعه
+       هیچ scale یا تغییر هندسی نداریم
+    */
+    transform: translate(-50%, 70px);
+
+}
+
+
+/* ---------------------------------------------------------
+   IMPORTANT:
+   اگر سیستم‌ها داخل یکی از این Containerها هستند،
+   فقط همان Container فعال می‌شود.
+   --------------------------------------------------------- */
+
+
+/*
+   اگر Container اصلی پروژه اسم دیگری دارد،
+   این بخش را بعداً با selector واقعی جایگزین می‌کنیم.
+*/
+
+
+/* ---------------------------------------------------------
+   SAFETY:
+   هیچ تغییر مستقیمی روی سه سیستم انجام نشود
+   --------------------------------------------------------- */
+
+.hero-systems .yellow-system,
+.hero-systems .blue-system,
+.hero-systems .single-node-system,
+
+.systems-container .yellow-system,
+.systems-container .blue-system,
+.systems-container .single-node-system,
+
+.energy-systems .yellow-system,
+.energy-systems .blue-system,
+.energy-systems .single-node-system,
+
+.ecosystem-systems .yellow-system,
+.ecosystem-systems .blue-system,
+.ecosystem-systems .single-node-system {
+    /* هندسه داخلی دست‌نخورده */
+}
 
 
 
