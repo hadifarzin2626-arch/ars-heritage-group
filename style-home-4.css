@@ -20224,7 +20224,262 @@ code {
 
 
 
+/* =========================================================
+   ARS HOME — CAPSULE VISUAL REFINEMENT
+   LOCKED SPECIFICATION
+   =========================================================
 
+   RULE:
+   Existing position / size / shape MUST remain untouched.
+
+   BLUE CONTENT  -> GOLD SHADOW
+   GOLD CONTENT  -> BLUE SHADOW
+
+   Existing capsule dimensions are the master reference.
+   ========================================================= */
+
+
+/* =========================================================
+   MASTER GOLD / BLUE ENERGY
+   ========================================================= */
+
+:root {
+
+    --ars-capsule-gold:
+        var(--home-gold-rich, #d6b64a);
+
+    --ars-capsule-gold-light:
+        var(--home-gold-light, #ecd98a);
+
+    --ars-capsule-gold-white:
+        var(--home-gold-white, #fff1b5);
+
+    --ars-capsule-blue:
+        var(--home-blue-electric, #00a8ff);
+
+    --ars-capsule-blue-light:
+        var(--home-blue-bright, #35c3ff);
+
+}
+
+
+/* =========================================================
+   BLUE CONTENT → GOLD SHADOW
+   ========================================================= */
+
+.ars-capsule-blue {
+
+    color:
+        var(--ars-capsule-blue-light);
+
+    border-color:
+        rgba(201,162,39,.32);
+
+    box-shadow:
+
+        0 0 18px
+        rgba(201,162,39,.12),
+
+        0 0 38px
+        rgba(201,162,39,.08);
+
+}
+
+
+/* =========================================================
+   GOLD CONTENT → BLUE SHADOW
+   ========================================================= */
+
+.ars-capsule-gold {
+
+    color:
+        var(--ars-capsule-gold-light);
+
+    border-color:
+        rgba(0,168,255,.28);
+
+    box-shadow:
+
+        0 0 18px
+        rgba(0,168,255,.12),
+
+        0 0 38px
+        rgba(0,168,255,.08);
+
+}
+
+
+/* =========================================================
+   GOLDEN TEXT — PREMIUM METALLIC DNA
+   ========================================================= */
+
+.ars-gold-text {
+
+    background:
+        var(--home-metal-gold);
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    -webkit-text-fill-color:
+        transparent;
+
+    color:
+        var(--ars-capsule-gold-light);
+
+}
+
+
+/* =========================================================
+   CAPSULE GLASS SURFACE
+   IMPORTANT:
+   Do NOT change width / height / position / margin.
+   Existing capsule geometry remains master reference.
+   ========================================================= */
+
+.ars-capsule {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.045),
+            rgba(7,17,31,.52)
+        );
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+
+    box-sizing:
+        border-box;
+
+    isolation:
+        isolate;
+
+}
+
+
+/* =========================================================
+   GOLD GLOW — APPROX. 20% INTENSITY
+   ========================================================= */
+
+.ars-gold-glow {
+
+    box-shadow:
+
+        0 0 18px
+        rgba(201,162,39,.12),
+
+        0 0 42px
+        rgba(201,162,39,.08);
+
+}
+
+
+/* =========================================================
+   BLUE GLOW — APPROX. 20% INTENSITY
+   ========================================================= */
+
+.ars-blue-glow {
+
+    box-shadow:
+
+        0 0 18px
+        rgba(0,168,255,.12),
+
+        0 0 42px
+        rgba(0,168,255,.08);
+
+}
+
+
+/* =========================================================
+   GOLD SITE-WIDE REFINEMENT
+   Only existing GOLD elements.
+   No layout modification.
+   ========================================================= */
+
+.section-label,
+.home-gold,
+.ars-gold,
+[data-color="gold"] {
+
+    color:
+        var(--ars-capsule-gold-light);
+
+}
+
+
+/* =========================================================
+   GOLD BORDER REFINEMENT
+   ========================================================= */
+
+.section-label,
+.home-gold-border,
+.ars-gold-border {
+
+    border-color:
+        rgba(201,162,39,.32);
+
+}
+
+
+/* =========================================================
+   GOLD HOVER
+   ========================================================= */
+
+.ars-capsule-gold:hover {
+
+    box-shadow:
+
+        0 0 22px
+        rgba(0,168,255,.16),
+
+        0 0 48px
+        rgba(0,168,255,.10);
+
+}
+
+
+/* =========================================================
+   BLUE HOVER
+   ========================================================= */
+
+.ars-capsule-blue:hover {
+
+    box-shadow:
+
+        0 0 22px
+        rgba(201,162,39,.16),
+
+        0 0 48px
+        rgba(201,162,39,.10);
+
+}
+
+
+/* =========================================================
+   MOBILE SAFETY
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .ars-capsule {
+
+        backdrop-filter:
+            blur(10px);
+
+        -webkit-backdrop-filter:
+            blur(10px);
+
+    }
+
+}
 
 
 
