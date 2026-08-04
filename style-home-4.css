@@ -17278,99 +17278,26 @@ code {
    END — NEW PREMIUM HERO
    ========================================================= */
 /* =========================================================
-   ARS HERO — GOLD ORBIT GEOMETRY PATCH
-   TARGET: GOLD ORBIT ONLY
-   NODES: UNTOUCHED
-   BLUE: UNTOUCHED
+   TEST — ORBIT MOTION ONLY
+   NODES REMAIN COMPLETELY STATIC
    ========================================================= */
 
-.ars-hero-master-geometry
-.ars-gold-system
-.ars-orbits
-.ars-orbit {
-
-    left: 50%;
-    top: 50%;
-
-    transform:
-        translate(-50%, -50%);
-
-    transform-origin:
-        center center;
+.ars-orbits .ars-orbit {
+    animation: arsOrbitTest 18s linear infinite;
 }
 
+@keyframes arsOrbitTest {
 
-/* ---------------------------------------------------------
-   GOLD MASTER ORBIT
-   همه نودهای Gold باید روی همین مدار هندسی قرار بگیرند
-   --------------------------------------------------------- */
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
 
-.ars-hero-master-geometry
-.ars-gold-system
-.ars-orbit.orbit-01 {
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
 
-    width: 94%;
-    height: 94%;
-
-    border-radius: 50%;
-}
-
-
-/* ---------------------------------------------------------
-   GOLD SECONDARY ORBIT
-   --------------------------------------------------------- */
-
-.ars-hero-master-geometry
-.ars-gold-system
-.ars-orbit.orbit-02 {
-
-    width: 84%;
-    height: 84%;
-
-    border-radius: 50%;
-}
-
-
-/* ---------------------------------------------------------
-   GOLD INNER ORBIT
-   --------------------------------------------------------- */
-
-.ars-hero-master-geometry
-.ars-gold-system
-.ars-orbit.orbit-03 {
-
-    width: 73%;
-    height: 73%;
-
-    border-radius: 50%;
-}
-
-
-/* ---------------------------------------------------------
-   GOLD INNER DETAIL ORBIT
-   --------------------------------------------------------- */
-
-.ars-hero-master-geometry
-.ars-gold-system
-.ars-orbit.orbit-04 {
-
-    width: 62%;
-    height: 62%;
-
-    border-radius: 50%;
-}
-
-
-/* ---------------------------------------------------------
-   GOLD CORE ORBIT
-   --------------------------------------------------------- */
-
-.ars-hero-master-geometry
-.ars-gold-system
-.ars-orbit.orbit-05 {
-
-    width: 51%;
-    height: 51%;
-
-    border-radius: 50%;
 }
