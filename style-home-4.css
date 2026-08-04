@@ -21373,6 +21373,55 @@ code {
 
 
 
+/* =========================================================
+   ARS — GOLD LINE LIGHT UNDER CARDS
+   KEEP EXISTING CARD GLOW UNTOUCHED
+   ========================================================= */
+
+.ars-hero-field .ars-card,
+.ars-hero-field .hero-card,
+.ars-hero-field .ars-feature-card,
+.ars-hero-field .ars-title-card {
+    position: relative;
+}
+
+/* Thin premium gold light line */
+
+.ars-hero-field .ars-card::after,
+.ars-hero-field .hero-card::after,
+.ars-hero-field .ars-feature-card::after,
+.ars-hero-field .ars-title-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 8%;
+    right: 8%;
+    bottom: -3px;
+
+    height: 2px;
+
+    border-radius: 999px;
+
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 198, 65, 0.45) 12%,
+        rgba(255, 225, 135, 0.95) 50%,
+        rgba(255, 198, 65, 0.45) 88%,
+        transparent 100%
+    );
+
+    box-shadow:
+        0 0 4px rgba(255, 211, 92, 0.95),
+        0 0 10px rgba(255, 190, 40, 0.75),
+        0 0 20px rgba(255, 175, 25, 0.38);
+
+    pointer-events: none;
+}
+
+
 
 
 
