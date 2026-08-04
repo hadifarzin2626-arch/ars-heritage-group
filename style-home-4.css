@@ -19178,9 +19178,161 @@ code {
    END — SINGLE NODE HERITAGE CENTER PATCH
    ========================================================= */
 
+/* =========================================================
+   ARS HERITAGE CENTER
+   DUAL INDEPENDENT BELT ORBITS
+   ADDITIVE ONLY
+   ========================================================= */
+
+.ars-hero-field
+.ars-heritage-center
+.heritage-belt-orbit {
+
+    position: absolute !important;
+
+    left: 50% !important;
+    top: 50% !important;
+
+    width: 150% !important;
+    height: 38% !important;
+
+    border-radius: 50% !important;
+
+    background: transparent !important;
+
+    box-sizing: border-box !important;
+
+    pointer-events: none !important;
+
+    transform-origin: center center !important;
+
+    will-change: transform !important;
+}
 
 
+/* =========================================================
+   GOLD ORBIT
+   ========================================================= */
 
+.ars-hero-field
+.ars-heritage-center
+.heritage-belt-gold {
+
+    border:
+        1px solid rgba(255, 210, 70, .95) !important;
+
+    box-shadow:
+        0 0 6px rgba(255, 205, 70, .55) !important;
+
+    transform:
+        translate(-50%, -50%)
+        rotateX(67deg)
+        rotateZ(-8deg) !important;
+
+    z-index: 6 !important;
+
+    animation:
+        ars-heritage-gold-orbit
+        12s linear infinite !important;
+}
+
+
+/* =========================================================
+   BLUE ORBIT
+   DIFFERENT ORBITAL PLANE
+   ========================================================= */
+
+.ars-hero-field
+.ars-heritage-center
+.heritage-belt-blue {
+
+    border:
+        1px solid rgba(55, 170, 255, .95) !important;
+
+    box-shadow:
+        0 0 6px rgba(55, 170, 255, .55) !important;
+
+    transform:
+        translate(-50%, -50%)
+        rotateX(67deg)
+        rotateZ(172deg) !important;
+
+    z-index: 7 !important;
+
+    animation:
+        ars-heritage-blue-orbit
+        12s linear infinite reverse !important;
+}
+
+
+/* =========================================================
+   GOLD — FULL ORBIT
+   ========================================================= */
+
+@keyframes ars-heritage-gold-orbit {
+
+    from {
+
+        transform:
+            translate(-50%, -50%)
+            rotateX(67deg)
+            rotateZ(-8deg);
+
+    }
+
+    to {
+
+        transform:
+            translate(-50%, -50%)
+            rotateX(67deg)
+            rotateZ(352deg);
+
+    }
+}
+
+
+/* =========================================================
+   BLUE — FULL ORBIT
+   ========================================================= */
+
+@keyframes ars-heritage-blue-orbit {
+
+    from {
+
+        transform:
+            translate(-50%, -50%)
+            rotateX(67deg)
+            rotateZ(172deg);
+
+    }
+
+    to {
+
+        transform:
+            translate(-50%, -50%)
+            rotateX(67deg)
+            rotateZ(532deg);
+
+    }
+}
+
+
+/* =========================================================
+   END — EXISTING HERITAGE SYSTEM UNTOUCHED
+   ========================================================= */
+
+.ars-hero-field
+.ars-heritage-center
+.heritage-body
+small {
+
+    font-size: 120% !important;
+
+    font-weight: 700 !important;
+
+    color: #f2c14e !important;
+
+}
 
 
 
