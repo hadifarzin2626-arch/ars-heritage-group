@@ -18490,14 +18490,556 @@ code {
    END — BLUE FINAL GEOMETRY ALIGNMENT
    ========================================================= */
 /* =========================================================
-   GOLD SYSTEM — GLOBAL VERTICAL CLEARANCE
-   MOVE WHOLE GOLD SYSTEM
+   ARS HERITAGE GROUP
+   GOLD SYSTEM — ORBITAL DEPTH MOTION TEST
+   =========================================================
+
+   PURPOSE
+   ---------------------------------------------------------
+   Convert GOLD from a flat TOP/BOTTOM node arrangement
+   into an independent orbital / solar-system motion.
+
+   IMPORTANT
+   ---------------------------------------------------------
+   - GOLD ONLY
+   - BLUE UNTOUCHED
+   - HERITAGE UNTOUCHED
+   - GOLD CORE REMAINS CENTRAL
+   - EXISTING GOLD GEOMETRY REMAINS THE BASE
+   - NO HTML CHANGE REQUIRED
+   ========================================================= */
+
+
+/* =========================================================
+   GOLD — 3D SPACE
    ========================================================= */
 
 .ars-hero-field
 .ars-gold-system {
 
-    top: 5.5% !important;
+    perspective:
+        900px !important;
 
+    perspective-origin:
+        50% 50% !important;
+
+    transform-style:
+        preserve-3d !important;
 }
+
+
+/* =========================================================
+   GOLD — ORBIT FIELD
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system
+.ars-orbits {
+
+    transform-style:
+        preserve-3d !important;
+
+    transform:
+        translateZ(0)
+        rotateX(58deg)
+        rotateY(-8deg) !important;
+}
+
+
+/* =========================================================
+   GOLD — ORBITAL PLANE
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system
+.ars-orbits {
+
+    animation:
+        arsGoldOrbitalPlane
+        26s
+        linear
+        infinite !important;
+
+    transform-origin:
+        center center !important;
+}
+
+
+@keyframes arsGoldOrbitalPlane {
+
+    0% {
+
+        transform:
+            translateZ(0)
+            rotateX(58deg)
+            rotateY(-8deg)
+            rotateZ(0deg);
+    }
+
+    50% {
+
+        transform:
+            translateZ(0)
+            rotateX(58deg)
+            rotateY(12deg)
+            rotateZ(180deg);
+    }
+
+    100% {
+
+        transform:
+            translateZ(0)
+            rotateX(58deg)
+            rotateY(-8deg)
+            rotateZ(360deg);
+    }
+}
+
+
+/* =========================================================
+   GOLD — NODE SPACE
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system
+.ars-system-node {
+
+    transform-style:
+        preserve-3d !important;
+
+    backface-visibility:
+        hidden;
+
+    will-change:
+        transform,
+        filter;
+}
+
+
+/* =========================================================
+   GOLD — NODE ORBIT MOTION
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system
+.ars-system-node.node-01 {
+
+    animation:
+        arsGoldNode01
+        26s
+        linear
+        infinite !important;
+}
+
+
+.ars-hero-field
+.ars-gold-system
+.ars-system-node.node-02 {
+
+    animation:
+        arsGoldNode02
+        26s
+        linear
+        infinite !important;
+}
+
+
+.ars-hero-field
+.ars-gold-system
+.ars-system-node.node-03 {
+
+    animation:
+        arsGoldNode03
+        26s
+        linear
+        infinite !important;
+}
+
+
+.ars-hero-field
+.ars-gold-system
+.ars-system-node.node-04 {
+
+    animation:
+        arsGoldNode04
+        26s
+        linear
+        infinite !important;
+}
+
+
+.ars-hero-field
+.ars-gold-system
+.ars-system-node.node-05 {
+
+    animation:
+        arsGoldNode05
+        26s
+        linear
+        infinite !important;
+}
+
+
+.ars-hero-field
+.ars-gold-system
+.ars-system-node.node-06 {
+
+    animation:
+        arsGoldNode06
+        26s
+        linear
+        infinite !important;
+}
+
+
+/* =========================================================
+   GOLD — NODE DEPTH
+   ========================================================= */
+
+@keyframes arsGoldNode01 {
+
+    0%,
+    100% {
+
+        transform:
+            translate(-50%,-50%)
+            translateZ(35px)
+            scale(1.03);
+    }
+
+    25% {
+
+        transform:
+            translate(-50%,-50%)
+            translateZ(-20px)
+            scale(.94);
+    }
+
+    50% {
+
+        transform:
+            translate(-50%,-50%)
+            translateZ(-45px)
+            scale(.90);
+    }
+
+    75% {
+
+        transform:
+            translate(-50%,-50%)
+            translateZ(15px)
+            scale(1);
+    }
+}
+
+
+@keyframes arsGoldNode02 {
+
+    0% {
+
+        transform:
+            translate(-50%,-50%)
+            translateZ(-20px)
+            scale(.94);
+    }
+
+    25% {
+
+        transform:
+            translate(-50%,-50%)
+            translateZ(-45px)
+            scale(.90);
+    }
+
+    50% {
+
+        transform:
+            translate(-50%,-50%)
+            translateZ(15px)
+            scale(1);
+    }
+
+    75% {
+
+        transform:
+            translate(-50%,-50%)
+            translateZ(35px)
+            scale(1.03);
+    }
+
+    100% {
+
+        transform:
+            translate(-50%,-50%)
+            translateZ(-20px)
+            scale(.94);
+    }
+}
+
+
+@keyframes arsGoldNode03 {
+
+    0% {
+
+        transform:
+            translate(-50%,-50%)
+            translateZ(-45px)
+            scale(.90);
+    }
+
+    25% {
+
+        transform:
+            translate(-50%,-50%)
+            translateZ(15px)
+            scale(1);
+    }
+
+    50% {
+
+        transform:
+            translate(-50%,-50%)
+            translateZ(35px)
+            scale(1.03);
+    }
+
+    75% {
+
+        transform:
+            translate(-50%,-50%)
+            translateZ(-20px)
+            scale(.94);
+    }
+
+    100% {
+
+        transform:
+            translate(-50%,-50%)
+            translateZ(-45px)
+            scale(.90);
+    }
+}
+
+
+@keyframes arsGoldNode04 {
+
+    0% {
+
+        transform:
+            translate(-50%,-50%)
+            translateZ(15px)
+            scale(1);
+    }
+
+    25% {
+
+        transform:
+            translate(-50%,-50%)
+            translateZ(35px)
+            scale(1.03);
+    }
+
+    50% {
+
+        transform:
+            translate(-50%,-50%)
+            translateZ(-20px)
+            scale(.94);
+    }
+
+    75% {
+
+        transform:
+            translate(-50%,-50%)
+            translateZ(-45px)
+            scale(.90);
+    }
+
+    100% {
+
+        transform:
+            translate(-50%,-50%)
+            translateZ(15px)
+            scale(1);
+    }
+}
+
+
+@keyframes arsGoldNode05 {
+
+    0% {
+
+        transform:
+            translate(-50%,-50%)
+            translateZ(35px)
+            scale(1.03);
+    }
+
+    25% {
+
+        transform:
+            translate(-50%,-50%)
+            translateZ(-20px)
+            scale(.94);
+    }
+
+    50% {
+
+        transform:
+            translate(-50%,-50%)
+            translateZ(-45px)
+            scale(.90);
+    }
+
+    75% {
+
+        transform:
+            translate(-50%,-50%)
+            translateZ(15px)
+            scale(1);
+    }
+
+    100% {
+
+        transform:
+            translate(-50%,-50%)
+            translateZ(35px)
+            scale(1.03);
+    }
+}
+
+
+@keyframes arsGoldNode06 {
+
+    0% {
+
+        transform:
+            translate(-50%,-50%)
+            translateZ(-20px)
+            scale(.94);
+    }
+
+    25% {
+
+        transform:
+            translate(-50%,-50%)
+            translateZ(-45px)
+            scale(.90);
+    }
+
+    50% {
+
+        transform:
+            translate(-50%,-50%)
+            translateZ(15px)
+            scale(1);
+    }
+
+    75% {
+
+        transform:
+            translate(-50%,-50%)
+            translateZ(35px)
+            scale(1.03);
+    }
+
+    100% {
+
+        transform:
+            translate(-50%,-50%)
+            translateZ(-20px)
+            scale(.94);
+    }
+}
+
+
+/* =========================================================
+   GOLD — DEPTH LIGHT
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system
+.ars-system-node {
+
+    filter:
+        drop-shadow(
+            0 0 9px
+            rgba(var(--system-color),.42)
+        ) !important;
+}
+
+
+/* =========================================================
+   GOLD — CORE STAYS FIXED
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system
+.ars-system-core {
+
+    transform:
+        translate(-50%,-50%) !important;
+
+    animation:
+        none !important;
+
+    transform-style:
+        preserve-3d !important;
+}
+
+
+/* =========================================================
+   GOLD — MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .ars-hero-field
+    .ars-gold-system {
+
+        perspective:
+            700px !important;
+    }
+
+    .ars-hero-field
+    .ars-gold-system
+    .ars-orbits {
+
+        animation-duration:
+            30s !important;
+    }
+
+    .ars-hero-field
+    .ars-gold-system
+    .ars-system-node {
+
+        animation-duration:
+            30s !important;
+    }
+}
+
+
+/* =========================================================
+   GOLD — REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ars-hero-field
+    .ars-gold-system
+    .ars-orbits,
+
+    .ars-hero-field
+    .ars-gold-system
+    .ars-system-node {
+
+        animation:
+            none !important;
+    }
+}
+
+
+/* =========================================================
+   END — GOLD ORBITAL DEPTH MOTION TEST
+   ========================================================= */
 
