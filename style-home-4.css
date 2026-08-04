@@ -15959,23 +15959,43 @@ code {
 
 
 /* =========================================================
-   ORBITAL SYSTEM — COMMON
+   ARS ORBITAL SYSTEM
+   GEOMETRY CALIBRATION — WIDE / COMPACT
    ========================================================= */
 
 .ars-orbital-system {
     position: relative;
 
-    width: 35vw;
-    max-width: 430px;
+    /*
+     * Wider than tall.
+     * The system remains compact enough to stay
+     * completely inside the Hero viewport.
+     */
+    width: 42vw;
+
+    max-width: 520px;
     min-width: 300px;
 
-    aspect-ratio: 1;
+    /*
+     * Horizontal intelligence constellation.
+     * Width : Height = 1.25 : 1
+     */
+    aspect-ratio: 1.25 / 1;
+
+    height: auto;
 
     flex: 0 0 auto;
 
     z-index: 5;
 
     isolation: isolate;
+
+    /*
+     * IMPORTANT:
+     * Do not add transform here.
+     * Node coordinates remain controlled by
+     * their existing .node-01 ... .node-07 rules.
+     */
 }
 
 
