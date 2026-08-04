@@ -15713,34 +15713,30 @@ code {
 
 /* =========================================================
    ARS HERITAGE GROUP
-   PREMIUM HERO — ISOLATED 3-SYSTEM GEOMETRY
+   PREMIUM HERO — FINAL 3-SYSTEM GEOMETRY
    =========================================================
+
+   LOCKED ARCHITECTURE
 
    SYSTEM 01
-   ARS GOLD
-   06 NODES
+   GOLD      = 06 NODES
 
    SYSTEM 02
-   ARS HERITAGE GROUP
-   01 CENTRAL NODE
+   HERITAGE  = 01 CENTRAL CORE
 
    SYSTEM 03
-   ARS BLUE
-   07 NODES
+   BLUE      = 07 NODES
 
-   =========================================================
-   ISOLATION RULE
-   =========================================================
+   IMPORTANT
 
-   GOLD     → ars-gold-*
-   HERITAGE → ars-heritage-*
-   BLUE     → ars-blue-*
-
-   NO SHARED NODE SELECTORS
-   NO SHARED CORE SELECTORS
-   NO SHARED ORBIT SELECTORS
-   NO MASTER NODE POSITIONING
-
+   - VISUAL DNA REMAINS BASED ON ORIGINAL CSS
+   - GOLD / HERITAGE / BLUE ARE INDEPENDENT
+   - EACH ORBIT BELONGS TO ITS OWN SYSTEM
+   - EACH NODE BELONGS TO ITS OWN SYSTEM
+   - NODES ARE STATIC
+   - ORBITS ROTATE
+   - NO MASTER NODE POSITIONING
+   - NO ELLIPTICAL SYSTEM CONTAINER
    ========================================================= */
 
 
@@ -15899,6 +15895,19 @@ code {
 
 /* =========================================================
    MASTER GEOMETRY
+   =========================================================
+
+   IMPORTANT
+
+   This is NOT a flex column anymore.
+
+   It is the page coordinate system.
+
+   GOLD      = TOP
+   HERITAGE  = CENTER
+   BLUE      = BOTTOM
+
+   Each system keeps its own local coordinate system.
    ========================================================= */
 
 .ars-hero-master-geometry {
@@ -15919,24 +15928,15 @@ code {
 
 
 /* =========================================================
-   =========================================================
-   SYSTEM 01 — ARS GOLD
-   =========================================================
+   SYSTEM MASTER CONTAINER
    ========================================================= */
 
-
-/* =========================================================
-   GOLD SYSTEM CONTAINER
-   ========================================================= */
-
-.ars-gold-system {
+.ars-orbital-system {
 
     position: absolute;
 
-    left: 50%;
-    top: 2.5%;
-
     width: min(34vw, 390px);
+
     height: min(34vw, 390px);
 
     min-width: 280px;
@@ -15947,19 +15947,30 @@ code {
 
     aspect-ratio: 1 / 1;
 
-    transform:
-        translateX(-50%);
-
     z-index: 5;
 
     isolation: isolate;
 
     pointer-events: none;
+}
 
-    --ars-gold-color:
+
+/* =========================================================
+   GOLD SYSTEM
+   ========================================================= */
+
+.ars-gold-system {
+
+    left: 50%;
+    top: 2.5%;
+
+    transform:
+        translateX(-50%);
+
+    --system-color:
         255,181,35;
 
-    --ars-gold-bright:
+    --system-bright:
         #ffe19a;
 
     color:
@@ -15968,10 +15979,33 @@ code {
 
 
 /* =========================================================
-   GOLD ATMOSPHERE
+   BLUE SYSTEM
    ========================================================= */
 
-.ars-gold-atmosphere {
+.ars-blue-system {
+
+    left: 50%;
+    bottom: 2.5%;
+
+    transform:
+        translateX(-50%);
+
+    --system-color:
+        0,153,255;
+
+    --system-bright:
+        #8bdcff;
+
+    color:
+        #18a9ff;
+}
+
+
+/* =========================================================
+   SYSTEM ATMOSPHERE
+   ========================================================= */
+
+.ars-system-atmosphere {
 
     position: absolute;
 
@@ -15983,7 +16017,7 @@ code {
 }
 
 
-.ars-gold-glow {
+.system-glow {
 
     position: absolute;
 
@@ -15995,39 +16029,39 @@ code {
 }
 
 
-.ars-gold-glow-01 {
+.system-glow.glow-01 {
 
     inset: 22%;
 
     background:
         radial-gradient(
             circle,
-            rgba(var(--ars-gold-color),.35),
+            rgba(var(--system-color),.35),
             transparent 70%
         );
 }
 
 
-.ars-gold-glow-02 {
+.system-glow.glow-02 {
 
     inset: 4%;
 
     border:
         1px solid
-        rgba(var(--ars-gold-color),.16);
+        rgba(var(--system-color),.16);
 
     filter: blur(10px);
 }
 
 
-.ars-gold-glow-03 {
+.system-glow.glow-03 {
 
     inset: 34%;
 
     background:
         radial-gradient(
             circle,
-            rgba(var(--ars-gold-color),.28),
+            rgba(var(--system-color),.28),
             transparent 70%
         );
 
@@ -16036,10 +16070,10 @@ code {
 
 
 /* =========================================================
-   GOLD ORBIT FIELD
+   ORBIT FIELD
    ========================================================= */
 
-.ars-gold-orbits {
+.ars-orbits {
 
     position: absolute;
 
@@ -16055,10 +16089,10 @@ code {
 
 
 /* =========================================================
-   GOLD ORBIT BASE
+   ORBITS
    ========================================================= */
 
-.ars-gold-orbit {
+.ars-orbit {
 
     position: absolute;
 
@@ -16075,7 +16109,7 @@ code {
 
     border:
         1px solid
-        rgba(var(--ars-gold-color),.28);
+        rgba(var(--system-color),.28);
 
     border-radius: 50%;
 
@@ -16085,22 +16119,22 @@ code {
         center center;
 
     animation:
-        arsGoldIndependentOrbit
+        arsIndependentOrbit
         22s
         linear
         infinite;
 
     box-shadow:
         0 0 12px
-        rgba(var(--ars-gold-color),.08);
+        rgba(var(--system-color),.08);
 }
 
 
 /* =========================================================
-   GOLD ORBIT SCALE
+   ORBIT SCALE
    ========================================================= */
 
-.ars-gold-orbit-01 {
+.ars-orbit.orbit-01 {
 
     width: 94%;
     height: 94%;
@@ -16110,7 +16144,7 @@ code {
 }
 
 
-.ars-gold-orbit-02 {
+.ars-orbit.orbit-02 {
 
     width: 84%;
     height: 84%;
@@ -16128,7 +16162,7 @@ code {
 }
 
 
-.ars-gold-orbit-03 {
+.ars-orbit.orbit-03 {
 
     width: 73%;
     height: 73%;
@@ -16140,7 +16174,7 @@ code {
 }
 
 
-.ars-gold-orbit-04 {
+.ars-orbit.orbit-04 {
 
     width: 62%;
     height: 62%;
@@ -16158,7 +16192,7 @@ code {
 }
 
 
-.ars-gold-orbit-05 {
+.ars-orbit.orbit-05 {
 
     width: 51%;
     height: 51%;
@@ -16171,10 +16205,10 @@ code {
 
 
 /* =========================================================
-   GOLD ORBIT MOTION
+   ORBIT MOTION
    ========================================================= */
 
-@keyframes arsGoldIndependentOrbit {
+@keyframes arsIndependentOrbit {
 
     from {
 
@@ -16193,10 +16227,10 @@ code {
 
 
 /* =========================================================
-   GOLD HORIZONTAL ENERGY PLANE
+   HORIZONTAL ENERGY PLANE
    ========================================================= */
 
-.ars-gold-system::before {
+.ars-orbital-system::before {
 
     content: "";
 
@@ -16213,13 +16247,13 @@ code {
 
     border:
         1px solid
-        rgba(var(--ars-gold-color),.32);
+        rgba(var(--system-color),.32);
 
     border-radius: 50%;
 
     box-shadow:
         0 0 18px
-        rgba(var(--ars-gold-color),.10);
+        rgba(var(--system-color),.10);
 
     z-index: 2;
 
@@ -16228,10 +16262,10 @@ code {
 
 
 /* =========================================================
-   GOLD ENERGY NETWORK
+   ENERGY NETWORK
    ========================================================= */
 
-.ars-gold-energy-network {
+.ars-energy-network {
 
     position: absolute;
 
@@ -16243,7 +16277,7 @@ code {
 }
 
 
-.ars-gold-energy-ray {
+.energy-ray {
 
     position: absolute;
 
@@ -16261,52 +16295,52 @@ code {
         linear-gradient(
             90deg,
             transparent,
-            rgba(var(--ars-gold-color),.75),
+            rgba(var(--system-color),.75),
             transparent
         );
 
     box-shadow:
         0 0 7px
-        rgba(var(--ars-gold-color),.55);
+        rgba(var(--system-color),.55);
 
     opacity: .58;
 }
 
 
-.ars-gold-ray-01 {
+.ray-01 {
     transform: rotate(-90deg);
 }
 
-.ars-gold-ray-02 {
+.ray-02 {
     transform: rotate(-30deg);
 }
 
-.ars-gold-ray-03 {
+.ray-03 {
     transform: rotate(30deg);
 }
 
-.ars-gold-ray-04 {
+.ray-04 {
     transform: rotate(90deg);
 }
 
-.ars-gold-ray-05 {
+.ray-05 {
     transform: rotate(150deg);
 }
 
-.ars-gold-ray-06 {
+.ray-06 {
     transform: rotate(210deg);
 }
 
-.ars-gold-ray-07 {
+.ray-07 {
     transform: rotate(270deg);
 }
 
 
 /* =========================================================
-   GOLD PARTICLES
+   PARTICLES
    ========================================================= */
 
-.ars-gold-particle {
+.energy-particle {
 
     position: absolute;
 
@@ -16316,11 +16350,11 @@ code {
     border-radius: 50%;
 
     background:
-        var(--ars-gold-bright);
+        var(--system-bright);
 
     box-shadow:
         0 0 7px
-        var(--ars-gold-bright);
+        var(--system-bright);
 
     opacity: .8;
 }
@@ -16328,44 +16362,94 @@ code {
 
 /* =========================================================
    GOLD — SIX NODE GEOMETRY
+   =========================================================
+
+   CENTER:
+       50% / 50%
+
+   ALL SIX NODES:
+       SAME RADIUS
+       SAME ORBIT
+       60° ANGULAR STEP
+
    ========================================================= */
 
-.ars-gold-node-01 {
+.ars-gold-system .node-01 {
     left: 50%;
     top: 11%;
 }
 
-.ars-gold-node-02 {
+.ars-gold-system .node-02 {
     left: 83.77%;
     top: 30.5%;
 }
 
-.ars-gold-node-03 {
+.ars-gold-system .node-03 {
     left: 83.77%;
     top: 69.5%;
 }
 
-.ars-gold-node-04 {
+.ars-gold-system .node-04 {
     left: 50%;
     top: 89%;
 }
 
-.ars-gold-node-05 {
+.ars-gold-system .node-05 {
     left: 16.23%;
     top: 69.5%;
 }
 
-.ars-gold-node-06 {
+.ars-gold-system .node-06 {
     left: 16.23%;
     top: 30.5%;
 }
 
 
 /* =========================================================
-   GOLD NODE BASE
+   BLUE — SEVEN NODE GEOMETRY
    ========================================================= */
 
-.ars-gold-node {
+.ars-blue-system .node-01 {
+    left: 50%;
+    top: 10%;
+}
+
+.ars-blue-system .node-02 {
+    left: 81.3%;
+    top: 28.3%;
+}
+
+.ars-blue-system .node-03 {
+    left: 89%;
+    top: 50%;
+}
+
+.ars-blue-system .node-04 {
+    left: 69.5%;
+    top: 88%;
+}
+
+.ars-blue-system .node-05 {
+    left: 30.5%;
+    top: 88%;
+}
+
+.ars-blue-system .node-06 {
+    left: 11%;
+    top: 50%;
+}
+
+.ars-blue-system .node-07 {
+    left: 18.7%;
+    top: 28.3%;
+}
+
+
+/* =========================================================
+   NODE
+   ========================================================= */
+
+.ars-system-node {
 
     position: absolute;
 
@@ -16383,34 +16467,31 @@ code {
     transform:
         translate(-50%,-50%);
 
-    color:
-        inherit;
+    color: inherit;
 
-    text-decoration:
-        none;
+    text-decoration: none;
 
     z-index: 8;
 
     filter:
         drop-shadow(
             0 0 8px
-            rgba(var(--ars-gold-color),.32)
+            rgba(var(--system-color),.32)
         );
 
     transition:
         transform .35s ease,
         filter .35s ease;
 
-    pointer-events:
-        auto;
+    pointer-events: auto;
 }
 
 
 /* =========================================================
-   GOLD NODE HOVER
+   NODE HOVER
    ========================================================= */
 
-.ars-gold-node:hover {
+.ars-system-node:hover {
 
     transform:
         translate(-50%,-50%)
@@ -16419,16 +16500,16 @@ code {
     filter:
         drop-shadow(
             0 0 16px
-            rgba(var(--ars-gold-color),.75)
+            rgba(var(--system-color),.75)
         );
 }
 
 
 /* =========================================================
-   GOLD NODE HALO
+   NODE HALO
    ========================================================= */
 
-.ars-gold-node-halo {
+.node-halo {
 
     position: absolute;
 
@@ -16439,7 +16520,7 @@ code {
     background:
         radial-gradient(
             circle,
-            rgba(var(--ars-gold-color),.24),
+            rgba(var(--system-color),.24),
             transparent 68%
         );
 
@@ -16451,10 +16532,10 @@ code {
 
 
 /* =========================================================
-   GOLD NODE ORBIT
+   NODE ORBIT
    ========================================================= */
 
-.ars-gold-node-orbit {
+.node-orbit {
 
     position: absolute;
 
@@ -16462,7 +16543,7 @@ code {
 
     border:
         1px solid
-        rgba(var(--ars-gold-color),.55);
+        rgba(var(--system-color),.55);
 
     border-top-color:
         transparent;
@@ -16475,10 +16556,10 @@ code {
 
 
 /* =========================================================
-   GOLD NODE RIM
+   NODE RIM
    ========================================================= */
 
-.ars-gold-node-rim {
+.node-rim {
 
     position: absolute;
 
@@ -16486,25 +16567,25 @@ code {
 
     border:
         1px solid
-        rgba(var(--ars-gold-color),.88);
+        rgba(var(--system-color),.88);
 
     border-radius: 50%;
 
     box-shadow:
 
         inset 0 0 10px
-        rgba(var(--ars-gold-color),.30),
+        rgba(var(--system-color),.30),
 
         0 0 10px
-        rgba(var(--ars-gold-color),.30);
+        rgba(var(--system-color),.30);
 }
 
 
 /* =========================================================
-   GOLD NODE RING
+   NODE RING
    ========================================================= */
 
-.ars-gold-node-ring {
+.node-ring {
 
     position: absolute;
 
@@ -16512,7 +16593,7 @@ code {
 
     border:
         2px solid
-        rgba(var(--ars-gold-color),.70);
+        rgba(var(--system-color),.70);
 
     border-left-color:
         transparent;
@@ -16525,10 +16606,10 @@ code {
 
 
 /* =========================================================
-   GOLD NODE CONTENT
+   NODE CONTENT
    ========================================================= */
 
-.ars-gold-node-content {
+.node-content {
 
     position: relative;
 
@@ -16539,6 +16620,7 @@ code {
     flex-direction: column;
 
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
@@ -16549,7 +16631,7 @@ code {
 }
 
 
-.ars-gold-node-content small {
+.node-content small {
 
     font-family:
         Arial,
@@ -16572,7 +16654,7 @@ code {
 }
 
 
-.ars-gold-node-content strong {
+.node-content strong {
 
     font-family:
         Arial,
@@ -16592,14 +16674,14 @@ code {
         .04em;
 
     color:
-        var(--ars-gold-bright);
+        var(--system-bright);
 
     white-space:
         nowrap;
 }
 
 
-.ars-gold-node-content em {
+.node-content em {
 
     margin-top:
         4px;
@@ -16627,10 +16709,10 @@ code {
 
 
 /* =========================================================
-   GOLD SYSTEM CENTER
+   SYSTEM CORE
    ========================================================= */
 
-.ars-gold-center {
+.ars-system-core {
 
     position: absolute;
 
@@ -16654,15 +16736,15 @@ code {
     border-radius: 50%;
 
     color:
-        var(--ars-gold-bright);
+        var(--system-bright);
 }
 
 
 /* =========================================================
-   GOLD CENTER HALO
+   CORE HALO
    ========================================================= */
 
-.ars-gold-center-halo {
+.core-halo {
 
     position: absolute;
 
@@ -16673,7 +16755,7 @@ code {
     background:
         radial-gradient(
             circle,
-            rgba(var(--ars-gold-color),.25),
+            rgba(var(--system-color),.25),
             transparent 68%
         );
 
@@ -16683,10 +16765,10 @@ code {
 
 
 /* =========================================================
-   GOLD CENTER RINGS
+   CORE RINGS
    ========================================================= */
 
-.ars-gold-center-ring {
+.core-ring {
 
     position: absolute;
 
@@ -16694,20 +16776,20 @@ code {
 
     border:
         1px solid
-        rgba(var(--ars-gold-color),.70);
+        rgba(var(--system-color),.70);
 
     box-shadow:
         0 0 10px
-        rgba(var(--ars-gold-color),.18);
+        rgba(var(--system-color),.18);
 }
 
 
-.ars-gold-center-ring-01 {
+.core-ring.ring-01 {
     inset: 0;
 }
 
 
-.ars-gold-center-ring-02 {
+.core-ring.ring-02 {
 
     inset: 7%;
 
@@ -16722,7 +16804,7 @@ code {
 }
 
 
-.ars-gold-center-ring-03 {
+.core-ring.ring-03 {
 
     inset: 14%;
 
@@ -16735,10 +16817,10 @@ code {
 
 
 /* =========================================================
-   GOLD CENTER BODY
+   CORE BODY
    ========================================================= */
 
-.ars-gold-center-body {
+.core-body {
 
     position: relative;
 
@@ -16760,28 +16842,28 @@ code {
     background:
         radial-gradient(
             circle at 50% 40%,
-            rgba(var(--ars-gold-color),.12),
+            rgba(var(--system-color),.12),
             rgba(2,5,9,.97) 67%
         );
 
     border:
         1px solid
-        rgba(var(--ars-gold-color),.52);
+        rgba(var(--system-color),.52);
 
     box-shadow:
 
         inset 0 0 25px
-        rgba(var(--ars-gold-color),.15),
+        rgba(var(--system-color),.15),
 
         0 0 22px
-        rgba(var(--ars-gold-color),.22);
+        rgba(var(--system-color),.22);
 
     overflow:
         hidden;
 }
 
 
-.ars-gold-center-body strong {
+.core-body strong {
 
     position:
         relative;
@@ -16801,15 +16883,15 @@ code {
         .95;
 
     color:
-        var(--ars-gold-bright);
+        var(--system-bright);
 
     text-shadow:
         0 0 12px
-        rgba(var(--ars-gold-color),.65);
+        rgba(var(--system-color),.65);
 }
 
 
-.ars-gold-center-body small {
+.core-body small {
 
     position:
         relative;
@@ -16837,10 +16919,7 @@ code {
 
 
 /* =========================================================
-   =========================================================
-   SYSTEM 02 — ARS HERITAGE GROUP
-   CENTRAL NODE ONLY
-   =========================================================
+   HERITAGE CENTER
    ========================================================= */
 
 .ars-heritage-center {
@@ -16851,6 +16930,7 @@ code {
     top: 50%;
 
     width: min(24vw, 260px);
+
     height: min(24vw, 260px);
 
     min-width: 190px;
@@ -16866,20 +16946,13 @@ code {
 
     z-index: 12;
 
-    --ars-heritage-color:
+    --heritage-color:
         255,195,65;
-
-    --ars-heritage-blue:
-        0,150,255;
-
-    --ars-heritage-bright:
-        #ffe09a;
 
     color:
         #ffe09a;
 
-    pointer-events:
-        none;
+    pointer-events: none;
 }
 
 
@@ -16887,7 +16960,9 @@ code {
    HERITAGE ORBIT
    ========================================================= */
 
-.ars-heritage-orbit {
+.ars-heritage-center::before {
+
+    content: "";
 
     position: absolute;
 
@@ -16902,13 +16977,13 @@ code {
 
     border:
         1px solid
-        rgba(var(--ars-heritage-color),.48);
+        rgba(255,195,65,.48);
 
     border-radius: 50%;
 
     box-shadow:
         0 0 16px
-        rgba(var(--ars-heritage-color),.18);
+        rgba(255,180,30,.18);
 }
 
 
@@ -16916,7 +16991,7 @@ code {
    HERITAGE HALO
    ========================================================= */
 
-.ars-heritage-halo {
+.heritage-halo {
 
     position: absolute;
 
@@ -16927,8 +17002,8 @@ code {
     background:
         radial-gradient(
             circle,
-            rgba(var(--ars-heritage-color),.25),
-            rgba(var(--ars-heritage-blue),.08) 48%,
+            rgba(255,190,45,.25),
+            rgba(0,140,255,.08) 48%,
             transparent 70%
         );
 
@@ -16941,7 +17016,7 @@ code {
    HERITAGE RINGS
    ========================================================= */
 
-.ars-heritage-ring {
+.heritage-ring {
 
     position: absolute;
 
@@ -16958,11 +17033,11 @@ code {
 
     border:
         1px solid
-        rgba(var(--ars-heritage-color),.72);
+        rgba(255,195,65,.72);
 }
 
 
-.ars-heritage-ring-02 {
+.heritage-ring.ring-02 {
 
     width: 89%;
     height: 89%;
@@ -16978,7 +17053,7 @@ code {
 }
 
 
-.ars-heritage-ring-03 {
+.heritage-ring.ring-03 {
 
     width: 78%;
     height: 78%;
@@ -16991,13 +17066,13 @@ code {
 }
 
 
-.ars-heritage-ring-04 {
+.heritage-ring.ring-04 {
 
     width: 67%;
     height: 67%;
 
     border-color:
-        rgba(var(--ars-heritage-blue),.60);
+        rgba(0,150,255,.60);
 }
 
 
@@ -17005,7 +17080,7 @@ code {
    HERITAGE ENERGY
    ========================================================= */
 
-.ars-heritage-energy {
+.heritage-energy {
 
     position: absolute;
 
@@ -17023,19 +17098,19 @@ code {
         linear-gradient(
             90deg,
             transparent,
-            rgba(var(--ars-heritage-blue),.72),
+            rgba(0,150,255,.72),
             rgba(255,205,90,1),
-            rgba(var(--ars-heritage-blue),.72),
+            rgba(0,150,255,.72),
             transparent
         );
 
     box-shadow:
 
         0 0 12px
-        rgba(var(--ars-heritage-color),.45),
+        rgba(255,190,45,.45),
 
         0 0 18px
-        rgba(var(--ars-heritage-blue),.35);
+        rgba(0,145,255,.35);
 
     filter:
         blur(.5px);
@@ -17043,10 +17118,10 @@ code {
 
 
 /* =========================================================
-   HERITAGE CENTRAL NODE
+   HERITAGE BODY
    ========================================================= */
 
-.ars-heritage-node {
+.heritage-body {
 
     position: absolute;
 
@@ -17074,7 +17149,7 @@ code {
     background:
         radial-gradient(
             circle at 50% 40%,
-            rgba(var(--ars-heritage-color),.12),
+            rgba(255,195,65,.12),
             rgba(2,5,10,.98) 66%
         );
 
@@ -17085,52 +17160,20 @@ code {
     box-shadow:
 
         inset 0 0 30px
-        rgba(var(--ars-heritage-color),.14),
+        rgba(255,185,40,.14),
 
         0 0 25px
-        rgba(var(--ars-heritage-color),.20),
+        rgba(255,180,30,.20),
 
         0 0 55px
-        rgba(var(--ars-heritage-blue),.12);
+        rgba(0,120,255,.12);
 
     overflow:
         hidden;
 }
 
 
-/* =========================================================
-   HERITAGE NODE CONTENT
-   ========================================================= */
-
-.ars-heritage-node-content {
-
-    position:
-        relative;
-
-    z-index:
-        10;
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    width:
-        100%;
-
-    text-align:
-        center;
-}
-
-
-.ars-heritage-node-content strong {
+.heritage-body strong {
 
     position:
         relative;
@@ -17154,11 +17197,11 @@ code {
 
     text-shadow:
         0 0 12px
-        rgba(var(--ars-heritage-color),.70);
+        rgba(255,195,65,.70);
 }
 
 
-.ars-heritage-node-content small {
+.heritage-body small {
 
     position:
         relative;
@@ -17182,929 +17225,6 @@ code {
 
     color:
         rgba(255,255,255,.82);
-}
-
-
-/* =========================================================
-   =========================================================
-   SYSTEM 03 — ARS BLUE
-   =========================================================
-   ========================================================= */
-
-
-/* =========================================================
-   BLUE SYSTEM CONTAINER
-   ========================================================= */
-
-.ars-blue-system {
-
-    position: absolute;
-
-    left: 50%;
-    bottom: 2.5%;
-
-    width: min(34vw, 390px);
-    height: min(34vw, 390px);
-
-    min-width: 280px;
-    min-height: 280px;
-
-    max-width: 390px;
-    max-height: 390px;
-
-    aspect-ratio: 1 / 1;
-
-    transform:
-        translateX(-50%);
-
-    z-index: 5;
-
-    isolation: isolate;
-
-    pointer-events: none;
-
-    --ars-blue-color:
-        0,153,255;
-
-    --ars-blue-bright:
-        #8bdcff;
-
-    color:
-        #18a9ff;
-}
-
-
-/* =========================================================
-   BLUE ATMOSPHERE
-   ========================================================= */
-
-.ars-blue-atmosphere {
-
-    position: absolute;
-
-    inset: -10%;
-
-    z-index: 0;
-
-    pointer-events: none;
-}
-
-
-.ars-blue-glow {
-
-    position: absolute;
-
-    border-radius: 50%;
-
-    opacity: .20;
-
-    filter: blur(30px);
-}
-
-
-.ars-blue-glow-01 {
-
-    inset: 22%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(var(--ars-blue-color),.35),
-            transparent 70%
-        );
-}
-
-
-.ars-blue-glow-02 {
-
-    inset: 4%;
-
-    border:
-        1px solid
-        rgba(var(--ars-blue-color),.16);
-
-    filter: blur(10px);
-}
-
-
-.ars-blue-glow-03 {
-
-    inset: 34%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(var(--ars-blue-color),.28),
-            transparent 70%
-        );
-
-    filter: blur(45px);
-}
-
-
-/* =========================================================
-   BLUE ORBIT FIELD
-   ========================================================= */
-
-.ars-blue-orbits {
-
-    position: absolute;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    z-index: 1;
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   BLUE ORBIT BASE
-   ========================================================= */
-
-.ars-blue-orbit {
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 100%;
-    height: 100%;
-
-    aspect-ratio: 1 / 1;
-
-    transform:
-        translate(-50%,-50%);
-
-    border:
-        1px solid
-        rgba(var(--ars-blue-color),.28);
-
-    border-radius: 50%;
-
-    box-sizing: border-box;
-
-    transform-origin:
-        center center;
-
-    animation:
-        arsBlueIndependentOrbit
-        22s
-        linear
-        infinite;
-
-    box-shadow:
-        0 0 12px
-        rgba(var(--ars-blue-color),.08);
-}
-
-
-/* =========================================================
-   BLUE ORBIT SCALE
-   ========================================================= */
-
-.ars-blue-orbit-01 {
-
-    width: 94%;
-    height: 94%;
-
-    animation-duration:
-        26s;
-}
-
-
-.ars-blue-orbit-02 {
-
-    width: 84%;
-    height: 84%;
-
-    border-style:
-        dashed;
-
-    opacity: .62;
-
-    animation-duration:
-        21s;
-
-    animation-direction:
-        reverse;
-}
-
-
-.ars-blue-orbit-03 {
-
-    width: 73%;
-    height: 73%;
-
-    opacity: .72;
-
-    animation-duration:
-        29s;
-}
-
-
-.ars-blue-orbit-04 {
-
-    width: 62%;
-    height: 62%;
-
-    border-style:
-        dotted;
-
-    opacity: .48;
-
-    animation-duration:
-        19s;
-
-    animation-direction:
-        reverse;
-}
-
-
-.ars-blue-orbit-05 {
-
-    width: 51%;
-    height: 51%;
-
-    opacity: .70;
-
-    animation-duration:
-        33s;
-}
-
-
-/* =========================================================
-   BLUE ORBIT MOTION
-   ========================================================= */
-
-@keyframes arsBlueIndependentOrbit {
-
-    from {
-
-        transform:
-            translate(-50%,-50%)
-            rotate(0deg);
-    }
-
-    to {
-
-        transform:
-            translate(-50%,-50%)
-            rotate(360deg);
-    }
-}
-
-
-/* =========================================================
-   BLUE HORIZONTAL ENERGY PLANE
-   ========================================================= */
-
-.ars-blue-system::before {
-
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 104%;
-    height: 24%;
-
-    transform:
-        translate(-50%,-50%);
-
-    border:
-        1px solid
-        rgba(var(--ars-blue-color),.32);
-
-    border-radius: 50%;
-
-    box-shadow:
-        0 0 18px
-        rgba(var(--ars-blue-color),.10);
-
-    z-index: 2;
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   BLUE ENERGY NETWORK
-   ========================================================= */
-
-.ars-blue-energy-network {
-
-    position: absolute;
-
-    inset: 0;
-
-    z-index: 3;
-
-    pointer-events: none;
-}
-
-
-.ars-blue-energy-ray {
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 42%;
-
-    height: 1px;
-
-    transform-origin:
-        left center;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(var(--ars-blue-color),.75),
-            transparent
-        );
-
-    box-shadow:
-        0 0 7px
-        rgba(var(--ars-blue-color),.55);
-
-    opacity: .58;
-}
-
-
-.ars-blue-ray-01 {
-    transform: rotate(-90deg);
-}
-
-.ars-blue-ray-02 {
-    transform: rotate(-30deg);
-}
-
-.ars-blue-ray-03 {
-    transform: rotate(30deg);
-}
-
-.ars-blue-ray-04 {
-    transform: rotate(90deg);
-}
-
-.ars-blue-ray-05 {
-    transform: rotate(150deg);
-}
-
-.ars-blue-ray-06 {
-    transform: rotate(210deg);
-}
-
-.ars-blue-ray-07 {
-    transform: rotate(270deg);
-}
-
-
-/* =========================================================
-   BLUE PARTICLES
-   ========================================================= */
-
-.ars-blue-particle {
-
-    position: absolute;
-
-    width: 2px;
-    height: 2px;
-
-    border-radius: 50%;
-
-    background:
-        var(--ars-blue-bright);
-
-    box-shadow:
-        0 0 7px
-        var(--ars-blue-bright);
-
-    opacity: .8;
-}
-
-
-/* =========================================================
-   BLUE — SEVEN NODE GEOMETRY
-   ========================================================= */
-
-.ars-blue-node-01 {
-    left: 50%;
-    top: 10%;
-}
-
-.ars-blue-node-02 {
-    left: 81.3%;
-    top: 28.3%;
-}
-
-.ars-blue-node-03 {
-    left: 89%;
-    top: 50%;
-}
-
-.ars-blue-node-04 {
-    left: 69.5%;
-    top: 88%;
-}
-
-.ars-blue-node-05 {
-    left: 30.5%;
-    top: 88%;
-}
-
-.ars-blue-node-06 {
-    left: 11%;
-    top: 50%;
-}
-
-.ars-blue-node-07 {
-    left: 18.7%;
-    top: 28.3%;
-}
-
-
-/* =========================================================
-   BLUE NODE BASE
-   ========================================================= */
-
-.ars-blue-node {
-
-    position: absolute;
-
-    width: 19%;
-
-    aspect-ratio: 1 / 1;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    transform:
-        translate(-50%,-50%);
-
-    color:
-        inherit;
-
-    text-decoration:
-        none;
-
-    z-index: 8;
-
-    filter:
-        drop-shadow(
-            0 0 8px
-            rgba(var(--ars-blue-color),.32)
-        );
-
-    transition:
-        transform .35s ease,
-        filter .35s ease;
-
-    pointer-events:
-        auto;
-}
-
-
-/* =========================================================
-   BLUE NODE HOVER
-   ========================================================= */
-
-.ars-blue-node:hover {
-
-    transform:
-        translate(-50%,-50%)
-        scale(1.08);
-
-    filter:
-        drop-shadow(
-            0 0 16px
-            rgba(var(--ars-blue-color),.75)
-        );
-}
-
-
-/* =========================================================
-   BLUE NODE HALO
-   ========================================================= */
-
-.ars-blue-node-halo {
-
-    position: absolute;
-
-    inset: -28%;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(var(--ars-blue-color),.24),
-            transparent 68%
-        );
-
-    filter:
-        blur(7px);
-
-    z-index: 0;
-}
-
-
-/* =========================================================
-   BLUE NODE ORBIT
-   ========================================================= */
-
-.ars-blue-node-orbit {
-
-    position: absolute;
-
-    inset: -14%;
-
-    border:
-        1px solid
-        rgba(var(--ars-blue-color),.55);
-
-    border-top-color:
-        transparent;
-
-    border-bottom-color:
-        transparent;
-
-    border-radius: 50%;
-}
-
-
-/* =========================================================
-   BLUE NODE RIM
-   ========================================================= */
-
-.ars-blue-node-rim {
-
-    position: absolute;
-
-    inset: 0;
-
-    border:
-        1px solid
-        rgba(var(--ars-blue-color),.88);
-
-    border-radius: 50%;
-
-    box-shadow:
-
-        inset 0 0 10px
-        rgba(var(--ars-blue-color),.30),
-
-        0 0 10px
-        rgba(var(--ars-blue-color),.30);
-}
-
-
-/* =========================================================
-   BLUE NODE RING
-   ========================================================= */
-
-.ars-blue-node-ring {
-
-    position: absolute;
-
-    inset: 8%;
-
-    border:
-        2px solid
-        rgba(var(--ars-blue-color),.70);
-
-    border-left-color:
-        transparent;
-
-    border-right-color:
-        transparent;
-
-    border-radius: 50%;
-}
-
-
-/* =========================================================
-   BLUE NODE CONTENT
-   ========================================================= */
-
-.ars-blue-node-content {
-
-    position: relative;
-
-    z-index: 10;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-
-    line-height: 1;
-
-    width: 100%;
-}
-
-
-.ars-blue-node-content small {
-
-    font-family:
-        Arial,
-        sans-serif;
-
-    font-size:
-        clamp(
-            13px,
-            1.55vw,
-            19px
-        );
-
-    font-weight: 600;
-
-    color:
-        #fff;
-
-    margin-bottom:
-        4px;
-}
-
-
-.ars-blue-node-content strong {
-
-    font-family:
-        Arial,
-        sans-serif;
-
-    font-size:
-        clamp(
-            7px,
-            .78vw,
-            10px
-        );
-
-    font-weight:
-        700;
-
-    letter-spacing:
-        .04em;
-
-    color:
-        var(--ars-blue-bright);
-
-    white-space:
-        nowrap;
-}
-
-
-.ars-blue-node-content em {
-
-    margin-top:
-        4px;
-
-    font-family:
-        Arial,
-        sans-serif;
-
-    font-size:
-        clamp(
-            5px,
-            .55vw,
-            7px
-        );
-
-    font-style:
-        normal;
-
-    letter-spacing:
-        .10em;
-
-    color:
-        rgba(255,255,255,.68);
-}
-
-
-/* =========================================================
-   BLUE SYSTEM CENTER
-   ========================================================= */
-
-.ars-blue-center {
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 40%;
-
-    aspect-ratio: 1 / 1;
-
-    transform:
-        translate(-50%,-50%);
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    z-index: 10;
-
-    border-radius: 50%;
-
-    color:
-        var(--ars-blue-bright);
-}
-
-
-/* =========================================================
-   BLUE CENTER HALO
-   ========================================================= */
-
-.ars-blue-center-halo {
-
-    position: absolute;
-
-    inset: -18%;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(var(--ars-blue-color),.25),
-            transparent 68%
-        );
-
-    filter:
-        blur(12px);
-}
-
-
-/* =========================================================
-   BLUE CENTER RINGS
-   ========================================================= */
-
-.ars-blue-center-ring {
-
-    position: absolute;
-
-    border-radius: 50%;
-
-    border:
-        1px solid
-        rgba(var(--ars-blue-color),.70);
-
-    box-shadow:
-        0 0 10px
-        rgba(var(--ars-blue-color),.18);
-}
-
-
-.ars-blue-center-ring-01 {
-    inset: 0;
-}
-
-
-.ars-blue-center-ring-02 {
-
-    inset: 7%;
-
-    border-width:
-        2px;
-
-    border-left-color:
-        transparent;
-
-    border-right-color:
-        transparent;
-}
-
-
-.ars-blue-center-ring-03 {
-
-    inset: 14%;
-
-    border-style:
-        dashed;
-
-    opacity:
-        .7;
-}
-
-
-/* =========================================================
-   BLUE CENTER BODY
-   ========================================================= */
-
-.ars-blue-center-body {
-
-    position: relative;
-
-    width: 70%;
-
-    aspect-ratio: 1 / 1;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    text-align: center;
-
-    background:
-        radial-gradient(
-            circle at 50% 40%,
-            rgba(var(--ars-blue-color),.12),
-            rgba(2,5,9,.97) 67%
-        );
-
-    border:
-        1px solid
-        rgba(var(--ars-blue-color),.52);
-
-    box-shadow:
-
-        inset 0 0 25px
-        rgba(var(--ars-blue-color),.15),
-
-        0 0 22px
-        rgba(var(--ars-blue-color),.22);
-
-    overflow:
-        hidden;
-}
-
-
-.ars-blue-center-body strong {
-
-    position:
-        relative;
-
-    font-family:
-        Arial,
-        sans-serif;
-
-    font-size:
-        clamp(
-            27px,
-            3.8vw,
-            48px
-        );
-
-    line-height:
-        .95;
-
-    color:
-        var(--ars-blue-bright);
-
-    text-shadow:
-        0 0 12px
-        rgba(var(--ars-blue-color),.65);
-}
-
-
-.ars-blue-center-body small {
-
-    position:
-        relative;
-
-    margin-top:
-        7px;
-
-    font-family:
-        Arial,
-        sans-serif;
-
-    font-size:
-        clamp(
-            6px,
-            .75vw,
-            9px
-        );
-
-    letter-spacing:
-        .18em;
-
-    color:
-        rgba(255,255,255,.80);
 }
 
 
@@ -18154,8 +17274,7 @@ code {
 
 @media (max-width: 900px) {
 
-    .ars-gold-system,
-    .ars-blue-system {
+    .ars-orbital-system {
 
         width: 36vw;
         height: 36vw;
@@ -18169,11 +17288,13 @@ code {
 
 
     .ars-gold-system {
+
         top: 3%;
     }
 
 
     .ars-blue-system {
+
         bottom: 3%;
     }
 
@@ -18213,8 +17334,7 @@ code {
     }
 
 
-    .ars-gold-system,
-    .ars-blue-system {
+    .ars-orbital-system {
 
         width: 64vw;
         height: 64vw;
@@ -18228,11 +17348,13 @@ code {
 
 
     .ars-gold-system {
+
         top: 2%;
     }
 
 
     .ars-blue-system {
+
         bottom: 2%;
     }
 
@@ -18250,52 +17372,47 @@ code {
     }
 
 
-    .ars-gold-node,
-    .ars-blue-node {
+    .ars-system-node {
 
         width: 18%;
     }
 
 
-    .ars-gold-center,
-    .ars-blue-center {
+    .ars-system-core {
 
         width: 42%;
     }
 
 
-    .ars-gold-node-content small,
-    .ars-blue-node-content small {
+    .node-content small {
 
         font-size:
             14px;
     }
 
 
-    .ars-gold-node-content strong,
-    .ars-blue-node-content strong {
+    .node-content strong {
 
         font-size:
             7px;
     }
 
 
-    .ars-gold-node-content em,
-    .ars-blue-node-content em {
+    .node-content em {
 
         font-size:
             5px;
     }
 
 
-    .ars-heritage-node-content strong {
+    .heritage-body strong {
 
         font-size:
             28px;
     }
 
 
-    .ars-heritage-node-content small {
+    .heritage-body small {
 
         font-size:
             6px;
@@ -18317,8 +17434,7 @@ code {
 
 @media (max-width: 390px) {
 
-    .ars-gold-system,
-    .ars-blue-system {
+    .ars-orbital-system {
 
         width: 60vw;
         height: 60vw;
@@ -18332,11 +17448,13 @@ code {
 
 
     .ars-gold-system {
+
         top: 2%;
     }
 
 
     .ars-blue-system {
+
         bottom: 2%;
     }
 
@@ -18351,8 +17469,7 @@ code {
     }
 
 
-    .ars-gold-node,
-    .ars-blue-node {
+    .ars-system-node {
 
         width:
             18%;
@@ -18367,8 +17484,7 @@ code {
 
 @media (prefers-reduced-motion: reduce) {
 
-    .ars-gold-orbit,
-    .ars-blue-orbit {
+    .ars-orbit {
 
         animation:
             none !important;
@@ -18393,9 +17509,443 @@ code {
 
 
 /* =========================================================
-   END — ISOLATED 3-SYSTEM HERO
+   END — FINAL 3 SYSTEM HERO
    ========================================================= */
 
+/* =========================================================
+   ARS HERITAGE GROUP
+   GOLD SYSTEM — STRUCTURAL DIAGNOSTIC PATCH
+   =========================================================
+
+   PURPOSE:
+
+   THIS PATCH DOES NOT REDESIGN GOLD.
+
+   IT TESTS WHETHER THE GOLD SYSTEM IS ACTUALLY
+   CONTROLLED BY ITS OWN HTML NODE STRUCTURE.
+
+   COMMAND SOURCE:
+       .ars-hero-field
+
+   TARGET:
+       GOLD SYSTEM ONLY
+
+   TEST:
+       01 — ORBIT POSITION
+       02 — NODE POSITION
+       03 — NODE 04 DE-CENTERING
+       04 — NODE IDENTITY ISOLATION
+
+   ========================================================= */
+
+
+/* =========================================================
+   GOLD SYSTEM — HARD LOCAL CONTROL
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system {
+
+    position: absolute !important;
+
+    left: 50% !important;
+    top: 2.5% !important;
+
+    width: min(34vw, 390px) !important;
+    height: min(34vw, 390px) !important;
+
+    min-width: 280px !important;
+    min-height: 280px !important;
+
+    max-width: 390px !important;
+    max-height: 390px !important;
+
+    transform:
+        translateX(-50%) !important;
+
+    isolation: isolate !important;
+
+    pointer-events: none !important;
+
+    z-index: 5 !important;
+}
+
+
+/* =========================================================
+   GOLD ORBIT FIELD — HARD RESET
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system
+.ars-orbits {
+
+    position: absolute !important;
+
+    inset: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    transform: none !important;
+
+    pointer-events: none !important;
+
+    z-index: 1 !important;
+}
+
+
+/* =========================================================
+   GOLD ORBITS — HARD LOCAL GEOMETRY
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system
+.ars-orbits
+.ars-orbit {
+
+    position: absolute !important;
+
+    left: 50% !important;
+    top: 50% !important;
+
+    transform:
+        translate(-50%,-50%) !important;
+
+    border-radius: 50% !important;
+
+    pointer-events: none !important;
+
+    box-sizing: border-box !important;
+
+    transform-origin:
+        center center !important;
+}
+
+
+/* =========================================================
+   GOLD ORBIT SIZES
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system
+.ars-orbit.orbit-01 {
+
+    width: 94% !important;
+    height: 94% !important;
+}
+
+
+.ars-hero-field
+.ars-gold-system
+.ars-orbit.orbit-02 {
+
+    width: 84% !important;
+    height: 84% !important;
+}
+
+
+.ars-hero-field
+.ars-gold-system
+.ars-orbit.orbit-03 {
+
+    width: 73% !important;
+    height: 73% !important;
+}
+
+
+.ars-hero-field
+.ars-gold-system
+.ars-orbit.orbit-04 {
+
+    width: 62% !important;
+    height: 62% !important;
+}
+
+
+.ars-hero-field
+.ars-gold-system
+.ars-orbit.orbit-05 {
+
+    width: 51% !important;
+    height: 51% !important;
+}
+
+
+/* =========================================================
+   GOLD NODE FIELD
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system
+.ars-system-node {
+
+    position: absolute !important;
+
+    width: 19% !important;
+
+    aspect-ratio: 1 / 1 !important;
+
+    transform:
+        translate(-50%,-50%) !important;
+
+    z-index: 50 !important;
+
+    pointer-events: auto !important;
+}
+
+
+/* =========================================================
+   GOLD NODE 01
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system
+.ars-system-node.node-01 {
+
+    left: 50% !important;
+    top: 11% !important;
+}
+
+
+/* =========================================================
+   GOLD NODE 02
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system
+.ars-system-node.node-02 {
+
+    left: 83.77% !important;
+    top: 30.5% !important;
+}
+
+
+/* =========================================================
+   GOLD NODE 03
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system
+.ars-system-node.node-03 {
+
+    left: 83.77% !important;
+    top: 69.5% !important;
+}
+
+
+/* =========================================================
+   GOLD NODE 04
+   =========================================================
+
+   CRITICAL DIAGNOSTIC NODE
+
+   THIS MUST NOT BE AT THE CENTER.
+
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system
+.ars-system-node.node-04 {
+
+    left: 50% !important;
+    top: 89% !important;
+
+    margin:
+        0 !important;
+}
+
+
+/* =========================================================
+   GOLD NODE 05
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system
+.ars-system-node.node-05 {
+
+    left: 16.23% !important;
+    top: 69.5% !important;
+}
+
+
+/* =========================================================
+   GOLD NODE 06
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system
+.ars-system-node.node-06 {
+
+    left: 16.23% !important;
+    top: 30.5% !important;
+}
+
+
+/* =========================================================
+   GOLD NODE INTERNAL ORBIT
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system
+.ars-system-node
+.node-orbit {
+
+    position: absolute !important;
+
+    inset: -14% !important;
+
+    pointer-events: none !important;
+}
+
+
+/* =========================================================
+   GOLD NODE INTERNAL VISUAL LAYERS
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system
+.ars-system-node
+.node-halo,
+
+.ars-hero-field
+.ars-gold-system
+.ars-system-node
+.node-rim,
+
+.ars-hero-field
+.ars-gold-system
+.ars-system-node
+.node-ring {
+
+    pointer-events: none !important;
+}
+
+
+/* =========================================================
+   GOLD CORE — KEEP IT CENTERED
+   =========================================================
+
+   IMPORTANT:
+
+   This is the GOLD SYSTEM CORE.
+
+   It is NOT a NODE.
+
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system
+.ars-system-core {
+
+    position: absolute !important;
+
+    left: 50% !important;
+    top: 50% !important;
+
+    transform:
+        translate(-50%,-50%) !important;
+
+    z-index: 20 !important;
+}
+
+
+/* =========================================================
+   GOLD SYSTEM — KILL POSSIBLE NODE TRANSFORM LEAK
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system
+.ars-system-node.node-04:hover {
+
+    left: 50% !important;
+    top: 89% !important;
+
+    transform:
+        translate(-50%,-50%)
+        scale(1.08) !important;
+}
+
+
+/* =========================================================
+   GOLD SYSTEM — MOBILE DIAGNOSTIC
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .ars-hero-field
+    .ars-gold-system {
+
+        width: 64vw !important;
+        height: 64vw !important;
+
+        min-width: 220px !important;
+        min-height: 220px !important;
+
+        max-width: 270px !important;
+        max-height: 270px !important;
+    }
+
+
+    .ars-hero-field
+    .ars-gold-system
+    .ars-system-node {
+
+        width: 18% !important;
+    }
+
+
+    .ars-hero-field
+    .ars-gold-system
+    .ars-system-node.node-01 {
+        left: 50% !important;
+        top: 11% !important;
+    }
+
+
+    .ars-hero-field
+    .ars-gold-system
+    .ars-system-node.node-02 {
+        left: 83.77% !important;
+        top: 30.5% !important;
+    }
+
+
+    .ars-hero-field
+    .ars-gold-system
+    .ars-system-node.node-03 {
+        left: 83.77% !important;
+        top: 69.5% !important;
+    }
+
+
+    .ars-hero-field
+    .ars-gold-system
+    .ars-system-node.node-04 {
+        left: 50% !important;
+        top: 89% !important;
+    }
+
+
+    .ars-hero-field
+    .ars-gold-system
+    .ars-system-node.node-05 {
+        left: 16.23% !important;
+        top: 69.5% !important;
+    }
+
+
+    .ars-hero-field
+    .ars-gold-system
+    .ars-system-node.node-06 {
+        left: 16.23% !important;
+        top: 30.5% !important;
+    }
+}
+
+
+/* =========================================================
+   END — GOLD STRUCTURAL DIAGNOSTIC PATCH
+   ========================================================= */
 
 
 
