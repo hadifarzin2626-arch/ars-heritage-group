@@ -17248,166 +17248,198 @@ code {
    END — NEW PREMIUM HERO
    ========================================================= */
 /* =========================================================
-   ARS HERO — GOLD NODE ORBIT PATCH 01
-   PURPOSE:
-   SIX GOLD NODES — ONE COMMON ORBIT
+   ARS GOLD — NODE ORBIT ALIGNMENT PATCH
+   STEP 01 — SIX NODES ON ONE DEDICATED ORBIT
+   DO NOT MODIFY ORIGINAL CSS
    ========================================================= */
 
-.ars-hero-field .ars-gold-system .ars-system-node {
-    /*
-     * Every Gold node uses the same orbital radius.
-     * The positions below are calculated around the
-     * exact center of the Gold system.
-     */
-    left: 50%;
-    top: 50%;
+
+/* ---------------------------------------------------------
+   GOLD DEDICATED NODE ORBIT
+   --------------------------------------------------------- */
+
+.ars-gold-system {
+    --gold-node-radius: 42%;
 }
 
 
-/* =========================================================
-   GOLD NODE 01 — 12 O'CLOCK
-   ========================================================= */
+/* ---------------------------------------------------------
+   IMPORTANT:
+   The six nodes are positioned against ONE dedicated
+   circular geometry instead of the master vertical axis.
+   --------------------------------------------------------- */
 
-.ars-hero-field .ars-gold-system .node-01 {
+.ars-gold-system .ars-system-node {
+    position: absolute;
+    width: 19%;
+    aspect-ratio: 1;
+    z-index: 20;
+}
+
+
+/* ---------------------------------------------------------
+   NODE 01
+   TOP
+   --------------------------------------------------------- */
+
+.ars-gold-system .node-01 {
     left: 50%;
     top: 8%;
 }
 
 
-/* =========================================================
-   GOLD NODE 02 — 2 O'CLOCK
-   ========================================================= */
+/* ---------------------------------------------------------
+   NODE 02
+   UPPER RIGHT
+   --------------------------------------------------------- */
 
-.ars-hero-field .ars-gold-system .node-02 {
-    left: 86.5%;
+.ars-gold-system .node-02 {
+    left: 82%;
     top: 29%;
 }
 
 
-/* =========================================================
-   GOLD NODE 03 — 4 O'CLOCK
-   ========================================================= */
+/* ---------------------------------------------------------
+   NODE 03
+   LOWER RIGHT
+   --------------------------------------------------------- */
 
-.ars-hero-field .ars-gold-system .node-03 {
-    left: 86.5%;
+.ars-gold-system .node-03 {
+    left: 82%;
     top: 71%;
 }
 
 
-/* =========================================================
-   GOLD NODE 04 — 6 O'CLOCK
-   ========================================================= */
+/* ---------------------------------------------------------
+   NODE 04
+   BOTTOM
+   IMPORTANT:
+   Keep it away from the Heritage core.
+   It remains on the same six-node orbit.
+   --------------------------------------------------------- */
 
-.ars-hero-field .ars-gold-system .node-04 {
+.ars-gold-system .node-04 {
     left: 50%;
     top: 92%;
 }
 
 
-/* =========================================================
-   GOLD NODE 05 — 8 O'CLOCK
-   ========================================================= */
+/* ---------------------------------------------------------
+   NODE 05
+   LOWER LEFT
+   --------------------------------------------------------- */
 
-.ars-hero-field .ars-gold-system .node-05 {
-    left: 13.5%;
+.ars-gold-system .node-05 {
+    left: 18%;
     top: 71%;
 }
 
 
-/* =========================================================
-   GOLD NODE 06 — 10 O'CLOCK
-   ========================================================= */
+/* ---------------------------------------------------------
+   NODE 06
+   UPPER LEFT
+   --------------------------------------------------------- */
 
-.ars-hero-field .ars-gold-system .node-06 {
-    left: 13.5%;
+.ars-gold-system .node-06 {
+    left: 18%;
     top: 29%;
 }
 
 
 /* =========================================================
-   GOLD COMMON ORBIT GUIDE
-   ---------------------------------------------------------
-   Temporary visual calibration ring.
-   It can be removed later without touching the nodes.
+   GOLD NODE CONNECTION ORBIT
    ========================================================= */
 
-.ars-hero-field .ars-gold-system .ars-orbits {
+.ars-gold-system .ars-orbits::after {
+    content: "";
+
     position: absolute;
-
-    inset: 0;
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   GOLD PRIMARY NODE ORBIT
-   ========================================================= */
-
-.ars-hero-field .ars-gold-system .ars-orbit.orbit-01 {
-    width: 84%;
-    height: 84%;
 
     left: 50%;
     top: 50%;
 
-    transform: translate(-50%, -50%);
+    width: 84%;
+    height: 84%;
 
-    border-radius: 50%;
+    transform:
+        translate(-50%, -50%);
 
     border:
         1px solid
-        rgba(255,181,35,.45);
+        rgba(255, 181, 35, .48);
+
+    border-radius: 50%;
 
     box-shadow:
-        0 0 14px
-        rgba(255,181,35,.12);
+        0 0 10px
+        rgba(255, 181, 35, .16),
+
+        inset 0 0 10px
+        rgba(255, 181, 35, .08);
+
+    pointer-events: none;
+
+    z-index: 2;
 }
 
 
 /* =========================================================
-   GOLD SECONDARY ORBITS
+   GOLD NODE CONNECTION ENERGY
+   ========================================================= */
+
+.ars-gold-system .ars-energy-network {
+    z-index: 4;
+}
+
+
+/* ---------------------------------------------------------
+   Keep the energy rays behind the nodes
+   --------------------------------------------------------- */
+
+.ars-gold-system .energy-ray {
+    z-index: 1;
+}
+
+
+/* =========================================================
+   GOLD NODE VISIBILITY
+   ========================================================= */
+
+.ars-gold-system .ars-system-node {
+    filter:
+        drop-shadow(
+            0 0 8px
+            rgba(255,181,35,.40)
+        );
+}
+
+
+/* =========================================================
+   GOLD NODE 04 — EXTRA CLEARANCE
    ---------------------------------------------------------
-   Kept intact but visually subordinate.
+   This does NOT move it onto the Heritage core.
+   It guarantees visual separation from the center.
    ========================================================= */
 
-.ars-hero-field .ars-gold-system .orbit-02 {
-    width: 76%;
-    height: 76%;
-}
-
-.ars-hero-field .ars-gold-system .orbit-03 {
-    width: 68%;
-    height: 68%;
-}
-
-.ars-hero-field .ars-gold-system .orbit-04 {
-    width: 58%;
-    height: 58%;
-}
-
-.ars-hero-field .ars-gold-system .orbit-05 {
-    width: 48%;
-    height: 48%;
+.ars-gold-system .node-04 {
+    margin-top: 1%;
 }
 
 
 /* =========================================================
-   GOLD NODE ALIGNMENT LOCK
+   GOLD NODE 05 / 06
+   Keep equal geometric spacing from node 04
    ========================================================= */
 
-.ars-hero-field .ars-gold-system .ars-system-node {
-    transform:
-        translate(-50%, -50%);
+.ars-gold-system .node-05,
+.ars-gold-system .node-06 {
+    margin: 0;
 }
 
 
 /* =========================================================
-   END — GOLD NODE ORBIT PATCH 01
+   END — STEP 01
    ========================================================= */
-
-
-
 
 
 
