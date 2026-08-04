@@ -19005,18 +19005,99 @@ code {
 /* =========================================================
    END — FINAL POSITION PATCH
    ========================================================= */
+
+/* =========================================================
+   ARS HERO — ORBITAL SYSTEM ROTATION TEST
+   GOLD + BLUE
+   مدار و نودها با هم می‌چرخند
+   ========================================================= */
+
 .ars-hero-field
 .ars-hero-master-geometry
-.ars-gold-system {
-    animation: arsGoldRotation 8s linear infinite !important;
+.ars-orbital-system {
+
+    animation:
+        ars-orbital-rotation 24s linear infinite !important;
+
+    transform-origin:
+        50% 50% !important;
+
+    will-change:
+        transform !important;
 }
 
-@keyframes arsGoldRotation {
+
+/* =========================================================
+   ROTATION
+   ========================================================= */
+
+@keyframes ars-orbital-rotation {
+
     from {
-        transform: translateX(-50%) rotate(0deg) !important;
+        transform:
+            rotate(0deg);
     }
 
     to {
-        transform: translateX(-50%) rotate(360deg) !important;
+        transform:
+            rotate(360deg);
     }
+
 }
+
+
+/* =========================================================
+   CORE — COUNTER ROTATION
+   هسته ثابت از نظر نوشته و ظاهر
+   ========================================================= */
+
+.ars-hero-field
+.ars-hero-master-geometry
+.ars-orbital-system
+.ars-system-core {
+
+    animation:
+        ars-core-counter-rotation 24s linear infinite !important;
+
+}
+
+
+@keyframes ars-core-counter-rotation {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(-360deg);
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ars-hero-field
+    .ars-hero-master-geometry
+    .ars-orbital-system {
+
+        animation:
+            none !important;
+    }
+
+}
+
+
+
+
+
+
+
