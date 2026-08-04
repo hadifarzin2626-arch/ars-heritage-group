@@ -19095,7 +19095,178 @@ code {
 
 }
 
+/* =========================================================
+   ARS HERITAGE CENTER
+   SINGLE-NODE PREMIUM ORBIT PATCH
+   ========================================================= */
 
+/* ---------------------------------------------------------
+   01 — HERITAGE CENTER : +25% SCALE
+   --------------------------------------------------------- */
+
+.ars-hero-field
+.ars-hero-master-geometry
+.ars-heritage-center {
+
+    transform:
+        translate(-50%, -50%)
+        scale(1.25) !important;
+
+    z-index: 100 !important;
+
+    isolation: isolate !important;
+}
+
+
+/* ---------------------------------------------------------
+   02 — STRONGER GOLD + BLUE PRESENCE
+   --------------------------------------------------------- */
+
+.ars-hero-field
+.ars-heritage-center
+.heritage-body {
+
+    filter:
+        saturate(1.20)
+        brightness(1.20) !important;
+}
+
+
+/* ---------------------------------------------------------
+   03 — BLUE SECONDARY ORBIT
+   EXACTLY AROUND THE EXISTING HERITAGE ORBIT
+   --------------------------------------------------------- */
+
+.ars-hero-field
+.ars-heritage-center::after {
+
+    content: "" !important;
+
+    position: absolute !important;
+
+    left: 50% !important;
+    top: 50% !important;
+
+    width: 112% !important;
+    height: 112% !important;
+
+    border-radius: 50% !important;
+
+    transform:
+        translate(-50%, -50%) !important;
+
+    border:
+        1.5px solid rgba(80, 180, 255, .90) !important;
+
+    box-shadow:
+        0 0 8px rgba(50, 150, 255, .65),
+        0 0 20px rgba(30, 120, 255, .35),
+        inset 0 0 8px rgba(60, 170, 255, .25) !important;
+
+    pointer-events: none !important;
+
+    z-index: 1 !important;
+
+    animation:
+        ars-heritage-blue-orbit
+        9s linear infinite !important;
+
+    transform-origin:
+        center center !important;
+}
+
+
+/* ---------------------------------------------------------
+   04 — BLUE ORBIT ENERGY
+   --------------------------------------------------------- */
+
+.ars-hero-field
+.ars-heritage-center::before {
+
+    content: "" !important;
+
+    position: absolute !important;
+
+    left: 50% !important;
+    top: 50% !important;
+
+    width: 112% !important;
+    height: 112% !important;
+
+    border-radius: 50% !important;
+
+    transform:
+        translate(-50%, -50%) !important;
+
+    border:
+        1px solid rgba(90, 190, 255, .45) !important;
+
+    box-shadow:
+        0 0 14px rgba(40, 150, 255, .45) !important;
+
+    pointer-events: none !important;
+
+    z-index: 0 !important;
+
+    animation:
+        ars-heritage-blue-orbit-glow
+        9s linear infinite !important;
+}
+
+
+/* ---------------------------------------------------------
+   05 — BLUE ORBIT ROTATION
+   --------------------------------------------------------- */
+
+@keyframes ars-heritage-blue-orbit {
+
+    from {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+
+    }
+
+    to {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   06 — SECONDARY BLUE ENERGY ROTATION
+   --------------------------------------------------------- */
+
+@keyframes ars-heritage-blue-orbit-glow {
+
+    from {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+
+    }
+
+    to {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   END — SINGLE NODE HERITAGE CENTER PATCH
+   ========================================================= */
 
 
 
