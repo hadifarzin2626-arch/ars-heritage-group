@@ -19005,21 +19005,18 @@ code {
 /* =========================================================
    END — FINAL POSITION PATCH
    ========================================================= */
-/* =========================================================
-   GOLD — SIMPLE ORBIT ROTATION TEST
-   ========================================================= */
-
-.ars-gold-system .ars-orbits {
-    animation: goldOrbitSpin 8s linear infinite !important;
+.ars-hero-field
+.ars-hero-master-geometry
+.ars-gold-system {
+    animation: arsGoldRotation 8s linear infinite !important;
 }
 
-@keyframes goldOrbitSpin {
+@keyframes arsGoldRotation {
     from {
-        transform: rotate(0deg);
+        transform: translateX(-50%) rotate(0deg) !important;
     }
 
     to {
-        transform: rotate(360deg);
+        transform: translateX(-50%) rotate(360deg) !important;
     }
 }
-/* 
