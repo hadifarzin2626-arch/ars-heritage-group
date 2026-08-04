@@ -2727,7 +2727,46 @@ const heritageCenter =
     document.querySelector(
         ".ars-heritage-center"
     );
+/* =========================================================
+   HERO — HERITAGE DUAL BELT ORBIT ENGINE
+   ========================================================= */
 
+const heritageBelts =
+    document.querySelectorAll(
+        ".ars-heritage-center .heritage-belt-orbit"
+    );
+
+if (heritageBelts.length) {
+
+    let heritageOrbitAngle = 0;
+
+    function animateHeritageBelts() {
+
+        heritageOrbitAngle += 0.35;
+
+        heritageBelts.forEach(
+            (belt, index) => {
+
+                const offset =
+                    index === 0 ? 0 : 90;
+
+                belt.style.setProperty(
+                    "--heritage-orbit-angle",
+                    `${heritageOrbitAngle + offset}deg`
+                );
+
+            }
+        );
+
+        requestAnimationFrame(
+            animateHeritageBelts
+        );
+
+    }
+
+    animateHeritageBelts();
+
+}
 
    HERO — MOUSE PARALLAX
 
