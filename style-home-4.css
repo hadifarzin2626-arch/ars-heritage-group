@@ -16335,6 +16335,7 @@ code {
 
 /* =========================================================
    GOLD — SIX NODE GEOMETRY
+   REBUILT — SINGLE ORBIT / SIX NODES
    ========================================================= */
 
 .ars-gold-system .node-01 {
@@ -16366,6 +16367,35 @@ code {
     left: 18%;
     top: 29%;
 }
+
+
+/* =========================================================
+   GOLD NODE ORBIT
+   ========================================================= */
+
+.ars-gold-system .node-01,
+.ars-gold-system .node-02,
+.ars-gold-system .node-03,
+.ars-gold-system .node-04,
+.ars-gold-system .node-05,
+.ars-gold-system .node-06 {
+    position: absolute;
+    z-index: 8;
+}
+
+
+/* =========================================================
+   GOLD NODE 04 — CLEAR GAP FROM HERITAGE CORE
+   ========================================================= */
+
+.ars-gold-system .node-04 {
+    top: 96%;
+}
+
+
+/* =========================================================
+   END — GOLD SIX NODE GEOMETRY
+   ========================================================= */
 
 
 /* =========================================================
@@ -17247,199 +17277,3 @@ code {
 /* =========================================================
    END — NEW PREMIUM HERO
    ========================================================= */
-/* =========================================================
-   ARS GOLD — NODE ORBIT ALIGNMENT PATCH
-   STEP 01 — SIX NODES ON ONE DEDICATED ORBIT
-   DO NOT MODIFY ORIGINAL CSS
-   ========================================================= */
-
-
-/* ---------------------------------------------------------
-   GOLD DEDICATED NODE ORBIT
-   --------------------------------------------------------- */
-
-.ars-gold-system {
-    --gold-node-radius: 42%;
-}
-
-
-/* ---------------------------------------------------------
-   IMPORTANT:
-   The six nodes are positioned against ONE dedicated
-   circular geometry instead of the master vertical axis.
-   --------------------------------------------------------- */
-
-.ars-gold-system .ars-system-node {
-    position: absolute;
-    width: 19%;
-    aspect-ratio: 1;
-    z-index: 20;
-}
-
-
-/* ---------------------------------------------------------
-   NODE 01
-   TOP
-   --------------------------------------------------------- */
-
-.ars-gold-system .node-01 {
-    left: 50%;
-    top: 8%;
-}
-
-
-/* ---------------------------------------------------------
-   NODE 02
-   UPPER RIGHT
-   --------------------------------------------------------- */
-
-.ars-gold-system .node-02 {
-    left: 82%;
-    top: 29%;
-}
-
-
-/* ---------------------------------------------------------
-   NODE 03
-   LOWER RIGHT
-   --------------------------------------------------------- */
-
-.ars-gold-system .node-03 {
-    left: 82%;
-    top: 71%;
-}
-
-
-/* ---------------------------------------------------------
-   NODE 04
-   BOTTOM
-   IMPORTANT:
-   Keep it away from the Heritage core.
-   It remains on the same six-node orbit.
-   --------------------------------------------------------- */
-
-.ars-gold-system .node-04 {
-    left: 50%;
-    top: 92%;
-}
-
-
-/* ---------------------------------------------------------
-   NODE 05
-   LOWER LEFT
-   --------------------------------------------------------- */
-
-.ars-gold-system .node-05 {
-    left: 18%;
-    top: 71%;
-}
-
-
-/* ---------------------------------------------------------
-   NODE 06
-   UPPER LEFT
-   --------------------------------------------------------- */
-
-.ars-gold-system .node-06 {
-    left: 18%;
-    top: 29%;
-}
-
-
-/* =========================================================
-   GOLD NODE CONNECTION ORBIT
-   ========================================================= */
-
-.ars-gold-system .ars-orbits::after {
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 84%;
-    height: 84%;
-
-    transform:
-        translate(-50%, -50%);
-
-    border:
-        1px solid
-        rgba(255, 181, 35, .48);
-
-    border-radius: 50%;
-
-    box-shadow:
-        0 0 10px
-        rgba(255, 181, 35, .16),
-
-        inset 0 0 10px
-        rgba(255, 181, 35, .08);
-
-    pointer-events: none;
-
-    z-index: 2;
-}
-
-
-/* =========================================================
-   GOLD NODE CONNECTION ENERGY
-   ========================================================= */
-
-.ars-gold-system .ars-energy-network {
-    z-index: 4;
-}
-
-
-/* ---------------------------------------------------------
-   Keep the energy rays behind the nodes
-   --------------------------------------------------------- */
-
-.ars-gold-system .energy-ray {
-    z-index: 1;
-}
-
-
-/* =========================================================
-   GOLD NODE VISIBILITY
-   ========================================================= */
-
-.ars-gold-system .ars-system-node {
-    filter:
-        drop-shadow(
-            0 0 8px
-            rgba(255,181,35,.40)
-        );
-}
-
-
-/* =========================================================
-   GOLD NODE 04 — EXTRA CLEARANCE
-   ---------------------------------------------------------
-   This does NOT move it onto the Heritage core.
-   It guarantees visual separation from the center.
-   ========================================================= */
-
-.ars-gold-system .node-04 {
-    margin-top: 1%;
-}
-
-
-/* =========================================================
-   GOLD NODE 05 / 06
-   Keep equal geometric spacing from node 04
-   ========================================================= */
-
-.ars-gold-system .node-05,
-.ars-gold-system .node-06 {
-    margin: 0;
-}
-
-
-/* =========================================================
-   END — STEP 01
-   ========================================================= */
-
-
-
