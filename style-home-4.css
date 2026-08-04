@@ -19005,3 +19005,183 @@ code {
 /* =========================================================
    END — FINAL POSITION PATCH
    ========================================================= */
+
+/* =========================================================
+   ARS HERO — GOLD SYSTEM
+   REAL ORBITAL NODE ROTATION — TEST PATCH
+   =========================================================
+
+   TEST ONLY — GOLD SYSTEM
+
+   CORE      = STATIC
+   ORBITS    = ROTATE
+   06 NODES  = ROTATE WITH THE SYSTEM
+
+   IMPORTANT:
+   The node geometry itself is preserved.
+   Only the complete Gold orbital system rotates.
+
+   ========================================================= */
+
+
+/* =========================================================
+   GOLD SYSTEM — ROTATION SPACE
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system {
+
+    transform-origin:
+        center center !important;
+
+    animation:
+        arsGoldSystemRotation
+        36s
+        linear
+        infinite !important;
+}
+
+
+/* =========================================================
+   GOLD SYSTEM — REAL ROTATION
+   ========================================================= */
+
+@keyframes arsGoldSystemRotation {
+
+    from {
+
+        transform:
+            translateX(-50%)
+            rotate(0deg);
+
+    }
+
+    to {
+
+        transform:
+            translateX(-50%)
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   GOLD CORE — LOCKED
+   =========================================================
+
+   The entire Gold system rotates,
+   but the Core must visually remain fixed.
+
+   Therefore the Core receives the opposite rotation.
+
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system
+.ars-system-core {
+
+    animation:
+        arsGoldCoreCounterRotation
+        36s
+        linear
+        infinite !important;
+
+}
+
+
+/* =========================================================
+   GOLD CORE COUNTER ROTATION
+   ========================================================= */
+
+@keyframes arsGoldCoreCounterRotation {
+
+    from {
+
+        transform:
+            translate(-50%,-50%)
+            rotate(0deg);
+
+    }
+
+    to {
+
+        transform:
+            translate(-50%,-50%)
+            rotate(-360deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   GOLD NODES
+   =========================================================
+
+   Nodes are children of the rotating Gold system.
+
+   Therefore they automatically travel with
+   the orbital system around the Core.
+
+   ========================================================= */
+
+
+/* =========================================================
+   GOLD NODE HOVER
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system
+.ars-system-node:hover {
+
+    z-index:
+        100 !important;
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ars-hero-field
+    .ars-gold-system,
+    
+    .ars-hero-field
+    .ars-gold-system
+    .ars-system-core {
+
+        animation:
+            none !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   END — GOLD ROTATION TEST
+   ========================================================= */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
