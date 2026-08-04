@@ -2744,25 +2744,24 @@ if (heroField) {
                 (event.clientY - rect.top)
                 / rect.height - 0.5;
 
+heroNodes.forEach(
+    (node, index) => {
 
-            heroNodes.forEach(
-                (node, index) => {
-(index % 8 + 1) * 2.5
+        const depth =
+            (index % 7 + 1) * 2.5;
 
-                    node.style.setProperty(
-                        "--hero-parallax-x",
-                        `${x * depth}px`
-                    );
+        node.style.setProperty(
+            "--hero-parallax-x",
+            `${x * depth}px`
+        );
 
-                    node.style.setProperty(
-                        "--hero-parallax-y",
-                        `${y * depth}px`
-                    );
+        node.style.setProperty(
+            "--hero-parallax-y",
+            `${y * depth}px`
+        );
 
-                }
-            );
-
-
+    }
+);
             heroOrbits.forEach(
                 (orbit, index) => {
 
@@ -3574,64 +3573,6 @@ document.addEventListener("DOMContentLoaded", function () {
             card.classList.add("is-selected");
 
         });
-
-    });
-
-});
-
-</script>
-
-<script>
-
-/* =========================================================
-   ARS HERO — ORBITAL NODE MOTION
-   GOLD + BLUE
-   Nodes rotate WITH their own orbital system
-   Cores remain fixed
-   ========================================================= */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    const systems = document.querySelectorAll(
-        ".ars-hero-master-geometry .ars-orbital-system"
-    );
-
-    systems.forEach((system) => {
-
-        const nodes = system.querySelectorAll(
-            ".ars-system-node"
-        );
-
-        if (!nodes.length) return;
-
-        let angle = 0;
-
-        const speed =
-            system.classList.contains("ars-gold-system")
-                ? 0.018
-                : 0.014;
-
-
-        function rotateSystem() {
-
-            angle += speed;
-
-            nodes.forEach((node) => {
-
-                node.style.setProperty(
-                    "--orbital-angle",
-                    `${angle}rad`
-                );
-
-            });
-
-            requestAnimationFrame(
-                rotateSystem
-            );
-        }
-
-
-        rotateSystem();
 
     });
 
