@@ -17248,359 +17248,166 @@ code {
    END — NEW PREMIUM HERO
    ========================================================= */
 /* =========================================================
-   ARS HERITAGE GROUP
-   PREMIUM HERO — PATCH 01
-   GEOMETRY / PROPORTION / VERTICAL CALIBRATION
-
-   LOCK RULE:
-   ---------------------------------------------------------
-   ORIGINAL CSS IS LOCKED.
-   THIS PATCH IS FULLY OVERRIDABLE / REMOVABLE.
-
+   ARS HERO — GOLD NODE ORBIT PATCH 01
    PURPOSE:
-   1. GOLD SYSTEM  → wider + shorter
-   2. BLUE SYSTEM  → wider + shorter
-   3. GOLD SYSTEM  → move upward
-   4. BLUE SYSTEM  → remain below Heritage
-   5. HERITAGE     → remain central
-   6. DO NOT MODIFY HTML / JS
-   7. DO NOT MODIFY ORIGINAL CSS
+   SIX GOLD NODES — ONE COMMON ORBIT
    ========================================================= */
 
-
-/* =========================================================
-   PATCH ROOT VARIABLES
-   ========================================================= */
-
-.ars-hero-field {
-
-    --ars-patch-system-width: 48vw;
-
-    --ars-patch-system-max-width: 520px;
-    --ars-patch-system-min-width: 300px;
-
-    --ars-patch-gold-shift-y: -4vh;
-    --ars-patch-blue-shift-y: 2vh;
-
-}
-
-
-/* =========================================================
-   GOLD SYSTEM
-   ---------------------------------------------------------
-   Wider + shorter
-   ========================================================= */
-
-.ars-hero-field .ars-gold-system {
-
-    width: var(--ars-patch-system-width);
-
-    max-width: var(--ars-patch-system-max-width);
-
-    min-width: var(--ars-patch-system-min-width);
-
+.ars-hero-field .ars-gold-system .ars-system-node {
     /*
-     * Original square geometry is intentionally replaced
-     * ONLY inside this patch.
+     * Every Gold node uses the same orbital radius.
+     * The positions below are calculated around the
+     * exact center of the Gold system.
      */
-    aspect-ratio: 1.15 / 1;
-
-    /*
-     * Move the complete Gold system upward.
-     */
-    transform:
-        translateY(var(--ars-patch-gold-shift-y));
-
+    left: 50%;
+    top: 50%;
 }
 
 
 /* =========================================================
-   BLUE SYSTEM
-   ---------------------------------------------------------
-   Wider + shorter
-   ========================================================= */
-
-.ars-hero-field .ars-blue-system {
-
-    width: var(--ars-patch-system-width);
-
-    max-width: var(--ars-patch-system-max-width);
-
-    min-width: var(--ars-patch-system-min-width);
-
-    aspect-ratio: 1.15 / 1;
-
-    transform:
-        translateY(var(--ars-patch-blue-shift-y));
-
-}
-
-
-/* =========================================================
-   IMPORTANT:
-   KEEP HERITAGE CENTER ON ITS OWN AXIS
-   ========================================================= */
-
-.ars-hero-field .ars-heritage-center {
-
-    transform: none;
-
-}
-
-
-/* =========================================================
-   GOLD SYSTEM — INTERNAL GEOMETRY COMPENSATION
-   ---------------------------------------------------------
-   Because the container became shorter,
-   move the outer node positions inward slightly.
+   GOLD NODE 01 — 12 O'CLOCK
    ========================================================= */
 
 .ars-hero-field .ars-gold-system .node-01 {
-
-    top: 10%;
-
+    left: 50%;
+    top: 8%;
 }
+
+
+/* =========================================================
+   GOLD NODE 02 — 2 O'CLOCK
+   ========================================================= */
 
 .ars-hero-field .ars-gold-system .node-02 {
-
-    left: 80%;
-    top: 30%;
-
+    left: 86.5%;
+    top: 29%;
 }
+
+
+/* =========================================================
+   GOLD NODE 03 — 4 O'CLOCK
+   ========================================================= */
 
 .ars-hero-field .ars-gold-system .node-03 {
-
-    left: 80%;
-    top: 70%;
-
+    left: 86.5%;
+    top: 71%;
 }
+
+
+/* =========================================================
+   GOLD NODE 04 — 6 O'CLOCK
+   ========================================================= */
 
 .ars-hero-field .ars-gold-system .node-04 {
-
-    top: 90%;
-
+    left: 50%;
+    top: 92%;
 }
+
+
+/* =========================================================
+   GOLD NODE 05 — 8 O'CLOCK
+   ========================================================= */
 
 .ars-hero-field .ars-gold-system .node-05 {
-
-    left: 20%;
-    top: 70%;
-
+    left: 13.5%;
+    top: 71%;
 }
+
+
+/* =========================================================
+   GOLD NODE 06 — 10 O'CLOCK
+   ========================================================= */
 
 .ars-hero-field .ars-gold-system .node-06 {
-
-    left: 20%;
-    top: 30%;
-
+    left: 13.5%;
+    top: 29%;
 }
 
 
 /* =========================================================
-   BLUE SYSTEM — INTERNAL GEOMETRY COMPENSATION
+   GOLD COMMON ORBIT GUIDE
+   ---------------------------------------------------------
+   Temporary visual calibration ring.
+   It can be removed later without touching the nodes.
    ========================================================= */
 
-.ars-hero-field .ars-blue-system .node-01 {
+.ars-hero-field .ars-gold-system .ars-orbits {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   GOLD PRIMARY NODE ORBIT
+   ========================================================= */
+
+.ars-hero-field .ars-gold-system .ars-orbit.orbit-01 {
+    width: 84%;
+    height: 84%;
 
     left: 50%;
-    top: 9%;
-
-}
-
-.ars-hero-field .ars-blue-system .node-02 {
-
-    left: 77%;
-    top: 23%;
-
-}
-
-.ars-hero-field .ars-blue-system .node-03 {
-
-    left: 87%;
     top: 50%;
 
-}
+    transform: translate(-50%, -50%);
 
-.ars-hero-field .ars-blue-system .node-04 {
+    border-radius: 50%;
 
-    left: 70%;
-    top: 78%;
+    border:
+        1px solid
+        rgba(255,181,35,.45);
 
-}
-
-.ars-hero-field .ars-blue-system .node-05 {
-
-    left: 30%;
-    top: 78%;
-
-}
-
-.ars-hero-field .ars-blue-system .node-06 {
-
-    left: 13%;
-    top: 50%;
-
-}
-
-.ars-hero-field .ars-blue-system .node-07 {
-
-    left: 23%;
-    top: 23%;
-
+    box-shadow:
+        0 0 14px
+        rgba(255,181,35,.12);
 }
 
 
 /* =========================================================
-   PATCH — SYSTEM ORBIT PROPORTION
+   GOLD SECONDARY ORBITS
    ---------------------------------------------------------
-   Make the main orbital field follow the new wider shape.
+   Kept intact but visually subordinate.
    ========================================================= */
 
-.ars-hero-field .ars-orbital-system .ars-orbits {
+.ars-hero-field .ars-gold-system .orbit-02 {
+    width: 76%;
+    height: 76%;
+}
 
-    width: 100%;
-    height: 100%;
+.ars-hero-field .ars-gold-system .orbit-03 {
+    width: 68%;
+    height: 68%;
+}
 
+.ars-hero-field .ars-gold-system .orbit-04 {
+    width: 58%;
+    height: 58%;
+}
+
+.ars-hero-field .ars-gold-system .orbit-05 {
+    width: 48%;
+    height: 48%;
 }
 
 
 /* =========================================================
-   PATCH — HORIZONTAL ENERGY PLANE
-   ---------------------------------------------------------
-   Preserve the wide constellation character.
+   GOLD NODE ALIGNMENT LOCK
    ========================================================= */
 
-.ars-hero-field .ars-orbital-system::before {
-
-    width: 108%;
-    height: 25%;
-
+.ars-hero-field .ars-gold-system .ars-system-node {
+    transform:
+        translate(-50%, -50%);
 }
 
 
 /* =========================================================
-   PATCH — MOBILE GEOMETRY
+   END — GOLD NODE ORBIT PATCH 01
    ========================================================= */
 
-@media (max-width: 600px) {
-
-    .ars-hero-field {
-
-        --ars-patch-system-width: 42vw;
-
-        --ars-patch-system-max-width: 285px;
-        --ars-patch-system-min-width: 220px;
-
-        --ars-patch-gold-shift-y: -1vh;
-        --ars-patch-blue-shift-y: 1vh;
-
-    }
 
 
-    .ars-hero-field .ars-gold-system,
-    .ars-hero-field .ars-blue-system {
-
-        width: var(--ars-patch-system-width);
-
-        max-width: var(--ars-patch-system-max-width);
-
-        min-width: var(--ars-patch-system-min-width);
-
-        aspect-ratio: 1.15 / 1;
-
-    }
 
 
-    .ars-hero-field .ars-gold-system {
 
-        transform:
-            translateY(var(--ars-patch-gold-shift-y));
-
-    }
-
-
-    .ars-hero-field .ars-blue-system {
-
-        transform:
-            translateY(var(--ars-patch-blue-shift-y));
-
-    }
-
-
-    /* ---------------------------------------------
-       GOLD MOBILE NODE GEOMETRY
-       --------------------------------------------- */
-
-    .ars-hero-field .ars-gold-system .node-01 {
-        top: 10%;
-    }
-
-    .ars-hero-field .ars-gold-system .node-02 {
-        left: 80%;
-        top: 30%;
-    }
-
-    .ars-hero-field .ars-gold-system .node-03 {
-        left: 80%;
-        top: 70%;
-    }
-
-    .ars-hero-field .ars-gold-system .node-04 {
-        top: 90%;
-    }
-
-    .ars-hero-field .ars-gold-system .node-05 {
-        left: 20%;
-        top: 70%;
-    }
-
-    .ars-hero-field .ars-gold-system .node-06 {
-        left: 20%;
-        top: 30%;
-    }
-
-
-    /* ---------------------------------------------
-       BLUE MOBILE NODE GEOMETRY
-       --------------------------------------------- */
-
-    .ars-hero-field .ars-blue-system .node-01 {
-        top: 9%;
-    }
-
-    .ars-hero-field .ars-blue-system .node-02 {
-        left: 77%;
-        top: 23%;
-    }
-
-    .ars-hero-field .ars-blue-system .node-03 {
-        left: 87%;
-        top: 50%;
-    }
-
-    .ars-hero-field .ars-blue-system .node-04 {
-        left: 70%;
-        top: 78%;
-    }
-
-    .ars-hero-field .ars-blue-system .node-05 {
-        left: 30%;
-        top: 78%;
-    }
-
-    .ars-hero-field .ars-blue-system .node-06 {
-        left: 13%;
-        top: 50%;
-    }
-
-    .ars-hero-field .ars-blue-system .node-07 {
-        left: 23%;
-        top: 23%;
-    }
-
-}
-
-
-/* =========================================================
-   PATCH 01 END
-   ========================================================= */
