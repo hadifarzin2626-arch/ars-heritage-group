@@ -19327,3 +19327,71 @@ code {
     }
 
           }
+
+
+
+
+/* =========================================================
+   HERITAGE BELTS — REAL CONTINUOUS ORBIT ROTATION
+   ========================================================= */
+
+.ars-heritage-center .heritage-belt-gold {
+
+    animation:
+        heritage-gold-orbit
+        10s linear infinite !important;
+}
+
+
+.ars-heritage-center .heritage-belt-blue {
+
+    animation:
+        heritage-blue-orbit
+        10s linear infinite reverse !important;
+}
+
+
+/* =========================================================
+   GOLD — FULL 360° ORBIT
+   ========================================================= */
+
+@keyframes heritage-gold-orbit {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotateX(0deg)
+            rotateY(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotateX(0deg)
+            rotateY(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   BLUE — FULL 360° ORBIT
+   ========================================================= */
+
+@keyframes heritage-blue-orbit {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotateY(90deg)
+            rotateX(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotateY(90deg)
+            rotateX(360deg);
+    }
+
+}
