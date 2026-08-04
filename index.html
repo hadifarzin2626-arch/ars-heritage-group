@@ -3581,7 +3581,63 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </script>
 
+<script>
 
+/* =========================================================
+   ARS HERO — ORBITAL NODE MOTION
+   GOLD + BLUE
+   Nodes rotate WITH their own orbital system
+   Cores remain fixed
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const systems = document.querySelectorAll(
+        ".ars-hero-master-geometry .ars-orbital-system"
+    );
+
+    systems.forEach((system) => {
+
+        const nodes = system.querySelectorAll(
+            ".ars-system-node"
+        );
+
+        if (!nodes.length) return;
+
+        let angle = 0;
+
+        const speed =
+            system.classList.contains("ars-gold-system")
+                ? 0.018
+                : 0.014;
+
+
+        function rotateSystem() {
+
+            angle += speed;
+
+            nodes.forEach((node) => {
+
+                node.style.setProperty(
+                    "--orbital-angle",
+                    `${angle}rad`
+                );
+
+            });
+
+            requestAnimationFrame(
+                rotateSystem
+            );
+        }
+
+
+        rotateSystem();
+
+    });
+
+});
+
+</script>
 
 
 
