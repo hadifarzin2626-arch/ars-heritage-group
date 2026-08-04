@@ -19177,3 +19177,1055 @@ code {
 /* =========================================================
    END —vvvvvvvv SINGLE NODE HERITAGE CENTER PATCH
    ========================================================= */
+/* =========================================================
+   ARS HERITAGE GROUP — HOME
+   PREMIUM VISUAL MASTER PATCH
+   =========================================================
+   MASTER GOLD — LOCKED
+   Base Gold  : rgb(255,195,65)
+   Bright Gold: #FFE09A
+
+   STRUCTURE:
+   6 CARDS + 1 HERITAGE CORE + 7 CARDS
+
+   ENERGY BRIDGES:
+   RESERVED / UNTOUCHED
+   ========================================================= */
+
+
+/* =========================================================
+   01 — MASTER DESIGN TOKENS
+   ========================================================= */
+
+:root {
+
+    /* =====================================================
+       ARS MASTER GOLD — EXACT HERO HERITAGE GOLD
+       ===================================================== */
+
+    --ars-gold-rgb:
+        255, 195, 65;
+
+    --ars-gold-master:
+        rgb(255, 195, 65);
+
+    --ars-gold-bright:
+        #FFE09A;
+
+
+    /* =====================================================
+       ARS MASTER BLUE
+       ===================================================== */
+
+    --ars-blue-rgb:
+        54, 174, 245;
+
+    --ars-blue-master:
+        rgb(54, 174, 245);
+
+
+    /* =====================================================
+       PREMIUM GLASS
+       ===================================================== */
+
+    --ars-glass:
+        rgba(255,255,255,.045);
+
+    --ars-glass-strong:
+        rgba(255,255,255,.075);
+
+}
+
+
+/* =========================================================
+   02 — GLOBAL GOLD TEXT
+   ========================================================= */
+
+.ars-gold-master {
+
+    color:
+        var(--ars-gold-master) !important;
+
+}
+
+
+.ars-gold-bright {
+
+    color:
+        var(--ars-gold-bright) !important;
+
+}
+
+
+/* =========================================================
+   03 — GLOBAL GOLD BORDER
+   ========================================================= */
+
+.ars-gold-border {
+
+    border-color:
+        var(--ars-gold-master) !important;
+
+}
+
+
+/* =========================================================
+   04 — GLOBAL GOLD GLOW
+   SAME GOLD — ONLY OPACITY CHANGES
+   ========================================================= */
+
+.ars-gold-glow {
+
+    text-shadow:
+
+        0 0 8px
+        rgba(
+            var(--ars-gold-rgb),
+            .48
+        ),
+
+        0 0 22px
+        rgba(
+            var(--ars-gold-rgb),
+            .22
+        );
+
+}
+
+
+/* =========================================================
+   05 — GLOBAL GOLD SHADOW
+   ========================================================= */
+
+.ars-gold-shadow {
+
+    box-shadow:
+
+        0 12px 34px
+        rgba(
+            var(--ars-gold-rgb),
+            .22
+        ),
+
+        0 0 34px
+        rgba(
+            var(--ars-gold-rgb),
+            .12
+        );
+
+}
+
+
+/* =========================================================
+   06 — PREMIUM GLASS FRAME
+   BLUE BORDER + GOLD SHADOW
+   ========================================================= */
+
+.ars-premium-glass {
+
+    position:
+        relative;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    box-sizing:
+        border-box;
+
+    padding:
+        10px 22px;
+
+    min-height:
+        40px;
+
+    border-radius:
+        17px;
+
+    border:
+        1px solid
+        rgba(
+            var(--ars-blue-rgb),
+            .68
+        );
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.075),
+            rgba(255,255,255,.025)
+        );
+
+    backdrop-filter:
+        blur(16px)
+        saturate(135%);
+
+    -webkit-backdrop-filter:
+        blur(16px)
+        saturate(135%);
+
+    box-shadow:
+
+        0 0 0 1px
+        rgba(255,255,255,.025),
+
+        0 9px 28px
+        rgba(0,0,0,.28),
+
+        0 0 25px
+        rgba(
+            var(--ars-blue-rgb),
+            .16
+        ),
+
+        0 15px 42px
+        rgba(
+            var(--ars-gold-rgb),
+            .22
+        );
+
+    cursor:
+        pointer;
+
+    transition:
+
+        transform
+        .38s cubic-bezier(.16,1,.3,1),
+
+        border-color
+        .38s ease,
+
+        box-shadow
+        .38s ease,
+
+        background
+        .38s ease;
+
+}
+
+
+/* =========================================================
+   07 — PREMIUM GLASS HOVER
+   ========================================================= */
+
+.ars-premium-glass:hover {
+
+    transform:
+        translateY(-2px)
+        scale(1.025);
+
+    border-color:
+        rgba(
+            var(--ars-blue-rgb),
+            .96
+        );
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.095),
+            rgba(255,255,255,.035)
+        );
+
+    box-shadow:
+
+        0 12px 34px
+        rgba(0,0,0,.34),
+
+        0 0 32px
+        rgba(
+            var(--ars-blue-rgb),
+            .26
+        ),
+
+        0 18px 52px
+        rgba(
+            var(--ars-gold-rgb),
+            .30
+        );
+
+}
+
+
+/* =========================================================
+   08 — BLUE PREMIUM TEXT
+   ========================================================= */
+
+.ars-premium-blue {
+
+    color:
+        var(--ars-blue-master) !important;
+
+    text-shadow:
+
+        0 0 7px
+        rgba(
+            var(--ars-blue-rgb),
+            .30
+        ),
+
+        0 0 18px
+        rgba(
+            var(--ars-blue-rgb),
+            .13
+        );
+
+}
+
+
+/* =========================================================
+   09 — GOLD PREMIUM TEXT
+   ========================================================= */
+
+.ars-premium-gold {
+
+    color:
+        var(--ars-gold-master) !important;
+
+    text-shadow:
+
+        0 0 8px
+        rgba(
+            var(--ars-gold-rgb),
+            .46
+        ),
+
+        0 0 20px
+        rgba(
+            var(--ars-gold-rgb),
+            .20
+        );
+
+}
+
+
+/* =========================================================
+   10 — HERO BRAND
+   AUTOMOTIVE REVIVAL INTELLIGENCE
+   ========================================================= */
+
+.ars-hero-brand {
+
+    position:
+        relative;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        9px 22px;
+
+    min-height:
+        38px;
+
+    border-radius:
+        17px;
+
+    border:
+        1px solid
+        rgba(
+            var(--ars-blue-rgb),
+            .70
+        );
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.07),
+            rgba(255,255,255,.025)
+        );
+
+    backdrop-filter:
+        blur(15px)
+        saturate(135%);
+
+    -webkit-backdrop-filter:
+        blur(15px)
+        saturate(135%);
+
+    box-shadow:
+
+        0 8px 26px
+        rgba(
+            var(--ars-blue-rgb),
+            .18
+        ),
+
+        0 15px 42px
+        rgba(
+            var(--ars-gold-rgb),
+            .24
+        );
+
+    color:
+        var(--ars-gold-bright);
+
+    cursor:
+        pointer;
+
+}
+
+
+/* =========================================================
+   11 — HERO BRAND TEXT
+   ========================================================= */
+
+.ars-hero-brand span {
+
+    color:
+        var(--ars-gold-bright) !important;
+
+    text-shadow:
+
+        0 0 8px
+        rgba(
+            var(--ars-gold-rgb),
+            .42
+        ),
+
+        0 0 20px
+        rgba(
+            var(--ars-gold-rgb),
+            .18
+        );
+
+}
+
+
+/* =========================================================
+   12 — HERITAGE CENTER
+   MASTER GOLD +20% PRESENCE
+   ========================================================= */
+
+.ars-hero-field
+.ars-heritage-center {
+
+    --heritage-color:
+        var(--ars-gold-rgb);
+
+    color:
+        var(--ars-gold-bright);
+
+}
+
+
+/* =========================================================
+   13 — HERITAGE CENTER BODY
+   +20% GOLD / BLUE PRESENCE
+   ========================================================= */
+
+.ars-hero-field
+.ars-heritage-center
+.heritage-body {
+
+    filter:
+        saturate(1.20)
+        brightness(1.20) !important;
+
+}
+
+
+/* =========================================================
+   14 — HERITAGE ORBIT
+   MASTER GOLD
+   ========================================================= */
+
+.ars-hero-field
+.ars-heritage-center::before {
+
+    border-color:
+        rgba(
+            var(--ars-gold-rgb),
+            .48
+        );
+
+    box-shadow:
+
+        0 0 16px
+        rgba(
+            var(--ars-gold-rgb),
+            .20
+        );
+
+}
+
+
+/* =========================================================
+   15 — GOLD BUTTON
+   ========================================================= */
+
+.ars-gold-button {
+
+    color:
+        var(--ars-gold-master) !important;
+
+    border:
+        1px solid
+        var(--ars-gold-master);
+
+    background:
+        rgba(255,255,255,.035);
+
+    box-shadow:
+
+        0 8px 24px
+        rgba(
+            var(--ars-gold-rgb),
+            .22
+        );
+
+    cursor:
+        pointer;
+
+    transition:
+
+        transform .35s ease,
+
+        box-shadow .35s ease,
+
+        background .35s ease;
+
+}
+
+
+/* =========================================================
+   16 — GOLD BUTTON HOVER
+   ========================================================= */
+
+.ars-gold-button:hover {
+
+    transform:
+        translateY(-2px);
+
+    background:
+        rgba(
+            var(--ars-gold-rgb),
+            .08
+        );
+
+    box-shadow:
+
+        0 0 24px
+        rgba(
+            var(--ars-gold-rgb),
+            .40
+        ),
+
+        0 14px 38px
+        rgba(
+            var(--ars-gold-rgb),
+            .24
+        );
+
+}
+
+
+/* =========================================================
+   17 — 14 CARD SYSTEM
+   6 + 1 + 7
+   ========================================================= */
+
+.ars-ecosystem-universe
+.ars-system-card {
+
+    cursor:
+        pointer;
+
+    box-shadow:
+
+        0 10px 28px
+        rgba(0,0,0,.28),
+
+        0 15px 42px
+        rgba(
+            var(--ars-gold-rgb),
+            .18
+        );
+
+    transition:
+
+        transform .38s cubic-bezier(.16,1,.3,1),
+
+        box-shadow .38s ease,
+
+        border-color .38s ease;
+
+}
+
+
+/* =========================================================
+   18 — BLUE WORDS ON ALL 14 CARDS
+   ========================================================= */
+
+.ars-ecosystem-universe
+.ars-system-card strong,
+
+.ars-ecosystem-universe
+.ars-system-card small,
+
+.ars-ecosystem-universe
+.ars-system-card em {
+
+    color:
+        var(--ars-blue-master) !important;
+
+}
+
+
+/* =========================================================
+   19 — BLUE CARD TEXT GLOW
+   ========================================================= */
+
+.ars-ecosystem-universe
+.ars-system-card strong,
+
+.ars-ecosystem-universe
+.ars-system-card small,
+
+.ars-ecosystem-universe
+.ars-system-card em {
+
+    text-shadow:
+
+        0 0 7px
+        rgba(
+            var(--ars-blue-rgb),
+            .28
+        ),
+
+        0 0 18px
+        rgba(
+            var(--ars-blue-rgb),
+            .12
+        );
+
+}
+
+
+/* =========================================================
+   20 — THREE ECOSYSTEM SECTION TITLES
+   ========================================================= */
+
+.ars-ecosystem-section-title {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    box-sizing:
+        border-box;
+
+    padding:
+        10px 24px;
+
+    border-radius:
+        17px;
+
+    border:
+        1px solid
+        rgba(
+            var(--ars-blue-rgb),
+            .68
+        );
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.065),
+            rgba(255,255,255,.025)
+        );
+
+    backdrop-filter:
+        blur(15px)
+        saturate(130%);
+
+    -webkit-backdrop-filter:
+        blur(15px)
+        saturate(130%);
+
+    color:
+        var(--ars-blue-master) !important;
+
+    text-shadow:
+
+        0 0 8px
+        rgba(
+            var(--ars-blue-rgb),
+            .28
+        );
+
+    box-shadow:
+
+        0 9px 28px
+        rgba(0,0,0,.25),
+
+        0 15px 42px
+        rgba(
+            var(--ars-gold-rgb),
+            .26
+        );
+
+    cursor:
+        pointer;
+
+    transition:
+
+        transform .38s cubic-bezier(.16,1,.3,1),
+
+        box-shadow .38s ease;
+
+}
+
+
+/* =========================================================
+   21 — SECTION TITLE HOVER
+   ========================================================= */
+
+.ars-ecosystem-section-title:hover {
+
+    transform:
+        translateY(-2px)
+        scale(1.025);
+
+    box-shadow:
+
+        0 12px 32px
+        rgba(0,0,0,.30),
+
+        0 0 30px
+        rgba(
+            var(--ars-blue-rgb),
+            .20
+        ),
+
+        0 18px 48px
+        rgba(
+            var(--ars-gold-rgb),
+            .32
+        );
+
+}
+
+
+/* =========================================================
+   22 — UNIVERSAL PREMIUM FRAME
+   ========================================================= */
+
+.ars-premium-frame {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        10px 22px;
+
+    min-height:
+        40px;
+
+    border-radius:
+        17px;
+
+    border:
+        1px solid
+        rgba(
+            var(--ars-blue-rgb),
+            .70
+        );
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.07),
+            rgba(255,255,255,.025)
+        );
+
+    backdrop-filter:
+        blur(15px)
+        saturate(135%);
+
+    -webkit-backdrop-filter:
+        blur(15px)
+        saturate(135%);
+
+    box-shadow:
+
+        0 8px 26px
+        rgba(
+            var(--ars-blue-rgb),
+            .16
+        ),
+
+        0 15px 42px
+        rgba(
+            var(--ars-gold-rgb),
+            .24
+        );
+
+    cursor:
+        pointer;
+
+    transition:
+        transform .38s cubic-bezier(.16,1,.3,1),
+        box-shadow .38s ease,
+        border-color .38s ease;
+
+}
+
+
+/* =========================================================
+   23 — UNIVERSAL FRAME HOVER
+   ========================================================= */
+
+.ars-premium-frame:hover {
+
+    transform:
+        translateY(-2px)
+        scale(1.025);
+
+    border-color:
+        rgba(
+            var(--ars-blue-rgb),
+            .96
+        );
+
+    box-shadow:
+
+        0 12px 32px
+        rgba(
+            var(--ars-blue-rgb),
+            .24
+        ),
+
+        0 18px 48px
+        rgba(
+            var(--ars-gold-rgb),
+            .30
+        );
+
+}
+
+
+/* =========================================================
+   24 — CLICK / SELECTED STATE
+   JS CAN ADD .is-selected
+   ========================================================= */
+
+.ars-premium-frame.is-selected,
+
+.ars-premium-glass.is-selected,
+
+.ars-ecosystem-section-title.is-selected,
+
+.ars-system-card.is-selected,
+
+.ars-hero-brand.is-selected {
+
+    transform:
+        scale(2);
+
+    z-index:
+        9999;
+
+    box-shadow:
+
+        0 0 30px
+        rgba(
+            var(--ars-blue-rgb),
+            .36
+        ),
+
+        0 0 65px
+        rgba(
+            var(--ars-gold-rgb),
+            .40
+        ),
+
+        0 22px 70px
+        rgba(0,0,0,.55);
+
+}
+
+
+/* =========================================================
+   25 — FINAL ARS HERITAGE GROUP
+   GOLD MASTER
+   ========================================================= */
+
+.ars-heritage-group-title,
+
+.ars-heritage-signature-card,
+.ars-heritage-signature-card * {
+
+    color:
+        var(--ars-gold-bright) !important;
+
+    text-shadow:
+
+        0 0 8px
+        rgba(
+            var(--ars-gold-rgb),
+            .42
+        ),
+
+        0 0 20px
+        rgba(
+            var(--ars-gold-rgb),
+            .18
+        );
+
+}
+
+
+/* =========================================================
+   26 — GOLD ELEMENTS ANYWHERE IN HOME
+   ========================================================= */
+
+.ars-home-gold,
+.ars-home-gold *,
+[data-ars-color="gold"] {
+
+    color:
+        var(--ars-gold-master) !important;
+
+}
+
+
+/* =========================================================
+   27 — GOLD BORDERS ANYWHERE IN HOME
+   ========================================================= */
+
+[data-ars-border="gold"] {
+
+    border-color:
+        var(--ars-gold-master) !important;
+
+}
+
+
+/* =========================================================
+   28 — GOLD SHADOW ANYWHERE IN HOME
+   ========================================================= */
+
+[data-ars-shadow="gold"] {
+
+    box-shadow:
+
+        0 14px 42px
+        rgba(
+            var(--ars-gold-rgb),
+            .28
+        );
+
+}
+
+
+/* =========================================================
+   29 — MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .ars-premium-glass,
+    .ars-premium-frame {
+
+        padding:
+            9px 16px;
+
+        min-height:
+            38px;
+
+        border-radius:
+            14px;
+
+    }
+
+
+    .ars-ecosystem-section-title {
+
+        padding:
+            9px 17px;
+
+        border-radius:
+            14px;
+
+    }
+
+
+    .ars-hero-brand {
+
+        padding:
+            9px 17px;
+
+        border-radius:
+            14px;
+
+    }
+
+
+    .ars-premium-frame.is-selected,
+    .ars-premium-glass.is-selected,
+    .ars-ecosystem-section-title.is-selected,
+    .ars-system-card.is-selected,
+    .ars-hero-brand.is-selected {
+
+        transform:
+            scale(1.35);
+
+    }
+
+}
+
+
+/* =========================================================
+   30 — REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ars-premium-frame,
+    .ars-premium-glass,
+    .ars-ecosystem-section-title,
+    .ars-system-card,
+    .ars-hero-brand {
+
+        transition:
+            none !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   END — ARS PREMIUM VISUAL MASTER PATCH
+   ========================================================= */
+
+
+
+
+
+
+
+
