@@ -19005,3 +19005,451 @@ code {
 /* =========================================================
    END — FINAL POSITION PATCH
    ========================================================= */
+/* =========================================================
+   ARS HERITAGE GROUP
+   ORBITAL CONSTELLATION MOTION
+   GOLD + BLUE — NODES REVOLVE AROUND FIXED CORE
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   GOLD — ORBITAL MOTION
+   --------------------------------------------------------- */
+
+.ars-hero-field
+.ars-gold-system {
+
+    --gold-orbit-speed: 42s;
+}
+
+
+/* Gold nodes move around the Gold core */
+
+.ars-hero-field
+.ars-gold-system
+.gold-node {
+
+    animation:
+        arsGoldOrbitalMotion
+        var(--gold-orbit-speed)
+        linear
+        infinite;
+
+    animation-delay:
+        calc(var(--gold-node-delay, 0s));
+
+    will-change:
+        left,
+        top;
+}
+
+
+/* Individual phase offsets */
+
+.ars-hero-field
+.ars-gold-system
+.gold-node.node-01 {
+    --gold-node-delay: 0s;
+}
+
+.ars-hero-field
+.ars-gold-system
+.gold-node.node-02 {
+    --gold-node-delay: -7s;
+}
+
+.ars-hero-field
+.ars-gold-system
+.gold-node.node-03 {
+    --gold-node-delay: -14s;
+}
+
+.ars-hero-field
+.ars-gold-system
+.gold-node.node-04 {
+    --gold-node-delay: -21s;
+}
+
+.ars-hero-field
+.ars-gold-system
+.gold-node.node-05 {
+    --gold-node-delay: -28s;
+}
+
+.ars-hero-field
+.ars-gold-system
+.gold-node.node-06 {
+    --gold-node-delay: -35s;
+}
+
+
+/* ---------------------------------------------------------
+   BLUE — ORBITAL MOTION
+   --------------------------------------------------------- */
+
+.ars-hero-field
+.ars-blue-system {
+
+    --blue-orbit-speed: 48s;
+}
+
+
+.ars-hero-field
+.ars-blue-system
+.blue-node {
+
+    animation:
+        arsBlueOrbitalMotion
+        var(--blue-orbit-speed)
+        linear
+        infinite;
+
+    animation-delay:
+        calc(var(--blue-node-delay, 0s));
+
+    will-change:
+        left,
+        top;
+}
+
+
+/* Individual phase offsets */
+
+.ars-hero-field
+.ars-blue-system
+.blue-node.node-01 {
+    --blue-node-delay: 0s;
+}
+
+.ars-hero-field
+.ars-blue-system
+.blue-node.node-02 {
+    --blue-node-delay: -6.85s;
+}
+
+.ars-hero-field
+.ars-blue-system
+.blue-node.node-03 {
+    --blue-node-delay: -13.7s;
+}
+
+.ars-hero-field
+.ars-blue-system
+.blue-node.node-04 {
+    --blue-node-delay: -20.55s;
+}
+
+.ars-hero-field
+.ars-blue-system
+.blue-node.node-05 {
+    --blue-node-delay: -27.4s;
+}
+
+.ars-hero-field
+.ars-blue-system
+.blue-node.node-06 {
+    --blue-node-delay: -34.25s;
+}
+
+.ars-hero-field
+.ars-blue-system
+.blue-node.node-07 {
+    --blue-node-delay: -41.1s;
+}
+
+
+/* =========================================================
+   GOLD ORBITAL PATH
+   ========================================================= */
+
+@keyframes arsGoldOrbitalMotion {
+
+    0% {
+        left: 50%;
+        top: 11%;
+        transform: translate(-50%,-50%);
+    }
+
+    16.666% {
+        left: 83.77%;
+        top: 30.5%;
+        transform: translate(-50%,-50%);
+    }
+
+    33.333% {
+        left: 83.77%;
+        top: 69.5%;
+        transform: translate(-50%,-50%);
+    }
+
+    50% {
+        left: 50%;
+        top: 89%;
+        transform: translate(-50%,-50%);
+    }
+
+    66.666% {
+        left: 16.23%;
+        top: 69.5%;
+        transform: translate(-50%,-50%);
+    }
+
+    83.333% {
+        left: 16.23%;
+        top: 30.5%;
+        transform: translate(-50%,-50%);
+    }
+
+    100% {
+        left: 50%;
+        top: 11%;
+        transform: translate(-50%,-50%);
+    }
+}
+
+
+/* =========================================================
+   BLUE ORBITAL PATH
+   ========================================================= */
+
+@keyframes arsBlueOrbitalMotion {
+
+    0% {
+        left: 50%;
+        top: 10%;
+        transform: translate(-50%,-50%);
+    }
+
+    14.285% {
+        left: 81.3%;
+        top: 28.3%;
+        transform: translate(-50%,-50%);
+    }
+
+    28.57% {
+        left: 89%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    42.855% {
+        left: 69.5%;
+        top: 88%;
+        transform: translate(-50%,-50%);
+    }
+
+    57.14% {
+        left: 30.5%;
+        top: 88%;
+        transform: translate(-50%,-50%);
+    }
+
+    71.425% {
+        left: 11%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    85.71% {
+        left: 18.7%;
+        top: 28.3%;
+        transform: translate(-50%,-50%);
+    }
+
+    100% {
+        left: 50%;
+        top: 10%;
+        transform: translate(-50%,-50%);
+    }
+}
+
+
+/* =========================================================
+   IMPORTANT — CORES STAY ABSOLUTELY FIXED
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system
+.gold-core,
+.ars-hero-field
+.ars-blue-system
+.blue-core {
+
+    animation: none !important;
+
+    left: 50% !important;
+    top: 50% !important;
+
+    transform:
+        translate(-50%,-50%) !important;
+}
+
+
+/* =========================================================
+   IMPORTANT — NODE INTERNAL CONTENT DOES NOT ROTATE
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system
+.gold-node > *,
+.ars-hero-field
+.ars-blue-system
+.blue-node > * {
+
+    transform-origin:
+        center center;
+}
+
+
+/* =========================================================
+   HOVER — PRESERVE NODE SCALE
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system
+.gold-node:hover,
+.ars-hero-field
+.ars-blue-system
+.blue-node:hover {
+
+    filter:
+        drop-shadow(
+            0 0 16px
+            rgba(var(--system-color),.75)
+        );
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ars-hero-field
+    .ars-gold-system
+    .gold-node,
+
+    .ars-hero-field
+    .ars-blue-system
+    .blue-node {
+
+        animation:
+            none !important;
+    }
+}
+
+
+/* =========================================================
+   END — ORBITAL CONSTELLATION MOTION
+   ========================================================= */
+
+/* =========================================================
+   ARS NODE INTERACTION — CLICK / LINK PRESERVATION
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system
+.gold-node,
+
+.ars-hero-field
+.ars-blue-system
+.blue-node {
+
+    pointer-events: auto !important;
+
+    cursor: pointer !important;
+
+    text-decoration: none;
+
+    z-index: 100 !important;
+}
+
+
+/* ---------------------------------------------------------
+   NODE INTERNAL VISUALS MUST NEVER BLOCK THE LINK
+   --------------------------------------------------------- */
+
+.ars-hero-field
+.gold-node > span,
+
+.ars-hero-field
+.blue-node > span {
+
+    pointer-events: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   CONTENT ALSO BELONGS TO THE CLICKABLE NODE
+   --------------------------------------------------------- */
+
+.ars-hero-field
+.gold-node .node-content,
+
+.ars-hero-field
+.blue-node .node-content {
+
+    pointer-events: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   HOVER — KEEP NODE INTERACTIVE
+   --------------------------------------------------------- */
+
+.ars-hero-field
+.gold-node:hover,
+
+.ars-hero-field
+.blue-node:hover {
+
+    cursor: pointer !important;
+
+    filter:
+        drop-shadow(
+            0 0 16px
+            rgba(var(--system-color),.85)
+        );
+}
+
+
+/* ---------------------------------------------------------
+   ACTIVE / TAP FEEDBACK
+   --------------------------------------------------------- */
+
+.ars-hero-field
+.gold-node:active,
+
+.ars-hero-field
+.blue-node:active {
+
+    filter:
+        drop-shadow(
+            0 0 22px
+            rgba(var(--system-color),1)
+        );
+}
+
+
+/* ---------------------------------------------------------
+   KEEP LINK ABOVE DECORATIVE SYSTEM LAYERS
+   --------------------------------------------------------- */
+
+.ars-hero-field
+.ars-gold-system
+.gold-node,
+
+.ars-hero-field
+.ars-blue-system
+.blue-node {
+
+    position: absolute !important;
+
+    z-index: 100 !important;
+}
+
+
+
+
+
+
