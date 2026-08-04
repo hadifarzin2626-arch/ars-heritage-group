@@ -18397,128 +18397,36 @@ code {
    END — BLUE STRUCTURAL DIAGNOSTIC PATCH
    ========================================================= */
 
-
 /* =========================================================
    ARS HERITAGE GROUP
-   BLUE SYSTEM — FINAL GEOMETRY ALIGNMENT PATCH
-   ========================================================= */
-
-
-/* ---------------------------------------------------------
-   BLUE — NODE 03 / NODE 06
-   EXACT HORIZONTAL ALIGNMENT
-   --------------------------------------------------------- */
-
-.ars-hero-field
-.ars-blue-system
-.ars-system-node.node-03 {
-
-    left: 89% !important;
-    top: 50% !important;
-}
-
-
-.ars-hero-field
-.ars-blue-system
-.ars-system-node.node-06 {
-
-    left: 11% !important;
-    top: 50% !important;
-}
-
-
-/* ---------------------------------------------------------
-   BLUE — LOWER PAIR
-   ONE STEP LOWER
-   --------------------------------------------------------- */
-
-.ars-hero-field
-.ars-blue-system
-.ars-system-node.node-04 {
-
-    left: 69.5% !important;
-    top: 88% !important;
-}
-
-
-.ars-hero-field
-.ars-blue-system
-.ars-system-node.node-05 {
-
-    left: 30.5% !important;
-    top: 88% !important;
-}
-
-
-/* ---------------------------------------------------------
-   BLUE — TOP PAIR
-   LOCK SYMMETRY
-   --------------------------------------------------------- */
-
-.ars-hero-field
-.ars-blue-system
-.ars-system-node.node-02 {
-
-    left: 81.3% !important;
-    top: 28.3% !important;
-}
-
-
-.ars-hero-field
-.ars-blue-system
-.ars-system-node.node-07 {
-
-    left: 18.7% !important;
-    top: 28.3% !important;
-}
-
-
-/* ---------------------------------------------------------
-   BLUE — TOP NODE
-   --------------------------------------------------------- */
-
-.ars-hero-field
-.ars-blue-system
-.ars-system-node.node-01 {
-
-    left: 50% !important;
-    top: 10% !important;
-}
-
-
-/* =========================================================
-   END — BLUE FINAL GEOMETRY ALIGNMENT
-   ========================================================= */
-/* =========================================================
-   ARS HERITAGE GROUP
-   GOLD SYSTEM — ORBITAL DEPTH MOTION TEST
+   FINAL STRUCTURAL DIAGNOSTIC PATCH
+   GOLD DEPTH + BLUE NODE 03 / 06 HARD CONTROL
    =========================================================
 
    PURPOSE
    ---------------------------------------------------------
-   Convert GOLD from a flat TOP/BOTTOM node arrangement
-   into an independent orbital / solar-system motion.
+   01 — GOLD enters real visual depth
+   02 — GOLD remains centered in HERO FIELD
+   03 — BLUE NODE 03 is hard-positioned
+   04 — BLUE NODE 06 is hard-positioned
+   05 — NO redesign of other systems
+   06 — COMMAND SOURCE = .ars-hero-field
 
    IMPORTANT
    ---------------------------------------------------------
-   - GOLD ONLY
-   - BLUE UNTOUCHED
-   - HERITAGE UNTOUCHED
-   - GOLD CORE REMAINS CENTRAL
-   - EXISTING GOLD GEOMETRY REMAINS THE BASE
-   - NO HTML CHANGE REQUIRED
+   This is a diagnostic patch.
+   It does NOT replace the main CSS.
    ========================================================= */
 
 
 /* =========================================================
-   GOLD — 3D SPACE
+   01 — HERO FIELD 3D SPACE
    ========================================================= */
 
-.ars-hero-field
-.ars-gold-system {
+.ars-hero-field {
 
     perspective:
-        900px !important;
+        1400px !important;
 
     perspective-origin:
         50% 50% !important;
@@ -18529,448 +18437,71 @@ code {
 
 
 /* =========================================================
-   GOLD — ORBIT FIELD
+   02 — MASTER GEOMETRY 3D SPACE
    ========================================================= */
 
 .ars-hero-field
-.ars-gold-system
-.ars-orbits {
+.ars-hero-master-geometry {
+
+    transform-style:
+        preserve-3d !important;
+
+    perspective:
+        1400px !important;
+
+    perspective-origin:
+        50% 50% !important;
+}
+
+
+/* =========================================================
+   03 — GOLD SYSTEM
+       REAL DEPTH
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system {
 
     transform-style:
         preserve-3d !important;
 
     transform:
-        translateZ(0)
-        rotateX(58deg)
-        rotateY(-8deg) !important;
+        translateX(-50%)
+        translateZ(80px)
+        rotateX(7deg)
+        rotateY(-5deg) !important;
+
+    perspective:
+        1200px !important;
+
+    perspective-origin:
+        50% 50% !important;
 }
 
 
 /* =========================================================
-   GOLD — ORBITAL PLANE
+   04 — GOLD INTERNAL SPACE
    ========================================================= */
 
 .ars-hero-field
 .ars-gold-system
-.ars-orbits {
-
-    animation:
-        arsGoldOrbitalPlane
-        26s
-        linear
-        infinite !important;
-
-    transform-origin:
-        center center !important;
-}
-
-
-@keyframes arsGoldOrbitalPlane {
-
-    0% {
-
-        transform:
-            translateZ(0)
-            rotateX(58deg)
-            rotateY(-8deg)
-            rotateZ(0deg);
-    }
-
-    50% {
-
-        transform:
-            translateZ(0)
-            rotateX(58deg)
-            rotateY(12deg)
-            rotateZ(180deg);
-    }
-
-    100% {
-
-        transform:
-            translateZ(0)
-            rotateX(58deg)
-            rotateY(-8deg)
-            rotateZ(360deg);
-    }
-}
-
-
-/* =========================================================
-   GOLD — NODE SPACE
-   ========================================================= */
+.ars-orbits,
 
 .ars-hero-field
 .ars-gold-system
-.ars-system-node {
+.ars-energy-network,
+
+.ars-hero-field
+.ars-gold-system
+.ars-system-atmosphere {
 
     transform-style:
         preserve-3d !important;
-
-    backface-visibility:
-        hidden;
-
-    will-change:
-        transform,
-        filter;
 }
 
 
 /* =========================================================
-   GOLD — NODE ORBIT MOTION
-   ========================================================= */
-
-.ars-hero-field
-.ars-gold-system
-.ars-system-node.node-01 {
-
-    animation:
-        arsGoldNode01
-        26s
-        linear
-        infinite !important;
-}
-
-
-.ars-hero-field
-.ars-gold-system
-.ars-system-node.node-02 {
-
-    animation:
-        arsGoldNode02
-        26s
-        linear
-        infinite !important;
-}
-
-
-.ars-hero-field
-.ars-gold-system
-.ars-system-node.node-03 {
-
-    animation:
-        arsGoldNode03
-        26s
-        linear
-        infinite !important;
-}
-
-
-.ars-hero-field
-.ars-gold-system
-.ars-system-node.node-04 {
-
-    animation:
-        arsGoldNode04
-        26s
-        linear
-        infinite !important;
-}
-
-
-.ars-hero-field
-.ars-gold-system
-.ars-system-node.node-05 {
-
-    animation:
-        arsGoldNode05
-        26s
-        linear
-        infinite !important;
-}
-
-
-.ars-hero-field
-.ars-gold-system
-.ars-system-node.node-06 {
-
-    animation:
-        arsGoldNode06
-        26s
-        linear
-        infinite !important;
-}
-
-
-/* =========================================================
-   GOLD — NODE DEPTH
-   ========================================================= */
-
-@keyframes arsGoldNode01 {
-
-    0%,
-    100% {
-
-        transform:
-            translate(-50%,-50%)
-            translateZ(35px)
-            scale(1.03);
-    }
-
-    25% {
-
-        transform:
-            translate(-50%,-50%)
-            translateZ(-20px)
-            scale(.94);
-    }
-
-    50% {
-
-        transform:
-            translate(-50%,-50%)
-            translateZ(-45px)
-            scale(.90);
-    }
-
-    75% {
-
-        transform:
-            translate(-50%,-50%)
-            translateZ(15px)
-            scale(1);
-    }
-}
-
-
-@keyframes arsGoldNode02 {
-
-    0% {
-
-        transform:
-            translate(-50%,-50%)
-            translateZ(-20px)
-            scale(.94);
-    }
-
-    25% {
-
-        transform:
-            translate(-50%,-50%)
-            translateZ(-45px)
-            scale(.90);
-    }
-
-    50% {
-
-        transform:
-            translate(-50%,-50%)
-            translateZ(15px)
-            scale(1);
-    }
-
-    75% {
-
-        transform:
-            translate(-50%,-50%)
-            translateZ(35px)
-            scale(1.03);
-    }
-
-    100% {
-
-        transform:
-            translate(-50%,-50%)
-            translateZ(-20px)
-            scale(.94);
-    }
-}
-
-
-@keyframes arsGoldNode03 {
-
-    0% {
-
-        transform:
-            translate(-50%,-50%)
-            translateZ(-45px)
-            scale(.90);
-    }
-
-    25% {
-
-        transform:
-            translate(-50%,-50%)
-            translateZ(15px)
-            scale(1);
-    }
-
-    50% {
-
-        transform:
-            translate(-50%,-50%)
-            translateZ(35px)
-            scale(1.03);
-    }
-
-    75% {
-
-        transform:
-            translate(-50%,-50%)
-            translateZ(-20px)
-            scale(.94);
-    }
-
-    100% {
-
-        transform:
-            translate(-50%,-50%)
-            translateZ(-45px)
-            scale(.90);
-    }
-}
-
-
-@keyframes arsGoldNode04 {
-
-    0% {
-
-        transform:
-            translate(-50%,-50%)
-            translateZ(15px)
-            scale(1);
-    }
-
-    25% {
-
-        transform:
-            translate(-50%,-50%)
-            translateZ(35px)
-            scale(1.03);
-    }
-
-    50% {
-
-        transform:
-            translate(-50%,-50%)
-            translateZ(-20px)
-            scale(.94);
-    }
-
-    75% {
-
-        transform:
-            translate(-50%,-50%)
-            translateZ(-45px)
-            scale(.90);
-    }
-
-    100% {
-
-        transform:
-            translate(-50%,-50%)
-            translateZ(15px)
-            scale(1);
-    }
-}
-
-
-@keyframes arsGoldNode05 {
-
-    0% {
-
-        transform:
-            translate(-50%,-50%)
-            translateZ(35px)
-            scale(1.03);
-    }
-
-    25% {
-
-        transform:
-            translate(-50%,-50%)
-            translateZ(-20px)
-            scale(.94);
-    }
-
-    50% {
-
-        transform:
-            translate(-50%,-50%)
-            translateZ(-45px)
-            scale(.90);
-    }
-
-    75% {
-
-        transform:
-            translate(-50%,-50%)
-            translateZ(15px)
-            scale(1);
-    }
-
-    100% {
-
-        transform:
-            translate(-50%,-50%)
-            translateZ(35px)
-            scale(1.03);
-    }
-}
-
-
-@keyframes arsGoldNode06 {
-
-    0% {
-
-        transform:
-            translate(-50%,-50%)
-            translateZ(-20px)
-            scale(.94);
-    }
-
-    25% {
-
-        transform:
-            translate(-50%,-50%)
-            translateZ(-45px)
-            scale(.90);
-    }
-
-    50% {
-
-        transform:
-            translate(-50%,-50%)
-            translateZ(15px)
-            scale(1);
-    }
-
-    75% {
-
-        transform:
-            translate(-50%,-50%)
-            translateZ(35px)
-            scale(1.03);
-    }
-
-    100% {
-
-        transform:
-            translate(-50%,-50%)
-            translateZ(-20px)
-            scale(.94);
-    }
-}
-
-
-/* =========================================================
-   GOLD — DEPTH LIGHT
-   ========================================================= */
-
-.ars-hero-field
-.ars-gold-system
-.ars-system-node {
-
-    filter:
-        drop-shadow(
-            0 0 9px
-            rgba(var(--system-color),.42)
-        ) !important;
-}
-
-
-/* =========================================================
-   GOLD — CORE STAYS FIXED
+   05 — GOLD CORE DEPTH
    ========================================================= */
 
 .ars-hero-field
@@ -18978,10 +18509,8 @@ code {
 .ars-system-core {
 
     transform:
-        translate(-50%,-50%) !important;
-
-    animation:
-        none !important;
+        translate(-50%,-50%)
+        translateZ(110px) !important;
 
     transform-style:
         preserve-3d !important;
@@ -18989,57 +18518,270 @@ code {
 
 
 /* =========================================================
-   GOLD — MOBILE
+   06 — GOLD NODE DEPTH
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system
+.ars-system-node {
+
+    transform-style:
+        preserve-3d !important;
+}
+
+
+/* =========================================================
+   GOLD NODE 01
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system
+.ars-system-node.node-01 {
+
+    transform:
+        translate(-50%,-50%)
+        translateZ(35px) !important;
+}
+
+
+/* =========================================================
+   GOLD NODE 02
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system
+.ars-system-node.node-02 {
+
+    transform:
+        translate(-50%,-50%)
+        translateZ(10px) !important;
+}
+
+
+/* =========================================================
+   GOLD NODE 03
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system
+.ars-system-node.node-03 {
+
+    transform:
+        translate(-50%,-50%)
+        translateZ(-20px) !important;
+}
+
+
+/* =========================================================
+   GOLD NODE 04
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system
+.ars-system-node.node-04 {
+
+    transform:
+        translate(-50%,-50%)
+        translateZ(-45px) !important;
+}
+
+
+/* =========================================================
+   GOLD NODE 05
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system
+.ars-system-node.node-05 {
+
+    transform:
+        translate(-50%,-50%)
+        translateZ(-10px) !important;
+}
+
+
+/* =========================================================
+   GOLD NODE 06
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system
+.ars-system-node.node-06 {
+
+    transform:
+        translate(-50%,-50%)
+        translateZ(20px) !important;
+}
+
+
+/* =========================================================
+   07 — BLUE NODE 03
+       HARD STRUCTURAL COMMAND
+   ========================================================= */
+
+.ars-hero-field
+.ars-blue-system
+.ars-system-node.node-03 {
+
+    left:
+        89% !important;
+
+    top:
+        50% !important;
+
+    margin:
+        0 !important;
+
+    transform:
+        translate(-50%,-50%) !important;
+
+    z-index:
+        80 !important;
+}
+
+
+/* =========================================================
+   08 — BLUE NODE 06
+       HARD STRUCTURAL COMMAND
+   ========================================================= */
+
+.ars-hero-field
+.ars-blue-system
+.ars-system-node.node-06 {
+
+    left:
+        11% !important;
+
+    top:
+        50% !important;
+
+    margin:
+        0 !important;
+
+    transform:
+        translate(-50%,-50%) !important;
+
+    z-index:
+        80 !important;
+}
+
+
+/* =========================================================
+   09 — KILL HOVER POSITION LEAK
+   ========================================================= */
+
+.ars-hero-field
+.ars-blue-system
+.ars-system-node.node-03:hover {
+
+    left:
+        89% !important;
+
+    top:
+        50% !important;
+
+    transform:
+        translate(-50%,-50%)
+        scale(1.08) !important;
+}
+
+
+.ars-hero-field
+.ars-blue-system
+.ars-system-node.node-06:hover {
+
+    left:
+        11% !important;
+
+    top:
+        50% !important;
+
+    transform:
+        translate(-50%,-50%)
+        scale(1.08) !important;
+}
+
+
+/* =========================================================
+   10 — BLUE LOCAL 3D SPACE
+   ========================================================= */
+
+.ars-hero-field
+.ars-blue-system {
+
+    transform-style:
+        preserve-3d !important;
+
+    perspective:
+        1200px !important;
+
+    perspective-origin:
+        50% 50% !important;
+}
+
+
+/* =========================================================
+   11 — MOBILE
    ========================================================= */
 
 @media (max-width: 600px) {
 
+    .ars-hero-field {
+
+        perspective:
+            1000px !important;
+    }
+
+
     .ars-hero-field
     .ars-gold-system {
 
-        perspective:
-            700px !important;
+        transform:
+            translateX(-50%)
+            translateZ(50px)
+            rotateX(5deg)
+            rotateY(-4deg) !important;
     }
+
 
     .ars-hero-field
     .ars-gold-system
-    .ars-orbits {
+    .ars-system-core {
 
-        animation-duration:
-            30s !important;
+        transform:
+            translate(-50%,-50%)
+            translateZ(80px) !important;
     }
+
 
     .ars-hero-field
-    .ars-gold-system
-    .ars-system-node {
+    .ars-blue-system
+    .ars-system-node.node-03 {
 
-        animation-duration:
-            30s !important;
+        left:
+            89% !important;
+
+        top:
+            50% !important;
     }
+
+
+    .ars-hero-field
+    .ars-blue-system
+    .ars-system-node.node-06 {
+
+        left:
+            11% !important;
+
+        top:
+            50% !important;
+    }
+
 }
 
 
 /* =========================================================
-   GOLD — REDUCED MOTION
+   END — STRUCTURAL DIAGNOSTIC PATCH
    ========================================================= */
 
-@media (prefers-reduced-motion: reduce) {
-
-    .ars-hero-field
-    .ars-gold-system
-    .ars-orbits,
-
-    .ars-hero-field
-    .ars-gold-system
-    .ars-system-node {
-
-        animation:
-            none !important;
-    }
-}
-
-
-/* =========================================================
-   END — GOLD ORBITAL DEPTH MOTION TEST
-   ========================================================= */
-
+    
