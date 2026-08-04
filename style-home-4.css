@@ -17277,3 +17277,356 @@ code {
 /* =========================================================
    END — NEW PREMIUM HERO
    ========================================================= */
+/* =========================================================
+   ARS HERO — GOLD MASTER ORBIT LOCK
+   STEP 01
+   TARGET: GOLD ONLY
+   BLUE: UNTOUCHED
+   HERITAGE: UNTOUCHED
+   ORIGINAL CSS: DO NOT MODIFY
+   ========================================================= */
+
+
+/* =========================================================
+   GOLD — MASTER GEOMETRY
+   ========================================================= */
+
+.ars-hero-master-geometry .ars-gold-system {
+
+    position: relative;
+
+    --gold-orbit-size: 76%;
+}
+
+
+/* =========================================================
+   GOLD — ORBIT FIELD
+   ========================================================= */
+
+.ars-hero-master-geometry
+.ars-gold-system
+.ars-orbits {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: var(--gold-orbit-size);
+    height: var(--gold-orbit-size);
+
+    transform:
+        translate(-50%, -50%);
+
+    margin: 0;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   GOLD — MASTER ORBIT
+   ONE CIRCULAR REFERENCE
+   ========================================================= */
+
+.ars-hero-master-geometry
+.ars-gold-system
+.ars-orbits
+.orbit-01 {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 100%;
+    height: 100%;
+
+    transform:
+        translate(-50%, -50%);
+
+    box-sizing: border-box;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   GOLD — SECONDARY ORBITS
+   SAME CENTER
+   ========================================================= */
+
+.ars-hero-master-geometry
+.ars-gold-system
+.ars-orbits
+.orbit-02,
+.ars-hero-master-geometry
+.ars-gold-system
+.ars-orbits
+.orbit-03,
+.ars-hero-master-geometry
+.ars-gold-system
+.ars-orbits
+.orbit-04,
+.ars-hero-master-geometry
+.ars-gold-system
+.ars-orbits
+.orbit-05 {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    margin: 0;
+
+    box-sizing: border-box;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   GOLD — SECONDARY SIZES
+   ========================================================= */
+
+.ars-hero-master-geometry
+.ars-gold-system
+.ars-orbits
+.orbit-02 {
+
+    width: 89%;
+    height: 89%;
+}
+
+
+.ars-hero-master-geometry
+.ars-gold-system
+.ars-orbits
+.orbit-03 {
+
+    width: 78%;
+    height: 78%;
+}
+
+
+.ars-hero-master-geometry
+.ars-gold-system
+.ars-orbits
+.orbit-04 {
+
+    width: 67%;
+    height: 67%;
+}
+
+
+.ars-hero-master-geometry
+.ars-gold-system
+.ars-orbits
+.orbit-05 {
+
+    width: 56%;
+    height: 56%;
+}
+
+
+/* =========================================================
+   GOLD — ALL SIX NODES
+   SAME MASTER RADIUS
+   ========================================================= */
+
+.ars-hero-master-geometry
+.ars-gold-system
+.ars-system-node {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 19%;
+
+    aspect-ratio: 1;
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 8;
+}
+
+
+/* =========================================================
+   GOLD — NODE 01
+   12 O'CLOCK
+   ========================================================= */
+
+.ars-hero-master-geometry
+.ars-gold-system
+.node-01 {
+
+    left: 50%;
+    top: 12%;
+}
+
+
+/* =========================================================
+   GOLD — NODE 02
+   2 O'CLOCK
+   ========================================================= */
+
+.ars-hero-master-geometry
+.ars-gold-system
+.node-02 {
+
+    left: 82.91%;
+    top: 31%;
+}
+
+
+/* =========================================================
+   GOLD — NODE 03
+   4 O'CLOCK
+   ========================================================= */
+
+.ars-hero-master-geometry
+.ars-gold-system
+.node-03 {
+
+    left: 82.91%;
+    top: 69%;
+}
+
+
+/* =========================================================
+   GOLD — NODE 04
+   6 O'CLOCK
+   ========================================================= */
+
+.ars-hero-master-geometry
+.ars-gold-system
+.node-04 {
+
+    left: 50%;
+    top: 88%;
+}
+
+
+/* =========================================================
+   GOLD — NODE 05
+   8 O'CLOCK
+   ========================================================= */
+
+.ars-hero-master-geometry
+.ars-gold-system
+.node-05 {
+
+    left: 17.09%;
+    top: 69%;
+}
+
+
+/* =========================================================
+   GOLD — NODE 06
+   10 O'CLOCK
+   ========================================================= */
+
+.ars-hero-master-geometry
+.ars-gold-system
+.node-06 {
+
+    left: 17.09%;
+    top: 31%;
+}
+
+
+/* =========================================================
+   GOLD — CORE
+   EXACT CENTER OF MASTER ORBIT
+   ========================================================= */
+
+.ars-hero-master-geometry
+.ars-gold-system
+.ars-system-core {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   GOLD — CORE / NODE GAP
+   ========================================================= */
+
+.ars-hero-master-geometry
+.ars-gold-system
+.ars-system-core {
+
+    --gold-core-gap: 1;
+}
+
+
+/* =========================================================
+   GOLD — KEEP NODE CONTENT ABOVE ORBITS
+   ========================================================= */
+
+.ars-hero-master-geometry
+.ars-gold-system
+.ars-system-node
+.node-content {
+
+    position: relative;
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   GOLD — PREVENT ORBIT LAYER FROM MOVING NODE GEOMETRY
+   ========================================================= */
+
+.ars-hero-master-geometry
+.ars-gold-system
+.ars-orbits {
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   END — GOLD MASTER ORBIT LOCK
+   ========================================================= */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
