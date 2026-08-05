@@ -2847,366 +2847,364 @@ the future of automotive intelligence.
 </footer>   
         
         
-        
-<script>
+   <script>
 
 /* =========================================================
    ARS HERITAGE GROUP — HOME MASTER JAVASCRIPT
+   PREMIUM / CLEAN / UNIFIED VERSION
    =========================================================
-   THREE REAL SYSTEMS — BASED ONLY ON CURRENT INDEX.HTML
 
    SYSTEM 01
    HERO — DUAL INTELLIGENCE ORBITAL SYSTEM
-   Gold  : 06 Nodes — ARS Ecosystem
-   Core  : 01 Node  — ARS Heritage Group
-   Blue  : 07 Nodes — ARS Universe
 
    SYSTEM 02
    ARS ECOSYSTEM — DUAL SYSTEM ARCHITECTURE
-   06 Cards + Energy Bridge + Central Core + 07 Cards
 
    SYSTEM 03
    GLOBAL PAGE INTERACTION
-   Reveal + Card Selection + Reduced Motion
+
+   SYSTEM 04
+   REVEAL / SELECTION / REDUCED MOTION
+
+   IMPORTANT:
+   This script is designed to work with the CURRENT HTML
+   architecture only.
+
+   No HTML redesign.
+   No CSS redesign.
+   No previous system replacement.
    ========================================================= */
 
 
 document.addEventListener("DOMContentLoaded", () => {
 
-document.addEventListener("DOMContentLoaded", () => {
+
+    /* =====================================================
+       MASTER CONFIGURATION
+       ===================================================== */
+
+    const CONFIG = {
+
+        heroParallaxStrength: 8,
+
+        orbitParallaxBase: 1.5,
+
+        ecosystemParallaxBase: 2,
+
+        bridgeParallaxStrength: 4,
+
+        revealThreshold: 0.12,
+
+        cardDimOpacity: ".42",
+
+        heritageDimOpacity: ".55"
+
+    };
 
 
-    /* =========================================================
-       JS LIVE TEST — TEMPORARY
-       ========================================================= */
+    /* =====================================================
+       SYSTEM 01
+       HERO — DUAL INTELLIGENCE ORBITAL SYSTEM
+       ===================================================== */
 
-    const jsTest = document.createElement("div");
-
-    jsTest.textContent = "✓ ARS JAVASCRIPT IS RUNNING";
-
-    jsTest.style.cssText = `
-        position: fixed;
-        top: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 999999;
-        padding: 12px 22px;
-        background: rgba(0,0,0,.9);
-        color: #00ff88;
-        border: 1px solid #00ff88;
-        border-radius: 8px;
-        font-family: Arial, sans-serif;
-        font-size: 14px;
-        font-weight: 700;
-        letter-spacing: 1px;
-        box-shadow: 0 0 18px rgba(0,255,136,.35);
-    `;
-
-    document.body.appendChild(jsTest);
+    const heroField =
+        document.querySelector(".ars-hero-field");
 
 
-    /* =========================================================
-       بقیه JS اصلی تو از اینجا ادامه پیدا می‌کند
-       ========================================================= */
-/* =========================================================
-   SYSTEM 01
-   HERO — DUAL INTELLIGENCE ORBITAL SYSTEM
-   ========================================================= */
+    const heroMasterGeometry =
+        document.querySelector(
+            ".ars-hero-master-geometry"
+        );
 
-const heroField =
-    document.querySelector(".ars-hero-field");
 
-const heroSystems =
-    document.querySelectorAll(
-        ".ars-hero-master-geometry .ars-orbital-system"
-    );
+    const heroSystems =
+        document.querySelectorAll(
+            ".ars-hero-master-geometry .ars-orbital-system"
+        );
 
-const heroNodes =
-    document.querySelectorAll(
-        ".ars-hero-master-geometry .ars-system-node"
-    );
 
-const heroOrbits =
-    document.querySelectorAll(
-        ".ars-hero-master-geometry .ars-orbit"
-    );
+    const heroNodes =
+        document.querySelectorAll(
+            ".ars-hero-master-geometry .ars-system-node"
+        );
 
-const heroCenters =
-    document.querySelectorAll(
-        ".ars-hero-master-geometry .ars-system-core"
-    );
 
-const heritageCenter =
-    document.querySelector(
-        ".ars-heritage-center"
-    );
-/* =========================================================
-   HERO — HERITAGE DUAL BELT ORBIT ENGINE
-   ========================================================= */
+    const heroOrbits =
+        document.querySelectorAll(
+            ".ars-hero-master-geometry .ars-orbit"
+        );
 
-const heritageBelts =
-    document.querySelectorAll(
-        ".ars-heritage-center .heritage-belt-orbit"
-    );
-console.log(
-    "HERITAGE BELTS FOUND:",
-    heritageBelts.length
-);
-if (heritageBelts.length) {
 
-    let heritageOrbitAngle = 0;
+    const heroCenters =
+        document.querySelectorAll(
+            ".ars-hero-master-geometry .ars-system-core"
+        );
 
-    function animateHeritageBelts() {
 
-        heritageOrbitAngle += 0.35;
+    const heritageCenter =
+        document.querySelector(
+            ".ars-heritage-center"
+        );
 
-        heritageBelts.forEach(
-            (belt, index) => {
 
-                const offset =
-                    index === 0 ? 0 : 90;
+    /* =====================================================
+       HERO — HERITAGE DUAL BELT ORBIT ENGINE
+       ===================================================== */
 
-                belt.style.setProperty(
-                    "--heritage-orbit-angle",
-                    `${heritageOrbitAngle + offset}deg`
+    const heritageBelts =
+        document.querySelectorAll(
+            ".ars-heritage-center .heritage-belt-orbit"
+        );
+
+
+    if (heritageBelts.length) {
+
+        let heritageOrbitAngle = 0;
+
+
+        function animateHeritageBelts() {
+
+            heritageOrbitAngle += 0.35;
+
+
+            heritageBelts.forEach(
+                (belt, index) => {
+
+                    const offset =
+                        index === 0 ? 0 : 90;
+
+
+                    belt.style.setProperty(
+                        "--heritage-orbit-angle",
+                        `${heritageOrbitAngle + offset}deg`
+                    );
+
+                }
+            );
+
+
+            requestAnimationFrame(
+                animateHeritageBelts
+            );
+
+        }
+
+
+        animateHeritageBelts();
+
+    }
+
+
+    /* =====================================================
+       HERO — MOUSE PARALLAX
+       ===================================================== */
+
+    if (
+        heroField &&
+        !window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches
+    ) {
+
+        heroField.addEventListener(
+            "mousemove",
+            (event) => {
+
+                const rect =
+                    heroField.getBoundingClientRect();
+
+
+                if (
+                    !rect.width ||
+                    !rect.height
+                ) {
+                    return;
+                }
+
+
+                const x =
+                    (event.clientX - rect.left)
+                    / rect.width - 0.5;
+
+
+                const y =
+                    (event.clientY - rect.top)
+                    / rect.height - 0.5;
+
+
+                /* -----------------------------------------
+                   HERO NODES
+                   ----------------------------------------- */
+
+                heroNodes.forEach(
+                    (node) => {
+
+                        node.style.setProperty(
+                            "--hero-parallax-x",
+                            `${x * CONFIG.heroParallaxStrength}px`
+                        );
+
+
+                        node.style.setProperty(
+                            "--hero-parallax-y",
+                            `${y * CONFIG.heroParallaxStrength}px`
+                        );
+
+                    }
+                );
+
+
+                /* -----------------------------------------
+                   HERO ORBITS
+                   ----------------------------------------- */
+
+                heroOrbits.forEach(
+                    (orbit, index) => {
+
+                        const depth =
+                            (index + 1)
+                            * CONFIG.orbitParallaxBase;
+
+
+                        orbit.style.setProperty(
+                            "--orbit-parallax-x",
+                            `${x * depth}px`
+                        );
+
+
+                        orbit.style.setProperty(
+                            "--orbit-parallax-y",
+                            `${y * depth}px`
+                        );
+
+                    }
                 );
 
             }
         );
 
-        requestAnimationFrame(
-            animateHeritageBelts
+
+        heroField.addEventListener(
+            "mouseleave",
+            () => {
+
+                heroNodes.forEach(
+                    (node) => {
+
+                        node.style.setProperty(
+                            "--hero-parallax-x",
+                            "0px"
+                        );
+
+
+                        node.style.setProperty(
+                            "--hero-parallax-y",
+                            "0px"
+                        );
+
+                    }
+                );
+
+
+                heroOrbits.forEach(
+                    (orbit) => {
+
+                        orbit.style.setProperty(
+                            "--orbit-parallax-x",
+                            "0px"
+                        );
+
+
+                        orbit.style.setProperty(
+                            "--orbit-parallax-y",
+                            "0px"
+                        );
+
+                    }
+                );
+
+            }
         );
 
     }
 
-    animateHeritageBelts();
 
-}
-
-   /* HERO — MOUSE PARALLAX */
-
-
-if (heroField) {
-
-    heroField.addEventListener(
-        "mousemove",
-        (event) => {
-
-            const rect =
-                heroField.getBoundingClientRect();
-
-            const x =
-                (event.clientX - rect.left)
-                / rect.width - 0.5;
-
-            const y =
-                (event.clientY - rect.top)
-                / rect.height - 0.5;
-
-heroNodes.forEach(
-    (node, index) => {
-
-
-        node.style.setProperty(
-            "--hero-parallax-x",
-            `${x * depth}px`
-        );
-
-        node.style.setProperty(
-            "--hero-parallax-y",
-            `${y * depth}px`
-        );
-
-    }
-);
-            heroOrbits.forEach(
-                (orbit, index) => {
-
-                    const depth =
-                        (index + 1) * 1.5;
-
-                    orbit.style.setProperty(
-                        "--orbit-parallax-x",
-                        `${x * depth}px`
-                    );
-
-                    orbit.style.setProperty(
-                        "--orbit-parallax-y",
-                        `${y * depth}px`
-                    );
-
-                }
-            );
-
-        }
-    );
-
-    heroField.addEventListener(
-        "mouseleave",
-        () => {
-
-            heroNodes.forEach(
-                (node) => {
-
-                    node.style.setProperty(
-                        "--hero-parallax-x",
-                        "0px"
-                    );
-
-                    node.style.setProperty(
-                        "--hero-parallax-y",
-                        "0px"
-                    );
-
-                }
-            );
-
-
-            heroOrbits.forEach(
-                (orbit) => {
-
-                    orbit.style.setProperty(
-                        "--orbit-parallax-x",
-                        "0px"
-                    );
-
-                    orbit.style.setProperty(
-                        "--orbit-parallax-y",
-                        "0px"
-                    );
-
-                }
-            );
-
-        }
-    );
-
-}
-
-
-/* ---------------------------------------------------------
-   HERO — NODE HOVER INTELLIGENCE
-   --------------------------------------------------------- */
+    /* =====================================================
+       HERO — NODE HOVER INTELLIGENCE
+       ===================================================== */
 
     heroNodes.forEach(
-    (node) => {
+        (node) => {
 
-        node.addEventListener(
-            "mouseenter",
-            () => {
+            node.addEventListener(
+                "mouseenter",
+                () => {
 
-                heroNodes.forEach(
-                    (other) => {
+                    heroNodes.forEach(
+                        (other) => {
 
-                        if (other !== node) {
+                            if (other !== node) {
 
-                            other.style.opacity =
-                                ".38";
+                                other.style.opacity =
+                                    CONFIG.cardDimOpacity;
+
+                            }
 
                         }
-
-                    }
-                );
+                    );
 
 
-                node.style.zIndex =
-                    "50";
+                    node.style.zIndex = "50";
 
-            }
-        );
-
-
-        node.addEventListener(
-            "mouseleave",
-            () => {
-
-                heroNodes.forEach(
-                    (other) => {
-
-                        other.style.opacity =
-                            "";
-
-                        other.style.zIndex =
-                            "";
-
-                    }
-                );
-
-            }
-        );
-
-    }
-);
+                }
+            );
 
 
-/* ---------------------------------------------------------
-   HERO — GOLD / BLUE SYSTEM HOVER
-   --------------------------------------------------------- */
+            node.addEventListener(
+                "mouseleave",
+                () => {
 
-heroSystems.forEach(
-    (system) => {
+                    heroNodes.forEach(
+                        (other) => {
 
-        system.addEventListener(
-            "mouseenter",
-            () => {
+                            other.style.opacity = "";
+                            other.style.zIndex = "";
 
-                system.classList.add(
-                    "is-active"
-                );
+                        }
+                    );
 
-            }
-        );
+                }
+            );
 
-
-        system.addEventListener(
-            "mouseleave",
-            () => {
-
-                system.classList.remove(
-                    "is-active"
-                );
-
-            }
-        );
-
-    }
-);
+        }
+    );
 
 
-/* ---------------------------------------------------------
-   HERO — CENTRAL HERITAGE CORE
-   --------------------------------------------------------- */
+    /* =====================================================
+       HERO — GOLD / BLUE SYSTEM HOVER
+       ===================================================== */
 
-if (heritageCenter) {
+    heroSystems.forEach(
+        (system) => {
 
-    heritageCenter.addEventListener(
-        "mouseenter",
-        () => {
-
-            heroSystems.forEach(
-                (system) => {
+            system.addEventListener(
+                "mouseenter",
+                () => {
 
                     system.classList.add(
-                        "core-connected"
+                        "is-active"
                     );
 
                 }
             );
 
-        }
-    );
 
-
-    heritageCenter.addEventListener(
-        "mouseleave",
-        () => {
-
-            heroSystems.forEach(
-                (system) => {
+            system.addEventListener(
+                "mouseleave",
+                () => {
 
                     system.classList.remove(
-                        "core-connected"
+                        "is-active"
                     );
 
                 }
@@ -3215,151 +3213,41 @@ if (heritageCenter) {
         }
     );
 
-}
 
+    /* =====================================================
+       HERO — CENTRAL HERITAGE CORE
+       ===================================================== */
 
-/* ---------------------------------------------------------
-   HERO — SYSTEM CORE HOVER
-   --------------------------------------------------------- */
+    if (heritageCenter) {
 
-heroCenters.forEach(
-    (core) => {
-
-        core.addEventListener(
+        heritageCenter.addEventListener(
             "mouseenter",
             () => {
 
-                const parentSystem =
-                    core.closest(
-                        ".ars-orbital-system"
-                    );
+                heroSystems.forEach(
+                    (system) => {
 
-                if (!parentSystem) return;
-
-                parentSystem
-                    .querySelectorAll(
-                        ".ars-system-node"
-                    )
-                    .forEach(
-                        (node) => {
-
-                            node.style.opacity =
-                                ".72";
-
-                        }
-                    );
-
-            }
-        );
-
-
-        core.addEventListener(
-            "mouseleave",
-            () => {
-
-                const parentSystem =
-                    core.closest(
-                        ".ars-orbital-system"
-                    );
-
-                if (!parentSystem) return;
-
-                parentSystem
-                    .querySelectorAll(
-                        ".ars-system-node"
-                    )
-                    .forEach(
-                        (node) => {
-
-                            node.style.opacity =
-                                "";
-
-                        }
-                    );
-
-            }
-        );
-
-    }
-);
-
-
-
-/* =========================================================
-   SYSTEM 02
-   ARS ECOSYSTEM — DUAL SYSTEM ARCHITECTURE
-   ========================================================= */
-
-const ecosystemUniverse =
-    document.querySelector(
-        ".ars-ecosystem-universe"
-    );
-
-const ecosystemSystems =
-    document.querySelectorAll(
-        ".ars-ecosystem-system"
-    );
-
-const ecosystemCards =
-    document.querySelectorAll(
-        ".ars-ecosystem-universe .ars-system-card"
-    );
-
-const heritageCard =
-    document.querySelector(
-        ".ars-heritage-signature-card"
-    );
-
-const energyBridges =
-    document.querySelectorAll(
-        ".ars-energy-bridge"
-    );
-
-
-/* ---------------------------------------------------------
-   ECOSYSTEM — CARD HOVER
-   --------------------------------------------------------- */
-
-ecosystemCards.forEach(
-    (card) => {
-
-        card.addEventListener(
-            "mouseenter",
-            () => {
-
-                ecosystemCards.forEach(
-                    (other) => {
-
-                        if (other !== card) {
-
-                            other.style.opacity =
-                                ".42";
-
-                        }
+                        system.classList.add(
+                            "core-connected"
+                        );
 
                     }
                 );
 
-
-                card.style.zIndex =
-                    "30";
-
             }
         );
 
 
-        card.addEventListener(
+        heritageCenter.addEventListener(
             "mouseleave",
             () => {
 
-                ecosystemCards.forEach(
-                    (other) => {
+                heroSystems.forEach(
+                    (system) => {
 
-                        other.style.opacity =
-                            "";
-
-                        other.style.zIndex =
-                            "";
+                        system.classList.remove(
+                            "core-connected"
+                        );
 
                     }
                 );
@@ -3368,24 +3256,256 @@ ecosystemCards.forEach(
         );
 
     }
-);
 
 
-/* ---------------------------------------------------------
-   ECOSYSTEM — CARD CLICK / GOLDEN REVEAL
-   --------------------------------------------------------- */
+    /* =====================================================
+       HERO — SYSTEM CORE HOVER
+       ===================================================== */
 
-ecosystemCards.forEach(
-    (card) => {
+    heroCenters.forEach(
+        (core) => {
 
-        card.addEventListener(
+            core.addEventListener(
+                "mouseenter",
+                () => {
+
+                    const parentSystem =
+                        core.closest(
+                            ".ars-orbital-system"
+                        );
+
+
+                    if (!parentSystem) {
+                        return;
+                    }
+
+
+                    parentSystem
+                        .querySelectorAll(
+                            ".ars-system-node"
+                        )
+                        .forEach(
+                            (node) => {
+
+                                node.style.opacity =
+                                    ".72";
+
+                            }
+                        );
+
+                }
+            );
+
+
+            core.addEventListener(
+                "mouseleave",
+                () => {
+
+                    const parentSystem =
+                        core.closest(
+                            ".ars-orbital-system"
+                        );
+
+
+                    if (!parentSystem) {
+                        return;
+                    }
+
+
+                    parentSystem
+                        .querySelectorAll(
+                            ".ars-system-node"
+                        )
+                        .forEach(
+                            (node) => {
+
+                                node.style.opacity = "";
+
+                            }
+                        );
+
+                }
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       SYSTEM 02
+       ARS ECOSYSTEM — DUAL SYSTEM ARCHITECTURE
+       ===================================================== */
+
+    const ecosystemUniverse =
+        document.querySelector(
+            ".ars-ecosystem-universe"
+        );
+
+
+    const ecosystemSystems =
+        document.querySelectorAll(
+            ".ars-ecosystem-system"
+        );
+
+
+    const ecosystemCards =
+        document.querySelectorAll(
+            ".ars-ecosystem-universe .ars-system-card"
+        );
+
+
+    const heritageCard =
+        document.querySelector(
+            ".ars-heritage-signature-card"
+        );
+
+
+    const energyBridges =
+        document.querySelectorAll(
+            ".ars-energy-bridge"
+        );
+
+
+    /* =====================================================
+       ECOSYSTEM — CARD HOVER
+       ===================================================== */
+
+    ecosystemCards.forEach(
+        (card) => {
+
+            card.addEventListener(
+                "mouseenter",
+                () => {
+
+                    ecosystemCards.forEach(
+                        (other) => {
+
+                            if (other !== card) {
+
+                                other.style.opacity =
+                                    CONFIG.cardDimOpacity;
+
+                            }
+
+                        }
+                    );
+
+
+                    card.style.zIndex = "30";
+
+                }
+            );
+
+
+            card.addEventListener(
+                "mouseleave",
+                () => {
+
+                    ecosystemCards.forEach(
+                        (other) => {
+
+                            other.style.opacity = "";
+                            other.style.zIndex = "";
+
+                        }
+                    );
+
+                }
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       ECOSYSTEM — CARD CLICK / GOLDEN REVEAL
+       ===================================================== */
+
+    ecosystemCards.forEach(
+        (card) => {
+
+            card.addEventListener(
+                "click",
+                () => {
+
+                    ecosystemCards.forEach(
+                        (other) => {
+
+                            other.classList.remove(
+                                "is-selected"
+                            );
+
+                        }
+                    );
+
+
+                    if (heritageCard) {
+
+                        heritageCard.classList.remove(
+                            "is-selected"
+                        );
+
+                    }
+
+
+                    card.classList.add(
+                        "is-selected"
+                    );
+
+                }
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       CENTRAL HERITAGE CARD
+       ===================================================== */
+
+    if (heritageCard) {
+
+        heritageCard.addEventListener(
+            "mouseenter",
+            () => {
+
+                ecosystemCards.forEach(
+                    (card) => {
+
+                        card.style.opacity =
+                            CONFIG.heritageDimOpacity;
+
+                    }
+                );
+
+            }
+        );
+
+
+        heritageCard.addEventListener(
+            "mouseleave",
+            () => {
+
+                ecosystemCards.forEach(
+                    (card) => {
+
+                        card.style.opacity = "";
+
+                    }
+                );
+
+            }
+        );
+
+
+        heritageCard.addEventListener(
             "click",
             () => {
 
                 ecosystemCards.forEach(
-                    (other) => {
+                    (card) => {
 
-                        other.classList.remove(
+                        card.classList.remove(
                             "is-selected"
                         );
 
@@ -3393,16 +3513,7 @@ ecosystemCards.forEach(
                 );
 
 
-                if (heritageCard) {
-
-                    heritageCard.classList.remove(
-                        "is-selected"
-                    );
-
-                }
-
-
-                card.classList.add(
+                heritageCard.classList.add(
                     "is-selected"
                 );
 
@@ -3410,275 +3521,339 @@ ecosystemCards.forEach(
         );
 
     }
-);
 
 
-/* ---------------------------------------------------------
-   CENTRAL HERITAGE CARD
-   --------------------------------------------------------- */
+    /* =====================================================
+       ECOSYSTEM — MOUSE ENERGY PARALLAX
+       ===================================================== */
 
-if (heritageCard) {
+    if (
+        ecosystemUniverse &&
+        !window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches
+    ) {
 
-    heritageCard.addEventListener(
-        "mouseenter",
-        () => {
+        ecosystemUniverse.addEventListener(
+            "mousemove",
+            (event) => {
 
-            ecosystemCards.forEach(
-                (card) => {
+                const rect =
+                    ecosystemUniverse.getBoundingClientRect();
 
-                    card.style.opacity =
-                        ".55";
 
+                if (
+                    !rect.width ||
+                    !rect.height
+                ) {
+                    return;
+                }
+
+
+                const x =
+                    (event.clientX - rect.left)
+                    / rect.width - 0.5;
+
+
+                const y =
+                    (event.clientY - rect.top)
+                    / rect.height - 0.5;
+
+
+                /* -----------------------------------------
+                   ECOSYSTEM SYSTEM PARALLAX
+                   ----------------------------------------- */
+
+                ecosystemSystems.forEach(
+                    (system, index) => {
+
+                        const depth =
+                            (index + 1)
+                            * CONFIG.ecosystemParallaxBase;
+
+
+                        system.style.setProperty(
+                            "--system-parallax-x",
+                            `${x * depth}px`
+                        );
+
+
+                        system.style.setProperty(
+                            "--system-parallax-y",
+                            `${y * depth}px`
+                        );
+
+                    }
+                );
+
+
+                /* -----------------------------------------
+                   ENERGY BRIDGE PARALLAX
+                   ----------------------------------------- */
+
+                energyBridges.forEach(
+                    (bridge) => {
+
+                        bridge.style.setProperty(
+                            "--bridge-parallax-x",
+                            `${x * CONFIG.bridgeParallaxStrength}px`
+                        );
+
+
+                        bridge.style.setProperty(
+                            "--bridge-parallax-y",
+                            `${y * CONFIG.bridgeParallaxStrength}px`
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+        ecosystemUniverse.addEventListener(
+            "mouseleave",
+            () => {
+
+                ecosystemSystems.forEach(
+                    (system) => {
+
+                        system.style.setProperty(
+                            "--system-parallax-x",
+                            "0px"
+                        );
+
+
+                        system.style.setProperty(
+                            "--system-parallax-y",
+                            "0px"
+                        );
+
+                    }
+                );
+
+
+                energyBridges.forEach(
+                    (bridge) => {
+
+                        bridge.style.setProperty(
+                            "--bridge-parallax-x",
+                            "0px"
+                        );
+
+
+                        bridge.style.setProperty(
+                            "--bridge-parallax-y",
+                            "0px"
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       SYSTEM 03
+       GLOBAL REVEAL SYSTEM
+       ===================================================== */
+
+    const revealSelectors = [
+
+        ".about-content",
+
+        ".principle-card",
+
+        ".philosophy-content",
+
+        ".ars-system-heading",
+
+        ".ars-system-card",
+
+        ".ars-heritage-signature-card",
+
+        ".future-roadmap .principle-card",
+
+        ".future-vision .future-item",
+
+        ".engineering-quote",
+
+        ".mission-card",
+
+        ".value-card",
+
+        ".vision-card",
+
+        ".dna-card",
+
+        ".future-card",
+
+        ".timeline-card",
+
+        ".stat-card",
+
+        ".leader-card",
+
+        ".gallery-card",
+
+        ".standard-card",
+
+        ".technology-partner",
+
+        ".partner-card",
+
+        ".country-card",
+
+        ".org-card"
+
+    ];
+
+
+    const revealItems =
+        document.querySelectorAll(
+            revealSelectors.join(",")
+        );
+
+
+    /* =====================================================
+       INTERSECTION OBSERVER
+       ===================================================== */
+
+    if (
+        revealItems.length &&
+        "IntersectionObserver" in window
+    ) {
+
+        const revealObserver =
+            new IntersectionObserver(
+                (entries) => {
+
+                    entries.forEach(
+                        (entry) => {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target.classList.add(
+                                    "is-visible"
+                                );
+
+
+                                revealObserver.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold:
+                        CONFIG.revealThreshold
                 }
             );
 
-        }
-    );
+
+        revealItems.forEach(
+            (item) => {
+
+                revealObserver.observe(
+                    item
+                );
+
+            }
+        );
+
+    }
+    else {
+
+        /*
+         * Fallback for browsers without
+         * IntersectionObserver.
+         */
+
+        revealItems.forEach(
+            (item) => {
+
+                item.classList.add(
+                    "is-visible"
+                );
+
+            }
+        );
+
+    }
 
 
-    heritageCard.addEventListener(
-        "mouseleave",
-        () => {
+    /* =====================================================
+       SYSTEM 04
+       GLOBAL CARD SELECTION
+       ===================================================== */
 
-            ecosystemCards.forEach(
-                (card) => {
-
-                    card.style.opacity =
-                        "";
-
-                }
-            );
-
-        }
-    );
+    const allGlassCards =
+        document.querySelectorAll(
+            ".ars-glass-card"
+        );
 
 
-    heritageCard.addEventListener(
-        "click",
-        () => {
+    allGlassCards.forEach(
+        (card) => {
 
-            ecosystemCards.forEach(
-                (card) => {
+            card.addEventListener(
+                "click",
+                () => {
 
-                    card.classList.remove(
+                    allGlassCards.forEach(
+                        (other) => {
+
+                            if (other !== card) {
+
+                                other.classList.remove(
+                                    "is-selected"
+                                );
+
+                            }
+
+                        }
+                    );
+
+
+                    card.classList.add(
                         "is-selected"
                     );
 
                 }
             );
 
-
-            heritageCard.classList.add(
-                "is-selected"
-            );
-
         }
     );
 
-}
 
+    /* =====================================================
+       GLOBAL CLICK — REMOVE CARD SELECTION
+       ===================================================== */
 
-/* ---------------------------------------------------------
-   ECOSYSTEM — MOUSE ENERGY PARALLAX
-   --------------------------------------------------------- */
-
-if (ecosystemUniverse) {
-
-    ecosystemUniverse.addEventListener(
-        "mousemove",
+    document.addEventListener(
+        "click",
         (event) => {
 
-            const rect =
-                ecosystemUniverse.getBoundingClientRect();
-
-            const x =
-                (event.clientX - rect.left)
-                / rect.width - 0.5;
-
-            const y =
-                (event.clientY - rect.top)
-                / rect.height - 0.5;
-
-
-            ecosystemSystems.forEach(
-                (system, index) => {
-
-                    const depth =
-                        (index + 1) * 2;
-
-                    system.style.setProperty(
-                        "--system-parallax-x",
-                        `${x * depth}px`
-                    );
-
-                    system.style.setProperty(
-                        "--system-parallax-y",
-                        `${y * depth}px`
-                    );
-
-                }
-            );
-
-
-            energyBridges.forEach(
-                (bridge) => {
-
-                    bridge.style.setProperty(
-                        "--bridge-parallax-x",
-                        `${x * 4}px`
-                    );
-
-                    bridge.style.setProperty(
-                        "--bridge-parallax-y",
-                        `${y * 4}px`
-                    );
-
-                }
-            );
-
-        }
-    );
-
-
-    ecosystemUniverse.addEventListener(
-        "mouseleave",
-        () => {
-
-            ecosystemSystems.forEach(
-                (system) => {
-
-                    system.style.setProperty(
-                        "--system-parallax-x",
-                        "0px"
-                    );
-
-                    system.style.setProperty(
-                        "--system-parallax-y",
-                        "0px"
-                    );
-
-                }
-            );
-
-
-            energyBridges.forEach(
-                (bridge) => {
-
-                    bridge.style.setProperty(
-                        "--bridge-parallax-x",
-                        "0px"
-                    );
-
-                    bridge.style.setProperty(
-                        "--bridge-parallax-y",
-                        "0px"
-                    );
-
-                }
-            );
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   SYSTEM 03
-   GLOBAL PAGE INTERACTION
-   ========================================================= */
-
-/* ---------------------------------------------------------
-   INTERSECTION REVEAL
-   فقط برای کلاس‌هایی که واقعاً در HTML هستند
-   --------------------------------------------------------- */
-
-const revealItems =
-    document.querySelectorAll(
-        [
-            ".about-content",
-            ".principle-card",
-            ".philosophy-content",
-            ".ars-system-heading",
-            ".ars-system-card",
-            ".ars-heritage-signature-card",
-            ".future-roadmap .principle-card",
-            ".future-vision .future-item",
-            ".engineering-quote"
-        ].join(",")
-    );
-
-
-if (
-    revealItems.length &&
-    "IntersectionObserver" in window
-) {
-
-    const revealObserver =
-        new IntersectionObserver(
-            (entries) => {
-
-                entries.forEach(
-                    (entry) => {
-
-                        if (
-                            entry.isIntersecting
-                        ) {
-
-                            entry.target.classList.add(
-                                "is-visible"
-                            );
-
-                            revealObserver.unobserve(
-                                entry.target
-                            );
-
-                        }
-
-                    }
+            const clickedCard =
+                event.target.closest(
+                    ".ars-glass-card"
                 );
 
-            },
-            {
-                threshold: 0.12
+
+            if (clickedCard) {
+                return;
             }
-        );
 
-
-    revealItems.forEach(
-        (item) => {
-
-            revealObserver.observe(
-                item
-            );
-
-        }
-    );
-
-}
-
-
-/* ---------------------------------------------------------
-   GLOBAL CARD SELECTION
-   --------------------------------------------------------- */
-
-const allGlassCards =
-    document.querySelectorAll(
-        ".ars-glass-card"
-    );
-
-
-document.addEventListener(
-    "click",
-    (event) => {
-
-        const clickedCard =
-            event.target.closest(
-                ".ars-glass-card"
-            );
-
-
-        if (!clickedCard) {
 
             allGlassCards.forEach(
                 (card) => {
@@ -3691,161 +3866,347 @@ document.addEventListener(
             );
 
         }
+    );
+
+
+    /* =====================================================
+       SYSTEM 05
+       REDUCED MOTION
+       ===================================================== */
+
+    const reducedMotion =
+        window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        );
+
+
+    function applyReducedMotion() {
+
+        if (!reducedMotion.matches) {
+            return;
+        }
+
+
+        /* HERO */
+
+        heroNodes.forEach(
+            (node) => {
+
+                node.style.animation =
+                    "none";
+
+            }
+        );
+
+
+        heroOrbits.forEach(
+            (orbit) => {
+
+                orbit.style.animation =
+                    "none";
+
+            }
+        );
+
+
+        heroSystems.forEach(
+            (system) => {
+
+                system.style.animation =
+                    "none";
+
+            }
+        );
+
+
+        /* ECOSYSTEM */
+
+        ecosystemCards.forEach(
+            (card) => {
+
+                card.style.animation =
+                    "none";
+
+            }
+        );
+
+
+        ecosystemSystems.forEach(
+            (system) => {
+
+                system.style.animation =
+                    "none";
+
+            }
+        );
+
+
+        /* ENERGY BRIDGES */
+
+        energyBridges.forEach(
+            (bridge) => {
+
+                bridge.style.animation =
+                    "none";
+
+            }
+        );
+
+
+        heritageBelts.forEach(
+            (belt) => {
+
+                belt.style.animation =
+                    "none";
+
+            }
+        );
 
     }
-);
 
 
-/* ---------------------------------------------------------
-   REDUCED MOTION
-   --------------------------------------------------------- */
+    applyReducedMotion();
 
-const reducedMotion =
-    window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
+
+    /* =====================================================
+       RESPONSIVE / DEVICE SAFETY
+       ===================================================== */
+
+    const isTouchDevice =
+        window.matchMedia(
+            "(hover: none)"
+        ).matches;
+
+
+    if (isTouchDevice) {
+
+        /*
+         * Touch devices do not receive
+         * mouse parallax interaction.
+         *
+         * CSS remains responsible for
+         * visual presentation.
+         */
+
+        heroNodes.forEach(
+            (node) => {
+
+                node.style.setProperty(
+                    "--hero-parallax-x",
+                    "0px"
+                );
+
+
+                node.style.setProperty(
+                    "--hero-parallax-y",
+                    "0px"
+                );
+
+            }
+        );
+
+
+        heroOrbits.forEach(
+            (orbit) => {
+
+                orbit.style.setProperty(
+                    "--orbit-parallax-x",
+                    "0px"
+                );
+
+
+                orbit.style.setProperty(
+                    "--orbit-parallax-y",
+                    "0px"
+                );
+
+            }
+        );
+
+
+        ecosystemSystems.forEach(
+            (system) => {
+
+                system.style.setProperty(
+                    "--system-parallax-x",
+                    "0px"
+                );
+
+
+                system.style.setProperty(
+                    "--system-parallax-y",
+                    "0px"
+                );
+
+            }
+        );
+
+
+        energyBridges.forEach(
+            (bridge) => {
+
+                bridge.style.setProperty(
+                    "--bridge-parallax-x",
+                    "0px"
+                );
+
+
+                bridge.style.setProperty(
+                    "--bridge-parallax-y",
+                    "0px"
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       MASTER SYSTEM DIAGNOSTICS
+       ===================================================== */
+
+    console.log(
+        "=============================================="
     );
 
 
-if (reducedMotion.matches) {
-
-    heroNodes.forEach(
-        (node) => {
-
-            node.style.animation =
-                "none";
-
-        }
+    console.log(
+        "ARS HERITAGE GROUP — HOME MASTER JS"
     );
 
 
-    heroOrbits.forEach(
-        (orbit) => {
-
-            orbit.style.animation =
-                "none";
-
-        }
+    console.log(
+        "MASTER INITIALIZATION: COMPLETE"
     );
 
 
-    ecosystemCards.forEach(
-        (card) => {
-
-            card.style.animation =
-                "none";
-
-        }
+    console.log(
+        "----------------------------------------------"
     );
 
 
-    energyBridges.forEach(
-        (bridge) => {
-
-            bridge.style.animation =
-                "none";
-
-        }
+    console.log(
+        "SYSTEM 01 — HERO / DUAL INTELLIGENCE ORBITAL"
     );
 
-}
+
+    console.log(
+        "Hero Nodes:",
+        heroNodes.length
+    );
 
 
-/* =========================================================
-   MASTER INITIALIZATION
-   ========================================================= */
+    console.log(
+        "Hero Orbits:",
+        heroOrbits.length
+    );
 
-console.log(
-    "ARS Heritage Group — Home Master JavaScript initialized."
-);
 
-console.log(
-    "SYSTEM 01 — HERO / DUAL INTELLIGENCE ORBITAL SYSTEM"
-);
+    console.log(
+        "Hero Systems:",
+        heroSystems.length
+    );
 
-console.log(
-    "SYSTEM 02 — ARS ECOSYSTEM / DUAL SYSTEM ARCHITECTURE"
-);
 
-console.log(
-    "SYSTEM 03 — GLOBAL PAGE INTERACTION"
-);
+    console.log(
+        "Heritage Belts:",
+        heritageBelts.length
+    );
+
+
+    console.log(
+        "----------------------------------------------"
+    );
+
+
+    console.log(
+        "SYSTEM 02 — ARS DUAL ECOSYSTEM"
+    );
+
+
+    console.log(
+        "Ecosystem Cards:",
+        ecosystemCards.length
+    );
+
+
+    console.log(
+        "Ecosystem Systems:",
+        ecosystemSystems.length
+    );
+
+
+    console.log(
+        "Energy Bridges:",
+        energyBridges.length
+    );
+
+
+    console.log(
+        "Heritage Core Card:",
+        heritageCard ? "FOUND" : "NOT FOUND"
+    );
+
+
+    console.log(
+        "----------------------------------------------"
+    );
+
+
+    console.log(
+        "SYSTEM 03 — GLOBAL REVEAL"
+    );
+
+
+    console.log(
+        "Reveal Items:",
+        revealItems.length
+    );
+
+
+    console.log(
+        "----------------------------------------------"
+    );
+
+
+    console.log(
+        "SYSTEM 04 — CARD SELECTION"
+    );
+
+
+    console.log(
+        "Glass Cards:",
+        allGlassCards.length
+    );
+
+
+    console.log(
+        "----------------------------------------------"
+    );
+
+
+    console.log(
+        "Reduced Motion:",
+        reducedMotion.matches
+    );
+
+
+    console.log(
+        "Touch Device:",
+        isTouchDevice
+    );
+
+
+    console.log(
+        "=============================================="
+    );
 
 });
 
-</script>
-
-        
-        
-        
-        <script>
+   </script>     
 
 
-
-/* =========================================================
-   GLOBAL REVEAL SYSTEM
-   ---------------------------------------------------------
-   فقط برای عناصری که واقعاً در HTML وجود دارند.
-   ========================================================= */
-
-const revealItems =
-    document.querySelectorAll(
-        [
-            ".mission-card",
-            ".value-card",
-            ".vision-card",
-            ".dna-card",
-            ".future-card",
-            ".timeline-card",
-            ".stat-card",
-            ".leader-card",
-            ".gallery-card",
-            ".standard-card",
-            ".technology-partner",
-            ".partner-card",
-            ".country-card",
-            ".org-card",
-</script>
-
- <script>
-/* ========================================================= */
-/* ARS HOME — GOLDEN REVEAL CARD CLICK SYSTEM               */
-/* کلیک روی کارت و فعال‌سازی افکت Golden Reveal              */
-/* ========================================================= */
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const cards = document.querySelectorAll(".ars-glass-card");
-
-    if (!cards.length) return;
-
-    cards.forEach(function (card) {
-
-        card.addEventListener("click", function () {
-
-            /* حذف حالت انتخاب از همه کارت‌ها */
-            cards.forEach(function (item) {
-                item.classList.remove("is-selected");
-            });
-
-            /* فعال کردن کارت کلیک‌شده */
-            card.classList.add("is-selected");
-
-        });
-
-    });
-
-});
-
-</script>
-
-
-
-
-
-
-<!-- <script src="ars-intelligence-system.js"></script> -->
-<!-- <script src="ars-intelligence-constellation.js"></script> -->
-        
-        
+                
 </body>
 </html>
