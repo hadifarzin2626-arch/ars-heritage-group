@@ -24361,7 +24361,1472 @@ code {
 
 
 
+/* =========================================================
+   ARS HERITAGE GROUP
+   INTELLIGENCE CONSOLE FOOTER
+   WORLD-CLASS INDUSTRIAL MONITOR EDITION
+   ========================================================= */
 
+/* =========================================================
+   01 — FULLY SCOPED ROOT
+   ========================================================= */
+
+.ars-intelligence-footer {
+    --arsf-bg-0: #020304;
+    --arsf-bg-1: #07090c;
+    --arsf-bg-2: #0b0e12;
+
+    /* INDUSTRIAL MATTE BRONZE */
+    --arsf-bronze-0: #4b3527;
+    --arsf-bronze-1: #76533a;
+    --arsf-bronze-2: #9b7250;
+    --arsf-bronze-3: #bd966d;
+    --arsf-bronze-4: #d0ad82;
+
+    --arsf-blue: #159dff;
+    --arsf-blue-soft: #69cbff;
+
+    --arsf-yellow: #e9c85b;
+
+    --arsf-white: #f3f1eb;
+    --arsf-muted: rgba(243,241,235,.58);
+    --arsf-dim: rgba(243,241,235,.36);
+
+    position: relative;
+    isolation: isolate;
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    box-sizing: border-box;
+
+    padding:
+        clamp(55px, 7vw, 90px)
+        clamp(12px, 3vw, 40px)
+        clamp(25px, 4vw, 45px);
+
+    overflow: hidden;
+
+    color: var(--arsf-white);
+
+    background:
+        radial-gradient(
+            ellipse at 50% 20%,
+            rgba(155,114,80,.12),
+            transparent 45%
+        ),
+        radial-gradient(
+            ellipse at 50% 80%,
+            rgba(21,157,255,.045),
+            transparent 50%
+        ),
+        linear-gradient(
+            180deg,
+            var(--arsf-bg-0),
+            var(--arsf-bg-1) 52%,
+            var(--arsf-bg-0)
+        );
+}
+
+.ars-intelligence-footer *,
+.ars-intelligence-footer *::before,
+.ars-intelligence-footer *::after {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   02 — INDUSTRIAL ATMOSPHERE
+   ========================================================= */
+
+.ars-intelligence-footer::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: -2;
+
+    opacity: .55;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(208,173,130,.025) 50%,
+            transparent 100%
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent 0,
+            transparent 79px,
+            rgba(189,150,109,.018) 80px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            transparent 0,
+            transparent 79px,
+            rgba(21,157,255,.012) 80px
+        );
+
+    pointer-events: none;
+}
+
+.ars-intelligence-footer::after {
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    top: 8%;
+
+    width: 70%;
+    height: 70%;
+
+    transform: translateX(-50%);
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(21,157,255,.045),
+            transparent 68%
+        );
+
+    filter: blur(30px);
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* =========================================================
+   03 — TOP ENERGY HORIZON
+   ========================================================= */
+
+.ars-footer-horizon {
+    width: min(1500px, 100%);
+    margin: 0 auto clamp(22px, 3vw, 34px);
+
+    display: flex;
+    align-items: center;
+
+    gap: clamp(10px, 1.5vw, 20px);
+}
+
+.horizon-line {
+    flex: 1;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(118,83,58,.65),
+            rgba(208,173,130,.9),
+            transparent
+        );
+
+    box-shadow:
+        0 0 10px rgba(208,173,130,.2);
+}
+
+.horizon-right {
+    transform: scaleX(-1);
+}
+
+.ars-footer-status-core {
+    position: relative;
+
+    width: 34px;
+    height: 34px;
+
+    flex: 0 0 34px;
+
+    display: grid;
+    place-items: center;
+}
+
+.status-core-ring {
+    position: absolute;
+    inset: 3px;
+
+    border:
+        1px solid rgba(189,150,109,.72);
+
+    border-radius: 50%;
+}
+
+.status-core-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--arsf-blue);
+
+    box-shadow:
+        0 0 8px var(--arsf-blue),
+        0 0 20px rgba(21,157,255,.55);
+
+    animation:
+        arsfStatusPulse 2.4s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   04 — MASTER MONITOR FRAME
+   ========================================================= */
+
+.ars-footer-console {
+    position: relative;
+
+    width: min(1500px, 100%);
+    max-width: 100%;
+
+    margin: 0 auto;
+
+    border:
+        3px solid rgba(155,114,80,.72);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(118,83,58,.14),
+            rgba(255,255,255,.018) 32%,
+            rgba(7,21,37,.16) 68%,
+            rgba(118,83,58,.08)
+        );
+
+    box-shadow:
+        inset 0 0 0 1px rgba(208,173,130,.18),
+        inset 0 0 30px rgba(118,83,58,.08),
+        0 30px 100px rgba(0,0,0,.68),
+        0 0 60px rgba(118,83,58,.10);
+
+    overflow: hidden;
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+
+/* industrial outer rails */
+
+.ars-footer-console::before {
+    content: "";
+
+    position: absolute;
+    inset: 8px;
+
+    border:
+        1px solid rgba(208,173,130,.17);
+
+    pointer-events: none;
+
+    z-index: 10;
+}
+
+.ars-footer-console::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    top: 0;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(208,173,130,.75) 20%,
+            rgba(21,157,255,.7) 50%,
+            rgba(208,173,130,.75) 80%,
+            transparent
+        );
+
+    animation:
+        arsfTopScan 5s linear infinite;
+}
+
+
+/* =========================================================
+   05 — HEADER
+   ========================================================= */
+
+.ars-console-header {
+    min-height: 92px;
+
+    padding:
+        20px clamp(20px, 3vw, 40px);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom:
+        2px solid rgba(118,83,58,.42);
+}
+
+.ars-console-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.console-eyebrow {
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: .30em;
+
+    color:
+        rgba(208,173,130,.76);
+}
+
+.ars-console-brand strong {
+    font-size: clamp(21px, 2vw, 28px);
+
+    font-weight: 700;
+
+    letter-spacing: .18em;
+
+    color: var(--arsf-white);
+
+    text-shadow:
+        0 0 18px rgba(208,173,130,.08);
+}
+
+.ars-console-status {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: .20em;
+
+    color:
+        rgba(243,241,235,.58);
+}
+
+.status-indicator {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: var(--arsf-blue);
+
+    box-shadow:
+        0 0 8px var(--arsf-blue),
+        0 0 18px rgba(21,157,255,.65);
+
+    animation:
+        arsfStatusPulse 1.8s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   06 — MAIN MONITOR STAGE
+   ========================================================= */
+
+.ars-console-main {
+    position: relative;
+
+    min-height: 500px;
+
+    padding:
+        clamp(45px, 5vw, 70px)
+        clamp(25px, 4vw, 55px);
+
+    display: grid;
+
+    /*
+       CENTRAL MONITOR = EXACTLY ONE THIRD
+       OF THE THREE-COLUMN CONTENT SYSTEM
+    */
+
+    grid-template-columns:
+        1fr
+        minmax(280px, 33.333%)
+        1fr;
+
+    align-items: center;
+
+    gap: clamp(22px, 4vw, 65px);
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(118,83,58,.11),
+            transparent 34%
+        );
+}
+
+
+/* =========================================================
+   07 — SIDE INFORMATION
+   ========================================================= */
+
+.ars-console-panel {
+    width: 100%;
+    max-width: 340px;
+}
+
+.ars-panel-left {
+    justify-self: end;
+    text-align: right;
+}
+
+.ars-panel-right {
+    justify-self: start;
+    text-align: left;
+}
+
+.panel-label {
+    display: block;
+
+    margin-bottom: 13px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: .30em;
+
+    color: var(--arsf-bronze-3);
+}
+
+.ars-console-panel h3 {
+    margin: 0;
+
+    font-size:
+        clamp(22px, 2.5vw, 36px);
+
+    line-height: .98;
+
+    letter-spacing: .055em;
+
+    font-weight: 700;
+
+    color: var(--arsf-white);
+}
+
+.ars-console-panel p {
+    max-width: 310px;
+
+    margin: 20px 0 0;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+    letter-spacing: .045em;
+
+    color: var(--arsf-muted);
+}
+
+
+/* =========================================================
+   08 — CENTRAL MONITOR
+   ========================================================= */
+
+.ars-console-core {
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 1.55 / 1;
+
+    margin: 0 auto;
+
+    display: grid;
+    place-items: center;
+
+    border:
+        4px solid rgba(118,83,58,.95);
+
+    background:
+        linear-gradient(
+            145deg,
+            #17110d,
+            #050709 35%,
+            #090d12 70%,
+            #15100c
+        );
+
+    box-shadow:
+        inset 0 0 0 2px rgba(208,173,130,.22),
+        inset 0 0 45px rgba(0,0,0,.88),
+        0 0 0 7px rgba(59,42,32,.35),
+        0 25px 65px rgba(0,0,0,.75),
+        0 0 35px rgba(118,83,58,.16);
+
+    overflow: hidden;
+}
+
+
+/* monitor bezel */
+
+.ars-console-core::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 10px;
+
+    border:
+        2px solid rgba(189,150,109,.32);
+
+    pointer-events: none;
+
+    z-index: 5;
+}
+
+
+/* screen */
+
+.ars-console-core::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 18px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(21,157,255,.025),
+            transparent 35%,
+            rgba(21,157,255,.045)
+        ),
+        repeating-linear-gradient(
+            0deg,
+            transparent 0,
+            transparent 4px,
+            rgba(21,157,255,.025) 5px
+        ),
+        radial-gradient(
+            ellipse at 50% 50%,
+            rgba(7,37,58,.88),
+            #03070b 72%
+        );
+
+    border:
+        1px solid rgba(21,157,255,.20);
+
+    box-shadow:
+        inset 0 0 35px rgba(21,157,255,.08);
+
+    animation:
+        arsfScreenFlicker 7s ease-in-out infinite;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   09 — MONITOR SCREEN CONTENT
+   ========================================================= */
+
+.ars-monitor-screen {
+    position: relative;
+
+    z-index: 3;
+
+    width: calc(100% - 46px);
+    height: calc(100% - 46px);
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    padding: 18px 20px;
+
+    color: var(--arsf-white);
+}
+
+.ars-monitor-top {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ars-monitor-code {
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: .22em;
+
+    color: rgba(208,173,130,.72);
+}
+
+.ars-monitor-live {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: .18em;
+
+    color: rgba(243,241,235,.48);
+}
+
+.monitor-live-dot {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: var(--arsf-blue);
+
+    box-shadow:
+        0 0 8px var(--arsf-blue);
+
+    animation:
+        arsfStatusPulse 1.6s infinite;
+}
+
+.ars-monitor-center {
+    text-align: center;
+}
+
+.ars-monitor-title {
+    margin: 0;
+
+    font-size:
+        clamp(20px, 2.4vw, 32px);
+
+    font-weight: 700;
+
+    letter-spacing: .20em;
+
+    color: var(--arsf-bronze-4);
+
+    text-shadow:
+        0 0 18px rgba(208,173,130,.16);
+}
+
+.ars-monitor-subtitle {
+    margin-top: 8px;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: .25em;
+
+    color: rgba(243,241,235,.42);
+}
+
+.ars-monitor-data {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 8px;
+}
+
+.monitor-data-item {
+    padding: 8px;
+
+    border:
+        1px solid rgba(118,83,58,.35);
+
+    background:
+        rgba(0,0,0,.28);
+
+    text-align: center;
+}
+
+.monitor-data-item span {
+    display: block;
+
+    font-size: 7px;
+
+    letter-spacing: .12em;
+
+    color: rgba(243,241,235,.34);
+}
+
+.monitor-data-item strong {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 10px;
+
+    letter-spacing: .12em;
+
+    color: var(--arsf-bronze-3);
+}
+
+
+/* =========================================================
+   10 — ARS / STATISTICS TOP PODS
+   ========================================================= */
+
+.ars-console-pods {
+    position: absolute;
+
+    left: 50%;
+
+    top: 20px;
+
+    transform: translateX(-50%);
+
+    width: min(760px, 82%);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    z-index: 8;
+
+    pointer-events: none;
+}
+
+.ars-footer-pod {
+    position: relative;
+
+    width: clamp(70px, 7vw, 96px);
+    aspect-ratio: 1;
+
+    display: grid;
+    place-items: center;
+
+    border:
+        2px solid rgba(155,114,80,.78);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(118,83,58,.34),
+            rgba(5,7,9,.96) 68%
+        );
+
+    box-shadow:
+        inset 0 0 20px rgba(208,173,130,.08),
+        0 0 24px rgba(118,83,58,.13);
+
+    pointer-events: auto;
+}
+
+.ars-footer-pod::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -7px;
+
+    border:
+        1px solid rgba(208,173,130,.16);
+
+    border-radius: 50%;
+
+    animation:
+        arsfPodRotate 12s linear infinite;
+}
+
+.pod-label {
+    text-align: center;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: .12em;
+
+    color: var(--arsf-bronze-4);
+}
+
+.pod-label small {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 6px;
+
+    letter-spacing: .12em;
+
+    color: rgba(243,241,235,.42);
+}
+
+.pod-status-dot {
+    position: absolute;
+
+    right: 8px;
+    top: 8px;
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: var(--arsf-blue);
+
+    box-shadow:
+        0 0 8px var(--arsf-blue);
+
+    animation:
+        arsfStatusPulse 1.8s infinite;
+}
+
+.ars-statistics-pod .pod-status-dot {
+    background: var(--arsf-yellow);
+
+    box-shadow:
+        0 0 8px var(--arsf-yellow);
+
+    animation:
+        arsfYellowPulse 2s infinite;
+}
+
+
+/* =========================================================
+   11 — THREE-DIMENSIONAL MODULE BUTTONS
+   ========================================================= */
+
+.ars-console-modules {
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap: 12px;
+
+    padding:
+        18px clamp(18px, 3vw, 34px);
+
+    border-top:
+        2px solid rgba(118,83,58,.42);
+
+    border-bottom:
+        2px solid rgba(118,83,58,.42);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.32),
+            rgba(255,255,255,.008)
+        );
+}
+
+.ars-console-module {
+    position: relative;
+
+    min-height: 96px;
+
+    padding: 15px 16px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    text-decoration: none;
+
+    border:
+        2px solid rgba(118,83,58,.52);
+
+    border-radius: 4px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #141618,
+            #050607 58%,
+            #111315
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.055),
+        inset 0 -5px 0 rgba(0,0,0,.42),
+        0 7px 0 #020304,
+        0 13px 24px rgba(0,0,0,.45);
+
+    transition:
+        transform .28s ease,
+        border-color .28s ease,
+        box-shadow .28s ease,
+        background .28s ease;
+}
+
+.ars-console-module:hover {
+    transform:
+        translateY(-4px);
+
+    border-color:
+        rgba(189,150,109,.82);
+
+    background:
+        linear-gradient(
+            145deg,
+            #1b1d1f,
+            #080a0c 60%,
+            #15181a
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.07),
+        0 7px 0 #020304,
+        0 15px 30px rgba(0,0,0,.55),
+        0 0 22px rgba(118,83,58,.14);
+}
+
+.module-index {
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: .16em;
+
+    color:
+        rgba(189,150,109,.52);
+}
+
+.module-name {
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: .12em;
+
+    color:
+        var(--arsf-bronze-3);
+}
+
+.module-arrow {
+    position: absolute;
+
+    right: 13px;
+    top: 12px;
+
+    font-size: 15px;
+
+    color:
+        rgba(189,150,109,.65);
+}
+
+.module-power-dot {
+    position: absolute;
+
+    right: 13px;
+    bottom: 13px;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--arsf-blue);
+
+    box-shadow:
+        0 0 8px var(--arsf-blue),
+        0 0 16px rgba(21,157,255,.55);
+
+    animation:
+        arsfStatusPulse 2.1s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   12 — LOWER DESCRIPTION
+   ========================================================= */
+
+.ars-console-signature {
+    min-height: 125px;
+
+    padding:
+        30px clamp(20px, 4vw, 60px);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 24px;
+
+    text-align: center;
+}
+
+.signature-line {
+    flex: 1;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(155,114,80,.6),
+            transparent
+        );
+}
+
+.signature-text {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    max-width: 700px;
+}
+
+.signature-text span {
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: .24em;
+
+    color:
+        rgba(243,241,235,.48);
+}
+
+.signature-text strong {
+    font-size:
+        clamp(12px, 1.3vw, 17px);
+
+    font-weight: 700;
+
+    letter-spacing: .16em;
+
+    color:
+        var(--arsf-bronze-4);
+
+    text-shadow:
+        0 0 14px rgba(208,173,130,.12);
+}
+
+
+/* =========================================================
+   13 — LOWER FOOTER
+   ========================================================= */
+
+.ars-console-bottom {
+    min-height: 88px;
+
+    padding:
+        18px clamp(20px, 3vw, 35px);
+
+    display: grid;
+
+    grid-template-columns:
+        1fr auto 1fr;
+
+    align-items: center;
+
+    gap: 20px;
+
+    border-top:
+        2px solid rgba(118,83,58,.35);
+}
+
+.ars-footer-identity {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.identity-mark {
+    font-size: 20px;
+
+    font-weight: 700;
+
+    letter-spacing: .14em;
+
+    color:
+        var(--arsf-bronze-4);
+}
+
+.identity-description {
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: .20em;
+
+    color:
+        rgba(243,241,235,.42);
+}
+
+.ars-footer-links {
+    display: flex;
+
+    gap: 22px;
+}
+
+.ars-footer-links a {
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: .10em;
+
+    color:
+        rgba(243,241,235,.44);
+
+    text-decoration: none;
+
+    transition:
+        color .25s ease;
+}
+
+.ars-footer-links a:hover {
+    color:
+        var(--arsf-bronze-4);
+}
+
+.ars-footer-copy {
+    justify-self: end;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: .08em;
+
+    color:
+        rgba(243,241,235,.34);
+}
+
+
+/* =========================================================
+   14 — INDUSTRIAL ANIMATION SYSTEM
+   ========================================================= */
+
+@keyframes arsfStatusPulse {
+    0%, 100% {
+        opacity: .38;
+        transform: scale(.82);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.12);
+    }
+}
+
+@keyframes arsfYellowPulse {
+    0%, 100% {
+        opacity: .30;
+        transform: scale(.82);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+}
+
+@keyframes arsfTopScan {
+    0% {
+        transform: translateX(-18%);
+        opacity: .25;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(18%);
+        opacity: .25;
+    }
+}
+
+@keyframes arsfPodRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes arsfScreenFlicker {
+    0%, 100% {
+        opacity: .88;
+    }
+
+    48% {
+        opacity: .92;
+    }
+
+    50% {
+        opacity: .76;
+    }
+
+    52% {
+        opacity: .94;
+    }
+}
+
+
+/* =========================================================
+   15 — REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ars-intelligence-footer *,
+    .ars-intelligence-footer *::before,
+    .ars-intelligence-footer *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important;
+    }
+}
+
+
+/* =========================================================
+   16 — TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    .ars-console-main {
+        grid-template-columns:
+            1fr
+            minmax(250px, 36%)
+            1fr;
+
+        gap: 22px;
+    }
+
+    .ars-console-modules {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .ars-console-module:nth-child(3) {
+        border-right: 0;
+    }
+}
+
+
+/* =========================================================
+   17 — MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .ars-intelligence-footer {
+        padding:
+            45px 10px 18px;
+    }
+
+    .ars-footer-horizon {
+        margin-bottom: 20px;
+    }
+
+    .ars-footer-console {
+        border-width: 2px;
+    }
+
+    .ars-console-header {
+        min-height: 75px;
+
+        padding:
+            16px;
+    }
+
+    .console-eyebrow {
+        font-size: 7px;
+    }
+
+    .ars-console-brand strong {
+        font-size: 17px;
+    }
+
+    .ars-console-status {
+        font-size: 7px;
+    }
+
+    .ars-console-main {
+        min-height: 0;
+
+        padding:
+            80px 18px 32px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 28px;
+    }
+
+    .ars-console-pods {
+        top: 18px;
+
+        width: 75%;
+    }
+
+    .ars-footer-pod {
+        width: 66px;
+    }
+
+    .ars-console-core {
+        width: min(92%, 430px);
+
+        order: 1;
+
+        aspect-ratio: 1.45 / 1;
+    }
+
+    .ars-panel-left,
+    .ars-panel-right {
+        max-width: 100%;
+
+        text-align: center;
+
+        justify-self: center;
+    }
+
+    .ars-panel-left {
+        order: 2;
+    }
+
+    .ars-panel-right {
+        order: 3;
+    }
+
+    .ars-console-panel h3 {
+        font-size: 24px;
+    }
+
+    .ars-console-panel p {
+        margin-inline: auto;
+
+        font-size: 11px;
+    }
+
+    .ars-console-modules {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        padding:
+            14px;
+    }
+
+    .ars-console-module {
+        min-height: 82px;
+    }
+
+    .ars-console-module:nth-child(2n) {
+        border-right: 0;
+    }
+
+    .ars-console-signature {
+        padding:
+            25px 14px;
+
+        gap: 10px;
+    }
+
+    .signature-text span {
+        font-size: 7px;
+    }
+
+    .signature-text strong {
+        font-size: 9px;
+    }
+
+    .ars-console-bottom {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        gap: 14px;
+
+        padding:
+            20px 14px;
+    }
+
+    .ars-footer-identity,
+    .ars-footer-links,
+    .ars-footer-copy {
+        justify-self: center;
+    }
+
+    .ars-footer-links {
+        gap: 16px;
+    }
+}
+
+
+/* =========================================================
+   18 — SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+    .ars-console-modules {
+        gap: 8px;
+    }
+
+    .ars-console-module {
+        padding: 12px;
+
+        min-height: 76px;
+    }
+
+    .module-name {
+        font-size: 9px;
+    }
+
+    .ars-monitor-screen {
+        padding: 12px;
+    }
+
+    .ars-monitor-data {
+        gap: 4px;
+    }
+
+    .monitor-data-item {
+        padding: 5px;
+    }
+
+    .monitor-data-item span {
+        font-size: 5px;
+    }
+
+    .monitor-data-item strong {
+        font-size: 8px;
+    }
+}
+
+
+/* =========================================================
+   END — ARS INDUSTRIAL INTELLIGENCE CONSOLE
+   ========================================================= */
 
 
 
