@@ -21083,50 +21083,29 @@ code {
 
    ARCHITECTURE:
    UNTOUCHED
-
-   ========================================================= */
-
-
-
-
-
-
-
-
-
-
 /* =========================================================
-   ARS HERO — FINAL VISUAL REFINEMENT
-   CARD LIGHT / TITLE SCALE / AUTOMOTIVE SUBTITLE
+   ARS HERO — GOLD LINE ENERGY + TITLE CARD COMPRESSION
+   FINAL VISUAL PATCH
    ========================================================= */
 
 
 /* =========================================================
-   01 — GOLD CARDS
-   ایجاد خط نور طلایی دقیقاً مشابه خط نور آبی
+   01 — STRONG GOLD LINE UNDER ALL GOLD NODES
+   حدود 70% عرض کارت
+   فاصله حدود 1~1.5mm
    ========================================================= */
-
-.ars-gold-system .node-rim {
-    border-bottom-color: rgba(255, 205, 90, 0.95);
-
-    box-shadow:
-        inset 0 0 10px rgba(255, 190, 55, 0.18),
-        0 0 9px rgba(255, 190, 55, 0.28);
-}
-
-
-/*
-   خط نور باریک زیر هر کره/کادر
-*/
 
 .ars-gold-system .ars-system-node::after {
+
     content: "";
 
     position: absolute;
 
-    left: 18%;
-    right: 18%;
-    bottom: -8%;
+    left: 15%;
+    right: 15%;
+
+    /* فاصله از پایین کادر */
+    bottom: -7%;
 
     height: 2px;
 
@@ -21135,36 +21114,44 @@ code {
     background:
         linear-gradient(
             90deg,
-            transparent,
-            rgba(255, 205, 90, 0.95) 25%,
-            #ffe7a0 50%,
-            rgba(255, 205, 90, 0.95) 75%,
-            transparent
+            transparent 0%,
+            rgba(255, 185, 35, 0.35) 8%,
+            rgba(255, 205, 70, 0.95) 24%,
+            #fff0b0 50%,
+            rgba(255, 205, 70, 0.95) 76%,
+            rgba(255, 185, 35, 0.35) 92%,
+            transparent 100%
         );
 
     box-shadow:
-        0 0 5px rgba(255, 195, 55, 0.85),
-        0 0 12px rgba(255, 180, 35, 0.55);
+        0 0 4px rgba(255, 220, 110, 1),
+        0 0 9px rgba(255, 195, 45, 0.95),
+        0 0 18px rgba(255, 170, 25, 0.72),
+        0 0 30px rgba(255, 155, 15, 0.35);
 
-    opacity: 0.9;
+    opacity: 1;
 
     pointer-events: none;
+
+    z-index: 30;
 }
 
 
 /* =========================================================
-   02 — BLUE CARDS
-   حفظ خط آبی موجود با همان DNA
+   02 — BLUE LINE PRESERVED
+   هیچ تغییری در DNA خط آبی
    ========================================================= */
 
 .ars-blue-system .ars-system-node::after {
+
     content: "";
 
     position: absolute;
 
-    left: 18%;
-    right: 18%;
-    bottom: -8%;
+    left: 15%;
+    right: 15%;
+
+    bottom: -7%;
 
     height: 2px;
 
@@ -21173,257 +21160,156 @@ code {
     background:
         linear-gradient(
             90deg,
-            transparent,
-            rgba(40, 180, 255, 0.95) 25%,
-            #b8eaff 50%,
-            rgba(40, 180, 255, 0.95) 75%,
-            transparent
+            transparent 0%,
+            rgba(30, 155, 255, 0.35) 8%,
+            rgba(45, 185, 255, 0.95) 24%,
+            #c5edff 50%,
+            rgba(45, 185, 255, 0.95) 76%,
+            rgba(30, 155, 255, 0.35) 92%,
+            transparent 100%
         );
 
     box-shadow:
-        0 0 5px rgba(30, 170, 255, 0.85),
-        0 0 12px rgba(0, 140, 255, 0.55);
+        0 0 4px rgba(175, 230, 255, 1),
+        0 0 9px rgba(35, 180, 255, 0.95),
+        0 0 18px rgba(0, 145, 255, 0.72),
+        0 0 30px rgba(0, 120, 255, 0.35);
 
-    opacity: 0.9;
+    opacity: 0.95;
 
     pointer-events: none;
+
+    z-index: 30;
 }
 
 
 /* =========================================================
-   03 — FOUR LARGE TITLE CARDS
-   40% SMALLER
-   کوتاه‌تر + افقی‌تر
+   03 — TITLE CARDS
+   حدود 45% کوچک‌تر
    ========================================================= */
 
 /*
-   این selector برای کارت‌های عنوان اصلی است.
-   اگر کلاس اختصاصی دارند، همین بخش را روی آنها نگه می‌داریم.
+   scale = 0.55
+   یعنی حدود 45% کاهش کلی اندازه
 */
 
 .ars-hero-title-card,
 .ars-title-card,
 .ars-hero-card {
-    transform: scale(0.60);
+
+    transform: scale(0.55);
+
     transform-origin: center center;
-}
 
-
-/* =========================================================
-   04 — TITLE CARD GEOMETRY
-   جلوگیری از کشیده شدن عمودی
-   ========================================================= */
-
-.ars-hero-title-card,
-.ars-title-card,
-.ars-hero-card {
     min-height: 0;
 
     height: auto;
 
     padding:
-        10px 24px;
+        7px 18px;
 
-    aspect-ratio: auto;
-
-    border-radius: 12px;
+    border-radius: 9px;
 }
 
 
 /* =========================================================
-   05 — TITLE TEXT
-   جمع‌وجورتر و PREMIUM
+   04 — TITLE CONTENT
+   متن هم متناسب کوچک می‌شود
    ========================================================= */
 
 .ars-hero-title-card strong,
 .ars-title-card strong,
 .ars-hero-card strong {
 
-    font-size: clamp(13px, 1.5vw, 20px);
+    font-size: clamp(11px, 1.15vw, 16px);
 
-    letter-spacing: 0.08em;
+    letter-spacing: 0.075em;
+
+    line-height: 1.05;
 
     white-space: nowrap;
 }
 
-
-/* =========================================================
-   06 — TITLE CARD DESCRIPTION
-   ========================================================= */
 
 .ars-hero-title-card span,
 .ars-title-card span,
 .ars-hero-card span {
 
-    font-size: clamp(7px, 0.8vw, 10px);
+    font-size: clamp(6px, 0.65vw, 8px);
 
-    letter-spacing: 0.12em;
+    letter-spacing: 0.10em;
 
-    line-height: 1.35;
+    line-height: 1.2;
 
     white-space: nowrap;
 }
 
 
 /* =========================================================
-   07 — AUTOMOTIVE HEADER SUBTITLE
-   کادر جمله زیر هدر Automotive
+   05 — TITLE CARD HEIGHT CONTROL
+   جلوگیری از بلند ماندن کادر
    ========================================================= */
 
-.ars-automotive-subtitle,
-.automotive-subtitle,
-.ars-hero-subtitle {
+.ars-hero-title-card p,
+.ars-title-card p,
+.ars-hero-card p {
 
-    width: min(72%, 680px);
+    margin:
+        2px 0 0;
 
-    margin-inline: auto;
-
-    padding:
-        9px 20px;
-
-    text-align: center;
-
-    line-height: 1.45;
-
-    font-size: clamp(8px, 1vw, 12px);
-
-    letter-spacing: 0.12em;
-
-    color:
-        rgba(225, 235, 245, 0.82);
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,0.025),
-            transparent
-        );
-
-    border-top:
-        1px solid rgba(255, 255, 255, 0.08);
-
-    border-bottom:
-        1px solid rgba(255, 255, 255, 0.08);
-
-    box-shadow:
-        0 0 20px rgba(0, 120, 255, 0.05);
-
-    border-radius: 8px;
+    line-height: 1.15;
 }
 
 
 /* =========================================================
-   08 — MOBILE REFINEMENT
+   06 — MOBILE
    ========================================================= */
 
 @media (max-width: 600px) {
+
+    .ars-gold-system .ars-system-node::after,
+    .ars-blue-system .ars-system-node::after {
+
+        left: 15%;
+        right: 15%;
+
+        bottom: -7%;
+
+        height: 2px;
+    }
+
 
     .ars-hero-title-card,
     .ars-title-card,
     .ars-hero-card {
 
-        transform: scale(0.60);
+        transform: scale(0.55);
 
         padding:
-            8px 18px;
+            6px 14px;
+
+        border-radius: 8px;
     }
+
 
     .ars-hero-title-card strong,
     .ars-title-card strong,
     .ars-hero-card strong {
 
-        font-size: 12px;
-
-        letter-spacing: 0.07em;
+        font-size: 11px;
     }
+
 
     .ars-hero-title-card span,
     .ars-title-card span,
     .ars-hero-card span {
 
-        font-size: 7px;
-    }
-
-    .ars-automotive-subtitle,
-    .automotive-subtitle,
-    .ars-hero-subtitle {
-
-        width: 84%;
-
-        padding:
-            7px 12px;
-
-        font-size: 7px;
-
-        letter-spacing: 0.08em;
-
-        line-height: 1.5;
+        font-size: 6px;
     }
 }
 
 
 /* =========================================================
-   END — VISUAL REFINEMENT
+   END — GOLD ENERGY / TITLE COMPRESSION PATCH
    ========================================================= */
-
-
-
-
-
-
-
-/* =========================================================
-   ARS — GOLD LINE LIGHT UNDER CARDS
-   KEEP EXISTING CARD GLOW UNTOUCHED
-   ========================================================= */
-
-.ars-hero-field .ars-card,
-.ars-hero-field .hero-card,
-.ars-hero-field .ars-feature-card,
-.ars-hero-field .ars-title-card {
-    position: relative;
-}
-
-/* Thin premium gold light line */
-
-.ars-hero-field .ars-card::after,
-.ars-hero-field .hero-card::after,
-.ars-hero-field .ars-feature-card::after,
-.ars-hero-field .ars-title-card::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: 8%;
-    right: 8%;
-    bottom: -3px;
-
-    height: 2px;
-
-    border-radius: 999px;
-
-    background: linear-gradient(
-        90deg,
-        transparent 0%,
-        rgba(255, 198, 65, 0.45) 12%,
-        rgba(255, 225, 135, 0.95) 50%,
-        rgba(255, 198, 65, 0.45) 88%,
-        transparent 100%
-    );
-
-    box-shadow:
-        0 0 4px rgba(255, 211, 92, 0.95),
-        0 0 10px rgba(255, 190, 40, 0.75),
-        0 0 20px rgba(255, 175, 25, 0.38);
-
-    pointer-events: none;
-}
-
-
-
-
-
-
 
