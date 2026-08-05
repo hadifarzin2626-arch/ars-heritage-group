@@ -22341,381 +22341,219 @@ code {
 /* =========================================================
    ARS HERITAGE GROUP
    INTELLIGENCE CONSOLE FOOTER
-   FINAL WORLD-CLASS INDUSTRIAL SYSTEM
+   FINAL PREMIUM VISUAL SYSTEM
+   DESIGN REFERENCE:
+   Wide Display × Vehicle × ARS Core × Dual Intelligence
    ========================================================= */
 
 
 /* =========================================================
-   01 — FOOTER ROOT / DNA
+   01 — FOOTER ROOT
    ========================================================= */
 
 .ars-intelligence-footer {
 
-    --f-black-0: #010203;
-    --f-black-1: #030609;
-    --f-black-2: #070b10;
-    --f-black-3: #0b1117;
+    --f-bg-0: #020304;
+    --f-bg-1: #05080c;
+    --f-bg-2: #07111a;
 
-    --f-bronze-dark: #4a3427;
-    --f-bronze: #76543c;
-    --f-bronze-mid: #a07855;
-    --f-bronze-light: #c29a70;
-    --f-bronze-bright: #d1aa7d;
+    --f-bronze-0: #513a2b;
+    --f-bronze-1: #76533b;
+    --f-bronze-2: #a47a55;
+    --f-bronze-3: #c49b70;
+    --f-bronze-4: #d2ad82;
 
-    --f-blue: #159dff;
-    --f-blue-bright: #36b7ff;
-    --f-blue-soft: #72d1ff;
+    --f-blue-0: #0068b8;
+    --f-blue-1: #159dff;
+    --f-blue-2: #57c7ff;
+    --f-blue-3: #9cddff;
 
-    --f-navy: #071827;
-
-    --f-white: #f4f3ef;
-    --f-white-soft: rgba(244,243,239,.70);
-    --f-white-muted: rgba(244,243,239,.48);
-
-    --f-shadow-black: rgba(0,0,0,.72);
-    --f-shadow-blue: rgba(21,157,255,.28);
-    --f-shadow-bronze: rgba(194,154,112,.20);
+    --f-white: #f5f4ef;
+    --f-white-soft: rgba(245,244,239,.72);
+    --f-muted: rgba(245,244,239,.48);
 
     position: relative;
 
-    isolation: isolate;
-
     width: 100%;
-    max-width: none;
-
-    margin: 0;
-
-    padding:
-        clamp(58px, 6vw, 92px)
-        clamp(12px, 2.2vw, 32px)
-        clamp(24px, 3vw, 40px);
+    min-height: 100svh;
 
     box-sizing: border-box;
+
+    padding:
+        clamp(22px, 3vh, 42px)
+        clamp(10px, 2vw, 30px)
+        clamp(16px, 2.5vh, 32px);
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    isolation: isolate;
 
     color: var(--f-white);
 
     background:
         radial-gradient(
-            ellipse at 50% 20%,
-            rgba(118,84,60,.13),
-            transparent 40%
+            ellipse at 50% 35%,
+            rgba(21,157,255,.055),
+            transparent 38%
         ),
         radial-gradient(
-            ellipse at 50% 72%,
-            rgba(7,24,39,.42),
-            transparent 55%
+            ellipse at 50% 15%,
+            rgba(164,122,85,.12),
+            transparent 42%
         ),
         linear-gradient(
             180deg,
-            var(--f-black-0),
-            var(--f-black-2) 58%,
-            var(--f-black-0)
+            var(--f-bg-0),
+            var(--f-bg-1) 52%,
+            var(--f-bg-0)
         );
-
-    overflow: hidden;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
 }
 
 
 /* =========================================================
-   02 — GLOBAL FOOTER BOX MODEL
+   02 — ARCHITECTURAL ENERGY
    ========================================================= */
 
-.ars-intelligence-footer *,
-.ars-intelligence-footer *::before,
-.ars-intelligence-footer *::after {
+.ars-intelligence-footer::before {
 
-    box-sizing: border-box;
-
-}
-
-
-.ars-intelligence-footer a {
-
-    color: inherit;
-
-}
-
-
-/* =========================================================
-   03 — INDUSTRIAL AMBIENT FIELD
-   ========================================================= */
-
-.ars-footer-ambient {
+    content: "";
 
     position: absolute;
 
     inset: 0;
 
-    z-index: -3;
+    pointer-events: none;
+
+    z-index: -2;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent 0,
+            transparent 79px,
+            rgba(196,155,112,.018) 80px
+        ),
+        linear-gradient(
+            115deg,
+            transparent 0%,
+            rgba(21,157,255,.025) 48%,
+            transparent 58%
+        );
+}
+
+
+.ars-intelligence-footer::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 70%;
+    height: 22%;
+
+    left: 15%;
+    bottom: 3%;
 
     pointer-events: none;
 
-    overflow: hidden;
-
-}
-
-
-.ars-ambient-grid {
-
-    position: absolute;
-
-    inset: -20%;
-
-    opacity: .18;
-
-    background-image:
-        linear-gradient(
-            rgba(21,157,255,.055) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(21,157,255,.055) 1px,
-            transparent 1px
-        );
-
-    background-size:
-        54px 54px;
-
-    transform:
-        perspective(900px)
-        rotateX(58deg)
-        translateY(18%);
-
-    transform-origin: center bottom;
-
-    animation:
-        arsFooterGridDrift 18s linear infinite;
-
-}
-
-
-.ars-ambient-glow {
-
-    position: absolute;
-
-    width: 55vw;
-    height: 55vw;
-
-    max-width: 760px;
-    max-height: 760px;
-
-    border-radius: 50%;
-
-    filter: blur(65px);
-
-    opacity: .18;
-
-}
-
-
-.ars-ambient-glow-a {
-
-    left: 50%;
-    top: 30%;
-
-    transform: translate(-50%,-50%);
+    z-index: -1;
 
     background:
         radial-gradient(
-            circle,
-            rgba(21,157,255,.32),
+            ellipse,
+            rgba(21,157,255,.065),
             transparent 68%
         );
 
-    animation:
-        arsFooterAmbientA 8s ease-in-out infinite alternate;
-
-}
-
-
-.ars-ambient-glow-b {
-
-    left: 50%;
-    top: 70%;
-
-    transform: translate(-50%,-50%);
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(194,154,112,.18),
-            transparent 68%
-        );
+    filter: blur(28px);
 
     animation:
-        arsFooterAmbientB 11s ease-in-out infinite alternate;
-
+        footerAtmosphere 8s ease-in-out infinite alternate;
 }
 
 
 /* =========================================================
-   04 — DATA PARTICLES
-   ========================================================= */
-
-.ars-data-particle {
-
-    position: absolute;
-
-    width: 3px;
-    height: 3px;
-
-    border-radius: 50%;
-
-    background:
-        var(--f-blue-bright);
-
-    box-shadow:
-        0 0 8px var(--f-blue),
-        0 0 18px rgba(21,157,255,.45);
-
-    opacity: .55;
-
-    animation:
-        arsFooterParticleFloat 7s linear infinite;
-
-}
-
-
-.particle-01 { left: 8%;  top: 22%; animation-delay: -1s; }
-.particle-02 { left: 17%; top: 68%; animation-delay: -4s; }
-.particle-03 { left: 31%; top: 18%; animation-delay: -2s; }
-.particle-04 { left: 52%; top: 12%; animation-delay: -6s; }
-.particle-05 { left: 69%; top: 74%; animation-delay: -3s; }
-.particle-06 { left: 82%; top: 26%; animation-delay: -5s; }
-.particle-07 { left: 91%; top: 62%; animation-delay: -7s; }
-.particle-08 { left: 43%; top: 86%; animation-delay: -2.5s; }
-
-
-/* =========================================================
-   05 — TOP ENERGY HORIZON
+   03 — TOP HORIZON
    ========================================================= */
 
 .ars-footer-horizon {
 
-    width: min(96%, 1700px);
+    width: min(96%, 1500px);
 
     margin:
         0 auto
-        clamp(20px, 3vw, 38px);
+        clamp(10px, 1.5vh, 20px);
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
-    gap: 18px;
+    gap: clamp(10px, 1.5vw, 24px);
 
+    flex-shrink: 0;
 }
 
 
 .horizon-line {
 
-    flex: 1;
-
     height: 2px;
+
+    flex: 1;
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            rgba(118,84,60,.58),
-            rgba(194,154,112,.90),
+            rgba(164,122,85,.65),
+            rgba(210,173,130,.95),
+            rgba(21,157,255,.35),
             transparent
         );
 
     box-shadow:
-        0 0 10px rgba(194,154,112,.24);
-
+        0 0 9px rgba(196,155,112,.28);
 }
 
 
 .horizon-right {
 
-    transform:
-        scaleX(-1);
-
+    transform: scaleX(-1);
 }
 
-
-/* =========================================================
-   06 — HORIZON STATUS CORE
-   ========================================================= */
 
 .ars-footer-status-core {
 
     position: relative;
 
-    width: 34px;
-    height: 34px;
-
-    flex: 0 0 34px;
+    width: clamp(28px, 3vw, 42px);
+    height: clamp(28px, 3vw, 42px);
 
     display: grid;
-
     place-items: center;
 
-}
-
-
-.status-core-outer,
-.status-core-ring,
-.status-core-pulse {
-
-    position: absolute;
-
-    inset: 0;
-
-    border-radius: 50%;
-
-}
-
-
-.status-core-outer {
-
-    inset: -5px;
-
-    border:
-        1px solid
-        rgba(194,154,112,.28);
-
-    animation:
-        arsFooterSlowRotate 12s linear infinite;
-
+    flex: 0 0 auto;
 }
 
 
 .status-core-ring {
 
-    inset: 3px;
+    position: absolute;
+
+    inset: 1px;
 
     border:
-        1px solid
-        rgba(194,154,112,.72);
+        1px solid rgba(196,155,112,.72);
+
+    border-radius: 50%;
 
     box-shadow:
-        0 0 14px rgba(194,154,112,.25);
-
-}
-
-
-.status-core-pulse {
-
-    inset: 9px;
-
-    border:
-        1px solid
-        rgba(21,157,255,.75);
-
-    animation:
-        arsFooterCorePulse 2.8s ease-in-out infinite;
-
+        0 0 16px rgba(196,155,112,.18);
 }
 
 
@@ -22726,64 +22564,64 @@ code {
 
     border-radius: 50%;
 
-    background:
-        var(--f-blue-bright);
+    background: var(--f-blue-2);
 
     box-shadow:
-        0 0 8px var(--f-blue),
-        0 0 20px rgba(21,157,255,.60);
+        0 0 8px var(--f-blue-1),
+        0 0 20px rgba(21,157,255,.6);
 
     animation:
-        arsFooterLedPulse 2s ease-in-out infinite;
-
+        statusPulse 1.8s ease-in-out infinite;
 }
 
 
 /* =========================================================
-   07 — MASTER CONSOLE FRAME
+   04 — MASTER CONSOLE FRAME
    ========================================================= */
 
 .ars-footer-console {
 
     position: relative;
 
-    width: min(98%, 1700px);
+    width: min(98%, 1580px);
+
+    flex: 1 1 auto;
+
+    min-height: 0;
 
     margin: 0 auto;
 
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
     border:
-        2px solid
-        rgba(118,84,60,.72);
+        2px solid rgba(164,122,85,.72);
 
     background:
         linear-gradient(
             145deg,
-            rgba(118,84,60,.12),
-            rgba(255,255,255,.018) 32%,
-            rgba(7,24,39,.22) 68%,
-            rgba(118,84,60,.08)
+            rgba(164,122,85,.105),
+            rgba(255,255,255,.018) 34%,
+            rgba(7,17,26,.42) 72%,
+            rgba(21,157,255,.025)
         );
 
     box-shadow:
         inset 0 0 0 1px rgba(255,255,255,.025),
-        inset 0 0 55px rgba(118,84,60,.045),
-        0 30px 110px rgba(0,0,0,.68),
-        0 0 70px rgba(118,84,60,.08);
+        inset 0 0 70px rgba(164,122,85,.035),
+        0 30px 100px rgba(0,0,0,.72),
+        0 0 65px rgba(164,122,85,.09);
 
-    backdrop-filter:
-        blur(18px)
-        saturate(125%);
+    backdrop-filter: blur(16px);
 
-    -webkit-backdrop-filter:
-        blur(18px)
-        saturate(125%);
-
-    overflow: hidden;
-
+    -webkit-backdrop-filter: blur(16px);
 }
 
 
-/* metallic perimeter sweep */
+/* animated border energy */
 
 .ars-footer-console::before {
 
@@ -22795,74 +22633,31 @@ code {
 
     pointer-events: none;
 
-    background:
-        linear-gradient(
-            115deg,
-            transparent 0%,
-            transparent 42%,
-            rgba(194,154,112,.16) 50%,
-            transparent 58%,
-            transparent 100%
-        );
+    z-index: 10;
 
-    background-size: 220% 100%;
+    border:
+        1px solid rgba(21,157,255,.18);
+
+    opacity: .8;
 
     animation:
-        arsFooterMetalSweep 10s linear infinite;
-
-    z-index: 20;
-
-}
-
-
-/* subtle blue perimeter energy */
-
-.ars-footer-console::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: 8%;
-    right: 8%;
-
-    bottom: 0;
-
-    height: 2px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(21,157,255,.55),
-            rgba(194,154,112,.80),
-            rgba(21,157,255,.55),
-            transparent
-        );
-
-    box-shadow:
-        0 0 14px rgba(21,157,255,.30);
-
-    animation:
-        arsFooterBottomEnergy 5s ease-in-out infinite;
-
-    pointer-events: none;
-
-    z-index: 21;
-
+        frameEnergy 5s linear infinite;
 }
 
 
 /* =========================================================
-   08 — HEADER
+   05 — HEADER
    ========================================================= */
 
 .ars-console-header {
 
-    min-height: 92px;
+    position: relative;
+
+    min-height: clamp(64px, 8vh, 92px);
 
     padding:
-        20px clamp(20px, 3vw, 44px);
+        clamp(12px, 1.5vh, 20px)
+        clamp(18px, 2.5vw, 38px);
 
     display: flex;
 
@@ -22870,18 +22665,10 @@ code {
 
     justify-content: space-between;
 
+    flex-shrink: 0;
+
     border-bottom:
-        1px solid
-        rgba(118,84,60,.40);
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(118,84,60,.08),
-            transparent 45%,
-            rgba(21,157,255,.025)
-        );
-
+        1px solid rgba(164,122,85,.36);
 }
 
 
@@ -22891,41 +22678,37 @@ code {
 
     flex-direction: column;
 
-    gap: 6px;
-
+    gap: 5px;
 }
 
 
 .console-eyebrow {
 
     font-size:
-        clamp(9px, .72vw, 12px);
+        clamp(8px, .65vw, 11px);
 
     font-weight: 700;
 
     letter-spacing: .28em;
 
     color:
-        var(--f-bronze-mid);
-
+        rgba(196,155,112,.82);
 }
 
 
 .ars-console-brand strong {
 
     font-size:
-        clamp(23px, 2vw, 34px);
+        clamp(20px, 1.7vw, 30px);
 
-    font-weight: 800;
+    font-weight: 700;
 
     letter-spacing: .16em;
 
-    color:
-        var(--f-white);
+    color: var(--f-white);
 
     text-shadow:
-        0 0 18px rgba(194,154,112,.12);
-
+        0 0 20px rgba(255,255,255,.05);
 }
 
 
@@ -22935,18 +22718,16 @@ code {
 
     align-items: center;
 
-    gap: 10px;
+    gap: 9px;
 
     font-size:
-        clamp(9px, .72vw, 12px);
+        clamp(8px, .65vw, 11px);
 
     font-weight: 700;
 
-    letter-spacing: .20em;
+    letter-spacing: .2em;
 
-    color:
-        var(--f-white-muted);
-
+    color: var(--f-white-soft);
 }
 
 
@@ -22957,209 +22738,337 @@ code {
 
     border-radius: 50%;
 
-    background:
-        var(--f-blue-bright);
+    background: var(--f-blue-1);
 
     box-shadow:
-        0 0 8px var(--f-blue),
-        0 0 18px rgba(21,157,255,.58);
+        0 0 8px var(--f-blue-1),
+        0 0 20px rgba(21,157,255,.55);
 
     animation:
-        arsFooterLedPulse 2s ease-in-out infinite;
-
+        statusPulse 1.5s ease-in-out infinite;
 }
 
 
 /* =========================================================
-   09 — MAIN STAGE
+   06 — MAIN VISUAL AREA
    ========================================================= */
 
-.ars-console-stage {
+.ars-console-main {
 
     position: relative;
 
-    min-height:
-        clamp(700px, 48vw, 850px);
+    flex: 1 1 auto;
+
+    min-height: 0;
 
     padding:
-        125px
-        clamp(20px, 4vw, 70px)
-        115px;
+        clamp(22px, 3vh, 42px)
+        clamp(18px, 3vw, 55px);
 
     display: grid;
 
     grid-template-columns:
-        minmax(150px, 220px)
-        minmax(0, 1fr)
-        minmax(150px, 220px);
-
-    grid-template-rows:
-        auto
-        minmax(330px, 1fr)
-        auto;
+        minmax(150px, 1fr)
+        minmax(420px, 2.2fr)
+        minmax(150px, 1fr);
 
     align-items: center;
 
-    column-gap:
-        clamp(25px, 5vw, 85px);
+    gap:
+        clamp(20px, 3vw, 65px);
 
-    row-gap:
-        38px;
+    overflow: hidden;
 
     background:
         radial-gradient(
-            ellipse at 50% 48%,
-            rgba(21,157,255,.055),
-            transparent 36%
+            ellipse at 50% 50%,
+            rgba(164,122,85,.09),
+            transparent 35%
         ),
         radial-gradient(
-            ellipse at 50% 70%,
-            rgba(118,84,60,.08),
-            transparent 48%
+            ellipse at 50% 50%,
+            rgba(21,157,255,.045),
+            transparent 58%
         );
-
 }
 
 
 /* =========================================================
-   10 — ORBS
+   07 — SIDE PANELS
    ========================================================= */
 
-.ars-console-orb {
+.ars-console-panel {
 
-    position: absolute;
+    position: relative;
 
-    width:
-        clamp(105px, 9vw, 145px);
+    max-width: 300px;
 
-    aspect-ratio: 1;
+    z-index: 5;
+}
+
+
+.ars-panel-left {
+
+    justify-self: end;
+
+    text-align: right;
+}
+
+
+.ars-panel-right {
+
+    justify-self: start;
+
+    text-align: left;
+}
+
+
+.panel-label {
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-size:
+        clamp(9px, .72vw, 12px);
+
+    font-weight: 800;
+
+    letter-spacing: .28em;
+
+    color: var(--f-bronze-3);
+}
+
+
+.ars-console-panel h3 {
+
+    margin: 0;
+
+    font-size:
+        clamp(21px, 2vw, 34px);
+
+    line-height: 1;
+
+    letter-spacing: .045em;
+
+    font-weight: 700;
+
+    color: var(--f-white);
+}
+
+
+.ars-console-panel p {
+
+    max-width: 280px;
+
+    margin:
+        16px 0 0;
+
+    font-size:
+        clamp(10px, .72vw, 13px);
+
+    line-height: 1.7;
+
+    letter-spacing: .045em;
+
+    font-weight: 600;
+
+    color: var(--f-muted);
+}
+
+
+/* =========================================================
+   08 — CENTRAL DISPLAY
+   ========================================================= */
+
+.ars-console-core {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 850px;
+
+    aspect-ratio: 2.45 / 1;
+
+    margin: auto;
 
     display: grid;
 
     place-items: center;
 
-    border-radius: 50%;
+    z-index: 4;
+}
 
-    background:
-        radial-gradient(
-            circle at 35% 28%,
-            rgba(194,154,112,.16),
-            rgba(7,24,39,.78) 48%,
-            rgba(1,3,5,.96) 76%
-        );
+
+/* wide outer frame */
+
+.ars-core-outer-ring {
+
+    position: absolute;
+
+    inset: 0;
 
     border:
-        2px solid
-        rgba(194,154,112,.62);
+        2px solid rgba(164,122,85,.78);
 
-    box-shadow:
-        inset 0 0 32px rgba(194,154,112,.09),
-        0 0 25px rgba(118,84,60,.16),
-        0 0 55px rgba(21,157,255,.07);
-
-    z-index: 8;
-
-}
-
-
-.ars-console-orb-ars {
-
-    top: 25px;
-
-    left:
-        clamp(25px, 5vw, 90px);
-
-}
-
-
-.ars-console-orb-stat {
-
-    top: 25px;
-
-    right:
-        clamp(25px, 5vw, 90px);
-
-}
-
-
-.orb-energy {
-
-    position: absolute;
-
-    inset: -20%;
-
-    border-radius: 50%;
+    border-radius:
+        clamp(12px, 1.5vw, 24px);
 
     background:
-        radial-gradient(
-            circle,
-            rgba(21,157,255,.12),
-            transparent 65%
+        linear-gradient(
+            145deg,
+            rgba(164,122,85,.12),
+            rgba(0,0,0,.45) 42%,
+            rgba(21,157,255,.035)
         );
 
-    filter: blur(14px);
-
-    animation:
-        arsFooterOrbGlow 4s ease-in-out infinite alternate;
-
+    box-shadow:
+        inset 0 0 35px rgba(164,122,85,.07),
+        0 0 30px rgba(164,122,85,.11);
 }
 
 
-.orb-ring {
+/* inner display border */
+
+.ars-core-mid-ring {
 
     position: absolute;
 
-    border-radius: 50%;
+    inset: 7% 4%;
+
+    border:
+        1px solid rgba(21,157,255,.48);
+
+    border-radius:
+        clamp(8px, 1vw, 16px);
+
+    box-shadow:
+        inset 0 0 25px rgba(21,157,255,.08),
+        0 0 22px rgba(21,157,255,.08);
 
     pointer-events: none;
-
 }
 
 
-.orb-ring-outer {
+/* =========================================================
+   09 — DISPLAY ENERGY
+   ========================================================= */
 
-    inset: -11%;
+.ars-core-energy {
 
-    border:
-        1px dashed
-        rgba(194,154,112,.25);
+    position: absolute;
 
-    animation:
-        arsFooterSlowRotate 18s linear infinite;
+    inset: 4% 8%;
 
-}
+    border-radius:
+        clamp(10px, 1vw, 18px);
 
+    overflow: hidden;
 
-.orb-ring-mid {
+    background:
 
-    inset: 9%;
+        radial-gradient(
+            ellipse at 50% 50%,
+            rgba(21,157,255,.12),
+            transparent 52%
+        ),
 
-    border:
-        1px solid
-        rgba(21,157,255,.25);
-
-}
-
-
-.orb-ring-inner {
-
-    inset: 23%;
-
-    border:
-        1px solid
-        rgba(194,154,112,.20);
+        linear-gradient(
+            115deg,
+            rgba(164,122,85,.06),
+            rgba(21,157,255,.025),
+            rgba(164,122,85,.06)
+        );
 
     box-shadow:
-        0 0 15px rgba(194,154,112,.08);
+        inset 0 0 45px rgba(21,157,255,.06);
 
+    animation:
+        displayBreath 5s ease-in-out infinite alternate;
 }
 
 
-.orb-core {
+/* moving electric scan */
+
+.ars-core-energy::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -20%;
+
+    left: -35%;
+
+    width: 35%;
+
+    height: 140%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(21,157,255,.0),
+            rgba(21,157,255,.22),
+            rgba(196,155,112,.16),
+            rgba(21,157,255,.08),
+            transparent
+        );
+
+    filter: blur(8px);
+
+    transform: skewX(-18deg);
+
+    animation:
+        displayScan 6s linear infinite;
+}
+
+
+/* second bronze scan */
+
+.ars-core-energy::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: -30%;
+
+    right: -30%;
+
+    top: 50%;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(196,155,112,.15),
+            rgba(196,155,112,.65),
+            rgba(21,157,255,.25),
+            transparent
+        );
+
+    box-shadow:
+        0 0 14px rgba(196,155,112,.3);
+
+    animation:
+        horizontalScan 4.5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   10 — DISPLAY BODY
+   ========================================================= */
+
+.ars-core-body {
 
     position: relative;
 
-    z-index: 3;
+    width: 88%;
+    height: 76%;
 
     display: flex;
 
@@ -23169,15 +23078,83 @@ code {
 
     justify-content: center;
 
-    text-align: center;
+    overflow: hidden;
 
+    border:
+        1px solid rgba(21,157,255,.38);
+
+    border-radius:
+        clamp(8px, 1vw, 16px);
+
+    background:
+        radial-gradient(
+            ellipse at 50% 55%,
+            rgba(21,157,255,.055),
+            transparent 58%
+        ),
+        rgba(2,6,10,.48);
+
+    box-shadow:
+        inset 0 0 35px rgba(21,157,255,.08);
+
+    z-index: 3;
 }
 
 
-.orb-mark {
+/* =========================================================
+   11 — VEHICLE / DISPLAY VISUAL
+   ========================================================= */
+
+.ars-core-body::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 48%;
+
+    height: 46%;
+
+    left: 26%;
+
+    top: 28%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(21,157,255,.14),
+            transparent 67%
+        );
+
+    filter: blur(12px);
+
+    pointer-events: none;
+}
+
+
+/*
+   The existing vehicle / visual asset can sit above
+   this layer without changing the HTML structure.
+*/
+
+.ars-core-body > * {
+
+    position: relative;
+
+    z-index: 4;
+}
+
+
+/* =========================================================
+   12 — ARS CORE MARK
+   ========================================================= */
+
+.core-mark {
 
     font-size:
-        clamp(20px, 2vw, 29px);
+        clamp(25px, 2.3vw, 42px);
 
     font-weight: 800;
 
@@ -23186,1347 +23163,39 @@ code {
     margin-left: .18em;
 
     color:
-        var(--f-bronze-light);
+        var(--f-bronze-3);
 
+    text-shadow:
+        0 0 14px rgba(196,155,112,.32),
+        0 0 30px rgba(196,155,112,.12);
 }
 
 
-.orb-value {
-
-    font-size:
-        clamp(17px, 1.55vw, 24px);
-
-    font-weight: 800;
-
-    letter-spacing: .04em;
-
-    color:
-        var(--f-white);
-
-}
-
-
-.orb-caption {
+.core-caption {
 
     margin-top: 6px;
 
     font-size:
-        clamp(7px, .58vw, 10px);
+        clamp(7px, .55vw, 10px);
 
     font-weight: 700;
 
-    letter-spacing: .22em;
+    letter-spacing: .25em;
 
     color:
-        var(--f-bronze-mid);
-
-}
-
-
-.orb-status-dot {
-
-    position: absolute;
-
-    right: 15%;
-
-    bottom: 18%;
-
-    width: 8px;
-    height: 8px;
-
-    border-radius: 50%;
-
-    background:
-        var(--f-blue-bright);
-
-    box-shadow:
-        0 0 9px var(--f-blue),
-        0 0 20px rgba(21,157,255,.58);
-
-    animation:
-        arsFooterLedPulse 2.4s ease-in-out infinite;
-
-}
-
-
-.orb-status-dot-gold {
-
-    background:
-        #f0bd43;
-
-    box-shadow:
-        0 0 9px #e2a928,
-        0 0 20px rgba(226,169,40,.55);
-
-    animation:
-        arsFooterGoldPulse 2.7s ease-in-out infinite;
-
+        rgba(245,244,239,.58);
 }
 
 
 /* =========================================================
-   11 — CENTRAL MONITOR
-   ========================================================= */
-
-.ars-digital-monitor {
-
-    position: relative;
-
-    width: min(100%, 900px);
-
-    /*
-       IMPORTANT:
-       intentionally WIDE monitor ratio
-    */
-
-    aspect-ratio: 16 / 8.8;
-
-    min-height: 330px;
-
-    margin: 0 auto;
-
-    grid-column: 2;
-
-    grid-row: 2;
-
-    z-index: 7;
-
-    filter:
-        drop-shadow(0 28px 50px rgba(0,0,0,.62));
-
-}
-
-
-/* physical frame */
-
-.monitor-frame {
-
-    position: absolute;
-
-    inset: 0;
-
-    border:
-        3px solid
-        rgba(194,154,112,.78);
-
-    border-radius:
-        clamp(8px, 1vw, 16px);
-
-    background:
-        linear-gradient(
-            145deg,
-            #16100c,
-            #050607 26%,
-            #0b0d10 72%,
-            #2a1b12
-        );
-
-    box-shadow:
-        inset 0 0 0 2px rgba(255,255,255,.025),
-        inset 0 0 35px rgba(194,154,112,.07),
-        0 0 0 1px rgba(21,157,255,.10),
-        0 0 35px rgba(21,157,255,.10),
-        0 25px 65px rgba(0,0,0,.70);
-
-}
-
-
-.monitor-frame-top,
-.monitor-frame-bottom,
-.monitor-frame-left,
-.monitor-frame-right {
-
-    position: absolute;
-
-    pointer-events: none;
-
-}
-
-
-.monitor-frame-top {
-
-    left: 6%;
-    right: 6%;
-    top: 6px;
-
-    height: 2px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            var(--f-bronze-light),
-            transparent
-        );
-
-    opacity: .7;
-
-}
-
-
-.monitor-frame-bottom {
-
-    left: 8%;
-    right: 8%;
-    bottom: 6px;
-
-    height: 2px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            var(--f-blue-bright),
-            transparent
-        );
-
-    box-shadow:
-        0 0 12px rgba(21,157,255,.40);
-
-    animation:
-        arsFooterMonitorSweep 4s linear infinite;
-
-}
-
-
-.monitor-frame-left,
-.monitor-frame-right {
-
-    top: 15%;
-    bottom: 15%;
-
-    width: 2px;
-
-    background:
-        linear-gradient(
-            180deg,
-            transparent,
-            rgba(194,154,112,.65),
-            rgba(21,157,255,.45),
-            transparent
-        );
-
-}
-
-
-.monitor-frame-left { left: 5px; }
-.monitor-frame-right { right: 5px; }
-
-
-/* =========================================================
-   12 — MONITOR GLASS
-   ========================================================= */
-
-.monitor-glass {
-
-    position: absolute;
-
-    inset:
-        15px 17px 24px;
-
-    overflow: hidden;
-
-    border-radius: 5px;
-
-    background:
-        radial-gradient(
-            ellipse at 50% 52%,
-            rgba(21,157,255,.13),
-            transparent 40%
-        ),
-        linear-gradient(
-            180deg,
-            #02070b,
-            #030b12 52%,
-            #010407
-        );
-
-    border:
-        1px solid
-        rgba(21,157,255,.45);
-
-    box-shadow:
-        inset 0 0 45px rgba(21,157,255,.09),
-        inset 0 0 100px rgba(0,0,0,.72),
-        0 0 20px rgba(21,157,255,.12);
-
-}
-
-
-/* =========================================================
-   13 — MONITOR GRID
-   ========================================================= */
-
-.monitor-grid {
-
-    position: absolute;
-
-    inset: 0;
-
-    opacity: .42;
-
-    background-image:
-        linear-gradient(
-            rgba(21,157,255,.055) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(21,157,255,.055) 1px,
-            transparent 1px
-        );
-
-    background-size:
-        38px 38px;
-
-    animation:
-        arsFooterMonitorGrid 12s linear infinite;
-
-}
-
-
-/* =========================================================
-   14 — MONITOR SCANLINE
-   ========================================================= */
-
-.monitor-scanline {
-
-    position: absolute;
-
-    left: 0;
-    right: 0;
-
-    top: -20%;
-
-    height: 20%;
-
-    background:
-        linear-gradient(
-            180deg,
-            transparent,
-            rgba(21,157,255,.10),
-            rgba(54,183,255,.24),
-            transparent
-        );
-
-    filter:
-        blur(3px);
-
-    opacity: .65;
-
-    animation:
-        arsFooterScan 5.5s linear infinite;
-
-    z-index: 5;
-
-}
-
-
-/* =========================================================
-   15 — MONITOR DATA SWEEP
-   ========================================================= */
-
-.monitor-sweep {
-
-    position: absolute;
-
-    top: 0;
-    bottom: 0;
-
-    left: -20%;
-
-    width: 20%;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(21,157,255,.14),
-            rgba(194,154,112,.10),
-            transparent
-        );
-
-    filter:
-        blur(8px);
-
-    animation:
-        arsFooterDataSweep 7s ease-in-out infinite;
-
-    z-index: 6;
-
-}
-
-
-/* =========================================================
-   16 — MONITOR HUD
-   ========================================================= */
-
-.monitor-hud {
-
-    position: absolute;
-
-    left: 4%;
-    right: 4%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    font-size:
-        clamp(8px, .68vw, 11px);
-
-    font-weight: 700;
-
-    letter-spacing: .20em;
-
-    color:
-        rgba(114,209,255,.82);
-
-    z-index: 12;
-
-}
-
-
-.monitor-hud-top {
-
-    top: 7%;
-
-}
-
-
-.monitor-hud-bottom {
-
-    bottom: 7%;
-
-}
-
-
-.hud-progress {
-
-    flex: 1;
-
-    max-width: 220px;
-
-    height: 3px;
-
-    margin:
-        0 18px;
-
-    overflow: hidden;
-
-    background:
-        rgba(21,157,255,.12);
-
-}
-
-
-.hud-progress i {
-
-    display: block;
-
-    width: 72%;
-
-    height: 100%;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            var(--f-blue-bright),
-            var(--f-blue-soft)
-        );
-
-    box-shadow:
-        0 0 10px var(--f-blue);
-
-    animation:
-        arsFooterHudProgress 3s ease-in-out infinite alternate;
-
-}
-
-
-/* =========================================================
-   17 — VIRTUAL VEHICLE
-   ========================================================= */
-
-.virtual-vehicle {
-
-    position: absolute;
-
-    left: 50%;
-    top: 53%;
-
-    width: 54%;
-
-    aspect-ratio: 2 / 1;
-
-    transform:
-        translate(-50%,-50%);
-
-    z-index: 9;
-
-}
-
-
-/* vehicle glow */
-
-.vehicle-glow {
-
-    position: absolute;
-
-    inset: 5%;
-
-    background:
-        radial-gradient(
-            ellipse,
-            rgba(21,157,255,.24),
-            transparent 66%
-        );
-
-    filter:
-        blur(18px);
-
-    animation:
-        arsFooterVehicleGlow 3.4s ease-in-out infinite alternate;
-
-}
-
-
-/* vehicle shadow */
-
-.vehicle-shadow {
-
-    position: absolute;
-
-    left: 12%;
-    right: 12%;
-
-    bottom: 15%;
-
-    height: 14%;
-
-    border-radius: 50%;
-
-    background:
-        rgba(0,0,0,.70);
-
-    filter:
-        blur(8px);
-
-}
-
-
-/* main vehicle silhouette */
-
-.vehicle-body {
-
-    position: absolute;
-
-    left: 10%;
-    right: 10%;
-
-    bottom: 24%;
-
-    height: 44%;
-
-    border:
-        2px solid
-        rgba(54,183,255,.80);
-
-    border-radius:
-        30% 24% 15% 15%
-        / 50% 48% 30% 30%;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(21,157,255,.14),
-            rgba(4,15,24,.78)
-        );
-
-    box-shadow:
-        inset 0 0 18px rgba(21,157,255,.15),
-        0 0 14px rgba(21,157,255,.32);
-
-}
-
-
-/* roof */
-
-.vehicle-roof {
-
-    position: absolute;
-
-    left: 23%;
-    right: 23%;
-
-    top: -44%;
-
-    height: 70%;
-
-    border:
-        2px solid
-        rgba(54,183,255,.72);
-
-    border-bottom: 0;
-
-    border-radius:
-        55% 55% 0 0;
-
-}
-
-
-/* windows */
-
-.vehicle-window {
-
-    position: absolute;
-
-    top: 7%;
-
-    height: 42%;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(54,183,255,.18),
-            rgba(1,8,14,.88)
-        );
-
-    border:
-        1px solid
-        rgba(114,209,255,.52);
-
-}
-
-
-.vehicle-window-front {
-
-    left: 27%;
-    width: 21%;
-
-    transform:
-        skewX(-14deg);
-
-}
-
-
-.vehicle-window-rear {
-
-    right: 27%;
-    width: 21%;
-
-    transform:
-        skewX(14deg);
-
-}
-
-
-/* hood / trunk accents */
-
-.vehicle-hood,
-.vehicle-trunk {
-
-    position: absolute;
-
-    height: 2px;
-
-    background:
-        var(--f-blue-soft);
-
-    box-shadow:
-        0 0 9px var(--f-blue);
-
-}
-
-
-.vehicle-hood {
-
-    left: 4%;
-    right: 28%;
-    top: 51%;
-
-}
-
-
-.vehicle-trunk {
-
-    left: 72%;
-    right: 4%;
-    top: 51%;
-
-}
-
-
-/* lights */
-
-.vehicle-light {
-
-    position: absolute;
-
-    width: 8%;
-    height: 7%;
-
-    border-radius: 50%;
-
-    background:
-        var(--f-blue-soft);
-
-    box-shadow:
-        0 0 8px var(--f-blue),
-        0 0 18px rgba(21,157,255,.55);
-
-    animation:
-        arsFooterVehicleLights 1.8s ease-in-out infinite alternate;
-
-}
-
-
-.vehicle-light-left {
-
-    left: 5%;
-    top: 57%;
-
-}
-
-
-.vehicle-light-right {
-
-    right: 5%;
-    top: 57%;
-
-}
-
-
-/* wheels */
-
-.vehicle-wheel {
-
-    position: absolute;
-
-    bottom: -13%;
-
-    width: 18%;
-    aspect-ratio: 1;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            #020406 30%,
-            #16202a 33%,
-            #020406 52%
-        );
-
-    border:
-        2px solid
-        rgba(114,209,255,.62);
-
-    box-shadow:
-        0 0 8px rgba(21,157,255,.24);
-
-}
-
-
-.vehicle-wheel-front {
-
-    left: 17%;
-
-}
-
-
-.vehicle-wheel-rear {
-
-    right: 17%;
-
-}
-
-
-/* vehicle energy traces */
-
-.vehicle-energy-line {
-
-    position: absolute;
-
-    height: 1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            var(--f-blue-soft),
-            transparent
-        );
-
-    box-shadow:
-        0 0 8px var(--f-blue);
-
-    opacity: .75;
-
-}
-
-
-.vehicle-energy-line-a {
-
-    left: 0;
-    right: 62%;
-
-    top: 63%;
-
-    animation:
-        arsFooterVehicleTrace 2.4s linear infinite;
-
-}
-
-
-.vehicle-energy-line-b {
-
-    left: 62%;
-    right: 0;
-
-    top: 63%;
-
-    animation:
-        arsFooterVehicleTrace 2.4s linear infinite reverse;
-
-}
-
-
-/* =========================================================
-   18 — MONITOR DATA PANELS
-   ========================================================= */
-
-.monitor-data {
-
-    position: absolute;
-
-    top: 32%;
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 5px;
-
-    font-size:
-        clamp(7px, .62vw, 10px);
-
-    font-weight: 700;
-
-    letter-spacing: .15em;
-
-    color:
-        rgba(114,209,255,.62);
-
-    z-index: 11;
-
-}
-
-
-.monitor-data-left {
-
-    left: 4%;
-
-    text-align: left;
-
-}
-
-
-.monitor-data-right {
-
-    right: 4%;
-
-    text-align: right;
-
-}
-
-
-.data-title {
-
-    color:
-        var(--f-bronze-light);
-
-}
-
-
-/* =========================================================
-   19 — MONITOR ENERGY PULSES
-   ========================================================= */
-
-.monitor-energy-pulse {
-
-    position: absolute;
-
-    left: 50%;
-    top: 53%;
-
-    width: 110px;
-    height: 110px;
-
-    transform:
-        translate(-50%,-50%);
-
-    border:
-        1px solid
-        rgba(21,157,255,.28);
-
-    border-radius: 50%;
-
-    z-index: 7;
-
-    pointer-events: none;
-
-    animation:
-        arsFooterMonitorPulse 3.6s ease-out infinite;
-
-}
-
-
-.monitor-energy-pulse-b {
-
-    animation-delay:
-        -1.8s;
-
-}
-
-
-/* =========================================================
-   20 — MONITOR CONTROL STRIP
-   ========================================================= */
-
-.monitor-control-strip {
-
-    position: absolute;
-
-    left: 7%;
-    right: 7%;
-
-    bottom: -5px;
-
-    height: 18px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 8px;
-
-    z-index: 15;
-
-}
-
-
-.monitor-control-strip span {
-
-    width: 4px;
-    height: 4px;
-
-    border-radius: 50%;
-
-    background:
-        var(--f-bronze-light);
-
-    box-shadow:
-        0 0 6px rgba(194,154,112,.30);
-
-}
-
-
-.monitor-control-strip strong {
-
-    margin:
-        0 10px;
-
-    font-size:
-        clamp(6px, .55vw, 9px);
-
-    font-weight: 700;
-
-    letter-spacing: .20em;
-
-    color:
-        rgba(194,154,112,.68);
-
-}
-
-
-/* =========================================================
-   21 — SIX 3D CONTROL BUTTONS
-   ========================================================= */
-
-.ars-console-controls {
-
-    position: absolute;
-
-    left: 50%;
-
-    width:
-        min(100%, 1160px);
-
-    transform:
-        translateX(-50%);
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
-    gap:
-        clamp(12px, 2vw, 24px);
-
-    z-index: 15;
-
-}
-
-
-.ars-console-controls-top {
-
-    top: 28px;
-
-}
-
-
-.ars-console-controls-bottom {
-
-    bottom: 25px;
-
-}
-
-
-/* =========================================================
-   22 — 3D BUTTON
-   ========================================================= */
-
-.ars-console-button {
-
-    position: relative;
-
-    min-height:
-        clamp(76px, 7vw, 100px);
-
-    padding:
-        14px 18px;
-
-    display: grid;
-
-    grid-template-columns:
-        auto
-        auto
-        1fr
-        auto;
-
-    grid-template-rows:
-        1fr 1fr;
-
-    align-items: center;
-
-    column-gap: 12px;
-
-    text-decoration: none;
-
-    border:
-        1px solid
-        rgba(118,84,60,.80);
-
-    border-radius: 6px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #101419,
-            #050709 48%,
-            #0b0e12
-        );
-
-    box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.055),
-        inset 0 -3px 0 rgba(0,0,0,.65),
-        0 8px 0 #020304,
-        0 16px 25px rgba(0,0,0,.45);
-
-    transition:
-        transform .28s ease,
-        border-color .28s ease,
-        box-shadow .28s ease;
-
-}
-
-
-.ars-console-button::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 1px;
-
-    border-radius: 5px;
-
-    background:
-        linear-gradient(
-            115deg,
-            rgba(194,154,112,.08),
-            transparent 34%,
-            rgba(21,157,255,.035)
-        );
-
-    pointer-events: none;
-
-}
-
-
-.ars-console-button::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: 12%;
-    right: 12%;
-
-    bottom: 0;
-
-    height: 2px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            var(--f-blue),
-            transparent
-        );
-
-    box-shadow:
-        0 0 9px rgba(21,157,255,.45);
-
-    transform:
-        scaleX(.25);
-
-    opacity: .45;
-
-    transition:
-        transform .35s ease,
-        opacity .35s ease;
-
-}
-
-
-.ars-console-button:hover {
-
-    transform:
-        translateY(-4px);
-
-    border-color:
-        rgba(194,154,112,.95);
-
-    box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.075),
-        inset 0 -3px 0 rgba(0,0,0,.65),
-        0 8px 0 #020304,
-        0 18px 32px rgba(0,0,0,.55),
-        0 0 28px rgba(21,157,255,.09);
-
-}
-
-
-.ars-console-button:hover::after {
-
-    transform:
-        scaleX(1);
-
-    opacity: 1;
-
-}
-
-
-.button-led {
-
-    width: 8px;
-    height: 8px;
-
-    grid-row:
-        1 / 3;
-
-    border-radius: 50%;
-
-    background:
-        var(--f-blue-bright);
-
-    box-shadow:
-        0 0 8px var(--f-blue),
-        0 0 18px rgba(21,157,255,.55);
-
-    animation:
-        arsFooterButtonLed 2.2s ease-in-out infinite;
-
-}
-
-
-.button-index {
-
-    align-self: start;
-
-    font-size:
-        clamp(8px, .68vw, 11px);
-
-    font-weight: 800;
-
-    letter-spacing: .12em;
-
-    color:
-        rgba(194,154,112,.55);
-
-}
-
-
-.button-icon {
-
-    grid-row:
-        1 / 3;
-
-    font-size:
-        clamp(21px, 2vw, 29px);
-
-    color:
-        var(--f-bronze-light);
-
-    text-shadow:
-        0 0 12px rgba(194,154,112,.18);
-
-}
-
-
-.button-name {
-
-    align-self: end;
-
-    font-size:
-        clamp(11px, 1vw, 15px);
-
-    font-weight: 800;
-
-    letter-spacing: .12em;
-
-    color:
-        var(--f-bronze-bright);
-
-}
-
-
-.button-state {
-
-    align-self: end;
-
-    font-size:
-        clamp(7px, .60vw, 10px);
-
-    font-weight: 700;
-
-    letter-spacing: .16em;
-
-    color:
-        rgba(114,209,255,.72);
-
-}
-
-
-/* =========================================================
-   23 — STAGE DESCRIPTION
-   ========================================================= */
-
-.ars-stage-description {
-
-    position: absolute;
-
-    left: 50%;
-    bottom: 30px;
-
-    width: min(700px, 78%);
-
-    transform:
-        translateX(-50%);
-
-    text-align: center;
-
-    z-index: 13;
-
-}
-
-
-.description-eyebrow {
-
-    display: block;
-
-    margin-bottom: 8px;
-
-    font-size:
-        clamp(8px, .68vw, 11px);
-
-    font-weight: 800;
-
-    letter-spacing: .28em;
-
-    color:
-        var(--f-bronze-mid);
-
-}
-
-
-.ars-stage-description h2 {
-
-    margin: 0;
-
-    font-size:
-        clamp(18px, 1.8vw, 29px);
-
-    line-height: 1.15;
-
-    font-weight: 800;
-
-    letter-spacing: .06em;
-
-    color:
-        var(--f-white);
-
-}
-
-
-.ars-stage-description h2 span {
-
-    color:
-        var(--f-bronze-light);
-
-}
-
-
-.ars-stage-description p {
-
-    margin:
-        10px 0 0;
-
-    font-size:
-        clamp(9px, .72vw, 12px);
-
-    font-weight: 600;
-
-    letter-spacing: .08em;
-
-    color:
-        var(--f-white-muted);
-
-}
-
-
-/* =========================================================
-   24 — MODULE NAVIGATION
+   13 — MODULE NAVIGATION
    ========================================================= */
 
 .ars-console-modules {
+
+    position: relative;
+
+    flex-shrink: 0;
 
     display: grid;
 
@@ -24534,24 +23203,26 @@ code {
         repeat(6, 1fr);
 
     border-top:
-        1px solid
-        rgba(118,84,60,.42);
+        2px solid rgba(164,122,85,.38);
 
     border-bottom:
-        1px solid
-        rgba(118,84,60,.42);
-
+        2px solid rgba(164,122,85,.38);
 }
 
+
+/* =========================================================
+   14 — 3D MODULE KEYS
+   ========================================================= */
 
 .ars-console-module {
 
     position: relative;
 
-    min-height: 92px;
+    min-height:
+        clamp(66px, 8vh, 90px);
 
     padding:
-        17px 18px;
+        14px 16px;
 
     display: flex;
 
@@ -24561,142 +23232,64 @@ code {
 
     text-decoration: none;
 
+    overflow: hidden;
+
     border-right:
-        1px solid
-        rgba(118,84,60,.27);
+        1px solid rgba(164,122,85,.26);
 
     background:
-        rgba(255,255,255,.008);
+        linear-gradient(
+            145deg,
+            rgba(10,12,15,.98),
+            rgba(2,3,5,.98)
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.035),
+        inset 0 -8px 18px rgba(0,0,0,.42);
 
     transition:
-        background .3s ease,
-        transform .3s ease;
-
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
 }
 
 
 .ars-console-module:last-child {
 
     border-right: 0;
-
 }
 
 
-.module-index {
+/* bronze bevel */
 
-    font-size:
-        clamp(8px, .65vw, 11px);
+.ars-console-module::before {
 
-    font-weight: 800;
-
-    letter-spacing: .15em;
-
-    color:
-        rgba(194,154,112,.50);
-
-}
-
-
-.module-icon {
+    content: "";
 
     position: absolute;
 
-    right: 17px;
-    top: 15px;
+    inset: 3px;
 
-    font-size:
-        clamp(16px, 1.4vw, 23px);
+    border:
+        1px solid rgba(164,122,85,.16);
 
-    color:
-        var(--f-bronze-mid);
-
+    pointer-events: none;
 }
 
 
-.module-name {
+/* blue energy base */
 
-    font-size:
-        clamp(10px, .82vw, 13px);
+.ars-console-module::after {
 
-    font-weight: 800;
-
-    letter-spacing: .12em;
-
-    color:
-        var(--f-bronze-light);
-
-}
-
-
-.module-arrow {
+    content: "";
 
     position: absolute;
 
-    right: 17px;
-    bottom: 14px;
+    left: 14%;
+    right: 14%;
 
-    font-size: 14px;
-
-    color:
-        rgba(114,209,255,.60);
-
-    transition:
-        color .3s ease,
-        transform .3s ease;
-
-}
-
-
-.ars-console-module:hover {
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(118,84,60,.14),
-            rgba(21,157,255,.035)
-        );
-
-    transform:
-        translateY(-2px);
-
-}
-
-
-.ars-console-module:hover .module-arrow {
-
-    color:
-        var(--f-blue-soft);
-
-    transform:
-        translate(3px,-3px);
-
-}
-
-
-/* =========================================================
-   25 — SIGNATURE
-   ========================================================= */
-
-.ars-console-signature {
-
-    padding:
-        clamp(34px, 4vw, 52px)
-        clamp(20px, 4vw, 55px);
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 24px;
-
-    text-align: center;
-
-}
-
-
-.signature-line {
-
-    flex: 1;
+    bottom: 0;
 
     height: 2px;
 
@@ -24704,10 +23297,145 @@ code {
         linear-gradient(
             90deg,
             transparent,
-            rgba(118,84,60,.62),
-            rgba(194,154,112,.32)
+            rgba(21,157,255,.95),
+            transparent
         );
 
+    box-shadow:
+        0 0 12px rgba(21,157,255,.65);
+
+    transform:
+        scaleX(.28);
+
+    opacity: .5;
+
+    transition:
+        transform .4s ease,
+        opacity .4s ease;
+}
+
+
+/* blue indicator */
+
+.module-index {
+
+    font-size:
+        clamp(9px, .7vw, 12px);
+
+    font-weight: 800;
+
+    letter-spacing: .15em;
+
+    color:
+        var(--f-bronze-2);
+}
+
+
+.module-name {
+
+    font-size:
+        clamp(10px, .78vw, 14px);
+
+    font-weight: 800;
+
+    letter-spacing: .11em;
+
+    color:
+        rgba(245,244,239,.78);
+}
+
+
+.module-arrow {
+
+    position: absolute;
+
+    right: 14px;
+    top: 12px;
+
+    font-size:
+        clamp(13px, 1vw, 17px);
+
+    color:
+        var(--f-bronze-2);
+
+    transition:
+        color .35s ease,
+        transform .35s ease;
+}
+
+
+/* key active state */
+
+.ars-console-module:hover {
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(196,155,112,.58);
+
+    box-shadow:
+        inset 0 0 22px rgba(21,157,255,.055),
+        0 8px 25px rgba(0,0,0,.45);
+}
+
+
+.ars-console-module:hover::after {
+
+    transform:
+        scaleX(1);
+
+    opacity: 1;
+}
+
+
+.ars-console-module:hover .module-arrow {
+
+    color:
+        var(--f-blue-2);
+
+    transform:
+        translate(2px,-2px);
+}
+
+
+/* =========================================================
+   15 — SIGNATURE
+   ========================================================= */
+
+.ars-console-signature {
+
+    flex-shrink: 0;
+
+    min-height:
+        clamp(58px, 7vh, 82px);
+
+    padding:
+        14px clamp(18px, 3vw, 40px);
+
+    display: flex;
+
+    align-items: center;
+
+    gap:
+        clamp(12px, 2vw, 28px);
+
+    text-align: center;
+}
+
+
+.signature-line {
+
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(164,122,85,.48)
+        );
 }
 
 
@@ -24715,7 +23443,6 @@ code {
 
     transform:
         scaleX(-1);
-
 }
 
 
@@ -24725,54 +23452,54 @@ code {
 
     flex-direction: column;
 
-    gap: 9px;
-
+    gap: 7px;
 }
 
 
 .signature-text span {
 
     font-size:
-        clamp(9px, .72vw, 12px);
+        clamp(8px, .65vw, 11px);
 
     font-weight: 700;
 
-    letter-spacing: .25em;
+    letter-spacing: .24em;
 
     color:
-        var(--f-white-muted);
-
+        rgba(245,244,239,.56);
 }
 
 
 .signature-text strong {
 
     font-size:
-        clamp(13px, 1.15vw, 18px);
+        clamp(11px, .95vw, 16px);
 
     font-weight: 800;
 
-    letter-spacing: .16em;
+    letter-spacing: .15em;
 
     color:
-        var(--f-bronze-light);
+        var(--f-bronze-3);
 
     text-shadow:
-        0 0 15px rgba(194,154,112,.16);
-
+        0 0 16px rgba(196,155,112,.16);
 }
 
 
 /* =========================================================
-   26 — BOTTOM
+   16 — BOTTOM
    ========================================================= */
 
 .ars-console-bottom {
 
-    min-height: 88px;
+    flex-shrink: 0;
+
+    min-height:
+        clamp(60px, 7vh, 82px);
 
     padding:
-        18px clamp(20px, 3vw, 42px);
+        12px clamp(18px, 2.5vw, 38px);
 
     display: grid;
 
@@ -24781,12 +23508,10 @@ code {
 
     align-items: center;
 
-    gap: 25px;
+    gap: 20px;
 
     border-top:
-        1px solid
-        rgba(118,84,60,.34);
-
+        1px solid rgba(164,122,85,.30);
 }
 
 
@@ -24796,23 +23521,21 @@ code {
 
     align-items: center;
 
-    gap: 12px;
-
+    gap: 11px;
 }
 
 
 .identity-mark {
 
     font-size:
-        clamp(20px, 1.7vw, 28px);
+        clamp(19px, 1.6vw, 28px);
 
     font-weight: 800;
 
     letter-spacing: .14em;
 
     color:
-        var(--f-bronze-light);
-
+        var(--f-bronze-3);
 }
 
 
@@ -24823,11 +23546,10 @@ code {
 
     font-weight: 700;
 
-    letter-spacing: .20em;
+    letter-spacing: .18em;
 
     color:
-        var(--f-white-muted);
-
+        rgba(245,244,239,.48);
 }
 
 
@@ -24836,36 +23558,33 @@ code {
     display: flex;
 
     gap:
-        clamp(14px, 2vw, 28px);
-
+        clamp(14px, 1.5vw, 24px);
 }
 
 
 .ars-footer-links a {
 
     font-size:
-        clamp(8px, .66vw, 11px);
+        clamp(8px, .65vw, 11px);
 
     font-weight: 700;
 
-    letter-spacing: .10em;
+    letter-spacing: .1em;
 
     color:
-        var(--f-white-muted);
+        rgba(245,244,239,.46);
 
     text-decoration: none;
 
     transition:
         color .3s ease;
-
 }
 
 
 .ars-footer-links a:hover {
 
     color:
-        var(--f-bronze-light);
-
+        var(--f-blue-2);
 }
 
 
@@ -24874,480 +23593,230 @@ code {
     justify-self: end;
 
     font-size:
-        clamp(8px, .62vw, 10px);
+        clamp(8px, .65vw, 11px);
 
-    font-weight: 600;
+    font-weight: 700;
 
     letter-spacing: .08em;
 
     color:
-        rgba(244,243,239,.34);
-
+        rgba(245,244,239,.42);
 }
 
 
 /* =========================================================
-   27 — KEYFRAME ENGINE
+   17 — INDUSTRIAL MOTION SYSTEM
    ========================================================= */
 
-@keyframes arsFooterGridDrift {
+@keyframes statusPulse {
 
-    from {
-        background-position: 0 0, 0 0;
-    }
-
-    to {
-        background-position: 54px 54px, 54px 54px;
-    }
-
-}
-
-
-@keyframes arsFooterAmbientA {
-
-    from {
-        transform:
-            translate(-50%,-50%)
-            scale(.88);
-        opacity: .12;
-    }
-
-    to {
-        transform:
-            translate(-50%,-50%)
-            scale(1.12);
-        opacity: .25;
-    }
-
-}
-
-
-@keyframes arsFooterAmbientB {
-
-    from {
-        transform:
-            translate(-50%,-50%)
-            scale(1);
-        opacity: .08;
-    }
-
-    to {
-        transform:
-            translate(-50%,-50%)
-            scale(1.20);
-        opacity: .18;
-    }
-
-}
-
-
-@keyframes arsFooterParticleFloat {
-
-    0% {
-        transform:
-            translate3d(0,30px,0)
-            scale(.6);
-        opacity: 0;
-    }
-
-    15% {
-        opacity: .65;
-    }
-
-    80% {
-        opacity: .45;
-    }
-
+    0%,
     100% {
-        transform:
-            translate3d(40px,-120px,0)
-            scale(1.15);
-        opacity: 0;
-    }
-
-}
-
-
-@keyframes arsFooterSlowRotate {
-
-    to {
-        transform:
-            rotate(360deg);
-    }
-
-}
-
-
-@keyframes arsFooterCorePulse {
-
-    0%,100% {
-        transform: scale(.75);
-        opacity: .25;
-    }
-
-    50% {
-        transform: scale(1.15);
-        opacity: 1;
-    }
-
-}
-
-
-@keyframes arsFooterLedPulse {
-
-    0%,100% {
-        opacity: .45;
-        transform: scale(.82);
-    }
-
-    50% {
-        opacity: 1;
-        transform: scale(1.18);
-    }
-
-}
-
-
-@keyframes arsFooterGoldPulse {
-
-    0%,100% {
-        opacity: .35;
-        transform: scale(.82);
-    }
-
-    50% {
-        opacity: 1;
-        transform: scale(1.18);
-    }
-
-}
-
-
-@keyframes arsFooterMetalSweep {
-
-    0% {
-        background-position: 220% 0;
-    }
-
-    100% {
-        background-position: -220% 0;
-    }
-
-}
-
-
-@keyframes arsFooterBottomEnergy {
-
-    0%,100% {
-        opacity: .35;
-        transform: scaleX(.65);
-    }
-
-    50% {
-        opacity: 1;
-        transform: scaleX(1);
-    }
-
-}
-
-
-@keyframes arsFooterOrbGlow {
-
-    from {
-        transform: scale(.85);
-        opacity: .45;
-    }
-
-    to {
-        transform: scale(1.12);
-        opacity: .90;
-    }
-
-}
-
-
-@keyframes arsFooterMonitorSweep {
-
-    0%,100% {
-        opacity: .35;
-        transform: scaleX(.55);
-    }
-
-    50% {
-        opacity: 1;
-        transform: scaleX(1);
-    }
-
-}
-
-
-@keyframes arsFooterMonitorGrid {
-
-    from {
-        background-position: 0 0;
-    }
-
-    to {
-        background-position: 38px 38px;
-    }
-
-}
-
-
-@keyframes arsFooterScan {
-
-    0% {
-        top: -22%;
-        opacity: 0;
-    }
-
-    15% {
-        opacity: .8;
-    }
-
-    85% {
-        opacity: .65;
-    }
-
-    100% {
-        top: 105%;
-        opacity: 0;
-    }
-
-}
-
-
-@keyframes arsFooterDataSweep {
-
-    0%,15% {
-        left: -25%;
-        opacity: 0;
-    }
-
-    30% {
-        opacity: .8;
-    }
-
-    65% {
-        opacity: .45;
-    }
-
-    85%,100% {
-        left: 105%;
-        opacity: 0;
-    }
-
-}
-
-
-@keyframes arsFooterHudProgress {
-
-    from {
-        width: 35%;
-    }
-
-    to {
-        width: 88%;
-    }
-
-}
-
-
-@keyframes arsFooterVehicleGlow {
-
-    from {
-        opacity: .38;
-        transform: scale(.88);
-    }
-
-    to {
-        opacity: .85;
-        transform: scale(1.08);
-    }
-
-}
-
-
-@keyframes arsFooterVehicleLights {
-
-    from {
         opacity: .42;
-    }
-
-    to {
-        opacity: 1;
-    }
-
-}
-
-
-@keyframes arsFooterVehicleTrace {
-
-    0% {
-        opacity: .1;
-        transform: scaleX(.25);
+        transform: scale(.82);
     }
 
     50% {
         opacity: 1;
-        transform: scaleX(1);
+        transform: scale(1.18);
     }
-
-    100% {
-        opacity: .1;
-        transform: scaleX(.25);
-    }
-
 }
 
 
-@keyframes arsFooterMonitorPulse {
+@keyframes displayScan {
 
     0% {
         transform:
-            translate(-50%,-50%)
-            scale(.35);
-
-        opacity: .7;
+            translateX(-170%)
+            skewX(-18deg);
     }
 
     100% {
         transform:
-            translate(-50%,-50%)
-            scale(2.7);
-
-        opacity: 0;
+            translateX(440%)
+            skewX(-18deg);
     }
-
 }
 
 
-@keyframes arsFooterButtonLed {
+@keyframes horizontalScan {
 
-    0%,100% {
-        box-shadow:
-            0 0 5px var(--f-blue),
-            0 0 10px rgba(21,157,255,.30);
+    0%,
+    100% {
+        transform:
+            translateY(-45px)
+            scaleX(.45);
+
+        opacity: .1;
     }
 
     50% {
+        transform:
+            translateY(45px)
+            scaleX(1);
+
+        opacity: .75;
+    }
+}
+
+
+@keyframes displayBreath {
+
+    0% {
         box-shadow:
-            0 0 9px var(--f-blue-bright),
-            0 0 23px rgba(21,157,255,.68);
+            inset 0 0 35px rgba(21,157,255,.055);
     }
 
+    100% {
+        box-shadow:
+            inset 0 0 55px rgba(21,157,255,.13);
+    }
+}
+
+
+@keyframes frameEnergy {
+
+    0% {
+        opacity: .35;
+        border-color: rgba(21,157,255,.12);
+    }
+
+    50% {
+        opacity: .85;
+        border-color: rgba(196,155,112,.22);
+    }
+
+    100% {
+        opacity: .35;
+        border-color: rgba(21,157,255,.12);
+    }
+}
+
+
+@keyframes footerAtmosphere {
+
+    0% {
+        transform:
+            translateX(-3%)
+            scale(.96);
+
+        opacity: .45;
+    }
+
+    100% {
+        transform:
+            translateX(3%)
+            scale(1.04);
+
+        opacity: .8;
+    }
 }
 
 
 /* =========================================================
-   28 — LARGE DESKTOP
+   18 — LARGE DESKTOP
    ========================================================= */
 
-@media (min-width: 1500px) {
+@media (min-width: 1200px) {
 
-    .ars-console-stage {
+    .ars-console-main {
 
-        min-height: 820px;
-
+        grid-template-columns:
+            minmax(220px, 1fr)
+            minmax(600px, 3fr)
+            minmax(220px, 1fr);
     }
 
-    .ars-digital-monitor {
+    .ars-console-core {
 
-        width: min(900px, 100%);
-
+        max-width: 1000px;
     }
-
 }
 
 
 /* =========================================================
-   29 — TABLET
+   19 — TABLET
    ========================================================= */
 
-@media (max-width: 1050px) {
+@media (max-width: 950px) {
 
-    .ars-console-stage {
+    .ars-console-main {
 
-        min-height: 760px;
+        grid-template-columns:
+            1fr;
+
+        grid-template-rows:
+            auto
+            minmax(220px, 1fr)
+            auto;
+
+        gap: 16px;
 
         padding:
-            120px 25px 105px;
-
-        grid-template-columns:
-            145px
-            minmax(0,1fr)
-            145px;
-
-        column-gap: 20px;
-
+            20px 25px;
     }
 
 
-    .ars-console-controls {
+    .ars-console-core {
 
-        width: 90%;
+        width: min(90%, 720px);
 
+        order: 2;
     }
 
 
-    .ars-console-orb-ars {
+    .ars-panel-left {
 
-        left: 25px;
+        order: 1;
 
+        justify-self: center;
+
+        text-align: center;
     }
 
 
-    .ars-console-orb-stat {
+    .ars-panel-right {
 
-        right: 25px;
+        order: 3;
 
+        justify-self: center;
+
+        text-align: center;
     }
 
 
-    .ars-digital-monitor {
+    .ars-console-panel p {
 
-        width: 100%;
-
+        margin-inline: auto;
     }
-
-
-    .ars-console-modules {
-
-        grid-template-columns:
-            repeat(3, 1fr);
-
-    }
-
-
-    .ars-console-module:nth-child(3) {
-
-        border-right: 0;
-
-    }
-
-
-    .ars-console-module:nth-child(n+4) {
-
-        border-top:
-            1px solid
-            rgba(118,84,60,.25);
-
-    }
-
 }
 
 
 /* =========================================================
-   30 — MOBILE
+   20 — MOBILE
    ========================================================= */
 
 @media (max-width: 700px) {
 
     .ars-intelligence-footer {
 
-        padding:
-            45px 8px 18px;
+        min-height: 100svh;
 
+        height: 100svh;
+
+        padding:
+            8px 6px 8px;
+
+        justify-content: center;
+    }
+
+
+    .ars-footer-horizon {
+
+        margin:
+            0 auto 7px;
+
+        gap: 7px;
     }
 
 
@@ -25355,434 +23824,405 @@ code {
 
         width: 100%;
 
-        border-width: 1px;
+        height: calc(100svh - 28px);
 
+        max-height: calc(100svh - 28px);
+
+        border-width: 1px;
     }
 
 
     .ars-console-header {
 
-        min-height: 76px;
+        min-height: 46px;
 
         padding:
-            15px 16px;
+            7px 10px;
+    }
 
+
+    .console-eyebrow {
+
+        font-size: 6px;
+
+        letter-spacing: .19em;
     }
 
 
     .ars-console-brand strong {
 
-        font-size: 19px;
+        font-size: 14px;
 
+        letter-spacing: .12em;
     }
 
 
     .ars-console-status {
 
-        font-size: 7px;
+        font-size: 6px;
 
+        gap: 5px;
     }
 
 
-    .ars-console-stage {
+    .status-indicator {
 
-        min-height: 850px;
-
-        padding:
-            125px 12px 150px;
-
-        display: block;
-
+        width: 5px;
+        height: 5px;
     }
 
 
-    /* orbs */
+    .ars-console-main {
 
-    .ars-console-orb {
-
-        width: 88px;
-
-    }
-
-
-    .ars-console-orb-ars {
-
-        top: 20px;
-        left: 15%;
-
-        transform:
-            translateX(-50%);
-
-    }
-
-
-    .ars-console-orb-stat {
-
-        top: 20px;
-        right: 15%;
-
-        transform:
-            translateX(50%);
-
-    }
-
-
-    /* monitor */
-
-    .ars-digital-monitor {
-
-        width: 100%;
-
-        aspect-ratio:
-            16 / 9.5;
+        flex: 1 1 auto;
 
         min-height: 0;
 
-        margin:
-            80px auto 0;
+        padding:
+            9px 7px;
 
-    }
+        display: grid;
 
+        grid-template-columns: 1fr;
 
-    .monitor-glass {
-
-        inset:
-            10px 11px 18px;
-
-    }
-
-
-    .virtual-vehicle {
-
-        width: 62%;
-
-    }
-
-
-    .monitor-data {
-
-        font-size: 6px;
-
-    }
-
-
-    .monitor-hud {
-
-        font-size: 6px;
-
-    }
-
-
-    .ars-console-controls {
-
-        position: absolute;
-
-        width: calc(100% - 24px);
-
-        left: 12px;
-
-        transform: none;
-
-        grid-template-columns:
-            repeat(3, minmax(0,1fr));
+        grid-template-rows:
+            auto
+            minmax(125px, 1fr)
+            auto;
 
         gap: 7px;
 
+        overflow: hidden;
     }
 
 
-    .ars-console-controls-top {
+    .ars-console-panel {
 
-        top: 300px;
+        max-width: none;
 
+        width: 100%;
     }
 
 
-    .ars-console-controls-bottom {
+    .ars-panel-left {
 
-        bottom: 72px;
+        justify-self: center;
 
+        text-align: center;
+
+        order: 1;
     }
 
 
-    .ars-console-button {
+    .ars-panel-right {
 
-        min-height: 65px;
+        justify-self: center;
 
-        padding: 9px 7px;
+        text-align: center;
 
-        column-gap: 5px;
-
-        grid-template-columns:
-            auto
-            1fr
-            auto;
-
+        order: 3;
     }
 
 
-    .button-led {
+    .panel-label {
 
-        width: 6px;
-        height: 6px;
+        margin-bottom: 3px;
 
+        font-size: 6px;
+
+        letter-spacing: .18em;
     }
 
 
-    .button-icon {
-
-        display: none;
-
-    }
-
-
-    .button-index {
-
-        font-size: 7px;
-
-    }
-
-
-    .button-name {
-
-        font-size: 8px;
-
-        letter-spacing: .07em;
-
-    }
-
-
-    .button-state {
-
-        display: none;
-
-    }
-
-
-    .ars-stage-description {
-
-        bottom: 12px;
-
-        width: 90%;
-
-    }
-
-
-    .ars-stage-description h2 {
+    .ars-console-panel h3 {
 
         font-size: 15px;
 
+        line-height: .95;
     }
 
 
-    .ars-stage-description p {
+    .ars-console-panel p {
 
-        font-size: 8px;
+        display: none;
+    }
 
+
+    .ars-console-core {
+
+        width: 96%;
+
+        max-width: none;
+
+        aspect-ratio: 2.35 / 1;
+
+        order: 2;
+    }
+
+
+    .ars-core-outer-ring {
+
+        border-radius: 9px;
+    }
+
+
+    .ars-core-mid-ring {
+
+        inset: 8% 4%;
+
+        border-radius: 6px;
+    }
+
+
+    .ars-core-body {
+
+        width: 89%;
+
+        height: 76%;
+
+        border-radius: 5px;
+    }
+
+
+    .core-mark {
+
+        font-size: 19px;
+    }
+
+
+    .core-caption {
+
+        font-size: 5px;
     }
 
 
     .ars-console-modules {
 
         grid-template-columns:
-            repeat(2, 1fr);
-
+            repeat(3, 1fr);
     }
 
 
     .ars-console-module {
 
-        min-height: 75px;
+        min-height: 47px;
 
+        padding:
+            7px 7px;
     }
 
 
-    .ars-console-module:nth-child(3),
-    .ars-console-module:nth-child(5) {
+    .module-index {
 
-        border-right:
-            1px solid
-            rgba(118,84,60,.27);
-
+        font-size: 6px;
     }
 
 
-    .ars-console-module:nth-child(2n) {
+    .module-name {
+
+        font-size: 6.5px;
+
+        letter-spacing: .07em;
+    }
+
+
+    .module-arrow {
+
+        right: 6px;
+        top: 5px;
+
+        font-size: 10px;
+    }
+
+
+    .ars-console-module:nth-child(3) {
 
         border-right: 0;
-
     }
 
 
-    .ars-console-module:nth-child(n+3) {
+    .ars-console-module:nth-child(n+4) {
 
         border-top:
-            1px solid
-            rgba(118,84,60,.25);
-
+            1px solid rgba(164,122,85,.22);
     }
 
 
     .ars-console-signature {
 
+        min-height: 43px;
+
         padding:
-            28px 12px;
+            6px 8px;
 
-        gap: 10px;
+        gap: 7px;
+    }
 
+
+    .signature-text {
+
+        gap: 3px;
     }
 
 
     .signature-text span {
 
-        font-size: 7px;
+        font-size: 5px;
 
+        letter-spacing: .12em;
     }
 
 
     .signature-text strong {
 
-        font-size: 9px;
+        font-size: 6px;
 
+        letter-spacing: .06em;
     }
 
 
     .ars-console-bottom {
 
-        grid-template-columns: 1fr;
-
-        text-align: center;
-
-        gap: 14px;
+        min-height: 52px;
 
         padding:
-            20px 14px;
+            7px 9px;
 
+        grid-template-columns:
+            1fr auto 1fr;
+
+        gap: 5px;
     }
 
 
-    .ars-footer-identity,
-    .ars-footer-links,
-    .ars-footer-copy {
+    .ars-footer-identity {
 
-        justify-self: center;
+        gap: 5px;
+    }
 
+
+    .identity-mark {
+
+        font-size: 13px;
+    }
+
+
+    .identity-description {
+
+        font-size: 5px;
+
+        letter-spacing: .1em;
     }
 
 
     .ars-footer-links {
 
-        gap: 15px;
-
+        gap: 7px;
     }
 
+
+    .ars-footer-links a {
+
+        font-size: 5.5px;
+    }
+
+
+    .ars-footer-copy {
+
+        font-size: 5.5px;
+
+        white-space: nowrap;
+    }
 }
 
 
 /* =========================================================
-   31 — VERY SMALL PHONES
+   21 — VERY SHORT MOBILE
    ========================================================= */
 
-@media (max-width: 430px) {
+@media (max-width: 700px) and (max-height: 650px) {
 
-    .ars-console-orb {
+    .ars-console-header {
 
-        width: 76px;
-
+        min-height: 39px;
     }
 
 
-    .ars-console-orb-ars {
+    .ars-console-main {
 
-        left: 12%;
+        grid-template-rows:
+            auto
+            minmax(105px, 1fr)
+            auto;
 
+        gap: 4px;
     }
 
 
-    .ars-console-orb-stat {
+    .ars-console-panel h3 {
 
-        right: 12%;
-
+        font-size: 12px;
     }
 
 
-    .ars-console-stage {
+    .ars-console-modules .ars-console-module {
 
-        min-height: 790px;
-
+        min-height: 40px;
     }
 
 
-    .ars-console-controls {
+    .ars-console-signature {
 
-        width: calc(100% - 16px);
-
-        left: 8px;
-
+        min-height: 36px;
     }
 
 
-    .ars-console-controls-top {
+    .ars-console-bottom {
 
-        top: 280px;
-
+        min-height: 43px;
     }
-
-
-    .ars-console-controls-bottom {
-
-        bottom: 67px;
-
-    }
-
-
-    .ars-console-button {
-
-        min-height: 58px;
-
-    }
-
-
-    .button-name {
-
-        font-size: 7px;
-
-    }
-
-
-    .ars-console-module {
-
-        padding:
-            13px 11px;
-
-    }
-
-
 }
 
 
 /* =========================================================
-   32 — ACCESSIBILITY
+   22 — ACCESSIBILITY / MOTION
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
     .ars-intelligence-footer *,
-    .ars-intelligence-footer *::before,
-    .ars-intelligence-footer *::after {
+    .ars-intelligence-footer::after {
 
         animation-duration: .001ms !important;
+
         animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
 
+        transition-duration: .001ms !important;
     }
-
 }
 
 
 /* =========================================================
-   END — ARS INTELLIGENCE CONSOLE FOOTER
+   END — ARS FINAL FOOTER SYSTEM
    ========================================================= */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
