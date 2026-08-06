@@ -23784,4 +23784,392 @@ overflow: visible;
 /* =========================================================
    END — FINAL IMAGE REFERENCE FOOTER
    ========================================================= */
-        
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS FOOTER — PREMIUM CONTROL KEYS PATCH
+   06 KEYS / GOLD STATUS POINT / BLUE ENERGY LINE
+   ========================================================= */
+
+
+/* =========================================================
+   MASTER KEY SYSTEM
+   ========================================================= */
+
+.ars-floating-key {
+
+    position: relative;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(182, 138, 97, .72);
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(31, 39, 45, .96),
+            rgba(5, 10, 14, .98) 55%,
+            rgba(18, 23, 27, .96)
+        );
+
+    color: #eee8df;
+
+    box-shadow:
+
+        inset 0 1px 0 rgba(255,255,255,.10),
+
+        inset 0 -10px 22px rgba(0,0,0,.38),
+
+        0 5px 12px rgba(0,0,0,.65),
+
+        0 0 18px rgba(21,157,255,.08);
+
+    overflow: hidden;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+
+}
+
+
+/* =========================================================
+   01 — TOP THREE KEYS
+   20% SMALLER THAN CURRENT CSS SIZE
+   ========================================================= */
+
+.ars-controls-top .ars-floating-key {
+
+    width: 80%;
+
+    min-height: 80%;
+
+    transform: scale(.80);
+
+    transform-origin: center center;
+
+}
+
+
+/* =========================================================
+   02 — BOTTOM THREE KEYS
+   15% LARGER THAN CURRENT CSS SIZE
+   ========================================================= */
+
+.ars-controls-bottom .ars-floating-key {
+
+    width: 115%;
+
+    min-height: 115%;
+
+    transform: scale(1.15);
+
+    transform-origin: center center;
+
+}
+
+
+/* =========================================================
+   PREMIUM 3D DEPTH
+   ========================================================= */
+
+.ars-floating-key::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 3px;
+
+    border-radius: 15px;
+
+    border: 1px solid rgba(255,255,255,.055);
+
+    pointer-events: none;
+
+}
+
+
+.ars-floating-key::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 10%;
+
+    right: 10%;
+
+    bottom: 5px;
+
+    height: 2px;
+
+    border-radius: 100%;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            #159dff 22%,
+            #5bc9ff 50%,
+            #159dff 78%,
+            transparent
+        );
+
+    box-shadow:
+
+        0 0 5px #159dff,
+        0 0 12px rgba(21,157,255,.75),
+        0 0 22px rgba(21,157,255,.32);
+
+    animation:
+        ars-key-energy 2.4s ease-in-out infinite;
+
+}
+
+
+/* =========================================================
+   GOLD STATUS POINT
+   ========================================================= */
+
+.ars-key-light {
+
+    position: absolute;
+
+    width: 7px;
+
+    height: 7px;
+
+    right: 16px;
+
+    top: 14px;
+
+    border-radius: 50%;
+
+    background: #ffd34d;
+
+    box-shadow:
+
+        0 0 4px #ffd34d,
+        0 0 9px #ffd34d,
+        0 0 17px rgba(255,211,77,.85);
+
+    animation:
+        ars-gold-status 1.7s ease-in-out infinite;
+
+    z-index: 5;
+
+}
+
+
+/* =========================================================
+   GOLD ICON
+   ========================================================= */
+
+.ars-key-icon {
+
+    color: #d1aa7d;
+
+    text-shadow:
+
+        0 0 5px rgba(209,170,125,.35),
+        0 0 12px rgba(209,170,125,.18);
+
+}
+
+
+/* =========================================================
+   KEY TEXT
+   ========================================================= */
+
+.ars-key-text {
+
+    position: relative;
+
+    z-index: 4;
+
+    color: #eee7dd;
+
+    letter-spacing: .12em;
+
+    text-shadow:
+        0 1px 2px #000,
+        0 0 8px rgba(255,255,255,.08);
+
+}
+
+
+/* =========================================================
+   PREMIUM HOVER
+   ========================================================= */
+
+.ars-floating-key:hover {
+
+    border-color: rgba(91,201,255,.82);
+
+    box-shadow:
+
+        inset 0 1px 0 rgba(255,255,255,.14),
+
+        inset 0 -10px 22px rgba(0,0,0,.32),
+
+        0 8px 18px rgba(0,0,0,.72),
+
+        0 0 22px rgba(21,157,255,.24);
+
+}
+
+
+/* =========================================================
+   TOP KEY HOVER
+   ========================================================= */
+
+.ars-controls-top .ars-floating-key:hover {
+
+    transform: scale(.84);
+
+}
+
+
+/* =========================================================
+   BOTTOM KEY HOVER
+   ========================================================= */
+
+.ars-controls-bottom .ars-floating-key:hover {
+
+    transform: scale(1.19);
+
+}
+
+
+/* =========================================================
+   GOLD STATUS ANIMATION
+   ========================================================= */
+
+@keyframes ars-gold-status {
+
+    0%,
+    100% {
+
+        opacity: .42;
+
+        transform: scale(.78);
+
+        box-shadow:
+            0 0 3px #ffd34d,
+            0 0 7px #ffd34d;
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform: scale(1.12);
+
+        box-shadow:
+            0 0 5px #ffd34d,
+            0 0 12px #ffd34d,
+            0 0 22px rgba(255,211,77,.9);
+
+    }
+
+}
+
+
+/* =========================================================
+   BLUE ENERGY LINE ANIMATION
+   ========================================================= */
+
+@keyframes ars-key-energy {
+
+    0%,
+    100% {
+
+        opacity: .45;
+
+        transform: scaleX(.72);
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform: scaleX(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   MICRO LIGHT SWEEP
+   ========================================================= */
+
+.ars-floating-key {
+
+    background-size: 200% 200%;
+
+    animation:
+        ars-key-surface 6s ease-in-out infinite;
+
+}
+
+
+@keyframes ars-key-surface {
+
+    0%,
+    100% {
+
+        background-position: 0% 50%;
+
+    }
+
+    50% {
+
+        background-position: 100% 50%;
+
+    }
+
+}
+
+
+/* =========================================================
+   PRESERVE BUTTON FUNCTIONALITY
+   ========================================================= */
+
+.ars-floating-key {
+
+    cursor: pointer;
+
+    appearance: none;
+
+    -webkit-tap-highlight-color: transparent;
+
+}
+
+
+.ars-floating-key:active {
+
+    transform:
+        scale(.96)
+        translateY(2px);
+
+    box-shadow:
+
+        inset 0 4px 12px rgba(0,0,0,.65),
+
+        0 2px 7px rgba(0,0,0,.7);
+
+}
