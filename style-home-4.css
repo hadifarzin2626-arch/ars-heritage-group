@@ -23787,180 +23787,152 @@ overflow: visible;
    ========================================================= */
 
 
-
-
 /* =========================================================
-   ARS FOOTER — FINAL CONTROL KEY / SCANNER PATCH
-   REFERENCE:
-   RECTANGULAR × MINIMAL × PREMIUM
+   ARS FOOTER — FINAL CONTROL SYSTEM CORRECTION PATCH
+   SHARP × FLUSH × PREMIUM × MINIMAL ENERGY
+   PLACE DIRECTLY AFTER THE MAIN FOOTER CSS
    ========================================================= */
 
 
 /* =========================================================
-   01 — CONTROL ROW
+   01 — ROWS
+   THREE CARDS MUST TOUCH EACH OTHER
    ========================================================= */
 
 .ars-control-row {
 
-    gap: 2px;
+    gap:
+        0 !important;
+
+    margin:
+        0 !important;
 
 }
 
 
 /* =========================================================
-   02 — BASE KEY
-   Original base:
-   width  = clamp(78px, 9vw, 135px)
-   height = clamp(48px, 5.5vw, 72px)
-
-   TOP    = 80% of original
-   BOTTOM = 115% of original
+   02 — TOP ROW
+   20% SMALLER THAN ORIGINAL BASE SIZE
+   HEIGHT +15% OVER PREVIOUS PATCH
    ========================================================= */
 
+.ars-controls-top {
 
-/* =========================================================
-   03 — TOP THREE KEYS
-   20% SMALLER
-   ========================================================= */
+    gap:
+        0 !important;
+
+}
+
 
 .ars-controls-top .ars-floating-key {
 
     width:
-        clamp(62.4px, 7.2vw, 108px);
+        clamp(62.4px, 7.2vw, 108px) !important;
 
     height:
-        clamp(38.4px, 4.4vw, 57.6px);
+        clamp(44.16px, 5.06vw, 66.24px) !important;
 
-    padding:
-        6px;
-
-    border-radius:
-        clamp(5px, .55vw, 8px);
+    margin:
+        0 !important;
 
 }
 
 
 /* =========================================================
-   04 — BOTTOM THREE KEYS
-   15% LARGER
+   03 — BOTTOM ROW
+   15% LARGER THAN ORIGINAL BASE SIZE
+   HEIGHT +15% OVER PREVIOUS PATCH
    ========================================================= */
+
+.ars-controls-bottom {
+
+    gap:
+        0 !important;
+
+}
+
 
 .ars-controls-bottom .ars-floating-key {
 
     width:
-        clamp(89.7px, 10.35vw, 155.25px);
+        clamp(89.7px, 10.35vw, 155.25px) !important;
 
     height:
-        clamp(55.2px, 6.325vw, 82.8px);
+        clamp(63.48px, 7.274vw, 95.22px) !important;
 
-    padding:
-        9px;
-
-    border-radius:
-        clamp(7px, .75vw, 10px);
+    margin:
+        0 !important;
 
 }
 
 
 /* =========================================================
-   05 — PREMIUM RECTANGULAR FRAME
+   04 — SHARP PREMIUM GEOMETRY
    ========================================================= */
 
 .ars-floating-key {
 
-    border:
-        1px solid rgba(182,138,97,.72);
-
     border-radius:
-        7px;
+        0 !important;
+
+    border:
+        1px solid rgba(182,138,97,.82) !important;
+
+    outline:
+        1px solid rgba(91,201,255,.18);
+
+    outline-offset:
+        -4px;
 
     background:
 
         linear-gradient(
             145deg,
-            rgba(24,28,32,.98),
-            rgba(8,10,12,.98) 55%,
-            rgba(2,3,4,1)
+            #191d21 0%,
+            #0a0c0f 48%,
+            #020304 100%
         );
 
     box-shadow:
 
         inset 0 1px 0 rgba(255,255,255,.10),
 
-        inset 0 -5px 10px rgba(0,0,0,.75),
+        inset 0 -7px 12px rgba(0,0,0,.76),
 
-        0 3px 0 #020304,
+        0 3px 0 #030405,
 
-        0 7px 15px rgba(0,0,0,.58);
-
-}
-
-
-/* inner precision frame */
-
-.ars-floating-key::before {
-
-    inset:
-        3px;
-
-    border:
-        1px solid rgba(182,138,97,.18);
-
-    border-radius:
-        4px;
+        0 8px 16px rgba(0,0,0,.62);
 
 }
 
 
 /* =========================================================
-   06 — BLUE ENERGY RAIL
+   05 — DOUBLE-LINE INNER FRAME
+   ========================================================= */
+
+.ars-floating-key::before {
+
+    inset:
+        3px !important;
+
+    border-radius:
+        0 !important;
+
+    border:
+        1px solid rgba(209,170,125,.28) !important;
+
+}
+
+
+/* =========================================================
+   06 — REMOVE OLD MOVING REFLECTION
+   REPLACE IT WITH CLEAN ENERGY RAIL
    ========================================================= */
 
 .ars-floating-key::after {
 
-    content: "";
-
-    position: absolute;
-
-    left: 7%;
-
-    right: 7%;
-
-    bottom: 3px;
-
-    top: auto;
-
-    width: auto;
-
-    height: 2px;
-
-    transform: none;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(21,157,255,.35),
-            rgba(91,201,255,1),
-            rgba(21,157,255,.35),
-            transparent
-        );
-
-    box-shadow:
-
-        0 0 5px rgba(21,157,255,.8),
-
-        0 0 12px rgba(21,157,255,.38);
-
-    filter:
-        blur(.15px);
-
-    opacity:
-        .92;
-
-    animation:
-        arsKeyEnergy 4.2s ease-in-out infinite;
+    content:
+        none !important;
 
 }
 
@@ -23972,102 +23944,159 @@ overflow: visible;
 .ars-key-icon {
 
     font-size:
-        clamp(11px, 1.1vw, 17px);
+        clamp(11px, 1.1vw, 17px) !important;
+
+    font-weight:
+        900;
 
     color:
         var(--ars-bronze-light);
 
     text-shadow:
-        0 0 7px rgba(182,138,97,.22);
+        0 0 8px rgba(182,138,97,.25);
 
 }
 
 
 /* =========================================================
    08 — TEXT
+   +15% SIZE
+   HEAVY PREMIUM WEIGHT
    ========================================================= */
 
 .ars-key-text {
 
+    position:
+        relative;
+
+    z-index:
+        4;
+
     font-size:
-        clamp(7px, .68vw, 10px);
+        clamp(8.05px, .782vw, 11.5px) !important;
 
     font-weight:
-        800;
+        900 !important;
 
     letter-spacing:
         .13em;
 
     color:
-        rgba(245,242,235,.86);
+        rgba(245,242,235,.90);
 
 }
 
 
 /* =========================================================
-   09 — GOLD MINIMAL STATUS DOT
+   09 — BLUE LIGHT RAIL UNDER TEXT
+   2/3 OF CARD WIDTH
+   ========================================================= */
+
+.ars-key-text::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    bottom:
+        -7px;
+
+    width:
+        66.666%;
+
+    height:
+        2px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(21,157,255,.55),
+            rgba(91,201,255,1),
+            rgba(21,157,255,.55),
+            transparent
+        );
+
+    box-shadow:
+
+        0 0 5px rgba(21,157,255,.95),
+
+        0 0 12px rgba(21,157,255,.48);
+
+    animation:
+        arsTextEnergy 2.8s ease-in-out infinite;
+
+}
+
+
+/* =========================================================
+   10 — GOLD STATUS DOT
    ========================================================= */
 
 .ars-key-light {
 
     right:
-        8px;
+        8px !important;
 
     top:
-        7px;
+        7px !important;
 
     width:
-        4px;
+        4px !important;
 
     height:
-        4px;
+        4px !important;
 
     border-radius:
-        50%;
+        50% !important;
 
     background:
-        var(--ars-yellow);
+        var(--ars-yellow) !important;
 
     box-shadow:
 
-        0 0 4px rgba(255,211,77,.85),
+        0 0 4px rgba(255,211,77,.95),
 
-        0 0 9px rgba(255,211,77,.42);
+        0 0 10px rgba(255,211,77,.45);
 
     animation:
-        arsMinimalGold 2.4s ease-in-out infinite;
+        arsGoldStatus 2.2s ease-in-out infinite !important;
 
 }
 
 
 /* =========================================================
-   10 — SECONDARY BLUE DOT
+   11 — BLUE SECONDARY DOT
    ========================================================= */
-
-.ars-floating-key {
-
-    --ars-blue-dot-size: 7px;
-
-}
-
 
 .ars-floating-key .ars-key-light::after {
 
-    content: "";
+    content:
+        "";
 
-    position: absolute;
+    position:
+        absolute;
 
     width:
-        var(--ars-blue-dot-size);
+        6px;
 
     height:
-        var(--ars-blue-dot-size);
+        6px;
 
     right:
-        -4px;
+        -5px;
 
     top:
-        8px;
+        7px;
 
     border-radius:
         50%;
@@ -24082,67 +24111,68 @@ overflow: visible;
         0 0 12px rgba(21,157,255,.55);
 
     animation:
-        arsMinimalBlue 4.8s ease-in-out infinite;
+        arsBlueStatusSlow 5.2s ease-in-out infinite;
 
 }
 
 
 /* =========================================================
-   11 — SCANNER
+   12 — SCANNER
    BLUE + BRONZE
-   2/3 OF ORIGINAL SPEED
-   Original = 5.5s
-   New = 8.25s
+   50% STRONGER
+   ORIGINAL SPEED 5.5s
+   NEW SPEED 8.25s
    ========================================================= */
 
 .ars-scan-line {
 
     height:
-        2px;
+        2px !important;
 
     background:
 
         linear-gradient(
             90deg,
             transparent 0%,
-            rgba(21,157,255,.12) 8%,
-            rgba(21,157,255,.92) 27%,
-            rgba(91,201,255,1) 40%,
-            rgba(182,138,97,1) 50%,
-            rgba(209,170,125,1) 58%,
-            rgba(91,201,255,1) 70%,
-            rgba(21,157,255,.92) 82%,
+            rgba(21,157,255,.16) 7%,
+            rgba(21,157,255,.95) 25%,
+            rgba(91,201,255,1) 38%,
+            rgba(182,138,97,1) 48%,
+            rgba(209,170,125,1) 55%,
+            rgba(91,201,255,1) 68%,
+            rgba(21,157,255,.95) 82%,
             transparent 100%
-        );
+        ) !important;
 
     box-shadow:
 
-        0 0 9px rgba(21,157,255,.75),
+        0 0 12px rgba(21,157,255,.82),
 
-        0 0 18px rgba(21,157,255,.38),
+        0 0 25px rgba(21,157,255,.42),
 
-        0 0 9px rgba(182,138,97,.45);
+        0 0 12px rgba(182,138,97,.52) !important;
 
     animation:
-        arsScan 8.25s linear infinite;
+        arsScan 8.25s linear infinite !important;
 
 }
 
 
 /* =========================================================
-   12 — GOLD PULSE
+   13 — TEXT ENERGY
    ========================================================= */
 
-@keyframes arsMinimalGold {
+@keyframes arsTextEnergy {
 
     0%,
     100% {
 
         opacity:
-            .28;
+            .35;
 
         transform:
-            scale(.72);
+            translateX(-50%)
+            scaleX(.78);
 
     }
 
@@ -24152,7 +24182,8 @@ overflow: visible;
             1;
 
         transform:
-            scale(1);
+            translateX(-50%)
+            scaleX(1);
 
     }
 
@@ -24160,16 +24191,54 @@ overflow: visible;
 
 
 /* =========================================================
-   13 — BLUE PULSE
+   14 — GOLD STATUS
    ========================================================= */
 
-@keyframes arsMinimalBlue {
+@keyframes arsGoldStatus {
 
     0%,
     100% {
 
         opacity:
-            .22;
+            .25;
+
+        transform:
+            scale(.70);
+
+    }
+
+    45% {
+
+        opacity:
+            1;
+
+        transform:
+            scale(1);
+
+    }
+
+    55% {
+
+        opacity:
+            .82;
+
+    }
+
+}
+
+
+/* =========================================================
+   15 — BLUE STATUS
+   SLOWER THAN GOLD
+   ========================================================= */
+
+@keyframes arsBlueStatusSlow {
+
+    0%,
+    100% {
+
+        opacity:
+            .18;
 
         transform:
             scale(.72);
@@ -24179,63 +24248,18 @@ overflow: visible;
     50% {
 
         opacity:
-            .8;
+            .95;
 
         transform:
             scale(1);
 
     }
-
-}
-
-
-/* =========================================================
-   14 — BLUE ENERGY RAIL ANIMATION
-   ========================================================= */
-
-@keyframes arsKeyEnergy {
-
-    0%,
-    100% {
-
-        opacity:
-            .55;
-
-    }
-
-    50% {
-
-        opacity:
-            1;
-
-    }
-
-}
-
-
-/* =========================================================
-   15 — TOP / BOTTOM POSITION
-   ========================================================= */
-
-.ars-controls-top {
-
-    top:
-        19%;
-
-}
-
-
-.ars-controls-bottom {
-
-    bottom:
-        17%;
 
 }
 
 
 /* =========================================================
    16 — MOBILE
-   Preserve the same proportions
    ========================================================= */
 
 @media (max-width: 600px) {
@@ -24243,7 +24267,7 @@ overflow: visible;
     .ars-control-row {
 
         gap:
-            2px;
+            0 !important;
 
     }
 
@@ -24251,16 +24275,16 @@ overflow: visible;
     .ars-controls-top .ars-floating-key {
 
         width:
-            calc((100vw - 22px) / 3 * .80);
+            calc((100vw - 22px) / 3 * .80) !important;
 
         height:
-            34px;
+            39.1px !important;
 
-        padding:
-            4px;
+        margin:
+            0 !important;
 
         border-radius:
-            6px;
+            0 !important;
 
     }
 
@@ -24268,24 +24292,16 @@ overflow: visible;
     .ars-controls-bottom .ars-floating-key {
 
         width:
-            calc((100vw - 22px) / 3 * 1.15);
+            calc((100vw - 22px) / 3 * 1.15) !important;
 
         height:
-            48px;
+            55.2px !important;
 
-        padding:
-            6px;
+        margin:
+            0 !important;
 
         border-radius:
-            7px;
-
-    }
-
-
-    .ars-key-icon {
-
-        font-size:
-            10px;
+            0 !important;
 
     }
 
@@ -24293,10 +24309,24 @@ overflow: visible;
     .ars-key-text {
 
         font-size:
-            6px;
+            6.9px !important;
 
-        letter-spacing:
-            .08em;
+        font-weight:
+            900 !important;
+
+    }
+
+
+    .ars-key-text::after {
+
+        bottom:
+            -5px;
+
+        width:
+            66.666%;
+
+        height:
+            1px;
 
     }
 
@@ -24304,16 +24334,10 @@ overflow: visible;
     .ars-key-light {
 
         width:
-            4px;
+            4px !important;
 
         height:
-            4px;
-
-        right:
-            6px;
-
-        top:
-            6px;
+            4px !important;
 
     }
 
@@ -24329,27 +24353,10 @@ overflow: visible;
     }
 
 
-    .ars-floating-key::after {
-
-        left:
-            8%;
-
-        right:
-            8%;
-
-        bottom:
-            2px;
-
-        height:
-            2px;
-
-    }
-
-
     .ars-scan-line {
 
         height:
-            2px;
+            2px !important;
 
     }
 
@@ -24357,8 +24364,14 @@ overflow: visible;
 
 
 /* =========================================================
-   END — FINAL CONTROL KEY / SCANNER PATCH
+   END — FINAL CONTROL SYSTEM CORRECTION PATCH
    ========================================================= */
+
+
+
+
+
+
 
 
 
