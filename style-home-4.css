@@ -23790,46 +23790,47 @@ overflow: visible;
 
 
 
+
+
+
+
+
+
+
 /* =========================================================
-   ARS PREMIUM FOOTER — FINAL OVERRIDE PATCHابتدای طراحی مجدد ۶ کلید فوتر و  و اسکنر
-   Keys + Core Spheres + Dual Color Scanner
+   ARS PREMIUM FOOTER — FINAL VISUAL PATCH
+   Based on the provided MASTER FOOTER CSS + MOCKUP
    ========================================================= */
 
 
 /* =========================================================
    01 — TOP 3 KEYS
-   20% SMALLER
+   20% SMALLER + ZERO GAP
    ========================================================= */
+
+.ars-controls-top {
+
+    gap: 0 !important;
+
+}
+
 
 .ars-controls-top .ars-floating-key {
 
-    width: 80% !important;
-    height: 80% !important;
+    width:
+        clamp(62px, 7.2vw, 108px) !important;
 
-    border-radius: 14px !important;
+    height:
+        clamp(38px, 4.4vw, 58px) !important;
 
-    background:
-        linear-gradient(
-            145deg,
-            #202328 0%,
-            #0b0e12 45%,
-            #020304 100%
-        ) !important;
+    border-radius:
+        clamp(9px, .9vw, 12px) !important;
 
-    border:
-        1px solid rgba(182,138,97,.82) !important;
+    padding: 7px !important;
 
-    box-shadow:
+    transform:
+        translateY(0);
 
-        inset 0 1px 0 rgba(255,255,255,.13),
-
-        inset 0 -9px 16px rgba(0,0,0,.82),
-
-        0 5px 0 #020304,
-
-        0 10px 22px rgba(0,0,0,.72),
-
-        0 0 18px rgba(21,157,255,.12) !important;
 }
 
 
@@ -23838,360 +23839,479 @@ overflow: visible;
    15% LARGER
    ========================================================= */
 
+.ars-controls-bottom {
+
+    gap:
+        clamp(9px, 1.2vw, 20px) !important;
+
+}
+
+
 .ars-controls-bottom .ars-floating-key {
 
-    width: 115% !important;
-    height: 115% !important;
+    width:
+        clamp(90px, 10.35vw, 155px) !important;
 
-    border-radius: 15px !important;
+    height:
+        clamp(55px, 6.35vw, 83px) !important;
+
+    border-radius:
+        clamp(10px, 1.05vw, 15px) !important;
+
+    padding: 9px !important;
+
+}
+
+
+/* =========================================================
+   03 — PREMIUM 3D BODY FOR ALL SIX KEYS
+   ========================================================= */
+
+.ars-floating-key {
+
+    border:
+        1px solid rgba(209,170,125,.78) !important;
 
     background:
+
         linear-gradient(
             145deg,
-            #22262b 0%,
-            #0a0d11 46%,
-            #020304 100%
+            rgba(31,36,41,.96) 0%,
+            rgba(9,14,19,.98) 42%,
+            rgba(2,4,7,1) 100%
         ) !important;
 
+    box-shadow:
+
+        inset 0 1px 0 rgba(255,255,255,.15),
+
+        inset 1px 0 0 rgba(255,255,255,.045),
+
+        inset -1px 0 0 rgba(182,138,97,.20),
+
+        inset 0 -9px 15px rgba(0,0,0,.78),
+
+        0 4px 0 #020304,
+
+        0 10px 22px rgba(0,0,0,.72),
+
+        0 0 18px rgba(182,138,97,.13),
+
+        0 0 28px rgba(21,157,255,.055) !important;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* inner premium frame */
+
+.ars-floating-key::before {
+
+    inset: 4px !important;
+
+    border-radius:
+        clamp(6px, .7vw, 10px) !important;
+
     border:
-        1px solid rgba(182,138,97,.9) !important;
+        1px solid rgba(209,170,125,.16) !important;
 
     box-shadow:
 
-        inset 0 1px 0 rgba(255,255,255,.14),
+        inset 0 0 0 1px rgba(21,157,255,.035),
 
-        inset 0 -10px 18px rgba(0,0,0,.84),
+        0 0 8px rgba(182,138,97,.06);
 
-        0 6px 0 #020304,
-
-        0 13px 25px rgba(0,0,0,.78),
-
-        0 0 20px rgba(21,157,255,.15) !important;
 }
 
 
 /* =========================================================
-   03 — PREMIUM GOLD STATUS LIGHT
-   ALL 6 KEYS
+   04 — GOLD MICRO STATUS DOT
    ========================================================= */
 
-.ars-floating-key .ars-key-light {
+/*
+   The gold point is generated directly through the key
+   background so it does not destroy the existing ::before
+   and ::after layers.
+*/
 
-    width: 7px !important;
-    height: 7px !important;
-
-    right: 11px !important;
-    top: 11px !important;
-
-    background:
-        #ffd34d !important;
-
-    box-shadow:
-
-        0 0 6px #ffd34d,
-
-        0 0 14px #ffd34d,
-
-        0 0 27px rgba(255,211,77,.82),
-
-        0 0 42px rgba(255,190,60,.35) !important;
-
-    animation:
-        arsPremiumGoldPulse 1.45s ease-in-out infinite !important;
-}
-
-
-/* =========================================================
-   04 — GOLD PULSE
-   ========================================================= */
-
-@keyframes arsPremiumGoldPulse {
-
-    0%,
-    100% {
-
-        opacity: .25;
-
-        transform:
-            scale(.65);
-    }
-
-    45% {
-
-        opacity: 1;
-
-        transform:
-            scale(1.15);
-    }
-
-    60% {
-
-        opacity: .75;
-
-        transform:
-            scale(.95);
-    }
-}
-
-
-/* =========================================================
-   05 — TOP KEY ICON
-   ========================================================= */
-
-.ars-controls-top .ars-key-icon {
-
-    color:
-        var(--ars-bronze-light) !important;
-
-    text-shadow:
-        0 0 10px rgba(182,138,97,.42) !important;
-}
-
-
-/* =========================================================
-   06 — BOTTOM KEY ICON
-   ========================================================= */
-
-.ars-controls-bottom .ars-key-icon {
-
-    color:
-        #d9b78d !important;
-
-    text-shadow:
-
-        0 0 8px rgba(182,138,97,.5),
-
-        0 0 16px rgba(21,157,255,.18) !important;
-}
-
-
-/* =========================================================
-   07 — PREMIUM KEY TEXT
-   ========================================================= */
-
-.ars-floating-key .ars-key-text {
-
-    color:
-        rgba(245,242,235,.94) !important;
-
-    letter-spacing:
-        .14em !important;
-
-    text-shadow:
-        0 0 8px rgba(255,255,255,.08);
-}
-
-
-/* =========================================================
-   08 — ARS CORE — BRONZE GLASS
-   ========================================================= */
-
-.ars-floating-core {
-
-    border:
-        1px solid rgba(182,138,97,.95) !important;
+.ars-floating-key {
 
     background:
 
         radial-gradient(
-            circle at 50% 42%,
-            rgba(182,138,97,.32),
-            rgba(17,14,12,.88) 48%,
-            rgba(2,3,4,.98) 75%
+            circle at 88% 19%,
+            rgba(255,211,77,.98) 0 2px,
+            rgba(255,211,77,.42) 2.5px,
+            rgba(255,211,77,.10) 4px,
+            transparent 7px
+        ),
+
+        linear-gradient(
+            145deg,
+            rgba(31,36,41,.96) 0%,
+            rgba(9,14,19,.98) 42%,
+            rgba(2,4,7,1) 100%
         ) !important;
 
-    box-shadow:
-
-        inset 0 0 22px rgba(182,138,97,.18),
-
-        inset 0 0 5px rgba(255,255,255,.12),
-
-        0 0 18px rgba(182,138,97,.22),
-
-        0 0 42px rgba(21,157,255,.12),
-
-        0 0 65px rgba(0,0,0,.8) !important;
-
-    backdrop-filter:
-        blur(9px) saturate(125%) !important;
-
-    -webkit-backdrop-filter:
-        blur(9px) saturate(125%) !important;
 }
 
 
 /* =========================================================
-   09 — LEFT ARS CORE
+   05 — GOLD DOT ANIMATION
    ========================================================= */
 
-.ars-core-left .ars-core-label {
+.ars-floating-key {
 
-    color:
-        #d1aa7d !important;
+    animation:
+        arsGoldKeyAmbient 2.8s ease-in-out infinite;
 
-    text-shadow:
-
-        0 0 10px rgba(182,138,97,.45),
-
-        0 0 22px rgba(182,138,97,.18) !important;
 }
 
 
 /* =========================================================
-   10 — RIGHT VISITOR CORE
+   06 — BLUE LARGER STATUS DOT
    ========================================================= */
 
-.ars-core-right .ars-core-number {
-
-    color:
-        #d1aa7d !important;
-
-    text-shadow:
-
-        0 0 10px rgba(182,138,97,.42),
-
-        0 0 22px rgba(182,138,97,.18) !important;
-}
-
-
-.ars-core-right .ars-core-label {
-
-    color:
-        #b68a61 !important;
-
-    text-shadow:
-        0 0 8px rgba(182,138,97,.35) !important;
-}
-
-
-/* =========================================================
-   11 — OUTER CORE RING
-   ========================================================= */
-
-.ars-floating-core::before {
-
-    border-color:
-        rgba(21,157,255,.62) !important;
-
-    box-shadow:
-
-        0 0 12px rgba(21,157,255,.18),
-
-        0 0 24px rgba(21,157,255,.10) !important;
-}
-
-
-/* =========================================================
-   12 — INNER CORE RING
-   ========================================================= */
-
-.ars-floating-core::after {
-
-    border-color:
-        rgba(182,138,97,.46) !important;
-
-    box-shadow:
-        0 0 8px rgba(182,138,97,.12);
-}
-
-
-/* =========================================================
-   13 — DUAL COLOR SCANNER
-   BLUE + BRONZE
-   ========================================================= */
-
-.ars-scan-line {
-
-    height:
-        3px !important;
-
-    left:
-        -10% !important;
+.ars-key-light {
 
     width:
-        120% !important;
+        7px !important;
+
+    height:
+        7px !important;
+
+    right:
+        9px !important;
+
+    top:
+        31px !important;
+
+    background:
+        var(--ars-blue-bright) !important;
+
+    box-shadow:
+
+        0 0 7px var(--ars-blue),
+
+        0 0 16px var(--ars-blue),
+
+        0 0 28px rgba(21,157,255,.72),
+
+        0 0 42px rgba(21,157,255,.30) !important;
+
+    animation:
+        arsBlueKeySlowPulse 6.8s ease-in-out infinite !important;
+
+}
+
+
+/* =========================================================
+   07 — PREMIUM BLUE LIGHT BAR
+   ========================================================= */
+
+.ars-floating-key {
+
+    position: relative;
+
+}
+
+
+/*
+   A luminous blue bar is created with an extra background
+   layer along the lower edge of every key.
+*/
+
+.ars-floating-key {
+
+    background:
+
+        radial-gradient(
+            ellipse at 50% 97%,
+            rgba(91,201,255,.98) 0%,
+            rgba(21,157,255,.82) 8%,
+            rgba(21,157,255,.30) 22%,
+            transparent 48%
+        ),
+
+        radial-gradient(
+            circle at 88% 19%,
+            rgba(255,211,77,.98) 0 2px,
+            rgba(255,211,77,.42) 2.5px,
+            rgba(255,211,77,.10) 4px,
+            transparent 7px
+        ),
+
+        linear-gradient(
+            145deg,
+            rgba(31,36,41,.96) 0%,
+            rgba(9,14,19,.98) 42%,
+            rgba(2,4,7,1) 100%
+        ) !important;
+
+}
+
+
+/* =========================================================
+   08 — BLUE LIGHT BAR ENHANCEMENT
+   ========================================================= */
+
+.ars-floating-key::after {
+
+    height:
+        300% !important;
+
+    width:
+        42% !important;
+
+    opacity:
+        .55 !important;
 
     background:
 
         linear-gradient(
             90deg,
             transparent 0%,
-            rgba(21,157,255,.05) 12%,
+            rgba(21,157,255,.08) 20%,
+            rgba(91,201,255,.52) 48%,
+            rgba(21,157,255,.14) 72%,
+            transparent 100%
+        ) !important;
 
-            rgba(21,157,255,.72) 30%,
+    filter:
+        blur(4px) !important;
 
-            #5bc9ff 43%,
+    animation:
+        arsKeySweep 4.8s linear infinite !important;
 
-            rgba(182,138,97,.95) 50%,
+}
 
-            #d1aa7d 57%,
 
-            rgba(21,157,255,.72) 70%,
+/* =========================================================
+   09 — PREMIUM KEY TYPOGRAPHY
+   ========================================================= */
 
-            rgba(21,157,255,.05) 88%,
+.ars-key-text {
 
+    font-size:
+        clamp(7px, .72vw, 12px) !important;
+
+    font-weight:
+        900 !important;
+
+    letter-spacing:
+        .14em !important;
+
+    color:
+        #e8d2b5 !important;
+
+    text-shadow:
+
+        0 0 7px rgba(182,138,97,.20),
+
+        0 1px 0 rgba(0,0,0,.9);
+
+}
+
+
+.ars-key-icon {
+
+    color:
+        #e4c18f !important;
+
+    text-shadow:
+
+        0 0 8px rgba(182,138,97,.35),
+
+        0 0 16px rgba(182,138,97,.12) !important;
+
+}
+
+
+/* =========================================================
+   10 — TOP KEY TYPOGRAPHY
+   ========================================================= */
+
+.ars-controls-top .ars-key-text {
+
+    font-size:
+        clamp(6px, .65vw, 10px) !important;
+
+}
+
+
+/* =========================================================
+   11 — BOTTOM KEY TYPOGRAPHY
+   ========================================================= */
+
+.ars-controls-bottom .ars-key-text {
+
+    font-size:
+        clamp(8px, .78vw, 13px) !important;
+
+    letter-spacing:
+        .14em !important;
+
+}
+
+
+/* =========================================================
+   12 — PREMIUM CORE CIRCLES
+   ========================================================= */
+
+.ars-floating-core {
+
+    border:
+        1px solid rgba(209,170,125,.95) !important;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 38%,
+            rgba(209,170,125,.30),
+            rgba(182,138,97,.12) 24%,
+            rgba(8,12,16,.94) 60%,
+            rgba(1,3,5,.99) 100%
+        ) !important;
+
+    box-shadow:
+
+        inset 0 0 16px rgba(209,170,125,.16),
+
+        inset 0 0 4px rgba(255,255,255,.12),
+
+        0 0 14px rgba(182,138,97,.22),
+
+        0 0 28px rgba(21,157,255,.10),
+
+        0 0 50px rgba(0,0,0,.82) !important;
+
+    backdrop-filter:
+        blur(9px) saturate(125%) !important;
+
+    -webkit-backdrop-filter:
+        blur(9px) saturate(125%) !important;
+
+}
+
+
+/* outer ring = bronze + blue */
+
+.ars-floating-core::before {
+
+    border:
+        1px solid rgba(21,157,255,.58) !important;
+
+    box-shadow:
+
+        0 0 10px rgba(21,157,255,.20),
+
+        0 0 24px rgba(182,138,97,.12) !important;
+
+}
+
+
+/* inner ring */
+
+.ars-floating-core::after {
+
+    border:
+        1px dashed rgba(209,170,125,.42) !important;
+
+}
+
+
+/* ARS lettering */
+
+.ars-core-label {
+
+    color:
+        #e0bd8d !important;
+
+    text-shadow:
+
+        0 0 8px rgba(182,138,97,.38),
+
+        0 0 18px rgba(182,138,97,.16) !important;
+
+}
+
+
+/* visitor number */
+
+.ars-core-number {
+
+    color:
+        #e0bd8d !important;
+
+    text-shadow:
+
+        0 0 9px rgba(182,138,97,.38),
+
+        0 0 18px rgba(182,138,97,.14) !important;
+
+}
+
+
+/* visitors text */
+
+.ars-core-right .ars-core-label {
+
+    color:
+        #d1aa7d !important;
+
+}
+
+
+/* =========================================================
+   13 — TWO-COLOR PREMIUM SCANNER
+   ========================================================= */
+
+.ars-scan-line {
+
+    height:
+        2px !important;
+
+    left:
+        -20% !important;
+
+    width:
+        140% !important;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(21,157,255,.06) 8%,
+            rgba(21,157,255,.72) 27%,
+            rgba(91,201,255,1) 39%,
+            rgba(182,138,97,1) 50%,
+            rgba(209,170,125,1) 61%,
+            rgba(21,157,255,.78) 73%,
+            rgba(21,157,255,.08) 92%,
             transparent 100%
         ) !important;
 
     box-shadow:
 
-        0 0 8px rgba(21,157,255,.75),
+        0 0 12px rgba(21,157,255,.78),
 
-        0 0 18px rgba(21,157,255,.62),
+        0 0 28px rgba(21,157,255,.48),
 
-        0 0 32px rgba(21,157,255,.38),
+        0 0 14px rgba(182,138,97,.72),
 
-        0 0 12px rgba(182,138,97,.75),
-
-        0 0 28px rgba(182,138,97,.42) !important;
-
-    opacity:
-        1 !important;
+        0 0 34px rgba(182,138,97,.36) !important;
 
     animation:
-        arsPremiumDualScan 3.2s linear infinite !important;
+        arsScanPremium 8.25s linear infinite !important;
+
 }
 
 
 /* =========================================================
-   14 — BRIGHTER SCAN ANIMATION
-   ========================================================= */
-
-@keyframes arsPremiumDualScan {
-
-    0% {
-
-        top: -5%;
-
-        opacity: 0;
-    }
-
-    8% {
-
-        opacity: 1;
-    }
-
-    18% {
-
-        opacity: 1;
-    }
-
-    88% {
-
-        opacity: 1;
-    }
-
-    100% {
-
-        top: 105%;
-
-        opacity: 0;
-    }
-}
-
-
-/* =========================================================
-   15 — EXTRA SCAN HALO
+   14 — STRONGER SCAN CORE
    ========================================================= */
 
 .ars-display-overlay::after {
@@ -24200,68 +24320,227 @@ overflow: visible;
 
     position: absolute;
 
-    left: -15%;
+    left: 0;
 
-    width: 130%;
+    right: 0;
 
-    height: 34px;
+    top: 0;
 
-    top: -8%;
+    height: 100%;
 
     pointer-events: none;
 
     background:
 
         linear-gradient(
-            180deg,
-            transparent,
-            rgba(21,157,255,.08),
-            rgba(182,138,97,.20),
-            rgba(91,201,255,.08),
-            transparent
+            90deg,
+            transparent 0%,
+            rgba(21,157,255,.025) 30%,
+            rgba(182,138,97,.035) 50%,
+            rgba(21,157,255,.025) 70%,
+            transparent 100%
         );
 
-    filter:
-        blur(8px);
-
-    opacity:
-        .9;
-
-    animation:
-        arsPremiumScanHalo 3.2s linear infinite;
-}
-
-
-@keyframes arsPremiumScanHalo {
-
-    0% {
-
-        top: -8%;
-
-        opacity: 0;
-    }
-
-    10% {
-
-        opacity: .95;
-    }
-
-    88% {
-
-        opacity: .95;
-    }
-
-    100% {
-
-        top: 105%;
-
-        opacity: 0;
-    }
 }
 
 
 /* =========================================================
-   END — PREMIUM OVERRIDEپایان فوتر طراحی کلید ها.  اسکنر
+   15 — ANIMATIONS
    ========================================================= */
 
+@keyframes arsGoldKeyAmbient {
 
+    0%,
+    100% {
+
+        filter:
+            brightness(1);
+
+    }
+
+    50% {
+
+        filter:
+            brightness(1.035);
+
+    }
+
+}
+
+
+@keyframes arsBlueKeySlowPulse {
+
+    0%,
+    100% {
+
+        opacity:
+            .32;
+
+        transform:
+            scale(.72);
+
+    }
+
+    50% {
+
+        opacity:
+            1;
+
+        transform:
+            scale(1.28);
+
+    }
+
+}
+
+
+@keyframes arsScanPremium {
+
+    0% {
+
+        top:
+            -5%;
+
+        opacity:
+            0;
+
+    }
+
+    8% {
+
+        opacity:
+            1;
+
+    }
+
+    88% {
+
+        opacity:
+            1;
+
+    }
+
+    100% {
+
+        top:
+            105%;
+
+        opacity:
+            0;
+
+    }
+
+}
+
+
+/* =========================================================
+   16 — MOBILE OVERRIDES
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .ars-controls-top {
+
+        gap:
+            0 !important;
+
+        width:
+            auto !important;
+
+    }
+
+
+    .ars-controls-top .ars-floating-key {
+
+        width:
+            calc((100vw - 20px) / 3 * .80) !important;
+
+        max-width:
+            76px !important;
+
+        height:
+            38px !important;
+
+        padding:
+            4px !important;
+
+    }
+
+
+    .ars-controls-bottom {
+
+        width:
+            auto !important;
+
+        gap:
+            5px !important;
+
+    }
+
+
+    .ars-controls-bottom .ars-floating-key {
+
+        width:
+            calc((100vw - 34px) / 3 * 1.15) !important;
+
+        max-width:
+            108px !important;
+
+        height:
+            48px !important;
+
+        padding:
+            6px !important;
+
+    }
+
+
+    .ars-key-light {
+
+        width:
+            6px !important;
+
+        height:
+            6px !important;
+
+        right:
+            6px !important;
+
+        top:
+            25px !important;
+
+    }
+
+
+    .ars-floating-core {
+
+        width:
+            57px !important;
+
+        height:
+            57px !important;
+
+    }
+
+
+    .ars-key-text {
+
+        font-size:
+            5px !important;
+
+    }
+
+
+    .ars-controls-bottom .ars-key-text {
+
+        font-size:
+            6px !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   END — PREMIUM MOCKUP PATCH
+   ========================================================= */
