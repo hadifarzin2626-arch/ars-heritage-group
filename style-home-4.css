@@ -22877,12 +22877,18 @@ END
 
 
 
+
+
+
+
+
+
 /* =========================================================
    ARS SCAN TWO
-   PREMIUM BRONZE HORIZONTAL SCANNER
-   TOP → BOTTOM
+   HORIZONTAL BRONZE SCAN
+   REAL TOP → BOTTOM MOVEMENT
    11 SECOND CYCLE
-   ========================================================= */
+========================================================= */
 
 .scan-two {
 
@@ -22891,38 +22897,33 @@ END
     left: 8%;
     right: 8%;
 
-    top: 0;
+    top: -5%;
 
+    width: auto;
     height: 3px;
+
+    transform: none;
 
     border-radius: 50px;
 
     background:
         linear-gradient(
             90deg,
-            transparent 0%,
-            rgba(110,77,53,.20) 12%,
-            rgba(182,138,97,.75) 30%,
-            #d1aa7d 43%,
-            #ffe3b0 50%,
-            #d1aa7d 57%,
-            rgba(182,138,97,.75) 70%,
-            rgba(110,77,53,.20) 88%,
-            transparent 100%
+            transparent,
+            rgba(110,77,53,.25),
+            #b68a61 35%,
+            #ffe1ad 50%,
+            #b68a61 65%,
+            rgba(110,77,53,.25),
+            transparent
         );
 
     box-shadow:
+        0 0 8px rgba(209,170,125,.95),
+        0 0 18px rgba(183,138,97,.75),
+        0 0 35px rgba(183,138,97,.35);
 
-        0 0 7px
-        rgba(209,170,125,.95),
-
-        0 0 16px
-        rgba(183,138,97,.75),
-
-        0 0 32px
-        rgba(183,138,97,.38);
-
-    opacity: .90;
+    opacity: 0;
 
     pointer-events: none;
 
@@ -22931,57 +22932,49 @@ END
     animation:
         arsScanTwoDown
         11s
-        ease-in-out
+        linear
         infinite;
 
 }
 
 
 /* =========================================================
-   SCAN TWO — TOP → BOTTOM
+   REAL VERTICAL TRAVEL
 ========================================================= */
 
 @keyframes arsScanTwoDown {
 
     0% {
 
-        transform:
-            translateY(-20%);
+        top: -5%;
 
-        opacity: .05;
+        opacity: 0;
 
     }
 
     8% {
 
-        opacity: .90;
+        opacity: .95;
 
     }
 
-    18% {
+    45% {
 
         opacity: 1;
 
     }
 
-    82% {
+    88% {
 
         opacity: 1;
-
-    }
-
-    92% {
-
-        opacity: .70;
 
     }
 
     100% {
 
-        transform:
-            translateY(68%);
+        top: 100%;
 
-        opacity: .05;
+        opacity: 0;
 
     }
 
