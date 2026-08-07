@@ -21277,8 +21277,8 @@ code {
 
     inset: 0;
 
-    width: 100%;
-    height: 100%;
+    width: 98%;
+    height: 98%;
 
     background-image:
         url("ars-ip.jpg");
@@ -22803,7 +22803,71 @@ END
 
 
 
+/* =========================================================
+   ARS KEY SIZE OVERRIDE — FINAL
+   Based on CURRENT sizes
+   ========================================================= */
 
+/* ---------------------------------------------------------
+   3 TOP KEYS
+   Width  -20%
+   Height +15%
+--------------------------------------------------------- */
+
+.ars-controls-top .ars-floating-key {
+
+    width:
+        calc(clamp(72px, 6.7vw, 105px) * .80);
+
+    height:
+        calc(clamp(40px, 4.1vh, 56px) * 1.15);
+}
+
+
+/* ---------------------------------------------------------
+   3 BOTTOM KEYS
+   Width unchanged
+   Height +25%
+--------------------------------------------------------- */
+
+.ars-controls-bottom .ars-floating-key {
+
+    height:
+        calc(clamp(46px, 5vh, 70px) * 1.25);
+}
+
+
+/* ---------------------------------------------------------
+   7 LOWER MINI KEYS
+   Width +5%
+   Height +5%
+--------------------------------------------------------- */
+
+.ars-secondary-module,
+.ars-reference-secondary-module,
+.ars-console-secondary-module {
+
+    height:
+        calc(clamp(28px, 3.5vh, 43px) * 1.05);
+
+    transform:
+        scaleX(1.05);
+}
+
+
+/* ---------------------------------------------------------
+   MONITOR SCANNER
+   Length / height -25%
+--------------------------------------------------------- */
+
+.ars-scan-line {
+
+    height:
+        75%;
+    
+    top:
+        12.5%;
+}
 
 
 
