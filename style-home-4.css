@@ -22860,7 +22860,7 @@ END
    Length / height -25%
 --------------------------------------------------------- */
 
-.ars-scan-line {
+
 
 .ars-scan-line {
 
@@ -22870,3 +22870,342 @@ END
 
     bottom: auto;
 }
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS LIVE MONITOR SYSTEM
+   DIGITAL VEHICLE DISPLAY
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   DIGITAL GRID
+--------------------------------------------------------- */
+
+.ars-monitor-grid {
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            rgba(21,157,255,.10) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(21,157,255,.10) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        35px 35px;
+
+    opacity:.35;
+
+    animation:
+        arsGridMove 8s linear infinite;
+
+    pointer-events:none;
+
+}
+
+
+@keyframes arsGridMove {
+
+    from {
+        background-position:
+            0 0;
+    }
+
+    to {
+        background-position:
+            35px 35px;
+    }
+
+}
+
+
+
+/* ---------------------------------------------------------
+   LIVE SCANNER BEAMS
+--------------------------------------------------------- */
+
+
+.ars-monitor-scan {
+
+    position:absolute;
+
+    top:0;
+
+    width:3px;
+
+    height:75%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            #159dff,
+            transparent
+        );
+
+    box-shadow:
+
+        0 0 12px #159dff,
+        0 0 35px #159dff;
+
+    opacity:.85;
+
+}
+
+
+.scan-one {
+
+    left:100%;
+
+    animation:
+        arsMonitorScan 4s linear infinite;
+
+}
+
+
+.scan-two {
+
+    left:100%;
+
+    height:55%;
+
+    opacity:.45;
+
+    animation:
+        arsMonitorScan 6s linear infinite;
+
+    animation-delay:
+        1.5s;
+
+}
+
+
+
+@keyframes arsMonitorScan {
+
+    from {
+
+        transform:
+            translateX(0);
+
+    }
+
+
+    to {
+
+        transform:
+            translateX(-350px);
+
+    }
+
+}
+
+
+
+/* ---------------------------------------------------------
+   VEHICLE ENERGY PULSE
+--------------------------------------------------------- */
+
+
+.ars-monitor-pulse {
+
+    position:absolute;
+
+    left:20%;
+
+    right:20%;
+
+    top:25%;
+
+    height:45%;
+
+
+    border-radius:50%;
+
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(21,157,255,.22),
+            transparent 65%
+        );
+
+
+    animation:
+        arsVehiclePulse 3s ease-in-out infinite;
+
+}
+
+
+
+@keyframes arsVehiclePulse {
+
+    0%,
+    100% {
+
+        opacity:.25;
+
+        transform:
+            scale(.95);
+
+    }
+
+
+    50% {
+
+        opacity:.75;
+
+        transform:
+            scale(1.05);
+
+    }
+
+}
+
+
+
+/* ---------------------------------------------------------
+   DATA LINE
+--------------------------------------------------------- */
+
+
+.ars-monitor-data-line {
+
+    position:absolute;
+
+    left:10%;
+
+    right:10%;
+
+    bottom:18%;
+
+    height:2px;
+
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #159dff,
+            transparent
+        );
+
+
+    box-shadow:
+        0 0 12px #159dff;
+
+
+    animation:
+        arsDataPulse 2s infinite;
+
+}
+
+
+
+@keyframes arsDataPulse {
+
+    0%,
+    100% {
+
+        opacity:.3;
+
+    }
+
+    50% {
+
+        opacity:1;
+
+    }
+
+}
+
+
+
+/* ---------------------------------------------------------
+   HUD POINTS
+--------------------------------------------------------- */
+
+
+.ars-monitor-hud-dot {
+
+    position:absolute;
+
+    width:7px;
+
+    height:7px;
+
+    border-radius:50%;
+
+    background:#5bc9ff;
+
+
+    box-shadow:
+
+        0 0 10px #159dff,
+        0 0 25px #159dff;
+
+
+    animation:
+        arsHudBlink 1.5s infinite;
+
+}
+
+
+
+.hud-one {
+
+    left:18%;
+    top:35%;
+
+}
+
+
+.hud-two {
+
+    right:22%;
+    top:45%;
+
+}
+
+
+.hud-three {
+
+    left:40%;
+    bottom:22%;
+
+}
+
+
+
+@keyframes arsHudBlink {
+
+    0%,
+    100% {
+
+        opacity:.35;
+
+    }
+
+    50% {
+
+        opacity:1;
+
+    }
+
+      }
+
+
