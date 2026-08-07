@@ -21192,49 +21192,47 @@ code {
 
 
 
+
+
 /* =========================================================
    ARS HERITAGE GROUP
-   PREMIUM AUTOMOTIVE INTELLIGENCE FOOTER
-   MASTER STAGE — V1
+   REFERENCE FOOTER
+   WORLD-CLASS PREMIUM VISUAL SYSTEM
    ========================================================= */
 
 
 /* =========================================================
-   01 — ROOT FOOTER
-   ========================================================= */
+01 — ROOT FOOTER
+========================================================= */
 
-.ars-reference-footer,
-.ars-intelligence-footer {
+.ars-reference-footer {
 
     --ars-bronze: #b68a61;
-    --ars-bronze-light: #e0bd91;
-    --ars-bronze-hot: #f0d0a4;
-    --ars-bronze-dark: #62432d;
+    --ars-bronze-light: #d8b487;
+    --ars-bronze-hot: #f0c996;
+    --ars-bronze-dark: #62432f;
 
     --ars-blue: #159dff;
-    --ars-blue-bright: #63d4ff;
+    --ars-blue-bright: #67d1ff;
     --ars-blue-deep: #0067b5;
 
-    --ars-white: #f4f1eb;
-
-    position: relative;
-
     width: 100%;
-    max-width: 100%;
-
     height: 100svh;
     min-height: 100svh;
 
-    margin: 0;
-    padding: 0;
+    position: relative;
 
     overflow: hidden;
 
     background:
+        radial-gradient(
+            ellipse at 50% 48%,
+            rgba(21,157,255,.035),
+            transparent 55%
+        ),
         #020304;
 
-    color:
-        var(--ars-white);
+    color: #f4f1eb;
 
     isolation: isolate;
 
@@ -21248,36 +21246,31 @@ code {
 
 
 /* =========================================================
-   02 — MASTER STAGE
-   ========================================================= */
+02 — REFERENCE STAGE
+========================================================= */
 
-.ars-reference-stage,
-.ars-console-stage {
+.ars-reference-stage {
 
     position: relative;
 
     width: 100%;
-    max-width: 100%;
 
-    height: calc(100% - 74px);
+    height: calc(100% - 85px);
+
     min-height: 0;
-
-    margin: 0;
-    padding: 0;
 
     overflow: hidden;
 
     display: block;
-
-    box-sizing: border-box;
 
     isolation: isolate;
 }
 
 
 /* =========================================================
-   03 — MASTER IMAGE
-   ========================================================= */
+03 — MASTER IMAGE
+   Maximum natural size without crop
+========================================================= */
 
 .ars-reference-image {
 
@@ -21288,37 +21281,36 @@ code {
     width: 100%;
     height: 100%;
 
-    margin: 0;
-    padding: 0;
-
     background-image:
         url("ars-footer-reference.png");
 
-    background-repeat:
-        no-repeat;
+    background-repeat: no-repeat;
 
     background-position:
         center center;
 
     /*
        IMPORTANT:
-       Preserve original image ratio.
-       NEVER use cover.
-       NEVER stretch the image.
+       Keep aspect ratio.
+       Image fills the maximum available width
+       without being cropped.
     */
 
     background-size:
-        contain;
+        100% auto;
 
-    z-index: 1;
+    z-index: 0;
 
     filter:
-        contrast(1.06)
-        brightness(.98)
-        saturate(1.05);
+        contrast(1.08)
+        brightness(.96)
+        saturate(1.04);
 
     transform:
         translateZ(0);
+
+    will-change:
+        filter;
 
     transition:
         filter 1.2s ease;
@@ -21326,225 +21318,10 @@ code {
 
 
 /* =========================================================
-   04 — GLOBAL AUTOMOTIVE ENERGY FIELD
-   ========================================================= */
+04 — GLOBAL FOOTER ENERGY
+========================================================= */
 
-.ars-reference-stage::before,
-.ars-console-stage::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    z-index: 3;
-
-    pointer-events: none;
-
-    background:
-
-        radial-gradient(
-            ellipse at 50% 52%,
-            rgba(21,157,255,.08),
-            transparent 38%
-        ),
-
-        radial-gradient(
-            ellipse at 50% 100%,
-            rgba(182,138,97,.10),
-            transparent 55%
-        ),
-
-        linear-gradient(
-            90deg,
-            rgba(21,157,255,.025),
-            transparent 25%,
-            transparent 75%,
-            rgba(21,157,255,.025)
-        );
-
-    mix-blend-mode:
-        screen;
-
-    animation:
-        arsGlobalEnergy 8s ease-in-out infinite alternate;
-}
-
-
-@keyframes arsGlobalEnergy {
-
-    0% {
-        opacity: .45;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-
-/* =========================================================
-   05 — GLOBAL LIVE SCANNER
-   ========================================================= */
-
-.ars-reference-stage::after,
-.ars-console-stage::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: -15%;
-    width: 130%;
-
-    height: 2px;
-
-    top: -5%;
-
-    z-index: 25;
-
-    pointer-events: none;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(21,157,255,.05),
-            rgba(99,212,255,.9),
-            rgba(224,189,145,.65),
-            rgba(21,157,255,.15),
-            transparent
-        );
-
-    box-shadow:
-
-        0 0 8px
-            rgba(21,157,255,.85),
-
-        0 0 25px
-            rgba(21,157,255,.55),
-
-        0 0 45px
-            rgba(182,138,97,.22);
-
-    opacity: .9;
-
-    animation:
-        arsMasterScan 7s linear infinite;
-}
-
-
-@keyframes arsMasterScan {
-
-    0% {
-        top: -5%;
-        opacity: 0;
-    }
-
-    8% {
-        opacity: 1;
-    }
-
-    90% {
-        opacity: .85;
-    }
-
-    100% {
-        top: 105%;
-        opacity: 0;
-    }
-}
-
-
-/* =========================================================
-   06 — CENTRAL DIGITAL MONITOR
-   ========================================================= */
-
-.ars-digital-monitor {
-
-    position: absolute;
-
-    left: 8%;
-    right: 8%;
-
-    top: 25%;
-    bottom: 25%;
-
-    z-index: 10;
-
-    pointer-events: none;
-
-    overflow: hidden;
-
-    border:
-        1px solid
-        rgba(91,201,255,.18);
-
-    border-radius:
-        10px;
-
-    box-shadow:
-
-        inset 0 0 35px
-            rgba(21,157,255,.055),
-
-        0 0 25px
-            rgba(21,157,255,.08);
-}
-
-
-/* LIVE MONITOR GLASS */
-
-.ars-digital-monitor::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-
-        linear-gradient(
-            105deg,
-            transparent 0%,
-            rgba(255,255,255,.025) 45%,
-            rgba(91,201,255,.10) 50%,
-            rgba(255,255,255,.025) 55%,
-            transparent 100%
-        );
-
-    background-size:
-        250% 100%;
-
-    animation:
-        arsMonitorReflection 5s ease-in-out infinite;
-
-    pointer-events: none;
-}
-
-
-@keyframes arsMonitorReflection {
-
-    0% {
-        background-position: 150% 0;
-    }
-
-    55% {
-        background-position: -50% 0;
-    }
-
-    100% {
-        background-position: -50% 0;
-    }
-}
-
-
-/* MONITOR SCAN */
-
-.ars-digital-monitor::after {
+.ars-reference-stage::before {
 
     content: "";
 
@@ -21553,55 +21330,427 @@ code {
     left: 0;
     right: 0;
 
-    top: -15%;
+    bottom: 0;
 
-    height: 2px;
+    height: 32%;
+
+    pointer-events: none;
+
+    background:
+
+        radial-gradient(
+            ellipse at 50% 80%,
+            rgba(21,157,255,.18),
+            transparent 48%
+        ),
+
+        radial-gradient(
+            ellipse at 50% 100%,
+            rgba(182,138,97,.16),
+            transparent 58%
+        );
+
+    filter:
+        blur(24px);
+
+    opacity: .8;
+
+    z-index: 1;
+
+    animation:
+        arsFooterAtmosphere
+        6s ease-in-out infinite alternate;
+}
+
+
+@keyframes arsFooterAtmosphere {
+
+    from {
+        opacity: .48;
+        transform: scaleX(.92);
+    }
+
+    to {
+        opacity: .95;
+        transform: scaleX(1.08);
+    }
+}
+
+
+/* =========================================================
+05 — MONITOR LIVE AREA
+========================================================= */
+
+.ars-display-overlay {
+
+    position: absolute;
+
+    /*
+       Central monitor zone
+       aligned to reference image
+    */
+
+    left: 8%;
+    right: 8%;
+
+    top: 27%;
+    bottom: 25%;
+
+    z-index: 12;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            rgba(3,13,21,.05),
+            rgba(0,0,0,.08)
+        );
+
+    box-shadow:
+
+        inset 0 0 0 1px
+        rgba(21,157,255,.08),
+
+        inset 0 0 35px
+        rgba(21,157,255,.035);
+}
+
+
+/* =========================================================
+06 — MONITOR DIGITAL GRID
+========================================================= */
+
+.ars-display-overlay::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        repeating-linear-gradient(
+            90deg,
+            transparent 0,
+            transparent 48px,
+            rgba(21,157,255,.035) 49px,
+            transparent 50px
+        ),
+
+        repeating-linear-gradient(
+            0deg,
+            transparent 0,
+            transparent 38px,
+            rgba(21,157,255,.028) 39px,
+            transparent 40px
+        );
+
+    opacity: .65;
+
+    mix-blend-mode: screen;
+
+    animation:
+        arsMonitorGrid
+        12s linear infinite;
+}
+
+
+@keyframes arsMonitorGrid {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50px);
+    }
+}
+
+
+/* =========================================================
+07 — SCANNER #1
+   RIGHT → LEFT
+========================================================= */
+
+.ars-display-overlay::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 5%;
+
+    right: -25%;
+
+    width: 42%;
+
+    height: 90%;
 
     background:
 
         linear-gradient(
             90deg,
             transparent,
-            rgba(21,157,255,.75),
-            rgba(99,212,255,1),
-            rgba(21,157,255,.75),
+            rgba(21,157,255,.035),
+            rgba(91,201,255,.28),
+            rgba(21,157,255,.06),
             transparent
         );
 
+    filter:
+        blur(4px);
+
     box-shadow:
-        0 0 14px
-        rgba(21,157,255,.8);
+
+        0 0 18px
+        rgba(21,157,255,.25),
+
+        0 0 50px
+        rgba(21,157,255,.12);
+
+    transform:
+        skewX(-12deg);
 
     animation:
-        arsMonitorScan 4.8s linear infinite;
+        arsMonitorScannerOne
+        5.5s linear infinite;
 }
 
 
-@keyframes arsMonitorScan {
+@keyframes arsMonitorScannerOne {
 
     0% {
-        top: -10%;
+        right: -35%;
         opacity: 0;
     }
 
     10% {
+        opacity: .9;
+    }
+
+    50% {
         opacity: 1;
     }
 
     90% {
-        opacity: .8;
+        opacity: .65;
     }
 
     100% {
-        top: 110%;
+        right: 115%;
         opacity: 0;
     }
 }
 
 
 /* =========================================================
-   07 — SIX MAIN AUTOMOTIVE CONTROLS
-   ========================================================= */
+08 — SCANNER #2
+   THIN BLUE DATA BEAM
+========================================================= */
+
+.ars-scan-line {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 105%;
+
+    width: 2px;
+
+    height: 100%;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(91,201,255,.95) 25%,
+            #159dff 50%,
+            rgba(91,201,255,.95) 75%,
+            transparent
+        );
+
+    box-shadow:
+
+        0 0 8px
+        #159dff,
+
+        0 0 20px
+        rgba(21,157,255,.85),
+
+        0 0 45px
+        rgba(21,157,255,.42);
+
+    animation:
+        arsMonitorScannerTwo
+        4.3s linear infinite;
+}
+
+
+@keyframes arsMonitorScannerTwo {
+
+    0% {
+        left: 105%;
+        opacity: 0;
+    }
+
+    8% {
+        opacity: 1;
+    }
+
+    88% {
+        opacity: 1;
+    }
+
+    100% {
+        left: -5%;
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+09 — SCANNER #3
+   HORIZONTAL DIGITAL SWEEP
+========================================================= */
+
+.ars-display-corner {
+
+    position: absolute;
+
+    width: 28px;
+    height: 28px;
+
+    border-color:
+        rgba(91,201,255,.75);
+
+    border-style:
+        solid;
+
+    opacity: .75;
+
+    filter:
+        drop-shadow(
+            0 0 7px
+            rgba(21,157,255,.45)
+        );
+
+    z-index: 5;
+}
+
+
+.ars-display-corner::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    width: 100vw;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(21,157,255,0),
+            rgba(91,201,255,.75),
+            rgba(21,157,255,0)
+        );
+
+    box-shadow:
+        0 0 12px
+        rgba(21,157,255,.7);
+
+    animation:
+        arsMonitorScannerThree
+        6.2s ease-in-out infinite;
+}
+
+
+@keyframes arsMonitorScannerThree {
+
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateX(-45%);
+        opacity: 1;
+    }
+
+    85% {
+        opacity: .8;
+    }
+
+    100% {
+        transform: translateX(-90%);
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+10 — CORNERS
+========================================================= */
+
+.corner-tl {
+
+    top: 14px;
+    left: 14px;
+
+    border-width:
+        1px 0 0 1px;
+}
+
+
+.corner-tr {
+
+    top: 14px;
+    right: 14px;
+
+    border-width:
+        1px 1px 0 0;
+}
+
+
+.corner-bl {
+
+    bottom: 14px;
+    left: 14px;
+
+    border-width:
+        0 0 1px 1px;
+}
+
+
+.corner-br {
+
+    bottom: 14px;
+    right: 14px;
+
+    border-width:
+        0 1px 1px 0;
+}
+
+
+/* =========================================================
+11 — CONTROL ROW BASE
+========================================================= */
 
 .ars-control-row {
 
@@ -21609,63 +21758,8 @@ code {
 
     left: 50%;
 
-    width: min(92%, 1100px);
-
     transform:
         translateX(-50%);
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap:
-        clamp(12px, 1.7vw, 24px);
-
-    z-index: 40;
-
-    box-sizing: border-box;
-}
-
-
-/* TOP */
-
-.ars-controls-top {
-
-    top: 27%;
-}
-
-
-/* BOTTOM */
-
-.ars-controls-bottom {
-
-    bottom: 24%;
-}
-
-
-/* =========================================================
-   08 — PREMIUM AUTOMOTIVE KEY
-   ========================================================= */
-
-.ars-floating-key,
-.ars-console-button {
-
-    position: relative;
-
-    width: 100%;
-
-    min-width: 0;
-
-    height:
-        clamp(68px, 7vh, 92px);
-
-    padding:
-        10px 18px;
 
     display: flex;
 
@@ -21673,18 +21767,84 @@ code {
 
     justify-content: center;
 
-    gap: 10px;
+    z-index: 30;
+
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+12 — TOP THREE
+   2/3 OF CURRENT SIZE
+========================================================= */
+
+.ars-controls-top {
+
+    top: 25%;
+
+    width: 58%;
+
+    gap:
+        clamp(10px, 1.4vw, 20px);
+}
+
+
+.ars-controls-top
+.ars-floating-key {
+
+    width:
+        clamp(72px, 6.7vw, 105px);
+
+    height:
+        clamp(40px, 4.1vh, 56px);
+}
+
+
+/* =========================================================
+13 — BOTTOM THREE
+   CURRENT SIZE
+========================================================= */
+
+.ars-controls-bottom {
+
+    bottom: 25%;
+
+    width: 76%;
+
+    gap:
+        clamp(14px, 2vw, 30px);
+}
+
+
+/* =========================================================
+14 — PREMIUM 3D KEY
+========================================================= */
+
+.ars-floating-key {
+
+    position: relative;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
 
     cursor: pointer;
 
-    overflow: hidden;
+    padding:
+        8px 12px;
 
     border:
         1px solid
-        rgba(182,138,97,.78);
+        rgba(183,138,97,.88);
 
     border-radius:
-        13px;
+        11px;
 
     color:
         var(--ars-bronze-light);
@@ -21693,49 +21853,53 @@ code {
 
         linear-gradient(
             145deg,
-            rgba(35,32,29,.96),
-            rgba(5,7,9,.98) 52%,
-            rgba(20,18,16,.98)
+            #25282b 0%,
+            #0b0d10 38%,
+            #030405 70%,
+            #17191d 100%
         );
 
     box-shadow:
 
         inset 0 1px 0
-            rgba(255,255,255,.10),
+        rgba(255,255,255,.12),
 
-        inset 0 -8px 18px
-            rgba(0,0,0,.85),
+        inset 0 -7px 14px
+        rgba(0,0,0,.9),
 
         inset 0 0 0 2px
-            rgba(182,138,97,.12),
+        rgba(182,138,97,.08),
 
-        0 5px 0
-            #030405,
+        0 3px 0
+        #4d3424,
 
-        0 12px 28px
-            rgba(0,0,0,.72),
+        0 7px 0
+        #010203,
 
-        0 0 22px
-            rgba(182,138,97,.10);
+        0 13px 28px
+        rgba(0,0,0,.72),
+
+        0 0 20px
+        rgba(182,138,97,.13);
 
     transition:
+        transform .28s ease,
+        box-shadow .28s ease,
+        border-color .28s ease;
 
-        transform .35s cubic-bezier(.2,.8,.2,1),
+    font-family:
+        inherit;
 
-        box-shadow .35s ease,
-
-        border-color .35s ease,
-
-        filter .35s ease;
+    overflow:
+        hidden;
 }
 
 
 /* =========================================================
-   09 — DOUBLE BRONZE FRAME
-   ========================================================= */
+15 — SECOND INNER BRONZE FRAME
+========================================================= */
 
-.ars-floating-key::before,
-.ars-console-button::before {
+.ars-floating-key::before {
 
     content: "";
 
@@ -21745,236 +21909,175 @@ code {
 
     border:
         1px solid
-        rgba(224,189,145,.50);
+        rgba(216,180,135,.52);
 
     border-radius:
-        9px;
-
-    box-shadow:
-
-        inset 0 0 0 1px
-            rgba(110,77,53,.65),
-
-        0 0 8px
-            rgba(182,138,97,.08);
+        7px;
 
     pointer-events:
         none;
+
+    box-shadow:
+
+        inset 0 0 8px
+        rgba(182,138,97,.08),
+
+        0 0 5px
+        rgba(182,138,97,.06);
 }
 
 
 /* =========================================================
-   10 — INTERNAL SCANNER
-   ========================================================= */
+16 — LIVE BLUE SCANNER ON EVERY KEY
+========================================================= */
 
-.ars-floating-key::after,
-.ars-console-button::after {
+.ars-floating-key::after {
 
     content: "";
 
     position: absolute;
 
-    top: -20%;
+    top: 0;
 
-    left: -60%;
+    left: -45%;
 
-    width: 35%;
+    width: 30%;
 
-    height: 140%;
-
-    transform:
-        rotate(18deg);
+    height: 100%;
 
     background:
 
         linear-gradient(
             90deg,
             transparent,
-            rgba(21,157,255,.05),
-            rgba(91,201,255,.85),
-            rgba(224,189,145,.60),
-            rgba(21,157,255,.08),
+            rgba(91,201,255,.22),
+            rgba(21,157,255,.75),
+            rgba(91,201,255,.22),
             transparent
         );
 
     filter:
-        blur(.3px);
+        blur(2px);
+
+    transform:
+        skewX(-18deg);
 
     box-shadow:
-
         0 0 12px
-            rgba(21,157,255,.65),
-
-        0 0 28px
-            rgba(21,157,255,.35);
+        rgba(21,157,255,.45);
 
     animation:
-        arsKeyScanner 3.6s ease-in-out infinite;
-
-    pointer-events:
-        none;
+        arsKeyScanner
+        3.2s ease-in-out infinite;
 }
 
 
 @keyframes arsKeyScanner {
 
     0% {
-        left: -60%;
+        left: -45%;
         opacity: 0;
     }
 
     15% {
-        opacity: .85;
-    }
-
-    50% {
         opacity: 1;
     }
 
-    85% {
-        opacity: .75;
+    50% {
+        opacity: .8;
     }
 
     100% {
-        left: 130%;
+        left: 125%;
         opacity: 0;
     }
 }
 
 
 /* =========================================================
-   11 — KEY HOVER
-   ========================================================= */
-
-.ars-floating-key:hover,
-.ars-console-button:hover {
-
-    transform:
-        translateY(-5px)
-        scale(1.025);
-
-    border-color:
-        rgba(240,208,164,.98);
-
-    box-shadow:
-
-        inset 0 1px 0
-            rgba(255,255,255,.14),
-
-        inset 0 -8px 20px
-            rgba(0,0,0,.85),
-
-        0 7px 0
-            #030405,
-
-        0 18px 40px
-            rgba(0,0,0,.78),
-
-        0 0 28px
-            rgba(21,157,255,.20),
-
-        0 0 45px
-            rgba(182,138,97,.14);
-
-    filter:
-        brightness(1.08);
-}
-
-
-/* =========================================================
-   12 — KEY PRESS
-   ========================================================= */
-
-.ars-floating-key:active,
-.ars-console-button:active {
-
-    transform:
-        translateY(3px)
-        scale(.985);
-
-    box-shadow:
-
-        inset 0 3px 10px
-            rgba(0,0,0,.8),
-
-        0 2px 0
-            #030405,
-
-        0 5px 12px
-            rgba(0,0,0,.65);
-}
-
-
-/* =========================================================
-   13 — KEY ICON
-   ========================================================= */
+17 — ICON
+========================================================= */
 
 .ars-key-icon {
 
-    position: relative;
+    position:
+        relative;
 
-    z-index: 5;
-
-    font-size:
-        clamp(18px, 1.5vw, 26px);
+    z-index:
+        5;
 
     color:
         var(--ars-bronze-hot);
 
+    font-size:
+        clamp(13px, 1.1vw, 19px);
+
     text-shadow:
 
-        0 0 10px
-            rgba(224,189,145,.35),
+        0 0 8px
+        rgba(216,180,135,.45),
 
-        0 0 20px
-            rgba(182,138,97,.15);
+        0 0 18px
+        rgba(182,138,97,.2);
 }
 
 
 /* =========================================================
-   14 — KEY TEXT
-   ========================================================= */
+18 — TEXT
+========================================================= */
 
 .ars-key-text {
 
-    position: relative;
+    position:
+        relative;
 
-    z-index: 5;
+    z-index:
+        5;
+
+    color:
+        var(--ars-bronze-light);
 
     font-size:
-        clamp(11px, .9vw, 16px);
+        clamp(8px, .72vw, 13px);
 
     font-weight:
         900;
 
     letter-spacing:
-        .12em;
-
-    color:
-        var(--ars-bronze-light);
+        .11em;
 
     text-shadow:
+
         0 1px 0 #000,
-        0 0 10px
-        rgba(182,138,97,.20);
+
+        0 0 8px
+        rgba(182,138,97,.3);
 }
 
 
 /* =========================================================
-   15 — LIVE POINT
-   ========================================================= */
+19 — BLUE STATUS POINT
+========================================================= */
 
 .ars-key-light {
 
-    position: absolute;
+    position:
+        absolute;
 
-    right: 12px;
-    top: 12px;
+    right:
+        10px;
 
-    width: 6px;
-    height: 6px;
+    top:
+        9px;
 
-    border-radius: 50%;
+    width:
+        5px;
+
+    height:
+        5px;
+
+    border-radius:
+        50%;
 
     background:
         var(--ars-blue-bright);
@@ -21982,24 +22085,26 @@ code {
     box-shadow:
 
         0 0 7px
-            var(--ars-blue),
+        var(--ars-blue),
 
         0 0 17px
-            var(--ars-blue),
-
-        0 0 30px
-            rgba(21,157,255,.55);
+        rgba(21,157,255,.85);
 
     animation:
-        arsLivePulse 1.5s ease-in-out infinite;
+        arsKeyLive
+        1.4s ease-in-out infinite;
+
+    z-index:
+        6;
 }
 
 
-@keyframes arsLivePulse {
+@keyframes arsKeyLive {
 
-    0%,100% {
+    0%,
+    100% {
         opacity: .35;
-        transform: scale(.7);
+        transform: scale(.72);
     }
 
     50% {
@@ -22010,46 +22115,106 @@ code {
 
 
 /* =========================================================
-   16 — SEVEN SECONDARY MODULES
-   ========================================================= */
+20 — KEY HOVER
+========================================================= */
 
-.ars-console-modules {
+.ars-floating-key:hover {
+
+    transform:
+        translateY(-5px)
+        scale(1.025);
+
+    border-color:
+        rgba(240,201,150,.98);
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255,255,255,.16),
+
+        inset 0 -8px 16px
+        rgba(0,0,0,.9),
+
+        0 4px 0
+        #5a3c28,
+
+        0 11px 0
+        #010203,
+
+        0 20px 38px
+        rgba(0,0,0,.78),
+
+        0 0 28px
+        rgba(21,157,255,.22);
+}
+
+
+/* =========================================================
+21 — KEY PRESS
+========================================================= */
+
+.ars-floating-key:active {
+
+    transform:
+        translateY(4px)
+        scale(.985);
+
+    box-shadow:
+
+        inset 0 4px 10px
+        rgba(0,0,0,.8),
+
+        0 2px 0
+        #010203;
+}
+
+
+/* =========================================================
+22 — 7 SMALL LOWER MODULES
+   Compatible with new secondary-module HTML
+========================================================= */
+
+.ars-secondary-modules,
+.ars-reference-secondary-modules,
+.ars-console-secondary-modules {
 
     position: absolute;
 
     left: 50%;
 
-    bottom: 6%;
-
     transform:
         translateX(-50%);
 
-    width: min(94%, 1180px);
+    bottom: 11%;
+
+    width: 82%;
 
     display: grid;
 
     grid-template-columns:
-        repeat(7, 1fr);
+        repeat(7, minmax(0, 1fr));
 
     gap:
-        clamp(5px, .8vw, 12px);
+        clamp(5px, .7vw, 10px);
 
-    z-index: 45;
+    z-index: 32;
 }
 
 
 /* =========================================================
-   17 — SECONDARY MODULE
-   ========================================================= */
+23 — SMALL MODULE CARD
+========================================================= */
 
-.ars-console-modules > * {
+.ars-secondary-module,
+.ars-reference-secondary-module,
+.ars-console-secondary-module {
 
     position: relative;
 
     min-width: 0;
 
     height:
-        clamp(40px, 4.2vh, 58px);
+        clamp(28px, 3.5vh, 43px);
 
     display: flex;
 
@@ -22057,287 +22222,183 @@ code {
 
     justify-content: center;
 
-    overflow: hidden;
+    gap: 4px;
+
+    padding:
+        4px 6px;
 
     border:
         1px solid
-        rgba(182,138,97,.62);
+        rgba(182,138,97,.68);
 
     border-radius:
-        9px;
+        7px;
 
     background:
 
         linear-gradient(
             145deg,
-            rgba(30,28,25,.95),
-            rgba(4,6,8,.98),
-            rgba(20,18,16,.95)
+            rgba(30,32,35,.96),
+            rgba(4,6,8,.98)
         );
 
     box-shadow:
 
         inset 0 1px 0
-            rgba(255,255,255,.08),
+        rgba(255,255,255,.08),
 
-        inset 0 -5px 12px
-            rgba(0,0,0,.85),
+        inset 0 -5px 10px
+        rgba(0,0,0,.82),
 
-        0 5px 0
-            #030405,
+        0 3px 0
+        #4b3222,
 
-        0 9px 20px
-            rgba(0,0,0,.65);
+        0 7px 14px
+        rgba(0,0,0,.6);
+
+    overflow:
+        hidden;
 
     color:
         var(--ars-bronze-light);
 
-    font-size:
-        clamp(7px, .65vw, 11px);
-
-    font-weight:
-        900;
-
-    letter-spacing:
-        .10em;
-
     transition:
-        transform .3s ease,
-        border-color .3s ease,
-        box-shadow .3s ease;
+        transform .25s ease,
+        border-color .25s ease;
 }
 
 
-/* SECONDARY SCAN */
+/* SMALL CARD INNER FRAME */
 
-.ars-console-modules > *::after {
+.ars-secondary-module::before,
+.ars-reference-secondary-module::before,
+.ars-console-secondary-module::before {
 
     content: "";
 
     position: absolute;
 
-    top: -20%;
-    left: -70%;
+    inset: 3px;
 
-    width: 28%;
-    height: 140%;
+    border:
+        1px solid
+        rgba(216,180,135,.3);
 
-    transform:
-        rotate(18deg);
+    border-radius:
+        5px;
+
+    pointer-events:
+        none;
+}
+
+
+/* SMALL CARD SCANNER */
+
+.ars-secondary-module::after,
+.ars-reference-secondary-module::after,
+.ars-console-secondary-module::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -40%;
+
+    width: 22%;
+
+    height: 100%;
 
     background:
+
         linear-gradient(
             90deg,
             transparent,
-            rgba(21,157,255,.75),
-            rgba(224,189,145,.7),
+            rgba(21,157,255,.85),
             transparent
         );
 
     box-shadow:
-        0 0 15px
-        rgba(21,157,255,.55);
-
-    animation:
-        arsSecondaryScan 4.2s ease-in-out infinite;
-}
-
-
-@keyframes arsSecondaryScan {
-
-    0% {
-        left: -70%;
-        opacity: 0;
-    }
-
-    20% {
-        opacity: .7;
-    }
-
-    60% {
-        opacity: 1;
-    }
-
-    100% {
-        left: 145%;
-        opacity: 0;
-    }
-}
-
-
-.ars-console-modules > *:hover {
+        0 0 10px
+        rgba(21,157,255,.65);
 
     transform:
-        translateY(-3px);
-
-    border-color:
-        var(--ars-bronze-hot);
-
-    box-shadow:
-
-        inset 0 0 12px
-            rgba(21,157,255,.08),
-
-        0 7px 0 #030405,
-
-        0 15px 30px
-            rgba(0,0,0,.72),
-
-        0 0 20px
-            rgba(21,157,255,.16);
-}
-
-
-/* =========================================================
-   18 — VEHICLE INTELLIGENCE
-   ========================================================= */
-
-.virtual-vehicle {
-
-    position: absolute;
-
-    z-index: 20;
-
-    pointer-events: none;
-
-    /*
-       Animation layers only.
-       The reference vehicle remains untouched.
-    */
-}
-
-
-/* VEHICLE SCAN RING */
-
-.virtual-vehicle::before {
-
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 70%;
-    height: 35%;
-
-    transform:
-        translate(-50%,-50%);
-
-    border:
-        1px solid
-        rgba(21,157,255,.38);
-
-    border-radius:
-        50%;
-
-    box-shadow:
-
-        0 0 12px
-            rgba(21,157,255,.28),
-
-        0 0 35px
-            rgba(21,157,255,.12);
+        skewX(-15deg);
 
     animation:
-        arsVehicleRing 5s ease-in-out infinite;
+        arsSmallModuleScan
+        3.8s linear infinite;
 }
 
 
-/* VEHICLE ENERGY FIELD */
-
-.virtual-vehicle::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: 15%;
-    right: 15%;
-
-    bottom: 5%;
-
-    height: 18%;
-
-    background:
-
-        radial-gradient(
-            ellipse,
-            rgba(21,157,255,.24),
-            transparent 68%
-        );
-
-    filter:
-        blur(12px);
-
-    animation:
-        arsVehicleEnergy 3.5s ease-in-out infinite alternate;
-}
-
-
-@keyframes arsVehicleRing {
-
-    0%,100% {
-        transform:
-            translate(-50%,-50%)
-            scale(.92);
-        opacity: .3;
-    }
-
-    50% {
-        transform:
-            translate(-50%,-50%)
-            scale(1.08);
-        opacity: .85;
-    }
-}
-
-
-@keyframes arsVehicleEnergy {
+@keyframes arsSmallModuleScan {
 
     from {
-        opacity: .35;
-        transform: scaleX(.82);
+        left: -40%;
     }
 
     to {
-        opacity: 1;
-        transform: scaleX(1.08);
+        left: 130%;
     }
 }
 
 
 /* =========================================================
-   19 — FOOTER BASE
-   ========================================================= */
+24 — SMALL CARD TEXT
+========================================================= */
+
+.ars-secondary-module *,
+.ars-reference-secondary-module *,
+.ars-console-secondary-module * {
+
+    position:
+        relative;
+
+    z-index:
+        4;
+}
+
+
+/* =========================================================
+25 — LOWER FOOTER
+========================================================= */
 
 .ars-reference-footer-bottom {
 
-    position: relative;
+    position:
+        relative;
 
-    z-index: 100;
+    z-index:
+        60;
 
-    width: 100%;
+    width:
+        100%;
 
-    height: 74px;
+    height:
+        85px;
 
-    flex-shrink: 0;
+    flex-shrink:
+        0;
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         1fr 2fr 1fr;
 
-    align-items: center;
+    align-items:
+        center;
 
     padding:
-        0 clamp(12px, 2.5vw, 38px);
+        0 clamp(14px, 2.5vw, 38px);
 
-    box-sizing: border-box;
+    box-sizing:
+        border-box;
 
     border-top:
         1px solid
-        rgba(182,138,97,.45);
+        rgba(182,138,97,.48);
 
     background:
 
@@ -22348,14 +22409,28 @@ code {
         );
 
     box-shadow:
-        0 -12px 40px
+
+        0 -10px 35px
         rgba(0,0,0,.55);
 }
 
 
 /* =========================================================
-   20 — BRAND
-   ========================================================= */
+26 — FOOTER BRAND
+========================================================= */
+
+.ars-reference-brand {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+}
+
 
 .ars-reference-brand strong {
 
@@ -22373,7 +22448,7 @@ code {
 
     text-shadow:
         0 0 14px
-        rgba(182,138,97,.25);
+        rgba(182,138,97,.24);
 }
 
 
@@ -22389,17 +22464,18 @@ code {
         .18em;
 
     color:
-        rgba(245,242,235,.48);
+        rgba(245,242,235,.5);
 }
 
 
 /* =========================================================
-   21 — SIGNATURE
-   ========================================================= */
+27 — SIGNATURE
+========================================================= */
 
 .ars-reference-signature {
 
-    text-align: center;
+    text-align:
+        center;
 
     font-size:
         clamp(8px, .75vw, 12px);
@@ -22411,7 +22487,7 @@ code {
         .16em;
 
     color:
-        rgba(245,242,235,.55);
+        rgba(245,242,235,.58);
 }
 
 
@@ -22429,8 +22505,8 @@ code {
 
 
 /* =========================================================
-   22 — COPYRIGHT
-   ========================================================= */
+28 — COPYRIGHT
+========================================================= */
 
 .ars-reference-copy {
 
@@ -22447,49 +22523,68 @@ code {
         .08em;
 
     color:
-        rgba(245,242,235,.42);
+        rgba(245,242,235,.45);
 }
 
 
 /* =========================================================
-   23 — TABLET
-   ========================================================= */
+29 — TABLET
+========================================================= */
 
 @media (max-width: 900px) {
 
-    .ars-reference-stage,
-    .ars-console-stage {
+    .ars-reference-stage {
 
         height:
-            calc(100% - 68px);
+            calc(100% - 70px);
     }
 
 
-    .ars-control-row {
+    .ars-controls-top {
+
+        top:
+            24%;
 
         width:
-            94%;
-
-        gap:
-            9px;
+            64%;
     }
 
 
-    .ars-floating-key,
-    .ars-console-button {
+    .ars-controls-bottom {
 
-        height:
-            68px;
-
-        padding:
-            8px;
-    }
-
-
-    .ars-console-modules {
+        bottom:
+            23%;
 
         width:
-            96%;
+            84%;
+    }
+
+
+    .ars-display-overlay {
+
+        left:
+            6%;
+
+        right:
+            6%;
+
+        top:
+            28%;
+
+        bottom:
+            24%;
+    }
+
+
+    .ars-secondary-modules,
+    .ars-reference-secondary-modules,
+    .ars-console-secondary-modules {
+
+        width:
+            88%;
+
+        bottom:
+            9%;
 
         gap:
             4px;
@@ -22498,13 +22593,12 @@ code {
 
 
 /* =========================================================
-   24 — MOBILE
-   ========================================================= */
+30 — MOBILE
+========================================================= */
 
 @media (max-width: 600px) {
 
-    .ars-reference-footer,
-    .ars-intelligence-footer {
+    .ars-reference-footer {
 
         height:
             100svh;
@@ -22514,8 +22608,7 @@ code {
     }
 
 
-    .ars-reference-stage,
-    .ars-console-stage {
+    .ars-reference-stage {
 
         height:
             calc(100% - 54px);
@@ -22525,7 +22618,7 @@ code {
     .ars-reference-image {
 
         background-size:
-            contain;
+            auto 100%;
 
         background-position:
             center center;
@@ -22552,134 +22645,148 @@ code {
     }
 
 
-    .ars-control-row {
+    /* TOP THREE */
+
+    .ars-controls-top {
+
+        top:
+            20%;
 
         width:
-            94%;
+            76%;
+
+        gap:
+            4px;
+    }
+
+
+    .ars-controls-top
+    .ars-floating-key {
+
+        width:
+            calc((100vw - 40px) / 3);
+
+        max-width:
+            82px;
+
+        height:
+            38px;
+
+        padding:
+            4px;
+    }
+
+
+    /* BOTTOM THREE */
+
+    .ars-controls-bottom {
+
+        bottom:
+            20%;
+
+        width:
+            88%;
 
         gap:
             5px;
     }
 
 
-    .ars-controls-top {
+    .ars-controls-bottom
+    .ars-floating-key {
 
-        top:
-            18%;
-    }
+        width:
+            calc((100vw - 34px) / 3);
 
-
-    .ars-controls-bottom {
-
-        bottom:
-            17%;
-    }
-
-
-    .ars-floating-key,
-    .ars-console-button {
+        max-width:
+            94px;
 
         height:
-            54px;
+            42px;
+    }
+
+
+    /* MONITOR */
+
+    .ars-display-overlay {
+
+        left:
+            7%;
+
+        right:
+            7%;
+
+        top:
+            29%;
+
+        bottom:
+            27%;
+    }
+
+
+    /* SEVEN SMALL MODULES */
+
+    .ars-secondary-modules,
+    .ars-reference-secondary-modules,
+    .ars-console-secondary-modules {
+
+        width:
+            92%;
+
+        bottom:
+            10%;
+
+        grid-template-columns:
+            repeat(7, 1fr);
+
+        gap:
+            2px;
+    }
+
+
+    .ars-secondary-module,
+    .ars-reference-secondary-module,
+    .ars-console-secondary-module {
+
+        height:
+            30px;
 
         padding:
-            5px;
+            2px;
 
         border-radius:
-            9px;
+            5px;
+
+        font-size:
+            5px;
     }
 
 
     .ars-key-icon {
 
         font-size:
-            13px;
+            10px;
     }
 
 
     .ars-key-text {
 
         font-size:
-            6px;
-
-        letter-spacing:
-            .07em;
-    }
-
-
-    .ars-key-light {
-
-        right:
-            7px;
-
-        top:
-            7px;
-
-        width:
-            4px;
-
-        height:
-            4px;
-    }
-
-
-    .ars-console-modules {
-
-        width:
-            96%;
-
-        bottom:
-            4%;
-
-        gap:
-            3px;
-
-        grid-template-columns:
-            repeat(7, 1fr);
-    }
-
-
-    .ars-console-modules > * {
-
-        height:
-            34px;
-
-        border-radius:
-            6px;
-
-        font-size:
             5px;
 
         letter-spacing:
-            .04em;
-    }
-
-
-    .ars-digital-monitor {
-
-        left:
-            5%;
-
-        right:
-            5%;
-
-        top:
-            25%;
-
-        bottom:
-            25%;
+            .06em;
     }
 }
 
 
 /* =========================================================
-   25 — REDUCED MOTION
-   ========================================================= */
+31 — REDUCED MOTION
+========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
-    .ars-reference-footer *,
-    .ars-intelligence-footer * {
+    .ars-reference-footer * {
 
         animation:
             none !important;
@@ -22691,8 +22798,14 @@ code {
 
 
 /* =========================================================
-   END — ARS PREMIUM AUTOMOTIVE FOOTER
-   ========================================================= */
+END
+========================================================= */
+
+
+
+
+
+
 
 
 
