@@ -21279,7 +21279,7 @@ MASTER VISUAL CSS — LIVE INTERACTION / ENERGY LAYER
 
     background-position: center center;
 
-    background-size: contain;
+    background-size: 100% auto;
 
     z-index: 0;
 
@@ -21540,13 +21540,14 @@ CONTROL ROW
 
 
 /* =========================================================
-PREMIUM 3D CARD
+PREMIUM 3D KEY — BASE
 ========================================================= */
 
 .ars-floating-key {
 
     position: relative;
 
+    /* اندازه پایه فعلی */
     width:
         clamp(95px, 10vw, 155px);
 
@@ -21568,7 +21569,7 @@ PREMIUM 3D CARD
     cursor: pointer;
 
     border:
-        2px solid rgba(183,138,97,.62);
+        1px solid rgba(183,138,97,.72);
 
     border-radius:
         9px;
@@ -21587,19 +21588,19 @@ PREMIUM 3D CARD
     box-shadow:
 
         inset 0 2px 0
-            rgba(255,255,255,.06),
+            rgba(255,255,255,.07),
 
-        inset 0 -5px 12px
-            rgba(0,0,0,.8),
+        inset 0 -6px 14px
+            rgba(0,0,0,.82),
 
-        0 8px 0
+        0 7px 0
             #010203,
 
         0 12px 25px
             rgba(0,0,0,.62),
 
-        0 0 15px
-            rgba(183,138,97,.08);
+        0 0 16px
+            rgba(183,138,97,.12);
 
     transition:
 
@@ -21611,11 +21612,14 @@ PREMIUM 3D CARD
 
     font-family:
         inherit;
+
+    box-sizing:
+        border-box;
 }
 
 
 /* =========================================================
-SHARP INNER BEVEL
+SECOND BRONZE FRAME — OUTER
 ========================================================= */
 
 .ars-floating-key::before {
@@ -21624,18 +21628,71 @@ SHARP INNER BEVEL
 
     position: absolute;
 
-    inset: 3px;
+    inset:
+        3px;
 
     border:
-        1px solid rgba(255,255,255,.035);
+        1px solid
+        rgba(209,170,125,.48);
 
     border-radius:
         6px;
 
+    box-shadow:
+
+        inset 0 1px 0
+            rgba(255,255,255,.12),
+
+        inset 0 -2px 3px
+            rgba(0,0,0,.65),
+
+        0 0 4px
+            rgba(183,138,97,.22);
+
     pointer-events:
         none;
+
+    z-index:
+        2;
 }
 
+
+/* =========================================================
+INNER BRONZE FRAME — 3D LAYER
+========================================================= */
+
+.ars-floating-key > * {
+
+    position: relative;
+
+    z-index: 4;
+}
+/* =========================================================
+TOP THREE — 20% NARROWER / 35% TALLER
+========================================================= */
+
+.ars-controls-top .ars-floating-key {
+
+    width:
+        clamp(76px, 8vw, 124px);
+
+    height:
+        clamp(62px, 6.75vh, 95px);
+}
+
+
+/* =========================================================
+BOTTOM THREE — 20% WIDER / 35% TALLER
+========================================================= */
+
+.ars-controls-bottom .ars-floating-key {
+
+    width:
+        clamp(114px, 12vw, 186px);
+
+    height:
+        clamp(62px, 6.75vh, 95px);
+}
 
 /* =========================================================
 BLUE ENERGY LINE UNDER TEXT
@@ -21694,7 +21751,7 @@ CARD ICON
 
 
 /* =========================================================
-CARD TEXT
+CARD TEXT — PREMIUM BRONZE
 ========================================================= */
 
 .ars-key-text {
@@ -21704,18 +21761,25 @@ CARD TEXT
     z-index: 4;
 
     font-size:
-        clamp(9px, .78vw, 14px);
+        clamp(10.35px, .897vw, 16.1px);
 
     font-weight:
         900;
 
     letter-spacing:
-        .09em;
+        .10em;
 
     color:
-        rgba(245,242,235,.9);
-}
+        var(--ars-bronze-light);
 
+    text-shadow:
+
+        0 0 5px
+            rgba(182,138,97,.35),
+
+        0 0 12px
+            rgba(182,138,97,.18);
+}
 
 /* =========================================================
 BLUE LIVE POINT
@@ -21867,7 +21931,7 @@ PRESS
             rgba(21,157,255,.25);
 
     animation:
-        arsScan 5.5s linear infinite;
+        arsScan 8.5s linear infinite;
 }
 
 
