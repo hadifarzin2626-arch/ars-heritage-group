@@ -21189,15 +21189,9 @@ code {
 
 
 
-
-
-
-
-
-
 /* =========================================================
-ARS HERITAGE GROUP FINAL IMAGE-REFERENCE FOOTER
-MASTER VISUAL CSS — LIVE INTERACTION / ENERGY LAYER
+ARS HERITAGE GROUP — FINAL IMAGE-REFERENCE FOOTER
+MASTER VISUAL CSS — CORRECTED
 ========================================================= */
 
 
@@ -21249,13 +21243,15 @@ MASTER VISUAL CSS — LIVE INTERACTION / ENERGY LAYER
     position: relative;
 
     width: 100%;
-    heigh:(100%-85px);
+    height: calc(100% - 85px);
 
     min-height: 0;
 
     overflow: visible;
 
     display: block;
+
+    box-sizing: border-box;
 }
 
 
@@ -21273,13 +21269,16 @@ MASTER VISUAL CSS — LIVE INTERACTION / ENERGY LAYER
     width: 100%;
     height: 100%;
 
-    background-image: url("ars-footer-reference.png");
+    background-image:
+        url("ars-footer-reference.png");
 
     background-repeat: no-repeat;
 
-    background-position: center center;
+    background-position:
+        center top;
 
-    background-size: 100% auto;
+    background-size:
+        100% auto;
 
     z-index: 0;
 
@@ -21297,14 +21296,15 @@ MASTER VISUAL CSS — LIVE INTERACTION / ENERGY LAYER
 
 
 /* =========================================================
-04 — TWO FLOATING CORES
+04 — TOP ARS CORE
 ========================================================= */
 
 .ars-floating-core {
 
     position: absolute;
 
-    width: clamp(55px, 6vw, 92px);
+    width:
+        clamp(55px, 6vw, 92px);
 
     aspect-ratio: 1;
 
@@ -21318,7 +21318,7 @@ MASTER VISUAL CSS — LIVE INTERACTION / ENERGY LAYER
 
     flex-direction: column;
 
-    z-index: 8;
+    z-index: 20;
 
     background:
         radial-gradient(
@@ -21328,7 +21328,8 @@ MASTER VISUAL CSS — LIVE INTERACTION / ENERGY LAYER
         );
 
     border:
-        2px solid rgba(183,138,97,.82);
+        2px solid
+        rgba(183,138,97,.82);
 
     box-shadow:
 
@@ -21338,7 +21339,14 @@ MASTER VISUAL CSS — LIVE INTERACTION / ENERGY LAYER
         0 0 22px
             rgba(183,138,97,.16);
 
-    transform-origin: center;
+    backdrop-filter:
+        blur(7px);
+
+    -webkit-backdrop-filter:
+        blur(7px);
+
+    transform-origin:
+        center;
 
     animation:
         arsCoreFloat 5s ease-in-out infinite;
@@ -21358,10 +21366,12 @@ MASTER VISUAL CSS — LIVE INTERACTION / ENERGY LAYER
     border-radius: 50%;
 
     border:
-        1px solid rgba(21,157,255,.35);
+        1px solid
+        rgba(21,157,255,.35);
 
     box-shadow:
-        0 0 12px rgba(21,157,255,.12);
+        0 0 12px
+        rgba(21,157,255,.12);
 
     animation:
         arsCoreRotate 7s linear infinite;
@@ -21405,7 +21415,6 @@ MASTER VISUAL CSS — LIVE INTERACTION / ENERGY LAYER
 .ars-core-left {
 
     left: 12%;
-
     top: 7%;
 }
 
@@ -21415,13 +21424,12 @@ MASTER VISUAL CSS — LIVE INTERACTION / ENERGY LAYER
 .ars-core-right {
 
     right: 12%;
-
     top: 7%;
 }
 
 
 /* =========================================================
-05 — CORE TEXT
+05 — ARS CORE TEXT
 ========================================================= */
 
 .ars-core-label {
@@ -21496,11 +21504,6 @@ MASTER VISUAL CSS — LIVE INTERACTION / ENERGY LAYER
 06 — SIX CONTROL CARDS
 ========================================================= */
 
-
-/* =========================================================
-CONTROL ROW
-========================================================= */
-
 .ars-control-row {
 
     position: absolute;
@@ -21540,14 +21543,13 @@ CONTROL ROW
 
 
 /* =========================================================
-PREMIUM 3D KEY — BASE
+07 — PREMIUM 3D CARD
 ========================================================= */
 
 .ars-floating-key {
 
     position: relative;
 
-    /* اندازه پایه فعلی */
     width:
         clamp(95px, 10vw, 155px);
 
@@ -21569,7 +21571,8 @@ PREMIUM 3D KEY — BASE
     cursor: pointer;
 
     border:
-        1px solid rgba(183,138,97,.72);
+        2px solid
+        rgba(183,138,97,.62);
 
     border-radius:
         9px;
@@ -21588,19 +21591,19 @@ PREMIUM 3D KEY — BASE
     box-shadow:
 
         inset 0 2px 0
-            rgba(255,255,255,.07),
+            rgba(255,255,255,.06),
 
-        inset 0 -6px 14px
-            rgba(0,0,0,.82),
+        inset 0 -5px 12px
+            rgba(0,0,0,.8),
 
-        0 7px 0
+        0 8px 0
             #010203,
 
         0 12px 25px
             rgba(0,0,0,.62),
 
-        0 0 16px
-            rgba(183,138,97,.12);
+        0 0 15px
+            rgba(183,138,97,.08);
 
     transition:
 
@@ -21619,7 +21622,7 @@ PREMIUM 3D KEY — BASE
 
 
 /* =========================================================
-SECOND BRONZE FRAME — OUTER
+08 — DOUBLE BRONZE FRAME
 ========================================================= */
 
 .ars-floating-key::before {
@@ -21628,26 +21631,22 @@ SECOND BRONZE FRAME — OUTER
 
     position: absolute;
 
-    inset:
-        3px;
+    inset: 4px;
 
     border:
         1px solid
-        rgba(209,170,125,.48);
+        rgba(209,170,125,.78);
 
     border-radius:
         6px;
 
     box-shadow:
 
-        inset 0 1px 0
-            rgba(255,255,255,.12),
+        inset 0 0 0 1px
+            rgba(110,77,53,.55),
 
-        inset 0 -2px 3px
-            rgba(0,0,0,.65),
-
-        0 0 4px
-            rgba(183,138,97,.22);
+        0 0 7px
+            rgba(182,138,97,.16);
 
     pointer-events:
         none;
@@ -21657,45 +21656,30 @@ SECOND BRONZE FRAME — OUTER
 }
 
 
-/* =========================================================
-INNER BRONZE FRAME — 3D LAYER
-========================================================= */
+/* SECOND INNER BRONZE FRAME */
 
-.ars-floating-key > * {
+.ars-floating-key span::before {
 
-    position: relative;
+    content: "";
 
-    z-index: 4;
-}
-/* =========================================================
-TOP THREE — 20% NARROWER / 35% TALLER
-========================================================= */
+    position: absolute;
 
-.ars-controls-top .ars-floating-key {
+    inset: 2px;
 
-    width:
-        clamp(76px, 8vw, 124px);
+    border:
+        1px solid
+        rgba(182,138,97,.42);
 
-    height:
-        clamp(62px, 6.75vh, 95px);
+    border-radius:
+        5px;
+
+    pointer-events:
+        none;
 }
 
 
 /* =========================================================
-BOTTOM THREE — 20% WIDER / 35% TALLER
-========================================================= */
-
-.ars-controls-bottom .ars-floating-key {
-
-    width:
-        clamp(114px, 12vw, 186px);
-
-    height:
-        clamp(62px, 6.75vh, 95px);
-}
-
-/* =========================================================
-BLUE ENERGY LINE UNDER TEXT
+09 — BLUE ENERGY LINE
 ========================================================= */
 
 .ars-floating-key::after {
@@ -21707,7 +21691,7 @@ BLUE ENERGY LINE UNDER TEXT
     left: 16%;
     right: 16%;
 
-    bottom: 4px;
+    bottom: 9px;
 
     height: 2px;
 
@@ -21725,11 +21709,17 @@ BLUE ENERGY LINE UNDER TEXT
 
     animation:
         arsKeyEnergy 2.5s ease-in-out infinite;
+
+    z-index:
+        3;
+
+    pointer-events:
+        none;
 }
 
 
 /* =========================================================
-CARD ICON
+10 — CARD ICON
 ========================================================= */
 
 .ars-key-icon {
@@ -21751,7 +21741,7 @@ CARD ICON
 
 
 /* =========================================================
-CARD TEXT — PREMIUM BRONZE
+11 — CARD TEXT
 ========================================================= */
 
 .ars-key-text {
@@ -21767,22 +21757,23 @@ CARD TEXT — PREMIUM BRONZE
         900;
 
     letter-spacing:
-        .10em;
+        .09em;
 
     color:
         var(--ars-bronze-light);
 
     text-shadow:
 
-        0 0 5px
-            rgba(182,138,97,.35),
+        0 0 7px
+            rgba(182,138,97,.32),
 
-        0 0 12px
-            rgba(182,138,97,.18);
+        0 0 14px
+            rgba(182,138,97,.12);
 }
 
+
 /* =========================================================
-BLUE LIVE POINT
+12 — BLUE LIVE POINT
 ========================================================= */
 
 .ars-key-light {
@@ -21809,59 +21800,21 @@ BLUE LIVE POINT
 
 
 /* =========================================================
-HOVER
+BOTTOM CARDS — ONLY 20% WIDER
 ========================================================= */
 
-.ars-floating-key:hover {
+.ars-controls-bottom .ars-floating-key {
 
-    transform:
-        translateY(-4px)
-        scale(1.025);
+    width:
+        clamp(114px, 12vw, 186px);
 
-    border-color:
-        rgba(208,170,125,.95);
-
-    box-shadow:
-
-        inset 0 2px 0
-            rgba(255,255,255,.08),
-
-        inset 0 -5px 14px
-            rgba(0,0,0,.8),
-
-        0 10px 0
-            #010203,
-
-        0 15px 35px
-            rgba(0,0,0,.7),
-
-        0 0 25px
-            rgba(21,157,255,.16);
+    height:
+        clamp(46px, 5vh, 70px);
 }
 
 
 /* =========================================================
-PRESS
-========================================================= */
-
-.ars-floating-key:active {
-
-    transform:
-        translateY(3px)
-        scale(.98);
-
-    box-shadow:
-
-        inset 0 2px 0
-            rgba(0,0,0,.6),
-
-        0 3px 0
-            #010203;
-}
-
-
-/* =========================================================
-07 — DISPLAY ENERGY OVERLAY
+13 — DISPLAY ENERGY OVERLAY
 ========================================================= */
 
 .ars-display-overlay {
@@ -21885,7 +21838,7 @@ PRESS
 
 
 /* =========================================================
-08 — TWO-COLOR ELECTRIC SCAN
+14 — ELECTRIC BLUE SCAN
 ========================================================= */
 
 .ars-scan-line {
@@ -21903,19 +21856,10 @@ PRESS
     background:
         linear-gradient(
             90deg,
-
             transparent,
-
-            rgba(21,157,255,.04),
-
-            rgba(91,201,255,.72),
-
-            rgba(183,138,97,.82),
-
-            rgba(91,201,255,.72),
-
-            rgba(21,157,255,.04),
-
+            rgba(21,157,255,.05),
+            rgba(91,201,255,.75),
+            rgba(21,157,255,.08),
             transparent
         );
 
@@ -21924,19 +21868,16 @@ PRESS
         0 0 10px
             rgba(21,157,255,.55),
 
-        0 0 18px
-            rgba(183,138,97,.28),
-
         0 0 25px
             rgba(21,157,255,.25);
 
     animation:
-        arsScan 8.5s linear infinite;
+        arsScan 5.5s linear infinite;
 }
 
 
 /* =========================================================
-09 — DISPLAY CORNERS
+15 — DISPLAY CORNERS
 ========================================================= */
 
 .ars-display-corner {
@@ -22002,7 +21943,7 @@ PRESS
 
 
 /* =========================================================
-10 — LOWER ENERGY ATMOSPHERE
+16 — LOWER ENERGY ATMOSPHERE
 ========================================================= */
 
 .ars-reference-stage::after {
@@ -22065,7 +22006,59 @@ PRESS
 
 
 /* =========================================================
-11 — LOWER FOOTER
+17 — HOVER
+========================================================= */
+
+.ars-floating-key:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.025);
+
+    border-color:
+        rgba(208,170,125,.95);
+
+    box-shadow:
+
+        inset 0 2px 0
+            rgba(255,255,255,.08),
+
+        inset 0 -5px 14px
+            rgba(0,0,0,.8),
+
+        0 10px 0
+            #010203,
+
+        0 15px 35px
+            rgba(0,0,0,.7),
+
+        0 0 25px
+            rgba(21,157,255,.16);
+}
+
+
+/* =========================================================
+18 — PRESS
+========================================================= */
+
+.ars-floating-key:active {
+
+    transform:
+        translateY(3px)
+        scale(.98);
+
+    box-shadow:
+
+        inset 0 2px 0
+            rgba(0,0,0,.6),
+
+        0 3px 0
+            #010203;
+}
+
+
+/* =========================================================
+19 — LOWER FOOTER
 ========================================================= */
 
 .ars-reference-footer-bottom {
@@ -22076,7 +22069,7 @@ PRESS
 
     width: 100%;
 
-    height: 74px;
+    height: 85px;
 
     flex-shrink: 0;
 
@@ -22090,10 +22083,12 @@ PRESS
     padding:
         0 clamp(12px, 2.5vw, 38px);
 
-    box-sizing: border-box;
+    box-sizing:
+        border-box;
 
     border-top:
-        1px solid rgba(182,138,97,.42);
+        1px solid
+        rgba(182,138,97,.42);
 
     background:
         linear-gradient(
@@ -22109,7 +22104,7 @@ PRESS
 
 
 /* =========================================================
-12 — BRAND
+20 — BRAND
 ========================================================= */
 
 .ars-reference-brand {
@@ -22159,12 +22154,13 @@ PRESS
 
 
 /* =========================================================
-13 — SIGNATURE
+21 — SIGNATURE
 ========================================================= */
 
 .ars-reference-signature {
 
-    text-align: center;
+    text-align:
+        center;
 
     font-size:
         clamp(8px, .75vw, 12px);
@@ -22182,7 +22178,8 @@ PRESS
 
 .ars-reference-signature strong {
 
-    margin-left: 7px;
+    margin-left:
+        7px;
 
     color:
         var(--ars-bronze-light);
@@ -22193,12 +22190,13 @@ PRESS
 
 
 /* =========================================================
-14 — COPYRIGHT
+22 — COPYRIGHT
 ========================================================= */
 
 .ars-reference-copy {
 
-    justify-self: end;
+    justify-self:
+        end;
 
     font-size:
         clamp(7px, .65vw, 11px);
@@ -22215,7 +22213,7 @@ PRESS
 
 
 /* =========================================================
-15 — ANIMATIONS
+23 — ANIMATIONS
 ========================================================= */
 
 @keyframes arsBluePulse {
@@ -22279,27 +22277,16 @@ PRESS
 
 @keyframes arsCoreRotate {
 
-    0% {
+    from {
 
         transform:
-            rotate(0deg)
-            scale(.98);
-
-        opacity: .35;
+            rotate(0deg);
     }
 
-    50% {
-
-        opacity: .85;
-    }
-
-    100% {
+    to {
 
         transform:
-            rotate(360deg)
-            scale(.98);
-
-        opacity: .35;
+            rotate(360deg);
     }
 }
 
@@ -22312,12 +22299,14 @@ PRESS
             rotate(0deg)
             scale(.98);
 
-        opacity: .35;
+        opacity:
+            .35;
     }
 
     50% {
 
-        opacity: .85;
+        opacity:
+            .85;
     }
 
     100% {
@@ -22326,7 +22315,8 @@ PRESS
             rotate(360deg)
             scale(.98);
 
-        opacity: .35;
+        opacity:
+            .35;
     }
 }
 
@@ -22343,27 +22333,6 @@ PRESS
 
         transform:
             rotate(-360deg);
-    }
-}
-
-
-@keyframes arsKeyEnergy {
-
-    0%,
-    100% {
-
-        opacity: .25;
-
-        transform:
-            scaleX(.65);
-    }
-
-    50% {
-
-        opacity: 1;
-
-        transform:
-            scaleX(1);
     }
 }
 
@@ -22386,23 +22355,42 @@ PRESS
 }
 
 
+@keyframes arsKeyEnergy {
+
+    0%,
+    100% {
+
+        opacity:
+            .35;
+
+        transform:
+            scaleX(.7);
+    }
+
+    50% {
+
+        opacity:
+            1;
+
+        transform:
+            scaleX(1);
+    }
+}
+
+
 @keyframes arsBlink {
 
     0%,
     100% {
 
-        opacity: .28;
-
-        transform:
-            scale(.75);
+        opacity:
+            .35;
     }
 
     50% {
 
-        opacity: 1;
-
-        transform:
-            scale(1.18);
+        opacity:
+            1;
     }
 }
 
@@ -22411,37 +22399,38 @@ PRESS
 
     0% {
 
-        top: -5%;
+        top:
+            -5%;
 
-        opacity: 0;
+        opacity:
+            0;
     }
 
     10% {
 
-        opacity: .8;
-    }
-
-    50% {
-
-        opacity: 1;
+        opacity:
+            .8;
     }
 
     90% {
 
-        opacity: .8;
+        opacity:
+            .8;
     }
 
     100% {
 
-        top: 105%;
+        top:
+            105%;
 
-        opacity: 0;
+        opacity:
+            0;
     }
 }
 
 
 /* =========================================================
-16 — TABLET
+24 — TABLET
 ========================================================= */
 
 @media (max-width: 900px) {
@@ -22449,14 +22438,12 @@ PRESS
     .ars-core-left {
 
         left: 4%;
-
         top: 4%;
     }
 
     .ars-core-right {
 
         right: 4%;
-
         top: 4%;
     }
 
@@ -22479,6 +22466,15 @@ PRESS
             clamp(45px, 8vw, 65px);
     }
 
+    .ars-controls-bottom .ars-floating-key {
+
+        width:
+            clamp(84px, 15.6vw, 132px);
+
+        height:
+            clamp(45px, 8vw, 65px);
+    }
+
     .ars-display-overlay {
 
         left: 18%;
@@ -22491,16 +22487,18 @@ PRESS
 
 
 /* =========================================================
-17 — MOBILE
+25 — MOBILE
 ========================================================= */
 
 @media (max-width: 600px) {
 
     .ars-reference-footer {
 
-        height: 100svh;
+        height:
+            100svh;
 
-        min-height: 100svh;
+        min-height:
+            100svh;
     }
 
 
@@ -22514,16 +22512,20 @@ PRESS
     .ars-reference-image {
 
         background-size:
-            cover;
+            100% auto;
 
         background-position:
-            center center;
+            center top;
+
+        background-repeat:
+            no-repeat;
     }
 
 
     .ars-reference-footer-bottom {
 
-        height: 54px;
+        height:
+            54px;
 
         padding:
             0 8px;
@@ -22531,122 +22533,148 @@ PRESS
         grid-template-columns:
             1fr 1fr;
 
-        gap: 6px;
+        gap:
+            6px;
     }
 
 
     .ars-reference-signature {
 
-        display: none;
+        display:
+            none;
     }
 
 
     .ars-reference-brand {
 
-        gap: 5px;
+        gap:
+            5px;
     }
 
 
     .ars-reference-brand strong {
 
-        font-size: 15px;
+        font-size:
+            15px;
     }
 
 
     .ars-reference-brand span {
 
-        font-size: 5px;
+        font-size:
+            5px;
 
-        letter-spacing: .1em;
+        letter-spacing:
+            .1em;
     }
 
 
     .ars-reference-copy {
 
-        font-size: 5px;
+        font-size:
+            5px;
     }
 
 
-    /* =====================================================
-    CORE CIRCLES
-    ===================================================== */
+    /* CORE CIRCLES */
 
     .ars-floating-core {
 
-        width: 57px;
-        height: 57px;
+        width:
+            57px;
+
+        height:
+            57px;
     }
 
 
     .ars-core-left {
 
-        top: 4%;
-        left: 4%;
+        top:
+            4%;
+
+        left:
+            4%;
     }
 
 
     .ars-core-right {
 
-        top: 4%;
-        right: 4%;
+        top:
+            4%;
+
+        right:
+            4%;
     }
 
 
     .ars-core-label {
 
-        font-size: 14px;
+        font-size:
+            14px;
     }
 
 
     .ars-core-number {
 
-        font-size: 16px;
+        font-size:
+            16px;
     }
 
 
     .ars-core-right .ars-core-label {
 
-        font-size: 5px;
+        font-size:
+            5px;
     }
 
 
     .ars-core-status {
 
-        width: 5px;
-        height: 5px;
+        width:
+            5px;
+
+        height:
+            5px;
     }
 
 
     .ars-stat-light {
 
-        width: 5px;
-        height: 5px;
+        width:
+            5px;
+
+        height:
+            5px;
     }
 
 
-    /* =====================================================
-    TOP KEYS
-    ===================================================== */
+    /* CONTROL ROWS */
 
     .ars-control-row {
 
-        gap: 5px;
+        gap:
+            5px;
     }
 
 
     .ars-controls-top {
 
-        top: 17%;
+        top:
+            17%;
 
-        width: 80%;
+        width:
+            80%;
     }
 
 
     .ars-controls-bottom {
 
-        bottom: 15%;
+        bottom:
+            15%;
 
-        width: 80%;
+        width:
+            80%;
     }
 
 
@@ -22655,15 +22683,20 @@ PRESS
         width:
             calc((100vw - 34px) / 3);
 
-        max-width: 94px;
+        max-width:
+            94px;
 
-        height: 42px;
+        height:
+            42px;
 
-        padding: 5px;
+        padding:
+            5px;
 
-        border-radius: 7px;
+        border-radius:
+            7px;
 
-        gap: 2px;
+        gap:
+            2px;
 
         box-shadow:
 
@@ -22681,110 +22714,146 @@ PRESS
     }
 
 
+    .ars-controls-bottom .ars-floating-key {
+
+        width:
+            calc(((100vw - 34px) / 3) * 1.2);
+
+        max-width:
+            113px;
+
+        height:
+            42px;
+    }
+
+
     .ars-key-icon {
 
-        font-size: 11px;
+        font-size:
+            11px;
     }
 
 
     .ars-key-text {
 
-        font-size: 5px;
+        font-size:
+            6px;
 
-        letter-spacing: .08em;
+        letter-spacing:
+            .08em;
     }
 
 
     .ars-key-light {
 
-        width: 4px;
+        width:
+            4px;
 
-        height: 4px;
-
-        right: 6px;
-
-        top: 6px;
+        height:
+            4px;
     }
 
 
-    /* =====================================================
-    DISPLAY
-    ===================================================== */
+    /* DISPLAY */
 
     .ars-display-overlay {
 
-        left: 12%;
-        right: 12%;
+        left:
+            12%;
 
-        top: 25%;
-        bottom: 25%;
+        right:
+            12%;
+
+        top:
+            25%;
+
+        bottom:
+            25%;
     }
 
 
     .ars-display-corner {
 
-        width: 13px;
+        width:
+            13px;
 
-        height: 13px;
+        height:
+            13px;
     }
 }
 
 
 /* =========================================================
-18 — VERY SHORT MOBILE
+26 — VERY SHORT MOBILE
 ========================================================= */
 
 @media (max-width: 600px) and (max-height: 700px) {
 
     .ars-floating-core {
 
-        width: 50px;
+        width:
+            50px;
 
-        height: 50px;
+        height:
+            50px;
     }
 
 
     .ars-core-label {
 
-        font-size: 12px;
+        font-size:
+            12px;
     }
 
 
     .ars-core-number {
 
-        font-size: 14px;
+        font-size:
+            14px;
     }
 
 
     .ars-controls-top {
 
-        top: 15%;
+        top:
+            15%;
     }
 
 
     .ars-controls-bottom {
 
-        bottom: 13%;
+        bottom:
+            13%;
     }
 
 
     .ars-floating-key {
 
-        height: 37px;
+        height:
+            37px;
+    }
+
+
+    .ars-controls-bottom .ars-floating-key {
+
+        height:
+            37px;
     }
 
 
     .ars-display-overlay {
 
-        top: 23%;
+        top:
+            23%;
 
-        bottom: 23%;
+        bottom:
+            23%;
     }
 }
 
 
 /* =========================================================
-19 — REDUCED MOTION
+27 — REDUCED MOTION
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -22803,6 +22872,13 @@ PRESS
 /* =========================================================
 END — FINAL IMAGE REFERENCE FOOTER
 ========================================================= */
+```0
 
 
 
+
+
+
+
+/* =========================================================
+ARS HERITAGE GROUP FINAL IMAGE-REFERENCE
