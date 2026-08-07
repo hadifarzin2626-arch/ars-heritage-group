@@ -22875,59 +22875,52 @@ END
 
 
 
+
+
 /* =========================================================
    ARS SCAN TWO
-   PREMIUM BRONZE VEHICLE SCANNER
-   Vertical / Top → Bottom
-   Cycle: 11 Seconds
-   ========================================================= */
-
-
-/* =========================================================
-   SCAN TWO — CORE
+   PREMIUM BRONZE HORIZONTAL SCANNER
+   TOP → BOTTOM
+   11 SECOND CYCLE
    ========================================================= */
 
 .scan-two {
 
     position: absolute;
 
-    left: 50%;
+    left: 8%;
+    right: 8%;
 
-    top: -18%;
+    top: 0;
 
-    transform:
-        translateX(-50%);
-
-    width: 4px;
-
-    height: 58px;
+    height: 3px;
 
     border-radius: 50px;
 
     background:
         linear-gradient(
-            to bottom,
+            90deg,
             transparent 0%,
-            rgba(110,77,53,.15) 12%,
-            rgba(182,138,97,.75) 32%,
-            #d1aa7d 47%,
-            #ffe1ae 50%,
-            #d1aa7d 53%,
-            rgba(182,138,97,.75) 68%,
-            rgba(110,77,53,.15) 88%,
+            rgba(110,77,53,.20) 12%,
+            rgba(182,138,97,.75) 30%,
+            #d1aa7d 43%,
+            #ffe3b0 50%,
+            #d1aa7d 57%,
+            rgba(182,138,97,.75) 70%,
+            rgba(110,77,53,.20) 88%,
             transparent 100%
         );
 
     box-shadow:
 
         0 0 7px
-        rgba(209,170,125,.90),
+        rgba(209,170,125,.95),
 
         0 0 16px
         rgba(183,138,97,.75),
 
-        0 0 30px
-        rgba(183,138,97,.42);
+        0 0 32px
+        rgba(183,138,97,.38);
 
     opacity: .90;
 
@@ -22936,9 +22929,9 @@ END
     z-index: 30;
 
     animation:
-        arsScanTwoVertical
+        arsScanTwoDown
         11s
-        linear
+        ease-in-out
         infinite;
 
 }
@@ -22946,13 +22939,14 @@ END
 
 /* =========================================================
    SCAN TWO — TOP → BOTTOM
-   ========================================================= */
+========================================================= */
 
-@keyframes arsScanTwoVertical {
+@keyframes arsScanTwoDown {
 
     0% {
 
-        top: -18%;
+        transform:
+            translateY(-20%);
 
         opacity: .05;
 
@@ -22964,7 +22958,7 @@ END
 
     }
 
-    15% {
+    18% {
 
         opacity: 1;
 
@@ -22984,7 +22978,8 @@ END
 
     100% {
 
-        top: 68%;
+        transform:
+            translateY(68%);
 
         opacity: .05;
 
