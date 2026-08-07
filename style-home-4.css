@@ -21514,7 +21514,7 @@ code {
 
     animation:
         arsMonitorScannerOne
-        5.5s linear infinite;
+        8.5s linear infinite;
 }
 
 
@@ -21667,7 +21667,7 @@ code {
 
     animation:
         arsMonitorScannerThree
-        6.2s ease-in-out infinite;
+        7.9s ease-in-out infinite;
 }
 
 
@@ -23095,6 +23095,7 @@ END
     }
 
 
+}
 
 
 
@@ -23102,59 +23103,90 @@ END
 
 
 
-  /* =========================================================
-   ARS — FINAL KEY POSITION + TYPOGRAPHY REFINEMENT
-   13 KEY SYSTEM
+
+
+
+
+
+/* =========================================================
+   ARS FINAL KEY POSITION + TYPOGRAPHY
+   13-KEY SYSTEM
    ========================================================= */
 
 
 /* =========================================================
    01 — TOP 3 KEYS
-   MOVE UP = 1/3 OF THEIR OWN HEIGHT
+   MOVE UP BY 1/3 OF THEIR OWN CURRENT HEIGHT
    ========================================================= */
 
 .ars-controls-top {
-    transform: translateY(-33.333%);
+
+    transform:
+        translateY(
+            calc(
+                -1 * clamp(40px, 4.1vh, 56px) * .333333
+            )
+        ) !important;
 }
 
 
 /* =========================================================
    02 — BOTTOM 3 KEYS
-   MOVE UP = 1.25 × THEIR OWN HEIGHT
-   CLOSE TO DISPLAY
+   MOVE UP BY 1.25 × THEIR OWN CURRENT HEIGHT
    ========================================================= */
 
 .ars-controls-bottom {
-    transform: translateY(-125%);
+
+    transform:
+        translateY(
+            calc(
+                -1 *
+                (clamp(46px, 5vh, 70px) * 1.25) *
+                1.25
+            )
+        ) !important;
 }
 
 
 /* =========================================================
-   03 — SECONDARY 7 KEYS
-   MOVE UP = 1.10 × THEIR OWN HEIGHT
+   03 — 7 SECONDARY KEYS
+   KEEP HORIZONTAL CENTER
+   MOVE UP BY 1.10 × THEIR OWN HEIGHT
    ========================================================= */
 
 .ars-console-secondary-modules {
-    transform: translateY(-110%);
+
+    transform:
+        translate(
+            -50%,
+            calc(
+                -1 *
+                (clamp(28px, 3.5vh, 43px) * 1.15) *
+                1.10
+            )
+        ) !important;
 }
 
 
 /* =========================================================
-   04 — SECONDARY 7 KEY TEXT
+   04 — 7 SECONDARY KEY TEXT
    +15%
    MATTE BRONZE
    ========================================================= */
 
 .ars-secondary-module .secondary-name {
 
-    font-size: 115%;
+    font-size:
+        115% !important;
 
-    font-weight: 600;
+    font-weight:
+        600 !important;
 
-    color: #b78a61;
+    color:
+        #b78a61 !important;
 
-    letter-spacing: .06em;
-
+    letter-spacing:
+        .06em;
 }
 
 
@@ -23167,14 +23199,17 @@ END
 
 .ars-controls-bottom .ars-key-text {
 
-    font-size: 160%;
+    font-size:
+        160% !important;
 
-    font-weight: 700;
+    font-weight:
+        900 !important;
 
-    color: #b78a61;
+    color:
+        #b78a61 !important;
 
-    letter-spacing: .055em;
-
+    letter-spacing:
+        .055em !important;
 }
 
 
@@ -23187,43 +23222,56 @@ END
 
 .ars-controls-top .ars-key-text {
 
-    font-size: 130%;
+    font-size:
+        130% !important;
 
-    font-weight: 700;
+    font-weight:
+        900 !important;
 
-    color: #b78a61;
+    color:
+        #b78a61 !important;
 
-    letter-spacing: .055em;
-
+    letter-spacing:
+        .055em !important;
 }
 
 
 /* =========================================================
-   07 — BLUE LINE UNDER TEXT
-   ALL 13 KEYS
+   07 — BLUE LINE UNDER ALL 13 LABELS
    ========================================================= */
 
 
-/* SECONDARY 7 */
+/* ---------- 7 SECONDARY ---------- */
 
 .ars-secondary-module .secondary-name {
-    position: relative;
-    display: inline-block;
+
+    position:
+        relative;
+
+    display:
+        inline-block;
 }
 
 
 .ars-secondary-module .secondary-name::after {
 
-    content: "";
+    content:
+        "";
 
-    position: absolute;
+    position:
+        absolute;
 
-    left: 0;
-    right: 0;
+    left:
+        0;
 
-    bottom: -5px;
+    right:
+        0;
 
-    height: 2px;
+    bottom:
+        -5px;
+
+    height:
+        2px;
 
     background:
         linear-gradient(
@@ -23235,33 +23283,45 @@ END
         );
 
     box-shadow:
-        0 0 7px rgba(21,157,255,.65);
+        0 0 7px
+        rgba(21,157,255,.65);
 
-    opacity: .9;
-
+    opacity:
+        .9;
 }
 
 
-/* TOP 3 */
+/* ---------- TOP 3 ---------- */
 
 .ars-controls-top .ars-key-text {
-    position: relative;
-    display: inline-block;
+
+    position:
+        relative;
+
+    display:
+        inline-block;
 }
 
 
 .ars-controls-top .ars-key-text::after {
 
-    content: "";
+    content:
+        "";
 
-    position: absolute;
+    position:
+        absolute;
 
-    left: 0;
-    right: 0;
+    left:
+        0;
 
-    bottom: -5px;
+    right:
+        0;
 
-    height: 2px;
+    bottom:
+        -5px;
+
+    height:
+        2px;
 
     background:
         linear-gradient(
@@ -23273,33 +23333,45 @@ END
         );
 
     box-shadow:
-        0 0 7px rgba(21,157,255,.65);
+        0 0 7px
+        rgba(21,157,255,.65);
 
-    opacity: .9;
-
+    opacity:
+        .9;
 }
 
 
-/* BOTTOM 3 */
+/* ---------- BOTTOM 3 ---------- */
 
 .ars-controls-bottom .ars-key-text {
-    position: relative;
-    display: inline-block;
+
+    position:
+        relative;
+
+    display:
+        inline-block;
 }
 
 
 .ars-controls-bottom .ars-key-text::after {
 
-    content: "";
+    content:
+        "";
 
-    position: absolute;
+    position:
+        absolute;
 
-    left: 0;
-    right: 0;
+    left:
+        0;
 
-    bottom: -5px;
+    right:
+        0;
 
-    height: 2px;
+    bottom:
+        -5px;
+
+    height:
+        2px;
 
     background:
         linear-gradient(
@@ -23311,12 +23383,9 @@ END
         );
 
     box-shadow:
-        0 0 7px rgba(21,157,255,.65);
+        0 0 7px
+        rgba(21,157,255,.65);
 
-    opacity: .9;
-
+    opacity:
+        .9;
 }
-}
-
-
-
