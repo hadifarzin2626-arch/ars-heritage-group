@@ -23208,22 +23208,29 @@ END
 
       }
 
-/* ================================
-   ARS MONITOR LAYER TEST
-================================ */
 
-.ars-display-overlay {
-    z-index: 10;
+
+/* =====================================
+   ARS ORIGINAL SCANNER REFINEMENT
+   Bronze Upgrade + Move Up
+===================================== */
+
+.ars-scan-line {
+
+    top: -30%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            var(--ars-bronze-light),
+            transparent
+        );
+
+    box-shadow:
+
+        0 0 10px var(--ars-bronze-light),
+        0 0 25px rgba(183,138,97,.65);
+
 }
 
-
-.ars-monitor-grid,
-.ars-monitor-pulse,
-.ars-monitor-data-line,
-.ars-monitor-hud-dot {
-    z-index: 20;
-}/* MOVE SCANNER UP */
-
-.ars-monitor-scan {
-    top: -10%;
-}
