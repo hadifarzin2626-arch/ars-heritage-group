@@ -21747,10 +21747,10 @@ width: 98%;
 
     position: absolute;
 
-    left: 50%;
+    left: 25%;
 
     transform:
-        translateX(-50%);
+        translateX(-25%);
 
     display: flex;
 
@@ -23477,7 +23477,785 @@ END
 
 
 /* =========================================================
+   ARS FUTURE VISION
+   PHASE 02 — FUTURE CORE
+   LOCKED / ISOLATED SYSTEM
+========================================================= */
 
+
+/* =========================================================
+   01 — FUTURE VISION ROOT
+========================================================= */
+
+.ars-future-vision {
+
+    --future-blue:
+        #159dff;
+
+    --future-blue-bright:
+        #67d1ff;
+
+    --future-blue-deep:
+        #0067b5;
+
+    --future-bronze:
+        #b68a61;
+
+    --future-bronze-light:
+        #d8b487;
+
+    --future-bronze-hot:
+        #f0c996;
+
+    --future-black:
+        #020304;
+
+    position:
+        relative;
+
+    width:
+        100%;
+
+    min-height:
+        720px;
+
+    overflow:
+        hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(21,157,255,.045),
+            transparent 42%
+        ),
+
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(182,138,97,.025),
+            transparent 58%
+        ),
+
+        #020304;
+
+    isolation:
+        isolate;
+
+    box-sizing:
+        border-box;
+}
+
+
+/* =========================================================
+   02 — UNIVERSE
+========================================================= */
+
+.ars-future-vision-universe {
+
+    position:
+        relative;
+
+    width:
+        100%;
+
+    height:
+        650px;
+
+    overflow:
+        hidden;
+
+    isolation:
+        isolate;
+}
+
+
+/* =========================================================
+   03 — FUTURE ATMOSPHERE
+========================================================= */
+
+.ars-future-vision-universe::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        min(70vw, 700px);
+
+    height:
+        min(70vw, 700px);
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(21,157,255,.075)
+            0%,
+
+            rgba(21,157,255,.035)
+            25%,
+
+            rgba(182,138,97,.018)
+            48%,
+
+            transparent
+            72%
+        );
+
+    filter:
+        blur(18px);
+
+    pointer-events:
+        none;
+
+    z-index:
+        1;
+
+    animation:
+        arsFutureCoreAtmosphere
+        6s ease-in-out infinite;
+}
+
+
+@keyframes arsFutureCoreAtmosphere {
+
+    0%,
+    100% {
+
+        opacity:
+            .72;
+
+        transform:
+            translate(-50%, -50%)
+            scale(.96);
+    }
+
+    50% {
+
+        opacity:
+            1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.035);
+    }
+}
+
+
+/* =========================================================
+   04 — FUTURE CORE CONTAINER
+========================================================= */
+
+.ars-future-vision-core {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        clamp(190px, 23vw, 330px);
+
+    height:
+        clamp(190px, 23vw, 330px);
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index:
+        12;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    pointer-events:
+        none;
+
+    animation:
+        arsFutureCoreFloat
+        6s ease-in-out infinite;
+}
+
+
+@keyframes arsFutureCoreFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translate(-50%, -50%)
+            translateY(0);
+    }
+
+    50% {
+
+        transform:
+            translate(-50%, -50%)
+            translateY(-5px);
+    }
+}
+
+
+/* =========================================================
+   05 — CORE OUTER GLOW
+========================================================= */
+
+.ars-future-vision-core-glow {
+
+    position:
+        absolute;
+
+    inset:
+        -20%;
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+
+            rgba(21,157,255,.20)
+            0%,
+
+            rgba(21,157,255,.075)
+            28%,
+
+            rgba(182,138,97,.045)
+            45%,
+
+            transparent
+            70%
+        );
+
+    filter:
+        blur(18px);
+
+    opacity:
+        .78;
+
+    animation:
+        arsFutureCoreGlow
+        4.5s ease-in-out infinite;
+}
+
+
+@keyframes arsFutureCoreGlow {
+
+    0%,
+    100% {
+
+        opacity:
+            .58;
+
+        transform:
+            scale(.94);
+    }
+
+    50% {
+
+        opacity:
+            1;
+
+        transform:
+            scale(1.08);
+    }
+}
+
+
+/* =========================================================
+   06 — CORE BODY
+========================================================= */
+
+.ars-future-vision-core-body {
+
+    position:
+        relative;
+
+    width:
+        62%;
+
+    height:
+        62%;
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            circle at 38% 30%,
+            rgba(255,255,255,.10),
+            transparent 18%
+        ),
+
+        radial-gradient(
+            circle at 50% 50%,
+            #182027 0%,
+            #080c10 42%,
+            #020304 72%,
+            #000000 100%
+        );
+
+    border:
+        1px solid
+        rgba(216,180,135,.48);
+
+    box-shadow:
+
+        inset
+        8px 8px 22px
+        rgba(255,255,255,.055),
+
+        inset
+        -12px -12px 28px
+        rgba(0,0,0,.95),
+
+        inset
+        0 0 28px
+        rgba(21,157,255,.10),
+
+        0 0 15px
+        rgba(182,138,97,.18),
+
+        0 0 42px
+        rgba(21,157,255,.16);
+
+    overflow:
+        hidden;
+
+    animation:
+        arsFutureCoreBreathing
+        4.2s ease-in-out infinite;
+}
+
+
+@keyframes arsFutureCoreBreathing {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+    }
+
+    50% {
+
+        transform:
+            scale(1.025);
+    }
+}
+
+
+/* =========================================================
+   07 — CORE INNER ENERGY
+========================================================= */
+
+.ars-future-vision-core-energy {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        28%;
+
+    height:
+        28%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #d9f6ff 0%,
+            #67d1ff 18%,
+            #159dff 38%,
+            rgba(21,157,255,.22) 62%,
+            transparent 75%
+        );
+
+    box-shadow:
+
+        0 0 10px
+        rgba(103,209,255,.95),
+
+        0 0 28px
+        rgba(21,157,255,.75),
+
+        0 0 55px
+        rgba(21,157,255,.35);
+
+    animation:
+        arsFutureCoreEnergy
+        2.8s ease-in-out infinite;
+}
+
+
+@keyframes arsFutureCoreEnergy {
+
+    0%,
+    100% {
+
+        opacity:
+            .72;
+
+        transform:
+            translate(-50%, -50%)
+            scale(.82);
+    }
+
+    50% {
+
+        opacity:
+            1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.15);
+    }
+}
+
+
+/* =========================================================
+   08 — CORE CENTRAL NODE
+========================================================= */
+
+.ars-future-vision-core-node {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        9px;
+
+    height:
+        9px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius:
+        50%;
+
+    background:
+        #f5fbff;
+
+    box-shadow:
+
+        0 0 7px
+        #ffffff,
+
+        0 0 16px
+        #67d1ff,
+
+        0 0 30px
+        #159dff,
+
+        0 0 48px
+        rgba(21,157,255,.65);
+
+    animation:
+        arsFutureCoreNode
+        2s ease-in-out infinite;
+}
+
+
+@keyframes arsFutureCoreNode {
+
+    0%,
+    100% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(.75);
+    }
+
+    50% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.25);
+    }
+}
+
+
+/* =========================================================
+   09 — ORBIT SYSTEM
+========================================================= */
+
+.ars-future-vision-core-orbit {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    border-radius:
+        50%;
+
+    pointer-events:
+        none;
+
+    transform-origin:
+        center center;
+}
+
+
+/* =========================================================
+   ORBIT ONE
+========================================================= */
+
+.ars-future-vision-core-orbit.orbit-one {
+
+    width:
+        78%;
+
+    height:
+        31%;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(-18deg);
+
+    border:
+        1px solid
+        rgba(21,157,255,.46);
+
+    box-shadow:
+        0 0 9px
+        rgba(21,157,255,.16);
+
+    animation:
+        arsFutureOrbitOne
+        12s linear infinite;
+}
+
+
+@keyframes arsFutureOrbitOne {
+
+    from {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(-18deg);
+    }
+
+    to {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(342deg);
+    }
+}
+
+
+/* =========================================================
+   ORBIT TWO
+========================================================= */
+
+.ars-future-vision-core-orbit.orbit-two {
+
+    width:
+        88%;
+
+    height:
+        38%;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(52deg);
+
+    border:
+        1px solid
+        rgba(182,138,97,.42);
+
+    box-shadow:
+        0 0 9px
+        rgba(182,138,97,.13);
+
+    animation:
+        arsFutureOrbitTwo
+        16s linear infinite reverse;
+}
+
+
+@keyframes arsFutureOrbitTwo {
+
+    from {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(52deg);
+    }
+
+    to {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(-308deg);
+    }
+}
+
+
+/* =========================================================
+   ORBIT THREE
+========================================================= */
+
+.ars-future-vision-core-orbit.orbit-three {
+
+    width:
+        98%;
+
+    height:
+        43%;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(118deg);
+
+    border:
+        1px solid
+        rgba(103,209,255,.22);
+
+    animation:
+        arsFutureOrbitThree
+        21s linear infinite;
+}
+
+
+@keyframes arsFutureOrbitThree {
+
+    from {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(118deg);
+    }
+
+    to {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(478deg);
+    }
+}
+
+
+/* =========================================================
+   10 — CORE LABEL
+========================================================= */
+
+.ars-future-vision-core-label {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        calc(100% + 22px);
+
+    transform:
+        translateX(-50%);
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    white-space:
+        nowrap;
+
+    font-size:
+        clamp(8px, .7vw, 12px);
+
+    letter-spacing:
+        .22em;
+
+    color:
+        rgba(216,180,135,.72);
+
+    text-shadow:
+        0 0 10px
+        rgba(182,138,97,.18);
+}
+
+
+.ars-future-vision-core-label strong {
+
+    color:
+        #d8b487;
+
+    font-weight:
+        800;
+}
+
+
+/* =========================================================
+   11 — REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ars-future-vision-core,
+    .ars-future-vision-core-glow,
+    .ars-future-vision-core-body,
+    .ars-future-vision-core-energy,
+    .ars-future-vision-core-node,
+    .ars-future-vision-core-orbit,
+    .ars-future-vision-universe::before {
+
+        animation:
+            none !important;
+    }
+}
 
 
 
