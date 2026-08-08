@@ -23461,31 +23461,52 @@ END
 
 
 /* =========================================================
-   7 SMALL LOWER MODULES
-   MOVE LEFT = 0.5cm
-========================================================= */
+   7 SECONDARY KEYS
+   MOVE LEFT — VERY SMALL / APPROX. 0.5cm
+   ========================================================= */
 
 .ars-console-secondary-modules {
 
     margin-left:
         calc(
-            -0.5cm
+            -0.12 *
+            clamp(28px, 3.5vh, 43px)
         ) !important;
 }
 
 
-
 /* =========================================================
-   ARS SCANNER #2 — MOVE ENTIRE SYSTEM UP 50%
-   BRONZE SCANNER ONLY
-   ========================================================= */
+   ARS SCAN TWO — BRONZE
+   MOVE ENTIRE SCAN PATH UP 50%
+   KEEP SIZE / WIDTH / COLOR / SPEED
+========================================================= */
 
 .scan-two {
     transform: translateY(-50%) !important;
 }
 
+@keyframes arsScanTwoDown {
 
+    0% {
+        top: 0%;
+        opacity: 0;
+    }
 
+    8% {
+        opacity: .95;
+    }
 
+    45% {
+        opacity: 1;
+    }
 
+    88% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+}
 
