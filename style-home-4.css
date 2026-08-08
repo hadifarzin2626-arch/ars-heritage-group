@@ -23475,183 +23475,19 @@ END
 }
 
 
+
 /* =========================================================
-   ARS SCAN TWO — BRONZE
-   MOVE ENTIRE SCAN PATH UP 50%
-   KEEP SIZE / WIDTH / COLOR / SPEED
+   FINAL FOOTER IMAGE SYSTEM
+   MOVE ENTIRE IMAGE SYSTEM DOWN
 ========================================================= */
 
-.scan-two {
-    transform: translateY(-50%) !important;
-}
-
-@keyframes arsScanTwoDown {
-
-    0% {
-        top: 0%;
-        opacity: 0;
-    }
-
-    8% {
-        opacity: .95;
-    }
-
-    45% {
-        opacity: 1;
-    }
-
-    88% {
-        opacity: 1;
-    }
-
-    100% {
-        top: 100%;
-        opacity: 0;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* =========================================================
-   ARS HOME — FINAL ONE SCREEN / NO SCROLL
-   IMAGE + ALL ANIMATIONS LOCKED TO ONE VIEWPORT
-   REMOVE ONLY DUPLICATE HTML FOOTER
-   ========================================================= */
-
-
-/* ---------------------------------------------------------
-   01 — REMOVE HTML FOOTER BELOW THE IMAGE
-   --------------------------------------------------------- */
-
-.ars-reference-footer-bottom {
-    display: none !important;
-}
-
-
-/* ---------------------------------------------------------
-   02 — LOCK PAGE TO ONE SCREEN
-   --------------------------------------------------------- */
-
-html,
-body {
-    width: 100%;
-    height: 100%;
-    min-height: 100%;
-    margin: 0;
-    padding: 0;
-
-    overflow: hidden !important;
-}
-
-
-/* ---------------------------------------------------------
-   03 — MAIN ARS PAGE
-   --------------------------------------------------------- */
-
-.ars-reference-footer {
-
-    position: relative;
-
-    width: 100%;
-    height: 100vh;
-    min-height: 100vh;
-
-    margin: 0;
-    padding: 0;
-
-    overflow: hidden;
-
-    display: flex;
-    flex-direction: column;
-}
-
-
-/* ---------------------------------------------------------
-   04 — IMAGE / MAIN VISUAL AREA
-   EVERYTHING STAYS TOGETHER
-   --------------------------------------------------------- */
-
 .ars-reference-stage {
-
-    position: relative;
-
-    width: 100%;
-
-    height: 100vh;
-    min-height: 100vh;
-
-    flex: 1 1 100%;
-
-    margin: 0;
-    padding: 0;
-
-    overflow: hidden;
+    transform: translateY(3cm);
 }
 
 
-/* ---------------------------------------------------------
-   05 — IMAGE ITSELF
-   --------------------------------------------------------- */
-
-.ars-reference-image {
-
-    position: absolute;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    margin: 0;
-    padding: 0;
-
-    background-position: center center;
-    background-repeat: no-repeat;
-
-    background-size: cover;
-
-    overflow: hidden;
-}
 
 
-/* ---------------------------------------------------------
-   06 — KEEP ALL ARS OVERLAYS INSIDE IMAGE
-   --------------------------------------------------------- */
-
-.ars-reference-stage > * {
-
-    max-height: 100%;
-
-}
 
 
-/* ---------------------------------------------------------
-   07 — KILL ANY EXTRA BOTTOM SPACE
-   --------------------------------------------------------- */
 
-.ars-reference-stage::after {
-
-    content: none !important;
-
-}
-
-
-/* ---------------------------------------------------------
-   08 — SAFETY: NO EXTRA FOOTER / MARGIN
-   --------------------------------------------------------- */
-
-.ars-reference-footer > *:last-child {
-
-    margin-bottom: 0 !important;
-
-}
