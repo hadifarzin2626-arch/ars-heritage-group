@@ -25208,6 +25208,422 @@ END
 }
 
 
+/* =========================================================
+   ARS FUTURE VISION
+   PHASE 06 — SIMPLE PREMIUM GOLDEN ENERGY
 
+   BLUE = CORE
+   GOLD = INTELLIGENCE ENERGY
+
+   IMPORTANT:
+   THIS CSS DOES NOT POSITION CARDS.
+   THIS CSS DOES NOT RESIZE CARDS.
+   THIS CSS DOES NOT MOVE THE CORE.
+   THIS CSS DOES NOT CREATE ANY EXTRA CARD.
+========================================================= */
+
+
+/* =========================================================
+   01 — ENERGY CONTAINER
+========================================================= */
+
+.ars-phase06-energy {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    pointer-events:
+        none;
+
+    z-index:
+        12;
+}
+
+
+/* =========================================================
+   02 — SVG FIELD
+========================================================= */
+
+.ars-phase06-energy-svg {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    overflow:
+        visible;
+
+    pointer-events:
+        none;
+}
+
+
+/* =========================================================
+   03 — GOLDEN ENERGY GLOW
+========================================================= */
+
+.ars-energy-route-glow {
+
+    fill:
+        none;
+
+    stroke:
+        rgba(255, 211, 145, .72);
+
+    stroke-width:
+        10;
+
+    stroke-linecap:
+        round;
+
+    stroke-linejoin:
+        round;
+
+    opacity:
+        .42;
+
+    filter:
+        blur(7px);
+}
+
+
+/* =========================================================
+   04 — GOLDEN MAIN BEAM
+========================================================= */
+
+.ars-energy-route-main {
+
+    fill:
+        none;
+
+    stroke:
+        #e8bd7c;
+
+    stroke-width:
+        2.2;
+
+    stroke-linecap:
+        round;
+
+    stroke-linejoin:
+        round;
+
+    opacity:
+        .88;
+
+    filter:
+        drop-shadow(
+            0 0 4px
+            rgba(255, 210, 145, .9)
+        )
+        drop-shadow(
+            0 0 11px
+            rgba(216, 170, 105, .55)
+        );
+}
+
+
+/* =========================================================
+   05 — MOVING GOLDEN ENERGY PULSE
+========================================================= */
+
+.ars-energy-route-pulse {
+
+    fill:
+        none;
+
+    stroke:
+        #fff1d2;
+
+    stroke-width:
+        4;
+
+    stroke-linecap:
+        round;
+
+    stroke-dasharray:
+        35 965;
+
+    stroke-dashoffset:
+        0;
+
+    opacity:
+        .95;
+
+    filter:
+        drop-shadow(
+            0 0 5px
+            #fff0cf
+        )
+        drop-shadow(
+            0 0 14px
+            rgba(240, 195, 125, .95)
+        )
+        drop-shadow(
+            0 0 25px
+            rgba(210, 160, 90, .65)
+        );
+
+    animation:
+        arsPhase06EnergyFlow
+        3.8s
+        linear
+        infinite;
+}
+
+
+@keyframes arsPhase06EnergyFlow {
+
+    0% {
+
+        stroke-dashoffset:
+            1000;
+
+        opacity:
+            0;
+    }
+
+    8% {
+
+        opacity:
+            1;
+    }
+
+    82% {
+
+        opacity:
+            1;
+    }
+
+    100% {
+
+        stroke-dashoffset:
+            0;
+
+        opacity:
+            0;
+    }
+}
+
+
+/* =========================================================
+   06 — GOLDEN LIGHT UNDER FUTURE LAB
+========================================================= */
+
+.ars-phase06-card-light {
+
+    position:
+        absolute;
+
+    width:
+        210px;
+
+    height:
+        32px;
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+
+            rgba(255, 218, 160, .55)
+            0%,
+
+            rgba(240, 190, 120, .30)
+            28%,
+
+            rgba(210, 160, 90, .14)
+            52%,
+
+            transparent 76%
+        );
+
+    filter:
+        blur(8px);
+
+    opacity:
+        .78;
+
+    animation:
+        arsPhase06CardGlow
+        4.5s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   07 — CARD LIGHT POSITIONS
+========================================================= */
+
+.ars-phase06-card-light.light-left {
+
+    left:
+        13%;
+
+    top:
+        34%;
+
+    transform:
+        translateX(-50%);
+}
+
+
+.ars-phase06-card-light.light-right {
+
+    right:
+        13%;
+
+    top:
+        34%;
+
+    transform:
+        translateX(50%);
+}
+
+
+.ars-phase06-card-light.light-bottom {
+
+    left:
+        50%;
+
+    top:
+        72%;
+
+    transform:
+        translateX(-50%);
+}
+
+
+/* =========================================================
+   08 — CARD LIGHT BREATHING
+========================================================= */
+
+@keyframes arsPhase06CardGlow {
+
+    0%,
+    100% {
+
+        opacity:
+            .40;
+
+        transform:
+            translateX(-50%)
+            scaleX(.82);
+    }
+
+    50% {
+
+        opacity:
+            .92;
+
+        transform:
+            translateX(-50%)
+            scaleX(1.12);
+    }
+}
+
+
+/* =========================================================
+   09 — INDIVIDUAL CARD ENERGY IDENTITY
+========================================================= */
+
+.ars-energy-future-lab
+.ars-energy-route-pulse {
+
+    animation-duration:
+        4.2s;
+}
+
+
+.ars-energy-vision
+.ars-energy-route-pulse {
+
+    animation-duration:
+        4.7s;
+}
+
+
+.ars-energy-open-door
+.ars-energy-route-pulse {
+
+    animation-duration:
+        4.0s;
+}
+
+
+/* =========================================================
+   10 — REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ars-energy-route-pulse,
+    .ars-phase06-card-light {
+
+        animation:
+            none !important;
+    }
+}
+
+
+/* =========================================================
+   11 — MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .ars-phase06-card-light {
+
+        width:
+            150px;
+
+        height:
+            24px;
+
+        filter:
+            blur(7px);
+    }
+
+    .ars-energy-route-main {
+
+        stroke-width:
+            2;
+    }
+
+    .ars-energy-route-glow {
+
+        stroke-width:
+            8;
+
+        opacity:
+            .35;
+    }
+
+    .ars-energy-route-pulse {
+
+        stroke-width:
+            3.5;
+    }
+              }
 
 
