@@ -25204,8 +25204,1151 @@ END
 .ars-future-vision-card-bottom {
 
     bottom:
-        calc(12% - 50px) !important;
+        calc(12% - 40px) !important;
 }
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS FUTURE VISION
+   PHASE 06 — PREMIUM GOLDEN INTELLIGENCE ENERGY SYSTEM
+
+   GOLD = INTELLIGENCE / TRANSFER
+   BLUE = FUTURE CORE / RECEIVER
+
+   SOURCE  = CARDS
+   TARGET  = FUTURE CORE
+
+   NO CARD GEOMETRY CHANGE
+   NO CORE GEOMETRY CHANGE
+========================================================= */
+
+
+/* =========================================================
+   01 — MASTER ENERGY VARIABLES
+========================================================= */
+
+.ars-future-vision {
+
+    --gold-main:
+        #f0c996;
+
+    --gold-bright:
+        #ffe4b5;
+
+    --gold-hot:
+        #fff2d2;
+
+    --gold-deep:
+        #b68a61;
+
+    --gold-shadow:
+        rgba(182,138,97,.55);
+
+    --gold-glow:
+        rgba(240,201,150,.9);
+
+    --blue-core:
+        #159dff;
+
+    --energy-speed:
+        4.8s;
+}
+
+
+/* =========================================================
+   02 — ENERGY SYSTEM ROOT
+========================================================= */
+
+.ars-card-energy-system {
+
+    position:
+        absolute;
+
+    pointer-events:
+        none;
+
+    z-index:
+        26;
+
+    width:
+        0;
+
+    height:
+        0;
+
+    overflow:
+        visible;
+}
+
+
+/* =========================================================
+   03 — ENERGY ORIGIN
+========================================================= */
+
+.ars-card-energy-origin {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        16px;
+
+    height:
+        16px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius:
+        50%;
+
+    z-index:
+        5;
+}
+
+
+/* =========================================================
+   ORIGIN CORE
+========================================================= */
+
+.ars-card-energy-origin-core {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        5px;
+
+    height:
+        5px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius:
+        50%;
+
+    background:
+        var(--gold-hot);
+
+    box-shadow:
+
+        0 0 5px
+        #ffffff,
+
+        0 0 10px
+        var(--gold-bright),
+
+        0 0 20px
+        var(--gold-main),
+
+        0 0 38px
+        rgba(240,201,150,.85);
+
+    animation:
+        arsGoldenOriginPulse
+        2.4s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes arsGoldenOriginPulse {
+
+    0%,
+    100% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(.72);
+
+        opacity:
+            .72;
+    }
+
+    50% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.35);
+
+        opacity:
+            1;
+    }
+}
+
+
+/* =========================================================
+   ORIGIN HALO
+========================================================= */
+
+.ars-card-energy-origin-halo {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        34px;
+
+    height:
+        34px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,242,210,.34),
+            rgba(240,201,150,.18) 28%,
+            rgba(182,138,97,.08) 52%,
+            transparent 72%
+        );
+
+    filter:
+        blur(4px);
+
+    animation:
+        arsGoldenOriginHalo
+        3.2s ease-in-out
+        infinite;
+}
+
+
+@keyframes arsGoldenOriginHalo {
+
+    0%,
+    100% {
+
+        opacity:
+            .45;
+
+        transform:
+            translate(-50%, -50%)
+            scale(.78);
+    }
+
+    50% {
+
+        opacity:
+            1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.28);
+    }
+}
+
+
+/* =========================================================
+   04 — MAIN GOLDEN BEAM
+========================================================= */
+
+.ars-card-energy-beam {
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    top:
+        0;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    transform-origin:
+        left center;
+
+    z-index:
+        2;
+
+    opacity:
+        .96;
+}
+
+
+/* =========================================================
+   BEAM CORE
+========================================================= */
+
+.ars-card-energy-beam-core {
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    top:
+        50%;
+
+    width:
+        100%;
+
+    height:
+        2px;
+
+    transform:
+        translateY(-50%);
+
+    border-radius:
+        999px;
+
+    background:
+        linear-gradient(
+            90deg,
+
+            transparent 0%,
+
+            rgba(182,138,97,.22) 5%,
+
+            var(--gold-main) 22%,
+
+            var(--gold-bright) 43%,
+
+            var(--gold-hot) 50%,
+
+            var(--gold-bright) 58%,
+
+            var(--gold-main) 78%,
+
+            rgba(182,138,97,.20) 94%,
+
+            transparent 100%
+        );
+
+    box-shadow:
+
+        0 0 4px
+        var(--gold-bright),
+
+        0 0 10px
+        var(--gold-main),
+
+        0 0 22px
+        rgba(240,201,150,.82),
+
+        0 0 42px
+        rgba(182,138,97,.45);
+
+    animation:
+        arsGoldenBeamBreath
+        3.6s ease-in-out
+        infinite;
+}
+
+
+@keyframes arsGoldenBeamBreath {
+
+    0%,
+    100% {
+
+        opacity:
+            .58;
+
+        filter:
+            brightness(.85)
+            saturate(1.05);
+    }
+
+    50% {
+
+        opacity:
+            1;
+
+        filter:
+            brightness(1.35)
+            saturate(1.25);
+    }
+}
+
+
+/* =========================================================
+   BEAM GLOW
+========================================================= */
+
+.ars-card-energy-beam-glow {
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    top:
+        50%;
+
+    width:
+        100%;
+
+    height:
+        18px;
+
+    transform:
+        translateY(-50%);
+
+    border-radius:
+        50%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(240,201,150,.18),
+            rgba(240,201,150,.34),
+            rgba(240,201,150,.18),
+            transparent
+        );
+
+    filter:
+        blur(7px);
+
+    opacity:
+        .8;
+}
+
+
+/* =========================================================
+   05 — THREE ENERGY VEINS
+========================================================= */
+
+.ars-card-energy-vein {
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    top:
+        0;
+
+    height:
+        1px;
+
+    transform-origin:
+        left center;
+
+    border-radius:
+        999px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(216,180,135,.45),
+            var(--gold-bright),
+            rgba(216,180,135,.35),
+            transparent
+        );
+
+    box-shadow:
+        0 0 6px
+        rgba(240,201,150,.7),
+
+        0 0 15px
+        rgba(182,138,97,.35);
+
+    opacity:
+        .8;
+
+    animation:
+        arsGoldenVeinFlow
+        4s ease-in-out
+        infinite;
+}
+
+
+.ars-card-energy-vein.vein-one {
+
+    width:
+        82%;
+
+    transform:
+        rotate(-7deg);
+}
+
+
+.ars-card-energy-vein.vein-two {
+
+    width:
+        88%;
+
+    transform:
+        rotate(0deg);
+
+    animation-delay:
+        -.8s;
+}
+
+
+.ars-card-energy-vein.vein-three {
+
+    width:
+        76%;
+
+    transform:
+        rotate(7deg);
+
+    animation-delay:
+        -1.6s;
+}
+
+
+@keyframes arsGoldenVeinFlow {
+
+    0%,
+    100% {
+
+        opacity:
+            .25;
+
+        filter:
+            brightness(.75);
+    }
+
+    50% {
+
+        opacity:
+            1;
+
+        filter:
+            brightness(1.5);
+    }
+}
+
+
+/* =========================================================
+   06 — MOVING GOLDEN PULSE
+========================================================= */
+
+.ars-card-energy-pulse {
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    top:
+        50%;
+
+    width:
+        13px;
+
+    height:
+        4px;
+
+    transform:
+        translateY(-50%);
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+
+            #ffffff 0%,
+
+            var(--gold-hot) 22%,
+
+            var(--gold-bright) 42%,
+
+            var(--gold-main) 60%,
+
+            transparent 78%
+        );
+
+    box-shadow:
+
+        0 0 7px
+        #ffffff,
+
+        0 0 15px
+        var(--gold-bright),
+
+        0 0 28px
+        var(--gold-main),
+
+        0 0 48px
+        rgba(182,138,97,.65);
+
+    animation:
+        arsGoldenPulseTravel
+        var(--energy-speed)
+        linear
+        infinite;
+}
+
+
+@keyframes arsGoldenPulseTravel {
+
+    0% {
+
+        left:
+            0%;
+
+        opacity:
+            0;
+
+        transform:
+            translateY(-50%)
+            scale(.55);
+    }
+
+    8% {
+
+        opacity:
+            1;
+    }
+
+    45% {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(-50%)
+            scale(1);
+    }
+
+    85% {
+
+        opacity:
+            .95;
+    }
+
+    100% {
+
+        left:
+            100%;
+
+        opacity:
+            0;
+
+        transform:
+            translateY(-50%)
+            scale(1.25);
+    }
+}
+
+
+/* =========================================================
+   07 — CORE DESTINATION
+========================================================= */
+
+.ars-card-energy-destination {
+
+    position:
+        absolute;
+
+    right:
+        0;
+
+    top:
+        50%;
+
+    width:
+        14px;
+
+    height:
+        14px;
+
+    transform:
+        translate(50%, -50%);
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #fff7e5 0%,
+            var(--gold-bright) 18%,
+            var(--gold-main) 42%,
+            rgba(240,201,150,.28) 65%,
+            transparent 76%
+        );
+
+    box-shadow:
+
+        0 0 7px
+        #fff4dc,
+
+        0 0 16px
+        var(--gold-bright),
+
+        0 0 30px
+        var(--gold-main),
+
+        0 0 55px
+        rgba(182,138,97,.5);
+
+    animation:
+        arsGoldenDestination
+        3.8s ease-in-out
+        infinite;
+}
+
+
+@keyframes arsGoldenDestination {
+
+    0%,
+    100% {
+
+        opacity:
+            .55;
+
+        transform:
+            translate(50%, -50%)
+            scale(.72);
+    }
+
+    50% {
+
+        opacity:
+            1;
+
+        transform:
+            translate(50%, -50%)
+            scale(1.25);
+    }
+}
+
+
+/* =========================================================
+   DESTINATION GLOW
+========================================================= */
+
+.ars-card-energy-destination-glow {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,242,210,.30),
+            rgba(240,201,150,.16) 32%,
+            transparent 72%
+        );
+
+    filter:
+        blur(6px);
+
+    animation:
+        arsDestinationHalo
+        3.8s ease-in-out
+        infinite;
+}
+
+
+@keyframes arsDestinationHalo {
+
+    0%,
+    100% {
+
+        opacity:
+            .35;
+
+        transform:
+            translate(-50%, -50%)
+            scale(.75);
+    }
+
+    50% {
+
+        opacity:
+            .9;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.25);
+    }
+}
+
+
+/* =========================================================
+   08 — CARD GOLDEN AURA
+========================================================= */
+
+.ars-future-vision-card::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    bottom:
+        -20px;
+
+    width:
+        82%;
+
+    height:
+        28px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+
+            rgba(255,228,181,.34) 0%,
+
+            rgba(240,201,150,.25) 28%,
+
+            rgba(182,138,97,.10) 55%,
+
+            transparent 76%
+        );
+
+    filter:
+        blur(7px);
+
+    opacity:
+        .85;
+
+    pointer-events:
+        none;
+
+    animation:
+        arsCardGoldenAura
+        4s ease-in-out
+        infinite;
+}
+
+
+@keyframes arsCardGoldenAura {
+
+    0%,
+    100% {
+
+        opacity:
+            .38;
+
+        transform:
+            translateX(-50%)
+            scale(.82);
+    }
+
+    50% {
+
+        opacity:
+            1;
+
+        transform:
+            translateX(-50%)
+            scale(1.18);
+    }
+}
+
+
+/* =========================================================
+   09 — CARD GOLDEN ENERGY EDGE
+========================================================= */
+
+.ars-future-vision-card::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        7%;
+
+    right:
+        7%;
+
+    bottom:
+        5px;
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(182,138,97,.32),
+            var(--gold-bright),
+            rgba(182,138,97,.32),
+            transparent
+        );
+
+    box-shadow:
+
+        0 0 5px
+        rgba(255,228,181,.8),
+
+        0 0 14px
+        rgba(240,201,150,.45);
+
+    opacity:
+        .9;
+
+    animation:
+        arsCardEnergyEdge
+        3.2s ease-in-out
+        infinite;
+}
+
+
+@keyframes arsCardEnergyEdge {
+
+    0%,
+    100% {
+
+        opacity:
+            .35;
+
+        transform:
+            scaleX(.6);
+    }
+
+    50% {
+
+        opacity:
+            1;
+
+        transform:
+            scaleX(1);
+    }
+}
+
+
+/* =========================================================
+   10 — HOVER / SELECTION
+========================================================= */
+
+.ars-future-vision-card:hover {
+
+    z-index:
+        60;
+
+    filter:
+        brightness(1.12)
+        saturate(1.08);
+
+    transition:
+        filter .35s ease,
+        box-shadow .35s ease;
+}
+
+
+.ars-future-vision-card:hover::after {
+
+    opacity:
+        1;
+
+    filter:
+        blur(5px)
+        brightness(1.35);
+
+    transform:
+        translateX(-50%)
+        scale(1.28);
+}
+
+
+.ars-future-vision-card:hover::before {
+
+    opacity:
+        1;
+
+    filter:
+        brightness(1.4);
+
+    box-shadow:
+
+        0 0 7px
+        #fff0d0,
+
+        0 0 18px
+        rgba(240,201,150,.95),
+
+        0 0 32px
+        rgba(182,138,97,.65);
+}
+
+
+/* =========================================================
+   11 — ENERGY SYSTEM HOVER
+========================================================= */
+
+.ars-future-vision-card:hover
+~ .ars-card-energy-system {
+
+    filter:
+        brightness(1.45)
+        saturate(1.35);
+}
+
+
+.ars-future-vision-card:hover
+~ .ars-card-energy-system
+.ars-card-energy-origin-core {
+
+    transform:
+        translate(-50%, -50%)
+        scale(1.5);
+
+    box-shadow:
+
+        0 0 8px
+        #ffffff,
+
+        0 0 18px
+        var(--gold-bright),
+
+        0 0 35px
+        var(--gold-main),
+
+        0 0 65px
+        rgba(240,201,150,.9);
+}
+
+
+/* =========================================================
+   12 — MOBILE ENERGY SCALE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .ars-card-energy-origin-core {
+
+        width:
+            4px;
+
+        height:
+            4px;
+    }
+
+    .ars-card-energy-origin-halo {
+
+        width:
+            26px;
+
+        height:
+            26px;
+    }
+
+    .ars-card-energy-beam-core {
+
+        height:
+            1.5px;
+    }
+
+    .ars-card-energy-beam-glow {
+
+        height:
+            12px;
+
+        filter:
+            blur(5px);
+    }
+
+    .ars-card-energy-pulse {
+
+        width:
+            10px;
+
+        height:
+            3px;
+    }
+
+    .ars-future-vision-card::after {
+
+        width:
+            76%;
+
+        height:
+            22px;
+    }
+}
+
+
+/* =========================================================
+   13 — REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ars-card-energy-system *,
+    .ars-future-vision-card::before,
+    .ars-future-vision-card::after {
+
+        animation:
+            none !important;
+    }
+  }
+
+
+
+
+
+
 
 
 
