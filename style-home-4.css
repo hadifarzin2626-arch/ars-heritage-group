@@ -27235,38 +27235,6 @@ END
 }
 
 
-/* =========================================================
-   13 — CARD ACTIVE STATE PRESERVATION
-========================================================= */
-
-.ars-future-vision-card-left:hover,
-.ars-future-vision-card-left:focus-visible {
-
-    transform:
-        translateY(
-            calc(-1 * var(--future-card-height, 150px) - 12px)
-        );
-}
-
-
-.ars-future-vision-card-right:hover,
-.ars-future-vision-card-right:focus-visible {
-
-    transform:
-        translateY(
-            calc(-1 * var(--future-card-height, 150px) - 12px)
-        );
-}
-
-
-.ars-future-vision-card-bottom:hover,
-.ars-future-vision-card-bottom:focus-visible {
-
-    transform:
-        translateY(
-            calc(var(--future-card-height, 150px) - 12px)
-        );
-}
 
 
 /* =========================================================
@@ -27298,6 +27266,340 @@ END
              }
 
 
+
+
+
+/* =========================================================
+   ARS FUTURE VISION
+   PHASE 06.5 — CARD / ENERGY ALIGNMENT PATCH
+   =========================================================
+
+   PURPOSE:
+   • MOVE TOP CARDS ONE FULL CARD HEIGHT UP
+   • MOVE OPEN DOOR ONE FULL CARD HEIGHT DOWN
+   • MOVE THEIR GOLDEN ENERGY ORIGINS WITH THEM
+   • RECONNECT ALL THREE ROUTES DIRECTLY TO THE CORE
+   • KEEP GOLDEN INTENSITY FROM PHASE 06
+
+   NO CORE SIZE CHANGE
+   NO CARD SIZE CHANGE
+========================================================= */
+
+
+/* =========================================================
+   01 — CARD SEPARATION VARIABLE
+========================================================= */
+
+.ars-future-vision {
+
+    --future-card-separation:
+        clamp(135px, 11vw, 175px);
+}
+
+
+/* =========================================================
+   02 — TOP CARDS
+   ONE FULL CARD HEIGHT AWAY FROM CORE
+========================================================= */
+
+.ars-future-vision-card-left,
+.ars-future-vision-card-right {
+
+    margin-top:
+        calc(-1 * var(--future-card-separation));
+
+}
+
+
+/* =========================================================
+   03 — OPEN DOOR
+   ONE FULL CARD HEIGHT DOWN
+========================================================= */
+
+.ars-future-vision-card-bottom {
+
+    margin-top:
+        var(--future-card-separation);
+
+}
+
+
+/* =========================================================
+   04 — GOLDEN ROUTE FIELD
+========================================================= */
+
+.ars-energy-route-left,
+.ars-energy-route-right {
+
+    /*
+       The top routes must follow the NEW
+       vertical position of the cards.
+    */
+
+    top:
+        calc(
+            42% -
+            var(--future-card-separation)
+        );
+}
+
+
+.ars-energy-route-bottom {
+
+    /*
+       Open Door moved downward,
+       therefore its energy origin moves with it.
+    */
+
+    top:
+        calc(
+            61% +
+            var(--future-card-separation)
+        );
+}
+
+
+/* =========================================================
+   05 — EXTEND TOP ENERGY ROUTES
+   SO THEY ACTUALLY REACH THE CORE
+========================================================= */
+
+.ars-energy-route-left {
+
+    left:
+        31%;
+
+    width:
+        23%;
+
+    transform:
+        rotate(16deg);
+}
+
+
+.ars-energy-route-right {
+
+    right:
+        31%;
+
+    width:
+        23%;
+
+    transform:
+        rotate(-16deg);
+}
+
+
+/* =========================================================
+   06 — OPEN DOOR ROUTE
+========================================================= */
+
+.ars-energy-route-bottom {
+
+    left:
+        50%;
+
+    width:
+        100px;
+
+    height:
+        20%;
+
+    transform:
+        translateX(-50%);
+}
+
+
+/* =========================================================
+   07 — GOLDEN ROUTE VISIBILITY
+========================================================= */
+
+.ars-energy-route-line {
+
+    opacity:
+        1;
+
+    filter:
+        brightness(1.38)
+        saturate(1.38)
+        drop-shadow(
+            0 0 7px
+            rgba(255,218,160,.95)
+        )
+        drop-shadow(
+            0 0 18px
+            rgba(240,190,115,.82)
+        )
+        drop-shadow(
+            0 0 38px
+            rgba(210,155,80,.48)
+        );
+}
+
+
+/* =========================================================
+   08 — GOLDEN ORIGIN PORT
+========================================================= */
+
+.ars-energy-node-origin {
+
+    width:
+        11px;
+
+    height:
+        11px;
+
+    background:
+        #fff0c9;
+
+    box-shadow:
+
+        0 0 7px
+        #ffffff,
+
+        0 0 15px
+        #ffd99f,
+
+        0 0 30px
+        #f0bd70,
+
+        0 0 55px
+        rgba(220,160,80,.85);
+}
+
+
+/* =========================================================
+   09 — GOLDEN CORE RECEIVING PORT
+========================================================= */
+
+.ars-energy-node-core {
+
+    width:
+        10px;
+
+    height:
+        10px;
+
+    background:
+        #fff3d2;
+
+    box-shadow:
+
+        0 0 7px
+        #ffffff,
+
+        0 0 16px
+        #ffd99f,
+
+        0 0 32px
+        #f0bd70,
+
+        0 0 58px
+        rgba(220,160,80,.8);
+}
+
+
+/* =========================================================
+   10 — TOP ENERGY THREADS
+========================================================= */
+
+.ars-energy-route-left::before,
+.ars-energy-route-left::after,
+.ars-energy-route-right::before,
+.ars-energy-route-right::after {
+
+    opacity:
+        .9;
+
+    filter:
+        brightness(1.35)
+        saturate(1.35)
+        drop-shadow(
+            0 0 5px
+            rgba(255,215,155,.8)
+        );
+}
+
+
+/* =========================================================
+   11 — OPEN DOOR ENERGY THREADS
+========================================================= */
+
+.ars-energy-route-bottom::before,
+.ars-energy-route-bottom::after {
+
+    opacity:
+        .92;
+
+    filter:
+        brightness(1.38)
+        saturate(1.35)
+        drop-shadow(
+            0 0 6px
+            rgba(255,215,155,.82)
+        );
+}
+
+
+/* =========================================================
+   12 — KEEP CARDS VISUALLY ABOVE ENERGY
+========================================================= */
+
+.ars-future-vision-card {
+
+    z-index:
+        20;
+
+}
+
+
+/* =========================================================
+   13 — ENERGY STAYS BEHIND CARDS
+========================================================= */
+
+.ars-future-vision-connections {
+
+    z-index:
+        10;
+
+}
+
+
+/* =========================================================
+   14 — MOBILE PROPORTION
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .ars-future-vision {
+
+        --future-card-separation:
+            clamp(105px, 25vw, 135px);
+    }
+
+    .ars-energy-route-left,
+    .ars-energy-route-right {
+
+        width:
+            21%;
+    }
+
+}
+
+
+/* =========================================================
+   15 — DESKTOP PROPORTION
+========================================================= */
+
+@media (min-width: 701px) {
+
+    .ars-future-vision {
+
+        --future-card-separation:
+            clamp(145px, 11vw, 180px);
+    }
+
+}
 
 
 
