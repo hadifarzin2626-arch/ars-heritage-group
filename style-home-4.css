@@ -26834,7 +26834,468 @@ END
 
 
 
+/* =========================================================
+   ARS FUTURE VISION
+   PHASE 06 — PREMIUM GOLD INTENSITY + CARD SEPARATION
+   FINAL POSITION / LIGHT PATCH
+========================================================= */
 
+
+/* =========================================================
+   01 — GOLDEN COLOR BOOST
+   GOLD MUST COMPETE WITH THE BLUE CORE
+========================================================= */
+
+.ars-future-vision-connections {
+
+    --gold-core:
+        #ffd99f;
+
+    --gold-hot:
+        #fff6df;
+
+    --gold-mid:
+        #e7b875;
+
+    --gold-deep:
+        #b98143;
+}
+
+
+/* =========================================================
+   02 — GOLDEN ROUTE INTENSITY
+========================================================= */
+
+.ars-energy-route-line {
+
+    filter:
+        brightness(1.35)
+        saturate(1.35)
+        drop-shadow(
+            0 0 7px
+            rgba(255,215,155,.95)
+        )
+        drop-shadow(
+            0 0 18px
+            rgba(240,190,115,.75)
+        )
+        drop-shadow(
+            0 0 38px
+            rgba(210,155,80,.42)
+        );
+
+    opacity:
+        .96;
+}
+
+
+/* =========================================================
+   03 — GOLDEN SECONDARY VEINS BOOST
+========================================================= */
+
+.ars-energy-route::before,
+.ars-energy-route::after {
+
+    filter:
+        brightness(1.4)
+        saturate(1.35)
+        drop-shadow(
+            0 0 5px
+            rgba(255,220,165,.8)
+        );
+
+    opacity:
+        .82;
+}
+
+
+/* =========================================================
+   04 — GOLDEN ENERGY PULSE BOOST
+========================================================= */
+
+.ars-energy-pulse {
+
+    background:
+        radial-gradient(
+            ellipse,
+
+            #ffffff 0%,
+
+            #fff7e6 15%,
+
+            #ffd99f 30%,
+
+            #f0bd70 48%,
+
+            rgba(216,165,95,.62) 68%,
+
+            transparent 100%
+        );
+
+    box-shadow:
+
+        0 0 7px
+        #fff9ed,
+
+        0 0 17px
+        #ffd99f,
+
+        0 0 32px
+        #f0bd70,
+
+        0 0 58px
+        rgba(220,160,80,.72);
+
+    filter:
+        brightness(1.3)
+        saturate(1.4);
+
+    opacity:
+        1;
+}
+
+
+/* =========================================================
+   05 — GOLDEN ENERGY PORT BOOST
+========================================================= */
+
+.ars-energy-node {
+
+    background:
+        #fff0c9;
+
+    border-color:
+        #fff8e8;
+
+    box-shadow:
+
+        0 0 6px
+        #ffffff,
+
+        0 0 14px
+        #ffd99f,
+
+        0 0 28px
+        #f0bd70,
+
+        0 0 52px
+        rgba(220,160,80,.8);
+
+    filter:
+        brightness(1.3)
+        saturate(1.35);
+}
+
+
+/* =========================================================
+   06 — CARD GOLDEN SOURCE
+   STRONGER GOLD UNDER EACH CARD
+========================================================= */
+
+.ars-future-vision-card::before {
+
+    background:
+        radial-gradient(
+            ellipse,
+
+            rgba(255,239,204,.68) 0%,
+
+            rgba(255,214,150,.48) 18%,
+
+            rgba(240,190,115,.30) 38%,
+
+            rgba(210,155,80,.14) 58%,
+
+            transparent 82%
+        );
+
+    filter:
+        blur(10px)
+        brightness(1.3)
+        saturate(1.35);
+
+    opacity:
+        .92;
+}
+
+
+/* =========================================================
+   07 — CARD INTERNAL GOLDEN VEIN
+========================================================= */
+
+.ars-future-vision-card::after {
+
+    background:
+        linear-gradient(
+            90deg,
+
+            transparent,
+
+            rgba(190,130,60,.38),
+
+            rgba(240,190,115,.95),
+
+            #fff1d0 50%,
+
+            rgba(240,190,115,.95),
+
+            rgba(190,130,60,.38),
+
+            transparent
+        );
+
+    box-shadow:
+
+        0 0 6px
+        rgba(255,239,205,.95),
+
+        0 0 15px
+        rgba(240,190,115,.8),
+
+        0 0 30px
+        rgba(210,155,80,.45);
+
+    filter:
+        brightness(1.25)
+        saturate(1.35);
+
+    opacity:
+        .9;
+}
+
+
+/* =========================================================
+   08 — CARD STATUS LIGHT
+========================================================= */
+
+.ars-future-vision-card-status {
+
+    background:
+        #ffe7b8;
+
+    box-shadow:
+
+        0 0 6px
+        #fff8e8,
+
+        0 0 14px
+        #ffd99f,
+
+        0 0 28px
+        #f0bd70,
+
+        0 0 46px
+        rgba(220,160,80,.72);
+
+    filter:
+        brightness(1.35)
+        saturate(1.4);
+}
+
+
+/* =========================================================
+   09 — GOLDEN FIELD BOOST
+========================================================= */
+
+.ars-golden-field {
+
+    background:
+        radial-gradient(
+            circle,
+
+            transparent 32%,
+
+            rgba(255,220,165,.055) 44%,
+
+            rgba(240,190,115,.105) 56%,
+
+            rgba(210,155,80,.065) 67%,
+
+            transparent 80%
+        );
+
+    filter:
+        blur(2px)
+        brightness(1.25)
+        saturate(1.3);
+
+    opacity:
+        .88;
+}
+
+
+/* =========================================================
+   10 — GOLDEN ORBIT BOOST
+========================================================= */
+
+.ars-golden-field-ring.ring-one {
+
+    border-color:
+        rgba(255,215,155,.48);
+
+    box-shadow:
+        0 0 10px
+        rgba(255,215,155,.28);
+}
+
+
+.ars-golden-field-ring.ring-two {
+
+    border-color:
+        rgba(240,190,115,.38);
+
+    box-shadow:
+        0 0 13px
+        rgba(240,190,115,.22);
+}
+
+
+.ars-golden-field-ring.ring-three {
+
+    border-color:
+        rgba(210,155,80,.25);
+
+    box-shadow:
+        0 0 14px
+        rgba(210,155,80,.16);
+}
+
+
+/* =========================================================
+   11 — GOLDEN CORE RECEPTION
+========================================================= */
+
+.ars-future-vision-core-body::after {
+
+    background:
+        radial-gradient(
+            circle,
+
+            rgba(255,235,200,.28) 0%,
+
+            rgba(255,215,155,.17) 24%,
+
+            rgba(240,190,115,.09) 44%,
+
+            transparent 72%
+        );
+
+    filter:
+        blur(10px)
+        brightness(1.25)
+        saturate(1.3);
+
+    opacity:
+        .62;
+}
+
+
+/* =========================================================
+   12 — CARD SEPARATION
+   ONE FULL CARD HEIGHT AWAY FROM CORE
+========================================================= */
+
+/*
+   IMPORTANT:
+   These are intentionally transform-only.
+   Existing card geometry remains untouched.
+*/
+
+
+/* FUTURE LAB */
+
+.ars-future-vision-card-left {
+
+    transform:
+        translateY(
+            calc(-1 * var(--future-card-height, 150px))
+        );
+}
+
+
+/* VISION */
+
+.ars-future-vision-card-right {
+
+    transform:
+        translateY(
+            calc(-1 * var(--future-card-height, 150px))
+        );
+}
+
+
+/* OPEN DOOR */
+
+.ars-future-vision-card-bottom {
+
+    transform:
+        translateY(
+            var(--future-card-height, 150px)
+        );
+}
+
+
+/* =========================================================
+   13 — CARD ACTIVE STATE PRESERVATION
+========================================================= */
+
+.ars-future-vision-card-left:hover,
+.ars-future-vision-card-left:focus-visible {
+
+    transform:
+        translateY(
+            calc(-1 * var(--future-card-height, 150px) - 12px)
+        );
+}
+
+
+.ars-future-vision-card-right:hover,
+.ars-future-vision-card-right:focus-visible {
+
+    transform:
+        translateY(
+            calc(-1 * var(--future-card-height, 150px) - 12px)
+        );
+}
+
+
+.ars-future-vision-card-bottom:hover,
+.ars-future-vision-card-bottom:focus-visible {
+
+    transform:
+        translateY(
+            calc(var(--future-card-height, 150px) - 12px)
+        );
+}
+
+
+/* =========================================================
+   14 — MOBILE
+   KEEP THE SAME RELATIVE SEPARATION
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .ars-future-vision {
+
+        --future-card-height:
+            clamp(105px, 25vw, 135px);
+    }
+}
+
+
+/* =========================================================
+   15 — DESKTOP
+========================================================= */
+
+@media (min-width: 701px) {
+
+    .ars-future-vision {
+
+        --future-card-height:
+            clamp(135px, 11vw, 175px);
+    }
+             }
 
 
 
