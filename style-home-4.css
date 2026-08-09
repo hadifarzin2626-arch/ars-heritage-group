@@ -23433,7 +23433,7 @@ END
 
     margin-left:
         calc(
-            -3.065 *
+            -3.09 *
             clamp(72px, 6.7vw, 105px)
         );
 
@@ -23448,7 +23448,7 @@ END
 
     margin-left:
         calc(
-            -3.45 *
+            -3.4 *
             clamp(72px, 6.7vw, 105px)
         );
 
@@ -25175,4 +25175,1200 @@ END
 }
 
 
+
+
+
+
+/* =========================================================
+   ARS FUTURE VISION
+   PHASE 06 — GOLDEN INTELLIGENCE ENERGY SYSTEM
+   =========================================================
+
+   BLUE  = FUTURE CORE / SYSTEM FIELD
+   GOLD  = INTELLIGENCE TRANSFER
+
+   HTML TARGET:
+   .ars-energy-route
+   .ars-energy-route-line
+   .ars-energy-pulse
+   .ars-energy-node
+   .ars-golden-field
+   .ars-golden-field-ring
+
+   NO BASE GEOMETRY CHANGE
+========================================================= */
+
+
+/* =========================================================
+   01 — ENERGY FIELD
+========================================================= */
+
+.ars-future-vision-connections {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    pointer-events:
+        none;
+
+    z-index:
+        8;
+}
+
+
+/* =========================================================
+   02 — ENERGY ROUTES
+========================================================= */
+
+.ars-energy-route {
+
+    position:
+        absolute;
+
+    pointer-events:
+        none;
+
+    overflow:
+        visible;
+
+    z-index:
+        9;
+}
+
+
+/* =========================================================
+   LEFT ROUTE
+   FUTURE LAB → CORE
+========================================================= */
+
+.ars-energy-route-left {
+
+    left:
+        23%;
+
+    top:
+        34%;
+
+    width:
+        29%;
+
+    height:
+        110px;
+
+    transform:
+        rotate(11deg);
+}
+
+
+/* =========================================================
+   RIGHT ROUTE
+   VISION → CORE
+========================================================= */
+
+.ars-energy-route-right {
+
+    right:
+        23%;
+
+    top:
+        34%;
+
+    width:
+        29%;
+
+    height:
+        110px;
+
+    transform:
+        rotate(-11deg);
+}
+
+
+/* =========================================================
+   BOTTOM ROUTE
+   OPEN DOOR → CORE
+========================================================= */
+
+.ars-energy-route-bottom {
+
+    left:
+        50%;
+
+    top:
+        58%;
+
+    width:
+        110px;
+
+    height:
+        25%;
+
+    transform:
+        translateX(-50%);
+}
+
+
+/* =========================================================
+   03 — GOLDEN ENERGY LINES
+========================================================= */
+
+.ars-energy-route-line {
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    top:
+        50%;
+
+    width:
+        100%;
+
+    height:
+        2px;
+
+    transform:
+        translateY(-50%);
+
+    border-radius:
+        999px;
+
+    background:
+        linear-gradient(
+            90deg,
+
+            transparent 0%,
+
+            rgba(182,138,97,.08) 8%,
+
+            rgba(182,138,97,.28) 22%,
+
+            rgba(216,180,135,.62) 38%,
+
+            rgba(240,201,150,.95) 50%,
+
+            rgba(216,180,135,.62) 62%,
+
+            rgba(182,138,97,.28) 78%,
+
+            transparent 100%
+        );
+
+    box-shadow:
+
+        0 0 4px
+        rgba(240,201,150,.45),
+
+        0 0 12px
+        rgba(216,180,135,.28),
+
+        0 0 28px
+        rgba(182,138,97,.14);
+
+    opacity:
+        .72;
+
+    animation:
+        arsGoldenRouteBreath
+        4.8s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes arsGoldenRouteBreath {
+
+    0%,
+    100% {
+
+        opacity:
+            .38;
+
+        filter:
+            brightness(.72);
+    }
+
+    50% {
+
+        opacity:
+            .92;
+
+        filter:
+            brightness(1.35);
+    }
+}
+
+
+/* =========================================================
+   BOTTOM LINE
+========================================================= */
+
+.ars-energy-route-bottom
+.ars-energy-route-line {
+
+    left:
+        50%;
+
+    top:
+        0;
+
+    width:
+        2px;
+
+    height:
+        100%;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            180deg,
+
+            transparent 0%,
+
+            rgba(182,138,97,.18) 18%,
+
+            rgba(216,180,135,.55) 38%,
+
+            rgba(240,201,150,.95) 50%,
+
+            rgba(216,180,135,.55) 62%,
+
+            rgba(182,138,97,.18) 82%,
+
+            transparent 100%
+        );
+}
+
+
+/* =========================================================
+   04 — GOLDEN ENERGY PULSE
+========================================================= */
+
+.ars-energy-pulse {
+
+    position:
+        absolute;
+
+    left:
+        -12px;
+
+    top:
+        50%;
+
+    width:
+        28px;
+
+    height:
+        5px;
+
+    transform:
+        translateY(-50%);
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+
+            #fff9ed 0%,
+
+            #f0c996 20%,
+
+            #d8b487 44%,
+
+            rgba(182,138,97,.18) 70%,
+
+            transparent 100%
+        );
+
+    box-shadow:
+
+        0 0 7px
+        #fff1d5,
+
+        0 0 16px
+        #f0c996,
+
+        0 0 34px
+        rgba(240,201,150,.75),
+
+        0 0 60px
+        rgba(182,138,97,.38);
+
+    opacity:
+        0;
+
+    animation:
+        arsGoldenPulseTravel
+        4.2s
+        linear
+        infinite;
+}
+
+
+@keyframes arsGoldenPulseTravel {
+
+    0% {
+
+        left:
+            -12px;
+
+        opacity:
+            0;
+
+        transform:
+            translateY(-50%)
+            scale(.55);
+    }
+
+    8% {
+
+        opacity:
+            1;
+    }
+
+    50% {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(-50%)
+            scale(1);
+    }
+
+    88% {
+
+        opacity:
+            .9;
+    }
+
+    100% {
+
+        left:
+            calc(100% + 12px);
+
+        opacity:
+            0;
+
+        transform:
+            translateY(-50%)
+            scale(1.25);
+    }
+}
+
+
+/* =========================================================
+   BOTTOM PULSE
+========================================================= */
+
+.ars-energy-route-bottom
+.ars-energy-pulse {
+
+    left:
+        50%;
+
+    top:
+        -12px;
+
+    transform:
+        translateX(-50%);
+
+    animation:
+        arsGoldenPulseVertical
+        4.5s
+        linear
+        infinite;
+}
+
+
+@keyframes arsGoldenPulseVertical {
+
+    0% {
+
+        top:
+            -12px;
+
+        opacity:
+            0;
+
+        transform:
+            translateX(-50%)
+            scale(.55);
+    }
+
+    8% {
+
+        opacity:
+            1;
+    }
+
+    50% {
+
+        opacity:
+            1;
+
+        transform:
+            translateX(-50%)
+            scale(1);
+    }
+
+    88% {
+
+        opacity:
+            .9;
+    }
+
+    100% {
+
+        top:
+            calc(100% + 12px);
+
+        opacity:
+            0;
+
+        transform:
+            translateX(-50%)
+            scale(1.25);
+    }
+}
+
+
+/* =========================================================
+   05 — GOLDEN NODES
+========================================================= */
+
+.ars-energy-node {
+
+    position:
+        absolute;
+
+    width:
+        7px;
+
+    height:
+        7px;
+
+    border-radius:
+        50%;
+
+    background:
+        #f0c996;
+
+    box-shadow:
+
+        0 0 5px
+        #fff4df,
+
+        0 0 12px
+        #f0c996,
+
+        0 0 25px
+        rgba(240,201,150,.75),
+
+        0 0 42px
+        rgba(182,138,97,.38);
+
+    animation:
+        arsGoldenNodePulse
+        2.8s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes arsGoldenNodePulse {
+
+    0%,
+    100% {
+
+        opacity:
+            .45;
+
+        transform:
+            scale(.72);
+    }
+
+    50% {
+
+        opacity:
+            1;
+
+        transform:
+            scale(1.28);
+    }
+}
+
+
+/* =========================================================
+   ROUTE ORIGIN
+========================================================= */
+
+.ars-energy-node-origin {
+
+    left:
+        0;
+
+    top:
+        50%;
+
+    transform:
+        translate(-50%, -50%);
+}
+
+
+/* =========================================================
+   ROUTE CORE NODE
+========================================================= */
+
+.ars-energy-node-core {
+
+    right:
+        0;
+
+    top:
+        50%;
+
+    transform:
+        translate(50%, -50%);
+}
+
+
+/* =========================================================
+   BOTTOM NODES
+========================================================= */
+
+.ars-energy-route-bottom
+.ars-energy-node-origin {
+
+    left:
+        50%;
+
+    top:
+        0;
+
+    transform:
+        translate(-50%, -50%);
+}
+
+
+.ars-energy-route-bottom
+.ars-energy-node-core {
+
+    right:
+        auto;
+
+    left:
+        50%;
+
+    top:
+        auto;
+
+    bottom:
+        0;
+
+    transform:
+        translate(-50%, 50%);
+}
+
+
+/* =========================================================
+   06 — GOLDEN FIELD
+========================================================= */
+
+.ars-golden-field {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        min(58vw, 560px);
+
+    height:
+        min(58vw, 560px);
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius:
+        50%;
+
+    pointer-events:
+        none;
+
+    z-index:
+        6;
+
+    opacity:
+        .55;
+
+    animation:
+        arsGoldenFieldPulse
+        7s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes arsGoldenFieldPulse {
+
+    0%,
+    100% {
+
+        opacity:
+            .34;
+
+        transform:
+            translate(-50%, -50%)
+            scale(.94);
+    }
+
+    50% {
+
+        opacity:
+            .72;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.04);
+    }
+}
+
+
+/* =========================================================
+   07 — GOLDEN FIELD RINGS
+========================================================= */
+
+.ars-golden-field-ring {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    border-radius:
+        50%;
+
+    border:
+        1px solid
+        rgba(216,180,135,.22);
+
+    box-shadow:
+        0 0 8px
+        rgba(240,201,150,.12);
+
+    transform:
+        translate(-50%, -50%);
+
+    animation:
+        arsGoldenRingRotate
+        18s
+        linear
+        infinite;
+}
+
+
+.ring-one {
+
+    width:
+        72%;
+
+    height:
+        36%;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(18deg);
+}
+
+
+.ring-two {
+
+    width:
+        88%;
+
+    height:
+        44%;
+
+    border-color:
+        rgba(240,201,150,.16);
+
+    animation-duration:
+        24s;
+
+    animation-direction:
+        reverse;
+}
+
+
+.ring-three {
+
+    width:
+        104%;
+
+    height:
+        52%;
+
+    border-color:
+        rgba(182,138,97,.12);
+
+    animation-duration:
+        31s;
+}
+
+
+@keyframes arsGoldenRingRotate {
+
+    from {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   08 — GOLDEN ENERGY INSIDE CARDS
+========================================================= */
+
+.ars-future-vision-card {
+
+    overflow:
+        visible;
+}
+
+
+/* INNER ENERGY VEIN */
+
+.ars-future-vision-card::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        9%;
+
+    right:
+        9%;
+
+    bottom:
+        8px;
+
+    height:
+        1px;
+
+    border-radius:
+        999px;
+
+    background:
+        linear-gradient(
+            90deg,
+
+            transparent,
+
+            rgba(182,138,97,.18),
+
+            rgba(240,201,150,.95),
+
+            rgba(216,180,135,.32),
+
+            transparent
+        );
+
+    box-shadow:
+
+        0 0 5px
+        rgba(240,201,150,.55),
+
+        0 0 14px
+        rgba(182,138,97,.28);
+
+    opacity:
+        .62;
+
+    animation:
+        arsCardGoldenVein
+        3.6s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes arsCardGoldenVein {
+
+    0%,
+    100% {
+
+        opacity:
+            .24;
+
+        transform:
+            scaleX(.48);
+    }
+
+    50% {
+
+        opacity:
+            .92;
+
+        transform:
+            scaleX(1);
+    }
+}
+
+
+/* =========================================================
+   09 — GOLDEN AURA UNDER CARDS
+========================================================= */
+
+.ars-future-vision-card::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    bottom:
+        -24px;
+
+    width:
+        72%;
+
+    height:
+        32px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+
+            rgba(240,201,150,.27) 0%,
+
+            rgba(216,180,135,.15) 28%,
+
+            rgba(182,138,97,.06) 54%,
+
+            transparent 78%
+        );
+
+    filter:
+        blur(8px);
+
+    opacity:
+        .62;
+
+    animation:
+        arsCardGoldenAura
+        4.5s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes arsCardGoldenAura {
+
+    0%,
+    100% {
+
+        opacity:
+            .35;
+
+        transform:
+            translateX(-50%)
+            scale(.86);
+    }
+
+    50% {
+
+        opacity:
+            .82;
+
+        transform:
+            translateX(-50%)
+            scale(1.10);
+    }
+}
+
+
+/* =========================================================
+   10 — CARD ACTIVE / HOVER
+   GOLDEN ENERGY ×2
+========================================================= */
+
+.ars-future-vision-card:hover::after,
+.ars-future-vision-card:focus-visible::after {
+
+    opacity:
+        1;
+
+    transform:
+        translateX(-50%)
+        scale(1.55);
+
+    filter:
+        blur(10px);
+
+    background:
+        radial-gradient(
+            ellipse,
+
+            rgba(255,220,170,.55) 0%,
+
+            rgba(240,201,150,.28) 28%,
+
+            rgba(182,138,97,.12) 54%,
+
+            transparent 78%
+        );
+}
+
+
+.ars-future-vision-card:hover::before,
+.ars-future-vision-card:focus-visible::before {
+
+    opacity:
+        1;
+
+    box-shadow:
+
+        0 0 7px
+        rgba(255,244,220,.85),
+
+        0 0 18px
+        rgba(240,201,150,.8),
+
+        0 0 32px
+        rgba(182,138,97,.38);
+}
+
+
+/* =========================================================
+   11 — CARD LIFT
+========================================================= */
+
+.ars-future-vision-card {
+
+    transition:
+        transform
+        .65s
+        cubic-bezier(.2,.8,.2,1);
+}
+
+
+.ars-future-vision-card:hover,
+.ars-future-vision-card:focus-visible {
+
+    transform:
+        translateY(-12px);
+}
+
+
+/* =========================================================
+   12 — GOLDEN CORE RECEIVER
+========================================================= */
+
+.ars-future-vision-core-body::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        10%;
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+
+            rgba(240,201,150,.20) 0%,
+
+            rgba(216,180,135,.08) 30%,
+
+            transparent 70%
+        );
+
+    filter:
+        blur(10px);
+
+    opacity:
+        .38;
+
+    pointer-events:
+        none;
+
+    animation:
+        arsGoldenCoreReceive
+        4.2s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes arsGoldenCoreReceive {
+
+    0%,
+    100% {
+
+        opacity:
+            .22;
+
+        transform:
+            scale(.86);
+    }
+
+    50% {
+
+        opacity:
+            .78;
+
+        transform:
+            scale(1.10);
+    }
+}
+
+
+/* =========================================================
+   13 — CARD STATUS ENERGY
+========================================================= */
+
+.ars-future-vision-card-status {
+
+    box-shadow:
+
+        0 0 5px
+        #f0c996,
+
+        0 0 12px
+        rgba(240,201,150,.7);
+
+    animation:
+        arsGoldenStatus
+        2.4s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes arsGoldenStatus {
+
+    0%,
+    100% {
+
+        opacity:
+            .38;
+    }
+
+    50% {
+
+        opacity:
+            1;
+    }
+}
+
+
+/* =========================================================
+   14 — MOBILE TOUCH FEEDBACK
+========================================================= */
+
+@media (hover: none) {
+
+    .ars-future-vision-card:active {
+
+        transform:
+            translateY(-10px)
+            scale(1.015);
+    }
+
+    .ars-future-vision-card:active::after {
+
+        opacity:
+            1;
+
+        transform:
+            translateX(-50%)
+            scale(1.5);
+    }
+
+    .ars-future-vision-card:active::before {
+
+        opacity:
+            1;
+    }
+}
+
+
+/* =========================================================
+   15 — REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ars-energy-route-line,
+    .ars-energy-pulse,
+    .ars-energy-node,
+    .ars-golden-field,
+    .ars-golden-field-ring,
+    .ars-future-vision-card::before,
+    .ars-future-vision-card::after,
+    .ars-future-vision-core-body::after {
+
+        animation:
+            none !important;
+    }
+
+    .ars-future-vision-card {
+
+        transition:
+            none !important;
+    }
+  }
 
