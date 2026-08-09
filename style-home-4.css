@@ -26892,28 +26892,6 @@ END
 ========================================================= */
 
 
-/* =========================================================
-   UPPER LEFT → ROTATE 90° DOWN
-========================================================= */
-
-.ars-card-energy-left
-.ars-card-energy-beam {
-
-    transform:
-        rotate(90deg) !important;
-}
-
-
-/* =========================================================
-   UPPER RIGHT → ROTATE 90° DOWN
-========================================================= */
-
-.ars-card-energy-right
-.ars-card-energy-beam {
-
-    transform:
-        rotate(90deg) !important;
-}
 
 
 /* =========================================================
@@ -26927,5 +26905,42 @@ END
         rotate(-90deg) !important;
 }
 
+/* =========================================================
+   PHASE 06 — UPPER CARD ENERGY DIRECTION
+   FUTURE LAB → CORE = 45°
+   VISION → CORE = 125°
+   OPEN DOOR = LOCKED
+========================================================= */
 
+
+/* =========================================================
+   FUTURE LAB
+   45° TOWARD CORE
+========================================================= */
+
+.ars-card-energy-left
+.ars-card-energy-beam {
+
+    transform:
+        rotate(45deg) !important;
+
+    transform-origin:
+        left center !important;
+}
+
+
+/* =========================================================
+   VISION
+   125° TOWARD CORE
+========================================================= */
+
+.ars-card-energy-right
+.ars-card-energy-beam {
+
+    transform:
+        rotate(125deg) !important;
+
+    transform-origin:
+        left center !important;
+}
 
