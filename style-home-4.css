@@ -25174,59 +25174,28 @@ END
         calc(32% - 36.7px) !important;
 }
 
-
-
 /* =========================================================
    ARS FUTURE VISION
-   CARD POSITION PATCH — PHASE 06 PREP
-   MOVE EACH CARD BY EXACTLY ONE CARD HEIGHT
-========================================================= */
-
-.ars-future-vision {
-
-    --ars-card-height:
-        clamp(150px, 11vw, 180px);
-}
-
-
-/* =========================================================
-   FUTURE LAB — ONE CARD HEIGHT UP
+   CARD POSITION TEST — DEFINITIVE
 ========================================================= */
 
 .ars-future-vision-card-left {
-
-    transform:
-        translateY(
-            calc(-1 * var(--ars-card-height))
-        );
+    top: calc(
+        var(--future-card-top-left, 0px)
+        - var(--future-card-move, 160px)
+    ) !important;
 }
-
-
-/* =========================================================
-   VISION — ONE CARD HEIGHT UP
-========================================================= */
 
 .ars-future-vision-card-right {
-
-    transform:
-        translateY(
-            calc(-1 * var(--ars-card-height))
-        );
+    top: calc(
+        var(--future-card-top-right, 0px)
+        - var(--future-card-move, 160px)
+    ) !important;
 }
-
-
-/* =========================================================
-   OPEN DOOR — ONE CARD HEIGHT DOWN
-========================================================= */
 
 .ars-future-vision-card-bottom {
-
-    transform:
-        translateY(
-            var(--ars-card-height)
-        );
+    top: calc(
+        var(--future-card-top-bottom, 0px)
+        + var(--future-card-move, 160px)
+    ) !important;
 }
-
-
-
-
