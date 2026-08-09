@@ -25208,422 +25208,237 @@ END
 }
 
 
-/* =========================================================
-   ARS FUTURE VISION
-   PHASE 06 — SIMPLE PREMIUM GOLDEN ENERGY
-
-   BLUE = CORE
-   GOLD = INTELLIGENCE ENERGY
-
-   IMPORTANT:
-   THIS CSS DOES NOT POSITION CARDS.
-   THIS CSS DOES NOT RESIZE CARDS.
-   THIS CSS DOES NOT MOVE THE CORE.
-   THIS CSS DOES NOT CREATE ANY EXTRA CARD.
-========================================================= */
-
 
 /* =========================================================
-   01 — ENERGY CONTAINER
+   ARS PHASE 06 — FUTURE LAB ENERGY
+   STEP 01 — CARD ENERGY ONLY
+
+   LOCKED:
+   NO CARD POSITION
+   NO CARD SIZE
+   NO CORE POSITION
+   NO OTHER CARD
 ========================================================= */
 
-.ars-phase06-energy {
+.ars-future-vision-card-left {
 
-    position:
-        absolute;
+    position: relative;
 
-    inset:
-        0;
+    overflow: visible;
 
-    width:
-        100%;
+    /* GOLDEN CARD PRESENCE */
+    box-shadow:
 
-    height:
-        100%;
+        0 0 0 1px
+        rgba(232, 189, 124, .16),
 
-    pointer-events:
-        none;
+        0 0 12px
+        rgba(232, 189, 124, .12),
 
-    z-index:
-        12;
+        0 8px 24px
+        rgba(0, 0, 0, .22);
+
 }
 
 
 /* =========================================================
-   02 — SVG FIELD
+   GOLDEN LINE INSIDE CARD
 ========================================================= */
 
-.ars-phase06-energy-svg {
+.ars-future-vision-card-left::before {
 
-    position:
-        absolute;
+    content: "";
 
-    inset:
-        0;
+    position: absolute;
 
-    width:
-        100%;
+    left: 9%;
+    right: 9%;
 
-    height:
-        100%;
+    bottom: 9px;
 
-    overflow:
-        visible;
+    height: 2px;
 
-    pointer-events:
-        none;
-}
+    border-radius: 999px;
 
+    background:
 
-/* =========================================================
-   03 — GOLDEN ENERGY GLOW
-========================================================= */
+        linear-gradient(
+            90deg,
 
-.ars-energy-route-glow {
+            transparent 0%,
 
-    fill:
-        none;
+            rgba(184, 135, 72, .18) 12%,
 
-    stroke:
-        rgba(255, 211, 145, .72);
+            rgba(224, 175, 103, .72) 32%,
 
-    stroke-width:
-        10;
+            #ffe2a8 50%,
 
-    stroke-linecap:
-        round;
+            rgba(224, 175, 103, .72) 68%,
 
-    stroke-linejoin:
-        round;
+            rgba(184, 135, 72, .18) 88%,
 
-    opacity:
-        .42;
-
-    filter:
-        blur(7px);
-}
-
-
-/* =========================================================
-   04 — GOLDEN MAIN BEAM
-========================================================= */
-
-.ars-energy-route-main {
-
-    fill:
-        none;
-
-    stroke:
-        #e8bd7c;
-
-    stroke-width:
-        2.2;
-
-    stroke-linecap:
-        round;
-
-    stroke-linejoin:
-        round;
-
-    opacity:
-        .88;
-
-    filter:
-        drop-shadow(
-            0 0 4px
-            rgba(255, 210, 145, .9)
-        )
-        drop-shadow(
-            0 0 11px
-            rgba(216, 170, 105, .55)
+            transparent 100%
         );
+
+    box-shadow:
+
+        0 0 4px
+        rgba(255, 220, 160, .75),
+
+        0 0 10px
+        rgba(224, 175, 103, .48),
+
+        0 0 20px
+        rgba(184, 135, 72, .24);
+
+    opacity: .88;
+
+    animation:
+        arsFutureLabCardLine
+        3.8s
+        ease-in-out
+        infinite;
+
 }
 
 
 /* =========================================================
-   05 — MOVING GOLDEN ENERGY PULSE
+   GOLDEN VEIN / ENERGY THREADS
 ========================================================= */
 
-.ars-energy-route-pulse {
+.ars-future-vision-card-left::after {
 
-    fill:
-        none;
+    content: "";
 
-    stroke:
-        #fff1d2;
+    position: absolute;
 
-    stroke-width:
-        4;
+    left: 15%;
 
-    stroke-linecap:
-        round;
+    bottom: 12px;
 
-    stroke-dasharray:
-        35 965;
+    width: 70%;
 
-    stroke-dashoffset:
-        0;
+    height: 24px;
 
-    opacity:
-        .95;
+    pointer-events: none;
+
+    background:
+
+        linear-gradient(
+            118deg,
+            transparent 0%,
+            transparent 25%,
+            rgba(255, 218, 155, .72) 27%,
+            transparent 30%,
+            transparent 48%,
+            rgba(240, 195, 125, .60) 50%,
+            transparent 53%,
+            transparent 70%,
+            rgba(255, 218, 155, .52) 72%,
+            transparent 75%
+        );
 
     filter:
         drop-shadow(
             0 0 5px
-            #fff0cf
-        )
-        drop-shadow(
-            0 0 14px
-            rgba(240, 195, 125, .95)
-        )
-        drop-shadow(
-            0 0 25px
-            rgba(210, 160, 90, .65)
+            rgba(240, 195, 125, .65)
         );
 
-    animation:
-        arsPhase06EnergyFlow
-        3.8s
-        linear
-        infinite;
-}
-
-
-@keyframes arsPhase06EnergyFlow {
-
-    0% {
-
-        stroke-dashoffset:
-            1000;
-
-        opacity:
-            0;
-    }
-
-    8% {
-
-        opacity:
-            1;
-    }
-
-    82% {
-
-        opacity:
-            1;
-    }
-
-    100% {
-
-        stroke-dashoffset:
-            0;
-
-        opacity:
-            0;
-    }
-}
-
-
-/* =========================================================
-   06 — GOLDEN LIGHT UNDER FUTURE LAB
-========================================================= */
-
-.ars-phase06-card-light {
-
-    position:
-        absolute;
-
-    width:
-        210px;
-
-    height:
-        32px;
-
-    border-radius:
-        50%;
-
-    background:
-        radial-gradient(
-            ellipse,
-
-            rgba(255, 218, 160, .55)
-            0%,
-
-            rgba(240, 190, 120, .30)
-            28%,
-
-            rgba(210, 160, 90, .14)
-            52%,
-
-            transparent 76%
-        );
-
-    filter:
-        blur(8px);
-
-    opacity:
-        .78;
+    opacity: .72;
 
     animation:
-        arsPhase06CardGlow
-        4.5s
+        arsFutureLabVeins
+        4.6s
         ease-in-out
         infinite;
+
 }
 
 
 /* =========================================================
-   07 — CARD LIGHT POSITIONS
+   UNDER-CARD GOLDEN AURA
 ========================================================= */
 
-.ars-phase06-card-light.light-left {
+.ars-future-vision-card-left {
 
-    left:
-        13%;
+    isolation: isolate;
 
-    top:
-        34%;
-
-    transform:
-        translateX(-50%);
 }
 
 
-.ars-phase06-card-light.light-right {
+.ars-future-vision-card-left > * {
 
-    right:
-        13%;
+    position: relative;
 
-    top:
-        34%;
+    z-index: 2;
 
-    transform:
-        translateX(50%);
-}
-
-
-.ars-phase06-card-light.light-bottom {
-
-    left:
-        50%;
-
-    top:
-        72%;
-
-    transform:
-        translateX(-50%);
 }
 
 
 /* =========================================================
-   08 — CARD LIGHT BREATHING
+   UNDER-CARD AURA
+   SEPARATE ELEMENT THROUGH BOX-SHADOW
 ========================================================= */
 
-@keyframes arsPhase06CardGlow {
+.ars-future-vision-card-left {
+
+    filter:
+        drop-shadow(
+            0 10px 13px
+            rgba(202, 150, 82, .10)
+        );
+}
+
+
+/* =========================================================
+   BREATHING CARD LINE
+========================================================= */
+
+@keyframes arsFutureLabCardLine {
 
     0%,
     100% {
 
-        opacity:
-            .40;
+        opacity: .40;
 
         transform:
-            translateX(-50%)
-            scaleX(.82);
+            scaleX(.72);
     }
 
     50% {
 
-        opacity:
-            .92;
+        opacity: 1;
 
         transform:
-            translateX(-50%)
-            scaleX(1.12);
+            scaleX(1);
     }
+
 }
 
 
 /* =========================================================
-   09 — INDIVIDUAL CARD ENERGY IDENTITY
+   GOLDEN VEIN MOVEMENT
 ========================================================= */
 
-.ars-energy-future-lab
-.ars-energy-route-pulse {
+@keyframes arsFutureLabVeins {
 
-    animation-duration:
-        4.2s;
+    0%,
+    100% {
+
+        opacity: .28;
+
+        transform:
+            translateX(-3px)
+            scaleX(.92);
+    }
+
+    50% {
+
+        opacity: .90;
+
+        transform:
+            translateX(3px)
+            scaleX(1);
+    }
+
 }
-
-
-.ars-energy-vision
-.ars-energy-route-pulse {
-
-    animation-duration:
-        4.7s;
-}
-
-
-.ars-energy-open-door
-.ars-energy-route-pulse {
-
-    animation-duration:
-        4.0s;
-}
-
-
-/* =========================================================
-   10 — REDUCED MOTION
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    .ars-energy-route-pulse,
-    .ars-phase06-card-light {
-
-        animation:
-            none !important;
-    }
-}
-
-
-/* =========================================================
-   11 — MOBILE
-========================================================= */
-
-@media (max-width: 600px) {
-
-    .ars-phase06-card-light {
-
-        width:
-            150px;
-
-        height:
-            24px;
-
-        filter:
-            blur(7px);
-    }
-
-    .ars-energy-route-main {
-
-        stroke-width:
-            2;
-    }
-
-    .ars-energy-route-glow {
-
-        stroke-width:
-            8;
-
-        opacity:
-            .35;
-    }
-
-    .ars-energy-route-pulse {
-
-        stroke-width:
-            3.5;
-    }
-              }
-
-
