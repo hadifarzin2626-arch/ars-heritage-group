@@ -25232,26 +25232,23 @@ END
 
 
 
+
 /* =========================================================
    ARS PHASE 06
-   INDEPENDENT CARD-ANCHORED GOLDEN INTELLIGENCE
+   INDEPENDENT CARD ENERGY — FINAL LOCKED VERSION
 
-   IMPORTANT:
-   ENERGY IS ANCHORED TO THE EXISTING CARD COORDINATES.
+   FUTURE LAB  → OWN CORE + 3 ORBITS
+   VISION      → OWN CORE + 3 ORBITS
+   OPEN DOOR   → OWN CORE + 3 ORBITS
 
-   FUTURE LAB  → 13% / 29%
-   VISION      → right 13% / 29%
-   OPEN DOOR   → center / bottom 12%
-
-   NO CARD POSITION CHANGE
-   NO CARD SIZE CHANGE
-   NO MAIN CORE CHANGE
-   NO MAIN ORBIT CHANGE
+   CARD POSITIONS ARE NOT TOUCHED.
+   CARD SIZE IS NOT TOUCHED.
+   MAIN CORE IS NOT TOUCHED.
 ========================================================= */
 
 
 /* =========================================================
-   01 — MASTER
+   01 — MASTER ENERGY OBJECT
 ========================================================= */
 
 .ars-independent-card-energy {
@@ -25260,6 +25257,9 @@ END
 
     width: 0;
     height: 0;
+
+    margin: 0;
+    padding: 0;
 
     overflow: visible;
 
@@ -25270,8 +25270,8 @@ END
 
 
 /* =========================================================
-   02 — FUTURE LAB
-   EXACTLY ANCHORED TO FUTURE LAB CARD CENTER
+   02 — FUTURE LAB ENERGY ANCHOR
+   LAST LOCKED CARD COORDINATES
 ========================================================= */
 
 .ars-energy-future-lab {
@@ -25283,14 +25283,18 @@ END
         );
 
     top:
-        29%;
+        calc(
+            29% - 100px
+        );
 
+    transform:
+        translate(-50%, -50%);
 }
 
 
 /* =========================================================
-   03 — VISION
-   EXACTLY ANCHORED TO VISION CARD CENTER
+   03 — VISION ENERGY ANCHOR
+   LAST LOCKED CARD COORDINATES
 ========================================================= */
 
 .ars-energy-vision {
@@ -25302,14 +25306,20 @@ END
         );
 
     top:
-        29%;
+        calc(
+            29% - 100px
+        );
 
+    transform:
+        translate(50%, -50%);
 }
 
 
 /* =========================================================
-   04 — OPEN DOOR
-   EXACTLY ANCHORED TO OPEN DOOR CARD CENTER
+   04 — OPEN DOOR ENERGY ANCHOR
+   LAST LOCKED CARD COORDINATES
+
+   bottom = 12% - 35px
 ========================================================= */
 
 .ars-energy-open-door {
@@ -25319,82 +25329,76 @@ END
 
     bottom:
         calc(
-            12% +
-            39px
+            12% - 35px
         );
 
+    transform:
+        translate(-50%, 50%);
 }
 
 
 /* =========================================================
-   05 — GOLDEN LINES ON CARD
+   05 — ENERGY LINES
 ========================================================= */
 
 .ars-card-energy-line {
 
-    position:
-        absolute;
+    position: absolute;
 
-    display:
-        block;
+    display: block;
 
-    pointer-events:
-        none;
+    pointer-events: none;
 
-    border-radius:
-        999px;
+    border-radius: 999px;
 
-    transform-origin:
-        center;
+    z-index: 5;
 }
 
 
-/* MAIN GOLDEN LINE */
+/* =========================================================
+   MAIN GOLDEN ENERGY LINE
+========================================================= */
 
 .ars-card-energy-line.line-main {
 
-    width:
-        145px;
+    width: 145px;
 
-    height:
-        2px;
+    height: 2px;
 
-    left:
-        -72.5px;
+    left: -72.5px;
 
-    top:
-        25px;
+    top: 25px;
 
     background:
 
         linear-gradient(
             90deg,
 
-            transparent,
+            transparent 0%,
 
-            rgba(190,132,54,.22),
+            rgba(190,132,54,.20) 12%,
 
-            rgba(229,181,103,.72),
+            rgba(229,181,103,.68) 30%,
 
-            #ffe5b0,
+            #ffe5b0 50%,
 
-            rgba(229,181,103,.72),
+            rgba(229,181,103,.68) 70%,
 
-            rgba(190,132,54,.22),
+            rgba(190,132,54,.20) 88%,
 
-            transparent
+            transparent 100%
         );
 
     box-shadow:
 
         0 0 4px
-        rgba(255,224,170,.85),
+        rgba(255,224,170,.82),
 
         0 0 11px
-        rgba(235,188,110,.58),
+        rgba(235,188,110,.55),
 
         0 0 23px
-        rgba(190,130,48,.32);
+        rgba(190,130,48,.30);
 
     animation:
         arsCardGoldenLine
@@ -25405,13 +25409,21 @@ END
 
 
 /* =========================================================
-   06 — ENERGY VEINS
+   ENERGY VEIN ONE
 ========================================================= */
 
-.ars-card-energy-line.line-vein {
+.ars-card-energy-line.line-vein-one {
 
-    height:
-        1px;
+    width: 115px;
+
+    height: 1px;
+
+    left: -58px;
+
+    top: 18px;
+
+    transform:
+        rotate(-7deg);
 
     background:
 
@@ -25427,29 +25439,10 @@ END
     box-shadow:
 
         0 0 5px
-        rgba(245,204,143,.65),
+        rgba(245,204,143,.60),
 
         0 0 13px
-        rgba(210,157,76,.30);
-
-    opacity:
-        .75;
-}
-
-
-.ars-card-energy-line.line-vein-one {
-
-    width:
-        115px;
-
-    left:
-        -58px;
-
-    top:
-        18px;
-
-    transform:
-        rotate(-7deg);
+        rgba(210,157,76,.28);
 
     animation:
         arsCardVeinOne
@@ -25459,19 +25452,41 @@ END
 }
 
 
+/* =========================================================
+   ENERGY VEIN TWO
+========================================================= */
+
 .ars-card-energy-line.line-vein-two {
 
-    width:
-        125px;
+    width: 125px;
 
-    left:
-        -62px;
+    height: 1px;
 
-    top:
-        31px;
+    left: -62px;
+
+    top: 31px;
 
     transform:
         rotate(6deg);
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(231,184,105,.72),
+            #ffe4ad,
+            rgba(231,184,105,.55),
+            transparent
+        );
+
+    box-shadow:
+
+        0 0 5px
+        rgba(245,204,143,.60),
+
+        0 0 13px
+        rgba(210,157,76,.28);
 
     animation:
         arsCardVeinTwo
@@ -25481,19 +25496,41 @@ END
 }
 
 
+/* =========================================================
+   ENERGY VEIN THREE
+========================================================= */
+
 .ars-card-energy-line.line-vein-three {
 
-    width:
-        95px;
+    width: 95px;
 
-    left:
-        -47px;
+    height: 1px;
 
-    top:
-        38px;
+    left: -47px;
+
+    top: 38px;
 
     transform:
         rotate(-3deg);
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(231,184,105,.66),
+            #ffe4ad,
+            rgba(231,184,105,.48),
+            transparent
+        );
+
+    box-shadow:
+
+        0 0 5px
+        rgba(245,204,143,.54),
+
+        0 0 13px
+        rgba(210,157,76,.24);
 
     animation:
         arsCardVeinThree
@@ -25504,39 +25541,33 @@ END
 
 
 /* =========================================================
-   07 — UNDER CARD GOLDEN LIGHT
+   06 — GOLDEN UNDER-CARD LIGHT
 ========================================================= */
 
 .ars-card-energy-underlight {
 
-    position:
-        absolute;
+    position: absolute;
 
-    width:
-        155px;
+    width: 155px;
 
-    height:
-        42px;
+    height: 42px;
 
-    left:
-        -77.5px;
+    left: -77.5px;
 
-    top:
-        42px;
+    top: 42px;
 
-    border-radius:
-        50%;
+    border-radius: 50%;
 
     background:
 
         radial-gradient(
             ellipse,
 
-            rgba(255,225,171,.34) 0%,
+            rgba(255,225,171,.30) 0%,
 
-            rgba(230,181,105,.24) 25%,
+            rgba(230,181,105,.21) 25%,
 
-            rgba(190,128,48,.13) 48%,
+            rgba(190,128,48,.11) 48%,
 
             transparent 75%
         );
@@ -25544,8 +25575,9 @@ END
     filter:
         blur(8px);
 
-    opacity:
-        .78;
+    opacity: .78;
+
+    z-index: 2;
 
     animation:
         arsCardGoldenUnderlight
@@ -25556,34 +25588,26 @@ END
 
 
 /* =========================================================
-   08 — GOLDEN CORE
+   07 — INDEPENDENT GOLDEN CORE
 ========================================================= */
 
 .ars-card-energy-core {
 
-    position:
-        absolute;
+    position: absolute;
 
-    left:
-        0;
+    left: 0;
 
-    top:
-        0;
+    top: 0;
 
-    width:
-        30px;
+    width: 30px;
 
-    height:
-        30px;
+    height: 30px;
 
-    margin-left:
-        -15px;
+    margin-left: -15px;
 
-    margin-top:
-        -15px;
+    margin-top: -15px;
 
-    border-radius:
-        50%;
+    border-radius: 50%;
 
     background:
 
@@ -25594,11 +25618,11 @@ END
 
             #ffe7b5 14%,
 
-            rgba(239,193,116,.82) 30%,
+            rgba(239,193,116,.80) 30%,
 
-            rgba(202,148,69,.48) 50%,
+            rgba(202,148,69,.45) 50%,
 
-            rgba(164,105,36,.16) 68%,
+            rgba(164,105,36,.14) 68%,
 
             transparent 80%
         );
@@ -25606,19 +25630,18 @@ END
     box-shadow:
 
         0 0 6px
-        rgba(255,238,202,.92),
+        rgba(255,238,202,.88),
 
         0 0 15px
-        rgba(239,193,116,.72),
+        rgba(239,193,116,.66),
 
         0 0 30px
-        rgba(205,151,69,.42),
+        rgba(205,151,69,.38),
 
         0 0 48px
-        rgba(175,113,38,.18);
+        rgba(175,113,38,.16);
 
-    z-index:
-        12;
+    z-index: 10;
 
     animation:
         arsCardGoldenCore
@@ -25628,68 +25651,63 @@ END
 }
 
 
-/* CORE INNER */
+/* =========================================================
+   CORE INNER
+========================================================= */
 
 .ars-card-energy-core-inner {
 
-    position:
-        absolute;
+    position: absolute;
 
-    width:
-        11px;
+    width: 11px;
 
-    height:
-        11px;
+    height: 11px;
 
-    left:
-        50%;
+    left: 50%;
 
-    top:
-        50%;
+    top: 50%;
 
     transform:
         translate(-50%, -50%);
 
-    border-radius:
-        50%;
+    border-radius: 50%;
 
     background:
 
         radial-gradient(
             circle,
 
-            #fffdf5,
+            #fffdf5 0%,
 
             #ffe9bb 42%,
 
-            rgba(239,193,116,.5) 72%,
+            rgba(239,193,116,.48) 72%,
 
-            transparent
+            transparent 100%
         );
 }
 
 
-/* CORE HALO */
+/* =========================================================
+   CORE HALO
+========================================================= */
 
 .ars-card-energy-core-light {
 
-    position:
-        absolute;
+    position: absolute;
 
-    inset:
-        -12px;
+    inset: -12px;
 
-    border-radius:
-        50%;
+    border-radius: 50%;
 
     background:
 
         radial-gradient(
             circle,
 
-            rgba(255,225,171,.20),
+            rgba(255,225,171,.18),
 
-            rgba(225,173,94,.08) 45%,
+            rgba(225,173,94,.07) 45%,
 
             transparent 75%
         );
@@ -25706,72 +25724,57 @@ END
 
 
 /* =========================================================
-   09 — THREE INDEPENDENT ORBITS
+   08 — THREE INDEPENDENT ORBITS
 ========================================================= */
 
 .ars-card-energy-orbit {
 
-    position:
-        absolute;
+    position: absolute;
 
-    left:
-        0;
+    left: 0;
 
-    top:
-        0;
+    top: 0;
 
-    display:
-        block;
+    display: block;
 
-    border-radius:
-        50%;
+    border-radius: 50%;
 
-    pointer-events:
-        none;
+    pointer-events: none;
 
-    transform-origin:
-        center center;
+    transform-origin: center center;
 
-    transform-box:
-        border-box;
-
-    z-index:
-        7;
+    z-index: 6;
 }
 
 
 /* =========================================================
-   ORBIT 01 — GOLD
+   ORBIT ONE — GOLD
 ========================================================= */
 
 .ars-card-energy-orbit.orbit-one {
 
-    width:
-        118px;
+    width: 118px;
 
-    height:
-        48px;
+    height: 48px;
 
-    margin-left:
-        -59px;
+    margin-left: -59px;
 
-    margin-top:
-        -24px;
+    margin-top: -24px;
 
     border:
         1.5px solid
-        rgba(239,193,116,.88);
+        rgba(239,193,116,.86);
 
     box-shadow:
 
         0 0 5px
-        rgba(245,204,143,.60),
+        rgba(245,204,143,.56),
 
         0 0 13px
-        rgba(213,159,77,.34),
+        rgba(213,159,77,.30),
 
         0 0 23px
-        rgba(177,116,38,.16);
+        rgba(177,116,38,.14);
 
     animation:
         arsCardOrbitGold
@@ -25782,78 +25785,70 @@ END
 
 
 /* =========================================================
-   ORBIT 02 — BLUE
+   ORBIT TWO — ELECTRIC BLUE
 ========================================================= */
 
 .ars-card-energy-orbit.orbit-two {
 
-    width:
-        158px;
+    width: 158px;
 
-    height:
-        64px;
+    height: 64px;
 
-    margin-left:
-        -79px;
+    margin-left: -79px;
 
-    margin-top:
-        -32px;
+    margin-top: -32px;
 
     border:
         1.3px solid
-        rgba(76,164,224,.68);
+        rgba(76,164,224,.64);
 
     box-shadow:
 
         0 0 5px
-        rgba(70,165,226,.42),
+        rgba(70,165,226,.40),
 
         0 0 14px
-        rgba(40,126,188,.25),
+        rgba(40,126,188,.22),
 
         0 0 26px
-        rgba(25,91,149,.14);
+        rgba(25,91,149,.12);
 
     animation:
         arsCardOrbitBlue
         8.1s
         linear
-        infinite;
+        infinite reverse;
 }
 
 
 /* =========================================================
-   ORBIT 03 — LONGEST GOLD
+   ORBIT THREE — LONGEST GOLD
 ========================================================= */
 
 .ars-card-energy-orbit.orbit-three {
 
-    width:
-        215px;
+    width: 215px;
 
-    height:
-        88px;
+    height: 88px;
 
-    margin-left:
-        -107.5px;
+    margin-left: -107.5px;
 
-    margin-top:
-        -44px;
+    margin-top: -44px;
 
     border:
         1.4px solid
-        rgba(230,181,101,.78);
+        rgba(230,181,101,.76);
 
     box-shadow:
 
         0 0 5px
-        rgba(241,199,130,.54),
+        rgba(241,199,130,.50),
 
         0 0 15px
-        rgba(211,157,76,.32),
+        rgba(211,157,76,.29),
 
         0 0 31px
-        rgba(171,111,37,.15);
+        rgba(171,111,37,.14);
 
     animation:
         arsCardOrbitOuter
@@ -25864,83 +25859,50 @@ END
 
 
 /* =========================================================
-   10 — EACH CARD HAS ITS OWN PHASE
+   09 — DIFFERENT PHASE PER CARD
 ========================================================= */
 
-.ars-energy-future-lab
-.orbit-one {
+.ars-energy-future-lab .orbit-one {
+    animation-delay: -0.7s;
+}
 
-    animation-delay:
-        -.7s;
+.ars-energy-future-lab .orbit-two {
+    animation-delay: -1.9s;
+}
+
+.ars-energy-future-lab .orbit-three {
+    animation-delay: -3.1s;
 }
 
 
-.ars-energy-future-lab
-.orbit-two {
+.ars-energy-vision .orbit-one {
+    animation-delay: -2.2s;
+}
 
-    animation-delay:
-        -1.9s;
+.ars-energy-vision .orbit-two {
+    animation-delay: -0.9s;
+}
+
+.ars-energy-vision .orbit-three {
+    animation-delay: -4s;
 }
 
 
-.ars-energy-future-lab
-.orbit-three {
-
-    animation-delay:
-        -3.1s;
+.ars-energy-open-door .orbit-one {
+    animation-delay: -3s;
 }
 
-
-.ars-energy-vision
-.orbit-one {
-
-    animation-delay:
-        -2.2s;
+.ars-energy-open-door .orbit-two {
+    animation-delay: -1.5s;
 }
 
-
-.ars-energy-vision
-.orbit-two {
-
-    animation-delay:
-        -.9s;
-}
-
-
-.ars-energy-vision
-.orbit-three {
-
-    animation-delay:
-        -4.0s;
-}
-
-
-.ars-energy-open-door
-.orbit-one {
-
-    animation-delay:
-        -3.0s;
-}
-
-
-.ars-energy-open-door
-.orbit-two {
-
-    animation-delay:
-        -1.5s;
-}
-
-
-.ars-energy-open-door
-.orbit-three {
-
-    animation-delay:
-        -4.8s;
+.ars-energy-open-door .orbit-three {
+    animation-delay: -4.8s;
 }
 
 
 /* =========================================================
-   11 — ANIMATIONS
+   10 — CORE ANIMATION
 ========================================================= */
 
 @keyframes arsCardGoldenCore {
@@ -25988,6 +25950,10 @@ END
     }
 }
 
+
+/* =========================================================
+   ORBIT MOTION
+========================================================= */
 
 @keyframes arsCardOrbitGold {
 
@@ -26037,13 +26003,16 @@ END
 }
 
 
+/* =========================================================
+   LINE MOTION
+========================================================= */
+
 @keyframes arsCardGoldenLine {
 
     0%,
     100% {
 
-        opacity:
-            .38;
+        opacity: .38;
 
         transform:
             scaleX(.72);
@@ -26051,8 +26020,7 @@ END
 
     50% {
 
-        opacity:
-            1;
+        opacity: 1;
 
         transform:
             scaleX(1.08);
@@ -26065,8 +26033,7 @@ END
     0%,
     100% {
 
-        opacity:
-            .25;
+        opacity: .25;
 
         transform:
             rotate(-7deg)
@@ -26075,8 +26042,7 @@ END
 
     50% {
 
-        opacity:
-            .9;
+        opacity: .9;
 
         transform:
             rotate(-7deg)
@@ -26090,8 +26056,7 @@ END
     0%,
     100% {
 
-        opacity:
-            .25;
+        opacity: .25;
 
         transform:
             rotate(6deg)
@@ -26100,8 +26065,7 @@ END
 
     50% {
 
-        opacity:
-            .88;
+        opacity: .88;
 
         transform:
             rotate(6deg)
@@ -26115,8 +26079,7 @@ END
     0%,
     100% {
 
-        opacity:
-            .22;
+        opacity: .22;
 
         transform:
             rotate(-3deg)
@@ -26125,8 +26088,7 @@ END
 
     50% {
 
-        opacity:
-            .8;
+        opacity: .8;
 
         transform:
             rotate(-3deg)
@@ -26140,8 +26102,7 @@ END
     0%,
     100% {
 
-        opacity:
-            .32;
+        opacity: .32;
 
         transform:
             scaleX(.78)
@@ -26150,8 +26111,7 @@ END
 
     50% {
 
-        opacity:
-            .92;
+        opacity: .92;
 
         transform:
             scaleX(1.12)
@@ -26161,7 +26121,7 @@ END
 
 
 /* =========================================================
-   12 — REDUCED MOTION
+   11 — REDUCED MOTION
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -26177,4 +26137,6 @@ END
         animation:
             none !important;
     }
-}
+  }
+
+
