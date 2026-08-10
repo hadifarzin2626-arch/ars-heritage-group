@@ -25444,3 +25444,405 @@ END
     }
 
 }
+
+
+
+
+
+/* =========================================================
+   ARS PHASE 06 — VISION ENERGY
+   STEP 01 — CARD ENERGY ONLY
+
+   LOCKED:
+   NO CARD POSITION
+   NO CARD SIZE
+   NO CORE POSITION
+   NO OTHER CARD
+========================================================= */
+
+.ars-future-vision-card-right {
+
+    position: relative;
+
+    overflow: visible;
+
+    box-shadow:
+
+        0 0 0 1px
+        rgba(232, 189, 124, .16),
+
+        0 0 12px
+        rgba(232, 189, 124, .12),
+
+        0 8px 24px
+        rgba(202, 150, 82, .16);
+}
+
+
+/* =========================================================
+   GOLDEN LINE INSIDE VISION
+========================================================= */
+
+.ars-future-vision-card-right::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 9%;
+    right: 9%;
+
+    bottom: 9px;
+
+    height: 2px;
+
+    border-radius: 999px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(184, 135, 72, .18) 12%,
+            rgba(224, 175, 103, .72) 32%,
+            #ffe2a8 50%,
+            rgba(224, 175, 103, .72) 68%,
+            rgba(184, 135, 72, .18) 88%,
+            transparent 100%
+        );
+
+    box-shadow:
+
+        0 0 4px
+        rgba(255, 220, 160, .75),
+
+        0 0 10px
+        rgba(224, 175, 103, .48),
+
+        0 0 20px
+        rgba(184, 135, 72, .24);
+
+    opacity: .88;
+
+    animation:
+        arsVisionCardLine
+        3.8s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   GOLDEN VEINS — VISION
+========================================================= */
+
+.ars-future-vision-card-right::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 15%;
+
+    bottom: 12px;
+
+    width: 70%;
+
+    height: 24px;
+
+    pointer-events: none;
+
+    background:
+
+        linear-gradient(
+            118deg,
+            transparent 0%,
+            transparent 25%,
+            rgba(255, 218, 155, .72) 27%,
+            transparent 30%,
+            transparent 48%,
+            rgba(240, 195, 125, .60) 50%,
+            transparent 53%,
+            transparent 70%,
+            rgba(255, 218, 155, .52) 72%,
+            transparent 75%
+        );
+
+    filter:
+        drop-shadow(
+            0 0 5px
+            rgba(240, 195, 125, .65)
+        );
+
+    opacity: .72;
+
+    animation:
+        arsVisionVeins
+        4.6s
+        ease-in-out
+        infinite;
+}
+
+
+.ars-future-vision-card-right {
+
+    isolation: isolate;
+
+    filter:
+        drop-shadow(
+            0 10px 13px
+            rgba(202, 150, 82, .14)
+        );
+}
+
+
+.ars-future-vision-card-right > * {
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+@keyframes arsVisionCardLine {
+
+    0%,
+    100% {
+
+        opacity: .40;
+
+        transform:
+            scaleX(.72);
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform:
+            scaleX(1);
+    }
+}
+
+
+@keyframes arsVisionVeins {
+
+    0%,
+    100% {
+
+        opacity: .28;
+
+        transform:
+            translateX(-3px)
+            scaleX(.92);
+    }
+
+    50% {
+
+        opacity: .90;
+
+        transform:
+            translateX(3px)
+            scaleX(1);
+    }
+}
+
+
+
+/* =========================================================
+   ARS PHASE 06 — OPEN DOOR ENERGY
+   STEP 01 — CARD ENERGY ONLY
+
+   LOCKED:
+   NO CARD POSITION
+   NO CARD SIZE
+   NO CORE POSITION
+   NO OTHER CARD
+========================================================= */
+
+.ars-future-vision-card-bottom {
+
+    position: relative;
+
+    overflow: visible;
+
+    box-shadow:
+
+        0 0 0 1px
+        rgba(232, 189, 124, .16),
+
+        0 0 12px
+        rgba(232, 189, 124, .12),
+
+        0 8px 24px
+        rgba(202, 150, 82, .18);
+}
+
+
+/* =========================================================
+   GOLDEN LINE INSIDE OPEN DOOR
+========================================================= */
+
+.ars-future-vision-card-bottom::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 9%;
+    right: 9%;
+
+    bottom: 9px;
+
+    height: 2px;
+
+    border-radius: 999px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(184, 135, 72, .18) 12%,
+            rgba(224, 175, 103, .72) 32%,
+            #ffe2a8 50%,
+            rgba(224, 175, 103, .72) 68%,
+            rgba(184, 135, 72, .18) 88%,
+            transparent 100%
+        );
+
+    box-shadow:
+
+        0 0 4px
+        rgba(255, 220, 160, .75),
+
+        0 0 10px
+        rgba(224, 175, 103, .48),
+
+        0 0 20px
+        rgba(184, 135, 72, .24);
+
+    opacity: .88;
+
+    animation:
+        arsOpenDoorCardLine
+        3.8s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   GOLDEN VEINS — OPEN DOOR
+========================================================= */
+
+.ars-future-vision-card-bottom::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 15%;
+
+    bottom: 12px;
+
+    width: 70%;
+
+    height: 24px;
+
+    pointer-events: none;
+
+    background:
+
+        linear-gradient(
+            118deg,
+            transparent 0%,
+            transparent 25%,
+            rgba(255, 218, 155, .72) 27%,
+            transparent 30%,
+            transparent 48%,
+            rgba(240, 195, 125, .60) 50%,
+            transparent 53%,
+            transparent 70%,
+            rgba(255, 218, 155, .52) 72%,
+            transparent 75%
+        );
+
+    filter:
+        drop-shadow(
+            0 0 5px
+            rgba(240, 195, 125, .65)
+        );
+
+    opacity: .72;
+
+    animation:
+        arsOpenDoorVeins
+        4.6s
+        ease-in-out
+        infinite;
+}
+
+
+.ars-future-vision-card-bottom {
+
+    isolation: isolate;
+
+    filter:
+        drop-shadow(
+            0 10px 13px
+            rgba(202, 150, 82, .16)
+        );
+}
+
+
+.ars-future-vision-card-bottom > * {
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+@keyframes arsOpenDoorCardLine {
+
+    0%,
+    100% {
+
+        opacity: .40;
+
+        transform:
+            scaleX(.72);
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform:
+            scaleX(1);
+    }
+}
+
+
+@keyframes arsOpenDoorVeins {
+
+    0%,
+    100% {
+
+        opacity: .28;
+
+        transform:
+            translateX(-3px)
+            scaleX(.92);
+    }
+
+    50% {
+
+        opacity: .90;
+
+        transform:
+            translateX(3px)
+            scaleX(1);
+    }
+}
