@@ -25846,3 +25846,323 @@ END
             scaleX(1);
     }
 }
+
+
+
+
+
+
+/* =========================================================
+   ARS PHASE 06 — PREMIUM GOLDEN MINI CORES
+   STEP 02 — THREE INDEPENDENT CARD CORES
+
+   FUTURE LAB  = LEFT
+   VISION      = RIGHT
+   OPEN DOOR   = BOTTOM
+
+   LOCKED:
+   NO CARD POSITION CHANGE
+   NO CARD SIZE CHANGE
+   NO MAIN CORE CHANGE
+   NO PAGE GEOMETRY CHANGE
+
+   EACH CARD:
+   GOLDEN MINI CORE
+   + 3 GOLDEN ORBITS
+   + BREATHING SCALE
+   + GOLDEN LIGHT
+========================================================= */
+
+
+/* =========================================================
+   01 — CARD ENERGY CONTAINER
+========================================================= */
+
+.ars-future-vision-card-left,
+.ars-future-vision-card-right,
+.ars-future-vision-card-bottom {
+
+    position: relative;
+
+    overflow: visible;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   02 — MINI GOLDEN CORE
+   EXACT CENTER OF EACH CARD
+========================================================= */
+
+.ars-future-vision-card-left::before,
+.ars-future-vision-card-right::before,
+.ars-future-vision-card-bottom::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 22px;
+    height: 22px;
+
+    transform:
+        translate(-50%, -50%)
+        scale(.82);
+
+    border-radius: 50%;
+
+    z-index: 12;
+
+    pointer-events: none;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 50%,
+
+            #fff9e8 0%,
+
+            #ffe7b0 12%,
+
+            #f4c879 28%,
+
+            #dca451 48%,
+
+            rgba(208,151,72,.42) 67%,
+
+            transparent 76%
+        );
+
+    box-shadow:
+
+        0 0 4px
+        rgba(255,239,196,.98),
+
+        0 0 10px
+        rgba(246,201,119,.95),
+
+        0 0 22px
+        rgba(231,178,86,.78),
+
+        0 0 42px
+        rgba(208,151,72,.42),
+
+        0 0 70px
+        rgba(190,137,58,.20);
+
+    animation:
+        arsGoldenMiniCoreBreath
+        3.8s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   03 — THREE GOLDEN ORBIT RINGS
+   GENERATED AROUND THE CARD CORE
+========================================================= */
+
+.ars-future-vision-card-left::after,
+.ars-future-vision-card-right::after,
+.ars-future-vision-card-bottom::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 72px;
+    height: 72px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 10;
+
+    border:
+
+        1px solid
+        rgba(244,199,118,.72);
+
+    box-shadow:
+
+        0 0 5px
+        rgba(244,199,118,.62),
+
+        0 0 12px
+        rgba(224,169,82,.34);
+
+    opacity: .82;
+
+    animation:
+        arsGoldenOrbitOne
+        7s
+        linear
+        infinite;
+}
+
+
+/* =========================================================
+   ORBIT SYSTEM — EXTRA RINGS
+   Using nested visual shadows to keep each card isolated
+========================================================= */
+
+.ars-future-vision-card-left > *,
+.ars-future-vision-card-right > *,
+.ars-future-vision-card-bottom > * {
+
+    position: relative;
+
+    z-index: 20;
+}
+
+
+/* =========================================================
+   GOLDEN CORE BREATHING
+   SMALL → LARGE → SMALL
+========================================================= */
+
+@keyframes arsGoldenMiniCoreBreath {
+
+    0%,
+    100% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(.78);
+
+        opacity: .68;
+
+        filter:
+            brightness(.88);
+    }
+
+    50% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.22);
+
+        opacity: 1;
+
+        filter:
+            brightness(1.45);
+    }
+}
+
+
+/* =========================================================
+   ORBIT 01
+========================================================= */
+
+@keyframes arsGoldenOrbitOne {
+
+    0% {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg)
+            scaleY(.42);
+    }
+
+    50% {
+
+        opacity: 1;
+    }
+
+    100% {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg)
+            scaleY(.42);
+    }
+}
+
+
+/* =========================================================
+   ORBIT 02
+========================================================= */
+
+.ars-future-vision-card-left,
+.ars-future-vision-card-right,
+.ars-future-vision-card-bottom {
+
+    --ars-gold-orbit-speed: 9s;
+}
+
+
+/* =========================================================
+   VISUAL GOLDEN ORBIT DEPTH
+========================================================= */
+
+.ars-future-vision-card-left::after,
+.ars-future-vision-card-right::after,
+.ars-future-vision-card-bottom::after {
+
+    background:
+
+        radial-gradient(
+            ellipse at center,
+
+            transparent 0%,
+
+            transparent 52%,
+
+            rgba(240,194,111,.10) 53%,
+
+            transparent 56%,
+
+            transparent 68%,
+
+            rgba(240,194,111,.07) 69%,
+
+            transparent 72%
+        );
+}
+
+
+/* =========================================================
+   PREMIUM CORE AURA
+========================================================= */
+
+.ars-future-vision-card-left,
+.ars-future-vision-card-right,
+.ars-future-vision-card-bottom {
+
+    filter:
+
+        drop-shadow(
+            0 0 8px
+            rgba(230,174,82,.18)
+        );
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ars-future-vision-card-left::before,
+    .ars-future-vision-card-right::before,
+    .ars-future-vision-card-bottom::before,
+    .ars-future-vision-card-left::after,
+    .ars-future-vision-card-right::after,
+    .ars-future-vision-card-bottom::after {
+
+        animation: none !important;
+    }
+                   }
