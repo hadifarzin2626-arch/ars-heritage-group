@@ -28547,7 +28547,1950 @@ END
 
 
 
+/* =========================================================
+   ARS MISSION & VISION + PHILOSOPHY
+   PREMIUM ART DIRECTION
+   DNA: 65% HERITAGE BRONZE × 35% ELECTRIC BLUE
+   Bronze: #D8B487
+   Blue:   #168CFF
 
+   IMPORTANT:
+   This block is isolated to:
+   .ars-mission-vision
+   .ars-philosophy-artifact
+========================================================= */
+
+
+/* =========================================================
+   01 — MISSION & VISION
+========================================================= */
+
+.ars-mission-vision {
+
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    padding:
+        clamp(100px, 11vw, 165px) 0
+        clamp(110px, 12vw, 180px);
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(216,180,135,.055),
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(22,140,255,.035),
+            transparent 58%
+        );
+
+}
+
+
+/* atmospheric field */
+
+.ars-mission-vision::before {
+
+    content: "";
+    position: absolute;
+
+    width: 760px;
+    height: 760px;
+
+    left: 50%;
+    top: 48%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(216,180,135,.065),
+            transparent 64%
+        );
+
+    filter: blur(8px);
+
+    pointer-events: none;
+
+    animation:
+        arsMissionAtmosphere
+        10s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes arsMissionAtmosphere {
+
+    0%,100% {
+
+        opacity: .45;
+
+        transform:
+            translate(-50%, -50%)
+            scale(.92);
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.06);
+
+    }
+
+}
+
+
+/* =========================================================
+   02 — HEADER
+========================================================= */
+
+.ars-mission-header {
+
+    position: relative;
+    z-index: 5;
+
+    text-align: center;
+
+    margin-bottom:
+        clamp(55px, 7vw, 90px);
+
+}
+
+
+.ars-mission-label {
+
+    color:
+        #D8B487 !important;
+
+    letter-spacing:
+        .30em;
+
+    font-size:
+        10px;
+
+}
+
+
+.ars-mission-title {
+
+    margin-top: 18px;
+
+    color:
+        #F3F4F6;
+
+    font-size:
+        clamp(34px, 5vw, 70px);
+
+    line-height:
+        1.04;
+
+    letter-spacing:
+        -.025em;
+
+}
+
+
+/* second line bronze */
+
+.ars-mission-title br + * {
+
+    color:
+        #D8B487;
+
+}
+
+
+/* =========================================================
+   03 — TRIAD FIELD
+========================================================= */
+
+.ars-mission-triad {
+
+    position: relative;
+
+    min-height:
+        570px;
+
+    max-width:
+        1200px;
+
+    margin:
+        0 auto;
+
+}
+
+
+/* =========================================================
+   04 — CENTRAL AXIS
+========================================================= */
+
+.ars-triad-axis {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 230px;
+    height: 230px;
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 1;
+
+    pointer-events: none;
+
+}
+
+
+/* outer ring */
+
+.ars-axis-ring {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+}
+
+
+.ars-axis-ring.ring-outer {
+
+    width: 230px;
+    height: 230px;
+
+    border:
+        1px solid
+        rgba(216,180,135,.24);
+
+    box-shadow:
+        0 0 30px
+        rgba(216,180,135,.06);
+
+    animation:
+        arsTriadOuterRotate
+        18s
+        linear
+        infinite;
+
+}
+
+
+.ars-axis-ring.ring-inner {
+
+    width: 150px;
+    height: 150px;
+
+    border:
+        1px solid
+        rgba(22,140,255,.28);
+
+    animation:
+        arsTriadInnerRotate
+        11s
+        linear
+        infinite reverse;
+
+}
+
+
+@keyframes arsTriadOuterRotate {
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+}
+
+
+@keyframes arsTriadInnerRotate {
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+}
+
+
+/* central core */
+
+.ars-axis-core {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 38px;
+    height: 38px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #FFF3DE 0%,
+            #D8B487 35%,
+            rgba(216,180,135,.55) 58%,
+            transparent 72%
+        );
+
+    box-shadow:
+        0 0 14px
+        rgba(216,180,135,.65),
+
+        0 0 38px
+        rgba(216,180,135,.25),
+
+        0 0 70px
+        rgba(22,140,255,.12);
+
+    animation:
+        arsTriadCorePulse
+        3.8s
+        ease-in-out
+        infinite;
+
+}
+
+
+.ars-axis-core-light {
+
+    position: absolute;
+
+    inset: 9px;
+
+    border-radius: 50%;
+
+    background:
+        #FFF8EC;
+
+    box-shadow:
+        0 0 12px
+        rgba(255,248,236,.95);
+
+}
+
+
+@keyframes arsTriadCorePulse {
+
+    0%,100% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(.86);
+
+    }
+
+    50% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.16);
+
+    }
+
+}
+
+
+/* energy particle */
+
+.ars-axis-energy {
+
+    position: absolute;
+
+    width: 6px;
+    height: 6px;
+
+    left: 50%;
+    top: -4px;
+
+    margin-left: -3px;
+
+    border-radius: 50%;
+
+    background:
+        #168CFF;
+
+    box-shadow:
+        0 0 10px
+        rgba(22,140,255,.9);
+
+    transform-origin:
+        3px 119px;
+
+    animation:
+        arsAxisEnergy
+        5s
+        linear
+        infinite;
+
+}
+
+
+@keyframes arsAxisEnergy {
+
+    to {
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   05 — MISSION CARDS
+========================================================= */
+
+.ars-mission-card {
+
+    position: absolute;
+
+    width:
+        min(360px, 31vw);
+
+    min-height:
+        285px;
+
+    padding:
+        34px 34px 32px;
+
+    z-index: 5;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(216,180,135,.19);
+
+    border-radius:
+        18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15,29,43,.96),
+            rgba(7,17,29,.94)
+        );
+
+    box-shadow:
+        0 20px 65px
+        rgba(0,0,0,.28),
+
+        inset 0 0 40px
+        rgba(216,180,135,.018);
+
+    transition:
+        transform .55s cubic-bezier(.16,1,.3,1),
+        border-color .55s ease,
+        box-shadow .55s ease;
+
+}
+
+
+/* positions */
+
+.ars-mission-card-left {
+
+    left: 2%;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+}
+
+
+.ars-mission-card-right {
+
+    right: 2%;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+}
+
+
+.ars-mission-card-bottom {
+
+    left: 50%;
+
+    bottom: -5px;
+
+    transform:
+        translateX(-50%);
+
+}
+
+
+/* =========================================================
+   06 — CARD ENERGY
+========================================================= */
+
+.ars-mission-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -20%;
+    top: 0;
+
+    width: 140%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(216,180,135,.0),
+            rgba(216,180,135,.75),
+            rgba(22,140,255,.42),
+            transparent
+        );
+
+    animation:
+        arsCardScan
+        5s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes arsCardScan {
+
+    0%,100% {
+
+        opacity: .25;
+
+        transform:
+            translateX(-20%);
+
+    }
+
+    50% {
+
+        opacity: .9;
+
+        transform:
+            translateX(20%);
+
+    }
+
+}
+
+
+/* internal orbit */
+
+.ars-mission-card-orbit {
+
+    position: absolute;
+
+    width: 170px;
+    height: 170px;
+
+    right: -80px;
+    top: -80px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(216,180,135,.12);
+
+    box-shadow:
+        0 0 25px
+        rgba(216,180,135,.035);
+
+    animation:
+        arsCardOrbit
+        14s
+        linear
+        infinite;
+
+}
+
+
+@keyframes arsCardOrbit {
+
+    to {
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   07 — CARD TYPOGRAPHY
+========================================================= */
+
+.ars-mission-card-index {
+
+    display: block;
+
+    color:
+        rgba(22,140,255,.72);
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        .28em;
+
+}
+
+
+.ars-mission-card-label {
+
+    display: block;
+
+    margin-top:
+        7px;
+
+    color:
+        rgba(216,180,135,.62);
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        .25em;
+
+}
+
+
+.ars-mission-card h3 {
+
+    margin:
+        18px 0 15px;
+
+    color:
+        #D8B487;
+
+    font-size:
+        clamp(22px, 2vw, 30px);
+
+    line-height:
+        1.1;
+
+}
+
+
+.ars-mission-card p {
+
+    margin: 0;
+
+    color:
+        rgba(224,231,237,.68);
+
+    font-size:
+        12px;
+
+    line-height:
+        1.85;
+
+}
+
+
+.ars-mission-card-line {
+
+    display: block;
+
+    width:
+        58px;
+
+    height:
+        1px;
+
+    margin-top:
+        22px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #D8B487,
+            rgba(22,140,255,.45),
+            transparent
+        );
+
+}
+
+
+/* hover */
+
+.ars-mission-card:hover {
+
+    border-color:
+        rgba(216,180,135,.45);
+
+    box-shadow:
+        0 28px 75px
+        rgba(0,0,0,.38),
+
+        0 0 35px
+        rgba(216,180,135,.055);
+
+}
+
+
+.ars-mission-card-left:hover {
+
+    transform:
+        translateY(calc(-50% - 7px));
+
+}
+
+
+.ars-mission-card-right:hover {
+
+    transform:
+        translateY(calc(-50% - 7px));
+
+}
+
+
+.ars-mission-card-bottom:hover {
+
+    transform:
+        translateX(-50%)
+        translateY(-7px);
+
+}
+
+
+/* =========================================================
+   08 — TRIAD SIGNATURE
+========================================================= */
+
+.ars-mission-signature {
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 11px;
+
+    margin-top:
+        30px;
+
+}
+
+
+.ars-signature-line {
+
+    width:
+        70px;
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(216,180,135,.55)
+        );
+
+}
+
+
+.ars-signature-line:last-child {
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(22,140,255,.55),
+            transparent
+        );
+
+}
+
+
+.ars-signature-node {
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background:
+        #D8B487;
+
+    box-shadow:
+        0 0 10px
+        rgba(216,180,135,.65);
+
+    animation:
+        arsSignaturePulse
+        3s
+        ease-in-out
+        infinite;
+
+}
+
+
+.ars-signature-text {
+
+    color:
+        rgba(216,180,135,.58);
+
+    font-size:
+        7px;
+
+    letter-spacing:
+        .27em;
+
+}
+
+
+@keyframes arsSignaturePulse {
+
+    0%,100% {
+        transform: scale(.8);
+    }
+
+    50% {
+        transform: scale(1.35);
+    }
+
+}
+
+
+/* =========================================================
+   09 — PHILOSOPHY ARTIFACT
+========================================================= */
+
+.ars-philosophy-artifact {
+
+    position: relative;
+
+    isolation: isolate;
+
+    overflow: hidden;
+
+    padding:
+        clamp(105px, 12vw, 175px) 0
+        clamp(100px, 11vw, 165px);
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(216,180,135,.075),
+            transparent 31%
+        ),
+
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(22,140,255,.035),
+            transparent 55%
+        );
+
+}
+
+
+/* =========================================================
+   10 — PHILOSOPHY HEADER
+========================================================= */
+
+.ars-philosophy-header {
+
+    position: relative;
+
+    z-index: 5;
+
+    text-align: center;
+
+    margin-bottom:
+        70px;
+
+}
+
+
+.ars-philosophy-label {
+
+    color:
+        #D8B487 !important;
+
+    letter-spacing:
+        .3em;
+
+}
+
+
+.ars-philosophy-title {
+
+    margin-top:
+        18px;
+
+    color:
+        #F2F4F6;
+
+    font-size:
+        clamp(31px, 4.5vw, 62px);
+
+    line-height:
+        1.08;
+
+}
+
+
+/* =========================================================
+   11 — ARTIFACT FIELD
+========================================================= */
+
+.ars-philosophy-artifact-field {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(300px, .9fr)
+        minmax(360px, 1.1fr);
+
+    align-items: center;
+
+    gap:
+        clamp(50px, 8vw, 120px);
+
+    max-width:
+        1120px;
+
+    min-height:
+        470px;
+
+    margin:
+        0 auto;
+
+}
+
+
+/* =========================================================
+   12 — ATMOSPHERE
+========================================================= */
+
+.ars-philosophy-atmosphere {
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+}
+
+
+.ars-philosophy-aura {
+
+    position: absolute;
+
+    left: 25%;
+
+    top: 50%;
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+}
+
+
+.aura-one {
+
+    width: 390px;
+    height: 390px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(216,180,135,.11),
+            transparent 67%
+        );
+
+    filter:
+        blur(8px);
+
+    animation:
+        arsArtifactAura
+        7s
+        ease-in-out
+        infinite;
+
+}
+
+
+.aura-two {
+
+    width: 250px;
+    height: 250px;
+
+    border:
+        1px solid
+        rgba(22,140,255,.12);
+
+    box-shadow:
+        0 0 70px
+        rgba(22,140,255,.05);
+
+    animation:
+        arsArtifactBlueAura
+        11s
+        ease-in-out
+        infinite reverse;
+
+}
+
+
+@keyframes arsArtifactAura {
+
+    0%,100% {
+        opacity: .45;
+        transform:
+            translate(-50%, -50%)
+            scale(.9);
+    }
+
+    50% {
+        opacity: 1;
+        transform:
+            translate(-50%, -50%)
+            scale(1.08);
+    }
+
+}
+
+
+@keyframes arsArtifactBlueAura {
+
+    0%,100% {
+        transform:
+            translate(-50%, -50%)
+            scale(.92);
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.08);
+    }
+
+}
+
+
+/* particles */
+
+.ars-philosophy-particle {
+
+    position: absolute;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background:
+        #168CFF;
+
+    box-shadow:
+        0 0 8px
+        rgba(22,140,255,.8);
+
+}
+
+
+.particle-one {
+    left: 10%;
+    top: 28%;
+    animation:
+        arsParticleOne
+        5s
+        ease-in-out
+        infinite;
+}
+
+
+.particle-two {
+    left: 37%;
+    top: 22%;
+    animation:
+        arsParticleTwo
+        6s
+        ease-in-out
+        infinite;
+}
+
+
+.particle-three {
+    left: 32%;
+    top: 77%;
+    animation:
+        arsParticleThree
+        7s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes arsParticleOne {
+
+    50% {
+        transform:
+            translate(20px, -14px);
+        opacity: .35;
+    }
+
+}
+
+
+@keyframes arsParticleTwo {
+
+    50% {
+        transform:
+            translate(-18px, 18px);
+        opacity: .3;
+    }
+
+}
+
+
+@keyframes arsParticleThree {
+
+    50% {
+        transform:
+            translate(16px, -20px);
+        opacity: .3;
+    }
+
+}
+
+
+/* =========================================================
+   13 — CENTRAL HERITAGE CORE
+========================================================= */
+
+.ars-philosophy-core {
+
+    position: relative;
+
+    z-index: 4;
+
+    width:
+        320px;
+
+    height:
+        320px;
+
+    justify-self: center;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+}
+
+
+/* logo */
+
+.ars-philosophy-core img {
+
+    position: relative;
+
+    z-index: 7;
+
+    width:
+        135px;
+
+    height:
+        auto;
+
+    filter:
+        drop-shadow(
+            0 0 14px
+            rgba(216,180,135,.32)
+        );
+
+    animation:
+        arsLogoBreath
+        5s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes arsLogoBreath {
+
+    0%,100% {
+        transform: scale(.98);
+        filter:
+            drop-shadow(
+                0 0 10px
+                rgba(216,180,135,.25)
+            );
+    }
+
+    50% {
+        transform: scale(1.035);
+        filter:
+            drop-shadow(
+                0 0 22px
+                rgba(216,180,135,.48)
+            );
+    }
+
+}
+
+
+/* core glow */
+
+.ars-philosophy-core-glow {
+
+    position: absolute;
+
+    width: 210px;
+    height: 210px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(216,180,135,.20),
+            rgba(216,180,135,.045) 43%,
+            transparent 70%
+        );
+
+    filter:
+        blur(5px);
+
+    animation:
+        arsCoreGlow
+        5s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes arsCoreGlow {
+
+    0%,100% {
+        opacity: .55;
+        transform: scale(.9);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.08);
+    }
+
+}
+
+
+/* =========================================================
+   14 — PHILOSOPHY RINGS
+========================================================= */
+
+.ars-philosophy-ring {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    pointer-events: none;
+
+}
+
+
+.philosophy-ring-one {
+
+    width: 250px;
+    height: 250px;
+
+    border:
+        1px solid
+        rgba(216,180,135,.30);
+
+    animation:
+        arsPhilosophyRingOne
+        17s
+        linear
+        infinite;
+
+}
+
+
+.philosophy-ring-two {
+
+    width: 285px;
+    height: 285px;
+
+    border:
+        1px solid
+        rgba(22,140,255,.22);
+
+    animation:
+        arsPhilosophyRingTwo
+        13s
+        linear
+        infinite reverse;
+
+}
+
+
+.philosophy-ring-three {
+
+    width: 315px;
+    height: 315px;
+
+    border:
+        1px dashed
+        rgba(216,180,135,.16);
+
+    animation:
+        arsPhilosophyRingThree
+        24s
+        linear
+        infinite;
+
+}
+
+
+@keyframes arsPhilosophyRingOne {
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+}
+
+
+@keyframes arsPhilosophyRingTwo {
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+}
+
+
+@keyframes arsPhilosophyRingThree {
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   15 — PHILOSOPHY NODE
+========================================================= */
+
+.ars-philosophy-node {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 8px;
+    height: 8px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        #D8B487;
+
+    box-shadow:
+        0 0 10px
+        rgba(216,180,135,.9),
+
+        0 0 28px
+        rgba(216,180,135,.4);
+
+    z-index: 8;
+
+    animation:
+        arsPhilosophyNode
+        3.5s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes arsPhilosophyNode {
+
+    0%,100% {
+        opacity: .65;
+        transform:
+            translate(-50%, -50%)
+            scale(.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform:
+            translate(-50%, -50%)
+            scale(1.35);
+    }
+
+}
+
+
+/* =========================================================
+   16 — PHILOSOPHY TEXT
+========================================================= */
+
+.ars-philosophy-text {
+
+    position:
+        relative;
+
+    z-index:
+        5;
+
+    padding:
+        25px 0;
+
+}
+
+
+.ars-philosophy-text-label {
+
+    display:
+        block;
+
+    margin-bottom:
+        13px;
+
+    color:
+        rgba(22,140,255,.72);
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        .28em;
+
+}
+
+
+.ars-philosophy-text h3 {
+
+    margin:
+        0 0 22px;
+
+    color:
+        #D8B487;
+
+    font-size:
+        clamp(25px, 3vw, 40px);
+
+    line-height:
+        1.1;
+
+}
+
+
+.ars-philosophy-text p {
+
+    max-width:
+        600px;
+
+    margin:
+        0;
+
+    color:
+        rgba(225,231,237,.69);
+
+    font-size:
+        13px;
+
+    line-height:
+        1.95;
+
+}
+
+
+/* =========================================================
+   17 — MANIFESTO
+========================================================= */
+
+.ars-philosophy-manifesto {
+
+    position:
+        relative;
+
+    margin:
+        34px 0 0;
+
+    padding:
+        22px 0 0 25px;
+
+    border-left:
+        1px solid
+        rgba(216,180,135,.45);
+
+}
+
+
+.ars-philosophy-manifesto::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        -1px;
+
+    top:
+        0;
+
+    width:
+        1px;
+
+    height:
+        42px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #168CFF,
+            #D8B487,
+            transparent
+        );
+
+}
+
+
+.ars-philosophy-manifesto span {
+
+    display:
+        block;
+
+    color:
+        #D8B487;
+
+    font-size:
+        clamp(14px, 1.3vw, 18px);
+
+    line-height:
+        1.65;
+
+}
+
+
+.ars-philosophy-manifesto span:last-child {
+
+    color:
+        rgba(216,180,135,.72);
+
+}
+
+
+/* =========================================================
+   18 — FINAL SIGNATURE
+========================================================= */
+
+.ars-philosophy-signature {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        11px;
+
+    margin-top:
+        55px;
+
+}
+
+
+.ars-philosophy-signature-line {
+
+    width:
+        75px;
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(216,180,135,.55)
+        );
+
+}
+
+
+.ars-philosophy-signature-line:last-of-type {
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(22,140,255,.55),
+            transparent
+        );
+
+}
+
+
+.ars-philosophy-signature-node {
+
+    width:
+        5px;
+    height:
+        5px;
+
+    border-radius:
+        50%;
+
+    background:
+        #D8B487;
+
+    box-shadow:
+        0 0 9px
+        rgba(216,180,135,.7);
+
+}
+
+
+.ars-philosophy-signature-text {
+
+    color:
+        rgba(216,180,135,.55);
+
+    font-size:
+        7px;
+
+    letter-spacing:
+        .25em;
+
+}
+
+
+/* =========================================================
+   19 — MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .ars-mission-triad {
+
+        min-height:
+            auto;
+
+        display:
+            grid;
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            18px;
+
+        padding:
+            0 15px;
+
+    }
+
+
+    .ars-triad-axis {
+
+        display:
+            none;
+
+    }
+
+
+    .ars-mission-card {
+
+        position:
+            relative;
+
+        width:
+            100%;
+
+        min-height:
+            240px;
+
+        left:
+            auto;
+
+        right:
+            auto;
+
+        top:
+            auto;
+
+        bottom:
+            auto;
+
+        transform:
+            none !important;
+
+    }
+
+
+    .ars-mission-card:hover {
+
+        transform:
+            translateY(-5px) !important;
+
+    }
+
+
+    .ars-philosophy-artifact-field {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            45px;
+
+        min-height:
+            auto;
+
+        padding:
+            0 18px;
+
+    }
+
+
+    .ars-philosophy-core {
+
+        width:
+            290px;
+
+        height:
+            290px;
+
+        order:
+            1;
+
+    }
+
+
+    .ars-philosophy-text {
+
+        order:
+            2;
+
+        text-align:
+            center;
+
+    }
+
+
+    .ars-philosophy-text p {
+
+        margin:
+            0 auto;
+
+    }
+
+
+    .ars-philosophy-manifesto {
+
+        text-align:
+            left;
+
+        max-width:
+            420px;
+
+        margin-left:
+            auto;
+
+        margin-right:
+            auto;
+
+    }
+
+
+    .ars-philosophy-aura {
+
+        left:
+            50%;
+
+    }
+
+}
+
+
+/* =========================================================
+   20 — SMALL MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+
+    .ars-mission-vision,
+    .ars-philosophy-artifact {
+
+        padding-top:
+            80px;
+
+        padding-bottom:
+            90px;
+
+    }
+
+
+    .ars-mission-card {
+
+        padding:
+            28px 24px;
+
+    }
+
+
+    .ars-mission-card p,
+    .ars-philosophy-text p {
+
+        font-size:
+            11px;
+
+    }
+
+
+    .ars-philosophy-core {
+
+        width:
+            255px;
+
+        height:
+            255px;
+
+    }
+
+
+    .philosophy-ring-one {
+        width: 200px;
+        height: 200px;
+    }
+
+
+    .philosophy-ring-two {
+        width: 230px;
+        height: 230px;
+    }
+
+
+    .philosophy-ring-three {
+        width: 255px;
+        height: 255px;
+    }
+
+
+    .ars-philosophy-core img {
+
+        width:
+            110px;
+
+    }
+
+
+    .ars-philosophy-manifesto span {
+
+        font-size:
+            13px;
+
+    }
+
+}
+
+
+/* =========================================================
+   21 — REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ars-mission-vision *,
+    .ars-philosophy-artifact * {
+
+        animation:
+            none !important;
+
+        transition:
+            none !important;
+
+    }
+
+      }
 
 
 
