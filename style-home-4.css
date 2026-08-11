@@ -28285,7 +28285,265 @@ END
 
 
 
+/* =========================================================
+   ARS POST-HERO + ABOUT
+   HERITAGE BRONZE LOCK + MICRO SCROLL REVEAL
+   LOCKED COLOR: #D8B487
+========================================================= */
 
+
+/* =========================================================
+   01 — HERITAGE BRONZE COLOR LOCK
+========================================================= */
+
+.ars-post-hero-label,
+.ars-title-line:nth-child(2),
+.ars-heritage-button,
+.ars-about-label,
+.ars-about-title-line:last-child,
+.ars-about-footer-text {
+
+    color:
+        #D8B487 !important;
+}
+
+
+/* =========================================================
+   02 — BRONZE LIGHT LANGUAGE
+========================================================= */
+
+.ars-post-hero-signature-node,
+.ars-about-signature-node,
+.ars-transition-node {
+
+    background:
+        #D8B487 !important;
+
+    box-shadow:
+        0 0 8px
+        rgba(216,180,135,.72),
+
+        0 0 22px
+        rgba(216,180,135,.24) !important;
+}
+
+
+/* =========================================================
+   03 — BRONZE ENERGY
+========================================================= */
+
+.ars-heritage-button {
+
+    border-color:
+        rgba(216,180,135,.45) !important;
+}
+
+
+.ars-heritage-button:hover {
+
+    border-color:
+        rgba(216,180,135,.82) !important;
+
+    box-shadow:
+        0 8px 30px
+        rgba(216,180,135,.14) !important;
+}
+
+
+.ars-heritage-button .ars-button-energy {
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(216,180,135,.24),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   04 — ABOUT MICRO REVEAL
+   Heritage → Engineering → Intelligence
+========================================================= */
+
+.ars-about-signature,
+.ars-about-label,
+.ars-about-title,
+.ars-about-text-primary,
+.ars-about-text-secondary,
+.ars-about-intelligence-footer {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(18px);
+
+    animation:
+        arsAboutCinematicReveal
+        1s
+        cubic-bezier(.16,1,.3,1)
+        forwards;
+}
+
+
+/* staggered entrance */
+
+.ars-about-signature {
+
+    animation-delay:
+        .10s;
+}
+
+
+.ars-about-label {
+
+    animation-delay:
+        .25s;
+}
+
+
+.ars-about-title {
+
+    animation-delay:
+        .40s;
+}
+
+
+.ars-about-text-primary {
+
+    animation-delay:
+        .58s;
+}
+
+
+.ars-about-text-secondary {
+
+    animation-delay:
+        .72s;
+}
+
+
+.ars-about-intelligence-footer {
+
+    animation-delay:
+        .90s;
+}
+
+
+@keyframes arsAboutCinematicReveal {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(18px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+
+    }
+}
+
+
+/* =========================================================
+   05 — FINAL BRONZE SIGNATURE
+========================================================= */
+
+.ars-about-intelligence-footer {
+
+    position:
+        relative;
+}
+
+
+.ars-about-footer-text {
+
+    text-shadow:
+        0 0 10px
+        rgba(216,180,135,.14);
+}
+
+
+/* =========================================================
+   06 — BRONZE TRANSITION PULSE
+========================================================= */
+
+.ars-transition-energy {
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.82),
+            #168CFF,
+            #D8B487,
+            transparent
+        ) !important;
+
+    box-shadow:
+        0 0 10px
+        rgba(216,180,135,.28),
+
+        0 0 18px
+        rgba(22,140,255,.18) !important;
+}
+
+
+/* =========================================================
+   07 — MOBILE SAFETY
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .ars-about-signature,
+    .ars-about-label,
+    .ars-about-title,
+    .ars-about-text-primary,
+    .ars-about-text-secondary,
+    .ars-about-intelligence-footer {
+
+        transform:
+            translateY(10px);
+
+    }
+
+}
+
+
+/* =========================================================
+   08 — REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ars-about-signature,
+    .ars-about-label,
+    .ars-about-title,
+    .ars-about-text-primary,
+    .ars-about-text-secondary,
+    .ars-about-intelligence-footer {
+
+        opacity:
+            1 !important;
+
+        transform:
+            none !important;
+
+        animation:
+            none !important;
+    }
+}
 
 
 
