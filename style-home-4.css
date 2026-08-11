@@ -26464,3 +26464,250 @@ END
         0 0 12px
         rgba(216,180,135,.20);
 }
+
+
+
+
+/* =========================================================
+   GLOBAL VISION — FINAL POLISH PATCH
+   01 — CARD ENERGY
+   02 — ENERGY SPINE
+   03 — DESTINATION STATEMENT
+========================================================= */
+
+
+/* =========================================================
+   01 — THREE CARDS
+   Keep geometry / position untouched
+   Only refine visual separation
+========================================================= */
+
+.ars-global-vision-grid {
+
+    column-gap:
+        clamp(24px, 3.4vw, 52px);
+}
+
+
+/* subtle premium separation */
+
+.ars-global-vision-card {
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255,255,255,.025),
+
+        0 18px 42px
+        rgba(0,0,0,.38);
+}
+
+
+/* =========================================================
+   02 — GLOBAL ENERGY SPINE
+   More visible, still extremely subtle
+========================================================= */
+
+.ars-global-vision-spine {
+
+    height:
+        34px;
+}
+
+
+.ars-global-vision-spine-line {
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+
+            transparent 0%,
+
+            rgba(22,140,255,.10) 8%,
+
+            rgba(22,140,255,.58) 24%,
+
+            rgba(228,185,95,.72) 50%,
+
+            rgba(22,140,255,.58) 76%,
+
+            rgba(228,185,95,.28) 88%,
+
+            transparent 100%
+        );
+
+    box-shadow:
+        0 0 7px
+        rgba(22,140,255,.22),
+
+        0 0 14px
+        rgba(228,185,95,.10);
+}
+
+
+/* moving energy pulse */
+
+.ars-global-vision-spine-line::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        -8%;
+
+    top:
+        0;
+
+    width:
+        16%;
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.90),
+            rgba(228,185,95,.85),
+            transparent
+        );
+
+    box-shadow:
+        0 0 9px
+        rgba(228,185,95,.55);
+
+    animation:
+        arsGlobalVisionSpinePulse
+        4.8s
+        linear infinite;
+}
+
+
+@keyframes arsGlobalVisionSpinePulse {
+
+    from {
+        transform:
+            translateX(0);
+        opacity:
+            0;
+    }
+
+    12% {
+        opacity:
+            1;
+    }
+
+    48% {
+        opacity:
+            .85;
+    }
+
+    62% {
+        opacity:
+            0;
+    }
+
+    to {
+        transform:
+            translateX(720%);
+        opacity:
+            0;
+    }
+}
+
+
+/* =========================================================
+   03 — DESTINATION STATEMENT
+========================================================= */
+
+.ars-global-vision-destination {
+
+    margin-top:
+        clamp(18px, 2vw, 30px);
+
+    padding-top:
+        clamp(8px, 1vw, 14px);
+}
+
+
+/* keep GLOBAL ECOSYSTEM blue */
+
+.ars-global-vision-destination-label {
+
+    margin-bottom:
+        16px;
+
+    letter-spacing:
+        .30em;
+}
+
+
+/* main statement */
+
+.ars-global-vision-destination h2 {
+
+    margin:
+        0 0 14px;
+
+    line-height:
+        1.2;
+
+    letter-spacing:
+        .045em;
+}
+
+
+/* destination paragraphs */
+
+.ars-global-vision-destination p {
+
+    margin:
+        5px 0;
+
+    line-height:
+        1.65;
+
+    letter-spacing:
+        .025em;
+}
+
+
+/* =========================================================
+   FINAL GOLDEN ACCENT UNDER STATEMENT
+========================================================= */
+
+.ars-global-vision-destination h2::after {
+
+    content:
+        "";
+
+    display:
+        block;
+
+    width:
+        56px;
+
+    height:
+        1px;
+
+    margin:
+        13px auto 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(228,185,95,.72),
+            transparent
+        );
+
+    box-shadow:
+        0 0 8px
+        rgba(228,185,95,.28);
+}
