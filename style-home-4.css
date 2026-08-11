@@ -26711,3 +26711,1586 @@ END
         0 0 8px
         rgba(228,185,95,.28);
 }
+
+
+
+
+
+
+/* =========================================================
+   ARS HERITAGE GROUP
+   POST-HERO INTELLIGENCE SYSTEM
+   PREMIUM CINEMATIC CSS
+   SCOPE: HERO CONTENT + ABOUT ONLY
+========================================================= */
+
+
+/* =========================================================
+   01 — POST HERO SECTION
+========================================================= */
+
+.ars-post-hero {
+
+    position:
+        relative;
+
+    isolation:
+        isolate;
+
+    overflow:
+        hidden;
+
+    padding:
+        clamp(90px, 10vw, 150px) 0
+        clamp(80px, 9vw, 135px);
+
+    background:
+        radial-gradient(
+            ellipse at 50% 25%,
+            rgba(15,86,130,.10),
+            transparent 55%
+        );
+}
+
+
+/* =========================================================
+   CINEMATIC AMBIENT FIELD
+========================================================= */
+
+.ars-post-hero::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    background:
+        radial-gradient(
+            circle at 50% 38%,
+            rgba(22,140,255,.075),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 50% 72%,
+            rgba(216,180,135,.045),
+            transparent 35%
+        );
+
+    opacity:
+        .9;
+
+    animation:
+        arsPostHeroBreath
+        8s ease-in-out
+        infinite;
+}
+
+
+@keyframes arsPostHeroBreath {
+
+    0%,
+    100% {
+        opacity:
+            .55;
+        transform:
+            scale(1);
+    }
+
+    50% {
+        opacity:
+            1;
+        transform:
+            scale(1.045);
+    }
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.ars-post-hero-content {
+
+    position:
+        relative;
+
+    z-index:
+        5;
+
+    max-width:
+        920px;
+
+    margin:
+        0 auto;
+
+    text-align:
+        center;
+}
+
+
+/* =========================================================
+   02 — INTELLIGENCE SIGNATURE
+========================================================= */
+
+.ars-post-hero-signature {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        10px;
+
+    width:
+        min(260px, 58vw);
+
+    margin:
+        0 auto
+        24px;
+
+    opacity:
+        0;
+
+    animation:
+        arsSignatureReveal
+        1.2s
+        cubic-bezier(.16,1,.3,1)
+        .15s
+        forwards;
+}
+
+
+.ars-post-hero-signature-line {
+
+    flex:
+        1;
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(22,140,255,.58)
+        );
+}
+
+
+.ars-post-hero-signature-line:last-child {
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(216,180,135,.58),
+            transparent
+        );
+}
+
+
+.ars-post-hero-signature-node {
+
+    width:
+        5px;
+
+    height:
+        5px;
+
+    flex:
+        0 0 5px;
+
+    border-radius:
+        50%;
+
+    background:
+        #d8b487;
+
+    box-shadow:
+        0 0 6px rgba(216,180,135,.75),
+        0 0 18px rgba(22,140,255,.28);
+
+    animation:
+        arsSignatureNode
+        3.4s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes arsSignatureReveal {
+
+    from {
+        opacity:
+            0;
+        transform:
+            scaleX(.35);
+    }
+
+    to {
+        opacity:
+            1;
+        transform:
+            scaleX(1);
+    }
+}
+
+
+@keyframes arsSignatureNode {
+
+    0%,
+    100% {
+        transform:
+            scale(.8);
+        box-shadow:
+            0 0 5px rgba(216,180,135,.55),
+            0 0 12px rgba(22,140,255,.18);
+    }
+
+    50% {
+        transform:
+            scale(1.35);
+        box-shadow:
+            0 0 9px rgba(216,180,135,.95),
+            0 0 24px rgba(22,140,255,.38);
+    }
+}
+
+
+/* =========================================================
+   03 — HERO LABEL
+========================================================= */
+
+.ars-post-hero-label {
+
+    position:
+        relative;
+
+    display:
+        inline-block;
+
+    margin-bottom:
+        20px;
+
+    color:
+        #d8b487;
+
+    letter-spacing:
+        .28em;
+
+    opacity:
+        0;
+
+    transform:
+        translateY(14px);
+
+    animation:
+        arsPostLabelReveal
+        1s
+        cubic-bezier(.16,1,.3,1)
+        .45s
+        forwards;
+}
+
+
+.ars-post-hero-label::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    bottom:
+        -7px;
+
+    width:
+        0;
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #168cff,
+            #d8b487,
+            transparent
+        );
+
+    animation:
+        arsLabelScan
+        1.5s
+        cubic-bezier(.16,1,.3,1)
+        .9s
+        forwards;
+}
+
+
+@keyframes arsPostLabelReveal {
+
+    to {
+        opacity:
+            1;
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes arsLabelScan {
+
+    to {
+        width:
+            100%;
+    }
+}
+
+
+/* =========================================================
+   04 — MAIN MANIFESTO
+========================================================= */
+
+.ars-post-hero-title {
+
+    margin:
+        0;
+
+    font-size:
+        clamp(34px, 5vw, 76px);
+
+    line-height:
+        1.04;
+
+    letter-spacing:
+        -.025em;
+
+    font-weight:
+        700;
+
+    text-wrap:
+        balance;
+}
+
+
+/* individual title lines */
+
+.ars-title-line {
+
+    display:
+        block;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    color:
+        #f3f4f6;
+
+    opacity:
+        0;
+
+    transform:
+        translateY(42px);
+
+    animation:
+        arsTitleReveal
+        1.25s
+        cubic-bezier(.16,1,.3,1)
+        forwards;
+}
+
+
+.ars-title-line:nth-child(1) {
+
+    animation-delay:
+        .65s;
+}
+
+
+.ars-title-line:nth-child(2) {
+
+    animation-delay:
+        .84s;
+
+    color:
+        #d8b487;
+}
+
+
+/* cinematic light sweep */
+
+.ars-title-line::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        -35%;
+
+    width:
+        22%;
+
+    height:
+        100%;
+
+    pointer-events:
+        none;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.32),
+            transparent
+        );
+
+    transform:
+        skewX(-18deg);
+
+    animation:
+        arsTitleSweep
+        1.7s
+        ease
+        1.15s
+        both;
+}
+
+
+@keyframes arsTitleReveal {
+
+    to {
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes arsTitleSweep {
+
+    from {
+        left:
+            -35%;
+    }
+
+    to {
+        left:
+            125%;
+    }
+}
+
+
+/* =========================================================
+   05 — HERO DESCRIPTION
+========================================================= */
+
+.ars-post-hero-description {
+
+    max-width:
+        760px;
+
+    margin:
+        28px auto 0;
+
+    font-size:
+        clamp(12px, 1vw, 15px);
+
+    line-height:
+        1.9;
+
+    letter-spacing:
+        .035em;
+
+    color:
+        rgba(220,228,235,.72);
+
+    opacity:
+        0;
+
+    transform:
+        translateY(20px);
+
+    animation:
+        arsDescriptionReveal
+        1.15s
+        cubic-bezier(.16,1,.3,1)
+        1.08s
+        forwards;
+}
+
+
+@keyframes arsDescriptionReveal {
+
+    to {
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   06 — CTA SYSTEM
+========================================================= */
+
+.ars-post-hero-buttons {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        14px;
+
+    margin-top:
+        34px;
+
+    opacity:
+        0;
+
+    transform:
+        translateY(18px);
+
+    animation:
+        arsButtonsReveal
+        1s
+        cubic-bezier(.16,1,.3,1)
+        1.3s
+        forwards;
+}
+
+
+@keyframes arsButtonsReveal {
+
+    to {
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* buttons */
+
+.ars-intelligence-button,
+.ars-heritage-button {
+
+    position:
+        relative;
+
+    isolation:
+        isolate;
+
+    overflow:
+        hidden;
+
+    min-width:
+        205px;
+
+    transition:
+        transform .45s cubic-bezier(.16,1,.3,1),
+        box-shadow .45s ease,
+        border-color .45s ease;
+}
+
+
+.ars-intelligence-button {
+
+    border-color:
+        rgba(22,140,255,.45) !important;
+
+    box-shadow:
+        0 0 0
+        rgba(22,140,255,0);
+}
+
+
+.ars-heritage-button {
+
+    border-color:
+        rgba(216,180,135,.42) !important;
+
+    box-shadow:
+        0 0 0
+        rgba(216,180,135,0);
+}
+
+
+/* moving energy trace */
+
+.ars-button-energy {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    z-index:
+        -1;
+
+    pointer-events:
+        none;
+
+    opacity:
+        0;
+}
+
+
+.ars-intelligence-button .ars-button-energy {
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(22,140,255,.24),
+            transparent
+        );
+
+    transform:
+        translateX(-120%);
+
+    transition:
+        opacity .3s ease;
+}
+
+
+.ars-heritage-button .ars-button-energy {
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(216,180,135,.20),
+            transparent
+        );
+
+    transform:
+        translateX(-120%);
+
+    transition:
+        opacity .3s ease;
+}
+
+
+.ars-intelligence-button:hover {
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(22,140,255,.82) !important;
+
+    box-shadow:
+        0 8px 30px
+        rgba(22,140,255,.16);
+}
+
+
+.ars-heritage-button:hover {
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(216,180,135,.78) !important;
+
+    box-shadow:
+        0 8px 30px
+        rgba(216,180,135,.13);
+}
+
+
+.ars-intelligence-button:hover .ars-button-energy,
+.ars-heritage-button:hover .ars-button-energy {
+
+    opacity:
+        1;
+
+    animation:
+        arsButtonEnergySweep
+        1.2s
+        ease
+        infinite;
+}
+
+
+@keyframes arsButtonEnergySweep {
+
+    from {
+        transform:
+            translateX(-120%);
+    }
+
+    to {
+        transform:
+            translateX(120%);
+    }
+}
+
+
+/* =========================================================
+   07 — MICRO STATUS
+========================================================= */
+
+.ars-post-hero-status {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    gap:
+        9px;
+
+    margin-top:
+        27px;
+
+    opacity:
+        0;
+
+    animation:
+        arsStatusReveal
+        1s
+        ease
+        1.65s
+        forwards;
+}
+
+
+.ars-status-line {
+
+    width:
+        28px;
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(22,140,255,.6)
+        );
+}
+
+
+.ars-status-dot {
+
+    width:
+        4px;
+
+    height:
+        4px;
+
+    border-radius:
+        50%;
+
+    background:
+        #168cff;
+
+    box-shadow:
+        0 0 9px
+        rgba(22,140,255,.75);
+
+    animation:
+        arsStatusPulse
+        2.2s
+        ease-in-out
+        infinite;
+}
+
+
+.ars-status-text {
+
+    font-size:
+        7px;
+
+    letter-spacing:
+        .25em;
+
+    color:
+        rgba(160,190,210,.48);
+}
+
+
+@keyframes arsStatusReveal {
+
+    to {
+        opacity:
+            1;
+    }
+}
+
+
+@keyframes arsStatusPulse {
+
+    0%,
+    100% {
+        opacity:
+            .45;
+        transform:
+            scale(.8);
+    }
+
+    50% {
+        opacity:
+            1;
+        transform:
+            scale(1.25);
+    }
+}
+
+
+/* =========================================================
+   08 — HERO → ABOUT TRANSITION
+========================================================= */
+
+.ars-intelligence-transition {
+
+    position:
+        relative;
+
+    width:
+        min(700px, 78%);
+
+    height:
+        46px;
+
+    margin:
+        35px auto 0;
+
+    pointer-events:
+        none;
+}
+
+
+.ars-transition-line {
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    right:
+        0;
+
+    top:
+        50%;
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(22,140,255,.25),
+            rgba(22,140,255,.62),
+            rgba(216,180,135,.72),
+            rgba(22,140,255,.62),
+            rgba(216,180,135,.25),
+            transparent
+        );
+
+    box-shadow:
+        0 0 9px
+        rgba(22,140,255,.16);
+}
+
+
+.ars-transition-node {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        7px;
+
+    height:
+        7px;
+
+    border-radius:
+        50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    background:
+        #d8b487;
+
+    box-shadow:
+        0 0 8px rgba(216,180,135,.7),
+        0 0 22px rgba(22,140,255,.28);
+
+    animation:
+        arsTransitionNode
+        3.2s
+        ease-in-out
+        infinite;
+}
+
+
+.ars-transition-energy {
+
+    position:
+        absolute;
+
+    top:
+        calc(50% - 1px);
+
+    left:
+        -8%;
+
+    width:
+        16%;
+
+    height:
+        2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.9),
+            #168cff,
+            #d8b487,
+            transparent
+        );
+
+    box-shadow:
+        0 0 10px
+        rgba(22,140,255,.45);
+
+    animation:
+        arsTransitionEnergy
+        4.5s
+        linear
+        infinite;
+}
+
+
+@keyframes arsTransitionEnergy {
+
+    from {
+        transform:
+            translateX(0);
+        opacity:
+            0;
+    }
+
+    12% {
+        opacity:
+            1;
+    }
+
+    65% {
+        opacity:
+            .8;
+    }
+
+    100% {
+        transform:
+            translateX(675%);
+        opacity:
+            0;
+    }
+}
+
+
+@keyframes arsTransitionNode {
+
+    0%,
+    100% {
+        transform:
+            translate(-50%, -50%)
+            scale(.8);
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.35);
+    }
+}
+
+
+/* =========================================================
+   09 — ABOUT SECTION
+========================================================= */
+
+.ars-about-intelligence {
+
+    position:
+        relative;
+
+    isolation:
+        isolate;
+
+    overflow:
+        hidden;
+
+    padding:
+        clamp(90px, 11vw, 155px) 0
+        clamp(100px, 12vw, 175px);
+
+    background:
+        radial-gradient(
+            ellipse at 50% 40%,
+            rgba(216,180,135,.035),
+            transparent 48%
+        );
+}
+
+
+/* ambient light */
+
+.ars-about-intelligence::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        600px;
+
+    height:
+        600px;
+
+    left:
+        50%;
+
+    top:
+        48%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(22,140,255,.055),
+            transparent 67%
+        );
+
+    pointer-events:
+        none;
+
+    animation:
+        arsAboutBreath
+        9s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes arsAboutBreath {
+
+    0%,
+    100% {
+        opacity:
+            .45;
+        transform:
+            translate(-50%, -50%)
+            scale(.94);
+    }
+
+    50% {
+        opacity:
+            1;
+        transform:
+            translate(-50%, -50%)
+            scale(1.06);
+    }
+}
+
+
+/* =========================================================
+   10 — ABOUT CONTENT
+========================================================= */
+
+.ars-about-wrapper {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+}
+
+
+.ars-about-content {
+
+    width:
+        min(850px, 100%);
+
+    text-align:
+        center;
+}
+
+
+/* =========================================================
+   11 — ABOUT SIGNATURE
+========================================================= */
+
+.ars-about-signature {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    margin-bottom:
+        24px;
+}
+
+
+.ars-about-signature-line {
+
+    width:
+        74px;
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(216,180,135,.65)
+        );
+}
+
+
+.ars-about-signature-line:last-child {
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(22,140,255,.65),
+            transparent
+        );
+}
+
+
+.ars-about-signature-node {
+
+    width:
+        6px;
+
+    height:
+        6px;
+
+    margin:
+        0 10px;
+
+    border-radius:
+        50%;
+
+    background:
+        #d8b487;
+
+    box-shadow:
+        0 0 8px
+        rgba(216,180,135,.72),
+
+        0 0 20px
+        rgba(22,140,255,.25);
+}
+
+
+/* =========================================================
+   12 — ABOUT LABEL
+========================================================= */
+
+.ars-about-label {
+
+    display:
+        inline-block;
+
+    color:
+        rgba(216,180,135,.76);
+
+    letter-spacing:
+        .27em;
+
+    font-size:
+        clamp(8px, .65vw, 11px);
+}
+
+
+/* =========================================================
+   13 — ABOUT TITLE
+========================================================= */
+
+.ars-about-title {
+
+    margin:
+        18px 0 0;
+
+    font-size:
+        clamp(29px, 4vw, 58px);
+
+    line-height:
+        1.08;
+
+    letter-spacing:
+        -.02em;
+
+    font-weight:
+        700;
+}
+
+
+.ars-about-title-line {
+
+    display:
+        block;
+
+    color:
+        #f1f3f5;
+}
+
+
+.ars-about-title-line:last-child {
+
+    color:
+        #d8b487;
+}
+
+
+/* =========================================================
+   14 — ABOUT TEXT
+========================================================= */
+
+.ars-about-text {
+
+    max-width:
+        760px;
+
+    margin-left:
+        auto;
+
+    margin-right:
+        auto;
+
+    font-size:
+        clamp(11px, .9vw, 14px);
+
+    line-height:
+        1.9;
+
+    letter-spacing:
+        .025em;
+}
+
+
+.ars-about-text-primary {
+
+    margin-top:
+        30px;
+
+    color:
+        rgba(225,231,236,.74);
+}
+
+
+.ars-about-text-secondary {
+
+    margin-top:
+        13px;
+
+    color:
+        rgba(205,216,225,.56);
+}
+
+
+/* =========================================================
+   15 — ABOUT INTELLIGENCE SIGNATURE
+========================================================= */
+
+.ars-about-intelligence-footer {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    margin-top:
+        30px;
+}
+
+
+.ars-about-footer-line {
+
+    width:
+        42px;
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(22,140,255,.5)
+        );
+}
+
+
+.ars-about-footer-node {
+
+    width:
+        4px;
+
+    height:
+        4px;
+
+    border-radius:
+        50%;
+
+    background:
+        #168cff;
+
+    box-shadow:
+        0 0 9px
+        rgba(22,140,255,.7);
+}
+
+
+.ars-about-footer-text {
+
+    font-size:
+        6px;
+
+    letter-spacing:
+        .24em;
+
+    color:
+        rgba(216,180,135,.58);
+}
+
+
+/* =========================================================
+   16 — HOVER INTELLIGENCE
+========================================================= */
+
+.ars-about-content:hover
+.ars-about-signature-node {
+
+    animation:
+        arsAboutNodeActivation
+        1.2s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes arsAboutNodeActivation {
+
+    0%,
+    100% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(1.5);
+    }
+}
+
+
+/* =========================================================
+   17 — MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .ars-post-hero {
+
+        padding:
+            75px 0
+            80px;
+    }
+
+    .ars-post-hero-title {
+
+        font-size:
+            clamp(30px, 9vw, 48px);
+    }
+
+    .ars-post-hero-description {
+
+        padding:
+            0 12px;
+
+        font-size:
+            11px;
+
+        line-height:
+            1.8;
+    }
+
+    .ars-post-hero-buttons {
+
+        flex-direction:
+            column;
+
+        gap:
+            11px;
+    }
+
+    .ars-intelligence-button,
+    .ars-heritage-button {
+
+        width:
+            min(88vw, 300px);
+
+        min-width:
+            0;
+    }
+
+    .ars-intelligence-transition {
+
+        width:
+            84%;
+
+        height:
+            34px;
+    }
+
+    .ars-about-intelligence {
+
+        padding:
+            80px 0
+            100px;
+    }
+
+    .ars-about-title {
+
+        font-size:
+            clamp(28px, 8vw, 42px);
+    }
+
+    .ars-about-text {
+
+        padding:
+            0 12px;
+
+        font-size:
+            10px;
+    }
+
+    .ars-about-footer-text {
+
+        font-size:
+            5px;
+
+        letter-spacing:
+            .18em;
+    }
+}
+
+
+/* =========================================================
+   18 — REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ars-post-hero *,
+    .ars-about-intelligence * {
+
+        animation:
+            none !important;
+
+        transition:
+            none !important;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
