@@ -25465,3 +25465,881 @@ END
         0 0 12px rgba(103,209,255,.14),
         0 0 22px rgba(103,209,255,.08) !important;
 }
+
+
+
+
+
+
+
+/* =========================================================
+   ARS GLOBAL VISION
+   PREMIUM INTELLIGENCE ARRAY — V1
+
+   COLOR DNA:
+   BLUE 55%
+   GOLD 45%
+
+   IMPORTANT:
+   - NO EXISTING CARD POSITION OVERRIDE
+   - NO OTHER SECTION MODIFICATION
+   - ENERGY IS LOCAL TO EACH CARD
+========================================================= */
+
+
+/* =========================================================
+   01 — GLOBAL VISION SYSTEM
+========================================================= */
+
+.ars-global-vision {
+    position: relative;
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   02 — HEADER
+========================================================= */
+
+.ars-global-vision-header {
+    position: relative;
+    z-index: 10;
+}
+
+
+/* =========================================================
+   03 — THREE CARD GRID
+========================================================= */
+
+.ars-global-vision-grid {
+    position: relative;
+    z-index: 5;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap:
+        clamp(18px, 3vw, 42px);
+
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   04 — CARD BASE
+========================================================= */
+
+.ars-global-vision-card {
+    position: relative;
+
+    min-height:
+        clamp(170px, 16vw, 225px);
+
+    overflow: visible;
+
+    isolation: isolate;
+
+    z-index: 10;
+
+    padding:
+        clamp(22px, 2vw, 32px);
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+    border-radius:
+        14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10,18,28,.96),
+            rgba(4,9,16,.92)
+        );
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,.28);
+
+    transition:
+        border-color .45s ease,
+        box-shadow .45s ease,
+        transform .45s ease;
+}
+
+
+/* =========================================================
+   05 — CARD COLOR DNA
+========================================================= */
+
+/* ENGINEERING — BLUE DOMINANT */
+
+.ars-global-vision-engineering {
+
+    --gv-blue:
+        rgba(22,140,255,.72);
+
+    --gv-gold:
+        rgba(228,185,95,.40);
+}
+
+
+/* TECHNOLOGY — BALANCED */
+
+.ars-global-vision-technology {
+
+    --gv-blue:
+        rgba(22,140,255,.64);
+
+    --gv-gold:
+        rgba(228,185,95,.52);
+}
+
+
+/* MANUFACTURING — GOLD SLIGHTLY DOMINANT */
+
+.ars-global-vision-manufacturing {
+
+    --gv-blue:
+        rgba(22,140,255,.50);
+
+    --gv-gold:
+        rgba(228,185,95,.68);
+}
+
+
+/* =========================================================
+   06 — CARD CONTENT
+========================================================= */
+
+.ars-global-vision-card-content {
+
+    position: relative;
+
+    z-index: 30;
+
+    max-width: 82%;
+}
+
+
+.ars-global-vision-card-index {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size:
+        clamp(8px, .55vw, 11px);
+
+    letter-spacing:
+        .20em;
+
+    color:
+        rgba(255,255,255,.38);
+}
+
+
+.ars-global-vision-card-label {
+
+    display: block;
+
+    margin-bottom: 9px;
+
+    font-size:
+        clamp(7px, .55vw, 10px);
+
+    font-weight: 700;
+
+    letter-spacing:
+        .18em;
+
+    color:
+        var(--gv-blue);
+
+    text-shadow:
+        0 0 10px
+        rgba(22,140,255,.20);
+}
+
+
+.ars-global-vision-card h3 {
+
+    position: relative;
+
+    margin:
+        0 0 11px;
+
+    font-size:
+        clamp(15px, 1.15vw, 21px);
+
+    line-height:
+        1.2;
+
+    letter-spacing:
+        .06em;
+
+    color:
+        #f4f6f8;
+}
+
+
+.ars-global-vision-card p {
+
+    margin:
+        0;
+
+    font-size:
+        clamp(9px, .68vw, 12px);
+
+    line-height:
+        1.75;
+
+    letter-spacing:
+        .035em;
+
+    color:
+        rgba(220,228,236,.62);
+}
+
+
+/* =========================================================
+   07 — LOCAL ENERGY CONTAINER
+   EVERYTHING INSIDE HERE BELONGS TO THIS CARD
+========================================================= */
+
+.ars-global-vision-card-energy {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        0;
+
+    height:
+        0;
+
+    pointer-events:
+        none;
+
+    z-index:
+        5;
+}
+
+
+/* =========================================================
+   08 — GOLDEN / BLUE CORE
+========================================================= */
+
+.ars-global-vision-core {
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    top:
+        0;
+
+    width:
+        28px;
+
+    height:
+        28px;
+
+    margin:
+        -14px;
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #fff8e8 0%,
+            #ffe2a4 14%,
+            rgba(228,185,95,.88) 31%,
+            rgba(22,140,255,.38) 55%,
+            transparent 78%
+        );
+
+    box-shadow:
+        0 0 7px
+        rgba(255,238,201,.85),
+
+        0 0 18px
+        rgba(228,185,95,.52),
+
+        0 0 30px
+        rgba(22,140,255,.28);
+
+    animation:
+        arsGlobalVisionCore
+        4.8s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes arsGlobalVisionCore {
+
+    0%,
+    100% {
+        transform: scale(.82);
+        opacity: .78;
+    }
+
+    50% {
+        transform: scale(1.16);
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   09 — CORE GLOW
+========================================================= */
+
+.ars-global-vision-core-glow {
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    top:
+        0;
+
+    width:
+        70px;
+
+    height:
+        70px;
+
+    margin:
+        -35px;
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(228,185,95,.24),
+            rgba(22,140,255,.12) 42%,
+            transparent 72%
+        );
+
+    filter:
+        blur(8px);
+
+    animation:
+        arsGlobalVisionGlow
+        5.2s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes arsGlobalVisionGlow {
+
+    0%,
+    100% {
+        transform: scale(.72);
+        opacity: .35;
+    }
+
+    50% {
+        transform: scale(1.12);
+        opacity: .78;
+    }
+}
+
+
+/* =========================================================
+   10 — THREE ORBITS
+========================================================= */
+
+.ars-global-vision-orbit {
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    top:
+        0;
+
+    border-radius:
+        50%;
+
+    transform-origin:
+        center;
+
+    pointer-events:
+        none;
+}
+
+
+/* GOLD */
+
+.ars-global-vision-orbit.orbit-one {
+
+    width:
+        90px;
+
+    height:
+        38px;
+
+    margin:
+        -19px -45px;
+
+    border:
+        1px solid
+        var(--gv-gold);
+
+    box-shadow:
+        0 0 8px
+        rgba(228,185,95,.22);
+
+    animation:
+        arsGlobalVisionOrbitOne
+        7s linear infinite;
+}
+
+
+/* BLUE */
+
+.ars-global-vision-orbit.orbit-two {
+
+    width:
+        122px;
+
+    height:
+        52px;
+
+    margin:
+        -26px -61px;
+
+    border:
+        1px solid
+        var(--gv-blue);
+
+    box-shadow:
+        0 0 9px
+        rgba(22,140,255,.20);
+
+    animation:
+        arsGlobalVisionOrbitTwo
+        9s linear infinite reverse;
+}
+
+
+/* SOFT GOLD */
+
+.ars-global-vision-orbit.orbit-three {
+
+    width:
+        158px;
+
+    height:
+        66px;
+
+    margin:
+        -33px -79px;
+
+    border:
+        1px solid
+        color-mix(
+            in srgb,
+            var(--gv-gold) 65%,
+            transparent
+        );
+
+    box-shadow:
+        0 0 12px
+        rgba(228,185,95,.12);
+
+    animation:
+        arsGlobalVisionOrbitThree
+        12s linear infinite;
+}
+
+
+@keyframes arsGlobalVisionOrbitOne {
+
+    from {
+        transform: rotate(20deg);
+    }
+
+    to {
+        transform: rotate(380deg);
+    }
+}
+
+
+@keyframes arsGlobalVisionOrbitTwo {
+
+    from {
+        transform: rotate(-42deg);
+    }
+
+    to {
+        transform: rotate(318deg);
+    }
+}
+
+
+@keyframes arsGlobalVisionOrbitThree {
+
+    from {
+        transform: rotate(68deg);
+    }
+
+    to {
+        transform: rotate(428deg);
+    }
+}
+
+
+/* =========================================================
+   11 — ENERGY VEINS
+========================================================= */
+
+.ars-global-vision-energy-vein {
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    top:
+        0;
+
+    height:
+        1px;
+
+    transform-origin:
+        left center;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--gv-blue),
+            var(--gv-gold),
+            transparent
+        );
+
+    box-shadow:
+        0 0 7px
+        rgba(80,170,255,.24);
+
+    opacity:
+        .65;
+}
+
+
+.ars-global-vision-energy-vein.vein-one {
+
+    width:
+        105px;
+
+    transform:
+        rotate(-18deg);
+
+    animation:
+        arsGlobalVisionVeinOne
+        4s ease-in-out infinite;
+}
+
+
+.ars-global-vision-energy-vein.vein-two {
+
+    width:
+        90px;
+
+    transform:
+        rotate(23deg);
+
+    animation:
+        arsGlobalVisionVeinTwo
+        4.7s ease-in-out infinite;
+}
+
+
+@keyframes arsGlobalVisionVeinOne {
+
+    0%,
+    100% {
+        opacity: .20;
+        transform:
+            rotate(-18deg)
+            translateX(-5px);
+    }
+
+    50% {
+        opacity: .80;
+        transform:
+            rotate(-18deg)
+            translateX(6px);
+    }
+}
+
+
+@keyframes arsGlobalVisionVeinTwo {
+
+    0%,
+    100% {
+        opacity: .18;
+        transform:
+            rotate(23deg)
+            translateX(5px);
+    }
+
+    50% {
+        opacity: .72;
+        transform:
+            rotate(23deg)
+            translateX(-6px);
+    }
+}
+
+
+/* =========================================================
+   12 — CARD STATUS
+========================================================= */
+
+.ars-global-vision-card-status {
+
+    position:
+        absolute;
+
+    right:
+        18px;
+
+    bottom:
+        17px;
+
+    width:
+        4px;
+
+    height:
+        4px;
+
+    border-radius:
+        50%;
+
+    background:
+        #d8b487;
+
+    box-shadow:
+        0 0 8px
+        rgba(228,185,95,.72);
+
+    z-index:
+        30;
+}
+
+
+/* =========================================================
+   13 — GLOBAL ENERGY SPINE
+========================================================= */
+
+.ars-global-vision-spine {
+
+    position:
+        relative;
+
+    width:
+        100%;
+
+    height:
+        28px;
+
+    pointer-events:
+        none;
+
+    z-index:
+        2;
+}
+
+
+.ars-global-vision-spine-line {
+
+    position:
+        absolute;
+
+    left:
+        16%;
+
+    right:
+        16%;
+
+    top:
+        50%;
+
+    height:
+        1px;
+
+    transform:
+        translateY(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(22,140,255,.38),
+            rgba(228,185,95,.58),
+            rgba(22,140,255,.38),
+            transparent
+        );
+
+    box-shadow:
+        0 0 8px
+        rgba(22,140,255,.18);
+}
+
+
+.ars-global-vision-spine-node {
+
+    position:
+        absolute;
+
+    top:
+        50%;
+
+    width:
+        5px;
+
+    height:
+        5px;
+
+    margin:
+        -2.5px;
+
+    border-radius:
+        50%;
+
+    background:
+        #ffe6b2;
+
+    box-shadow:
+        0 0 9px
+        rgba(228,185,95,.75);
+}
+
+
+.ars-global-vision-spine-node.node-one {
+    left: 16.66%;
+}
+
+
+.ars-global-vision-spine-node.node-two {
+    left: 50%;
+}
+
+
+.ars-global-vision-spine-node.node-three {
+    left: 83.33%;
+}
+
+
+/* =========================================================
+   14 — DESTINATION
+========================================================= */
+
+.ars-global-vision-destination {
+
+    position:
+        relative;
+
+    z-index:
+        10;
+
+    text-align:
+        center;
+}
+
+
+.ars-global-vision-destination-label {
+
+    display:
+        block;
+
+    margin-bottom:
+        10px;
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        .25em;
+
+    color:
+        rgba(22,140,255,.68);
+}
+
+
+/* =========================================================
+   15 — RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .ars-global-vision-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            22px;
+    }
+
+    .ars-global-vision-spine {
+
+        display:
+            none;
+    }
+
+    .ars-global-vision-card-content {
+
+        max-width:
+            78%;
+    }
+}
+
+
+/* =========================================================
+   16 — REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ars-global-vision-core,
+    .ars-global-vision-core-glow,
+    .ars-global-vision-orbit,
+    .ars-global-vision-energy-vein {
+
+        animation:
+            none !important;
+    }
+  }
+
+
+
+
+
+
