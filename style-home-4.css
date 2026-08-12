@@ -30673,3 +30673,65 @@ END
     z-index: 5;
 
 }
+
+
+
+
+/* =========================================================
+   ARS PHILOSOPHY — ENERGY CIRCLE VISIBILITY PATCH
+   ONLY LAYER FIX — NO POSITION / NO SIZE CHANGES
+========================================================= */
+
+
+/* PHILOSOPHY MAIN WRAPPER */
+
+.ars-philosophy-home {
+    position: relative;
+    isolation: isolate;
+}
+
+
+/* CONTENT LAYER */
+
+.ars-philosophy-home .container {
+    position: relative;
+    z-index: 5;
+}
+
+
+/* IMAGE / LOGO LAYER */
+
+.ars-philosophy-home .concept-logo {
+    position: relative;
+    z-index: 6;
+}
+
+
+/* =========================================================
+   ENERGY CIRCLES / ARTWORK
+   اجازه می‌دهد انرژی زیر تصویر ولی روی بک‌گراند دیده شود
+========================================================= */
+
+.ars-philosophy-home .concept-glow,
+.ars-philosophy-home .concept-logo::before,
+.ars-philosophy-home .concept-logo::after {
+    z-index: 2;
+}
+
+
+/* اگر دایره‌ها با pseudo-element ساخته شده‌اند */
+
+.ars-philosophy-home::before,
+.ars-philosophy-home::after {
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+/* متن همچنان روی انرژی */
+
+.ars-philosophy-home .philosophy-text {
+    position: relative;
+    z-index: 7;
+}
+
