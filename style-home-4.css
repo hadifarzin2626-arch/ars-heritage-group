@@ -30881,45 +30881,57 @@ END
 
 
 
-
-/* =========================================================
+/* ============================================================
    ARS ECOSYSTEM — SYSTEM I
+   PREMIUM VISUAL REBUILD
    ONE ECOSYSTEM · SIX DIMENSIONS
 
-   ISOLATED SYSTEM CSS
-   65% HERITAGE BRONZE
-   35% ELECTRIC BLUE
+   DESIGN DNA:
+   HERITAGE BRONZE × ELECTRIC BLUE
+   65% BRONZE / 35% BLUE
 
-   IMPORTANT:
-   This block targets ONLY:
-   .ars-system-six
-   .ars-six-grid
-   .ars-system-card
+   SIGNATURE MOTION:
+   ARS PULSE-WEAVE
 
-   ENERGY BRIDGE / CENTRAL CORE / SYSTEM II
-   ARE NOT TOUCHED.
-========================================================= */
+   SCOPE:
+   SYSTEM I ONLY
+
+   DOES NOT TARGET:
+   ENERGY BRIDGE
+   ARS HERITAGE GROUP CORE
+   SYSTEM III
+============================================================ */
 
 
-/* =========================================================
-   01 — SYSTEM FIELD
-========================================================= */
+/* ============================================================
+   01 — SYSTEM CONTAINER
+============================================================ */
 
 .ars-ecosystem-universe .ars-system-six {
+
+    --ars-bronze: #D8B487;
+    --ars-bronze-soft: rgba(216,180,135,.32);
+    --ars-bronze-dim: rgba(216,180,135,.12);
+
+    --ars-blue: #168CFF;
+    --ars-blue-soft: rgba(22,140,255,.28);
+    --ars-blue-dim: rgba(22,140,255,.10);
 
     position: relative;
 
     isolation: isolate;
 
     padding:
-        clamp(90px, 10vw, 145px)
+        clamp(95px, 10vw, 150px)
         0
-        clamp(100px, 11vw, 160px);
+        clamp(100px, 11vw, 165px);
 
 }
 
 
-/* atmospheric bronze field */
+/* ============================================================
+   02 — LIVING ATMOSPHERE
+============================================================ */
 
 .ars-ecosystem-universe .ars-system-six::before {
 
@@ -30927,96 +30939,127 @@ END
 
     position: absolute;
 
-    left: 50%;
-    top: 46%;
+    width:
+        min(900px, 85vw);
 
-    width: 900px;
-    height: 900px;
+    height:
+        min(900px, 85vw);
+
+    left:
+        50%;
+
+    top:
+        48%;
 
     transform:
         translate(-50%, -50%);
 
-    border-radius: 50%;
+    border-radius:
+        50%;
 
     background:
+
         radial-gradient(
             circle,
-            rgba(216,180,135,.055) 0%,
-            rgba(216,180,135,.022) 28%,
-            transparent 67%
+            rgba(216,180,135,.065)
+            0%,
+            rgba(216,180,135,.028)
+            24%,
+            rgba(22,140,255,.018)
+            43%,
+            transparent
+            70%
         );
 
-    filter: blur(4px);
+    filter:
+        blur(12px);
 
-    pointer-events: none;
+    pointer-events:
+        none;
 
-    z-index: -2;
+    z-index:
+        -2;
 
     animation:
-        arsEcosystemAtmosphere
-        12s
+        arsEcosystemBreath
+        13s
         ease-in-out
         infinite;
 
 }
 
 
-@keyframes arsEcosystemAtmosphere {
+@keyframes arsEcosystemBreath {
 
-    0%,100% {
+    0%,
+    100% {
 
-        opacity: .55;
+        opacity:
+            .48;
 
         transform:
             translate(-50%, -50%)
-            scale(.94);
+            scale(.92);
 
     }
 
     50% {
 
-        opacity: 1;
+        opacity:
+            .95;
 
         transform:
             translate(-50%, -50%)
-            scale(1.06);
+            scale(1.07);
 
     }
 
 }
 
 
-/* =========================================================
-   02 — SYSTEM HEADER
-========================================================= */
+/* ============================================================
+   03 — SYSTEM HEADER
+============================================================ */
 
-.ars-ecosystem-universe .ars-system-six
+.ars-ecosystem-universe
+.ars-system-six
 .ars-system-heading {
 
-    position: relative;
+    position:
+        relative;
 
-    z-index: 10;
+    z-index:
+        20;
 
-    max-width: 850px;
+    max-width:
+        900px;
 
     margin:
         0 auto
-        clamp(55px, 6vw, 82px);
+        clamp(60px, 7vw, 90px);
 
-    text-align: center;
+    text-align:
+        center;
 
 }
 
 
-/* technical kicker */
+/* ============================================================
+   04 — KICKER
+============================================================ */
 
-.ars-ecosystem-universe .ars-system-six
+.ars-ecosystem-universe
+.ars-system-six
 .ars-system-kicker {
 
-    display: inline-block;
+    position:
+        relative;
+
+    display:
+        inline-block;
 
     color:
-        #168CFF;
+        var(--ars-blue);
 
     font-size:
         9px;
@@ -31025,7 +31068,7 @@ END
         600;
 
     letter-spacing:
-        .34em;
+        .38em;
 
     line-height:
         1;
@@ -31033,26 +31076,32 @@ END
     opacity:
         .82;
 
-    position: relative;
-
 }
 
 
-/* kicker side energy */
+/* left / right signal */
 
-.ars-ecosystem-universe .ars-system-six
+.ars-ecosystem-universe
+.ars-system-six
 .ars-system-kicker::before,
-.ars-ecosystem-universe .ars-system-six
+.ars-ecosystem-universe
+.ars-system-six
 .ars-system-kicker::after {
 
-    content: "";
+    content:
+        "";
 
-    position: absolute;
+    position:
+        absolute;
 
-    top: 50%;
+    top:
+        50%;
 
-    width: 46px;
-    height: 1px;
+    width:
+        58px;
+
+    height:
+        1px;
 
     transform:
         translateY(-50%);
@@ -31060,105 +31109,126 @@ END
 }
 
 
-.ars-ecosystem-universe .ars-system-six
+/* bronze side */
+
+.ars-ecosystem-universe
+.ars-system-six
 .ars-system-kicker::before {
 
     right:
-        calc(100% + 15px);
+        calc(100% + 18px);
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            rgba(216,180,135,.65)
+            var(--ars-bronze-soft)
         );
 
 }
 
 
-.ars-ecosystem-universe .ars-system-six
+/* blue side */
+
+.ars-ecosystem-universe
+.ars-system-six
 .ars-system-kicker::after {
 
     left:
-        calc(100% + 15px);
+        calc(100% + 18px);
 
     background:
         linear-gradient(
             90deg,
-            rgba(22,140,255,.55),
+            var(--ars-blue-soft),
             transparent
         );
 
 }
 
 
-/* =========================================================
-   03 — MAIN SYSTEM TITLE
-========================================================= */
+/* ============================================================
+   05 — MAIN TITLE
+============================================================ */
 
-.ars-ecosystem-universe .ars-system-six
+.ars-ecosystem-universe
+.ars-system-six
 .ars-system-heading h2 {
 
-    position: relative;
+    position:
+        relative;
 
     margin:
-        18px 0 18px;
+        19px 0 22px;
 
     color:
-        #F1F3F5;
+        #F2F4F6;
 
     font-size:
-        clamp(38px, 5.5vw, 76px);
+        clamp(42px, 6vw, 78px);
 
     line-height:
-        .98;
+        .96;
 
     font-weight:
         500;
 
     letter-spacing:
-        -.035em;
+        -.045em;
 
     text-shadow:
-        0 0 35px
-        rgba(216,180,135,.055);
+        0 0 38px
+        rgba(216,180,135,.06);
 
 }
 
 
-/* bronze intelligence accent */
+/* ============================================================
+   06 — TITLE ENERGY THREAD
+============================================================ */
 
-.ars-ecosystem-universe .ars-system-six
+.ars-ecosystem-universe
+.ars-system-six
 .ars-system-heading h2::after {
 
-    content: "";
+    content:
+        "";
 
-    display: block;
+    display:
+        block;
 
     width:
-        92px;
+        110px;
 
     height:
-        1px;
+        2px;
 
     margin:
-        24px auto 0;
+        25px auto 0;
 
     background:
+
         linear-gradient(
             90deg,
             transparent,
-            #D8B487,
-            #168CFF,
+            var(--ars-bronze),
+            var(--ars-blue),
             transparent
         );
 
     box-shadow:
-        0 0 14px
-        rgba(216,180,135,.18);
+
+        0 0 8px
+        rgba(216,180,135,.22),
+
+        0 0 18px
+        rgba(22,140,255,.10);
+
+    transform-origin:
+        center;
 
     animation:
-        arsSystemTitleLine
+        arsTitlePulse
         5s
         ease-in-out
         infinite;
@@ -31166,15 +31236,16 @@ END
 }
 
 
-@keyframes arsSystemTitleLine {
+@keyframes arsTitlePulse {
 
-    0%,100% {
+    0%,
+    100% {
 
         opacity:
-            .45;
+            .35;
 
         transform:
-            scaleX(.65);
+            scaleX(.55);
 
     }
 
@@ -31191,27 +31262,28 @@ END
 }
 
 
-/* =========================================================
-   04 — SYSTEM DESCRIPTION
-========================================================= */
+/* ============================================================
+   07 — DESCRIPTION
+============================================================ */
 
-.ars-ecosystem-universe .ars-system-six
+.ars-ecosystem-universe
+.ars-system-six
 .ars-system-description {
 
     max-width:
-        650px;
+        680px;
 
     margin:
         0 auto;
 
     color:
-        rgba(220,227,234,.62);
+        rgba(224,230,236,.66);
 
     font-size:
         13px;
 
     line-height:
-        1.9;
+        1.95;
 
     letter-spacing:
         .015em;
@@ -31219,24 +31291,28 @@ END
 }
 
 
-/* =========================================================
-   05 — SIX CARD GRID
-========================================================= */
+/* ============================================================
+   08 — SIX CARD GRID
+============================================================ */
 
-.ars-ecosystem-universe .ars-system-six
+.ars-ecosystem-universe
+.ars-system-six
 .ars-six-grid {
 
-    position: relative;
+    position:
+        relative;
 
-    z-index: 5;
+    z-index:
+        10;
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         repeat(3, minmax(0, 1fr));
 
     gap:
-        clamp(18px, 2vw, 30px);
+        clamp(18px, 2.1vw, 30px);
 
     max-width:
         1240px;
@@ -31247,160 +31323,185 @@ END
 }
 
 
-/* =========================================================
-   06 — SIX CARD BASE
-========================================================= */
+/* ============================================================
+   09 — CARD
+============================================================ */
 
-.ars-ecosystem-universe .ars-system-six
+.ars-ecosystem-universe
+.ars-system-six
 .ars-system-card {
 
-    position: relative;
+    --pulse-delay:
+        0s;
 
-    isolation: isolate;
+    position:
+        relative;
 
-    overflow: hidden;
+    isolation:
+        isolate;
+
+    overflow:
+        hidden;
 
     min-height:
         420px;
 
     border:
         1px solid
-        rgba(216,180,135,.15);
+        rgba(216,180,135,.16);
 
     border-radius:
-        20px;
+        22px;
 
     background:
+
         linear-gradient(
             145deg,
-            rgba(12,29,45,.96),
-            rgba(5,16,28,.98)
+            rgba(9,28,45,.97),
+            rgba(4,15,27,.985)
         );
 
     box-shadow:
 
-        0 22px 65px
-        rgba(0,0,0,.28),
+        0 25px 70px
+        rgba(0,0,0,.34),
 
         inset 0 1px 0
         rgba(255,255,255,.025),
 
-        inset 0 0 45px
+        inset 0 0 55px
         rgba(216,180,135,.018);
+
+    transform:
+        translateZ(0);
 
     transition:
 
         transform
-        .65s cubic-bezier(.16,1,.3,1),
+        .7s cubic-bezier(.16,1,.3,1),
 
         border-color
-        .55s ease,
+        .6s ease,
 
         box-shadow
-        .55s ease;
+        .6s ease;
 
 }
 
 
-/* =========================================================
-   07 — CARD TOP ENERGY
-========================================================= */
+/* ============================================================
+   10 — SIGNATURE PULSE-WEAVE
+============================================================ */
 
-.ars-ecosystem-universe .ars-system-six
+/*
+   A moving light field travels through each card.
+   The delays make the six cards behave as ONE SYSTEM.
+*/
+
+.ars-ecosystem-universe
+.ars-system-six
 .ars-system-card::before {
 
-    content: "";
+    content:
+        "";
 
-    position: absolute;
+    position:
+        absolute;
 
-    left: -20%;
+    inset:
+        -2px;
 
-    top: 0;
+    border-radius:
+        inherit;
 
-    width: 140%;
-
-    height: 1px;
+    padding:
+        1px;
 
     background:
 
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(216,180,135,.08),
-            rgba(216,180,135,.75),
-            rgba(22,140,255,.55),
-            transparent
+        conic-gradient(
+            from 0deg,
+            transparent 0deg,
+            transparent 235deg,
+            rgba(216,180,135,.08) 260deg,
+            rgba(216,180,135,.85) 276deg,
+            rgba(22,140,255,.72) 292deg,
+            transparent 318deg,
+            transparent 360deg
         );
 
-    z-index: 10;
+    -webkit-mask:
+        linear-gradient(#000 0 0)
+        content-box,
+        linear-gradient(#000 0 0);
+
+    -webkit-mask-composite:
+        xor;
+
+    mask-composite:
+        exclude;
+
+    opacity:
+        .72;
+
+    pointer-events:
+        none;
+
+    z-index:
+        12;
 
     animation:
-        arsCardEnergyScan
-        5.5s
-        ease-in-out
+        arsPulseWeave
+        7.5s
+        linear
         infinite;
 
-}
-
-
-@keyframes arsCardEnergyScan {
-
-    0%,100% {
-
-        transform:
-            translateX(-18%);
-
-        opacity:
-            .3;
-
-    }
-
-    50% {
-
-        transform:
-            translateX(18%);
-
-        opacity:
-            .9;
-
-    }
+    animation-delay:
+        var(--pulse-delay);
 
 }
 
 
-/* =========================================================
-   08 — CARD ATMOSPHERE
-========================================================= */
+/* ============================================================
+   11 — SECONDARY BLUE FIELD
+============================================================ */
 
-.ars-ecosystem-universe .ars-system-six
+.ars-ecosystem-universe
+.ars-system-six
 .ars-system-card::after {
 
-    content: "";
+    content:
+        "";
 
-    position: absolute;
+    position:
+        absolute;
 
     width:
-        260px;
+        280px;
 
     height:
-        260px;
+        280px;
 
     right:
-        -155px;
+        -150px;
 
     top:
-        -155px;
+        -150px;
 
     border-radius:
         50%;
 
-    border:
-        1px solid
-        rgba(216,180,135,.12);
+    background:
 
-    box-shadow:
-        0 0 35px
-        rgba(216,180,135,.035);
+        radial-gradient(
+            circle,
+            rgba(22,140,255,.10),
+            rgba(22,140,255,.025) 38%,
+            transparent 70%
+        );
+
+    filter:
+        blur(5px);
 
     pointer-events:
         none;
@@ -31409,47 +31510,118 @@ END
         1;
 
     animation:
-        arsCardOrbitalBreath
-        10s
+        arsCardField
+        9s
         ease-in-out
         infinite;
 
 }
 
 
-@keyframes arsCardOrbitalBreath {
+@keyframes arsPulseWeave {
 
-    0%,100% {
-
-        opacity:
-            .4;
+    0% {
 
         transform:
-            scale(.94)
-            rotate(-4deg);
+            rotate(0deg);
 
     }
 
-    50% {
-
-        opacity:
-            .9;
+    100% {
 
         transform:
-            scale(1.05)
-            rotate(5deg);
+            rotate(360deg);
 
     }
 
 }
 
 
-/* =========================================================
-   09 — IMAGE
-========================================================= */
+@keyframes arsCardField {
 
-.ars-ecosystem-universe .ars-system-six
-.ars-system-card
+    0%,
+    100% {
+
+        opacity:
+            .38;
+
+        transform:
+            scale(.88);
+
+    }
+
+    50% {
+
+        opacity:
+            .95;
+
+        transform:
+            scale(1.12);
+
+    }
+
+}
+
+
+/* ============================================================
+   12 — CARD DELAYS
+============================================================ */
+
+.ars-six-grid
+.ars-system-card:nth-child(1) {
+
+    --pulse-delay:
+        0s;
+
+}
+
+.ars-six-grid
+.ars-system-card:nth-child(2) {
+
+    --pulse-delay:
+        -1.25s;
+
+}
+
+.ars-six-grid
+.ars-system-card:nth-child(3) {
+
+    --pulse-delay:
+        -2.5s;
+
+}
+
+.ars-six-grid
+.ars-system-card:nth-child(4) {
+
+    --pulse-delay:
+        -3.75s;
+
+}
+
+.ars-six-grid
+.ars-system-card:nth-child(5) {
+
+    --pulse-delay:
+        -5s;
+
+}
+
+.ars-six-grid
+.ars-system-card:nth-child(6) {
+
+    --pulse-delay:
+        -6.25s;
+
+}
+
+
+/* ============================================================
+   13 — IMAGE
+============================================================ */
+
+.ars-ecosystem-universe
+.ars-system-six
 .ars-card-image {
 
     position:
@@ -31459,29 +31631,33 @@ END
         hidden;
 
     height:
-        205px;
+        210px;
 
     z-index:
-        2;
+        3;
 
 }
 
 
-.ars-ecosystem-universe .ars-system-six
-.ars-system-card
+.ars-ecosystem-universe
+.ars-system-six
 .ars-card-image::after {
 
-    content: "";
+    content:
+        "";
 
-    position: absolute;
+    position:
+        absolute;
 
-    inset: 0;
+    inset:
+        0;
 
     background:
+
         linear-gradient(
             180deg,
-            transparent 45%,
-            rgba(4,14,25,.82) 100%
+            transparent 35%,
+            rgba(3,13,24,.88) 100%
         );
 
     pointer-events:
@@ -31490,8 +31666,8 @@ END
 }
 
 
-.ars-ecosystem-universe .ars-system-six
-.ars-system-card
+.ars-ecosystem-universe
+.ars-system-six
 .ars-card-image img {
 
     width:
@@ -31507,53 +31683,48 @@ END
         block;
 
     opacity:
-        .78;
+        .76;
 
     filter:
-        saturate(.82)
-        contrast(1.06);
-
-    transform:
-        scale(1.01);
+        saturate(.78)
+        contrast(1.07);
 
     transition:
+
         transform
-        1s cubic-bezier(.16,1,.3,1),
+        1.2s cubic-bezier(.16,1,.3,1),
 
         opacity
-        .7s ease,
+        .8s ease,
 
         filter
-        .7s ease;
+        .8s ease;
 
 }
 
 
-/* =========================================================
-   10 — CARD LOGO
-========================================================= */
+/* ============================================================
+   14 — LOGO WINDOW
+============================================================ */
 
-.ars-ecosystem-universe .ars-system-six
-.ars-system-card
+.ars-ecosystem-universe
+.ars-system-six
 .ars-card-logo {
 
     position:
         relative;
 
     z-index:
-        7;
-
-    margin-top:
-        -38px;
-
-    margin-left:
-        25px;
+        15;
 
     width:
-        76px;
+        78px;
 
     height:
-        76px;
+        78px;
+
+    margin:
+        -38px 0 0 25px;
 
     display:
         flex;
@@ -31566,30 +31737,30 @@ END
 
     border:
         1px solid
-        rgba(216,180,135,.22);
+        rgba(216,180,135,.25);
 
     border-radius:
-        16px;
+        17px;
 
     background:
-        rgba(5,17,29,.88);
+        rgba(4,17,30,.91);
 
     backdrop-filter:
-        blur(12px);
+        blur(14px);
 
     box-shadow:
 
-        0 10px 30px
-        rgba(0,0,0,.32),
+        0 12px 32px
+        rgba(0,0,0,.36),
 
-        0 0 22px
-        rgba(216,180,135,.05);
+        0 0 24px
+        rgba(216,180,135,.06);
 
 }
 
 
-.ars-ecosystem-universe .ars-system-six
-.ars-system-card
+.ars-ecosystem-universe
+.ars-system-six
 .ars-card-logo img {
 
     max-width:
@@ -31601,53 +31772,51 @@ END
     object-fit:
         contain;
 
-    filter:
-        drop-shadow(
-            0 0 8px
-            rgba(216,180,135,.18)
-        );
-
     transition:
         transform
-        .6s cubic-bezier(.16,1,.3,1);
+        .7s cubic-bezier(.16,1,.3,1);
 
 }
 
 
-/* =========================================================
-   11 — CARD CONTENT
-========================================================= */
+/* ============================================================
+   15 — CARD CONTENT
+============================================================ */
 
-.ars-ecosystem-universe .ars-system-six
-.ars-system-card
+.ars-ecosystem-universe
+.ars-system-six
 .ars-card-content {
 
     position:
         relative;
 
     z-index:
-        6;
+        16;
 
     padding:
-        18px 25px 28px;
+        18px 25px 29px;
 
 }
 
 
-.ars-ecosystem-universe .ars-system-six
+.ars-ecosystem-universe
+.ars-system-six
 .ars-card-category {
 
     display:
         block;
 
     color:
-        rgba(22,140,255,.72);
+        rgba(22,140,255,.76);
 
     font-size:
         8px;
 
+    font-weight:
+        600;
+
     letter-spacing:
-        .25em;
+        .27em;
 
     text-transform:
         uppercase;
@@ -31655,38 +31824,40 @@ END
 }
 
 
-.ars-ecosystem-universe .ars-system-six
+.ars-ecosystem-universe
+.ars-system-six
 .ars-system-card h3 {
 
     margin:
         10px 0 12px;
 
     color:
-        #D8B487;
+        var(--ars-bronze);
 
     font-size:
-        clamp(21px, 2vw, 28px);
+        clamp(22px, 2vw, 29px);
 
     line-height:
-        1.1;
+        1.05;
 
     font-weight:
         600;
 
     letter-spacing:
-        -.01em;
+        -.02em;
 
 }
 
 
-.ars-ecosystem-universe .ars-system-six
+.ars-ecosystem-universe
+.ars-system-six
 .ars-system-card p {
 
     margin:
         0;
 
     color:
-        rgba(222,229,235,.62);
+        rgba(224,230,236,.62);
 
     font-size:
         11px;
@@ -31697,7 +31868,8 @@ END
 }
 
 
-.ars-ecosystem-universe .ars-system-six
+.ars-ecosystem-universe
+.ars-system-six
 .ars-card-action {
 
     display:
@@ -31713,7 +31885,7 @@ END
         9px;
 
     letter-spacing:
-        .08em;
+        .09em;
 
     transition:
         color .35s ease,
@@ -31722,278 +31894,166 @@ END
 }
 
 
-/* =========================================================
-   12 — HOVER
-========================================================= */
+/* ============================================================
+   16 — HOVER = SYSTEM ACTIVATION
+============================================================ */
 
-.ars-ecosystem-universe .ars-system-six
+.ars-ecosystem-universe
+.ars-system-six
 .ars-system-card:hover {
 
     transform:
-        translateY(-9px);
+        translateY(-11px)
+        scale(1.012);
 
     border-color:
-        rgba(216,180,135,.38);
+        rgba(216,180,135,.42);
 
     box-shadow:
 
-        0 32px 80px
-        rgba(0,0,0,.42),
+        0 36px 90px
+        rgba(0,0,0,.48),
 
-        0 0 38px
-        rgba(216,180,135,.045),
+        0 0 45px
+        rgba(216,180,135,.055),
+
+        0 0 80px
+        rgba(22,140,255,.025),
 
         inset 0 1px 0
-        rgba(216,180,135,.08);
+        rgba(216,180,135,.09);
 
 }
 
 
-.ars-ecosystem-universe .ars-system-six
+.ars-ecosystem-universe
+.ars-system-six
 .ars-system-card:hover
 .ars-card-image img {
 
     transform:
-        scale(1.07);
+        scale(1.08);
 
     opacity:
         .96;
 
     filter:
         saturate(1)
-        contrast(1.08);
+        contrast(1.09);
 
 }
 
 
-.ars-ecosystem-universe .ars-system-six
+.ars-ecosystem-universe
+.ars-system-six
 .ars-system-card:hover
 .ars-card-logo img {
 
     transform:
-        scale(1.08);
+        scale(1.1)
+        rotate(-2deg);
 
 }
 
 
-.ars-ecosystem-universe .ars-system-six
+.ars-ecosystem-universe
+.ars-system-six
 .ars-system-card:hover
 .ars-card-action {
 
     color:
-        #D8B487;
+        var(--ars-bronze);
 
     transform:
-        translateX(4px);
+        translateX(5px);
 
 }
 
 
-/* =========================================================
-   13 — SIX CARD VISUAL DIFFERENTIATION
-========================================================= */
+/* ============================================================
+   17 — CARD IDENTITY DIFFERENTIATION
+============================================================ */
 
-/* Brain */
+/* 01 — BRAIN */
 
 .ars-six-grid
-.ars-system-card:nth-child(1) {
+.ars-system-card:nth-child(1)
+.ars-card-category {
 
-    --card-accent:
-        #168CFF;
+    color:
+        rgba(22,140,255,.86);
 
 }
 
 
-/* Design */
+/* 02 — DESIGN */
 
 .ars-six-grid
-.ars-system-card:nth-child(2) {
+.ars-system-card:nth-child(2)
+.ars-card-category {
 
-    --card-accent:
-        #D8B487;
+    color:
+        rgba(216,180,135,.82);
 
 }
 
 
-/* Company */
+/* 03 — COMPANY */
 
 .ars-six-grid
-.ars-system-card:nth-child(3) {
+.ars-system-card:nth-child(3)
+.ars-card-category {
 
-    --card-accent:
-        #168CFF;
+    color:
+        rgba(22,140,255,.86);
 
 }
 
 
-/* ROSE */
+/* 04 — ROSE */
 
 .ars-six-grid
-.ars-system-card:nth-child(4) {
+.ars-system-card:nth-child(4)
+.ars-card-category {
 
-    --card-accent:
-        #D8B487;
+    color:
+        rgba(216,180,135,.82);
 
 }
 
 
-/* ZHR */
+/* 05 — ZHR */
 
 .ars-six-grid
-.ars-system-card:nth-child(5) {
+.ars-system-card:nth-child(5)
+.ars-card-category {
 
-    --card-accent:
-        #168CFF;
+    color:
+        rgba(22,140,255,.86);
 
 }
 
 
-/* Engineering */
+/* 06 — ENGINEERING */
 
 .ars-six-grid
-.ars-system-card:nth-child(6) {
+.ars-system-card:nth-child(6)
+.ars-card-category {
 
-    --card-accent:
-        #D8B487;
-
-}
-
-
-/* individual accent glow */
-
-.ars-six-grid
-.ars-system-card:hover {
-
-    box-shadow:
-
-        0 32px 80px
-        rgba(0,0,0,.42),
-
-        0 0 34px
-        color-mix(
-            in srgb,
-            var(--card-accent) 12%,
-            transparent
-        );
+    color:
+        rgba(216,180,135,.82);
 
 }
 
 
-/* =========================================================
-   14 — STAGGERED CARD BREATH
-========================================================= */
-
-.ars-six-grid
-.ars-system-card:nth-child(1) {
-
-    animation:
-        arsCardBreath
-        8s
-        ease-in-out
-        infinite;
-
-}
-
-
-.ars-six-grid
-.ars-system-card:nth-child(2) {
-
-    animation:
-        arsCardBreath
-        8s
-        ease-in-out
-        1.2s
-        infinite;
-
-}
-
-
-.ars-six-grid
-.ars-system-card:nth-child(3) {
-
-    animation:
-        arsCardBreath
-        8s
-        ease-in-out
-        2.4s
-        infinite;
-
-}
-
-
-.ars-six-grid
-.ars-system-card:nth-child(4) {
-
-    animation:
-        arsCardBreath
-        8s
-        ease-in-out
-        3.6s
-        infinite;
-
-}
-
-
-.ars-six-grid
-.ars-system-card:nth-child(5) {
-
-    animation:
-        arsCardBreath
-        8s
-        ease-in-out
-        4.8s
-        infinite;
-
-}
-
-
-.ars-six-grid
-.ars-system-card:nth-child(6) {
-
-    animation:
-        arsCardBreath
-        8s
-        ease-in-out
-        6s
-        infinite;
-
-}
-
-
-@keyframes arsCardBreath {
-
-    0%,100% {
-
-        box-shadow:
-            0 22px 65px
-            rgba(0,0,0,.28),
-
-            inset 0 0 45px
-            rgba(216,180,135,.018);
-
-    }
-
-    50% {
-
-        box-shadow:
-            0 25px 68px
-            rgba(0,0,0,.31),
-
-            inset 0 0 48px
-            rgba(216,180,135,.035);
-
-    }
-
-}
-
-
-/* =========================================================
-   15 — RESPONSIVE
-========================================================= */
+/* ============================================================
+   18 — RESPONSIVE
+============================================================ */
 
 @media (max-width: 1000px) {
 
-    .ars-ecosystem-universe .ars-system-six
+    .ars-ecosystem-universe
+    .ars-system-six
     .ars-six-grid {
 
         grid-template-columns:
@@ -32004,75 +32064,68 @@ END
 }
 
 
-@media (max-width: 620px) {
+@media (max-width: 640px) {
 
-    .ars-ecosystem-universe .ars-system-six {
+    .ars-ecosystem-universe
+    .ars-system-six {
 
         padding:
-            75px 0 90px;
+            75px 0 95px;
 
     }
 
 
-    .ars-ecosystem-universe .ars-system-six
+    .ars-ecosystem-universe
+    .ars-system-six
     .ars-system-heading {
 
         padding:
             0 18px;
 
-        margin-bottom:
-            45px;
-
     }
 
 
-    .ars-ecosystem-universe .ars-system-six
+    .ars-ecosystem-universe
+    .ars-system-six
     .ars-system-heading h2 {
 
         font-size:
-            39px;
+            42px;
 
     }
 
 
-    .ars-ecosystem-universe .ars-system-six
+    .ars-ecosystem-universe
+    .ars-system-six
+    .ars-system-description {
+
+        font-size:
+            12px;
+
+    }
+
+
+    .ars-ecosystem-universe
+    .ars-system-six
     .ars-six-grid {
 
         grid-template-columns:
             1fr;
 
-        gap:
-            18px;
-
         padding:
             0 15px;
 
-    }
-
-
-    .ars-ecosystem-universe .ars-system-six
-    .ars-system-card {
-
-        min-height:
-            390px;
-
-    }
-
-
-    .ars-ecosystem-universe .ars-system-six
-    .ars-system-card:hover {
-
-        transform:
-            translateY(-5px);
+        gap:
+            18px;
 
     }
 
 }
 
 
-/* =========================================================
-   16 — ACCESSIBILITY
-========================================================= */
+/* ============================================================
+   19 — REDUCED MOTION
+============================================================ */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -32088,4 +32141,5 @@ END
 
     }
 
-      }
+          }
+
