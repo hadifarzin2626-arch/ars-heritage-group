@@ -32954,193 +32954,180 @@ section.ars-ecosystem-system.ars-system-six
 
 
 /* =========================================================
-   ARS ECOSYSTEM — SIX DIMENSIONS
-   SIGNATURE ANIMATION
-   "DIMENSIONAL PARALLAX AWAKENING"
+   ARS ECOSYSTEM — SIX CARD SIGNATURE MOTION
+   NO SCROLL TIMELINE
+   PURE CSS / MOBILE SAFE
    ========================================================= */
 
 
 /* ---------------------------------------------------------
-   01 — CARD DEPTH
+   01 — CARD BASE
 --------------------------------------------------------- */
 
 section.ars-ecosystem-system.ars-system-six
 .ars-six-grid
 .ars-system-card {
 
-    transform-style: preserve-3d;
-    will-change: transform, opacity;
+    position: relative;
 
-    animation:
-        arsSixCardReveal
-        linear
-        both;
-
-    animation-duration: 1ms;
-
-    animation-timeline: view();
-
-    animation-range:
-        entry 8%
-        cover 28%;
-}
-
-
-@keyframes arsSixCardReveal {
-
-    0% {
-
-        opacity: 0;
-
-        transform:
-            perspective(1400px)
-            translateY(75px)
-            translateZ(-80px)
-            rotateX(5deg)
-            scale(.94);
-
-        filter:
-            blur(3px);
-    }
-
-
-    45% {
-
-        opacity: .72;
-
-        transform:
-            perspective(1400px)
-            translateY(18px)
-            translateZ(-20px)
-            rotateX(1.5deg)
-            scale(.982);
-
-        filter:
-            blur(.8px);
-    }
-
-
-    100% {
-
-        opacity: 1;
-
-        transform:
-            perspective(1400px)
-            translateY(0)
-            translateZ(0)
-            rotateX(0)
-            scale(1);
-
-        filter:
-            blur(0);
-    }
-}
-
-
-/* ---------------------------------------------------------
-   02 — IMAGE HAS ITS OWN DEPTH
---------------------------------------------------------- */
-
-section.ars-ecosystem-system.ars-system-six
-.ars-six-grid
-.ars-system-card
-.ars-card-image {
-
-    overflow: hidden;
+    overflow: visible;
 
     transform-style: preserve-3d;
-}
-
-
-section.ars-ecosystem-system.ars-system-six
-.ars-six-grid
-.ars-system-card
-.ars-card-image img {
-
-    transform:
-        scale(1.14)
-        translateY(22px);
 
     will-change:
         transform,
-        filter;
+        box-shadow;
 
     animation:
-        arsSixImageDepth
-        linear
-        both;
+        arsSixCardAtmosphere
+        8s
+        ease-in-out
+        infinite;
 
-    animation-duration: 1ms;
-
-    animation-timeline: view();
-
-    animation-range:
-        entry 0%
-        cover 35%;
-}
-
-
-@keyframes arsSixImageDepth {
-
-    0% {
-
-        transform:
-            scale(1.14)
-            translateY(22px);
-
-        filter:
-            brightness(.58)
-            saturate(.72)
-            contrast(1.05);
-    }
-
-
-    45% {
-
-        transform:
-            scale(1.065)
-            translateY(7px);
-
-        filter:
-            brightness(.78)
-            saturate(.86)
-            contrast(1.07);
-    }
-
-
-    100% {
-
-        transform:
-            scale(1)
-            translateY(0);
-
-        filter:
-            brightness(1)
-            saturate(.92)
-            contrast(1.06);
-    }
 }
 
 
 /* ---------------------------------------------------------
-   03 — CINEMATIC LIGHT SWEEP
+   02 — THE MAIN CARD MOVEMENT
+   Very subtle — luxury, not bouncing
+--------------------------------------------------------- */
+
+@keyframes arsSixCardAtmosphere {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotateX(0deg)
+            scale(1);
+
+    }
+
+    25% {
+
+        transform:
+            translateY(-3px)
+            rotateX(.15deg)
+            scale(1.002);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-6px)
+            rotateX(0deg)
+            scale(1.006);
+
+    }
+
+    75% {
+
+        transform:
+            translateY(-2px)
+            rotateX(-.12deg)
+            scale(1.002);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   03 — DIFFERENT RHYTHM FOR EACH DIMENSION
+--------------------------------------------------------- */
+
+
+/* ARS BRAIN — precise */
+
+section.ars-ecosystem-system.ars-system-six
+.ars-six-grid
+.ars-system-card:nth-child(1) {
+
+    animation-duration: 6.4s;
+}
+
+
+/* ARS DESIGN — elegant */
+
+section.ars-ecosystem-system.ars-system-six
+.ars-six-grid
+.ars-system-card:nth-child(2) {
+
+    animation-duration: 8.8s;
+    animation-delay: -2s;
+}
+
+
+/* ARS COMPANY — authoritative */
+
+section.ars-ecosystem-system.ars-system-six
+.ars-six-grid
+.ars-system-card:nth-child(3) {
+
+    animation-duration: 10.2s;
+    animation-delay: -4.5s;
+}
+
+
+/* ROSE — softer */
+
+section.ars-ecosystem-system.ars-system-six
+.ars-six-grid
+.ars-system-card:nth-child(4) {
+
+    animation-duration: 7.6s;
+    animation-delay: -1.8s;
+}
+
+
+/* ZHR NAJI — stronger */
+
+section.ars-ecosystem-system.ars-system-six
+.ars-six-grid
+.ars-system-card:nth-child(5) {
+
+    animation-duration: 9.4s;
+    animation-delay: -5.2s;
+}
+
+
+/* ARS ENGINEERING — technical */
+
+section.ars-ecosystem-system.ars-system-six
+.ars-six-grid
+.ars-system-card:nth-child(6) {
+
+    animation-duration: 7.1s;
+    animation-delay: -3.1s;
+}
+
+
+/* ---------------------------------------------------------
+   04 — CINEMATIC LIGHT MOVING THROUGH EACH CARD
 --------------------------------------------------------- */
 
 section.ars-ecosystem-system.ars-system-six
 .ars-six-grid
-.ars-system-card
-.ars-card-image::after {
+.ars-system-card::after {
 
     content: "";
 
     position: absolute;
 
-    top: -20%;
-    bottom: -20%;
+    top: 0;
+    bottom: 0;
 
-    left: -45%;
+    left: -35%;
 
-    width: 24%;
+    width: 18%;
+
+    pointer-events: none;
+
+    z-index: 20;
+
+    opacity: 0;
 
     transform:
         skewX(-18deg);
@@ -33149,314 +33136,166 @@ section.ars-ecosystem-system.ars-system-six
         linear-gradient(
             90deg,
 
-            transparent 0%,
+            transparent,
 
-            rgba(216,180,135,0) 20%,
+            rgba(255,255,255,0),
 
-            rgba(216,180,135,.18) 48%,
+            rgba(216,180,135,.16),
 
-            rgba(82,182,255,.18) 58%,
+            rgba(82,182,255,.18),
 
-            rgba(216,180,135,0) 82%,
+            rgba(255,255,255,0),
 
-            transparent 100%
+            transparent
         );
 
     filter:
-        blur(7px);
-
-    opacity: 0;
-
-    pointer-events: none;
-
-    z-index: 8;
+        blur(8px);
 
     animation:
-        arsSixLightSweep
-        1ms
-        linear
-        both;
+        arsCardLightPass
+        7.5s
+        ease-in-out
+        infinite;
 
-    animation-timeline: view();
-
-    animation-range:
-        entry 12%
-        cover 42%;
-}
-
-
-@keyframes arsSixLightSweep {
-
-    0% {
-
-        left: -45%;
-
-        opacity: 0;
-    }
-
-
-    18% {
-
-        opacity: .15;
-    }
-
-
-    48% {
-
-        opacity: .72;
-    }
-
-
-    72% {
-
-        opacity: .18;
-    }
-
-
-    100% {
-
-        left: 135%;
-
-        opacity: 0;
-    }
 }
 
 
 /* ---------------------------------------------------------
-   04 — LOGO FLOAT
+   05 — LIGHT PASS
+--------------------------------------------------------- */
+
+@keyframes arsCardLightPass {
+
+    0% {
+
+        left: -35%;
+        opacity: 0;
+
+    }
+
+    12% {
+
+        opacity: 0;
+
+    }
+
+    25% {
+
+        opacity: .8;
+
+    }
+
+    42% {
+
+        opacity: .25;
+
+    }
+
+    55% {
+
+        left: 120%;
+        opacity: 0;
+
+    }
+
+    100% {
+
+        left: 120%;
+        opacity: 0;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   06 — EACH CARD GETS ITS OWN LIGHT TIMING
+--------------------------------------------------------- */
+
+section.ars-ecosystem-system.ars-system-six
+.ars-six-grid
+.ars-system-card:nth-child(1)::after {
+
+    animation-delay: 1s;
+}
+
+section.ars-ecosystem-system.ars-system-six
+.ars-six-grid
+.ars-system-card:nth-child(2)::after {
+
+    animation-delay: 3.1s;
+}
+
+section.ars-ecosystem-system.ars-system-six
+.ars-six-grid
+.ars-system-card:nth-child(3)::after {
+
+    animation-delay: 5.4s;
+}
+
+section.ars-ecosystem-system.ars-system-six
+.ars-six-grid
+.ars-system-card:nth-child(4)::after {
+
+    animation-delay: 7.2s;
+}
+
+section.ars-ecosystem-system.ars-system-six
+.ars-six-grid
+.ars-system-card:nth-child(5)::after {
+
+    animation-delay: 2.4s;
+}
+
+section.ars-ecosystem-system.ars-system-six
+.ars-six-grid
+.ars-system-card:nth-child(6)::after {
+
+    animation-delay: 4.6s;
+}
+
+
+/* ---------------------------------------------------------
+   07 — IMAGE BREATH
 --------------------------------------------------------- */
 
 section.ars-ecosystem-system.ars-system-six
 .ars-six-grid
 .ars-system-card
-.ars-card-logo {
-
-    will-change:
-        transform,
-        box-shadow;
-
-    animation:
-        arsSixLogoRise
-        linear
-        both;
-
-    animation-duration: 1ms;
-
-    animation-timeline: view();
-
-    animation-range:
-        entry 15%
-        cover 38%;
-}
-
-
-@keyframes arsSixLogoRise {
-
-    0% {
-
-        opacity: 0;
-
-        transform:
-            translate(-50%, -38%)
-            scale(.78);
-
-        box-shadow:
-            0 0 0
-            rgba(216,180,135,0);
-    }
-
-
-    55% {
-
-        opacity: 1;
-
-        transform:
-            translate(-50%, -53%)
-            scale(1.035);
-
-        box-shadow:
-            0 0 34px
-            rgba(216,180,135,.12);
-    }
-
-
-    100% {
-
-        opacity: 1;
-
-        transform:
-            translate(-50%, -50%)
-            scale(1);
-
-        box-shadow:
-            0 15px 40px
-            rgba(0,0,0,.48);
-    }
-}
-
-
-/* ---------------------------------------------------------
-   05 — CONTENT ARRIVES AFTER IMAGE
---------------------------------------------------------- */
-
-section.ars-ecosystem-system.ars-system-six
-.ars-six-grid
-.ars-system-card
-.ars-card-content {
-
-    animation:
-        arsSixContentRise
-        linear
-        both;
-
-    animation-duration: 1ms;
-
-    animation-timeline: view();
-
-    animation-range:
-        entry 18%
-        cover 42%;
-}
-
-
-@keyframes arsSixContentRise {
-
-    0% {
-
-        opacity: 0;
-
-        transform:
-            translateY(22px);
-    }
-
-
-    55% {
-
-        opacity: .72;
-
-        transform:
-            translateY(5px);
-    }
-
-
-    100% {
-
-        opacity: 1;
-
-        transform:
-            translateY(0);
-    }
-}
-
-
-/* ---------------------------------------------------------
-   06 — SIX CARDS GET DIFFERENT MOTION PERSONALITIES
---------------------------------------------------------- */
-
-
-/* 01 — ARS BRAIN
-   faster / precise */
-
-section.ars-ecosystem-system.ars-system-six
-.ars-six-grid
-.ars-system-card:nth-child(1) {
-
-    --ars-motion-depth: 1;
-}
-
-
-/* 02 — ARS DESIGN
-   elegant / slower */
-
-section.ars-ecosystem-system.ars-system-six
-.ars-six-grid
-.ars-system-card:nth-child(2) {
-
-    --ars-motion-depth: 1.15;
-}
-
-
-/* 03 — ARS COMPANY
-   stable / authoritative */
-
-section.ars-ecosystem-system.ars-system-six
-.ars-six-grid
-.ars-system-card:nth-child(3) {
-
-    --ars-motion-depth: .88;
-}
-
-
-/* 04 — ROSE
-   softer */
-
-section.ars-ecosystem-system.ars-system-six
-.ars-six-grid
-.ars-system-card:nth-child(4) {
-
-    --ars-motion-depth: 1.08;
-}
-
-
-/* 05 — ZHR NAJI
-   stronger */
-
-section.ars-ecosystem-system.ars-system-six
-.ars-six-grid
-.ars-system-card:nth-child(5) {
-
-    --ars-motion-depth: 1.22;
-}
-
-
-/* 06 — ENGINEERING
-   controlled / technical */
-
-section.ars-ecosystem-system.ars-system-six
-.ars-six-grid
-.ars-system-card:nth-child(6) {
-
-    --ars-motion-depth: .96;
-}
-
-
-/* ---------------------------------------------------------
-   07 — HOVER: CARD BECOMES "ACTIVE DIMENSION"
---------------------------------------------------------- */
-
-section.ars-ecosystem-system.ars-system-six
-.ars-six-grid
-.ars-system-card {
+.ars-card-image img {
 
     transition:
-        transform .7s cubic-bezier(.16,1,.3,1),
-        box-shadow .7s ease;
+        transform 1.2s cubic-bezier(.16,1,.3,1),
+        filter 1.2s ease;
+
 }
 
+
+/* ---------------------------------------------------------
+   08 — HOVER / TOUCH ACTIVATION
+--------------------------------------------------------- */
 
 section.ars-ecosystem-system.ars-system-six
 .ars-six-grid
 .ars-system-card:hover {
 
     transform:
-        perspective(1400px)
-        translateY(-10px)
-        translateZ(18px)
-        rotateX(.7deg)
+        translateY(-12px)
         scale(1.012);
 
+    z-index: 10;
+
     box-shadow:
-        0 38px 90px
-        rgba(0,0,0,.48),
+
+        0 30px 80px
+        rgba(0,0,0,.55),
 
         0 0 45px
-        rgba(82,182,255,.055);
+        rgba(82,182,255,.08);
+
 }
 
-
-/* ---------------------------------------------------------
-   08 — IMAGE BREATH ON HOVER
---------------------------------------------------------- */
 
 section.ars-ecosystem-system.ars-system-six
 .ars-six-grid
@@ -33464,21 +33303,29 @@ section.ars-ecosystem-system.ars-system-six
 .ars-card-image img {
 
     transform:
-        scale(1.055);
+        scale(1.045);
 
     filter:
-        brightness(1.04)
-        saturate(1.04);
+        brightness(1.06)
+        saturate(1.06);
 
-    transition:
-        transform 1.1s cubic-bezier(.16,1,.3,1),
-        filter 1.1s ease;
 }
 
 
 /* ---------------------------------------------------------
-   09 — CARD CONTENT MICRO-LIFT
+   09 — CONTENT MICRO MOVEMENT
 --------------------------------------------------------- */
+
+section.ars-ecosystem-system.ars-system-six
+.ars-six-grid
+.ars-system-card
+.ars-card-content {
+
+    transition:
+        transform .8s cubic-bezier(.16,1,.3,1);
+
+}
+
 
 section.ars-ecosystem-system.ars-system-six
 .ars-six-grid
@@ -33486,61 +33333,90 @@ section.ars-ecosystem-system.ars-system-six
 .ars-card-content {
 
     transform:
-        translateY(-3px);
+        translateY(-4px);
 
-    transition:
-        transform .65s cubic-bezier(.16,1,.3,1);
 }
 
 
 /* ---------------------------------------------------------
-   10 — MOBILE
+   10 — CATEGORY OVAL GETS A LITTLE ENERGY
 --------------------------------------------------------- */
 
-@media (max-width: 700px) {
+section.ars-ecosystem-system.ars-system-six
+.ars-six-grid
+.ars-system-card
+.ars-card-category {
+
+    transition:
+        box-shadow .8s ease,
+        border-color .8s ease;
+
+}
+
+
+section.ars-ecosystem-system.ars-system-six
+.ars-six-grid
+.ars-system-card:hover
+.ars-card-category {
+
+    border-color:
+        rgba(216,180,135,.55);
+
+    box-shadow:
+
+        0 0 12px
+        rgba(216,180,135,.12),
+
+        inset 0 0 14px
+        rgba(216,180,135,.04);
+
+}
+
+
+/* ---------------------------------------------------------
+   11 — MOBILE
+--------------------------------------------------------- */
+
+@media (max-width:700px) {
 
     section.ars-ecosystem-system.ars-system-six
     .ars-six-grid
     .ars-system-card {
 
-        animation-range:
-            entry 5%
-            cover 25%;
-    }
+        animation-duration: 9s;
 
+    }
 
     section.ars-ecosystem-system.ars-system-six
     .ars-six-grid
     .ars-system-card:hover {
 
         transform:
-            translateY(-5px)
+            translateY(-6px)
             scale(1.005);
+
     }
+
 }
 
 
 /* ---------------------------------------------------------
-   11 — REDUCED MOTION
+   12 — REDUCED MOTION
 --------------------------------------------------------- */
 
-@media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion:reduce) {
 
     section.ars-ecosystem-system.ars-system-six
     .ars-six-grid
     .ars-system-card,
     section.ars-ecosystem-system.ars-system-six
     .ars-six-grid
-    .ars-system-card * {
+    .ars-system-card::after {
 
-        animation: none !important;
+        animation:none !important;
 
-        opacity: 1 !important;
-
-        transform: none !important;
-
-        filter: none !important;
     }
-      }
+
+  }
 
 
