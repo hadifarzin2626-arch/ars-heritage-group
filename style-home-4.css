@@ -32390,418 +32390,758 @@ article.ars-system-card {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* =========================================================
-   ARS ECOSYSTEM — SIX DIMENSIONS
-   FINAL CARD MOTION OVERRIDE
-   NO TRANSFORM
-   NO PSEUDO ELEMENT
-   NO SCROLL TIMELINE
+   ARS HERITAGE CORE
+   SYSTEM II — ENERGY TRANSITION
+   COMPLETELY ISOLATED COMPONENT
    ========================================================= */
 
+.ars-heritage-transition {
+    --ahc-bronze: #d6b487;
+    --ahc-bronze-soft: rgba(214,180,135,.42);
+    --ahc-blue: #52b6ff;
+    --ahc-blue-soft: rgba(82,182,255,.38);
+    --ahc-navy: #06111f;
 
-/* =========================================================
-   01 — FORCE THE ANIMATION ENGINE
-   ========================================================= */
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    overflow: hidden;
 
-section.ars-ecosystem-system.ars-system-six
-.ars-six-grid
-.ars-system-card {
+    padding:
+        clamp(90px, 11vw, 150px)
+        20px
+        clamp(110px, 13vw, 180px);
 
-    animation-name:
-        arsSixLivingCore !important;
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(82,182,255,.055),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 50% 55%,
+            rgba(214,180,135,.045),
+            transparent 48%
+        );
 
-    animation-duration:
-        6.8s !important;
-
-    animation-timing-function:
-        ease-in-out !important;
-
-    animation-iteration-count:
-        infinite !important;
-
-    animation-direction:
-        alternate !important;
-
-    animation-fill-mode:
-        both !important;
-
-    animation-play-state:
-        running !important;
-
-    will-change:
-        box-shadow,
-        border-color;
+    z-index: 1;
 }
 
 
 /* =========================================================
-   02 — THE LIVING CORE
-   BRONZE + ELECTRIC BLUE ENERGY
+   ENERGY BRIDGE
    ========================================================= */
 
-@keyframes arsSixLivingCore {
+.ars-heritage-transition::before {
+    content: "";
 
-    0% {
+    position: absolute;
 
-        border-color:
-            rgba(216,180,135,.16);
+    left: 50%;
+    top: 0;
 
-        box-shadow:
+    width: 1px;
+    height: 42%;
 
-            0 0 0
-            rgba(216,180,135,0),
+    transform: translateX(-50%);
 
-            0 18px 55px
-            rgba(0,0,0,.30),
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(214,180,135,.18),
+            rgba(82,182,255,.8),
+            rgba(214,180,135,.3),
+            transparent
+        );
 
-            inset 0 0 25px
-            rgba(82,182,255,.015);
-    }
+    box-shadow:
+        0 0 18px rgba(82,182,255,.28),
+        0 0 35px rgba(214,180,135,.08);
 
-
-    25% {
-
-        border-color:
-            rgba(82,182,255,.28);
-
-        box-shadow:
-
-            0 0 18px
-            rgba(82,182,255,.045),
-
-            0 22px 62px
-            rgba(0,0,0,.34),
-
-            inset 0 0 32px
-            rgba(82,182,255,.025);
-    }
+    animation:
+        ahcVerticalEnergy 4.8s
+        ease-in-out
+        infinite;
+}
 
 
-    50% {
+.ars-heritage-transition::after {
+    content: "";
 
-        border-color:
-            rgba(216,180,135,.42);
+    position: absolute;
 
-        box-shadow:
+    left: 50%;
+    top: 19%;
 
-            0 0 32px
-            rgba(216,180,135,.075),
+    width: clamp(100px, 18vw, 230px);
+    height: clamp(100px, 18vw, 230px);
 
-            0 25px 70px
-            rgba(0,0,0,.42),
+    transform: translate(-50%, -50%);
 
-            inset 0 0 38px
-            rgba(216,180,135,.035);
-    }
+    border-radius: 50%;
 
+    background:
+        radial-gradient(
+            circle,
+            rgba(82,182,255,.12),
+            transparent 63%
+        );
 
-    75% {
+    filter: blur(15px);
 
-        border-color:
-            rgba(82,182,255,.32);
+    pointer-events: none;
 
-        box-shadow:
-
-            0 0 24px
-            rgba(82,182,255,.06),
-
-            0 22px 65px
-            rgba(0,0,0,.36),
-
-            inset 0 0 34px
-            rgba(82,182,255,.025);
-    }
+    animation:
+        ahcBridgePulse 5s
+        ease-in-out
+        infinite;
+}
 
 
+@keyframes ahcVerticalEnergy {
+
+    0%,
     100% {
-
-        border-color:
-            rgba(216,180,135,.18);
-
-        box-shadow:
-
-            0 0 5px
-            rgba(216,180,135,.02),
-
-            0 18px 55px
-            rgba(0,0,0,.30),
-
-            inset 0 0 25px
-            rgba(216,180,135,.012);
-    }
-
-}
-
-
-/* =========================================================
-   03 — SIX DIMENSIONS
-   EACH CARD HAS ITS OWN ENERGY FREQUENCY
-   ========================================================= */
-
-
-/* 01 — ARS BRAIN
-   Precision */
-
-section.ars-ecosystem-system.ars-system-six
-.ars-six-grid
-.ars-system-card:nth-child(1) {
-
-    animation-duration:
-        5.4s !important;
-
-    animation-delay:
-        -1.2s !important;
-}
-
-
-/* 02 — ARS DESIGN
-   Elegant / slow */
-
-section.ars-ecosystem-system.ars-system-six
-.ars-six-grid
-.ars-system-card:nth-child(2) {
-
-    animation-duration:
-        7.8s !important;
-
-    animation-delay:
-        -3.8s !important;
-}
-
-
-/* 03 — ARS COMPANY
-   Stable */
-
-section.ars-ecosystem-system.ars-system-six
-.ars-six-grid
-.ars-system-card:nth-child(3) {
-
-    animation-duration:
-        9.2s !important;
-
-    animation-delay:
-        -5.4s !important;
-}
-
-
-/* 04 — ROSE
-   Soft intelligence */
-
-section.ars-ecosystem-system.ars-system-six
-.ars-six-grid
-.ars-system-card:nth-child(4) {
-
-    animation-duration:
-        6.3s !important;
-
-    animation-delay:
-        -2.1s !important;
-}
-
-
-/* 05 — ZHR NAJI
-   Strong protection */
-
-section.ars-ecosystem-system.ars-system-six
-.ars-six-grid
-.ars-system-card:nth-child(5) {
-
-    animation-duration:
-        8.6s !important;
-
-    animation-delay:
-        -6.2s !important;
-}
-
-
-/* 06 — ARS ENGINEERING
-   Technical */
-
-section.ars-ecosystem-system.ars-system-six
-.ars-six-grid
-.ars-system-card:nth-child(6) {
-
-    animation-duration:
-        6.9s !important;
-
-    animation-delay:
-        -4.1s !important;
-}
-
-
-/* =========================================================
-   04 — SECONDARY ENERGY BREATH
-   DOES NOT USE ::BEFORE / ::AFTER
-   ========================================================= */
-
-section.ars-ecosystem-system.ars-system-six
-.ars-six-grid
-.ars-system-card
-.ars-card-content {
-
-    animation-name:
-        arsContentEnergy !important;
-
-    animation-duration:
-        5.8s !important;
-
-    animation-timing-function:
-        ease-in-out !important;
-
-    animation-iteration-count:
-        infinite !important;
-
-    animation-direction:
-        alternate !important;
-
-    animation-play-state:
-        running !important;
-}
-
-
-@keyframes arsContentEnergy {
-
-    0% {
-
-        filter:
-            brightness(.96);
+        opacity: .25;
+        transform: translateX(-50%) scaleY(.72);
     }
 
     50% {
-
-        filter:
-            brightness(1.025);
+        opacity: 1;
+        transform: translateX(-50%) scaleY(1);
     }
+}
 
+
+@keyframes ahcBridgePulse {
+
+    0%,
     100% {
-
-        filter:
-            brightness(.98);
-    }
-
-}
-
-
-/* =========================================================
-   05 — CARD IMAGE CINEMATIC BREATH
-   ========================================================= */
-
-section.ars-ecosystem-system.ars-system-six
-.ars-six-grid
-.ars-system-card
-.ars-card-image img {
-
-    animation-name:
-        arsImageBreath !important;
-
-    animation-duration:
-        8s !important;
-
-    animation-timing-function:
-        ease-in-out !important;
-
-    animation-iteration-count:
-        infinite !important;
-
-    animation-direction:
-        alternate !important;
-
-    animation-play-state:
-        running !important;
-}
-
-
-@keyframes arsImageBreath {
-
-    0% {
-
-        filter:
-            brightness(.92)
-            saturate(.88);
+        opacity: .28;
+        scale: .72;
     }
 
     50% {
-
-        filter:
-            brightness(1.025)
-            saturate(1.03);
+        opacity: .8;
+        scale: 1.08;
     }
-
-    100% {
-
-        filter:
-            brightness(.95)
-            saturate(.94);
-    }
-
 }
 
 
 /* =========================================================
-   06 — HOVER DOES NOT KILL THE ANIMATION
+   SYSTEM II HEADER
    ========================================================= */
 
-@media (hover:hover) {
+.ars-heritage-transition .ahc-system-heading {
 
-    section.ars-ecosystem-system.ars-system-six
-    .ars-six-grid
-    .ars-system-card:hover {
+    position: relative;
 
-        animation-play-state:
-            running !important;
+    z-index: 10;
 
-        border-color:
-            rgba(216,180,135,.55);
+    width: min(760px, 92%);
 
+    margin:
+        0 auto
+        clamp(70px, 9vw, 110px);
+
+    text-align: center;
+}
+
+
+.ars-heritage-transition .ahc-kicker {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 34px;
+
+    padding:
+        7px
+        22px;
+
+    border: 1px solid
+        rgba(82,182,255,.28);
+
+    border-radius: 999px;
+
+    color:
+        var(--ahc-blue);
+
+    background:
+        rgba(5,17,31,.48);
+
+    box-shadow:
+        0 0 22px
+        rgba(82,182,255,.07);
+
+    font-size: 10px;
+
+    letter-spacing:
+        .28em;
+
+    text-transform:
+        uppercase;
+
+    animation:
+        ahcKickerGlow 4.5s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes ahcKickerGlow {
+
+    0%,
+    100% {
         box-shadow:
-
-            0 0 42px
-            rgba(216,180,135,.10),
-
-            0 30px 80px
-            rgba(0,0,0,.52),
-
-            inset 0 0 40px
-            rgba(216,180,135,.035);
+            0 0 12px
+            rgba(82,182,255,.04);
     }
 
+    50% {
+        box-shadow:
+            0 0 30px
+            rgba(82,182,255,.13);
+    }
+}
+
+
+.ars-heritage-transition .ahc-system-heading h2 {
+
+    margin:
+        24px 0 18px;
+
+    color:
+        #f4f0e9;
+
+    font-size:
+        clamp(30px, 4.2vw, 54px);
+
+    line-height:
+        1.04;
+
+    letter-spacing:
+        -.025em;
+
+    font-weight:
+        500;
+}
+
+
+.ars-heritage-transition .ahc-system-heading h2 span {
+
+    color:
+        var(--ahc-bronze);
+}
+
+
+.ars-heritage-transition .ahc-system-heading p {
+
+    max-width: 650px;
+
+    margin:
+        0 auto;
+
+    color:
+        rgba(224,231,238,.68);
+
+    font-size:
+        clamp(13px, 1.25vw, 16px);
+
+    line-height:
+        1.9;
+
+    letter-spacing:
+        .015em;
 }
 
 
 /* =========================================================
-   07 — MOBILE
+   ENERGY CORE
+   ========================================================= */
+
+.ars-heritage-transition .ahc-core {
+
+    position: relative;
+
+    z-index: 20;
+
+    width:
+        clamp(260px, 38vw, 440px);
+
+    aspect-ratio: 1;
+
+    margin:
+        0 auto;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+}
+
+
+/* =========================================================
+   CORE ATMOSPHERE
+   ========================================================= */
+
+.ars-heritage-transition .ahc-core-halo {
+
+    position: absolute;
+
+    inset: 2%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(82,182,255,.10) 0%,
+            rgba(214,180,135,.055) 28%,
+            transparent 68%
+        );
+
+    filter:
+        blur(18px);
+
+    animation:
+        ahcHaloBreath
+        5s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes ahcHaloBreath {
+
+    0%,
+    100% {
+        opacity: .45;
+        transform: scale(.88);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.08);
+    }
+}
+
+
+/* =========================================================
+   CORE SPHERE
+   ========================================================= */
+
+.ars-heritage-transition .ahc-sphere {
+
+    position: relative;
+
+    width: 43%;
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle at 36% 30%,
+            rgba(255,255,255,.16),
+            transparent 9%
+        ),
+
+        radial-gradient(
+            circle at 42% 38%,
+            rgba(82,182,255,.34),
+            transparent 31%
+        ),
+
+        radial-gradient(
+            circle at 65% 70%,
+            rgba(214,180,135,.23),
+            transparent 38%
+        ),
+
+        radial-gradient(
+            circle,
+            #0b2032 0%,
+            #061522 54%,
+            #02080f 100%
+        );
+
+    border:
+        1px solid
+        rgba(214,180,135,.52);
+
+    box-shadow:
+
+        0 0 25px
+        rgba(82,182,255,.16),
+
+        0 0 60px
+        rgba(214,180,135,.12),
+
+        inset 0 0 45px
+        rgba(82,182,255,.12),
+
+        inset 0 0 80px
+        rgba(0,0,0,.72);
+
+    overflow:
+        hidden;
+
+    animation:
+        ahcSphereBreath
+        4.8s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes ahcSphereBreath {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 20px rgba(82,182,255,.13),
+            0 0 48px rgba(214,180,135,.07),
+            inset 0 0 40px rgba(82,182,255,.09);
+    }
+
+    50% {
+        box-shadow:
+            0 0 35px rgba(82,182,255,.28),
+            0 0 85px rgba(214,180,135,.18),
+            inset 0 0 55px rgba(82,182,255,.18);
+    }
+}
+
+
+/* =========================================================
+   CORE ENERGY PARTICLE
+   ========================================================= */
+
+.ars-heritage-transition .ahc-sphere::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 12px;
+    height: 12px;
+
+    left: 50%;
+    top: 50%;
+
+    margin:
+        -6px;
+
+    border-radius: 50%;
+
+    background:
+        #dff4ff;
+
+    box-shadow:
+
+        0 0 10px
+        #52b6ff,
+
+        0 0 25px
+        #52b6ff,
+
+        0 0 45px
+        rgba(214,180,135,.8);
+
+    animation:
+        ahcCorePulse
+        2.8s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes ahcCorePulse {
+
+    0%,
+    100% {
+        transform: scale(.55);
+        opacity: .65;
+    }
+
+    50% {
+        transform: scale(1.25);
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   ORBIT SYSTEM
+   ========================================================= */
+
+.ars-heritage-transition .ahc-orbit {
+
+    position: absolute;
+
+    inset: 4%;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(82,182,255,.18);
+
+    transform-style:
+        preserve-3d;
+
+    pointer-events:
+        none;
+}
+
+
+.ars-heritage-transition .ahc-orbit:nth-child(2) {
+
+    inset: 11%;
+
+    border-color:
+        rgba(214,180,135,.24);
+
+    transform:
+        rotateX(67deg)
+        rotateY(12deg);
+
+    animation:
+        ahcOrbitOne
+        18s
+        linear
+        infinite;
+}
+
+
+.ars-heritage-transition .ahc-orbit:nth-child(3) {
+
+    inset: 17%;
+
+    border-color:
+        rgba(82,182,255,.22);
+
+    transform:
+        rotateX(72deg)
+        rotateY(-26deg);
+
+    animation:
+        ahcOrbitTwo
+        24s
+        linear
+        infinite reverse;
+}
+
+
+@keyframes ahcOrbitOne {
+
+    from {
+        transform:
+            rotateX(67deg)
+            rotateY(12deg)
+            rotateZ(0deg);
+    }
+
+    to {
+        transform:
+            rotateX(67deg)
+            rotateY(12deg)
+            rotateZ(360deg);
+    }
+}
+
+
+@keyframes ahcOrbitTwo {
+
+    from {
+        transform:
+            rotateX(72deg)
+            rotateY(-26deg)
+            rotateZ(0deg);
+    }
+
+    to {
+        transform:
+            rotateX(72deg)
+            rotateY(-26deg)
+            rotateZ(360deg);
+    }
+}
+
+
+/* =========================================================
+   ORBIT ENERGY NODES
+   ========================================================= */
+
+.ars-heritage-transition .ahc-orbit::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: -4px;
+    left: 50%;
+
+    width: 8px;
+    height: 8px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:
+        50%;
+
+    background:
+        var(--ahc-bronze);
+
+    box-shadow:
+
+        0 0 8px
+        var(--ahc-bronze),
+
+        0 0 20px
+        rgba(214,180,135,.7);
+}
+
+
+.ars-heritage-transition .ahc-orbit:nth-child(3)::after {
+
+    background:
+        var(--ahc-blue);
+
+    box-shadow:
+
+        0 0 8px
+        var(--ahc-blue),
+
+        0 0 22px
+        rgba(82,182,255,.7);
+}
+
+
+/* =========================================================
+   CORE LABEL
+   ========================================================= */
+
+.ars-heritage-transition .ahc-core-label {
+
+    position: absolute;
+
+    bottom:
+        -55px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width:
+        max-content;
+
+    color:
+        rgba(214,180,135,.85);
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        .30em;
+
+    text-transform:
+        uppercase;
+
+    white-space:
+        nowrap;
+}
+
+
+/* =========================================================
+   MOBILE
    ========================================================= */
 
 @media (max-width:700px) {
 
-    section.ars-ecosystem-system.ars-system-six
-    .ars-six-grid
-    .ars-system-card {
+    .ars-heritage-transition {
 
-        animation-play-state:
-            running !important;
+        padding:
+            80px 18px 120px;
+    }
 
-        will-change:
-            box-shadow,
-            border-color;
+    .ars-heritage-transition
+    .ahc-system-heading {
+
+        margin-bottom:
+            70px;
+    }
+
+    .ars-heritage-transition
+    .ahc-system-heading h2 {
+
+        font-size:
+            32px;
+    }
+
+    .ars-heritage-transition
+    .ahc-system-heading p {
+
+        font-size:
+            13px;
+
+        line-height:
+            1.8;
+    }
+
+    .ars-heritage-transition
+    .ahc-core {
+
+        width:
+            min(88vw, 390px);
     }
 
 }
 
 
 /* =========================================================
-   08 — IMPORTANT
-   DO NOT DISABLE THIS ANIMATION
+   REDUCED MOTION
    ========================================================= */
 
-@media (prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion: reduce) {
 
-    section.ars-ecosystem-system.ars-system-six
-    .ars-six-grid
-    .ars-system-card {
+    .ars-heritage-transition *,
+    .ars-heritage-transition::before,
+    .ars-heritage-transition::after {
 
-        animation-play-state:
-            running !important;
+        animation:
+            none !important;
     }
 
-                 }
+  }
+
+
+  
