@@ -34828,3 +34828,417 @@ article.ars-system-card {
 
 }
 
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS HERITAGE GROUP — FINAL LIVING CORE PATCH
+   HEADER + IDENTITY IMAGE POSITION
+   ISOLATED — DOES NOT TOUCH ECOSYSTEM SYSTEMS
+========================================================= */
+
+
+/* =========================================================
+   CORE CAPTION → SAME VISUAL DNA AS ARS ECOSYSTEM HEADER
+========================================================= */
+
+.ars-living-core .ars-core-caption {
+    position: relative;
+    z-index: 20;
+
+    width: min(900px, 88%);
+    margin: 0 auto;
+
+    text-align: center;
+
+    padding-top: 18px;
+}
+
+
+/* ---------------------------------------------------------
+   KICKER / TOP PILL
+--------------------------------------------------------- */
+
+.ars-living-core .ars-core-kicker {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+    padding: 0 42px;
+
+    border: 1px solid rgba(190, 157, 105, .55);
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(13, 24, 34, .92),
+            rgba(5, 12, 19, .82)
+        );
+
+    color: #c9a873;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    letter-spacing: 5px;
+    text-transform: uppercase;
+
+    box-shadow:
+        0 0 0 1px rgba(40, 140, 190, .05),
+        0 0 28px rgba(194, 155, 92, .08),
+        inset 0 1px 0 rgba(255,255,255,.05);
+
+    overflow: hidden;
+}
+
+
+/* moving premium light */
+
+.ars-living-core .ars-core-kicker::after {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    left: -35%;
+
+    width: 32%;
+    height: 1px;
+
+    transform: translateY(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.85),
+            #c9a873,
+            transparent
+        );
+
+    box-shadow:
+        0 0 10px #c9a873,
+        0 0 22px rgba(201,168,115,.65);
+
+    animation:
+        arsCoreHeaderSweep 5.5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+.ars-living-core .ars-core-caption h2 {
+
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 22px auto 0;
+
+    min-height: 82px;
+
+    padding: 0 46px;
+
+    border-radius: 999px;
+
+    border: 1px solid rgba(201,168,115,.42);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(11, 22, 32, .95),
+            rgba(4, 10, 16, .92)
+        );
+
+    color: #f1eee9;
+
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 500;
+
+    letter-spacing: -.8px;
+
+    line-height: 1.05;
+
+    box-shadow:
+        0 0 35px rgba(201,168,115,.07),
+        inset 0 1px 0 rgba(255,255,255,.06);
+
+    overflow: hidden;
+}
+
+
+/* blue / bronze light blade */
+
+.ars-living-core .ars-core-caption h2::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: 12%;
+    top: 50%;
+
+    width: 95px;
+    height: 2px;
+
+    transform: translateY(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #2d9bd3,
+            #c9a873,
+            transparent
+        );
+
+    box-shadow:
+        0 0 8px rgba(45,155,211,.75),
+        0 0 18px rgba(201,168,115,.45);
+
+    animation:
+        arsCoreTitlePulse 4.5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.ars-living-core .ars-core-caption p {
+
+    margin: 24px auto 0;
+
+    max-width: 720px;
+
+    color: rgba(214,219,224,.72);
+
+    font-size: clamp(15px, 2vw, 19px);
+
+    line-height: 1.8;
+
+    letter-spacing: .2px;
+}
+
+
+/* =========================================================
+   MOVE EXISTING LOGO IMAGE
+   OUT OF THE CENTER OF THE ORB
+========================================================= */
+
+.ars-living-core .ars-core-identity {
+
+    position: absolute;
+
+    z-index: 35;
+
+    /*
+       Move identity ABOVE the orb.
+       Slightly left for asymmetric premium composition.
+    */
+
+    top: -108px;
+    left: 37%;
+
+    width: 150px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    pointer-events: auto;
+}
+
+
+/* actual image */
+
+.ars-living-core .ars-core-identity img {
+
+    display: block;
+
+    width: 145px;
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 14px;
+
+    filter:
+        drop-shadow(0 0 10px rgba(45,155,211,.20))
+        drop-shadow(0 0 16px rgba(201,168,115,.12));
+
+    opacity: .94;
+
+    transition:
+        transform .55s cubic-bezier(.2,.8,.2,1),
+        filter .55s ease;
+}
+
+
+/* hide text that was sitting underneath the logo */
+
+.ars-living-core .ars-core-identity-label {
+    display: none;
+}
+
+
+/* subtle hover */
+
+.ars-living-core .ars-core-identity:hover img {
+
+    transform: translateY(-4px) scale(1.035);
+
+    filter:
+        drop-shadow(0 0 12px rgba(45,155,211,.35))
+        drop-shadow(0 0 25px rgba(201,168,115,.22));
+}
+
+
+/* =========================================================
+   KEEP THE ENERGY ORB BELOW THE IDENTITY
+========================================================= */
+
+.ars-living-core .ars-living-core-field {
+
+    position: relative;
+
+    z-index: 10;
+
+    overflow: visible;
+}
+
+
+/* make sure the actual energy core stays clean */
+
+.ars-living-core .ars-core-energy {
+
+    z-index: 18;
+}
+
+
+/* =========================================================
+   HEADER ANIMATIONS
+========================================================= */
+
+@keyframes arsCoreHeaderSweep {
+
+    0% {
+        left: -35%;
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    50% {
+        left: 105%;
+        opacity: 1;
+    }
+
+    65%,
+    100% {
+        left: 105%;
+        opacity: 0;
+    }
+}
+
+
+@keyframes arsCoreTitlePulse {
+
+    0%,
+    100% {
+        opacity: .45;
+        transform: translateY(-50%) scaleX(.72);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-50%) scaleX(1);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .ars-living-core .ars-core-caption {
+        width: 92%;
+        padding-top: 10px;
+    }
+
+    .ars-living-core .ars-core-kicker {
+        min-height: 42px;
+        padding: 0 22px;
+
+        font-size: 9px;
+        letter-spacing: 3.5px;
+    }
+
+    .ars-living-core .ars-core-caption h2 {
+
+        min-height: 64px;
+
+        padding: 0 25px;
+
+        margin-top: 17px;
+
+        font-size: 30px;
+
+        white-space: nowrap;
+    }
+
+    .ars-living-core .ars-core-caption p {
+
+        margin-top: 18px;
+
+        font-size: 14px;
+
+        line-height: 1.65;
+    }
+
+    .ars-living-core .ars-core-identity {
+
+        top: -82px;
+        left: 28%;
+
+        width: 110px;
+    }
+
+    .ars-living-core .ars-core-identity img {
+        width: 105px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ars-living-core .ars-core-kicker::after,
+    .ars-living-core .ars-core-caption h2::after {
+
+        animation: none;
+    }
+
+}
