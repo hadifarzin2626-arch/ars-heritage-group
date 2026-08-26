@@ -35246,20 +35246,9 @@ article.ars-system-card {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 /* =========================================================
-   ARS HERITAGE GROUP — FINAL HEADER OVERRIDE
-   HEADER ONLY / DO NOT TOUCH THE CORE SPHERE
+   ARS HERITAGE GROUP
+   HEADER — RESTORE PREMIUM ARS DNA
    ========================================================= */
 
 section.ars-living-core .ars-core-caption {
@@ -35278,8 +35267,7 @@ section.ars-living-core .ars-core-caption {
 
 
 /* =========================================================
-   TOP PILL
-   SAME VISUAL LANGUAGE AS ARS ECOSYSTEM
+   HERITAGE KICKER — RESTORED ELLIPSE
    ========================================================= */
 
 section.ars-living-core .ars-core-caption .ars-core-kicker {
@@ -35290,15 +35278,15 @@ section.ars-living-core .ars-core-caption .ars-core-kicker {
     justify-content: center !important;
 
     width: min(680px, 86vw) !important;
-    min-width: 0 !important;
     height: 68px !important;
 
-    margin: 0 auto 42px auto !important;
-    padding: 0 40px !important;
+    margin: 0 auto 42px !important;
+    padding: 0 42px !important;
 
     box-sizing: border-box !important;
 
-    border: 1px solid rgba(205, 174, 120, .72) !important;
+    border: 1px solid rgba(205, 174, 120, .68) !important;
+
     border-radius: 999px !important;
 
     background:
@@ -35310,58 +35298,56 @@ section.ars-living-core .ars-core-caption .ars-core-kicker {
 
     color: #cdb28a !important;
 
-    font-family: inherit !important;
     font-size: 16px !important;
     font-weight: 500 !important;
 
+    letter-spacing: .34em !important;
     line-height: 1 !important;
 
-    letter-spacing: .34em !important;
     text-transform: uppercase !important;
 
-    text-align: center !important;
+    overflow: hidden !important;
 
     box-shadow:
-        0 0 10px rgba(213, 171, 99, .22),
-        0 0 28px rgba(213, 171, 99, .13),
-        0 0 65px rgba(213, 171, 99, .07),
-        inset 0 0 24px rgba(213, 171, 99, .035) !important;
-
-    overflow: hidden !important;
+        0 0 10px rgba(210,170,100,.18),
+        0 0 28px rgba(210,170,100,.12),
+        inset 0 0 20px rgba(210,170,100,.035) !important;
 }
 
 
 /* =========================================================
-   GOLDEN HALO BEHIND PILL
+   GOLDEN HALO BEHIND ELLIPSE
    ========================================================= */
 
 section.ars-living-core .ars-core-caption .ars-core-kicker::before {
     content: "" !important;
 
     position: absolute !important;
-    inset: -28px -55px !important;
+
+    inset: -25px -50px !important;
 
     border-radius: 999px !important;
 
     background:
         radial-gradient(
             ellipse at center,
-            rgba(214, 174, 102, .28) 0%,
-            rgba(214, 174, 102, .12) 30%,
-            rgba(214, 174, 102, .035) 55%,
-            transparent 76%
+            rgba(215,177,105,.24) 0%,
+            rgba(215,177,105,.10) 34%,
+            rgba(215,177,105,.025) 58%,
+            transparent 78%
         ) !important;
 
-    filter: blur(16px) !important;
+    filter: blur(15px) !important;
 
-    z-index: -2 !important;
+    z-index: -1 !important;
 
-    opacity: 1 !important;
+    pointer-events: none !important;
 }
 
 
 /* =========================================================
-   MOVING LIGHT INSIDE PILL
+   ORIGINAL ARS MULTI-COLOR LIGHT LINE
+   BLUE → GOLD → BLUE
    ========================================================= */
 
 section.ars-living-core .ars-core-caption .ars-core-kicker::after {
@@ -35369,55 +35355,65 @@ section.ars-living-core .ars-core-caption .ars-core-kicker::after {
 
     position: absolute !important;
 
+    left: -45% !important;
     top: 0 !important;
-    bottom: 0 !important;
-    left: -35% !important;
 
-    width: 18% !important;
+    width: 42% !important;
+    height: 100% !important;
 
     background:
         linear-gradient(
             90deg,
-            transparent,
-            rgba(214, 174, 102, .15),
-            rgba(255, 237, 193, .95),
-            rgba(214, 174, 102, .15),
-            transparent
+            transparent 0%,
+            rgba(39,154,255,.05) 8%,
+            rgba(39,154,255,.75) 28%,
+            rgba(220,183,112,1) 50%,
+            rgba(39,154,255,.75) 72%,
+            rgba(39,154,255,.05) 92%,
+            transparent 100%
         ) !important;
 
-    filter: blur(4px) !important;
+    filter: blur(3px) !important;
 
-    transform: skewX(-20deg) !important;
+    transform: skewX(-18deg) !important;
+
+    opacity: .85 !important;
+
+    pointer-events: none !important;
 
     animation:
-        ars-heritage-pill-light
-        5s
-        ease-in-out
+        ars-heritage-spectrum-scan
+        5.2s
+        cubic-bezier(.45,0,.55,1)
         infinite !important;
 }
 
 
-@keyframes ars-heritage-pill-light {
+@keyframes ars-heritage-spectrum-scan {
 
     0% {
-        left: -35%;
+        left: -45%;
         opacity: 0;
     }
 
-    18% {
-        opacity: .4;
+    12% {
+        opacity: .55;
     }
 
-    48% {
+    42% {
         opacity: 1;
     }
 
+    55% {
+        opacity: .95;
+    }
+
     72% {
-        opacity: .35;
+        opacity: .45;
     }
 
     100% {
-        left: 120%;
+        left: 115%;
         opacity: 0;
     }
 }
@@ -35425,13 +35421,11 @@ section.ars-living-core .ars-core-caption .ars-core-kicker::after {
 
 /* =========================================================
    HERITAGE TITLE
-   SAME SCALE / DNA AS ARS ECOSYSTEM
+   SAME VISUAL SCALE AS ARS ECOSYSTEM
    ========================================================= */
 
 section.ars-living-core .ars-core-caption h2 {
     position: relative !important;
-
-    display: block !important;
 
     width: 100% !important;
 
@@ -35439,8 +35433,6 @@ section.ars-living-core .ars-core-caption h2 {
     padding: 0 !important;
 
     color: #f1eee8 !important;
-
-    font-family: inherit !important;
 
     font-size: clamp(42px, 6vw, 78px) !important;
 
@@ -35452,20 +35444,15 @@ section.ars-living-core .ars-core-caption h2 {
 
     text-align: center !important;
 
-    white-space: normal !important;
-
     background: none !important;
 
-    border: 0 !important;
-
-    text-shadow:
-        0 0 18px rgba(255,255,255,.055),
-        0 0 45px rgba(211,167,91,.035) !important;
+    border: none !important;
 }
 
 
 /* =========================================================
-   GOLDEN ANIMATED LINE
+   TITLE LIGHT LINE
+   BLUE + GOLD — SAME ARS LANGUAGE
    ========================================================= */
 
 section.ars-living-core .ars-core-caption h2::after {
@@ -35482,35 +35469,39 @@ section.ars-living-core .ars-core-caption h2::after {
         linear-gradient(
             90deg,
             transparent,
-            rgba(203, 161, 91, .25),
-            #d8b36f,
-            rgba(203, 161, 91, .25),
+            rgba(42,160,255,.35),
+            #2fa8ff,
+            #d4ad6b,
+            #f0d28e,
+            #d4ad6b,
+            #2fa8ff,
+            rgba(42,160,255,.35),
             transparent
         ) !important;
 
     box-shadow:
-        0 0 7px rgba(220, 180, 105, .75),
-        0 0 20px rgba(220, 180, 105, .30) !important;
+        0 0 7px rgba(45,166,255,.55),
+        0 0 13px rgba(214,174,103,.38) !important;
 
     animation:
-        ars-heritage-title-line-final
-        4.6s
+        ars-heritage-title-spectrum
+        4.5s
         ease-in-out
         infinite !important;
 }
 
 
-@keyframes ars-heritage-title-line-final {
+@keyframes ars-heritage-title-spectrum {
 
     0%,
     100% {
-        opacity: .25;
-        transform: scaleX(.60);
+        opacity: .35;
+        transform: scaleX(.62);
     }
 
     50% {
         opacity: 1;
-        transform: scaleX(1.18);
+        transform: scaleX(1.16);
     }
 }
 
@@ -35520,56 +35511,41 @@ section.ars-living-core .ars-core-caption h2::after {
    ========================================================= */
 
 section.ars-living-core .ars-core-caption p {
-    position: relative !important;
-
     width: 100% !important;
     max-width: 720px !important;
 
     margin: 32px auto 0 !important;
-    padding: 0 !important;
 
-    color: rgba(204, 210, 217, .72) !important;
-
-    font-family: inherit !important;
+    color: rgba(204,210,217,.72) !important;
 
     font-size: 22px !important;
     font-weight: 400 !important;
 
     line-height: 1.65 !important;
 
-    letter-spacing: 0 !important;
-
     text-align: center !important;
 }
 
 
 /* =========================================================
-   MOBILE — SAME PROPORTION
+   MOBILE
    ========================================================= */
 
 @media (max-width: 700px) {
-
-    section.ars-living-core .ars-core-caption {
-        width: 94% !important;
-    }
 
     section.ars-living-core .ars-core-caption .ars-core-kicker {
         width: 88% !important;
         height: 58px !important;
 
         margin-bottom: 34px !important;
-
         padding: 0 18px !important;
 
         font-size: 11px !important;
-
         letter-spacing: .23em !important;
     }
 
     section.ars-living-core .ars-core-caption h2 {
         font-size: 48px !important;
-        line-height: 1 !important;
-        letter-spacing: -.025em !important;
     }
 
     section.ars-living-core .ars-core-caption h2::after {
@@ -35579,9 +35555,16 @@ section.ars-living-core .ars-core-caption p {
 
     section.ars-living-core .ars-core-caption p {
         margin-top: 25px !important;
-
         font-size: 16px !important;
-
-        line-height: 1.65 !important;
     }
-}
+          }
+
+
+
+
+
+
+
+
+
+-
