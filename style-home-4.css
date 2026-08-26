@@ -35242,3 +35242,366 @@ article.ars-system-card {
     }
 
 }
+
+
+
+
+/* =========================================================
+   ARS HERITAGE GROUP
+   HEADER DNA LOCK
+   MATCH ARS ECOSYSTEM HEADER
+   ========================================================= */
+
+.ars-living-core {
+    position: relative;
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   CORE CAPTION — HEADER AREA
+   ========================================================= */
+
+.ars-core-caption {
+    position: relative;
+    z-index: 20;
+
+    width: min(92%, 760px);
+    margin: 0 auto;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 20px;
+}
+
+
+/* =========================================================
+   TOP PILL
+   CENTRAL INTELLIGENCE CORE
+   ========================================================= */
+
+.ars-core-kicker {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 68px;
+    min-width: min(680px, 88vw);
+
+    padding: 0 54px;
+
+    border: 1px solid rgba(205, 170, 112, .55);
+    border-radius: 999px;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(196, 153, 78, .075),
+            rgba(5, 13, 22, .30) 65%,
+            transparent 100%
+        );
+
+    color: #cdb18a;
+
+    font-size: clamp(13px, 1.35vw, 18px);
+    font-weight: 500;
+
+    letter-spacing: .34em;
+    text-transform: uppercase;
+
+    box-shadow:
+        0 0 18px rgba(202, 162, 94, .10),
+        0 0 42px rgba(202, 162, 94, .055),
+        inset 0 0 25px rgba(202, 162, 94, .035);
+
+    overflow: hidden;
+
+    margin-bottom: 42px;
+}
+
+
+/* =========================================================
+   GOLDEN ENERGY BEHIND PILL
+   ========================================================= */
+
+.ars-core-kicker::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -18px -35px;
+
+    border-radius: inherit;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(210, 166, 92, .20) 0%,
+            rgba(210, 166, 92, .08) 35%,
+            transparent 72%
+        );
+
+    filter: blur(18px);
+
+    opacity: .85;
+
+    z-index: -2;
+}
+
+
+/* =========================================================
+   MOVING LIGHT INSIDE / ACROSS PILL
+   ========================================================= */
+
+.ars-core-kicker::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    left: -35%;
+
+    width: 22%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 224, 160, .75),
+            rgba(255, 246, 215, .95),
+            rgba(255, 224, 160, .65),
+            transparent
+        );
+
+    filter: blur(5px);
+
+    transform: skewX(-22deg);
+
+    opacity: .8;
+
+    animation:
+        ars-heritage-header-sweep
+        5.8s
+        cubic-bezier(.45, 0, .25, 1)
+        infinite;
+}
+
+
+@keyframes ars-heritage-header-sweep {
+
+    0% {
+        left: -35%;
+        opacity: 0;
+    }
+
+    12% {
+        opacity: .65;
+    }
+
+    48% {
+        opacity: .95;
+    }
+
+    72% {
+        opacity: .35;
+    }
+
+    100% {
+        left: 115%;
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   MAIN TITLE
+   SAME VISUAL SCALE AS ARS ECOSYSTEM
+   ========================================================= */
+
+.ars-core-caption h2 {
+    position: relative;
+
+    margin: 0;
+
+    color: #f1eee8;
+
+    font-size: clamp(40px, 6vw, 78px);
+    line-height: .98;
+
+    font-weight: 600;
+
+    letter-spacing: -.035em;
+
+    text-align: center;
+
+    text-shadow:
+        0 0 18px rgba(255,255,255,.045),
+        0 0 42px rgba(211,167,91,.035);
+}
+
+
+/* =========================================================
+   GOLDEN LINE UNDER TITLE
+   SAME LANGUAGE AS ECOSYSTEM
+   ========================================================= */
+
+.ars-core-caption h2::after {
+    content: "";
+
+    display: block;
+
+    width: 110px;
+    height: 2px;
+
+    margin: 42px auto 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(191, 151, 88, .20),
+            #d3ad72,
+            rgba(191, 151, 88, .20),
+            transparent
+        );
+
+    box-shadow:
+        0 0 7px rgba(214, 177, 103, .55),
+        0 0 20px rgba(214, 177, 103, .20);
+
+    animation:
+        ars-heritage-title-line
+        4.8s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes ars-heritage-title-line {
+
+    0%,
+    100% {
+        opacity: .28;
+        transform: scaleX(.65);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scaleX(1.15);
+    }
+}
+
+
+/* =========================================================
+   CORE STATEMENT
+   ========================================================= */
+
+.ars-core-caption p {
+    margin: 34px auto 0;
+
+    max-width: 700px;
+
+    color: rgba(205, 210, 216, .72);
+
+    font-size: clamp(17px, 2vw, 24px);
+
+    line-height: 1.7;
+
+    letter-spacing: -.01em;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   SPACE BETWEEN HEADER AND ENERGY SPHERE
+   ========================================================= */
+
+.ars-living-core-field {
+    position: relative;
+
+    margin-top: 70px;
+
+    min-height: 600px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   IMPORTANT:
+   KEEP THE HERITAGE SPHERE BELOW THE HEADER
+   ========================================================= */
+
+.ars-core-identity {
+    position: absolute;
+
+    z-index: 30;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .ars-core-caption {
+        width: 94%;
+        padding-top: 10px;
+    }
+
+    .ars-core-kicker {
+        min-width: 0;
+        width: 88%;
+
+        min-height: 58px;
+
+        padding: 0 22px;
+
+        font-size: 11px;
+
+        letter-spacing: .24em;
+
+        margin-bottom: 34px;
+    }
+
+    .ars-core-caption h2 {
+        font-size: clamp(34px, 9vw, 48px);
+        letter-spacing: -.025em;
+    }
+
+    .ars-core-caption h2::after {
+        margin-top: 30px;
+        width: 82px;
+    }
+
+    .ars-core-caption p {
+        margin-top: 26px;
+
+        font-size: 16px;
+
+        line-height: 1.65;
+    }
+
+    .ars-living-core-field {
+        margin-top: 42px;
+        min-height: 500px;
+    }
+  }
+
+
+
+
