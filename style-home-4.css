@@ -36568,3 +36568,97 @@ section.ars-system-seven .ars-system-heading h2 {
 .main-header .header-brand-mark {
     transform: scale(1.30);
 }
+
+
+
+
+
+
+
+/* =========================================================
+   ARS LOGO — REMOVE SQUARE BACKGROUND
+   HEADER + PHILOSOPHY
+   Keep circular logo / transparent corners
+   ========================================================= */
+
+
+/* =========================
+   HEADER LOGO
+   ========================= */
+
+.main-header .header-brand-mark {
+
+    background: transparent !important;
+
+    background-color: transparent !important;
+
+    overflow: hidden;
+
+}
+
+
+.main-header .header-brand-mark img {
+
+    display: block;
+
+    background: transparent !important;
+
+    background-color: transparent !important;
+
+    object-fit: contain;
+
+}
+
+
+/* =========================
+   PHILOSOPHY LOGO
+   ========================= */
+
+.ars-philosophy-core {
+
+    background: transparent !important;
+
+    background-color: transparent !important;
+
+}
+
+
+.ars-philosophy-core img {
+
+    display: block;
+
+    background: transparent !important;
+
+    background-color: transparent !important;
+
+    object-fit: contain;
+
+}
+
+
+/* =========================================================
+   MAKE SURE NO SQUARE IS CREATED BY EFFECT LAYERS
+   ========================================================= */
+
+.ars-philosophy-core::before,
+.ars-philosophy-core::after {
+
+    background-color: transparent;
+
+}
+
+
+/* =========================================================
+   PRESERVE THE CIRCULAR LOGO
+   ========================================================= */
+
+.ars-philosophy-core img,
+.main-header .header-brand-mark img {
+
+    border-radius: 50%;
+
+}
+
+
+
+
