@@ -37169,3 +37169,140 @@ section.ars-system-seven .ars-system-heading h2 {
 
 
 
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS SYSTEM VII — FINAL ORB
+   ISOLATED FROM SINGLE CORE + SYSTEM VI
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   ONLY THE 7 SYSTEM VII CARDS
+   --------------------------------------------------------- */
+
+.ars-system-card:has(a[href="ars-philosophy.html"]),
+.ars-system-card:has(a[href="ars-media-center.html"]),
+.ars-system-card:has(a[href="ars-partnership.html"]),
+.ars-system-card:has(a[href="ars-open-door.html"]),
+.ars-system-card:has(a[href="ars-collection.html"]),
+.ars-system-card:has(a[href="become-ars.html"]),
+.ars-system-card:has(a[href="ars-future-lab.html"]) {
+
+    position: relative !important;
+}
+
+
+/* ---------------------------------------------------------
+   ORB
+   30% LARGER
+   BOTTOM EDGE OF CONCEPT IMAGE
+   --------------------------------------------------------- */
+
+.ars-system-card:has(a[href="ars-philosophy.html"]) .ars-card-logo,
+.ars-system-card:has(a[href="ars-media-center.html"]) .ars-card-logo,
+.ars-system-card:has(a[href="ars-partnership.html"]) .ars-card-logo,
+.ars-system-card:has(a[href="ars-open-door.html"]) .ars-card-logo,
+.ars-system-card:has(a[href="ars-collection.html"]) .ars-card-logo,
+.ars-system-card:has(a[href="become-ars.html"]) .ars-card-logo,
+.ars-system-card:has(a[href="ars-future-lab.html"]) .ars-card-logo {
+
+    position: absolute !important;
+
+    width: 150px !important;
+    height: 150px !important;
+
+    left: 50% !important;
+
+    /*
+       پایین Orb روی ضلع پایینی
+       عکس مفهومی قرار می‌گیرد
+    */
+    top: 47% !important;
+
+    right: auto !important;
+    bottom: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    transform:
+        translate(-50%, -50%) !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    border-radius: 50% !important;
+
+    background: transparent !important;
+
+    overflow: visible !important;
+
+    z-index: 30 !important;
+}
+
+
+/* ---------------------------------------------------------
+   ORB IMAGE
+   --------------------------------------------------------- */
+
+.ars-system-card:has(a[href="ars-philosophy.html"]) .ars-card-logo img,
+.ars-system-card:has(a[href="ars-media-center.html"]) .ars-card-logo img,
+.ars-system-card:has(a[href="ars-partnership.html"]) .ars-card-logo img,
+.ars-system-card:has(a[href="ars-open-door.html"]) .ars-card-logo img,
+.ars-system-card:has(a[href="ars-collection.html"]) .ars-card-logo img,
+.ars-system-card:has(a[href="become-ars.html"]) .ars-card-logo img,
+.ars-system-card:has(a[href="ars-future-lab.html"]) .ars-card-logo img {
+
+    display: block !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    object-fit: contain !important;
+
+    border-radius: 50% !important;
+
+    background: transparent !important;
+
+    /*
+       فقط خود Orb نفس می‌کشد
+    */
+    animation:
+        arsSystem7LivingOrb
+        5s
+        ease-in-out
+        infinite !important;
+}
+
+
+/* ---------------------------------------------------------
+   LIVING BREATH
+   --------------------------------------------------------- */
+
+@keyframes arsSystem7LivingOrb {
+
+    0%,
+    100% {
+        transform: scale(.94);
+    }
+
+    50% {
+        transform: scale(1.06);
+    }
+}
+
+
