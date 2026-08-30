@@ -37074,41 +37074,95 @@ section.ars-system-seven .ars-system-heading h2 {
 
 
 
-
-
-
 /* =========================================================
-   ARS HERITAGE ORB — SYNCHRONIZED BREATH
+   ARS HERITAGE ORB — TRUE VISIBLE BREATH
    ========================================================= */
 
 .ars-living-core .ars-core-identity {
-    animation: none !important;
+    position: absolute !important;
+
+    left: 50% !important;
+    top: 50% !important;
+
+    width: 28.8% !important;
+    height: 28.8% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border-radius: 50% !important;
+    overflow: visible !important;
+
+    background: transparent !important;
+
     transform:
         translate(-50%, -50%) !important;
+
+    z-index: 40 !important;
 }
 
 
-/* خود Orb — تنفس هماهنگ با Core */
-
+/* خود تصویر بدون animation */
 .ars-living-core .ars-core-identity img {
-    transform-origin: center center !important;
+    display: block !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: contain !important;
+
+    border-radius: 50% !important;
+
+    transform: none !important;
+    animation: none !important;
+
+    background: transparent !important;
+}
+
+
+/* =========================================================
+   ORB BREATHING LAYER
+   ========================================================= */
+
+.ars-living-core .ars-core-identity::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 50%;
+
+    background:
+        url("images/ars-heritage-group-orb.png")
+        center / contain
+        no-repeat;
+
+    pointer-events: none;
+
+    z-index: 2;
 
     animation:
-        arsHeritageOrbSync
+        arsOrbVisibleBreath
         5s
         ease-in-out
-        infinite !important;
+        infinite;
 }
 
 
-@keyframes arsHeritageOrbSync {
+/* =========================================================
+   VISIBLE BREATH
+   ========================================================= */
+
+@keyframes arsOrbVisibleBreath {
 
     0%,
     100% {
-        transform: scale(.94) !important;
+        transform: scale(.90);
     }
 
     50% {
-        transform: scale(1.06) !important;
+        transform: scale(1.10);
     }
 }
+
