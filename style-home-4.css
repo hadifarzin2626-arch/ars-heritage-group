@@ -37176,82 +37176,32 @@ section.ars-system-seven .ars-system-heading h2 {
 
 
 
-
-
 /* =========================================================
-   ARS SYSTEM VII
-   LIVING ENERGY EMBLEM
-   ========================================================= */
-
-
-/* CARD */
-.ars-system-card {
-    position: relative !important;
-    overflow: hidden !important;
-}
-
-
-/* =========================================================
-   CONCEPT IMAGE
-   ========================================================= */
-
-.ars-system-card .ars-card-image {
-    position: relative !important;
-    z-index: 1 !important;
-}
-
-
-/* =========================================================
-   ORB CONTAINER
+   ARS SYSTEM VII — ORB FINAL SIZE & POSITION
    ========================================================= */
 
 .ars-system-card .ars-card-logo {
 
-    position: absolute !important;
+    width: 155px !important;
+    height: 155px !important;
 
     left: 50% !important;
-    top: 32% !important;
-
-    width: 115px !important;
-    height: 115px !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
+    top: 34% !important;
 
     transform:
         translate(-50%, -50%) !important;
 
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    border-radius: 50% !important;
-
-    background: transparent !important;
-
     overflow: visible !important;
 
-    z-index: 15 !important;
-
-    filter:
-        drop-shadow(0 0 12px rgba(82,182,255,.18))
-        drop-shadow(0 0 28px rgba(214,180,135,.10));
-
-    animation:
-        arsSystemVIIOrbFloat
-        6s
-        ease-in-out
-        infinite;
+    z-index: 20 !important;
 }
 
 
 /* =========================================================
-   ORB IMAGE
+   KEEP ORB FULLY VISIBLE
    ========================================================= */
 
 .ars-system-card .ars-card-logo img {
-
-    display: block !important;
 
     width: 100% !important;
     height: 100% !important;
@@ -37262,56 +37212,21 @@ section.ars-system-seven .ars-system-heading h2 {
     object-fit: contain !important;
 
     border-radius: 50% !important;
+}
 
-    background: transparent !important;
 
+/* =========================================================
+   KEEP BREATHING
+   ========================================================= */
+
+.ars-system-card .ars-card-logo img {
     animation:
         arsSystemVIIOrbBreath
         5s
         ease-in-out
-        infinite;
+        infinite !important;
 }
 
-
-/* =========================================================
-   SOFT ENERGY FIELD BEHIND ORB
-   ========================================================= */
-
-.ars-system-card .ars-card-logo::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: -18px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(82,182,255,.12),
-            rgba(214,180,135,.06) 38%,
-            transparent 70%
-        );
-
-    filter: blur(10px);
-
-    z-index: -1;
-
-    pointer-events: none;
-
-    animation:
-        arsSystemVIIAura
-        5s
-        ease-in-out
-        infinite;
-}
-
-
-/* =========================================================
-   ORB BREATH
-   ========================================================= */
 
 @keyframes arsSystemVIIOrbBreath {
 
@@ -37324,45 +37239,4 @@ section.ars-system-seven .ars-system-heading h2 {
         transform: scale(1.06);
     }
 }
-
-
-/* =========================================================
-   SUBTLE FLOAT
-   ========================================================= */
-
-@keyframes arsSystemVIIOrbFloat {
-
-    0%,
-    100% {
-        transform:
-            translate(-50%, -50%)
-            translateY(0);
-    }
-
-    50% {
-        transform:
-            translate(-50%, -50%)
-            translateY(-6px);
-    }
-}
-
-
-/* =========================================================
-   AURA BREATH
-   ========================================================= */
-
-@keyframes arsSystemVIIAura {
-
-    0%,
-    100% {
-        opacity: .45;
-        transform: scale(.90);
-    }
-
-    50% {
-        opacity: .9;
-        transform: scale(1.08);
-    }
-}
-
 
