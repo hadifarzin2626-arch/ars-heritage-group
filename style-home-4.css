@@ -37173,20 +37173,20 @@ section.ars-system-seven .ars-system-heading h2 {
 
 
 
-
-
 /* =========================================================
-   ARS SYSTEM VII — ORB SIZE + SOFT BREATH
-   ISOLATED — 7 CARDS ONLY
+   ARS SYSTEM VII — ORB ONLY
+   SIZE + SOFT BREATH
+   NO POSITION CHANGE
    ========================================================= */
 
-.ars-system-card:has(a[href="ars-philosophy.html"]) .ars-card-logo img,
-.ars-system-card:has(a[href="ars-media-center.html"]) .ars-card-logo img,
-.ars-system-card:has(a[href="ars-partnership.html"]) .ars-card-logo img,
-.ars-system-card:has(a[href="ars-open-door.html"]) .ars-card-logo img,
-.ars-system-card:has(a[href="ars-collection.html"]) .ars-card-logo img,
-.ars-system-card:has(a[href="become-ars.html"]) .ars-card-logo img,
-.ars-system-card:has(a[href="ars-future-lab.html"]) .ars-card-logo img {
+
+/* فقط کارت‌های سیستم ۷ — با ساختار خود کارت‌ها */
+.ars-system-card .ars-card-logo img[src*="ars-media-orb"],
+.ars-system-card .ars-card-logo img[src*="ars-partnership-orb"],
+.ars-system-card .ars-card-logo img[src*="ars-open-door-orb"],
+.ars-system-card .ars-card-logo img[src*="ars-collection-orb"],
+.ars-system-card .ars-card-logo img[src*="become-ars-orb"],
+.ars-system-card .ars-card-logo img[src*="ars-future-lab-orb"] {
 
     width: 135% !important;
     height: 135% !important;
@@ -37196,10 +37196,15 @@ section.ars-system-seven .ars-system-heading h2 {
 
     object-fit: contain !important;
 
+    background: transparent !important;
+    border: 0 !important;
+
+    border-radius: 50% !important;
+
     transform-origin: center center !important;
 
     animation:
-        arsSystem7SoftBreath
+        arsSystem7OrbBreathing
         6s
         ease-in-out
         infinite !important;
@@ -37207,18 +37212,49 @@ section.ars-system-seven .ars-system-heading h2 {
 
 
 /* =========================================================
-   SOFT LIVING BREATH
+   PHILOSOPHY — فعلاً با همان ساختار کارت اول
    ========================================================= */
 
-@keyframes arsSystem7SoftBreath {
+.ars-system-card:first-of-type .ars-card-logo img {
+
+    width: 135% !important;
+    height: 135% !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    object-fit: contain !important;
+
+    background: transparent !important;
+    border: 0 !important;
+
+    border-radius: 50% !important;
+
+    transform-origin: center center !important;
+
+    animation:
+        arsSystem7OrbBreathing
+        6s
+        ease-in-out
+        infinite !important;
+}
+
+
+/* =========================================================
+   SOFT BREATH
+   ========================================================= */
+
+@keyframes arsSystem7OrbBreathing {
 
     0%,
     100% {
-        transform: scale(0.97);
+        transform: scale(.96);
     }
 
     50% {
-        transform: scale(1.03);
+        transform: scale(1.04);
     }
 }
+
+
 
