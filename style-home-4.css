@@ -37171,97 +37171,87 @@ section.ars-system-seven .ars-system-heading h2 {
 
 
 
+
+
+
 /* =========================================================
-   ARS SYSTEM VII — ORB SIZE FIX
-   ONLY SYSTEM VII ORBS
+   SYSTEM VII — MIRROR OF SYSTEM VI
+   ORB SEAL ON LOWER EDGE OF CONCEPT IMAGE
    ========================================================= */
 
 
-/* ---------------------------------------------------------
-   ORB CONTAINER
-   --------------------------------------------------------- */
+/* =========================================================
+   SYSTEM VII ORB CONTAINER
+   ========================================================= */
 
-.ars-card-logo:has(img[src*="ars-media-orb"]),
-.ars-card-logo:has(img[src*="ars-partnership-orb"]),
-.ars-card-logo:has(img[src*="ars-open-door-orb"]),
-.ars-card-logo:has(img[src*="ars-collection-orb"]),
-.ars-card-logo:has(img[src*="become-ars-orb"]),
-.ars-card-logo:has(img[src*="ars-future-lab-orb"]) {
+.ars-system-card:has(img[src*="ars-media-orb"]) .ars-card-logo,
+.ars-system-card:has(img[src*="ars-partnership-orb"]) .ars-card-logo,
+.ars-system-card:has(img[src*="ars-open-door-orb"]) .ars-card-logo,
+.ars-system-card:has(img[src*="ars-collection-orb"]) .ars-card-logo,
+.ars-system-card:has(img[src*="become-ars-orb"]) .ars-card-logo,
+.ars-system-card:has(img[src*="ars-future-lab-orb"]) .ars-card-logo {
 
-    width: 150px !important;
-    height: 150px !important;
+    width: 115px !important;
+    height: 115px !important;
 
-    overflow: visible !important;
+    left: 225px !important;
 
-    background: transparent !important;
+    /* قرینه‌ی top سیستم ۶ */
+    top: auto !important;
+    bottom: 22px !important;
 
     border-radius: 50% !important;
+
+    overflow: hidden !important;
+
+    z-index: 20 !important;
 }
 
 
-/* ---------------------------------------------------------
-   PHILOSOPHY ORB
-   --------------------------------------------------------- */
+/* =========================================================
+   SYSTEM VII ORB IMAGE
+   ========================================================= */
 
-.ars-card-logo:has(img[src*="ars-philosophy-orb"]) {
+.ars-system-card:has(img[src*="ars-media-orb"]) .ars-card-logo img,
+.ars-system-card:has(img[src*="ars-partnership-orb"]) .ars-card-logo img,
+.ars-system-card:has(img[src*="ars-open-door-orb"]) .ars-card-logo img,
+.ars-system-card:has(img[src*="ars-collection-orb"]) .ars-card-logo img,
+.ars-system-card:has(img[src*="become-ars-orb"]) .ars-card-logo img,
+.ars-system-card:has(img[src*="ars-future-lab-orb"]) .ars-card-logo img {
 
-    width: 150px !important;
-    height: 150px !important;
-
-    overflow: visible !important;
-
-    background: transparent !important;
-
-    border-radius: 50% !important;
-}
-
-
-/* ---------------------------------------------------------
-   ORB IMAGE
-   --------------------------------------------------------- */
-
-.ars-card-logo:has(img[src*="ars-media-orb"]) img,
-.ars-card-logo:has(img[src*="ars-partnership-orb"]) img,
-.ars-card-logo:has(img[src*="ars-open-door-orb"]) img,
-.ars-card-logo:has(img[src*="ars-collection-orb"]) img,
-.ars-card-logo:has(img[src*="become-ars-orb"]) img,
-.ars-card-logo:has(img[src*="ars-future-lab-orb"]) img,
-.ars-card-logo:has(img[src*="ars-philosophy-orb"]) img {
-
-    width: 100% !important;
-    height: 100% !important;
+    width: 108px !important;
+    height: 108px !important;
 
     max-width: none !important;
     max-height: none !important;
 
     object-fit: contain !important;
 
-    background: transparent !important;
-
-    border: 0 !important;
-
     border-radius: 50% !important;
 
+    background: transparent !important;
+
     animation:
-        arsSystem7OrbBreathing
+        arsSystem7SealBreath
         6s
         ease-in-out
         infinite !important;
 }
 
 
-/* ---------------------------------------------------------
-   SOFT BREATH
-   --------------------------------------------------------- */
+/* =========================================================
+   SOFT SEAL BREATH
+   ========================================================= */
 
-@keyframes arsSystem7OrbBreathing {
+@keyframes arsSystem7SealBreath {
 
     0%,
     100% {
-        transform: scale(.97);
+        transform: scale(.98);
     }
 
     50% {
-        transform: scale(1.03);
+        transform: scale(1.02);
     }
 }
+
