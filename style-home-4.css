@@ -37449,64 +37449,83 @@ section.ars-system-seven .ars-system-card .ars-card-logo::after {
 
 
 
-
-
-
-
-
 /* =========================================================
-   ARS SYSTEM VII — BOTTOM ORB EDGE CLIP
-   ONLY CLIP THE PART BELOW THE CONCEPT IMAGE
-   NO SIZE / X / Y CHANGE
+   ARS SYSTEM VII — REAL IMAGE EDGE CLIP
+   ONLY THE PART OF ORB BELOW IMAGE IS CUT
    ========================================================= */
 
-/* عکس مفهومی مرجع برش */
-section.ars-system-seven .ars-card-image {
+section.ars-system-seven .ars-system-card {
     position: relative !important;
     overflow: hidden !important;
 }
 
 
-/* لبه پایینی عکس به‌عنوان خط برش */
-section.ars-system-seven .ars-card-image::before {
+/* خط برش دقیقاً در انتهای عکس 330px */
+section.ars-system-seven .ars-system-card::after {
+
     content: "";
+
     position: absolute;
 
     left: 0;
     right: 0;
-    bottom: 0;
 
-    height: 18px;
+    top: 330px;
 
-    z-index: 40;
+    height: 12px;
 
-    background: linear-gradient(
-        to bottom,
-        transparent 0%,
-        rgba(5,13,21,.18) 35%,
-        rgba(5,13,21,.72) 72%,
-        rgba(5,13,21,1) 100%
-    );
+    z-index: 60;
 
     pointer-events: none;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(5,13,21,0),
+            rgba(5,13,21,.95)
+        );
+
 }
 
 
-/* فقط پایین ORB را محو/کات می‌کند */
+/* =========================================================
+   ORB — NOTHING CHANGES
+   ========================================================= */
+
 section.ars-system-seven .ars-card-logo {
-    -webkit-mask-image: linear-gradient(
-        to bottom,
-        #000 0%,
-        #000 88%,
-        rgba(0,0,0,.85) 94%,
-        transparent 100%
+
+    left: 242px !important;
+    top: 107px !important;
+
+    width: 115px !important;
+    height: 115px !important;
+
+    z-index: 50 !important;
+
+}
+
+
+/* =========================================================
+   CLIP ONLY LOWER PART OF ORB
+   ========================================================= */
+
+section.ars-system-seven .ars-card-logo {
+
+    clip-path: inset(
+        0
+        0
+        5px
+        0
     ) !important;
 
-    mask-image: linear-gradient(
-        to bottom,
-        #000 0%,
-        #000 88%,
-        rgba(0,0,0,.85) 94%,
-        transparent 100%
+    -webkit-clip-path: inset(
+        0
+        0
+        5px
+        0
     ) !important;
+
 }
+
+
+
