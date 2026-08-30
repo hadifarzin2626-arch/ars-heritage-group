@@ -36948,98 +36948,34 @@ section.ars-system-seven .ars-system-heading h2 {
 
 
 
-
 /* =========================================================
-   ARS HERITAGE CORE — FINAL SCALE & LIVING ORB
+   ARS HERITAGE CORE — MASTER SCALE + LIVING ORB
    ========================================================= */
 
 
 /* =========================================================
-   01 — ENLARGE COMPLETE BLUE CORE SYSTEM
+   01 — کل میدان Core + مدارها + هاله‌ها
    ========================================================= */
 
-.ars-living-core-field {
-    width: clamp(390px, 70vw, 728px) !important;
-}
-
-
-/* =========================================================
-   02 — HERITAGE ORB — 20% LARGER
-   ========================================================= */
-
-.ars-living-core .ars-core-identity {
-    width: 28.8% !important;
-    height: 28.8% !important;
-
-    left: 50% !important;
-    top: 50% !important;
-
-    transform: translate(-50%, -50%) scale(.92) !important;
-
+.ars-living-core .ars-living-core-field {
+    width: clamp(345px, 54vw, 644px) !important;
+    transform: scale(1.30) !important;
     transform-origin: center center !important;
-
-    animation:
-        arsHeritageOrbBreath
-        5s
-        ease-in-out
-        infinite !important;
-
-    z-index: 30 !important;
 }
 
 
 /* =========================================================
-   03 — ORB IMAGE
+   02 — کره مرکزی آبی
    ========================================================= */
 
-.ars-living-core .ars-core-identity img {
-    width: 100% !important;
-    height: 100% !important;
-
-    object-fit: contain !important;
-
-    border-radius: 50% !important;
-
-    transform: none !important;
-
-    background: transparent !important;
+.ars-living-core .ars-core-energy {
+    transform: scale(1.30) !important;
+    transform-origin: center center !important;
 }
 
 
 /* =========================================================
-   04 — LIVING BREATH
-   ========================================================= */
-
-@keyframes arsHeritageOrbBreath {
-
-    0%,
-    100% {
-        transform:
-            translate(-50%, -50%)
-            scale(.92);
-    }
-
-    50% {
-        transform:
-            translate(-50%, -50%)
-            scale(1.08);
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* =========================================================
-   ARS HERITAGE ORB — TRUE CORE BREATH
+   03 — Orb طلایی ARS Heritage
    ========================================================= */
 
 .ars-living-core .ars-core-identity {
@@ -37065,19 +37001,24 @@ section.ars-system-seven .ars-system-heading h2 {
 
     transform-origin: center center !important;
 
-    animation:
-        arsHeritageCoreBreath
-        4s
-        ease-in-out
-        infinite !important;
+    z-index: 40 !important;
 
-    z-index: 30 !important;
+    animation: arsHeritageOrbLiving 4.8s ease-in-out infinite !important;
 }
 
 
+/* =========================================================
+   04 — خود تصویر Orb
+   ========================================================= */
+
 .ars-living-core .ars-core-identity img {
+    display: block !important;
+
     width: 100% !important;
     height: 100% !important;
+
+    max-width: none !important;
+    max-height: none !important;
 
     margin: 0 !important;
     padding: 0 !important;
@@ -37087,7 +37028,6 @@ section.ars-system-seven .ars-system-heading h2 {
     border-radius: 50% !important;
 
     transform: none !important;
-
     animation: none !important;
 
     background: transparent !important;
@@ -37095,21 +37035,30 @@ section.ars-system-seven .ars-system-heading h2 {
 
 
 /* =========================================================
-   LIVING BREATH
+   05 — تنفس واقعی Orb
    ========================================================= */
 
-@keyframes arsHeritageCoreBreath {
+@keyframes arsHeritageOrbLiving {
 
     0%,
     100% {
         transform:
             translate(-50%, -50%)
-            scale(0.88) !important;
+            scale(.90) !important;
     }
 
     50% {
         transform:
             translate(-50%, -50%)
-            scale(1.12) !important;
+            scale(1.10) !important;
     }
+}
+
+
+/* =========================================================
+   06 — حذف Label قدیمی
+   ========================================================= */
+
+.ars-living-core .ars-core-identity-label {
+    display: none !important;
 }
