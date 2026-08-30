@@ -37171,25 +37171,65 @@ section.ars-system-seven .ars-system-heading h2 {
 
 
 
-
-
 /* =========================================================
-   ARS SYSTEM VII — ORB ONLY
-   SIZE + SOFT BREATH
-   NO POSITION CHANGE
+   ARS SYSTEM VII — ORB SIZE FIX
+   ONLY SYSTEM VII ORBS
    ========================================================= */
 
 
-/* فقط کارت‌های سیستم ۷ — با ساختار خود کارت‌ها */
-.ars-system-card .ars-card-logo img[src*="ars-media-orb"],
-.ars-system-card .ars-card-logo img[src*="ars-partnership-orb"],
-.ars-system-card .ars-card-logo img[src*="ars-open-door-orb"],
-.ars-system-card .ars-card-logo img[src*="ars-collection-orb"],
-.ars-system-card .ars-card-logo img[src*="become-ars-orb"],
-.ars-system-card .ars-card-logo img[src*="ars-future-lab-orb"] {
+/* ---------------------------------------------------------
+   ORB CONTAINER
+   --------------------------------------------------------- */
 
-    width: 135% !important;
-    height: 135% !important;
+.ars-card-logo:has(img[src*="ars-media-orb"]),
+.ars-card-logo:has(img[src*="ars-partnership-orb"]),
+.ars-card-logo:has(img[src*="ars-open-door-orb"]),
+.ars-card-logo:has(img[src*="ars-collection-orb"]),
+.ars-card-logo:has(img[src*="become-ars-orb"]),
+.ars-card-logo:has(img[src*="ars-future-lab-orb"]) {
+
+    width: 150px !important;
+    height: 150px !important;
+
+    overflow: visible !important;
+
+    background: transparent !important;
+
+    border-radius: 50% !important;
+}
+
+
+/* ---------------------------------------------------------
+   PHILOSOPHY ORB
+   --------------------------------------------------------- */
+
+.ars-card-logo:has(img[src*="ars-philosophy-orb"]) {
+
+    width: 150px !important;
+    height: 150px !important;
+
+    overflow: visible !important;
+
+    background: transparent !important;
+
+    border-radius: 50% !important;
+}
+
+
+/* ---------------------------------------------------------
+   ORB IMAGE
+   --------------------------------------------------------- */
+
+.ars-card-logo:has(img[src*="ars-media-orb"]) img,
+.ars-card-logo:has(img[src*="ars-partnership-orb"]) img,
+.ars-card-logo:has(img[src*="ars-open-door-orb"]) img,
+.ars-card-logo:has(img[src*="ars-collection-orb"]) img,
+.ars-card-logo:has(img[src*="become-ars-orb"]) img,
+.ars-card-logo:has(img[src*="ars-future-lab-orb"]) img,
+.ars-card-logo:has(img[src*="ars-philosophy-orb"]) img {
+
+    width: 100% !important;
+    height: 100% !important;
 
     max-width: none !important;
     max-height: none !important;
@@ -37197,11 +37237,10 @@ section.ars-system-seven .ars-system-heading h2 {
     object-fit: contain !important;
 
     background: transparent !important;
+
     border: 0 !important;
 
     border-radius: 50% !important;
-
-    transform-origin: center center !important;
 
     animation:
         arsSystem7OrbBreathing
@@ -37211,50 +37250,18 @@ section.ars-system-seven .ars-system-heading h2 {
 }
 
 
-/* =========================================================
-   PHILOSOPHY — فعلاً با همان ساختار کارت اول
-   ========================================================= */
-
-.ars-system-card:first-of-type .ars-card-logo img {
-
-    width: 165% !important;
-    height: 165% !important;
-
-    max-width: none !important;
-    max-height: none !important;
-
-    object-fit: contain !important;
-
-    background: transparent !important;
-    border: 0 !important;
-
-    border-radius: 50% !important;
-
-    transform-origin: center center !important;
-
-    animation:
-        arsSystem7OrbBreathing
-        6s
-        ease-in-out
-        infinite !important;
-}
-
-
-/* =========================================================
+/* ---------------------------------------------------------
    SOFT BREATH
-   ========================================================= */
+   --------------------------------------------------------- */
 
 @keyframes arsSystem7OrbBreathing {
 
     0%,
     100% {
-        transform: scale(.96);
+        transform: scale(.97);
     }
 
     50% {
-        transform: scale(1.04);
+        transform: scale(1.03);
     }
 }
-
-
-
