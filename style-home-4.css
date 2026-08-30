@@ -36959,7 +36959,7 @@ section.ars-system-seven .ars-system-heading h2 {
    ========================================================= */
 
 .ars-living-core-field {
-    width: clamp(390px, 66.1vw, 728px) !important;
+    width: clamp(390px, 70vw, 728px) !important;
 }
 
 
@@ -37039,31 +37039,77 @@ section.ars-system-seven .ars-system-heading h2 {
 
 
 /* =========================================================
-   HERITAGE ORB — VISIBLE BREATHING
+   ARS HERITAGE ORB — TRUE CORE BREATH
    ========================================================= */
 
-.ars-living-core .ars-core-identity img {
+.ars-living-core .ars-core-identity {
+    position: absolute !important;
+
+    left: 50% !important;
+    top: 50% !important;
+
+    width: 28.8% !important;
+    height: 28.8% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    border-radius: 50% !important;
+    overflow: hidden !important;
+
+    background: transparent !important;
+
+    transform-origin: center center !important;
+
     animation:
-        arsHeritageOrbImageBreath
-        4.8s
+        arsHeritageCoreBreath
+        4s
         ease-in-out
         infinite !important;
 
-    transform-origin: center center !important;
+    z-index: 30 !important;
 }
 
-@keyframes arsHeritageOrbImageBreath {
+
+.ars-living-core .ars-core-identity img {
+    width: 100% !important;
+    height: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    object-fit: contain !important;
+
+    border-radius: 50% !important;
+
+    transform: none !important;
+
+    animation: none !important;
+
+    background: transparent !important;
+}
+
+
+/* =========================================================
+   LIVING BREATH
+   ========================================================= */
+
+@keyframes arsHeritageCoreBreath {
 
     0%,
     100% {
-        transform: scale(0.94) !important;
+        transform:
+            translate(-50%, -50%)
+            scale(0.88) !important;
     }
 
     50% {
-        transform: scale(1.06) !important;
+        transform:
+            translate(-50%, -50%)
+            scale(1.12) !important;
     }
 }
-
-
-
-
