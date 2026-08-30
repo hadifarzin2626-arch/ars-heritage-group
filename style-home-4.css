@@ -37447,85 +37447,66 @@ section.ars-system-seven .ars-system-card .ars-card-logo::after {
 
 
 
-
-
 /* =========================================================
-   ARS SYSTEM VII — REAL IMAGE EDGE CLIP
-   ONLY THE PART OF ORB BELOW IMAGE IS CUT
+   ARS SYSTEM VII — ORB / IMAGE EDGE CLIP
+   فقط SYSTEM VII
+   فقط لبه پایینی ORB
    ========================================================= */
 
-section.ars-system-seven .ars-system-card {
-    position: relative !important;
+section.ars-system-seven .ars-card-logo {
+
     overflow: hidden !important;
+
 }
 
 
-/* خط برش دقیقاً در انتهای عکس 330px */
-section.ars-system-seven .ars-system-card::after {
+/* خود ORB هم باید داخل همان قاب بریده شود */
 
-    content: "";
+section.ars-system-seven .ars-card-logo img {
 
-    position: absolute;
+    display: block !important;
 
-    left: 0;
-    right: 0;
+    width: 100% !important;
+    height: 100% !important;
 
-    top: 330px;
+    max-width: none !important;
+    max-height: none !important;
 
-    height: 12px;
-
-    z-index: 60;
-
-    pointer-events: none;
-
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(5,13,21,0),
-            rgba(5,13,21,.95)
-        );
+    object-fit: contain !important;
 
 }
 
 
 /* =========================================================
-   ORB — NOTHING CHANGES
+   کمی پایین‌تر از مرکز قاب، فقط برای اینکه لبه پایین
+   دقیقاً با ضلع پایین عکس مفهومی برخورد کند
    ========================================================= */
 
 section.ars-system-seven .ars-card-logo {
 
-    left: 242px !important;
-    top: 107px !important;
-
-    width: 115px !important;
-    height: 115px !important;
-
-    z-index: 50 !important;
+    clip-path: circle(50% at 50% 50%) !important;
 
 }
 
 
 /* =========================================================
-   CLIP ONLY LOWER PART OF ORB
+   MOBILE — بدون دست زدن به سیستم‌های دیگر
    ========================================================= */
 
-section.ars-system-seven .ars-card-logo {
+@media (max-width: 650px) {
 
-    clip-path: inset(
-        0
-        0
-        5px
-        0
-    ) !important;
+    section.ars-system-seven .ars-card-logo {
 
-    -webkit-clip-path: inset(
-        0
-        0
-        5px
-        0
-    ) !important;
+        overflow: hidden !important;
+        clip-path: circle(50% at 50% 50%) !important;
+
+    }
+
+    section.ars-system-seven .ars-card-logo img {
+
+        width: 100% !important;
+        height: 100% !important;
+
+    }
 
 }
-
-
-
