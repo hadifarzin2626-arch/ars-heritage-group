@@ -37168,45 +37168,58 @@ section.ars-system-seven .ars-system-heading h2 {
 
 
 
-
-
 /* =========================================================
-   ARS SYSTEM VII — FINAL ORB POSITION
-   SAME GEOMETRY AS SYSTEM VI
-   BUT AT LOWER EDGE OF CONCEPT IMAGE
+   ARS SYSTEM VII
+   CONCEPT IMAGE ORB SEAL
+   EXACTLY ON LOWER EDGE OF IMAGE
+   VII ONLY
    ========================================================= */
 
-section.ars-system-seven .ars-system-card
-.ars-card-logo {
+section.ars-system-seven .ars-system-card {
+    position: relative !important;
+}
 
-    left: 255px !important;
 
-    top: 190px !important;
+/* ORB */
 
-    bottom: auto !important;
+section.ars-system-seven .ars-system-card .ars-card-logo {
+
+    position: absolute !important;
+
+    /* مرکز ORB روی انتهای عکس 300px */
+    left: 242px !important;
+
+    /* پایین عکس 330px */
+    top: 222px !important;
 
     width: 115px !important;
     height: 115px !important;
 
-    z-index: 30 !important;
+    z-index: 50 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
 
     background: transparent !important;
-
     border: 0 !important;
-
     box-shadow: none !important;
 
     border-radius: 0 !important;
-
     overflow: visible !important;
 
     backdrop-filter: none !important;
 
+    transform: none !important;
 }
 
 
-section.ars-system-seven .ars-system-card
-.ars-card-logo img {
+/* خود ORB */
+
+section.ars-system-seven .ars-system-card .ars-card-logo img {
 
     width: 108px !important;
     height: 108px !important;
@@ -37216,22 +37229,25 @@ section.ars-system-seven .ars-system-card
 
     object-fit: contain !important;
 
+    display: block !important;
+
     background: transparent !important;
-
     border: 0 !important;
-
     border-radius: 0 !important;
 
     opacity: .95 !important;
+
+    transform-origin: center center !important;
 
     animation:
         arsSystemSevenOrbBreath
         6.5s
         ease-in-out
         infinite !important;
-
 }
 
+
+/* تنفس آرام */
 
 @keyframes arsSystemSevenOrbBreath {
 
