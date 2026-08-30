@@ -37166,3 +37166,144 @@ section.ars-system-seven .ars-system-heading h2 {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS SYSTEM VII
+   ORB SEAL — CONCEPT IMAGE INTEGRATION
+   ========================================================= */
+
+.ars-seven-system .ars-system-card,
+.ars-seven-grid .ars-system-card {
+    position: relative !important;
+}
+
+
+/* =========================================================
+   CONCEPT IMAGE
+   ========================================================= */
+
+.ars-seven-system .ars-card-image,
+.ars-seven-grid .ars-card-image {
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+
+/* =========================================================
+   ORB — FLOATING HERITAGE SEAL
+   ========================================================= */
+
+.ars-seven-system .ars-card-logo,
+.ars-seven-grid .ars-card-logo {
+
+    position: absolute !important;
+
+    left: 50% !important;
+
+    top: 0 !important;
+
+    width: 82px !important;
+    height: 82px !important;
+
+    transform:
+        translate(-50%, -50%) !important;
+
+    z-index: 20 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    border-radius: 50% !important;
+
+    background: transparent !important;
+
+    overflow: visible !important;
+
+    box-shadow:
+        0 0 18px rgba(82,182,255,.14),
+        0 0 38px rgba(214,180,135,.08);
+
+    animation:
+        arsSevenOrbFloat
+        5s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   ORB IMAGE
+   ========================================================= */
+
+.ars-seven-system .ars-card-logo img,
+.ars-seven-grid .ars-card-logo img {
+
+    display: block !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: contain !important;
+
+    border-radius: 50% !important;
+
+    background: transparent !important;
+
+    animation:
+        arsSevenOrbBreath
+        5s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   ORB BREATH
+   ========================================================= */
+
+@keyframes arsSevenOrbBreath {
+
+    0%,
+    100% {
+        transform: scale(.94);
+    }
+
+    50% {
+        transform: scale(1.06);
+    }
+}
+
+
+/* =========================================================
+   SUBTLE FLOAT
+   ========================================================= */
+
+@keyframes arsSevenOrbFloat {
+
+    0%,
+    100% {
+        transform:
+            translate(-50%, -50%)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            translateY(-4px);
+    }
+}
