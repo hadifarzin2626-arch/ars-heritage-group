@@ -36772,40 +36772,27 @@ section.ars-system-seven .ars-system-heading h2 {
 
 
 
+
+
+
+
 /* =========================================================
-   ARS HERITAGE ORB — REAL IMAGE SIZE & POSITION
+   ARS HERITAGE ORB — SIZE & POSITION
    ========================================================= */
 
-.ars-living-core .ars-core-identity img {
-    width: 130% !important;
-    height: 130% !important;
-
-    max-width: none !important;
-    max-height: none !important;
-
-    object-fit: contain !important;
-
-    border-radius: 50% !important;
-
-    position: relative !important;
-    left: 0 !important;
-    top: 0 !important;
-
-    transform: scale(1.30) !important;
-}
-
-
-/* MOVE THE WHOLE ORB TO THE LEFT OF THE BLUE CORE */
-
 .ars-living-core .ars-core-identity {
+    position: absolute !important;
+
+    width: 24% !important;
+    height: 24% !important;
+
     left: 50% !important;
     top: 50% !important;
 
-    transform: translate(-175%, -50%) !important;
+    transform: translate(-155%, -50%) !important;
 
-    width: 22% !important;
-    height: auto !important;
-    aspect-ratio: 1 / 1 !important;
+    margin: 0 !important;
+    padding: 0 !important;
 
     display: flex !important;
     align-items: center !important;
@@ -36815,4 +36802,40 @@ section.ars-system-seven .ars-system-heading h2 {
     overflow: hidden !important;
 
     background: transparent !important;
+    box-shadow: none !important;
+
+    z-index: 35 !important;
 }
+
+
+/* خود Orb */
+
+.ars-living-core .ars-core-identity img {
+    position: static !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    object-fit: contain !important;
+
+    border-radius: 50% !important;
+
+    transform: none !important;
+
+    background: transparent !important;
+}
+
+
+/* حذف نوشته کنار Orb */
+
+.ars-living-core .ars-core-identity-label {
+    display: none !important;
+}
+
+
