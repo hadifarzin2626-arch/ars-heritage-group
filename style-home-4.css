@@ -37287,3 +37287,156 @@ section.ars-system-seven .ars-system-card .ars-card-logo {
 
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS SYSTEM VII — ORB SEAL / IMAGE EMBOSS
+   FIXED POSITION — FIXED SIZE
+   SOFT CIRCULAR FRAME + LOWER EDGE BLEND
+   VII ONLY
+   ========================================================= */
+
+section.ars-system-seven .ars-system-card .ars-card-logo {
+
+    /* EXACT CURRENT POSITION — DO NOT MOVE */
+    left: 242px !important;
+    top: 107px !important;
+
+    width: 115px !important;
+    height: 115px !important;
+
+    z-index: 50 !important;
+
+    /* fixed circular seal */
+    border-radius: 50% !important;
+
+    overflow: hidden !important;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(4,12,19,.10),
+            rgba(4,12,19,0) 68%
+        ) !important;
+
+    border:
+        1px solid rgba(210,171,103,.34) !important;
+
+    box-shadow:
+        0 0 14px rgba(210,171,103,.12),
+        inset 0 0 12px rgba(255,255,255,.045) !important;
+
+    backdrop-filter: none !important;
+
+    /* LOCK POSITION */
+    transform: none !important;
+
+}
+
+
+/* =========================================================
+   ORB — KEEP CURRENT SIZE + BREATH
+   ========================================================= */
+
+section.ars-system-seven .ars-system-card .ars-card-logo img {
+
+    width: 108px !important;
+    height: 108px !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    object-fit: contain !important;
+
+    display: block !important;
+
+    margin: auto !important;
+
+    background: transparent !important;
+
+    border: 0 !important;
+
+    border-radius: 50% !important;
+
+    opacity: .95 !important;
+
+    transform-origin: center center !important;
+
+    animation:
+        arsSystemSevenOrbBreath
+        6.5s
+        ease-in-out
+        infinite !important;
+
+}
+
+
+/* =========================================================
+   LOWER EDGE — SOFT IMAGE BLEND
+   ========================================================= */
+
+section.ars-system-seven .ars-system-card .ars-card-logo::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: -2px;
+    right: -2px;
+
+    bottom: -1px;
+
+    height: 18%;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent 0%,
+            rgba(4,12,19,.12) 38%,
+            rgba(4,12,19,.58) 76%,
+            rgba(4,12,19,.92) 100%
+        );
+
+    opacity: .72;
+
+    z-index: 5;
+
+}
+
+
+/* =========================================================
+   SOFT SEAL BREATH
+   ========================================================= */
+
+@keyframes arsSystemSevenOrbBreath {
+
+    0%,
+    100% {
+        transform: scale(.97);
+        opacity: .92;
+    }
+
+    50% {
+        transform: scale(1.03);
+        opacity: 1;
+    }
+
+          }
+
+
