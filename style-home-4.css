@@ -37440,3 +37440,73 @@ section.ars-system-seven .ars-system-card .ars-card-logo::after {
           }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS SYSTEM VII — BOTTOM ORB EDGE CLIP
+   ONLY CLIP THE PART BELOW THE CONCEPT IMAGE
+   NO SIZE / X / Y CHANGE
+   ========================================================= */
+
+/* عکس مفهومی مرجع برش */
+section.ars-system-seven .ars-card-image {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+
+/* لبه پایینی عکس به‌عنوان خط برش */
+section.ars-system-seven .ars-card-image::before {
+    content: "";
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 18px;
+
+    z-index: 40;
+
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(5,13,21,.18) 35%,
+        rgba(5,13,21,.72) 72%,
+        rgba(5,13,21,1) 100%
+    );
+
+    pointer-events: none;
+}
+
+
+/* فقط پایین ORB را محو/کات می‌کند */
+section.ars-system-seven .ars-card-logo {
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        #000 0%,
+        #000 88%,
+        rgba(0,0,0,.85) 94%,
+        transparent 100%
+    ) !important;
+
+    mask-image: linear-gradient(
+        to bottom,
+        #000 0%,
+        #000 88%,
+        rgba(0,0,0,.85) 94%,
+        transparent 100%
+    ) !important;
+}
