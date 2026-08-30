@@ -37073,135 +37073,83 @@ section.ars-system-seven .ars-system-heading h2 {
 
 
 
-
 /* =========================================================
-   ARS HERITAGE ORB — TRUE VISIBLE BREATH
+   ARS SYSTEM VII — CORNER ORB
+   ONLY SYSTEM VII CARDS
    ========================================================= */
 
-.ars-living-core .ars-core-identity {
+
+/* ---------------------------------------------------------
+   IDENTIFY ONLY THE 7 SYSTEM VII CARDS
+   --------------------------------------------------------- */
+
+.ars-system-card:has(a[href="ars-philosophy.html"]),
+.ars-system-card:has(a[href="ars-media-center.html"]),
+.ars-system-card:has(a[href="ars-partnership.html"]),
+.ars-system-card:has(a[href="ars-open-door.html"]),
+.ars-system-card:has(a[href="ars-collection.html"]),
+.ars-system-card:has(a[href="become-ars.html"]),
+.ars-system-card:has(a[href="ars-future-lab.html"]) {
+
+    position: relative !important;
+}
+
+
+/* =========================================================
+   ORB — 40% LARGER
+   ========================================================= */
+
+.ars-system-card:has(a[href="ars-philosophy.html"]) .ars-card-logo,
+.ars-system-card:has(a[href="ars-media-center.html"]) .ars-card-logo,
+.ars-system-card:has(a[href="ars-partnership.html"]) .ars-card-logo,
+.ars-system-card:has(a[href="ars-open-door.html"]) .ars-card-logo,
+.ars-system-card:has(a[href="ars-collection.html"]) .ars-card-logo,
+.ars-system-card:has(a[href="become-ars.html"]) .ars-card-logo,
+.ars-system-card:has(a[href="ars-future-lab.html"]) .ars-card-logo {
+
     position: absolute !important;
-
-    left: 50% !important;
-    top: 50% !important;
-
-    width: 28.8% !important;
-    height: 28.8% !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    border-radius: 50% !important;
-    overflow: visible !important;
-
-    background: transparent !important;
-
-    transform:
-        translate(-50%, -50%) !important;
-
-    z-index: 40 !important;
-}
-
-
-/* خود تصویر بدون animation */
-.ars-living-core .ars-core-identity img {
-    display: block !important;
-
-    width: 100% !important;
-    height: 100% !important;
-
-    object-fit: contain !important;
-
-    border-radius: 50% !important;
-
-    transform: none !important;
-    animation: none !important;
-
-    background: transparent !important;
-}
-
-
-/* =========================================================
-   ORB BREATHING LAYER
-   ========================================================= */
-
-.ars-living-core .ars-core-identity::before {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    border-radius: 50%;
-
-    background:
-        url("images/ars-heritage-group-orb.png")
-        center / contain
-        no-repeat;
-
-    pointer-events: none;
-
-    z-index: 2;
-
-    animation:
-        arsOrbVisibleBreath
-        5s
-        ease-in-out
-        infinite;
-}
-
-
-/* =========================================================
-   VISIBLE BREATH
-   ========================================================= */
-
-@keyframes arsOrbVisibleBreath {
-
-    0%,
-    100% {
-        transform: scale(.90);
-    }
-
-    50% {
-        transform: scale(1.10);
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-/* =========================================================
-   ARS SYSTEM VII — ORB FINAL SIZE & POSITION
-   ========================================================= */
-
-.ars-system-card .ars-card-logo {
 
     width: 155px !important;
     height: 155px !important;
 
-    left: 50% !important;
-    top: 34% !important;
+    top: 18px !important;
+    right: 18px !important;
 
-    transform:
-        translate(-50%, -50%) !important;
+    left: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    transform: none !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    border-radius: 50% !important;
+
+    background: transparent !important;
 
     overflow: visible !important;
 
-    z-index: 20 !important;
+    z-index: 30 !important;
 }
 
 
 /* =========================================================
-   KEEP ORB FULLY VISIBLE
+   ORB IMAGE
    ========================================================= */
 
-.ars-system-card .ars-card-logo img {
+.ars-system-card:has(a[href="ars-philosophy.html"]) .ars-card-logo img,
+.ars-system-card:has(a[href="ars-media-center.html"]) .ars-card-logo img,
+.ars-system-card:has(a[href="ars-partnership.html"]) .ars-card-logo img,
+.ars-system-card:has(a[href="ars-open-door.html"]) .ars-card-logo img,
+.ars-system-card:has(a[href="ars-collection.html"]) .ars-card-logo img,
+.ars-system-card:has(a[href="become-ars.html"]) .ars-card-logo img,
+.ars-system-card:has(a[href="ars-future-lab.html"]) .ars-card-logo img {
+
+    display: block !important;
 
     width: 100% !important;
     height: 100% !important;
@@ -37212,23 +37160,22 @@ section.ars-system-seven .ars-system-heading h2 {
     object-fit: contain !important;
 
     border-radius: 50% !important;
-}
 
+    background: transparent !important;
 
-/* =========================================================
-   KEEP BREATHING
-   ========================================================= */
-
-.ars-system-card .ars-card-logo img {
     animation:
-        arsSystemVIIOrbBreath
+        arsSystem7OrbBreath
         5s
         ease-in-out
         infinite !important;
 }
 
 
-@keyframes arsSystemVIIOrbBreath {
+/* =========================================================
+   LIVING BREATH
+   ========================================================= */
+
+@keyframes arsSystem7OrbBreath {
 
     0%,
     100% {
