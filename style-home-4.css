@@ -37171,17 +37171,38 @@ section.ars-system-seven .ars-system-heading h2 {
 
 
 
-
-
-
 /* =========================================================
-   SYSTEM VII — MIRROR OF SYSTEM VI
-   ORB SEAL ON LOWER EDGE OF CONCEPT IMAGE
+   SYSTEM VII — ORB ON LOWER EDGE OF CONCEPT IMAGE
+   ISOLATED — SYSTEM VII ONLY
    ========================================================= */
 
 
+/* کارت فقط مرجع موقعیت */
+.ars-system-card:has(img[src*="ars-media-orb"]),
+.ars-system-card:has(img[src*="ars-partnership-orb"]),
+.ars-system-card:has(img[src*="ars-open-door-orb"]),
+.ars-system-card:has(img[src*="ars-collection-orb"]),
+.ars-system-card:has(img[src*="become-ars-orb"]),
+.ars-system-card:has(img[src*="ars-future-lab-orb"]) {
+    position: relative !important;
+}
+
+
+/* عکس مفهومی = مرجع اصلی Orb */
+.ars-system-card:has(img[src*="ars-media-orb"]) .ars-card-image,
+.ars-system-card:has(img[src*="ars-partnership-orb"]) .ars-card-image,
+.ars-system-card:has(img[src*="ars-open-door-orb"]) .ars-card-image,
+.ars-system-card:has(img[src*="ars-collection-orb"]) .ars-card-image,
+.ars-system-card:has(img[src*="become-ars-orb"]) .ars-card-image,
+.ars-system-card:has(img[src*="ars-future-lab-orb"]) .ars-card-image {
+
+    position: relative !important;
+    overflow: visible !important;
+}
+
+
 /* =========================================================
-   SYSTEM VII ORB CONTAINER
+   ORB — SAME SIZE AS SYSTEM VI
    ========================================================= */
 
 .ars-system-card:has(img[src*="ars-media-orb"]) .ars-card-logo,
@@ -37191,25 +37212,32 @@ section.ars-system-seven .ars-system-heading h2 {
 .ars-system-card:has(img[src*="become-ars-orb"]) .ars-card-logo,
 .ars-system-card:has(img[src*="ars-future-lab-orb"]) .ars-card-logo {
 
+    position: absolute !important;
+
     width: 115px !important;
     height: 115px !important;
 
+    /*
+       دقیقاً روی ضلع پایینی عکس
+    */
     left: 225px !important;
-
-    /* قرینه‌ی top سیستم ۶ */
     top: auto !important;
-    bottom: 22px !important;
+    bottom: -55px !important;
+
+    margin: 0 !important;
+
+    z-index: 50 !important;
 
     border-radius: 50% !important;
 
     overflow: hidden !important;
 
-    z-index: 20 !important;
+    background: transparent !important;
 }
 
 
 /* =========================================================
-   SYSTEM VII ORB IMAGE
+   ORB IMAGE
    ========================================================= */
 
 .ars-system-card:has(img[src*="ars-media-orb"]) .ars-card-logo img,
@@ -37240,7 +37268,7 @@ section.ars-system-seven .ars-system-heading h2 {
 
 
 /* =========================================================
-   SOFT SEAL BREATH
+   VERY SOFT BREATH
    ========================================================= */
 
 @keyframes arsSystem7SealBreath {
@@ -37254,4 +37282,5 @@ section.ars-system-seven .ars-system-heading h2 {
         transform: scale(1.02);
     }
 }
+
 
