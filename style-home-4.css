@@ -37170,193 +37170,41 @@ section.ars-system-seven .ars-system-heading h2 {
 
 
 
-
 /* =========================================================
-   ARS SYSTEM VII
-   ORB SEAL — BOTTOM OF CONCEPT IMAGE
-   SAME DNA AS SYSTEM VI
-   VII ONLY — NO EFFECT ON OTHER SYSTEMS
+   ARS SYSTEM VII — FINAL ORB POSITION
+   SAME GEOMETRY AS SYSTEM VI
+   BUT AT LOWER EDGE OF CONCEPT IMAGE
    ========================================================= */
-
-
-/* ---------------------------------------------------------
-   ORB CONTAINER
-   --------------------------------------------------------- */
 
 section.ars-system-seven .ars-system-card
 .ars-card-logo {
 
-    position: absolute !important;
-
     left: 255px !important;
 
-    top: 250px !important;
+    top: 190px !important;
+
+    bottom: auto !important;
 
     width: 115px !important;
-
     height: 115px !important;
 
-    z-index: 20 !important;
-
-    display: flex !important;
-
-    align-items: center !important;
-
-    justify-content: center !important;
-
-    border-radius: 50% !important;
-
-    overflow: hidden !important;
+    z-index: 30 !important;
 
     background: transparent !important;
 
     border: 0 !important;
 
     box-shadow: none !important;
+
+    border-radius: 0 !important;
+
+    overflow: visible !important;
 
     backdrop-filter: none !important;
 
 }
 
 
-/* ---------------------------------------------------------
-   ORB IMAGE
-   --------------------------------------------------------- */
-
-section.ars-system-seven .ars-system-card
-.ars-card-logo img {
-
-    width: 108px !important;
-
-    height: 108px !important;
-
-    max-width: none !important;
-
-    max-height: none !important;
-
-    display: block !important;
-
-    object-fit: contain !important;
-
-    border-radius: 50% !important;
-
-    background: transparent !important;
-
-    border: 0 !important;
-
-    opacity: .95 !important;
-
-    transform-origin: center center !important;
-
-    animation:
-        arsSystemSevenSealBreath
-        6.5s
-        ease-in-out
-        infinite !important;
-
-}
-
-
-/* ---------------------------------------------------------
-   SOFT SEAL BREATH
-   --------------------------------------------------------- */
-
-@keyframes arsSystemSevenSealBreath {
-
-    0%,
-    100% {
-
-        transform:
-            scale(.97);
-
-        opacity: .90;
-
-    }
-
-    50% {
-
-        transform:
-            scale(1.03);
-
-        opacity: 1;
-
-    }
-
-}
-
-
-/* ---------------------------------------------------------
-   MOBILE
-   --------------------------------------------------------- */
-
-@media (max-width: 650px) {
-
-    section.ars-system-seven .ars-system-card
-    .ars-card-logo {
-
-        left: auto !important;
-
-        right: 22px !important;
-
-        top: 165px !important;
-
-        width: 76px !important;
-
-        height: 76px !important;
-
-    }
-
-
-    section.ars-system-seven .ars-system-card
-    .ars-card-logo img {
-
-        width: 70px !important;
-
-        height: 70px !important;
-
-    }
-
-}
-
-
-
-
-
-
-
-
-
-/* =========================================================
-   ARS SYSTEM VII
-   ORB SEAL — 5% EDGE / STAMP EFFECT
-   VII ONLY
-   ========================================================= */
-
-section.ars-system-seven .ars-system-card
-.ars-card-logo {
-
-    /* همان جای فعلی */
-    left: 255px !important;
-    top: 250px !important;
-
-    width: 115px !important;
-    height: 115px !important;
-
-    /* بدون قاب دایره‌ای */
-    border-radius: 0 !important;
-    overflow: visible !important;
-
-    background: transparent !important;
-    border: 0 !important;
-    box-shadow: none !important;
-
-    /* مهر روی تصویر */
-    transform: translateY(5%) !important;
-}
-
-
-/* خود ORB */
-
 section.ars-system-seven .ars-system-card
 .ars-card-logo img {
 
@@ -37366,36 +37214,31 @@ section.ars-system-seven .ars-system-card
     max-width: none !important;
     max-height: none !important;
 
-    display: block !important;
-
     object-fit: contain !important;
 
-    /* خود تصویر کروی/مهرمانند باقی بماند */
-    border-radius: 0 !important;
-
     background: transparent !important;
+
     border: 0 !important;
+
+    border-radius: 0 !important;
 
     opacity: .95 !important;
 
-    transform-origin: center center !important;
-
     animation:
-        arsSystemSevenSealBreath
+        arsSystemSevenOrbBreath
         6.5s
         ease-in-out
         infinite !important;
+
 }
 
 
-/* تنفس خیلی آرام */
-
-@keyframes arsSystemSevenSealBreath {
+@keyframes arsSystemSevenOrbBreath {
 
     0%,
     100% {
         transform: scale(.97);
-        opacity: .90;
+        opacity: .92;
     }
 
     50% {
