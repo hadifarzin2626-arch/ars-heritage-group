@@ -38463,98 +38463,294 @@ section.ars-system-seven .ars-card-logo {
 
 
 
+
+
+
+
 /* =========================================================
-   ARS PHILOSOPHY — FINAL CORRECTION
-   ONLY:
-   1. SLOGAN +40%
-   2. RESTORE UPPER ORB POSITION
-   3. RESTORE LOGO BREATHING
+   ARS PHILOSOPHY — LOWER ORB SLOGAN ONLY
+   REFERENCE: FINAL ORB / BREATHING / GOLDEN ENERGY PATCH
+   ONLY CHANGE: LOWER ORB TEXT +30%
+   DO NOT TOUCH UPPER ORB / LOGO
    ========================================================= */
 
 
 /* =========================================================
-   01 — UPPER ORB
-   DO NOT ALTER ITS ORIGINAL POSITION
-   ONLY MAKE IT 10% LARGER
+   01 — LOWER ORB
+   EXACTLY PRESERVED FROM REFERENCE PATCH
    ========================================================= */
 
-.ars-philosophy-core {
-    transform: scale(1.10) !important;
-    transform-origin: center center !important;
+.ars-philosophy-text {
+    position: relative !important;
+    isolation: isolate !important;
 }
 
 
 /* =========================================================
-   02 — ARS HERITAGE LOGO
-   15% LARGER + BREATHING
+   02 — LOWER ORB FIELD
+   EXACT COPY OF REFERENCE
    ========================================================= */
 
-.ars-philosophy-core > img {
-    width: 115% !important;
-    height: auto !important;
+.ars-philosophy-text::before {
+    content: "" !important;
 
-    transform: none !important;
+    position: absolute !important;
+
+    left: 50% !important;
+    top: 50% !important;
+
+    width: 110% !important;
+    aspect-ratio: 1 / 1 !important;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1.10) !important;
+
+    border-radius: 50% !important;
+
+    border:
+        1px solid
+        rgba(214,180,135,.48) !important;
+
+    background:
+        radial-gradient(
+            circle at 38% 30%,
+            rgba(255,255,255,.07),
+            transparent 12%
+        ),
+        radial-gradient(
+            circle at center,
+            rgba(82,182,255,.08),
+            rgba(214,180,135,.045) 42%,
+            rgba(2,7,13,.80) 72%,
+            rgba(2,7,13,.92) 100%
+        ) !important;
+
+    box-shadow:
+        0 0 22px rgba(214,180,135,.18),
+        0 0 60px rgba(214,180,135,.13),
+        inset 0 0 35px rgba(214,180,135,.08),
+        inset 0 0 70px rgba(82,182,255,.06) !important;
+
+    z-index: -1 !important;
+
+    pointer-events: none !important;
 
     animation:
-        arsPhilosophyLogoBreathingFinal
-        4.2s
+        arsPhilosophyLowerOrbBreathing
+        5.5s
         ease-in-out
         infinite !important;
-
-    transform-origin: center center !important;
 }
 
 
-@keyframes arsPhilosophyLogoBreathingFinal {
+/* =========================================================
+   03 — LOWER ORB BREATHING
+   EXACTLY PRESERVED
+   ========================================================= */
+
+@keyframes arsPhilosophyLowerOrbBreathing {
 
     0%,
     100% {
-        transform: scale(1) !important;
+        opacity: .72;
 
-        filter:
-            drop-shadow(
-                0 0 10px
-                rgba(214,180,135,.28)
-            )
-            drop-shadow(
-                0 0 20px
-                rgba(218,177,105,.10)
-            ) !important;
+        transform:
+            translate(-50%, -50%)
+            scale(1.06);
+
+        box-shadow:
+            0 0 18px rgba(214,180,135,.14),
+            0 0 45px rgba(214,180,135,.08),
+            inset 0 0 28px rgba(214,180,135,.05);
     }
 
     50% {
-        transform: scale(1.055) !important;
+        opacity: 1;
 
-        filter:
-            drop-shadow(
-                0 0 15px
-                rgba(214,180,135,.50)
-            )
-            drop-shadow(
-                0 0 32px
-                rgba(218,177,105,.32)
-            ) !important;
+        transform:
+            translate(-50%, -50%)
+            scale(1.14);
+
+        box-shadow:
+            0 0 30px rgba(214,180,135,.28),
+            0 0 85px rgba(214,180,135,.18),
+            inset 0 0 42px rgba(214,180,135,.11);
     }
 }
 
 
 /* =========================================================
-   03 — SLOGAN
-   EXACTLY 40% LARGER
+   04 — LOWER ORB GOLDEN TURBULENCE
+   EXACTLY PRESERVED
    ========================================================= */
 
-.ars-philosophy-manifesto {
+.ars-philosophy-text::after {
+    content: "" !important;
+
+    position: absolute !important;
+
+    left: 50% !important;
+    top: 50% !important;
+
+    width: 125% !important;
+    aspect-ratio: 1 / 1 !important;
+
+    transform:
+        translate(-50%, -50%) !important;
+
+    border-radius: 50% !important;
+
+    background:
+        radial-gradient(
+            circle at 30% 42%,
+            rgba(255,215,140,.17),
+            transparent 23%
+        ),
+        radial-gradient(
+            circle at 70% 58%,
+            rgba(214,180,135,.14),
+            transparent 25%
+        ) !important;
+
+    filter: blur(20px) !important;
+
+    opacity: .65 !important;
+
+    z-index: -2 !important;
+
+    pointer-events: none !important;
+
     animation:
-        arsPhilosophyManifestoBreathing
-        4.8s
+        arsPhilosophyLowerTurbulence
+        6.5s
         ease-in-out
         infinite !important;
 }
 
 
+@keyframes arsPhilosophyLowerTurbulence {
+
+    0%,
+    100% {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg)
+            scale(.94);
+
+        opacity: .42;
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            rotate(7deg)
+            scale(1.08);
+
+        opacity: .82;
+    }
+}
+
+
+/* =========================================================
+   05 — OLD CONTENT
+   EXACTLY PRESERVED
+   ========================================================= */
+
+.ars-philosophy-text-label {
+    position: relative !important;
+    z-index: 5 !important;
+
+    opacity: 0 !important;
+}
+
+
+.ars-philosophy-text > h3,
+.ars-philosophy-text > p {
+    position: relative !important;
+    z-index: 4 !important;
+
+    opacity: 0 !important;
+
+    pointer-events: none !important;
+}
+
+
+/* =========================================================
+   06 — MANIFESTO POSITION
+   EXACTLY PRESERVED
+   ========================================================= */
+
+.ars-philosophy-manifesto {
+    position: absolute !important;
+
+    left: 50% !important;
+    top: 50% !important;
+
+    width: 78% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    transform:
+        translate(-50%, -50%) !important;
+
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 8px !important;
+
+    text-align: center !important;
+
+    z-index: 10 !important;
+
+    border: 0 !important;
+
+    background: transparent !important;
+}
+
+
+/* =========================================================
+   07 — REMOVE QUOTE MARKS
+   EXACTLY PRESERVED
+   ========================================================= */
+
+.ars-philosophy-manifesto::before,
+.ars-philosophy-manifesto::after {
+    display: none !important;
+}
+
+
+/* =========================================================
+   08 — SLOGAN
+   ONLY CHANGE = 30% LARGER
+   ========================================================= */
+
 .ars-philosophy-manifesto span {
+    display: block !important;
+
+    color:
+        rgba(246,239,225,.94) !important;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif !important;
+
+    /*
+       REFERENCE:
+       clamp(13px, 1.55vw, 20px)
+
+       NEW:
+       +30%
+    */
+
     font-size:
-        clamp(18.2px, 2.17vw, 28px) !important;
+        clamp(16.9px, 2.015vw, 26px) !important;
 
     line-height:
         1.45 !important;
@@ -38565,89 +38761,96 @@ section.ars-system-seven .ars-card-logo {
     font-weight:
         500 !important;
 
-    transform-origin:
-        center center !important;
-}
+    text-shadow:
+        0 0 8px rgba(214,180,135,.22),
+        0 0 20px rgba(214,180,135,.10) !important;
 
-
-.ars-philosophy-manifesto span + span {
-    font-size:
-        clamp(16.8px, 1.96vw, 25px) !important;
-}
-
-
-/* =========================================================
-   04 — SLOGAN BREATHING
-   ========================================================= */
-
-@keyframes arsPhilosophyManifestoBreathing {
-
-    0%,
-    100% {
-        opacity: .76;
-    }
-
-    50% {
-        opacity: 1;
-    }
-}
-
-
-/* =========================================================
-   05 — TEXT ITSELF ALSO BREATHES VERY SLIGHTLY
-   ========================================================= */
-
-.ars-philosophy-manifesto span {
     animation:
-        arsPhilosophySloganTextBreathing
+        arsPhilosophySloganBreathing
         4.8s
         ease-in-out
         infinite !important;
 }
 
 
+/* SECOND LINE
+   SAME +30% SCALE */
+
 .ars-philosophy-manifesto span + span {
-    animation-delay:
-        -.35s !important;
+    color:
+        rgba(218,177,105,.96) !important;
+
+    /*
+       REFERENCE:
+       clamp(12px, 1.4vw, 18px)
+
+       NEW:
+       +30%
+    */
+
+    font-size:
+        clamp(15.6px, 1.82vw, 23.4px) !important;
+
+    letter-spacing:
+        .035em !important;
 }
 
 
-@keyframes arsPhilosophySloganTextBreathing {
+/* =========================================================
+   09 — SLOGAN BREATHING
+   EXACTLY PRESERVED
+   ========================================================= */
+
+@keyframes arsPhilosophySloganBreathing {
 
     0%,
     100% {
-        transform: scale(.98);
+        opacity: .72;
+
+        transform:
+            scale(.98);
+
         text-shadow:
-            0 0 8px
-            rgba(214,180,135,.18),
-            0 0 18px
-            rgba(214,180,135,.06);
+            0 0 7px rgba(214,180,135,.16),
+            0 0 18px rgba(214,180,135,.06);
     }
 
     50% {
-        transform: scale(1.025);
+        opacity: 1;
+
+        transform:
+            scale(1.025);
+
         text-shadow:
-            0 0 11px
-            rgba(214,180,135,.38),
-            0 0 28px
-            rgba(214,180,135,.18);
+            0 0 10px rgba(214,180,135,.35),
+            0 0 25px rgba(214,180,135,.18);
     }
 }
 
 
 /* =========================================================
-   06 — MOBILE
+   10 — MOBILE
+   SAME STRUCTURE — TEXT ONLY +30%
    ========================================================= */
 
-@media (max-width:700px) {
+@media (max-width: 700px) {
+
+    .ars-philosophy-text::before {
+        width: 108% !important;
+    }
+
+    .ars-philosophy-manifesto {
+        width: 74% !important;
+    }
 
     .ars-philosophy-manifesto span {
-        font-size:
-            18.2px !important;
+        font-size: 16.9px !important;
     }
 
     .ars-philosophy-manifesto span + span {
-        font-size:
-            16.8px !important;
+        font-size: 15.6px !important;
     }
-}
+  }
+
+
+
