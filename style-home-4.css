@@ -38504,7 +38504,7 @@ section.ars-system-seven .ars-card-logo {
 
     transform:
         translate(-50%, -50%)
-        scale(1.10) !important;
+        scale(1) !important;
 
     border-radius: 50% !important;
 
@@ -38593,7 +38593,7 @@ section.ars-system-seven .ars-card-logo {
     left: 50% !important;
     top: 50% !important;
 
-    width: 125% !important;
+    width: 120% !important;
     aspect-ratio: 1 / 1 !important;
 
     transform:
@@ -38888,7 +38888,7 @@ section.ars-system-seven .ars-card-logo {
 
     transform:
         translate(-50%, -50%)
-        scale(1.15) !important;
+        scale(1.19) !important;
 
     transform-origin: center center !important;
 
@@ -39197,111 +39197,55 @@ section.ars-system-seven .ars-card-logo {
 
 
 /* =========================================================
-   ARS PHILOSOPHY — FINAL LOGO BREATHING
-   NO POSITION / NO ORB MOVEMENT
+   ARS PHILOSOPHY — LOGO ONLY BREATHING RESTORE
+   DO NOT TOUCH ORB / POSITION / GOLDEN LIGHT
    ========================================================= */
-
-.ars-philosophy-core {
-    position: relative !important;
-}
-
-/* مستقل از transform اصلی لوگو */
-.ars-philosophy-core::after {
-    content: "" !important;
-
-    position: absolute !important;
-    left: 50% !important;
-    top: 50% !important;
-
-    width: 42% !important;
-    aspect-ratio: 1 !important;
-
-    transform: translate(-50%, -50%) scale(.82) !important;
-
-    border-radius: 50% !important;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,220,150,.34) 0%,
-            rgba(218,177,105,.18) 28%,
-            rgba(218,177,105,.07) 52%,
-            transparent 72%
-        ) !important;
-
-    filter: blur(12px) !important;
-
-    opacity: .35 !important;
-
-    z-index: 15 !important;
-
-    pointer-events: none !important;
-
-    animation:
-        arsPhilosophyLogoAuraBreath
-        4.5s
-        ease-in-out
-        infinite !important;
-}
-
-
-@keyframes arsPhilosophyLogoAuraBreath {
-
-    0%,
-    100% {
-        opacity: .30;
-        transform:
-            translate(-50%, -50%)
-            scale(.82);
-    }
-
-    50% {
-        opacity: .95;
-        transform:
-            translate(-50%, -50%)
-            scale(1.18);
-    }
-}
-
-
-/* خود لوگو فقط با opacity و filter نفس می‌کشد
-   تا transform موقعیت‌دهی قبلی خراب نشود */
 
 .ars-philosophy-core > img {
     animation:
-        arsPhilosophyLogoLightBreath
-        4.5s
+        arsPhilosophyLogoBreathRestore
+        4.6s
         ease-in-out
         infinite !important;
 
-    opacity: .82 !important;
+    transform-origin: center center !important;
+
+    will-change:
+        transform,
+        filter !important;
 }
 
 
-@keyframes arsPhilosophyLogoLightBreath {
+@keyframes arsPhilosophyLogoBreathRestore {
 
     0%,
     100% {
-        opacity: .82;
+        transform:
+            scale(1.20);
 
         filter:
             drop-shadow(
-                0 0 8px
-                rgba(214,180,135,.25)
+                0 0 10px
+                rgba(214,180,135,.30)
+            )
+            drop-shadow(
+                0 0 22px
+                rgba(218,177,105,.12)
             );
     }
 
     50% {
-        opacity: 1;
+        transform:
+            scale(1.26);
 
         filter:
             drop-shadow(
-                0 0 18px
-                rgba(214,180,135,.70)
+                0 0 16px
+                rgba(214,180,135,.55)
             )
             drop-shadow(
-                0 0 40px
-                rgba(218,177,105,.42)
+                0 0 38px
+                rgba(218,177,105,.30)
             );
     }
 }
