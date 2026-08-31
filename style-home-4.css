@@ -39272,166 +39272,29 @@ section.ars-system-seven .ars-card-logo {
 
 
 
-/* =========================================================
-   ARS HERO — MASTER HORIZONTAL COMPOSITION
-   GOLD  ←  HERITAGE CORE  →  BLUE
-   ========================================================= */
-
 
 /* =========================================================
-   MASTER CONTAINER
-   ========================================================= */
-
-.ars-hero-master-geometry {
-    position: relative !important;
-
-    display: grid !important;
-
-    grid-template-columns:
-        minmax(0, 1fr)
-        auto
-        minmax(0, 1fr) !important;
-
-    align-items: center !important;
-
-    justify-items: center !important;
-
-    width: 100% !important;
-    max-width: 100% !important;
-
-    margin: 0 auto !important;
-
-    column-gap: 0 !important;
-
-    overflow: visible !important;
-}
-
-
-/* =========================================================
-   GOLD — LEFT SYSTEM
-   ========================================================= */
-
-.ars-gold-system {
-    position: relative !important;
-
-    top: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    left: auto !important;
-
-    margin: 0 !important;
-
-    transform-origin: center center !important;
-
-    justify-self: end !important;
-
-    grid-column: 1 !important;
-
-    z-index: 10 !important;
-}
-
-
-/* =========================================================
-   HERITAGE — TRUE CENTER
+   ARS HERO — HERITAGE CORE TRUE CENTER
+   ONLY THE SINGLE NODE
    ========================================================= */
 
 .ars-heritage-center {
-    position: relative !important;
+    position: absolute !important;
 
-    top: auto !important;
+    left: 50vw !important;
+    top: 50% !important;
+
     right: auto !important;
     bottom: auto !important;
-    left: auto !important;
 
     margin: 0 !important;
 
-    transform-origin: center center !important;
-
-    justify-self: center !important;
-
-    grid-column: 2 !important;
-
-    z-index: 30 !important;
-}
-
-
-/* =========================================================
-   BLUE — RIGHT SYSTEM
-   ========================================================= */
-
-.ars-blue-system {
-    position: relative !important;
-
-    top: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    left: auto !important;
-
-    margin: 0 !important;
+    transform:
+        translate(-50%, -50%) !important;
 
     transform-origin: center center !important;
 
-    justify-self: start !important;
-
-    grid-column: 3 !important;
-
-    z-index: 10 !important;
+    z-index: 100 !important;
 }
 
 
-/* =========================================================
-   IMPORTANT:
-   REMOVE ANY OLD FLOATING BEHAVIOR
-   ========================================================= */
-
-.ars-gold-system,
-.ars-heritage-center,
-.ars-blue-system {
-    float: none !important;
-}
-
-
-/* =========================================================
-   DESKTOP
-   ========================================================= */
-
-@media (min-width: 901px) {
-
-    .ars-hero-master-geometry {
-        min-height: 720px !important;
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 900px) {
-
-    .ars-hero-master-geometry {
-        display: flex !important;
-
-        flex-direction: column !important;
-
-        align-items: center !important;
-
-        justify-content: center !important;
-
-        min-height: auto !important;
-
-        gap: 0 !important;
-    }
-
-    .ars-gold-system,
-    .ars-heritage-center,
-    .ars-blue-system {
-        grid-column: auto !important;
-
-        justify-self: center !important;
-
-        margin: 0 !important;
-    }
-
-}
