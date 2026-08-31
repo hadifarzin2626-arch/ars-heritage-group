@@ -39270,66 +39270,168 @@ section.ars-system-seven .ars-card-logo {
 
 
 
+
+
 /* =========================================================
-   ARS HERO — THREE SYSTEMS / TRUE HORIZONTAL POSITION
-   GOLD ← HERITAGE CORE → BLUE
-   POSITION OVERRIDE ONLY
+   ARS HERO — MASTER HORIZONTAL COMPOSITION
+   GOLD  ←  HERITAGE CORE  →  BLUE
+   ========================================================= */
+
+
+/* =========================================================
+   MASTER CONTAINER
    ========================================================= */
 
 .ars-hero-master-geometry {
     position: relative !important;
+
+    display: grid !important;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        auto
+        minmax(0, 1fr) !important;
+
+    align-items: center !important;
+
+    justify-items: center !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin: 0 auto !important;
+
+    column-gap: 0 !important;
+
+    overflow: visible !important;
 }
 
 
-/* =========================
-   CENTRAL HERITAGE CORE
-   ========================= */
+/* =========================================================
+   GOLD — LEFT SYSTEM
+   ========================================================= */
 
-.ars-heritage-center {
-    position: absolute !important;
+.ars-gold-system {
+    position: relative !important;
 
-    left: 50% !important;
-    top: 50% !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
 
     margin: 0 !important;
 
-    transform: translate(-50%, -50%) !important;
+    transform-origin: center center !important;
+
+    justify-self: end !important;
+
+    grid-column: 1 !important;
+
+    z-index: 10 !important;
+}
+
+
+/* =========================================================
+   HERITAGE — TRUE CENTER
+   ========================================================= */
+
+.ars-heritage-center {
+    position: relative !important;
+
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    margin: 0 !important;
+
+    transform-origin: center center !important;
+
+    justify-self: center !important;
+
+    grid-column: 2 !important;
 
     z-index: 30 !important;
 }
 
 
-/* =========================
-   GOLD — LEFT
-   ========================= */
+/* =========================================================
+   BLUE — RIGHT SYSTEM
+   ========================================================= */
 
-.ars-gold-system {
-    position: absolute !important;
+.ars-blue-system {
+    position: relative !important;
 
-    left: 20% !important;
-    top: 50% !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
 
     margin: 0 !important;
 
-    transform: translate(-50%, -50%) !important;
+    transform-origin: center center !important;
 
-    z-index: 20 !important;
+    justify-self: start !important;
+
+    grid-column: 3 !important;
+
+    z-index: 10 !important;
 }
 
 
-/* =========================
-   BLUE — RIGHT
-   ========================= */
+/* =========================================================
+   IMPORTANT:
+   REMOVE ANY OLD FLOATING BEHAVIOR
+   ========================================================= */
 
+.ars-gold-system,
+.ars-heritage-center,
 .ars-blue-system {
-    position: absolute !important;
+    float: none !important;
+}
 
-    left: 80% !important;
-    top: 50% !important;
 
-    margin: 0 !important;
+/* =========================================================
+   DESKTOP
+   ========================================================= */
 
-    transform: translate(-50%, -50%) !important;
+@media (min-width: 901px) {
 
-    z-index: 20 !important;
+    .ars-hero-master-geometry {
+        min-height: 720px !important;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .ars-hero-master-geometry {
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        align-items: center !important;
+
+        justify-content: center !important;
+
+        min-height: auto !important;
+
+        gap: 0 !important;
+    }
+
+    .ars-gold-system,
+    .ars-heritage-center,
+    .ars-blue-system {
+        grid-column: auto !important;
+
+        justify-self: center !important;
+
+        margin: 0 !important;
+    }
+
 }
