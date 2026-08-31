@@ -38902,3 +38902,689 @@ section.ars-philosophy-artifact
   }
 
 
+
+
+
+
+
+
+/* =========================================================
+   ARS PHILOSOPHY — FINAL VISUAL OVERRIDE
+   01 — BOTH ORBS +10%
+   02 — HERITAGE LOGO +15%
+   03 — OFFICIAL ARS SLOGAN IN LOWER ORB
+   04 — STRONG GOLDEN LIGHT / TURBULENCE
+   ========================================================= */
+
+
+/* =========================================================
+   PHILOSOPHY FIELD
+   ========================================================= */
+
+section.ars-philosophy-artifact
+.ars-philosophy-artifact-field {
+
+    position: relative !important;
+
+    isolation: isolate !important;
+
+}
+
+
+/* =========================================================
+   GOLDEN ENERGY — FULL PHILOSOPHY FIELD
+   ========================================================= */
+
+section.ars-philosophy-artifact
+.ars-philosophy-artifact-field::before {
+
+    content: "" !important;
+
+    position: absolute !important;
+
+    left: 50% !important;
+    top: 50% !important;
+
+    width: 125% !important;
+    height: 125% !important;
+
+    transform:
+        translate(-50%, -50%) !important;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 42%,
+            rgba(235,193,116,.24) 0%,
+            rgba(218,177,108,.16) 22%,
+            rgba(214,180,135,.09) 42%,
+            rgba(214,180,135,.035) 62%,
+            transparent 78%
+        ) !important;
+
+    filter: blur(35px) !important;
+
+    opacity: .95 !important;
+
+    z-index: -5 !important;
+
+    pointer-events: none !important;
+
+    animation:
+        arsPhilosophyGoldField
+        5.5s
+        ease-in-out
+        infinite !important;
+
+}
+
+
+/* SECOND GOLDEN TURBULENCE */
+
+section.ars-philosophy-artifact
+.ars-philosophy-artifact-field::after {
+
+    content: "" !important;
+
+    position: absolute !important;
+
+    left: 50% !important;
+    top: 50% !important;
+
+    width: 115% !important;
+    height: 115% !important;
+
+    transform:
+        translate(-50%, -50%) !important;
+
+    background:
+
+        radial-gradient(
+            ellipse at 28% 45%,
+            rgba(255,207,126,.18),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            ellipse at 72% 55%,
+            rgba(218,177,108,.20),
+            transparent 36%
+        ),
+
+        radial-gradient(
+            ellipse at 50% 75%,
+            rgba(214,180,135,.14),
+            transparent 40%
+        );
+
+    filter: blur(25px) !important;
+
+    opacity: .9 !important;
+
+    z-index: -4 !important;
+
+    pointer-events: none !important;
+
+    animation:
+        arsPhilosophyGoldTurbulence
+        7s
+        ease-in-out
+        infinite !important;
+
+}
+
+
+/* =========================================================
+   UPPER ORB — 10% LARGER
+   ========================================================= */
+
+section.ars-philosophy-artifact
+.ars-philosophy-core {
+
+    transform:
+        scale(1.10) !important;
+
+    transform-origin:
+        center center !important;
+
+    z-index: 20 !important;
+
+}
+
+
+/* =========================================================
+   HERITAGE LOGO — 15% LARGER
+   ========================================================= */
+
+section.ars-philosophy-artifact
+.ars-philosophy-core > img {
+
+    transform:
+        scale(1.15) !important;
+
+    transform-origin:
+        center center !important;
+
+    position: relative !important;
+
+    z-index: 50 !important;
+
+}
+
+
+/* =========================================================
+   GOLDEN TURBULENCE AROUND UPPER ORB
+   ========================================================= */
+
+section.ars-philosophy-artifact
+.ars-philosophy-core::before {
+
+    content: "" !important;
+
+    position: absolute !important;
+
+    inset: -24% !important;
+
+    border-radius: 50% !important;
+
+    background:
+        radial-gradient(
+            circle,
+            transparent 45%,
+            rgba(238,193,112,.18) 54%,
+            rgba(218,177,108,.12) 65%,
+            transparent 78%
+        ) !important;
+
+    filter: blur(14px) !important;
+
+    z-index: -2 !important;
+
+    pointer-events: none !important;
+
+    animation:
+        arsPhilosophyOrbGlow
+        4.5s
+        ease-in-out
+        infinite !important;
+
+}
+
+
+/* =========================================================
+   LOWER ORB
+   ساخته می‌شود مستقل از CSS قبلی
+   ========================================================= */
+
+section.ars-philosophy-artifact
+.ars-philosophy-text {
+
+    position: relative !important;
+
+    z-index: 15 !important;
+
+    width: min(560px, 82vw) !important;
+
+    min-height: 260px !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    text-align: center !important;
+
+}
+
+
+/* LOWER ORB BODY */
+
+section.ars-philosophy-artifact
+.ars-philosophy-text::before {
+
+    content: "" !important;
+
+    position: absolute !important;
+
+    left: 50% !important;
+    top: 50% !important;
+
+    width: 100% !important;
+    aspect-ratio: 1 / .62 !important;
+
+    transform:
+        translate(-50%, -50%) !important;
+
+    border-radius: 50% !important;
+
+    border:
+        1px solid rgba(218,177,108,.42) !important;
+
+    background:
+
+        radial-gradient(
+            ellipse at 50% 38%,
+            rgba(218,177,108,.075),
+            transparent 45%
+        ),
+
+        radial-gradient(
+            ellipse at center,
+            rgba(7,17,27,.42),
+            rgba(2,7,13,.12) 68%,
+            transparent 100%
+        ) !important;
+
+    box-shadow:
+
+        0 0 24px rgba(218,177,108,.10),
+
+        0 0 70px rgba(218,177,108,.075),
+
+        inset 0 0 35px rgba(218,177,108,.035) !important;
+
+    z-index: -2 !important;
+
+    pointer-events: none !important;
+
+    animation:
+        arsPhilosophyLowerOrb
+        5.5s
+        ease-in-out
+        infinite !important;
+
+}
+
+
+/* GOLDEN ENERGY RING AROUND LOWER ORB */
+
+section.ars-philosophy-artifact
+.ars-philosophy-text::after {
+
+    content: "" !important;
+
+    position: absolute !important;
+
+    left: 50% !important;
+    top: 50% !important;
+
+    width: 108% !important;
+    height: 70% !important;
+
+    transform:
+        translate(-50%, -50%) !important;
+
+    border-radius: 50% !important;
+
+    background:
+        radial-gradient(
+            ellipse,
+            transparent 55%,
+            rgba(232,190,112,.13) 63%,
+            transparent 75%
+        ) !important;
+
+    filter: blur(9px) !important;
+
+    z-index: -1 !important;
+
+    pointer-events: none !important;
+
+    animation:
+        arsPhilosophyLowerEnergy
+        4.8s
+        ease-in-out
+        infinite !important;
+
+}
+
+
+/* =========================================================
+   LOWER ORB CONTENT
+   ========================================================= */
+
+section.ars-philosophy-artifact
+.ars-philosophy-text
+.ars-philosophy-text-label {
+
+    position: relative !important;
+
+    z-index: 10 !important;
+
+    color:
+        rgba(218,177,108,.72) !important;
+
+    font-size:
+        10px !important;
+
+    letter-spacing:
+        .28em !important;
+
+}
+
+
+/* =========================================================
+   OFFICIAL ARS SLOGAN
+   ========================================================= */
+
+section.ars-philosophy-artifact
+.ars-philosophy-manifesto {
+
+    position: relative !important;
+
+    z-index: 20 !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    width: 82% !important;
+
+    margin: 18px auto 0 !important;
+
+    padding: 0 !important;
+
+    border: 0 !important;
+
+    background: transparent !important;
+
+    text-align: center !important;
+
+}
+
+
+/* HIDE OLD MANIFESTO */
+
+section.ars-philosophy-artifact
+.ars-philosophy-manifesto span {
+
+    display: none !important;
+
+}
+
+
+/* INSERT OFFICIAL SLOGAN */
+
+section.ars-philosophy-artifact
+.ars-philosophy-manifesto::before {
+
+    content:
+        "Respect the Heritage · Elevate the Grandeur · Embrace Intelligence" !important;
+
+    display: block !important;
+
+    width: 100% !important;
+
+    color:
+        #f0d29a !important;
+
+    font-family:
+        "Cormorant Garamond",
+        "Times New Roman",
+        serif !important;
+
+    font-size:
+        clamp(14px, 1.45vw, 19px) !important;
+
+    font-weight:
+        500 !important;
+
+    line-height:
+        1.45 !important;
+
+    letter-spacing:
+        .045em !important;
+
+    text-align:
+        center !important;
+
+    text-shadow:
+
+        0 0 7px rgba(240,210,154,.35),
+
+        0 0 18px rgba(218,177,108,.22),
+
+        0 0 35px rgba(218,177,108,.10) !important;
+
+    animation:
+        arsPhilosophySloganBreath
+        4.5s
+        ease-in-out
+        infinite !important;
+
+}
+
+
+/* =========================================================
+   GOLDEN LIGHT ON LOWER ORB
+   ========================================================= */
+
+section.ars-philosophy-artifact
+.ars-philosophy-text
+.ars-philosophy-text-label::after {
+
+    content: "" !important;
+
+    position: absolute !important;
+
+    left: 50% !important;
+    top: 50% !important;
+
+    width: 180px !important;
+    height: 60px !important;
+
+    transform:
+        translate(-50%, -50%) !important;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(255,210,126,.20),
+            transparent 70%
+        ) !important;
+
+    filter: blur(18px) !important;
+
+    z-index: -1 !important;
+
+    pointer-events: none !important;
+
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes arsPhilosophyGoldField {
+
+    0%,
+    100% {
+        opacity: .55;
+        transform:
+            translate(-50%, -50%)
+            scale(.92);
+    }
+
+    50% {
+        opacity: 1;
+        transform:
+            translate(-50%, -50%)
+            scale(1.08);
+    }
+
+}
+
+
+@keyframes arsPhilosophyGoldTurbulence {
+
+    0%,
+    100% {
+        opacity: .38;
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg)
+            scale(.94);
+    }
+
+    33% {
+        opacity: .85;
+        transform:
+            translate(-50%, -50%)
+            rotate(4deg)
+            scale(1.05);
+    }
+
+    66% {
+        opacity: .65;
+        transform:
+            translate(-50%, -50%)
+            rotate(-4deg)
+            scale(1.08);
+    }
+
+}
+
+
+@keyframes arsPhilosophyOrbGlow {
+
+    0%,
+    100% {
+        opacity: .35;
+        transform: scale(.92);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.08);
+    }
+
+}
+
+
+@keyframes arsPhilosophyLowerOrb {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 20px rgba(218,177,108,.07),
+            0 0 55px rgba(218,177,108,.045),
+            inset 0 0 30px rgba(218,177,108,.025);
+
+        transform:
+            translate(-50%, -50%)
+            scale(.97);
+    }
+
+    50% {
+        box-shadow:
+            0 0 35px rgba(218,177,108,.18),
+            0 0 90px rgba(218,177,108,.11),
+            inset 0 0 45px rgba(218,177,108,.055);
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.03);
+    }
+
+}
+
+
+@keyframes arsPhilosophyLowerEnergy {
+
+    0%,
+    100% {
+        opacity: .25;
+        transform:
+            translate(-50%, -50%)
+            scale(.94);
+    }
+
+    50% {
+        opacity: .95;
+        transform:
+            translate(-50%, -50%)
+            scale(1.08);
+    }
+
+}
+
+
+@keyframes arsPhilosophySloganBreath {
+
+    0%,
+    100% {
+        opacity: .70;
+
+        text-shadow:
+            0 0 6px rgba(240,210,154,.22),
+            0 0 16px rgba(218,177,108,.10);
+
+        transform: scale(.985);
+    }
+
+    50% {
+        opacity: 1;
+
+        text-shadow:
+            0 0 9px rgba(240,210,154,.48),
+            0 0 24px rgba(218,177,108,.28),
+            0 0 40px rgba(218,177,108,.12);
+
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width:700px) {
+
+    section.ars-philosophy-artifact
+    .ars-philosophy-core {
+
+        transform: scale(1.10) !important;
+
+    }
+
+    section.ars-philosophy-artifact
+    .ars-philosophy-core > img {
+
+        transform: scale(1.15) !important;
+
+    }
+
+    section.ars-philosophy-artifact
+    .ars-philosophy-text {
+
+        width: 86% !important;
+
+        min-height: 230px !important;
+
+    }
+
+    section.ars-philosophy-artifact
+    .ars-philosophy-manifesto::before {
+
+        font-size: 12px !important;
+
+        letter-spacing: .025em !important;
+
+        line-height: 1.5 !important;
+
+    }
+
+  }
+
+
+
