@@ -39256,3 +39256,195 @@ section.ars-system-seven .ars-card-logo {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS HERO — HORIZONTAL MASTER COMPOSITION
+   GOLD ← HERITAGE CORE → BLUE
+   SIDE ORBS APPROACH CENTRAL INNER CIRCLE
+   ========================================================= */
+
+.ars-hero-master-geometry {
+    position: relative !important;
+
+    display: grid !important;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        auto
+        minmax(0, 1fr) !important;
+
+    align-items: center !important;
+    justify-items: center !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    overflow: visible !important;
+}
+
+
+/* =========================================================
+   GOLD — LEFT
+   ========================================================= */
+
+.ars-gold-system {
+    position: relative !important;
+
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+
+    margin: 0 !important;
+
+    justify-self: end !important;
+
+    transform-origin: center center !important;
+
+    translate: 0 0 !important;
+
+    max-width: 100% !important;
+}
+
+
+/* =========================================================
+   HERITAGE CORE — EXACT CENTER
+   ========================================================= */
+
+.ars-heritage-center {
+    position: relative !important;
+
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+
+    margin: 0 !important;
+
+    justify-self: center !important;
+    align-self: center !important;
+
+    transform-origin: center center !important;
+
+    translate: 0 0 !important;
+
+    z-index: 30 !important;
+}
+
+
+/* =========================================================
+   BLUE — RIGHT
+   ========================================================= */
+
+.ars-blue-system {
+    position: relative !important;
+
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+
+    margin: 0 !important;
+
+    justify-self: start !important;
+
+    transform-origin: center center !important;
+
+    translate: 0 0 !important;
+
+    max-width: 100% !important;
+}
+
+
+/* =========================================================
+   REMOVE UNWANTED OUTER PUSH
+   ========================================================= */
+
+.ars-gold-system,
+.ars-heritage-center,
+.ars-blue-system {
+    float: none !important;
+}
+
+
+/* =========================================================
+   DESKTOP — KEEP THE THREE SYSTEMS INSIDE HERO
+   ========================================================= */
+
+@media (min-width: 1101px) {
+
+    .ars-hero-master-geometry {
+        padding-left: 1.5vw !important;
+        padding-right: 1.5vw !important;
+
+        column-gap: 0 !important;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) and (min-width: 701px) {
+
+    .ars-hero-master-geometry {
+        grid-template-columns:
+            minmax(0, 1fr)
+            auto
+            minmax(0, 1fr) !important;
+
+        padding-left: 1vw !important;
+        padding-right: 1vw !important;
+
+        column-gap: 0 !important;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .ars-hero-master-geometry {
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        align-items: center !important;
+
+        gap: 0 !important;
+    }
+
+    .ars-gold-system,
+    .ars-heritage-center,
+    .ars-blue-system {
+        justify-self: center !important;
+        align-self: center !important;
+    }
+
+}
