@@ -39270,109 +39270,66 @@ section.ars-system-seven .ars-card-logo {
 
 
 
-
-
 /* =========================================================
-   ARS HERO — HORIZONTAL THREE-SYSTEM LAYOUT
-   GOLD  ←  HERITAGE CORE  →  BLUE
-   POSITION ONLY
+   ARS HERO — THREE SYSTEMS / TRUE HORIZONTAL POSITION
+   GOLD ← HERITAGE CORE → BLUE
+   POSITION OVERRIDE ONLY
    ========================================================= */
 
 .ars-hero-master-geometry {
     position: relative !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    flex-direction: row !important;
-    width: 100% !important;
-    max-width: 100% !important;
 }
 
 
-/* =========================================================
-   GOLD — LEFT OF CENTER
-   ========================================================= */
-
-.ars-gold-system {
-    position: relative !important;
-    top: auto !important;
-    bottom: auto !important;
-
-    margin: 0 -1px 0 0 !important;
-
-    flex: 0 0 auto !important;
-    order: 1 !important;
-
-    z-index: 10 !important;
-}
-
-
-/* =========================================================
-   HERITAGE CORE — EXACT CENTER
-   ========================================================= */
+/* =========================
+   CENTRAL HERITAGE CORE
+   ========================= */
 
 .ars-heritage-center {
-    position: relative !important;
-    top: auto !important;
-    bottom: auto !important;
+    position: absolute !important;
+
+    left: 50% !important;
+    top: 50% !important;
 
     margin: 0 !important;
 
-    flex: 0 0 auto !important;
-    order: 2 !important;
+    transform: translate(-50%, -50%) !important;
 
     z-index: 30 !important;
 }
 
 
-/* =========================================================
-   BLUE — RIGHT OF CENTER
-   ========================================================= */
+/* =========================
+   GOLD — LEFT
+   ========================= */
+
+.ars-gold-system {
+    position: absolute !important;
+
+    left: 20% !important;
+    top: 50% !important;
+
+    margin: 0 !important;
+
+    transform: translate(-50%, -50%) !important;
+
+    z-index: 20 !important;
+}
+
+
+/* =========================
+   BLUE — RIGHT
+   ========================= */
 
 .ars-blue-system {
-    position: relative !important;
-    top: auto !important;
-    bottom: auto !important;
+    position: absolute !important;
 
-    margin: 0 0 0 -1px !important;
+    left: 80% !important;
+    top: 50% !important;
 
-    flex: 0 0 auto !important;
-    order: 3 !important;
+    margin: 0 !important;
 
-    z-index: 10 !important;
-}
+    transform: translate(-50%, -50%) !important;
 
-
-/* =========================================================
-   KEEP COMPLETE COMPOSITION INSIDE VIEWPORT
-   ========================================================= */
-
-@media (min-width: 901px) {
-
-    .ars-hero-master-geometry {
-        overflow: visible !important;
-        transform: scale(.96) !important;
-        transform-origin: center center !important;
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE — RETURN TO VERTICAL
-   ========================================================= */
-
-@media (max-width: 900px) {
-
-    .ars-hero-master-geometry {
-        flex-direction: column !important;
-        transform: none !important;
-    }
-
-    .ars-gold-system,
-    .ars-heritage-center,
-    .ars-blue-system {
-        margin: 0 !important;
-    }
-
+    z-index: 20 !important;
 }
