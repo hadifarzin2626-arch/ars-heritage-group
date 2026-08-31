@@ -38836,19 +38836,19 @@ section.ars-system-seven .ars-card-logo {
 @media (max-width: 700px) {
 
     .ars-philosophy-text::before {
-        width: 108% !important;
+        width: 120% !important;
     }
 
     .ars-philosophy-manifesto {
-        width: 60% !important;
+        width: 75% !important;
     }
 
     .ars-philosophy-manifesto span {
-        font-size: 18px !important;
+        font-size: 24px !important;
     }
 
     .ars-philosophy-manifesto span + span {
-        font-size: 13px !important;
+        font-size: 18px !important;
     }
   }
 
@@ -39179,4 +39179,79 @@ section.ars-system-seven .ars-card-logo {
     transform-origin:
         center center !important;
 }
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS PHILOSOPHY — RESTORE UPPER ORB + LOGO BREATHING
+   POSITION / SIZE / OTHER SETTINGS UNTOUCHED
+   ========================================================= */
+
+/* ORB BREATHING */
+.ars-philosophy-core {
+    animation:
+        arsPhilosophyUpperOrbBreathing
+        5.5s
+        ease-in-out
+        infinite !important;
+}
+
+@keyframes arsPhilosophyUpperOrbBreathing {
+
+    0%,
+    100% {
+        filter:
+            drop-shadow(
+                0 0 12px
+                rgba(214,180,135,.18)
+            );
+    }
+
+    50% {
+        filter:
+            drop-shadow(
+                0 0 24px
+                rgba(214,180,135,.38)
+            )
+            drop-shadow(
+                0 0 50px
+                rgba(218,177,105,.18)
+            );
+    }
+}
+
+
+/* LOGO BREATHING */
+.ars-philosophy-core > img {
+    animation:
+        arsPhilosophyUpperLogoBreathing
+        4.5s
+        ease-in-out
+        infinite !important;
+
+    transform-origin:
+        center center !important;
+}
+
+@keyframes arsPhilosophyUpperLogoBreathing {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: .88;
+    }
+
+    50% {
+        transform: scale(1.06);
+        opacity: 1;
+    }
+}
+
 
