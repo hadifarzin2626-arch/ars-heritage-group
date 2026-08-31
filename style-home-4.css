@@ -38840,17 +38840,312 @@ section.ars-system-seven .ars-card-logo {
     }
 
     .ars-philosophy-manifesto {
-        width: 74% !important;
+        width: 60% !important;
     }
 
     .ars-philosophy-manifesto span {
-        font-size: 16.9px !important;
+        font-size: 18px !important;
     }
 
     .ars-philosophy-manifesto span + span {
-        font-size: 15.6px !important;
+        font-size: 13px !important;
     }
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS PHILOSOPHY — UPPER ORB 20% + GOLDEN TURBULENCE
+   INDEPENDENT OVERRIDE PATCH
+   ONLY:
+   - UPPER ORB +20%
+   - ARS HERITAGE LOGO +20%
+   - GOLDEN LIGHT / TURBULENCE
+   ========================================================= */
+
+
+/* =========================================================
+   01 — UPPER ORB
+   ========================================================= */
+
+.ars-philosophy-core {
+    position: relative !important;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1.20) !important;
+
+    transform-origin: center center !important;
+
+    z-index: 20 !important;
+}
+
+
+/* =========================================================
+   02 — LOGO
+   EXACTLY +20%
+   ========================================================= */
+
+.ars-philosophy-core > img {
+    transform:
+        scale(1.20) !important;
+
+    transform-origin: center center !important;
+
+    animation:
+        arsUpperLogoBreathing
+        4.5s
+        ease-in-out
+        infinite !important;
+
+    will-change:
+        transform,
+        filter !important;
+}
+
+
+/* =========================================================
+   03 — LOGO BREATHING
+   ========================================================= */
+
+@keyframes arsUpperLogoBreathing {
+
+    0%,
+    100% {
+        transform: scale(1.20);
+
+        filter:
+            drop-shadow(
+                0 0 12px
+                rgba(214,180,135,.32)
+            )
+            drop-shadow(
+                0 0 28px
+                rgba(218,177,105,.14)
+            );
+    }
+
+    50% {
+        transform: scale(1.26);
+
+        filter:
+            drop-shadow(
+                0 0 17px
+                rgba(214,180,135,.58)
+            )
+            drop-shadow(
+                0 0 42px
+                rgba(218,177,105,.34)
+            );
+    }
+}
+
+
+/* =========================================================
+   04 — GOLDEN TURBULENCE BEHIND UPPER ORB
+   ========================================================= */
+
+.ars-philosophy-core::before {
+    content: "" !important;
+
+    position: absolute !important;
+
+    left: 50% !important;
+    top: 50% !important;
+
+    width: 155% !important;
+    height: 155% !important;
+
+    transform:
+        translate(-50%, -50%) !important;
+
+    border-radius: 50% !important;
+
+    background:
+
+        radial-gradient(
+            circle at 32% 35%,
+            rgba(255,220,155,.28) 0%,
+            rgba(218,177,105,.16) 22%,
+            transparent 52%
+        ),
+
+        radial-gradient(
+            circle at 70% 62%,
+            rgba(214,180,135,.24) 0%,
+            rgba(218,177,105,.10) 27%,
+            transparent 58%
+        ),
+
+        radial-gradient(
+            circle at center,
+            rgba(255,200,105,.12),
+            transparent 65%
+        ) !important;
+
+    filter: blur(20px) !important;
+
+    opacity: .78 !important;
+
+    z-index: -2 !important;
+
+    pointer-events: none !important;
+
+    animation:
+        arsUpperGoldenTurbulence
+        6.5s
+        ease-in-out
+        infinite !important;
+}
+
+
+/* =========================================================
+   05 — GOLDEN TURBULENCE MOTION
+   ========================================================= */
+
+@keyframes arsUpperGoldenTurbulence {
+
+    0%,
+    100% {
+        opacity: .52;
+
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg)
+            scale(.92);
+    }
+
+    30% {
+        opacity: .82;
+
+        transform:
+            translate(-50%, -50%)
+            rotate(5deg)
+            scale(1.02);
+    }
+
+    55% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            rotate(-4deg)
+            scale(1.10);
+    }
+
+    78% {
+        opacity: .74;
+
+        transform:
+            translate(-50%, -50%)
+            rotate(3deg)
+            scale(1.04);
+    }
+}
+
+
+/* =========================================================
+   06 — ADDITIONAL GOLDEN ENERGY RING
+   ========================================================= */
+
+.ars-philosophy-core::after {
+    content: "" !important;
+
+    position: absolute !important;
+
+    left: 50% !important;
+    top: 50% !important;
+
+    width: 128% !important;
+    height: 128% !important;
+
+    transform:
+        translate(-50%, -50%) !important;
+
+    border-radius: 50% !important;
+
+    border:
+        1px solid
+        rgba(218,177,105,.20) !important;
+
+    box-shadow:
+
+        0 0 22px
+        rgba(218,177,105,.20),
+
+        0 0 55px
+        rgba(218,177,105,.13),
+
+        0 0 100px
+        rgba(255,210,130,.08) !important;
+
+    opacity: .65 !important;
+
+    pointer-events: none !important;
+
+    animation:
+        arsUpperGoldenRing
+        5s
+        ease-in-out
+        infinite !important;
+}
+
+
+@keyframes arsUpperGoldenRing {
+
+    0%,
+    100% {
+        opacity: .38;
+
+        transform:
+            translate(-50%, -50%)
+            scale(.96);
+    }
+
+    50% {
+        opacity: .95;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.06);
+    }
+}
+
+
+/* =========================================================
+   07 — MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .ars-philosophy-core {
+        transform:
+            translate(-50%, -50%)
+            scale(1.20) !important;
+    }
+
+    .ars-philosophy-core > img {
+        transform:
+            scale(1.20) !important;
+    }
+}
+
+
 
 
 
