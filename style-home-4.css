@@ -39272,58 +39272,38 @@ section.ars-system-seven .ars-card-logo {
 
 
 
-
-
 /* =========================================================
-   ARS HERO — HORIZONTAL MASTER COMPOSITION
-   GOLD ← HERITAGE CORE → BLUE
-   SIDE ORBS APPROACH CENTRAL INNER CIRCLE
+   ARS HERO — HORIZONTAL THREE-SYSTEM LAYOUT
+   GOLD  ←  HERITAGE CORE  →  BLUE
+   POSITION ONLY
    ========================================================= */
 
 .ars-hero-master-geometry {
     position: relative !important;
-
-    display: grid !important;
-
-    grid-template-columns:
-        minmax(0, 1fr)
-        auto
-        minmax(0, 1fr) !important;
-
+    display: flex !important;
     align-items: center !important;
-    justify-items: center !important;
-
+    justify-content: center !important;
+    flex-direction: row !important;
     width: 100% !important;
     max-width: 100% !important;
-
-    margin-left: auto !important;
-    margin-right: auto !important;
-
-    overflow: visible !important;
 }
 
 
 /* =========================================================
-   GOLD — LEFT
+   GOLD — LEFT OF CENTER
    ========================================================= */
 
 .ars-gold-system {
     position: relative !important;
-
     top: auto !important;
     bottom: auto !important;
-    left: auto !important;
-    right: auto !important;
 
-    margin: 0 !important;
+    margin: 0 -1px 0 0 !important;
 
-    justify-self: end !important;
+    flex: 0 0 auto !important;
+    order: 1 !important;
 
-    transform-origin: center center !important;
-
-    translate: 0 0 !important;
-
-    max-width: 100% !important;
+    z-index: 10 !important;
 }
 
 
@@ -39333,118 +39313,66 @@ section.ars-system-seven .ars-card-logo {
 
 .ars-heritage-center {
     position: relative !important;
-
     top: auto !important;
     bottom: auto !important;
-    left: auto !important;
-    right: auto !important;
 
     margin: 0 !important;
 
-    justify-self: center !important;
-    align-self: center !important;
-
-    transform-origin: center center !important;
-
-    translate: 0 0 !important;
+    flex: 0 0 auto !important;
+    order: 2 !important;
 
     z-index: 30 !important;
 }
 
 
 /* =========================================================
-   BLUE — RIGHT
+   BLUE — RIGHT OF CENTER
    ========================================================= */
 
 .ars-blue-system {
     position: relative !important;
-
     top: auto !important;
     bottom: auto !important;
-    left: auto !important;
-    right: auto !important;
 
-    margin: 0 !important;
+    margin: 0 0 0 -1px !important;
 
-    justify-self: start !important;
+    flex: 0 0 auto !important;
+    order: 3 !important;
 
-    transform-origin: center center !important;
-
-    translate: 0 0 !important;
-
-    max-width: 100% !important;
+    z-index: 10 !important;
 }
 
 
 /* =========================================================
-   REMOVE UNWANTED OUTER PUSH
+   KEEP COMPLETE COMPOSITION INSIDE VIEWPORT
    ========================================================= */
 
-.ars-gold-system,
-.ars-heritage-center,
-.ars-blue-system {
-    float: none !important;
-}
-
-
-/* =========================================================
-   DESKTOP — KEEP THE THREE SYSTEMS INSIDE HERO
-   ========================================================= */
-
-@media (min-width: 1101px) {
+@media (min-width: 901px) {
 
     .ars-hero-master-geometry {
-        padding-left: 1.5vw !important;
-        padding-right: 1.5vw !important;
-
-        column-gap: 0 !important;
+        overflow: visible !important;
+        transform: scale(.96) !important;
+        transform-origin: center center !important;
     }
 
 }
 
 
 /* =========================================================
-   TABLET
+   MOBILE — RETURN TO VERTICAL
    ========================================================= */
 
-@media (max-width: 1100px) and (min-width: 701px) {
+@media (max-width: 900px) {
 
     .ars-hero-master-geometry {
-        grid-template-columns:
-            minmax(0, 1fr)
-            auto
-            minmax(0, 1fr) !important;
-
-        padding-left: 1vw !important;
-        padding-right: 1vw !important;
-
-        column-gap: 0 !important;
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 700px) {
-
-    .ars-hero-master-geometry {
-        display: flex !important;
-
         flex-direction: column !important;
-
-        align-items: center !important;
-
-        gap: 0 !important;
+        transform: none !important;
     }
 
     .ars-gold-system,
     .ars-heritage-center,
     .ars-blue-system {
-        justify-self: center !important;
-        align-self: center !important;
+        margin: 0 !important;
     }
 
 }
