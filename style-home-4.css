@@ -39707,3 +39707,608 @@ section.ars-system-seven .ars-card-logo {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS HERO V2 — 3D INTELLIGENCE CONSTELLATION
+   Safe Override Layer
+   ========================================================= */
+
+.ars-hero-field{
+  perspective:1800px !important;
+  perspective-origin:50% 48% !important;
+  transform-style:preserve-3d !important;
+  overflow:hidden !important;
+}
+
+/* ---------- MASTER SPACE ---------- */
+
+.ars-hero-field .ars-hero-master-geometry{
+  transform-style:preserve-3d !important;
+  perspective:1800px !important;
+  perspective-origin:50% 50% !important;
+}
+
+/* =========================================================
+   GOLD SYSTEM
+   ========================================================= */
+
+.ars-hero-field .ars-gold-system{
+  transform-style:preserve-3d !important;
+  perspective:1400px !important;
+  perspective-origin:50% 50% !important;
+
+  transform:
+    translateX(-50%)
+    translateZ(90px)
+    rotateX(10deg)
+    rotateY(-8deg)
+    !important;
+
+  filter:
+    drop-shadow(0 35px 45px rgba(0,0,0,.55))
+    drop-shadow(0 0 35px rgba(212,175,55,.10));
+}
+
+/* Deep spatial plane */
+
+.ars-hero-field .ars-gold-system::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:72%;
+  height:72%;
+  transform:
+    translate(-50%,-50%)
+    translateZ(-90px)
+    rotateX(2deg);
+  border-radius:50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(212,175,55,.10) 0%,
+      rgba(212,175,55,.035) 32%,
+      transparent 68%
+    );
+  filter:blur(18px);
+  pointer-events:none;
+  z-index:0;
+}
+
+/* ---------- GOLD ORBITS ---------- */
+
+.ars-hero-field .ars-gold-system .ars-orbits{
+  transform-style:preserve-3d !important;
+  transform:
+    translateZ(-25px)
+    rotateX(8deg)
+    rotateY(-5deg)
+    !important;
+  filter:drop-shadow(0 0 10px rgba(212,175,55,.16));
+}
+
+.ars-hero-field .ars-gold-system .ars-orbit:nth-child(1){
+  transform:translateZ(45px) rotateX(70deg) rotateY(8deg) !important;
+}
+
+.ars-hero-field .ars-gold-system .ars-orbit:nth-child(2){
+  transform:translateZ(15px) rotateX(62deg) rotateY(-18deg) !important;
+}
+
+.ars-hero-field .ars-gold-system .ars-orbit:nth-child(3){
+  transform:translateZ(-15px) rotateX(78deg) rotateY(22deg) !important;
+}
+
+.ars-hero-field .ars-gold-system .ars-orbit:nth-child(4){
+  transform:translateZ(-45px) rotateX(55deg) rotateY(-12deg) !important;
+}
+
+.ars-hero-field .ars-gold-system .ars-orbit:nth-child(5){
+  transform:translateZ(-70px) rotateX(82deg) rotateY(15deg) !important;
+}
+
+/* ---------- GOLD ENERGY ---------- */
+
+.ars-hero-field .ars-gold-system .ars-energy-network{
+  transform-style:preserve-3d !important;
+  transform:translateZ(5px) !important;
+  opacity:.85;
+}
+
+.ars-hero-field .ars-gold-system .energy-ray:nth-child(1){
+  transform:translateZ(65px) rotateZ(18deg) !important;
+}
+
+.ars-hero-field .ars-gold-system .energy-ray:nth-child(2){
+  transform:translateZ(35px) rotateZ(72deg) !important;
+}
+
+.ars-hero-field .ars-gold-system .energy-ray:nth-child(3){
+  transform:translateZ(5px) rotateZ(126deg) !important;
+}
+
+.ars-hero-field .ars-gold-system .energy-ray:nth-child(4){
+  transform:translateZ(-25px) rotateZ(188deg) !important;
+}
+
+.ars-hero-field .ars-gold-system .energy-ray:nth-child(5){
+  transform:translateZ(-50px) rotateZ(244deg) !important;
+}
+
+.ars-hero-field .ars-gold-system .energy-ray:nth-child(6){
+  transform:translateZ(25px) rotateZ(306deg) !important;
+}
+
+/* =========================================================
+   GOLD NODES — REAL DEPTH
+   ========================================================= */
+
+.ars-hero-field .ars-gold-system .ars-system-node{
+  transform-style:preserve-3d !important;
+  backface-visibility:hidden !important;
+  will-change:transform;
+  filter:
+    drop-shadow(0 18px 18px rgba(0,0,0,.45))
+    drop-shadow(0 0 14px rgba(212,175,55,.16));
+}
+
+/* Existing spatial depth preserved + exaggerated */
+
+.ars-hero-field .ars-gold-system .node-01{
+  transform:
+    translate(-50%,-50%)
+    translateZ(85px)
+    rotateY(-4deg)
+    !important;
+}
+
+.ars-hero-field .ars-gold-system .node-02{
+  transform:
+    translate(-50%,-50%)
+    translateZ(45px)
+    rotateY(3deg)
+    !important;
+}
+
+.ars-hero-field .ars-gold-system .node-03{
+  transform:
+    translate(-50%,-50%)
+    translateZ(-20px)
+    rotateY(6deg)
+    !important;
+}
+
+.ars-hero-field .ars-gold-system .node-04{
+  transform:
+    translate(-50%,-50%)
+    translateZ(-55px)
+    rotateY(-5deg)
+    !important;
+}
+
+.ars-hero-field .ars-gold-system .node-05{
+  transform:
+    translate(-50%,-50%)
+    translateZ(10px)
+    rotateY(-7deg)
+    !important;
+}
+
+.ars-hero-field .ars-gold-system .node-06{
+  transform:
+    translate(-50%,-50%)
+    translateZ(60px)
+    rotateY(5deg)
+    !important;
+}
+
+/* Node inner orbit depth */
+
+.ars-hero-field .ars-gold-system .node-orbit{
+  transform:
+    translateZ(22px)
+    rotateX(18deg)
+    !important;
+}
+
+/* =========================================================
+   GOLD CORE — FLOATING REACTOR
+   ========================================================= */
+
+.ars-hero-field .ars-gold-system .ars-system-core{
+  transform:
+    translate(-50%,-50%)
+    translateZ(155px)
+    rotateX(-4deg)
+    rotateY(5deg)
+    !important;
+
+  transform-style:preserve-3d !important;
+
+  filter:
+    drop-shadow(0 22px 24px rgba(0,0,0,.65))
+    drop-shadow(0 0 32px rgba(212,175,55,.30));
+}
+
+.ars-hero-field .ars-gold-system .core-halo{
+  transform:translateZ(-20px) scale(1.12) !important;
+}
+
+.ars-hero-field .ars-gold-system .core-ring.ring-01{
+  transform:translateZ(38px) rotateX(68deg) rotateY(8deg) !important;
+}
+
+.ars-hero-field .ars-gold-system .core-ring.ring-02{
+  transform:translateZ(18px) rotateY(64deg) rotateZ(20deg) !important;
+}
+
+.ars-hero-field .ars-gold-system .core-ring.ring-03{
+  transform:translateZ(-12px) rotateX(72deg) rotateY(-12deg) !important;
+}
+
+.ars-hero-field .ars-gold-system .core-body{
+  transform:translateZ(65px) !important;
+}
+
+/* =========================================================
+   HERITAGE CENTER
+   ========================================================= */
+
+.ars-hero-field .ars-heritage-center{
+  transform:
+    translate(-50%,-50%)
+    translateZ(240px)
+    scale(1.20)
+    rotateX(-3deg)
+    rotateY(3deg)
+    !important;
+
+  transform-style:preserve-3d !important;
+
+  filter:
+    drop-shadow(0 30px 40px rgba(0,0,0,.70))
+    drop-shadow(0 0 55px rgba(255,255,255,.08));
+}
+
+/* Heritage orbital belts */
+
+.ars-hero-field .heritage-belt-gold{
+  transform:
+    translateZ(55px)
+    rotateX(68deg)
+    rotateY(-12deg)
+    !important;
+}
+
+.ars-hero-field .heritage-belt-blue{
+  transform:
+    translateZ(25px)
+    rotateX(64deg)
+    rotateY(18deg)
+    !important;
+}
+
+.ars-hero-field .ars-heritage-center .heritage-ring.ring-01{
+  transform:translateZ(85px) rotateX(68deg) rotateY(8deg) !important;
+}
+
+.ars-hero-field .ars-heritage-center .heritage-ring.ring-02{
+  transform:translateZ(48px) rotateY(68deg) !important;
+}
+
+.ars-hero-field .ars-heritage-center .heritage-ring.ring-03{
+  transform:translateZ(12px) rotateX(72deg) rotateY(-15deg) !important;
+}
+
+.ars-hero-field .ars-heritage-center .heritage-ring.ring-04{
+  transform:translateZ(-28px) rotateX(58deg) rotateY(18deg) !important;
+}
+
+.ars-hero-field .ars-heritage-center .heritage-body{
+  transform:translateZ(105px) !important;
+}
+
+/* =========================================================
+   BLUE SYSTEM
+   ========================================================= */
+
+.ars-hero-field .ars-blue-system{
+  transform-style:preserve-3d !important;
+  perspective:1400px !important;
+  perspective-origin:50% 50% !important;
+
+  transform:
+    translateX(-50%)
+    translateZ(55px)
+    rotateX(-9deg)
+    rotateY(8deg)
+    !important;
+
+  filter:
+    drop-shadow(0 30px 45px rgba(0,0,0,.55))
+    drop-shadow(0 0 35px rgba(50,140,255,.10));
+}
+
+.ars-hero-field .ars-blue-system::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:72%;
+  height:72%;
+  transform:
+    translate(-50%,-50%)
+    translateZ(-95px);
+  border-radius:50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(40,130,255,.11) 0%,
+      rgba(40,130,255,.035) 34%,
+      transparent 70%
+    );
+  filter:blur(20px);
+  pointer-events:none;
+  z-index:0;
+}
+
+/* ---------- BLUE ORBITS ---------- */
+
+.ars-hero-field .ars-blue-system .ars-orbits{
+  transform-style:preserve-3d !important;
+  transform:
+    translateZ(-20px)
+    rotateX(-7deg)
+    rotateY(5deg)
+    !important;
+}
+
+.ars-hero-field .ars-blue-system .ars-orbit:nth-child(1){
+  transform:translateZ(48px) rotateX(72deg) rotateY(-10deg) !important;
+}
+
+.ars-hero-field .ars-blue-system .ars-orbit:nth-child(2){
+  transform:translateZ(18px) rotateX(60deg) rotateY(18deg) !important;
+}
+
+.ars-hero-field .ars-blue-system .ars-orbit:nth-child(3){
+  transform:translateZ(-15px) rotateX(80deg) rotateY(-20deg) !important;
+}
+
+.ars-hero-field .ars-blue-system .ars-orbit:nth-child(4){
+  transform:translateZ(-45px) rotateX(55deg) rotateY(12deg) !important;
+}
+
+.ars-hero-field .ars-blue-system .ars-orbit:nth-child(5){
+  transform:translateZ(-75px) rotateX(82deg) rotateY(-15deg) !important;
+}
+
+/* ---------- BLUE NODES ---------- */
+
+.ars-hero-field .ars-blue-system .ars-system-node{
+  transform-style:preserve-3d !important;
+  backface-visibility:hidden !important;
+  filter:
+    drop-shadow(0 18px 18px rgba(0,0,0,.48))
+    drop-shadow(0 0 15px rgba(45,145,255,.18));
+}
+
+.ars-hero-field .ars-blue-system .node-01{
+  transform:translate(-50%,-50%) translateZ(90px) rotateY(-3deg) !important;
+}
+
+.ars-hero-field .ars-blue-system .node-02{
+  transform:translate(-50%,-50%) translateZ(45px) rotateY(4deg) !important;
+}
+
+.ars-hero-field .ars-blue-system .node-03{
+  transform:translate(-50%,-50%) translateZ(-5px) rotateY(7deg) !important;
+}
+
+.ars-hero-field .ars-blue-system .node-04{
+  transform:translate(-50%,-50%) translateZ(-45px) rotateY(-5deg) !important;
+}
+
+.ars-hero-field .ars-blue-system .node-05{
+  transform:translate(-50%,-50%) translateZ(-45px) rotateY(5deg) !important;
+}
+
+.ars-hero-field .ars-blue-system .node-06{
+  transform:translate(-50%,-50%) translateZ(5px) rotateY(-7deg) !important;
+}
+
+.ars-hero-field .ars-blue-system .node-07{
+  transform:translate(-50%,-50%) translateZ(55px) rotateY(3deg) !important;
+}
+
+.ars-hero-field .ars-blue-system .node-orbit{
+  transform:
+    translateZ(22px)
+    rotateX(-18deg)
+    !important;
+}
+
+/* =========================================================
+   BLUE CORE
+   ========================================================= */
+
+.ars-hero-field .ars-blue-system .ars-system-core{
+  transform:
+    translate(-50%,-50%)
+    translateZ(150px)
+    rotateX(4deg)
+    rotateY(-5deg)
+    !important;
+
+  transform-style:preserve-3d !important;
+
+  filter:
+    drop-shadow(0 22px 24px rgba(0,0,0,.65))
+    drop-shadow(0 0 32px rgba(45,145,255,.28));
+}
+
+.ars-hero-field .ars-blue-system .core-halo{
+  transform:translateZ(-22px) scale(1.12) !important;
+}
+
+.ars-hero-field .ars-blue-system .core-ring.ring-01{
+  transform:translateZ(38px) rotateX(70deg) rotateY(-8deg) !important;
+}
+
+.ars-hero-field .ars-blue-system .core-ring.ring-02{
+  transform:translateZ(18px) rotateY(66deg) rotateZ(-18deg) !important;
+}
+
+.ars-hero-field .ars-blue-system .core-ring.ring-03{
+  transform:translateZ(-12px) rotateX(72deg) rotateY(15deg) !important;
+}
+
+.ars-hero-field .ars-blue-system .core-body{
+  transform:translateZ(65px) !important;
+}
+
+/* =========================================================
+   MASTER AXIS — DEPTH
+   ========================================================= */
+
+.ars-hero-field .ars-master-axis{
+  transform-style:preserve-3d !important;
+  transform:translateZ(-120px) !important;
+  opacity:.55;
+}
+
+.ars-hero-field .ars-axis-core{
+  transform:translateZ(-20px) !important;
+}
+
+.ars-hero-field .ars-axis-glow{
+  transform:translateZ(-10px) !important;
+}
+
+/* =========================================================
+   ATMOSPHERE
+   ========================================================= */
+
+.ars-hero-field .ars-hero-atmosphere{
+  transform-style:preserve-3d !important;
+  transform:translateZ(-180px) !important;
+}
+
+.ars-hero-field .ars-atmosphere-glow{
+  filter:blur(8px);
+}
+
+/* =========================================================
+   SUBTLE 3D FLOAT — NO ROTATION
+   ========================================================= */
+
+@keyframes ars3dGoldFloat{
+  0%,100%{
+    transform:
+      translateX(-50%)
+      translateZ(90px)
+      rotateX(10deg)
+      rotateY(-8deg);
+  }
+  50%{
+    transform:
+      translateX(-50%)
+      translateZ(108px)
+      rotateX(11deg)
+      rotateY(-6deg);
+  }
+}
+
+@keyframes ars3dBlueFloat{
+  0%,100%{
+    transform:
+      translateX(-50%)
+      translateZ(55px)
+      rotateX(-9deg)
+      rotateY(8deg);
+  }
+  50%{
+    transform:
+      translateX(-50%)
+      translateZ(72px)
+      rotateX(-8deg)
+      rotateY(6deg);
+  }
+}
+
+.ars-hero-field .ars-gold-system{
+  animation:ars3dGoldFloat 8s ease-in-out infinite !important;
+}
+
+.ars-hero-field .ars-blue-system{
+  animation:ars3dBlueFloat 9s ease-in-out infinite !important;
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion:reduce){
+  .ars-hero-field .ars-gold-system,
+  .ars-hero-field .ars-blue-system{
+    animation:none !important;
+  }
+}
+
+/* =========================================================
+   MOBILE — KEEP GEOMETRY, REDUCE DEPTH
+   ========================================================= */
+
+@media(max-width:600px){
+
+  .ars-hero-field{
+    perspective:1100px !important;
+  }
+
+  .ars-hero-field .ars-gold-system{
+    transform:
+      translateX(-50%)
+      translateZ(45px)
+      rotateX(6deg)
+      rotateY(-4deg)
+      !important;
+  }
+
+  .ars-hero-field .ars-blue-system{
+    transform:
+      translateX(-50%)
+      translateZ(30px)
+      rotateX(-5deg)
+      rotateY(4deg)
+      !important;
+  }
+
+  .ars-hero-field .ars-heritage-center{
+    transform:
+      translate(-50%,-50%)
+      translateZ(120px)
+      scale(1.10)
+      !important;
+  }
+
+  .ars-hero-field .ars-gold-system .ars-system-node,
+  .ars-hero-field .ars-blue-system .ars-system-node{
+    filter:
+      drop-shadow(0 10px 12px rgba(0,0,0,.45))
+      !important;
+  }
+                 }
+
