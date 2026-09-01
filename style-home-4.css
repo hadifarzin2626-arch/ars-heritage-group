@@ -39298,7 +39298,7 @@ section.ars-system-seven .ars-card-logo {
 
     position: absolute !important;
 
-    left: 25% !important;
+    left: 20% !important;
 
     top: auto !important;
 
@@ -39323,7 +39323,7 @@ section.ars-system-seven .ars-card-logo {
 
     position: absolute !important;
 
-    left: 50% !important;
+    left: 40% !important;
 
     top: auto !important;
 
@@ -39349,7 +39349,7 @@ section.ars-system-seven .ars-card-logo {
 
     position: absolute !important;
 
-    left: 75% !important;
+    left: 65% !important;
 
     top: auto !important;
 
@@ -39464,215 +39464,3 @@ section.ars-system-seven .ars-card-logo {
 
 
 
-
-
-/* =========================================================
-   ARS HERO — FINAL MICRO POSITION / MIRROR PATCH
-   =========================================================
-   01 — ENTIRE 3-SYSTEM COMPOSITION → ~1cm LEFT
-   02 — BLUE = EXACT HORIZONTAL MIRROR OF GOLD
-   03 — SINGLE NODE REMAINS TRUE CENTER
-   04 — SAME BOTTOM POSITION
-   05 — INTERNAL GEOMETRY UNTOUCHED
-   ========================================================= */
-
-
-/* =========================================================
-   01 — GOLD 7-NODE
-   LEFT SIDE
-   ========================================================= */
-
-.ars-hero-field
-.ars-gold-system {
-
-    left:
-        calc(25% - 20px) !important;
-
-    top:
-        auto !important;
-
-    bottom:
-        3% !important;
-
-    transform:
-        translate(-50%, 0) !important;
-
-    margin:
-        0 !important;
-}
-
-
-/* =========================================================
-   02 — SINGLE HERITAGE
-   TRUE CENTER + 1cm LEFT
-   ========================================================= */
-
-.ars-hero-field
-.ars-heritage-center {
-
-    left:
-        calc(50% - 20px) !important;
-
-    top:
-        auto !important;
-
-    bottom:
-        3% !important;
-
-    transform:
-        translate(-50%, 0)
-        scale(1.20) !important;
-
-    margin:
-        0 !important;
-}
-
-
-/* =========================================================
-   03 — BLUE 6-NODE
-   EXACT MIRROR OF GOLD
-   =========================================================
-
-   Gold:
-   25% - 10px
-
-   Center:
-   50% - 10px
-
-   Therefore:
-
-   Blue:
-   75% - 10px
-
-   This keeps exactly equal horizontal distance
-   between Gold ↔ Center and Center ↔ Blue.
-   ========================================================= */
-
-.ars-hero-field
-.ars-blue-system {
-
-    left:
-    calc(70% - 20px) !important;
-
-    top:
-        auto !important;
-
-    bottom:
-        3% !important;
-
-    transform:
-        translate(-50%, 0) !important;
-
-    margin:
-        0 !important;
-}
-
-
-/* =========================================================
-   04 — HARD LOCK
-   ========================================================= */
-
-.ars-hero-field
-.ars-gold-system,
-.ars-hero-field
-.ars-heritage-center,
-.ars-hero-field
-.ars-blue-system {
-
-    top:
-        auto !important;
-
-    right:
-        auto !important;
-}
-
-
-/* =========================================================
-   05 — MOBILE
-   SAME LOGIC
-   ========================================================= */
-
-@media (max-width: 600px) {
-
-    .ars-hero-field
-    .ars-gold-system {
-
-        left:
-            calc(18% - 20px) !important;
-
-        bottom:
-            3% !important;
-    }
-
-
-    .ars-hero-field
-    .ars-heritage-center {
-
-        left:
-            calc(50% - 20px) !important;
-
-        bottom:
-            3% !important;
-    }
-
-
-    .ars-hero-field
-    .ars-blue-system {
-
-        left:
-            calc(82% - 20px) !important;
-
-        bottom:
-            3% !important;
-    }
-
-}
-
-
-/* =========================================================
-   END — MICRO POSITION / MIRROR LOCK
-   ========================================================= */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* =========================================================
-   ARS — POSITION TEST / HARD OVERRIDE
-   ========================================================= */
-
-.ars-hero-field .ars-gold-system {
-    position: absolute !important;
-    left: 20% !important;
-    top: auto !important;
-    bottom: 3% !important;
-    transform: translateX(-50%) !important;
-}
-
-.ars-hero-field .ars-heritage-center {
-    position: absolute !important;
-    left: 45% !important;
-    top: auto !important;
-    bottom: 3% !important;
-    transform: translateX(-50%) scale(1.20) !important;
-}
-
-.ars-hero-field .ars-blue-system {
-    position: absolute !important;
-    left: 70% !important;
-    top: auto !important;
-    bottom: 3% !important;
-    transform: translateX(-50%) !important;
-}
