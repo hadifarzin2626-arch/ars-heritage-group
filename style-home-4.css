@@ -39452,3 +39452,183 @@ section.ars-system-seven .ars-card-logo {
 /* =========================================================
    END — BOTTOM HORIZONTAL LOCK
    ========================================================= */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS HERO — FINAL MICRO POSITION / MIRROR PATCH
+   =========================================================
+   01 — ENTIRE 3-SYSTEM COMPOSITION → ~1cm LEFT
+   02 — BLUE = EXACT HORIZONTAL MIRROR OF GOLD
+   03 — SINGLE NODE REMAINS TRUE CENTER
+   04 — SAME BOTTOM POSITION
+   05 — INTERNAL GEOMETRY UNTOUCHED
+   ========================================================= */
+
+
+/* =========================================================
+   01 — GOLD 7-NODE
+   LEFT SIDE
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system {
+
+    left:
+        calc(25% - 10px) !important;
+
+    top:
+        auto !important;
+
+    bottom:
+        3% !important;
+
+    transform:
+        translate(-50%, 0) !important;
+
+    margin:
+        0 !important;
+}
+
+
+/* =========================================================
+   02 — SINGLE HERITAGE
+   TRUE CENTER + 1cm LEFT
+   ========================================================= */
+
+.ars-hero-field
+.ars-heritage-center {
+
+    left:
+        calc(50% - 10px) !important;
+
+    top:
+        auto !important;
+
+    bottom:
+        3% !important;
+
+    transform:
+        translate(-50%, 0)
+        scale(1.20) !important;
+
+    margin:
+        0 !important;
+}
+
+
+/* =========================================================
+   03 — BLUE 6-NODE
+   EXACT MIRROR OF GOLD
+   =========================================================
+
+   Gold:
+   25% - 10px
+
+   Center:
+   50% - 10px
+
+   Therefore:
+
+   Blue:
+   75% - 10px
+
+   This keeps exactly equal horizontal distance
+   between Gold ↔ Center and Center ↔ Blue.
+   ========================================================= */
+
+.ars-hero-field
+.ars-blue-system {
+
+    left:
+        calc(75% - 10px) !important;
+
+    top:
+        auto !important;
+
+    bottom:
+        3% !important;
+
+    transform:
+        translate(-50%, 0) !important;
+
+    margin:
+        0 !important;
+}
+
+
+/* =========================================================
+   04 — HARD LOCK
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system,
+.ars-hero-field
+.ars-heritage-center,
+.ars-hero-field
+.ars-blue-system {
+
+    top:
+        auto !important;
+
+    right:
+        auto !important;
+}
+
+
+/* =========================================================
+   05 — MOBILE
+   SAME LOGIC
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .ars-hero-field
+    .ars-gold-system {
+
+        left:
+            calc(18% - 10px) !important;
+
+        bottom:
+            3% !important;
+    }
+
+
+    .ars-hero-field
+    .ars-heritage-center {
+
+        left:
+            calc(50% - 10px) !important;
+
+        bottom:
+            3% !important;
+    }
+
+
+    .ars-hero-field
+    .ars-blue-system {
+
+        left:
+            calc(82% - 10px) !important;
+
+        bottom:
+            3% !important;
+    }
+
+}
+
+
+/* =========================================================
+   END — MICRO POSITION / MIRROR LOCK
+   ========================================================= */
