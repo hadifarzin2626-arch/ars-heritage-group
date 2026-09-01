@@ -39671,3 +39671,117 @@ section.ars-system-seven .ars-card-logo {
    END — INDEPENDENT ORBIT ROTATION PATCH
    ========================================================= */
 
+
+/* =========================================================
+   ARS HERITAGE GROUP
+   INDEPENDENT 2X SELECTION SCALE PATCH
+
+   RULE:
+   Selected system = EXACTLY 2X VISUAL SCALE
+
+   - No HTML change
+   - No width change
+   - No height change
+   - No position change
+   - No fullscreen
+   - Transform origin = system center
+   ========================================================= */
+
+
+/* =========================================================
+   01 — GOLD SYSTEM 2X
+   ========================================================= */
+
+.ars-hero-field .ars-gold-system.is-selected {
+
+    transform:
+        translateX(-50%)
+        scale(2) !important;
+
+    transform-origin:
+        50% 50% !important;
+
+    z-index:
+        500 !important;
+}
+
+
+/* =========================================================
+   02 — BLUE SYSTEM 2X
+   ========================================================= */
+
+.ars-hero-field .ars-blue-system.is-selected {
+
+    transform:
+        translateX(-50%)
+        scale(2) !important;
+
+    transform-origin:
+        50% 50% !important;
+
+    z-index:
+        500 !important;
+}
+
+
+/* =========================================================
+   03 — HERITAGE CENTER 2X
+   Optional compatibility if the center itself
+   receives .is-selected.
+   ========================================================= */
+
+.ars-hero-field .ars-heritage-center.is-selected {
+
+    transform:
+        translate(-50%, -50%)
+        scale(2) !important;
+
+    transform-origin:
+        50% 50% !important;
+
+    z-index:
+        1000 !important;
+}
+
+
+/* =========================================================
+   04 — IMPORTANT
+   Preserve the existing X-centering of GOLD + BLUE
+   ========================================================= */
+
+.ars-hero-field .ars-gold-system.is-selected,
+.ars-hero-field .ars-blue-system.is-selected {
+
+    left:
+        50% !important;
+
+}
+
+
+/* =========================================================
+   05 — MOBILE
+   Still exactly 2X.
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .ars-hero-field .ars-gold-system.is-selected {
+
+        transform:
+            translateX(-50%)
+            scale(2) !important;
+    }
+
+    .ars-hero-field .ars-blue-system.is-selected {
+
+        transform:
+            translateX(-50%)
+            scale(2) !important;
+    }
+
+}
+
+
+/* =========================================================
+   END — INDEPENDENT 2X SELECTION PATCH
+   ========================================================= */
