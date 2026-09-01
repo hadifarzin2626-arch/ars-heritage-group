@@ -39555,7 +39555,153 @@ section.ars-system-seven .ars-card-logo {
 
 
 
+/* =========================================================
+   ARS HERITAGE GROUP
+   TRUE ORBITAL ROTATION
+   GOLD  = 6 NODES
+   BLUE  = 7 NODES
+   CORE REMAINS FIXED
+   ========================================================= */
 
+
+/* =========================================================
+   GOLD ORBIT STAGE
+   ========================================================= */
+
+.ars-hero-field .ars-gold-orbit-stage {
+
+    position: absolute !important;
+
+    inset: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    transform-origin: 50% 50% !important;
+
+    animation:
+        arsGoldOrbitRotation
+        32s
+        linear
+        infinite !important;
+
+    transform-style: preserve-3d !important;
+
+    pointer-events: none !important;
+}
+
+
+/* =========================================================
+   BLUE ORBIT STAGE
+   ========================================================= */
+
+.ars-hero-field .ars-blue-orbit-stage {
+
+    position: absolute !important;
+
+    inset: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    transform-origin: 50% 50% !important;
+
+    animation:
+        arsBlueOrbitRotation
+        38s
+        linear
+        infinite !important;
+
+    transform-style: preserve-3d !important;
+
+    pointer-events: none !important;
+}
+
+
+/* =========================================================
+   NODES REMAIN CLICKABLE
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-orbit-stage
+.ars-system-node,
+
+.ars-hero-field
+.ars-blue-orbit-stage
+.ars-system-node {
+
+    pointer-events: auto !important;
+
+}
+
+
+/* =========================================================
+   GOLD ROTATION
+   ========================================================= */
+
+@keyframes arsGoldOrbitRotation {
+
+    from {
+
+        transform:
+            rotateZ(0deg);
+
+    }
+
+    to {
+
+        transform:
+            rotateZ(360deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   BLUE ROTATION
+   ========================================================= */
+
+@keyframes arsBlueOrbitRotation {
+
+    from {
+
+        transform:
+            rotateZ(0deg);
+
+    }
+
+    to {
+
+        transform:
+            rotateZ(360deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width:600px) {
+
+    .ars-hero-field .ars-gold-orbit-stage {
+
+        animation-duration:
+            42s !important;
+
+    }
+
+    .ars-hero-field .ars-blue-orbit-stage {
+
+        animation-duration:
+            48s !important;
+
+    }
+
+}
 
 
 
