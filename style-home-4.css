@@ -41198,4 +41198,724 @@ section.ars-system-seven .ars-card-logo {
 
 
 
+/* =========================================================
+   ARS DIMENSION UNIVERSE
+   FULLY ISOLATED FROM HERO 1
+   ========================================================= */
 
+.ars-dimension-universe {
+    --ad-gold: #d6b36a;
+    --ad-blue: #4fa8ff;
+    --ad-white: #f4f1e9;
+    --ad-muted: rgba(244,241,233,.52);
+    --ad-line: rgba(214,179,106,.20);
+
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    height: 960px !important;
+    min-height: 960px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    overflow: hidden !important;
+    isolation: isolate !important;
+
+    background:
+        radial-gradient(
+            circle at 50% 48%,
+            rgba(45,75,110,.18) 0%,
+            rgba(0,0,0,0) 38%
+        ),
+        #030405;
+
+    color: var(--ad-white);
+
+    box-sizing: border-box !important;
+}
+
+
+/* BACKGROUND */
+
+.ars-dimension-universe .ars-dimension-bg,
+.ars-dimension-universe .ars-dimension-stars,
+.ars-dimension-universe .ars-dimension-grid {
+    position: absolute !important;
+    inset: 0 !important;
+    pointer-events: none !important;
+}
+
+
+/* atmospheric glow */
+
+.ars-dimension-universe .ars-dimension-bg {
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(79,168,255,.08),
+            transparent 48%
+        ),
+        radial-gradient(
+            ellipse at center,
+            rgba(214,179,106,.07),
+            transparent 62%
+        );
+}
+
+
+/* stars */
+
+.ars-dimension-universe .ars-dimension-stars {
+    opacity: .42;
+
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,.75) 1px, transparent 1px),
+        radial-gradient(circle, rgba(214,179,106,.55) 1px, transparent 1px);
+
+    background-size:
+        130px 130px,
+        210px 210px;
+
+    background-position:
+        20px 30px,
+        80px 110px;
+}
+
+
+/* technical grid */
+
+.ars-dimension-universe .ars-dimension-grid {
+    opacity: .16;
+
+    background-image:
+        linear-gradient(
+            rgba(214,179,106,.12) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(214,179,106,.12) 1px,
+            transparent 1px
+        );
+
+    background-size: 90px 90px;
+
+    mask-image:
+        radial-gradient(
+            ellipse at center,
+            black 0%,
+            transparent 68%
+        );
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.ars-dimension-universe .ars-dimension-heading {
+    position: absolute !important;
+
+    top: 55px !important;
+    left: 50% !important;
+
+    transform: translateX(-50%) !important;
+
+    width: 100% !important;
+
+    text-align: center !important;
+
+    z-index: 20 !important;
+
+    pointer-events: none !important;
+}
+
+
+.ars-dimension-universe .ars-dimension-eyebrow {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+    letter-spacing: 5px;
+
+    color: var(--ad-gold);
+    opacity: .78;
+}
+
+
+.ars-dimension-universe .ars-dimension-heading h2 {
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    font-size: clamp(38px, 5vw, 68px);
+
+    font-weight: 300;
+
+    letter-spacing: 12px;
+
+    line-height: 1;
+}
+
+
+.ars-dimension-universe .ars-dimension-heading h2 em {
+    font-style: normal;
+
+    color: transparent;
+
+    -webkit-text-stroke: 1px rgba(244,241,233,.75);
+}
+
+
+.ars-dimension-universe .ars-dimension-heading p {
+    margin: 13px 0 0;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    color: var(--ad-muted);
+}
+
+
+/* =========================================================
+   COMMAND AREA
+   ========================================================= */
+
+.ars-dimension-universe .ars-dimension-command {
+    position: absolute !important;
+
+    left: 50% !important;
+    top: 54% !important;
+
+    width: 760px !important;
+    height: 620px !important;
+
+    transform: translate(-50%, -50%) !important;
+
+    perspective: 1200px;
+
+    z-index: 10 !important;
+}
+
+
+/* ORBIT RINGS */
+
+.ars-dimension-universe .ars-dimension-orbit {
+    position: absolute !important;
+
+    left: 50%;
+    top: 50%;
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%)
+        rotateX(68deg);
+
+    pointer-events: none;
+}
+
+
+.ars-dimension-universe .ars-dimension-orbit-main {
+    width: 570px;
+    height: 570px;
+
+    border: 1px solid rgba(214,179,106,.28);
+
+    box-shadow:
+        0 0 25px rgba(214,179,106,.05),
+        inset 0 0 30px rgba(214,179,106,.04);
+}
+
+
+.ars-dimension-universe .ars-dimension-orbit-inner {
+    width: 410px;
+    height: 410px;
+
+    border: 1px solid rgba(79,168,255,.20);
+
+    transform:
+        translate(-50%, -50%)
+        rotateX(68deg)
+        rotateZ(18deg);
+}
+
+
+.ars-dimension-universe .ars-dimension-orbit-outer {
+    width: 690px;
+    height: 690px;
+
+    border: 1px dashed rgba(244,241,233,.09);
+
+    transform:
+        translate(-50%, -50%)
+        rotateX(68deg)
+        rotateZ(-14deg);
+}
+
+
+/* =========================================================
+   SYSTEM FIELD
+   ========================================================= */
+
+.ars-dimension-universe .ars-dimension-system {
+    position: absolute !important;
+
+    inset: 0 !important;
+
+    transform-style: preserve-3d;
+}
+
+
+/* =========================================================
+   NODES
+   ========================================================= */
+
+.ars-dimension-universe .ars-dimension-node {
+    position: absolute !important;
+
+    width: 142px;
+    min-height: 68px;
+
+    padding: 12px 14px;
+
+    box-sizing: border-box;
+
+    text-decoration: none;
+
+    border: 1px solid rgba(244,241,233,.13);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.015)
+        );
+
+    backdrop-filter: blur(8px);
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease,
+        background .35s ease;
+
+    z-index: 5;
+}
+
+
+.ars-dimension-universe .ars-dimension-node:hover {
+    transform: translateY(-5px) scale(1.035);
+
+    border-color: rgba(214,179,106,.72);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(214,179,106,.14),
+            rgba(255,255,255,.035)
+        );
+
+    box-shadow:
+        0 12px 40px rgba(0,0,0,.55),
+        0 0 25px rgba(214,179,106,.12);
+}
+
+
+.ars-dimension-universe .ars-dimension-node span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-family: monospace;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    color: var(--ad-gold);
+}
+
+
+.ars-dimension-universe .ars-dimension-node strong {
+    display: block;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    letter-spacing: 1.5px;
+
+    color: var(--ad-white);
+}
+
+
+.ars-dimension-universe .ars-dimension-node small {
+    display: block;
+
+    margin-top: 4px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+
+    color: var(--ad-muted);
+}
+
+
+/* POSITIONS */
+
+.ars-dimension-universe .ars-dimension-node-01 {
+    left: 50%;
+    top: 2%;
+    transform: translateX(-50%);
+}
+
+.ars-dimension-universe .ars-dimension-node-02 {
+    left: 69%;
+    top: 8%;
+}
+
+.ars-dimension-universe .ars-dimension-node-03 {
+    left: 82%;
+    top: 24%;
+}
+
+.ars-dimension-universe .ars-dimension-node-04 {
+    left: 84%;
+    top: 48%;
+}
+
+.ars-dimension-universe .ars-dimension-node-05 {
+    left: 76%;
+    top: 70%;
+}
+
+.ars-dimension-universe .ars-dimension-node-06 {
+    left: 60%;
+    top: 84%;
+}
+
+.ars-dimension-universe .ars-dimension-node-07 {
+    left: 40%;
+    top: 84%;
+}
+
+.ars-dimension-universe .ars-dimension-node-08 {
+    left: 20%;
+    top: 70%;
+}
+
+.ars-dimension-universe .ars-dimension-node-09 {
+    left: 8%;
+    top: 48%;
+}
+
+.ars-dimension-universe .ars-dimension-node-10 {
+    left: 10%;
+    top: 24%;
+}
+
+.ars-dimension-universe .ars-dimension-node-11 {
+    left: 22%;
+    top: 8%;
+}
+
+.ars-dimension-universe .ars-dimension-node-12 {
+    left: 50%;
+    top: 16%;
+    transform: translateX(-50%);
+}
+
+
+/* =========================================================
+   CENTRAL ARS HERITAGE CORE
+   ========================================================= */
+
+.ars-dimension-universe .ars-dimension-core {
+    position: absolute !important;
+
+    left: 50%;
+    top: 50%;
+
+    width: 230px;
+    height: 230px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    text-decoration: none;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 15;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(20,26,33,.96) 0%,
+            rgba(5,7,9,.98) 64%,
+            rgba(0,0,0,1) 100%
+        );
+
+    border: 1px solid rgba(214,179,106,.55);
+
+    box-shadow:
+        0 0 45px rgba(214,179,106,.10),
+        inset 0 0 40px rgba(79,168,255,.08);
+}
+
+
+.ars-dimension-universe .ars-dimension-core-glow {
+    position: absolute;
+
+    inset: -35px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(214,179,106,.13),
+            transparent 68%
+        );
+
+    filter: blur(8px);
+
+    z-index: -1;
+}
+
+
+.ars-dimension-universe .ars-dimension-core-ring {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+.ars-dimension-universe .ars-dimension-core .ring-a {
+    inset: 10px;
+
+    border: 1px solid rgba(214,179,106,.32);
+}
+
+
+.ars-dimension-universe .ars-dimension-core .ring-b {
+    inset: 21px;
+
+    border: 1px dashed rgba(79,168,255,.30);
+
+    transform: rotate(28deg);
+}
+
+
+.ars-dimension-universe .ars-dimension-core .ring-c {
+    inset: 34px;
+
+    border: 1px solid rgba(244,241,233,.10);
+}
+
+
+.ars-dimension-universe .ars-dimension-core-content {
+    position: relative;
+
+    text-align: center;
+
+    z-index: 4;
+}
+
+
+.ars-dimension-universe .ars-dimension-core-content span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 7px;
+
+    letter-spacing: 3px;
+
+    color: var(--ad-muted);
+}
+
+
+.ars-dimension-universe .ars-dimension-core-content b {
+    display: block;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 48px;
+
+    line-height: .9;
+
+    font-weight: 300;
+
+    letter-spacing: 8px;
+
+    color: var(--ad-gold);
+}
+
+
+.ars-dimension-universe .ars-dimension-core-content strong {
+    display: block;
+
+    margin-top: 7px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 400;
+
+    letter-spacing: 4px;
+
+    color: var(--ad-white);
+}
+
+
+.ars-dimension-universe .ars-dimension-core-content small {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 7px;
+
+    letter-spacing: 4px;
+
+    color: var(--ad-muted);
+}
+
+
+/* =========================================================
+   FOOTER STATUS
+   ========================================================= */
+
+.ars-dimension-universe .ars-dimension-status {
+    position: absolute !important;
+
+    left: 50%;
+    bottom: 34px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    white-space: nowrap;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    color: rgba(244,241,233,.40);
+
+    z-index: 20;
+}
+
+
+.ars-dimension-universe .ars-dimension-status b {
+    font-weight: 400;
+
+    color: var(--ad-gold);
+}
+
+
+.ars-dimension-universe .ars-dimension-status i {
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: var(--ad-gold);
+
+    opacity: .65;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .ars-dimension-universe {
+        height: 850px !important;
+        min-height: 850px !important;
+    }
+
+    .ars-dimension-universe .ars-dimension-command {
+        width: 650px !important;
+        height: 570px !important;
+        top: 53% !important;
+        transform: translate(-50%, -50%) scale(.86) !important;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .ars-dimension-universe {
+        height: 760px !important;
+        min-height: 760px !important;
+    }
+
+    .ars-dimension-universe .ars-dimension-heading {
+        top: 38px !important;
+    }
+
+    .ars-dimension-universe .ars-dimension-heading h2 {
+        font-size: 34px;
+        letter-spacing: 7px;
+    }
+
+    .ars-dimension-universe .ars-dimension-heading p {
+        font-size: 7px;
+        letter-spacing: 2px;
+    }
+
+    .ars-dimension-universe .ars-dimension-command {
+        width: 620px !important;
+        height: 540px !important;
+
+        top: 54% !important;
+
+        transform:
+            translate(-50%, -50%)
+            scale(.60) !important;
+    }
+
+    .ars-dimension-universe .ars-dimension-status {
+        bottom: 25px;
+
+        gap: 8px;
+
+        font-size: 6px;
+
+        letter-spacing: 1.5px;
+    }
+
+  }
