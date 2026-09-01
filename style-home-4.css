@@ -39536,3 +39536,351 @@ section.ars-system-seven .ars-card-logo {
    =========================================================
    END — SIMPLE 3-SYSTEM POSITION PATCH
    ========================================================= */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS HERO — GOLD / BLUE ROTATING SYSTEM PATCH
+   =========================================================
+   PURPOSE
+   ---------------------------------------------------------
+   • GOLD 7-NODE rotates around its own core
+   • BLUE 6-NODE rotates around its own core
+   • SINGLE HERITAGE NODE DOES NOT ROTATE
+   • POSITION UNTOUCHED
+   • SIZE UNTOUCHED
+   • INTERNAL GEOMETRY UNTOUCHED
+   • CLICK = STOP ROTATION + ENLARGE SYSTEM
+   ========================================================= */
+
+
+/* =========================================================
+   01 — GOLD 7-NODE ROTATION
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system {
+
+    animation:
+        ars-gold-system-spin
+        18s
+        linear
+        infinite;
+
+    transform-origin:
+        50% 50% !important;
+
+}
+
+
+/* =========================================================
+   02 — BLUE 6-NODE ROTATION
+   ========================================================= */
+
+.ars-hero-field
+.ars-blue-system {
+
+    animation:
+        ars-blue-system-spin
+        18s
+        linear
+        infinite;
+
+    transform-origin:
+        50% 50% !important;
+
+}
+
+
+/* =========================================================
+   03 — GOLD ROTATION
+   =========================================================
+   IMPORTANT:
+   translate(-50%,0) keeps the exact existing position.
+   ONLY rotation is added.
+   ========================================================= */
+
+@keyframes ars-gold-system-spin {
+
+    from {
+
+        transform:
+            translate(-50%, 0)
+            rotate(0deg);
+
+    }
+
+    to {
+
+        transform:
+            translate(-50%, 0)
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   04 — BLUE ROTATION
+   =========================================================
+   Reverse direction gives the two systems
+   a symmetrical / mechanical feel.
+   ========================================================= */
+
+@keyframes ars-blue-system-spin {
+
+    from {
+
+        transform:
+            translate(-50%, 0)
+            rotate(360deg);
+
+    }
+
+    to {
+
+        transform:
+            translate(-50%, 0)
+            rotate(0deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   05 — HOVER
+   =========================================================
+   Mouse over = temporarily slow down.
+   Position does NOT change.
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system:hover,
+
+.ars-hero-field
+.ars-blue-system:hover {
+
+    animation-play-state:
+        paused;
+}
+
+
+/* =========================================================
+   06 — SELECTED STATE
+   =========================================================
+   JavaScript adds .is-selected.
+
+   Rotation stops.
+   System becomes approximately 2x.
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system.is-selected,
+
+.ars-hero-field
+.ars-blue-system.is-selected {
+
+    animation-play-state:
+        paused !important;
+
+    transform:
+        translate(-50%, 0)
+        scale(1.90) !important;
+
+    transform-origin:
+        50% 50% !important;
+
+    z-index:
+        500 !important;
+
+    box-shadow:
+
+        0 0 35px
+        rgba(54,174,245,.30),
+
+        0 0 70px
+        rgba(255,195,65,.25),
+
+        0 25px 70px
+        rgba(0,0,0,.55);
+
+}
+
+
+/* =========================================================
+   07 — SELECTED GOLD
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system.is-selected {
+
+    box-shadow:
+
+        0 0 38px
+        rgba(255,195,65,.38),
+
+        0 0 75px
+        rgba(255,195,65,.20),
+
+        0 25px 70px
+        rgba(0,0,0,.55);
+
+}
+
+
+/* =========================================================
+   08 — SELECTED BLUE
+   ========================================================= */
+
+.ars-hero-field
+.ars-blue-system.is-selected {
+
+    box-shadow:
+
+        0 0 38px
+        rgba(54,174,245,.38),
+
+        0 0 75px
+        rgba(54,174,245,.20),
+
+        0 25px 70px
+        rgba(0,0,0,.55);
+
+}
+
+
+/* =========================================================
+   09 — MOBILE
+   =========================================================
+   SAME ROTATION
+   SAME POSITION
+   SAME LOGIC
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .ars-hero-field
+    .ars-gold-system,
+    .ars-hero-field
+    .ars-blue-system {
+
+        transform-origin:
+            50% 50% !important;
+
+    }
+
+
+    .ars-hero-field
+    .ars-gold-system.is-selected,
+    .ars-hero-field
+    .ars-blue-system.is-selected {
+
+        transform:
+            translate(-50%, 0)
+            scale(1.75) !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   10 — REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ars-hero-field
+    .ars-gold-system,
+    .ars-hero-field
+    .ars-blue-system {
+
+        animation:
+            none !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   END — ROTATING SYSTEM PATCH
+   ========================================================= */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const systems = document.querySelectorAll(
+        ".ars-hero-field .ars-gold-system, " +
+        ".ars-hero-field .ars-blue-system"
+    );
+
+    systems.forEach(function (system) {
+
+        system.addEventListener("click", function (event) {
+
+            event.stopPropagation();
+
+            systems.forEach(function (other) {
+
+                if (other !== system) {
+                    other.classList.remove("is-selected");
+                }
+
+            });
+
+            system.classList.toggle("is-selected");
+
+        });
+
+    });
+
+
+    /* Click outside = return to rotation */
+
+    document.addEventListener("click", function () {
+
+        systems.forEach(function (system) {
+
+            system.classList.remove("is-selected");
+
+        });
+
+    });
+
+});
+</script>
+
