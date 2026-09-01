@@ -5849,7 +5849,418 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
+<!-- =========================================================
+     ARS HERITAGE GROUP
+     INDEPENDENT ORBIT ENGINE
+     
+     GOLD = 06 NODES
+     BLUE = 07 NODES
+     
+     NO HTML CHANGE REQUIRED
+     NO DEPENDENCY ON EXISTING CSS ANIMATIONS
+     ========================================================= -->
 
+<style>
+
+.ars-hero-field .ars-gold-system > .ars-system-node,
+.ars-hero-field .ars-blue-system > .ars-system-node {
+
+    position: absolute !important;
+
+    margin: 0 !important;
+
+    /* JS controls the position */
+    left: 0 !important;
+    top: 0 !important;
+
+    transition: none !important;
+
+    will-change: left, top, transform !important;
+
+    z-index: 50 !important;
+}
+
+</style>
+
+
+<script>
+
+(function () {
+
+    "use strict";
+
+
+    /* =====================================================
+       WAIT FOR HERO
+       ===================================================== */
+
+    function ARSOrbitEngine() {
+
+
+        const hero = document.querySelector(".ars-hero-field");
+
+        if (!hero) return;
+
+
+        /* =================================================
+           SYSTEM CONFIGURATION
+           ================================================= */
+
+        const systems = [
+
+            {
+                selector: ".ars-gold-system",
+                speed: 0.20,
+                direction: 1
+            },
+
+            {
+                selector: ".ars-blue-system",
+                speed: 0.16,
+                direction: -1
+            }
+
+        ];
+
+
+        /* =================================================
+           CREATE ORBIT DATA
+           ================================================= */
+
+        const orbitSystems = [];
+
+
+        systems.forEach(function (config) {
+
+
+            const system = hero.querySelector(config.selector);
+
+            if (!system) return;
+
+
+            const nodes = Array.from(
+                system.querySelectorAll(
+                    ":scope > .ars-system-node"
+                )
+            );
+
+
+            const core = system.querySelector(
+                ":scope > .ars-system-core"
+            );
+
+
+            if (!nodes.length || !core) return;
+
+
+            /* =============================================
+               INITIALIZE
+               ============================================= */
+
+            const data = {
+
+                system: system,
+
+                core: core,
+
+                nodes: nodes,
+
+                speed: config.speed,
+
+                direction: config.direction,
+
+                angle: 0,
+
+                initialized: false
+
+            };
+
+
+            orbitSystems.push(data);
+
+
+        });
+
+
+        /* =================================================
+           CALCULATE TRUE ORBIT
+           ================================================= */
+
+        function updateSystem(data) {
+
+
+            const system = data.system;
+
+            const nodes = data.nodes;
+
+
+            const rect = system.getBoundingClientRect();
+
+
+            if (
+                rect.width === 0 ||
+                rect.height === 0
+            ) {
+                return;
+            }
+
+
+            /* =============================================
+               SYSTEM CENTER
+               ============================================= */
+
+            const centerX = rect.width / 2;
+
+            const centerY = rect.height / 2;
+
+
+            /* =============================================
+               ORBIT RADIUS
+               
+               Uses current node positions on first frame.
+               Therefore existing HTML/CSS geometry defines
+               the original orbit size.
+               ============================================= */
+
+            if (!data.initialized) {
+
+
+                data.initialAngles = [];
+
+
+                nodes.forEach(function (node) {
+
+
+                    const nodeRect =
+                        node.getBoundingClientRect();
+
+
+                    const systemRect =
+                        system.getBoundingClientRect();
+
+
+                    const nodeCenterX =
+                        nodeRect.left -
+                        systemRect.left +
+                        nodeRect.width / 2;
+
+
+                    const nodeCenterY =
+                        nodeRect.top -
+                        systemRect.top +
+                        nodeRect.height / 2;
+
+
+                    const dx =
+                        nodeCenterX - centerX;
+
+
+                    const dy =
+                        nodeCenterY - centerY;
+
+
+                    const radius =
+                        Math.sqrt(
+                            dx * dx +
+                            dy * dy
+                        );
+
+
+                    const angle =
+                        Math.atan2(
+                            dy,
+                            dx
+                        );
+
+
+                    data.initialAngles.push({
+
+                        angle: angle,
+
+                        radius: radius
+
+                    });
+
+
+                });
+
+
+                data.initialized = true;
+
+            }
+
+
+            /* =============================================
+               MOVE NODES
+               ============================================= */
+
+            nodes.forEach(function (node, index) {
+
+
+                const orbit =
+                    data.initialAngles[index];
+
+
+                const angle =
+                    orbit.angle +
+                    data.angle *
+                    data.direction;
+
+
+                const x =
+                    centerX +
+                    Math.cos(angle) *
+                    orbit.radius;
+
+
+                const y =
+                    centerY +
+                    Math.sin(angle) *
+                    orbit.radius;
+
+
+                const nodeWidth =
+                    node.offsetWidth;
+
+
+                const nodeHeight =
+                    node.offsetHeight;
+
+
+                node.style.left =
+                    (x - nodeWidth / 2) + "px";
+
+
+                node.style.top =
+                    (y - nodeHeight / 2) + "px";
+
+
+                /*
+                 * Keep node content upright.
+                 * Only its orbital position changes.
+                 */
+
+                node.style.transform =
+                    "translate(0,0)";
+
+
+            });
+
+
+        }
+
+
+        /* =================================================
+           ANIMATION LOOP
+           ================================================= */
+
+        let lastTime = performance.now();
+
+
+        function animate(now) {
+
+
+            const delta =
+                Math.min(
+                    now - lastTime,
+                    50
+                );
+
+
+            lastTime = now;
+
+
+            orbitSystems.forEach(function (data) {
+
+
+                /*
+                 * speed = degrees per millisecond
+                 *
+                 * 0.20 = approximately 30 seconds / revolution
+                 * 0.16 = approximately 39 seconds / revolution
+                 */
+
+                data.angle +=
+                    data.speed *
+                    delta *
+                    Math.PI / 180;
+
+
+                if (
+                    data.angle >
+                    Math.PI * 2
+                ) {
+
+                    data.angle -=
+                        Math.PI * 2;
+
+                }
+
+
+                updateSystem(data);
+
+
+            });
+
+
+            requestAnimationFrame(animate);
+
+        }
+
+
+        /* =================================================
+           START
+           ================================================= */
+
+        requestAnimationFrame(animate);
+
+
+        /* =================================================
+           RECALCULATE ON RESIZE
+           ================================================= */
+
+        window.addEventListener(
+            "resize",
+            function () {
+
+                orbitSystems.forEach(
+                    function (data) {
+
+                        data.initialized = false;
+
+                    }
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       START AFTER DOM
+       ===================================================== */
+
+    if (
+        document.readyState ===
+        "loading"
+    ) {
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            ARSOrbitEngine
+        );
+
+    } else {
+
+        ARSOrbitEngine();
+
+    }
+
+
+})();
+
+</script>
                 
 </body>
 </html>
