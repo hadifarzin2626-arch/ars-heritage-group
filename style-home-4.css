@@ -39270,66 +39270,210 @@ section.ars-system-seven .ars-card-logo {
 
 
 
-
+/* =========================================================
+   ARS HERITAGE GROUP
+   THREE-SYSTEM HORIZONTAL ALIGNMENT PATCH
+   =========================================================
+   
+   FINAL GEOMETRY:
+   
+        GOLD 6 NODE   |   HERITAGE 1 NODE   |   BLUE 7 NODE
+   
+              LEFT   |      CENTER      |   RIGHT
+   
+   PURPOSE:
+   • 1-NODE HERITAGE = EXACT CENTER
+   • 6-NODE GOLD      = LEFT
+   • 7-NODE BLUE      = RIGHT
+   • ALL THREE        = SAME HORIZONTAL AXIS
+   • PRESERVE EXISTING SYSTEM SIZES
+   • PRESERVE INTERNAL NODE GEOMETRY
+   • PRESERVE ORBITS / CORES / EFFECTS
+   ========================================================= */
 
 
 /* =========================================================
-   ARS HERO — HERITAGE CORE TRUE CENTER
-   ONLY THE SINGLE NODE
+   01 — COMMON HORIZONTAL STAGE
    ========================================================= */
 
+.ars-hero-field
+.ars-hero-master-geometry {
+
+    position: relative !important;
+
+}
+
+
+/* =========================================================
+   02 — HERITAGE CENTER
+   SINGLE-NODE SYSTEM
+   EXACT CENTER
+   ========================================================= */
+
+.ars-hero-field
+.ars-hero-master-geometry
 .ars-heritage-center {
+
     position: absolute !important;
 
-    left: 50vw !important;
-    top: 50% !important;
+    left: 50% !important;
 
-    right: auto !important;
-    bottom: auto !important;
+    top: 50% !important;
 
     margin: 0 !important;
 
     transform:
-        translate(-50%, -50%) !important;
+        translate(-50%, -50%)
+        scale(1.20) !important;
 
-    transform-origin: center center !important;
+    transform-origin:
+        center center !important;
 
     z-index: 100 !important;
+
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 /* =========================================================
-   ARS HERO — GOLD 6 NODE
-   SAME CENTER AS HERITAGE CORE
-   THEN 75% OF OWN WIDTH TO THE LEFT
+   03 — GOLD SYSTEM
+   6-NODE SYSTEM
+   LEFT OF HERITAGE
    ========================================================= */
 
+.ars-hero-field
+.ars-hero-master-geometry
 .ars-gold-system {
+
     position: absolute !important;
 
-    left: 50vw !important;
+    left: 25% !important;
+
     top: 50% !important;
 
-    right: auto !important;
     bottom: auto !important;
 
     margin: 0 !important;
 
     transform:
-        translate(-125%, -50%) !important;
+        translateX(-50%) !important;
 
-    transform-origin: center center !important;
+    transform-origin:
+        center center !important;
+
 }
 
+
+/* =========================================================
+   04 — BLUE SYSTEM
+   7-NODE SYSTEM
+   RIGHT OF HERITAGE
+   ========================================================= */
+
+.ars-hero-field
+.ars-hero-master-geometry
+.ars-blue-system {
+
+    position: absolute !important;
+
+    left: 75% !important;
+
+    top: 50% !important;
+
+    bottom: auto !important;
+
+    margin: 0 !important;
+
+    transform:
+        translateX(-50%) !important;
+
+    transform-origin:
+        center center !important;
+
+}
+
+
+/* =========================================================
+   05 — KILL OLD VERTICAL OFFSETS
+   ========================================================= */
+
+.ars-hero-field
+.ars-gold-system {
+
+    bottom: auto !important;
+
+}
+
+
+.ars-hero-field
+.ars-blue-system {
+
+    bottom: auto !important;
+
+}
+
+
+/* =========================================================
+   06 — MOBILE
+   SAME THREE-COLUMN LOGIC
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .ars-hero-field
+    .ars-hero-master-geometry {
+
+        position: relative !important;
+
+    }
+
+
+    .ars-hero-field
+    .ars-gold-system {
+
+        left: 24% !important;
+
+        top: 50% !important;
+
+        bottom: auto !important;
+
+        transform:
+            translateX(-50%) !important;
+
+    }
+
+
+    .ars-hero-field
+    .ars-heritage-center {
+
+        left: 50% !important;
+
+        top: 50% !important;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.20) !important;
+
+    }
+
+
+    .ars-hero-field
+    .ars-blue-system {
+
+        left: 76% !important;
+
+        top: 50% !important;
+
+        bottom: auto !important;
+
+        transform:
+            translateX(-50%) !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   END — THREE-SYSTEM HORIZONTAL ALIGNMENT
+   ========================================================= */
 
