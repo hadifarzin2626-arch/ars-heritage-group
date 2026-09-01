@@ -39228,39 +39228,6 @@ section.ars-system-seven .ars-card-logo {
 
 
 
-/* =========================================================
-   ARS HERO — MASTER SYSTEM SCALE
-   18% SMALLER
-   POSITION / GEOMETRY PRESERVED
-   ========================================================= */
-
-/* GOLD — 6 NODE SYSTEM */
-.ars-gold-system {
-    scale: 0.65 !important;
-    transform-origin: center center !important;
-}
-
-
-/* CENTRAL — HERITAGE GROUP */
-.ars-heritage-center {
-    scale: 0.75 !important;
-    transform-origin: center center !important;
-}
-
-
-/* BLUE — 7 NODE SYSTEM */
-.ars-blue-system {
-    scale: 0.67 !important;
-    transform-origin: center center !important;
-}
-
-
-
-
-
-
-
-
 
 
 
@@ -39547,225 +39514,50 @@ section.ars-system-seven .ars-card-logo {
 
 
 
-
-
-
-
-
-
-
-
- /* =========================================================
-    ARS — TRUE NODE ORBIT
-    GOLD  = 06 NODES
-    BLUE  = 07 NODES
-    CORE REMAINS FIXED
-    ========================================================= */
-
-.ars-hero-field .ars-gold-system,
-.ars-hero-field .ars-blue-system {
-    --orbit-r: 38%;
-}
-
-
 /* =========================================================
-   GOLD — 6 NODES
+   ARS HERO — MASTER SYSTEM SCALE
+   18% SMALLER
+   POSITION / GEOMETRY PRESERVED
    ========================================================= */
 
-.ars-hero-field .ars-gold-system > .ars-system-node {
-    --orbit-angle: 0deg;
-
-    left: 50% !important;
-    top: 50% !important;
-
-    transform:
-        translate(-50%, -50%)
-        rotate(var(--orbit-angle))
-        translateY(calc(-1 * var(--orbit-r)))
-        rotate(calc(-1 * var(--orbit-angle)))
-        !important;
-
-    animation:
-        arsGoldNodeOrbit 32s linear infinite !important;
+/* GOLD — 6 NODE SYSTEM */
+.ars-gold-system {
+    scale: 0.85 !important;
+    transform-origin: center center !important;
 }
 
 
-/* =========================================================
-   GOLD — INDIVIDUAL PHASES
-   ========================================================= */
-
-.ars-hero-field .ars-gold-system > .node-01 {
-    animation-delay: 0s !important;
-}
-
-.ars-hero-field .ars-gold-system > .node-02 {
-    animation-delay: -5.333s !important;
-}
-
-.ars-hero-field .ars-gold-system > .node-03 {
-    animation-delay: -10.666s !important;
-}
-
-.ars-hero-field .ars-gold-system > .node-04 {
-    animation-delay: -16s !important;
-}
-
-.ars-hero-field .ars-gold-system > .node-05 {
-    animation-delay: -21.333s !important;
-}
-
-.ars-hero-field .ars-gold-system > .node-06 {
-    animation-delay: -26.666s !important;
+/* CENTRAL — HERITAGE GROUP */
+.ars-heritage-center {
+    scale: 1.1 !important;
+    transform-origin: center center !important;
 }
 
 
-@keyframes arsGoldNodeOrbit {
-
-    from {
-        --orbit-angle: 0deg;
-
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg)
-            translateY(calc(-1 * var(--orbit-r)))
-            rotate(0deg)
-            !important;
-    }
-
-    to {
-        --orbit-angle: 360deg;
-
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg)
-            translateY(calc(-1 * var(--orbit-r)))
-            rotate(-360deg)
-            !important;
-    }
-
+/* BLUE — 7 NODE SYSTEM */
+.ars-blue-system {
+    scale: 0.85 !important;
+    transform-origin: center center !important;
 }
 
 
-/* =========================================================
-   BLUE — 7 NODES
-   ========================================================= */
-
-.ars-hero-field .ars-blue-system > .ars-system-node {
-    --orbit-angle: 0deg;
-
-    left: 50% !important;
-    top: 50% !important;
-
-    transform:
-        translate(-50%, -50%)
-        rotate(var(--orbit-angle))
-        translateY(calc(-1 * var(--orbit-r)))
-        rotate(calc(-1 * var(--orbit-angle)))
-        !important;
-
-    animation:
-        arsBlueNodeOrbit 38s linear infinite !important;
-}
 
 
-/* =========================================================
-   BLUE — INDIVIDUAL PHASES
-   ========================================================= */
-
-.ars-hero-field .ars-blue-system > .node-01 {
-    animation-delay: 0s !important;
-}
-
-.ars-hero-field .ars-blue-system > .node-02 {
-    animation-delay: -5.428s !important;
-}
-
-.ars-hero-field .ars-blue-system > .node-03 {
-    animation-delay: -10.857s !important;
-}
-
-.ars-hero-field .ars-blue-system > .node-04 {
-    animation-delay: -16.285s !important;
-}
-
-.ars-hero-field .ars-blue-system > .node-05 {
-    animation-delay: -21.714s !important;
-}
-
-.ars-hero-field .ars-blue-system > .node-06 {
-    animation-delay: -27.142s !important;
-}
-
-.ars-hero-field .ars-blue-system > .node-07 {
-    animation-delay: -32.571s !important;
-}
 
 
-@keyframes arsBlueNodeOrbit {
-
-    from {
-        --orbit-angle: 0deg;
-
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg)
-            translateY(calc(-1 * var(--orbit-r)))
-            rotate(0deg)
-            !important;
-    }
-
-    to {
-        --orbit-angle: 360deg;
-
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg)
-            translateY(calc(-1 * var(--orbit-r)))
-            rotate(-360deg)
-            !important;
-    }
-
-}
 
 
-/* =========================================================
-   CORE MUST STAY IN CENTER
-   ========================================================= */
-
-.ars-hero-field .ars-gold-system > .ars-system-core,
-.ars-hero-field .ars-blue-system > .ars-system-core {
-
-    left: 50% !important;
-    top: 50% !important;
-
-    transform:
-        translate(-50%, -50%)
-        translateZ(110px)
-        !important;
-
-    animation: none !important;
-}
 
 
-/* =========================================================
-   NODE INTERNAL CONTENT STAYS UPRIGHT
-   ========================================================= */
-
-.ars-hero-field .ars-system-node .node-content {
-    transform: rotate(0deg) !important;
-}
 
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
 
-@media (max-width:600px) {
 
-    .ars-hero-field .ars-gold-system,
-    .ars-hero-field .ars-blue-system {
-        --orbit-r: 34%;
-    }
 
-}
+
+
+
+
+
+
 
