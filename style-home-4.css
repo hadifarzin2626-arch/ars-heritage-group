@@ -39278,25 +39278,62 @@ section.ars-system-seven .ars-card-logo {
 
 
 
-/* =========================================================
-   ARS HERO — FINAL BOTTOM HORIZONTAL SYSTEM ALIGNMENT
-   =========================================================
-   GOLD 7-NODE  |  HERITAGE SINGLE NODE  |  BLUE 6-NODE
 
-   ALL THREE:
-   • AT THE LOWEST PART OF HERO
-   • SAME HORIZONTAL BASELINE
-   • GOLD = LEFT
-   • HERITAGE = EXACT CENTER
-   • BLUE = RIGHT
-   • NO VERTICAL STACKING
-   • INTERNAL NODE GEOMETRY UNTOUCHED
+
+/* =========================================================
+   ARS HERO — FINAL UNIVERSAL POSITION / MIRROR PATCH
+   =========================================================
+   PURPOSE
+   ---------------------------------------------------------
+   01 — ONE MASTER SHIFT CONTROLS WHOLE COMPOSITION
+   02 — MOVE EVERYTHING LEFT/RIGHT WITH ONE NUMBER
+   03 — GOLD AND BLUE ARE TRUE MIRRORS
+   04 — SINGLE NODE STAYS IN THE CENTER OF COMPOSITION
+   05 — SAME LOGIC ON DESKTOP + MOBILE PORTRAIT + LANDSCAPE
+   06 — NO SEPARATE MOBILE POSITION VALUES
+   07 — INTERNAL NODE GEOMETRY UNTOUCHED
    ========================================================= */
 
 
 /* =========================================================
+   00 — MASTER POSITION CONTROLS
+   ========================================================= */
+
+.ars-hero-field {
+
+    /*
+       MASTER HORIZONTAL SHIFT
+
+       کاهش عدد  → کل سیستم به سمت چپ
+       افزایش عدد → کل سیستم به سمت راست
+
+       مثال:
+       -10px = حدود 1cm چپ
+       -15px = بیشتر به چپ
+       0px   = بدون جابه‌جایی
+       +10px = به راست
+    */
+
+    --ars-system-shift-x: -10px;
+
+
+    /*
+       فاصله Gold و Blue از Single Node
+
+       افزایش این عدد:
+       Gold و Blue از مرکز دورتر می‌شوند
+
+       کاهش این عدد:
+       Gold و Blue به مرکز نزدیک‌تر می‌شوند
+    */
+
+    --ars-system-gap: 25%;
+}
+
+
+/* =========================================================
    01 — GOLD 7-NODE
-   LEFT / BOTTOM
+   LEFT SIDE
    ========================================================= */
 
 .ars-hero-field
@@ -39304,24 +39341,33 @@ section.ars-system-seven .ars-card-logo {
 
     position: absolute !important;
 
-    left: 25% !important;
+    left:
+        calc(
+            50% -
+            var(--ars-system-gap) +
+            var(--ars-system-shift-x)
+        ) !important;
 
-    top: auto !important;
+    top:
+        auto !important;
 
-    bottom: 3% !important;
+    bottom:
+        3% !important;
 
     transform:
         translate(-50%, 0) !important;
 
-    margin: 0 !important;
+    margin:
+        0 !important;
 
-    z-index: 40 !important;
+    z-index:
+        40 !important;
 }
 
 
 /* =========================================================
    02 — HERITAGE SINGLE NODE
-   EXACT CENTER / LOWEST POINT
+   TRUE CENTER
    ========================================================= */
 
 .ars-hero-field
@@ -39329,25 +39375,33 @@ section.ars-system-seven .ars-card-logo {
 
     position: absolute !important;
 
-    left: 50% !important;
+    left:
+        calc(
+            50% +
+            var(--ars-system-shift-x)
+        ) !important;
 
-    top: auto !important;
+    top:
+        auto !important;
 
-    bottom: 3% !important;
+    bottom:
+        3% !important;
 
     transform:
         translate(-50%, 0)
         scale(1.20) !important;
 
-    margin: 0 !important;
+    margin:
+        0 !important;
 
-    z-index: 100 !important;
+    z-index:
+        100 !important;
 }
 
 
 /* =========================================================
-   03 — BLUE 6-NODE
-   RIGHT / BOTTOM
+   03 — BLUE 7/6-NODE
+   EXACT HORIZONTAL MIRROR OF GOLD
    ========================================================= */
 
 .ars-hero-field
@@ -39355,23 +39409,33 @@ section.ars-system-seven .ars-card-logo {
 
     position: absolute !important;
 
-    left: 75% !important;
+    left:
+        calc(
+            50% +
+            var(--ars-system-gap) +
+            var(--ars-system-shift-x)
+        ) !important;
 
-    top: auto !important;
+    top:
+        auto !important;
 
-    bottom: 3% !important;
+    bottom:
+        3% !important;
 
     transform:
         translate(-50%, 0) !important;
 
-    margin: 0 !important;
+    margin:
+        0 !important;
 
-    z-index: 40 !important;
+    z-index:
+        40 !important;
 }
 
 
 /* =========================================================
-   04 — ABSOLUTELY KILL OLD TOP POSITIONING
+   04 — HARD POSITION LOCK
+   KILL OLD TOP / RIGHT / BOTTOM CONFLICTS
    ========================================================= */
 
 .ars-hero-field
@@ -39381,15 +39445,18 @@ section.ars-system-seven .ars-card-logo {
 .ars-hero-field
 .ars-heritage-center {
 
-    top: auto !important;
+    top:
+        auto !important;
 
-    right: auto !important;
+    right:
+        auto !important;
 
 }
 
 
 /* =========================================================
-   05 — KEEP ALL INTERNAL SYSTEM GEOMETRY
+   05 — INTERNAL NODE GEOMETRY
+   DO NOT TOUCH
    ========================================================= */
 
 .ars-hero-field
@@ -39400,38 +39467,67 @@ section.ars-system-seven .ars-card-logo {
 .ars-blue-system
 .ars-system-node {
 
-    position: absolute !important;
+    position:
+        absolute !important;
 }
 
 
 /* =========================================================
-   06 — MOBILE
+   06 — MOBILE PORTRAIT + LANDSCAPE
+   SAME MASTER VALUES
+   =========================================================
+
+   IMPORTANT:
+
+   هیچ left جداگانه‌ای برای موبایل وجود ندارد.
+
+   بنابراین:
+
+   Portrait
+   Landscape
+   Desktop
+
+   همگی دقیقاً از همان:
+
+   --ars-system-shift-x
+
+   استفاده می‌کنند.
+
+   پس اگر مثلاً:
+
+   --ars-system-shift-x: -15px;
+
+   بگذاری، هر سه سیستم در تمام حالت‌ها
+   15px به چپ می‌روند.
    ========================================================= */
 
 @media (max-width: 600px) {
 
+    .ars-hero-field {
+
+        /*
+           فقط اندازه/مقیاس قبلی موبایل را دست نمی‌زنیم.
+           موقعیت افقی از MASTER CONTROL می‌آید.
+        */
+
+        --ars-system-shift-x: -10px;
+
+    }
+
+
     .ars-hero-field
     .ars-gold-system {
 
-        left: 18% !important;
-
-        top: auto !important;
-
-        bottom: 3% !important;
-
-        transform:
-            translate(-50%, 0) !important;
+        bottom:
+            3% !important;
     }
 
 
     .ars-hero-field
     .ars-heritage-center {
 
-        left: 50% !important;
-
-        top: auto !important;
-
-        bottom: 3% !important;
+        bottom:
+            3% !important;
 
         transform:
             translate(-50%, 0)
@@ -39442,20 +39538,80 @@ section.ars-system-seven .ars-card-logo {
     .ars-hero-field
     .ars-blue-system {
 
-        left: 82% !important;
-
-        top: auto !important;
-
-        bottom: 3% !important;
-
-        transform:
-            translate(-50%, 0) !important;
+        bottom:
+            3% !important;
     }
 
 }
 
 
 /* =========================================================
-   END — BOTTOM HORIZONTAL LOCK
+   07 — MOBILE LANDSCAPE
+   =========================================================
+
+   عمداً هیچ مختصات افقی جدیدی تعریف نمی‌کنیم.
+
+   این قسمت فقط تضمین می‌کند که Landscape
+   از همان Master Position استفاده کند.
    ========================================================= */
 
+@media (max-width: 900px) and (orientation: landscape) {
+
+    .ars-hero-field
+    .ars-gold-system,
+    .ars-hero-field
+    .ars-blue-system,
+    .ars-hero-field
+    .ars-heritage-center {
+
+        top:
+            auto !important;
+
+        right:
+            auto !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   08 — FINAL POSITION LOGIC
+   =========================================================
+
+   اگر کل ترکیب باید بیشتر به چپ برود:
+
+       --ars-system-shift-x: -15px;
+
+   اگر باز هم بیشتر:
+
+       --ars-system-shift-x: -20px;
+
+   اگر باید به راست برگردد:
+
+       --ars-system-shift-x: -5px;
+
+   یا:
+
+       --ars-system-shift-x: 0px;
+
+
+   فاصله Gold ↔ Center ↔ Blue:
+
+       --ars-system-gap: 25%;
+
+   نزدیک‌تر:
+
+       --ars-system-gap: 22%;
+
+   دورتر:
+
+       --ars-system-gap: 28%;
+
+   ========================================================= */
+
+
+/* =========================================================
+   END — UNIVERSAL POSITION / MIRROR LOCK
+   ========================================================= */
+        
