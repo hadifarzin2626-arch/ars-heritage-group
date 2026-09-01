@@ -39615,3 +39615,23 @@ section.ars-system-seven .ars-card-logo {
    END — UNIVERSAL POSITION / MIRROR LOCK
    ========================================================= */
         
+.ars-hero-field {
+
+    --ars-system-shift-x: -10px;
+
+    /* فقط Gold */
+    --ars-gold-extra-x: -10px;
+}
+
+
+.ars-hero-field
+.ars-gold-system {
+
+    left:
+        calc(
+            50% -
+            var(--ars-system-gap) +
+            var(--ars-system-shift-x) +
+            var(--ars-gold-extra-x)
+        ) !important;
+}
