@@ -5732,7 +5732,123 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
    </script>     
+<style>
+/* =========================================================
+   ARS SYSTEM SELECTION — 2X SCALE
+   GOLD / BLUE
+   INDEPENDENT PATCH
+   ========================================================= */
 
+.ars-hero-field .ars-gold-system,
+.ars-hero-field .ars-blue-system {
+    --ars-orbit-scale: 1;
+    transition:
+        filter .45s ease,
+        opacity .45s ease;
+}
+
+
+/* =========================================================
+   SELECTED SYSTEM = 2X
+   ========================================================= */
+
+.ars-hero-field .ars-gold-system.ars-system-selected,
+.ars-hero-field .ars-blue-system.ars-system-selected {
+
+    --ars-orbit-scale: 2 !important;
+
+    z-index: 9999 !important;
+
+    filter:
+        drop-shadow(0 0 25px rgba(255,215,90,.35))
+        drop-shadow(0 0 55px rgba(255,255,255,.12));
+}
+
+
+/* BLUE SELECTED GLOW */
+
+.ars-hero-field .ars-blue-system.ars-system-selected {
+
+    filter:
+        drop-shadow(0 0 25px rgba(60,160,255,.40))
+        drop-shadow(0 0 60px rgba(80,180,255,.16));
+}
+
+
+/* =========================================================
+   SELECTED NODE / CORE CURSOR
+   ========================================================= */
+
+.ars-hero-field .ars-system-core {
+    pointer-events:auto !important;
+    cursor:pointer;
+}
+
+
+/* =========================================================
+   SELECTED STATE VISUAL
+   ========================================================= */
+
+.ars-hero-field .ars-gold-system.ars-system-selected
+.ars-system-core,
+
+.ars-hero-field .ars-blue-system.ars-system-selected
+.ars-system-core {
+
+    filter:
+        brightness(1.25)
+        drop-shadow(0 0 20px rgba(255,255,255,.35));
+}
+
+</style>
+
+
+<script>
+/* =========================================================
+   ARS SYSTEM SELECTION ENGINE
+   GOLD / BLUE
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const systems = document.querySelectorAll(
+        ".ars-hero-field .ars-gold-system, " +
+        ".ars-hero-field .ars-blue-system"
+    );
+
+    systems.forEach(function (system) {
+
+        const core = system.querySelector(".ars-system-core");
+
+        if (!core) return;
+
+        core.addEventListener("click", function (event) {
+
+            event.preventDefault();
+            event.stopPropagation();
+
+            /* close the other system */
+            systems.forEach(function (otherSystem) {
+
+                if (otherSystem !== system) {
+                    otherSystem.classList.remove(
+                        "ars-system-selected"
+                    );
+                }
+
+            });
+
+            /* toggle current system */
+            system.classList.toggle(
+                "ars-system-selected"
+            );
+
+        });
+
+    });
+
+});
+</script>
 
                 
 </body>
