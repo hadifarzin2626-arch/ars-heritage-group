@@ -39268,44 +39268,25 @@ section.ars-system-seven .ars-card-logo {
 
 
 
-
 /* =========================================================
-   ARS HERO — FINAL 3-SYSTEM HORIZONTAL COMPOSITION
+   ARS HERO — FINAL BOTTOM HORIZONTAL SYSTEM ALIGNMENT
    =========================================================
-   LAYOUT:
+   GOLD 7-NODE  |  HERITAGE SINGLE NODE  |  BLUE 6-NODE
 
-   [ 7-NODE GOLD ] [ SINGLE HERITAGE ] [ 6-NODE BLUE ]
-
-   • SINGLE NODE = BOTTOM CENTER
-   • GOLD 7-NODE = LEFT
-   • BLUE 6-NODE = RIGHT
-   • SYSTEMS TOUCH / TANGENT
-   • INTERNAL GEOMETRY UNTOUCHED
+   ALL THREE:
+   • AT THE LOWEST PART OF HERO
+   • SAME HORIZONTAL BASELINE
+   • GOLD = LEFT
+   • HERITAGE = EXACT CENTER
+   • BLUE = RIGHT
+   • NO VERTICAL STACKING
+   • INTERNAL NODE GEOMETRY UNTOUCHED
    ========================================================= */
 
 
 /* =========================================================
-   01 — HERO MASTER GEOMETRY
-   ========================================================= */
-
-.ars-hero-field
-.ars-hero-master-geometry {
-
-    position: relative !important;
-
-    width: 100% !important;
-    height: 100% !important;
-
-    display: block !important;
-
-    transform: none !important;
-
-}
-
-
-/* =========================================================
-   02 — GOLD 7-NODE SYSTEM
-   LEFT
+   01 — GOLD 7-NODE
+   LEFT / BOTTOM
    ========================================================= */
 
 .ars-hero-field
@@ -39314,23 +39295,23 @@ section.ars-system-seven .ars-card-logo {
     position: absolute !important;
 
     left: 25% !important;
-    top: 72% !important;
 
-    bottom: auto !important;
+    top: auto !important;
+
+    bottom: 3% !important;
 
     transform:
-        translate(-50%, -50%) !important;
+        translate(-50%, 0) !important;
 
     margin: 0 !important;
 
     z-index: 40 !important;
-
 }
 
 
 /* =========================================================
-   03 — SINGLE HERITAGE SYSTEM
-   EXACT CENTER + LOWEST HERO POSITION
+   02 — HERITAGE SINGLE NODE
+   EXACT CENTER / LOWEST POINT
    ========================================================= */
 
 .ars-hero-field
@@ -39339,22 +39320,24 @@ section.ars-system-seven .ars-card-logo {
     position: absolute !important;
 
     left: 50% !important;
-    top: 86% !important;
+
+    top: auto !important;
+
+    bottom: 3% !important;
+
+    transform:
+        translate(-50%, 0)
+        scale(1.20) !important;
 
     margin: 0 !important;
 
-    transform:
-        translate(-50%, -50%)
-        scale(1.20) !important;
-
     z-index: 100 !important;
-
 }
 
 
 /* =========================================================
-   04 — BLUE 6-NODE SYSTEM
-   RIGHT
+   03 — BLUE 6-NODE
+   RIGHT / BOTTOM
    ========================================================= */
 
 .ars-hero-field
@@ -39363,22 +39346,22 @@ section.ars-system-seven .ars-card-logo {
     position: absolute !important;
 
     left: 75% !important;
-    top: 72% !important;
 
-    bottom: auto !important;
+    top: auto !important;
+
+    bottom: 3% !important;
 
     transform:
-        translate(-50%, -50%) !important;
+        translate(-50%, 0) !important;
 
     margin: 0 !important;
 
     z-index: 40 !important;
-
 }
 
 
 /* =========================================================
-   05 — DISABLE OLD VERTICAL POSITION LOGIC
+   04 — ABSOLUTELY KILL OLD TOP POSITIONING
    ========================================================= */
 
 .ars-hero-field
@@ -39388,161 +39371,31 @@ section.ars-system-seven .ars-card-logo {
 .ars-hero-field
 .ars-heritage-center {
 
+    top: auto !important;
+
     right: auto !important;
 
 }
 
 
 /* =========================================================
-   06 — KEEP GOLD INTERNAL GEOMETRY
+   05 — KEEP ALL INTERNAL SYSTEM GEOMETRY
    ========================================================= */
 
 .ars-hero-field
 .ars-gold-system
-.ars-system-node {
-
-    position: absolute !important;
-
-}
-
-
-/* =========================================================
-   07 — KEEP BLUE INTERNAL GEOMETRY
-   ========================================================= */
+.ars-system-node,
 
 .ars-hero-field
 .ars-blue-system
 .ars-system-node {
 
     position: absolute !important;
-
 }
 
 
 /* =========================================================
-   08 — GOLD NODE POSITIONS — LOCKED
-   ========================================================= */
-
-.ars-hero-field
-.ars-gold-system
-.ars-system-node.node-01 {
-
-    left: 50% !important;
-    top: 10% !important;
-}
-
-.ars-hero-field
-.ars-gold-system
-.ars-system-node.node-02 {
-
-    left: 81.3% !important;
-    top: 28.3% !important;
-}
-
-.ars-hero-field
-.ars-gold-system
-.ars-system-node.node-03 {
-
-    left: 89% !important;
-    top: 50% !important;
-}
-
-.ars-hero-field
-.ars-gold-system
-.ars-system-node.node-04 {
-
-    left: 69.5% !important;
-    top: 78% !important;
-}
-
-.ars-hero-field
-.ars-gold-system
-.ars-system-node.node-05 {
-
-    left: 30.5% !important;
-    top: 78% !important;
-}
-
-.ars-hero-field
-.ars-gold-system
-.ars-system-node.node-06 {
-
-    left: 11% !important;
-    top: 50% !important;
-}
-
-.ars-hero-field
-.ars-gold-system
-.ars-system-node.node-07 {
-
-    left: 18.7% !important;
-    top: 28.3% !important;
-}
-
-
-/* =========================================================
-   09 — BLUE NODE POSITIONS — LOCKED
-   ========================================================= */
-
-.ars-hero-field
-.ars-blue-system
-.ars-system-node.node-01 {
-
-    left: 50% !important;
-    top: 10% !important;
-}
-
-.ars-hero-field
-.ars-blue-system
-.ars-system-node.node-02 {
-
-    left: 81.3% !important;
-    top: 28.3% !important;
-}
-
-.ars-hero-field
-.ars-blue-system
-.ars-system-node.node-03 {
-
-    left: 89% !important;
-    top: 50% !important;
-}
-
-.ars-hero-field
-.ars-blue-system
-.ars-system-node.node-04 {
-
-    left: 69.5% !important;
-    top: 78% !important;
-}
-
-.ars-hero-field
-.ars-blue-system
-.ars-system-node.node-05 {
-
-    left: 30.5% !important;
-    top: 78% !important;
-}
-
-.ars-hero-field
-.ars-blue-system
-.ars-system-node.node-06 {
-
-    left: 11% !important;
-    top: 50% !important;
-}
-
-.ars-hero-field
-.ars-blue-system
-.ars-system-node.node-07 {
-
-    left: 18.7% !important;
-    top: 28.3% !important;
-}
-
-
-/* =========================================================
-   10 — MOBILE
+   06 — MOBILE
    ========================================================= */
 
 @media (max-width: 600px) {
@@ -39551,21 +39404,28 @@ section.ars-system-seven .ars-card-logo {
     .ars-gold-system {
 
         left: 18% !important;
-        top: 76% !important;
+
+        top: auto !important;
+
+        bottom: 3% !important;
 
         transform:
-            translate(-50%, -50%) !important;
+            translate(-50%, 0) !important;
     }
+  
 
 
     .ars-hero-field
     .ars-heritage-center {
 
         left: 50% !important;
-        top: 88% !important;
+
+        top: auto !important;
+
+        bottom: 3% !important;
 
         transform:
-            translate(-50%, -50%)
+            translate(-50%, 0)
             scale(1.05) !important;
     }
 
@@ -39574,15 +39434,18 @@ section.ars-system-seven .ars-card-logo {
     .ars-blue-system {
 
         left: 82% !important;
-        top: 76% !important;
+
+        top: auto !important;
+
+        bottom: 3% !important;
 
         transform:
-            translate(-50%, -50%) !important;
+            translate(-50%, 0) !important;
     }
 
 }
 
 
 /* =========================================================
-   END — FINAL 3-SYSTEM HORIZONTAL COMPOSITION
+   END — BOTTOM HORIZONTAL LOCK
    ========================================================= */
