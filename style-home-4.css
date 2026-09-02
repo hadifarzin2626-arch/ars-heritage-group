@@ -42341,333 +42341,320 @@ section.ars-system-seven .ars-card-logo {
 
 
 
+
+
+
+
 /* =========================================================
-   ARS UNIVERSE — CORE V6
-   REAL GLASS SPHERE
+   ARS UNIVERSE — REAL SPHERE CORE
    CORE ONLY
+   DO NOT TOUCH NODES / ORBITS / COMMAND
    ========================================================= */
 
 .ars-dimension-universe .ars-dimension-core {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
 
-    /* حفظ اندازه و جای فعلی */
+    overflow: visible !important;
+    transform-style: preserve-3d !important;
+    isolation: isolate !important;
+}
+
+
+/* THE ACTUAL SPHERE */
+
+.ars-dimension-universe .ars-dimension-sphere {
     position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    transform:
+        translate3d(-50%, -50%, 0)
+        translateZ(0) !important;
+
     border-radius: 50% !important;
 
     transform-style: preserve-3d !important;
 
-    border: 1px solid rgba(255, 224, 150, .72) !important;
+    overflow: visible !important;
 
-    /* شیشه + حجم کروی */
     background:
-
-        /* سطح شیشه */
         radial-gradient(
-            ellipse 42% 28% at 27% 18%,
-            rgba(255,255,255,.48) 0%,
-            rgba(255,255,255,.20) 18%,
-            rgba(255,255,255,.06) 42%,
-            transparent 72%
+            circle at 27% 22%,
+            rgba(255,255,255,.62) 0%,
+            rgba(255,244,207,.30) 8%,
+            transparent 22%
         ),
 
-        /* GOLD اصلی */
         radial-gradient(
-            circle at 32% 38%,
-            rgba(255,215,125,.48) 0%,
-            rgba(219,166,76,.34) 22%,
-            rgba(157,98,43,.18) 46%,
-            transparent 70%
-        ),
-
-        /* BRONZE */
-        radial-gradient(
-            circle at 67% 30%,
-            rgba(184,117,58,.48) 0%,
-            rgba(129,72,37,.30) 30%,
+            circle at 34% 38%,
+            rgba(255,215,120,.72) 0%,
+            rgba(214,157,65,.48) 20%,
+            rgba(133,77,36,.22) 42%,
             transparent 66%
         ),
 
-        /* CARBON BLUE */
         radial-gradient(
-            circle at 72% 70%,
-            rgba(24,132,174,.55) 0%,
-            rgba(8,62,86,.48) 32%,
-            rgba(3,25,37,.22) 58%,
-            transparent 76%
+            circle at 66% 30%,
+            rgba(181,112,53,.62) 0%,
+            rgba(121,67,35,.34) 28%,
+            transparent 58%
         ),
 
-        /* عمق سیاه شیشه */
         radial-gradient(
-            circle at 50% 50%,
-            rgba(38,32,25,.72) 0%,
-            rgba(13,18,22,.84) 48%,
-            rgba(1,5,8,.96) 100%
+            circle at 72% 69%,
+            rgba(21,135,177,.62) 0%,
+            rgba(8,67,91,.48) 30%,
+            rgba(2,25,38,.28) 54%,
+            transparent 73%
+        ),
+
+        radial-gradient(
+            circle at 48% 48%,
+            rgba(93,61,31,.20) 0%,
+            rgba(15,20,23,.72) 58%,
+            rgba(0,4,7,.96) 100%
         ) !important;
 
-    backdrop-filter:
-        blur(14px)
-        saturate(180%)
-        brightness(108%) !important;
-
-    -webkit-backdrop-filter:
-        blur(14px)
-        saturate(180%)
-        brightness(108%) !important;
-
-    /* حجم کروی */
     box-shadow:
 
-        /* highlight داخلی */
-        inset 18px 20px 38px
-            rgba(255,255,255,.16),
+        inset 22px 18px 38px
+            rgba(255,255,255,.17),
 
-        /* طلایی داخل حجم */
-        inset 18px 4px 65px
-            rgba(229,177,77,.23),
+        inset 34px 10px 70px
+            rgba(229,177,77,.24),
 
-        /* bronze depth */
-        inset -25px -18px 55px
-            rgba(118,67,35,.28),
+        inset -30px -20px 70px
+            rgba(4,47,66,.42),
 
-        /* blue depth */
-        inset -12px -8px 80px
-            rgba(8,108,151,.27),
+        inset -12px -20px 45px
+            rgba(0,0,0,.65),
 
-        /* edge lighting */
-        inset 0 0 22px
-            rgba(255,226,154,.22),
+        0 0 22px
+            rgba(229,189,104,.35),
 
-        /* GOLD aura */
-        0 0 25px
-            rgba(229,189,104,.34),
+        0 0 55px
+            rgba(207,148,58,.20),
 
-        0 0 65px
-            rgba(203,145,58,.22),
+        0 0 90px
+            rgba(18,130,181,.16) !important;
 
-        /* BLUE aura */
-        0 0 100px
-            rgba(12,125,170,.16),
-
-        /* عمق زیرین */
-        0 28px 55px
-            rgba(0,0,0,.68) !important;
-
-    overflow: visible !important;
+    pointer-events: auto !important;
 }
 
 
-/* =========================================================
-   GLASS REFLECTION
-   ========================================================= */
+/* GLASS SHELL */
 
-.ars-dimension-universe .ars-dimension-core::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 58%;
-    height: 38%;
-
-    left: 10%;
-    top: 7%;
-
-    border-radius: 50%;
-
-    background:
-
-        radial-gradient(
-            ellipse at center,
-            rgba(255,255,255,.42) 0%,
-            rgba(255,255,255,.20) 24%,
-            rgba(255,231,175,.08) 48%,
-            transparent 74%
-        );
-
-    transform:
-        rotate(-25deg)
-        translateZ(55px);
-
-    filter:
-        blur(5px);
-
-    opacity: .95;
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   GOLDEN UNDERLIGHT
-   ========================================================= */
-
-.ars-dimension-universe .ars-dimension-core::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: -18%;
-    width: 136%;
-
-    bottom: -31%;
-
-    height: 48%;
-
-    border-radius: 50%;
-
-    background:
-
-        radial-gradient(
-            ellipse at center,
-            rgba(255,214,112,.62) 0%,
-            rgba(239,181,70,.42) 18%,
-            rgba(192,122,38,.25) 38%,
-            rgba(129,75,32,.10) 58%,
-            transparent 76%
-        );
-
-    filter:
-        blur(17px);
-
-    opacity: .95;
-
-    transform:
-        translateZ(-25px);
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   CORE INTERNAL GLASS RINGS
-   ========================================================= */
-
-.ars-dimension-universe
-.ars-dimension-core .ring-a {
-
-    border:
-        1px solid rgba(255,225,151,.82) !important;
-
-    box-shadow:
-        0 0 12px rgba(255,215,117,.34),
-        0 0 28px rgba(229,177,77,.20),
-        inset 0 0 14px rgba(255,226,155,.15) !important;
-
-    transform:
-        translateZ(22px) !important;
-}
-
-
-.ars-dimension-universe
-.ars-dimension-core .ring-b {
-
-    border:
-        1px solid rgba(55,190,232,.72) !important;
-
-    box-shadow:
-        0 0 14px rgba(18,174,225,.34),
-        0 0 32px rgba(18,130,181,.18),
-        inset 0 0 16px rgba(18,130,181,.12) !important;
-
-    transform:
-        translateZ(14px) !important;
-}
-
-
-.ars-dimension-universe
-.ars-dimension-core .ring-c {
-
-    border:
-        1px solid rgba(194,129,65,.60) !important;
-
-    box-shadow:
-        0 0 16px rgba(181,111,51,.22),
-        inset 0 0 14px rgba(181,111,51,.10) !important;
-
-    transform:
-        translateZ(7px) !important;
-}
-
-
-/* =========================================================
-   OUTER GLASS ATMOSPHERE
-   ========================================================= */
-
-.ars-dimension-universe
-.ars-dimension-core-glow {
-
-    inset: -58px !important;
+.ars-dimension-universe .ars-sphere-glass {
+    position: absolute !important;
+    inset: 0 !important;
 
     border-radius: 50% !important;
 
     background:
+        radial-gradient(
+            ellipse 48% 31% at 28% 18%,
+            rgba(255,255,255,.36),
+            rgba(255,255,255,.12) 28%,
+            transparent 68%
+        ),
 
         radial-gradient(
-            circle at 42% 38%,
-            rgba(255,218,128,.25) 0%,
-            rgba(229,177,77,.18) 25%,
-            rgba(18,145,190,.15) 47%,
-            rgba(18,100,145,.06) 62%,
-            transparent 78%
+            circle at 50% 50%,
+            transparent 54%,
+            rgba(255,255,255,.08) 70%,
+            rgba(255,218,139,.22) 88%,
+            rgba(255,255,255,.38) 100%
         ) !important;
 
-    filter:
-        blur(22px)
-        saturate(155%) !important;
+    border:
+        1px solid rgba(255,239,194,.70) !important;
 
-    opacity: 1 !important;
+    box-shadow:
+        inset 0 0 18px rgba(255,255,255,.14),
+        inset 0 0 45px rgba(255,215,120,.10),
+        0 0 15px rgba(255,222,151,.25) !important;
+
+    transform:
+        translateZ(16px) !important;
+
+    pointer-events: none !important;
 }
 
 
-/* =========================================================
-   CORE CONTENT — FLOAT ABOVE GLASS
-   ========================================================= */
+/* GOLD / BRONZE VOLUME */
+
+.ars-dimension-universe .ars-sphere-gold {
+    position: absolute !important;
+    inset: 5% !important;
+
+    border-radius: 50% !important;
+
+    background:
+        radial-gradient(
+            circle at 30% 32%,
+            rgba(255,226,145,.36),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 62% 35%,
+            rgba(174,105,48,.28),
+            transparent 45%
+        ) !important;
+
+    filter: blur(2px);
+
+    transform:
+        translateZ(8px) !important;
+
+    pointer-events: none !important;
+}
+
+
+/* CARBON BLUE DEPTH */
+
+.ars-dimension-universe .ars-sphere-blue {
+    position: absolute !important;
+    inset: 4% !important;
+
+    border-radius: 50% !important;
+
+    background:
+        radial-gradient(
+            circle at 72% 68%,
+            rgba(19,151,199,.40),
+            rgba(8,73,101,.22) 32%,
+            transparent 68%
+        ) !important;
+
+    filter: blur(3px);
+
+    transform:
+        translateZ(5px) !important;
+
+    pointer-events: none !important;
+}
+
+
+/* BIG GLASS REFLECTION */
+
+.ars-dimension-universe .ars-sphere-reflection {
+    position: absolute !important;
+
+    width: 62% !important;
+    height: 38% !important;
+
+    left: 8% !important;
+    top: 5% !important;
+
+    border-radius: 50% !important;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(255,255,255,.40) 0%,
+            rgba(255,255,255,.17) 24%,
+            rgba(255,231,178,.06) 48%,
+            transparent 72%
+        ) !important;
+
+    transform:
+        rotate(-23deg)
+        translateZ(35px) !important;
+
+    filter: blur(5px);
+
+    opacity: .92;
+
+    pointer-events: none !important;
+}
+
+
+/* SPECULAR POINT */
+
+.ars-dimension-universe .ars-sphere-highlight {
+    position: absolute !important;
+
+    width: 18% !important;
+    height: 11% !important;
+
+    left: 21% !important;
+    top: 16% !important;
+
+    border-radius: 50% !important;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(255,255,255,.72),
+            rgba(255,255,255,.18) 45%,
+            transparent 75%
+        ) !important;
+
+    filter: blur(3px);
+
+    transform:
+        rotate(-20deg)
+        translateZ(55px) !important;
+
+    pointer-events: none !important;
+}
+
+
+/* GOLDEN LIGHT UNDER THE SPHERE */
+
+.ars-dimension-universe .ars-dimension-core::after {
+    content: "";
+
+    position: absolute !important;
+
+    left: -20% !important;
+    width: 140% !important;
+
+    bottom: -28% !important;
+    height: 45% !important;
+
+    border-radius: 50% !important;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(255,216,119,.68) 0%,
+            rgba(229,177,77,.42) 22%,
+            rgba(181,106,38,.22) 43%,
+            transparent 72%
+        ) !important;
+
+    filter: blur(18px);
+
+    transform:
+        translateZ(-20px) !important;
+
+    pointer-events: none !important;
+}
+
+
+/* TEXT FLOATS ABOVE THE GLASS */
 
 .ars-dimension-universe
 .ars-dimension-core-content {
 
-    position: relative !important;
+    position: absolute !important;
 
-    z-index: 50 !important;
+    left: 50% !important;
+    top: 50% !important;
 
     transform:
-        translateZ(48px) !important;
+        translate3d(-50%, -50%, 65px) !important;
 
-    text-shadow:
-        0 5px 18px rgba(0,0,0,.75);
+    z-index: 100 !important;
+
+    pointer-events: none !important;
 }
-
-
-/* ARS — GOLD / BRONZE / BLUE REFLECTION */
-
-.ars-dimension-universe
-.ars-dimension-core-content b {
-
-    background:
-
-        linear-gradient(
-            120deg,
-
-            #8e582d 0%,
-            #c88943 15%,
-            #ffe4a0 30%,
-            #e4bd69 48%,
-            #c78a42 58%,
-            #68b5d0 73%,
-            #208caf 87%,
-            #0a5774 100%
-        ) !important;
-
-    -webkit-background-clip: text !important;
-    background-clip: text !important;
-
-    -webkit-text-fill-color: transparent !important;
-
-    text-shadow:
-        0 0 14px rgba(229,189,104,.28),
-        0 0 32px rgba(229,189,104,.17),
-        0 0 48px rgba(18,130,181,.13) !important;
-}
-
-
-
