@@ -42339,4 +42339,305 @@ section.ars-system-seven .ars-card-logo {
 
 
 
+/* =========================================================
+   ARS UNIVERSE — CORE V5
+   GLASS / 65% GOLD-BRONZE / 35% CARBON BLUE
+   CORE ONLY — NO ORBIT / NODE / LAYOUT CHANGES
+   ========================================================= */
 
+.ars-dimension-universe .ars-dimension-core {
+    /* همان اندازه و همان position قبلی حفظ شود */
+    transform-style: preserve-3d !important;
+
+    border: 1px solid rgba(255, 224, 145, .82) !important;
+
+    background:
+        /* glass highlight */
+        radial-gradient(
+            ellipse 38% 24% at 28% 18%,
+            rgba(255,255,255,.34) 0%,
+            rgba(255,255,255,.10) 38%,
+            transparent 72%
+        ),
+
+        /* GOLD */
+        radial-gradient(
+            circle at 32% 34%,
+            rgba(255, 218, 128, .42) 0%,
+            rgba(214, 157, 65, .26) 24%,
+            transparent 53%
+        ),
+
+        /* BRONZE */
+        radial-gradient(
+            circle at 68% 32%,
+            rgba(184, 118, 61, .42) 0%,
+            rgba(125, 72, 38, .24) 30%,
+            transparent 58%
+        ),
+
+        /* CARBON BLUE */
+        radial-gradient(
+            circle at 70% 68%,
+            rgba(18, 91, 125, .52) 0%,
+            rgba(7, 38, 57, .48) 38%,
+            transparent 70%
+        ),
+
+        /* deep glass body */
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(34, 29, 23, .78) 0%,
+            rgba(13, 17, 20, .82) 48%,
+            rgba(3, 7, 10, .94) 100%
+        ) !important;
+
+    backdrop-filter:
+        blur(18px)
+        saturate(175%)
+        contrast(108%) !important;
+
+    -webkit-backdrop-filter:
+        blur(18px)
+        saturate(175%)
+        contrast(108%) !important;
+
+    box-shadow:
+        /* glass inner reflection */
+        inset 12px 14px 35px rgba(255,255,255,.13),
+
+        /* gold inner volume */
+        inset 0 0 55px rgba(229, 177, 77, .20),
+
+        /* bronze depth */
+        inset -20px -18px 45px rgba(139, 78, 39, .22),
+
+        /* carbon blue depth */
+        inset 0 -5px 70px rgba(12, 115, 163, .22),
+
+        /* gold outer aura */
+        0 0 24px rgba(229, 189, 104, .30),
+
+        0 0 65px rgba(201, 139, 56, .18),
+
+        /* blue secondary aura */
+        0 0 95px rgba(18, 130, 181, .13),
+
+        /* deep shadow */
+        0 24px 55px rgba(0,0,0,.58) !important;
+
+    overflow: visible !important;
+}
+
+
+/* ---------------------------------------------------------
+   GLASS VOLUME / OUTER AURA
+   --------------------------------------------------------- */
+
+.ars-dimension-universe .ars-dimension-core::before {
+    content: "";
+    position: absolute;
+
+    width: 42%;
+    height: 25%;
+
+    left: 16%;
+    top: 11%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(255,255,255,.34) 0%,
+            rgba(255,237,183,.16) 28%,
+            transparent 72%
+        );
+
+    transform:
+        translateZ(65px)
+        rotate(-24deg);
+
+    filter: blur(5px);
+
+    opacity: .9;
+
+    pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   GOLDEN UNDERLIGHT
+   --------------------------------------------------------- */
+
+.ars-dimension-universe .ars-dimension-core::after {
+    content: "";
+
+    position: absolute;
+
+    left: 8%;
+    right: 8%;
+    bottom: -18%;
+
+    height: 38%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(255, 202, 92, .52) 0%,
+            rgba(226, 166, 62, .30) 24%,
+            rgba(177, 107, 37, .16) 45%,
+            transparent 74%
+        );
+
+    filter: blur(18px);
+
+    opacity: .9;
+
+    transform:
+        translateZ(-35px);
+
+    pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   INNER RINGS — GOLD / BLUE / BRONZE
+   --------------------------------------------------------- */
+
+.ars-dimension-universe .ars-dimension-core .ring-a {
+    border:
+        1px solid rgba(255, 225, 151, .86) !important;
+
+    box-shadow:
+        0 0 10px rgba(255, 215, 117, .32),
+        0 0 25px rgba(229, 177, 77, .20),
+
+        inset 0 0 12px rgba(255, 218, 128, .12) !important;
+
+    transform:
+        translateZ(18px) !important;
+}
+
+
+.ars-dimension-universe .ars-dimension-core .ring-b {
+    border:
+        1px solid rgba(42, 181, 231, .72) !important;
+
+    box-shadow:
+        0 0 12px rgba(18, 166, 220, .30),
+        0 0 30px rgba(18, 130, 181, .16),
+
+        inset 0 0 15px rgba(18, 130, 181, .10) !important;
+
+    transform:
+        translateZ(10px) !important;
+}
+
+
+.ars-dimension-universe .ars-dimension-core .ring-c {
+    border:
+        1px solid rgba(190, 127, 66, .58) !important;
+
+    box-shadow:
+        0 0 15px rgba(180, 112, 53, .20),
+        inset 0 0 14px rgba(180, 112, 53, .08) !important;
+
+    transform:
+        translateZ(5px) !important;
+}
+
+
+/* ---------------------------------------------------------
+   CORE GLOW
+   --------------------------------------------------------- */
+
+.ars-dimension-universe .ars-dimension-core-glow {
+    inset: -48px !important;
+
+    border-radius: 50% !important;
+
+    background:
+        radial-gradient(
+            circle at 42% 40%,
+            rgba(255, 213, 119, .20) 0%,
+            rgba(229, 177, 77, .15) 26%,
+            rgba(18, 130, 181, .14) 48%,
+            rgba(18, 130, 181, .06) 62%,
+            transparent 78%
+        ) !important;
+
+    filter:
+        blur(19px)
+        saturate(145%) !important;
+
+    opacity: 1 !important;
+
+    pointer-events: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   CORE TYPOGRAPHY — KEEP POSITION / SIZE
+   --------------------------------------------------------- */
+
+.ars-dimension-universe
+.ars-dimension-core-content {
+    transform:
+        translateZ(42px) !important;
+
+    text-shadow:
+        0 4px 18px rgba(0,0,0,.72);
+}
+
+
+.ars-dimension-universe
+.ars-dimension-core-content b {
+    background:
+        linear-gradient(
+            115deg,
+
+            #9b622f 0%,
+            #d69b4e 18%,
+            #ffe3a0 34%,
+            #e8c06b 49%,
+
+            /* carbon blue transition */
+            #7eb6ca 67%,
+            #2995bc 82%,
+            #0d6385 100%
+        ) !important;
+
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+
+    -webkit-text-fill-color: transparent !important;
+
+    text-shadow:
+        0 0 14px rgba(229,189,104,.26),
+        0 0 32px rgba(229,189,104,.16),
+        0 0 42px rgba(18,130,181,.10) !important;
+}
+
+
+.ars-dimension-universe
+.ars-dimension-core-content strong {
+    color:
+        rgba(255,245,221,.96) !important;
+
+    text-shadow:
+        0 0 13px rgba(229,189,104,.25),
+        0 0 24px rgba(18,130,181,.12) !important;
+}
+
+
+.ars-dimension-universe
+.ars-dimension-core-content small {
+    color:
+        #72cce9 !important;
+
+    text-shadow:
+        0 0 12px rgba(18,166,220,.40) !important;
+  }
