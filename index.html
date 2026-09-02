@@ -5812,205 +5812,783 @@ document.addEventListener("DOMContentLoaded", () => {
    </script>     
 
 
+
+
+
+
+
 <script>
+/* =========================================================
+   ARS UNIVERSE — V4
+   TRUE 3D SPHERICAL ORBIT ENGINE
+   13 SYSTEMS
+   FAST AUTO ROTATION
+   HIGH-SPEED DRAG
+   INERTIA
+   DEPTH / SCALE / BLUR
+   ========================================================= */
+
 (function () {
 
+    'use strict';
+
+
+    /* =====================================================
+       FIND UNIVERSE
+       ===================================================== */
+
     const universe =
-        document.querySelector('.ars-dimension-universe');
+        document.querySelector(
+            '.ars-dimension-universe'
+        );
 
     if (!universe) return;
 
+
     const system =
-        universe.querySelector('.ars-dimension-system');
+        universe.querySelector(
+            '.ars-dimension-system'
+        );
+
 
     const nodes =
         Array.from(
-            universe.querySelectorAll('.ars-dimension-node')
+            universe.querySelectorAll(
+                '.ars-dimension-node'
+            )
         );
 
+
     const core =
-        universe.querySelector('.ars-dimension-core');
+        universe.querySelector(
+            '.ars-dimension-core'
+        );
 
-    if (!system || nodes.length !== 13) return;
+
+    if (!system) return;
 
 
-    /* =========================================
-       ARS DIMENSION ENGINE
-       ========================================= */
+    if (nodes.length !== 13) {
+
+        console.warn(
+            'ARS Universe V4: Expected 13 systems, found:',
+            nodes.length
+        );
+
+        return;
+    }
+
+
+    /* =====================================================
+       CONFIGURATION
+       ===================================================== */
 
     const TOTAL = 13;
 
-    let rotation = 0;
 
-    /* 2X BASE SPEED */
-    let velocity = 0.07;
+    /*
+       Auto rotation.
 
-    let targetVelocity = 0.07;
+       Higher = faster.
+    */
+
+    const AUTO_SPEED = 0.34;
+
+
+    /*
+       Maximum manual inertia.
+    */
+
+    const MAX_INERTIA = 1.20;
+
+
+    /*
+       Sphere dimensions.
+    */
+
+    const RADIUS_X = 420;
+    const RADIUS_Y = 245;
+    const RADIUS_Z = 315;
+
+
+    /*
+       Small vertical deformation
+       gives the universe more depth.
+    */
+
+    const TILT_X = 0.10;
+
+
+    /* =====================================================
+       STATE
+       ===================================================== */
+
+    let rotationY = 0;
+    let rotationX = 0;
+
+    let velocityY = AUTO_SPEED;
+    let velocityX = 0;
+
+    let targetVelocityY = AUTO_SPEED;
+    let targetVelocityX = 0;
 
     let dragging = false;
 
+    let pointerId = null;
+
     let lastX = 0;
+    let lastY = 0;
 
-    let raf = null;
+    let lastTime = 0;
 
+    let dragVelocityY = 0;
+    let dragVelocityX = 0;
 
-    /* =========================================
-       ORBIT GEOMETRY
-       ========================================= */
-
-    const radiusX = 315;
-    const radiusY = 205;
-    const radiusZ = 205;
+    let pointerInside = false;
 
 
-    /* =========================================
+    /* =====================================================
+       PREPARE NODES
+       ===================================================== */
+
+    nodes.forEach(function (node, index) {
+
+        node.style.position =
+            'absolute';
+
+        node.style.left =
+            '50%';
+
+        node.style.top =
+            '50%';
+
+        node.style.transformOrigin =
+            'center center';
+
+        node.style.transformStyle =
+            'preserve-3d';
+
+        /*
+           Every node receives its
+           own latitude.
+
+           This prevents the 13 cards
+           from sitting on one flat ring.
+        */
+
+        const latitude =
+            -48 +
+            (index / (TOTAL - 1)) * 96;
+
+        /*
+           Golden-angle style distribution.
+
+           This gives much better spacing
+           around the spherical surface.
+        */
+
+        const goldenAngle =
+            137.507764;
+
+        const longitude =
+            index * goldenAngle;
+
+        node.dataset.latitude =
+            latitude;
+
+        node.dataset.longitude =
+            longitude;
+    });
+
+
+    /* =====================================================
+       VECTOR ROTATION
+       ===================================================== */
+
+    function rotatePoint(
+        x,
+        y,
+        z,
+        yaw,
+        pitch
+    ) {
+
+        /*
+           YAW
+        */
+
+        const cosY =
+            Math.cos(yaw);
+
+        const sinY =
+            Math.sin(yaw);
+
+
+        let rx =
+            x * cosY -
+            z * sinY;
+
+        let rz =
+            x * sinY +
+            z * cosY;
+
+
+        /*
+           PITCH
+        */
+
+        const cosX =
+            Math.cos(pitch);
+
+        const sinX =
+            Math.sin(pitch);
+
+
+        const ry =
+            y * cosX -
+            rz * sinX;
+
+        rz =
+            y * sinX +
+            rz * cosX;
+
+
+        return {
+            x: rx,
+            y: ry,
+            z: rz
+        };
+    }
+
+
+    /* =====================================================
        RENDER
-       ========================================= */
+       ===================================================== */
 
     function render() {
 
-        for (let i = 0; i < TOTAL; i++) {
+        const yaw =
+            rotationY *
+            Math.PI /
+            180;
 
-            const node = nodes[i];
 
-            const angle =
+        const pitch =
+            (
+                rotationX +
+                TILT_X * 20
+            ) *
+            Math.PI /
+            180;
+
+
+        for (
+            let i = 0;
+            i < TOTAL;
+            i++
+        ) {
+
+            const node =
+                nodes[i];
+
+
+            const latitude =
+                Number(
+                    node.dataset.latitude
+                ) *
+                Math.PI /
+                180;
+
+
+            const longitude =
                 (
-                    (360 / TOTAL) * i +
-                    rotation
-                ) * Math.PI / 180;
+                    Number(
+                        node.dataset.longitude
+                    ) +
+                    rotationY
+                )
+                *
+                Math.PI /
+                180;
 
 
-            const x =
-                Math.sin(angle) * radiusX;
+            /*
+               SPHERICAL COORDINATES
+            */
 
-            const y =
-                Math.cos(angle) * radiusY;
-
-            const z =
-                Math.cos(angle) * radiusZ;
+            const cosLat =
+                Math.cos(latitude);
 
 
-            /* front / back depth */
+            let x =
+                Math.cos(longitude) *
+                cosLat *
+                RADIUS_X;
+
+
+            let y =
+                Math.sin(latitude) *
+                RADIUS_Y;
+
+
+            let z =
+                Math.sin(longitude) *
+                cosLat *
+                RADIUS_Z;
+
+
+            /*
+               REAL 3D ROTATION
+            */
+
+            const p =
+                rotatePoint(
+                    x,
+                    y,
+                    z,
+                    0,
+                    pitch
+                );
+
+
+            /*
+               Z DEPTH
+
+               Front = positive
+               Back  = negative
+            */
 
             const depth =
-                (z + radiusZ) /
-                (radiusZ * 2);
+                (
+                    p.z +
+                    RADIUS_Z
+                )
+                /
+                (
+                    RADIUS_Z * 2
+                );
 
+
+            /*
+               Perspective scale
+            */
 
             const scale =
-                0.72 +
-                depth * 0.34;
+                0.68 +
+                depth * 0.40;
 
+
+            /*
+               Back cards become
+               slightly transparent.
+            */
 
             const opacity =
-                0.38 +
-                depth * 0.62;
+                0.30 +
+                depth * 0.70;
 
+
+            /*
+               Blur only when significantly
+               behind the sphere.
+            */
 
             let blur = 0;
 
-            if (z < -65) {
+
+            if (p.z < -90) {
+
                 blur =
                     Math.min(
-                        2.8,
-                        Math.abs(z + 65) / 70
+                        3.2,
+                        Math.abs(
+                            p.z + 90
+                        ) / 70
                     );
             }
 
 
+            /*
+               Small vertical breathing
+               makes the cards feel suspended.
+            */
+
+            const float =
+                Math.sin(
+                    (
+                        performance.now() *
+                        0.001
+                    ) +
+                    i
+                ) *
+                1.5;
+
+
+            /*
+               APPLY TRANSFORM
+            */
+
             node.style.transform =
-                `
-                translate3d(
-                    calc(-50% + ${x}px),
-                    calc(-50% + ${y}px),
-                    ${z}px
-                )
-                scale(${scale})
-                `;
+
+                'translate3d(' +
+
+                'calc(-50% + ' +
+                p.x +
+                'px), ' +
+
+                'calc(-50% + ' +
+                (p.y + float) +
+                'px), ' +
+
+                p.z +
+                'px) ' +
+
+                'scale(' +
+                scale +
+                ')';
 
 
-            node.style.opacity = opacity;
+            node.style.opacity =
+                opacity;
 
 
             node.style.filter =
                 blur > 0
-                    ? `blur(${blur}px)`
+                    ? 'blur(' +
+                      blur +
+                      'px)'
                     : 'none';
 
 
+            /*
+               DEPTH ORDER
+            */
+
             node.style.zIndex =
-                Math.round(100 + z);
+                Math.round(
+                    1000 +
+                    p.z
+                );
+
+
+            /*
+               Dynamic glass illumination.
+            */
+
+            const blueGlow =
+                (
+                    0.055 +
+                    depth * 0.18
+                );
+
+
+            const goldGlow =
+                (
+                    0.035 +
+                    depth * 0.13
+                );
+
+
+            node.style.boxShadow =
+
+                'inset 1px 1px 0 ' +
+                'rgba(255,255,255,.20),' +
+
+                'inset 0 0 28px ' +
+                'rgba(255,255,255,.025),' +
+
+                '0 20px 48px ' +
+                'rgba(0,0,0,.52),' +
+
+                '0 0 30px rgba(18,186,255,' +
+                blueGlow +
+                '),' +
+
+                '0 0 24px rgba(229,189,104,' +
+                goldGlow +
+                ')';
         }
 
+
+        /* =================================================
+           CORE FLOATING MOTION
+           ================================================= */
 
         if (core) {
-            core.style.zIndex = 5000;
+
+            const time =
+                performance.now();
+
+
+            const floatY =
+                Math.sin(
+                    time * 0.0010
+                ) * 5;
+
+
+            const floatZ =
+                Math.cos(
+                    time * 0.00075
+                ) * 4;
+
+
+            const coreRotate =
+                time * 0.00008;
+
+
+            core.style.transform =
+
+                'translate3d(' +
+                '-50%, -50%, ' +
+                (50 + floatZ) +
+                'px) ' +
+
+                'rotateY(' +
+                coreRotate +
+                'rad)';
         }
 
 
-        rotation += velocity;
+        /* =================================================
+           MOTION
+           ================================================= */
+
+        if (!dragging) {
+
+            rotationY +=
+                velocityY;
+
+            rotationX +=
+                velocityX;
+
+            /*
+               Auto acceleration /
+               smoothing.
+            */
+
+            velocityY +=
+                (
+                    targetVelocityY -
+                    velocityY
+                ) * 0.10;
 
 
-        velocity +=
-            (targetVelocity - velocity) *
-            0.055;
+            velocityX +=
+                (
+                    targetVelocityX -
+                    velocityX
+                ) * 0.10;
+        }
 
 
-        raf =
-            requestAnimationFrame(render);
+        requestAnimationFrame(
+            render
+        );
     }
 
 
-    /* =========================================
-       POINTER DRAG
-       ========================================= */
+    /* =====================================================
+       POINTER DOWN
+       ===================================================== */
 
     universe.addEventListener(
         'pointerdown',
-        function (e) {
+        function (event) {
+
+            /*
+               Clicking a system or core
+               must remain clickable.
+            */
 
             if (
-                e.target.closest(
-                    '.ars-dimension-node, .ars-dimension-core'
+                event.target.closest(
+                    '.ars-dimension-node,' +
+                    '.ars-dimension-core'
                 )
             ) {
+
                 return;
             }
 
+
             dragging = true;
 
-            lastX = e.clientX;
+            pointerId =
+                event.pointerId;
 
-            targetVelocity = 0;
 
-            universe.setPointerCapture?.(
-                e.pointerId
+            lastX =
+                event.clientX;
+
+            lastY =
+                event.clientY;
+
+            lastTime =
+                performance.now();
+
+
+            dragVelocityY = 0;
+            dragVelocityX = 0;
+
+
+            velocityY = 0;
+            velocityX = 0;
+
+
+            targetVelocityY = 0;
+            targetVelocityX = 0;
+
+
+            try {
+
+                universe.setPointerCapture(
+                    pointerId
+                );
+
+            } catch (error) {}
+
+
+            universe.classList.add(
+                'ars-universe-dragging'
             );
         }
     );
 
 
+    /* =====================================================
+       POINTER MOVE
+       ===================================================== */
+
     universe.addEventListener(
         'pointermove',
-        function (e) {
+        function (event) {
 
             if (!dragging) return;
 
+
+            const now =
+                performance.now();
+
+
             const dx =
-                e.clientX - lastX;
+                event.clientX -
+                lastX;
 
-            rotation += dx * 0.42;
 
-            lastX = e.clientX;
+            const dy =
+                event.clientY -
+                lastY;
+
+
+            const dt =
+                Math.max(
+                    8,
+                    now -
+                    lastTime
+                );
+
+
+            /*
+               HIGH SPEED MANUAL CONTROL
+            */
+
+            const moveY =
+                dx * 1.15;
+
+
+            const moveX =
+                dy * 0.42;
+
+
+            rotationY +=
+                moveY;
+
+
+            rotationX +=
+                moveX;
+
+
+            /*
+               Capture velocity for inertia.
+            */
+
+            dragVelocityY =
+                moveY /
+                dt *
+                16;
+
+
+            dragVelocityX =
+                moveX /
+                dt *
+                12;
+
+
+            lastX =
+                event.clientX;
+
+
+            lastY =
+                event.clientY;
+
+
+            lastTime =
+                now;
         }
     );
 
 
+    /* =====================================================
+       POINTER RELEASE
+       ===================================================== */
+
     function releasePointer() {
+
+        if (!dragging) return;
+
 
         dragging = false;
 
-        targetVelocity = 0.07;
+
+        universe.classList.remove(
+            'ars-universe-dragging'
+        );
+
+
+        /*
+           Strong but controlled inertia.
+        */
+
+        velocityY =
+            Math.max(
+                -MAX_INERTIA,
+                Math.min(
+                    MAX_INERTIA,
+                    dragVelocityY
+                )
+            );
+
+
+        velocityX =
+            Math.max(
+                -0.45,
+                Math.min(
+                    0.45,
+                    dragVelocityX
+                )
+            );
+
+
+        targetVelocityY =
+            AUTO_SPEED;
+
+
+        targetVelocityX =
+            0;
+
+
+        pointerId =
+            null;
     }
 
 
@@ -6019,58 +6597,151 @@ document.addEventListener("DOMContentLoaded", () => {
         releasePointer
     );
 
+
     universe.addEventListener(
         'pointercancel',
         releasePointer
     );
 
 
-    /* =========================================
+    universe.addEventListener(
+        'pointerleave',
+        function () {
+
+            if (dragging) {
+
+                releasePointer();
+            }
+        }
+    );
+
+
+    /* =====================================================
        TOUCH
-       ========================================= */
+       ===================================================== */
 
     universe.addEventListener(
         'touchstart',
-        function (e) {
+        function (event) {
 
             if (
-                e.target.closest(
-                    '.ars-dimension-node, .ars-dimension-core'
+                event.target.closest(
+                    '.ars-dimension-node,' +
+                    '.ars-dimension-core'
                 )
             ) {
+
                 return;
             }
 
+
+            const touch =
+                event.touches[0];
+
+
             dragging = true;
 
+
             lastX =
-                e.touches[0].clientX;
+                touch.clientX;
 
-            targetVelocity = 0;
+            lastY =
+                touch.clientY;
 
+            lastTime =
+                performance.now();
+
+
+            velocityY = 0;
+            velocityX = 0;
+
+
+            targetVelocityY = 0;
+            targetVelocityX = 0;
+
+
+            dragVelocityY = 0;
+            dragVelocityX = 0;
         },
-        { passive: true }
+        {
+            passive: true
+        }
     );
 
 
     universe.addEventListener(
         'touchmove',
-        function (e) {
+        function (event) {
 
             if (!dragging) return;
 
-            const x =
-                e.touches[0].clientX;
+
+            const touch =
+                event.touches[0];
+
+
+            const now =
+                performance.now();
+
 
             const dx =
-                x - lastX;
+                touch.clientX -
+                lastX;
 
-            rotation += dx * 0.50;
 
-            lastX = x;
+            const dy =
+                touch.clientY -
+                lastY;
 
+
+            const dt =
+                Math.max(
+                    8,
+                    now -
+                    lastTime
+                );
+
+
+            const moveY =
+                dx * 1.35;
+
+
+            const moveX =
+                dy * 0.50;
+
+
+            rotationY +=
+                moveY;
+
+
+            rotationX +=
+                moveX;
+
+
+            dragVelocityY =
+                moveY /
+                dt *
+                18;
+
+
+            dragVelocityX =
+                moveX /
+                dt *
+                14;
+
+
+            lastX =
+                touch.clientX;
+
+            lastY =
+                touch.clientY;
+
+            lastTime =
+                now;
         },
-        { passive: true }
+        {
+            passive: true
+        }
     );
 
 
@@ -6078,60 +6749,99 @@ document.addEventListener("DOMContentLoaded", () => {
         'touchend',
         function () {
 
+            if (!dragging) return;
+
+
             dragging = false;
 
-            targetVelocity = 0.07;
 
+            velocityY =
+                Math.max(
+                    -MAX_INERTIA,
+                    Math.min(
+                        MAX_INERTIA,
+                        dragVelocityY
+                    )
+                );
+
+
+            velocityX =
+                Math.max(
+                    -0.45,
+                    Math.min(
+                        0.45,
+                        dragVelocityX
+                    )
+                );
+
+
+            targetVelocityY =
+                AUTO_SPEED;
+
+            targetVelocityX =
+                0;
         },
-        { passive: true }
+        {
+            passive: true
+        }
     );
 
 
-    /* =========================================
-       HOVER
-       ========================================= */
+    /* =====================================================
+       HOVER BEHAVIOR
+       ===================================================== */
 
-    nodes.forEach(function (node) {
+    nodes.forEach(
+        function (node) {
 
-        node.addEventListener(
-            'mouseenter',
-            function () {
+            node.addEventListener(
+                'mouseenter',
+                function () {
 
-                targetVelocity = 0.018;
+                    pointerInside = true;
 
-            }
-        );
+                    /*
+                       Slow only slightly.
+                       Never stop.
+                    */
 
-
-        node.addEventListener(
-            'mouseleave',
-            function () {
-
-                targetVelocity = 0.07;
-
-            }
-        );
-
-    });
+                    targetVelocityY =
+                        AUTO_SPEED * 0.42;
+                }
+            );
 
 
-    /* =========================================
+            node.addEventListener(
+                'mouseleave',
+                function () {
+
+                    pointerInside = false;
+
+                    if (!dragging) {
+
+                        targetVelocityY =
+                            AUTO_SPEED;
+                    }
+                }
+            );
+        }
+    );
+
+
+    /* =====================================================
        START
-       ========================================= */
-
-    nodes.forEach(function (node) {
-
-        node.style.position =
-            'absolute';
-
-    });
-
+       ===================================================== */
 
     render();
 
 
 })();
-</script>
+    </script>
+
+
+
+
+         
 
     
 </body>
