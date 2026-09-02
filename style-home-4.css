@@ -42332,97 +42332,126 @@ section.ars-system-seven .ars-card-logo {
 
 
 
+
+
+
+
+
+
+
+
 /* =========================================================
-   ARS DIMENSION UNIVERSE — V3
-   GLASS / DEPTH / GOLD / ELECTRIC BLUE
+   ARS UNIVERSE — V4
+   TRUE 3D GLASS ORBITAL COMMAND SYSTEM
+   13 SYSTEMS / 5 ORBITS / GLASS CORE
    ========================================================= */
 
 .ars-dimension-universe {
-    --ad-gold: #e4bd68;
-    --ad-gold-hot: #ffe4a0;
-    --ad-blue: #12b8ff;
-    --ad-blue-hot: #72ddff;
-    --ad-bronze: #9a6740;
-    --ad-bronze-hot: #d39a67;
+    --ars-gold: #e5bd68;
+    --ars-gold-hot: #ffe7a3;
+    --ars-blue: #12baff;
+    --ars-blue-hot: #70ddff;
+    --ars-bronze: #a86f45;
+    --ars-bronze-hot: #d69b68;
 
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
+    position: relative !important;
+    isolation: isolate !important;
+    overflow: hidden !important;
+
+    min-height: 980px !important;
 
     background:
         radial-gradient(
-            ellipse at 50% 48%,
-            rgba(30,190,255,.28) 0%,
-            rgba(30,190,255,.13) 18%,
-            transparent 43%
+            ellipse 55% 45% at 50% 47%,
+            rgba(18,186,255,.22),
+            rgba(18,186,255,.07) 32%,
+            transparent 68%
         ),
         radial-gradient(
-            ellipse at 25% 52%,
-            rgba(211,154,103,.30) 0%,
-            rgba(154,103,64,.15) 27%,
-            transparent 58%
+            ellipse 42% 55% at 20% 50%,
+            rgba(168,111,69,.30),
+            rgba(168,111,69,.08) 38%,
+            transparent 72%
         ),
         radial-gradient(
-            ellipse at 75% 42%,
-            rgba(228,189,104,.27) 0%,
-            rgba(228,189,104,.10) 26%,
-            transparent 58%
+            ellipse 42% 50% at 80% 45%,
+            rgba(229,189,104,.25),
+            rgba(229,189,104,.06) 38%,
+            transparent 72%
         ),
         linear-gradient(
-            120deg,
-            #050403 0%,
-            #21140b 25%,
-            #090c11 48%,
-            #061b2a 73%,
-            #020406 100%
+            115deg,
+            #030303 0%,
+            #17100b 24%,
+            #070a0e 48%,
+            #061522 72%,
+            #020405 100%
         ) !important;
 
     box-shadow:
-        inset 0 0 180px rgba(228,189,104,.12),
-        inset 0 0 220px rgba(18,184,255,.12);
+        inset 0 0 180px rgba(168,111,69,.15),
+        inset 0 0 180px rgba(18,186,255,.12),
+        inset 0 0 100px rgba(229,189,104,.08) !important;
 }
 
 
-/* ---------- DEEP ATMOSPHERE ---------- */
+/* =========================================================
+   ATMOSPHERE
+   ========================================================= */
 
 .ars-dimension-universe .ars-dimension-bg {
+    position: absolute !important;
+    inset: -15% !important;
+
     opacity: 1 !important;
 
     background:
         radial-gradient(
-            circle at 50% 50%,
-            rgba(18,184,255,.25),
-            transparent 28%
+            circle at 50% 48%,
+            rgba(18,186,255,.22),
+            transparent 27%
         ),
         radial-gradient(
-            circle at 22% 48%,
-            rgba(154,103,64,.30),
+            circle at 27% 52%,
+            rgba(168,111,69,.30),
             transparent 32%
         ),
         radial-gradient(
-            circle at 78% 45%,
-            rgba(228,189,104,.25),
-            transparent 32%
+            circle at 74% 44%,
+            rgba(229,189,104,.25),
+            transparent 34%
         ) !important;
 
-    filter: blur(24px) saturate(145%);
-    transform: scale(1.18);
+    filter: blur(28px) saturate(145%) !important;
+
+    transform: scale(1.12) !important;
+
+    pointer-events: none !important;
 }
 
 
-/* ---------- GLASS GRID ---------- */
+/* deep luminous atmosphere */
+
+.ars-dimension-universe::marker {
+    display: none;
+}
+
+
+/* =========================================================
+   GRID
+   ========================================================= */
 
 .ars-dimension-universe .ars-dimension-grid {
-    opacity: .34 !important;
+    opacity: .27 !important;
 
     background-image:
         linear-gradient(
-            rgba(228,189,104,.10) 1px,
+            rgba(229,189,104,.09) 1px,
             transparent 1px
         ),
         linear-gradient(
             90deg,
-            rgba(18,184,255,.12) 1px,
+            rgba(18,186,255,.10) 1px,
             transparent 1px
         ) !important;
 
@@ -42432,228 +42461,290 @@ section.ars-system-seven .ars-card-logo {
         radial-gradient(
             ellipse at center,
             black 0%,
-            rgba(0,0,0,.8) 40%,
+            rgba(0,0,0,.75) 42%,
             transparent 82%
-        );
-}
+        ) !important;
 
-
-/* ---------- COMMAND SPACE ---------- */
-
-.ars-dimension-universe .ars-dimension-command {
-    perspective: 1400px !important;
-    transform-style: preserve-3d !important;
-
-    filter:
-        drop-shadow(0 0 35px rgba(18,184,255,.10))
-        drop-shadow(0 0 45px rgba(228,189,104,.10))
-        !important;
-}
-
-.ars-dimension-universe .ars-dimension-system {
-    position: relative !important;
-    width: 100%;
-    height: 100%;
-
-    transform-style: preserve-3d !important;
-    perspective: 1400px !important;
+    -webkit-mask-image:
+        radial-gradient(
+            ellipse at center,
+            black 0%,
+            rgba(0,0,0,.75) 42%,
+            transparent 82%
+        ) !important;
 }
 
 
 /* =========================================================
-   FIVE ORBIT SYSTEM
+   HEADING
+   ========================================================= */
+
+.ars-dimension-universe .ars-dimension-heading {
+    position: relative !important;
+    z-index: 9000 !important;
+}
+
+
+/* =========================================================
+   COMMAND DECK
+   ========================================================= */
+
+.ars-dimension-universe .ars-dimension-command {
+    position: relative !important;
+
+    width: min(1040px, 96vw) !important;
+    height: 700px !important;
+
+    margin: 0 auto !important;
+
+    perspective: 1600px !important;
+    perspective-origin: 50% 50% !important;
+
+    transform-style: preserve-3d !important;
+
+    overflow: visible !important;
+
+    filter:
+        drop-shadow(0 0 30px rgba(18,186,255,.08))
+        drop-shadow(0 0 40px rgba(229,189,104,.08)) !important;
+}
+
+
+/* =========================================================
+   SYSTEM — TRUE 3D SPACE
+   ========================================================= */
+
+.ars-dimension-universe .ars-dimension-system {
+    position: absolute !important;
+
+    left: 50% !important;
+    top: 50% !important;
+
+    width: 1px !important;
+    height: 1px !important;
+
+    transform-style: preserve-3d !important;
+
+    perspective: 1600px !important;
+
+    transform:
+        translate3d(-50%, -50%, 0)
+        rotateX(4deg) !important;
+
+    overflow: visible !important;
+}
+
+
+/* =========================================================
+   ORBIT RINGS
    ========================================================= */
 
 .ars-dimension-universe .ars-dimension-orbit {
-    position: absolute;
-    left: 50%;
-    top: 50%;
+    position: absolute !important;
 
-    transform-style: preserve-3d !important;
-    pointer-events: none;
+    left: 50% !important;
+    top: 50% !important;
 
-    border-radius: 50%;
+    border-radius: 50% !important;
 
     background: transparent !important;
+
+    pointer-events: none !important;
+
+    transform-style: preserve-3d !important;
+
+    transform-origin: center center !important;
 }
 
 
-/* GOLD */
+/* GOLD MAIN ORBIT */
 
 .ars-dimension-universe .ars-dimension-orbit-main {
-    width: 610px !important;
-    height: 610px !important;
+    width: 590px !important;
+    height: 590px !important;
 
     transform:
-        translate(-50%, -50%)
+        translate3d(-50%, -50%, 0)
         rotateX(68deg)
-        rotateZ(8deg) !important;
+        rotateZ(10deg) !important;
 
-    border: 1px solid rgba(228,189,104,.65) !important;
+    border:
+        1px solid rgba(229,189,104,.64) !important;
 
     box-shadow:
-        0 0 18px rgba(228,189,104,.20),
-        0 0 55px rgba(228,189,104,.10),
-        inset 0 0 25px rgba(228,189,104,.08) !important;
+        0 0 15px rgba(229,189,104,.18),
+        0 0 45px rgba(229,189,104,.08),
+        inset 0 0 25px rgba(229,189,104,.05) !important;
 }
 
 
-/* BLUE */
+/* BLUE INNER ORBIT */
 
 .ars-dimension-universe .ars-dimension-orbit-inner {
     width: 450px !important;
     height: 450px !important;
 
     transform:
-        translate(-50%, -50%)
-        rotateX(66deg)
-        rotateZ(-18deg) !important;
+        translate3d(-50%, -50%, 0)
+        rotateX(65deg)
+        rotateZ(-20deg) !important;
 
-    border: 1px solid rgba(18,184,255,.62) !important;
+    border:
+        1px solid rgba(18,186,255,.62) !important;
 
     box-shadow:
-        0 0 22px rgba(18,184,255,.22),
-        0 0 65px rgba(18,184,255,.10) !important;
+        0 0 20px rgba(18,186,255,.18),
+        0 0 55px rgba(18,186,255,.08) !important;
 }
 
 
-/* BRONZE OUTER */
+/* BRONZE OUTER ORBIT */
 
 .ars-dimension-universe .ars-dimension-orbit-outer {
-    width: 740px !important;
-    height: 740px !important;
+    width: 760px !important;
+    height: 760px !important;
 
     transform:
-        translate(-50%, -50%)
+        translate3d(-50%, -50%, 0)
         rotateX(72deg)
-        rotateZ(25deg) !important;
+        rotateZ(26deg) !important;
 
-    border: 1px solid rgba(154,103,64,.48) !important;
+    border:
+        1px solid rgba(168,111,69,.48) !important;
 
     box-shadow:
-        0 0 28px rgba(154,103,64,.14),
-        inset 0 0 30px rgba(154,103,64,.05) !important;
+        0 0 25px rgba(168,111,69,.12),
+        inset 0 0 30px rgba(168,111,69,.04) !important;
 }
 
 
-/* EXTRA BLUE ORBIT */
+/* =========================================================
+   TWO ADDITIONAL ORBITS
+   ========================================================= */
 
-.ars-dimension-universe::before {
+.ars-dimension-universe .ars-dimension-command::before {
     content: "";
+
     position: absolute;
 
     left: 50%;
     top: 50%;
 
-    width: 820px;
-    height: 300px;
+    width: 850px;
+    height: 310px;
 
     transform:
         translate(-50%, -50%)
         rotateX(68deg)
-        rotateZ(-34deg);
+        rotateZ(-36deg);
 
-    border: 1px solid rgba(18,184,255,.25);
+    border:
+        1px solid rgba(18,186,255,.32);
+
     border-radius: 50%;
 
     box-shadow:
-        0 0 30px rgba(18,184,255,.08),
-        inset 0 0 25px rgba(18,184,255,.05);
+        0 0 25px rgba(18,186,255,.10),
+        inset 0 0 30px rgba(18,186,255,.04);
 
     pointer-events: none;
 }
 
 
-/* EXTRA GOLD ORBIT */
-
-.ars-dimension-universe::after {
+.ars-dimension-universe .ars-dimension-command::after {
     content: "";
+
     position: absolute;
 
     left: 50%;
     top: 50%;
 
-    width: 860px;
-    height: 340px;
+    width: 880px;
+    height: 350px;
 
     transform:
         translate(-50%, -50%)
         rotateX(64deg)
-        rotateZ(42deg);
+        rotateZ(43deg);
 
-    border: 1px solid rgba(228,189,104,.25);
+    border:
+        1px solid rgba(229,189,104,.31);
+
     border-radius: 50%;
 
     box-shadow:
-        0 0 35px rgba(228,189,104,.07);
+        0 0 30px rgba(229,189,104,.09),
+        inset 0 0 30px rgba(229,189,104,.04);
 
     pointer-events: none;
 }
 
 
 /* =========================================================
-   GLASS CARDS
+   13 GLASS SYSTEM CARDS
    ========================================================= */
 
 .ars-dimension-universe .ars-dimension-node {
 
+    position: absolute !important;
+
     left: 50% !important;
     top: 50% !important;
 
-    width: 166px !important;
-    min-height: 82px !important;
+    width: 172px !important;
+    min-height: 84px !important;
 
     padding: 15px 17px !important;
 
-    position: absolute !important;
+    box-sizing: border-box !important;
 
     transform-origin: center center !important;
     transform-style: preserve-3d !important;
 
-    overflow: hidden;
-
-    border-radius: 8px !important;
-
     border:
         1px solid rgba(255,255,255,.20) !important;
+
+    border-radius: 9px !important;
 
     background:
         linear-gradient(
             135deg,
-            rgba(255,255,255,.15),
-            rgba(255,255,255,.055) 38%,
-            rgba(18,184,255,.055) 68%,
-            rgba(228,189,104,.07)
+            rgba(255,255,255,.16),
+            rgba(255,255,255,.055) 35%,
+            rgba(18,186,255,.055) 68%,
+            rgba(229,189,104,.075)
         ) !important;
 
     backdrop-filter:
-        blur(18px)
-        saturate(145%) !important;
+        blur(20px)
+        saturate(155%) !important;
 
     -webkit-backdrop-filter:
-        blur(18px)
-        saturate(145%) !important;
+        blur(20px)
+        saturate(155%) !important;
 
     box-shadow:
-        inset 1px 1px 0 rgba(255,255,255,.18),
+        inset 1px 1px 0 rgba(255,255,255,.20),
         inset -1px -1px 0 rgba(0,0,0,.35),
-        inset 0 0 28px rgba(255,255,255,.025),
-        0 16px 35px rgba(0,0,0,.48),
-        0 0 22px rgba(18,184,255,.08),
-        0 0 25px rgba(228,189,104,.06) !important;
+        inset 0 0 30px rgba(255,255,255,.025),
+        0 18px 45px rgba(0,0,0,.48),
+        0 0 25px rgba(18,186,255,.07),
+        0 0 24px rgba(229,189,104,.06) !important;
+
+    overflow: hidden !important;
 
     will-change:
         transform,
         opacity,
-        filter;
+        filter !important;
 
     transition:
-        border-color .3s ease,
-        box-shadow .3s ease;
+        border-color .25s ease,
+        box-shadow .25s ease !important;
 }
 
 
-/* GLASS HIGHLIGHT */
+/* glass reflection */
 
 .ars-dimension-universe .ars-dimension-node::before {
 
@@ -42661,29 +42752,30 @@ section.ars-system-seven .ars-card-logo {
 
     position: absolute;
 
-    left: -20%;
-    top: -35%;
+    left: -40%;
+    top: -60%;
 
-    width: 70%;
-    height: 180%;
+    width: 75%;
+    height: 220%;
 
     background:
         linear-gradient(
-            110deg,
-            transparent,
-            rgba(255,255,255,.16),
-            transparent
+            105deg,
+            transparent 20%,
+            rgba(255,255,255,.17) 48%,
+            transparent 70%
         );
 
-    transform: rotate(18deg);
+    transform:
+        rotate(18deg);
 
-    opacity: .5;
+    opacity: .55;
 
     pointer-events: none;
 }
 
 
-/* GOLD EDGE */
+/* illuminated bottom edge */
 
 .ars-dimension-universe .ars-dimension-node::after {
 
@@ -42691,8 +42783,8 @@ section.ars-system-seven .ars-card-logo {
 
     position: absolute;
 
-    left: 12px;
-    right: 12px;
+    left: 13px;
+    right: 13px;
     bottom: 7px;
 
     height: 1px;
@@ -42701,316 +42793,447 @@ section.ars-system-seven .ars-card-logo {
         linear-gradient(
             90deg,
             transparent,
-            rgba(228,189,104,.75),
-            rgba(18,184,255,.75),
+            rgba(229,189,104,.82),
+            rgba(18,186,255,.80),
             transparent
         );
 
     box-shadow:
-        0 0 8px rgba(18,184,255,.25);
+        0 0 9px rgba(18,186,255,.28);
 
-    opacity: .65;
+    opacity: .72;
 }
 
 
-/* CARD TYPOGRAPHY */
+/* card typography */
 
 .ars-dimension-universe .ars-dimension-node span {
     font-size: 9px !important;
-    letter-spacing: 2.8px !important;
-    color: rgba(255,255,255,.52) !important;
+    letter-spacing: 3px !important;
+
+    color:
+        rgba(255,255,255,.50) !important;
 }
 
 .ars-dimension-universe .ars-dimension-node strong {
-    font-size: 13.8px !important;
+    font-size: 13.5px !important;
     letter-spacing: 1.7px !important;
-    color: rgba(255,255,255,.94) !important;
+
+    color:
+        rgba(255,255,255,.95) !important;
 
     text-shadow:
         0 0 12px rgba(255,255,255,.10);
 }
 
 .ars-dimension-universe .ars-dimension-node small {
-    font-size: 7.8px !important;
+    font-size: 7.6px !important;
     letter-spacing: 2.5px !important;
-    color: var(--ad-blue-hot) !important;
+
+    color:
+        var(--ars-blue-hot) !important;
 
     text-shadow:
-        0 0 10px rgba(18,184,255,.32);
-}
-
-
-.ars-dimension-universe .ars-dimension-node:hover {
-
-    border-color:
-        rgba(255,228,160,.80) !important;
-
-    box-shadow:
-        inset 1px 1px 0 rgba(255,255,255,.24),
-        0 20px 50px rgba(0,0,0,.65),
-        0 0 32px rgba(228,189,104,.18),
-        0 0 42px rgba(18,184,255,.13) !important;
+        0 0 12px rgba(18,186,255,.38);
 }
 
 
 /* =========================================================
-   3D GLASS ARS CORE
+   3D GLASS CORE
    ========================================================= */
 
 .ars-dimension-universe .ars-dimension-core {
 
+    position: absolute !important;
+
     left: 50% !important;
     top: 50% !important;
 
-    width: 275px !important;
-    height: 275px !important;
+    width: 285px !important;
+    height: 285px !important;
+
+    margin: 0 !important;
 
     transform:
-        translate(-50%, -50%)
-        translateZ(40px) !important;
+        translate3d(-50%, -50%, 50px) !important;
+
+    transform-style: preserve-3d !important;
 
     border-radius: 50% !important;
 
     border:
-        1px solid rgba(255,228,160,.70) !important;
+        1px solid rgba(255,231,163,.72) !important;
 
     background:
+
         radial-gradient(
-            circle at 34% 27%,
-            rgba(255,255,255,.24),
+            circle at 28% 22%,
+            rgba(255,255,255,.30),
             transparent 12%
         ),
+
         radial-gradient(
-            circle at 50% 52%,
-            rgba(18,184,255,.20),
-            transparent 35%
+            circle at 38% 38%,
+            rgba(229,189,104,.25),
+            transparent 31%
         ),
+
         radial-gradient(
-            circle at 57% 58%,
-            rgba(228,189,104,.27),
-            transparent 55%
+            circle at 62% 60%,
+            rgba(18,186,255,.28),
+            transparent 42%
         ),
+
         radial-gradient(
             circle,
-            rgba(12,18,23,.70) 0%,
-            rgba(4,8,11,.82) 52%,
-            rgba(1,3,5,.95) 100%
+            rgba(31,25,17,.60) 0%,
+            rgba(9,14,18,.72) 48%,
+            rgba(1,4,7,.91) 100%
         ) !important;
 
     backdrop-filter:
-        blur(10px)
-        saturate(155%) !important;
+        blur(13px)
+        saturate(170%) !important;
 
     -webkit-backdrop-filter:
-        blur(10px)
-        saturate(155%) !important;
+        blur(13px)
+        saturate(170%) !important;
 
     box-shadow:
 
-        inset 12px 12px 35px
-            rgba(255,255,255,.10),
+        inset 13px 13px 38px
+            rgba(255,255,255,.12),
 
-        inset -18px -18px 45px
-            rgba(0,0,0,.60),
+        inset -22px -20px 48px
+            rgba(0,0,0,.62),
 
-        inset 0 0 45px
-            rgba(18,184,255,.15),
+        inset 0 0 50px
+            rgba(229,189,104,.17),
 
-        inset 0 0 80px
-            rgba(228,189,104,.16),
+        inset 0 0 90px
+            rgba(18,186,255,.14),
 
-        0 0 25px
-            rgba(228,189,104,.22),
+        0 0 28px
+            rgba(229,189,104,.25),
 
-        0 0 60px
-            rgba(18,184,255,.17),
+        0 0 70px
+            rgba(18,186,255,.19),
 
-        0 0 120px
-            rgba(154,103,64,.12) !important;
+        0 0 135px
+            rgba(168,111,69,.14) !important;
 
     overflow: visible !important;
 
-    will-change: transform;
-
-    z-index: 5000 !important;
+    z-index: 9999 !important;
 }
 
 
-/* SPHERE GLASS OUTER GLOW */
+/* spherical atmospheric glow */
 
 .ars-dimension-universe .ars-dimension-core-glow {
 
-    inset: -75px !important;
+    position: absolute !important;
+
+    inset: -85px !important;
+
+    border-radius: 50% !important;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(229,189,104,.28) 0%,
+            rgba(229,189,104,.14) 23%,
+            rgba(18,186,255,.20) 43%,
+            rgba(18,186,255,.08) 58%,
+            transparent 76%
+        ) !important;
+
+    filter:
+        blur(20px)
+        saturate(150%) !important;
+
+    opacity: 1 !important;
+
+    pointer-events: none !important;
+}
+
+
+/* sphere highlight */
+
+.ars-dimension-universe .ars-dimension-core::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 95px;
+    height: 42px;
+
+    left: 50px;
+    top: 36px;
 
     border-radius: 50%;
 
     background:
         radial-gradient(
-            circle,
-            rgba(228,189,104,.26) 0%,
-            rgba(228,189,104,.13) 24%,
-            rgba(18,184,255,.18) 42%,
-            rgba(18,184,255,.08) 56%,
-            transparent 74%
-        ) !important;
+            ellipse,
+            rgba(255,255,255,.30),
+            transparent 70%
+        );
 
-    filter:
-        blur(18px)
-        saturate(145%) !important;
+    transform:
+        rotate(-25deg);
 
-    opacity: 1 !important;
+    filter: blur(4px);
+
+    opacity: .75;
+
+    pointer-events: none;
 }
 
 
-/* CORE RINGS */
+/* sphere bottom blue energy */
+
+.ars-dimension-universe .ars-dimension-core::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 18%;
+    right: 18%;
+    bottom: 17%;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(18,186,255,.30),
+            transparent 70%
+        );
+
+    filter: blur(12px);
+
+    opacity: .75;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CORE RINGS
+   ========================================================= */
 
 .ars-dimension-universe .ars-dimension-core .ring-a {
 
-    inset: 9px !important;
+    inset: 10px !important;
 
     border:
-        1px solid rgba(255,228,160,.68) !important;
+        1px solid rgba(255,231,163,.70) !important;
 
     box-shadow:
-        0 0 16px rgba(228,189,104,.20);
+        0 0 18px rgba(229,189,104,.22);
 }
+
 
 .ars-dimension-universe .ars-dimension-core .ring-b {
 
-    inset: 25px !important;
+    inset: 27px !important;
 
     border:
-        1px solid rgba(18,184,255,.62) !important;
+        1px solid rgba(18,186,255,.68) !important;
 
     box-shadow:
-        0 0 20px rgba(18,184,255,.20);
+        0 0 22px rgba(18,186,255,.22);
 }
+
 
 .ars-dimension-universe .ars-dimension-core .ring-c {
 
-    inset: 44px !important;
+    inset: 46px !important;
 
     border:
-        1px solid rgba(211,154,103,.40) !important;
+        1px solid rgba(168,111,69,.45) !important;
 
     box-shadow:
-        0 0 18px rgba(154,103,64,.12);
+        0 0 20px rgba(168,111,69,.14);
 }
 
 
-/* CORE TEXT */
+/* =========================================================
+   CORE TYPOGRAPHY
+   ========================================================= */
 
 .ars-dimension-universe .ars-dimension-core-content {
 
-    transform:
-        translateZ(35px) !important;
+    position: relative !important;
 
-    text-align: center;
+    z-index: 20 !important;
+
+    transform:
+        translateZ(42px) !important;
+
+    text-align: center !important;
 }
 
-.ars-dimension-universe .ars-dimension-core-content span {
+
+.ars-dimension-universe
+.ars-dimension-core-content span {
 
     font-size: 7px !important;
-    letter-spacing: 3.5px !important;
+
+    letter-spacing: 3.8px !important;
 
     color:
-        rgba(255,255,255,.58) !important;
+        rgba(255,255,255,.60) !important;
 }
 
-.ars-dimension-universe .ars-dimension-core-content b {
 
-    display: block;
+.ars-dimension-universe
+.ars-dimension-core-content b {
 
-    font-size: 58px !important;
-    line-height: .9;
+    display: block !important;
 
-    letter-spacing: 7px !important;
+    margin: 7px 0 2px !important;
 
-    color:
-        var(--ad-gold-hot) !important;
+    font-size: 61px !important;
+
+    line-height: .88 !important;
+
+    letter-spacing: 8px !important;
+
+    font-weight: 700 !important;
 
     background:
         linear-gradient(
-            115deg,
-            var(--ad-gold),
-            #fff0bd 40%,
-            var(--ad-blue-hot) 72%,
-            var(--ad-gold)
-        );
+            120deg,
+            #b77a42 0%,
+            #ffe6a0 28%,
+            #e4bd68 50%,
+            #72ddff 72%,
+            #12baff 100%
+        ) !important;
 
-    -webkit-background-clip: text;
-    background-clip: text;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
 
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent !important;
 
     text-shadow:
-        0 0 12px rgba(228,189,104,.32),
-        0 0 28px rgba(18,184,255,.18);
+        0 0 14px rgba(229,189,104,.32),
+        0 0 30px rgba(18,186,255,.20) !important;
 }
 
-.ars-dimension-universe .ars-dimension-core-content strong {
 
-    display: block;
+.ars-dimension-universe
+.ars-dimension-core-content strong {
+
+    display: block !important;
 
     font-size: 15px !important;
 
-    letter-spacing: 3px !important;
+    letter-spacing: 3.2px !important;
 
     color:
         rgba(255,255,255,.94) !important;
 
     text-shadow:
-        0 0 10px rgba(228,189,104,.16);
+        0 0 14px rgba(229,189,104,.20);
 }
 
-.ars-dimension-universe .ars-dimension-core-content small {
+
+.ars-dimension-universe
+.ars-dimension-core-content small {
+
+    display: block !important;
+
+    margin-top: 4px !important;
 
     font-size: 7px !important;
 
     letter-spacing: 4px !important;
 
     color:
-        var(--ad-blue-hot) !important;
+        var(--ars-blue-hot) !important;
 
     text-shadow:
-        0 0 12px rgba(18,184,255,.40);
+        0 0 13px rgba(18,186,255,.45);
 }
 
 
-/* STATUS */
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.ars-dimension-universe .ars-dimension-status {
+    position: relative !important;
+    z-index: 9000 !important;
+}
 
 .ars-dimension-universe .ars-dimension-status b {
-
     color:
-        var(--ad-gold-hot) !important;
+        var(--ars-gold-hot) !important;
 
     text-shadow:
-        0 0 15px rgba(228,189,104,.30);
+        0 0 14px rgba(229,189,104,.32);
 }
 
 
-/* MOBILE */
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
 @media (max-width: 900px) {
 
-    .ars-dimension-universe .ars-dimension-command {
-        transform: scale(.82);
+    .ars-dimension-universe {
+        min-height: 900px !important;
+    }
+
+    .ars-dimension-universe
+    .ars-dimension-command {
+
+        width: 100vw !important;
+        height: 650px !important;
+
+        transform:
+            scale(.82) !important;
+
+        transform-origin:
+            center center !important;
     }
 }
+
 
 @media (max-width: 600px) {
 
-    .ars-dimension-universe .ars-dimension-command {
-        transform: scale(.63);
+    .ars-dimension-universe {
+        min-height: 820px !important;
     }
 
-    .ars-dimension-universe .ars-dimension-node {
-        width: 150px !important;
+    .ars-dimension-universe
+    .ars-dimension-command {
+
+        height: 590px !important;
+
+        transform:
+            scale(.61) !important;
+    }
+
+    .ars-dimension-universe
+    .ars-dimension-core {
+
+        width: 245px !important;
+        height: 245px !important;
+    }
+
+    .ars-dimension-universe
+    .ars-dimension-node {
+
+        width: 154px !important;
         min-height: 76px !important;
     }
+                 }
 
-    .ars-dimension-universe .ars-dimension-core {
-        width: 235px !important;
-        height: 235px !important;
-    }
-}
