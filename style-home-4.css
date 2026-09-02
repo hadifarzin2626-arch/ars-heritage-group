@@ -42316,3 +42316,701 @@ section.ars-system-seven .ars-card-logo {
     }
 
                  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS DIMENSION UNIVERSE — V3
+   GLASS / DEPTH / GOLD / ELECTRIC BLUE
+   ========================================================= */
+
+.ars-dimension-universe {
+    --ad-gold: #e4bd68;
+    --ad-gold-hot: #ffe4a0;
+    --ad-blue: #12b8ff;
+    --ad-blue-hot: #72ddff;
+    --ad-bronze: #9a6740;
+    --ad-bronze-hot: #d39a67;
+
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 48%,
+            rgba(30,190,255,.28) 0%,
+            rgba(30,190,255,.13) 18%,
+            transparent 43%
+        ),
+        radial-gradient(
+            ellipse at 25% 52%,
+            rgba(211,154,103,.30) 0%,
+            rgba(154,103,64,.15) 27%,
+            transparent 58%
+        ),
+        radial-gradient(
+            ellipse at 75% 42%,
+            rgba(228,189,104,.27) 0%,
+            rgba(228,189,104,.10) 26%,
+            transparent 58%
+        ),
+        linear-gradient(
+            120deg,
+            #050403 0%,
+            #21140b 25%,
+            #090c11 48%,
+            #061b2a 73%,
+            #020406 100%
+        ) !important;
+
+    box-shadow:
+        inset 0 0 180px rgba(228,189,104,.12),
+        inset 0 0 220px rgba(18,184,255,.12);
+}
+
+
+/* ---------- DEEP ATMOSPHERE ---------- */
+
+.ars-dimension-universe .ars-dimension-bg {
+    opacity: 1 !important;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(18,184,255,.25),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 22% 48%,
+            rgba(154,103,64,.30),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 78% 45%,
+            rgba(228,189,104,.25),
+            transparent 32%
+        ) !important;
+
+    filter: blur(24px) saturate(145%);
+    transform: scale(1.18);
+}
+
+
+/* ---------- GLASS GRID ---------- */
+
+.ars-dimension-universe .ars-dimension-grid {
+    opacity: .34 !important;
+
+    background-image:
+        linear-gradient(
+            rgba(228,189,104,.10) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(18,184,255,.12) 1px,
+            transparent 1px
+        ) !important;
+
+    background-size: 70px 70px !important;
+
+    mask-image:
+        radial-gradient(
+            ellipse at center,
+            black 0%,
+            rgba(0,0,0,.8) 40%,
+            transparent 82%
+        );
+}
+
+
+/* ---------- COMMAND SPACE ---------- */
+
+.ars-dimension-universe .ars-dimension-command {
+    perspective: 1400px !important;
+    transform-style: preserve-3d !important;
+
+    filter:
+        drop-shadow(0 0 35px rgba(18,184,255,.10))
+        drop-shadow(0 0 45px rgba(228,189,104,.10))
+        !important;
+}
+
+.ars-dimension-universe .ars-dimension-system {
+    position: relative !important;
+    width: 100%;
+    height: 100%;
+
+    transform-style: preserve-3d !important;
+    perspective: 1400px !important;
+}
+
+
+/* =========================================================
+   FIVE ORBIT SYSTEM
+   ========================================================= */
+
+.ars-dimension-universe .ars-dimension-orbit {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform-style: preserve-3d !important;
+    pointer-events: none;
+
+    border-radius: 50%;
+
+    background: transparent !important;
+}
+
+
+/* GOLD */
+
+.ars-dimension-universe .ars-dimension-orbit-main {
+    width: 610px !important;
+    height: 610px !important;
+
+    transform:
+        translate(-50%, -50%)
+        rotateX(68deg)
+        rotateZ(8deg) !important;
+
+    border: 1px solid rgba(228,189,104,.65) !important;
+
+    box-shadow:
+        0 0 18px rgba(228,189,104,.20),
+        0 0 55px rgba(228,189,104,.10),
+        inset 0 0 25px rgba(228,189,104,.08) !important;
+}
+
+
+/* BLUE */
+
+.ars-dimension-universe .ars-dimension-orbit-inner {
+    width: 450px !important;
+    height: 450px !important;
+
+    transform:
+        translate(-50%, -50%)
+        rotateX(66deg)
+        rotateZ(-18deg) !important;
+
+    border: 1px solid rgba(18,184,255,.62) !important;
+
+    box-shadow:
+        0 0 22px rgba(18,184,255,.22),
+        0 0 65px rgba(18,184,255,.10) !important;
+}
+
+
+/* BRONZE OUTER */
+
+.ars-dimension-universe .ars-dimension-orbit-outer {
+    width: 740px !important;
+    height: 740px !important;
+
+    transform:
+        translate(-50%, -50%)
+        rotateX(72deg)
+        rotateZ(25deg) !important;
+
+    border: 1px solid rgba(154,103,64,.48) !important;
+
+    box-shadow:
+        0 0 28px rgba(154,103,64,.14),
+        inset 0 0 30px rgba(154,103,64,.05) !important;
+}
+
+
+/* EXTRA BLUE ORBIT */
+
+.ars-dimension-universe::before {
+    content: "";
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 820px;
+    height: 300px;
+
+    transform:
+        translate(-50%, -50%)
+        rotateX(68deg)
+        rotateZ(-34deg);
+
+    border: 1px solid rgba(18,184,255,.25);
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 30px rgba(18,184,255,.08),
+        inset 0 0 25px rgba(18,184,255,.05);
+
+    pointer-events: none;
+}
+
+
+/* EXTRA GOLD ORBIT */
+
+.ars-dimension-universe::after {
+    content: "";
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 860px;
+    height: 340px;
+
+    transform:
+        translate(-50%, -50%)
+        rotateX(64deg)
+        rotateZ(42deg);
+
+    border: 1px solid rgba(228,189,104,.25);
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 35px rgba(228,189,104,.07);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   GLASS CARDS
+   ========================================================= */
+
+.ars-dimension-universe .ars-dimension-node {
+
+    left: 50% !important;
+    top: 50% !important;
+
+    width: 166px !important;
+    min-height: 82px !important;
+
+    padding: 15px 17px !important;
+
+    position: absolute !important;
+
+    transform-origin: center center !important;
+    transform-style: preserve-3d !important;
+
+    overflow: hidden;
+
+    border-radius: 8px !important;
+
+    border:
+        1px solid rgba(255,255,255,.20) !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.15),
+            rgba(255,255,255,.055) 38%,
+            rgba(18,184,255,.055) 68%,
+            rgba(228,189,104,.07)
+        ) !important;
+
+    backdrop-filter:
+        blur(18px)
+        saturate(145%) !important;
+
+    -webkit-backdrop-filter:
+        blur(18px)
+        saturate(145%) !important;
+
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,.18),
+        inset -1px -1px 0 rgba(0,0,0,.35),
+        inset 0 0 28px rgba(255,255,255,.025),
+        0 16px 35px rgba(0,0,0,.48),
+        0 0 22px rgba(18,184,255,.08),
+        0 0 25px rgba(228,189,104,.06) !important;
+
+    will-change:
+        transform,
+        opacity,
+        filter;
+
+    transition:
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+
+/* GLASS HIGHLIGHT */
+
+.ars-dimension-universe .ars-dimension-node::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -20%;
+    top: -35%;
+
+    width: 70%;
+    height: 180%;
+
+    background:
+        linear-gradient(
+            110deg,
+            transparent,
+            rgba(255,255,255,.16),
+            transparent
+        );
+
+    transform: rotate(18deg);
+
+    opacity: .5;
+
+    pointer-events: none;
+}
+
+
+/* GOLD EDGE */
+
+.ars-dimension-universe .ars-dimension-node::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 12px;
+    right: 12px;
+    bottom: 7px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(228,189,104,.75),
+            rgba(18,184,255,.75),
+            transparent
+        );
+
+    box-shadow:
+        0 0 8px rgba(18,184,255,.25);
+
+    opacity: .65;
+}
+
+
+/* CARD TYPOGRAPHY */
+
+.ars-dimension-universe .ars-dimension-node span {
+    font-size: 9px !important;
+    letter-spacing: 2.8px !important;
+    color: rgba(255,255,255,.52) !important;
+}
+
+.ars-dimension-universe .ars-dimension-node strong {
+    font-size: 13.8px !important;
+    letter-spacing: 1.7px !important;
+    color: rgba(255,255,255,.94) !important;
+
+    text-shadow:
+        0 0 12px rgba(255,255,255,.10);
+}
+
+.ars-dimension-universe .ars-dimension-node small {
+    font-size: 7.8px !important;
+    letter-spacing: 2.5px !important;
+    color: var(--ad-blue-hot) !important;
+
+    text-shadow:
+        0 0 10px rgba(18,184,255,.32);
+}
+
+
+.ars-dimension-universe .ars-dimension-node:hover {
+
+    border-color:
+        rgba(255,228,160,.80) !important;
+
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,.24),
+        0 20px 50px rgba(0,0,0,.65),
+        0 0 32px rgba(228,189,104,.18),
+        0 0 42px rgba(18,184,255,.13) !important;
+}
+
+
+/* =========================================================
+   3D GLASS ARS CORE
+   ========================================================= */
+
+.ars-dimension-universe .ars-dimension-core {
+
+    left: 50% !important;
+    top: 50% !important;
+
+    width: 275px !important;
+    height: 275px !important;
+
+    transform:
+        translate(-50%, -50%)
+        translateZ(40px) !important;
+
+    border-radius: 50% !important;
+
+    border:
+        1px solid rgba(255,228,160,.70) !important;
+
+    background:
+        radial-gradient(
+            circle at 34% 27%,
+            rgba(255,255,255,.24),
+            transparent 12%
+        ),
+        radial-gradient(
+            circle at 50% 52%,
+            rgba(18,184,255,.20),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 57% 58%,
+            rgba(228,189,104,.27),
+            transparent 55%
+        ),
+        radial-gradient(
+            circle,
+            rgba(12,18,23,.70) 0%,
+            rgba(4,8,11,.82) 52%,
+            rgba(1,3,5,.95) 100%
+        ) !important;
+
+    backdrop-filter:
+        blur(10px)
+        saturate(155%) !important;
+
+    -webkit-backdrop-filter:
+        blur(10px)
+        saturate(155%) !important;
+
+    box-shadow:
+
+        inset 12px 12px 35px
+            rgba(255,255,255,.10),
+
+        inset -18px -18px 45px
+            rgba(0,0,0,.60),
+
+        inset 0 0 45px
+            rgba(18,184,255,.15),
+
+        inset 0 0 80px
+            rgba(228,189,104,.16),
+
+        0 0 25px
+            rgba(228,189,104,.22),
+
+        0 0 60px
+            rgba(18,184,255,.17),
+
+        0 0 120px
+            rgba(154,103,64,.12) !important;
+
+    overflow: visible !important;
+
+    will-change: transform;
+
+    z-index: 5000 !important;
+}
+
+
+/* SPHERE GLASS OUTER GLOW */
+
+.ars-dimension-universe .ars-dimension-core-glow {
+
+    inset: -75px !important;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(228,189,104,.26) 0%,
+            rgba(228,189,104,.13) 24%,
+            rgba(18,184,255,.18) 42%,
+            rgba(18,184,255,.08) 56%,
+            transparent 74%
+        ) !important;
+
+    filter:
+        blur(18px)
+        saturate(145%) !important;
+
+    opacity: 1 !important;
+}
+
+
+/* CORE RINGS */
+
+.ars-dimension-universe .ars-dimension-core .ring-a {
+
+    inset: 9px !important;
+
+    border:
+        1px solid rgba(255,228,160,.68) !important;
+
+    box-shadow:
+        0 0 16px rgba(228,189,104,.20);
+}
+
+.ars-dimension-universe .ars-dimension-core .ring-b {
+
+    inset: 25px !important;
+
+    border:
+        1px solid rgba(18,184,255,.62) !important;
+
+    box-shadow:
+        0 0 20px rgba(18,184,255,.20);
+}
+
+.ars-dimension-universe .ars-dimension-core .ring-c {
+
+    inset: 44px !important;
+
+    border:
+        1px solid rgba(211,154,103,.40) !important;
+
+    box-shadow:
+        0 0 18px rgba(154,103,64,.12);
+}
+
+
+/* CORE TEXT */
+
+.ars-dimension-universe .ars-dimension-core-content {
+
+    transform:
+        translateZ(35px) !important;
+
+    text-align: center;
+}
+
+.ars-dimension-universe .ars-dimension-core-content span {
+
+    font-size: 7px !important;
+    letter-spacing: 3.5px !important;
+
+    color:
+        rgba(255,255,255,.58) !important;
+}
+
+.ars-dimension-universe .ars-dimension-core-content b {
+
+    display: block;
+
+    font-size: 58px !important;
+    line-height: .9;
+
+    letter-spacing: 7px !important;
+
+    color:
+        var(--ad-gold-hot) !important;
+
+    background:
+        linear-gradient(
+            115deg,
+            var(--ad-gold),
+            #fff0bd 40%,
+            var(--ad-blue-hot) 72%,
+            var(--ad-gold)
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
+        0 0 12px rgba(228,189,104,.32),
+        0 0 28px rgba(18,184,255,.18);
+}
+
+.ars-dimension-universe .ars-dimension-core-content strong {
+
+    display: block;
+
+    font-size: 15px !important;
+
+    letter-spacing: 3px !important;
+
+    color:
+        rgba(255,255,255,.94) !important;
+
+    text-shadow:
+        0 0 10px rgba(228,189,104,.16);
+}
+
+.ars-dimension-universe .ars-dimension-core-content small {
+
+    font-size: 7px !important;
+
+    letter-spacing: 4px !important;
+
+    color:
+        var(--ad-blue-hot) !important;
+
+    text-shadow:
+        0 0 12px rgba(18,184,255,.40);
+}
+
+
+/* STATUS */
+
+.ars-dimension-universe .ars-dimension-status b {
+
+    color:
+        var(--ad-gold-hot) !important;
+
+    text-shadow:
+        0 0 15px rgba(228,189,104,.30);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    .ars-dimension-universe .ars-dimension-command {
+        transform: scale(.82);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .ars-dimension-universe .ars-dimension-command {
+        transform: scale(.63);
+    }
+
+    .ars-dimension-universe .ars-dimension-node {
+        width: 150px !important;
+        min-height: 76px !important;
+    }
+
+    .ars-dimension-universe .ars-dimension-core {
+        width: 235px !important;
+        height: 235px !important;
+    }
+}
