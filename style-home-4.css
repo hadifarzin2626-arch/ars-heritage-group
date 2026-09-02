@@ -42347,311 +42347,446 @@ section.ars-system-seven .ars-card-logo {
 
 
 
+
+
+
+
+
+
 /* =========================================================
-   ARS UNIVERSE — CENTER GLASS SPHERE
-   Based directly on the original 3-glass-sphere system
-   ONLY CENTER SPHERE — NO HTML / JS CHANGE
+   ARS UNIVERSE — HERITAGE CORE / TRUE 3D SPHERE
+   CORE ONLY — ISOLATED PATCH
    ========================================================= */
 
-#ars-universe .ars-universe-core{
-    position:absolute;
-    left:50%;
-    top:50%;
-    width:270px;
-    height:270px;
+.ars-dimension-universe .ars-dimension-core {
+    width: 300px !important;
+    height: 300px !important;
 
-    transform:
-        translate(-50%,-50%)
-        translateZ(100px);
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
 
-    border-radius:50%;
-    transform-style:preserve-3d;
-    perspective:900px;
+    transform-style: preserve-3d !important;
+    border-radius: 50% !important;
 
-    overflow:visible;
-    z-index:50;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
 
-    filter:
-        drop-shadow(0 35px 55px rgba(0,0,0,.75))
-        drop-shadow(0 0 35px rgba(214,179,106,.12));
+    overflow: visible !important;
+
+    z-index: 100 !important;
+
+    isolation: isolate;
+    perspective: 900px;
 }
 
 
 /* ---------------------------------------------------------
-   ORIGINAL GLASS SURFACE — upgraded, not replaced
+   SPHERE CONTAINER
    --------------------------------------------------------- */
 
-#ars-universe .ars-core-surface{
-    position:absolute;
-    inset:0;
+.ars-dimension-universe .ars-dimension-sphere {
+    position: absolute;
 
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
 
-    border-radius:50%;
-    overflow:hidden;
+    left: 0;
+    top: 0;
 
-    transform:
-        translateZ(30px);
+    border-radius: 50%;
 
-    transform-style:preserve-3d;
+    overflow: hidden;
+
+    transform-style: preserve-3d;
 
     background:
         radial-gradient(
             circle at 31% 24%,
-            rgba(255,255,255,.34) 0%,
-            rgba(255,255,255,.12) 8%,
-            transparent 22%
-        ),
-
-        radial-gradient(
-            circle at 68% 72%,
-            rgba(78,157,255,.22) 0%,
-            transparent 38%
-        ),
-
-        radial-gradient(
-            circle at 40% 42%,
-            rgba(214,179,106,.18) 0%,
-            transparent 45%
-        ),
-
-        radial-gradient(
-            circle at 50% 52%,
-            rgba(255,255,255,.045) 0%,
-            rgba(12,15,19,.78) 48%,
-            rgba(1,3,5,.98) 100%
+            rgba(255,255,255,.95) 0%,
+            rgba(255,239,185,.72) 4%,
+            rgba(211,157,61,.92) 16%,
+            rgba(128,83,24,.98) 39%,
+            rgba(20,25,30,1) 72%
         );
 
-    border:
-        1px solid rgba(255,255,255,.28);
-
     box-shadow:
+        inset -34px -30px 55px rgba(0,0,0,.90),
+        inset 20px 16px 35px rgba(255,255,255,.18),
+        inset 0 0 35px rgba(0,0,0,.55),
 
-        /* glass rim */
-        inset 8px 8px 18px rgba(255,255,255,.10),
+        0 0 18px rgba(231,177,73,.72),
+        0 0 55px rgba(231,177,73,.42),
+        0 18px 70px rgba(190,128,35,.48),
+        0 30px 90px rgba(0,0,0,.9);
 
-        /* gold internal reflection */
-        inset -18px -20px 35px rgba(214,179,106,.12),
-
-        /* blue depth */
-        inset 24px -10px 48px rgba(78,157,255,.10),
-
-        /* deep spherical shadow */
-        inset -35px -42px 70px rgba(0,0,0,.92),
-
-        /* external glass */
-        0 20px 45px rgba(0,0,0,.75),
-
-        /* gold atmospheric glow */
-        0 0 55px rgba(214,179,106,.13);
-
-    isolation:isolate;
+    transition: transform .2s ease;
 }
 
 
 /* ---------------------------------------------------------
-   GLASS VOLUME
+   CARBON / ELECTRIC BLUE CORE DEPTH
    --------------------------------------------------------- */
 
-#ars-universe .ars-core-surface::before{
-    content:"";
+.ars-dimension-universe .ars-sphere-blue {
+    position: absolute;
+    inset: -3%;
 
-    position:absolute;
-    inset:-2px;
-
-    border-radius:50%;
+    border-radius: 50%;
 
     background:
-
         radial-gradient(
-            ellipse at 28% 20%,
-            rgba(255,255,255,.30) 0%,
-            rgba(255,255,255,.09) 12%,
-            transparent 27%
-        ),
-
-        radial-gradient(
-            ellipse at 74% 78%,
-            rgba(78,157,255,.18),
-            transparent 38%
-        ),
-
-        radial-gradient(
-            ellipse at 50% 100%,
-            rgba(214,179,106,.20),
-            transparent 48%
+            ellipse at 70% 64%,
+            rgba(0,184,255,.95) 0%,
+            rgba(0,91,145,.72) 19%,
+            rgba(4,34,52,.68) 42%,
+            rgba(2,9,15,.20) 66%,
+            transparent 78%
         );
 
-    mix-blend-mode:screen;
+    mix-blend-mode: screen;
 
-    opacity:.82;
+    transform: translateZ(18px);
 
-    pointer-events:none;
+    opacity: .86;
 
-    z-index:1;
+    pointer-events: none;
 }
 
 
 /* ---------------------------------------------------------
-   ORIGINAL MICRO-RING TECHNIQUE — retained
+   GOLD / BRONZE VOLUME
    --------------------------------------------------------- */
 
-#ars-universe .ars-core-surface::after{
-    content:"";
+.ars-dimension-universe .ars-sphere-gold {
+    position: absolute;
+    inset: -2%;
 
-    position:absolute;
-
-    width:88%;
-    height:88%;
-
-    left:6%;
-    top:6%;
-
-    border-radius:50%;
+    border-radius: 50%;
 
     background:
-        repeating-radial-gradient(
-            circle at 38% 34%,
-            transparent 0,
-            transparent 14px,
-            rgba(255,255,255,.018) 15px,
-            transparent 17px
+        radial-gradient(
+            ellipse at 38% 31%,
+            rgba(255,246,205,.95) 0%,
+            rgba(239,192,91,.88) 9%,
+            rgba(174,116,35,.72) 27%,
+            rgba(100,61,18,.45) 49%,
+            transparent 72%
         );
 
-    border:
-        1px solid rgba(255,255,255,.055);
+    mix-blend-mode: overlay;
+
+    opacity: .92;
+
+    pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   GLASS SHELL
+   --------------------------------------------------------- */
+
+.ars-dimension-universe .ars-sphere-glass {
+    position: absolute;
+    inset: 0;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse at 29% 20%,
+            rgba(255,255,255,.40) 0%,
+            rgba(255,255,255,.12) 13%,
+            transparent 32%
+        ),
+
+        radial-gradient(
+            ellipse at 63% 72%,
+            rgba(0,157,255,.15),
+            transparent 52%
+        );
+
+    border: 1px solid rgba(255,255,255,.30);
 
     box-shadow:
-        inset 0 0 20px rgba(255,255,255,.035),
-        0 0 18px rgba(214,179,106,.04);
+        inset 8px 8px 20px rgba(255,255,255,.15),
+        inset -15px -18px 35px rgba(0,0,0,.58);
 
-    opacity:.75;
+    backdrop-filter: blur(3px);
+
+    transform: translateZ(30px);
+
+    pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   GLASS REFLECTION
+   --------------------------------------------------------- */
+
+.ars-dimension-universe .ars-sphere-reflection {
+    position: absolute;
+
+    width: 58%;
+    height: 34%;
+
+    left: 9%;
+    top: 8%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(255,255,255,.68) 0%,
+            rgba(255,255,255,.22) 28%,
+            rgba(255,255,255,.05) 55%,
+            transparent 72%
+        );
+
+    filter: blur(5px);
 
     transform:
-        translateZ(2px)
-        rotate(-8deg);
+        rotate(-24deg)
+        translateZ(45px);
 
-    pointer-events:none;
+    opacity: .82;
 
-    z-index:2;
+    pointer-events: none;
 }
 
 
 /* ---------------------------------------------------------
-   REAL GLASS EDGE / RIM
+   SPECULAR POINT
    --------------------------------------------------------- */
 
-#ars-universe .ars-core-surface{
-    isolation:isolate;
-}
+.ars-dimension-universe .ars-sphere-highlight {
+    position: absolute;
 
-#ars-universe .ars-core-surface > *{
-    position:relative;
-    z-index:4;
+    width: 22%;
+    height: 22%;
+
+    left: 20%;
+    top: 15%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.95) 0%,
+            rgba(255,255,255,.40) 22%,
+            rgba(255,255,255,.08) 48%,
+            transparent 70%
+        );
+
+    filter: blur(2px);
+
+    transform: translateZ(60px);
+
+    pointer-events: none;
 }
 
 
 /* ---------------------------------------------------------
-   KEEP ORIGINAL TEXT — make it sit INSIDE the glass
+   IDENTITY TEXT
    --------------------------------------------------------- */
 
-#ars-universe .ars-core-symbol,
-#ars-universe .ars-core-title,
-#ars-universe .ars-core-subtitle{
-    position:relative;
-    z-index:8;
-}
+.ars-dimension-universe .ars-dimension-core-content {
+    position: absolute;
 
+    inset: 0;
 
-/* ARS */
+    z-index: 20;
 
-#ars-universe .ars-core-symbol{
-    font-size:55px;
-    font-weight:200;
-    letter-spacing:-.08em;
+    display: flex;
 
-    color:#f7f7f7;
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    transform: translateZ(70px);
+
+    pointer-events: none;
 
     text-shadow:
-        0 1px 1px rgba(0,0,0,.7),
-        0 0 18px rgba(255,255,255,.18),
-        0 0 38px rgba(214,179,106,.08);
+        0 2px 5px rgba(0,0,0,.95),
+        0 0 14px rgba(0,174,255,.35);
 }
 
 
-/* GOLD TITLE */
+.ars-dimension-universe .ars-dimension-core-content span {
+    margin-bottom: 5px;
 
-#ars-universe .ars-core-title{
-    color:#d6b36a;
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+    letter-spacing: 4px;
+
+    color: rgba(255,244,211,.78);
+}
+
+
+.ars-dimension-universe .ars-dimension-core-content b {
+    font-family: Arial, sans-serif;
+
+    font-size: 48px;
+    line-height: .9;
+
+    letter-spacing: 7px;
+
+    color: #fff3c4;
 
     text-shadow:
-        0 0 12px rgba(214,179,106,.22);
+        0 0 5px rgba(255,255,255,.55),
+        0 0 18px rgba(230,174,68,.85),
+        0 0 34px rgba(230,174,68,.38);
 }
 
 
-/* SUBTITLE */
+.ars-dimension-universe .ars-dimension-core-content strong {
+    margin-top: 8px;
 
-#ars-universe .ars-core-subtitle{
-    color:rgba(255,255,255,.42);
+    font-family: Arial, sans-serif;
+
+    font-size: 17px;
+
+    letter-spacing: 4px;
+
+    color: #ffffff;
+}
+
+
+.ars-dimension-universe .ars-dimension-core-content small {
+    margin-top: 3px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 5px;
+
+    color: rgba(0,207,255,.90);
 }
 
 
 /* ---------------------------------------------------------
-   GLASS HIGHLIGHT — subtle moving reflection
+   GOLDEN UNDERLIGHT
    --------------------------------------------------------- */
 
-#ars-universe .ars-core-surface{
-    animation:arsCenterGlassBreath 6s ease-in-out infinite;
+.ars-dimension-universe .ars-dimension-core::after {
+    content: "";
+
+    position: absolute;
+
+    width: 72%;
+    height: 25%;
+
+    left: 14%;
+    bottom: -13%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(255,191,58,.85) 0%,
+            rgba(220,143,32,.48) 25%,
+            rgba(210,130,20,.16) 52%,
+            transparent 75%
+        );
+
+    filter: blur(13px);
+
+    transform: translateZ(-35px);
+
+    pointer-events: none;
+
+    z-index: -2;
 }
 
-@keyframes arsCenterGlassBreath{
 
-    0%,100%{
-        box-shadow:
-            inset 8px 8px 18px rgba(255,255,255,.10),
-            inset -18px -20px 35px rgba(214,179,106,.12),
-            inset 24px -10px 48px rgba(78,157,255,.10),
-            inset -35px -42px 70px rgba(0,0,0,.92),
-            0 20px 45px rgba(0,0,0,.75),
-            0 0 55px rgba(214,179,106,.13);
+/* ---------------------------------------------------------
+   OUTER ATMOSPHERE
+   --------------------------------------------------------- */
+
+.ars-dimension-universe .ars-dimension-core::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -10px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            transparent 57%,
+            rgba(0,186,255,.10) 68%,
+            rgba(0,186,255,.26) 74%,
+            rgba(230,171,55,.30) 80%,
+            transparent 88%
+        );
+
+    filter: blur(4px);
+
+    z-index: -1;
+
+    pointer-events: none;
+
+    animation: arsHeritageAtmosphere 4s ease-in-out infinite;
+}
+
+
+@keyframes arsHeritageAtmosphere {
+
+    0%,100% {
+        opacity: .65;
+        transform: scale(.98);
     }
 
-    50%{
-        box-shadow:
-            inset 10px 10px 22px rgba(255,255,255,.14),
-            inset -18px -20px 38px rgba(214,179,106,.17),
-            inset 25px -10px 55px rgba(78,157,255,.14),
-            inset -38px -45px 74px rgba(0,0,0,.94),
-            0 24px 50px rgba(0,0,0,.78),
-            0 0 70px rgba(214,179,106,.17);
+    50% {
+        opacity: 1;
+        transform: scale(1.035);
     }
 }
 
 
 /* ---------------------------------------------------------
-   IMPORTANT:
-   keep the original three orbital glass rings untouched
+   REMOVE OLD CORE RINGS VISUAL INTERFERENCE
+   They remain in HTML but stay behind the sphere.
    --------------------------------------------------------- */
 
-#ars-universe .ars-core-orbit{
-    transform-style:preserve-3d;
+.ars-dimension-universe .ars-dimension-core-ring {
+    z-index: -3 !important;
 }
 
 
 /* ---------------------------------------------------------
-   HOVER — same architecture, only stronger depth
+   MOBILE
    --------------------------------------------------------- */
 
-#ars-universe .ars-universe-core:hover .ars-core-surface{
-    filter:brightness(1.12) saturate(1.08);
+@media (max-width: 900px) {
 
-    box-shadow:
-        inset 10px 10px 24px rgba(255,255,255,.16),
-        inset -20px -25px 42px rgba(214,179,106,.18),
-        inset 25px -12px 55px rgba(78,157,255,.15),
-        inset -40px -48px 78px rgba(0,0,0,.94),
-        0 25px 55px rgba(0,0,0,.82),
-        0 0 80px rgba(214,179,106,.20);
+    .ars-dimension-universe .ars-dimension-core {
+        width: 245px !important;
+        height: 245px !important;
+    }
+
+    .ars-dimension-universe .ars-dimension-core-content b {
+        font-size: 40px;
+    }
+
+    .ars-dimension-universe .ars-dimension-core-content strong {
+        font-size: 14px;
+    }
 }
+
+
 
