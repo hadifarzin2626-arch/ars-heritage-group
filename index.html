@@ -6866,19 +6866,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-
-    <script>
-/* =========================================================
-   ARS HERITAGE — TRUE VOLUMETRIC CORE
-   CORE ONLY
-   DOES NOT TOUCH:
-   - 13 SYSTEMS
-   - ORBITS
-   - COMMAND
-   - UNIVERSE LAYOUT
-   ========================================================= */
-
+<script>
 (function () {
     'use strict';
 
@@ -6886,78 +6874,53 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!universe) return;
 
     const core = universe.querySelector('.ars-dimension-core');
-    if (!core) return;
+    const sphere = universe.querySelector('.ars-dimension-sphere');
 
-    const sphere = core.querySelector('.ars-dimension-sphere');
-    if (!sphere) return;
+    if (!core || !sphere) return;
 
-    /* -----------------------------------------------------
-       Freeze the external Core geometry.
-       Nothing around the Core is modified.
-       ----------------------------------------------------- */
+    /* Remove any old sphere canvas */
+    sphere.querySelectorAll(
+        '.ars-true-sphere-canvas, .ars-final-sphere-canvas'
+    ).forEach(el => el.remove());
 
-    core.style.transformStyle = 'preserve-3d';
+    const canvas = document.createElement('canvas');
+    canvas.className = 'ars-final-sphere-canvas';
 
-    /* -----------------------------------------------------
-       Create an isolated rendering surface.
-       ----------------------------------------------------- */
+    sphere.insertBefore(
+        canvas,
+        sphere.querySelector('.ars-dimension-core-content')
+    );
 
-    let canvas = sphere.querySelector('.ars-true-sphere-canvas');
-
-    if (!canvas) {
-        canvas = document.createElement('canvas');
-        canvas.className = 'ars-true-sphere-canvas';
-
-        canvas.style.position = 'absolute';
-        canvas.style.inset = '0';
-        canvas.style.width = '100%';
-        canvas.style.height = '100%';
-        canvas.style.borderRadius = '50%';
-        canvas.style.pointerEvents = 'none';
-        canvas.style.zIndex = '1';
-
-        sphere.appendChild(canvas);
-    }
-
-    const ctx = canvas.getContext('2d', {
-        alpha: true
-    });
+    const ctx = canvas.getContext('2d');
 
     if (!ctx) return;
 
-    let size = 0;
-    let radius = 0;
+    let W = 300;
+    let H = 300;
+    let R = 145;
+
+    let angle = 0;
 
     function resize() {
 
         const rect = sphere.getBoundingClientRect();
 
-        size = Math.max(
-            1,
-            Math.min(rect.width, rect.height)
-        );
+        W = Math.max(100, rect.width);
+        H = Math.max(100, rect.height);
 
         const dpr = Math.min(
             window.devicePixelRatio || 1,
             2
         );
 
-        canvas.width = Math.round(size * dpr);
-        canvas.height = Math.round(size * dpr);
-
-        canvas.style.width = size + 'px';
-        canvas.style.height = size + 'px';
+        canvas.width = W * dpr;
+        canvas.height = H * dpr;
 
         ctx.setTransform(
-            dpr,
-            0,
-            0,
-            dpr,
-            0,
-            0
+            dpr, 0, 0, dpr, 0, 0
         );
 
-        radius = size * 0.485;
+        R = Math.min(W, H) * .485;
     }
 
     resize();
@@ -6968,46 +6931,28 @@ document.addEventListener("DOMContentLoaded", () => {
         { passive: true }
     );
 
-    /* -----------------------------------------------------
-       Surface rotation.
-       IMPORTANT:
-       We rotate the LIGHT / SURFACE,
-       NOT the 2D sphere itself.
-       Therefore the sphere never becomes a coin.
-       ----------------------------------------------------- */
+    function frame() {
 
-    let surfaceRotation = 0;
+        ctx.clearRect(0, 0, W, H);
 
-    function drawSphere(time) {
+        const cx = W / 2;
+        const cy = H / 2;
 
-        if (!size || !radius) {
-            resize();
-        }
+        angle += 0.010;
 
-        surfaceRotation += 0.0024;
+        /* ------------------------------------------
+           ATMOSPHERE
+        ------------------------------------------ */
 
-        const cx = size / 2;
-        const cy = size / 2;
-
-        ctx.clearRect(
-            0,
-            0,
-            size,
-            size
-        );
-
-        /* -----------------------------------------------
-           1. Atmospheric outer glow
-           ----------------------------------------------- */
-
-        const atmosphere = ctx.createRadialGradient(
-            cx,
-            cy,
-            radius * 0.72,
-            cx,
-            cy,
-            radius * 1.04
-        );
+        const atmosphere =
+            ctx.createRadialGradient(
+                cx,
+                cy,
+                R * .78,
+                cx,
+                cy,
+                R * 1.08
+            );
 
         atmosphere.addColorStop(
             0,
@@ -7015,18 +6960,13 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         atmosphere.addColorStop(
-            0.76,
-            'rgba(0,178,255,0.08)'
+            .78,
+            'rgba(0,190,255,.10)'
         );
 
         atmosphere.addColorStop(
-            0.88,
-            'rgba(0,178,255,0.28)'
-        );
-
-        atmosphere.addColorStop(
-            0.95,
-            'rgba(231,177,73,0.24)'
+            .90,
+            'rgba(0,190,255,.30)'
         );
 
         atmosphere.addColorStop(
@@ -7035,64 +6975,68 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         ctx.beginPath();
-        ctx.arc(
-            cx,
-            cy,
-            radius * 1.04,
-            0,
-            Math.PI * 2
-        );
-
+        ctx.arc(cx, cy, R * 1.06, 0, Math.PI * 2);
         ctx.fillStyle = atmosphere;
         ctx.fill();
 
-        /* -----------------------------------------------
-           2. Actual spherical body
-           ----------------------------------------------- */
+        /* ------------------------------------------
+           THE SPHERE
+           This circle NEVER rotates.
+           Its lighting rotates instead.
+        ------------------------------------------ */
 
-        const body = ctx.createRadialGradient(
-            cx - radius * 0.34,
-            cy - radius * 0.40,
-            radius * 0.04,
+        const lightX =
+            cx -
+            Math.cos(angle) * R * .42;
 
-            cx + radius * 0.20,
-            cy + radius * 0.24,
-            radius * 1.05
-        );
+        const lightY =
+            cy -
+            R * .42;
 
-        body.addColorStop(
+        const sphereGradient =
+            ctx.createRadialGradient(
+                lightX,
+                lightY,
+                R * .03,
+
+                cx + R * .42,
+                cy + R * .28,
+                R * 1.08
+            );
+
+        sphereGradient.addColorStop(
             0,
-            '#fff1bd'
+            '#fff4c9'
         );
 
-        body.addColorStop(
-            0.09,
-            '#e9bd65'
+        sphereGradient.addColorStop(
+            .10,
+            '#e5b65b'
         );
 
-        body.addColorStop(
-            0.25,
-            '#a96f27'
+        sphereGradient.addColorStop(
+            .27,
+            '#a86f28'
         );
 
-        body.addColorStop(
-            0.48,
-            '#5a3818'
+        sphereGradient.addColorStop(
+            .48,
+            '#68431e'
         );
 
-        body.addColorStop(
-            0.68,
-            '#162c38'
+        sphereGradient.addColorStop(
+            .67,
+            '#12384b'
         );
 
-        body.addColorStop(
-            0.84,
-            '#06121b'
+        sphereGradient.addColorStop(
+            .84,
+            '#061824'
         );
 
-        body.addColorStop(
+        sphereGradient.addColorStop(
             1,
-            '#010508'
+            '#01070b'
         );
 
         ctx.beginPath();
@@ -7100,17 +7044,17 @@ document.addEventListener("DOMContentLoaded", () => {
         ctx.arc(
             cx,
             cy,
-            radius,
+            R,
             0,
             Math.PI * 2
         );
 
-        ctx.fillStyle = body;
+        ctx.fillStyle = sphereGradient;
         ctx.fill();
 
-        /* -----------------------------------------------
-           3. Gold / Bronze surface structures
-           ----------------------------------------------- */
+        /* ------------------------------------------
+           ELECTRIC BLUE ROTATING BAND
+        ------------------------------------------ */
 
         ctx.save();
 
@@ -7119,122 +7063,56 @@ document.addEventListener("DOMContentLoaded", () => {
         ctx.arc(
             cx,
             cy,
-            radius * 0.985,
+            R * .995,
             0,
             Math.PI * 2
         );
 
         ctx.clip();
 
-        for (let i = 0; i < 18; i++) {
+        const blueX =
+            cx +
+            Math.sin(angle) * R * .48;
 
-            const a =
-                i * 2.399963 +
-                surfaceRotation;
-
-            const rr =
-                radius *
-                (0.12 + ((i * 37) % 70) / 100);
-
-            const x =
-                cx +
-                Math.cos(a) * rr;
-
-            const y =
-                cy +
-                Math.sin(a) * rr * 0.72;
-
-            const w =
-                radius *
-                (0.08 + ((i * 13) % 12) / 100);
-
-            const h =
-                radius *
-                (0.018 + ((i * 7) % 8) / 100);
-
-            const glow =
-                ctx.createRadialGradient(
-                    x,
-                    y,
-                    0,
-                    x,
-                    y,
-                    w
-                );
-
-            glow.addColorStop(
+        const blue =
+            ctx.createRadialGradient(
+                blueX,
+                cy + R * .20,
                 0,
-                'rgba(245,190,75,0.30)'
+
+                blueX,
+                cy + R * .20,
+                R * .72
             );
 
-            glow.addColorStop(
-                0.55,
-                'rgba(173,110,28,0.13)'
-            );
-
-            glow.addColorStop(
-                1,
-                'rgba(0,0,0,0)'
-            );
-
-            ctx.fillStyle = glow;
-
-            ctx.beginPath();
-
-            ctx.ellipse(
-                x,
-                y,
-                w,
-                h,
-                a,
-                0,
-                Math.PI * 2
-            );
-
-            ctx.fill();
-        }
-
-        /* -----------------------------------------------
-           4. Electric blue depth
-           ----------------------------------------------- */
-
-        const blueDepth = ctx.createRadialGradient(
-            cx + radius * 0.43,
-            cy + radius * 0.28,
+        blue.addColorStop(
             0,
-            cx + radius * 0.25,
-            cy + radius * 0.20,
-            radius * 0.82
+            'rgba(0,215,255,.70)'
         );
 
-        blueDepth.addColorStop(
-            0,
-            'rgba(0,210,255,0.58)'
+        blue.addColorStop(
+            .25,
+            'rgba(0,130,200,.35)'
         );
 
-        blueDepth.addColorStop(
-            0.28,
-            'rgba(0,122,180,0.34)'
+        blue.addColorStop(
+            .60,
+            'rgba(0,50,80,.16)'
         );
 
-        blueDepth.addColorStop(
-            0.58,
-            'rgba(0,48,73,0.20)'
-        );
-
-        blueDepth.addColorStop(
+        blue.addColorStop(
             1,
             'rgba(0,0,0,0)'
         );
 
-        ctx.fillStyle = blueDepth;
+        ctx.fillStyle = blue;
 
         ctx.beginPath();
 
         ctx.arc(
             cx,
             cy,
-            radius,
+            R,
             0,
             Math.PI * 2
         );
@@ -7243,19 +7121,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
         ctx.restore();
 
-        /* -----------------------------------------------
-           5. Strong spherical terminator / side shadow
-           ----------------------------------------------- */
+        /* ------------------------------------------
+           DEEP SIDE SHADOW
+        ------------------------------------------ */
 
-        const shadow = ctx.createRadialGradient(
-            cx + radius * 0.46,
-            cy + radius * 0.25,
-            radius * 0.08,
+        const shadow =
+            ctx.createRadialGradient(
+                cx + R * .50,
+                cy + R * .20,
+                R * .10,
 
-            cx + radius * 0.30,
-            cy + radius * 0.20,
-            radius * 1.02
-        );
+                cx + R * .40,
+                cy + R * .20,
+                R * 1.02
+            );
 
         shadow.addColorStop(
             0,
@@ -7263,23 +7142,23 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         shadow.addColorStop(
-            0.52,
-            'rgba(0,0,0,0.12)'
+            .55,
+            'rgba(0,0,0,.14)'
         );
 
         shadow.addColorStop(
-            0.78,
-            'rgba(0,0,0,0.48)'
+            .78,
+            'rgba(0,0,0,.48)'
         );
 
         shadow.addColorStop(
-            0.94,
-            'rgba(0,0,0,0.82)'
+            .94,
+            'rgba(0,0,0,.82)'
         );
 
         shadow.addColorStop(
             1,
-            'rgba(0,0,0,0.98)'
+            'rgba(0,0,0,.98)'
         );
 
         ctx.beginPath();
@@ -7287,7 +7166,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ctx.arc(
             cx,
             cy,
-            radius,
+            R,
             0,
             Math.PI * 2
         );
@@ -7295,94 +7174,34 @@ document.addEventListener("DOMContentLoaded", () => {
         ctx.fillStyle = shadow;
         ctx.fill();
 
-        /* -----------------------------------------------
-           6. Glass dome
-           ----------------------------------------------- */
-
-        const glass = ctx.createRadialGradient(
-            cx - radius * 0.32,
-            cy - radius * 0.42,
-            0,
-
-            cx - radius * 0.15,
-            cy - radius * 0.12,
-            radius * 0.92
-        );
-
-        glass.addColorStop(
-            0,
-            'rgba(255,255,255,0.42)'
-        );
-
-        glass.addColorStop(
-            0.10,
-            'rgba(255,255,255,0.16)'
-        );
-
-        glass.addColorStop(
-            0.30,
-            'rgba(255,255,255,0.035)'
-        );
-
-        glass.addColorStop(
-            0.72,
-            'rgba(255,255,255,0)'
-        );
-
-        glass.addColorStop(
-            1,
-            'rgba(0,0,0,0.18)'
-        );
-
-        ctx.beginPath();
-
-        ctx.arc(
-            cx,
-            cy,
-            radius * 0.99,
-            0,
-            Math.PI * 2
-        );
-
-        ctx.fillStyle = glass;
-        ctx.fill();
-
-        /* -----------------------------------------------
-           7. Premium specular reflection
-           ----------------------------------------------- */
-
-        ctx.save();
-
-        ctx.translate(
-            cx - radius * 0.29,
-            cy - radius * 0.37
-        );
-
-        ctx.rotate(-0.42);
+        /* ------------------------------------------
+           GLASS REFLECTION
+        ------------------------------------------ */
 
         const reflection =
             ctx.createRadialGradient(
+                cx - R * .34,
+                cy - R * .42,
                 0,
-                0,
-                0,
-                0,
-                0,
-                radius * 0.48
+
+                cx - R * .28,
+                cy - R * .30,
+                R * .58
             );
 
         reflection.addColorStop(
             0,
-            'rgba(255,255,255,0.72)'
+            'rgba(255,255,255,.70)'
         );
 
         reflection.addColorStop(
-            0.18,
-            'rgba(255,255,255,0.28)'
+            .12,
+            'rgba(255,255,255,.28)'
         );
 
         reflection.addColorStop(
-            0.48,
-            'rgba(255,255,255,0.055)'
+            .34,
+            'rgba(255,255,255,.07)'
         );
 
         reflection.addColorStop(
@@ -7390,128 +7209,47 @@ document.addEventListener("DOMContentLoaded", () => {
             'rgba(255,255,255,0)'
         );
 
+        ctx.beginPath();
+
+        ctx.arc(
+            cx,
+            cy,
+            R * .99,
+            0,
+            Math.PI * 2
+        );
+
         ctx.fillStyle = reflection;
-
-        ctx.beginPath();
-
-        ctx.ellipse(
-            0,
-            0,
-            radius * 0.42,
-            radius * 0.22,
-            0,
-            0,
-            Math.PI * 2
-        );
-
         ctx.fill();
 
-        ctx.restore();
-
-        /* -----------------------------------------------
-           8. Crisp outer rim
-           ----------------------------------------------- */
+        /* ------------------------------------------
+           OUTER GLASS RIM
+        ------------------------------------------ */
 
         ctx.beginPath();
 
         ctx.arc(
             cx,
             cy,
-            radius * 0.985,
+            R * .985,
             0,
             Math.PI * 2
         );
 
         ctx.strokeStyle =
-            'rgba(255,224,157,0.48)';
+            'rgba(255,224,160,.58)';
 
-        ctx.lineWidth = 1.2;
-
-        ctx.stroke();
-
-        /* -----------------------------------------------
-           9. Electric blue lower rim
-           ----------------------------------------------- */
-
-        ctx.beginPath();
-
-        ctx.arc(
-            cx,
-            cy,
-            radius * 0.995,
-            0.22,
-            Math.PI - 0.22
-        );
-
-        ctx.strokeStyle =
-            'rgba(0,196,255,0.50)';
-
-        ctx.lineWidth = 2;
+        ctx.lineWidth = 1.4;
 
         ctx.stroke();
 
-        /* -----------------------------------------------
-           10. Gold underlight
-           ----------------------------------------------- */
-
-        const under =
-            ctx.createRadialGradient(
-                cx,
-                cy + radius * 0.96,
-                0,
-
-                cx,
-                cy + radius * 0.96,
-                radius * 0.72
-            );
-
-        under.addColorStop(
-            0,
-            'rgba(255,192,58,0.22)'
-        );
-
-        under.addColorStop(
-            0.34,
-            'rgba(230,151,38,0.12)'
-        );
-
-        under.addColorStop(
-            1,
-            'rgba(0,0,0,0)'
-        );
-
-        ctx.fillStyle = under;
-
-        ctx.beginPath();
-
-        ctx.ellipse(
-            cx,
-            cy + radius * 0.93,
-            radius * 0.70,
-            radius * 0.16,
-            0,
-            0,
-            Math.PI * 2
-        );
-
-        ctx.fill();
-
-        requestAnimationFrame(drawSphere);
+        requestAnimationFrame(frame);
     }
 
-    requestAnimationFrame(drawSphere);
+    frame();
 
 })();
-                 </script>
-
-
-
-
-
-
-
-
-
+    </script>
 
 
 
