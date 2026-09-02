@@ -5812,58 +5812,73 @@ document.addEventListener("DOMContentLoaded", () => {
    </script>     
 
 
-
 <script>
 (function () {
 
-    const universe = document.querySelector('.ars-dimension-universe');
+    const universe =
+        document.querySelector('.ars-dimension-universe');
+
     if (!universe) return;
 
-    const system = universe.querySelector('.ars-dimension-system');
-    const nodes = Array.from(
-        universe.querySelectorAll('.ars-dimension-node')
-    );
+    const system =
+        universe.querySelector('.ars-dimension-system');
+
+    const nodes =
+        Array.from(
+            universe.querySelectorAll('.ars-dimension-node')
+        );
+
+    const core =
+        universe.querySelector('.ars-dimension-core');
 
     if (!system || nodes.length !== 13) return;
 
-    const total = nodes.length;
-
-    let rotation = 0;
-    let velocity = 0.035;
-    let targetVelocity = 0.035;
-
-    let dragging = false;
-    let lastX = 0;
-    let lastY = 0;
-
-    let raf;
-
 
     /* =========================================
-       3D CONFIG
+       ARS DIMENSION ENGINE
        ========================================= */
 
-    const radiusX = 285;
-    const radiusY = 190;
-    const depth = 170;
+    const TOTAL = 13;
 
-    const perspective = 900;
+    let rotation = 0;
+
+    /* 2X BASE SPEED */
+    let velocity = 0.07;
+
+    let targetVelocity = 0.07;
+
+    let dragging = false;
+
+    let lastX = 0;
+
+    let raf = null;
 
 
     /* =========================================
-       POSITION ENGINE
+       ORBIT GEOMETRY
+       ========================================= */
+
+    const radiusX = 315;
+    const radiusY = 205;
+    const radiusZ = 205;
+
+
+    /* =========================================
+       RENDER
        ========================================= */
 
     function render() {
 
-        nodes.forEach((node, index) => {
+        for (let i = 0; i < TOTAL; i++) {
 
-            const baseAngle =
-                (360 / total) * index;
+            const node = nodes[i];
 
             const angle =
-                (baseAngle + rotation) *
-                Math.PI / 180;
+                (
+                    (360 / TOTAL) * i +
+                    rotation
+                ) * Math.PI / 180;
+
 
             const x =
                 Math.sin(angle) * radiusX;
@@ -5872,87 +5887,90 @@ document.addEventListener("DOMContentLoaded", () => {
                 Math.cos(angle) * radiusY;
 
             const z =
-                Math.cos(angle) * depth;
+                Math.cos(angle) * radiusZ;
 
-            /*
-             * z:
-             * front  = positive
-             * back   = negative
-             */
 
-            const depthScale =
-                0.72 + ((z + depth) / (depth * 2)) * 0.30;
+            /* front / back depth */
+
+            const depth =
+                (z + radiusZ) /
+                (radiusZ * 2);
+
+
+            const scale =
+                0.72 +
+                depth * 0.34;
+
 
             const opacity =
-                0.48 + ((z + depth) / (depth * 2)) * 0.52;
+                0.38 +
+                depth * 0.62;
 
-            const blur =
-                z < -50
-                    ? Math.min(2.5, Math.abs(z + 50) / 90)
-                    : 0;
 
-            const translate =
-                `translate3d(
+            let blur = 0;
+
+            if (z < -65) {
+                blur =
+                    Math.min(
+                        2.8,
+                        Math.abs(z + 65) / 70
+                    );
+            }
+
+
+            node.style.transform =
+                `
+                translate3d(
                     calc(-50% + ${x}px),
                     calc(-50% + ${y}px),
                     ${z}px
-                )`;
+                )
+                scale(${scale})
+                `;
 
-            node.style.transform =
-                `${translate} scale(${depthScale})`;
 
             node.style.opacity = opacity;
+
 
             node.style.filter =
                 blur > 0
                     ? `blur(${blur}px)`
                     : 'none';
 
+
             node.style.zIndex =
-                Math.round(1000 + z);
-
-        });
-
-
-        /*
-         * Keep the center above the orbital nodes
-         */
-
-        const core =
-            universe.querySelector('.ars-dimension-core');
-
-        if (core) {
-            core.style.zIndex = '5000';
+                Math.round(100 + z);
         }
 
 
-        /*
-         * Continue animation
-         */
+        if (core) {
+            core.style.zIndex = 5000;
+        }
+
 
         rotation += velocity;
 
-        velocity +=
-            (targetVelocity - velocity) * 0.045;
 
-        raf = requestAnimationFrame(render);
+        velocity +=
+            (targetVelocity - velocity) *
+            0.055;
+
+
+        raf =
+            requestAnimationFrame(render);
     }
 
 
     /* =========================================
-       MOUSE DRAG
+       POINTER DRAG
        ========================================= */
 
     universe.addEventListener(
         'pointerdown',
-        function (event) {
-
-            /*
-             * Don't hijack clicks on links
-             */
+        function (e) {
 
             if (
-                event.target.closest(
+                e.target.closest(
                     '.ars-dimension-node, .ars-dimension-core'
                 )
             ) {
@@ -5961,13 +5979,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
             dragging = true;
 
-            lastX = event.clientX;
-            lastY = event.clientY;
+            lastX = e.clientX;
 
             targetVelocity = 0;
 
             universe.setPointerCapture?.(
-                event.pointerId
+                e.pointerId
             );
         }
     );
@@ -5975,60 +5992,98 @@ document.addEventListener("DOMContentLoaded", () => {
 
     universe.addEventListener(
         'pointermove',
-        function (event) {
+        function (e) {
 
             if (!dragging) return;
 
             const dx =
-                event.clientX - lastX;
+                e.clientX - lastX;
 
-            const dy =
-                event.clientY - lastY;
+            rotation += dx * 0.42;
 
-            rotation += dx * 0.22;
-
-            /*
-             * Vertical movement slightly changes
-             * the orbit perspective.
-             */
-
-            const vertical =
-                dy * 0.03;
-
-            universe.style.setProperty(
-                '--ars-dimension-tilt',
-                vertical + 'deg'
-            );
-
-            lastX = event.clientX;
-            lastY = event.clientY;
+            lastX = e.clientX;
         }
     );
 
 
-    function stopDrag() {
-
-        if (!dragging) return;
+    function releasePointer() {
 
         dragging = false;
 
-        targetVelocity = 0.035;
+        targetVelocity = 0.07;
     }
 
 
     universe.addEventListener(
         'pointerup',
-        stopDrag
+        releasePointer
     );
 
     universe.addEventListener(
         'pointercancel',
-        stopDrag
+        releasePointer
     );
 
+
+    /* =========================================
+       TOUCH
+       ========================================= */
+
     universe.addEventListener(
-        'pointerleave',
-        stopDrag
+        'touchstart',
+        function (e) {
+
+            if (
+                e.target.closest(
+                    '.ars-dimension-node, .ars-dimension-core'
+                )
+            ) {
+                return;
+            }
+
+            dragging = true;
+
+            lastX =
+                e.touches[0].clientX;
+
+            targetVelocity = 0;
+
+        },
+        { passive: true }
+    );
+
+
+    universe.addEventListener(
+        'touchmove',
+        function (e) {
+
+            if (!dragging) return;
+
+            const x =
+                e.touches[0].clientX;
+
+            const dx =
+                x - lastX;
+
+            rotation += dx * 0.50;
+
+            lastX = x;
+
+        },
+        { passive: true }
+    );
+
+
+    universe.addEventListener(
+        'touchend',
+        function () {
+
+            dragging = false;
+
+            targetVelocity = 0.07;
+
+        },
+        { passive: true }
     );
 
 
@@ -6042,17 +6097,7 @@ document.addEventListener("DOMContentLoaded", () => {
             'mouseenter',
             function () {
 
-                targetVelocity = 0.008;
-
-                nodes.forEach(function (other) {
-                    if (other !== node) {
-                        other.style.opacity =
-                            Math.min(
-                                parseFloat(other.style.opacity || 1),
-                                0.72
-                            );
-                    }
-                });
+                targetVelocity = 0.018;
 
             }
         );
@@ -6062,7 +6107,7 @@ document.addEventListener("DOMContentLoaded", () => {
             'mouseleave',
             function () {
 
-                targetVelocity = 0.035;
+                targetVelocity = 0.07;
 
             }
         );
@@ -6071,128 +6116,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================================
-       TOUCH
-       ========================================= */
-
-    universe.addEventListener(
-        'touchstart',
-        function (event) {
-
-            if (
-                event.target.closest(
-                    '.ars-dimension-node, .ars-dimension-core'
-                )
-            ) {
-                return;
-            }
-
-            const touch =
-                event.touches[0];
-
-            dragging = true;
-
-            lastX = touch.clientX;
-            lastY = touch.clientY;
-
-            targetVelocity = 0;
-
-        },
-        { passive: true }
-    );
-
-
-    universe.addEventListener(
-        'touchmove',
-        function (event) {
-
-            if (!dragging) return;
-
-            const touch =
-                event.touches[0];
-
-            const dx =
-                touch.clientX - lastX;
-
-            rotation += dx * 0.28;
-
-            lastX = touch.clientX;
-            lastY = touch.clientY;
-
-        },
-        { passive: true }
-    );
-
-
-    universe.addEventListener(
-        'touchend',
-        function () {
-
-            dragging = false;
-
-            targetVelocity = 0.035;
-
-        },
-        { passive: true }
-    );
-
-
-    /* =========================================
-       INITIALIZE
+       START
        ========================================= */
 
     nodes.forEach(function (node) {
 
-        node.style.position = 'absolute';
+        node.style.position =
+            'absolute';
 
     });
+
 
     render();
 
 
-    /*
-     * Stop animation when the section is not visible.
-     * Saves CPU/GPU on long pages.
-     */
-
-    if ('IntersectionObserver' in window) {
-
-        const observer =
-            new IntersectionObserver(
-                function (entries) {
-
-                    entries.forEach(function (entry) {
-
-                        if (!entry.isIntersecting) {
-
-                            cancelAnimationFrame(raf);
-
-                        } else {
-
-                            cancelAnimationFrame(raf);
-                            render();
-
-                        }
-
-                    });
-
-                },
-                {
-                    threshold: 0.05
-                }
-            );
-
-        observer.observe(universe);
-    }
-
 })();
 </script>
-
-
-
-
-    
-
-
 
     
 </body>
