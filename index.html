@@ -5811,5 +5811,389 @@ document.addEventListener("DOMContentLoaded", () => {
 
    </script>     
 
+
+
+<script>
+(function () {
+
+    const universe = document.querySelector('.ars-dimension-universe');
+    if (!universe) return;
+
+    const system = universe.querySelector('.ars-dimension-system');
+    const nodes = Array.from(
+        universe.querySelectorAll('.ars-dimension-node')
+    );
+
+    if (!system || nodes.length !== 13) return;
+
+    const total = nodes.length;
+
+    let rotation = 0;
+    let velocity = 0.035;
+    let targetVelocity = 0.035;
+
+    let dragging = false;
+    let lastX = 0;
+    let lastY = 0;
+
+    let raf;
+
+
+    /* =========================================
+       3D CONFIG
+       ========================================= */
+
+    const radiusX = 285;
+    const radiusY = 190;
+    const depth = 170;
+
+    const perspective = 900;
+
+
+    /* =========================================
+       POSITION ENGINE
+       ========================================= */
+
+    function render() {
+
+        nodes.forEach((node, index) => {
+
+            const baseAngle =
+                (360 / total) * index;
+
+            const angle =
+                (baseAngle + rotation) *
+                Math.PI / 180;
+
+            const x =
+                Math.sin(angle) * radiusX;
+
+            const y =
+                Math.cos(angle) * radiusY;
+
+            const z =
+                Math.cos(angle) * depth;
+
+            /*
+             * z:
+             * front  = positive
+             * back   = negative
+             */
+
+            const depthScale =
+                0.72 + ((z + depth) / (depth * 2)) * 0.30;
+
+            const opacity =
+                0.48 + ((z + depth) / (depth * 2)) * 0.52;
+
+            const blur =
+                z < -50
+                    ? Math.min(2.5, Math.abs(z + 50) / 90)
+                    : 0;
+
+            const translate =
+                `translate3d(
+                    calc(-50% + ${x}px),
+                    calc(-50% + ${y}px),
+                    ${z}px
+                )`;
+
+            node.style.transform =
+                `${translate} scale(${depthScale})`;
+
+            node.style.opacity = opacity;
+
+            node.style.filter =
+                blur > 0
+                    ? `blur(${blur}px)`
+                    : 'none';
+
+            node.style.zIndex =
+                Math.round(1000 + z);
+
+        });
+
+
+        /*
+         * Keep the center above the orbital nodes
+         */
+
+        const core =
+            universe.querySelector('.ars-dimension-core');
+
+        if (core) {
+            core.style.zIndex = '5000';
+        }
+
+
+        /*
+         * Continue animation
+         */
+
+        rotation += velocity;
+
+        velocity +=
+            (targetVelocity - velocity) * 0.045;
+
+        raf = requestAnimationFrame(render);
+    }
+
+
+    /* =========================================
+       MOUSE DRAG
+       ========================================= */
+
+    universe.addEventListener(
+        'pointerdown',
+        function (event) {
+
+            /*
+             * Don't hijack clicks on links
+             */
+
+            if (
+                event.target.closest(
+                    '.ars-dimension-node, .ars-dimension-core'
+                )
+            ) {
+                return;
+            }
+
+            dragging = true;
+
+            lastX = event.clientX;
+            lastY = event.clientY;
+
+            targetVelocity = 0;
+
+            universe.setPointerCapture?.(
+                event.pointerId
+            );
+        }
+    );
+
+
+    universe.addEventListener(
+        'pointermove',
+        function (event) {
+
+            if (!dragging) return;
+
+            const dx =
+                event.clientX - lastX;
+
+            const dy =
+                event.clientY - lastY;
+
+            rotation += dx * 0.22;
+
+            /*
+             * Vertical movement slightly changes
+             * the orbit perspective.
+             */
+
+            const vertical =
+                dy * 0.03;
+
+            universe.style.setProperty(
+                '--ars-dimension-tilt',
+                vertical + 'deg'
+            );
+
+            lastX = event.clientX;
+            lastY = event.clientY;
+        }
+    );
+
+
+    function stopDrag() {
+
+        if (!dragging) return;
+
+        dragging = false;
+
+        targetVelocity = 0.035;
+    }
+
+
+    universe.addEventListener(
+        'pointerup',
+        stopDrag
+    );
+
+    universe.addEventListener(
+        'pointercancel',
+        stopDrag
+    );
+
+    universe.addEventListener(
+        'pointerleave',
+        stopDrag
+    );
+
+
+    /* =========================================
+       HOVER
+       ========================================= */
+
+    nodes.forEach(function (node) {
+
+        node.addEventListener(
+            'mouseenter',
+            function () {
+
+                targetVelocity = 0.008;
+
+                nodes.forEach(function (other) {
+                    if (other !== node) {
+                        other.style.opacity =
+                            Math.min(
+                                parseFloat(other.style.opacity || 1),
+                                0.72
+                            );
+                    }
+                });
+
+            }
+        );
+
+
+        node.addEventListener(
+            'mouseleave',
+            function () {
+
+                targetVelocity = 0.035;
+
+            }
+        );
+
+    });
+
+
+    /* =========================================
+       TOUCH
+       ========================================= */
+
+    universe.addEventListener(
+        'touchstart',
+        function (event) {
+
+            if (
+                event.target.closest(
+                    '.ars-dimension-node, .ars-dimension-core'
+                )
+            ) {
+                return;
+            }
+
+            const touch =
+                event.touches[0];
+
+            dragging = true;
+
+            lastX = touch.clientX;
+            lastY = touch.clientY;
+
+            targetVelocity = 0;
+
+        },
+        { passive: true }
+    );
+
+
+    universe.addEventListener(
+        'touchmove',
+        function (event) {
+
+            if (!dragging) return;
+
+            const touch =
+                event.touches[0];
+
+            const dx =
+                touch.clientX - lastX;
+
+            rotation += dx * 0.28;
+
+            lastX = touch.clientX;
+            lastY = touch.clientY;
+
+        },
+        { passive: true }
+    );
+
+
+    universe.addEventListener(
+        'touchend',
+        function () {
+
+            dragging = false;
+
+            targetVelocity = 0.035;
+
+        },
+        { passive: true }
+    );
+
+
+    /* =========================================
+       INITIALIZE
+       ========================================= */
+
+    nodes.forEach(function (node) {
+
+        node.style.position = 'absolute';
+
+    });
+
+    render();
+
+
+    /*
+     * Stop animation when the section is not visible.
+     * Saves CPU/GPU on long pages.
+     */
+
+    if ('IntersectionObserver' in window) {
+
+        const observer =
+            new IntersectionObserver(
+                function (entries) {
+
+                    entries.forEach(function (entry) {
+
+                        if (!entry.isIntersecting) {
+
+                            cancelAnimationFrame(raf);
+
+                        } else {
+
+                            cancelAnimationFrame(raf);
+                            render();
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.05
+                }
+            );
+
+        observer.observe(universe);
+    }
+
+})();
+</script>
+
+
+
+
+    
+
+
+
+    
 </body>
 </html>
