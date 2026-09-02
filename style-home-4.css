@@ -43188,6 +43188,635 @@ section.ars-system-seven .ars-card-logo {
 
 
 
+/* =========================================================
+   ARS INTELLIGENCE DISPLAY
+   FOUR CORE PILLARS — PREMIUM MASTER PATCH
+   ========================================================= */
+
+.ars-intelligence-display .ars-id-pillars {
+    position: absolute;
+    inset: 0;
+    z-index: 12;
+    pointer-events: none;
+}
+
+/* ---------------------------------------------------------
+   PILLAR
+   --------------------------------------------------------- */
+
+.ars-intelligence-display .ars-id-pillar {
+    position: absolute;
+    width: 245px;
+    min-height: 154px;
+    padding: 17px 18px 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    color: #fff;
+    text-decoration: none;
+
+    pointer-events: auto;
+
+    border: 1px solid rgba(255,255,255,.11);
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.012) 48%,
+            rgba(0,0,0,.18)
+        );
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.07),
+        inset 0 -30px 55px rgba(0,0,0,.16),
+        0 18px 55px rgba(0,0,0,.34);
+
+    overflow: hidden;
+
+    transform: translateZ(0);
+    transition:
+        transform .55s cubic-bezier(.16,1,.3,1),
+        border-color .4s ease,
+        box-shadow .5s ease,
+        background .5s ease;
+}
+
+/* cinematic glass sheen */
+
+.ars-intelligence-display .ars-id-pillar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            115deg,
+            transparent 0%,
+            transparent 38%,
+            rgba(255,255,255,.07) 49%,
+            transparent 60%
+        );
+
+    transform: translateX(-130%);
+    transition: transform 1s cubic-bezier(.16,1,.3,1);
+
+    pointer-events: none;
+}
+
+/* subtle lower energy */
+
+.ars-intelligence-display .ars-id-pillar::after {
+    content: "";
+    position: absolute;
+    left: 15%;
+    right: 15%;
+    bottom: -35px;
+    height: 65px;
+
+    border-radius: 50%;
+
+    filter: blur(20px);
+    opacity: .28;
+
+    pointer-events: none;
+}
+
+/* ---------------------------------------------------------
+   POSITIONS
+   --------------------------------------------------------- */
+
+.ars-intelligence-display .pillar-brain {
+    left: 22px;
+    top: 32px;
+}
+
+.ars-intelligence-display .pillar-rose {
+    right: 22px;
+    top: 32px;
+}
+
+.ars-intelligence-display .pillar-naji {
+    left: 22px;
+    bottom: 42px;
+}
+
+.ars-intelligence-display .pillar-design {
+    right: 22px;
+    bottom: 42px;
+}
+
+
+/* ---------------------------------------------------------
+   TOP META
+   --------------------------------------------------------- */
+
+.ars-intelligence-display .pillar-top {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+}
+
+.ars-intelligence-display .pillar-index {
+    font-family: "Arial Narrow", Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .2em;
+
+    color: rgba(255,255,255,.42);
+}
+
+.ars-intelligence-display .pillar-state {
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: .2em;
+    white-space: nowrap;
+
+    color: rgba(255,255,255,.35);
+}
+
+
+/* ---------------------------------------------------------
+   SYMBOL
+   --------------------------------------------------------- */
+
+.ars-intelligence-display .pillar-symbol {
+    position: absolute;
+
+    width: 78px;
+    height: 78px;
+
+    right: 17px;
+    top: 38px;
+
+    opacity: .72;
+}
+
+.ars-intelligence-display .symbol-ring {
+    position: absolute;
+    inset: 10px;
+
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 50%;
+
+    animation: arsPillarSpin 13s linear infinite;
+}
+
+.ars-intelligence-display .symbol-ring::before,
+.ars-intelligence-display .symbol-ring::after {
+    content: "";
+    position: absolute;
+    inset: 7px;
+
+    border-radius: 50%;
+    border: 1px dashed rgba(255,255,255,.11);
+}
+
+.ars-intelligence-display .symbol-ring::after {
+    inset: 18px;
+    border-style: solid;
+    border-color: rgba(255,255,255,.2);
+}
+
+.ars-intelligence-display .symbol-core {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%,-50%);
+
+    border-radius: 50%;
+    background: #fff;
+
+    box-shadow:
+        0 0 8px rgba(255,255,255,.8),
+        0 0 22px rgba(255,255,255,.45);
+}
+
+.ars-intelligence-display .symbol-line {
+    position: absolute;
+
+    width: 32px;
+    height: 1px;
+
+    left: 50%;
+    top: 50%;
+
+    transform-origin: left center;
+    transform: rotate(-38deg);
+
+    background: linear-gradient(
+        90deg,
+        rgba(255,255,255,.8),
+        transparent
+    );
+}
+
+
+/* ---------------------------------------------------------
+   COPY
+   --------------------------------------------------------- */
+
+.ars-intelligence-display .pillar-copy {
+    position: relative;
+    z-index: 3;
+
+    padding-right: 68px;
+}
+
+.ars-intelligence-display .pillar-kicker {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: .22em;
+
+    color: rgba(255,255,255,.43);
+}
+
+.ars-intelligence-display .pillar-copy strong {
+    display: block;
+
+    font-family:
+        "Arial Narrow",
+        Arial,
+        sans-serif;
+
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1;
+
+    letter-spacing: .035em;
+
+    color: #fff;
+
+    text-shadow:
+        0 0 18px rgba(255,255,255,.08);
+}
+
+.ars-intelligence-display .pillar-copy small {
+    display: block;
+
+    margin-top: 8px;
+
+    max-width: 155px;
+
+    font-size: 7px;
+    line-height: 1.45;
+    letter-spacing: .11em;
+
+    color: rgba(255,255,255,.39);
+}
+
+
+/* ---------------------------------------------------------
+   DATA STRIP
+   --------------------------------------------------------- */
+
+.ars-intelligence-display .pillar-data {
+    position: relative;
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    margin-top: 12px;
+    padding-top: 9px;
+
+    border-top: 1px solid rgba(255,255,255,.075);
+}
+
+.ars-intelligence-display .pillar-data span {
+    font-size: 6px;
+    line-height: 1;
+    letter-spacing: .13em;
+
+    color: rgba(255,255,255,.27);
+
+    white-space: nowrap;
+}
+
+.ars-intelligence-display .pillar-data span + span::before {
+    content: "·";
+    margin-right: 7px;
+
+    color: rgba(255,255,255,.18);
+}
+
+
+/* ---------------------------------------------------------
+   CORNERS
+   --------------------------------------------------------- */
+
+.ars-intelligence-display .pillar-corner {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+
+    pointer-events: none;
+}
+
+.ars-intelligence-display .pillar-corner-tl {
+    left: 0;
+    top: 0;
+
+    border-left: 1px solid currentColor;
+    border-top: 1px solid currentColor;
+
+    opacity: .45;
+}
+
+.ars-intelligence-display .pillar-corner-br {
+    right: 0;
+    bottom: 0;
+
+    border-right: 1px solid currentColor;
+    border-bottom: 1px solid currentColor;
+
+    opacity: .45;
+}
+
+.ars-intelligence-display .pillar-arrow {
+    position: absolute;
+
+    right: 15px;
+    bottom: 13px;
+
+    font-size: 13px;
+
+    color: rgba(255,255,255,.32);
+
+    transition:
+        transform .4s ease,
+        color .4s ease;
+}
+
+
+/* ---------------------------------------------------------
+   BRAIN — BLUE
+   --------------------------------------------------------- */
+
+.ars-intelligence-display .pillar-brain {
+    color: #79d7ff;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.07),
+        inset 0 -35px 70px rgba(15,108,160,.10),
+        0 18px 55px rgba(0,0,0,.34),
+        0 0 45px rgba(43,168,255,.055);
+}
+
+.ars-intelligence-display .pillar-brain .pillar-copy strong {
+    color: #dff5ff;
+}
+
+.ars-intelligence-display .pillar-brain::after {
+    background: #2ba8ff;
+}
+
+
+/* ---------------------------------------------------------
+   ROSE — GOLD
+   --------------------------------------------------------- */
+
+.ars-intelligence-display .pillar-rose {
+    color: #f1d994;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.07),
+        inset 0 -35px 70px rgba(180,135,45,.08),
+        0 18px 55px rgba(0,0,0,.34),
+        0 0 45px rgba(215,181,106,.045);
+}
+
+.ars-intelligence-display .pillar-rose .pillar-copy strong {
+    color: #fff7dd;
+}
+
+.ars-intelligence-display .pillar-rose::after {
+    background: #d7b56a;
+}
+
+
+/* ---------------------------------------------------------
+   NAJI — WHITE / BRONZE
+   --------------------------------------------------------- */
+
+.ars-intelligence-display .pillar-naji {
+    color: #d7c7aa;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.07),
+        inset 0 -35px 70px rgba(125,91,50,.09),
+        0 18px 55px rgba(0,0,0,.34);
+}
+
+.ars-intelligence-display .pillar-naji .pillar-copy strong {
+    color: #f4eee4;
+}
+
+.ars-intelligence-display .pillar-naji::after {
+    background: #9a784d;
+}
+
+
+/* ---------------------------------------------------------
+   DESIGN — WHITE / BLUE
+   --------------------------------------------------------- */
+
+.ars-intelligence-display .pillar-design {
+    color: #bfeaff;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.07),
+        inset 0 -35px 70px rgba(40,120,160,.08),
+        0 18px 55px rgba(0,0,0,.34);
+}
+
+.ars-intelligence-display .pillar-design .pillar-copy strong {
+    color: #eefaff;
+}
+
+.ars-intelligence-display .pillar-design::after {
+    background: #4fc5ff;
+}
+
+
+/* ---------------------------------------------------------
+   HOVER
+   --------------------------------------------------------- */
+
+.ars-intelligence-display .ars-id-pillar:hover {
+    transform:
+        translateY(-7px)
+        scale(1.025);
+
+    border-color: currentColor;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.13),
+        inset 0 -40px 80px rgba(255,255,255,.025),
+        0 25px 75px rgba(0,0,0,.45),
+        0 0 35px color-mix(in srgb, currentColor 16%, transparent);
+}
+
+.ars-intelligence-display .ars-id-pillar:hover::before {
+    transform: translateX(130%);
+}
+
+.ars-intelligence-display .ars-id-pillar:hover .pillar-arrow {
+    color: currentColor;
+    transform: translate(4px,-4px);
+}
+
+.ars-intelligence-display .ars-id-pillar:hover .symbol-ring {
+    animation-duration: 5s;
+}
+
+
+/* ---------------------------------------------------------
+   CORE CONNECTION — VISUAL BRIDGES
+   --------------------------------------------------------- */
+
+.ars-intelligence-display .ars-id-pillar::marker {
+    display: none;
+}
+
+.ars-intelligence-display .pillar-brain::selection,
+.ars-intelligence-display .pillar-rose::selection,
+.ars-intelligence-display .pillar-naji::selection,
+.ars-intelligence-display .pillar-design::selection {
+    background: transparent;
+}
+
+
+/* ---------------------------------------------------------
+   ANIMATION
+   --------------------------------------------------------- */
+
+@keyframes arsPillarSpin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    .ars-intelligence-display .ars-id-pillar {
+        width: 215px;
+        min-height: 145px;
+    }
+
+    .ars-intelligence-display .pillar-copy strong {
+        font-size: 22px;
+    }
+
+    .ars-intelligence-display .pillar-symbol {
+        transform: scale(.86);
+        transform-origin: top right;
+    }
+}
+
+
+@media (max-width: 820px) {
+
+    .ars-intelligence-display .ars-id-pillars {
+        position: relative;
+        inset: auto;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+
+        padding: 18px;
+        margin-top: 20px;
+    }
+
+    .ars-intelligence-display .ars-id-pillar {
+        position: relative;
+        inset: auto;
+
+        width: 100%;
+        min-height: 150px;
+    }
+}
+
+
+@media (max-width: 560px) {
+
+    .ars-intelligence-display .ars-id-pillars {
+        grid-template-columns: 1fr;
+        padding: 12px;
+    }
+
+    .ars-intelligence-display .ars-id-pillar {
+        min-height: 142px;
+    }
+
+    .ars-intelligence-display .pillar-copy strong {
+        font-size: 24px;
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ars-intelligence-display .symbol-ring {
+        animation: none !important;
+    }
+
+    .ars-intelligence-display .ars-id-pillar,
+    .ars-intelligence-display .ars-id-pillar::before {
+        transition: none !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
