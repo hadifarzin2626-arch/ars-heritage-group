@@ -42802,412 +42802,303 @@ section.ars-system-seven .ars-card-logo {
 
 
 
-
-
-
-
-
-
 /* =========================================================
-   ARS UNIVERSE — BRONZE / GOLD / ELECTRIC BLUE HEADER
-   HEADER + BACKGROUND ONLY
+   ARS UNIVERSE — FINAL ATMOSPHERE + HEADER
+   BACKGROUND / HEADER ONLY
    ========================================================= */
 
-#ars-universe{
-    --ars-bronze:#b9783f;
-    --ars-bronze-light:#d39a61;
-    --ars-gold:#d6b36a;
-    --ars-gold-light:#f2d99a;
-    --ars-electric:#3298ff;
-    --ars-electric-bright:#7bc4ff;
-}
+#ars-universe.ars-universe-hero {
+    position: relative !important;
+    overflow: hidden !important;
 
-
-/* =========================================================
-   DEEP ENERGY BACKGROUND
-   ========================================================= */
-
-#ars-universe{
     background:
-
-        /* deep electric-blue radiation */
+        /* ELECTRIC BLUE CORE RADIATION */
         radial-gradient(
-            ellipse 52% 34% at 50% 43%,
-            rgba(35,125,255,.18) 0%,
-            rgba(35,125,255,.09) 22%,
-            rgba(35,125,255,.035) 43%,
-            transparent 72%
-        ),
-
-        radial-gradient(
-            ellipse 35% 55% at 18% 55%,
-            rgba(0,108,255,.10),
-            transparent 72%
-        ),
-
-        radial-gradient(
-            ellipse 35% 55% at 82% 52%,
-            rgba(0,144,255,.085),
-            transparent 72%
-        ),
-
-        /* gold atmospheric field */
-        radial-gradient(
-            ellipse 50% 24% at 50% 18%,
-            rgba(214,179,106,.085),
-            transparent 72%
-        ),
-
-        /* bronze depth */
-        radial-gradient(
-            ellipse 42% 30% at 50% 72%,
-            rgba(157,91,42,.055),
+            ellipse 70% 48% at 50% 48%,
+            rgba(20, 105, 255, .20) 0%,
+            rgba(20, 105, 255, .105) 25%,
+            rgba(20, 105, 255, .045) 48%,
             transparent 75%
         ),
 
-        #020304;
-
-    overflow:hidden;
-}
-
-
-/* =========================================================
-   GOLDEN TECH LINES
-   ========================================================= */
-
-#ars-universe::before{
-    content:"";
-
-    position:absolute;
-    inset:0;
-
-    pointer-events:none;
-    z-index:0;
-
-    opacity:.38;
-
-    background-image:
-
-        linear-gradient(
-            90deg,
-            transparent 0%,
-            transparent 49.7%,
-            rgba(214,179,106,.12) 50%,
-            transparent 50.3%,
-            transparent 100%
-        ),
-
-        linear-gradient(
-            0deg,
-            transparent 0%,
-            transparent 49.7%,
-            rgba(214,179,106,.08) 50%,
-            transparent 50.3%,
-            transparent 100%
-        ),
-
-        repeating-linear-gradient(
-            90deg,
-            transparent 0,
-            transparent 118px,
-            rgba(214,179,106,.035) 119px,
-            transparent 120px
-        ),
-
-        repeating-linear-gradient(
-            0deg,
-            transparent 0,
-            transparent 118px,
-            rgba(214,179,106,.028) 119px,
-            transparent 120px
-        );
-
-    mask-image:
+        /* LEFT BLUE ENERGY */
         radial-gradient(
-            ellipse at center,
-            black 0%,
-            rgba(0,0,0,.7) 48%,
-            transparent 88%
-        );
+            ellipse 38% 60% at 5% 52%,
+            rgba(0, 105, 255, .13),
+            transparent 72%
+        ),
+
+        /* RIGHT BLUE ENERGY */
+        radial-gradient(
+            ellipse 38% 60% at 95% 50%,
+            rgba(0, 135, 255, .12),
+            transparent 72%
+        ),
+
+        /* GOLD ATMOSPHERE */
+        radial-gradient(
+            ellipse 55% 30% at 50% 10%,
+            rgba(214, 179, 106, .105),
+            transparent 72%
+        ),
+
+        /* BRONZE DEPTH */
+        radial-gradient(
+            ellipse 50% 35% at 50% 88%,
+            rgba(155, 82, 38, .075),
+            transparent 75%
+        ),
+
+        /* DEEP SPACE */
+        #020304 !important;
 }
 
 
 /* =========================================================
-   ELECTRIC BLUE RADIATION
+   DEEP ELECTRIC BLUE ENERGY FIELD
    ========================================================= */
 
-#ars-universe::after{
-    content:"";
+#ars-universe.ars-universe-hero::before {
+    content: "" !important;
 
-    position:absolute;
+    position: absolute !important;
+    inset: 0 !important;
 
-    width:900px;
-    height:900px;
-
-    left:50%;
-    top:47%;
-
-    transform:translate(-50%,-50%);
-
-    border-radius:50%;
-
-    pointer-events:none;
-    z-index:0;
+    z-index: 0 !important;
+    pointer-events: none !important;
 
     background:
+        repeating-linear-gradient(
+            90deg,
+            transparent 0px,
+            transparent 95px,
+            rgba(214,179,106,.035) 96px,
+            transparent 97px
+        ),
+
+        repeating-linear-gradient(
+            0deg,
+            transparent 0px,
+            transparent 95px,
+            rgba(214,179,106,.025) 96px,
+            transparent 97px
+        ),
 
         radial-gradient(
+            ellipse 75% 55% at 50% 48%,
+            transparent 0%,
+            rgba(0, 105, 255, .035) 42%,
+            transparent 76%
+        ) !important;
+
+    opacity: .95 !important;
+}
+
+
+/* =========================================================
+   ELECTRIC BLUE RADIANT SOURCE
+   ========================================================= */
+
+#ars-universe.ars-universe-hero::after {
+    content: "" !important;
+
+    position: absolute !important;
+
+    width: 1050px !important;
+    height: 1050px !important;
+
+    left: 50% !important;
+    top: 48% !important;
+
+    transform: translate(-50%, -50%) !important;
+
+    border-radius: 50% !important;
+
+    z-index: 0 !important;
+    pointer-events: none !important;
+
+    background:
+        radial-gradient(
             circle,
-            rgba(66,163,255,.13) 0%,
-            rgba(42,137,255,.075) 16%,
-            rgba(0,102,255,.035) 35%,
-            transparent 66%
-        );
+            rgba(65, 165, 255, .15) 0%,
+            rgba(20, 125, 255, .09) 18%,
+            rgba(0, 92, 255, .045) 38%,
+            transparent 68%
+        ) !important;
 
     box-shadow:
+        0 0 100px rgba(0, 115, 255, .12),
+        0 0 220px rgba(0, 105, 255, .09),
+        0 0 420px rgba(0, 90, 255, .055) !important;
 
-        0 0 120px rgba(0,115,255,.10),
-        0 0 240px rgba(0,115,255,.07),
-        0 0 400px rgba(0,115,255,.045);
+    filter: blur(2px) !important;
 
-    filter:blur(3px);
-
-    animation:arsElectricBreath 6s ease-in-out infinite;
+    animation: arsUniverseElectricField 7s ease-in-out infinite !important;
 }
 
-@keyframes arsElectricBreath{
+@keyframes arsUniverseElectricField {
 
-    0%,100%{
-        opacity:.65;
-        transform:translate(-50%,-50%) scale(.94);
+    0%, 100% {
+        opacity: .65;
+        transform: translate(-50%, -50%) scale(.94);
     }
 
-    50%{
-        opacity:1;
-        transform:translate(-50%,-50%) scale(1.08);
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.08);
     }
 }
 
 
 /* =========================================================
-   HEADER
+   KEEP ALL REAL UNIVERSE CONTENT ABOVE ATMOSPHERE
    ========================================================= */
 
-#ars-universe .ars-universe-header{
-    position:relative;
-    z-index:100;
-
-    width:min(1450px,94vw);
-
-    margin:0 auto;
-
-    padding-top:38px;
-
-    display:grid;
-    grid-template-columns:1fr auto 1fr;
-
-    align-items:start;
-
-    border-bottom:1px solid rgba(214,179,106,.12);
+#ars-universe.ars-universe-hero
+.ars-universe-header,
+#ars-universe.ars-universe-hero
+.ars-universe-stage,
+#ars-universe.ars-universe-hero
+.ars-universe-active-panel,
+#ars-universe.ars-universe-hero
+.ars-universe-controls,
+#ars-universe.ars-universe-hero
+.ars-universe-footer {
+    position: relative !important;
+    z-index: 5 !important;
 }
 
 
 /* =========================================================
-   LEFT EYEBROW — BRONZE
+   HEADER — BRONZE / GOLD / ELECTRIC BLUE
    ========================================================= */
 
-#ars-universe .ars-universe-eyebrow{
-    display:block;
+#ars-universe.ars-universe-hero
+.ars-universe-header {
+    border-bottom:
+        1px solid rgba(214,179,106,.18) !important;
+}
 
-    font-size:14px;
 
-    font-weight:900;
+/* LEFT BRAND */
 
-    letter-spacing:.34em;
+#ars-universe.ars-universe-hero
+.ars-universe-eyebrow {
 
-    color:
-        #c78950;
+    font-weight: 950 !important;
+
+    color: #c98248 !important;
+
+    letter-spacing: .34em !important;
 
     text-shadow:
-        0 0 12px rgba(191,117,55,.25),
-        0 0 28px rgba(191,117,55,.08);
-
-    text-transform:uppercase;
+        0 0 8px rgba(190,110,52,.38),
+        0 0 24px rgba(190,110,52,.18) !important;
 }
 
 
 /* SYSTEM CODE */
 
-#ars-universe .ars-universe-code{
-    display:block;
+#ars-universe.ars-universe-hero
+.ars-universe-code {
 
-    margin-top:9px;
+    color: rgba(214,179,106,.68) !important;
 
-    font-size:8px;
-
-    font-weight:700;
-
-    letter-spacing:.25em;
-
-    color:rgba(214,179,106,.55);
-
-    text-transform:uppercase;
+    font-weight: 800 !important;
 }
 
 
-/* =========================================================
-   CENTER OVERLINE
-   ========================================================= */
+/* OVERLINE */
 
-#ars-universe .ars-universe-overline{
-    display:block;
+#ars-universe.ars-universe-hero
+.ars-universe-overline {
 
-    margin-bottom:8px;
+    color: #d09255 !important;
 
-    font-size:9px;
+    font-weight: 900 !important;
 
-    font-weight:800;
-
-    letter-spacing:.42em;
-
-    color:
-        #c88951;
-
-    text-transform:uppercase;
+    letter-spacing: .42em !important;
 
     text-shadow:
-        0 0 12px rgba(190,119,63,.28);
+        0 0 10px rgba(190,112,58,.30) !important;
 }
 
 
 /* =========================================================
-   MAIN ARS UNIVERSE TITLE
+   ARS — HEAVY BRONZE METAL
    ========================================================= */
 
-#ars-universe .ars-universe-header-center h2{
+#ars-universe.ars-universe-hero
+.ars-universe-header-center h2 {
 
-    margin:0;
+    font-weight: 950 !important;
 
-    font-size:clamp(42px,5vw,72px);
+    letter-spacing: -.065em !important;
 
-    line-height:.9;
-
-    font-weight:950;
-
-    letter-spacing:-.055em;
-
-    text-transform:uppercase;
-
-    color:#d49a61;
+    color: #c9844b !important;
 
     text-shadow:
-
-        0 1px 0 rgba(255,220,170,.22),
-
-        0 0 12px rgba(194,125,65,.30),
-
-        0 0 32px rgba(194,125,65,.12);
-
+        0 1px 0 rgba(255,220,170,.25),
+        0 2px 4px rgba(0,0,0,.75),
+        0 0 12px rgba(191,116,57,.35),
+        0 0 34px rgba(191,116,57,.16) !important;
 }
 
 
-/* UNIVERSE — ELECTRIC BLUE */
+/* =========================================================
+   UNIVERSE — ELECTRIC BLUE
+   ========================================================= */
 
-#ars-universe .ars-universe-header-center h2 span{
+#ars-universe.ars-universe-hero
+.ars-universe-header-center h2 span {
 
-    color:#52adff;
+    color: #55b4ff !important;
+
+    font-weight: 950 !important;
 
     text-shadow:
+        0 0 7px rgba(75,175,255,.95),
+        0 0 18px rgba(35,145,255,.75),
+        0 0 38px rgba(0,110,255,.52),
+        0 0 80px rgba(0,90,255,.28) !important;
+}
 
-        0 0 8px rgba(82,173,255,.75),
 
-        0 0 22px rgba(42,142,255,.55),
+/* SUBTITLE */
 
-        0 0 48px rgba(0,111,255,.35),
+#ars-universe.ars-universe-hero
+.ars-universe-header-center p {
 
-        0 0 90px rgba(0,91,255,.18);
+    color: rgba(225,232,242,.70) !important;
+
+    font-weight: 700 !important;
+
+    letter-spacing: .28em !important;
 }
 
 
 /* =========================================================
-   SUBTITLE
+   SYSTEM ONLINE
    ========================================================= */
 
-#ars-universe .ars-universe-header-center p{
+#ars-universe.ars-universe-hero
+.ars-universe-header-right {
 
-    margin:14px 0 0;
+    color: #d0a16d !important;
 
-    font-size:11px;
-
-    font-weight:600;
-
-    letter-spacing:.28em;
-
-    color:rgba(225,231,240,.62);
-
-    text-transform:uppercase;
+    font-weight: 850 !important;
 }
 
 
-/* =========================================================
-   RIGHT STATUS
-   ========================================================= */
+#ars-universe.ars-universe-hero
+.ars-universe-live-dot {
 
-#ars-universe .ars-universe-header-right{
-
-    display:flex;
-
-    justify-content:flex-end;
-
-    align-items:center;
-
-    gap:9px;
-
-    padding-top:6px;
-
-    font-size:9px;
-
-    font-weight:800;
-
-    letter-spacing:.28em;
-
-    color:rgba(214,179,106,.68);
-
-    text-transform:uppercase;
-}
-
-
-/* ONLINE DOT */
-
-#ars-universe .ars-universe-live-dot{
-
-    width:7px;
-    height:7px;
-
-    border-radius:50%;
-
-    background:#51adff;
+    background: #59b8ff !important;
 
     box-shadow:
-
-        0 0 6px #51adff,
-        0 0 16px #3298ff,
-        0 0 32px rgba(0,115,255,.75);
-
-    animation:arsOnlinePulse 2s ease-in-out infinite;
-}
-
-@keyframes arsOnlinePulse{
-
-    0%,100%{
-        opacity:.65;
-        transform:scale(.85);
-    }
-
-    50%{
-        opacity:1;
-        transform:scale(1.18);
-    }
+        0 0 6px #59b8ff,
+        0 0 18px #319cff,
+        0 0 38px rgba(0,120,255,.85) !important;
 }
 
 
@@ -43215,34 +43106,18 @@ section.ars-system-seven .ars-card-logo {
    MOBILE
    ========================================================= */
 
-@media(max-width:760px){
+@media (max-width:760px) {
 
-    #ars-universe .ars-universe-header{
+    #ars-universe.ars-universe-hero
+    .ars-universe-header-center h2 {
 
-        grid-template-columns:1fr;
-
-        text-align:center;
-
-        gap:14px;
-
-        padding-top:25px;
+        font-size: 42px !important;
     }
 
-    #ars-universe .ars-universe-header-left,
-    #ars-universe .ars-universe-header-right{
+    #ars-universe.ars-universe-hero
+    .ars-universe-eyebrow {
 
-        justify-content:center;
-        text-align:center;
-    }
-
-    #ars-universe .ars-universe-header-center h2{
-
-        font-size:42px;
-    }
-
-    #ars-universe .ars-universe-header-center p{
-
-        font-size:8px;
-        letter-spacing:.20em;
+        font-size: 11px !important;
     }
 }
+
