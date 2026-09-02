@@ -6862,6 +6862,61 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+/* =========================================================
+   ARS HERITAGE — CORE SPHERE MOTION
+   CORE ONLY
+   ========================================================= */
+
+(function () {
+
+    const universe = document.querySelector('.ars-dimension-universe');
+    if (!universe) return;
+
+    const sphere = universe.querySelector('.ars-dimension-sphere');
+    if (!sphere) return;
+
+    let rotation = 0;
+    let last = performance.now();
+
+    function animate(now) {
+
+        const delta = Math.min(now - last, 40);
+        last = now;
+
+        rotation += delta * 0.018;
+
+        const y = Math.sin(rotation * 0.018) * 2.5;
+        const z = Math.cos(rotation * 0.013) * 2;
+
+        sphere.style.transform =
+            'translate3d(0,' + y + 'px,' + z + 'px) ' +
+            'rotateY(' + rotation + 'deg)';
+
+        requestAnimationFrame(animate);
+    }
+
+    requestAnimationFrame(animate);
+
+})();
+</script>
+    
          
 
     
