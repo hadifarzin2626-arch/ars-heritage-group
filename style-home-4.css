@@ -41182,1526 +41182,2682 @@ section.ars-system-seven .ars-card-logo {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* =========================================================
+   ARS HERITAGE GROUP
    ARS INTELLIGENCE DISPLAY
-   CINEMATIC CORE / FOUR PILLARS
-   PREMIUM AUTOMOTIVE INTERFACE
+   CINEMATIC PREMIUM SYSTEM
+   V1.0 — FULL STANDALONE CSS
    ========================================================= */
 
-.ars-intelligence-display{
-    --id-black:#020407;
-    --id-deep:#050b12;
-    --id-blue:#42c8ff;
-    --id-blue-soft:#9ce7ff;
-    --id-gold:#d9b86c;
-    --id-gold-soft:#f3dda0;
-    --id-bronze:#9c7950;
-    --id-white:#f4f8fb;
 
-    position:relative;
-    width:100%;
-    min-height:820px;
-    padding:34px;
-    overflow:hidden;
+/* =========================================================
+   01 — ROOT SYSTEM
+   ========================================================= */
 
-    color:var(--id-white);
+#ars-intelligence-display {
+    --id-black: #020305;
+    --id-deep: #05080d;
+    --id-panel: #080d14;
+
+    --id-white: #f4f7fa;
+    --id-muted: rgba(224,232,240,.58);
+    --id-faint: rgba(224,232,240,.25);
+
+    --id-blue: #39baff;
+    --id-blue-soft: #8bdeff;
+
+    --id-gold: #d9b66b;
+    --id-gold-soft: #f0d99b;
+
+    --id-bronze: #9b7548;
+
+    position: relative;
+    width: 100%;
+    min-height: 900px;
+
+    padding: 38px 34px 34px;
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+    color: var(--id-white);
 
     background:
         radial-gradient(
-            circle at 50% 48%,
-            rgba(35,110,155,.13),
-            transparent 28%
+            ellipse at 50% 42%,
+            rgba(25,76,112,.17) 0%,
+            rgba(7,18,29,.10) 28%,
+            transparent 58%
         ),
         radial-gradient(
-            circle at 50% 50%,
-            rgba(214,177,99,.055),
-            transparent 42%
-        ),
-        linear-gradient(
-            135deg,
-            #010204 0%,
-            #04080d 48%,
-            #010204 100%
-        );
-
-    isolation:isolate;
-}
-
-
-/* =========================================================
-   CINEMATIC ATMOSPHERE
-   ========================================================= */
-
-.ars-intelligence-display .ars-id-atmosphere{
-    position:absolute;
-    inset:0;
-    z-index:0;
-    pointer-events:none;
-}
-
-.ars-intelligence-display .ars-id-grid{
-    position:absolute;
-    inset:-15%;
-
-    opacity:.18;
-
-    background-image:
-        linear-gradient(
-            rgba(90,180,220,.055) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(90,180,220,.055) 1px,
-            transparent 1px
-        );
-
-    background-size:48px 48px;
-
-    transform:
-        perspective(800px)
-        rotateX(62deg)
-        translateY(18%);
-    
-    mask-image:
-        linear-gradient(
-            to bottom,
-            transparent,
-            black 25%,
-            black 72%,
-            transparent
-        );
-}
-
-
-.ars-intelligence-display .ars-id-glow{
-    position:absolute;
-    border-radius:50%;
-    filter:blur(70px);
-    opacity:.25;
-}
-
-.ars-intelligence-display .ars-id-glow-blue{
-    width:360px;
-    height:360px;
-    left:8%;
-    top:20%;
-    background:rgba(40,170,240,.13);
-}
-
-.ars-intelligence-display .ars-id-glow-gold{
-    width:320px;
-    height:320px;
-    right:8%;
-    top:24%;
-    background:rgba(220,180,90,.09);
-}
-
-.ars-intelligence-display .ars-id-glow-bronze{
-    width:300px;
-    height:300px;
-    left:45%;
-    bottom:-140px;
-    background:rgba(150,110,60,.08);
-}
-
-
-/* =========================================================
-   HEADER
-   ========================================================= */
-
-.ars-intelligence-display .ars-id-header{
-    position:relative;
-    z-index:30;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    height:42px;
-    padding:0 8px;
-
-    border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-.ars-intelligence-display .ars-id-header-left{
-    display:flex;
-    align-items:center;
-    gap:18px;
-}
-
-.ars-intelligence-display .ars-id-eyebrow{
-    font-size:9px;
-    font-weight:700;
-    letter-spacing:.28em;
-    color:rgba(255,255,255,.72);
-}
-
-.ars-intelligence-display .ars-id-code{
-    font-size:7px;
-    letter-spacing:.2em;
-    color:rgba(255,255,255,.25);
-}
-
-.ars-intelligence-display .ars-id-header-right{
-    display:flex;
-    align-items:center;
-    gap:8px;
-
-    font-size:7px;
-    letter-spacing:.2em;
-
-    color:rgba(255,255,255,.4);
-}
-
-.ars-intelligence-display .ars-id-status-dot{
-    width:5px;
-    height:5px;
-    border-radius:50%;
-
-    background:var(--id-blue);
-
-    box-shadow:
-        0 0 7px var(--id-blue),
-        0 0 16px rgba(66,200,255,.45);
-
-    animation:arsIDPulse 2.5s ease-in-out infinite;
-}
-
-
-/* =========================================================
-   STAGE
-   ========================================================= */
-
-.ars-intelligence-display .ars-id-stage{
-    position:relative;
-    z-index:5;
-
-    width:100%;
-    max-width:1320px;
-    min-height:680px;
-
-    margin:0 auto;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-
-/* =========================================================
-   MAIN GLASS DISPLAY
-   ========================================================= */
-
-.ars-intelligence-display .ars-id-glass{
-    position:relative;
-
-    width:min(1180px,100%);
-    height:610px;
-
-    overflow:hidden;
-
-    border:1px solid rgba(255,255,255,.10);
-    border-radius:24px;
-
-    background:
-        radial-gradient(
-            circle at 50% 50%,
-            rgba(40,125,170,.055),
-            transparent 31%
+            ellipse at 15% 80%,
+            rgba(144,105,46,.08),
+            transparent 40%
         ),
         linear-gradient(
             145deg,
-            rgba(255,255,255,.055),
-            rgba(255,255,255,.012) 45%,
-            rgba(0,0,0,.24)
+            #010204 0%,
+            #03070c 45%,
+            #010204 100%
         );
 
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
-
-    box-shadow:
-        0 35px 100px rgba(0,0,0,.55),
-        inset 0 1px 0 rgba(255,255,255,.08),
-        inset 0 -80px 100px rgba(0,0,0,.18);
-
-    isolation:isolate;
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
 }
 
 
 /* =========================================================
-   DISPLAY FRAME
+   02 — ATMOSPHERE
    ========================================================= */
 
-.ars-intelligence-display .ars-id-frame{
-    position:absolute;
-    inset:16px;
+#ars-intelligence-display .ars-id-atmosphere {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
 
-    z-index:1;
+    overflow: hidden;
 
-    border:1px solid rgba(255,255,255,.045);
-    border-radius:17px;
-
-    pointer-events:none;
-}
-
-.ars-intelligence-display .frame-corner{
-    position:absolute;
-    width:30px;
-    height:30px;
-}
-
-.ars-intelligence-display .corner-tl{
-    left:-1px;
-    top:-1px;
-    border-left:1px solid rgba(66,200,255,.55);
-    border-top:1px solid rgba(66,200,255,.55);
-}
-
-.ars-intelligence-display .corner-tr{
-    right:-1px;
-    top:-1px;
-    border-right:1px solid rgba(217,184,108,.5);
-    border-top:1px solid rgba(217,184,108,.5);
-}
-
-.ars-intelligence-display .corner-bl{
-    left:-1px;
-    bottom:-1px;
-    border-left:1px solid rgba(156,121,80,.5);
-    border-bottom:1px solid rgba(156,121,80,.5);
-}
-
-.ars-intelligence-display .corner-br{
-    right:-1px;
-    bottom:-1px;
-    border-right:1px solid rgba(66,200,255,.4);
-    border-bottom:1px solid rgba(66,200,255,.4);
+    pointer-events: none;
 }
 
 
-/* =========================================================
-   INNER GRID
-   ========================================================= */
+/* DIGITAL GRID */
 
-.ars-intelligence-display .ars-id-display-grid{
-    position:absolute;
-    inset:17px;
+#ars-intelligence-display .ars-id-grid {
+    position: absolute;
+    inset: -20%;
 
-    opacity:.10;
+    opacity: .25;
 
     background-image:
         linear-gradient(
-            rgba(255,255,255,.08) 1px,
+            rgba(73,150,191,.055) 1px,
             transparent 1px
         ),
         linear-gradient(
             90deg,
-            rgba(255,255,255,.08) 1px,
+            rgba(73,150,191,.055) 1px,
             transparent 1px
         );
 
-    background-size:42px 42px;
+    background-size:
+        72px 72px;
+
+    transform:
+        perspective(900px)
+        rotateX(63deg)
+        translateY(18%);
+
+    transform-origin: center bottom;
 
     mask-image:
-        radial-gradient(
-            ellipse at center,
-            black 0%,
-            transparent 72%
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.95),
+            transparent 82%
+        );
+
+    -webkit-mask-image:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.95),
+            transparent 82%
         );
 }
 
 
-/* =========================================================
-   CENTRAL INTELLIGENCE ZONE
-   ========================================================= */
+/* ATMOSPHERIC GLOWS */
 
-.ars-intelligence-display .ars-id-energy-core{
-    position:absolute;
+#ars-intelligence-display .ars-id-glow {
+    position: absolute;
 
-    left:50%;
-    top:50%;
+    border-radius: 50%;
 
-    width:310px;
-    height:310px;
+    filter: blur(90px);
 
-    transform:translate(-50%,-50%);
-
-    z-index:8;
-
-    pointer-events:none;
+    pointer-events: none;
 }
 
+#ars-intelligence-display .ars-id-glow-blue {
+    width: 520px;
+    height: 520px;
 
-/* outer atmospheric halo */
+    left: 50%;
+    top: 42%;
 
-.ars-intelligence-display .ars-id-energy-core::before{
-    content:"";
-
-    position:absolute;
-    inset:-55px;
-
-    border-radius:50%;
+    transform: translate(-50%, -50%);
 
     background:
         radial-gradient(
             circle,
-            rgba(55,180,235,.12),
-            rgba(55,180,235,.035) 38%,
+            rgba(26,147,214,.18),
             transparent 68%
         );
 
-    filter:blur(14px);
-
-    animation:arsIDBreath 5s ease-in-out infinite;
+    animation: idBreathBlue 7s ease-in-out infinite;
 }
 
+#ars-intelligence-display .ars-id-glow-gold {
+    width: 420px;
+    height: 420px;
 
-/* rings */
-
-.ars-intelligence-display .energy-ring{
-    position:absolute;
-    left:50%;
-    top:50%;
-
-    border-radius:50%;
-
-    transform:translate(-50%,-50%);
-
-    border:1px solid rgba(255,255,255,.10);
-}
-
-.ars-intelligence-display .ring-01{
-    width:300px;
-    height:300px;
-
-    border-color:rgba(66,200,255,.18);
-
-    animation:arsIDRotate 18s linear infinite;
-}
-
-.ars-intelligence-display .ring-02{
-    width:238px;
-    height:238px;
-
-    border-color:rgba(217,184,108,.19);
-
-    border-style:dashed;
-
-    animation:arsIDRotateReverse 13s linear infinite;
-}
-
-.ars-intelligence-display .ring-03{
-    width:176px;
-    height:176px;
-
-    border-color:rgba(255,255,255,.15);
-
-    animation:arsIDRotate 9s linear infinite;
-}
-
-
-/* orbit lines */
-
-.ars-intelligence-display .energy-orbit{
-    position:absolute;
-
-    left:50%;
-    top:50%;
-
-    border:1px solid rgba(66,200,255,.18);
-
-    border-radius:50%;
-
-    transform:translate(-50%,-50%) rotate(-25deg);
-}
-
-.ars-intelligence-display .orbit-01{
-    width:285px;
-    height:104px;
-
-    animation:arsIDOrbit 10s linear infinite;
-}
-
-.ars-intelligence-display .orbit-02{
-    width:104px;
-    height:285px;
-
-    border-color:rgba(217,184,108,.13);
-
-    animation:arsIDOrbitReverse 14s linear infinite;
-}
-
-
-/* central light */
-
-.ars-intelligence-display .energy-core-light{
-    position:absolute;
-
-    left:50%;
-    top:50%;
-
-    width:82px;
-    height:82px;
-
-    transform:translate(-50%,-50%);
-
-    border-radius:50%;
+    left: 8%;
+    bottom: -100px;
 
     background:
         radial-gradient(
             circle,
-            rgba(255,255,255,.98) 0%,
-            rgba(150,230,255,.65) 8%,
-            rgba(50,175,230,.22) 28%,
+            rgba(211,166,77,.09),
             transparent 68%
         );
 
-    box-shadow:
-        0 0 25px rgba(90,210,255,.65),
-        0 0 75px rgba(50,180,235,.28),
-        0 0 130px rgba(50,180,235,.12);
+    animation: idBreathGold 9s ease-in-out infinite;
+}
 
-    animation:arsIDCorePulse 3.5s ease-in-out infinite;
+#ars-intelligence-display .ars-id-glow-bronze {
+    width: 360px;
+    height: 360px;
+
+    right: 2%;
+    top: 5%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(150,105,58,.075),
+            transparent 70%
+        );
 }
 
 
-/* rays */
+/* =========================================================
+   03 — PARTICLES
+   ========================================================= */
 
-.ars-intelligence-display .energy-ray{
-    position:absolute;
+#ars-intelligence-display .ars-id-particle {
+    position: absolute;
 
-    left:50%;
-    top:50%;
+    width: 2px;
+    height: 2px;
 
-    width:150px;
-    height:1px;
+    border-radius: 50%;
 
-    transform-origin:left center;
+    background: rgba(150,220,255,.75);
+
+    box-shadow:
+        0 0 10px rgba(70,190,255,.55);
+
+    opacity: .45;
+
+    animation:
+        idParticleFloat
+        8s ease-in-out
+        infinite;
+}
+
+#ars-intelligence-display .p1 {
+    left: 13%;
+    top: 27%;
+}
+
+#ars-intelligence-display .p2 {
+    left: 27%;
+    top: 68%;
+    animation-delay: -2s;
+}
+
+#ars-intelligence-display .p3 {
+    left: 71%;
+    top: 20%;
+    animation-delay: -4s;
+}
+
+#ars-intelligence-display .p4 {
+    left: 84%;
+    top: 61%;
+    animation-delay: -1s;
+}
+
+#ars-intelligence-display .p5 {
+    left: 58%;
+    top: 79%;
+    animation-delay: -5s;
+}
+
+#ars-intelligence-display .p6 {
+    left: 39%;
+    top: 16%;
+    animation-delay: -3s;
+}
+
+
+/* SCAN */
+
+#ars-intelligence-display .ars-id-scan {
+    position: absolute;
+
+    left: -10%;
+    width: 120%;
+    height: 1px;
+
+    top: 25%;
 
     background:
         linear-gradient(
             90deg,
-            rgba(255,255,255,.45),
-            rgba(66,200,255,.22),
+            transparent,
+            rgba(66,190,255,.0),
+            rgba(66,190,255,.25),
+            rgba(255,255,255,.10),
+            rgba(66,190,255,.0),
             transparent
         );
 
-    opacity:.55;
-}
+    box-shadow:
+        0 0 20px rgba(44,170,240,.14);
 
-.ars-intelligence-display .ray-01{
-    transform:rotate(0deg);
-}
-
-.ars-intelligence-display .ray-02{
-    transform:rotate(90deg);
-}
-
-.ars-intelligence-display .ray-03{
-    transform:rotate(180deg);
-}
-
-.ars-intelligence-display .ray-04{
-    transform:rotate(270deg);
+    animation:
+        idScanMove
+        9s linear
+        infinite;
 }
 
 
 /* =========================================================
-   CENTRAL TEXT
+   04 — TOP IDENTITY
    ========================================================= */
 
-.ars-intelligence-display .ars-id-content{
-    position:absolute;
+#ars-intelligence-display .ars-id-header {
+    position: relative;
+    z-index: 20;
 
-    left:50%;
-    top:50%;
+    width: 100%;
 
-    width:330px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    transform:translate(-50%,-50%);
+    padding:
+        0
+        2px
+        18px;
 
-    z-index:14;
-
-    text-align:center;
-
-    pointer-events:none;
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.07);
 }
 
-.ars-intelligence-display .ars-id-overline{
-    display:block;
 
-    margin-bottom:13px;
-
-    font-size:7px;
-    font-weight:700;
-    letter-spacing:.38em;
-
-    color:rgba(255,255,255,.38);
+#ars-intelligence-display .ars-id-header-left {
+    display: flex;
+    align-items: center;
+    gap: 18px;
 }
 
-.ars-intelligence-display .ars-id-content h1{
-    margin:0;
 
-    font-family:
-        "Arial Narrow",
-        Arial,
-        sans-serif;
+#ars-intelligence-display .ars-id-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
 
-    font-size:48px;
-    font-weight:300;
-    line-height:.9;
+    letter-spacing: .24em;
 
-    letter-spacing:.08em;
-
-    color:#fff;
-
-    text-shadow:
-        0 0 30px rgba(120,220,255,.12);
+    color:
+        rgba(255,255,255,.86);
 }
 
-.ars-intelligence-display .ars-id-content h1 strong{
-    display:block;
 
-    margin-top:5px;
+#ars-intelligence-display .ars-id-code {
+    position: relative;
 
-    font-weight:700;
+    padding-left: 18px;
+
+    font-size: 9px;
+
+    letter-spacing: .18em;
+
+    color:
+        rgba(255,255,255,.32);
+}
+
+
+#ars-intelligence-display .ars-id-code::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 50%;
+
+    width: 5px;
+    height: 5px;
+
+    transform: translateY(-50%);
+
+    border-radius: 50%;
+
+    background: var(--id-gold);
+
+    box-shadow:
+        0 0 10px rgba(217,182,107,.6);
+}
+
+
+#ars-intelligence-display .ars-id-header-right {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: .19em;
+
+    color:
+        rgba(255,255,255,.42);
+}
+
+
+#ars-intelligence-display .ars-id-status-dot {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #62d5ff;
+
+    box-shadow:
+        0 0 0 3px rgba(98,213,255,.07),
+        0 0 16px rgba(98,213,255,.85);
+
+    animation:
+        idStatusPulse
+        2.4s ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   05 — STAGE
+   ========================================================= */
+
+#ars-intelligence-display .ars-id-stage {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 720px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 46px 0 54px;
+}
+
+
+/* =========================================================
+   06 — MAIN GLASS DISPLAY
+   ========================================================= */
+
+#ars-intelligence-display .ars-id-glass {
+    position: relative;
+
+    width: min(1240px, 100%);
+    height: 590px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(255,255,255,.105);
+
+    border-radius: 24px;
 
     background:
         linear-gradient(
-            90deg,
-            #d8efff,
-            #ffffff,
-            #f0d58d
+            145deg,
+            rgba(14,22,31,.88),
+            rgba(3,7,12,.94)
         );
 
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
-}
-
-.ars-intelligence-display .ars-id-content p{
-    margin:18px 0 0;
-
-    font-size:7px;
-    letter-spacing:.38em;
-
-    color:rgba(255,255,255,.35);
-}
-
-.ars-intelligence-display .ars-id-content p span{
-    color:rgba(217,184,108,.7);
-}
-
-
-/* =========================================================
-   FOUR PILLARS
-   IMPORTANT:
-   Cards live in four corner zones.
-   CENTRAL CORE REMAINS CLEAR.
-   ========================================================= */
-
-.ars-intelligence-display .ars-id-pillars{
-    position:absolute;
-    inset:0;
-
-    z-index:20;
-
-    pointer-events:none;
-}
-
-
-/* card */
-
-.ars-intelligence-display .ars-id-pillar{
-    position:absolute;
-
-    width:285px;
-    min-height:154px;
-
-    padding:17px 18px;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-
-    color:#fff;
-    text-decoration:none;
-
-    pointer-events:auto;
-
-    overflow:hidden;
-
-    border:1px solid rgba(255,255,255,.10);
-    border-radius:15px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,.075),
-            rgba(255,255,255,.025) 45%,
-            rgba(0,0,0,.25)
-        );
-
-    backdrop-filter:blur(15px);
-    -webkit-backdrop-filter:blur(15px);
-
     box-shadow:
-        0 22px 55px rgba(0,0,0,.40),
-        inset 0 1px 0 rgba(255,255,255,.08);
+        0 45px 120px rgba(0,0,0,.62),
+        0 10px 40px rgba(0,0,0,.48),
+        inset 0 1px 0 rgba(255,255,255,.085),
+        inset 0 -1px 0 rgba(255,255,255,.025);
 
-    transition:
-        transform .55s cubic-bezier(.16,1,.3,1),
-        border-color .4s ease,
-        box-shadow .5s ease;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    isolation: isolate;
 }
 
 
-/* exact corner placement */
+/* TOP GLASS LIGHT */
 
-.ars-intelligence-display .pillar-brain{
-    left:38px;
-    top:38px;
+#ars-intelligence-display .ars-id-glass::before {
+    content: "";
 
-    color:var(--id-blue-soft);
-}
+    position: absolute;
+    inset: 0;
 
-.ars-intelligence-display .pillar-rose{
-    right:38px;
-    top:38px;
+    z-index: 1;
 
-    color:var(--id-gold-soft);
-}
-
-.ars-intelligence-display .pillar-naji{
-    left:38px;
-    bottom:38px;
-
-    color:#d8c6a7;
-}
-
-.ars-intelligence-display .pillar-design{
-    right:38px;
-    bottom:38px;
-
-    color:#bdeaff;
-}
-
-
-/* =========================================================
-   CARD TOP
-   ========================================================= */
-
-.ars-intelligence-display .pillar-top{
-    position:relative;
-    z-index:5;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.ars-intelligence-display .pillar-index{
-    font-size:10px;
-    font-weight:700;
-    letter-spacing:.22em;
-
-    opacity:.48;
-}
-
-.ars-intelligence-display .pillar-state{
-    font-size:7px;
-    font-weight:700;
-    letter-spacing:.2em;
-
-    opacity:.42;
-}
-
-
-/* =========================================================
-   CARD SYMBOL
-   ========================================================= */
-
-.ars-intelligence-display .pillar-symbol{
-    position:absolute;
-
-    right:17px;
-    top:40px;
-
-    width:70px;
-    height:70px;
-
-    opacity:.65;
-}
-
-.ars-intelligence-display .symbol-ring{
-    position:absolute;
-    inset:8px;
-
-    border:1px solid currentColor;
-    border-radius:50%;
-
-    opacity:.45;
-
-    animation:arsPillarSpin 12s linear infinite;
-}
-
-.ars-intelligence-display .symbol-ring::before{
-    content:"";
-
-    position:absolute;
-    inset:8px;
-
-    border:1px dashed currentColor;
-    border-radius:50%;
-
-    opacity:.45;
-}
-
-.ars-intelligence-display .symbol-ring::after{
-    content:"";
-
-    position:absolute;
-    inset:19px;
-
-    border:1px solid rgba(255,255,255,.22);
-    border-radius:50%;
-}
-
-.ars-intelligence-display .symbol-core{
-    position:absolute;
-
-    left:50%;
-    top:50%;
-
-    width:8px;
-    height:8px;
-
-    transform:translate(-50%,-50%);
-
-    border-radius:50%;
-
-    background:currentColor;
-
-    box-shadow:
-        0 0 10px currentColor,
-        0 0 25px currentColor;
-}
-
-.ars-intelligence-display .symbol-line{
-    position:absolute;
-
-    left:50%;
-    top:50%;
-
-    width:31px;
-    height:1px;
-
-    transform-origin:left center;
-    transform:rotate(-35deg);
-
-    background:
-        linear-gradient(
-            90deg,
-            currentColor,
-            transparent
-        );
-}
-
-
-/* =========================================================
-   CARD COPY
-   ========================================================= */
-
-.ars-intelligence-display .pillar-copy{
-    position:relative;
-    z-index:5;
-
-    padding-right:78px;
-}
-
-.ars-intelligence-display .pillar-kicker{
-    display:block;
-
-    margin-bottom:6px;
-
-    font-size:7px;
-    font-weight:700;
-    letter-spacing:.22em;
-
-    opacity:.45;
-}
-
-.ars-intelligence-display .pillar-copy strong{
-    display:block;
-
-    font-family:
-        "Arial Narrow",
-        Arial,
-        sans-serif;
-
-    font-size:27px;
-    line-height:1;
-
-    letter-spacing:.045em;
-
-    color:#fff;
-
-    text-shadow:
-        0 0 20px rgba(255,255,255,.08);
-}
-
-.ars-intelligence-display .pillar-copy small{
-    display:block;
-
-    max-width:175px;
-
-    margin-top:8px;
-
-    font-size:7px;
-    line-height:1.5;
-
-    letter-spacing:.10em;
-
-    color:rgba(255,255,255,.38);
-}
-
-
-/* =========================================================
-   DATA STRIP
-   ========================================================= */
-
-.ars-intelligence-display .pillar-data{
-    position:relative;
-    z-index:5;
-
-    display:flex;
-    align-items:center;
-    gap:8px;
-
-    margin-top:13px;
-    padding-top:9px;
-
-    border-top:1px solid rgba(255,255,255,.075);
-}
-
-.ars-intelligence-display .pillar-data span{
-    font-size:6px;
-    letter-spacing:.12em;
-
-    white-space:nowrap;
-
-    color:rgba(255,255,255,.28);
-}
-
-.ars-intelligence-display .pillar-data span+span::before{
-    content:"·";
-
-    margin-right:8px;
-
-    color:rgba(255,255,255,.18);
-}
-
-
-/* =========================================================
-   CARD CORNERS
-   ========================================================= */
-
-.ars-intelligence-display .pillar-corner{
-    position:absolute;
-
-    width:19px;
-    height:19px;
-
-    pointer-events:none;
-}
-
-.ars-intelligence-display .pillar-corner-tl{
-    left:0;
-    top:0;
-
-    border-left:1px solid currentColor;
-    border-top:1px solid currentColor;
-
-    opacity:.55;
-}
-
-.ars-intelligence-display .pillar-corner-br{
-    right:0;
-    bottom:0;
-
-    border-right:1px solid currentColor;
-    border-bottom:1px solid currentColor;
-
-    opacity:.55;
-}
-
-.ars-intelligence-display .pillar-arrow{
-    position:absolute;
-
-    right:15px;
-    bottom:12px;
-
-    font-size:14px;
-
-    color:currentColor;
-
-    opacity:.42;
-
-    transition:
-        transform .4s ease,
-        opacity .4s ease;
-}
-
-
-/* =========================================================
-   CARD COLOR ATMOSPHERE
-   ========================================================= */
-
-.ars-intelligence-display .pillar-brain{
-    box-shadow:
-        0 22px 55px rgba(0,0,0,.42),
-        inset 0 1px 0 rgba(255,255,255,.08),
-        0 0 45px rgba(66,200,255,.045);
-}
-
-.ars-intelligence-display .pillar-rose{
-    box-shadow:
-        0 22px 55px rgba(0,0,0,.42),
-        inset 0 1px 0 rgba(255,255,255,.08),
-        0 0 45px rgba(217,184,108,.045);
-}
-
-.ars-intelligence-display .pillar-naji{
-    box-shadow:
-        0 22px 55px rgba(0,0,0,.42),
-        inset 0 1px 0 rgba(255,255,255,.08),
-        0 0 45px rgba(156,121,80,.045);
-}
-
-.ars-intelligence-display .pillar-design{
-    box-shadow:
-        0 22px 55px rgba(0,0,0,.42),
-        inset 0 1px 0 rgba(255,255,255,.08),
-        0 0 45px rgba(80,190,240,.045);
-}
-
-
-/* =========================================================
-   CARD SHEEN
-   ========================================================= */
-
-.ars-intelligence-display .ars-id-pillar::before{
-    content:"";
-
-    position:absolute;
-    inset:0;
+    pointer-events: none;
 
     background:
         linear-gradient(
             115deg,
             transparent 0%,
-            transparent 38%,
-            rgba(255,255,255,.09) 49%,
-            transparent 60%
+            rgba(255,255,255,.045) 35%,
+            transparent 55%
         );
 
-    transform:translateX(-130%);
-
-    transition:
-        transform 1s cubic-bezier(.16,1,.3,1);
-
-    pointer-events:none;
-}
-
-.ars-intelligence-display .ars-id-pillar::after{
-    content:"";
-
-    position:absolute;
-
-    left:15%;
-    right:15%;
-    bottom:-35px;
-
-    height:65px;
-
-    border-radius:50%;
-
-    background:currentColor;
-
-    filter:blur(24px);
-
-    opacity:.13;
-
-    pointer-events:none;
+    opacity: .65;
 }
 
 
 /* =========================================================
-   HOVER
+   07 — PREMIUM FRAME
    ========================================================= */
 
-.ars-intelligence-display .ars-id-pillar:hover{
-    transform:translateY(-7px) scale(1.018);
+#ars-intelligence-display .ars-id-frame {
+    position: absolute;
+    inset: 16px;
 
-    border-color:currentColor;
+    z-index: 10;
 
-    box-shadow:
-        0 30px 75px rgba(0,0,0,.52),
-        inset 0 1px 0 rgba(255,255,255,.13),
-        0 0 50px color-mix(
-            in srgb,
-            currentColor 12%,
-            transparent
-        );
-}
+    pointer-events: none;
 
-.ars-intelligence-display .ars-id-pillar:hover::before{
-    transform:translateX(130%);
-}
+    border:
+        1px solid
+        rgba(255,255,255,.045);
 
-.ars-intelligence-display .ars-id-pillar:hover .pillar-arrow{
-    opacity:1;
-    transform:translate(4px,-4px);
-}
-
-.ars-intelligence-display .ars-id-pillar:hover .symbol-ring{
-    animation-duration:4s;
+    border-radius: 17px;
 }
 
 
-/* =========================================================
-   CONNECTION LAYER
-   ========================================================= */
+#ars-intelligence-display .frame-corner {
+    position: absolute;
 
-.ars-intelligence-display .ars-id-connections{
-    position:absolute;
-    inset:0;
-
-    z-index:6;
-
-    pointer-events:none;
+    width: 34px;
+    height: 34px;
 }
 
-.ars-intelligence-display .connect{
-    position:absolute;
 
-    height:1px;
+#ars-intelligence-display .corner-tl {
+    left: -1px;
+    top: -1px;
 
-    transform-origin:left center;
+    border-left: 1px solid rgba(217,182,107,.62);
+    border-top: 1px solid rgba(217,182,107,.62);
+}
 
-    opacity:.22;
+#ars-intelligence-display .corner-tr {
+    right: -1px;
+    top: -1px;
+
+    border-right: 1px solid rgba(57,186,255,.62);
+    border-top: 1px solid rgba(57,186,255,.62);
+}
+
+#ars-intelligence-display .corner-bl {
+    left: -1px;
+    bottom: -1px;
+
+    border-left: 1px solid rgba(155,117,72,.5);
+    border-bottom: 1px solid rgba(155,117,72,.5);
+}
+
+#ars-intelligence-display .corner-br {
+    right: -1px;
+    bottom: -1px;
+
+    border-right: 1px solid rgba(255,255,255,.24);
+    border-bottom: 1px solid rgba(255,255,255,.24);
+}
+
+
+#ars-intelligence-display .frame-line {
+    position: absolute;
+
+    left: 50%;
+
+    width: 180px;
+    height: 1px;
+
+    transform: translateX(-50%);
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            rgba(66,200,255,.6),
+            rgba(255,255,255,.11),
             transparent
         );
 }
 
-.ars-intelligence-display .connect-01{
-    width:190px;
-    left:285px;
-    top:188px;
 
-    transform:rotate(25deg);
+#ars-intelligence-display .line-top {
+    top: -1px;
 }
 
-.ars-intelligence-display .connect-02{
-    width:190px;
-    right:285px;
-    top:188px;
-
-    transform:rotate(155deg);
-}
-
-.ars-intelligence-display .connect-03{
-    width:190px;
-    left:285px;
-    bottom:188px;
-
-    transform:rotate(-25deg);
-}
-
-.ars-intelligence-display .connect-04{
-    width:190px;
-    right:285px;
-    bottom:188px;
-
-    transform:rotate(-155deg);
+#ars-intelligence-display .line-bottom {
+    bottom: -1px;
 }
 
 
 /* =========================================================
-   REFLECTION / SWEEP
+   08 — INNER ATMOSPHERE
    ========================================================= */
 
-.ars-intelligence-display .ars-id-reflection{
-    position:absolute;
-    inset:0;
+#ars-intelligence-display .ars-id-inner-atmosphere {
+    position: absolute;
+    inset: 0;
 
-    z-index:25;
+    z-index: 2;
 
-    pointer-events:none;
+    pointer-events: none;
+}
+
+
+#ars-intelligence-display .inner-blue {
+    position: absolute;
+
+    width: 620px;
+    height: 420px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(34,154,216,.11),
+            transparent 67%
+        );
+
+    filter: blur(35px);
+}
+
+
+#ars-intelligence-display .inner-gold {
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    left: 0;
+    bottom: -120px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(217,182,107,.055),
+            transparent 70%
+        );
+
+    filter: blur(35px);
+}
+
+
+#ars-intelligence-display .inner-white {
+    position: absolute;
+
+    width: 500px;
+    height: 1px;
+
+    left: 50%;
+    top: 18%;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.08),
+            transparent
+        );
+
+    filter: blur(2px);
+}
+
+
+/* =========================================================
+   09 — DISPLAY GRID
+   ========================================================= */
+
+#ars-intelligence-display .ars-id-display-grid {
+    position: absolute;
+    inset: 35px;
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    opacity: .35;
+
+    background-image:
+        linear-gradient(
+            rgba(90,170,205,.045) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(90,170,205,.045) 1px,
+            transparent 1px
+        );
+
+    background-size: 42px 42px;
+
+    mask-image:
+        radial-gradient(
+            ellipse at center,
+            black 0%,
+            rgba(0,0,0,.65) 38%,
+            transparent 80%
+        );
+
+    -webkit-mask-image:
+        radial-gradient(
+            ellipse at center,
+            black 0%,
+            rgba(0,0,0,.65) 38%,
+            transparent 80%
+        );
+}
+
+
+/* =========================================================
+   10 — CENTRAL ENERGY ENGINE
+   ========================================================= */
+
+#ars-intelligence-display .ars-id-energy-core {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 300px;
+    height: 300px;
+
+    z-index: 5;
+
+    transform:
+        translate(-50%, -50%);
+
+    pointer-events: none;
+}
+
+
+/* CORE LIGHT */
+
+#ars-intelligence-display .energy-core-light {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 80px;
+    height: 80px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.95) 0%,
+            rgba(100,210,255,.78) 12%,
+            rgba(39,166,225,.25) 40%,
+            transparent 72%
+        );
+
+    filter: blur(1px);
+
+    box-shadow:
+        0 0 30px rgba(63,193,255,.75),
+        0 0 90px rgba(48,166,225,.30);
+
+    animation:
+        idCorePulse
+        3.5s ease-in-out
+        infinite;
+}
+
+
+/* RINGS */
+
+#ars-intelligence-display .energy-ring {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(92,196,245,.22);
+}
+
+
+#ars-intelligence-display .ring-01 {
+    width: 290px;
+    height: 290px;
+
+    border-color:
+        rgba(80,190,240,.18);
+
+    animation:
+        idRotate
+        24s linear
+        infinite;
+}
+
+
+#ars-intelligence-display .ring-02 {
+    width: 220px;
+    height: 220px;
+
+    border-color:
+        rgba(217,182,107,.23);
+
+    border-left-color:
+        rgba(217,182,107,.68);
+
+    animation:
+        idRotateReverse
+        17s linear
+        infinite;
+}
+
+
+#ars-intelligence-display .ring-03 {
+    width: 145px;
+    height: 145px;
+
+    border-color:
+        rgba(255,255,255,.17);
+
+    border-top-color:
+        rgba(255,255,255,.65);
+
+    animation:
+        idRotate
+        10s linear
+        infinite;
+}
+
+
+/* ORBITS */
+
+#ars-intelligence-display .energy-orbit {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(95,202,255,.20);
+}
+
+
+#ars-intelligence-display .orbit-01 {
+    width: 265px;
+    height: 105px;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(32deg);
+
+    animation:
+        idOrbitA
+        11s linear
+        infinite;
+}
+
+
+#ars-intelligence-display .orbit-02 {
+    width: 225px;
+    height: 90px;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(-42deg);
+
+    border-color:
+        rgba(217,182,107,.22);
+
+    animation:
+        idOrbitB
+        14s linear
+        infinite;
+}
+
+
+/* ENERGY RAYS */
+
+#ars-intelligence-display .energy-ray {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 1px;
+    height: 132px;
+
+    transform-origin:
+        50% 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(100,215,255,.0),
+            rgba(100,215,255,.40),
+            rgba(255,255,255,.0)
+        );
+
+    opacity: .6;
+}
+
+
+#ars-intelligence-display .ray-01 {
+    transform:
+        translate(-50%, 0)
+        rotate(0deg);
+}
+
+#ars-intelligence-display .ray-02 {
+    transform:
+        translate(-50%, 0)
+        rotate(90deg);
+}
+
+#ars-intelligence-display .ray-03 {
+    transform:
+        translate(-50%, 0)
+        rotate(180deg);
+}
+
+#ars-intelligence-display .ray-04 {
+    transform:
+        translate(-50%, 0)
+        rotate(270deg);
+}
+
+
+/* =========================================================
+   11 — CENTRAL MESSAGE
+   ========================================================= */
+
+#ars-intelligence-display .ars-id-content {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    z-index: 8;
+
+    width: 430px;
+
+    transform:
+        translate(-50%, -50%);
+
+    text-align: center;
+
+    pointer-events: none;
+}
+
+
+#ars-intelligence-display .ars-id-overline {
+    display: block;
+
+    margin-bottom: 15px;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: .34em;
+
+    color:
+        rgba(255,255,255,.42);
+}
+
+
+#ars-intelligence-display .ars-id-content h1 {
+    margin: 0;
+
+    font-size: clamp(38px, 4.2vw, 63px);
+
+    line-height: .9;
+
+    letter-spacing: -.055em;
+
+    font-weight: 300;
+
+    color:
+        rgba(255,255,255,.92);
+
+    text-shadow:
+        0 0 35px rgba(255,255,255,.08);
+}
+
+
+#ars-intelligence-display .ars-id-content h1 strong {
+    display: block;
+
+    margin-top: 7px;
+
+    font-weight: 800;
+
+    letter-spacing: -.06em;
+
+    background:
+        linear-gradient(
+            100deg,
+            #f6f8fa 5%,
+            #91dfff 48%,
+            #d7b56c 92%
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+#ars-intelligence-display .ars-id-content p {
+    margin: 22px 0 0;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: .25em;
+
+    color:
+        rgba(255,255,255,.34);
+}
+
+
+#ars-intelligence-display .ars-id-content p span {
+    color:
+        rgba(105,208,255,.70);
+}
+
+
+/* =========================================================
+   12 — FOUR CORE PILLARS
+   ========================================================= */
+
+#ars-intelligence-display .ars-id-pillars {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 15;
+
+    pointer-events: none;
+}
+
+
+/*
+   IMPORTANT:
+   The cards occupy the four outer zones.
+   The entire central zone remains reserved
+   for Energy Core + Intelligence message.
+*/
+
+
+#ars-intelligence-display .ars-id-pillar {
+    position: absolute;
+
+    width: 255px;
+    height: 184px;
+
+    padding: 17px 18px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    overflow: hidden;
+
+    color: var(--id-white);
+    text-decoration: none;
+
+    pointer-events: auto;
+
+    border:
+        1px solid
+        rgba(255,255,255,.105);
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(22,31,41,.88),
+            rgba(4,8,13,.90)
+        );
+
+    box-shadow:
+        0 22px 50px rgba(0,0,0,.42),
+        inset 0 1px 0 rgba(255,255,255,.07),
+        inset 0 -30px 60px rgba(0,0,0,.22);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    transition:
+        transform .55s cubic-bezier(.16,1,.3,1),
+        border-color .4s ease,
+        box-shadow .5s ease,
+        background .5s ease;
+}
+
+
+/* POSITIONS */
+
+#ars-intelligence-display .pillar-brain {
+    left: 34px;
+    top: 54px;
+}
+
+#ars-intelligence-display .pillar-rose {
+    right: 34px;
+    top: 54px;
+}
+
+#ars-intelligence-display .pillar-naji {
+    left: 34px;
+    bottom: 54px;
+}
+
+#ars-intelligence-display .pillar-design {
+    right: 34px;
+    bottom: 54px;
+}
+
+
+/* CARD SHINE */
+
+#ars-intelligence-display .ars-id-pillar::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 0;
 
     background:
         linear-gradient(
             120deg,
-            transparent 35%,
-            rgba(255,255,255,.025) 48%,
-            transparent 60%
+            transparent 0%,
+            transparent 40%,
+            rgba(255,255,255,.075) 49%,
+            transparent 58%,
+            transparent 100%
+        );
+
+    transform:
+        translateX(-120%);
+
+    transition:
+        transform 1s cubic-bezier(.16,1,.3,1);
+
+    pointer-events: none;
+}
+
+
+#ars-intelligence-display .ars-id-pillar:hover::before {
+    transform:
+        translateX(120%);
+}
+
+
+/* CARD TOP */
+
+#ars-intelligence-display .pillar-top,
+#ars-intelligence-display .pillar-symbol,
+#ars-intelligence-display .pillar-copy,
+#ars-intelligence-display .pillar-data,
+#ars-intelligence-display .pillar-arrow,
+#ars-intelligence-display .pillar-corner {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+#ars-intelligence-display .pillar-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+#ars-intelligence-display .pillar-index {
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 9px;
+
+    letter-spacing: .18em;
+
+    color:
+        rgba(255,255,255,.38);
+}
+
+
+#ars-intelligence-display .pillar-state {
+    font-size: 7px;
+    font-weight: 700;
+
+    letter-spacing: .17em;
+
+    color:
+        rgba(255,255,255,.32);
+}
+
+
+/* SYMBOL */
+
+#ars-intelligence-display .pillar-symbol {
+    position: absolute;
+
+    right: 17px;
+    top: 49px;
+
+    width: 48px;
+    height: 48px;
+}
+
+
+#ars-intelligence-display .symbol-ring {
+    position: absolute;
+
+    inset: 5px;
+
+    border:
+        1px solid
+        rgba(90,201,255,.45);
+
+    border-radius: 50%;
+
+    animation:
+        idSymbolRotate
+        10s linear
+        infinite;
+}
+
+
+#ars-intelligence-display .symbol-core {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 9px;
+    height: 9px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        #7edcff;
+
+    box-shadow:
+        0 0 12px rgba(78,204,255,.85),
+        0 0 25px rgba(78,204,255,.35);
+}
+
+
+#ars-intelligence-display .symbol-line {
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    width: 1px;
+    height: 100%;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(120,215,255,.55),
+            transparent
         );
 }
 
-.ars-intelligence-display .ars-id-sweep{
-    position:absolute;
 
-    left:-20%;
-    top:0;
+/* COPY */
 
-    width:1px;
-    height:100%;
+#ars-intelligence-display .pillar-copy {
+    padding-right: 55px;
 
-    z-index:26;
+    margin-top: 8px;
+}
+
+
+#ars-intelligence-display .pillar-kicker {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 7px;
+    font-weight: 700;
+
+    letter-spacing: .22em;
+
+    color:
+        rgba(255,255,255,.35);
+}
+
+
+#ars-intelligence-display .pillar-copy strong {
+    display: block;
+
+    font-size: 22px;
+    line-height: 1;
+
+    font-weight: 800;
+
+    letter-spacing: -.045em;
+
+    color:
+        rgba(255,255,255,.94);
+}
+
+
+#ars-intelligence-display .pillar-copy small {
+    display: block;
+
+    margin-top: 7px;
+
+    font-size: 8px;
+    line-height: 1.45;
+
+    letter-spacing: .09em;
+
+    color:
+        rgba(255,255,255,.34);
+}
+
+
+/* DATA */
+
+#ars-intelligence-display .pillar-data {
+    display: flex;
+
+    gap: 6px;
+
+    margin-top: auto;
+}
+
+
+#ars-intelligence-display .pillar-data span {
+    display: inline-flex;
+
+    align-items: center;
+
+    min-height: 20px;
+
+    padding: 0 7px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.065);
+
+    border-radius: 4px;
+
+    background:
+        rgba(255,255,255,.025);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 6px;
+
+    letter-spacing: .10em;
+
+    color:
+        rgba(255,255,255,.38);
+}
+
+
+/* CORNERS */
+
+#ars-intelligence-display .pillar-corner {
+    position: absolute;
+
+    width: 18px;
+    height: 18px;
+}
+
+
+#ars-intelligence-display .pillar-corner-tl {
+    left: 0;
+    top: 0;
+
+    border-left:
+        1px solid
+        rgba(255,255,255,.30);
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.30);
+}
+
+
+#ars-intelligence-display .pillar-corner-br {
+    right: 0;
+    bottom: 0;
+
+    border-right:
+        1px solid
+        rgba(255,255,255,.20);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.20);
+}
+
+
+/* ARROW */
+
+#ars-intelligence-display .pillar-arrow {
+    position: absolute;
+
+    right: 17px;
+    bottom: 17px;
+
+    font-size: 17px;
+
+    color:
+        rgba(255,255,255,.40);
+
+    transition:
+        transform .4s ease,
+        color .4s ease;
+}
+
+
+/* =========================================================
+   13 — PILLAR COLOR IDENTITIES
+   ========================================================= */
+
+
+/* BRAIN */
+
+#ars-intelligence-display .pillar-brain {
+    border-top-color:
+        rgba(55,188,255,.36);
+}
+
+#ars-intelligence-display .pillar-brain .symbol-ring {
+    border-color:
+        rgba(55,188,255,.60);
+}
+
+#ars-intelligence-display .pillar-brain .symbol-core {
+    background: #59caff;
+}
+
+
+/* ROSE */
+
+#ars-intelligence-display .pillar-rose {
+    border-top-color:
+        rgba(217,182,107,.38);
+}
+
+#ars-intelligence-display .pillar-rose .symbol-ring {
+    border-color:
+        rgba(217,182,107,.60);
+}
+
+#ars-intelligence-display .pillar-rose .symbol-core {
+    background:
+        #e3c477;
+
+    box-shadow:
+        0 0 12px rgba(227,196,119,.85),
+        0 0 25px rgba(227,196,119,.30);
+}
+
+
+/* NAJI */
+
+#ars-intelligence-display .pillar-naji {
+    border-top-color:
+        rgba(155,117,72,.48);
+}
+
+#ars-intelligence-display .pillar-naji .symbol-ring {
+    border-color:
+        rgba(191,151,98,.60);
+}
+
+#ars-intelligence-display .pillar-naji .symbol-core {
+    background:
+        #c59b62;
+
+    box-shadow:
+        0 0 12px rgba(197,155,98,.85),
+        0 0 25px rgba(197,155,98,.30);
+}
+
+
+/* DESIGN */
+
+#ars-intelligence-display .pillar-design {
+    border-top-color:
+        rgba(255,255,255,.25);
+}
+
+#ars-intelligence-display .pillar-design .symbol-ring {
+    border-color:
+        rgba(214,232,242,.52);
+}
+
+#ars-intelligence-display .pillar-design .symbol-core {
+    background:
+        #dcecf5;
+
+    box-shadow:
+        0 0 12px rgba(220,236,245,.70),
+        0 0 25px rgba(220,236,245,.25);
+}
+
+
+/* =========================================================
+   14 — PILLAR HOVER
+   ========================================================= */
+
+#ars-intelligence-display .ars-id-pillar:hover {
+    transform:
+        translateY(-8px)
+        scale(1.025);
+
+    border-color:
+        rgba(255,255,255,.23);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(25,37,49,.96),
+            rgba(4,8,13,.96)
+        );
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.56),
+        inset 0 1px 0 rgba(255,255,255,.10);
+}
+
+
+#ars-intelligence-display .pillar-brain:hover {
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.56),
+        0 0 45px rgba(48,174,235,.10),
+        inset 0 1px 0 rgba(255,255,255,.10);
+}
+
+
+#ars-intelligence-display .pillar-rose:hover {
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.56),
+        0 0 45px rgba(217,182,107,.10),
+        inset 0 1px 0 rgba(255,255,255,.10);
+}
+
+
+#ars-intelligence-display .pillar-naji:hover {
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.56),
+        0 0 45px rgba(155,117,72,.10),
+        inset 0 1px 0 rgba(255,255,255,.10);
+}
+
+
+#ars-intelligence-display .pillar-design:hover {
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.56),
+        0 0 45px rgba(220,236,245,.08),
+        inset 0 1px 0 rgba(255,255,255,.10);
+}
+
+
+#ars-intelligence-display .ars-id-pillar:hover .pillar-arrow {
+    transform:
+        translate(4px,-4px);
+
+    color:
+        rgba(255,255,255,.88);
+}
+
+
+/* =========================================================
+   15 — CONNECTION NETWORK
+   ========================================================= */
+
+#ars-intelligence-display .ars-id-connections {
+    position: absolute;
+    inset: 0;
+
+    z-index: 6;
+
+    pointer-events: none;
+}
+
+
+#ars-intelligence-display .connect {
+    position: absolute;
+
+    height: 1px;
+
+    opacity: .35;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(67,190,245,.30),
+            transparent
+        );
+
+    transform-origin: left center;
+}
+
+
+/*
+   Lines intentionally terminate before
+   the central core so they never cross
+   the main message.
+*/
+
+#ars-intelligence-display .connect-01 {
+    width: 165px;
+
+    left: 280px;
+    top: 145px;
+
+    transform:
+        rotate(8deg);
+}
+
+#ars-intelligence-display .connect-02 {
+    width: 165px;
+
+    right: 280px;
+    top: 145px;
+
+    transform:
+        rotate(172deg);
+}
+
+#ars-intelligence-display .connect-03 {
+    width: 165px;
+
+    left: 280px;
+    bottom: 145px;
+
+    transform:
+        rotate(-8deg);
+}
+
+#ars-intelligence-display .connect-04 {
+    width: 165px;
+
+    right: 280px;
+    bottom: 145px;
+
+    transform:
+        rotate(188deg);
+}
+
+
+/* =========================================================
+   16 — REFLECTION
+   ========================================================= */
+
+#ars-intelligence-display .ars-id-reflection {
+    position: absolute;
+
+    left: 5%;
+    top: -20%;
+
+    width: 42%;
+    height: 160%;
+
+    z-index: 18;
+
+    transform:
+        rotate(18deg);
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.035),
+            transparent
+        );
+
+    filter: blur(7px);
+
+    opacity: .45;
+
+    animation:
+        idReflection
+        12s ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   17 — LIGHT SWEEP
+   ========================================================= */
+
+#ars-intelligence-display .ars-id-sweep {
+    position: absolute;
+
+    left: -30%;
+    top: 0;
+
+    width: 2px;
+    height: 100%;
+
+    z-index: 19;
+
+    pointer-events: none;
 
     background:
         linear-gradient(
             to bottom,
             transparent,
-            rgba(120,220,255,.28),
+            rgba(91,205,255,.45),
+            rgba(255,255,255,.18),
             transparent
         );
 
+    filter:
+        blur(2px)
+        drop-shadow(
+            0 0 12px
+            rgba(76,194,255,.4)
+        );
+
+    opacity: .5;
+
+    animation:
+        idSweep
+        9s cubic-bezier(.45,0,.55,1)
+        infinite;
+}
+
+
+/* =========================================================
+   18 — DISPLAY FOOTER
+   ========================================================= */
+
+#ars-intelligence-display .ars-id-display-footer {
+    position: absolute;
+
+    left: 38px;
+    right: 38px;
+    bottom: 24px;
+
+    z-index: 20;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        auto
+        1fr;
+
+    align-items: center;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 7px;
+
+    letter-spacing: .17em;
+
+    color:
+        rgba(255,255,255,.25);
+}
+
+
+#ars-intelligence-display .footer-center {
+    color:
+        rgba(255,255,255,.38);
+}
+
+
+#ars-intelligence-display .ars-id-display-footer span:last-child {
+    text-align: right;
+}
+
+
+/* =========================================================
+   19 — FLOATING DATA
+   ========================================================= */
+
+#ars-intelligence-display .ars-id-floating-data {
+    position: absolute;
+
+    z-index: 30;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    pointer-events: none;
+}
+
+
+#ars-intelligence-display .ars-id-floating-data span {
+    font-size: 7px;
+    font-weight: 700;
+
+    letter-spacing: .20em;
+
+    color:
+        rgba(255,255,255,.25);
+}
+
+
+#ars-intelligence-display .ars-id-floating-data strong {
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 10px;
+
+    letter-spacing: .12em;
+
+    color:
+        rgba(117,210,255,.68);
+}
+
+
+#ars-intelligence-display .data-top-left {
+    left: 3%;
+    top: 20%;
+}
+
+
+#ars-intelligence-display .data-top-right {
+    right: 3%;
+    top: 20%;
+
+    text-align: right;
+}
+
+
+#ars-intelligence-display .data-bottom {
+    left: 50%;
+    bottom: 17px;
+
+    transform:
+        translateX(-50%);
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   20 — ORBITAL LIGHTS
+   ========================================================= */
+
+#ars-intelligence-display .ars-id-orbital-light {
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    z-index: 28;
+
+    border-radius: 50%;
+
+    background:
+        #69d7ff;
+
     box-shadow:
-        0 0 25px rgba(100,210,255,.18);
+        0 0 10px rgba(105,215,255,.85),
+        0 0 28px rgba(105,215,255,.40);
 
-    animation:arsIDSweep 8s ease-in-out infinite;
+    pointer-events: none;
+}
+
+
+#ars-intelligence-display .orbital-light-a {
+    left: calc(50% - 355px);
+    top: calc(50% - 150px);
+
+    animation:
+        idOrbitalA
+        7s ease-in-out
+        infinite;
+}
+
+
+#ars-intelligence-display .orbital-light-b {
+    right: calc(50% - 355px);
+    bottom: calc(50% - 150px);
+
+    background:
+        #d9b66b;
+
+    box-shadow:
+        0 0 10px rgba(217,182,107,.80),
+        0 0 28px rgba(217,182,107,.30);
+
+    animation:
+        idOrbitalB
+        8s ease-in-out
+        infinite;
 }
 
 
 /* =========================================================
-   DISPLAY FOOTER
+   21 — BOTTOM IDENTITY
    ========================================================= */
 
-.ars-intelligence-display .ars-id-display-footer{
-    position:absolute;
+#ars-intelligence-display .ars-id-footer {
+    position: relative;
 
-    left:28px;
-    right:28px;
-    bottom:18px;
+    z-index: 30;
 
-    z-index:30;
+    display: flex;
 
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    align-items: center;
 
-    font-size:6px;
-    letter-spacing:.24em;
+    gap: 15px;
 
-    color:rgba(255,255,255,.25);
+    padding:
+        0
+        2px;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: .22em;
+
+    color:
+        rgba(255,255,255,.27);
 }
 
-.ars-intelligence-display .footer-center{
-    color:rgba(255,255,255,.17);
+
+#ars-intelligence-display .ars-id-footer-line {
+    width: 70px;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(217,182,107,.55),
+            transparent
+        );
 }
 
 
 /* =========================================================
-   OUTER FOOTER
+   22 — ANIMATIONS
    ========================================================= */
 
-.ars-intelligence-display .ars-id-footer{
-    position:relative;
-    z-index:30;
+@keyframes idBreathBlue {
 
-    display:flex;
-    align-items:center;
-    gap:15px;
+    0%,
+    100% {
+        opacity: .65;
+        transform:
+            translate(-50%, -50%)
+            scale(.92);
+    }
 
-    padding:0 8px;
-
-    font-size:7px;
-    letter-spacing:.24em;
-
-    color:rgba(255,255,255,.25);
+    50% {
+        opacity: 1;
+        transform:
+            translate(-50%, -50%)
+            scale(1.08);
+    }
 }
 
-.ars-intelligence-display .ars-id-footer-line{
-    width:55px;
-    height:1px;
 
-    background:rgba(255,255,255,.12);
+@keyframes idBreathGold {
+
+    0%,
+    100% {
+        opacity: .45;
+        transform: scale(.9);
+    }
+
+    50% {
+        opacity: .8;
+        transform: scale(1.1);
+    }
+}
+
+
+@keyframes idParticleFloat {
+
+    0%,
+    100% {
+        transform:
+            translate3d(0,0,0);
+
+        opacity: .20;
+    }
+
+    50% {
+        transform:
+            translate3d(12px,-22px,0);
+
+        opacity: .75;
+    }
+}
+
+
+@keyframes idScanMove {
+
+    0% {
+        top: -5%;
+        opacity: 0;
+    }
+
+    15% {
+        opacity: .7;
+    }
+
+    85% {
+        opacity: .7;
+    }
+
+    100% {
+        top: 105%;
+        opacity: 0;
+    }
+}
+
+
+@keyframes idStatusPulse {
+
+    0%,
+    100% {
+        opacity: .55;
+        transform: scale(.85);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+}
+
+
+@keyframes idCorePulse {
+
+    0%,
+    100% {
+        transform:
+            translate(-50%, -50%)
+            scale(.85);
+
+        opacity: .72;
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.15);
+
+        opacity: 1;
+    }
+}
+
+
+@keyframes idRotate {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+}
+
+
+@keyframes idRotateReverse {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+}
+
+
+@keyframes idOrbitA {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(32deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(392deg);
+    }
+}
+
+
+@keyframes idOrbitB {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(-42deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(-402deg);
+    }
+}
+
+
+@keyframes idSymbolRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+@keyframes idReflection {
+
+    0%,
+    100% {
+        transform:
+            translateX(-20%)
+            rotate(18deg);
+
+        opacity: .18;
+    }
+
+    50% {
+        transform:
+            translateX(100%)
+            rotate(18deg);
+
+        opacity: .42;
+    }
+}
+
+
+@keyframes idSweep {
+
+    0% {
+        left: -20%;
+        opacity: 0;
+    }
+
+    15% {
+        opacity: .5;
+    }
+
+    70% {
+        opacity: .5;
+    }
+
+    100% {
+        left: 120%;
+        opacity: 0;
+    }
+}
+
+
+@keyframes idOrbitalA {
+
+    0% {
+        transform:
+            translate(0,0)
+            scale(.7);
+
+        opacity: .25;
+    }
+
+    50% {
+        transform:
+            translate(45px,25px)
+            scale(1.2);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translate(0,0)
+            scale(.7);
+
+        opacity: .25;
+    }
+}
+
+
+@keyframes idOrbitalB {
+
+    0% {
+        transform:
+            translate(0,0)
+            scale(.7);
+
+        opacity: .25;
+    }
+
+    50% {
+        transform:
+            translate(-45px,-25px)
+            scale(1.2);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translate(0,0)
+            scale(.7);
+
+        opacity: .25;
+    }
 }
 
 
 /* =========================================================
-   ANIMATION
+   23 — LARGE LAPTOP / SMALL DESKTOP
    ========================================================= */
 
-@keyframes arsIDRotate{
-    from{transform:translate(-50%,-50%) rotate(0deg);}
-    to{transform:translate(-50%,-50%) rotate(360deg);}
-}
+@media (max-width: 1180px) {
 
-@keyframes arsIDRotateReverse{
-    from{transform:translate(-50%,-50%) rotate(360deg);}
-    to{transform:translate(-50%,-50%) rotate(0deg);}
-}
-
-@keyframes arsIDOrbit{
-    from{transform:translate(-50%,-50%) rotate(-25deg);}
-    to{transform:translate(-50%,-50%) rotate(335deg);}
-}
-
-@keyframes arsIDOrbitReverse{
-    from{transform:translate(-50%,-50%) rotate(25deg);}
-    to{transform:translate(-50%,-50%) rotate(-335deg);}
-}
-
-@keyframes arsIDCorePulse{
-    0%,100%{
-        transform:translate(-50%,-50%) scale(.92);
-        opacity:.72;
+    #ars-intelligence-display {
+        padding-left: 22px;
+        padding-right: 22px;
     }
-    50%{
-        transform:translate(-50%,-50%) scale(1.08);
-        opacity:1;
-    }
-}
 
-@keyframes arsIDBreath{
-    0%,100%{
-        transform:scale(.88);
-        opacity:.35;
+    #ars-intelligence-display .ars-id-glass {
+        height: 570px;
     }
-    50%{
-        transform:scale(1.08);
-        opacity:.7;
-    }
-}
 
-@keyframes arsIDPulse{
-    0%,100%{opacity:.45;}
-    50%{opacity:1;}
-}
-
-@keyframes arsPillarSpin{
-    from{transform:rotate(0deg);}
-    to{transform:rotate(360deg);}
-}
-
-@keyframes arsIDSweep{
-    0%{
-        left:-20%;
-        opacity:0;
+    #ars-intelligence-display .ars-id-pillar {
+        width: 225px;
+        height: 174px;
     }
-    15%{opacity:.8;}
-    55%{opacity:.8;}
-    75%{
-        left:120%;
-        opacity:0;
+
+    #ars-intelligence-display .pillar-brain {
+        left: 25px;
     }
-    100%{
-        left:120%;
-        opacity:0;
+
+    #ars-intelligence-display .pillar-rose {
+        right: 25px;
+    }
+
+    #ars-intelligence-display .pillar-naji {
+        left: 25px;
+    }
+
+    #ars-intelligence-display .pillar-design {
+        right: 25px;
+    }
+
+    #ars-intelligence-display .connect-01,
+    #ars-intelligence-display .connect-03 {
+        left: 245px;
+        width: 120px;
+    }
+
+    #ars-intelligence-display .connect-02,
+    #ars-intelligence-display .connect-04 {
+        right: 245px;
+        width: 120px;
     }
 }
 
 
 /* =========================================================
-   TABLET
+   24 — TABLET
    ========================================================= */
 
-@media (max-width:1050px){
+@media (max-width: 900px) {
 
-    .ars-intelligence-display{
-        padding:24px;
+    #ars-intelligence-display {
+        min-height: auto;
+
+        padding:
+            28px 18px 28px;
     }
 
-    .ars-intelligence-display .ars-id-glass{
-        height:590px;
+    #ars-intelligence-display .ars-id-stage {
+        min-height: 820px;
+
+        padding:
+            35px 0 45px;
     }
 
-    .ars-intelligence-display .ars-id-pillar{
-        width:245px;
+    #ars-intelligence-display .ars-id-glass {
+        height: 760px;
+
+        border-radius: 20px;
     }
 
-    .ars-intelligence-display .pillar-brain,
-    .ars-intelligence-display .pillar-naji{
-        left:25px;
+    /*
+       On tablet the four pillars become
+       four distinct zones around the core.
+    */
+
+    #ars-intelligence-display .ars-id-pillar {
+        width: 205px;
+        height: 155px;
+
+        padding:
+            14px 15px;
     }
 
-    .ars-intelligence-display .pillar-rose,
-    .ars-intelligence-display .pillar-design{
-        right:25px;
+    #ars-intelligence-display .pillar-brain {
+        left: 22px;
+        top: 38px;
+    }
+
+    #ars-intelligence-display .pillar-rose {
+        right: 22px;
+        top: 38px;
+    }
+
+    #ars-intelligence-display .pillar-naji {
+        left: 22px;
+        bottom: 42px;
+    }
+
+    #ars-intelligence-display .pillar-design {
+        right: 22px;
+        bottom: 42px;
+    }
+
+    #ars-intelligence-display .ars-id-energy-core {
+        width: 240px;
+        height: 240px;
+    }
+
+    #ars-intelligence-display .ring-01 {
+        width: 235px;
+        height: 235px;
+    }
+
+    #ars-intelligence-display .ring-02 {
+        width: 180px;
+        height: 180px;
+    }
+
+    #ars-intelligence-display .ring-03 {
+        width: 120px;
+        height: 120px;
+    }
+
+    #ars-intelligence-display .ars-id-content {
+        width: 350px;
+    }
+
+    #ars-intelligence-display .ars-id-content h1 {
+        font-size: 45px;
+    }
+
+    #ars-intelligence-display .pillar-copy strong {
+        font-size: 18px;
+    }
+
+    #ars-intelligence-display .pillar-symbol {
+        width: 40px;
+        height: 40px;
+
+        top: 43px;
+        right: 14px;
+    }
+
+    #ars-intelligence-display .pillar-copy {
+        padding-right: 45px;
+    }
+
+    #ars-intelligence-display .pillar-data span {
+        font-size: 5px;
+        padding: 0 5px;
+    }
+
+    #ars-intelligence-display .ars-id-floating-data {
+        display: none;
+    }
+
+    #ars-intelligence-display .connect {
+        display: none;
     }
 }
 
 
 /* =========================================================
-   MOBILE
+   25 — MOBILE
    ========================================================= */
 
-@media (max-width:820px){
+@media (max-width: 620px) {
 
-    .ars-intelligence-display{
-        min-height:auto;
-        padding:18px;
+    #ars-intelligence-display {
+        padding:
+            22px 12px 24px;
     }
 
-    .ars-intelligence-display .ars-id-header{
-        height:auto;
-        min-height:42px;
+    #ars-intelligence-display .ars-id-header {
+        padding-bottom: 14px;
     }
 
-    .ars-intelligence-display .ars-id-code{
-        display:none;
+    #ars-intelligence-display .ars-id-header-left {
+        gap: 0;
     }
 
-    .ars-intelligence-display .ars-id-stage{
-        min-height:auto;
-        padding:20px 0;
+    #ars-intelligence-display .ars-id-eyebrow {
+        font-size: 9px;
+        letter-spacing: .16em;
     }
 
-    .ars-intelligence-display .ars-id-glass{
-        height:auto;
-        min-height:850px;
+    #ars-intelligence-display .ars-id-code {
+        display: none;
     }
 
-    .ars-intelligence-display .ars-id-energy-core{
-        top:390px;
-        transform:translate(-50%,-50%) scale(.72);
+    #ars-intelligence-display .ars-id-header-right {
+        font-size: 7px;
     }
 
-    .ars-intelligence-display .ars-id-content{
-        top:390px;
-        transform:translate(-50%,-50%) scale(.82);
+    #ars-intelligence-display .ars-id-stage {
+        min-height: 1110px;
+
+        padding:
+            20px 0 30px;
     }
 
-    .ars-intelligence-display .ars-id-pillars{
-        position:absolute;
-        inset:0;
+    #ars-intelligence-display .ars-id-glass {
+        height: 1050px;
+
+        border-radius: 17px;
     }
 
-    .ars-intelligence-display .ars-id-pillar{
-        width:calc(50% - 24px);
-        min-height:145px;
+    /*
+       MOBILE:
+       central intelligence engine stays central.
+       Cards stack vertically in their own zones.
+    */
+
+    #ars-intelligence-display .ars-id-pillars {
+        position: absolute;
+        inset: 0;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+
+        padding:
+            0 15px;
     }
 
-    .ars-intelligence-display .pillar-brain{
-        left:16px;
-        top:16px;
+    #ars-intelligence-display .ars-id-pillar {
+        position: absolute;
+
+        left: 15px !important;
+        right: 15px !important;
+
+        width: auto;
+        height: 145px;
     }
 
-    .ars-intelligence-display .pillar-rose{
-        right:16px;
-        top:16px;
+    #ars-intelligence-display .pillar-brain {
+        top: 35px;
     }
 
-    .ars-intelligence-display .pillar-naji{
-        left:16px;
-        bottom:16px;
+    #ars-intelligence-display .pillar-rose {
+        top: 200px;
     }
 
-    .ars-intelligence-display .pillar-design{
-        right:16px;
-        bottom:16px;
+    #ars-intelligence-display .pillar-naji {
+        bottom: 200px;
     }
 
-    .ars-intelligence-display .pillar-copy strong{
-        font-size:22px;
+    #ars-intelligence-display .pillar-design {
+        bottom: 35px;
     }
 
-    .ars-intelligence-display .pillar-symbol{
-        transform:scale(.78);
-        transform-origin:top right;
+    /*
+       Core occupies a protected central zone.
+    */
+
+    #ars-intelligence-display .ars-id-energy-core {
+        width: 185px;
+        height: 185px;
+
+        top: 50%;
     }
 
-    .ars-intelligence-display .ars-id-connections{
-        display:none;
+    #ars-intelligence-display .ring-01 {
+        width: 180px;
+        height: 180px;
+    }
+
+    #ars-intelligence-display .ring-02 {
+        width: 138px;
+        height: 138px;
+    }
+
+    #ars-intelligence-display .ring-03 {
+        width: 92px;
+        height: 92px;
+    }
+
+    #ars-intelligence-display .energy-orbit {
+        opacity: .55;
+    }
+
+    #ars-intelligence-display .orbit-01 {
+        width: 160px;
+        height: 65px;
+    }
+
+    #ars-intelligence-display .orbit-02 {
+        width: 140px;
+        height: 55px;
+    }
+
+    #ars-intelligence-display .ars-id-content {
+        width: 270px;
+    }
+
+    #ars-intelligence-display .ars-id-content h1 {
+        font-size: 32px;
+    }
+
+    #ars-intelligence-display .ars-id-overline {
+        font-size: 7px;
+        letter-spacing: .22em;
+    }
+
+    #ars-intelligence-display .ars-id-content p {
+        font-size: 7px;
+        letter-spacing: .17em;
+    }
+
+    #ars-intelligence-display .pillar-copy strong {
+        font-size: 18px;
+    }
+
+    #ars-intelligence-display .pillar-copy small {
+        font-size: 7px;
+    }
+
+    #ars-intelligence-display .ars-id-display-footer {
+        left: 24px;
+        right: 24px;
+        bottom: 18px;
+
+        font-size: 5px;
+    }
+
+    #ars-intelligence-display .footer-center {
+        display: none;
+    }
+
+    #ars-intelligence-display .ars-id-footer {
+        font-size: 6px;
+        letter-spacing: .15em;
+    }
+
+    #ars-intelligence-display .ars-id-footer-line {
+        width: 35px;
     }
 }
 
 
 /* =========================================================
-   SMALL MOBILE
+   26 — VERY SMALL PHONES
    ========================================================= */
 
-@media (max-width:560px){
+@media (max-width: 390px) {
 
-    .ars-intelligence-display .ars-id-header-right{
-        display:none;
+    #ars-intelligence-display .ars-id-stage {
+        min-height: 1040px;
     }
 
-    .ars-intelligence-display .ars-id-glass{
-        min-height:1120px;
+    #ars-intelligence-display .ars-id-glass {
+        height: 990px;
     }
 
-    .ars-intelligence-display .ars-id-energy-core{
-        top:550px;
-        transform:translate(-50%,-50%) scale(.58);
+    #ars-intelligence-display .pillar-brain {
+        top: 28px;
     }
 
-    .ars-intelligence-display .ars-id-content{
-        top:550px;
-        transform:translate(-50%,-50%) scale(.68);
+    #ars-intelligence-display .pillar-rose {
+        top: 182px;
     }
 
-    .ars-intelligence-display .ars-id-pillar{
-        width:calc(100% - 32px);
-        min-height:145px;
+    #ars-intelligence-display .pillar-naji {
+        bottom: 182px;
     }
 
-    .ars-intelligence-display .pillar-brain{
-        left:16px;
-        top:16px;
+    #ars-intelligence-display .pillar-design {
+        bottom: 28px;
     }
 
-    .ars-intelligence-display .pillar-rose{
-        left:16px;
-        right:auto;
-        top:175px;
+    #ars-intelligence-display .ars-id-pillar {
+        height: 138px;
     }
 
-    .ars-intelligence-display .pillar-naji{
-        left:16px;
-        bottom:175px;
+    #ars-intelligence-display .ars-id-content h1 {
+        font-size: 29px;
     }
 
-    .ars-intelligence-display .pillar-design{
-        left:16px;
-        right:auto;
-        bottom:16px;
+    #ars-intelligence-display .pillar-data {
+        gap: 3px;
     }
 
-    .ars-intelligence-display .ars-id-display-footer{
-        display:none;
+    #ars-intelligence-display .pillar-data span {
+        padding: 0 4px;
     }
 }
 
 
 /* =========================================================
-   REDUCED MOTION
+   27 — ACCESSIBILITY / REDUCED MOTION
    ========================================================= */
 
-@media (prefers-reduced-motion:reduce){
+@media (prefers-reduced-motion: reduce) {
 
-    .ars-intelligence-display *,
-    .ars-intelligence-display *::before,
-    .ars-intelligence-display *::after{
-        animation:none !important;
-        transition:none !important;
+    #ars-intelligence-display *,
+    #ars-intelligence-display *::before,
+    #ars-intelligence-display *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
     }
-  }
+}
 
 
-
-
-
-
+/* =========================================================
+   END — ARS INTELLIGENCE DISPLAY
+   ========================================================= */
 
 
 
