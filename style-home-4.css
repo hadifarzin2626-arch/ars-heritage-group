@@ -43332,6 +43332,683 @@ section.ars-system-seven .ars-card-logo {
 
 
 
+/* =========================================================
+   ARS INTELLIGENCE — GOLDEN NEURAL NETWORK
+   CORE → FOUR PILLARS
+   FULL DISPLAY GOLDEN ATMOSPHERE
+   + VIEWPORT STABILITY
+   ========================================================= */
+
+
+/* =========================================================
+   01 — LOCK THE VIEWPORT
+   ========================================================= */
+
+html,
+body{
+    max-width:100%;
+    overflow-x:hidden;
+}
+
+#ars-intelligence-display{
+    width:100%;
+    max-width:100%;
+    overflow:hidden;
+    contain:paint;
+}
+
+#ars-intelligence-display *{
+    box-sizing:border-box;
+}
+
+
+/* =========================================================
+   02 — GOLDEN ATMOSPHERE OVER THE ENTIRE DISPLAY
+   ========================================================= */
+
+#ars-intelligence-display .ars-id-glass::before{
+    content:"";
+
+    position:absolute;
+    z-index:2;
+
+    width:900px;
+    height:900px;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(224,188,112,.075) 0%,
+            rgba(224,188,112,.045) 18%,
+            rgba(224,188,112,.022) 36%,
+            transparent 68%
+        );
+
+    filter:blur(20px);
+
+    pointer-events:none;
+
+    animation:arsGoldenAtmosphere 6s ease-in-out infinite;
+}
+
+
+@keyframes arsGoldenAtmosphere{
+
+    0%,100%{
+        opacity:.55;
+        transform:translate(-50%,-50%) scale(.94);
+    }
+
+    50%{
+        opacity:1;
+        transform:translate(-50%,-50%) scale(1.08);
+    }
+}
+
+
+/* =========================================================
+   03 — GOLDEN LIGHT AROUND THE OUTER EDGE
+   ========================================================= */
+
+#ars-intelligence-display .ars-id-glass::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    z-index:3;
+
+    border-radius:28px;
+
+    pointer-events:none;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(224,188,112,.14),
+            transparent 18%,
+            transparent 82%,
+            rgba(224,188,112,.14)
+        ),
+        linear-gradient(
+            180deg,
+            rgba(224,188,112,.13),
+            transparent 20%,
+            transparent 80%,
+            rgba(224,188,112,.10)
+        );
+
+    box-shadow:
+        inset 0 0 70px rgba(224,188,112,.045),
+        inset 0 0 180px rgba(224,188,112,.025);
+}
+
+
+/* =========================================================
+   04 — TURN THE FOUR CONNECTIONS INTO GOLDEN ENERGY PATHS
+   ========================================================= */
+
+#ars-intelligence-display .ars-id-connections{
+    z-index:19;
+}
+
+
+/* Base energy */
+
+#ars-intelligence-display .connect{
+    height:3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(224,188,112,.08) 8%,
+            rgba(224,188,112,.30) 28%,
+            rgba(255,220,130,.92) 50%,
+            rgba(224,188,112,.30) 72%,
+            rgba(224,188,112,.08) 92%,
+            transparent 100%
+        );
+
+    box-shadow:
+        0 0 5px rgba(224,188,112,.45),
+        0 0 18px rgba(224,188,112,.20),
+        0 0 40px rgba(224,188,112,.08);
+
+    opacity:.85;
+
+    border-radius:100px;
+}
+
+
+/* =========================================================
+   05 — ENERGY CORE → CARD PULSE
+   ========================================================= */
+
+#ars-intelligence-display .connect::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:50%;
+    left:-4px;
+
+    width:10px;
+    height:10px;
+
+    transform:translateY(-50%);
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #fff8dc 0%,
+            #ffe39a 28%,
+            #e0bc70 52%,
+            transparent 72%
+        );
+
+    box-shadow:
+        0 0 7px rgba(255,235,170,.95),
+        0 0 18px rgba(224,188,112,.85),
+        0 0 38px rgba(224,188,112,.45);
+
+    animation:
+        arsGoldenPacket 2.5s cubic-bezier(.4,0,.6,1) infinite;
+}
+
+
+/* packet travelling toward pillar */
+
+@keyframes arsGoldenPacket{
+
+    0%{
+        left:0%;
+        opacity:0;
+        transform:translateY(-50%) scale(.45);
+    }
+
+    8%{
+        opacity:1;
+    }
+
+    50%{
+        transform:translateY(-50%) scale(1.25);
+    }
+
+    88%{
+        opacity:1;
+    }
+
+    100%{
+        left:100%;
+        opacity:0;
+        transform:translateY(-50%) scale(.55);
+    }
+}
+
+
+/* =========================================================
+   06 — DIFFERENT ENERGY TIMING
+   ========================================================= */
+
+#ars-intelligence-display .connect-01::after{
+    animation-delay:0s;
+}
+
+#ars-intelligence-display .connect-02::after{
+    animation-delay:-.65s;
+}
+
+#ars-intelligence-display .connect-03::after{
+    animation-delay:-1.3s;
+}
+
+#ars-intelligence-display .connect-04::after{
+    animation-delay:-1.95s;
+}
+
+
+/* =========================================================
+   07 — GOLDEN ENERGY AT CORE CONNECTION POINTS
+   ========================================================= */
+
+#ars-intelligence-display .ars-id-energy-core::after{
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:24px;
+    height:24px;
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:#ffe6a4;
+
+    box-shadow:
+        0 0 12px rgba(255,232,165,1),
+        0 0 35px rgba(224,188,112,.9),
+        0 0 75px rgba(224,188,112,.55),
+        0 0 130px rgba(224,188,112,.18);
+
+    opacity:.8;
+
+    animation:arsCoreGoldPulse 2.8s ease-in-out infinite;
+}
+
+
+@keyframes arsCoreGoldPulse{
+
+    0%,100%{
+        opacity:.55;
+        transform:translate(-50%,-50%) scale(.75);
+    }
+
+    50%{
+        opacity:1;
+        transform:translate(-50%,-50%) scale(1.5);
+    }
+}
+
+
+/* =========================================================
+   08 — GOLDEN RING AROUND THE CORE
+   ========================================================= */
+
+#ars-intelligence-display .ring-01{
+
+    border-color:rgba(224,188,112,.18);
+
+    border-top-color:#e0bc70;
+    border-right-color:rgba(224,188,112,.45);
+
+    box-shadow:
+        0 0 22px rgba(224,188,112,.12),
+        0 0 55px rgba(224,188,112,.055),
+        inset 0 0 25px rgba(224,188,112,.035);
+}
+
+
+#ars-intelligence-display .ring-02{
+
+    border-color:rgba(60,185,240,.16);
+
+    border-right-color:#5bc8ff;
+    border-bottom-color:rgba(60,185,240,.42);
+
+    box-shadow:
+        0 0 25px rgba(55,185,240,.12);
+}
+
+
+#ars-intelligence-display .ring-03{
+
+    border-color:rgba(224,188,112,.22);
+
+    border-left-color:rgba(255,230,160,.85);
+    border-bottom-color:rgba(224,188,112,.65);
+}
+
+
+/* =========================================================
+   09 — GOLDEN CORE AURA
+   ========================================================= */
+
+#ars-intelligence-display .ars-id-energy-core::before{
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,224,145,.22) 0%,
+            rgba(224,188,112,.12) 16%,
+            rgba(55,185,240,.10) 32%,
+            rgba(224,188,112,.035) 50%,
+            transparent 72%
+        );
+
+    filter:blur(16px);
+}
+
+
+/* =========================================================
+   10 — GOLDEN ENERGY RAYS
+   ========================================================= */
+
+#ars-intelligence-display .energy-ray{
+
+    height:190px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(255,229,155,.75),
+            rgba(224,188,112,.18),
+            transparent
+        );
+
+    box-shadow:
+        0 0 12px rgba(224,188,112,.15);
+
+    opacity:.32;
+}
+
+
+/* =========================================================
+   11 — FOUR CARDS RECEIVE THE ENERGY
+   ========================================================= */
+
+#ars-intelligence-display .ars-id-pillar{
+
+    border-color:rgba(224,188,112,.18);
+
+    box-shadow:
+        0 20px 55px rgba(0,0,0,.40),
+        0 0 22px rgba(224,188,112,.035),
+        inset 0 1px 0 rgba(255,255,255,.045);
+
+    transition:
+        transform .55s cubic-bezier(.2,.8,.2,1),
+        border-color .45s ease,
+        box-shadow .45s ease;
+}
+
+
+/* stronger golden lower aura */
+
+#ars-intelligence-display .ars-id-pillar::before{
+
+    bottom:-42px;
+
+    height:95px;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(255,214,125,.42) 0%,
+            rgba(224,188,112,.22) 25%,
+            rgba(224,188,112,.09) 48%,
+            transparent 74%
+        );
+
+    filter:blur(20px);
+
+    opacity:.85;
+
+    animation:
+        arsCardGoldenAura 4.2s ease-in-out infinite;
+}
+
+
+@keyframes arsCardGoldenAura{
+
+    0%,100%{
+        opacity:.45;
+        transform:scaleX(.72) scaleY(.82);
+    }
+
+    50%{
+        opacity:1;
+        transform:scaleX(1.08) scaleY(1.05);
+    }
+}
+
+
+/* stagger */
+
+#ars-intelligence-display .pillar-brain::before{
+    animation-delay:0s;
+}
+
+#ars-intelligence-display .pillar-rose::before{
+    animation-delay:-1.05s;
+}
+
+#ars-intelligence-display .pillar-naji::before{
+    animation-delay:-2.1s;
+}
+
+#ars-intelligence-display .pillar-design::before{
+    animation-delay:-3.15s;
+}
+
+
+/* =========================================================
+   12 — GOLDEN TOP EDGE OF EVERY CARD
+   ========================================================= */
+
+#ars-intelligence-display .pillar-brain,
+#ars-intelligence-display .pillar-rose,
+#ars-intelligence-display .pillar-naji,
+#ars-intelligence-display .pillar-design{
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(16,27,35,.92),
+            rgba(6,12,18,.95)
+        );
+
+    position:absolute;
+}
+
+
+/* moving metallic reflection */
+
+#ars-intelligence-display .ars-id-pillar{
+    background-size:240% 100%;
+
+    background-image:
+        linear-gradient(
+            112deg,
+            rgba(12,23,31,.94) 0%,
+            rgba(12,23,31,.94) 30%,
+            rgba(224,188,112,.025) 40%,
+            rgba(255,232,170,.18) 48%,
+            rgba(224,188,112,.035) 54%,
+            rgba(5,11,16,.96) 65%,
+            rgba(5,11,16,.96) 100%
+        );
+
+    background-position:120% 0;
+
+    animation:arsLuxuryCardSweep 8s ease-in-out infinite;
+}
+
+
+@keyframes arsLuxuryCardSweep{
+
+    0%,55%{
+        background-position:120% 0;
+    }
+
+    73%{
+        background-position:-35% 0;
+    }
+
+    100%{
+        background-position:-35% 0;
+    }
+}
+
+
+/* different timing */
+
+#ars-intelligence-display .pillar-brain{
+    animation-delay:0s;
+}
+
+#ars-intelligence-display .pillar-rose{
+    animation-delay:-2s;
+}
+
+#ars-intelligence-display .pillar-naji{
+    animation-delay:-4s;
+}
+
+#ars-intelligence-display .pillar-design{
+    animation-delay:-6s;
+}
+
+
+/* =========================================================
+   13 — GOLDEN TEXT ACCENT
+   ========================================================= */
+
+#ars-intelligence-display .pillar-copy strong{
+
+    text-shadow:
+        0 0 18px rgba(224,188,112,.06);
+}
+
+
+#ars-intelligence-display .ars-id-pillar:hover .pillar-copy strong{
+
+    color:#f6e2ad;
+
+    text-shadow:
+        0 0 20px rgba(224,188,112,.18);
+}
+
+
+/* =========================================================
+   14 — GOLDEN STATUS LIGHTS
+   ========================================================= */
+
+#ars-intelligence-display .pillar-state::before{
+
+    content:"";
+
+    display:inline-block;
+
+    width:4px;
+    height:4px;
+
+    margin-right:7px;
+
+    border-radius:50%;
+
+    vertical-align:1px;
+
+    background:#e0bc70;
+
+    box-shadow:
+        0 0 8px rgba(224,188,112,.85);
+
+    animation:arsTinyGoldPulse 2.2s ease-in-out infinite;
+}
+
+
+@keyframes arsTinyGoldPulse{
+
+    50%{
+        opacity:.3;
+        box-shadow:0 0 3px rgba(224,188,112,.3);
+    }
+}
+
+
+/* =========================================================
+   15 — GOLDEN DISPLAY CORONA
+   ========================================================= */
+
+#ars-intelligence-display .ars-id-glass{
+    box-shadow:
+        0 40px 120px rgba(0,0,0,.68),
+        0 0 80px rgba(224,188,112,.035),
+        0 0 160px rgba(224,188,112,.018),
+        inset 0 1px 0 rgba(255,255,255,.06),
+        inset 0 -1px 0 rgba(0,0,0,.9);
+}
+
+
+/* =========================================================
+   16 — MOBILE SAFETY
+   ========================================================= */
+
+@media(max-width:650px){
+
+    #ars-intelligence-display .ars-id-glass::before{
+        width:650px;
+        height:650px;
+    }
+
+    #ars-intelligence-display .connect{
+        display:none;
+    }
+
+    #ars-intelligence-display .ars-id-pillar::before{
+        bottom:-30px;
+        height:70px;
+        opacity:.65;
+    }
+}
+
+
+/* =========================================================
+   17 — MOTION SAFETY
+   ========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    #ars-intelligence-display .ars-id-glass::before,
+    #ars-intelligence-display .ars-id-pillar,
+    #ars-intelligence-display .ars-id-pillar::before,
+    #ars-intelligence-display .connect::after,
+    #ars-intelligence-display .ars-id-energy-core::after{
+        animation:none !important;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
