@@ -42146,9 +42146,568 @@ section.ars-system-seven .ars-card-logo {
 
 
 
+/* دیسپلی ۴ فیوچر لب */
 
 
 
+/* =====================================================
+   ARS FUTURE LAB — DISPLAY 04
+   RESEARCH / PROTOTYPE / NEXT
+   ===================================================== */
+
+.ars-command-hero-v2 .ars-future-screen {
+
+    position: relative;
+
+    overflow: hidden;
+
+    isolation: isolate;
+}
+
+
+/* -----------------------------------------------------
+   SLIDE SYSTEM
+   ----------------------------------------------------- */
+
+.ars-command-hero-v2 .ars-future-slides {
+
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    z-index: 0;
+}
+
+
+.ars-command-hero-v2 .ars-future-slide {
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: scale(1.045);
+
+    transition:
+        opacity 1.5s ease,
+        visibility 1.5s ease,
+        transform 8s cubic-bezier(.16,1,.3,1);
+}
+
+
+.ars-command-hero-v2 .ars-future-slide.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: scale(1.11);
+}
+
+
+.ars-command-hero-v2 .ars-future-slide img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    opacity: 1;
+
+    filter:
+        saturate(.68)
+        contrast(1.15)
+        brightness(.82);
+
+    transition:
+        filter .8s ease,
+        transform 8s cubic-bezier(.16,1,.3,1);
+}
+
+
+/* -----------------------------------------------------
+   FUTURE LAB ATMOSPHERE
+   ----------------------------------------------------- */
+
+.ars-command-hero-v2 .ars-future-screen::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -30%;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(121,221,255,.20),
+            transparent 22%
+        ),
+
+        radial-gradient(
+            circle at 78% 25%,
+            rgba(201,164,92,.14),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 18% 78%,
+            rgba(57,191,255,.12),
+            transparent 34%
+        );
+
+    pointer-events: none;
+
+    z-index: 2;
+
+    mix-blend-mode: screen;
+
+    opacity: .95;
+
+    animation:
+        arsFutureAura 7s ease-in-out infinite;
+}
+
+
+@keyframes arsFutureAura {
+
+    0% {
+        transform: scale(1);
+        opacity: .72;
+    }
+
+    50% {
+        transform: scale(1.06);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: .72;
+    }
+
+}
+
+
+/* -----------------------------------------------------
+   CENTRAL FUTURE CORE
+   ----------------------------------------------------- */
+
+.ars-command-hero-v2 .ars-future-core {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 54px;
+    height: 54px;
+
+    transform:
+        translate(-50%, -50%);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 5;
+
+    opacity: .82;
+}
+
+
+/* -----------------------------------------------------
+   CORE RINGS
+   ----------------------------------------------------- */
+
+.ars-command-hero-v2 .ars-future-core-ring {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    border: 1px solid
+        rgba(121,221,255,.48);
+
+    box-shadow:
+        0 0 10px rgba(121,221,255,.15);
+}
+
+
+.ars-command-hero-v2 .ars-future-core .ring-one {
+
+    width: 100%;
+    height: 100%;
+
+    animation:
+        arsFutureRingOne
+        8s linear infinite;
+}
+
+
+.ars-command-hero-v2 .ars-future-core .ring-two {
+
+    width: 68%;
+    height: 68%;
+
+    border-color:
+        rgba(201,164,92,.5);
+
+    animation:
+        arsFutureRingTwo
+        5s linear infinite reverse;
+}
+
+
+.ars-command-hero-v2 .ars-future-core .ring-three {
+
+    width: 38%;
+    height: 38%;
+
+    border-color:
+        rgba(255,255,255,.55);
+
+    animation:
+        arsFutureRingThree
+        3.5s linear infinite;
+}
+
+
+/* -----------------------------------------------------
+   CORE POINT
+   ----------------------------------------------------- */
+
+.ars-command-hero-v2 .ars-future-core-point {
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background:
+        var(--ars-gold-light);
+
+    box-shadow:
+
+        0 0 7px
+        rgba(240,210,139,.95),
+
+        0 0 18px
+        rgba(121,221,255,.7),
+
+        0 0 30px
+        rgba(57,191,255,.35);
+
+    animation:
+        arsFuturePulse
+        2.2s ease-in-out infinite;
+}
+
+
+/* -----------------------------------------------------
+   CORE LABEL
+   ----------------------------------------------------- */
+
+.ars-command-hero-v2 .ars-future-core-label {
+
+    position: absolute;
+
+    top: calc(100% + 8px);
+
+    white-space: nowrap;
+
+    font-family:
+        Inter,
+        system-ui,
+        sans-serif;
+
+    font-size: 5px;
+
+    letter-spacing: .2em;
+
+    color:
+        rgba(220,245,255,.72);
+
+    text-transform: uppercase;
+}
+
+
+/* -----------------------------------------------------
+   RING ANIMATIONS
+   ----------------------------------------------------- */
+
+@keyframes arsFutureRingOne {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+@keyframes arsFutureRingTwo {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+@keyframes arsFutureRingThree {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+@keyframes arsFuturePulse {
+
+    0%,
+    100% {
+        transform: scale(.8);
+        opacity: .65;
+    }
+
+    50% {
+        transform: scale(1.35);
+        opacity: 1;
+    }
+
+}
+
+
+/* -----------------------------------------------------
+   HUD
+   ----------------------------------------------------- */
+
+.ars-command-hero-v2 .ars-future-hud {
+
+    position: absolute;
+
+    inset: 0;
+
+    padding: 10px 11px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    pointer-events: none;
+
+    z-index: 7;
+
+    color:
+        rgba(225,246,255,.82);
+
+    font-family:
+        Inter,
+        system-ui,
+        sans-serif;
+
+    font-size: 6px;
+
+    letter-spacing: .14em;
+
+    text-transform: uppercase;
+}
+
+
+/* TOP */
+
+.ars-command-hero-v2 .ars-future-hud-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+.ars-command-hero-v2
+.ars-future-hud-top span:last-child {
+
+    color:
+        var(--ars-cyan);
+
+    text-shadow:
+        0 0 9px
+        rgba(121,221,255,.8);
+}
+
+
+/* BOTTOM */
+
+.ars-command-hero-v2 .ars-future-hud-bottom {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+/* -----------------------------------------------------
+   PROGRESS
+   ----------------------------------------------------- */
+
+.ars-command-hero-v2 .ars-future-progress {
+
+    width: 36px;
+
+    height: 2px;
+
+    background:
+        rgba(255,255,255,.12);
+
+    overflow: hidden;
+}
+
+
+.ars-command-hero-v2 .ars-future-progress i {
+
+    display: block;
+
+    width: 0;
+
+    height: 100%;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(57,191,255,.75),
+            var(--ars-gold-light)
+        );
+
+    box-shadow:
+        0 0 8px
+        rgba(121,221,255,.75);
+}
+
+
+/* -----------------------------------------------------
+   GLASS / FUTURE REFLECTION
+   ----------------------------------------------------- */
+
+.ars-command-hero-v2 .ars-future-screen::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            115deg,
+            rgba(255,255,255,.13),
+            rgba(255,255,255,.025) 16%,
+            transparent 34%,
+            transparent 67%,
+            rgba(121,221,255,.045),
+            transparent
+        );
+
+    pointer-events: none;
+
+    z-index: 8;
+
+    opacity: .58;
+
+    transition:
+        opacity .5s ease,
+        transform .9s ease;
+}
+
+
+/* -----------------------------------------------------
+   HOVER
+   ----------------------------------------------------- */
+
+.ars-command-hero-v2
+.ars-future-display:hover
+.ars-future-slide.active img {
+
+    filter:
+        saturate(.86)
+        contrast(1.18)
+        brightness(.95);
+}
+
+
+.ars-command-hero-v2
+.ars-future-display:hover
+.ars-future-screen::after {
+
+    opacity: .95;
+
+    transform:
+        translateX(4%);
+}
+
+
+/* -----------------------------------------------------
+   MOBILE
+   ----------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    .ars-command-hero-v2 .ars-future-hud {
+
+        padding: 8px 9px;
+
+        font-size: 5px;
+    }
+
+    .ars-command-hero-v2 .ars-future-core {
+
+        width: 38px;
+        height: 38px;
+    }
+
+    .ars-command-hero-v2 .ars-future-core-label {
+
+        font-size: 4px;
+    }
+
+    .ars-command-hero-v2 .ars-future-progress {
+
+        width: 30px;
+    }
+
+}
 
 
 
