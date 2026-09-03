@@ -7375,6 +7375,171 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+    <script>
+/* =====================================================
+   ARS DESIGN — DISPLAY 02
+   INDEPENDENT CINEMATIC SLIDESHOW ENGINE
+   ===================================================== */
+
+(function () {
+
+    const display = document.querySelector(
+        '.ars-design-display'
+    );
+
+    if (!display) return;
+
+    const slides = display.querySelectorAll(
+        '.ars-design-slide'
+    );
+
+    const progress = display.querySelector(
+        '.ars-design-progress i'
+    );
+
+    if (!slides.length) return;
+
+    let current = 0;
+
+    const duration = 6500;
+
+    let timer = null;
+
+
+    /* -------------------------------------------------
+       INITIAL STATE
+       ------------------------------------------------- */
+
+    slides.forEach((slide, index) => {
+
+        slide.classList.toggle(
+            'active',
+            index === 0
+        );
+
+    });
+
+
+    /* -------------------------------------------------
+       SHOW NEXT SLIDE
+       ------------------------------------------------- */
+
+    function showSlide(next) {
+
+        slides[current].classList.remove(
+            'active'
+        );
+
+        current = next % slides.length;
+
+        slides[current].classList.add(
+            'active'
+        );
+
+        resetProgress();
+
+    }
+
+
+    /* -------------------------------------------------
+       PROGRESS BAR
+       ------------------------------------------------- */
+
+    function resetProgress() {
+
+        if (!progress) return;
+
+        progress.style.transition = 'none';
+        progress.style.width = '0%';
+
+        requestAnimationFrame(() => {
+
+            requestAnimationFrame(() => {
+
+                progress.style.transition =
+                    `width ${duration}ms linear`;
+
+                progress.style.width = '100%';
+
+            });
+
+        });
+
+    }
+
+
+    /* -------------------------------------------------
+       START
+       ------------------------------------------------- */
+
+    function startSlideshow() {
+
+        clearInterval(timer);
+
+        resetProgress();
+
+        timer = setInterval(() => {
+
+            showSlide(current + 1);
+
+        }, duration);
+
+    }
+
+
+    /* -------------------------------------------------
+       PAUSE WHEN PAGE IS HIDDEN
+       ------------------------------------------------- */
+
+    document.addEventListener(
+        'visibilitychange',
+        function () {
+
+            if (document.hidden) {
+
+                clearInterval(timer);
+
+            } else {
+
+                startSlideshow();
+
+            }
+
+        }
+    );
+
+
+    /* -------------------------------------------------
+       REDUCED MOTION
+       ------------------------------------------------- */
+
+    const reducedMotion =
+        window.matchMedia(
+            '(prefers-reduced-motion: reduce)'
+        );
+
+    if (reducedMotion.matches) {
+
+        if (progress) {
+            progress.style.width = '100%';
+        }
+
+        return;
+    }
+
+
+    /* -------------------------------------------------
+       START ENGINE
+       ------------------------------------------------- */
+
+    startSlideshow();
+
+})();
+    </script>
+
+
+
+
 
 
 
