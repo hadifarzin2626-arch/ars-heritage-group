@@ -41460,6 +41460,98 @@ section.ars-system-seven .ars-card-logo {
 
 
 
+
+/* =====================================================
+   ARS BRAIN — HARD VIEWPORT CONTAINMENT PATCH
+   ===================================================== */
+
+.ars-command-hero-v2 .ars-brain-screen {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    contain: paint;
+    isolation: isolate;
+}
+
+.ars-command-hero-v2 .ars-brain-slides {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.ars-command-hero-v2 .ars-brain-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    transform-origin: center center;
+}
+
+.ars-command-hero-v2 .ars-brain-slide img {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+
+    min-width: 0;
+    min-height: 0;
+
+    object-fit: cover;
+}
+
+/* Contain the atmospheric glow */
+.ars-command-hero-v2 .ars-brain-screen::before {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Contain glass layer */
+.ars-command-hero-v2 .ars-brain-screen::after {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Prevent HUD from contributing to width */
+.ars-command-hero-v2 .ars-brain-hud {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* Final containment */
+.ars-command-hero-v2 .ars-v2-display-main {
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /*دیسپلی ۲ */
 
 
