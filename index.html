@@ -1403,32 +1403,100 @@
 
             <!-- DISPLAY 03 -->
 
-            <a href="rose-ai.html"
-               class="ars-v2-display">
 
-                <div class="ars-v2-screen">
+<!-- =====================================================
+     DISPLAY 03 — ROSE AI
+     ===================================================== -->
 
-                    <img
-                        src="images/rose-ai-display.jpg"
-                        alt="ROSE AI">
+<a href="rose-ai.html"
+   class="ars-v2-display ars-rose-display">
 
-                    <div class="ars-v2-screen-overlay"></div>
+    <div class="ars-v2-screen ars-rose-screen">
 
-                    <div class="ars-v2-screen-ui">
-                        <span>ROSE AI</span>
-                        <small>VOICE · ASSISTANCE · INTELLIGENCE</small>
-                    </div>
+        <!-- MEDIA / SLIDES -->
+        <div class="ars-rose-slides">
 
-                </div>
+            <div class="ars-rose-slide active">
+                <img
+                    src="images/rose-ai-display.jpg"
+                    alt="ROSE AI">
+            </div>
 
-                <div class="ars-v2-display-meta">
-                    <span>03</span>
-                    <strong>ROSE AI</strong>
-                    <small>INTELLIGENT INTERFACE</small>
-                </div>
+            <div class="ars-rose-slide">
+                <img
+                    src="images/rose-ai-display-02.jpg"
+                    alt="ROSE AI Voice Intelligence">
+            </div>
 
-            </a>
+            <div class="ars-rose-slide">
+                <img
+                    src="images/rose-ai-display-03.jpg"
+                    alt="ROSE AI Intelligent Interface">
+            </div>
 
+        </div>
+
+        <!-- EXISTING OVERLAY -->
+        <div class="ars-v2-screen-overlay"></div>
+
+        <!-- ROSE AI HUD -->
+        <div class="ars-rose-hud">
+
+            <div class="ars-rose-hud-top">
+                <span>03 / ROSE AI</span>
+                <span>LISTENING</span>
+            </div>
+
+            <div class="ars-rose-orbit">
+
+                <div class="ars-rose-orbit-ring"></div>
+
+                <span class="ars-rose-orbit-dot"></span>
+
+            </div>
+
+            <div class="ars-rose-hud-bottom">
+
+                <span>
+                    VOICE · ASSISTANCE · INTELLIGENCE
+                </span>
+
+                <span class="ars-rose-progress">
+                    <i></i>
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- EXISTING SCREEN UI -->
+        <div class="ars-v2-screen-ui">
+
+            <span>ROSE AI</span>
+
+            <small>
+                VOICE · ASSISTANCE · INTELLIGENCE
+            </small>
+
+        </div>
+
+    </div>
+
+    <div class="ars-v2-display-meta">
+
+        <span>03</span>
+
+        <strong>ROSE AI</strong>
+
+        <small>
+            INTELLIGENT INTERFACE
+        </small>
+
+    </div>
+
+</a>
+
+            
 <!-- DISPLAY 04 -->
 
 <a href="ars-future-lab.html"
@@ -7539,6 +7607,188 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+<script>
+/* =====================================================
+   ROSE AI — DISPLAY 03
+   INDEPENDENT CINEMATIC SLIDESHOW ENGINE
+   ===================================================== */
+
+(function () {
+
+    const display = document.querySelector(
+        '.ars-rose-display'
+    );
+
+    if (!display) return;
+
+    const slides = display.querySelectorAll(
+        '.ars-rose-slide'
+    );
+
+    const progress = display.querySelector(
+        '.ars-rose-progress i'
+    );
+
+    if (!slides.length) return;
+
+    let current = 0;
+
+    const duration = 6500;
+
+    let timer = null;
+
+
+    /* -------------------------------------------------
+       INITIAL STATE
+       ------------------------------------------------- */
+
+    slides.forEach((slide, index) => {
+
+        slide.classList.toggle(
+            'active',
+            index === 0
+        );
+
+    });
+
+
+    /* -------------------------------------------------
+       CHANGE SLIDE
+       ------------------------------------------------- */
+
+    function showSlide(next) {
+
+        slides[current].classList.remove(
+            'active'
+        );
+
+        current =
+            next % slides.length;
+
+        slides[current].classList.add(
+            'active'
+        );
+
+        resetProgress();
+
+    }
+
+
+    /* -------------------------------------------------
+       PROGRESS
+       ------------------------------------------------- */
+
+    function resetProgress() {
+
+        if (!progress) return;
+
+        progress.style.transition = 'none';
+
+        progress.style.width = '0%';
+
+
+        requestAnimationFrame(() => {
+
+            requestAnimationFrame(() => {
+
+                progress.style.transition =
+                    `width ${duration}ms linear`;
+
+                progress.style.width = '100%';
+
+            });
+
+        });
+
+    }
+
+
+    /* -------------------------------------------------
+       START
+       ------------------------------------------------- */
+
+    function startSlideshow() {
+
+        clearInterval(timer);
+
+        resetProgress();
+
+        timer = setInterval(() => {
+
+            showSlide(
+                current + 1
+            );
+
+        }, duration);
+
+    }
+
+
+    /* -------------------------------------------------
+       PAGE VISIBILITY
+       ------------------------------------------------- */
+
+    document.addEventListener(
+        'visibilitychange',
+        function () {
+
+            if (document.hidden) {
+
+                clearInterval(timer);
+
+            } else {
+
+                startSlideshow();
+
+            }
+
+        }
+    );
+
+
+    /* -------------------------------------------------
+       REDUCED MOTION
+       ------------------------------------------------- */
+
+    const reducedMotion =
+        window.matchMedia(
+            '(prefers-reduced-motion: reduce)'
+        );
+
+    if (reducedMotion.matches) {
+
+        if (progress) {
+
+            progress.style.width =
+                '100%';
+
+        }
+
+        return;
+    }
+
+
+    /* -------------------------------------------------
+       START ENGINE
+       ------------------------------------------------- */
+
+    startSlideshow();
+
+})();
+ </script>
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
