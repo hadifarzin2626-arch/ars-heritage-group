@@ -7176,7 +7176,165 @@ document.addEventListener("DOMContentLoaded", () => {
 
     
          
+<script>
+/* =====================================================
+   ARS BRAIN — DISPLAY 01
+   CINEMATIC SLIDESHOW ENGINE
+   ===================================================== */
 
+(function () {
+
+    const display = document.querySelector(
+        '.ars-v2-display-main'
+    );
+
+    if (!display) return;
+
+    const slides = display.querySelectorAll(
+        '.ars-brain-slide'
+    );
+
+    const progress = display.querySelector(
+        '.ars-brain-progress i'
+    );
+
+    if (!slides.length) return;
+
+    let current = 0;
+    const duration = 6500;
+    let timer;
+
+    /* -----------------------------------------------
+       INITIAL STATE
+       ----------------------------------------------- */
+
+    slides.forEach((slide, index) => {
+        slide.classList.toggle(
+            'active',
+            index === 0
+        );
+    });
+
+    /* -----------------------------------------------
+       SLIDE CHANGE
+       ----------------------------------------------- */
+
+    function showSlide(next) {
+
+        slides[current].classList.remove('active');
+
+        current = next % slides.length;
+
+        slides[current].classList.add('active');
+
+        resetProgress();
+
+    }
+
+    /* -----------------------------------------------
+       PROGRESS BAR
+       ----------------------------------------------- */
+
+    function resetProgress() {
+
+        if (!progress) return;
+
+        progress.style.transition = 'none';
+        progress.style.width = '0%';
+
+        requestAnimationFrame(() => {
+
+            requestAnimationFrame(() => {
+
+                progress.style.transition =
+                    `width ${duration}ms linear`;
+
+                progress.style.width = '100%';
+
+            });
+
+        });
+
+    }
+
+    /* -----------------------------------------------
+       AUTO PLAY
+       ----------------------------------------------- */
+
+    function start() {
+
+        clearInterval(timer);
+
+        resetProgress();
+
+        timer = setInterval(() => {
+
+            showSlide(current + 1);
+
+        }, duration);
+
+    }
+
+    /* -----------------------------------------------
+       PAUSE WHEN HIDDEN
+       ----------------------------------------------- */
+
+    document.addEventListener(
+        'visibilitychange',
+        () => {
+
+            if (document.hidden) {
+
+                clearInterval(timer);
+
+            } else {
+
+                start();
+
+            }
+
+        }
+    );
+
+    /* -----------------------------------------------
+       REDUCED MOTION
+       ----------------------------------------------- */
+
+    const reducedMotion =
+        window.matchMedia(
+            '(prefers-reduced-motion: reduce)'
+        );
+
+    if (reducedMotion.matches) {
+
+        if (progress) {
+            progress.style.width = '100%';
+        }
+
+        return;
+    }
+
+    /* -----------------------------------------------
+       START ENGINE
+       ----------------------------------------------- */
+
+    start();
+
+})();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+    
     
 </body>
 </html>
