@@ -41460,8 +41460,295 @@ section.ars-system-seven .ars-card-logo {
 
 
 
+/*دیسپلی ۲ */
 
 
+
+/* =====================================================
+   ARS DESIGN — DISPLAY 02
+   SILVER / ICE BLUE / PRECISION
+   ===================================================== */
+
+.ars-command-hero-v2 .ars-design-screen {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* -----------------------------------------------------
+   SLIDES
+   ----------------------------------------------------- */
+
+.ars-command-hero-v2 .ars-design-slides {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.ars-command-hero-v2 .ars-design-slide {
+    position: absolute;
+    inset: 0;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: scale(1.04);
+
+    transition:
+        opacity 1.35s ease,
+        visibility 1.35s ease,
+        transform 7s cubic-bezier(.16,1,.3,1);
+}
+
+.ars-command-hero-v2 .ars-design-slide.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.09);
+}
+
+.ars-command-hero-v2 .ars-design-slide img {
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    object-fit: cover;
+
+    opacity: 1;
+
+    filter:
+        saturate(.55)
+        contrast(1.14)
+        brightness(.88);
+
+    transition:
+        filter .7s ease,
+        transform 7s cubic-bezier(.16,1,.3,1);
+}
+
+/* -----------------------------------------------------
+   SILVER / ICE LIGHT
+   ----------------------------------------------------- */
+
+.ars-command-hero-v2 .ars-design-screen::before {
+    content: "";
+
+    position: absolute;
+    inset: -20%;
+
+    background:
+        radial-gradient(
+            circle at 72% 28%,
+            rgba(180,225,255,.16),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 28% 72%,
+            rgba(255,255,255,.08),
+            transparent 34%
+        );
+
+    pointer-events: none;
+
+    z-index: 2;
+
+    mix-blend-mode: screen;
+
+    opacity: .8;
+}
+
+/* -----------------------------------------------------
+   HUD
+   ----------------------------------------------------- */
+
+.ars-command-hero-v2 .ars-design-hud {
+    position: absolute;
+    inset: 0;
+
+    padding: 10px 11px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    pointer-events: none;
+
+    z-index: 5;
+
+    color: rgba(235,246,255,.82);
+
+    font-family:
+        Inter,
+        system-ui,
+        sans-serif;
+
+    font-size: 6px;
+
+    letter-spacing: .14em;
+
+    text-transform: uppercase;
+}
+
+/* TOP */
+
+.ars-command-hero-v2 .ars-design-hud-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ars-command-hero-v2
+.ars-design-hud-top span:last-child {
+    color: rgba(190,225,245,.85);
+
+    text-shadow:
+        0 0 8px rgba(150,210,240,.5);
+}
+
+/* CENTER */
+
+.ars-command-hero-v2 .ars-design-hud-center {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    white-space: nowrap;
+
+    opacity: .55;
+}
+
+.ars-command-hero-v2 .ars-design-hud-center i {
+    width: 6px;
+    height: 6px;
+
+    border: 1px solid rgba(205,235,250,.7);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 7px rgba(190,225,245,.4);
+}
+
+/* BOTTOM */
+
+.ars-command-hero-v2 .ars-design-hud-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+/* -----------------------------------------------------
+   PROGRESS
+   ----------------------------------------------------- */
+
+.ars-command-hero-v2 .ars-design-progress {
+    width: 36px;
+    height: 2px;
+
+    background: rgba(255,255,255,.13);
+
+    overflow: hidden;
+}
+
+.ars-command-hero-v2 .ars-design-progress i {
+    display: block;
+
+    width: 0;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(150,205,235,.7),
+            rgba(235,250,255,1)
+        );
+
+    box-shadow:
+        0 0 7px rgba(190,230,250,.7);
+
+    transform-origin: left center;
+}
+
+/* -----------------------------------------------------
+   GLASS REFLECTION
+   ----------------------------------------------------- */
+
+.ars-command-hero-v2 .ars-design-screen::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            118deg,
+            rgba(255,255,255,.13),
+            rgba(255,255,255,.035) 18%,
+            transparent 36%,
+            transparent 72%,
+            rgba(210,240,255,.035),
+            transparent
+        );
+
+    pointer-events: none;
+
+    z-index: 6;
+
+    opacity: .48;
+
+    transition:
+        opacity .5s ease,
+        transform .8s ease;
+}
+
+/* -----------------------------------------------------
+   HOVER
+   ----------------------------------------------------- */
+
+.ars-command-hero-v2
+.ars-design-display:hover
+.ars-design-slide.active img {
+
+    filter:
+        saturate(.72)
+        contrast(1.16)
+        brightness(1);
+}
+
+.ars-command-hero-v2
+.ars-design-display:hover
+.ars-design-screen::after {
+
+    opacity: .85;
+    transform: translateX(3%);
+}
+
+/* -----------------------------------------------------
+   MOBILE
+   ----------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    .ars-command-hero-v2 .ars-design-hud {
+        padding: 8px 9px;
+        font-size: 5px;
+    }
+
+    .ars-command-hero-v2 .ars-design-hud-center {
+        display: none;
+    }
+
+    .ars-command-hero-v2 .ars-design-progress {
+        width: 30px;
+    }
+}
 
 
 
