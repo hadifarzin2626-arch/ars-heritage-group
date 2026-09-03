@@ -1498,33 +1498,106 @@
 
             
 <!-- DISPLAY 04 -->
+<!-- =====================================================
+     DISPLAY 04 — ARS FUTURE LAB
+     ===================================================== -->
 
 <a href="ars-future-lab.html"
-   class="ars-v2-display">
+   class="ars-v2-display ars-future-display">
 
-    <div class="ars-v2-screen">
+    <div class="ars-v2-screen ars-future-screen">
 
-        <img
-            src="images/ars-future-lab-display.jpg"
-            alt="ARS Future Lab">
+        <!-- FUTURE LAB MEDIA -->
+        <div class="ars-future-slides">
 
+            <div class="ars-future-slide active">
+                <img
+                    src="images/ars-future-lab-display.jpg"
+                    alt="ARS Future Lab">
+            </div>
+
+            <div class="ars-future-slide">
+                <img
+                    src="images/ars-future-lab-display-02.jpg"
+                    alt="ARS Future Lab Research">
+            </div>
+
+            <div class="ars-future-slide">
+                <img
+                    src="images/ars-future-lab-display-03.jpg"
+                    alt="ARS Future Lab Prototype">
+            </div>
+
+        </div>
+
+        <!-- EXISTING CINEMATIC OVERLAY -->
         <div class="ars-v2-screen-overlay"></div>
 
+        <!-- FUTURE LAB HUD -->
+        <div class="ars-future-hud">
+
+            <div class="ars-future-hud-top">
+
+                <span>04 / FUTURE LAB</span>
+
+                <span>R&amp;D ACTIVE</span>
+
+            </div>
+
+            <!-- CENTRAL CORE -->
+            <div class="ars-future-core">
+
+                <div class="ars-future-core-ring ring-one"></div>
+                <div class="ars-future-core-ring ring-two"></div>
+                <div class="ars-future-core-ring ring-three"></div>
+
+                <span class="ars-future-core-point"></span>
+
+                <span class="ars-future-core-label">
+                    ARS / NEXT
+                </span>
+
+            </div>
+
+            <!-- BOTTOM HUD -->
+            <div class="ars-future-hud-bottom">
+
+                <span>
+                    RESEARCH · CONCEPT · PROTOTYPE
+                </span>
+
+                <span class="ars-future-progress">
+                    <i></i>
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- SCREEN UI -->
         <div class="ars-v2-screen-ui">
+
             <span>FUTURE LAB</span>
-            <small>RESEARCH · CONCEPT · PROTOTYPE</small>
+
+            <small>
+                RESEARCH · CONCEPT · PROTOTYPE
+            </small>
+
         </div>
 
     </div>
 
     <div class="ars-v2-display-meta">
+
         <span>04</span>
+
         <strong>ARS FUTURE LAB</strong>
+
         <small>THE FUTURE OF ARS</small>
+
     </div>
 
 </a>
-
 
         </div>
 
@@ -7781,7 +7854,175 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+<script>
+/* =====================================================
+   ARS FUTURE LAB — DISPLAY 04
+   INDEPENDENT CINEMATIC SLIDESHOW ENGINE
+   ===================================================== */
 
+(function () {
+
+    const display = document.querySelector(
+        '.ars-future-display'
+    );
+
+    if (!display) return;
+
+    const slides = display.querySelectorAll(
+        '.ars-future-slide'
+    );
+
+    const progress = display.querySelector(
+        '.ars-future-progress i'
+    );
+
+    if (!slides.length) return;
+
+    let current = 0;
+
+    const duration = 7000;
+
+    let timer = null;
+
+
+    /* -------------------------------------------------
+       INITIAL STATE
+       ------------------------------------------------- */
+
+    slides.forEach((slide, index) => {
+
+        slide.classList.toggle(
+            'active',
+            index === 0
+        );
+
+    });
+
+
+    /* -------------------------------------------------
+       CHANGE SLIDE
+       ------------------------------------------------- */
+
+    function showSlide(next) {
+
+        slides[current].classList.remove(
+            'active'
+        );
+
+        current =
+            next % slides.length;
+
+        slides[current].classList.add(
+            'active'
+        );
+
+        resetProgress();
+
+    }
+
+
+    /* -------------------------------------------------
+       PROGRESS
+       ------------------------------------------------- */
+
+    function resetProgress() {
+
+        if (!progress) return;
+
+        progress.style.transition = 'none';
+
+        progress.style.width = '0%';
+
+
+        requestAnimationFrame(() => {
+
+            requestAnimationFrame(() => {
+
+                progress.style.transition =
+                    `width ${duration}ms linear`;
+
+                progress.style.width = '100%';
+
+            });
+
+        });
+
+    }
+
+
+    /* -------------------------------------------------
+       START
+       ------------------------------------------------- */
+
+    function startSlideshow() {
+
+        clearInterval(timer);
+
+        resetProgress();
+
+        timer = setInterval(() => {
+
+            showSlide(
+                current + 1
+            );
+
+        }, duration);
+
+    }
+
+
+    /* -------------------------------------------------
+       VISIBILITY
+       ------------------------------------------------- */
+
+    document.addEventListener(
+        'visibilitychange',
+        function () {
+
+            if (document.hidden) {
+
+                clearInterval(timer);
+
+            } else {
+
+                startSlideshow();
+
+            }
+
+        }
+    );
+
+
+    /* -------------------------------------------------
+       REDUCED MOTION
+       ------------------------------------------------- */
+
+    const reducedMotion =
+        window.matchMedia(
+            '(prefers-reduced-motion: reduce)'
+        );
+
+    if (reducedMotion.matches) {
+
+        if (progress) {
+
+            progress.style.width =
+                '100%';
+
+        }
+
+        return;
+    }
+
+
+    /* -------------------------------------------------
+       START ENGINE
+       ------------------------------------------------- */
+
+    startSlideshow();
+
+})();
+</script>
 
 
 
