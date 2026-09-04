@@ -48610,23 +48610,37 @@ body{
 }
 
 
-
 /* =========================================================
-   ARS HERITAGE GROUP
-   HARD FREEZE — CENTER SPHERE ONLY
+   ARS HERITAGE GROUP — LOCK CENTER SPHERE
+   STOP ROTATION ONLY
    ========================================================= */
 
-.ars-dimension-sphere,
-.ars-dimension-sphere > div,
-.ars-dimension-sphere::before,
-.ars-dimension-sphere::after {
+.ars-dimension-universe .ars-dimension-core {
     animation: none !important;
     animation-name: none !important;
-    animation-duration: 0s !important;
-    animation-iteration-count: 1 !important;
+
+    transform:
+        translate(-50%, -50%) !important;
+
+    transition: none !important;
 }
 
+.ars-dimension-universe .ars-dimension-sphere {
+    animation: none !important;
+    animation-name: none !important;
 
+    transform: none !important;
+    transition: none !important;
+}
+
+.ars-dimension-universe .ars-sphere-glass,
+.ars-dimension-universe .ars-sphere-gold,
+.ars-dimension-universe .ars-sphere-blue,
+.ars-dimension-universe .ars-sphere-reflection,
+.ars-dimension-universe .ars-sphere-highlight {
+    animation: none !important;
+    animation-name: none !important;
+}
 
 
 /* =========================================================
