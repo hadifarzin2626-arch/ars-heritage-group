@@ -43170,6 +43170,314 @@ section.ars-system-seven .ars-card-logo {
 
 
 
+ /* =========================================================
+    ARS FUTURE LAB — CORE UPGRADE
+    ========================================================= */
+
+.ars-command-hero-v2 .ars-v2-display-future
+.ars-future-core {
+    filter:
+        drop-shadow(0 0 18px rgba(70,210,255,.18));
+}
+
+
+/* ---------------------------------------------------------
+   CORE INNER ENERGY
+   --------------------------------------------------------- */
+
+.ars-command-hero-v2 .ars-v2-display-future
+.ars-future-core::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 42%;
+    aspect-ratio: 1;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(185,245,255,.95) 0%,
+            rgba(70,210,255,.72) 9%,
+            rgba(25,164,215,.32) 28%,
+            rgba(12,94,135,.10) 48%,
+            transparent 72%
+        );
+
+    box-shadow:
+        0 0 25px rgba(70,210,255,.32),
+        0 0 65px rgba(40,180,230,.16);
+
+    animation:
+        arsFutureCorePulse 3.8s ease-in-out infinite;
+
+    z-index: -1;
+}
+
+
+/* ---------------------------------------------------------
+   DIGITAL TWIN GRID INSIDE CORE
+   --------------------------------------------------------- */
+
+.ars-command-hero-v2 .ars-v2-display-future
+.ars-future-prototype::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 125%;
+    height: 125%;
+
+    left: -12.5%;
+    top: -12.5%;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 48%,
+            rgba(180,240,255,.20) 49%,
+            rgba(180,240,255,.20) 51%,
+            transparent 52%
+        ),
+        linear-gradient(
+            0deg,
+            transparent 48%,
+            rgba(180,240,255,.14) 49%,
+            rgba(180,240,255,.14) 51%,
+            transparent 52%
+        );
+
+    opacity: .65;
+
+    mask-image:
+        radial-gradient(
+            circle,
+            black 0%,
+            black 58%,
+            transparent 72%
+        );
+
+    animation:
+        arsFutureTwinRotate 18s linear infinite;
+
+    pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   CORE GOLD ACCENT RING
+   --------------------------------------------------------- */
+
+.ars-command-hero-v2 .ars-v2-display-future
+.ars-future-prototype::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 118%;
+    height: 118%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(215,182,111,.28);
+
+    border-top-color:
+        rgba(215,182,111,.85);
+
+    border-bottom-color:
+        rgba(215,182,111,.08);
+
+    box-shadow:
+        0 0 12px rgba(215,182,111,.10);
+
+    animation:
+        arsFutureGoldOrbit 11s linear infinite;
+
+    pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   MOVING ENERGY PARTICLE
+   --------------------------------------------------------- */
+
+.ars-command-hero-v2 .ars-v2-display-future
+.ars-future-core::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #ffffff 0%,
+            #65ddff 35%,
+            transparent 72%
+        );
+
+    box-shadow:
+        0 0 8px rgba(101,221,255,.95),
+        0 0 20px rgba(101,221,255,.55);
+
+    transform-origin:
+        0 0;
+
+    animation:
+        arsFutureEnergyParticle 5s linear infinite;
+
+    z-index: 30;
+}
+
+
+/* ---------------------------------------------------------
+   ANIMATIONS
+   --------------------------------------------------------- */
+
+@keyframes arsFutureCorePulse {
+
+    0%,100% {
+        transform:
+            translate(-50%, -50%)
+            scale(.88);
+
+        opacity: .65;
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.08);
+
+        opacity: 1;
+    }
+}
+
+
+@keyframes arsFutureTwinRotate {
+
+    from {
+        transform:
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+}
+
+
+@keyframes arsFutureGoldOrbit {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+}
+
+
+@keyframes arsFutureEnergyParticle {
+
+    from {
+        transform:
+            rotate(0deg)
+            translateX(68px)
+            scale(.65);
+
+        opacity: .35;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    50% {
+        transform:
+            rotate(180deg)
+            translateX(68px)
+            scale(1);
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    to {
+        transform:
+            rotate(360deg)
+            translateX(68px)
+            scale(.65);
+
+        opacity: .35;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   FUTURE LAB HOVER — CORE RESPONSE
+   --------------------------------------------------------- */
+
+.ars-command-hero-v2 .ars-v2-display-future:hover
+.ars-future-field {
+    animation-duration: 2.4s;
+}
+
+.ars-command-hero-v2 .ars-v2-display-future:hover
+.ars-future-core {
+    filter:
+        brightness(1.12)
+        drop-shadow(0 0 25px rgba(70,210,255,.28));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
