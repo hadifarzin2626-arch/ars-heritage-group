@@ -49614,28 +49614,53 @@ body{
 
 
 
+
+
+
+
+
+
+
+
+
+
 /* =========================================================
-   ARS INTELLIGENCE → DISPLAY
-   CINEMATIC TRANSITION ZONE
-   60% ELECTRIC BLUE / 30% GOLD / 10% BRONZE
+   ARS INTELLIGENCE → DISPLAYS
+   EXTENDED CINEMATIC TRANSITION
+   GOLD PRESERVED + ELECTRIC BLUE DOMINANT
    ========================================================= */
 
 .ars-command-hero-v2 .ars-id-display-transfer {
     width: min(760px, 88%);
-    height: 45vh;
-    min-height: 320px;
-    margin: 20px auto 40px;
+    height: 72vh;
+    min-height: 520px;
+    margin: 24px auto 50px;
     position: relative;
     pointer-events: none;
     overflow: visible;
+    isolation: isolate;
+
+    /* فقط یک هاله بسیار ظریف در کل فضای انتقال */
+    background:
+        radial-gradient(
+            ellipse at 50% 48%,
+            rgba(57,191,255,.035) 0%,
+            rgba(22,169,255,.022) 28%,
+            rgba(201,164,92,.014) 48%,
+            transparent 72%
+        );
 }
 
-/* ظریف‌ترین مسیر انرژی */
+
+/* =========================================================
+   EXISTING GOLD SIGNAL — PRESERVED
+   ========================================================= */
+
 .ars-command-hero-v2 .ars-id-display-transfer::before {
     content: "";
     position: absolute;
-    left: 12%;
-    right: 12%;
+    left: 8%;
+    right: 8%;
     top: 50%;
     height: 1px;
     transform: translateY(-50%);
@@ -49644,74 +49669,96 @@ body{
         linear-gradient(
             90deg,
             transparent 0%,
-            rgba(22,169,255,.10) 12%,
-            rgba(57,191,255,.42) 30%,
-            rgba(121,221,255,.72) 42%,
-            rgba(255,224,154,.82) 50%,
-            rgba(57,191,255,.58) 58%,
-            rgba(22,169,255,.34) 72%,
-            rgba(154,103,64,.16) 88%,
+            rgba(154,103,64,.18) 10%,
+            rgba(22,169,255,.32) 22%,
+            rgba(57,191,255,.72) 36%,
+            rgba(121,221,255,.90) 46%,
+            rgba(255,224,154,.95) 50%,
+            rgba(121,221,255,.90) 54%,
+            rgba(57,191,255,.72) 64%,
+            rgba(22,169,255,.32) 78%,
+            rgba(154,103,64,.18) 90%,
             transparent 100%
         );
 
     box-shadow:
-        0 0 8px rgba(57,191,255,.28),
-        0 0 20px rgba(22,169,255,.12);
+        0 0 8px rgba(57,191,255,.32),
+        0 0 20px rgba(22,169,255,.18),
+        0 0 28px rgba(228,189,104,.12);
 
-    opacity: .72;
+    opacity: .78;
 }
 
-/* هاله مرکزی — عمدتاً آبی */
+
+/* =========================================================
+   BLUE DOMINANT CENTRAL ENERGY
+   ========================================================= */
+
 .ars-command-hero-v2 .ars-id-display-transfer::after {
     content: "";
     position: absolute;
     left: 50%;
     top: 50%;
 
-    width: 180px;
-    height: 100px;
+    width: 210px;
+    height: 120px;
 
     transform: translate(-50%, -50%);
 
     background:
         radial-gradient(
             ellipse at center,
-            rgba(121,221,255,.18) 0%,
-            rgba(57,191,255,.12) 28%,
-            rgba(22,169,255,.07) 48%,
+            rgba(121,221,255,.20) 0%,
+            rgba(57,191,255,.13) 25%,
+            rgba(22,169,255,.075) 45%,
             rgba(228,189,104,.045) 62%,
-            transparent 78%
+            rgba(154,103,64,.018) 70%,
+            transparent 80%
         );
 
-    filter: blur(10px);
+    filter: blur(11px);
 
-    animation: arsElegantTransferGlow 6s ease-in-out infinite;
+    animation:
+        arsExtendedTransferGlow 6.5s ease-in-out infinite;
 }
 
-/* هسته — کوچک و بسیار لوکس */
+
+/* =========================================================
+   GOLD CORE — STILL THERE
+   ========================================================= */
+
 .ars-command-hero-v2 .ars-id-transfer-core {
-    width: 7px;
-    height: 7px;
+    width: 8px;
+    height: 8px;
 
     background:
         radial-gradient(
             circle,
-            #ffffff 0%,
-            #79ddff 28%,
-            #39bfff 55%,
-            #e4bd68 78%,
-            rgba(154,103,64,.5) 100%
+            #fff7dc 0%,
+            #79ddff 25%,
+            #39bfff 48%,
+            #e4bd68 72%,
+            #c9a45c 88%,
+            rgba(154,103,64,.45) 100%
         );
 
     box-shadow:
-        0 0 6px rgba(121,221,255,.85),
-        0 0 14px rgba(57,191,255,.50),
-        0 0 22px rgba(228,189,104,.22);
+        0 0 7px rgba(121,221,255,.95),
+        0 0 16px rgba(57,191,255,.62),
+        0 0 27px rgba(228,189,104,.38),
+        0 0 42px rgba(201,164,92,.16);
 
-    animation: arsElegantTransferCore 5s ease-in-out infinite;
+    animation:
+        arsExtendedTransferCore 5s ease-in-out infinite;
+
+    z-index: 5;
 }
 
-/* Packetها — عمدتاً آبی */
+
+/* =========================================================
+   BLUE ENERGY PACKETS
+   ========================================================= */
+
 .ars-command-hero-v2 .ars-id-transfer-packet {
     width: 3px;
     height: 3px;
@@ -49719,59 +49766,41 @@ body{
     background: #79ddff;
 
     box-shadow:
-        0 0 6px rgba(121,221,255,.9),
-        0 0 13px rgba(57,191,255,.48);
+        0 0 6px rgba(121,221,255,.95),
+        0 0 14px rgba(57,191,255,.60),
+        0 0 22px rgba(22,169,255,.22);
 
     opacity: 0;
 }
 
-/* حرکت بسیار آرام */
 .ars-command-hero-v2 .ars-id-transfer-packet.p1 {
-    animation: arsElegantPacketRight 5.5s linear infinite;
+    animation: arsExtendedPacketRight 5.8s linear infinite;
 }
 
 .ars-command-hero-v2 .ars-id-transfer-packet.p2 {
-    animation: arsElegantPacketLeft 6.2s linear infinite 1.8s;
+    animation: arsExtendedPacketLeft 6.4s linear infinite 1.8s;
 }
 
 
 /* =========================================================
-   MICRO VERTICAL SIGNAL
+   EXTENDED CINEMATIC MOTION
    ========================================================= */
 
-.ars-command-hero-v2 .ars-id-display-transfer {
-    isolation: isolate;
-}
+@keyframes arsExtendedTransferGlow {
 
-.ars-command-hero-v2 .ars-id-display-transfer {
-    background:
-        radial-gradient(
-            ellipse at 50% 50%,
-            rgba(57,191,255,.025) 0%,
-            rgba(22,169,255,.018) 32%,
-            rgba(201,164,92,.012) 54%,
-            transparent 72%
-        );
-}
-
-
-/* =========================================================
-   ANIMATION
-   ========================================================= */
-
-@keyframes arsElegantTransferGlow {
     0%,100% {
-        opacity: .30;
-        transform: translate(-50%,-50%) scale(.88);
+        opacity: .28;
+        transform: translate(-50%,-50%) scale(.86);
     }
 
     50% {
-        opacity: .72;
-        transform: translate(-50%,-50%) scale(1.08);
+        opacity: .68;
+        transform: translate(-50%,-50%) scale(1.12);
     }
 }
 
-@keyframes arsElegantTransferCore {
+@keyframes arsExtendedTransferCore {
+
     0%,100% {
         opacity: .68;
         transform: translate(-50%,-50%) scale(.82);
@@ -49779,67 +49808,71 @@ body{
 
     50% {
         opacity: 1;
-        transform: translate(-50%,-50%) scale(1.18);
+        transform: translate(-50%,-50%) scale(1.20);
     }
 }
 
-@keyframes arsElegantPacketRight {
+@keyframes arsExtendedPacketRight {
+
     0% {
-        left: 18%;
+        left: 15%;
         opacity: 0;
     }
 
-    15% {
-        opacity: .55;
+    14% {
+        opacity: .48;
     }
 
-    55% {
+    52% {
         opacity: .72;
     }
 
-    88% {
-        opacity: .30;
+    86% {
+        opacity: .26;
     }
 
     100% {
-        left: 82%;
+        left: 85%;
         opacity: 0;
     }
 }
 
-@keyframes arsElegantPacketLeft {
+@keyframes arsExtendedPacketLeft {
+
     0% {
-        left: 82%;
+        left: 85%;
         opacity: 0;
     }
 
-    15% {
-        opacity: .45;
+    14% {
+        opacity: .42;
     }
 
-    55% {
-        opacity: .65;
+    52% {
+        opacity: .66;
     }
 
-    88% {
+    86% {
         opacity: .22;
     }
 
     100% {
-        left: 18%;
+        left: 15%;
         opacity: 0;
     }
 }
 
 
-/* MOBILE */
-@media (max-width: 700px) {
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width:700px) {
 
     .ars-command-hero-v2 .ars-id-display-transfer {
         width: 92%;
-        height: 38vh;
-        min-height: 250px;
-        margin: 10px auto 28px;
+        height: 58vh;
+        min-height: 360px;
+        margin: 15px auto 35px;
     }
-
-  }
+}
