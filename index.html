@@ -8000,16 +8000,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-<script>
-/* =====================================================
-   ARS FUTURE LAB — DISPLAY 04
-   INDEPENDENT CINEMATIC SLIDESHOW ENGINE
-   ===================================================== */
+
+
+
+
+    <script>
+/* =========================================================
+   ARS FUTURE LAB — CINEMATIC SLIDESHOW
+   DISPLAY 04
+   ========================================================= */
 
 (function () {
 
     const display = document.querySelector(
-        '.ars-future-display'
+        '.ars-v2-display-future'
     );
 
     if (!display) return;
@@ -8018,74 +8022,84 @@ document.addEventListener("DOMContentLoaded", () => {
         '.ars-future-slide'
     );
 
+    const counter = display.querySelector(
+        '.ars-future-slide-counter'
+    );
+
+    const label = display.querySelector(
+        '.ars-future-slide-label'
+    );
+
     const progress = display.querySelector(
-        '.ars-future-progress i'
+        '.ars-future-progress-bar i'
     );
 
     if (!slides.length) return;
 
+
+    /* ---------------------------------------------------------
+       SLIDE DATA
+       --------------------------------------------------------- */
+
+    const slideNames = [
+        'FUTURE VEHICLE',
+        'DIGITAL TWIN',
+        'ADVANCED MOBILITY',
+        'ARS PROTOTYPE'
+    ];
+
+
     let current = 0;
-
-    const duration = 7000;
-
     let timer = null;
+    let progressFrame = null;
+
+    const duration = 6500;
+    const fadeDuration = 1400;
 
 
-    /* -------------------------------------------------
-       INITIAL STATE
-       ------------------------------------------------- */
+    /* ---------------------------------------------------------
+       UPDATE HUD
+       --------------------------------------------------------- */
 
-    slides.forEach((slide, index) => {
+    function updateHUD(index) {
 
-        slide.classList.toggle(
-            'active',
-            index === 0
-        );
+        if (counter) {
 
-    });
+            counter.textContent =
+                String(index + 1).padStart(2, '0') +
+                ' / ' +
+                String(slides.length).padStart(2, '0');
 
+        }
 
-    /* -------------------------------------------------
-       CHANGE SLIDE
-       ------------------------------------------------- */
+        if (label) {
 
-    function showSlide(next) {
+            label.textContent =
+                slideNames[index] ||
+                'R&D SIMULATION';
 
-        slides[current].classList.remove(
-            'active'
-        );
-
-        current =
-            next % slides.length;
-
-        slides[current].classList.add(
-            'active'
-        );
-
-        resetProgress();
+        }
 
     }
 
 
-    /* -------------------------------------------------
-       PROGRESS
-       ------------------------------------------------- */
+    /* ---------------------------------------------------------
+       RESET PROGRESS
+       --------------------------------------------------------- */
 
     function resetProgress() {
 
         if (!progress) return;
 
         progress.style.transition = 'none';
-
         progress.style.width = '0%';
 
+        requestAnimationFrame(function () {
 
-        requestAnimationFrame(() => {
-
-            requestAnimationFrame(() => {
+            requestAnimationFrame(function () {
 
                 progress.style.transition =
-                    `width ${duration}ms linear`;
+                    'width ' + duration + 'ms linear';
 
                 progress.style.width = '100%';
 
@@ -8096,20 +8110,57 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* -------------------------------------------------
-       START
-       ------------------------------------------------- */
+    /* ---------------------------------------------------------
+       CLEAR TIMER
+       --------------------------------------------------------- */
 
-    function startSlideshow() {
+    function clearTimers() {
 
-        clearInterval(timer);
+        if (timer) {
+
+            clearTimeout(timer);
+            timer = null;
+
+        }
+
+        if (progressFrame) {
+
+            cancelAnimationFrame(progressFrame);
+            progressFrame = null;
+
+        }
+
+    }
+
+
+    /* ---------------------------------------------------------
+       GO TO SLIDE
+       --------------------------------------------------------- */
+
+    function goToSlide(nextIndex) {
+
+        if (nextIndex === current) return;
+
+        const previous = slides[current];
+        const next = slides[nextIndex];
+
+        if (!next) return;
+
+
+        previous.classList.remove('active');
+
+        next.classList.add('active');
+
+        current = nextIndex;
+
+        updateHUD(current);
 
         resetProgress();
 
-        timer = setInterval(() => {
+        timer = setTimeout(function () {
 
-            showSlide(
-                current + 1
+            goToSlide(
+                (current + 1) % slides.length
             );
 
         }, duration);
@@ -8117,9 +8168,32 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* -------------------------------------------------
-       VISIBILITY
-       ------------------------------------------------- */
+    /* ---------------------------------------------------------
+       START
+       --------------------------------------------------------- */
+
+    function start() {
+
+        clearTimers();
+
+        updateHUD(current);
+
+        resetProgress();
+
+        timer = setTimeout(function () {
+
+            goToSlide(
+                (current + 1) % slides.length
+            );
+
+        }, duration);
+
+    }
+
+
+    /* ---------------------------------------------------------
+       VISIBILITY CONTROL
+       --------------------------------------------------------- */
 
     document.addEventListener(
         'visibilitychange',
@@ -8127,11 +8201,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (document.hidden) {
 
-                clearInterval(timer);
+                clearTimers();
 
             } else {
 
-                startSlideshow();
+                start();
 
             }
 
@@ -8139,45 +8213,110 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-    /* -------------------------------------------------
+    /* ---------------------------------------------------------
        REDUCED MOTION
-       ------------------------------------------------- */
+       --------------------------------------------------------- */
 
     const reducedMotion =
+        window.matchMedia &&
         window.matchMedia(
             '(prefers-reduced-motion: reduce)'
-        );
+        ).matches;
 
-    if (reducedMotion.matches) {
+
+    if (reducedMotion) {
+
+        slides.forEach(function (slide, index) {
+
+            slide.classList.toggle(
+                'active',
+                index === 0
+            );
+
+        });
+
+        updateHUD(0);
 
         if (progress) {
 
-            progress.style.width =
-                '100%';
+            progress.style.width = '100%';
 
         }
 
         return;
+
     }
 
 
-    /* -------------------------------------------------
-       START ENGINE
-       ------------------------------------------------- */
+    /* ---------------------------------------------------------
+       INTERSECTION OBSERVER
+       Pause when display is outside viewport
+       --------------------------------------------------------- */
 
-    startSlideshow();
+    if ('IntersectionObserver' in window) {
+
+        const observer =
+            new IntersectionObserver(
+                function (entries) {
+
+                    entries.forEach(function (entry) {
+
+                        if (entry.isIntersecting) {
+
+                            start();
+
+                        } else {
+
+                            clearTimers();
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.15
+                }
+            );
+
+        observer.observe(display);
+
+    } else {
+
+        start();
+
+    }
+
+
+    /* ---------------------------------------------------------
+       HOVER — SUBTLE CINEMATIC RESPONSE
+       --------------------------------------------------------- */
+
+    display.addEventListener(
+        'mouseenter',
+        function () {
+
+            display.classList.add(
+                'ars-future-hover'
+            );
+
+        }
+    );
+
+    display.addEventListener(
+        'mouseleave',
+        function () {
+
+            display.classList.remove(
+                'ars-future-hover'
+            );
+
+        }
+    );
+
 
 })();
-</script>
-
-
-
-
-
-
-    
-
-
+ </script>
 
 
 
