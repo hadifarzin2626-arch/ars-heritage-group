@@ -45985,7 +45985,108 @@ body{
 
 
 
+/* =========================================================
+   ARS INTELLIGENCE DISPLAY — TRUE VIEWPORT CONTAINMENT
+   ROOT FIX
+   ========================================================= */
 
+#ars-intelligence-display {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    box-sizing: border-box;
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+/* Everything inside must obey the display width */
+
+#ars-intelligence-display *,
+#ars-intelligence-display *::before,
+#ars-intelligence-display *::after {
+    box-sizing: border-box;
+}
+
+/* Main containers */
+
+#ars-intelligence-display .ars-id-header,
+#ars-intelligence-display .ars-id-stage,
+#ars-intelligence-display .ars-id-footer {
+    width: 100%;
+    max-width: 1240px;
+    min-width: 0;
+}
+
+/* Stage */
+
+#ars-intelligence-display .ars-id-stage {
+    overflow: hidden;
+}
+
+/* Atmospheric grid */
+
+#ars-intelligence-display .ars-id-grid {
+    inset: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* Large glow layers */
+
+#ars-intelligence-display .ars-id-glow {
+    max-width: 100%;
+}
+
+/* Reflection */
+
+#ars-intelligence-display .ars-id-reflection {
+    inset: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* Sweep */
+
+#ars-intelligence-display .ars-id-sweep {
+    max-width: 100%;
+}
+
+/* Connection network */
+
+#ars-intelligence-display .ars-id-connections {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* Footer */
+
+#ars-intelligence-display .ars-id-display-footer {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Mobile containment */
+
+@media (max-width: 650px) {
+
+    #ars-intelligence-display {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    #ars-intelligence-display .ars-id-stage {
+        width: 100%;
+        max-width: 100%;
+    }
+
+}
 
 
 
@@ -47600,99 +47701,6 @@ body{
 
 
 
-
-
-
-
-
-
-
-
-
-/* بازی کردن عرض و طول سایت */
-
-
-
-/* =====================================================
-   ARS HOME — GLOBAL VIEWPORT / OVERFLOW FIX
-   ===================================================== */
-
-html,
-body {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
-
-body {
-    position: relative;
-}
-
-.ars-command-hero-v2 {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    overflow-x: hidden;
-}
-
-/* Keep every major Home section inside viewport */
-
-.ars-command-hero-v2,
-.ars-command-hero-v2 header,
-.ars-command-hero-v2 main,
-.ars-command-hero-v2 section,
-.ars-command-hero-v2 .ars-v2-topbar,
-.ars-command-hero-v2 .ars-v2-display-section,
-.ars-command-hero-v2 .ars-v2-display-wall {
-    max-width: 100%;
-    min-width: 0;
-}
-
-/* Grid / Flex children must be allowed to shrink */
-
-.ars-command-hero-v2
-.ars-v2-display-wall > * {
-    min-width: 0;
-    max-width: 100%;
-}
-
-/* Prevent oversized media */
-
-.ars-command-hero-v2 img,
-.ars-command-hero-v2 video,
-.ars-command-hero-v2 canvas,
-.ars-command-hero-v2 svg {
-    max-width: 100%;
-}
-
-/* Prevent transformed / glowing layers
-   from creating page-wide horizontal scroll */
-
-.ars-command-hero-v2 .ars-v2-bg,
-.ars-command-hero-v2 .ars-v2-grid,
-.ars-command-hero-v2 .ars-v2-glow,
-.ars-command-hero-v2 .ars-v2-lines {
-    max-width: 100%;
-}
-
-/* Mobile / tablet */
-
-@media (max-width: 900px) {
-
-    html,
-    body {
-        overflow-x: hidden;
-    }
-
-    .ars-command-hero-v2 {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-}
 
 
 
