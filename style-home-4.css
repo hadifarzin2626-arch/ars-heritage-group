@@ -49351,3 +49351,75 @@ body{
 .ars-v2-command-menu .ars-v2-system-blue {
     --system-blue: rgba(22,169,255,.95);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS GLOBAL IMAGE DISPLAY RULE
+   FULL IMAGE — NO UNWANTED CROPPING
+   ========================================================= */
+
+.ars-v2-screen img,
+.ars-v2-card img,
+.ars-card img,
+.ars-display img,
+.ars-panel img,
+.ars-image-frame img,
+.ars-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain !important;
+    object-position: center center !important;
+    display: block;
+}
+
+/* تصاویر داخل اسلایدشوها */
+.ars-v2-screen .ars-future-slide img,
+.ars-v2-screen .ars-rose-slide img,
+.ars-v2-screen .ars-brain-slide img,
+.ars-v2-screen .ars-design-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain !important;
+    object-position: center center !important;
+}
+
+/* جلوگیری از بیرون‌زدگی تصویر */
+.ars-v2-screen,
+.ars-v2-card,
+.ars-card,
+.ars-display,
+.ars-panel,
+.ars-image-frame,
+.ars-media {
+    overflow: hidden;
+}
