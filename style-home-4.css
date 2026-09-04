@@ -47003,59 +47003,110 @@ body{
 
 
 
+
+
+
+
 /* =========================================================
-   ARS FUTURE LAB — DISPLAY LIGHT & CLARITY PATCH
-   ONLY BRIGHTNESS / VISIBILITY
+   ARS FUTURE LAB — CLEAR CINEMATIC DISPLAY PATCH
+   REMOVE DARK VEIL / PRESERVE FUTURE LAB DESIGN
    ========================================================= */
 
-.ars-command-hero-v2 .ars-v2-display-future .ars-future-slide img {
-    opacity: .78 !important;
+
+/* ---------------------------------------------------------
+   01 — LIFT IMAGE
+   --------------------------------------------------------- */
+
+.ars-command-hero-v2 .ars-v2-display-future
+.ars-future-slide img {
+
+    opacity: .88 !important;
 
     filter:
-        saturate(.92)
-        contrast(1.04)
-        brightness(.98) !important;
+        saturate(.96)
+        contrast(1.05)
+        brightness(1.02) !important;
 }
 
 
-/* Slightly lift the image atmosphere */
+.ars-command-hero-v2 .ars-v2-display-future
+.ars-future-slide.active img {
 
-.ars-command-hero-v2 .ars-v2-display-future .ars-future-slides::after {
+    opacity: .90 !important;
+
+    filter:
+        saturate(1)
+        contrast(1.05)
+        brightness(1.04) !important;
+}
+
+
+/* ---------------------------------------------------------
+   02 — OPEN CINEMATIC VIGNETTE
+   --------------------------------------------------------- */
+
+.ars-command-hero-v2 .ars-v2-display-future
+.ars-future-slides::after {
+
     background:
         radial-gradient(
             ellipse at center,
-            transparent 42%,
-            rgba(0,5,9,.12) 72%,
-            rgba(0,3,6,.38) 100%
+            transparent 48%,
+            rgba(0,5,9,.06) 76%,
+            rgba(0,3,6,.18) 100%
         ) !important;
 }
 
 
-/* Reduce top/bottom darkness */
+/* ---------------------------------------------------------
+   03 — REMOVE TOP / BOTTOM DARK CURTAIN
+   --------------------------------------------------------- */
 
-.ars-command-hero-v2 .ars-v2-display-future .ars-future-slides::before {
+.ars-command-hero-v2 .ars-v2-display-future
+.ars-future-slides::before {
+
     background:
         linear-gradient(
             180deg,
-            rgba(1,5,8,.30) 0%,
+            rgba(1,5,8,.12) 0%,
             transparent 24%,
-            transparent 70%,
-            rgba(1,5,8,.42) 100%
+            transparent 76%,
+            rgba(1,5,8,.20) 100%
         ) !important;
 }
 
 
-/* Keep the cinematic Future Lab identity */
+/* ---------------------------------------------------------
+   04 — KEEP FUTURE LAB COLOR ATMOSPHERE
+   --------------------------------------------------------- */
 
-.ars-command-hero-v2 .ars-v2-display-future .ars-future-slide::after {
-    opacity: .48 !important;
+.ars-command-hero-v2 .ars-v2-display-future
+.ars-future-slide::after {
+
+    opacity: .55 !important;
 }
 
 
+/* ---------------------------------------------------------
+   05 — CHECK GLOBAL HERO SCREEN OVERLAY
+   --------------------------------------------------------- */
+
+.ars-command-hero-v2 .ars-v2-display-future
+.ars-v2-screen-overlay {
+
+    opacity: .18 !important;
+}
 
 
+/* ---------------------------------------------------------
+   06 — KEEP FUTURE LAB CORE / HUD ABOVE IMAGE
+   --------------------------------------------------------- */
 
+.ars-command-hero-v2 .ars-v2-display-future
+.ars-future-lab {
 
+    z-index: 10 !important;
+}
 
 
 
