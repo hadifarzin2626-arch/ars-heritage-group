@@ -47003,6 +47003,57 @@ body{
 
 
 
+/* =========================================================
+   ARS FUTURE LAB — DISPLAY LIGHT & CLARITY PATCH
+   ONLY BRIGHTNESS / VISIBILITY
+   ========================================================= */
+
+.ars-command-hero-v2 .ars-v2-display-future .ars-future-slide img {
+    opacity: .78 !important;
+
+    filter:
+        saturate(.92)
+        contrast(1.04)
+        brightness(.98) !important;
+}
+
+
+/* Slightly lift the image atmosphere */
+
+.ars-command-hero-v2 .ars-v2-display-future .ars-future-slides::after {
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 42%,
+            rgba(0,5,9,.12) 72%,
+            rgba(0,3,6,.38) 100%
+        ) !important;
+}
+
+
+/* Reduce top/bottom darkness */
+
+.ars-command-hero-v2 .ars-v2-display-future .ars-future-slides::before {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(1,5,8,.30) 0%,
+            transparent 24%,
+            transparent 70%,
+            rgba(1,5,8,.42) 100%
+        ) !important;
+}
+
+
+/* Keep the cinematic Future Lab identity */
+
+.ars-command-hero-v2 .ars-v2-display-future .ars-future-slide::after {
+    opacity: .48 !important;
+}
+
+
+
+
 
 
 
