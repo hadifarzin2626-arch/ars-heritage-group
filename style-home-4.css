@@ -49430,3 +49430,188 @@ body{
 
 
 
+
+
+
+/* =========================================================
+   ARS INTELLIGENCE → DISPLAY TRANSFER
+   PREMIUM HERO TRANSITION
+   ========================================================= */
+
+.ars-command-hero-v2 {
+    position: relative;
+}
+
+/* انتقال انرژی بین Intelligence و Displays */
+.ars-command-hero-v2 .ars-id-display-transfer {
+    position: relative;
+    width: min(760px, 88%);
+    height: 86px;
+    margin: 8px auto 28px;
+    pointer-events: none;
+    overflow: visible;
+}
+
+/* خط مرکزی انتقال */
+.ars-command-hero-v2 .ars-id-display-transfer::before {
+    content: "";
+    position: absolute;
+    left: 8%;
+    right: 8%;
+    top: 50%;
+    height: 1px;
+    transform: translateY(-50%);
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(154,103,64,.18) 12%,
+            rgba(201,164,92,.45) 28%,
+            rgba(255,224,154,.95) 50%,
+            rgba(201,164,92,.45) 72%,
+            rgba(22,169,255,.20) 88%,
+            transparent 100%
+        );
+    box-shadow:
+        0 0 8px rgba(228,189,104,.35),
+        0 0 24px rgba(201,164,92,.18);
+}
+
+/* هاله‌ی انرژی مرکزی */
+.ars-command-hero-v2 .ars-id-display-transfer::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 170px;
+    height: 70px;
+    transform: translate(-50%,-50%);
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(255,224,154,.32) 0%,
+            rgba(228,189,104,.18) 24%,
+            rgba(201,164,92,.08) 48%,
+            transparent 76%
+        );
+    filter: blur(9px);
+    animation: arsTransferPulse 4.8s ease-in-out infinite;
+}
+
+/* Core انتقال */
+.ars-command-hero-v2 .ars-id-transfer-core {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 9px;
+    height: 9px;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    background: #fff4cf;
+    box-shadow:
+        0 0 7px rgba(255,244,207,.95),
+        0 0 18px rgba(228,189,104,.75),
+        0 0 34px rgba(201,164,92,.45),
+        0 0 55px rgba(22,169,255,.18);
+    animation: arsTransferCore 3.6s ease-in-out infinite;
+    z-index: 3;
+}
+
+/* ذرات انتقال */
+.ars-command-hero-v2 .ars-id-transfer-packet {
+    position: absolute;
+    top: 50%;
+    width: 4px;
+    height: 4px;
+    margin-top: -2px;
+    border-radius: 50%;
+    background: #ffe9ad;
+    box-shadow:
+        0 0 7px rgba(255,224,154,.95),
+        0 0 16px rgba(228,189,104,.65);
+    opacity: 0;
+}
+
+.ars-command-hero-v2 .ars-id-transfer-packet.p1 {
+    animation: arsPacketRight 3.2s linear infinite;
+}
+
+.ars-command-hero-v2 .ars-id-transfer-packet.p2 {
+    animation: arsPacketLeft 3.8s linear infinite 1.2s;
+}
+
+@keyframes arsTransferPulse {
+    0%,100% {
+        opacity: .45;
+        transform: translate(-50%,-50%) scale(.82);
+    }
+    50% {
+        opacity: .95;
+        transform: translate(-50%,-50%) scale(1.12);
+    }
+}
+
+@keyframes arsTransferCore {
+    0%,100% {
+        transform: translate(-50%,-50%) scale(.8);
+        opacity: .72;
+    }
+    50% {
+        transform: translate(-50%,-50%) scale(1.35);
+        opacity: 1;
+    }
+}
+
+@keyframes arsPacketRight {
+    0% {
+        left: 16%;
+        opacity: 0;
+    }
+    12% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    88% {
+        opacity: .75;
+    }
+    100% {
+        left: 84%;
+        opacity: 0;
+    }
+}
+
+@keyframes arsPacketLeft {
+    0% {
+        left: 84%;
+        opacity: 0;
+    }
+    12% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    88% {
+        opacity: .75;
+    }
+    100% {
+        left: 16%;
+        opacity: 0;
+    }
+}
+
+/* موبایل */
+@media (max-width: 700px) {
+    .ars-command-hero-v2 .ars-id-display-transfer {
+        width: 92%;
+        height: 64px;
+        margin: 4px auto 20px;
+    }
+      }
+
+
+
+
+
