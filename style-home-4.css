@@ -43736,7 +43736,128 @@ section.ars-system-seven .ars-card-logo {
 
 
 
+/* =====================================================
+   ARS COMMAND MENU — GOLDEN CORE BEHIND 3 SYSTEM CARDS
+   ===================================================== */
 
+.ars-v2-command-menu {
+    position: relative;
+    isolation: isolate;
+}
+
+
+/* MAIN GOLDEN ORB */
+.ars-v2-command-menu::before {
+    content: "";
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 420px;
+    height: 420px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(255,236,170,1) 0%,
+            rgba(244,208,120,.95) 8%,
+            rgba(228,189,104,.82) 18%,
+            rgba(201,164,92,.58) 32%,
+            rgba(154,103,64,.30) 52%,
+            rgba(201,164,92,.12) 68%,
+            transparent 78%
+        );
+
+    filter: blur(1px);
+
+    box-shadow:
+        0 0 25px rgba(255,224,154,.75),
+        0 0 55px rgba(228,189,104,.58),
+        0 0 100px rgba(201,164,92,.42),
+        0 0 160px rgba(201,164,92,.25),
+        0 0 240px rgba(154,103,64,.18);
+
+    opacity: .92;
+
+    pointer-events: none;
+    z-index: -2;
+
+    animation: arsGoldenCorePulse 5s ease-in-out infinite;
+}
+
+
+/* LARGE ATMOSPHERIC GOLD HALO */
+.ars-v2-command-menu::after {
+    content: "";
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 650px;
+    height: 650px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(228,189,104,.18) 0%,
+            rgba(201,164,92,.13) 25%,
+            rgba(154,103,64,.08) 48%,
+            transparent 72%
+        );
+
+    filter: blur(18px);
+
+    box-shadow:
+        0 0 100px rgba(228,189,104,.18),
+        0 0 180px rgba(201,164,92,.12);
+
+    opacity: .95;
+
+    pointer-events: none;
+    z-index: -3;
+
+    animation: arsGoldenHaloPulse 7s ease-in-out infinite;
+}
+
+
+/* GOLDEN CORE PULSE */
+@keyframes arsGoldenCorePulse {
+
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(.94);
+        opacity: .78;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.05);
+        opacity: 1;
+    }
+}
+
+
+/* SLOW ATMOSPHERIC BREATHING */
+@keyframes arsGoldenHaloPulse {
+
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(.96);
+        opacity: .72;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.04);
+        opacity: .98;
+    }
+}
 
 
 
