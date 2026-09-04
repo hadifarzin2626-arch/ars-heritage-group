@@ -49020,3 +49020,212 @@ body{
     pointer-events: none;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* سه سیستم ابتدای هیرو */
+
+
+
+/* =====================================================
+   ARS COMMAND MENU — PREMIUM GOLD / BRONZE / ELECTRIC BLUE AURA
+   70% GOLD • 15% BRONZE • 15% ELECTRIC BLUE
+   ===================================================== */
+
+.ars-v2-command-menu .ars-v2-system {
+    position: relative;
+    isolation: isolate;
+
+    background:
+        linear-gradient(
+            105deg,
+            rgba(201,164,92,.10) 0%,
+            rgba(201,164,92,.055) 42%,
+            rgba(154,103,64,.035) 68%,
+            rgba(22,169,255,.035) 100%
+        ) !important;
+
+    border-color: rgba(228,189,104,.30) !important;
+
+    box-shadow:
+        /* GOLD — dominant */
+        0 0 18px rgba(228,189,104,.22),
+        0 0 42px rgba(201,164,92,.14),
+        0 10px 35px rgba(201,164,92,.10),
+
+        /* BRONZE */
+        0 0 55px rgba(154,103,64,.08),
+
+        /* ELECTRIC BLUE */
+        0 0 70px rgba(22,169,255,.07),
+
+        /* inner glass glow */
+        inset 0 1px 0 rgba(255,224,154,.30),
+        inset 0 0 28px rgba(201,164,92,.055) !important;
+
+    overflow: visible !important;
+}
+
+
+/* -----------------------------------------------------
+   LIGHT ABOVE / INSIDE THE CARD
+   ----------------------------------------------------- */
+
+.ars-v2-command-menu .ars-v2-system::before {
+    content: "";
+    position: absolute;
+    left: 4%;
+    right: 4%;
+    top: -1px;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(154,103,64,.35) 15%,
+            rgba(228,189,104,.95) 35%,
+            rgba(255,224,154,1) 50%,
+            rgba(228,189,104,.95) 65%,
+            rgba(22,169,255,.35) 85%,
+            transparent 100%
+        );
+
+    box-shadow:
+        0 0 8px rgba(228,189,104,.75),
+        0 0 22px rgba(201,164,92,.38),
+        0 0 35px rgba(22,169,255,.12);
+
+    opacity: .95;
+    pointer-events: none;
+    z-index: 5;
+}
+
+
+/* -----------------------------------------------------
+   GOLDEN / BRONZE / BLUE LIGHT UNDER THE CARD
+   ----------------------------------------------------- */
+
+.ars-v2-command-menu .ars-v2-system::after {
+    content: "";
+    position: absolute;
+    left: 7%;
+    right: 7%;
+    bottom: -15px;
+    height: 30px;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(228,189,104,.42) 0%,
+            rgba(201,164,92,.20) 28%,
+            rgba(154,103,64,.12) 48%,
+            rgba(22,169,255,.10) 68%,
+            transparent 82%
+        );
+
+    filter: blur(8px);
+    opacity: .9;
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+/* -----------------------------------------------------
+   ICONS — CRISP GOLD WITH BLUE / BRONZE ENERGY
+   ----------------------------------------------------- */
+
+.ars-v2-command-menu .ars-v2-system-icon {
+    filter:
+        drop-shadow(0 0 7px rgba(228,189,104,.65))
+        drop-shadow(0 0 18px rgba(201,164,92,.28))
+        drop-shadow(0 0 24px rgba(22,169,255,.12));
+}
+
+.ars-v2-command-menu .ars-v2-icon-core {
+    background:
+        radial-gradient(
+            circle,
+            #fff4cf 0%,
+            #e4bd68 24%,
+            #c9a45c 48%,
+            rgba(201,164,92,.28) 70%,
+            transparent 100%
+        ) !important;
+
+    box-shadow:
+        0 0 8px rgba(255,224,154,.90),
+        0 0 20px rgba(228,189,104,.55),
+        0 0 34px rgba(201,164,92,.25) !important;
+}
+
+
+/* -----------------------------------------------------
+   GOLDEN TYPOGRAPHY GLOW
+   ----------------------------------------------------- */
+
+.ars-v2-command-menu .ars-v2-system-copy strong {
+    text-shadow:
+        0 0 8px rgba(255,224,154,.22),
+        0 0 18px rgba(201,164,92,.12);
+}
+
+
+/* -----------------------------------------------------
+   HOVER — EXTRA LIGHT, NO SIZE CHANGE
+   ----------------------------------------------------- */
+
+.ars-v2-command-menu .ars-v2-system:hover {
+    border-color: rgba(255,224,154,.52) !important;
+
+    box-shadow:
+        0 0 22px rgba(228,189,104,.30),
+        0 0 48px rgba(201,164,92,.18),
+        0 12px 40px rgba(201,164,92,.14),
+        0 0 65px rgba(154,103,64,.09),
+        0 0 80px rgba(22,169,255,.08),
+        inset 0 1px 0 rgba(255,238,190,.45),
+        inset 0 0 32px rgba(228,189,104,.08) !important;
+}
+
+
+/* -----------------------------------------------------
+   SYSTEM 01 — GOLD DOMINANT
+   ----------------------------------------------------- */
+
+.ars-v2-command-menu .ars-v2-system-gold {
+    --system-gold: rgba(228,189,104,.95);
+}
+
+
+/* -----------------------------------------------------
+   SYSTEM 02 — GOLD + BRONZE
+   ----------------------------------------------------- */
+
+.ars-v2-command-menu .ars-v2-system-core {
+    --system-gold: rgba(228,189,104,.95);
+}
+
+
+/* -----------------------------------------------------
+   SYSTEM 03 — GOLD + ELECTRIC BLUE
+   ----------------------------------------------------- */
+
+.ars-v2-command-menu .ars-v2-system-blue {
+    --system-blue: rgba(22,169,255,.95);
+}
