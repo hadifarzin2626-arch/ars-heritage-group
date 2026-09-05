@@ -49440,11 +49440,27 @@ body{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* =========================================================
    ARS INTELLIGENCE → DISPLAY TRANSFER
-   CINEMATIC VERTICAL SIGNAL SCAN
-   GOLD CORE PRESERVED
-   BLUE DOMINANT / BRONZE SHADOW
+   SINGLE CINEMATIC TRANSITION FIELD
+   ELECTRIC BLUE SCAN / GOLD CORE / BRONZE SHADOW
    ========================================================= */
 
 .ars-command-hero-v2 {
@@ -49453,8 +49469,7 @@ body{
 
 
 /* =========================================================
-   MAIN TRANSITION SPACE
-   تقریبا 3/4 تا 1 صفحه
+   ONE CONTINUOUS TRANSITION SPACE
    ========================================================= */
 
 .ars-command-hero-v2 .ars-id-display-transfer {
@@ -49470,74 +49485,20 @@ body{
     overflow: visible;
 
     isolation: isolate;
-}
 
-
-/* =========================================================
-   VERTICAL ELECTRIC BLUE SCAN
-   اسکن از بالا به پایین
-   ========================================================= */
-
-.ars-command-hero-v2 .ars-id-display-transfer::after {
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    top: -2%;
-    
-    width: 1px;
-    height: 18%;
-
-    transform: translateX(-50%);
-
-    background:
-        linear-gradient(
-            180deg,
-            transparent 0%,
-            rgba(57,191,255,.05) 10%,
-            rgba(57,191,255,.35) 38%,
-            rgba(121,221,255,.95) 68%,
-            rgba(201,164,92,.42) 84%,
-            rgba(154,103,64,.12) 94%,
-            transparent 100%
-        );
-
-    box-shadow:
-        0 0 5px rgba(57,191,255,.42),
-        0 0 14px rgba(22,169,255,.28),
-        0 0 26px rgba(57,191,255,.12),
-        0 0 38px rgba(154,103,64,.08);
-
-    opacity: 0;
-
-    animation:
-        arsVerticalSignalScan 7.5s
-        cubic-bezier(.42,0,.58,1)
-        infinite;
-
-    z-index: 1;
-}
-
-
-/* =========================================================
-   VERY SUBTLE BLUE ATMOSPHERE
-   ========================================================= */
-
-.ars-command-hero-v2 .ars-id-display-transfer {
     background:
         radial-gradient(
             ellipse at 50% 50%,
             rgba(57,191,255,.018) 0%,
-            rgba(22,169,255,.012) 30%,
-            rgba(154,103,64,.008) 52%,
-            transparent 72%
+            rgba(22,169,255,.010) 34%,
+            rgba(154,103,64,.008) 54%,
+            transparent 74%
         );
 }
 
 
 /* =========================================================
-   GOLD TRANSFER LINE — ORIGINAL
+   ORIGINAL GOLD TRANSFER LINE — PRESERVED
    ========================================================= */
 
 .ars-command-hero-v2 .ars-id-display-transfer::before {
@@ -49568,21 +49529,114 @@ body{
     box-shadow:
         0 0 8px rgba(228,189,104,.35),
         0 0 24px rgba(201,164,92,.18);
+
+    z-index: 4;
 }
 
 
 /* =========================================================
-   GOLD CENTRAL HALO — ORIGINAL
+   FULL HEIGHT ELECTRIC BLUE SCAN
+   یک ستون نور بسیار ظریف از بالا تا پایین
    ========================================================= */
 
-.ars-command-hero-v2 .ars-id-display-transfer
-    > .ars-id-transfer-core {
+.ars-command-hero-v2 .ars-id-display-transfer::after {
+    content: "";
+
     position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    width: 1px;
+    height: 100%;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 0%,
+            rgba(57,191,255,.015) 8%,
+            rgba(57,191,255,.035) 38%,
+            rgba(57,191,255,.055) 50%,
+            rgba(154,103,64,.025) 68%,
+            rgba(154,103,64,.015) 90%,
+            transparent 100%
+        );
+
+    box-shadow:
+        0 0 5px rgba(57,191,255,.12),
+        0 0 14px rgba(22,169,255,.06),
+        0 0 22px rgba(154,103,64,.04);
+
+    opacity: .65;
+
+    z-index: 1;
+
+    overflow: visible;
 }
 
 
 /* =========================================================
-   CORE — ORIGINAL GOLD
+   MOVING SCAN HEAD
+   با خود Core تداخل ندارد
+   ========================================================= */
+
+.ars-command-hero-v2 .ars-id-transfer-packet.p1 {
+    animation:
+        arsPacketRight 3.2s linear infinite;
+}
+
+.ars-command-hero-v2 .ars-id-transfer-packet.p2 {
+    animation:
+        arsPacketLeft 3.8s linear infinite 1.2s;
+}
+
+
+/* =========================================================
+   SECONDARY VERTICAL LIGHT — روی همان محور
+   بسیار ظریف
+   ========================================================= */
+
+.ars-command-hero-v2 .ars-id-transfer-core::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: -220px;
+
+    width: 2px;
+    height: 440px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 0%,
+            rgba(57,191,255,.025) 20%,
+            rgba(57,191,255,.12) 42%,
+            rgba(121,221,255,.42) 50%,
+            rgba(57,191,255,.12) 58%,
+            rgba(154,103,64,.035) 78%,
+            transparent 100%
+        );
+
+    filter: blur(.2px);
+
+    box-shadow:
+        0 0 8px rgba(57,191,255,.14),
+        0 0 18px rgba(22,169,255,.07);
+
+    opacity: .72;
+
+    z-index: -1;
+}
+
+
+/* =========================================================
+   ORIGINAL GOLD CENTRAL CORE
    ========================================================= */
 
 .ars-command-hero-v2 .ars-id-transfer-core {
@@ -49609,16 +49663,15 @@ body{
     animation:
         arsTransferCore 3.6s ease-in-out infinite;
 
-    z-index: 5;
+    z-index: 6;
 }
 
 
 /* =========================================================
-   GOLD CENTRAL AURA
+   GOLD AURA AROUND CORE
    ========================================================= */
 
-.ars-command-hero-v2 .ars-id-display-transfer
-    > .ars-id-transfer-core::after {
+.ars-command-hero-v2 .ars-id-transfer-core::after {
     content: "";
 
     position: absolute;
@@ -49630,6 +49683,8 @@ body{
     height: 70px;
 
     transform: translate(-50%,-50%);
+
+    border-radius: 50%;
 
     background:
         radial-gradient(
@@ -49645,12 +49700,12 @@ body{
     animation:
         arsTransferPulse 4.8s ease-in-out infinite;
 
-    z-index: -1;
+    z-index: -2;
 }
 
 
 /* =========================================================
-   TRANSFER PACKETS — ORIGINAL
+   ORIGINAL GOLD PACKETS
    ========================================================= */
 
 .ars-command-hero-v2 .ars-id-transfer-packet {
@@ -49673,22 +49728,12 @@ body{
 
     opacity: 0;
 
-    z-index: 4;
-}
-
-.ars-command-hero-v2 .ars-id-transfer-packet.p1 {
-    animation:
-        arsPacketRight 3.2s linear infinite;
-}
-
-.ars-command-hero-v2 .ars-id-transfer-packet.p2 {
-    animation:
-        arsPacketLeft 3.8s linear infinite 1.2s;
+    z-index: 7;
 }
 
 
 /* =========================================================
-   ORIGINAL GOLD ANIMATIONS
+   ORIGINAL ANIMATIONS
    ========================================================= */
 
 @keyframes arsTransferPulse {
@@ -49772,46 +49817,6 @@ body{
 
 
 /* =========================================================
-   VERTICAL SCAN ANIMATION
-   ========================================================= */
-
-@keyframes arsVerticalSignalScan {
-
-    0% {
-        top: -4%;
-        opacity: 0;
-        transform: translateX(-50%) scaleY(.55);
-    }
-
-    7% {
-        opacity: .75;
-    }
-
-    18% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: .82;
-    }
-
-    82% {
-        opacity: .55;
-    }
-
-    94% {
-        opacity: .18;
-    }
-
-    100% {
-        top: 86%;
-        opacity: 0;
-        transform: translateX(-50%) scaleY(1);
-    }
-}
-
-
-/* =========================================================
    MOBILE
    ========================================================= */
 
@@ -49823,5 +49828,14 @@ body{
         min-height: 390px;
         margin: 8px auto 32px;
     }
-  }
+
+    .ars-command-hero-v2 .ars-id-transfer-core::before {
+        top: -150px;
+        height: 300px;
+    }
+      }
+
+
+
+
 
