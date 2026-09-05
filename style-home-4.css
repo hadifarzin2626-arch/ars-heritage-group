@@ -49877,67 +49877,114 @@ body{
 
 
 
+
+
+
+
+
+
 /* =========================================================
-   ARS TRANSITION — LIGHT INTENSITY BOOST
+   ARS TRANSITION — REAL LIGHT BOOST
    BLUE +30% / GOLD +60%
    ========================================================= */
 
 
-/* 🔵 نور عمودی آبی — حدود 30% قوی‌تر */
+/* 🔵 محور عمودی آبی — واقعاً روشن‌تر */
 .ars-command-hero-v2 .ars-id-display-transfer::after {
-    opacity: .85 !important;
+    opacity: 1 !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 0%,
+            rgba(57,191,255,.035) 8%,
+            rgba(57,191,255,.065) 30%,
+            rgba(57,191,255,.11) 44%,
+            rgba(121,221,255,.22) 50%,
+            rgba(57,191,255,.11) 56%,
+            rgba(57,191,255,.065) 70%,
+            rgba(154,103,64,.035) 90%,
+            transparent 100%
+        ) !important;
 
     box-shadow:
-        0 0 7px rgba(57,191,255,.16),
-        0 0 18px rgba(22,169,255,.09),
-        0 0 28px rgba(154,103,64,.05);
+        0 0 7px rgba(57,191,255,.22),
+        0 0 18px rgba(22,169,255,.14),
+        0 0 34px rgba(57,191,255,.08),
+        0 0 48px rgba(154,103,64,.055) !important;
 }
 
 
-/* 🟡 خط طلایی مرکزی — حدود 60% قوی‌تر */
+/* 🟡 خط طلایی وسط — خود خط روشن‌تر */
 .ars-command-hero-v2 .ars-id-display-transfer::before {
     opacity: 1 !important;
 
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(154,103,64,.24) 12%,
+            rgba(201,164,92,.68) 28%,
+            rgba(255,224,154,1) 42%,
+            #fff4cf 50%,
+            rgba(255,224,154,1) 58%,
+            rgba(201,164,92,.68) 72%,
+            rgba(22,169,255,.28) 88%,
+            transparent 100%
+        ) !important;
+
     box-shadow:
-        0 0 11px rgba(228,189,104,.55),
-        0 0 32px rgba(201,164,92,.30),
-        0 0 44px rgba(201,164,92,.16);
+        0 0 10px rgba(255,224,154,.65),
+        0 0 25px rgba(228,189,104,.45),
+        0 0 42px rgba(201,164,92,.24) !important;
 }
 
 
-/* 🟡 Core طلایی — حدود 60% قوی‌تر */
+/* 🟡 Core — خود منبع نور قوی‌تر */
 .ars-command-hero-v2 .ars-id-transfer-core {
+    background:
+        radial-gradient(
+            circle,
+            #ffffff 0%,
+            #fff7dc 18%,
+            #ffe9ad 38%,
+            #e4bd68 62%,
+            #c9a45c 82%,
+            rgba(154,103,64,.35) 100%
+        ) !important;
+
     box-shadow:
-        0 0 9px rgba(255,244,207,1),
-        0 0 23px rgba(228,189,104,.95),
-        0 0 43px rgba(201,164,92,.62),
-        0 0 68px rgba(22,169,255,.22) !important;
+        0 0 8px rgba(255,255,255,1),
+        0 0 18px rgba(255,244,207,1),
+        0 0 30px rgba(228,189,104,.95),
+        0 0 48px rgba(201,164,92,.62),
+        0 0 70px rgba(22,169,255,.25) !important;
 }
 
 
-/* 🟡 هاله Core — حدود 60% قوی‌تر */
+/* 🟡 هاله اطراف Core */
 .ars-command-hero-v2 .ars-id-transfer-core::after {
-    opacity: 1 !important;
-
-    filter: blur(10px);
-
     background:
         radial-gradient(
             ellipse at center,
-            rgba(255,224,154,.42) 0%,
-            rgba(228,189,104,.23) 25%,
-            rgba(201,164,92,.10) 48%,
-            transparent 76%
-        );
+            rgba(255,244,207,.52) 0%,
+            rgba(255,224,154,.36) 20%,
+            rgba(228,189,104,.20) 40%,
+            rgba(201,164,92,.09) 58%,
+            transparent 78%
+        ) !important;
+
+    filter: blur(10px) !important;
 }
 
 
-/* 🟡 Packetها — حدود 60% پرنورتر */
+/* 🟡 نقطه‌های متحرک — خودشان روشن‌تر */
 .ars-command-hero-v2 .ars-id-transfer-packet {
-    background: #fff0bd !important;
+    background: #fff7d6 !important;
 
     box-shadow:
-        0 0 9px rgba(255,224,154,1),
-        0 0 21px rgba(228,189,104,.88),
-        0 0 32px rgba(201,164,92,.34) !important;
+        0 0 8px rgba(255,255,255,1),
+        0 0 13px rgba(255,244,207,1),
+        0 0 23px rgba(228,189,104,.95),
+        0 0 36px rgba(201,164,92,.48) !important;
 }
