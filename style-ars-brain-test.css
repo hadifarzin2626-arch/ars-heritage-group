@@ -2372,3 +2372,67 @@ body.brain-test-page
 
 
 
+
+
+
+
+
+/* =====================================================
+   ARS BRAIN HERO IMAGE — RESPONSIVE CONTAIN
+   ===================================================== */
+
+.arsbrain-hero .hero-visual {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arsbrain-hero .hero-visual img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto !important;
+    max-height: 100%;
+    object-fit: contain !important;
+    object-position: center center !important;
+}
+
+/* MOBILE PORTRAIT */
+@media (max-width: 700px) {
+
+    .arsbrain-hero .hero-visual {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        min-height: 0;
+    }
+
+    .arsbrain-hero .hero-visual img {
+        width: 100%;
+        height: auto !important;
+        max-width: 100%;
+        object-fit: contain !important;
+    }
+}
+
+/* MOBILE LANDSCAPE */
+@media (min-width: 701px) and (max-width: 1024px) {
+
+    .arsbrain-hero .hero-visual {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .arsbrain-hero .hero-visual img {
+        width: 100%;
+        height: auto !important;
+        max-width: 100%;
+        object-fit: contain !important;
+    }
+}
+
+
