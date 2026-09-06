@@ -2034,7 +2034,93 @@ Contact ARS
 
 </section>
 
-<script src="brain-test.js"></script>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const architecture = document.querySelector(".arsbrain-architecture");
+    const visual = architecture?.querySelector(".architecture-image");
+    const image = visual?.querySelector("img");
+    const cards = architecture?.querySelectorAll(".architecture-card");
+
+    if (!architecture || !visual || !image || !cards?.length) return;
+
+    /* ================================
+       ARS BRAIN — ARCHITECTURE MOTION
+       DIGITAL TWIN ENGINE v1
+    ================================= */
+
+    visual.classList.add("ars-architecture-motion");
+
+    /* Create motion layer */
+    const motion = document.createElement("div");
+    motion.className = "ars-architecture-motion-layer";
+
+    motion.innerHTML = `
+        <div class="ars-scan-line"></div>
+
+        <div class="ars-digital-grid"></div>
+
+        <div class="ars-core">
+            <span></span>
+        </div>
+
+        <div class="ars-data-node node-01"></div>
+        <div class="ars-data-node node-02"></div>
+        <div class="ars-data-node node-03"></div>
+        <div class="ars-data-node node-04"></div>
+
+        <div class="ars-data-line line-01"></div>
+        <div class="ars-data-line line-02"></div>
+        <div class="ars-data-line line-03"></div>
+
+        <div class="ars-data-packet packet-01"></div>
+        <div class="ars-data-packet packet-02"></div>
+        <div class="ars-data-packet packet-03"></div>
+    `;
+
+    visual.appendChild(motion);
+
+    /* ================================
+       Scroll Activation
+    ================================= */
+
+    const observer = new IntersectionObserver(entries => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                architecture.classList.add("ars-architecture-active");
+
+                setTimeout(() => {
+                    architecture.classList.add("ars-architecture-settled");
+                }, 2600);
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.25
+    });
+
+    observer.observe(architecture);
+
+});
+</script>
+
+
+
+
+
+
+
+
+
+  
 </body>
 
 </html>  
