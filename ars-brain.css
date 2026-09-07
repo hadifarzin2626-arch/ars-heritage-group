@@ -4536,114 +4536,116 @@ body.brain-test-page
 
 
 
+
 /* =========================================================
-   ARS BRAIN — SENSOR → BRAIN NETWORK
+   ARS BRAIN — HERO SENSOR INTELLIGENCE NETWORK
+   CLEAN VERSION
    ========================================================= */
 
-.arsbrain-hero .ars-sensor-network {
-    position:absolute;
-    inset:0;
-    z-index:7;
-    pointer-events:none;
-    overflow:hidden;
+.arsbrain-hero .hero-visual {
+    position: relative !important;
+    overflow: hidden !important;
 }
 
-/* SENSOR LINES */
+.arsbrain-hero .ars-hero-sensor-network {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    pointer-events: none;
+    overflow: hidden;
+}
 
-.arsbrain-hero .ars-sensor-line {
-    position:absolute;
-    height:1px;
-    transform-origin:left center;
+/* =========================
+   SENSOR ROUTES
+   ========================= */
 
-    background:
-        linear-gradient(
-            90deg,
-            transparent 0%,
-            rgba(57,191,255,.20) 20%,
-            rgba(57,191,255,.62) 70%,
-            rgba(228,189,104,.82) 100%
-        );
+.arsbrain-hero .ars-sensor-route {
+    position: absolute;
+    height: 1px;
+    width: 34%;
+    transform-origin: left center;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(57,191,255,.22),
+        rgba(57,191,255,.72),
+        rgba(228,189,104,.78)
+    );
 
     box-shadow:
-        0 0 5px rgba(57,191,255,.28),
-        0 0 12px rgba(228,189,104,.16);
+        0 0 5px rgba(57,191,255,.35),
+        0 0 13px rgba(228,189,104,.18);
 
-    opacity:.55;
+    opacity: .62;
+
+    background-size: 180px 100%;
+    animation: arsSensorDataFlow 3.8s linear infinite;
 }
 
-/* FRONT SENSOR → CORE */
-.arsbrain-hero .sensor-front {
-    left:14%;
-    top:68%;
-    width:43%;
-    transform:rotate(-16deg);
-    animation:arsSensorFlow1 4.8s ease-in-out infinite;
+/* FRONT */
+.arsbrain-hero .route-1 {
+    left: 13%;
+    top: 69%;
+    transform: rotate(-15deg);
 }
 
-/* REAR SENSOR → CORE */
-.arsbrain-hero .sensor-rear {
-    left:80%;
-    top:68%;
-    width:34%;
-    transform:rotate(198deg);
-    animation:arsSensorFlow2 5.6s ease-in-out infinite;
+/* SIDE */
+.arsbrain-hero .route-2 {
+    left: 17%;
+    top: 39%;
+    transform: rotate(17deg);
+    animation-delay: .9s;
 }
 
-/* SIDE SENSOR → CORE */
-.arsbrain-hero .sensor-side {
-    left:18%;
-    top:39%;
-    width:46%;
-    transform:rotate(15deg);
-    animation:arsSensorFlow3 5.2s ease-in-out infinite;
+/* REAR */
+.arsbrain-hero .route-3 {
+    left: 72%;
+    top: 70%;
+    transform: rotate(197deg);
+    animation-delay: 1.7s;
 }
 
-/* CABIN → CORE */
-.arsbrain-hero .sensor-cabin {
-    left:73%;
-    top:34%;
-    width:31%;
-    transform:rotate(154deg);
-    animation:arsSensorFlow4 6s ease-in-out infinite;
+/* CABIN */
+.arsbrain-hero .route-4 {
+    left: 72%;
+    top: 35%;
+    transform: rotate(160deg);
+    animation-delay: 2.5s;
 }
 
-/* =========================================================
-   MOVING LIGHT ALONG NETWORK
-   ========================================================= */
+@keyframes arsSensorDataFlow {
 
-@keyframes arsSensorFlow1 {
-    0%,100% { opacity:.25; }
-    45% { opacity:.85; }
-    75% { opacity:.45; }
+    0% {
+        background-position: -180px 0;
+        opacity: .25;
+    }
+
+    35% {
+        opacity: .72;
+    }
+
+    70% {
+        opacity: .62;
+    }
+
+    100% {
+        background-position: 180px 0;
+        opacity: .25;
+    }
 }
 
-@keyframes arsSensorFlow2 {
-    0%,100% { opacity:.25; }
-    50% { opacity:.9; }
-    78% { opacity:.4; }
-}
+/* =========================
+   SENSOR ORBS
+   ========================= */
 
-@keyframes arsSensorFlow3 {
-    0%,100% { opacity:.2; }
-    42% { opacity:.75; }
-    70% { opacity:.4; }
-}
+.arsbrain-hero .ars-sensor-orb {
+    position: absolute;
 
-@keyframes arsSensorFlow4 {
-    0%,100% { opacity:.22; }
-    48% { opacity:.82; }
-    76% { opacity:.38; }
-}
+    width: 7px;
+    height: 7px;
 
-/* =========================================================
-   SENSOR NODES
-   ========================================================= */
-
-.arsbrain-hero .ars-sensor-node {
-    position:absolute;
-    width:5px;
-    height:5px;
-    border-radius:50%;
+    border-radius: 50%;
 
     background:
         radial-gradient(
@@ -4655,61 +4657,66 @@ body.brain-test-page
         );
 
     box-shadow:
-        0 0 6px rgba(255,244,207,.9),
-        0 0 14px rgba(57,191,255,.55),
-        0 0 24px rgba(228,189,104,.25);
+        0 0 7px rgba(255,244,207,.9),
+        0 0 16px rgba(57,191,255,.58),
+        0 0 27px rgba(228,189,104,.30);
 
-    animation:arsSensorNodePulse 2.8s ease-in-out infinite;
+    animation: arsSensorOrbPulse 2.6s ease-in-out infinite;
 }
 
-.arsbrain-hero .node-front {
-    left:14%;
-    top:68%;
+/* FRONT SENSOR */
+.arsbrain-hero .orb-1 {
+    left: 13%;
+    top: 69%;
 }
 
-.arsbrain-hero .node-rear {
-    left:80%;
-    top:68%;
-    animation-delay:.8s;
+/* SIDE SENSOR */
+.arsbrain-hero .orb-2 {
+    left: 17%;
+    top: 39%;
+    animation-delay: .65s;
 }
 
-.arsbrain-hero .node-side {
-    left:18%;
-    top:39%;
-    animation-delay:1.5s;
+/* REAR SENSOR */
+.arsbrain-hero .orb-3 {
+    left: 72%;
+    top: 70%;
+    animation-delay: 1.3s;
 }
 
-.arsbrain-hero .node-cabin {
-    left:73%;
-    top:34%;
-    animation-delay:2.1s;
+/* CABIN SENSOR */
+.arsbrain-hero .orb-4 {
+    left: 72%;
+    top: 35%;
+    animation-delay: 1.95s;
 }
 
-@keyframes arsSensorNodePulse {
+@keyframes arsSensorOrbPulse {
+
     0%,100% {
-        transform:scale(.7);
-        opacity:.45;
+        transform: scale(.65);
+        opacity: .45;
     }
 
     50% {
-        transform:scale(1.35);
-        opacity:1; 
+        transform: scale(1.35);
+        opacity: 1;
     }
 }
 
-/* =========================================================
-   MOBILE — KEEP IT SUBTLE
-   ========================================================= */
+/* =========================
+   MOBILE
+   ========================= */
 
-@media(max-width:700px) {
+@media (max-width:700px) {
 
-    .arsbrain-hero .ars-sensor-line {
-        opacity:.42;
+    .arsbrain-hero .ars-sensor-route {
+        opacity: .48;
+        width: 30%;
     }
 
-    .arsbrain-hero .ars-sensor-node {
-        width:4px;
-        height:4px;
+    .arsbrain-hero .ars-sensor-orb {
+        width: 5px;
+        height: 5px;
     }
 }
-
