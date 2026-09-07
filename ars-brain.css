@@ -2839,11 +2839,11 @@ body.brain-test-page
     }
 
     15% {
-        opacity: 1;
+        opacity: 0;
     }
 
     85% {
-        opacity: 1;
+        opacity: 0;
     }
 
     100% {
@@ -2860,11 +2860,11 @@ body.brain-test-page
     }
 
     15% {
-        opacity: 1;
+        opacity: 0;
     }
 
     85% {
-        opacity: 1;
+        opacity: 0;
     }
 
     100% {
@@ -2881,11 +2881,11 @@ body.brain-test-page
     }
 
     15% {
-        opacity: 1;
+        opacity: 0;
     }
 
     85% {
-        opacity: 1;
+        opacity: 0;
     }
 
     100% {
@@ -2919,21 +2919,21 @@ body.brain-test-page
         linear-gradient(
             90deg,
             transparent 0%,
-            rgba(57,191,255,.08) 18%,
-            rgba(57,191,255,.55) 35%,
-            rgba(121,221,255,.95) 50%,
-            rgba(228,189,104,.62) 65%,
-            rgba(201,164,92,.20) 82%,
+            rgba(87,220,255,1.2) 18%,
+            rgba(87,220,255,1) 35%,
+            rgba(181,241,255,1.5) 50%,
+            rgba(228,230,144,1.2) 65%,
+            rgba(231,199,110,.7) 82%,
             transparent 100%
         ) !important;
 
     box-shadow:
-        0 0 6px rgba(57,191,255,.35),
-        0 0 16px rgba(57,191,255,.18),
-        0 0 28px rgba(201,164,92,.12) !important;
+        0 0 6px rgba(87,191,255,.8),
+        0 0 16px rgba(87,191,255,.44),
+        0 0 28px rgba(201,164,92,.5) !important;
 
     /* نصف سرعت قبلی */
-    animation-duration: 6.4s !important;
+    animation-duration: 8.4s !important;
 }
 
 
@@ -2948,51 +2948,81 @@ body.brain-test-page
 
 
 
+
 /* =========================================================
-   ARS BRAIN HERO — IDENTITY LOGO MOTION v1
-   TEMP LOGO / CINEMATIC IDENTITY SYSTEM
+   ARS BRAIN HERO — INDEPENDENT IDENTITY SYSTEM
    ========================================================= */
 
-.arsbrain-hero .hero-visual {
-    position: relative !important;
-    isolation: isolate;
+/*
+   IMPORTANT:
+   The ARS BRAIN logo is NOT attached to the Hero image.
+   It exists as an independent identity object.
+*/
+
+
+/* =========================================================
+   IDENTITY AREA
+   ========================================================= */
+
+.arsbrain-hero {
+    position: relative;
+    overflow: hidden;
 }
 
-/* =========================================================
-   LOGO CONTAINER
-   ========================================================= */
+.arsbrain-hero .ars-hero-identity {
 
-.ars-hero-logo {
-    position: absolute;
-    left: 50%;
-    top: 50%;
+    position: relative;
 
-    width: clamp(150px, 24%, 285px);
-    aspect-ratio: 1 / 1;
+    width: 100%;
+    height: 190px;
 
-    transform: translate(-50%, -50%);
+    margin-top: -10px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    z-index: 10;
+    isolation: isolate;
 
     pointer-events: none;
+
+    z-index: 8;
+}
+
+
+/* =========================================================
+   LOGO OBJECT
+   ========================================================= */
+
+.ars-identity-logo {
+
+    position: relative;
+
+    width: clamp(125px, 15vw, 185px);
+    height: clamp(125px, 15vw, 185px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 20;
 
     opacity: 0;
 
     animation:
-        arsHeroLogoReveal 2.4s
+        arsIdentityReveal
+        2.2s
         cubic-bezier(.2,.8,.2,1)
         forwards;
 }
 
+
 /* =========================================================
-   LOGO IMAGE
+   ACTUAL LOGO
    ========================================================= */
 
-.ars-hero-logo > img {
+.ars-identity-logo img {
+
     position: relative;
 
     width: 100%;
@@ -3002,33 +3032,41 @@ body.brain-test-page
 
     display: block;
 
-    z-index: 4;
+    z-index: 10;
+
+    /*
+       The image itself remains untouched.
+       This only creates atmospheric separation.
+    */
 
     filter:
-        drop-shadow(0 0 5px rgba(255,255,255,.30))
-        drop-shadow(0 0 15px rgba(57,191,255,.30))
-        drop-shadow(0 0 30px rgba(228,189,104,.22));
+        drop-shadow(0 0 5px rgba(255,255,255,.28))
+        drop-shadow(0 0 14px rgba(57,191,255,.32))
+        drop-shadow(0 0 28px rgba(228,189,104,.22))
+        drop-shadow(0 0 48px rgba(201,164,92,.12));
 
     animation:
-        arsHeroLogoBreath
-        5.5s
+        arsIdentityBreath
+        5.8s
         ease-in-out
-        2.4s
+        2.2s
         infinite;
 }
 
+
 /* =========================================================
-   GOLD / BLUE AURA
+   GOLD + ELECTRIC BLUE AURA
    ========================================================= */
 
-.ars-hero-logo-aura {
+.ars-logo-aura {
+
     position: absolute;
 
     left: 50%;
     top: 50%;
 
-    width: 115%;
-    height: 115%;
+    width: 175%;
+    height: 175%;
 
     transform: translate(-50%, -50%);
 
@@ -3037,241 +3075,684 @@ body.brain-test-page
     background:
         radial-gradient(
             circle,
-            rgba(255,242,194,.18) 0%,
-            rgba(228,189,104,.18) 20%,
-            rgba(201,164,92,.12) 38%,
-            rgba(57,191,255,.09) 56%,
-            rgba(57,191,255,.025) 70%,
-            transparent 82%
+
+            rgba(255,242,194,.22) 0%,
+
+            rgba(228,189,104,.18) 17%,
+
+            rgba(201,164,92,.13) 32%,
+
+            rgba(57,191,255,.10) 48%,
+
+            rgba(57,191,255,.045) 63%,
+
+            transparent 78%
         );
 
-    filter: blur(14px);
+    filter: blur(20px);
+
+    opacity: .72;
 
     z-index: 1;
 
     animation:
-        arsHeroLogoAura
+        arsIdentityAura
+        6.5s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   LIGHT ENERGY GOING TOWARD HERO IMAGE
+   ========================================================= */
+
+.ars-identity-energy {
+
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    transform: translateX(-50%);
+
+    z-index: 3;
+
+    pointer-events: none;
+}
+
+
+/*
+   Main vertical intelligence beam
+*/
+
+.ars-identity-energy::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: -95px;
+
+    width: 1px;
+    height: 145px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 0%,
+            rgba(57,191,255,.04) 15%,
+            rgba(57,191,255,.20) 42%,
+            rgba(121,221,255,.55) 63%,
+            rgba(228,189,104,.75) 82%,
+            transparent 100%
+        );
+
+    box-shadow:
+        0 0 7px rgba(57,191,255,.20),
+        0 0 18px rgba(57,191,255,.10),
+        0 0 28px rgba(228,189,104,.08);
+
+    opacity: .72;
+
+    animation:
+        arsIdentityBeamPulse
+        4.8s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   THREE ENERGY STREAMS
+   ========================================================= */
+
+.ars-energy-beam {
+
+    position: absolute;
+
+    bottom: 50%;
+
+    height: 1px;
+
+    transform-origin: left center;
+
+    opacity: 0;
+
+}
+
+
+/* Blue stream */
+
+.beam-1 {
+
+    left: 52%;
+
+    width: 31%;
+
+    transform: rotate(-10deg);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(57,191,255,.75),
+            rgba(121,221,255,.28),
+            transparent
+        );
+
+    box-shadow:
+        0 0 7px rgba(57,191,255,.30),
+        0 0 20px rgba(57,191,255,.12);
+
+    animation:
+        arsEnergyStream1
         6s
         ease-in-out
         infinite;
 }
 
-/* =========================================================
-   ELECTRIC BLUE / GOLD LIGHT SWEEP
-   ========================================================= */
 
-.ars-hero-logo-scan {
-    position: absolute;
+/* Gold stream */
 
-    left: -20%;
-    top: 10%;
+.beam-2 {
 
-    width: 140%;
-    height: 1px;
+    left: 51%;
+
+    width: 28%;
+
+    transform: rotate(7deg);
 
     background:
         linear-gradient(
             90deg,
-            transparent 0%,
-            rgba(57,191,255,.10) 18%,
-            rgba(121,221,255,.72) 38%,
-            rgba(255,255,255,.95) 50%,
-            rgba(228,189,104,.75) 62%,
-            rgba(201,164,92,.18) 82%,
-            transparent 100%
+            rgba(228,189,104,.70),
+            rgba(201,164,92,.25),
+            transparent
         );
 
     box-shadow:
-        0 0 6px rgba(57,191,255,.35),
-        0 0 15px rgba(57,191,255,.18),
-        0 0 25px rgba(228,189,104,.12);
-
-    opacity: 0;
-
-    z-index: 7;
-
-    transform: rotate(-8deg);
+        0 0 7px rgba(228,189,104,.26),
+        0 0 18px rgba(201,164,92,.10);
 
     animation:
-        arsHeroLogoSweep
-        5.8s
-        cubic-bezier(.42,0,.24,1)
-        2.2s
+        arsEnergyStream2
+        7s
+        ease-in-out
+        .8s
         infinite;
 }
 
+
+/* Cyan stream */
+
+.beam-3 {
+
+    left: 48%;
+
+    width: 25%;
+
+    transform: rotate(-4deg);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(121,221,255,.58),
+            rgba(57,191,255,.18),
+            transparent
+        );
+
+    box-shadow:
+        0 0 6px rgba(57,191,255,.20),
+        0 0 17px rgba(57,191,255,.08);
+
+    animation:
+        arsEnergyStream3
+        5.5s
+        ease-in-out
+        1.4s
+        infinite;
+}
+
+
 /* =========================================================
-   IDENTITY RING
+   ORBIT SYSTEM
    ========================================================= */
 
-.ars-hero-logo-ring {
+.ars-identity-orbit {
+
     position: absolute;
 
     left: 50%;
     top: 50%;
 
-    width: 72%;
-    height: 72%;
+    width: 270px;
+    height: 100px;
 
     transform:
         translate(-50%, -50%)
-        scale(.82);
+        rotate(-8deg);
 
-    border:
-        1px solid rgba(228,189,104,.28);
+    z-index: 5;
+
+    pointer-events: none;
+}
+
+
+.ars-orbit-ring {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
 
     border-radius: 50%;
 
-    box-shadow:
-        0 0 12px rgba(228,189,104,.12),
-        inset 0 0 15px rgba(57,191,255,.05);
+    border: 1px solid transparent;
+
+    transform:
+        translate(-50%, -50%);
 
     opacity: .35;
+}
 
-    z-index: 2;
+
+/* Gold ring */
+
+.ring-1 {
+
+    width: 235px;
+    height: 78px;
+
+    border-top-color:
+        rgba(228,189,104,.48);
+
+    border-bottom-color:
+        rgba(201,164,92,.12);
 
     animation:
-        arsHeroLogoRing
+        arsOrbitSpin
+        11s
+        linear
+        infinite;
+}
+
+
+/* Blue ring */
+
+.ring-2 {
+
+    width: 205px;
+    height: 62px;
+
+    border-left-color:
+        rgba(57,191,255,.38);
+
+    border-right-color:
+        rgba(57,191,255,.08);
+
+    transform:
+        translate(-50%, -50%)
+        rotate(55deg);
+
+    animation:
+        arsOrbitSpinReverse
+        14s
+        linear
+        infinite;
+}
+
+
+/* Inner ring */
+
+.ring-3 {
+
+    width: 160px;
+    height: 48px;
+
+    border-top-color:
+        rgba(121,221,255,.22);
+
+    animation:
+        arsOrbitSpin
         8s
         linear
         infinite;
 }
 
+
 /* =========================================================
-   REVEAL
+   LOGO CORE
    ========================================================= */
 
-@keyframes arsHeroLogoReveal {
+.ars-logo-core {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 7px;
+    height: 7px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #fff8df 0%,
+            #e7c987 32%,
+            #d0aa63 58%,
+            transparent 100%
+        );
+
+    box-shadow:
+
+        0 0 7px
+        rgba(255,242,194,.90),
+
+        0 0 17px
+        rgba(228,189,104,.65),
+
+        0 0 32px
+        rgba(201,164,92,.35),
+
+        0 0 52px
+        rgba(57,191,255,.20);
+
+    opacity: .65;
+
+    z-index: 15;
+
+    animation:
+        arsIdentityCorePulse
+        4.2s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   LIGHT SWEEP ACROSS LOGO
+   ========================================================= */
+
+.ars-logo-sweep {
+
+    position: absolute;
+
+    left: -25%;
+    top: 8%;
+
+    width: 150%;
+    height: 1px;
+
+    transform:
+        rotate(-7deg);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(57,191,255,.08) 20%,
+            rgba(121,221,255,.55) 40%,
+            rgba(255,255,255,.75) 50%,
+            rgba(228,189,104,.55) 62%,
+            transparent 82%
+        );
+
+    box-shadow:
+        0 0 8px rgba(57,191,255,.25),
+        0 0 18px rgba(228,189,104,.12);
+
+    opacity: 0;
+
+    z-index: 18;
+
+    animation:
+        arsLogoLightSweep
+        6.2s
+        cubic-bezier(.42,0,.24,1)
+        2.6s
+        infinite;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes arsIdentityReveal {
 
     0% {
+
         opacity: 0;
+
         transform:
-            translate(-50%, -50%)
-            scale(.72);
+            translateY(20px)
+            scale(.76);
     }
 
-    45% {
+    55% {
+
         opacity: 1;
+
         transform:
-            translate(-50%, -50%)
+            translateY(-3px)
             scale(1.035);
     }
 
-    72% {
-        transform:
-            translate(-50%, -50%)
-            scale(.985);
-    }
-
     100% {
+
         opacity: 1;
+
         transform:
-            translate(-50%, -50%)
+            translateY(0)
             scale(1);
     }
 }
 
-/* =========================================================
-   CALM INTELLIGENCE BREATH
-   ========================================================= */
 
-@keyframes arsHeroLogoBreath {
+@keyframes arsIdentityBreath {
 
     0%, 100% {
+
         transform: scale(.985);
 
         filter:
-            drop-shadow(0 0 5px rgba(255,255,255,.24))
-            drop-shadow(0 0 14px rgba(57,191,255,.22))
+            drop-shadow(0 0 5px rgba(255,255,255,.22))
+            drop-shadow(0 0 14px rgba(57,191,255,.24))
             drop-shadow(0 0 28px rgba(228,189,104,.16));
     }
 
     50% {
-        transform: scale(1.018);
+
+        transform: scale(1.015);
 
         filter:
-            drop-shadow(0 0 7px rgba(255,255,255,.38))
-            drop-shadow(0 0 19px rgba(57,191,255,.34))
-            drop-shadow(0 0 36px rgba(228,189,104,.24));
+            drop-shadow(0 0 7px rgba(255,255,255,.32))
+            drop-shadow(0 0 18px rgba(57,191,255,.34))
+            drop-shadow(0 0 34px rgba(228,189,104,.24));
     }
 }
 
-/* =========================================================
-   AURA PULSE
-   ========================================================= */
 
-@keyframes arsHeroLogoAura {
+@keyframes arsIdentityAura {
 
     0%, 100% {
+
         transform:
             translate(-50%, -50%)
-            scale(.92);
+            scale(.90);
 
-        opacity: .52;
+        opacity: .45;
     }
 
     50% {
+
         transform:
             translate(-50%, -50%)
-            scale(1.08);
+            scale(1.10);
 
-        opacity: .90;
+        opacity: .82;
     }
 }
 
-/* =========================================================
-   LIGHT SWEEP
-   ========================================================= */
 
-@keyframes arsHeroLogoSweep {
+@keyframes arsIdentityCorePulse {
+
+    0%, 100% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(.65);
+
+        opacity: .45;
+    }
+
+    50% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.25);
+
+        opacity: 1;
+    }
+}
+
+
+@keyframes arsLogoLightSweep {
 
     0% {
-        top: 5%;
+
+        left: -30%;
         opacity: 0;
     }
 
     12% {
-        opacity: .75;
+
+        opacity: .72;
     }
 
-    55% {
-        opacity: .55;
-    }
+    52% {
 
-    100% {
-        top: 95%;
-        opacity: 0;
-    }
-}
-
-/* =========================================================
-   RING
-   ========================================================= */
-
-@keyframes arsHeroLogoRing {
-
-    0% {
-        transform:
-            translate(-50%, -50%)
-            scale(.82)
-            rotate(0deg);
-
-        opacity: .18;
-    }
-
-    50% {
         opacity: .48;
     }
 
     100% {
-        transform:
-            translate(-50%, -50%)
-            scale(1.06)
-            rotate(360deg);
 
-        opacity: .08;
+        left: 110%;
+        opacity: 0;
     }
 }
+
+
+@keyframes arsIdentityBeamPulse {
+
+    0%, 100% {
+
+        opacity: .25;
+        transform:
+            translateX(-50%)
+            scaleY(.75);
+    }
+
+    50% {
+
+        opacity: .82;
+        transform:
+            translateX(-50%)
+            scaleY(1.15);
+    }
+}
+
+
+@keyframes arsEnergyStream1 {
+
+    0%, 100% {
+
+        opacity: 0;
+        transform:
+            rotate(-10deg)
+            scaleX(.35);
+    }
+
+    35% {
+
+        opacity: .58;
+        transform:
+            rotate(-10deg)
+            scaleX(1);
+    }
+
+    70% {
+
+        opacity: .25;
+        transform:
+            rotate(-10deg)
+            scaleX(.72);
+    }
+}
+
+
+@keyframes arsEnergyStream2 {
+
+    0%, 100% {
+
+        opacity: 0;
+        transform:
+            rotate(7deg)
+            scaleX(.30);
+    }
+
+    40% {
+
+        opacity: .60;
+        transform:
+            rotate(7deg)
+            scaleX(1);
+    }
+
+    72% {
+
+        opacity: .22;
+        transform:
+            rotate(7deg)
+            scaleX(.70);
+    }
+}
+
+
+@keyframes arsEnergyStream3 {
+
+    0%, 100% {
+
+        opacity: 0;
+        transform:
+            rotate(-4deg)
+            scaleX(.25);
+    }
+
+    38% {
+
+        opacity: .48;
+        transform:
+            rotate(-4deg)
+            scaleX(1);
+    }
+
+    70% {
+
+        opacity: .18;
+        transform:
+            rotate(-4deg)
+            scaleX(.68);
+    }
+}
+
+
+@keyframes arsOrbitSpin {
+
+    from {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+}
+
+
+@keyframes arsOrbitSpinReverse {
+
+    from {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(55deg);
+    }
+
+    to {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(-305deg);
+    }
+}
+
 
 /* =========================================================
    MOBILE
@@ -3279,14 +3760,50 @@ body.brain-test-page
 
 @media (max-width: 700px) {
 
-    .ars-hero-logo {
-        width: clamp(115px, 30%, 175px);
+    .arsbrain-hero .ars-hero-identity {
+
+        height: 145px;
+
+        margin-top: 0;
     }
 
-    .ars-hero-logo-aura {
-        filter: blur(11px);
+    .ars-identity-logo {
+
+        width: 105px;
+        height: 105px;
+    }
+
+    .ars-identity-orbit {
+
+        width: 190px;
+        height: 70px;
+    }
+
+    .ring-1 {
+
+        width: 175px;
+        height: 58px;
+    }
+
+    .ring-2 {
+
+        width: 150px;
+        height: 48px;
+    }
+
+    .ring-3 {
+
+        width: 120px;
+        height: 38px;
+    }
+
+    .ars-identity-energy::before {
+
+        height: 105px;
+        top: -65px;
     }
 }
+
 
 /* =========================================================
    REDUCED MOTION
@@ -3294,60 +3811,23 @@ body.brain-test-page
 
 @media (prefers-reduced-motion: reduce) {
 
-    .ars-hero-logo,
-    .ars-hero-logo > img,
-    .ars-hero-logo-aura,
-    .ars-hero-logo-scan,
-    .ars-hero-logo-ring {
+    .ars-identity-logo,
+    .ars-identity-logo img,
+    .ars-logo-aura,
+    .ars-logo-sweep,
+    .ars-logo-core,
+    .ars-identity-energy::before,
+    .ars-energy-beam,
+    .ars-orbit-ring {
+
         animation: none !important;
     }
 
-    .ars-hero-logo {
+    .ars-identity-logo {
+
         opacity: 1;
-        transform: translate(-50%, -50%);
     }
-}
+   }
 
 
 
-
-/* =========================================================
-   ARS BRAIN HERO — LOGO POSITION FIX
-   Identity stays separate from Hero Image
-   ========================================================= */
-
-.arsbrain-hero .ars-hero-logo {
-    left: auto !important;
-    top: auto !important;
-
-    right: 5% !important;
-    bottom: 6% !important;
-
-    width: clamp(125px, 18%, 210px) !important;
-    aspect-ratio: 1 / 1;
-
-    transform: none !important;
-
-    z-index: 20 !important;
-}
-
-/* Keep the logo visually separated from the image */
-.arsbrain-hero .ars-hero-logo > img {
-    width: 100% !important;
-    height: 100% !important;
-}
-
-/* Slightly reduce the aura so it doesn't swallow the Hero image */
-.arsbrain-hero .ars-hero-logo-aura {
-    opacity: .58 !important;
-}
-
-/* Mobile */
-@media (max-width: 700px) {
-
-    .arsbrain-hero .ars-hero-logo {
-        right: 4% !important;
-        bottom: 4% !important;
-        width: 105px !important;
-    }
-}
