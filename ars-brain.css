@@ -7533,24 +7533,61 @@ body.brain-test-page .btn-secondary {
 
 
 
+/* ONLY — +15% CENTRAL DIAMOND */
 
-
-
-
-
-
-/* ARS BRAIN — CENTRAL DIAMOND +15% SIZE ONLY */
-
-.arsbrain-premium-2 .ars-p2-core {
-    width: 253px !important;
-    height: 253px !important;
+.arsbrain-premium-2 .ars-p2-core-frame {
+    transform: rotate(45deg) translateZ(10px) scale(1.15) !important;
 }
 
 
 
 
 
+/* ONLY — ARS BRAIN PLATFORM + ARS HAVEN
+   HEIGHT -15% */
+
+.arsbrain-premium-2 .ars-p2-product-platform,
+.arsbrain-premium-2 .ars-p2-product-haven {
+    min-height: 66.3px !important;
+    height: 66.3px !important;
+   }
 
 
 
+
+
+/* =========================================================
+   ARS BRAIN PREMIUM 2
+   ACTIVE PRODUCTS — VISIBLE BREATHING
+   ONLY LIGHT / GLOW / BRIGHTNESS
+   NO SIZE / NO POSITION / NO GEOMETRY CHANGE
+   ========================================================= */
+
+.arsbrain-premium-2 .ars-p2-product-platform,
+.arsbrain-premium-2 .ars-p2-product-haven {
+    animation: arsP2VisibleProductBreath 3.8s ease-in-out infinite !important;
+}
+
+@keyframes arsP2VisibleProductBreath {
+    0%, 100% {
+        filter: brightness(.88);
+        box-shadow:
+            0 12px 28px rgba(0,0,0,.48),
+            0 0 18px rgba(228,189,104,.16),
+            0 0 38px rgba(57,191,255,.08),
+            inset 0 1px 0 rgba(255,242,194,.24),
+            inset 0 0 28px rgba(57,191,255,.035);
+    }
+
+    50% {
+        filter: brightness(1.18);
+        box-shadow:
+            0 12px 28px rgba(0,0,0,.42),
+            0 0 26px rgba(255,242,194,.42),
+            0 0 55px rgba(228,189,104,.32),
+            0 0 82px rgba(57,191,255,.16),
+            inset 0 1px 0 rgba(255,242,194,.48),
+            inset 0 0 38px rgba(228,189,104,.10);
+    }
+}
 
