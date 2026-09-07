@@ -7670,52 +7670,61 @@ body.brain-test-page .btn-secondary {
 
 
 
-
-
 /* =========================================================
    ARS BRAIN PREMIUM 2
-   CORE → 4 FUTURE SYSTEMS
-   CONTINUOUS ELECTRIC ENERGY — NO DASH / NO DOT
+   FUTURE SYSTEMS — CONTINUOUS ELECTRIC RAYS
+   NO DOTS / NO DASHES
    ========================================================= */
 
 .arsbrain-premium-2 .ars-p2-line.future-line {
     stroke: #79DDFF !important;
-    stroke-width: 1.5 !important;
+    stroke-width: 2px !important;
     stroke-linecap: round !important;
-    fill: none !important;
-
+    stroke-linejoin: round !important;
     stroke-dasharray: none !important;
     stroke-dashoffset: 0 !important;
-
     opacity: .9 !important;
 
     filter:
-        drop-shadow(0 0 3px rgba(121,221,255,.95))
-        drop-shadow(0 0 8px rgba(57,191,255,.75))
-        drop-shadow(0 0 18px rgba(57,191,255,.42))
-        drop-shadow(0 0 30px rgba(57,191,255,.18)) !important;
+        drop-shadow(0 0 2px rgba(255,255,255,.95))
+        drop-shadow(0 0 6px rgba(121,221,255,.95))
+        drop-shadow(0 0 14px rgba(57,191,255,.85))
+        drop-shadow(0 0 28px rgba(57,191,255,.48)) !important;
 
-    animation: arsP2ContinuousElectric 7s ease-in-out infinite !important;
+    animation: arsP2ElectricRay 4.8s ease-in-out infinite !important;
 }
 
-@keyframes arsP2ContinuousElectric {
+@keyframes arsP2ElectricRay {
     0%, 100% {
-        opacity: .48;
+        opacity: .38;
+        stroke-width: 1.2px;
         filter:
-            drop-shadow(0 0 3px rgba(121,221,255,.55))
-            drop-shadow(0 0 9px rgba(57,191,255,.30));
+            drop-shadow(0 0 2px rgba(121,221,255,.45))
+            drop-shadow(0 0 8px rgba(57,191,255,.30))
+            drop-shadow(0 0 18px rgba(57,191,255,.16));
     }
 
+    46% {
+        opacity: .72;
+        stroke-width: 1.7px;
+    }
 
+    50% {
+        opacity: 1;
+        stroke-width: 2.4px;
+        filter:
+            drop-shadow(0 0 3px rgba(255,255,255,1))
+            drop-shadow(0 0 8px rgba(121,221,255,1))
+            drop-shadow(0 0 18px rgba(57,191,255,.95))
+            drop-shadow(0 0 36px rgba(57,191,255,.65))
+            drop-shadow(0 0 58px rgba(57,191,255,.28));
+    }
 
-
-
-
-
-
-
-
-
+    56% {
+        opacity: .62;
+        stroke-width: 1.4px;
+    }
+}
 
 
 
@@ -7807,38 +7816,3 @@ body.brain-test-page .btn-secondary {
 
 
 
-
-/* =========================================================
-   ARS BRAIN — WHAT IS ARS BRAIN
-   INTELLIGENCE REVEAL — STEP 01
-   ONLY ENTRANCE ANIMATION
-   ========================================================= */
-
-.what-is-arsbrain .ars-glass {
-    opacity: 0;
-    transform: translateY(22px);
-    transition:
-        opacity .9s cubic-bezier(.2,.8,.2,1),
-        transform .9s cubic-bezier(.2,.8,.2,1);
-}
-
-.what-is-arsbrain .ars-glass.ars-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.what-is-arsbrain .arsbrain-image,
-.what-is-arsbrain .intro-image {
-    opacity: 0;
-    transform: translateY(26px);
-    transition:
-        opacity 1s cubic-bezier(.2,.8,.2,1),
-        transform 1s cubic-bezier(.2,.8,.2,1);
-    transition-delay: .22s;
-}
-
-.what-is-arsbrain .arsbrain-image.ars-visible,
-.what-is-arsbrain .intro-image.ars-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
