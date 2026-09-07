@@ -7807,19 +7807,55 @@ body.brain-test-page .btn-secondary {
 
 
 
-/* FUTURE LINES — ELECTRIC BLUE + GOLD GLOW */
+/* =========================================================
+   ARS BRAIN PREMIUM 2
+   FUTURE SYSTEMS — REAL MOVING ELECTRIC ENERGY
+   ONLY FUTURE LINES — NOTHING ELSE
+   ========================================================= */
 
 .arsbrain-premium-2 .ars-p2-line.future-line {
     stroke: #39BFFF !important;
-    stroke-width: 2px !important;
-    stroke-opacity: 1 !important;
+    stroke-width: 1.4px !important;
+    stroke-opacity: .72 !important;
     fill: none !important;
-    
-    filter:
-        drop-shadow(0 0 3px rgba(121,221,255,1))
-        drop-shadow(0 0 9px rgba(57,191,255,.95))
-        drop-shadow(0 0 18px rgba(57,191,255,.65))
-        drop-shadow(0 0 30px rgba(228,189,104,.45))
-        drop-shadow(0 0 46px rgba(228,189,104,.20)) !important;
 }
 
+/* moving electric pulse */
+.arsbrain-premium-2 .ars-p2-line.future-line {
+    stroke-dasharray: 14 86 !important;
+    stroke-dashoffset: 100 !important;
+
+    filter:
+        drop-shadow(0 0 3px rgba(121,221,255,.95))
+        drop-shadow(0 0 8px rgba(57,191,255,.80))
+        drop-shadow(0 0 16px rgba(57,191,255,.45))
+        drop-shadow(0 0 25px rgba(228,189,104,.22)) !important;
+
+    animation: arsP2FutureElectricFlow 7.5s linear infinite !important;
+}
+
+@keyframes arsP2FutureElectricFlow {
+
+    0% {
+        stroke-dashoffset: 100;
+        opacity: .45;
+    }
+
+    12% {
+        opacity: .85;
+    }
+
+    50% {
+        stroke-dashoffset: 50;
+        opacity: 1;
+    }
+
+    88% {
+        opacity: .85;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        opacity: .45;
+    }
+}
