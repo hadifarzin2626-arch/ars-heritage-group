@@ -4238,3 +4238,288 @@ body.brain-test-page
 
 
 
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS BRAIN — HERO LIVE INTELLIGENCE SYSTEM
+   SENSORS → BRAIN → AI → DRIVER EXPERIENCE
+   ========================================================= */
+
+.arsbrain-hero .hero-visual {
+    position: relative !important;
+    isolation: isolate !important;
+}
+
+/* ---------- INTELLIGENCE CORE ---------- */
+
+.arsbrain-hero .hero-visual::after {
+    animation: arsHeroAtmosphere 6s ease-in-out infinite !important;
+}
+
+@keyframes arsHeroAtmosphere {
+    0%, 100% {
+        opacity: .72;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* ---------- DATA STREAM LAYER ---------- */
+
+.arsbrain-hero .hero-visual::before {
+    background:
+        radial-gradient(
+            circle at 62% 53%,
+            rgba(57,191,255,.10) 0%,
+            rgba(57,191,255,.035) 16%,
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at 68% 62%,
+            rgba(228,189,104,.10) 0%,
+            rgba(201,164,92,.035) 18%,
+            transparent 38%
+        ),
+        radial-gradient(
+            ellipse at center,
+            transparent 38%,
+            rgba(3,7,11,.06) 65%,
+            rgba(1,3,5,.32) 100%
+        ) !important;
+
+    animation: arsHeroIntelligenceField 8s ease-in-out infinite !important;
+}
+
+@keyframes arsHeroIntelligenceField {
+    0%, 100% {
+        opacity: .72;
+        filter: brightness(.95);
+    }
+
+    50% {
+        opacity: 1;
+        filter: brightness(1.08);
+    }
+}
+
+/* ---------- SCANNING AXIS ---------- */
+
+.arsbrain-hero .hero-visual {
+    --ars-scan-blue: rgba(57,191,255,.72);
+    --ars-scan-gold: rgba(228,189,104,.58);
+}
+
+.arsbrain-hero .hero-visual .ars-hero-scan {
+    position: absolute;
+    z-index: 8;
+    left: 4%;
+    right: 4%;
+    top: 0;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(57,191,255,.08) 18%,
+            var(--ars-scan-blue) 38%,
+            rgba(121,221,255,.88) 50%,
+            var(--ars-scan-gold) 64%,
+            transparent 100%
+        );
+
+    box-shadow:
+        0 0 7px rgba(57,191,255,.35),
+        0 0 18px rgba(57,191,255,.18),
+        0 0 30px rgba(228,189,104,.12);
+
+    pointer-events: none;
+
+    animation:
+        arsHeroScan 7s cubic-bezier(.4,0,.6,1) infinite;
+}
+
+@keyframes arsHeroScan {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: .65;
+    }
+
+    50% {
+        opacity: .9;
+    }
+
+    90% {
+        opacity: .65;
+    }
+
+    100% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+
+/* ---------- DATA PACKETS ---------- */
+
+.arsbrain-hero .hero-visual .ars-data-packet {
+    position: absolute;
+    z-index: 9;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #fff4cf 0%,
+            #e4bd68 28%,
+            #39bfff 62%,
+            transparent 100%
+        );
+
+    box-shadow:
+        0 0 7px rgba(255,244,207,.95),
+        0 0 16px rgba(57,191,255,.55),
+        0 0 25px rgba(228,189,104,.28);
+
+    pointer-events: none;
+}
+
+/* Sensor → Brain */
+.arsbrain-hero .hero-visual .ars-data-packet.p1 {
+    left: 16%;
+    top: 72%;
+    animation: arsPacket1 4.8s ease-in-out infinite;
+}
+
+@keyframes arsPacket1 {
+    0%,100% {
+        transform: translate(0,0);
+        opacity: 0;
+    }
+
+    12% {
+        opacity: 1;
+    }
+
+    70% {
+        transform: translate(28vw,-18vh);
+        opacity: .9;
+    }
+
+    88% {
+        opacity: 0;
+    }
+}
+
+/* Camera → Brain */
+.arsbrain-hero .hero-visual .ars-data-packet.p2 {
+    left: 22%;
+    top: 34%;
+    animation: arsPacket2 5.6s ease-in-out infinite;
+    animation-delay: 1.4s;
+}
+
+@keyframes arsPacket2 {
+    0%,100% {
+        transform: translate(0,0);
+        opacity: 0;
+    }
+
+    12% {
+        opacity: 1;
+    }
+
+    68% {
+        transform: translate(25vw,18vh);
+        opacity: .9;
+    }
+
+    88% {
+        opacity: 0;
+    }
+}
+
+/* Brain → Display */
+.arsbrain-hero .hero-visual .ars-data-packet.p3 {
+    right: 18%;
+    top: 52%;
+    animation: arsPacket3 5.2s ease-in-out infinite;
+    animation-delay: 2.7s;
+}
+
+@keyframes arsPacket3 {
+    0%,100% {
+        transform: translate(0,0);
+        opacity: 0;
+    }
+
+    12% {
+        opacity: 1;
+    }
+
+    70% {
+        transform: translate(-23vw,-10vh);
+        opacity: .9;
+    }
+
+    88% {
+        opacity: 0;
+    }
+}
+
+/* ---------- BRAIN CORE PULSE ---------- */
+
+.arsbrain-hero .hero-visual .ars-brain-core-pulse {
+    position: absolute;
+    z-index: 7;
+    left: 62%;
+    top: 52%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+
+    background: #e4bd68;
+
+    box-shadow:
+        0 0 8px rgba(255,244,207,.95),
+        0 0 20px rgba(228,189,104,.72),
+        0 0 38px rgba(57,191,255,.34);
+
+    pointer-events: none;
+
+    animation: arsBrainCorePulse 3.4s ease-in-out infinite;
+}
+
+@keyframes arsBrainCorePulse {
+    0%,100% {
+        transform: scale(.72);
+        opacity: .65;
+    }
+
+    50% {
+        transform: scale(1.25);
+        opacity: 1;
+    }
+}
+
+/* ---------- REDUCED MOTION ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .arsbrain-hero .hero-visual *,
+    .arsbrain-hero .hero-visual::before,
+    .arsbrain-hero .hero-visual::after {
+        animation: none !important;
+    }
+}
