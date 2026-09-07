@@ -7689,3 +7689,86 @@ body.brain-test-page .btn-secondary {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS BRAIN PREMIUM 2 — FUTURE NEURAL ENERGY
+   RESTORE + BOOST ORIGINAL MOTION
+   ========================================================= */
+
+.arsbrain-premium-2 .ars-p2-line.future-line {
+    fill: none !important;
+
+    /* Continuous electric-blue neural channel */
+    stroke: #79DDFF !important;
+    stroke-width: 1.35px !important;
+    stroke-linecap: round !important;
+    stroke-linejoin: round !important;
+
+    /* Keep the original travelling pulse */
+    stroke-dasharray: 7 93 !important;
+    stroke-dashoffset: 0 !important;
+
+    opacity: .92 !important;
+
+    filter:
+        drop-shadow(0 0 2px rgba(217,248,255,.95))
+        drop-shadow(0 0 6px rgba(121,221,255,.95))
+        drop-shadow(0 0 13px rgba(57,191,255,.78))
+        drop-shadow(0 0 25px rgba(57,191,255,.42))
+        drop-shadow(0 0 34px rgba(208,170,99,.22)) !important;
+
+    animation:
+        arsP2FutureNeuralFlow 6.8s linear infinite !important;
+}
+
+/* Four channels get slightly different timing */
+.arsbrain-premium-2 .future-01 ~ .ars-p2-neural-map .future-line:nth-of-type(3) {
+    animation-delay: 0s !important;
+}
+
+.arsbrain-premium-2 .future-02 ~ .ars-p2-neural-map .future-line:nth-of-type(4) {
+    animation-delay: -1.7s !important;
+}
+
+.arsbrain-premium-2 .future-03 ~ .ars-p2-neural-map .future-line:nth-of-type(5) {
+    animation-delay: -3.4s !important;
+}
+
+.arsbrain-premium-2 .future-04 ~ .ars-p2-neural-map .future-line:nth-of-type(6) {
+    animation-delay: -5.1s !important;
+}
+
+/* Original travelling light */
+@keyframes arsP2FutureNeuralFlow {
+
+    0% {
+        stroke-dashoffset: 100;
+        opacity: .62;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .92;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        opacity: .62;
+    }
+}
