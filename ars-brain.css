@@ -7548,8 +7548,8 @@ body.brain-test-page .btn-secondary {
 
 .arsbrain-premium-2 .ars-p2-product-platform,
 .arsbrain-premium-2 .ars-p2-product-haven {
-    min-height: 66.3px !important;
-    height: 66.3px !important;
+    min-height: 68.3px !important;
+    height: 68.3px !important;
    }
 
 
@@ -7558,19 +7558,18 @@ body.brain-test-page .btn-secondary {
 
 /* =========================================================
    ARS BRAIN PREMIUM 2
-   ACTIVE PRODUCTS — VISIBLE BREATHING
-   ONLY LIGHT / GLOW / BRIGHTNESS
-   NO SIZE / NO POSITION / NO GEOMETRY CHANGE
+   ACTIVE PRODUCTS — SLOW LIGHT BREATHING
+   ONLY LIGHT / NO GEOMETRY CHANGE
    ========================================================= */
 
 .arsbrain-premium-2 .ars-p2-product-platform,
 .arsbrain-premium-2 .ars-p2-product-haven {
-    animation: arsP2VisibleProductBreath 3.8s ease-in-out infinite !important;
+    animation: arsP2SlowLightBreath 5s ease-in-out infinite !important;
 }
 
-@keyframes arsP2VisibleProductBreath {
+@keyframes arsP2SlowLightBreath {
     0%, 100% {
-        filter: brightness(.88);
+        filter: brightness(.94);
         box-shadow:
             0 12px 28px rgba(0,0,0,.48),
             0 0 18px rgba(228,189,104,.16),
@@ -7580,14 +7579,60 @@ body.brain-test-page .btn-secondary {
     }
 
     50% {
-        filter: brightness(1.18);
+        filter: brightness(1.10);
         box-shadow:
-            0 12px 28px rgba(0,0,0,.42),
-            0 0 26px rgba(255,242,194,.42),
-            0 0 55px rgba(228,189,104,.32),
-            0 0 82px rgba(57,191,255,.16),
-            inset 0 1px 0 rgba(255,242,194,.48),
-            inset 0 0 38px rgba(228,189,104,.10);
+            0 12px 28px rgba(0,0,0,.45),
+            0 0 23px rgba(255,242,194,.30),
+            0 0 48px rgba(228,189,104,.22),
+            0 0 65px rgba(57,191,255,.11),
+            inset 0 1px 0 rgba(255,242,194,.34),
+            inset 0 0 32px rgba(228,189,104,.07);
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS BRAIN PREMIUM 2
+   CORE → 4 FUTURE SYSTEMS
+   ELECTRIC BLUE ENERGY ONLY
+   ========================================================= */
+
+.arsbrain-premium-2 .ars-p2-line.future-line {
+    stroke: #39BFFF !important;
+    stroke-width: 1.8 !important;
+    fill: none !important;
+    opacity: .72 !important;
+    filter:
+        drop-shadow(0 0 4px rgba(57,191,255,.85))
+        drop-shadow(0 0 10px rgba(57,191,255,.55))
+        drop-shadow(0 0 20px rgba(57,191,255,.32)) !important;
+    stroke-dasharray: 9 15 !important;
+    animation: arsP2FutureEnergyFlow 2.8s linear infinite !important;
+}
+
+@keyframes arsP2FutureEnergyFlow {
+    from {
+        stroke-dashoffset: 120;
+        opacity: .48;
+    }
+
+    45% {
+        opacity: .82;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+        opacity: .48;
+    }
+}
