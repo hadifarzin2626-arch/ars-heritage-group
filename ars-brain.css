@@ -3307,3 +3307,47 @@ body.brain-test-page
         transform: translate(-50%, -50%);
     }
 }
+
+
+
+
+/* =========================================================
+   ARS BRAIN HERO — LOGO POSITION FIX
+   Identity stays separate from Hero Image
+   ========================================================= */
+
+.arsbrain-hero .ars-hero-logo {
+    left: auto !important;
+    top: auto !important;
+
+    right: 5% !important;
+    bottom: 6% !important;
+
+    width: clamp(125px, 18%, 210px) !important;
+    aspect-ratio: 1 / 1;
+
+    transform: none !important;
+
+    z-index: 20 !important;
+}
+
+/* Keep the logo visually separated from the image */
+.arsbrain-hero .ars-hero-logo > img {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Slightly reduce the aura so it doesn't swallow the Hero image */
+.arsbrain-hero .ars-hero-logo-aura {
+    opacity: .58 !important;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+
+    .arsbrain-hero .ars-hero-logo {
+        right: 4% !important;
+        bottom: 4% !important;
+        width: 105px !important;
+    }
+}
