@@ -7796,19 +7796,17 @@ body.brain-test-page .btn-secondary {
 
 
 
-/* =====================================================
-   ARS BRAIN P2 — RESTORE FUTURE ENERGY CHANNELS
-   ===================================================== */
+/* =========================================================
+   ARS BRAIN PREMIUM 2
+   CORE → 4 FUTURE SYSTEMS
+   CONTINUOUS ELECTRIC ENERGY — NO DASH / NO DOT
+   ========================================================= */
 
 .arsbrain-premium-2 .ars-p2-line.future-line {
-    display: block !important;
-    visibility: visible !important;
-
-    fill: none !important;
     stroke: #79DDFF !important;
-    stroke-width: 2px !important;
+    stroke-width: 1.5 !important;
     stroke-linecap: round !important;
-    stroke-linejoin: round !important;
+    fill: none !important;
 
     stroke-dasharray: none !important;
     stroke-dashoffset: 0 !important;
@@ -7816,24 +7814,31 @@ body.brain-test-page .btn-secondary {
     opacity: .9 !important;
 
     filter:
-        drop-shadow(0 0 2px rgba(255,255,255,.95))
-        drop-shadow(0 0 6px rgba(121,221,255,.95))
-        drop-shadow(0 0 14px rgba(57,191,255,.85))
-        drop-shadow(0 0 28px rgba(57,191,255,.48)) !important;
+        drop-shadow(0 0 3px rgba(121,221,255,.95))
+        drop-shadow(0 0 8px rgba(57,191,255,.75))
+        drop-shadow(0 0 18px rgba(57,191,255,.42))
+        drop-shadow(0 0 30px rgba(57,191,255,.18)) !important;
 
-    animation: none !important;
+    animation: arsP2ContinuousElectric 7s ease-in-out infinite !important;
 }
 
+@keyframes arsP2ContinuousElectric {
+    0%, 100% {
+        opacity: .48;
+        filter:
+            drop-shadow(0 0 3px rgba(121,221,255,.55))
+            drop-shadow(0 0 9px rgba(57,191,255,.30));
+    }
 
-
-
-
-
-
-
-
-
-
+    50% {
+        opacity: 1;
+        filter:
+            drop-shadow(0 0 4px rgba(255,255,255,.95))
+            drop-shadow(0 0 9px rgba(121,221,255,.95))
+            drop-shadow(0 0 20px rgba(57,191,255,.70))
+            drop-shadow(0 0 38px rgba(57,191,255,.30));
+    }
+}
 
 
 
