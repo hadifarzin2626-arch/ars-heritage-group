@@ -7601,103 +7601,124 @@ body.brain-test-page .btn-secondary {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* =========================================================
    ARS BRAIN PREMIUM 2
-   CORE → FUTURE SYSTEMS
-   ELECTRIC / LIGHTNING ENERGY
-   ONLY 4 COMING SOON LINES
+   PLATFORM — KEEP ALL TEXT INSIDE CARD
+   NO CARD GEOMETRY CHANGE
+   ========================================================= */
+
+.arsbrain-premium-2 .ars-p2-product-platform {
+    overflow: hidden !important;
+}
+
+.arsbrain-premium-2 .ars-p2-product-platform .ars-p2-product-copy {
+    position: absolute !important;
+    left: 14px !important;
+    right: 14px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+
+    width: auto !important;
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+}
+
+.arsbrain-premium-2 .ars-p2-product-platform .ars-p2-product-copy small,
+.arsbrain-premium-2 .ars-p2-product-platform .ars-p2-product-copy strong,
+.arsbrain-premium-2 .ars-p2-product-platform .ars-p2-product-copy span {
+    display: block !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS BRAIN PREMIUM 2
+   CORE → 4 FUTURE SYSTEMS
+   SLOW ELECTRIC ENERGY STREAM
    ========================================================= */
 
 .arsbrain-premium-2 .ars-p2-line.future-line {
     stroke: #79DDFF !important;
-    stroke-width: 1.4 !important;
-    fill: none !important;
-    opacity: .9 !important;
+    stroke-width: 1.35 !important;
     stroke-linecap: round !important;
-    stroke-dasharray: 4 11 !important;
+    fill: none !important;
+
+    stroke-dasharray: 2 28 !important;
+    stroke-dashoffset: 0;
+
+    opacity: .82 !important;
 
     filter:
         drop-shadow(0 0 3px rgba(121,221,255,.95))
-        drop-shadow(0 0 8px rgba(57,191,255,.85))
-        drop-shadow(0 0 18px rgba(57,191,255,.55))
-        drop-shadow(0 0 32px rgba(57,191,255,.28)) !important;
+        drop-shadow(0 0 8px rgba(57,191,255,.72))
+        drop-shadow(0 0 18px rgba(57,191,255,.38))
+        drop-shadow(0 0 32px rgba(57,191,255,.16)) !important;
 
-    animation:
-        arsP2LightningFlow 3.8s linear infinite,
-        arsP2LightningPulse 5s ease-in-out infinite !important;
+    animation: arsP2FutureElectricFlow 9s linear infinite !important;
 }
 
-@keyframes arsP2LightningFlow {
+@keyframes arsP2FutureElectricFlow {
     0% {
-        stroke-dashoffset: 140;
+        stroke-dashoffset: 150;
+        opacity: .42;
     }
+
+    25% {
+        opacity: .68;
+    }
+
+    50% {
+        opacity: .90;
+    }
+
+    75% {
+        opacity: .68;
+    }
+
     100% {
         stroke-dashoffset: 0;
+        opacity: .42;
     }
-}
-
-@keyframes arsP2LightningPulse {
-    0%, 78%, 100% {
-        opacity: .62;
-        filter:
-            drop-shadow(0 0 3px rgba(121,221,255,.65))
-            drop-shadow(0 0 10px rgba(57,191,255,.40))
-            drop-shadow(0 0 22px rgba(57,191,255,.20));
-    }
-
-    82% {
-        opacity: 1;
-        filter:
-            drop-shadow(0 0 5px rgba(255,255,255,1))
-            drop-shadow(0 0 12px rgba(121,221,255,1))
-            drop-shadow(0 0 25px rgba(57,191,255,.90))
-            drop-shadow(0 0 45px rgba(57,191,255,.45));
-    }
-
-    85% {
-        opacity: .72;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* =========================================================
-   ARS BRAIN PREMIUM 2
-   PLATFORM CARD — TEXT FIT ONLY
-   ========================================================= */
-
-.arsbrain-premium-2 .ars-p2-product-platform .ars-p2-product-copy {
-    box-sizing: border-box !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 10px 16px !important;
-    overflow: hidden !important;
-}
-
-.arsbrain-premium-2 .ars-p2-product-platform .ars-p2-product-copy strong,
-.arsbrain-premium-2 .ars-p2-product-platform .ars-p2-product-copy span,
-.arsbrain-premium-2 .ars-p2-product-platform .ars-p2-product-copy small {
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-}
-
-.arsbrain-premium-2 .ars-p2-product-platform .ars-p2-product-copy strong,
-.arsbrain-premium-2 .ars-p2-product-platform .ars-p2-product-copy span {
-    white-space: normal !important;
-    overflow-wrap: break-word !important;
 }
