@@ -4162,3 +4162,106 @@ body.brain-test-page
         transform: scale(1.005) !important;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS BRAIN — HERO VISUAL
+   DESKTOP + MOBILE LANDSCAPE / PORTRAIT
+   ========================================================= */
+
+/* =========================
+   BASE / DESKTOP
+   ========================= */
+
+.arsbrain-hero .hero-visual {
+    transform: scale(1.35) !important;
+    transform-origin: center center !important;
+    z-index: 3 !important;
+}
+
+.arsbrain-hero .hero-visual img {
+    filter:
+        saturate(.98)
+        contrast(1.08)
+        brightness(1.04) !important;
+}
+
+/* Cinematic depth */
+.arsbrain-hero .hero-visual::before {
+    background:
+        radial-gradient(
+            ellipse at 52% 55%,
+            transparent 34%,
+            rgba(3,7,11,.03) 55%,
+            rgba(3,7,11,.18) 82%,
+            rgba(1,3,5,.38) 100%
+        ) !important;
+}
+
+/* Gold + electric-blue atmosphere */
+.arsbrain-hero .hero-visual::after {
+    opacity: 1 !important;
+    background:
+        radial-gradient(
+            ellipse at 67% 70%,
+            rgba(228,189,104,.15) 0%,
+            rgba(201,164,92,.075) 20%,
+            transparent 44%
+        ),
+        radial-gradient(
+            ellipse at 38% 38%,
+            rgba(57,191,255,.12) 0%,
+            rgba(57,191,255,.05) 23%,
+            transparent 50%
+        ) !important;
+}
+
+/* =========================
+   MOBILE LANDSCAPE
+   ========================= */
+
+@media (max-width:700px) and (orientation:landscape) {
+
+    .arsbrain-hero .hero-visual {
+        transform: scale(1.35) !important;
+        transform-origin: center center !important;
+        z-index: 3 !important;
+    }
+
+    .arsbrain-hero .hero-visual img {
+        filter:
+            saturate(1)
+            contrast(1.08)
+            brightness(1.04) !important;
+    }
+}
+
+/* =========================
+   MOBILE PORTRAIT
+   ========================= */
+
+@media (max-width:700px) and (orientation:portrait) {
+
+    .arsbrain-hero .hero-visual {
+        transform: scale(1.35) !important;
+        transform-origin: center center !important;
+        z-index: 3 !important;
+    }
+
+    .arsbrain-hero .hero-visual img {
+        filter:
+            saturate(1)
+            contrast(1.08)
+            brightness(1.04) !important;
+    }
+}
