@@ -6787,3 +6787,720 @@ body.brain-test-page .btn-secondary {
 
 
 
+
+
+
+
+
+
+/* =========================================================
+   ARS BRAIN PREMIUM 2
+   LIVING 3D / GLASS / LIGHT / ENERGY SYSTEM
+   GEOMETRY PRESERVED
+   ========================================================= */
+
+
+/* =========================================================
+   01 — 3D WORLD
+   ========================================================= */
+
+.arsbrain-premium-2 {
+    perspective: 1400px;
+    perspective-origin: 50% 50%;
+}
+
+.arsbrain-premium-2 .ars-p2-stage {
+    transform-style: preserve-3d !important;
+}
+
+.arsbrain-premium-2 .ars-p2-neural-map {
+    transform: translateZ(-35px);
+}
+
+
+/* =========================================================
+   02 — GLASS MATERIAL
+   ========================================================= */
+
+.arsbrain-premium-2 .ars-p2-product,
+.arsbrain-premium-2 .ars-p2-future {
+
+    transform-style: preserve-3d;
+
+    backdrop-filter:
+        blur(18px)
+        saturate(145%)
+        brightness(1.04);
+
+    -webkit-backdrop-filter:
+        blur(18px)
+        saturate(145%)
+        brightness(1.04);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.075) 0%,
+            rgba(30,38,44,.52) 28%,
+            rgba(8,13,18,.70) 68%,
+            rgba(57,191,255,.045) 100%
+        ) !important;
+
+    border: 1px solid
+        rgba(201,164,92,.36) !important;
+
+    box-shadow:
+        0 10px 22px rgba(0,0,0,.45),
+        0 20px 50px rgba(0,0,0,.30),
+        0 0 22px rgba(57,191,255,.08),
+        inset 0 1px 0 rgba(255,242,194,.20),
+        inset 0 -1px 0 rgba(57,191,255,.08),
+        inset 0 0 24px rgba(255,255,255,.025);
+
+    overflow: visible !important;
+}
+
+
+/* =========================================================
+   03 — 3D EDGE / THICKNESS
+   ========================================================= */
+
+.arsbrain-premium-2 .ars-p2-product::after,
+.arsbrain-premium-2 .ars-p2-future::after {
+
+    content: "";
+
+    position: absolute;
+    inset: 3px;
+
+    border-radius: inherit;
+
+    border: 1px solid
+        rgba(121,221,255,.10);
+
+    transform:
+        translateZ(-8px)
+        scale(.985);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(57,191,255,.08),
+            transparent 45%,
+            rgba(201,164,92,.06)
+        );
+
+    box-shadow:
+        0 12px 24px rgba(0,0,0,.42);
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+/* =========================================================
+   04 — ACTIVE PRODUCTS
+   GOLD + ELECTRIC BLUE
+   ========================================================= */
+
+.arsbrain-premium-2 .ars-p2-product {
+
+    border-color:
+        rgba(228,189,104,.48) !important;
+
+    box-shadow:
+        0 12px 28px rgba(0,0,0,.48),
+        0 0 18px rgba(228,189,104,.14),
+        0 0 38px rgba(57,191,255,.10),
+        inset 0 1px 0 rgba(255,242,194,.28),
+        inset 0 -1px 0 rgba(57,191,255,.14),
+        inset 0 0 30px rgba(57,191,255,.035);
+
+    animation:
+        arsP2ActiveBreath 5.5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   05 — ACTIVE CARD TOP ENERGY LINE
+   ========================================================= */
+
+.arsbrain-premium-2 .ars-p2-product::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 8%;
+    right: 8%;
+    top: -1px;
+
+    height: 2px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(201,164,92,.65),
+            rgba(255,242,194,1),
+            rgba(57,191,255,.85),
+            transparent
+        );
+
+    box-shadow:
+        0 0 7px rgba(255,224,154,.65),
+        0 0 16px rgba(57,191,255,.28),
+        0 0 30px rgba(57,191,255,.10);
+
+    animation:
+        arsP2EnergyLine 3.8s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   06 — FUTURE CARDS
+   ========================================================= */
+
+.arsbrain-premium-2 .ars-p2-future {
+
+    border-color:
+        rgba(57,191,255,.38) !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(18,32,42,.68),
+            rgba(7,13,19,.62),
+            rgba(57,191,255,.055)
+        ) !important;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.48),
+        0 0 15px rgba(57,191,255,.10),
+        0 0 32px rgba(57,191,255,.045),
+        inset 0 1px 0 rgba(121,221,255,.17),
+        inset 0 0 25px rgba(57,191,255,.035);
+
+    animation:
+        arsP2FutureLiving 6.5s ease-in-out infinite;
+}
+
+
+/* Different breathing phase for each future node */
+
+.arsbrain-premium-2 .future-01 {
+    animation-delay: -.8s !important;
+}
+
+.arsbrain-premium-2 .future-02 {
+    animation-delay: -2.4s !important;
+}
+
+.arsbrain-premium-2 .future-03 {
+    animation-delay: -4.1s !important;
+}
+
+.arsbrain-premium-2 .future-04 {
+    animation-delay: -5.3s !important;
+}
+
+
+/* =========================================================
+   07 — FUTURE NODE BLUE CORE
+   ========================================================= */
+
+.arsbrain-premium-2 .ars-p2-future-node {
+
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle,
+            #D9F8FF 0%,
+            #79DDFF 18%,
+            #39BFFF 42%,
+            rgba(57,191,255,.25) 68%,
+            transparent 100%
+        ) !important;
+
+    box-shadow:
+        0 0 7px rgba(121,221,255,.82),
+        0 0 17px rgba(57,191,255,.48),
+        0 0 34px rgba(57,191,255,.20) !important;
+
+    animation:
+        arsP2NodePulse 3.8s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   08 — PRODUCT NODE
+   ========================================================= */
+
+.arsbrain-premium-2 .ars-p2-node {
+
+    background:
+        radial-gradient(
+            circle,
+            #FFF8DF 0%,
+            #E7C987 25%,
+            #D0AA63 48%,
+            rgba(57,191,255,.42) 70%,
+            transparent 100%
+        ) !important;
+
+    box-shadow:
+        0 0 7px rgba(255,242,194,.9),
+        0 0 17px rgba(228,189,104,.52),
+        0 0 30px rgba(57,191,255,.20) !important;
+
+    animation:
+        arsP2ActiveNodePulse 3.4s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   09 — TEXT DEPTH
+   ========================================================= */
+
+.arsbrain-premium-2 .ars-p2-product-copy,
+.arsbrain-premium-2 .ars-p2-future strong,
+.arsbrain-premium-2 .ars-p2-future small {
+
+    transform: translateZ(18px);
+}
+
+.arsbrain-premium-2 .ars-p2-product-copy strong {
+
+    text-shadow:
+        0 0 8px rgba(255,242,194,.18),
+        0 0 18px rgba(201,164,92,.10),
+        0 0 24px rgba(57,191,255,.08);
+}
+
+
+/* =========================================================
+   10 — NEURAL ENERGY PATHS
+   ========================================================= */
+
+.arsbrain-premium-2 .ars-p2-line {
+
+    fill: none;
+
+    stroke-linecap: round;
+
+    transform-origin: center;
+
+    filter:
+        drop-shadow(0 0 5px rgba(228,189,104,.35))
+        drop-shadow(0 0 14px rgba(57,191,255,.10));
+}
+
+.arsbrain-premium-2 .ars-p2-line.active-line {
+
+    stroke:
+        url(#arsP2GoldFlow) !important;
+
+    stroke-width: 1.25;
+
+    opacity: .78;
+
+    stroke-dasharray: 10 90;
+
+    animation:
+        arsP2NeuralGoldFlow 4.5s linear infinite;
+}
+
+.arsbrain-premium-2 .ars-p2-line.future-line {
+
+    stroke:
+        url(#arsP2FutureFlow) !important;
+
+    stroke-width: .8;
+
+    opacity: .48;
+
+    stroke-dasharray: 5 95;
+
+    animation:
+        arsP2NeuralBlueFlow 7s linear infinite;
+}
+
+
+/* =========================================================
+   11 — CORE: PREMIUM 3D PROCESSOR
+   ========================================================= */
+
+.arsbrain-premium-2 .ars-p2-core {
+
+    transform-style: preserve-3d !important;
+
+    filter:
+        drop-shadow(0 0 12px rgba(201,164,92,.20))
+        drop-shadow(0 0 26px rgba(57,191,255,.12));
+}
+
+
+/* Outer diamond */
+.arsbrain-premium-2 .ars-p2-core-frame {
+
+    transform:
+        rotate(45deg)
+        translateZ(10px) !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,242,194,.12),
+            rgba(25,20,15,.86) 35%,
+            rgba(7,12,17,.92) 68%,
+            rgba(57,191,255,.10)
+        ) !important;
+
+    border:
+        1px solid rgba(228,189,104,.72) !important;
+
+    box-shadow:
+        0 0 12px rgba(228,189,104,.28),
+        0 0 28px rgba(201,164,92,.18),
+        0 0 48px rgba(57,191,255,.12),
+        inset 0 0 28px rgba(57,191,255,.055);
+}
+
+
+/* =========================================================
+   12 — CORE LIGHT / ENERGY FIELD
+   ========================================================= */
+
+.arsbrain-premium-2 .ars-p2-core-light {
+
+    width: 150%;
+    height: 150%;
+
+    left: -25%;
+    top: -25%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,242,194,.22) 0%,
+            rgba(228,189,104,.14) 20%,
+            rgba(57,191,255,.11) 42%,
+            rgba(57,191,255,.045) 60%,
+            transparent 74%
+        );
+
+    filter: blur(15px);
+
+    animation:
+        arsP2CoreAura 4.8s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   13 — CORE INNER POWER
+   ========================================================= */
+
+.arsbrain-premium-2 .ars-p2-core-inner {
+
+    transform:
+        translateZ(28px);
+
+    text-shadow:
+        0 0 8px rgba(255,242,194,.20),
+        0 0 18px rgba(57,191,255,.12);
+}
+
+.arsbrain-premium-2 .ars-p2-core-inner strong {
+
+    text-shadow:
+        0 0 8px rgba(255,242,194,.45),
+        0 0 20px rgba(228,189,104,.30),
+        0 0 34px rgba(57,191,255,.18);
+}
+
+
+/* =========================================================
+   14 — CORE SPECIAL ANIMATION
+   Charge → Pulse → Release → Reset
+   ========================================================= */
+
+@keyframes arsP2CoreBehavior {
+
+    0%, 100% {
+        transform:
+            translate(-50%, -50%)
+            scale(1)
+            rotate(0deg);
+    }
+
+    18% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.025)
+            rotate(0deg);
+    }
+
+    35% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.055)
+            rotate(1.5deg);
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.085)
+            rotate(-1.5deg);
+    }
+
+    64% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.025)
+            rotate(.7deg);
+    }
+
+    82% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.012)
+            rotate(0deg);
+    }
+}
+
+.arsbrain-premium-2 .ars-p2-core {
+    animation:
+        arsP2CoreBehavior 7s cubic-bezier(.45,.05,.25,1) infinite !important;
+}
+
+
+/* =========================================================
+   15 — CORE FRAME MICRO ROTATION
+   ========================================================= */
+
+@keyframes arsP2CoreFrameMotion {
+
+    0%, 100% {
+        rotate: 0deg;
+    }
+
+    50% {
+        rotate: 2deg;
+    }
+}
+
+.arsbrain-premium-2 .ars-p2-core-frame {
+    animation:
+        arsP2CoreFrameMotion 7s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   16 — CORE AURA
+   ========================================================= */
+
+@keyframes arsP2CoreAura {
+
+    0%, 100% {
+        opacity: .42;
+        transform: scale(.88);
+    }
+
+    38% {
+        opacity: .68;
+        transform: scale(.98);
+    }
+
+    50% {
+        opacity: .92;
+        transform: scale(1.08);
+    }
+
+    70% {
+        opacity: .55;
+        transform: scale(.96);
+    }
+}
+
+
+/* =========================================================
+   17 — ACTIVE CARD BREATH
+   ========================================================= */
+
+@keyframes arsP2ActiveBreath {
+
+    0%, 100% {
+        transform:
+            translateY(-50%)
+            translateZ(0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translateY(-50%)
+            translateZ(8px)
+            scale(1.018);
+    }
+}
+
+
+/* =========================================================
+   18 — FUTURE CARD BREATH
+   ========================================================= */
+
+@keyframes arsP2FutureLiving {
+
+    0%, 100% {
+        transform:
+            translateZ(0)
+            scale(1);
+        opacity: .60;
+    }
+
+    50% {
+        transform:
+            translateZ(7px)
+            scale(1.015);
+        opacity: .82;
+    }
+}
+
+
+/* =========================================================
+   19 — NODE PULSES
+   ========================================================= */
+
+@keyframes arsP2NodePulse {
+
+    0%, 100% {
+        transform: scale(.88);
+        opacity: .62;
+    }
+
+    50% {
+        transform: scale(1.12);
+        opacity: 1;
+    }
+}
+
+@keyframes arsP2ActiveNodePulse {
+
+    0%, 100% {
+        transform: scale(.88);
+        opacity: .72;
+    }
+
+    50% {
+        transform: scale(1.16);
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   20 — ENERGY LINE MOTION
+   ========================================================= */
+
+@keyframes arsP2EnergyLine {
+
+    0%, 100% {
+        opacity: .38;
+        transform: scaleX(.72);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+@keyframes arsP2NeuralGoldFlow {
+
+    from {
+        stroke-dashoffset: 100;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes arsP2NeuralBlueFlow {
+
+    from {
+        stroke-dashoffset: 100;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+/* =========================================================
+   21 — HOVER: DEPTH RESPONSE
+   ========================================================= */
+
+.arsbrain-premium-2 .ars-p2-product:hover {
+
+    transform:
+        translateY(-50%)
+        translateZ(18px)
+        scale(1.025) !important;
+
+    border-color:
+        rgba(255,242,194,.72) !important;
+
+    box-shadow:
+        0 18px 35px rgba(0,0,0,.52),
+        0 0 22px rgba(228,189,104,.24),
+        0 0 44px rgba(57,191,255,.14),
+        inset 0 1px 0 rgba(255,242,194,.36),
+        inset 0 0 28px rgba(57,191,255,.06) !important;
+}
+
+.arsbrain-premium-2 .ars-p2-future:hover {
+
+    transform:
+        translateZ(15px)
+        scale(1.025) !important;
+
+    opacity: .94 !important;
+
+    border-color:
+        rgba(121,221,255,.62) !important;
+
+    box-shadow:
+        0 16px 32px rgba(0,0,0,.50),
+        0 0 22px rgba(57,191,255,.20),
+        0 0 42px rgba(57,191,255,.10),
+        inset 0 0 26px rgba(57,191,255,.06) !important;
+}
+
+
+/* =========================================================
+   22 — REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .arsbrain-premium-2 *,
+    .arsbrain-premium-2 *::before,
+    .arsbrain-premium-2 *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition: none !important;
+    }
+}
+
