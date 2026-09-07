@@ -8099,3 +8099,249 @@ body.brain-test-page .btn-secondary {
 
 
 
+
+
+
+/* =====================================================
+   ARS BRAIN PREMIUM 2 — FINAL VISUAL CORRECTION
+   ===================================================== */
+
+/* ---------- CENTRAL CORE SIZE ---------- */
+
+.arsbrain-premium-2 .ars-p2-core {
+    width: 242px !important;
+    height: 242px !important;
+
+    transform: translate(-50%, -50%) !important;
+
+    animation: none !important;
+}
+
+/* Diamond frame stays visually fixed */
+.arsbrain-premium-2 .ars-p2-core-frame {
+    transform: rotate(45deg) !important;
+    animation: none !important;
+
+    box-shadow:
+        0 0 18px rgba(228,189,104,.38),
+        0 0 42px rgba(201,164,92,.24),
+        0 0 80px rgba(201,164,92,.14),
+        inset 0 0 28px rgba(228,189,104,.08) !important;
+}
+
+/* ---------- TEXT INSIDE DIAMOND ---------- */
+/* Counter-rotate ONLY the inner content.
+   The diamond itself remains a diamond. */
+
+.arsbrain-premium-2 .ars-p2-core-inner {
+    transform: rotate(-45deg) !important;
+    animation: arsP2CoreBreath 4.8s ease-in-out infinite !important;
+
+    transform-origin: center center !important;
+}
+
+/* ---------- CENTRAL LIGHT BREATH ---------- */
+
+.arsbrain-premium-2 .ars-p2-core-light {
+    animation: arsP2CoreLight 4.2s ease-in-out infinite !important;
+}
+
+@keyframes arsP2CoreBreath {
+    0%,100% {
+        opacity: .88;
+        filter:
+            brightness(.96)
+            drop-shadow(0 0 8px rgba(228,189,104,.30));
+    }
+
+    50% {
+        opacity: 1;
+        filter:
+            brightness(1.12)
+            drop-shadow(0 0 14px rgba(255,224,154,.58))
+            drop-shadow(0 0 30px rgba(228,189,104,.28));
+    }
+}
+
+@keyframes arsP2CoreLight {
+    0%,100% {
+        opacity: .42;
+        transform: scale(.90);
+        filter: blur(18px);
+    }
+
+    50% {
+        opacity: .90;
+        transform: scale(1.12);
+        filter: blur(24px);
+    }
+}
+
+
+/* =====================================================
+   ALL SIX PRODUCT CARDS — VISIBLE BREATHING
+   ===================================================== */
+
+.arsbrain-premium-2 .ars-p2-product,
+.arsbrain-premium-2 .ars-p2-future {
+    animation: arsP2CardBreath 4.6s ease-in-out infinite !important;
+    will-change: filter, opacity, box-shadow;
+}
+
+
+/* ---------- ACTIVE PRODUCTS — STRONGER ---------- */
+
+.arsbrain-premium-2 .ars-p2-product-platform,
+.arsbrain-premium-2 .ars-p2-product-haven {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(137,94,50,.34),
+            rgba(201,164,92,.16),
+            rgba(22,169,255,.07)
+        ) !important;
+
+    border-color: rgba(228,189,104,.48) !important;
+
+    box-shadow:
+        0 0 18px rgba(228,189,104,.26),
+        0 0 42px rgba(201,164,92,.22),
+        0 0 78px rgba(154,103,64,.16),
+        inset 0 1px 0 rgba(255,224,154,.34) !important;
+
+    animation:
+        arsP2ActiveBreath
+        3.8s
+        ease-in-out
+        infinite !important;
+}
+
+
+/* ---------- FOUR FUTURE SYSTEMS ---------- */
+
+.arsbrain-premium-2 .ars-p2-future {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(18,42,55,.46),
+            rgba(22,169,255,.10),
+            rgba(137,94,50,.09)
+        ) !important;
+
+    border-color: rgba(228,189,104,.30) !important;
+
+    box-shadow:
+        0 0 14px rgba(228,189,104,.20),
+        0 0 34px rgba(201,164,92,.16),
+        0 0 58px rgba(22,169,255,.12),
+        inset 0 1px 0 rgba(255,224,154,.22) !important;
+
+    opacity: .72 !important;
+}
+
+
+/* ---------- GENERAL CARD BREATH ---------- */
+
+@keyframes arsP2CardBreath {
+
+    0%,100% {
+        filter:
+            brightness(.88)
+            drop-shadow(0 0 7px rgba(228,189,104,.12));
+
+        opacity: .72;
+    }
+
+    50% {
+        filter:
+            brightness(1.08)
+            drop-shadow(0 0 16px rgba(228,189,104,.32))
+            drop-shadow(0 0 34px rgba(22,169,255,.14));
+
+        opacity: .94;
+    }
+}
+
+
+/* ---------- ACTIVE BREATH ---------- */
+
+@keyframes arsP2ActiveBreath {
+
+    0%,100% {
+        filter:
+            brightness(.92)
+            drop-shadow(0 0 10px rgba(228,189,104,.22))
+            drop-shadow(0 0 24px rgba(201,164,92,.16));
+    }
+
+    50% {
+        filter:
+            brightness(1.16)
+            drop-shadow(0 0 18px rgba(255,224,154,.48))
+            drop-shadow(0 0 40px rgba(228,189,104,.34))
+            drop-shadow(0 0 62px rgba(22,169,255,.14));
+    }
+}
+
+
+/* =====================================================
+   FUTURE NODES — GOLDEN BREATHING HALO
+   ===================================================== */
+
+.arsbrain-premium-2 .ars-p2-future-node {
+    box-shadow:
+        0 0 7px rgba(255,224,154,.48),
+        0 0 18px rgba(228,189,104,.34),
+        0 0 32px rgba(201,164,92,.18) !important;
+
+    animation: arsP2FutureNode 3.6s ease-in-out infinite !important;
+}
+
+@keyframes arsP2FutureNode {
+
+    0%,100% {
+        transform: scale(.88);
+        opacity: .55;
+    }
+
+    50% {
+        transform: scale(1.14);
+        opacity: 1;
+    }
+}
+
+
+/* =====================================================
+   ACTIVE PRODUCT NODES — STRONGER
+   ===================================================== */
+
+.arsbrain-premium-2 .ars-p2-product .ars-p2-node {
+    box-shadow:
+        0 0 8px rgba(255,224,154,.80),
+        0 0 20px rgba(228,189,104,.55),
+        0 0 38px rgba(201,164,92,.28) !important;
+
+    animation: arsP2ActiveNode 2.8s ease-in-out infinite !important;
+}
+
+@keyframes arsP2ActiveNode {
+
+    0%,100% {
+        transform: scale(.82);
+        opacity: .78;
+    }
+
+    50% {
+        transform: scale(1.18);
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+
+
