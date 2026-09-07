@@ -7806,66 +7806,6 @@ body.brain-test-page .btn-secondary {
 
 
 
-/* =========================================================
-   ARS BRAIN P2 — MOVING ELECTRIC ENERGY
-   BASE FUTURE LINES REMAIN UNTOUCHED
-   ========================================================= */
-
-.arsbrain-premium-2 .ars-p2-electric-energy {
-    fill: none !important;
-
-    stroke: #D9F8FF !important;
-    stroke-width: 2px !important;
-    stroke-linecap: round !important;
-
-    stroke-dasharray: 7 93 !important;
-    stroke-dashoffset: 100 !important;
-
-    opacity: .95 !important;
-
-    filter:
-        drop-shadow(0 0 3px rgba(121,221,255,.95))
-        drop-shadow(0 0 8px rgba(57,191,255,.85))
-        drop-shadow(0 0 16px rgba(57,191,255,.55))
-        drop-shadow(0 0 25px rgba(208,170,99,.30)) !important;
-
-    animation:
-        arsP2ElectricTravel 8s linear infinite !important;
-}
-
-@keyframes arsP2ElectricTravel {
-
-    0% {
-        stroke-dashoffset: 100;
-        opacity: .15;
-    }
-
-    8% {
-        opacity: 1;
-    }
-
-    50% {
-        stroke-dashoffset: 50;
-        opacity: 1;
-    }
-
-    92% {
-        opacity: 1;
-    }
-
-    100% {
-        stroke-dashoffset: 0;
-        opacity: .15;
-    }
-}
-
-
-
-
-
-
-
-
 
 
 
@@ -7877,20 +7817,28 @@ body.brain-test-page .btn-secondary {
 
 
 /* =========================================================
-   ARS BRAIN P2 — ENERGY PULSE VISIBILITY
-   ONLY THE 4 MOVING SVG PULSES
+   ARS BRAIN P2
+   REAL FUTURE ENERGY PULSES
+   ONLY EXISTING SVG CIRCLES
    ========================================================= */
 
-.arsbrain-premium-2 .ars-p2-energy-pulse {
+.arsbrain-premium-2 .ars-p2-neural-map .ars-p2-energy-pulse {
+    display: block !important;
+
     fill: #D9F8FF !important;
-    stroke: #39BFFF !important;
+    stroke: #79DDFF !important;
     stroke-width: 1px !important;
 
     opacity: 1 !important;
 
+    visibility: visible !important;
+
     filter:
         drop-shadow(0 0 3px rgba(217,248,255,1))
-        drop-shadow(0 0 8px rgba(57,191,255,.95))
-        drop-shadow(0 0 16px rgba(57,191,255,.65))
-        drop-shadow(0 0 25px rgba(208,170,99,.30)) !important;
-}
+        drop-shadow(0 0 8px rgba(121,221,255,.95))
+        drop-shadow(0 0 16px rgba(57,191,255,.80))
+        drop-shadow(0 0 28px rgba(57,191,255,.45))
+        drop-shadow(0 0 38px rgba(208,170,99,.20)) !important;
+
+    mix-blend-mode: screen;
+                        }
