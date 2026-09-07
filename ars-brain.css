@@ -7693,16 +7693,29 @@ body.brain-test-page .btn-secondary {
 
 
 
-.arsbrain-premium-2 .ars-p2-line.future-line {
-    stroke: url(#arsP2FutureElectricRay) !important;
+
+ /* =========================================================
+    ARS BRAIN PREMIUM 2 — FUTURE ENERGY EXTENSION
+    EXTEND EACH FUTURE CHANNEL ~1cm
+    ========================================================= */
+
+.arsbrain-premium-2 .ars-p2-neural-map .future-line {
+    stroke-linecap: round !important;
+    stroke-linejoin: round !important;
+    vector-effect: non-scaling-stroke !important;
 }
 
-/* Force the 75% BLUE / 25% GOLD energy balance */
-.arsbrain-premium-2 #arsP2FutureElectricRay {
-    /* intentionally overridden below by SVG gradient */
+/* Push the visible energy toward each COMING SOON card */
+.arsbrain-premium-2 .ars-p2-neural-map {
+    overflow: visible !important;
 }
 
-
-
-
-
+/* Slight optical extension at the end of each channel */
+.arsbrain-premium-2 .future-line {
+    filter:
+        drop-shadow(0 0 3px rgba(121,221,255,.95))
+        drop-shadow(0 0 8px rgba(57,191,255,.85))
+        drop-shadow(0 0 16px rgba(57,191,255,.55))
+        drop-shadow(0 0 5px rgba(231,201,135,.55))
+        drop-shadow(0 0 14px rgba(208,170,99,.30)) !important;
+}
