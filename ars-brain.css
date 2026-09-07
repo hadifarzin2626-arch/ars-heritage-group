@@ -4523,3 +4523,193 @@ body.brain-test-page
         animation: none !important;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS BRAIN — SENSOR → BRAIN NETWORK
+   ========================================================= */
+
+.arsbrain-hero .ars-sensor-network {
+    position:absolute;
+    inset:0;
+    z-index:7;
+    pointer-events:none;
+    overflow:hidden;
+}
+
+/* SENSOR LINES */
+
+.arsbrain-hero .ars-sensor-line {
+    position:absolute;
+    height:1px;
+    transform-origin:left center;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(57,191,255,.20) 20%,
+            rgba(57,191,255,.62) 70%,
+            rgba(228,189,104,.82) 100%
+        );
+
+    box-shadow:
+        0 0 5px rgba(57,191,255,.28),
+        0 0 12px rgba(228,189,104,.16);
+
+    opacity:.55;
+}
+
+/* FRONT SENSOR → CORE */
+.arsbrain-hero .sensor-front {
+    left:14%;
+    top:68%;
+    width:43%;
+    transform:rotate(-16deg);
+    animation:arsSensorFlow1 4.8s ease-in-out infinite;
+}
+
+/* REAR SENSOR → CORE */
+.arsbrain-hero .sensor-rear {
+    left:80%;
+    top:68%;
+    width:34%;
+    transform:rotate(198deg);
+    animation:arsSensorFlow2 5.6s ease-in-out infinite;
+}
+
+/* SIDE SENSOR → CORE */
+.arsbrain-hero .sensor-side {
+    left:18%;
+    top:39%;
+    width:46%;
+    transform:rotate(15deg);
+    animation:arsSensorFlow3 5.2s ease-in-out infinite;
+}
+
+/* CABIN → CORE */
+.arsbrain-hero .sensor-cabin {
+    left:73%;
+    top:34%;
+    width:31%;
+    transform:rotate(154deg);
+    animation:arsSensorFlow4 6s ease-in-out infinite;
+}
+
+/* =========================================================
+   MOVING LIGHT ALONG NETWORK
+   ========================================================= */
+
+@keyframes arsSensorFlow1 {
+    0%,100% { opacity:.25; }
+    45% { opacity:.85; }
+    75% { opacity:.45; }
+}
+
+@keyframes arsSensorFlow2 {
+    0%,100% { opacity:.25; }
+    50% { opacity:.9; }
+    78% { opacity:.4; }
+}
+
+@keyframes arsSensorFlow3 {
+    0%,100% { opacity:.2; }
+    42% { opacity:.75; }
+    70% { opacity:.4; }
+}
+
+@keyframes arsSensorFlow4 {
+    0%,100% { opacity:.22; }
+    48% { opacity:.82; }
+    76% { opacity:.38; }
+}
+
+/* =========================================================
+   SENSOR NODES
+   ========================================================= */
+
+.arsbrain-hero .ars-sensor-node {
+    position:absolute;
+    width:5px;
+    height:5px;
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #fff4cf 0%,
+            #e4bd68 28%,
+            #39bfff 68%,
+            transparent 100%
+        );
+
+    box-shadow:
+        0 0 6px rgba(255,244,207,.9),
+        0 0 14px rgba(57,191,255,.55),
+        0 0 24px rgba(228,189,104,.25);
+
+    animation:arsSensorNodePulse 2.8s ease-in-out infinite;
+}
+
+.arsbrain-hero .node-front {
+    left:14%;
+    top:68%;
+}
+
+.arsbrain-hero .node-rear {
+    left:80%;
+    top:68%;
+    animation-delay:.8s;
+}
+
+.arsbrain-hero .node-side {
+    left:18%;
+    top:39%;
+    animation-delay:1.5s;
+}
+
+.arsbrain-hero .node-cabin {
+    left:73%;
+    top:34%;
+    animation-delay:2.1s;
+}
+
+@keyframes arsSensorNodePulse {
+    0%,100% {
+        transform:scale(.7);
+        opacity:.45;
+    }
+
+    50% {
+        transform:scale(1.35);
+        opacity:1;
+    }
+}
+
+/* =========================================================
+   MOBILE — KEEP IT SUBTLE
+   ========================================================= */
+
+@media(max-width:700px) {
+
+    .arsbrain-hero .ars-sensor-line {
+        opacity:.42;
+    }
+
+    .arsbrain-hero .ars-sensor-node {
+        width:4px;
+        height:4px;
+    }
+}
+
