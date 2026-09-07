@@ -3974,3 +3974,191 @@ body.brain-test-page
         height: 120px;
     }
 }
+
+
+
+
+
+
+
+/* ARS BRAIN IDENTITY — 30% SMALLER THAN CURRENT 2X */
+
+.arsbrain-hero .ars-hero-identity {
+    transform: scale(.70) !important;
+    transform-origin: center center !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS BRAIN — HERO VISUAL / CINEMATIC INTELLIGENCE LAYER
+   ========================================================= */
+
+.arsbrain-hero .hero-visual {
+    position: relative !important;
+    isolation: isolate;
+    overflow: hidden !important;
+    border-radius: 24px;
+    transform: translateZ(0);
+    box-shadow:
+        0 0 0 1px rgba(228,189,104,.16),
+        0 0 35px rgba(201,164,92,.12),
+        0 0 70px rgba(22,169,255,.08),
+        0 28px 70px rgba(0,0,0,.55);
+}
+
+/* CINEMATIC DEPTH */
+.arsbrain-hero .hero-visual::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at 52% 58%,
+            transparent 30%,
+            rgba(3,7,11,.04) 52%,
+            rgba(3,7,11,.24) 82%,
+            rgba(1,3,5,.52) 100%
+        );
+
+    box-shadow:
+        inset 0 0 45px rgba(0,0,0,.28),
+        inset 0 0 100px rgba(0,0,0,.20);
+}
+
+/* GOLD / BLUE ATMOSPHERIC LIGHT */
+.arsbrain-hero .hero-visual::after {
+    content: "";
+    position: absolute;
+    inset: -15%;
+    z-index: 4;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at 67% 70%,
+            rgba(228,189,104,.13) 0%,
+            rgba(201,164,92,.07) 18%,
+            transparent 42%
+        ),
+        radial-gradient(
+            ellipse at 38% 38%,
+            rgba(57,191,255,.10) 0%,
+            rgba(57,191,255,.045) 22%,
+            transparent 48%
+        );
+
+    mix-blend-mode: screen;
+    opacity: .9;
+}
+
+/* IMAGE — CLEANER CINEMATIC PRESENCE */
+.arsbrain-hero .hero-visual img {
+    position: relative;
+    z-index: 1;
+    transform: scale(1.012) translateZ(0);
+    filter:
+        saturate(.90)
+        contrast(1.07)
+        brightness(.96)
+        drop-shadow(0 20px 35px rgba(0,0,0,.32));
+    transition:
+        transform 1.2s cubic-bezier(.2,.8,.2,1),
+        filter 1.2s ease;
+}
+
+/* SUBTLE DEPTH ON HERO IMAGE */
+.arsbrain-hero .hero-visual:hover img {
+    transform: scale(1.025) translate3d(0,-3px,0);
+    filter:
+        saturate(.96)
+        contrast(1.08)
+        brightness(1)
+        drop-shadow(0 24px 42px rgba(0,0,0,.36));
+}
+
+/* =========================================================
+   INTELLIGENCE DATA — ULTRA THIN
+   ========================================================= */
+
+.arsbrain-hero .hero-visual {
+    --hero-data-gold: rgba(228,189,104,.48);
+    --hero-data-blue: rgba(57,191,255,.52);
+}
+
+/* Fine horizontal intelligence axis */
+.arsbrain-hero .hero-visual .ars-hero-data-line {
+    position: absolute;
+    z-index: 6;
+    left: 7%;
+    right: 7%;
+    height: 1px;
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--hero-data-blue) 25%,
+            rgba(255,244,207,.72) 50%,
+            var(--hero-data-gold) 75%,
+            transparent
+        );
+    box-shadow:
+        0 0 8px rgba(57,191,255,.22),
+        0 0 16px rgba(228,189,104,.12);
+    opacity: .42;
+    pointer-events: none;
+}
+
+/* =========================================================
+   ARS BRAIN CORE LIGHT EMPHASIS
+   ========================================================= */
+
+.arsbrain-hero .hero-visual img {
+    --brain-core-glow:
+        0 0 30px rgba(57,191,255,.08);
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width:700px) {
+
+    .arsbrain-hero .hero-visual {
+        border-radius: 18px;
+        box-shadow:
+            0 0 0 1px rgba(228,189,104,.13),
+            0 0 30px rgba(201,164,92,.09),
+            0 20px 45px rgba(0,0,0,.48);
+    }
+
+    .arsbrain-hero .hero-visual::before {
+        background:
+            radial-gradient(
+                ellipse at center,
+                transparent 28%,
+                rgba(1,3,5,.18) 78%,
+                rgba(1,3,5,.42) 100%
+            );
+    }
+
+    .arsbrain-hero .hero-visual img {
+        transform: scale(1.005) !important;
+    }
+}
