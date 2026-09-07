@@ -122,6 +122,13 @@
         </div>
 
 
+        <!-- ================= NEURAL CONNECTIONS ================= -->
+
+        <svg class="ars-p2-neural-map"
+             viewBox="0 0 1200 700"
+             preserveAspectRatio="none"
+             aria-hidden="true">
+
             <defs>
 
                 <linearGradient id="arsP2GoldFlow"
@@ -165,6 +172,25 @@
 
 
 
+
+<!-- ELECTRIC BLUE / BRONZE LIGHT RAYS -->
+<filter id="arsP2FutureElectricGlow"
+        x="-60%" y="-60%"
+        width="220%" height="220%">
+
+    <feGaussianBlur
+        stdDeviation="2.5"
+        result="blueGlow"/>
+
+    <feColorMatrix
+        in="blueGlow"
+        type="matrix"
+        values="
+        0 0 0 0 0.22
+        0 0 0 0 0.75
+        0 0 0 0 1
+        0 0 0 1 0"
+        result="electricBlue"/>
 
     <feMerge>
         <feMergeNode in="electricBlue"/>
@@ -213,7 +239,7 @@
               
             </defs>
 
-            
+            <!-- ACTIVE PRODUCT CHANNELS -->
 
             <path class="ars-p2-line active-line"
                   d="M600 350 C455 350 360 350 170 350"
