@@ -4957,3 +4957,196 @@ body.brain-test-page
         animation: none !important;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS BRAIN HERO — VISIBLE CINEMATIC LIGHT ENGINE V2
+   ========================================================= */
+
+.arsbrain-hero .hero-visual {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* ---------- POWERFUL AMBIENT LIGHT ---------- */
+
+.arsbrain-hero .hero-visual::before {
+    content: "";
+    position: absolute;
+    inset: -20%;
+    z-index: 20;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at 25% 35%,
+            rgba(57,191,255,.24) 0%,
+            rgba(57,191,255,.10) 18%,
+            transparent 43%
+        ),
+        radial-gradient(
+            ellipse at 72% 62%,
+            rgba(228,189,104,.25) 0%,
+            rgba(201,164,92,.12) 20%,
+            transparent 46%
+        );
+
+    mix-blend-mode: screen;
+    filter: blur(22px);
+
+    animation: arsHeroAmbientPower 6s ease-in-out infinite;
+}
+
+@keyframes arsHeroAmbientPower {
+
+    0%,100% {
+        opacity: .45;
+        transform: scale(.92);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.12);
+    }
+}
+
+
+/* ---------- LARGE MOVING LIGHT ---------- */
+
+.arsbrain-hero .hero-visual::after {
+    content: "";
+    position: absolute;
+
+    top: -35%;
+    left: -55%;
+
+    width: 45%;
+    height: 170%;
+
+    z-index: 25;
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(201,164,92,.04) 20%,
+            rgba(255,242,194,.32) 48%,
+            rgba(57,191,255,.12) 58%,
+            transparent 100%
+        );
+
+    filter: blur(12px);
+    transform: rotate(13deg);
+
+    mix-blend-mode: screen;
+
+    animation: arsHeroMajorSweep 8s ease-in-out infinite;
+}
+
+@keyframes arsHeroMajorSweep {
+
+    0% {
+        left: -55%;
+        opacity: 0;
+    }
+
+    15% {
+        opacity: .8;
+    }
+
+    45% {
+        opacity: 1;
+    }
+
+    65% {
+        opacity: .65;
+    }
+
+    100% {
+        left: 125%;
+        opacity: 0;
+    }
+}
+
+
+/* ---------- IMAGE DEPTH ---------- */
+
+.arsbrain-hero .hero-visual img {
+    animation:
+        arsHeroImageBreath 9s ease-in-out infinite !important;
+
+    will-change: transform, filter;
+}
+
+@keyframes arsHeroImageBreath {
+
+    0%,100% {
+        transform:
+            translate3d(0,0,0)
+            scale(1.002);
+
+        filter:
+            saturate(1)
+            contrast(1.05)
+            brightness(1);
+    }
+
+    50% {
+        transform:
+            translate3d(0,-2px,0)
+            scale(1.008);
+
+        filter:
+            saturate(1.045)
+            contrast(1.08)
+            brightness(1.035);
+    }
+}
+
+
+/* ---------- DEEP CINEMATIC VIGNETTE ---------- */
+
+.arsbrain-hero .hero-visual {
+    box-shadow:
+        inset 0 0 80px rgba(0,0,0,.35),
+        inset 0 0 150px rgba(0,0,0,.20);
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:700px) {
+
+    .arsbrain-hero .hero-visual::before {
+        filter: blur(16px);
+    }
+
+    .arsbrain-hero .hero-visual::after {
+        width: 55%;
+        filter: blur(10px);
+    }
+}
+
+
+/* ---------- REDUCED MOTION ---------- */
+
+@media(prefers-reduced-motion:reduce) {
+
+    .arsbrain-hero .hero-visual::before,
+    .arsbrain-hero .hero-visual::after,
+    .arsbrain-hero .hero-visual img {
+        animation: none !important;
+    }
+}
