@@ -7815,30 +7815,51 @@ body.brain-test-page .btn-secondary {
 
 
 
+/* =====================================================
+   ARS BRAIN P2 — MOVING ELECTRIC ENERGY
+   ===================================================== */
 
-/* =========================================================
-   ARS BRAIN P2
-   REAL FUTURE ENERGY PULSES
-   ONLY EXISTING SVG CIRCLES
-   ========================================================= */
+.arsbrain-premium-2 .ars-p2-electric-streak {
+    fill: none !important;
 
-.arsbrain-premium-2 .ars-p2-neural-map .ars-p2-energy-pulse {
-    display: block !important;
+    stroke: #D9F8FF !important;
+    stroke-width: 2.4px !important;
+    stroke-linecap: round !important;
 
-    fill: #D9F8FF !important;
-    stroke: #79DDFF !important;
-    stroke-width: 1px !important;
+    stroke-dasharray: 7 93 !important;
+    stroke-dashoffset: 100 !important;
 
     opacity: 1 !important;
 
-    visibility: visible !important;
-
     filter:
-        drop-shadow(0 0 3px rgba(217,248,255,1))
-        drop-shadow(0 0 8px rgba(121,221,255,.95))
-        drop-shadow(0 0 16px rgba(57,191,255,.80))
-        drop-shadow(0 0 28px rgba(57,191,255,.45))
-        drop-shadow(0 0 38px rgba(208,170,99,.20)) !important;
+        drop-shadow(0 0 2px rgba(255,255,255,1))
+        drop-shadow(0 0 6px rgba(217,248,255,1))
+        drop-shadow(0 0 13px rgba(121,221,255,.95))
+        drop-shadow(0 0 24px rgba(57,191,255,.72))
+        drop-shadow(0 0 38px rgba(208,170,99,.28)) !important;
 
-    mix-blend-mode: screen;
-                        }
+    animation:
+        arsP2ElectricTravel 4.8s linear infinite !important;
+}
+
+.arsbrain-premium-2 .ars-p2-electric-streak:nth-of-type(2) {
+    animation-delay: 1.2s !important;
+}
+
+.arsbrain-premium-2 .ars-p2-electric-streak:nth-of-type(3) {
+    animation-delay: 2.4s !important;
+}
+
+.arsbrain-premium-2 .ars-p2-electric-streak:nth-of-type(4) {
+    animation-delay: 3.6s !important;
+}
+
+@keyframes arsP2ElectricTravel {
+    from {
+        stroke-dashoffset: 100;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
