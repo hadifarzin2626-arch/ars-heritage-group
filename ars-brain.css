@@ -7806,43 +7806,42 @@ body.brain-test-page .btn-secondary {
 
 
 
-
 /* =========================================================
-   ARS BRAIN PREMIUM 2
-   FUTURE SYSTEMS — REAL MOVING ELECTRIC ENERGY
-   ONLY FUTURE LINES — NOTHING ELSE
+   ARS BRAIN P2 — MOVING ELECTRIC ENERGY
+   BASE FUTURE LINES REMAIN UNTOUCHED
    ========================================================= */
 
-.arsbrain-premium-2 .ars-p2-line.future-line {
-    stroke: #39BFFF !important;
-    stroke-width: 1.4px !important;
-    stroke-opacity: .72 !important;
+.arsbrain-premium-2 .ars-p2-electric-energy {
     fill: none !important;
-}
 
-/* moving electric pulse */
-.arsbrain-premium-2 .ars-p2-line.future-line {
-    stroke-dasharray: 14 86 !important;
+    stroke: #D9F8FF !important;
+    stroke-width: 2px !important;
+    stroke-linecap: round !important;
+
+    stroke-dasharray: 7 93 !important;
     stroke-dashoffset: 100 !important;
+
+    opacity: .95 !important;
 
     filter:
         drop-shadow(0 0 3px rgba(121,221,255,.95))
-        drop-shadow(0 0 8px rgba(57,191,255,.80))
-        drop-shadow(0 0 16px rgba(57,191,255,.45))
-        drop-shadow(0 0 25px rgba(228,189,104,.22)) !important;
+        drop-shadow(0 0 8px rgba(57,191,255,.85))
+        drop-shadow(0 0 16px rgba(57,191,255,.55))
+        drop-shadow(0 0 25px rgba(208,170,99,.30)) !important;
 
-    animation: arsP2FutureElectricFlow 7.5s linear infinite !important;
+    animation:
+        arsP2ElectricTravel 8s linear infinite !important;
 }
 
-@keyframes arsP2FutureElectricFlow {
+@keyframes arsP2ElectricTravel {
 
     0% {
         stroke-dashoffset: 100;
-        opacity: .45;
+        opacity: .15;
     }
 
-    12% {
-        opacity: .85;
+    8% {
+        opacity: 1;
     }
 
     50% {
@@ -7850,12 +7849,12 @@ body.brain-test-page .btn-secondary {
         opacity: 1;
     }
 
-    88% {
-        opacity: .85;
+    92% {
+        opacity: 1;
     }
 
     100% {
         stroke-dashoffset: 0;
-        opacity: .45;
+        opacity: .15;
     }
 }
