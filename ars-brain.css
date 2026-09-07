@@ -7518,14 +7518,7 @@ body.brain-test-page .btn-secondary {
 
 
 
-/* =====================================================
-   PREMIUM 2 — CENTRAL ARS BRAIN DIAMOND ONLY
-   ===================================================== */
 
-.arsbrain-premium-2 .ars-p2-core {
-    width: 45% !important;
-    height: 45% !important;
-}
 
 /* Rotate the diamond 45° */
 .arsbrain-premium-2 .ars-p2-core-frame {
@@ -7547,60 +7540,3 @@ body.brain-test-page .btn-secondary {
 
 
 
-
-/* =====================================================
-   ARS BRAIN PREMIUM 2 — CENTRAL CORE BREATHING
-   ONLY LIGHT / NO GEOMETRY CHANGE
-   ===================================================== */
-
-.arsbrain-premium-2 .ars-p2-core-frame {
-    animation: arsP2CoreBreathing 4.8s ease-in-out infinite !important;
-    transform-origin: center center !important;
-}
-
-@keyframes arsP2CoreBreathing {
-
-    0%, 100% {
-        filter: brightness(.92);
-
-        box-shadow:
-            0 0 14px rgba(228,189,104,.30),
-            0 0 32px rgba(201,164,92,.18),
-            0 0 58px rgba(22,169,255,.08),
-            inset 0 0 22px rgba(228,189,104,.06);
-    }
-
-    50% {
-        filter: brightness(1.16);
-
-        box-shadow:
-            0 0 18px rgba(255,224,154,.65),
-            0 0 42px rgba(228,189,104,.42),
-            0 0 76px rgba(201,164,92,.28),
-            0 0 105px rgba(22,169,255,.14),
-            inset 0 0 34px rgba(255,224,154,.14);
-    }
-}
-
-
-/* Inner intelligence glow — slower and softer */
-
-.arsbrain-premium-2 .ars-p2-core-inner {
-    animation: arsP2CoreInnerBreath 4.8s ease-in-out infinite !important;
-}
-
-@keyframes arsP2CoreInnerBreath {
-
-    0%, 100% {
-        filter:
-            brightness(.94)
-            drop-shadow(0 0 5px rgba(228,189,104,.20));
-    }
-
-    50% {
-        filter:
-            brightness(1.12)
-            drop-shadow(0 0 10px rgba(255,224,154,.48))
-            drop-shadow(0 0 24px rgba(228,189,104,.24));
-    }
-}
