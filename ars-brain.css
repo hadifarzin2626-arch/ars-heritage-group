@@ -4767,3 +4767,222 @@ body.brain-test-page
     animation-timing-function: linear !important;
     animation-iteration-count: infinite !important;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS BRAIN — CINEMATIC LIVING HERO
+   Living Image / Depth / Light / Focus
+   ========================================================= */
+
+.arsbrain-hero .hero-visual {
+    position: relative !important;
+    isolation: isolate !important;
+}
+
+/* ---------- MASTER CINEMATIC ATMOSPHERE ---------- */
+
+.arsbrain-hero .ars-hero-cinematic {
+    position: absolute;
+    inset: 0;
+    z-index: 30;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* ---------- SLOW LIVING LIGHT ---------- */
+
+.arsbrain-hero .ars-hero-breath {
+    position: absolute;
+    inset: -15%;
+
+    background:
+        radial-gradient(
+            ellipse at 58% 54%,
+            rgba(228,189,104,.14) 0%,
+            rgba(201,164,92,.07) 20%,
+            transparent 43%
+        ),
+        radial-gradient(
+            ellipse at 35% 38%,
+            rgba(57,191,255,.10) 0%,
+            rgba(57,191,255,.04) 24%,
+            transparent 48%
+        );
+
+    mix-blend-mode: screen;
+
+    animation:
+        arsHeroBreathing 7s ease-in-out infinite;
+}
+
+@keyframes arsHeroBreathing {
+
+    0%,100% {
+        opacity: .42;
+        transform: scale(.97);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.035);
+    }
+}
+
+/* ---------- CINEMATIC LIGHT SWEEP ---------- */
+
+.arsbrain-hero .ars-hero-light-sweep {
+    position: absolute;
+    top: -20%;
+    left: -35%;
+
+    width: 26%;
+    height: 140%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(228,189,104,.035) 30%,
+            rgba(255,244,207,.16) 50%,
+            rgba(57,191,255,.045) 70%,
+            transparent 100%
+        );
+
+    filter: blur(9px);
+
+    transform: rotate(12deg);
+
+    mix-blend-mode: screen;
+
+    animation:
+        arsHeroLightSweep 11s cubic-bezier(.45,0,.55,1) infinite;
+}
+
+@keyframes arsHeroLightSweep {
+
+    0% {
+        left: -38%;
+        opacity: 0;
+    }
+
+    12% {
+        opacity: .35;
+    }
+
+    48% {
+        opacity: .75;
+    }
+
+    65% {
+        opacity: .30;
+    }
+
+    100% {
+        left: 118%;
+        opacity: 0;
+    }
+}
+
+/* ---------- INTELLIGENT FOCUS ---------- */
+
+.arsbrain-hero .ars-hero-focus {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 42%;
+    height: 42%;
+
+    transform: translate(-50%,-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(228,189,104,.08) 0%,
+            rgba(57,191,255,.045) 28%,
+            transparent 70%
+        );
+
+    filter: blur(18px);
+
+    animation:
+        arsHeroFocus 5s ease-in-out infinite;
+}
+
+@keyframes arsHeroFocus {
+
+    0%,100% {
+        opacity: .35;
+        transform: translate(-50%,-50%) scale(.88);
+    }
+
+    50% {
+        opacity: .85;
+        transform: translate(-50%,-50%) scale(1.08);
+    }
+}
+
+/* ---------- VERY SUBTLE IMAGE DEPTH ---------- */
+
+.arsbrain-hero .hero-visual img {
+    transition:
+        transform 2s cubic-bezier(.2,.8,.2,1),
+        filter 2s ease !important;
+}
+
+.arsbrain-hero .hero-visual:hover img {
+    transform: scale(1.018) translateY(-2px) !important;
+
+    filter:
+        saturate(1.02)
+        contrast(1.09)
+        brightness(1.035)
+        drop-shadow(0 24px 45px rgba(0,0,0,.35)) !important;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:700px) {
+
+    .arsbrain-hero .ars-hero-light-sweep {
+        width: 32%;
+        animation-duration: 13s;
+    }
+
+    .arsbrain-hero .ars-hero-focus {
+        width: 55%;
+        height: 55%;
+    }
+}
+
+/* ---------- REDUCED MOTION ---------- */
+
+@media(prefers-reduced-motion:reduce) {
+
+    .arsbrain-hero .ars-hero-light-sweep,
+    .arsbrain-hero .ars-hero-breath,
+    .arsbrain-hero .ars-hero-focus {
+        animation: none !important;
+    }
+}
