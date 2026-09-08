@@ -8432,3 +8432,736 @@ body.brain-test-page .btn-secondary {
         border-radius: 18px !important;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS BRAIN — SIX CORE PILLARS
+   DEDICATED LUXURY 3D DESIGN SYSTEM
+   HTML UNCHANGED
+   ========================================================= */
+
+.arsbrain-pillars {
+    position: relative !important;
+    isolation: isolate !important;
+    overflow: hidden !important;
+
+    background:
+        radial-gradient(
+            ellipse at 15% 35%,
+            rgba(57,191,255,.10),
+            transparent 32%
+        ),
+        radial-gradient(
+            ellipse at 85% 65%,
+            rgba(137,94,50,.12),
+            transparent 34%
+        ),
+        radial-gradient(
+            ellipse at 50% 50%,
+            rgba(201,164,92,.055),
+            transparent 58%
+        ),
+        linear-gradient(
+            145deg,
+            #020507 0%,
+            #07121b 32%,
+            #0b0c0d 56%,
+            #100b07 78%,
+            #030303 100%
+        ) !important;
+
+    perspective: 1600px !important;
+}
+
+
+/* =========================================================
+   ATMOSPHERIC INTELLIGENCE FIELD
+   ========================================================= */
+
+.arsbrain-pillars::before {
+    content: "";
+    position: absolute;
+    inset: -20%;
+
+    background:
+        radial-gradient(
+            circle at 18% 28%,
+            rgba(57,191,255,.14) 0,
+            rgba(57,191,255,.045) 14%,
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at 82% 72%,
+            rgba(137,94,50,.16) 0,
+            rgba(137,94,50,.055) 18%,
+            transparent 38%
+        );
+
+    filter: blur(25px);
+    pointer-events: none;
+    z-index: -3;
+
+    animation: arsPillarAtmosphere 10s ease-in-out infinite;
+}
+
+
+.arsbrain-pillars::after {
+    content: "";
+    position: absolute;
+    left: 8%;
+    right: 8%;
+    top: 50%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(57,191,255,.18),
+            rgba(208,170,99,.38),
+            rgba(255,242,194,.28),
+            rgba(137,94,50,.30),
+            rgba(57,191,255,.16),
+            transparent
+        );
+
+    box-shadow:
+        0 0 12px rgba(57,191,255,.12),
+        0 0 25px rgba(208,170,99,.08);
+
+    opacity: .65;
+    pointer-events: none;
+    z-index: -2;
+
+    animation: arsPillarEnergyLine 7s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+   ========================================================= */
+
+.arsbrain-pillars .section-heading {
+    position: relative !important;
+    z-index: 5 !important;
+    margin-bottom: 58px !important;
+}
+
+.arsbrain-pillars .section-heading .section-label {
+    color: #79ddff !important;
+
+    text-shadow:
+        0 0 8px rgba(57,191,255,.45),
+        0 0 18px rgba(57,191,255,.18) !important;
+}
+
+.arsbrain-pillars .section-heading h2 {
+    color: #fff8df !important;
+
+    text-shadow:
+        0 0 18px rgba(255,242,194,.12),
+        0 0 35px rgba(57,191,255,.07) !important;
+}
+
+.arsbrain-pillars .section-heading p {
+    color: rgba(217,210,198,.76) !important;
+}
+
+
+/* =========================================================
+   GRID
+   ========================================================= */
+
+.arsbrain-pillars .pillars-grid {
+    position: relative !important;
+    z-index: 4 !important;
+
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+
+    gap: 24px !important;
+
+    perspective: 1800px !important;
+}
+
+
+/* =========================================================
+   CORE 3D PILLAR CARD
+   ========================================================= */
+
+.arsbrain-pillars .pillars-grid .pillar-card {
+    position: relative !important;
+
+    min-height: 285px !important;
+    padding: 34px 30px 32px !important;
+
+    overflow: hidden !important;
+    isolation: isolate !important;
+
+    border-radius: 24px !important;
+
+    border:
+        1px solid rgba(57,191,255,.30) !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(57,191,255,.105) 0%,
+            rgba(11,27,39,.78) 28%,
+            rgba(13,13,13,.90) 52%,
+            rgba(52,36,22,.58) 76%,
+            rgba(137,94,50,.16) 100%
+        ) !important;
+
+    box-shadow:
+        0 24px 55px rgba(0,0,0,.62),
+        0 8px 22px rgba(57,191,255,.10),
+        0 0 32px rgba(137,94,50,.08),
+        inset 0 1px 0 rgba(255,242,194,.25),
+        inset 0 -1px 0 rgba(57,191,255,.12),
+        inset 18px 0 40px rgba(57,191,255,.025),
+        inset -18px 0 40px rgba(137,94,50,.035) !important;
+
+    backdrop-filter:
+        blur(20px)
+        saturate(145%) !important;
+
+    -webkit-backdrop-filter:
+        blur(20px)
+        saturate(145%) !important;
+
+    transform:
+        perspective(1200px)
+        translateZ(0)
+        rotateX(0deg)
+        rotateY(0deg) !important;
+
+    transform-style: preserve-3d !important;
+
+    transition:
+        transform .65s cubic-bezier(.2,.8,.2,1),
+        border-color .5s ease,
+        box-shadow .6s ease,
+        background .6s ease !important;
+
+    animation:
+        arsPillarFloat 7s ease-in-out infinite !important;
+}
+
+
+/* =========================================================
+   TOP ENERGY EDGE
+   ========================================================= */
+
+.arsbrain-pillars .pillar-card::before {
+    content: "";
+    position: absolute;
+
+    left: 8%;
+    right: 8%;
+    top: -1px;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(57,191,255,.55) 18%,
+            #79ddff 38%,
+            #fff2c2 50%,
+            #d0aa63 63%,
+            rgba(137,94,50,.55) 82%,
+            transparent 100%
+        );
+
+    box-shadow:
+        0 0 8px rgba(57,191,255,.65),
+        0 0 18px rgba(57,191,255,.28),
+        0 0 28px rgba(208,170,99,.18);
+
+    opacity: .78;
+
+    animation:
+        arsPillarTopEnergy 4.8s ease-in-out infinite;
+
+    z-index: 8;
+}
+
+
+/* =========================================================
+   INTERNAL BLUE / BRONZE LIGHT FIELD
+   ========================================================= */
+
+.arsbrain-pillars .pillar-card::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(57,191,255,.16),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 88% 88%,
+            rgba(137,94,50,.18),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            transparent 40%,
+            rgba(255,242,194,.025) 50%,
+            transparent 60%
+        );
+
+    opacity: .55;
+    pointer-events: none;
+    z-index: -1;
+
+    transition:
+        opacity .6s ease,
+        transform .8s ease !important;
+}
+
+
+/* =========================================================
+   NUMBER — FLOATING METALLIC MODULE
+   ========================================================= */
+
+.arsbrain-pillars .pillar-number {
+    position: relative !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 48px !important;
+    height: 48px !important;
+
+    margin-bottom: 25px !important;
+
+    border-radius: 14px !important;
+
+    border:
+        1px solid rgba(57,191,255,.42) !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(57,191,255,.16),
+            rgba(10,22,31,.92) 48%,
+            rgba(137,94,50,.24)
+        ) !important;
+
+    color: #79ddff !important;
+
+    box-shadow:
+        0 10px 22px rgba(0,0,0,.45),
+        0 0 15px rgba(57,191,255,.14),
+        inset 0 1px 0 rgba(255,242,194,.25) !important;
+
+    transform:
+        translateZ(28px) !important;
+
+    text-shadow:
+        0 0 8px rgba(57,191,255,.65) !important;
+
+    transition:
+        transform .5s ease,
+        box-shadow .5s ease,
+        border-color .5s ease !important;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.arsbrain-pillars .pillar-card h3 {
+    position: relative !important;
+    z-index: 3 !important;
+
+    color: #fff2c2 !important;
+
+    font-size: 20px !important;
+    font-weight: 600 !important;
+
+    letter-spacing: .025em !important;
+
+    transform:
+        translateZ(24px) !important;
+
+    text-shadow:
+        0 0 10px rgba(255,242,194,.12),
+        0 0 22px rgba(57,191,255,.06) !important;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.arsbrain-pillars .pillar-card p {
+    position: relative !important;
+    z-index: 3 !important;
+
+    color: rgba(217,210,198,.78) !important;
+
+    line-height: 1.85 !important;
+
+    transform:
+        translateZ(18px) !important;
+}
+
+
+/* =========================================================
+   3D HOVER
+   ========================================================= */
+
+.arsbrain-pillars .pillar-card:hover {
+    transform:
+        perspective(1200px)
+        translateY(-12px)
+        translateZ(28px)
+        rotateX(2deg)
+        rotateY(-2deg) !important;
+
+    border-color:
+        rgba(121,221,255,.62) !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(57,191,255,.15),
+            rgba(12,29,42,.84) 32%,
+            rgba(15,14,13,.91) 55%,
+            rgba(79,53,30,.65) 78%,
+            rgba(137,94,50,.22)
+        ) !important;
+
+    box-shadow:
+        0 35px 75px rgba(0,0,0,.72),
+        0 0 32px rgba(57,191,255,.18),
+        0 0 65px rgba(137,94,50,.12),
+        inset 0 1px 0 rgba(255,242,194,.38),
+        inset 0 0 35px rgba(57,191,255,.055) !important;
+
+    animation-play-state: paused !important;
+}
+
+.arsbrain-pillars .pillar-card:hover::after {
+    opacity: .95 !important;
+    transform: scale(1.08) !important;
+}
+
+.arsbrain-pillars .pillar-card:hover .pillar-number {
+    transform:
+        translateZ(42px)
+        rotateZ(-3deg) !important;
+
+    border-color:
+        rgba(121,221,255,.72) !important;
+
+    box-shadow:
+        0 12px 28px rgba(0,0,0,.48),
+        0 0 20px rgba(57,191,255,.28),
+        0 0 34px rgba(137,94,50,.14),
+        inset 0 1px 0 rgba(255,242,194,.38) !important;
+}
+
+
+/* =========================================================
+   SIX MODULE PERSONALITIES
+   ========================================================= */
+
+/* 01 — BLUE / COMPUTING */
+
+.arsbrain-pillars .pillar-card:nth-child(1) {
+    border-color: rgba(57,191,255,.42) !important;
+}
+
+.arsbrain-pillars .pillar-card:nth-child(1) .pillar-number {
+    color: #79ddff !important;
+}
+
+
+/* 02 — BRONZE / CONNECTIVITY */
+
+.arsbrain-pillars .pillar-card:nth-child(2) {
+    border-color: rgba(137,94,50,.52) !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(57,191,255,.08),
+            rgba(22,29,34,.78) 30%,
+            rgba(48,34,21,.72) 68%,
+            rgba(137,94,50,.22)
+        ) !important;
+}
+
+.arsbrain-pillars .pillar-card:nth-child(2) .pillar-number {
+    color: #d0a060 !important;
+    border-color: rgba(137,94,50,.55) !important;
+}
+
+
+/* 03 — GOLD / AI */
+
+.arsbrain-pillars .pillar-card:nth-child(3) {
+    border-color: rgba(208,170,99,.45) !important;
+}
+
+.arsbrain-pillars .pillar-card:nth-child(3) .pillar-number {
+    color: #fff2c2 !important;
+    border-color: rgba(208,170,99,.55) !important;
+}
+
+
+/* 04 — ELECTRIC BLUE / SAFETY */
+
+.arsbrain-pillars .pillar-card:nth-child(4) {
+    border-color: rgba(57,191,255,.50) !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(57,191,255,.14),
+            rgba(7,20,30,.86) 48%,
+            rgba(39,29,20,.48)
+        ) !important;
+}
+
+
+/* 05 — CHAMPAGNE / EXPERIENCE */
+
+.arsbrain-pillars .pillar-card:nth-child(5) {
+    border-color: rgba(231,201,135,.43) !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(57,191,255,.07),
+            rgba(16,16,16,.88) 45%,
+            rgba(137,94,50,.38)
+        ) !important;
+}
+
+.arsbrain-pillars .pillar-card:nth-child(5) .pillar-number {
+    color: #e7c987 !important;
+}
+
+
+/* 06 — BLUE + BRONZE / FUTURE */
+
+.arsbrain-pillars .pillar-card:nth-child(6) {
+    border-color: rgba(121,221,255,.44) !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(57,191,255,.13),
+            rgba(9,23,32,.82) 34%,
+            rgba(20,17,14,.84) 65%,
+            rgba(137,94,50,.25)
+        ) !important;
+}
+
+
+/* =========================================================
+   PILLARS MESSAGE — MASTER INTELLIGENCE PANEL
+   ========================================================= */
+
+.arsbrain-pillars .pillars-message {
+    position: relative !important;
+    margin-top: 34px !important;
+
+    padding: 28px 34px !important;
+
+    border-radius: 20px !important;
+
+    border:
+        1px solid rgba(57,191,255,.22) !important;
+
+    background:
+        linear-gradient(
+            105deg,
+            rgba(57,191,255,.075),
+            rgba(10,15,19,.82) 42%,
+            rgba(137,94,50,.12)
+        ) !important;
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.45),
+        inset 0 1px 0 rgba(255,242,194,.18),
+        inset 0 0 30px rgba(57,191,255,.025) !important;
+
+    backdrop-filter: blur(16px) !important;
+
+    transform:
+        translateZ(12px) !important;
+}
+
+
+/* =========================================================
+   ANIMATION SYSTEM
+   ========================================================= */
+
+@keyframes arsPillarFloat {
+
+    0%,100% {
+        transform:
+            perspective(1200px)
+            translateY(0)
+            translateZ(0)
+            rotateX(0deg)
+            rotateY(0deg);
+    }
+
+    50% {
+        transform:
+            perspective(1200px)
+            translateY(-4px)
+            translateZ(5px)
+            rotateX(.35deg)
+            rotateY(-.25deg);
+    }
+}
+
+
+@keyframes arsPillarTopEnergy {
+
+    0%,100% {
+        opacity: .42;
+        transform: scaleX(.72);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+
+@keyframes arsPillarAtmosphere {
+
+    0%,100% {
+        transform: scale(1) translate3d(0,0,0);
+        opacity: .65;
+    }
+
+    50% {
+        transform: scale(1.08) translate3d(1%, -1%, 0);
+        opacity: 1;
+    }
+}
+
+
+@keyframes arsPillarEnergyLine {
+
+    0%,100% {
+        opacity: .28;
+        transform: scaleX(.72);
+    }
+
+    50% {
+        opacity: .72;
+        transform: scaleX(1);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .arsbrain-pillars .pillars-grid {
+        grid-template-columns: repeat(2, minmax(0,1fr)) !important;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .arsbrain-pillars .pillars-grid {
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+    }
+
+    .arsbrain-pillars .pillars-grid .pillar-card {
+        min-height: 250px !important;
+        padding: 28px 24px !important;
+    }
+
+    .arsbrain-pillars .pillars-message {
+        padding: 24px !important;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .arsbrain-pillars::before,
+    .arsbrain-pillars::after,
+    .arsbrain-pillars .pillar-card,
+    .arsbrain-pillars .pillar-card::before {
+        animation: none !important;
+    }
+
+   }
