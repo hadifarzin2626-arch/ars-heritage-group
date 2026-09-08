@@ -17114,3 +17114,1062 @@ body.brain-test-page .btn-secondary {
     }
    }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS FINAL SECTIONS
+   ROADMAP × VISION × FINAL CTA
+   ========================================================= */
+
+
+/* =========================================================
+   01 — ENGINEERING ROADMAP
+   PRECISION / PROGRESSION / ENGINEERING
+   ========================================================= */
+
+.engineering-roadmap {
+
+    --road-bronze: #B98255;
+    --road-bronze-deep: #8F603F;
+    --road-blue: #39BFFF;
+    --road-cyan: #79DDFF;
+
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(57,191,255,.065),
+            transparent 38%
+        ),
+        linear-gradient(
+            135deg,
+            #03070B,
+            #06121B 52%,
+            #03070B
+        );
+}
+
+
+/* engineering grid */
+
+.engineering-roadmap::before {
+
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+    z-index: -2;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent 0,
+            transparent 99px,
+            rgba(57,191,255,.018) 100px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            transparent 0,
+            transparent 99px,
+            rgba(185,130,85,.012) 100px
+        );
+}
+
+
+/* central engineering field */
+
+.engineering-roadmap::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 700px;
+    height: 700px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%,-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(57,191,255,.055),
+            transparent 68%
+        );
+
+    filter: blur(15px);
+
+    pointer-events: none;
+    z-index: -1;
+
+    animation: roadmapField 8s ease-in-out infinite;
+}
+
+@keyframes roadmapField {
+
+    0%,100% {
+        transform: translate(-50%,-50%) scale(.94);
+        opacity: .55;
+    }
+
+    50% {
+        transform: translate(-50%,-50%) scale(1.06);
+        opacity: .9;
+    }
+}
+
+
+/* heading */
+
+.engineering-roadmap .section-label {
+
+    color: var(--road-bronze) !important;
+
+    text-shadow:
+        0 0 9px rgba(185,130,85,.28);
+}
+
+.engineering-roadmap .section-heading h2 {
+
+    color: #E8C39A !important;
+
+    text-shadow:
+        0 0 12px rgba(185,130,85,.18),
+        0 0 30px rgba(57,191,255,.06);
+}
+
+.engineering-roadmap .section-heading::after {
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(185,130,85,.75),
+            rgba(57,191,255,.95),
+            rgba(185,130,85,.75),
+            transparent
+        ) !important;
+
+    box-shadow:
+        0 0 12px rgba(57,191,255,.18);
+}
+
+
+/* timeline */
+
+.engineering-roadmap .roadmap-timeline {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap: 16px;
+}
+
+
+/* horizontal intelligence line */
+
+.engineering-roadmap .roadmap-timeline::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 8%;
+    right: 8%;
+    top: 29px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(185,130,85,.6),
+            rgba(57,191,255,.9),
+            rgba(185,130,85,.6),
+            transparent
+        );
+
+    box-shadow:
+        0 0 10px rgba(57,191,255,.18);
+
+    z-index: 0;
+}
+
+
+/* cards */
+
+.engineering-roadmap .roadmap-item {
+
+    position: relative;
+
+    min-height: 285px;
+
+    padding: 58px 25px 28px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(57,191,255,.18) !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10,26,36,.78),
+            rgba(4,10,15,.90)
+        ) !important;
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.24),
+        inset 0 1px 0 rgba(121,221,255,.10);
+
+    transition:
+        transform .5s ease,
+        border-color .5s ease,
+        box-shadow .5s ease;
+}
+
+
+/* phase node */
+
+.engineering-roadmap .roadmap-item::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 22px;
+
+    width: 14px;
+    height: 14px;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #E8C39A 0%,
+            var(--road-bronze) 38%,
+            var(--road-blue) 68%,
+            transparent 72%
+        );
+
+    box-shadow:
+        0 0 10px rgba(185,130,85,.55),
+        0 0 24px rgba(57,191,255,.28);
+
+    z-index: 3;
+
+    animation: roadmapNode 4s ease-in-out infinite;
+}
+
+.engineering-roadmap .roadmap-item:nth-child(2)::before {
+    animation-delay: .8s;
+}
+
+.engineering-roadmap .roadmap-item:nth-child(3)::before {
+    animation-delay: 1.6s;
+}
+
+.engineering-roadmap .roadmap-item:nth-child(4)::before {
+    animation-delay: 2.4s;
+}
+
+@keyframes roadmapNode {
+
+    0%,100% {
+        box-shadow:
+            0 0 8px rgba(185,130,85,.45),
+            0 0 18px rgba(57,191,255,.16);
+    }
+
+    50% {
+        box-shadow:
+            0 0 14px rgba(185,130,85,.75),
+            0 0 32px rgba(57,191,255,.35);
+    }
+}
+
+
+/* moving phase signal */
+
+.engineering-roadmap .roadmap-item::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: -30%;
+    top: 0;
+
+    width: 30%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--road-cyan),
+            transparent
+        );
+
+    box-shadow:
+        0 0 12px rgba(57,191,255,.35);
+
+    animation: roadmapScan 5s linear infinite;
+}
+
+@keyframes roadmapScan {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(430%);
+    }
+}
+
+
+.engineering-roadmap .roadmap-item:hover {
+
+    transform: translateY(-8px);
+
+    border-color:
+        rgba(57,191,255,.42) !important;
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.32),
+        0 0 25px rgba(57,191,255,.08),
+        inset 0 1px 0 rgba(121,221,255,.18);
+}
+
+
+.engineering-roadmap .roadmap-year {
+
+    color: var(--road-blue);
+
+    font-size: .72rem;
+    letter-spacing: .22em;
+    font-weight: 700;
+
+    text-shadow:
+        0 0 9px rgba(57,191,255,.22);
+}
+
+.engineering-roadmap .roadmap-item h3 {
+
+    color: var(--road-bronze-light, #E8C39A) !important;
+
+    margin-top: 15px;
+}
+
+.engineering-roadmap .roadmap-item p {
+
+    color: rgba(215,231,238,.67) !important;
+
+    line-height: 1.78;
+}
+
+
+/* roadmap message */
+
+.engineering-roadmap .roadmap-message {
+
+    position: relative;
+
+    margin-top: 35px;
+
+    padding: 38px 42px;
+
+    border: 1px solid rgba(185,130,85,.22) !important;
+
+    background:
+        linear-gradient(
+            105deg,
+            rgba(185,130,85,.065),
+            rgba(57,191,255,.045),
+            rgba(3,9,14,.82)
+        ) !important;
+
+    box-shadow:
+        0 0 30px rgba(185,130,85,.045),
+        inset 0 1px 0 rgba(232,195,154,.10);
+}
+
+.engineering-roadmap .roadmap-message h2 {
+
+    color: #E8C39A !important;
+}
+
+.engineering-roadmap .roadmap-message p {
+
+    color: rgba(215,231,238,.68) !important;
+    line-height: 1.85;
+}
+
+
+/* =========================================================
+   02 — OUR VISION
+   HERITAGE / HUMAN / PURPOSE
+   ========================================================= */
+
+.ars-vision {
+
+    --vision-bronze: #B98255;
+    --vision-bronze-light: #E8C39A;
+
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 25% 45%,
+            rgba(185,130,85,.075),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 78% 60%,
+            rgba(57,191,255,.045),
+            transparent 34%
+        ),
+        linear-gradient(
+            135deg,
+            #03070B,
+            #0A1217 52%,
+            #03070B
+        );
+}
+
+
+/* heritage atmosphere */
+
+.ars-vision::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    left: -260px;
+    top: 35%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(185,130,85,.09),
+            transparent 68%
+        );
+
+    filter: blur(20px);
+
+    pointer-events: none;
+    z-index: -1;
+
+    animation: visionBreath 9s ease-in-out infinite;
+}
+
+@keyframes visionBreath {
+
+    0%,100% {
+        transform: scale(.92);
+        opacity: .55;
+    }
+
+    50% {
+        transform: scale(1.07);
+        opacity: .9;
+    }
+}
+
+
+/* heading */
+
+.ars-vision .section-label {
+
+    color: var(--vision-bronze) !important;
+
+    text-shadow:
+        0 0 9px rgba(185,130,85,.28);
+}
+
+.ars-vision .section-heading h2 {
+
+    color: var(--vision-bronze-light) !important;
+
+    text-shadow:
+        0 0 12px rgba(185,130,85,.18),
+        0 0 30px rgba(57,191,255,.045);
+}
+
+.ars-vision .section-heading p {
+
+    color: rgba(224,229,229,.74) !important;
+}
+
+.ars-vision .section-heading::after {
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(143,96,63,.7),
+            rgba(185,130,85,1),
+            rgba(57,191,255,.55),
+            rgba(185,130,85,.65),
+            transparent
+        ) !important;
+}
+
+
+/* vision cards */
+
+.ars-vision .vision-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 17px;
+}
+
+
+.ars-vision .vision-card {
+
+    position: relative;
+
+    min-height: 230px;
+
+    padding: 32px 27px;
+
+    border: 1px solid rgba(185,130,85,.20) !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(25,20,17,.62),
+            rgba(6,12,16,.82)
+        ) !important;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.22),
+        inset 0 1px 0 rgba(232,195,154,.09);
+
+    transition:
+        transform .5s ease,
+        border-color .5s ease,
+        box-shadow .5s ease;
+}
+
+
+.ars-vision .vision-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 55px;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--vision-bronze),
+            var(--road-blue, #39BFFF),
+            transparent
+        );
+
+    box-shadow:
+        0 0 10px rgba(185,130,85,.25);
+}
+
+
+.ars-vision .vision-card:hover {
+
+    transform:
+        translateY(-8px)
+        rotateX(1deg);
+
+    border-color:
+        rgba(185,130,85,.42) !important;
+
+    box-shadow:
+        0 22px 45px rgba(0,0,0,.30),
+        0 0 25px rgba(185,130,85,.07);
+}
+
+
+.ars-vision .vision-card h3 {
+
+    color: var(--vision-bronze-light) !important;
+
+    margin-bottom: 16px;
+}
+
+.ars-vision .vision-card p {
+
+    color: rgba(218,226,229,.68) !important;
+
+    line-height: 1.82;
+}
+
+
+/* final quote */
+
+.ars-vision .vision-quote {
+
+    position: relative;
+
+    margin-top: 30px;
+
+    padding: 48px 35px;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(185,130,85,.28) !important;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(185,130,85,.07),
+            transparent 58%
+        ),
+        linear-gradient(
+            135deg,
+            rgba(20,17,14,.72),
+            rgba(4,10,14,.88)
+        ) !important;
+
+    box-shadow:
+        0 0 35px rgba(185,130,85,.055),
+        inset 0 1px 0 rgba(232,195,154,.13);
+}
+
+.ars-vision .vision-quote::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    width: 220px;
+    height: 1px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--vision-bronze),
+            #39BFFF,
+            var(--vision-bronze),
+            transparent
+        );
+
+    box-shadow:
+        0 0 13px rgba(185,130,85,.32);
+}
+
+.ars-vision .vision-quote h2 {
+
+    color: var(--vision-bronze-light) !important;
+
+    text-shadow:
+        0 0 13px rgba(185,130,85,.20);
+}
+
+.ars-vision .vision-quote p {
+
+    max-width: 850px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    color: rgba(220,228,230,.68) !important;
+
+    line-height: 1.85;
+}
+
+
+/* =========================================================
+   03 — FINAL CTA
+   FINAL GATE / ARS INVITATION
+   ========================================================= */
+
+.arsbrain-cta {
+
+    --cta-blue: #39BFFF;
+    --cta-cyan: #79DDFF;
+    --cta-bronze: #B98255;
+
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    padding-top: 70px;
+    padding-bottom: 90px;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(57,191,255,.11),
+            transparent 42%
+        ),
+        linear-gradient(
+            180deg,
+            #02070B,
+            #06121B 55%,
+            #02070B
+        );
+}
+
+
+/* final energy field */
+
+.arsbrain-cta::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 720px;
+    height: 720px;
+
+    transform: translate(-50%,-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(57,191,255,.09),
+            rgba(57,191,255,.025) 35%,
+            transparent 70%
+        );
+
+    filter: blur(14px);
+
+    pointer-events: none;
+    z-index: -1;
+
+    animation: finalGatePulse 7s ease-in-out infinite;
+}
+
+@keyframes finalGatePulse {
+
+    0%,100% {
+        transform: translate(-50%,-50%) scale(.92);
+        opacity: .55;
+    }
+
+    50% {
+        transform: translate(-50%,-50%) scale(1.08);
+        opacity: 1;
+    }
+}
+
+
+/* CTA box */
+
+.arsbrain-cta .cta-box {
+
+    position: relative;
+
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+    padding: 70px 55px;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(57,191,255,.32) !important;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(57,191,255,.075),
+            transparent 55%
+        ),
+        linear-gradient(
+            135deg,
+            rgba(7,20,29,.90),
+            rgba(3,9,14,.94)
+        ) !important;
+
+    box-shadow:
+        0 0 35px rgba(57,191,255,.09),
+        0 0 90px rgba(57,191,255,.035),
+        inset 0 1px 0 rgba(121,221,255,.18);
+}
+
+
+/* top and bottom energy rails */
+
+.arsbrain-cta .cta-box::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    width: 330px;
+    height: 1px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--cta-bronze),
+            var(--cta-cyan),
+            var(--cta-blue),
+            transparent
+        );
+
+    box-shadow:
+        0 0 15px rgba(57,191,255,.40);
+}
+
+.arsbrain-cta .cta-box::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 220px;
+    height: 1px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--cta-blue),
+            var(--cta-bronze),
+            transparent
+        );
+
+    box-shadow:
+        0 0 12px rgba(185,130,85,.28);
+}
+
+
+/* CTA typography */
+
+.arsbrain-cta .section-label {
+
+    color: var(--cta-blue) !important;
+
+    text-shadow:
+        0 0 9px rgba(57,191,255,.40);
+}
+
+.arsbrain-cta .cta-box h2 {
+
+    color: var(--cta-cyan) !important;
+
+    text-shadow:
+        0 0 13px rgba(57,191,255,.28),
+        0 0 35px rgba(57,191,255,.10);
+}
+
+.arsbrain-cta .cta-box p {
+
+    max-width: 780px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    color: rgba(218,234,241,.72) !important;
+
+    line-height: 1.9;
+}
+
+
+/* CTA buttons */
+
+.arsbrain-cta .btn-primary {
+
+    background:
+        linear-gradient(
+            110deg,
+            #168CFF,
+            #39BFFF,
+            #79DDFF
+        ) !important;
+
+    color: #021018 !important;
+
+    box-shadow:
+        0 0 20px rgba(57,191,255,.22),
+        0 0 45px rgba(57,191,255,.07);
+}
+
+.arsbrain-cta .btn-secondary {
+
+    color: var(--cta-bronze) !important;
+
+    border-color:
+        rgba(185,130,85,.42) !important;
+
+    box-shadow:
+        0 0 15px rgba(185,130,85,.06);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .engineering-roadmap .roadmap-timeline {
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .engineering-roadmap .roadmap-timeline::before {
+        display: none;
+    }
+
+    .ars-vision .vision-layout {
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .engineering-roadmap .roadmap-timeline {
+
+        grid-template-columns: 1fr;
+    }
+
+    .engineering-roadmap .roadmap-item {
+
+        min-height: 220px;
+
+        padding:
+            48px 22px 25px;
+    }
+
+    .engineering-roadmap .roadmap-message {
+
+        padding: 30px 22px;
+    }
+
+    .ars-vision .vision-layout {
+
+        grid-template-columns: 1fr;
+    }
+
+    .ars-vision .vision-card {
+
+        min-height: 190px;
+    }
+
+    .ars-vision .vision-quote {
+
+        padding: 35px 22px;
+    }
+
+    .arsbrain-cta {
+
+        padding-top: 45px;
+        padding-bottom: 55px;
+    }
+
+    .arsbrain-cta .cta-box {
+
+        padding: 48px 22px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .engineering-roadmap::after,
+    .engineering-roadmap .roadmap-item::before,
+    .engineering-roadmap .roadmap-item::after,
+    .ars-vision::before,
+    .arsbrain-cta::before {
+
+        animation: none !important;
+    }
+
+    .engineering-roadmap .roadmap-item,
+    .ars-vision .vision-card {
+
+        transition: none !important;
+    }
+}
