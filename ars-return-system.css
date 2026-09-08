@@ -929,3 +929,134 @@
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS RETURN SYSTEM — METALLIC LIGHT PASS
+   + HOME ICON ROOF REFINEMENT
+   ========================================================= */
+
+/* --- Elegant bronze / gold reflection passing over cards --- */
+
+.ars-return-gateway {
+    overflow: hidden;
+}
+
+.ars-return-gateway::after {
+    content: "";
+    position: absolute;
+
+    top: -25%;
+    left: -45%;
+
+    width: 28%;
+    height: 150%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(137,94,50,.08) 25%,
+            rgba(208,170,99,.38) 45%,
+            rgba(255,242,194,.72) 50%,
+            rgba(208,170,99,.34) 56%,
+            rgba(137,94,50,.08) 75%,
+            transparent 100%
+        );
+
+    filter: blur(7px);
+
+    transform: rotate(12deg);
+    opacity: 0;
+
+    pointer-events: none;
+    z-index: 20;
+
+    animation:
+        arsReturnMetallicSweep 8.5s
+        cubic-bezier(.45,0,.25,1)
+        infinite;
+}
+
+@keyframes arsReturnMetallicSweep {
+
+    0%, 72% {
+        left: -45%;
+        opacity: 0;
+    }
+
+    77% {
+        opacity: .18;
+    }
+
+    84% {
+        opacity: .72;
+    }
+
+    91% {
+        left: 125%;
+        opacity: .22;
+    }
+
+    96%, 100% {
+        left: 145%;
+        opacity: 0;
+    }
+}
+
+
+/* --- Home icon: perfectly balanced roof --- */
+
+.ars-return-home .ars-home-icon span {
+    width: 21px !important;
+    height: 21px !important;
+
+    left: 18px !important;
+    top: 12px !important;
+
+    border-left: 2px solid #d0aa63 !important;
+    border-top: 2px solid #d0aa63 !important;
+
+    transform:
+        rotate(45deg)
+        scale(.92) !important;
+
+    transform-origin: center center !important;
+
+    filter:
+        drop-shadow(0 0 4px rgba(208,170,99,.55))
+        drop-shadow(0 0 9px rgba(255,242,194,.16)) !important;
+}
+
+
+/* Keep the house body optically centered beneath the roof */
+
+.ars-return-home .ars-home-icon::before {
+    width: 22px !important;
+    height: 17px !important;
+
+    left: 17px !important;
+    top: 22px !important;
+
+    border: 2px solid #79ddff !important;
+    border-top: 0 !important;
+
+    box-shadow:
+        0 0 9px rgba(57,191,255,.45) !important;
+}
+
+
+/* Slightly stronger reflection on hover */
+
+.ars-return-gateway:hover::after {
+    animation-duration: 5.5s;
+}
