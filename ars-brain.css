@@ -11317,3 +11317,568 @@ body.brain-test-page .btn-secondary {
         drop-shadow(0 0 13px rgba(0,205,255,.48))
         drop-shadow(0 14px 25px rgba(0,0,0,.60));
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS — EXPLORE ECOSYSTEM
+   PREMIUM COMMAND INTERFACE
+   GLASS / MATTE NAVY / BRONZE / ELECTRIC BLUE
+   ========================================================= */
+
+.explore-platforms{
+    position:relative;
+    isolation:isolate;
+    padding-top:110px;
+    padding-bottom:120px;
+    overflow:hidden;
+}
+
+/* =========================================================
+   AMBIENT LIGHT FIELD
+   ========================================================= */
+
+.explore-platforms::before{
+    content:"";
+    position:absolute;
+    z-index:-3;
+
+    width:720px;
+    height:420px;
+
+    left:50%;
+    top:42%;
+
+    transform:translate(-50%,-50%);
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(0,170,255,.13) 0%,
+            rgba(0,110,255,.07) 34%,
+            transparent 72%
+        );
+
+    filter:blur(35px);
+    pointer-events:none;
+}
+
+.explore-platforms::after{
+    content:"";
+    position:absolute;
+    z-index:-2;
+
+    width:520px;
+    height:2px;
+
+    left:50%;
+    top:49%;
+
+    transform:translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(0,190,255,.45),
+            rgba(225,174,92,.65),
+            rgba(0,190,255,.45),
+            transparent
+        );
+
+    filter:blur(2px);
+
+    box-shadow:
+        0 0 18px rgba(0,170,255,.35);
+}
+
+
+/* =========================================================
+   SECTION HEADER
+   ========================================================= */
+
+.explore-platforms .section-heading{
+    position:relative;
+    text-align:center;
+    margin-bottom:48px;
+}
+
+.explore-platforms .section-label{
+    display:inline-block;
+
+    color:#35c7ff !important;
+
+    font-size:.72rem;
+    font-weight:700;
+    letter-spacing:.28em;
+
+    text-shadow:
+        0 0 8px rgba(0,190,255,.45),
+        0 0 20px rgba(0,150,255,.22);
+}
+
+.explore-platforms .section-heading h2{
+    position:relative;
+
+    margin-top:12px;
+
+    color:#55ceff !important;
+
+    font-size:clamp(2rem,4vw,3.25rem);
+    font-weight:700;
+
+    letter-spacing:-.025em;
+
+    text-shadow:
+        0 0 10px rgba(0,190,255,.32),
+        0 0 28px rgba(0,125,255,.18);
+}
+
+/* GOLD ENGINEERING LINE */
+.explore-platforms .section-heading h2::after{
+    content:"";
+
+    display:block;
+
+    width:125px;
+    height:2px;
+
+    margin:20px auto 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #9d7137 12%,
+            #e8bd77 50%,
+            #9d7137 88%,
+            transparent
+        );
+
+    box-shadow:
+        0 0 6px rgba(218,171,95,.9),
+        0 0 20px rgba(190,140,60,.38);
+}
+
+.explore-platforms .section-heading p{
+    max-width:760px;
+    margin:22px auto 0;
+
+    color:rgba(220,225,231,.68) !important;
+
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   MAIN GLASS COMMAND PANEL
+   ========================================================= */
+
+.explore-platforms .ecosystem-panel{
+    position:relative;
+    isolation:isolate;
+
+    max-width:1120px;
+
+    margin:0 auto;
+
+    padding:34px;
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.065),
+            rgba(13,28,44,.54) 45%,
+            rgba(4,14,25,.72)
+        ) !important;
+
+    border:1px solid rgba(186,143,82,.42) !important;
+
+    backdrop-filter:
+        blur(28px)
+        saturate(145%) !important;
+
+    -webkit-backdrop-filter:
+        blur(28px)
+        saturate(145%) !important;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.12),
+        inset 0 -1px 0 rgba(0,175,255,.10),
+        0 25px 70px rgba(0,0,0,.52),
+        0 0 45px rgba(0,140,255,.08);
+}
+
+/* TOP GLASS REFLECTION */
+.explore-platforms .ecosystem-panel::before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    border-radius:inherit;
+
+    background:
+        linear-gradient(
+            115deg,
+            transparent 8%,
+            rgba(255,255,255,.075) 37%,
+            rgba(214,169,99,.08) 48%,
+            transparent 63%
+        );
+
+    pointer-events:none;
+}
+
+/* BLUE UNDERGLOW */
+.explore-platforms .ecosystem-panel::after{
+    content:"";
+
+    position:absolute;
+    z-index:-1;
+
+    left:8%;
+    right:8%;
+    bottom:-32px;
+
+    height:70px;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(0,184,255,.38),
+            rgba(0,120,255,.12) 45%,
+            transparent 75%
+        );
+
+    filter:blur(22px);
+}
+
+
+/* =========================================================
+   BUTTON GRID
+   ========================================================= */
+
+.explore-platforms .ecosystem-buttons{
+    position:relative;
+    z-index:3;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:16px;
+}
+
+
+/* =========================================================
+   ECOSYSTEM BUTTON
+   ========================================================= */
+
+.explore-platforms .ecosystem-btn{
+    position:relative;
+    isolation:isolate;
+
+    min-height:78px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:18px 22px;
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+    text-decoration:none !important;
+
+    color:#d4a361 !important;
+
+    font-size:.94rem;
+    font-weight:650;
+    letter-spacing:.02em;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(105,80,48,.22),
+            rgba(17,31,46,.48) 55%,
+            rgba(4,15,27,.58)
+        ) !important;
+
+    border:1px solid rgba(195,150,87,.40) !important;
+
+    backdrop-filter:
+        blur(16px)
+        saturate(135%);
+
+    -webkit-backdrop-filter:
+        blur(16px)
+        saturate(135%);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.08),
+        inset 0 -1px 0 rgba(0,180,255,.07),
+        0 10px 25px rgba(0,0,0,.28);
+
+    transition:
+        transform .4s cubic-bezier(.2,.8,.2,1),
+        border-color .4s ease,
+        color .4s ease,
+        box-shadow .4s ease,
+        background .4s ease;
+}
+
+
+/* BLUE LIGHT CORE INSIDE BUTTON */
+.explore-platforms .ecosystem-btn::before{
+    content:"";
+
+    position:absolute;
+    z-index:-1;
+
+    width:140px;
+    height:100px;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,180,255,.10),
+            transparent 70%
+        );
+
+    filter:blur(14px);
+
+    opacity:.55;
+
+    transition:
+        opacity .4s ease,
+        transform .4s ease;
+}
+
+
+/* GOLD LIGHT EDGE */
+.explore-platforms .ecosystem-btn::after{
+    content:"";
+
+    position:absolute;
+
+    left:12%;
+    right:12%;
+    bottom:0;
+
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(214,163,92,.70),
+            transparent
+        );
+
+    box-shadow:
+        0 0 8px rgba(214,163,92,.32);
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+.explore-platforms .ecosystem-btn:hover{
+    transform:
+        translateY(-6px)
+        scale(1.025);
+
+    color:#5ed2ff !important;
+
+    border-color:
+        rgba(0,196,255,.70) !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(103,80,50,.30),
+            rgba(14,38,57,.58),
+            rgba(4,18,32,.68)
+        ) !important;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.13),
+        0 14px 32px rgba(0,0,0,.40),
+        0 0 22px rgba(0,175,255,.18),
+        0 18px 45px rgba(0,145,255,.12);
+}
+
+.explore-platforms .ecosystem-btn:hover::before{
+    opacity:1;
+
+    transform:
+        translate(-50%,-50%)
+        scale(1.35);
+}
+
+
+/* =========================================================
+   ACTIVE / FOCUS
+   ========================================================= */
+
+.explore-platforms .ecosystem-btn:focus-visible{
+    outline:none;
+
+    border-color:
+        rgba(0,204,255,.9) !important;
+
+    box-shadow:
+        0 0 0 2px rgba(0,190,255,.16),
+        0 0 28px rgba(0,180,255,.30);
+}
+
+
+/* =========================================================
+   ECOSYSTEM NOTE
+   ========================================================= */
+
+.explore-platforms .ecosystem-note{
+    position:relative;
+
+    max-width:900px;
+
+    margin:28px auto 0;
+
+    padding:34px 40px;
+
+    text-align:center;
+
+    border-radius:24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.045),
+            rgba(12,27,42,.38)
+        ) !important;
+
+    border:1px solid rgba(169,130,77,.28) !important;
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.07),
+        0 15px 35px rgba(0,0,0,.28);
+}
+
+.explore-platforms .ecosystem-note h2{
+    color:#55ccff !important;
+
+    font-size:1.55rem;
+
+    text-shadow:
+        0 0 10px rgba(0,185,255,.28);
+}
+
+.explore-platforms .ecosystem-note h2::after{
+    content:"";
+
+    display:block;
+
+    width:70px;
+    height:1px;
+
+    margin:13px auto 16px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #d4a05c,
+            transparent
+        );
+
+    box-shadow:
+        0 0 8px rgba(212,160,92,.55);
+}
+
+.explore-platforms .ecosystem-note p{
+    max-width:760px;
+
+    margin:0 auto;
+
+    color:rgba(220,224,229,.67) !important;
+
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:800px){
+
+    .explore-platforms{
+        padding-top:75px;
+        padding-bottom:80px;
+    }
+
+    .explore-platforms .ecosystem-panel{
+        padding:20px;
+        border-radius:24px;
+    }
+
+    .explore-platforms .ecosystem-buttons{
+        grid-template-columns:1fr;
+        gap:12px;
+    }
+
+    .explore-platforms .ecosystem-btn{
+        min-height:68px;
+    }
+
+    .explore-platforms .ecosystem-note{
+        padding:28px 22px;
+    }
+}
