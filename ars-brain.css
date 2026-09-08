@@ -11906,816 +11906,147 @@ body.brain-test-page .btn-secondary {
 
 
 
-
-
-
-
-
 /* =========================================================
-   ARS ECOSYSTEM — ARCHITECTURE CORE
-   PREMIUM 3D ENGINEERING SYSTEM
+   ARS ECOSYSTEM — SIMPLE ARCHITECTURE CORE
+   CLEAN / PREMIUM / LIGHTWEIGHT
    ========================================================= */
 
-.ecosystem-intro {
-    --eco-gold: #e4bd68;
-    --eco-gold-light: #fff0bd;
-    --eco-bronze: #9a6740;
-    --eco-bronze-dark: #5b3d29;
-    --eco-blue: #39bfff;
-    --eco-blue-light: #79ddff;
-    --eco-navy: #06111a;
-    --eco-black: #020509;
-
-    position: relative;
-    width: 100%;
-    min-height: 100svh;
-    overflow: hidden;
-
-    background:
-        radial-gradient(
-            circle at 50% 52%,
-            rgba(57,191,255,.075) 0%,
-            rgba(228,189,104,.055) 20%,
-            transparent 43%
-        ),
-        radial-gradient(
-            circle at 18% 72%,
-            rgba(154,103,64,.12) 0%,
-            transparent 32%
-        ),
-        radial-gradient(
-            circle at 84% 28%,
-            rgba(57,191,255,.08) 0%,
-            transparent 30%
-        ),
-        linear-gradient(
-            145deg,
-            #010407 0%,
-            #030910 38%,
-            #06131d 62%,
-            #020609 100%
-        );
-
-    perspective: 1600px;
-    isolation: isolate;
-}
-
-
-/* =========================================================
-   BACKGROUND ATMOSPHERE
-   ========================================================= */
-
-.ecosystem-intro-bg {
+.ecosystem-intro .architecture-core {
     position: absolute;
-    inset: -20%;
-    z-index: -3;
-
-    background:
-        radial-gradient(
-            ellipse at 50% 50%,
-            rgba(57,191,255,.10) 0%,
-            rgba(228,189,104,.065) 22%,
-            rgba(154,103,64,.045) 38%,
-            transparent 66%
-        );
-
-    filter: blur(40px);
-    opacity: .9;
-    pointer-events: none;
-
-    animation:
-        ecosystemAtmosphere 12s ease-in-out infinite;
-}
-
-
-@keyframes ecosystemAtmosphere {
-
-    0%,100% {
-        transform: scale(1);
-        opacity: .72;
-    }
-
-    50% {
-        transform: scale(1.08);
-        opacity: .96;
-    }
-
-}
-
-
-/* =========================================================
-   ENGINEERING GRID
-   ========================================================= */
-
-.ecosystem-grid-field {
-    position: absolute;
-    inset: 0;
-    z-index: -2;
-
-    background-image:
-        linear-gradient(
-            rgba(57,191,255,.045) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(57,191,255,.045) 1px,
-            transparent 1px
-        );
-
-    background-size:
-        46px 46px;
-
-    mask-image:
-        radial-gradient(
-            ellipse at center,
-            black 0%,
-            rgba(0,0,0,.8) 42%,
-            transparent 78%
-        );
-
-    opacity: .42;
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   CONTAINER
-   ========================================================= */
-
-.ecosystem-intro .container {
-    position: relative;
-    z-index: 5;
-    min-height: 100svh;
-    padding-top: 90px;
-    padding-bottom: 50px;
-}
-
-
-/* =========================================================
-   HEADING
-   ========================================================= */
-
-.ecosystem-heading {
-    position: relative;
-    z-index: 30;
-    max-width: 720px;
-    margin-bottom: 8px;
-}
-
-
-.ecosystem-heading .section-label {
-    display: inline-block;
-
-    color: var(--eco-gold-light);
-
-    letter-spacing: .28em;
-    font-size: 11px;
-    font-weight: 600;
-
-    text-shadow:
-        0 0 12px rgba(228,189,104,.25);
-}
-
-
-.ecosystem-heading h2 {
-    margin: 12px 0 12px;
-
-    color: #fff;
-    font-size: clamp(38px, 5vw, 70px);
-    line-height: .96;
-    letter-spacing: -.035em;
-
-    font-weight: 500;
-
-    text-shadow:
-        0 0 18px rgba(255,255,255,.08),
-        0 0 45px rgba(57,191,255,.06);
-}
-
-
-.ecosystem-heading p {
-    max-width: 610px;
-
-    color: rgba(221,234,241,.68);
-
-    font-size: 14px;
-    line-height: 1.85;
-    letter-spacing: .025em;
-}
-
-
-/* =========================================================
-   ARCHITECTURE STAGE
-   ========================================================= */
-
-.ecosystem-architecture {
-    position: relative;
-
-    width: min(1200px, 94vw);
-    height: min(760px, 68vw);
-
-    min-height: 620px;
-
-    margin: -5px auto 0;
-
-    perspective: 1800px;
-    transform-style: preserve-3d;
-}
-
-
-/* =========================================================
-   CONNECTION SVG
-   ========================================================= */
-
-.architecture-connections {
-    position: absolute;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    z-index: 4;
-
-    overflow: visible;
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   CONNECTION LINES
-   ========================================================= */
-
-.ecosystem-intro .ecosystem-line {
-    fill: none;
-
-    stroke-linecap: round;
-    stroke-linejoin: round;
-
-    vector-effect: non-scaling-stroke;
-
-    opacity: .72;
-}
-
-
-.ecosystem-intro .ecosystem-line-bronze {
-    stroke: url(#architectureBronzeFlow);
-
-    stroke-width: 1.15;
-
-    filter:
-        drop-shadow(0 0 3px rgba(228,189,104,.45))
-        drop-shadow(0 0 10px rgba(154,103,64,.28));
-
-    stroke-dasharray: 16 84;
-
-    animation:
-        architectureBronzeFlow 5.5s linear infinite;
-}
-
-
-.ecosystem-intro .ecosystem-line-blue {
-    stroke: url(#architectureBlueFlow);
-
-    stroke-width: 1.15;
-
-    filter:
-        drop-shadow(0 0 3px rgba(121,221,255,.55))
-        drop-shadow(0 0 12px rgba(57,191,255,.35));
-
-    stroke-dasharray: 14 86;
-
-    animation:
-        architectureBlueFlow 4.8s linear infinite;
-}
-
-
-.ecosystem-intro .ecosystem-line-gold {
-    stroke: url(#architectureGoldFlow);
-
-    stroke-width: 1.25;
-
-    filter:
-        drop-shadow(0 0 3px rgba(255,240,189,.65))
-        drop-shadow(0 0 12px rgba(228,189,104,.32));
-
-    stroke-dasharray: 18 82;
-
-    animation:
-        architectureGoldFlow 5.2s linear infinite;
-}
-
-
-@keyframes architectureBronzeFlow {
-
-    to {
-        stroke-dashoffset: -100;
-    }
-
-}
-
-
-@keyframes architectureBlueFlow {
-
-    to {
-        stroke-dashoffset: -100;
-    }
-
-}
-
-
-@keyframes architectureGoldFlow {
-
-    to {
-        stroke-dashoffset: -100;
-    }
-
-}
-
-
-/* =========================================================
-   CENTRAL ARCHITECTURE CORE
-   ========================================================= */
-
-.ecosystem-core.architecture-core {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 280px;
-    height: 280px;
-
-    transform:
-        translate(-50%, -50%)
-        translateZ(80px);
-
-    transform-style: preserve-3d;
-
-    z-index: 25;
-}
-
-
-/* =========================================================
-   OUTER ENGINEERING RINGS
-   ========================================================= */
-
-.architecture-ring {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    border-radius: 50%;
-
-    transform:
-        translate(-50%, -50%)
-        rotateX(70deg);
-
-    transform-style: preserve-3d;
-
-    pointer-events: none;
-}
-
-
-.architecture-ring.ring-outer {
-    width: 285px;
-    height: 285px;
-
-    border:
-        1px solid rgba(57,191,255,.28);
-
-    box-shadow:
-        0 0 10px rgba(57,191,255,.18),
-        0 0 28px rgba(57,191,255,.10);
-
-    animation:
-        architectureRingOuter 14s linear infinite;
-}
-
-
-.architecture-ring.ring-middle {
-    width: 235px;
-    height: 235px;
-
-    border:
-        1px solid rgba(228,189,104,.42);
-
-    box-shadow:
-        0 0 10px rgba(228,189,104,.22),
-        0 0 25px rgba(154,103,64,.12);
-
-    animation:
-        architectureRingMiddle 10s linear infinite reverse;
-}
-
-
-.architecture-ring.ring-inner {
-    width: 185px;
-    height: 185px;
-
-    border:
-        1px dashed rgba(121,221,255,.30);
-
-    animation:
-        architectureRingInner 8s linear infinite;
-}
-
-
-@keyframes architectureRingOuter {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotateX(70deg)
-            rotateZ(0deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotateX(70deg)
-            rotateZ(360deg);
-    }
-
-}
-
-
-@keyframes architectureRingMiddle {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotateX(70deg)
-            rotateZ(360deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotateX(70deg)
-            rotateZ(0deg);
-    }
-
-}
-
-
-@keyframes architectureRingInner {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotateX(70deg)
-            rotateZ(0deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotateX(70deg)
-            rotateZ(360deg);
-    }
-
-}
-
-
-/* =========================================================
-   CORE SPINES
-   ========================================================= */
-
-.architecture-spine {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    transform:
-        translate(-50%, -50%)
-        translateZ(5px);
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(228,189,104,.48),
-            rgba(121,221,255,.72),
-            rgba(228,189,104,.48),
-            transparent
-        );
-
-    box-shadow:
-        0 0 8px rgba(57,191,255,.18);
-
-    pointer-events: none;
-}
-
-
-.architecture-spine.spine-x {
-    width: 270px;
-    height: 1px;
-}
-
-
-.architecture-spine.spine-y {
-    width: 1px;
-    height: 270px;
-
-    background:
-        linear-gradient(
-            180deg,
-            transparent,
-            rgba(57,191,255,.55),
-            rgba(228,189,104,.72),
-            rgba(57,191,255,.55),
-            transparent
-        );
-}
-
-
-/* =========================================================
-   CORE HALO
-   ========================================================= */
-
-.architecture-core .ecosystem-core-halo {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 340px;
-    height: 340px;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(228,189,104,.20) 0%,
-            rgba(57,191,255,.12) 28%,
-            rgba(154,103,64,.07) 48%,
-            transparent 72%
-        );
-
-    filter: blur(12px);
-
-    opacity: .8;
-
-    animation:
-        architectureCoreHalo 5s ease-in-out infinite;
-
-    pointer-events: none;
-
-    z-index: -1;
-}
-
-
-@keyframes architectureCoreHalo {
-
-    0%,100% {
-        transform:
-            translate(-50%, -50%)
-            scale(.92);
-
-        opacity: .62;
-    }
-
-    50% {
-        transform:
-            translate(-50%, -50%)
-            scale(1.08);
-
-        opacity: .95;
-    }
-
-}
-
-
-/* =========================================================
-   CORE FRAME
-   ========================================================= */
-
-.architecture-core-frame {
-    position: absolute;
-
     left: 50%;
     top: 50%;
 
     width: 190px;
     height: 190px;
 
-    transform:
-        translate(-50%, -50%)
-        rotateX(10deg)
-        rotateY(-10deg)
-        translateZ(45px);
+    transform: translate(-50%, -50%);
 
-    transform-style: preserve-3d;
-
-    border-radius: 30px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,240,189,.16),
-            rgba(154,103,64,.20) 24%,
-            rgba(8,15,21,.96) 52%,
-            rgba(57,191,255,.10) 78%,
-            rgba(2,6,9,.98)
-        );
-
-    border:
-        1px solid rgba(228,189,104,.58);
-
-    box-shadow:
-        0 0 18px rgba(228,189,104,.25),
-        0 0 45px rgba(154,103,64,.18),
-        0 0 80px rgba(57,191,255,.10),
-        inset 0 1px 0 rgba(255,240,189,.32),
-        inset 0 0 35px rgba(57,191,255,.055);
-
-    overflow: visible;
-
-    animation:
-        architectureCoreFloat 7s ease-in-out infinite;
+    z-index: 25;
 }
 
 
-@keyframes architectureCoreFloat {
+/* ---------------------------------------------------------
+   CORE BODY
+   --------------------------------------------------------- */
 
-    0%,100% {
-        transform:
-            translate(-50%, -50%)
-            rotateX(10deg)
-            rotateY(-10deg)
-            translateZ(45px);
-    }
-
-    50% {
-        transform:
-            translate(-50%, -50%)
-            rotateX(6deg)
-            rotateY(-6deg)
-            translateZ(65px);
-    }
-
-}
-
-
-/* =========================================================
-   CORE SHELL
-   ========================================================= */
-
-.architecture-core-shell {
+.ecosystem-intro .architecture-core-frame {
     position: absolute;
-    inset: 9px;
+    left: 50%;
+    top: 50%;
 
-    border-radius: 23px;
+    width: 150px;
+    height: 150px;
 
-    border:
-        1px solid rgba(57,191,255,.22);
+    transform: translate(-50%, -50%);
+
+    border-radius: 24px;
 
     background:
         linear-gradient(
             145deg,
-            rgba(255,255,255,.035),
-            rgba(7,15,22,.72)
+            rgba(201,164,92,.22),
+            rgba(12,22,30,.96) 38%,
+            rgba(5,12,18,.98) 70%,
+            rgba(57,191,255,.14)
         );
 
-    box-shadow:
-        inset 0 0 25px rgba(57,191,255,.06),
-        inset 0 1px 0 rgba(255,255,255,.08);
+    border: 1px solid rgba(228,189,104,.58);
 
-    transform-style: preserve-3d;
+    box-shadow:
+        0 0 18px rgba(228,189,104,.18),
+        0 0 38px rgba(57,191,255,.08),
+        inset 0 1px 0 rgba(255,240,189,.25),
+        inset 0 0 25px rgba(57,191,255,.06);
+
+    z-index: 5;
+}
+
+
+/* ---------------------------------------------------------
+   INNER PROCESSING PANEL
+   --------------------------------------------------------- */
+
+.ecosystem-intro .architecture-core-shell {
+    position: absolute;
+    inset: 10px;
+
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.045),
+            rgba(7,14,21,.88) 48%,
+            rgba(18,42,55,.48)
+        );
+
+    border: 1px solid rgba(57,191,255,.24);
+
+    box-shadow:
+        inset 0 0 18px rgba(57,191,255,.055),
+        inset 0 1px 0 rgba(255,255,255,.08);
 
     overflow: hidden;
 }
 
 
-/* =========================================================
+/* ---------------------------------------------------------
    PROCESSING LAYERS
-   ========================================================= */
+   --------------------------------------------------------- */
 
-.architecture-core-layer {
+.ecosystem-intro .architecture-core-layer {
     position: absolute;
 
     left: 50%;
 
-    width: 82%;
+    width: 76%;
 
-    transform:
-        translateX(-50%)
-        translateZ(20px);
+    transform: translateX(-50%);
 
-    border-radius: 12px;
+    border-radius: 6px;
 
     background:
         linear-gradient(
             90deg,
-            rgba(154,103,64,.20),
-            rgba(8,16,23,.86),
+            rgba(154,103,64,.22),
+            rgba(228,189,104,.08),
             rgba(57,191,255,.16)
         );
 
-    border:
-        1px solid rgba(228,189,104,.24);
-
-    box-shadow:
-        inset 0 1px 0 rgba(255,240,189,.12),
-        0 0 12px rgba(57,191,255,.07);
+    border: 1px solid rgba(228,189,104,.20);
 }
 
 
-.layer-top {
-    top: 17px;
+/* TOP */
 
-    height: 24px;
-
-    transform:
-        translateX(-50%)
-        translateZ(35px)
-        skewX(-12deg);
+.ecosystem-intro .layer-top {
+    top: 14px;
+    height: 13px;
 }
 
 
-.layer-main {
-    top: 48px;
-    height: 95px;
+/* MAIN */
 
-    transform:
-        translateX(-50%)
-        translateZ(55px);
+.ecosystem-intro .layer-main {
+    top: 38px;
+    height: 65px;
 }
 
 
-.layer-bottom {
-    bottom: 17px;
+/* BOTTOM */
 
-    height: 24px;
-
-    transform:
-        translateX(-50%)
-        translateZ(30px)
-        skewX(12deg);
+.ecosystem-intro .layer-bottom {
+    bottom: 14px;
+    height: 13px;
 }
 
 
-/* =========================================================
-   PROCESSOR DETAILS
-   ========================================================= */
+/* ---------------------------------------------------------
+   CORE TEXT
+   --------------------------------------------------------- */
 
-.layer-top span,
-.layer-bottom span {
+.ecosystem-intro .architecture-core-inner {
     position: absolute;
-
-    top: 50%;
-
-    width: 7px;
-    height: 7px;
-
-    transform:
-        translateY(-50%);
-
-    border-radius: 50%;
-
-    background:
-        #79ddff;
-
-    box-shadow:
-        0 0 7px rgba(121,221,255,.95),
-        0 0 16px rgba(57,191,255,.55);
-}
-
-
-.layer-top span:nth-child(1),
-.layer-bottom span:nth-child(1) {
-    left: 14px;
-}
-
-
-.layer-top span:nth-child(2),
-.layer-bottom span:nth-child(2) {
-    left: 50%;
-}
-
-
-.layer-top span:nth-child(3),
-.layer-bottom span:nth-child(3) {
-    right: 14px;
-}
-
-
-/* =========================================================
-   CORE INNER
-   ========================================================= */
-
-.architecture-core-inner {
-    position: absolute;
-
     inset: 0;
 
     display: flex;
@@ -12726,58 +12057,26 @@ body.brain-test-page .btn-secondary {
 
     text-align: center;
 
-    padding: 12px;
+    padding: 10px;
 
-    transform: translateZ(30px);
+    z-index: 10;
 }
 
 
-.architecture-core-inner::before {
-    content: "";
-
-    position: absolute;
-
-    left: 15%;
-    right: 15%;
-    top: 50%;
-
-    height: 1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(57,191,255,.55),
-            rgba(228,189,104,.75),
-            rgba(57,191,255,.55),
-            transparent
-        );
-
-    box-shadow:
-        0 0 8px rgba(57,191,255,.25);
-}
-
-
-.ecosystem-core-kicker {
-    position: relative;
-    z-index: 2;
-
-    color: rgba(255,240,189,.70);
-
-    font-size: 7px;
-    letter-spacing: .24em;
-
+.ecosystem-intro .architecture-core-inner .ecosystem-core-kicker {
     margin-bottom: 5px;
+
+    color: rgba(255,240,189,.65);
+
+    font-size: 6px;
+    letter-spacing: .20em;
 }
 
 
-.architecture-core-inner strong {
-    position: relative;
-    z-index: 2;
+.ecosystem-intro .architecture-core-inner strong {
+    color: #f5d990;
 
-    color: var(--eco-gold-light);
-
-    font-size: 34px;
+    font-size: 28px;
     line-height: 1;
 
     letter-spacing: .10em;
@@ -12785,877 +12084,318 @@ body.brain-test-page .btn-secondary {
     font-weight: 500;
 
     text-shadow:
-        0 0 8px rgba(255,240,189,.48),
-        0 0 25px rgba(228,189,104,.22);
+        0 0 10px rgba(228,189,104,.38);
 }
 
 
-.architecture-core-inner b {
-    position: relative;
-    z-index: 2;
-
-    margin-top: 4px;
+.ecosystem-intro .architecture-core-inner b {
+    margin-top: 5px;
 
     color: #fff;
 
-    font-size: 10px;
-
-    letter-spacing: .20em;
-
-    font-weight: 500;
-}
-
-
-.architecture-core-inner small {
-    position: relative;
-    z-index: 2;
-
-    margin-top: 9px;
-
-    color: rgba(121,221,255,.72);
-
-    font-size: 6px;
-
-    letter-spacing: .18em;
-}
-
-
-/* =========================================================
-   CORE LIGHT
-   ========================================================= */
-
-.architecture-core-light {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 250px;
-    height: 250px;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,240,189,.28) 0%,
-            rgba(228,189,104,.16) 16%,
-            rgba(57,191,255,.10) 32%,
-            rgba(57,191,255,.045) 50%,
-            transparent 72%
-        );
-
-    filter: blur(8px);
-
-    opacity: .72;
-
-    animation:
-        architectureCoreLight 4.5s ease-in-out infinite;
-
-    pointer-events: none;
-
-    z-index: -1;
-}
-
-
-@keyframes architectureCoreLight {
-
-    0%,100% {
-        transform:
-            translate(-50%, -50%)
-            scale(.88);
-
-        opacity: .52;
-    }
-
-    50% {
-        transform:
-            translate(-50%, -50%)
-            scale(1.12);
-
-        opacity: .90;
-    }
-
-}
-
-
-/* =========================================================
-   CORE PULSE
-   ========================================================= */
-
-.ecosystem-core-pulse {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 18px;
-    height: 18px;
-
-    transform:
-        translate(-50%, -50%)
-        translateZ(90px);
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            #fff 0%,
-            #fff0bd 22%,
-            #e4bd68 48%,
-            transparent 74%
-        );
-
-    box-shadow:
-        0 0 8px rgba(255,255,255,.95),
-        0 0 20px rgba(255,240,189,.85),
-        0 0 40px rgba(228,189,104,.55),
-        0 0 70px rgba(57,191,255,.28);
-
-    animation:
-        architecturePulse 3.2s ease-in-out infinite;
-
-    z-index: 50;
-}
-
-
-@keyframes architecturePulse {
-
-    0%,100% {
-        transform:
-            translate(-50%, -50%)
-            translateZ(90px)
-            scale(.65);
-
-        opacity: .58;
-    }
-
-    50% {
-        transform:
-            translate(-50%, -50%)
-            translateZ(90px)
-            scale(1.25);
-
-        opacity: 1;
-    }
-
-}
-
-
-/* =========================================================
-   DATA PULSES
-   ========================================================= */
-
-.ecosystem-data-pulse {
-    fill: #fff;
-
-    filter:
-        drop-shadow(0 0 4px rgba(255,255,255,.95))
-        drop-shadow(0 0 10px rgba(57,191,255,.85))
-        drop-shadow(0 0 18px rgba(228,189,104,.40));
-}
-
-
-/* =========================================================
-   ECOSYSTEM NODES
-   ========================================================= */
-
-.ecosystem-node {
-    position: absolute;
-
-    width: 245px;
-    min-height: 88px;
-
-    z-index: 20;
-
-    text-decoration: none;
-
-    transform-style: preserve-3d;
-
-    transition:
-        transform .55s cubic-bezier(.2,.75,.2,1),
-        filter .55s ease;
-}
-
-
-/* TOP */
-
-.ecosystem-node-haven {
-    left: 50%;
-    top: 0;
-
-    transform:
-        translateX(-50%)
-        translateZ(35px);
-}
-
-
-/* TOP RIGHT */
-
-.ecosystem-node-rose {
-    right: 0;
-    top: 11%;
-
-    transform:
-        translateZ(35px);
-}
-
-
-/* BOTTOM RIGHT */
-
-.ecosystem-node-future {
-    right: 0;
-    bottom: 10%;
-
-    transform:
-        translateZ(35px);
-}
-
-
-/* BOTTOM */
-
-.ecosystem-node-os {
-    left: 50%;
-    bottom: 0;
-
-    transform:
-        translateX(-50%)
-        translateZ(35px);
-}
-
-
-/* BOTTOM LEFT */
-
-.ecosystem-node-zhr {
-    left: 0;
-    bottom: 10%;
-
-    transform:
-        translateZ(35px);
-}
-
-
-/* TOP LEFT */
-
-.ecosystem-node-brain {
-    left: 0;
-    top: 11%;
-
-    transform:
-        translateZ(35px);
-}
-
-
-/* =========================================================
-   NODE GLOW
-   ========================================================= */
-
-.ecosystem-node-glow {
-    position: absolute;
-
-    inset: -25px;
-
-    border-radius: 30px;
-
-    background:
-        radial-gradient(
-            ellipse at center,
-            rgba(228,189,104,.18),
-            rgba(57,191,255,.07) 38%,
-            transparent 70%
-        );
-
-    filter: blur(18px);
-
-    opacity: .48;
-
-    transition:
-        opacity .5s ease,
-        transform .5s ease;
-
-    pointer-events: none;
-
-    z-index: -1;
-}
-
-
-/* =========================================================
-   NODE FRAME
-   ========================================================= */
-
-.ecosystem-node-frame {
-    position: relative;
-
-    min-height: 88px;
-
-    display: flex;
-    align-items: center;
-
-    gap: 17px;
-
-    padding: 15px 19px;
-
-    border-radius: 18px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(18,27,34,.94),
-            rgba(7,13,18,.90) 55%,
-            rgba(5,11,16,.95)
-        );
-
-    border:
-        1px solid rgba(228,189,104,.28);
-
-    box-shadow:
-        0 12px 35px rgba(0,0,0,.42),
-        0 0 18px rgba(228,189,104,.08),
-        inset 0 1px 0 rgba(255,240,189,.14),
-        inset 0 0 25px rgba(57,191,255,.025);
-
-    backdrop-filter: blur(12px);
-
-    transform:
-        translateZ(15px);
-
-    overflow: hidden;
-}
-
-
-.ecosystem-node-frame::before {
-    content: "";
-
-    position: absolute;
-
-    left: 7%;
-    right: 7%;
-    top: 0;
-
-    height: 1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(228,189,104,.82),
-            rgba(255,240,189,.92),
-            rgba(57,191,255,.42),
-            transparent
-        );
-
-    box-shadow:
-        0 0 9px rgba(228,189,104,.35);
-
-    opacity: .8;
-}
-
-
-.ecosystem-node-frame::after {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            115deg,
-            transparent 25%,
-            rgba(255,255,255,.035) 48%,
-            transparent 62%
-        );
-
-    transform:
-        translateX(-110%);
-
-    animation:
-        ecosystemNodeSweep 8s ease-in-out infinite;
-
-    pointer-events: none;
-}
-
-
-@keyframes ecosystemNodeSweep {
-
-    0%,65%,100% {
-        transform: translateX(-110%);
-    }
-
-    82% {
-        transform: translateX(110%);
-    }
-
-}
-
-
-/* =========================================================
-   NODE ICON
-   ========================================================= */
-
-.ecosystem-node-icon {
-    flex: 0 0 48px;
-
-    width: 48px;
-    height: 48px;
-
-    display: grid;
-    place-items: center;
-
-    border-radius: 14px;
-
-    color: var(--eco-gold);
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(228,189,104,.12),
-            rgba(57,191,255,.045) 55%,
-            transparent 72%
-        );
-
-    border:
-        1px solid rgba(228,189,104,.24);
-
-    box-shadow:
-        inset 0 0 16px rgba(228,189,104,.05),
-        0 0 12px rgba(228,189,104,.07);
-
-    transform:
-        translateZ(20px);
-}
-
-
-.ecosystem-node-icon svg {
-    width: 34px;
-    height: 34px;
-
-    display: block;
-
-    filter:
-        drop-shadow(0 0 5px currentColor);
-}
-
-
-/* =========================================================
-   NODE COPY
-   ========================================================= */
-
-.ecosystem-node-copy {
-    min-width: 0;
-
-    display: flex;
-    flex-direction: column;
-}
-
-
-.ecosystem-node-copy span {
-    color: rgba(121,221,255,.62);
-
-    font-size: 7px;
+    font-size: 8px;
 
     letter-spacing: .16em;
 
-    margin-bottom: 4px;
-}
-
-
-.ecosystem-node-copy strong {
-    color: #fff;
-
-    font-size: 16px;
-
-    letter-spacing: .08em;
-
-    line-height: 1.1;
-
     font-weight: 500;
-
-    text-shadow:
-        0 0 10px rgba(255,255,255,.08);
 }
 
 
-.ecosystem-node-copy small {
-    margin-top: 5px;
+.ecosystem-intro .architecture-core-inner small {
+    margin-top: 7px;
 
-    color: rgba(218,230,237,.50);
+    color: rgba(121,221,255,.70);
 
-    font-size: 8px;
+    font-size: 5px;
 
-    line-height: 1.35;
-
-    letter-spacing: .035em;
+    letter-spacing: .13em;
 }
 
 
-/* =========================================================
-   NODE DNA
-   ========================================================= */
+/* ---------------------------------------------------------
+   SIMPLE CORE LIGHT
+   --------------------------------------------------------- */
 
-.ecosystem-node-brain .ecosystem-node-icon,
-.ecosystem-node-haven .ecosystem-node-icon,
-.ecosystem-node-zhr .ecosystem-node-icon {
-    color: var(--eco-gold);
-}
+.ecosystem-intro .architecture-core-light {
+    position: absolute;
 
+    left: 50%;
+    top: 50%;
 
-.ecosystem-node-rose .ecosystem-node-icon,
-.ecosystem-node-future .ecosystem-node-icon {
-    color: var(--eco-blue-light);
-}
+    width: 210px;
+    height: 210px;
 
+    transform: translate(-50%, -50%);
 
-.ecosystem-node-os .ecosystem-node-icon {
-    color: #e8c879;
-}
-
-
-/* =========================================================
-   HOVER
-   ========================================================= */
-
-.ecosystem-node:hover {
-    filter:
-        brightness(1.12)
-        saturate(1.08);
-}
-
-
-.ecosystem-node:hover .ecosystem-node-glow {
-    opacity: .95;
-    transform: scale(1.12);
-}
-
-
-.ecosystem-node-brain:hover,
-.ecosystem-node-zhr:hover {
-    transform:
-        translateZ(75px)
-        rotateY(2deg);
-}
-
-
-.ecosystem-node-rose:hover,
-.ecosystem-node-future:hover {
-    transform:
-        translateZ(75px)
-        rotateY(-2deg);
-}
-
-
-.ecosystem-node-haven:hover,
-.ecosystem-node-os:hover {
-    transform:
-        translateX(-50%)
-        translateZ(75px)
-        rotateX(-2deg);
-}
-
-
-.ecosystem-node:hover .ecosystem-node-frame {
-    border-color:
-        rgba(255,240,189,.55);
-
-    box-shadow:
-        0 18px 45px rgba(0,0,0,.52),
-        0 0 22px rgba(228,189,104,.18),
-        0 0 45px rgba(57,191,255,.07),
-        inset 0 1px 0 rgba(255,240,189,.28);
-}
-
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-.ecosystem-footer {
-    position: relative;
-
-    z-index: 30;
-
-    margin-top: -5px;
-
-    text-align: center;
-}
-
-
-.ecosystem-footer-line {
-    width: min(500px, 70vw);
-    height: 1px;
-
-    margin: 0 auto 16px;
+    border-radius: 50%;
 
     background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(154,103,64,.42),
-            rgba(228,189,104,.82),
-            rgba(57,191,255,.55),
-            transparent
+        radial-gradient(
+            circle,
+            rgba(228,189,104,.16) 0%,
+            rgba(57,191,255,.08) 35%,
+            transparent 70%
         );
 
+    filter: blur(10px);
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    animation: ecoSimpleCoreLight 5s ease-in-out infinite;
+}
+
+
+@keyframes ecoSimpleCoreLight {
+
+    0%,100% {
+        opacity: .55;
+        transform: translate(-50%, -50%) scale(.94);
+    }
+
+    50% {
+        opacity: .85;
+        transform: translate(-50%, -50%) scale(1.06);
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   SIMPLE RINGS
+   --------------------------------------------------------- */
+
+.ecosystem-intro .architecture-ring {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+.ecosystem-intro .ring-outer {
+    width: 185px;
+    height: 185px;
+
+    transform:
+        translate(-50%, -50%)
+        rotateX(66deg);
+
+    border: 1px solid rgba(57,191,255,.22);
+
     box-shadow:
-        0 0 10px rgba(228,189,104,.18);
+        0 0 14px rgba(57,191,255,.08);
 }
 
 
-.ecosystem-footer p {
-    margin: 0;
+.ecosystem-intro .ring-middle {
+    width: 160px;
+    height: 160px;
 
-    color: rgba(221,232,238,.60);
+    transform:
+        translate(-50%, -50%)
+        rotateX(66deg);
 
-    font-size: 11px;
+    border: 1px solid rgba(228,189,104,.28);
 
-    letter-spacing: .10em;
+    box-shadow:
+        0 0 12px rgba(228,189,104,.08);
 }
 
 
-.ecosystem-footer span {
-    display: inline-block;
+.ecosystem-intro .ring-inner {
+    width: 135px;
+    height: 135px;
 
-    margin-top: 10px;
+    transform:
+        translate(-50%, -50%)
+        rotateX(66deg);
 
-    color: rgba(228,189,104,.72);
-
-    font-size: 8px;
-
-    letter-spacing: .30em;
+    border: 1px dashed rgba(121,221,255,.20);
 }
 
 
-/* =========================================================
-   TABLET
-   ========================================================= */
+/* ---------------------------------------------------------
+   CORE PULSE
+   --------------------------------------------------------- */
 
-@media (max-width: 1024px) {
+.ecosystem-intro .ecosystem-core-pulse {
+    position: absolute;
 
-    .ecosystem-intro .container {
-        padding-top: 75px;
+    left: 50%;
+    top: 50%;
+
+    width: 8px;
+    height: 8px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: #fff0bd;
+
+    box-shadow:
+        0 0 8px rgba(255,240,189,.95),
+        0 0 18px rgba(228,189,104,.65),
+        0 0 32px rgba(57,191,255,.28);
+
+    z-index: 20;
+
+    animation: ecoSimplePulse 3.5s ease-in-out infinite;
+}
+
+
+@keyframes ecoSimplePulse {
+
+    0%,100% {
+        opacity: .65;
+        transform: translate(-50%, -50%) scale(.75);
     }
 
-    .ecosystem-heading {
-        margin-bottom: 0;
-    }
-
-    .ecosystem-architecture {
-        width: 96vw;
-        height: 690px;
-        min-height: 0;
-    }
-
-    .ecosystem-node {
-        width: 205px;
-    }
-
-    .ecosystem-node-frame {
-        min-height: 78px;
-        padding: 12px 14px;
-        gap: 12px;
-    }
-
-    .ecosystem-node-icon {
-        flex-basis: 40px;
-        width: 40px;
-        height: 40px;
-    }
-
-    .ecosystem-node-icon svg {
-        width: 29px;
-        height: 29px;
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.15);
     }
 
 }
 
 
-/* =========================================================
+/* ---------------------------------------------------------
+   CONNECTIONS — THIN & CLEAN
+   --------------------------------------------------------- */
+
+.ecosystem-intro .architecture-connections {
+    overflow: visible;
+    pointer-events: none;
+}
+
+
+.ecosystem-intro .ecosystem-line {
+    fill: none;
+
+    stroke-linecap: round;
+
+    vector-effect: non-scaling-stroke;
+
+    opacity: .68;
+}
+
+
+.ecosystem-intro .ecosystem-line-bronze {
+    stroke: #c9a45c;
+
+    stroke-width: 1;
+
+    filter:
+        drop-shadow(0 0 4px rgba(228,189,104,.28));
+}
+
+
+.ecosystem-intro .ecosystem-line-blue {
+    stroke: #39bfff;
+
+    stroke-width: 1;
+
+    filter:
+        drop-shadow(0 0 5px rgba(57,191,255,.30));
+}
+
+
+.ecosystem-intro .ecosystem-line-gold {
+    stroke: #e4bd68;
+
+    stroke-width: 1;
+
+    filter:
+        drop-shadow(0 0 5px rgba(228,189,104,.30));
+}
+
+
+/* ---------------------------------------------------------
+   NODE CARDS — LIGHT TOUCH
+   --------------------------------------------------------- */
+
+.ecosystem-intro .ecosystem-node {
+    z-index: 30;
+}
+
+
+.ecosystem-intro .ecosystem-node-frame {
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+}
+
+
+.ecosystem-intro .ecosystem-node:hover .ecosystem-node-frame {
+    transform: translateZ(8px);
+
+    border-color:
+        rgba(228,189,104,.52);
+
+    box-shadow:
+        0 12px 32px rgba(0,0,0,.38),
+        0 0 20px rgba(228,189,104,.12),
+        inset 0 1px 0 rgba(255,240,189,.22);
+}
+
+
+/* ---------------------------------------------------------
    MOBILE
-   ========================================================= */
+   --------------------------------------------------------- */
 
-@media (max-width: 700px) {
+@media (max-width:700px) {
 
-    .ecosystem-intro {
-        min-height: 100svh;
+    .ecosystem-intro .architecture-core {
+        width: 150px;
+        height: 150px;
     }
 
-    .ecosystem-intro .container {
-        min-height: 100svh;
-        padding-top: 65px;
-        padding-bottom: 28px;
+    .ecosystem-intro .architecture-core-frame {
+        width: 115px;
+        height: 115px;
+
+        border-radius: 18px;
     }
 
-    .ecosystem-heading {
-        max-width: 92vw;
-        margin-bottom: 0;
-    }
-
-    .ecosystem-heading h2 {
-        font-size: clamp(34px, 10vw, 48px);
-    }
-
-    .ecosystem-heading p {
-        font-size: 12px;
-        line-height: 1.65;
-        max-width: 90vw;
-    }
-
-    .ecosystem-architecture {
-        width: 100%;
-        height: 570px;
-        min-height: 0;
-        margin-top: 4px;
-    }
-
-    .ecosystem-core.architecture-core {
-        width: 205px;
-        height: 205px;
-    }
-
-    .architecture-core-frame {
-        width: 145px;
-        height: 145px;
-        border-radius: 23px;
-    }
-
-    .architecture-ring.ring-outer {
-        width: 215px;
-        height: 215px;
-    }
-
-    .architecture-ring.ring-middle {
-        width: 180px;
-        height: 180px;
-    }
-
-    .architecture-ring.ring-inner {
-        width: 145px;
-        height: 145px;
-    }
-
-    .architecture-spine.spine-x {
-        width: 205px;
-    }
-
-    .architecture-spine.spine-y {
-        height: 205px;
-    }
-
-    .architecture-core-inner strong {
-        font-size: 27px;
-    }
-
-    .architecture-core-inner b {
-        font-size: 8px;
-    }
-
-    .architecture-core-inner small {
-        font-size: 5px;
-    }
-
-    .ecosystem-node {
-        width: 145px;
-        min-height: 58px;
-    }
-
-    .ecosystem-node-frame {
-        min-height: 58px;
-        padding: 9px 10px;
-        gap: 8px;
+    .ecosystem-intro .architecture-core-shell {
+        inset: 7px;
         border-radius: 13px;
     }
 
-    .ecosystem-node-icon {
-        flex-basis: 31px;
-        width: 31px;
-        height: 31px;
-        border-radius: 9px;
+    .ecosystem-intro .architecture-core-inner strong {
+        font-size: 21px;
     }
 
-    .ecosystem-node-icon svg {
-        width: 22px;
-        height: 22px;
-    }
-
-    .ecosystem-node-copy span {
-        font-size: 5px;
-    }
-
-    .ecosystem-node-copy strong {
-        font-size: 10px;
-    }
-
-    .ecosystem-node-copy small {
-        font-size: 5.5px;
-    }
-
-    .ecosystem-node-brain {
-        left: 1%;
-        top: 15%;
-    }
-
-    .ecosystem-node-rose {
-        right: 1%;
-        top: 15%;
-    }
-
-    .ecosystem-node-haven {
-        left: 50%;
-        top: 1%;
-    }
-
-    .ecosystem-node-zhr {
-        left: 1%;
-        bottom: 13%;
-    }
-
-    .ecosystem-node-future {
-        right: 1%;
-        bottom: 13%;
-    }
-
-    .ecosystem-node-os {
-        left: 50%;
-        bottom: 1%;
-    }
-
-    .ecosystem-footer {
-        margin-top: 0;
-    }
-
-    .ecosystem-footer p {
-        font-size: 8px;
-        letter-spacing: .06em;
-    }
-
-    .ecosystem-footer span {
+    .ecosystem-intro .architecture-core-inner b {
         font-size: 6px;
-        letter-spacing: .20em;
     }
 
-}
-
-
-/* =========================================================
-   REDUCED MOTION
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    .ecosystem-intro-bg,
-    .architecture-ring,
-    .architecture-core-frame,
-    .architecture-core-light,
-    .architecture-core-halo,
-    .ecosystem-core-pulse,
-    .ecosystem-node-frame::after,
-    .ecosystem-intro .ecosystem-line {
-        animation: none !important;
+    .ecosystem-intro .architecture-core-inner small {
+        font-size: 4px;
     }
 
-}
+    .ecosystem-intro .ring-outer {
+        width: 150px;
+        height: 150px;
+    }
 
+    .ecosystem-intro .ring-middle {
+        width: 130px;
+        height: 130px;
+    }
+
+    .ecosystem-intro .ring-inner {
+        width: 108px;
+        height: 108px;
+    }
+
+   }
+
+e-
