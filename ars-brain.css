@@ -12953,3 +12953,847 @@ body.brain-test-page .btn-secondary {
         0 0 10px rgba(57,191,255,.25),
         0 0 20px rgba(57,191,255,.10) !important;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS HAVEN — SIGNATURE VISUAL SYSTEM
+   MATTE BRONZE × ELECTRIC BLUE
+   Human-Centered Intelligence
+   ========================================================= */
+
+.ars-haven {
+    --haven-bronze: #B98255;
+    --haven-bronze-deep: #8F603F;
+    --haven-bronze-light: #E8C39A;
+
+    --haven-blue: #39BFFF;
+    --haven-cyan: #79DDFF;
+
+    --haven-navy: #06121B;
+    --haven-black: #03070B;
+
+    --haven-gold: #C9A45C;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 18% 18%,
+            rgba(185,130,85,.10),
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at 82% 30%,
+            rgba(57,191,255,.09),
+            transparent 36%
+        ),
+        radial-gradient(
+            circle at 50% 85%,
+            rgba(143,96,63,.07),
+            transparent 40%
+        ),
+        linear-gradient(
+            145deg,
+            #03070B 0%,
+            #06121B 48%,
+            #04090F 100%
+        );
+}
+
+
+/* =========================================================
+   GLOBAL HAVEN HEADINGS
+   ========================================================= */
+
+.ars-haven .section-heading h2,
+.ars-haven .haven-philosophy h2,
+.ars-haven .haven-roadmap h2,
+.ars-haven .haven-status h2,
+.ars-haven .haven-story-content h2,
+.ars-haven .haven-ecosystem-content h2 {
+
+    color: var(--haven-bronze-light) !important;
+
+    text-shadow:
+        0 0 8px rgba(185,130,85,.25),
+        0 0 20px rgba(185,130,85,.14),
+        0 0 38px rgba(57,191,255,.07) !important;
+
+    letter-spacing: -.025em;
+}
+
+
+/* =========================================================
+   SECTION LABELS
+   ========================================================= */
+
+.ars-haven .section-label {
+
+    color: var(--haven-bronze) !important;
+
+    letter-spacing: .20em;
+
+    text-shadow:
+        0 0 7px rgba(185,130,85,.35),
+        0 0 18px rgba(57,191,255,.08) !important;
+}
+
+
+/* =========================================================
+   HEADING SIGNAL LINE
+   ========================================================= */
+
+.ars-haven .section-heading::after {
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(143,96,63,.35) 15%,
+            rgba(185,130,85,.90) 34%,
+            rgba(232,195,154,.95) 46%,
+            rgba(57,191,255,.95) 65%,
+            rgba(57,191,255,.48) 82%,
+            transparent 100%
+        ) !important;
+
+    box-shadow:
+        0 0 7px rgba(185,130,85,.28),
+        0 0 18px rgba(57,191,255,.16) !important;
+}
+
+
+/* =========================================================
+   MAIN HAVEN HERO
+   ========================================================= */
+
+.ars-haven .haven-hero {
+
+    position: relative;
+
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1.08fr)
+        minmax(0, .92fr);
+
+    gap: clamp(28px, 5vw, 72px);
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   HERO IMAGE CHAMBER
+   ========================================================= */
+
+.ars-haven .haven-image {
+
+    position: relative;
+    overflow: hidden;
+
+    min-height: 420px;
+
+    border: 1px solid rgba(185,130,85,.24);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(185,130,85,.08),
+            rgba(57,191,255,.045) 52%,
+            rgba(3,7,11,.78)
+        );
+
+    box-shadow:
+        0 0 22px rgba(185,130,85,.10),
+        0 0 55px rgba(57,191,255,.06),
+        inset 0 1px 0 rgba(232,195,154,.16);
+}
+
+.ars-haven .haven-image::before {
+
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            115deg,
+            transparent 0%,
+            rgba(185,130,85,.10) 42%,
+            transparent 54%,
+            rgba(57,191,255,.08) 78%,
+            transparent 100%
+        );
+
+    pointer-events: none;
+}
+
+.ars-haven .haven-image img {
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    filter:
+        saturate(.92)
+        contrast(1.06)
+        brightness(.98);
+
+    transition:
+        transform .8s cubic-bezier(.2,.7,.2,1),
+        filter .8s ease;
+}
+
+.ars-haven .haven-image:hover img {
+
+    transform: scale(1.025);
+
+    filter:
+        saturate(1)
+        contrast(1.08)
+        brightness(1.03);
+}
+
+
+/* =========================================================
+   HERO CONTENT
+   ========================================================= */
+
+.ars-haven .haven-content h3 {
+
+    color: var(--haven-bronze-light) !important;
+
+    text-shadow:
+        0 0 9px rgba(185,130,85,.18),
+        0 0 22px rgba(57,191,255,.06);
+}
+
+.ars-haven .haven-content p {
+
+    color: rgba(220,228,234,.78);
+}
+
+
+/* =========================================================
+   PHILOSOPHY
+   ========================================================= */
+
+.ars-haven .haven-philosophy {
+
+    position: relative;
+
+    border: 1px solid rgba(185,130,85,.20);
+
+    background:
+        linear-gradient(
+            115deg,
+            rgba(185,130,85,.085),
+            rgba(8,18,27,.72) 48%,
+            rgba(57,191,255,.055)
+        );
+
+    box-shadow:
+        0 0 28px rgba(185,130,85,.07),
+        0 0 55px rgba(57,191,255,.04),
+        inset 0 1px 0 rgba(232,195,154,.12);
+}
+
+.ars-haven .haven-philosophy::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 1px;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            var(--haven-bronze),
+            var(--haven-blue),
+            transparent
+        );
+
+    opacity: .75;
+}
+
+
+/* =========================================================
+   NEW — HUMAN-CENTERED INTELLIGENCE
+   ========================================================= */
+
+.ars-haven .haven-story-visual {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(0, .85fr);
+
+    gap: clamp(28px, 5vw, 70px);
+
+    align-items: center;
+
+    margin: clamp(55px, 7vw, 100px) 0;
+
+    padding: clamp(18px, 3vw, 32px);
+
+    border: 1px solid rgba(185,130,85,.20);
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(185,130,85,.075),
+            rgba(7,17,25,.76) 50%,
+            rgba(57,191,255,.055)
+        );
+
+    box-shadow:
+        0 0 25px rgba(185,130,85,.07),
+        0 0 65px rgba(57,191,255,.035),
+        inset 0 1px 0 rgba(232,195,154,.12);
+}
+
+.ars-haven .haven-story-image {
+
+    position: relative;
+
+    min-height: 330px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.ars-haven .haven-story-image::after {
+
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 45%,
+            rgba(3,7,11,.18) 100%
+        );
+
+    pointer-events: none;
+}
+
+.ars-haven .haven-story-image img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    filter:
+        saturate(.94)
+        contrast(1.05)
+        brightness(1.01);
+
+    transition: transform .8s ease;
+}
+
+.ars-haven .haven-story-visual:hover
+.haven-story-image img {
+
+    transform: scale(1.025);
+}
+
+.ars-haven .haven-story-content h2 {
+
+    margin-top: 12px;
+}
+
+.ars-haven .haven-story-content p {
+
+    color: rgba(220,228,234,.78);
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   STORY SIGNAL
+   ========================================================= */
+
+.ars-haven .haven-story-line {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 28px;
+
+    color: var(--haven-cyan);
+
+    font-size: .68rem;
+
+    letter-spacing: .16em;
+}
+
+.ars-haven .haven-story-line i {
+
+    width: 26px;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(185,130,85,.8),
+            rgba(57,191,255,.8)
+        );
+
+    box-shadow:
+        0 0 8px rgba(57,191,255,.18);
+}
+
+
+/* =========================================================
+   CORE VALUES
+   ========================================================= */
+
+.ars-haven .haven-card {
+
+    position: relative;
+
+    border: 1px solid rgba(185,130,85,.18);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(185,130,85,.065),
+            rgba(8,17,24,.78) 55%,
+            rgba(57,191,255,.045)
+        );
+
+    box-shadow:
+        0 0 18px rgba(185,130,85,.055),
+        inset 0 1px 0 rgba(232,195,154,.09);
+
+    transition:
+        transform .45s ease,
+        border-color .45s ease,
+        box-shadow .45s ease;
+}
+
+.ars-haven .haven-card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: rgba(185,130,85,.40);
+
+    box-shadow:
+        0 0 24px rgba(185,130,85,.12),
+        0 0 42px rgba(57,191,255,.06),
+        inset 0 1px 0 rgba(232,195,154,.16);
+}
+
+.ars-haven .haven-card h3 {
+
+    color: var(--haven-bronze-light) !important;
+
+    text-shadow:
+        0 0 8px rgba(185,130,85,.18);
+}
+
+.ars-haven .haven-icon {
+
+    color: var(--haven-blue);
+
+    text-shadow:
+        0 0 10px rgba(57,191,255,.30),
+        0 0 22px rgba(57,191,255,.12);
+}
+
+
+/* =========================================================
+   NEW — THE HAVEN ECOSYSTEM
+   ========================================================= */
+
+.ars-haven .haven-ecosystem-visual {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    gap: clamp(28px, 5vw, 72px);
+
+    align-items: center;
+
+    margin: clamp(55px, 7vw, 100px) 0;
+
+    padding: clamp(18px, 3vw, 34px);
+
+    border: 1px solid rgba(57,191,255,.18);
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(57,191,255,.045),
+            rgba(7,17,25,.78) 48%,
+            rgba(185,130,85,.07)
+        );
+
+    box-shadow:
+        0 0 28px rgba(57,191,255,.055),
+        0 0 60px rgba(185,130,85,.035),
+        inset 0 1px 0 rgba(121,221,255,.10);
+}
+
+.ars-haven .haven-ecosystem-image {
+
+    min-height: 330px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.ars-haven .haven-ecosystem-image img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    filter:
+        saturate(.96)
+        contrast(1.05)
+        brightness(1.02);
+
+    transition: transform .8s ease;
+}
+
+.ars-haven .haven-ecosystem-visual:hover
+.haven-ecosystem-image img {
+
+    transform: scale(1.025);
+}
+
+.ars-haven .haven-ecosystem-content h2 {
+
+    color: var(--haven-bronze-light) !important;
+}
+
+.ars-haven .haven-ecosystem-content p {
+
+    color: rgba(220,228,234,.78);
+
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   ECOSYSTEM DATA
+   ========================================================= */
+
+.ars-haven .haven-ecosystem-data {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0,1fr));
+
+    gap: 14px;
+
+    margin-top: 28px;
+}
+
+.ars-haven .haven-ecosystem-data div {
+
+    padding: 13px 15px;
+
+    border-left: 1px solid rgba(185,130,85,.55);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(185,130,85,.065),
+            rgba(57,191,255,.025),
+            transparent
+        );
+}
+
+.ars-haven .haven-ecosystem-data strong {
+
+    display: block;
+
+    color: var(--haven-blue);
+
+    font-size: .78rem;
+
+    letter-spacing: .14em;
+}
+
+.ars-haven .haven-ecosystem-data span {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: rgba(232,195,154,.82);
+
+    font-size: .62rem;
+
+    letter-spacing: .13em;
+}
+
+
+/* =========================================================
+   ROADMAP
+   ========================================================= */
+
+.ars-haven .haven-roadmap {
+
+    position: relative;
+
+    border: 1px solid rgba(57,191,255,.16);
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(57,191,255,.045),
+            rgba(7,17,25,.78),
+            rgba(185,130,85,.045)
+        );
+
+    box-shadow:
+        0 0 25px rgba(57,191,255,.04),
+        inset 0 1px 0 rgba(121,221,255,.08);
+}
+
+.ars-haven .haven-roadmap h2 {
+
+    color: var(--haven-bronze-light) !important;
+}
+
+
+/* =========================================================
+   FINAL STATUS / JOURNEY
+   ========================================================= */
+
+.ars-haven .haven-status {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(185,130,85,.28);
+
+    background:
+        radial-gradient(
+            circle at 15% 50%,
+            rgba(185,130,85,.10),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 85% 50%,
+            rgba(57,191,255,.09),
+            transparent 34%
+        ),
+        linear-gradient(
+            120deg,
+            rgba(185,130,85,.065),
+            rgba(6,18,27,.82),
+            rgba(57,191,255,.055)
+        );
+
+    box-shadow:
+        0 0 30px rgba(185,130,85,.08),
+        0 0 70px rgba(57,191,255,.05),
+        inset 0 1px 0 rgba(232,195,154,.15);
+}
+
+.ars-haven .haven-status::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    top: 0;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(185,130,85,.85),
+            rgba(232,195,154,.95),
+            rgba(57,191,255,.85),
+            transparent
+        );
+
+    box-shadow:
+        0 0 12px rgba(185,130,85,.25),
+        0 0 22px rgba(57,191,255,.12);
+}
+
+.ars-haven .haven-status h2 {
+
+    color: var(--haven-bronze-light) !important;
+
+    text-shadow:
+        0 0 10px rgba(185,130,85,.25),
+        0 0 28px rgba(57,191,255,.07);
+}
+
+
+/* =========================================================
+   BUTTONS — HAVEN DNA
+   ========================================================= */
+
+.ars-haven .btn-primary {
+
+    border-color: rgba(185,130,85,.55) !important;
+
+    background:
+        linear-gradient(
+            105deg,
+            rgba(185,130,85,.18),
+            rgba(57,191,255,.10)
+        ) !important;
+
+    box-shadow:
+        0 0 15px rgba(185,130,85,.10),
+        inset 0 1px 0 rgba(232,195,154,.18);
+}
+
+.ars-haven .btn-secondary {
+
+    border-color: rgba(57,191,255,.38) !important;
+
+    background:
+        rgba(57,191,255,.035) !important;
+
+    box-shadow:
+        0 0 14px rgba(57,191,255,.06);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .ars-haven .haven-hero,
+    .ars-haven .haven-story-visual,
+    .ars-haven .haven-ecosystem-visual {
+
+        grid-template-columns: 1fr;
+    }
+
+    .ars-haven .haven-image {
+
+        min-height: 340px;
+    }
+
+    .ars-haven .haven-story-image,
+    .ars-haven .haven-ecosystem-image {
+
+        min-height: 280px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .ars-haven .haven-image {
+
+        min-height: 260px;
+    }
+
+    .ars-haven .haven-story-image,
+    .ars-haven .haven-ecosystem-image {
+
+        min-height: 220px;
+    }
+
+    .ars-haven .haven-ecosystem-data {
+
+        grid-template-columns: 1fr;
+    }
+
+    .ars-haven .haven-story-line {
+
+        gap: 7px;
+    }
+
+    .ars-haven .haven-story-line i {
+
+        width: 16px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ars-haven *,
+    .ars-haven *::before,
+    .ars-haven *::after {
+
+        animation: none !important;
+
+        transition: none !important;
+    }
+}
+
+
+
+
