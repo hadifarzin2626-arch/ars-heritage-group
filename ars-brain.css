@@ -7745,33 +7745,17 @@ body.brain-test-page .btn-secondary {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* =========================================================
-   SIX CORE PILLARS — VISIBLE LIVING MOTION
+   ARS BRAIN — SIX CORE PILLARS
+   REAL HTML TARGET
+   NO BODY CLASS / NO JS DEPENDENCY
    ========================================================= */
 
-body.brain-test-page
-.arsbrain-pillars
-.pillars-grid
-.pillar-card {
-
-    opacity: 1 !important;
+.arsbrain-pillars .pillars-grid .pillar-card.ars-glass {
 
     animation:
-        arsPillarLiving
-        6s
+        arsPillarsFloat
+        5.8s
         ease-in-out
         infinite !important;
 
@@ -7779,103 +7763,93 @@ body.brain-test-page
 }
 
 
-/* هر کارت با ریتم کمی متفاوت */
+/* staggered living rhythm */
 
-body.brain-test-page
-.arsbrain-pillars
-.pillar-card:nth-child(1) {
+.arsbrain-pillars .pillars-grid .pillar-card:nth-child(1) {
     animation-delay: 0s !important;
 }
 
-body.brain-test-page
-.arsbrain-pillars
-.pillar-card:nth-child(2) {
-    animation-delay: -.8s !important;
+.arsbrain-pillars .pillars-grid .pillar-card:nth-child(2) {
+    animation-delay: -.7s !important;
 }
 
-body.brain-test-page
-.arsbrain-pillars
-.pillar-card:nth-child(3) {
-    animation-delay: -1.6s !important;
+.arsbrain-pillars .pillars-grid .pillar-card:nth-child(3) {
+    animation-delay: -1.4s !important;
 }
 
-body.brain-test-page
-.arsbrain-pillars
-.pillar-card:nth-child(4) {
-    animation-delay: -2.4s !important;
+.arsbrain-pillars .pillars-grid .pillar-card:nth-child(4) {
+    animation-delay: -2.1s !important;
 }
 
-body.brain-test-page
-.arsbrain-pillars
-.pillar-card:nth-child(5) {
-    animation-delay: -3.2s !important;
+.arsbrain-pillars .pillars-grid .pillar-card:nth-child(5) {
+    animation-delay: -2.8s !important;
 }
 
-body.brain-test-page
-.arsbrain-pillars
-.pillar-card:nth-child(6) {
-    animation-delay: -4s !important;
+.arsbrain-pillars .pillars-grid .pillar-card:nth-child(6) {
+    animation-delay: -3.5s !important;
 }
 
 
-/* حرکت بسیار آرام — نه پرش، نه لرزش */
+/* subtle independent vertical breathing */
 
-@keyframes arsPillarLiving {
+@keyframes arsPillarsFloat {
 
     0%,
     100% {
         transform:
-            translate3d(0,0,0);
+            translate3d(0, 0, 0) !important;
     }
 
     50% {
         transform:
-            translate3d(0,-4px,0);
+            translate3d(0, -5px, 0) !important;
     }
 }
 
 
-/* خط نور بالای هر کارت */
+/* ---------------------------------------------------------
+   SIGNAL LINE
+--------------------------------------------------------- */
 
-body.brain-test-page
-.arsbrain-pillars
-.pillar-card::before {
+.arsbrain-pillars .pillars-grid .pillar-card.ars-glass::before {
 
     content: "";
 
     position: absolute;
 
+    left: 8%;
+    right: 8%;
     top: 0;
-    left: 12%;
-    right: 12%;
 
     height: 1px;
 
     background:
         linear-gradient(
             90deg,
-            transparent,
-            rgba(201,164,92,.75),
-            rgba(121,221,255,.95),
-            rgba(201,164,92,.75),
-            transparent
+            transparent 0%,
+            rgba(201,164,92,.35) 22%,
+            rgba(255,242,194,.95) 50%,
+            rgba(57,191,255,.65) 72%,
+            transparent 100%
         );
 
-    opacity: .55;
+    opacity: .35;
+
+    transform: scaleX(.55);
 
     animation:
-        arsPillarSignalPulse
-        3.8s
+        arsPillarsSignal
+        3.6s
         ease-in-out
         infinite;
 }
 
 
-@keyframes arsPillarSignalPulse {
+@keyframes arsPillarsSignal {
 
     0%,
     100% {
-        opacity: .28;
+        opacity: .25;
         transform: scaleX(.55);
     }
 
@@ -7886,43 +7860,32 @@ body.brain-test-page
 }
 
 
-/* نور خیلی ظریف داخل کارت */
+/* ---------------------------------------------------------
+   HOVER — stops float and reacts
+--------------------------------------------------------- */
 
-body.brain-test-page
-.arsbrain-pillars
-.pillar-card {
+.arsbrain-pillars .pillars-grid .pillar-card.ars-glass:hover {
 
-    box-shadow:
-        0 14px 34px rgba(0,0,0,.52),
-        inset 0 1px 0 rgba(255,242,194,.06);
-
-    transition:
-        border-color .5s ease,
-        box-shadow .5s ease;
-}
-
-
-/* Hover */
-
-body.brain-test-page
-.arsbrain-pillars
-.pillar-card:hover {
-
-    animation-play-state:
-        paused !important;
+    animation-play-state: paused !important;
 
     transform:
-        translate3d(0,-8px,0) !important;
+        translate3d(0, -9px, 0) !important;
 
     border-color:
         rgba(228,189,104,.48) !important;
 
     box-shadow:
         0 25px 55px rgba(0,0,0,.62),
-        0 0 28px rgba(201,164,92,.12),
-        0 0 38px rgba(57,191,255,.06),
-        inset 0 1px 0 rgba(255,242,194,.12);
-   }
+        0 0 25px rgba(201,164,92,.14),
+        0 0 38px rgba(57,191,255,.055),
+        inset 0 1px 0 rgba(255,242,194,.14) !important;
+}
+
+
+
+
+
+
 
 
 
