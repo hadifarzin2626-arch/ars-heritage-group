@@ -7890,4 +7890,545 @@ body.brain-test-page .btn-secondary {
 
 
 
+/* =========================================================
+   ARS BRAIN — SIX CORE PILLARS
+   DISTINCT PREMIUM CARD MOTION
+   ========================================================= */
 
+.arsbrain-pillars .pillars-grid .pillar-card.ars-glass {
+    position: relative !important;
+    overflow: hidden !important;
+    transform: translate3d(0,0,0);
+    transition:
+        transform .65s cubic-bezier(.2,.8,.2,1),
+        border-color .65s ease,
+        box-shadow .65s ease !important;
+    animation: arsPillarFloat 6s ease-in-out infinite !important;
+}
+
+/* هر کارت ریتم متفاوت */
+.arsbrain-pillars .pillars-grid .pillar-card:nth-child(1) {
+    animation-delay: 0s !important;
+}
+
+.arsbrain-pillars .pillars-grid .pillar-card:nth-child(2) {
+    animation-delay: -.8s !important;
+}
+
+.arsbrain-pillars .pillars-grid .pillar-card:nth-child(3) {
+    animation-delay: -1.6s !important;
+}
+
+.arsbrain-pillars .pillars-grid .pillar-card:nth-child(4) {
+    animation-delay: -2.4s !important;
+}
+
+.arsbrain-pillars .pillars-grid .pillar-card:nth-child(5) {
+    animation-delay: -3.2s !important;
+}
+
+.arsbrain-pillars .pillars-grid .pillar-card:nth-child(6) {
+    animation-delay: -4s !important;
+}
+
+
+/* نور بسیار ظریف بالای هر کارت */
+.arsbrain-pillars .pillars-grid .pillar-card::before {
+    content: "";
+    position: absolute;
+    left: 12%;
+    right: 12%;
+    top: 0;
+    height: 1px;
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(208,170,99,.75),
+            rgba(255,242,194,.95),
+            rgba(208,170,99,.75),
+            transparent
+        );
+    opacity: .42;
+    transform: scaleX(.55);
+    transform-origin: center;
+    animation: arsPillarSignal 4.5s ease-in-out infinite;
+    pointer-events: none;
+}
+
+
+/* نور داخلی بسیار آرام */
+.arsbrain-pillars .pillars-grid .pillar-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(208,170,99,.075),
+            transparent 55%
+        );
+    opacity: .35;
+    pointer-events: none;
+    transition: opacity .6s ease;
+}
+
+
+/* Hover */
+.arsbrain-pillars .pillars-grid .pillar-card:hover {
+    transform: translateY(-9px) !important;
+    border-color: rgba(231,201,135,.65) !important;
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.55),
+        0 0 22px rgba(208,170,99,.18),
+        inset 0 1px 0 rgba(255,242,194,.28) !important;
+}
+
+.arsbrain-pillars .pillars-grid .pillar-card:hover::after {
+    opacity: .7;
+}
+
+
+/* شماره کارت */
+.arsbrain-pillars .pillar-number {
+    transition:
+        transform .6s ease,
+        text-shadow .6s ease;
+}
+
+.arsbrain-pillars .pillar-card:hover .pillar-number {
+    transform: translateX(5px);
+    text-shadow:
+        0 0 10px rgba(231,201,135,.55),
+        0 0 22px rgba(208,170,99,.25);
+}
+
+
+/* =========================================================
+   MOTION
+   ========================================================= */
+
+@keyframes arsPillarFloat {
+
+    0%, 100% {
+        transform: translate3d(0,0,0);
+    }
+
+    50% {
+        transform: translate3d(0,-4px,0);
+    }
+}
+
+@keyframes arsPillarSignal {
+
+    0%, 100% {
+        opacity: .20;
+        transform: scaleX(.45);
+    }
+
+    50% {
+        opacity: .72;
+        transform: scaleX(1);
+    }
+}
+
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+    .arsbrain-pillars .pillars-grid .pillar-card.ars-glass,
+    .arsbrain-pillars .pillars-grid .pillar-card::before {
+        animation: none !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS BRAIN — PREMIUM CARD LANGUAGE
+   DISTINCT MATERIALS / DEPTH / COLOR
+   Based on actual ARS Brain HTML structure
+   ========================================================= */
+
+
+/* =========================================================
+   01 — GLOBAL GLASS BASE
+   فقط پایه؛ هر بخش ظاهر مخصوص خودش را می‌گیرد
+   ========================================================= */
+
+.arsbrain-page .ars-glass {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   02 — WHAT IS ARS BRAIN
+   MATERIAL: WARM OBSIDIAN / GOLD
+   ========================================================= */
+
+.what-is-arsbrain .ars-glass {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(35,26,16,.88) 0%,
+            rgba(13,12,10,.94) 48%,
+            rgba(8,13,18,.92) 100%
+        ) !important;
+
+    border: 1px solid rgba(208,170,99,.32) !important;
+
+    box-shadow:
+        0 20px 55px rgba(0,0,0,.48),
+        0 0 28px rgba(208,170,99,.08),
+        inset 0 1px 0 rgba(255,242,194,.16),
+        inset 0 0 35px rgba(208,170,99,.035) !important;
+
+    border-radius: 26px !important;
+}
+
+
+/* =========================================================
+   03 — ARCHITECTURE
+   MATERIAL: ENGINEERING BLACK / ELECTRIC BLUE
+   ========================================================= */
+
+.arsbrain-architecture .architecture-card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10,24,34,.94),
+            rgba(5,10,15,.96) 58%,
+            rgba(20,14,8,.82)
+        ) !important;
+
+    border: 1px solid rgba(57,191,255,.25) !important;
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.55),
+        0 0 25px rgba(57,191,255,.07),
+        inset 0 1px 0 rgba(121,221,255,.13) !important;
+
+    border-radius: 18px !important;
+}
+
+.arsbrain-architecture .architecture-card:hover {
+    border-color: rgba(121,221,255,.52) !important;
+
+    box-shadow:
+        0 22px 55px rgba(0,0,0,.62),
+        0 0 30px rgba(57,191,255,.14),
+        inset 0 1px 0 rgba(121,221,255,.25) !important;
+}
+
+
+/* =========================================================
+   04 — SIX CORE PILLARS
+   MATERIAL: SIX-PANEL ENGINEERING METAL
+   ========================================================= */
+
+.arsbrain-pillars .pillars-grid .pillar-card {
+    background:
+        linear-gradient(
+            160deg,
+            rgba(28,24,19,.94) 0%,
+            rgba(11,11,10,.96) 52%,
+            rgba(8,14,19,.94) 100%
+        ) !important;
+
+    border: 1px solid rgba(201,164,92,.22) !important;
+
+    border-radius: 20px !important;
+
+    box-shadow:
+        0 14px 38px rgba(0,0,0,.50),
+        inset 0 1px 0 rgba(255,242,194,.12),
+        inset 0 0 24px rgba(201,164,92,.025) !important;
+
+    transition:
+        transform .55s cubic-bezier(.2,.8,.2,1),
+        border-color .55s ease,
+        box-shadow .55s ease,
+        background .55s ease !important;
+}
+
+
+/* هر دو ردیف کمی شخصیت متفاوت */
+.arsbrain-pillars .pillars-grid .pillar-card:nth-child(odd) {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(39,29,18,.92),
+            rgba(12,11,9,.96) 65%,
+            rgba(7,12,17,.95)
+        ) !important;
+}
+
+.arsbrain-pillars .pillars-grid .pillar-card:nth-child(even) {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10,20,28,.94),
+            rgba(9,10,10,.96) 65%,
+            rgba(27,19,11,.90)
+        ) !important;
+
+    border-color: rgba(57,191,255,.18) !important;
+}
+
+
+/* hover */
+.arsbrain-pillars .pillars-grid .pillar-card:hover {
+    transform: translateY(-8px) !important;
+
+    border-color: rgba(231,201,135,.58) !important;
+
+    box-shadow:
+        0 24px 55px rgba(0,0,0,.60),
+        0 0 26px rgba(208,170,99,.12),
+        inset 0 1px 0 rgba(255,242,194,.22) !important;
+}
+
+
+/* =========================================================
+   05 — PILLARS MESSAGE
+   MATERIAL: DEEP OBSIDIAN / GOLD EDGE
+   ========================================================= */
+
+.arsbrain-pillars .pillars-message {
+    background:
+        linear-gradient(
+            100deg,
+            rgba(31,23,14,.92),
+            rgba(9,10,10,.96) 50%,
+            rgba(14,20,25,.92)
+        ) !important;
+
+    border: 1px solid rgba(208,170,99,.30) !important;
+
+    border-radius: 30px !important;
+
+    box-shadow:
+        0 22px 55px rgba(0,0,0,.52),
+        inset 0 1px 0 rgba(255,242,194,.15),
+        0 0 35px rgba(208,170,99,.055) !important;
+}
+
+
+/* =========================================================
+   06 — PLATFORM
+   MATERIAL: PREMIUM AUTOMOTIVE COMPUTING
+   ========================================================= */
+
+.arsbrain-platform .ars-glass {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(9,20,29,.94),
+            rgba(7,10,13,.97) 52%,
+            rgba(30,21,12,.90)
+        ) !important;
+
+    border: 1px solid rgba(57,191,255,.25) !important;
+
+    box-shadow:
+        0 22px 58px rgba(0,0,0,.58),
+        0 0 30px rgba(57,191,255,.075),
+        inset 0 1px 0 rgba(121,221,255,.13) !important;
+
+    border-radius: 24px !important;
+}
+
+
+/* =========================================================
+   07 — ARS HAVEN
+   MATERIAL: WARM ENVIRONMENTAL GLASS
+   ========================================================= */
+
+#ars-haven .ars-glass {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(42,30,18,.90),
+            rgba(15,12,10,.96) 52%,
+            rgba(25,30,29,.90)
+        ) !important;
+
+    border: 1px solid rgba(208,170,99,.30) !important;
+
+    box-shadow:
+        0 24px 60px rgba(0,0,0,.56),
+        0 0 32px rgba(208,170,99,.065),
+        inset 0 1px 0 rgba(255,242,194,.15) !important;
+
+    border-radius: 28px !important;
+}
+
+
+/* =========================================================
+   08 — ROSE AI
+   MATERIAL: SOFT INTELLIGENCE / BLUE-GOLD GLASS
+   ========================================================= */
+
+.arsbrain-rose .ars-glass {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(25,18,15,.90),
+            rgba(9,13,18,.96) 48%,
+            rgba(22,27,31,.91)
+        ) !important;
+
+    border: 1px solid rgba(121,221,255,.24) !important;
+
+    box-shadow:
+        0 22px 58px rgba(0,0,0,.56),
+        0 0 32px rgba(57,191,255,.065),
+        inset 0 1px 0 rgba(255,242,194,.12) !important;
+
+    border-radius: 25px !important;
+}
+
+
+/* =========================================================
+   09 — ZHR NAJI
+   MATERIAL: PROTECTIVE DARK / BLUE GUARDIAN
+   ========================================================= */
+
+.arsbrain-zhr .ars-glass {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(7,21,30,.96),
+            rgba(6,10,14,.97) 55%,
+            rgba(18,18,14,.92)
+        ) !important;
+
+    border: 1px solid rgba(57,191,255,.30) !important;
+
+    box-shadow:
+        0 24px 62px rgba(0,0,0,.62),
+        0 0 35px rgba(57,191,255,.09),
+        inset 0 1px 0 rgba(121,221,255,.17) !important;
+
+    border-radius: 22px !important;
+}
+
+
+/* =========================================================
+   10 — ARS OS
+   MATERIAL: SYSTEM CONSOLE / DARK NAVY
+   ========================================================= */
+
+.arsbrain-os .ars-glass {
+    background:
+        linear-gradient(
+            150deg,
+            rgba(10,22,32,.96),
+            rgba(6,10,15,.97) 58%,
+            rgba(18,15,10,.90)
+        ) !important;
+
+    border: 1px solid rgba(57,191,255,.23) !important;
+
+    box-shadow:
+        0 20px 55px rgba(0,0,0,.60),
+        0 0 28px rgba(57,191,255,.07),
+        inset 0 1px 0 rgba(121,221,255,.12) !important;
+
+    border-radius: 20px !important;
+}
+
+
+/* =========================================================
+   11 — FUTURE TECHNOLOGY
+   MATERIAL: FUTURE METAL / BLUE-GOLD
+   ========================================================= */
+
+.arsbrain-future .ars-glass {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(27,22,15,.90),
+            rgba(7,12,17,.96) 48%,
+            rgba(15,25,32,.92)
+        ) !important;
+
+    border: 1px solid rgba(121,221,255,.25) !important;
+
+    box-shadow:
+        0 25px 65px rgba(0,0,0,.60),
+        0 0 35px rgba(57,191,255,.07),
+        0 0 18px rgba(208,170,99,.055),
+        inset 0 1px 0 rgba(255,242,194,.14) !important;
+
+    border-radius: 26px !important;
+}
+
+
+/* =========================================================
+   12 — UNIVERSAL MICRO LIGHT
+   ========================================================= */
+
+.arsbrain-pillars .pillar-card::before,
+.what-is-arsbrain .ars-glass::before,
+.arsbrain-platform .ars-glass::before,
+#ars-haven .ars-glass::before,
+.arsbrain-rose .ars-glass::before,
+.arsbrain-zhr .ars-glass::before,
+.arsbrain-os .ars-glass::before,
+.arsbrain-future .ars-glass::before {
+    content: "";
+    position: absolute;
+    left: 8%;
+    right: 8%;
+    top: 0;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,242,194,.55),
+            rgba(208,170,99,.75),
+            transparent
+        );
+
+    opacity: .38;
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width:700px) {
+
+    .arsbrain-pillars .pillars-grid .pillar-card,
+    .what-is-arsbrain .ars-glass,
+    .arsbrain-platform .ars-glass,
+    #ars-haven .ars-glass,
+    .arsbrain-rose .ars-glass,
+    .arsbrain-zhr .ars-glass,
+    .arsbrain-os .ars-glass,
+    .arsbrain-future .ars-glass {
+        border-radius: 18px !important;
+    }
+}
