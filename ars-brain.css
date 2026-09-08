@@ -11915,452 +11915,969 @@ body.brain-test-page .btn-secondary {
 
 
 
-
-
-
 /* =========================================================
-   ARS ECOSYSTEM — ARCHITECTURE MODULE
-   CLEAN 3D CORE
+   ARS BRAIN PLATFORM
+   PREMIUM ENGINEERING PLATFORM SYSTEM
    ========================================================= */
 
-.ecosystem-intro .architecture-core {
-    position:absolute !important;
-    left:50% !important;
-    top:50% !important;
+.arsbrain-platform {
+    --platform-gold: #c9a45c;
+    --platform-gold-light: #f0d28b;
+    --platform-bronze: #9a6740;
+    --platform-blue: #39bfff;
+    --platform-cyan: #79ddff;
+    --platform-navy: #07121b;
+    --platform-black: #03070b;
 
-    width:230px !important;
-    height:150px !important;
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    min-height: 100svh;
+    padding: 120px 0 140px;
+    overflow: hidden;
 
-    transform:translate(-50%,-50%) !important;
-
-    z-index:25 !important;
-
-    pointer-events:none;
+    background:
+        radial-gradient(
+            ellipse at 50% 38%,
+            rgba(57,191,255,.075) 0%,
+            transparent 35%
+        ),
+        radial-gradient(
+            ellipse at 18% 58%,
+            rgba(154,103,64,.075) 0%,
+            transparent 34%
+        ),
+        radial-gradient(
+            ellipse at 82% 42%,
+            rgba(201,164,92,.055) 0%,
+            transparent 32%
+        ),
+        linear-gradient(
+            180deg,
+            #020509 0%,
+            #061018 45%,
+            #03080d 100%
+        );
 }
 
 
-/* =========================================================
-   CORE FRAME
-   ========================================================= */
+/* ---------------------------------------------------------
+   ENGINEERING ATMOSPHERE
+   --------------------------------------------------------- */
 
-.ecosystem-intro .architecture-core-frame {
-    position:absolute !important;
-
-    left:50% !important;
-    top:50% !important;
-
-    width:190px !important;
-    height:105px !important;
-
-    transform:
-        translate(-50%,-50%)
-        perspective(700px)
-        rotateX(8deg) !important;
-
-    border-radius:16px !important;
+.arsbrain-platform::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: -2;
 
     background:
         linear-gradient(
-            135deg,
-            #17130f 0%,
-            #292016 18%,
-            #090d11 48%,
-            #0a151c 78%,
-            #111b20 100%
-        ) !important;
+            90deg,
+            transparent 0%,
+            rgba(57,191,255,.025) 48%,
+            rgba(201,164,92,.035) 50%,
+            transparent 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(57,191,255,.025) 1px,
+            transparent 1px
+        );
 
-    border:
-        1px solid rgba(201,164,92,.55) !important;
+    background-size:
+        100% 100%,
+        100% 90px;
 
-    box-shadow:
-        0 15px 30px rgba(0,0,0,.55),
-        0 0 18px rgba(201,164,92,.12),
-        0 0 30px rgba(57,191,255,.07),
-        inset 0 1px 0 rgba(255,240,189,.22),
-        inset 0 -1px 0 rgba(0,0,0,.8) !important;
-
-    overflow:hidden !important;
+    opacity: .65;
 }
 
 
-/* =========================================================
-   INNER PANEL
-   ========================================================= */
+/* ---------------------------------------------------------
+   CENTRAL ENGINEERING LIGHT
+   --------------------------------------------------------- */
 
-.ecosystem-intro .architecture-core-shell {
-    position:absolute !important;
+.arsbrain-platform::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 48%;
+    width: 760px;
+    height: 420px;
 
-    inset:8px !important;
-
-    border-radius:10px !important;
+    transform: translate(-50%, -50%);
 
     background:
-        linear-gradient(
-            100deg,
-            rgba(154,103,64,.20),
-            rgba(8,13,18,.95) 42%,
-            rgba(9,24,32,.88) 100%
-        ) !important;
+        radial-gradient(
+            ellipse at center,
+            rgba(57,191,255,.09) 0%,
+            rgba(201,164,92,.045) 30%,
+            rgba(154,103,64,.025) 50%,
+            transparent 74%
+        );
 
-    border:
-        1px solid rgba(57,191,255,.20) !important;
+    filter: blur(18px);
+    pointer-events: none;
+    z-index: -1;
 
-    box-shadow:
-        inset 0 0 20px rgba(57,191,255,.045),
-        inset 0 1px 0 rgba(255,255,255,.06) !important;
+    animation: arsPlatformAtmosphere 12s ease-in-out infinite;
+}
 
-    overflow:hidden !important;
+@keyframes arsPlatformAtmosphere {
+    0%,100% {
+        opacity: .65;
+        transform: translate(-50%, -50%) scale(.96);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.04);
+    }
 }
 
 
 /* =========================================================
-   DISABLE EXTRA CORE LAYERS
+   HEADING
    ========================================================= */
 
-.ecosystem-intro .architecture-core-layer {
-    display:none !important;
+.arsbrain-platform .section-heading {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto 70px;
+    text-align: center;
+    z-index: 5;
 }
 
-
-/* =========================================================
-   CORE CONTENT
-   ========================================================= */
-
-.ecosystem-intro .architecture-core-inner {
-    position:absolute !important;
-
-    inset:0 !important;
-
-    display:flex !important;
-
-    flex-direction:column !important;
-
-    align-items:center !important;
-    justify-content:center !important;
-
-    text-align:center !important;
-
-    padding:8px !important;
-
-    z-index:5 !important;
-}
-
-
-/* small ARS label */
-
-.ecosystem-intro .architecture-core-inner
-.ecosystem-core-kicker {
-    margin:0 0 5px !important;
-
-    color:rgba(255,240,189,.62) !important;
-
-    font-size:6px !important;
-
-    letter-spacing:.25em !important;
-}
-
-
-/* ARS */
-
-.ecosystem-intro .architecture-core-inner strong {
-    margin:0 !important;
-
-    color:#f0d28b !important;
-
-    font-size:28px !important;
-
-    line-height:1 !important;
-
-    letter-spacing:.12em !important;
-
-    font-weight:500 !important;
-
-    text-shadow:
-        0 0 8px rgba(228,189,104,.35) !important;
-}
-
-
-/* ARCHITECTURE */
-
-.ecosystem-intro .architecture-core-inner b {
-    margin:5px 0 0 !important;
-
-    color:#fff !important;
-
-    font-size:8px !important;
-
-    line-height:1 !important;
-
-    letter-spacing:.20em !important;
-
-    font-weight:500 !important;
-}
-
-
-/* INTELLIGENCE CORE */
-
-.ecosystem-intro .architecture-core-inner small {
-    margin:6px 0 0 !important;
-
-    color:rgba(121,221,255,.72) !important;
-
-    font-size:5px !important;
-
-    letter-spacing:.16em !important;
-}
-
-
-/* =========================================================
-   TOP LIGHT EDGE
-   ========================================================= */
-
-.ecosystem-intro .architecture-core-frame::before {
-    content:"";
-
-    position:absolute;
-
-    left:10%;
-    right:10%;
-    top:0;
-
-    height:1px;
+.arsbrain-platform .section-heading::after {
+    content: "";
+    display: block;
+    width: 150px;
+    height: 1px;
+    margin: 28px auto 0;
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            rgba(201,164,92,.75),
+            rgba(154,103,64,.65),
+            rgba(201,164,92,1),
             rgba(255,240,189,1),
+            rgba(57,191,255,.75),
+            transparent
+        );
+
+    box-shadow:
+        0 0 10px rgba(201,164,92,.32),
+        0 0 22px rgba(57,191,255,.12);
+}
+
+.arsbrain-platform .section-label {
+    color: var(--platform-gold-light);
+    letter-spacing: .28em;
+    font-size: 10px;
+    text-shadow:
+        0 0 12px rgba(201,164,92,.25);
+}
+
+.arsbrain-platform .section-heading h2 {
+    margin-top: 16px;
+    color: #fff;
+    font-size: clamp(32px, 4vw, 58px);
+    line-height: 1.08;
+    letter-spacing: -.025em;
+    font-weight: 500;
+
+    text-shadow:
+        0 0 18px rgba(255,255,255,.08),
+        0 0 38px rgba(201,164,92,.08);
+}
+
+.arsbrain-platform .section-heading p {
+    max-width: 760px;
+    margin: 22px auto 0;
+
+    color: rgba(220,232,240,.68);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   MAIN PLATFORM LAYOUT
+   ========================================================= */
+
+.arsbrain-platform .platform-layout {
+    position: relative;
+
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(340px, .85fr);
+
+    gap: 30px;
+
+    align-items: stretch;
+
+    margin-bottom: 32px;
+}
+
+
+/* ---------------------------------------------------------
+   PLATFORM VISUAL
+   --------------------------------------------------------- */
+
+.arsbrain-platform .platform-visual {
+    position: relative;
+    min-height: 510px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(154,103,64,.13),
+            rgba(7,15,22,.88) 38%,
+            rgba(5,14,21,.94) 70%,
+            rgba(57,191,255,.07)
+        );
+
+    border:
+        1px solid rgba(201,164,92,.25);
+
+    box-shadow:
+        0 25px 65px rgba(0,0,0,.48),
+        0 0 35px rgba(201,164,92,.06),
+        0 0 55px rgba(57,191,255,.035),
+        inset 0 1px 0 rgba(255,240,189,.12),
+        inset 0 0 60px rgba(57,191,255,.025);
+
+    transform-style: preserve-3d;
+}
+
+.arsbrain-platform .platform-visual::before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+
+    border:
+        1px solid rgba(57,191,255,.10);
+
+    border-radius: 17px;
+
+    pointer-events: none;
+}
+
+.arsbrain-platform .platform-visual::after {
+    content: "";
+    position: absolute;
+
+    left: 8%;
+    right: 8%;
+    top: 0;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(154,103,64,.45),
+            rgba(201,164,92,.9),
+            rgba(255,240,189,1),
+            rgba(57,191,255,.75),
+            transparent
+        );
+
+    box-shadow:
+        0 0 9px rgba(201,164,92,.42),
+        0 0 22px rgba(57,191,255,.10);
+
+    animation: arsPlatformTopLine 5s ease-in-out infinite;
+}
+
+@keyframes arsPlatformTopLine {
+    0%,100% {
+        opacity: .55;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   PLATFORM IMAGE
+   --------------------------------------------------------- */
+
+.arsbrain-platform .platform-visual img {
+    position: relative;
+    z-index: 2;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: 100%;
+    max-height: 510px;
+
+    object-fit: contain;
+
+    padding: 30px;
+
+    opacity: .92;
+
+    filter:
+        saturate(.88)
+        contrast(1.06)
+        brightness(1.03)
+        drop-shadow(0 0 18px rgba(57,191,255,.08))
+        drop-shadow(0 0 28px rgba(201,164,92,.07));
+
+    transition:
+        transform .7s cubic-bezier(.2,.8,.2,1),
+        filter .7s ease;
+}
+
+.arsbrain-platform .platform-visual:hover img {
+    transform: scale(1.035);
+
+    filter:
+        saturate(1)
+        contrast(1.08)
+        brightness(1.06)
+        drop-shadow(0 0 22px rgba(57,191,255,.13))
+        drop-shadow(0 0 35px rgba(201,164,92,.10));
+}
+
+
+/* =========================================================
+   PLATFORM CONTENT
+   ========================================================= */
+
+.arsbrain-platform .platform-content {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 14px;
+}
+
+
+/* ---------------------------------------------------------
+   ENGINEERING CARDS
+   --------------------------------------------------------- */
+
+.arsbrain-platform .platform-card {
+    position: relative;
+
+    min-height: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 28px 30px;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(154,103,64,.12) 0%,
+            rgba(9,17,24,.82) 38%,
+            rgba(7,14,20,.88) 68%,
+            rgba(57,191,255,.055) 100%
+        );
+
+    border:
+        1px solid rgba(201,164,92,.20);
+
+    box-shadow:
+        0 14px 35px rgba(0,0,0,.35),
+        inset 0 1px 0 rgba(255,240,189,.09),
+        inset 0 0 28px rgba(57,191,255,.018);
+
+    transform:
+        translateZ(0);
+
+    transition:
+        transform .45s cubic-bezier(.2,.8,.2,1),
+        border-color .45s ease,
+        box-shadow .45s ease,
+        background .45s ease;
+}
+
+
+/* gold engineering edge */
+
+.arsbrain-platform .platform-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 22px;
+    right: 22px;
+    top: 0;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(201,164,92,.65),
+            rgba(240,210,139,.95),
+            transparent
+        );
+
+    box-shadow:
+        0 0 8px rgba(201,164,92,.28);
+
+    opacity: .55;
+}
+
+
+/* blue engineering side */
+
+.arsbrain-platform .platform-card::after {
+    content: "";
+
+    position: absolute;
+
+    top: 18%;
+    right: 0;
+
+    width: 1px;
+    height: 64%;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
             rgba(57,191,255,.65),
             transparent
         );
 
     box-shadow:
-        0 0 8px rgba(228,189,104,.45);
+        0 0 9px rgba(57,191,255,.22);
 
-    z-index:10;
+    opacity: .45;
+}
+
+.arsbrain-platform .platform-card:hover {
+    transform:
+        translateY(-5px)
+        translateZ(12px);
+
+    border-color:
+        rgba(228,189,104,.42);
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(154,103,64,.17),
+            rgba(9,18,26,.90) 42%,
+            rgba(8,16,23,.94) 70%,
+            rgba(57,191,255,.08)
+        );
+
+    box-shadow:
+        0 20px 42px rgba(0,0,0,.42),
+        0 0 28px rgba(201,164,92,.08),
+        0 0 35px rgba(57,191,255,.045),
+        inset 0 1px 0 rgba(255,240,189,.14);
+}
+
+.arsbrain-platform .platform-card h3 {
+    margin: 0 0 11px;
+
+    color: #f5f1e8;
+
+    font-size: 17px;
+    font-weight: 500;
+
+    letter-spacing: .01em;
+
+    text-shadow:
+        0 0 12px rgba(255,255,255,.06);
+}
+
+.arsbrain-platform .platform-card p {
+    margin: 0;
+
+    color: rgba(204,218,228,.64);
+
+    font-size: 12.5px;
+    line-height: 1.8;
 }
 
 
 /* =========================================================
-   BLUE ENGINEERING LINE
+   FEATURE STRIP
    ========================================================= */
 
-.ecosystem-intro .architecture-core-frame::after {
-    content:"";
+.arsbrain-platform .feature-card {
+    position: relative;
 
-    position:absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-    left:18px;
-    right:18px;
+    min-height: 135px;
 
-    bottom:14px;
+    padding: 28px 30px;
 
-    height:1px;
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            100deg,
+            rgba(9,16,22,.92),
+            rgba(10,20,27,.84),
+            rgba(7,15,21,.90)
+        );
+
+    border:
+        1px solid rgba(57,191,255,.16);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.34),
+        inset 0 1px 0 rgba(255,255,255,.055),
+        inset 0 0 30px rgba(57,191,255,.018);
+
+    transition:
+        transform .45s ease,
+        border-color .45s ease,
+        box-shadow .45s ease;
+}
+
+
+/* subtle data rail */
+
+.arsbrain-platform .feature-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 2px;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(57,191,255,.9),
+            rgba(201,164,92,.75),
+            transparent
+        );
+
+    box-shadow:
+        0 0 12px rgba(57,191,255,.22);
+
+    opacity: .7;
+}
+
+.arsbrain-platform .feature-card::after {
+    content: "";
+
+    position: absolute;
+
+    left: 24%;
+    right: 24%;
+    top: 0;
+
+    height: 1px;
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            rgba(57,191,255,.25),
-            rgba(57,191,255,.9),
-            rgba(121,221,255,.45),
+            rgba(57,191,255,.5),
+            transparent
+        );
+
+    opacity: .5;
+}
+
+.arsbrain-platform .feature-card:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(57,191,255,.32);
+
+    box-shadow:
+        0 20px 42px rgba(0,0,0,.40),
+        0 0 28px rgba(57,191,255,.06),
+        inset 0 1px 0 rgba(121,221,255,.10);
+}
+
+.arsbrain-platform .feature-card h3 {
+    margin: 0 0 10px;
+
+    color: #fff;
+
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.arsbrain-platform .feature-card p {
+    margin: 0;
+
+    color: rgba(201,215,225,.60);
+
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   HIGHLIGHT / PLATFORM STATEMENT
+   ========================================================= */
+
+.arsbrain-platform .platform-highlight {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+
+    gap: 50px;
+
+    align-items: center;
+
+    margin-top: 32px;
+
+    padding: 52px 55px;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            105deg,
+            rgba(154,103,64,.16) 0%,
+            rgba(8,16,23,.94) 36%,
+            rgba(6,14,21,.94) 66%,
+            rgba(57,191,255,.075) 100%
+        );
+
+    border:
+        1px solid rgba(201,164,92,.28);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.45),
+        0 0 45px rgba(201,164,92,.06),
+        0 0 55px rgba(57,191,255,.035),
+        inset 0 1px 0 rgba(255,240,189,.11);
+}
+
+
+/* central energy rail */
+
+.arsbrain-platform .platform-highlight::before {
+    content: "";
+
+    position: absolute;
+
+    left: 7%;
+    right: 7%;
+    top: 0;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(154,103,64,.45),
+            rgba(201,164,92,.95),
+            rgba(255,240,189,1),
+            rgba(57,191,255,.8),
             transparent
         );
 
     box-shadow:
-        0 0 8px rgba(57,191,255,.30);
+        0 0 10px rgba(201,164,92,.45),
+        0 0 22px rgba(57,191,255,.12);
+}
 
-    opacity:.8;
+.arsbrain-platform .highlight-content {
+    position: relative;
+    z-index: 2;
+}
 
-    z-index:8;
+.arsbrain-platform .highlight-content h2 {
+    margin: 0 0 18px;
+
+    max-width: 620px;
+
+    color: #fff;
+
+    font-size: clamp(28px, 3.2vw, 46px);
+    line-height: 1.12;
+
+    font-weight: 500;
+    letter-spacing: -.02em;
+
+    text-shadow:
+        0 0 22px rgba(255,255,255,.07),
+        0 0 40px rgba(201,164,92,.08);
+}
+
+.arsbrain-platform .highlight-content p {
+    max-width: 650px;
+
+    margin: 0;
+
+    color: rgba(211,224,232,.66);
+
+    font-size: 13px;
+    line-height: 1.9;
 }
 
 
 /* =========================================================
-   CORE LIGHT
+   HIGHLIGHT STATS
    ========================================================= */
 
-.ecosystem-intro .architecture-core-light {
-    position:absolute !important;
+.arsbrain-platform .highlight-stats {
+    position: relative;
 
-    left:50% !important;
-    top:50% !important;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 
-    width:240px !important;
-    height:140px !important;
-
-    transform:translate(-50%,-50%) !important;
+    gap: 1px;
 
     background:
-        radial-gradient(
-            ellipse,
-            rgba(228,189,104,.13) 0%,
-            rgba(57,191,255,.07) 35%,
-            transparent 72%
-        ) !important;
+        rgba(201,164,92,.13);
 
-    filter:blur(12px) !important;
+    border:
+        1px solid rgba(201,164,92,.13);
+}
 
-    opacity:.7 !important;
+.arsbrain-platform .highlight-item {
+    position: relative;
 
-    z-index:-1 !important;
+    min-height: 115px;
 
-    pointer-events:none !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(12,21,28,.94),
+            rgba(5,12,18,.96)
+        );
+
+    overflow: hidden;
+}
+
+.arsbrain-platform .highlight-item::after {
+    content: "";
+
+    position: absolute;
+
+    left: 25%;
+    right: 25%;
+    bottom: 0;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(57,191,255,.55),
+            transparent
+        );
+
+    opacity: .5;
+}
+
+.arsbrain-platform .highlight-item h2 {
+    margin: 0;
+
+    color: var(--platform-gold-light);
+
+    font-size: 30px;
+    line-height: 1;
+
+    font-weight: 500;
+
+    text-shadow:
+        0 0 14px rgba(201,164,92,.28);
+}
+
+.arsbrain-platform .highlight-item span {
+    margin-top: 9px;
+
+    color: rgba(220,231,238,.58);
+
+    font-size: 9px;
+
+    letter-spacing: .16em;
+    text-transform: uppercase;
 }
 
 
 /* =========================================================
-   SIMPLE CORE POINT
+   RESPONSIVE — TABLET
    ========================================================= */
 
-.ecosystem-intro .ecosystem-core-pulse {
-    position:absolute !important;
+@media (max-width: 1000px) {
 
-    left:50% !important;
-    top:50% !important;
-
-    width:7px !important;
-   
-    height:7px !important;
-
-    transform:translate(-50%,-50%) !important;
-
-    border-radius:50% !important;
-
-    background:#fff0bd !important;
-
-    box-shadow:
-        0 0 7px #fff,
-        0 0 16px rgba(228,189,104,.8),
-        0 0 26px rgba(57,191,255,.45) !important;
-
-    z-index:15 !important;
-
-    animation:
-        ecoCorePoint 3s ease-in-out infinite !important;
-}
-
-
-@keyframes ecoCorePoint {
-
-    0%,100% {
-        opacity:.55;
-        transform:translate(-50%,-50%) scale(.75);
+    .arsbrain-platform {
+        padding: 95px 0 110px;
     }
 
-    50% {
-        opacity:1;
-        transform:translate(-50%,-50%) scale(1.15);
+    .arsbrain-platform .platform-layout {
+        grid-template-columns: 1fr;
     }
 
+    .arsbrain-platform .platform-visual {
+        min-height: 430px;
+    }
+
+    .arsbrain-platform .platform-content {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: none;
+    }
+
+    .arsbrain-platform .platform-card {
+        min-height: 190px;
+    }
+
+    .arsbrain-platform .platform-highlight {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
 }
 
 
 /* =========================================================
-   REMOVE ALL OLD RINGS / SPINES
+   RESPONSIVE — MOBILE
    ========================================================= */
 
-.ecosystem-intro .architecture-ring,
-.ecosystem-intro .architecture-spine {
-    display:none !important;
+@media (max-width: 700px) {
+
+    .arsbrain-platform {
+        min-height: auto;
+        padding: 80px 0 90px;
+    }
+
+    .arsbrain-platform .section-heading {
+        margin-bottom: 48px;
+    }
+
+    .arsbrain-platform .section-heading h2 {
+        font-size: 32px;
+    }
+
+    .arsbrain-platform .section-heading p {
+        padding: 0 12px;
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .arsbrain-platform .platform-layout {
+        gap: 18px;
+        margin-bottom: 18px;
+    }
+
+    .arsbrain-platform .platform-visual {
+        min-height: 310px;
+        border-radius: 18px;
+    }
+
+    .arsbrain-platform .platform-visual img {
+        max-height: 310px;
+        padding: 18px;
+    }
+
+    .arsbrain-platform .platform-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .arsbrain-platform .platform-card {
+        min-height: 0;
+        padding: 23px 22px;
+        border-radius: 15px;
+    }
+
+    .arsbrain-platform .platform-card h3 {
+        font-size: 15px;
+    }
+
+    .arsbrain-platform .platform-card p {
+        font-size: 11.5px;
+    }
+
+    .arsbrain-platform .feature-card {
+        min-height: 120px;
+        padding: 23px 24px;
+        border-radius: 15px;
+    }
+
+    .arsbrain-platform .platform-highlight {
+        margin-top: 22px;
+        padding: 32px 22px;
+        border-radius: 18px;
+        gap: 28px;
+    }
+
+    .arsbrain-platform .highlight-content h2 {
+        font-size: 28px;
+    }
+
+    .arsbrain-platform .highlight-content p {
+        font-size: 11.5px;
+    }
+
+    .arsbrain-platform .highlight-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .arsbrain-platform .highlight-item {
+        min-height: 100px;
+    }
+
+    .arsbrain-platform .highlight-item h2 {
+        font-size: 25px;
+    }
 }
 
 
 /* =========================================================
-   CONNECTIONS
+   REDUCED MOTION
    ========================================================= */
 
-.ecosystem-intro .architecture-connections {
-    pointer-events:none !important;
-}
+@media (prefers-reduced-motion: reduce) {
 
-
-/* thin engineering lines */
-
-.ecosystem-intro .ecosystem-line {
-    fill:none !important;
-
-    stroke-linecap:round !important;
-
-    stroke-width:1px !important;
-
-    opacity:.58 !important;
-
-    filter:none !important;
-}
-
-
-/* bronze */
-
-.ecosystem-intro .ecosystem-line-bronze {
-    stroke:#c9a45c !important;
-}
-
-
-/* blue */
-
-.ecosystem-intro .ecosystem-line-blue {
-    stroke:#39bfff !important;
-}
-
-
-/* gold */
-
-.ecosystem-intro .ecosystem-line-gold {
-    stroke:#e4bd68 !important;
-}
-
-
-/* =========================================================
-   DATA POINTS
-   ========================================================= */
-
-.ecosystem-intro .ecosystem-data-pulse {
-    fill:#fff0bd !important;
-
-    filter:
-        drop-shadow(0 0 5px rgba(255,240,189,.8)) !important;
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width:700px) {
-
-    .ecosystem-intro .architecture-core {
-        width:170px !important;
-        height:120px !important;
+    .arsbrain-platform *,
+    .arsbrain-platform::after {
+        animation: none !important;
+        transition: none !important;
     }
-
-    .ecosystem-intro .architecture-core-frame {
-        width:140px !important;
-        height:82px !important;
-
-        border-radius:13px !important;
-    }
-
-    .ecosystem-intro .architecture-core-shell {
-        inset:6px !important;
-        border-radius:9px !important;
-    }
-
-    .ecosystem-intro .architecture-core-inner strong {
-        font-size:22px !important;
-    }
-
-    .ecosystem-intro .architecture-core-inner b {
-        font-size:6px !important;
-    }
-
-    .ecosystem-intro .architecture-core-inner small {
-        font-size:4px !important;
-    }
-
-       }
-
-
-
+}
 
