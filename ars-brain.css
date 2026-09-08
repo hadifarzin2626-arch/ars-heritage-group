@@ -10882,579 +10882,438 @@ body.brain-test-page .btn-secondary {
 
 
 
-
-
-
 /* =========================================================
-   ARS BRAIN — SYSTEM ARCHITECTURE
-   INDUSTRIAL MATTE BRONZE + ELECTRIC BLUE AURA
+   ARS ARCHITECTURE — GLASS / INDUSTRIAL BRONZE / BLUE AURA
    ========================================================= */
 
 .arsbrain-architecture .architecture-card{
     position:relative !important;
-    overflow:hidden !important;
+    isolation:isolate !important;
+    overflow:visible !important;
 
     background:
         linear-gradient(
             145deg,
-            rgba(92,72,48,.96) 0%,
-            rgba(54,43,31,.98) 38%,
-            rgba(31,29,27,.99) 100%
+            rgba(96,74,45,.34),
+            rgba(24,31,42,.48) 45%,
+            rgba(8,18,30,.58)
         ) !important;
 
-    border:1px solid rgba(184,139,82,.72) !important;
-    border-top:2px solid rgba(211,165,101,.82) !important;
+    border:1px solid rgba(194,145,78,.62) !important;
+    border-top:1px solid rgba(226,178,105,.82) !important;
+
+    backdrop-filter:blur(22px) saturate(135%) !important;
+    -webkit-backdrop-filter:blur(22px) saturate(135%) !important;
 
     box-shadow:
-        0 12px 30px rgba(0,0,0,.58),
-        0 0 0 1px rgba(116,82,42,.22) inset,
-        0 0 28px rgba(0,174,255,.18),
-        0 18px 45px rgba(0,155,255,.14) !important;
+        inset 0 1px 0 rgba(255,215,155,.16),
+        inset 0 -1px 0 rgba(0,160,255,.08),
+        0 14px 35px rgba(0,0,0,.52) !important;
 
-    backdrop-filter:blur(14px) !important;
-    -webkit-backdrop-filter:blur(14px) !important;
-
-    transform:translateZ(0);
     transition:
         transform .45s ease,
         border-color .45s ease,
-        box-shadow .45s ease,
-        background .45s ease !important;
+        box-shadow .45s ease !important;
 }
 
-/* Matte industrial bronze surface */
+/* REAL ELECTRIC BLUE AURA BEHIND CARD */
 .arsbrain-architecture .architecture-card::before{
     content:"";
     position:absolute;
-    inset:0;
-    pointer-events:none;
-
-    background:
-        linear-gradient(
-            115deg,
-            transparent 0%,
-            rgba(226,183,119,.10) 28%,
-            rgba(255,214,145,.16) 46%,
-            transparent 63%
-        );
-
-    opacity:.65;
-}
-
-/* Electric-blue transparent light UNDER the card */
-.arsbrain-architecture .architecture-card::after{
-    content:"";
-    position:absolute;
-    left:7%;
-    right:7%;
-    bottom:-25px;
-    height:55px;
-    pointer-events:none;
-
-    background:rgba(0,174,255,.42);
-    filter:blur(24px);
-
-    box-shadow:
-        0 0 35px rgba(0,174,255,.42),
-        0 0 70px rgba(0,132,255,.22);
-
-    opacity:.72;
-}
-
-/* Stronger bronze industrial edge */
-.arsbrain-architecture .architecture-card:hover{
-    transform:translateY(-8px) scale(1.015) !important;
-
-    border-color:rgba(225,174,103,.95) !important;
-
-    box-shadow:
-        0 20px 42px rgba(0,0,0,.65),
-        0 0 0 1px rgba(214,160,88,.32) inset,
-        0 0 32px rgba(0,174,255,.34),
-        0 25px 65px rgba(0,157,255,.25) !important;
-}
-
-/* Blue luminous bottom edge */
-.arsbrain-architecture .architecture-card > *{
-    position:relative;
-    z-index:2;
-}
-
-.arsbrain-architecture .architecture-card h3{
-    color:#d7a765 !important;
-    text-shadow:
-        0 1px 0 rgba(0,0,0,.8),
-        0 0 12px rgba(210,158,88,.16) !important;
-}
-
-.arsbrain-architecture .architecture-card p{
-    color:rgba(225,220,211,.78) !important;
-}
-
-/* Thin electric-blue engineering signature */
-.arsbrain-architecture .architecture-card h3::after{
-    content:"";
-    display:block;
-    width:42px;
-    height:2px;
-    margin-top:12px;
-
-    background:rgba(0,190,255,.82);
-
-    box-shadow:
-        0 0 8px rgba(0,190,255,.75),
-        0 0 20px rgba(0,150,255,.42);
-   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* =========================================================
-   ARS BRAIN — PRODUCT FAMILY
-   ENGINEERED BRONZE / DEEP NAVY / ELECTRIC BLUE
-   ========================================================= */
-
-.arsbrain-family {
-    --family-bronze: #b88750;
-    --family-bronze-light: #d0a36c;
-    --family-bronze-dark: #704522;
-    --family-blue: #24aaff;
-    --family-blue-bright: #55c8ff;
-}
-
-
-/* =========================
-   FAMILY CARDS
-   ========================= */
-
-.arsbrain-family .family-card {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(24, 45, 70, .98) 0%,
-            rgba(12, 29, 48, .98) 48%,
-            rgba(5, 15, 28, 1) 100%
-        );
-
-    border: 1px solid rgba(184, 135, 80, .72);
-
-    border-radius: 26px;
-
-    box-shadow:
-        inset 0 1px 0 rgba(224, 181, 125, .18),
-        inset 0 -1px 0 rgba(0, 0, 0, .8),
-
-        0 16px 35px rgba(0, 0, 0, .42),
-
-        /* ELECTRIC BLUE UNDERLIGHT */
-        0 24px 42px rgba(30, 164, 255, .19),
-        0 38px 80px rgba(20, 140, 255, .11);
-
-    transform: translateY(0);
-
-    transition:
-        transform .5s cubic-bezier(.16, 1, .3, 1),
-        border-color .4s ease,
-        box-shadow .5s ease;
-}
-
-
-/* =========================
-   BRONZE METALLIC LIGHT
-   ========================= */
-
-.arsbrain-family .family-card::before {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    background:
-        linear-gradient(
-            115deg,
-            transparent 8%,
-            rgba(184, 135, 80, .04) 27%,
-            rgba(224, 178, 111, .13) 43%,
-            rgba(137, 89, 43, .07) 56%,
-            transparent 78%
-        );
-
-    opacity: .9;
-
-    pointer-events: none;
-
-    z-index: -1;
-}
-
-
-/* =========================
-   GOLD / BRONZE ATMOSPHERE
-   BEHIND EACH CARD
-   ========================= */
-
-.arsbrain-family .family-card::after {
-    content: "";
-
-    position: absolute;
-
-    width: 210px;
-    height: 210px;
-
-    right: -95px;
-    top: -105px;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(211, 158, 88, .20) 0%,
-            rgba(184, 135, 80, .08) 34%,
-            transparent 70%
-        );
-
-    filter: blur(12px);
-
-    opacity: .7;
-
-    pointer-events: none;
-
-    z-index: -1;
-
-    transition:
-        transform .7s cubic-bezier(.16,1,.3,1),
-        opacity .5s ease;
-}
-
-
-/* =========================
-   HOVER
-   ========================= */
-
-.arsbrain-family .family-card:hover {
-
-    transform: translateY(-10px);
-
-    border-color:
-        rgba(211, 163, 103, .95);
-
-    box-shadow:
-
-        inset 0 1px 0 rgba(255, 218, 160, .23),
-        inset 0 -1px 0 rgba(0, 0, 0, .85),
-
-        0 24px 45px rgba(0, 0, 0, .48),
-
-        /* STRONG BLUE UNDERGLOW */
-        0 27px 55px rgba(30, 170, 255, .34),
-        0 45px 95px rgba(22, 145, 255, .17);
-}
-
-
-.arsbrain-family .family-card:hover::after {
-    transform: scale(1.35);
-    opacity: 1;
-}
-
-
-/* =========================================================
-   FAMILY ICON
-   Turn emoji container into a luxury engineering emblem
-   ========================================================= */
-
-.arsbrain-family .family-icon {
-
-    position: relative;
-
-    width: 68px;
-    height: 68px;
-
-    margin-bottom: 22px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 21px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #b27a45 0%,
-            #744a29 43%,
-            #382516 100%
-        );
-
-    border: 1px solid rgba(224, 176, 108, .72);
-
-    box-shadow:
-
-        inset 0 1px 0 rgba(255, 222, 168, .25),
-        inset 0 -7px 12px rgba(0, 0, 0, .38),
-
-        0 8px 20px rgba(0,0,0,.35),
-
-        0 0 20px rgba(31, 161, 255, .14);
-
-    font-size: 30px;
-
-    filter: saturate(.78);
-
-    transition:
-        transform .45s cubic-bezier(.16,1,.3,1),
-        box-shadow .45s ease,
-        border-color .35s ease;
-}
-
-
-/* ICON HALO */
-
-.arsbrain-family .family-icon::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: -8px;
-
-    border-radius: 25px;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(205, 153, 88, .18),
-            transparent 68%
-        );
-
-    filter: blur(5px);
-
-    z-index: -1;
-
-    opacity: .8;
-}
-
-
-/* ICON BLUE BASE LIGHT */
-
-.arsbrain-family .family-icon::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: 15%;
-    right: 15%;
-    bottom: -11px;
-
-    height: 12px;
+    z-index:-2;
+
+    left:8%;
+    right:8%;
+    bottom:-34px;
+    height:75px;
 
     background:
         radial-gradient(
             ellipse,
-            rgba(35, 169, 255, .55),
-            transparent 70%
+            rgba(0,188,255,.55) 0%,
+            rgba(0,145,255,.30) 35%,
+            rgba(0,100,255,.10) 62%,
+            transparent 78%
         );
 
-    filter: blur(5px);
-
-    opacity: .75;
+    filter:blur(20px);
+    opacity:.95;
+    pointer-events:none;
 }
 
-
-.arsbrain-family .family-card:hover .family-icon {
-
-    transform:
-        translateY(-4px)
-        scale(1.07)
-        rotate(-2deg);
-
-    border-color:
-        rgba(240, 195, 128, .95);
-
-    box-shadow:
-
-        inset 0 1px 0 rgba(255, 230, 185, .30),
-        inset 0 -7px 12px rgba(0, 0, 0, .42),
-
-        0 10px 25px rgba(0,0,0,.42),
-
-        0 0 28px rgba(31, 170, 255, .30);
-}
-
-
-/* =========================================================
-   TITLES — MATTE ENGINEERING BRONZE
-   ========================================================= */
-
-.arsbrain-family .family-card h3 {
-
-    color:
-        var(--family-bronze-light);
-
-    font-weight: 700;
-
-    letter-spacing: .025em;
-
-    text-shadow:
-        0 1px 1px rgba(0,0,0,.75),
-        0 0 16px rgba(184,135,80,.10);
-
-    transition:
-        color .35s ease,
-        text-shadow .35s ease;
-}
-
-
-.arsbrain-family .family-card:hover h3 {
-
-    color: #dfb782;
-
-    text-shadow:
-        0 0 20px rgba(207,157,94,.25);
-}
-
-
-/* =========================================================
-   DESCRIPTION
-   ========================================================= */
-
-.arsbrain-family .family-card p {
-
-    color:
-        rgba(211, 220, 230, .72);
-
-    transition:
-        color .35s ease;
-}
-
-
-.arsbrain-family .family-card:hover p {
-
-    color:
-        rgba(224, 230, 236, .84);
-}
-
-
-/* =========================================================
-   BOTTOM ELECTRIC BLUE ENGINEERING LINE
-   ========================================================= */
-
-.arsbrain-family .family-card {
-
-    --family-line-width: 42px;
-}
-
-
-.arsbrain-family .family-card > h3::after {
-
-    content: "";
-
-    display: block;
-
-    width: var(--family-line-width);
-    height: 2px;
-
-    margin-top: 12px;
-
-    border-radius: 99px;
+/* GLASS REFLECTION */
+.arsbrain-architecture .architecture-card::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:inherit;
+    pointer-events:none;
 
     background:
         linear-gradient(
-            90deg,
-            rgba(36,170,255,1),
-            rgba(36,170,255,.18)
+            115deg,
+            transparent 15%,
+            rgba(255,255,255,.075) 42%,
+            rgba(215,168,100,.10) 50%,
+            transparent 65%
         );
 
-    box-shadow:
-        0 0 7px rgba(36,170,255,.8),
-        0 0 18px rgba(36,170,255,.35);
+    opacity:.75;
+}
 
-    transition:
-        width .45s cubic-bezier(.16,1,.3,1),
-        box-shadow .4s ease;
+/* CONTENT ABOVE EFFECTS */
+.arsbrain-architecture .architecture-card > *{
+    position:relative;
+    z-index:3;
+}
+
+/* INDUSTRIAL BRONZE TITLE */
+.arsbrain-architecture .architecture-card h3{
+    color:#d6a361 !important;
+
+    text-shadow:
+        0 0 8px rgba(210,157,82,.18),
+        0 1px 2px rgba(0,0,0,.8) !important;
+}
+
+/* ELECTRIC BLUE SIGNATURE */
+.arsbrain-architecture .architecture-card h3::after{
+    content:"";
+    display:block;
+
+    width:46px;
+    height:2px;
+    margin-top:11px;
+
+    background:linear-gradient(
+        90deg,
+        rgba(0,207,255,.95),
+        rgba(0,133,255,.30),
+        transparent
+    );
+
+    box-shadow:
+        0 0 7px rgba(0,207,255,.85),
+        0 0 18px rgba(0,155,255,.48);
+}
+
+/* HOVER */
+.arsbrain-architecture .architecture-card:hover{
+    transform:translateY(-8px) !important;
+
+    border-color:rgba(222,174,103,.95) !important;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,220,170,.22),
+        0 18px 45px rgba(0,0,0,.62),
+        0 0 30px rgba(0,178,255,.22),
+        0 28px 65px rgba(0,145,255,.18) !important;
+}
+
+.arsbrain-architecture .architecture-card:hover::before{
+    opacity:1.35;
+    filter:blur(23px);
 }
 
 
-.arsbrain-family .family-card:hover > h3::after {
 
-    width: 76px;
 
-    box-shadow:
-        0 0 9px rgba(36,170,255,.95),
-        0 0 24px rgba(36,170,255,.45);
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* =========================================================
-   DIFFERENT NAVY DEPTH PER CARD
+   ARS PRODUCT FAMILY
+   PREMIUM GLASS / VISUAL LOGO CHAMBERS
    ========================================================= */
 
-.arsbrain-family .family-card:nth-child(even) {
+/* SECTION HEADER */
+.arsbrain-family .section-heading .section-label{
+    color:#3ec7ff !important;
+
+    text-shadow:
+        0 0 8px rgba(0,190,255,.45),
+        0 0 22px rgba(0,150,255,.22) !important;
+}
+
+.arsbrain-family .section-heading h2{
+    color:#48caff !important;
+
+    text-shadow:
+        0 0 10px rgba(0,190,255,.35),
+        0 0 28px rgba(0,130,255,.18) !important;
+}
+
+/* GOLD LIGHT LINE UNDER HEADER */
+.arsbrain-family .section-heading h2::after{
+    content:"";
+    display:block;
+
+    width:110px;
+    height:2px;
+
+    margin:18px auto 0;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #b98a4b,
+        #f0c77b,
+        #b98a4b,
+        transparent
+    );
+
+    box-shadow:
+        0 0 7px rgba(218,171,94,.75),
+        0 0 20px rgba(194,142,65,.35);
+}
+
+/* FAMILY CARD */
+.arsbrain-family .family-card{
+    position:relative;
+    isolation:isolate;
+    overflow:hidden;
+
+    min-height:390px;
 
     background:
         linear-gradient(
             145deg,
-            rgba(18, 39, 64, .99),
-            rgba(8, 22, 38, .99) 55%,
-            rgba(4, 13, 25, 1)
-        );
+            rgba(255,255,255,.075),
+            rgba(20,32,48,.48) 42%,
+            rgba(4,14,25,.68)
+        ) !important;
+
+    border:1px solid rgba(198,153,88,.42) !important;
+    border-top:1px solid rgba(232,190,122,.70) !important;
+
+    border-radius:24px !important;
+
+    backdrop-filter:
+        blur(24px)
+        saturate(145%) !important;
+
+    -webkit-backdrop-filter:
+        blur(24px)
+        saturate(145%) !important;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.12),
+        inset 0 -1px 0 rgba(0,180,255,.10),
+        0 18px 45px rgba(0,0,0,.48) !important;
+
+    transition:
+        transform .5s ease,
+        border-color .5s ease,
+        box-shadow .5s ease !important;
 }
 
+/* BLUE ATMOSPHERE BEHIND CARD */
+.arsbrain-family .family-card::before{
+    content:"";
+    position:absolute;
+    z-index:-2;
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
+    width:75%;
+    height:45%;
 
-@media (max-width: 700px) {
+    left:12%;
+    bottom:-20%;
 
-    .arsbrain-family .family-card {
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(0,190,255,.30),
+            rgba(0,120,255,.12) 45%,
+            transparent 75%
+        );
 
-        border-radius: 21px;
+    filter:blur(28px);
+}
 
-        box-shadow:
-            inset 0 1px 0 rgba(224,181,125,.16),
-            0 15px 32px rgba(0,0,0,.4),
-            0 22px 45px rgba(25,155,255,.14);
-    }
+/* GLASS REFLECTION */
+.arsbrain-family .family-card::after{
+    content:"";
+    position:absolute;
+    inset:0;
 
-    .arsbrain-family .family-icon {
+    background:
+        linear-gradient(
+            120deg,
+            transparent 10%,
+            rgba(255,255,255,.07) 38%,
+            rgba(214,169,100,.08) 48%,
+            transparent 64%
+        );
 
-        width: 60px;
-        height: 60px;
+    pointer-events:none;
+}
 
-        font-size: 27px;
+/* VISUAL CHAMBER */
+.arsbrain-family .family-visual{
+    position:relative;
 
-        border-radius: 18px;
-    }
+    height:205px;
+    margin:14px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:19px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.07),
+            rgba(8,23,39,.34)
+        );
+
+    border:1px solid rgba(205,160,92,.25);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.08),
+        0 0 25px rgba(0,155,255,.08);
+}
+
+/* IMAGE GLOW */
+.arsbrain-family .family-visual-glow{
+    position:absolute;
+
+    width:150px;
+    height:150px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,190,255,.24),
+            transparent 68%
+        );
+
+    filter:blur(12px);
+}
+
+/* LOGO / IMAGE SLOT */
+.arsbrain-family .family-logo-slot{
+    position:relative;
+    z-index:4;
+
+    width:150px;
+    height:150px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.arsbrain-family .family-logo-slot img{
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(0 0 8px rgba(0,190,255,.28))
+        drop-shadow(0 10px 18px rgba(0,0,0,.55));
+
+    transition:
+        transform .5s ease,
+        filter .5s ease;
+}
+
+/* CONTENT */
+.arsbrain-family .family-content{
+    position:relative;
+    z-index:5;
+
+    padding:4px 25px 28px;
+}
+
+.arsbrain-family .family-content h3{
+    color:#d6a461 !important;
+
+    font-size:1.25rem;
+
+    text-shadow:
+        0 0 10px rgba(213,163,94,.16);
+}
+
+.arsbrain-family .family-content p{
+    color:rgba(224,225,226,.76) !important;
+    line-height:1.75;
+}
+
+/* BLUE LINE UNDER PRODUCT TITLE */
+.arsbrain-family .family-content h3::after{
+    content:"";
+
+    display:block;
+
+    width:38px;
+    height:2px;
+
+    margin-top:10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #00c8ff,
+            rgba(0,170,255,.18),
+            transparent
+        );
+
+    box-shadow:
+        0 0 8px rgba(0,195,255,.8),
+        0 0 18px rgba(0,150,255,.38);
+}
+
+/* HOVER */
+.arsbrain-family .family-card:hover{
+    transform:translateY(-9px);
+
+    border-color:rgba(224,175,103,.72) !important;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.16),
+        0 22px 55px rgba(0,0,0,.58),
+        0 0 30px rgba(0,174,255,.18),
+        0 30px 70px rgba(0,145,255,.15) !important;
+}
+
+.arsbrain-family .family-card:hover .family-logo-slot img{
+    transform:scale(1.08);
+
+    filter:
+        drop-shadow(0 0 13px rgba(0,205,255,.48))
+        drop-shadow(0 14px 25px rgba(0,0,0,.60));
 }
