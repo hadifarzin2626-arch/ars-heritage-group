@@ -13797,3 +13797,862 @@ body.brain-test-page .btn-secondary {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ROSE AI — SIGNATURE INTELLIGENCE SYSTEM
+   MATTE BRONZE × ELECTRIC BLUE × DEEP BURGUNDY
+   ========================================================= */
+
+.rose-ai {
+
+    --rose-bronze: #B98255;
+    --rose-bronze-deep: #8F603F;
+    --rose-bronze-light: #E8C39A;
+
+    --rose-blue: #39BFFF;
+    --rose-cyan: #79DDFF;
+
+    --rose-burgundy: #7A1738;
+    --rose-burgundy-deep: #430C20;
+    --rose-crimson: #A52A52;
+    --rose-rose-light: #D66A8C;
+
+    --rose-gold: #C9A45C;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 18% 15%,
+            rgba(185,130,85,.09),
+            transparent 31%
+        ),
+        radial-gradient(
+            circle at 82% 22%,
+            rgba(57,191,255,.075),
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at 50% 48%,
+            rgba(122,23,56,.075),
+            transparent 38%
+        ),
+        radial-gradient(
+            circle at 50% 92%,
+            rgba(67,12,32,.08),
+            transparent 38%
+        ),
+        linear-gradient(
+            145deg,
+            #03070B 0%,
+            #07111A 48%,
+            #05080D 100%
+        );
+}
+
+
+/* =========================================================
+   ROSE ATMOSPHERIC ORBS
+   ========================================================= */
+
+.rose-ai::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    left: 7%;
+    top: 20%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(165,42,82,.19) 0%,
+            rgba(122,23,56,.13) 25%,
+            rgba(67,12,32,.075) 48%,
+            transparent 72%
+        );
+
+    filter: blur(18px);
+
+    opacity: .75;
+
+    pointer-events: none;
+
+    animation:
+        roseOrbBreath 8s ease-in-out infinite;
+}
+
+
+.rose-ai::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    right: 3%;
+    top: 42%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(57,191,255,.075) 0%,
+            rgba(57,191,255,.035) 30%,
+            transparent 70%
+        );
+
+    filter: blur(25px);
+
+    pointer-events: none;
+
+    animation:
+        roseBlueOrbBreath 10s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   ALL MAIN SECTION HEADINGS
+   ========================================================= */
+
+.rose-ai .section-heading h2,
+.rose-ai .rose-message h2 {
+
+    color: var(--rose-bronze-light) !important;
+
+    text-shadow:
+        0 0 8px rgba(185,130,85,.28),
+        0 0 20px rgba(185,130,85,.15),
+        0 0 38px rgba(57,191,255,.07) !important;
+
+    letter-spacing: -.025em;
+}
+
+
+/* =========================================================
+   ROSE LABELS
+   ========================================================= */
+
+.rose-ai .section-label {
+
+    color: var(--rose-bronze) !important;
+
+    letter-spacing: .20em;
+
+    text-shadow:
+        0 0 8px rgba(185,130,85,.32),
+        0 0 18px rgba(122,23,56,.18);
+}
+
+
+/* =========================================================
+   HEADING SIGNAL
+   ========================================================= */
+
+.rose-ai .section-heading::after {
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(143,96,63,.35) 12%,
+            rgba(185,130,85,.95) 30%,
+            rgba(232,195,154,.92) 42%,
+            rgba(122,23,56,.90) 55%,
+            rgba(165,42,82,.95) 63%,
+            rgba(57,191,255,.95) 77%,
+            rgba(57,191,255,.45) 88%,
+            transparent 100%
+        ) !important;
+
+    box-shadow:
+        0 0 8px rgba(185,130,85,.25),
+        0 0 18px rgba(122,23,56,.16),
+        0 0 26px rgba(57,191,255,.12) !important;
+}
+
+
+/* =========================================================
+   MAIN ROSE LAYOUT
+   ========================================================= */
+
+.rose-ai .rose-layout {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.08fr)
+        minmax(0, .92fr);
+
+    gap: clamp(30px, 5vw, 76px);
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   ROSE HERO IMAGE
+   ========================================================= */
+
+.rose-ai .rose-image {
+
+    position: relative;
+
+    min-height: 420px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(122,23,56,.28);
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(122,23,56,.12),
+            transparent 52%
+        ),
+        linear-gradient(
+            135deg,
+            rgba(185,130,85,.065),
+            rgba(7,16,24,.82) 48%,
+            rgba(57,191,255,.045)
+        );
+
+    box-shadow:
+        0 0 24px rgba(122,23,56,.10),
+        0 0 50px rgba(57,191,255,.045),
+        inset 0 1px 0 rgba(232,195,154,.13);
+}
+
+
+/* AI CORE AURA */
+
+.rose-ai .rose-image::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 230px;
+    height: 230px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(214,106,140,.22) 0%,
+            rgba(165,42,82,.14) 28%,
+            rgba(122,23,56,.08) 48%,
+            transparent 72%
+        );
+
+    filter: blur(10px);
+
+    pointer-events: none;
+
+    animation:
+        roseCorePulse 5.5s ease-in-out infinite;
+}
+
+
+/* OUTER INTELLIGENCE RING */
+
+.rose-ai .rose-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 310px;
+    height: 310px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(122,23,56,.18);
+
+    box-shadow:
+        0 0 25px rgba(122,23,56,.08),
+        inset 0 0 25px rgba(57,191,255,.035);
+
+    pointer-events: none;
+
+    animation:
+        roseRingBreath 7s ease-in-out infinite;
+}
+
+
+.rose-ai .rose-image img {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    filter:
+        saturate(.94)
+        contrast(1.06)
+        brightness(1.01);
+
+    transition:
+        transform .8s cubic-bezier(.2,.7,.2,1),
+        filter .8s ease;
+}
+
+
+.rose-ai .rose-image:hover img {
+
+    transform: scale(1.025);
+
+    filter:
+        saturate(1)
+        contrast(1.08)
+        brightness(1.04);
+}
+
+
+/* =========================================================
+   ROSE CONTENT
+   ========================================================= */
+
+.rose-ai .rose-content h3 {
+
+    color: var(--rose-bronze-light) !important;
+
+    text-shadow:
+        0 0 9px rgba(185,130,85,.20),
+        0 0 20px rgba(122,23,56,.10);
+}
+
+
+.rose-ai .rose-content p {
+
+    color: rgba(222,229,234,.79);
+
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   CAPABILITY CARDS
+   ========================================================= */
+
+.rose-ai .rose-capabilities {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 16px;
+
+    margin-top: clamp(45px, 6vw, 80px);
+}
+
+
+/* EVERY ROSE CARD */
+
+.rose-ai .rose-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(122,23,56,.28);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(122,23,56,.105),
+            rgba(8,15,22,.82) 52%,
+            rgba(57,191,255,.035)
+        );
+
+    box-shadow:
+        0 0 18px rgba(122,23,56,.075),
+        0 0 34px rgba(57,191,255,.025),
+        inset 0 1px 0 rgba(214,106,140,.12);
+
+    transition:
+        transform .45s ease,
+        border-color .45s ease,
+        box-shadow .45s ease;
+}
+
+
+/* TOP AI ENERGY EDGE */
+
+.rose-ai .rose-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    top: 0;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(122,23,56,.85),
+            rgba(214,106,140,.85),
+            rgba(57,191,255,.65),
+            transparent
+        );
+
+    box-shadow:
+        0 0 10px rgba(165,42,82,.20);
+}
+
+
+/* SUBTLE INTERNAL BURGUNDY ORB */
+
+.rose-ai .rose-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 110px;
+    height: 110px;
+
+    right: -45px;
+    bottom: -45px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(165,42,82,.14),
+            rgba(122,23,56,.06) 45%,
+            transparent 72%
+        );
+
+    filter: blur(8px);
+
+    pointer-events: none;
+}
+
+
+.rose-ai .rose-card:hover {
+
+    transform: translateY(-6px);
+
+    border-color: rgba(165,42,82,.48);
+
+    box-shadow:
+        0 0 24px rgba(122,23,56,.14),
+        0 0 42px rgba(57,191,255,.055),
+        inset 0 1px 0 rgba(214,106,140,.20);
+}
+
+
+/* =========================================================
+   ROSE ICONS
+   ========================================================= */
+
+.rose-ai .rose-icon {
+
+    position: relative;
+
+    color: var(--rose-rose-light) !important;
+
+    text-shadow:
+        0 0 9px rgba(165,42,82,.38),
+        0 0 20px rgba(122,23,56,.18);
+
+    transition:
+        transform .4s ease,
+        text-shadow .4s ease;
+}
+
+
+.rose-ai .rose-card:hover .rose-icon {
+
+    transform: translateY(-2px) scale(1.06);
+
+    text-shadow:
+        0 0 12px rgba(214,106,140,.55),
+        0 0 28px rgba(122,23,56,.25);
+}
+
+
+.rose-ai .rose-card h3 {
+
+    color: var(--rose-bronze-light) !important;
+
+    text-shadow:
+        0 0 8px rgba(185,130,85,.16),
+        0 0 16px rgba(122,23,56,.07);
+}
+
+
+.rose-ai .rose-card p {
+
+    color: rgba(218,226,231,.72);
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   DIFFERENT BURGUNDY DNA FOR SIX CARDS
+   ========================================================= */
+
+.rose-ai .rose-card:nth-child(1),
+.rose-ai .rose-card:nth-child(4) {
+
+    border-color: rgba(122,23,56,.30);
+}
+
+
+.rose-ai .rose-card:nth-child(2),
+.rose-ai .rose-card:nth-child(5) {
+
+    border-color: rgba(165,42,82,.24);
+}
+
+
+.rose-ai .rose-card:nth-child(3),
+.rose-ai .rose-card:nth-child(6) {
+
+    border-color: rgba(57,191,255,.18);
+}
+
+
+/* =========================================================
+   FINAL ROSE MESSAGE
+   ========================================================= */
+
+.rose-ai .rose-message {
+
+    position: relative;
+
+    overflow: hidden;
+
+    margin-top: clamp(50px, 7vw, 90px);
+
+    border: 1px solid rgba(122,23,56,.30);
+
+    background:
+        radial-gradient(
+            circle at 18% 50%,
+            rgba(165,42,82,.105),
+            transparent 31%
+        ),
+        radial-gradient(
+            circle at 84% 50%,
+            rgba(57,191,255,.075),
+            transparent 33%
+        ),
+        linear-gradient(
+            120deg,
+            rgba(122,23,56,.065),
+            rgba(6,17,25,.84),
+            rgba(57,191,255,.045)
+        );
+
+    box-shadow:
+        0 0 28px rgba(122,23,56,.08),
+        0 0 65px rgba(57,191,255,.04),
+        inset 0 1px 0 rgba(214,106,140,.13);
+}
+
+
+/* FINAL TOP ENERGY */
+
+.rose-ai .rose-message::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    top: 0;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(185,130,85,.80),
+            rgba(165,42,82,.95),
+            rgba(214,106,140,.95),
+            rgba(57,191,255,.85),
+            transparent
+        );
+
+    box-shadow:
+        0 0 12px rgba(165,42,82,.25),
+        0 0 24px rgba(57,191,255,.10);
+}
+
+
+/* FINAL BURGUNDY CORE */
+
+.rose-ai .rose-message::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    right: -80px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(165,42,82,.11),
+            rgba(122,23,56,.055) 42%,
+            transparent 72%
+        );
+
+    filter: blur(18px);
+
+    pointer-events: none;
+
+    animation:
+        roseMessageOrb 8s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   FINAL BUTTONS
+   ========================================================= */
+
+.rose-ai .btn-primary {
+
+    border-color: rgba(165,42,82,.48) !important;
+
+    background:
+        linear-gradient(
+            105deg,
+            rgba(122,23,56,.18),
+            rgba(185,130,85,.08),
+            rgba(57,191,255,.055)
+        ) !important;
+
+    box-shadow:
+        0 0 15px rgba(122,23,56,.10),
+        inset 0 1px 0 rgba(214,106,140,.15);
+}
+
+
+.rose-ai .btn-secondary {
+
+    border-color: rgba(57,191,255,.36) !important;
+
+    background:
+        rgba(57,191,255,.035) !important;
+
+    box-shadow:
+        0 0 14px rgba(57,191,255,.055);
+}
+
+
+/* =========================================================
+   ROSE INTELLIGENCE MOTION
+   ========================================================= */
+
+@keyframes roseOrbBreath {
+
+    0%, 100% {
+        transform: scale(.94);
+        opacity: .62;
+    }
+
+    50% {
+        transform: scale(1.08);
+        opacity: .90;
+    }
+}
+
+
+@keyframes roseBlueOrbBreath {
+
+    0%, 100% {
+        transform: scale(.96);
+        opacity: .55;
+    }
+
+    50% {
+        transform: scale(1.06);
+        opacity: .82;
+    }
+}
+
+
+@keyframes roseCorePulse {
+
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(.92);
+        opacity: .62;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.08);
+        opacity: .98;
+    }
+}
+
+
+@keyframes roseRingBreath {
+
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(.96);
+        opacity: .42;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.045);
+        opacity: .82;
+    }
+}
+
+
+@keyframes roseMessageOrb {
+
+    0%, 100% {
+        transform: translateY(-50%) scale(.94);
+        opacity: .52;
+    }
+
+    50% {
+        transform: translateY(-50%) scale(1.08);
+        opacity: .85;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .rose-ai .rose-layout {
+
+        grid-template-columns: 1fr;
+    }
+
+    .rose-ai .rose-capabilities {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .rose-ai .rose-image {
+
+        min-height: 340px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .rose-ai .rose-capabilities {
+
+        grid-template-columns: 1fr;
+    }
+
+    .rose-ai .rose-image {
+
+        min-height: 260px;
+    }
+
+    .rose-ai::before {
+
+        width: 280px;
+        height: 280px;
+    }
+
+    .rose-ai::after {
+
+        width: 330px;
+        height: 330px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .rose-ai *,
+    .rose-ai *::before,
+    .rose-ai *::after {
+
+        animation: none !important;
+        transition: none !important;
+    }
+}
