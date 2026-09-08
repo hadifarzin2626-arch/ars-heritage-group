@@ -10871,3 +10871,393 @@ body.brain-test-page .btn-secondary {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS PRODUCT FAMILY — LUXURY FANTASY THEME
+   Navy / Matte Bronze / Transparent Gold / Electric Blue
+   ========================================================= */
+
+.product-family {
+  --pf-navy-deep: #07101f;
+  --pf-navy: #0b1930;
+  --pf-navy-light: #122746;
+  --pf-navy-edge: #1b3558;
+
+  --pf-bronze: #a88963;
+  --pf-bronze-soft: #c0a77f;
+  --pf-bronze-dark: #725b3e;
+
+  --pf-gold: rgba(218, 174, 82, .30);
+  --pf-gold-soft: rgba(232, 197, 112, .12);
+
+  --pf-electric: #24aaff;
+  --pf-electric-soft: rgba(36, 170, 255, .35);
+
+  position: relative;
+}
+
+
+/* ---------- CARD ---------- */
+
+.product-family .product-card {
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 82% 18%,
+      rgba(218,174,82,.09),
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      #132846 0%,
+      #0b1930 48%,
+      #07101f 100%
+    );
+
+  border: 1px solid rgba(168,137,99,.34);
+  border-radius: 26px;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.045),
+    inset 0 -1px 0 rgba(0,0,0,.45),
+    0 18px 50px rgba(0,0,0,.30);
+
+  transition:
+    transform .55s cubic-bezier(.16,1,.3,1),
+    border-color .4s ease,
+    box-shadow .5s ease;
+}
+
+
+/* ---------- GOLDEN ATMOSPHERE BEHIND CARD ---------- */
+
+.product-family .product-card::before {
+  content: "";
+  position: absolute;
+  width: 210px;
+  height: 210px;
+
+  right: -75px;
+  top: -85px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(232,197,112,.24) 0%,
+      rgba(218,174,82,.10) 28%,
+      transparent 70%
+    );
+
+  filter: blur(8px);
+  opacity: .55;
+
+  pointer-events: none;
+  transition:
+    transform .7s cubic-bezier(.16,1,.3,1),
+    opacity .5s ease;
+}
+
+
+/* SECOND GOLDEN AURA */
+
+.product-family .product-card::after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+
+  left: -80px;
+  bottom: -80px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(214,169,73,.13),
+      transparent 68%
+    );
+
+  filter: blur(12px);
+  opacity: .45;
+
+  pointer-events: none;
+}
+
+
+/* ---------- HOVER ---------- */
+
+.product-family .product-card:hover {
+  transform:
+    translateY(-10px)
+    perspective(1000px)
+    rotateX(1deg);
+
+  border-color: rgba(192,167,127,.72);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.07),
+    0 24px 70px rgba(0,0,0,.42),
+    0 0 35px rgba(218,174,82,.08);
+}
+
+.product-family .product-card:hover::before {
+  transform: scale(1.35);
+  opacity: .9;
+}
+
+
+/* ---------- CARD ICON / MINI EMBLEM ---------- */
+
+.product-family .product-card .card-icon,
+.product-family .product-card .icon,
+.product-family .product-card .product-icon {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 58px;
+  height: 58px;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.055),
+      rgba(255,255,255,.012)
+    );
+
+  border: 1px solid rgba(192,167,127,.38);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.08),
+    0 8px 22px rgba(0,0,0,.28);
+
+  color: var(--pf-bronze-soft);
+
+  transition:
+    transform .5s cubic-bezier(.16,1,.3,1),
+    border-color .4s ease,
+    box-shadow .5s ease;
+}
+
+
+/* MINI EMBLEM GOLDEN HALO */
+
+.product-family .card-icon::before,
+.product-family .icon::before,
+.product-family .product-icon::before {
+  content: "";
+
+  position: absolute;
+  inset: -7px;
+
+  border-radius: 22px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(218,174,82,.16),
+      transparent 68%
+    );
+
+  filter: blur(5px);
+  opacity: .65;
+  z-index: -1;
+}
+
+
+.product-family .product-card:hover .card-icon,
+.product-family .product-card:hover .icon,
+.product-family .product-card:hover .product-icon {
+  transform:
+    translateY(-3px)
+    rotate(-2deg)
+    scale(1.06);
+
+  border-color: rgba(218,174,82,.65);
+
+  box-shadow:
+    0 0 28px rgba(218,174,82,.15),
+    inset 0 1px 0 rgba(255,255,255,.09);
+}
+
+
+/* ---------- CARD TITLE ---------- */
+
+.product-family .product-card h3,
+.product-family .product-card .card-title,
+.product-family .product-card .product-title {
+  color: var(--pf-bronze-soft);
+
+  letter-spacing: .025em;
+
+  text-shadow:
+    0 1px 0 rgba(0,0,0,.55);
+
+  transition:
+    color .35s ease,
+    text-shadow .35s ease;
+}
+
+
+.product-family .product-card:hover h3,
+.product-family .product-card:hover .card-title,
+.product-family .product-card:hover .product-title {
+  color: #d0b58a;
+
+  text-shadow:
+    0 0 18px rgba(192,167,127,.16);
+}
+
+
+/* ---------- DESCRIPTION ---------- */
+
+.product-family .product-card p,
+.product-family .product-card .description {
+  color: rgba(197,207,220,.72);
+}
+
+
+/* ---------- ELECTRIC BLUE SIGNATURE ---------- */
+
+.product-family .product-card .signature,
+.product-family .product-card .card-signature,
+.product-family .product-card .product-signature {
+  position: relative;
+
+  color: var(--pf-electric);
+
+  letter-spacing: .08em;
+
+  text-shadow:
+    0 0 8px rgba(36,170,255,.45),
+    0 0 20px rgba(36,170,255,.18);
+
+  transition:
+    color .35s ease,
+    text-shadow .35s ease,
+    transform .35s ease;
+}
+
+
+.product-family .product-card:hover .signature,
+.product-family .product-card:hover .card-signature,
+.product-family .product-card:hover .product-signature {
+  color: #52c1ff;
+
+  text-shadow:
+    0 0 10px rgba(36,170,255,.75),
+    0 0 28px rgba(36,170,255,.38);
+
+  transform: translateX(2px);
+}
+
+
+/* ---------- PREMIUM EDGE ---------- */
+
+.product-family .product-card {
+  isolation: isolate;
+}
+
+.product-family .product-card .card-content {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* ---------- SUBTLE GOLD LIGHT SWEEP ---------- */
+
+.product-family .product-card {
+  --sweep-x: -120%;
+}
+
+.product-family .product-card .card-content::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: var(--sweep-x);
+
+  width: 55%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      100deg,
+      transparent,
+      rgba(255,220,140,.055),
+      transparent
+    );
+
+  transform: skewX(-18deg);
+
+  pointer-events: none;
+
+  transition:
+    left .9s cubic-bezier(.16,1,.3,1);
+}
+
+.product-family .product-card:hover {
+  --sweep-x: 140%;
+}
+
+
+/* ---------- DARK / LIGHT NAVY VARIATION ---------- */
+
+.product-family .product-card:nth-child(even) {
+  background:
+    radial-gradient(
+      circle at 18% 22%,
+      rgba(218,174,82,.075),
+      transparent 32%
+    ),
+    linear-gradient(
+      145deg,
+      #0e203a 0%,
+      #0a172b 55%,
+      #07101f 100%
+    );
+}
+
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 700px) {
+
+  .product-family .product-card {
+    border-radius: 21px;
+  }
+
+  .product-family .product-card .card-icon,
+  .product-family .product-card .icon,
+  .product-family .product-card .product-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+  }
+}
