@@ -8106,3 +8106,236 @@ h3 {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS BRAIN — CARD VISUAL HIERARCHY FOUNDATION
+   STEP 01
+   Break the "everything looks like the same glass card" effect
+   ========================================================= */
+
+body.brain-test-page {
+
+    --ars-card-bg:
+        linear-gradient(
+            145deg,
+            rgba(24,18,11,.82),
+            rgba(8,8,8,.94)
+        );
+
+    --ars-card-border:
+        rgba(208,170,99,.22);
+
+    --ars-card-radius:
+        22px;
+
+}
+
+
+/* ---------------------------------------------------------
+   BASE GLASS — quieter than before
+--------------------------------------------------------- */
+
+body.brain-test-page .ars-glass {
+
+    background:
+        var(--ars-card-bg) !important;
+
+    border:
+        1px solid var(--ars-card-border) !important;
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.52),
+        inset 0 1px 0 rgba(255,242,194,.08) !important;
+
+    border-radius:
+        var(--ars-card-radius) !important;
+
+}
+
+
+/* ---------------------------------------------------------
+   REMOVE THE "EVERY CARD IS GLOWING GOLD" EFFECT
+--------------------------------------------------------- */
+
+body.brain-test-page .ars-glass::before,
+body.brain-test-page .ars-glass::after {
+
+    opacity:
+        .18 !important;
+
+}
+
+
+/* ---------------------------------------------------------
+   NORMAL HOVER — restrained
+--------------------------------------------------------- */
+
+body.brain-test-page .ars-glass:hover {
+
+    transform:
+        translateY(-4px) !important;
+
+    border-color:
+        rgba(231,201,135,.38) !important;
+
+    box-shadow:
+        0 24px 55px rgba(0,0,0,.62),
+        0 0 24px rgba(201,164,92,.10),
+        inset 0 1px 0 rgba(255,242,194,.12) !important;
+
+}
+
+
+/* =========================================================
+   PILLARS — SHOULD NOT LOOK LIKE NORMAL ARS GLASS CARDS
+   ========================================================= */
+
+body.brain-test-page
+.arsbrain-pillars
+.pillar-card {
+
+    background:
+        linear-gradient(
+            150deg,
+            rgba(22,20,17,.94),
+            rgba(8,9,10,.96)
+        ) !important;
+
+    border:
+        1px solid rgba(201,164,92,.16) !important;
+
+    border-radius:
+        16px !important;
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.48),
+        inset 0 1px 0 rgba(255,255,255,.045) !important;
+
+}
+
+
+/* pillar number becomes the identity accent */
+
+body.brain-test-page
+.arsbrain-pillars
+.pillar-number {
+
+    color:
+        rgba(121,221,255,.72) !important;
+
+    text-shadow:
+        0 0 12px rgba(57,191,255,.20);
+
+}
+
+
+/* pillars title — less gold-card feeling */
+
+body.brain-test-page
+.arsbrain-pillars
+.pillar-card h3 {
+
+    color:
+        #f5f1e8 !important;
+
+}
+
+
+/* =========================================================
+   PILLARS MESSAGE — NOT A 7TH CARD
+========================================================= */
+
+body.brain-test-page
+.arsbrain-pillars
+.pillars-message {
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(57,191,255,.035),
+            rgba(201,164,92,.055),
+            rgba(57,191,255,.035)
+        ) !important;
+
+    border:
+        1px solid rgba(57,191,255,.16) !important;
+
+    border-radius:
+        12px !important;
+
+    box-shadow:
+        none !important;
+
+}
+
+
+/* =========================================================
+   PRODUCT / TECH BOXES — stronger architecture feeling
+========================================================= */
+
+body.brain-test-page
+.arsbrain-architecture .architecture-card {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15,25,31,.92),
+            rgba(7,10,13,.97)
+        ) !important;
+
+    border:
+        1px solid rgba(57,191,255,.20) !important;
+
+    border-radius:
+        14px !important;
+
+    box-shadow:
+        0 14px 34px rgba(0,0,0,.55),
+        inset 0 1px 0 rgba(121,221,255,.07) !important;
+
+}
+
+
+/* =========================================================
+   IMAGES — DON'T TREAT THEM AS CARDS
+========================================================= */
+
+body.brain-test-page
+.arsbrain-image,
+body.brain-test-page
+.intro-image,
+body.brain-test-page
+.architecture-image {
+
+    border-radius:
+        18px !important;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.62) !important;
+
+}
+
+
+/* =========================================================
+   IMPORTANT:
+   DO NOT ALTER:
+   HERO
+   PREMIUM 2
+   PREMIUM 1
+   ARS UNIVERSE
+   THEIR GEOMETRY / ANIMATIONS
+========================================================= */
