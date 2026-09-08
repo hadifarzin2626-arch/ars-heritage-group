@@ -10196,3 +10196,678 @@ body.brain-test-page .btn-secondary {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS BRAIN — SYSTEM ARCHITECTURE
+   AUTOMOTIVE ENGINEERING INTELLIGENCE
+   MATTE BRONZE × ELECTRIC BLUE
+   ========================================================= */
+
+.arsbrain-architecture {
+    position: relative !important;
+    isolation: isolate !important;
+    overflow: hidden !important;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 45%,
+            rgba(57,191,255,.10) 0%,
+            transparent 34%
+        ),
+        radial-gradient(
+            ellipse at 18% 58%,
+            rgba(137,94,50,.24) 0%,
+            transparent 38%
+        ),
+        radial-gradient(
+            ellipse at 84% 38%,
+            rgba(137,94,50,.20) 0%,
+            transparent 38%
+        ),
+        linear-gradient(
+            135deg,
+            #020304 0%,
+            #07111a 28%,
+            #0b1117 50%,
+            #15100b 72%,
+            #030303 100%
+        ) !important;
+}
+
+
+/* =========================================================
+   ENGINEERING ATMOSPHERE
+   ========================================================= */
+
+.arsbrain-architecture::before {
+    content: "";
+    position: absolute;
+    inset: -20%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(57,191,255,.025) 24%,
+            rgba(208,170,99,.035) 50%,
+            rgba(57,191,255,.025) 76%,
+            transparent 100%
+        ),
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(137,94,50,.14),
+            transparent 48%
+        );
+
+    pointer-events: none;
+    z-index: 0;
+
+    animation:
+        arsArchitectureAtmosphere
+        14s ease-in-out infinite;
+}
+
+
+/* Fine engineering grid */
+
+.arsbrain-architecture::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(121,221,255,.028) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(121,221,255,.028) 1px,
+            transparent 1px
+        );
+
+    background-size: 54px 54px;
+
+    mask-image:
+        radial-gradient(
+            ellipse at center,
+            black 0%,
+            rgba(0,0,0,.72) 42%,
+            transparent 78%
+        );
+
+    opacity: .42;
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.arsbrain-architecture .section-heading {
+    position: relative;
+    z-index: 10;
+}
+
+.arsbrain-architecture .section-heading .section-label {
+    color: #79ddff !important;
+
+    text-shadow:
+        0 0 8px rgba(57,191,255,.42),
+        0 0 22px rgba(57,191,255,.16);
+}
+
+.arsbrain-architecture .section-heading h2 {
+    color: #fff8df !important;
+
+    text-shadow:
+        0 2px 20px rgba(0,0,0,.8),
+        0 0 30px rgba(208,170,99,.08);
+}
+
+
+/* =========================================================
+   MAIN ARCHITECTURE VISUAL
+   ========================================================= */
+
+.arsbrain-architecture .architecture-visual {
+    position: relative !important;
+    isolation: isolate !important;
+
+    border: 1px solid rgba(159,109,56,.48) !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(137,94,50,.20),
+            rgba(8,18,26,.91) 38%,
+            rgba(4,9,14,.96) 62%,
+            rgba(57,191,255,.075)
+        ) !important;
+
+    box-shadow:
+        0 35px 85px rgba(0,0,0,.78),
+        0 0 28px rgba(137,94,50,.12),
+        0 0 45px rgba(57,191,255,.08),
+        inset 0 1px 0 rgba(255,242,194,.18),
+        inset 0 0 55px rgba(57,191,255,.025) !important;
+
+    backdrop-filter:
+        blur(18px)
+        saturate(135%) !important;
+
+    -webkit-backdrop-filter:
+        blur(18px)
+        saturate(135%) !important;
+
+    transform-style: preserve-3d;
+}
+
+
+/* Metallic engineering frame */
+
+.arsbrain-architecture .architecture-visual::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    border: 1px solid rgba(208,170,99,.16);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(57,191,255,.06) 48%,
+            rgba(208,170,99,.08) 52%,
+            transparent 100%
+        );
+
+    pointer-events: none;
+    z-index: 4;
+}
+
+
+/* =========================================================
+   ARCHITECTURE IMAGE
+   ========================================================= */
+
+.arsbrain-architecture .architecture-image {
+    position: relative !important;
+
+    border:
+        1px solid rgba(137,94,50,.55) !important;
+
+    background:
+        #03070b !important;
+
+    box-shadow:
+        0 25px 55px rgba(0,0,0,.70),
+        0 0 25px rgba(57,191,255,.07),
+        0 0 30px rgba(137,94,50,.09) !important;
+
+    overflow: hidden !important;
+}
+
+
+/* Image itself */
+
+.arsbrain-architecture .architecture-image img {
+    position: relative;
+    z-index: 1;
+
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    filter:
+        saturate(.78)
+        contrast(1.10)
+        brightness(.88) !important;
+
+    transition:
+        filter 1s ease,
+        transform 1.2s cubic-bezier(.2,.8,.2,1);
+}
+
+
+/* =========================================================
+   ENGINEERING SCAN
+   ========================================================= */
+
+.arsbrain-architecture .architecture-image::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    top: -4%;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(57,191,255,.18) 18%,
+            #39bfff 40%,
+            #d9f8ff 50%,
+            #d0aa63 60%,
+            rgba(137,94,50,.18) 82%,
+            transparent 100%
+        );
+
+    box-shadow:
+        0 0 7px rgba(57,191,255,.75),
+        0 0 18px rgba(57,191,255,.30),
+        0 0 26px rgba(208,170,99,.16);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: 8;
+
+    animation:
+        arsArchitectureScan
+        9s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   ARCHITECTURE CARDS
+   ========================================================= */
+
+.arsbrain-architecture .architecture-card {
+    position: relative !important;
+    isolation: isolate !important;
+
+    border:
+        1px solid rgba(137,94,50,.44) !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(137,94,50,.22),
+            rgba(8,18,26,.91) 42%,
+            rgba(5,10,15,.96) 68%,
+            rgba(57,191,255,.075)
+        ) !important;
+
+    box-shadow:
+        0 22px 48px rgba(0,0,0,.65),
+        0 0 20px rgba(137,94,50,.08),
+        0 0 30px rgba(57,191,255,.045),
+        inset 0 1px 0 rgba(255,242,194,.14) !important;
+
+    backdrop-filter:
+        blur(16px)
+        saturate(135%) !important;
+
+    -webkit-backdrop-filter:
+        blur(16px)
+        saturate(135%) !important;
+
+    transform:
+        perspective(1100px)
+        translateZ(0);
+
+    transform-style: preserve-3d;
+
+    transition:
+        transform .65s cubic-bezier(.2,.8,.2,1),
+        border-color .5s ease,
+        box-shadow .6s ease;
+}
+
+
+/* Card engineering edge */
+
+.arsbrain-architecture .architecture-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 8%;
+    right: 8%;
+    top: 0;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(137,94,50,.42),
+            rgba(208,170,99,.82),
+            #79ddff,
+            rgba(57,191,255,.42),
+            transparent
+        );
+
+    box-shadow:
+        0 0 9px rgba(57,191,255,.20);
+
+    opacity: .72;
+
+    pointer-events: none;
+}
+
+
+/* Data indicator */
+
+.arsbrain-architecture .architecture-card::after {
+    content: "";
+
+    position: absolute;
+
+    right: 14px;
+    top: 14px;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #79ddff;
+
+    box-shadow:
+        0 0 7px rgba(121,221,255,.90),
+        0 0 16px rgba(57,191,255,.42);
+
+    animation:
+        arsArchitectureNode
+        3.8s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   CARD TYPOGRAPHY
+   ========================================================= */
+
+.arsbrain-architecture .architecture-card h3 {
+    position: relative;
+    z-index: 3;
+
+    color: #e7c987 !important;
+
+    text-shadow:
+        0 0 10px rgba(208,170,99,.18);
+}
+
+.arsbrain-architecture .architecture-card p {
+    position: relative;
+    z-index: 3;
+
+    color: rgba(245,241,232,.74) !important;
+}
+
+
+/* =========================================================
+   ACTIVE ARCHITECTURE MOTION LAYER
+   Works with the EXISTING inline architecture script
+   ========================================================= */
+
+.arsbrain-architecture
+.ars-architecture-motion-layer {
+    position: absolute !important;
+
+    inset: 0 !important;
+
+    pointer-events: none !important;
+
+    z-index: 7 !important;
+}
+
+
+/* Existing scanner */
+
+.arsbrain-architecture
+.ars-architecture-motion-layer
+.ars-architecture-scanner {
+    background:
+        linear-gradient(
+            180deg,
+            transparent 0%,
+            rgba(57,191,255,.025) 35%,
+            rgba(121,221,255,.65) 50%,
+            rgba(208,170,99,.18) 53%,
+            transparent 100%
+        ) !important;
+
+    box-shadow:
+        0 0 14px rgba(57,191,255,.22),
+        0 0 30px rgba(57,191,255,.08) !important;
+}
+
+
+/* Existing motion lines */
+
+.arsbrain-architecture
+.ars-architecture-motion-layer
+.ars-architecture-line {
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(57,191,255,.72),
+            #79ddff,
+            rgba(208,170,99,.68),
+            transparent
+        ) !important;
+
+    box-shadow:
+        0 0 6px rgba(57,191,255,.42),
+        0 0 15px rgba(208,170,99,.14) !important;
+}
+
+
+/* Existing data packets */
+
+.arsbrain-architecture
+.ars-architecture-motion-layer
+.ars-architecture-packet {
+    background:
+        radial-gradient(
+            circle,
+            #ffffff 0%,
+            #d9f8ff 24%,
+            #79ddff 48%,
+            #39bfff 68%,
+            rgba(57,191,255,0) 100%
+        ) !important;
+
+    box-shadow:
+        0 0 7px rgba(255,255,255,.90),
+        0 0 16px rgba(121,221,255,.78),
+        0 0 28px rgba(57,191,255,.42) !important;
+}
+
+
+/* Existing Core */
+
+.arsbrain-architecture
+.ars-architecture-motion-layer
+.ars-architecture-core {
+    background:
+        radial-gradient(
+            circle,
+            #fff2c2 0%,
+            #d0aa63 28%,
+            #79ddff 58%,
+            #39bfff 72%,
+            transparent 100%
+        ) !important;
+
+    box-shadow:
+        0 0 8px rgba(255,242,194,.95),
+        0 0 18px rgba(208,170,99,.70),
+        0 0 34px rgba(57,191,255,.50) !important;
+}
+
+
+/* =========================================================
+   HOVER — ENGINEERING RESPONSE
+   ========================================================= */
+
+.arsbrain-architecture .architecture-card:hover {
+    transform:
+        perspective(1100px)
+        translateY(-8px)
+        translateZ(18px)
+        rotateX(1deg);
+
+    border-color:
+        rgba(121,221,255,.58) !important;
+
+    box-shadow:
+        0 30px 65px rgba(0,0,0,.76),
+        0 0 30px rgba(57,191,255,.13),
+        0 0 42px rgba(137,94,50,.13),
+        inset 0 1px 0 rgba(255,242,194,.25) !important;
+}
+
+.arsbrain-architecture .architecture-card:hover::after {
+    box-shadow:
+        0 0 9px rgba(255,255,255,.95),
+        0 0 18px rgba(121,221,255,.80),
+        0 0 30px rgba(57,191,255,.55);
+}
+
+.arsbrain-architecture .architecture-image:hover img {
+    transform: scale(1.018);
+
+    filter:
+        saturate(.92)
+        contrast(1.12)
+        brightness(.96) !important;
+}
+
+
+/* =========================================================
+   MOTION
+   ========================================================= */
+
+@keyframes arsArchitectureAtmosphere {
+
+    0%,100% {
+        transform:
+            translate3d(0,0,0)
+            scale(.96);
+
+        opacity: .58;
+    }
+
+    50% {
+        transform:
+            translate3d(2%, -1%, 0)
+            scale(1.04);
+
+        opacity: .90;
+    }
+}
+
+
+@keyframes arsArchitectureScan {
+
+    0%, 54% {
+        top: -4%;
+        opacity: 0;
+    }
+
+    62% {
+        opacity: .18;
+    }
+
+    74% {
+        top: 100%;
+        opacity: .82;
+    }
+
+    82%,100% {
+        top: 104%;
+        opacity: 0;
+    }
+}
+
+
+@keyframes arsArchitectureNode {
+
+    0%,100% {
+        opacity: .38;
+        transform: scale(.72);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.18);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .arsbrain-architecture::after {
+        background-size: 38px 38px;
+        opacity: .28;
+    }
+
+    .arsbrain-architecture
+    .architecture-visual {
+        backdrop-filter: blur(12px) saturate(125%) !important;
+        -webkit-backdrop-filter: blur(12px) saturate(125%) !important;
+    }
+
+    .arsbrain-architecture
+    .architecture-card {
+        backdrop-filter: blur(12px) saturate(125%) !important;
+        -webkit-backdrop-filter: blur(12px) saturate(125%) !important;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .arsbrain-architecture::before,
+    .arsbrain-architecture::after,
+    .arsbrain-architecture
+    .architecture-image::after,
+    .arsbrain-architecture
+    .architecture-card::after {
+        animation: none !important;
+    }
+       }
+
+
+
+
+
+
