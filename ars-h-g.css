@@ -19422,3 +19422,319 @@ REDUCED MOTION
 
 
 
+
+
+
+/* =========================================================
+   ARS ECOSYSTEM — 9 NODE ELECTRIC BLUE BACKLIGHT
+   GOLD / BRONZE PRESERVED
+   NO GEOMETRY CHANGE
+   ========================================================= */
+
+.ars-group-page .ecosystem-intro{
+    position:relative;
+    isolation:isolate;
+}
+
+/* ---------------------------------------------------------
+   GLOBAL BLUE ATMOSPHERE BEHIND THE 9-NODE SYSTEM
+   --------------------------------------------------------- */
+
+.ars-group-page .ecosystem-intro::before{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:1050px;
+    height:1050px;
+    transform:translate(-50%,-50%);
+    border-radius:50%;
+    pointer-events:none;
+    z-index:-5;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(57,191,255,.14) 0%,
+            rgba(57,191,255,.085) 22%,
+            rgba(57,191,255,.045) 42%,
+            rgba(22,169,255,.025) 58%,
+            transparent 76%
+        );
+
+    filter:blur(32px);
+    opacity:.9;
+}
+
+
+/* =========================================================
+   9 NODES
+   Blue becomes a BACK-SHADOW.
+   Existing gold / bronze lighting remains.
+   ========================================================= */
+
+.ars-group-page .ecosystem-node{
+    position:relative;
+    isolation:isolate;
+
+    box-shadow:
+        /* ELECTRIC BLUE BACKLIGHT */
+        0 0 18px rgba(57,191,255,.18),
+        0 0 42px rgba(57,191,255,.12),
+        0 0 82px rgba(57,191,255,.075),
+
+        /* EXISTING DEPTH */
+        0 20px 55px rgba(0,0,0,.30),
+
+        /* BLUE TOP EDGE */
+        inset 0 1px 0 rgba(121,221,255,.14) !important;
+}
+
+
+/* BLUE AURA DIRECTLY BEHIND EACH NODE */
+
+.ars-group-page .ecosystem-node::before{
+    content:"";
+    position:absolute;
+
+    left:-25%;
+    top:-32%;
+    width:150%;
+    height:165%;
+
+    border-radius:50%;
+    pointer-events:none;
+    z-index:-1;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(57,191,255,.20) 0%,
+            rgba(57,191,255,.115) 28%,
+            rgba(22,169,255,.060) 48%,
+            rgba(57,191,255,.025) 62%,
+            transparent 75%
+        );
+
+    filter:blur(25px);
+    opacity:.82;
+}
+
+
+/* THIN ELECTRIC-BLUE ENERGY EDGE */
+
+.ars-group-page .ecosystem-node::after{
+    content:"";
+    position:absolute;
+
+    left:10%;
+    right:10%;
+    bottom:0;
+
+    height:1px;
+    pointer-events:none;
+    z-index:2;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(57,191,255,.55),
+            rgba(121,221,255,.92),
+            rgba(57,191,255,.55),
+            transparent
+        );
+
+    box-shadow:
+        0 0 8px rgba(57,191,255,.48),
+        0 0 20px rgba(57,191,255,.22);
+
+    opacity:.78;
+}
+
+
+/* =========================================================
+   CENTRAL ARS INTELLIGENCE CORE
+   ========================================================= */
+
+.ars-group-page .ecosystem-core{
+    position:relative;
+    isolation:isolate;
+
+    box-shadow:
+        0 0 20px rgba(57,191,255,.24),
+        0 0 48px rgba(57,191,255,.17),
+        0 0 95px rgba(57,191,255,.10) !important;
+}
+
+
+/* LARGE BLUE HALO BEHIND CENTRAL CORE */
+
+.ars-group-page .ecosystem-core-halo{
+    background:
+        radial-gradient(
+            circle,
+            rgba(57,191,255,.30) 0%,
+            rgba(57,191,255,.19) 20%,
+            rgba(22,169,255,.105) 40%,
+            rgba(57,191,255,.045) 60%,
+            transparent 77%
+        ) !important;
+
+    filter:blur(20px) !important;
+
+    box-shadow:
+        0 0 45px rgba(57,191,255,.25),
+        0 0 95px rgba(57,191,255,.17),
+        0 0 160px rgba(57,191,255,.09) !important;
+}
+
+
+/* BLUE DEPTH AROUND CENTRAL FRAME */
+
+.ars-group-page .ecosystem-core-frame{
+    box-shadow:
+        0 0 18px rgba(57,191,255,.22),
+        0 0 42px rgba(57,191,255,.14),
+        0 0 78px rgba(57,191,255,.075),
+        inset 0 0 30px rgba(57,191,255,.045) !important;
+}
+
+
+/* CENTRAL BLUE CORE PULSE */
+
+.ars-group-page .ecosystem-core-pulse{
+    box-shadow:
+        0 0 10px rgba(121,221,255,.90),
+        0 0 25px rgba(57,191,255,.72),
+        0 0 52px rgba(57,191,255,.45),
+        0 0 95px rgba(57,191,255,.22) !important;
+}
+
+
+/* =========================================================
+   CONNECTION NETWORK
+   GOLD / BRONZE LINES STAY.
+   BLUE IS ADDED ONLY AS SECONDARY GLOW.
+   ========================================================= */
+
+.ars-group-page .ecosystem-line{
+    filter:
+        drop-shadow(0 0 4px rgba(57,191,255,.32))
+        drop-shadow(0 0 11px rgba(57,191,255,.17));
+}
+
+
+/* MOVING DATA POINTS */
+
+.ars-group-page .ecosystem-data-pulse{
+    fill:#79DDFF !important;
+
+    filter:
+        drop-shadow(0 0 5px rgba(121,221,255,.95))
+        drop-shadow(0 0 14px rgba(57,191,255,.78))
+        drop-shadow(0 0 28px rgba(57,191,255,.40));
+}
+
+
+/* KEEP CENTRAL CONTENT ABOVE BLUE LIGHT */
+
+.ars-group-page .ecosystem-core-orbit,
+.ars-group-page .ecosystem-core-frame,
+.ars-group-page .ecosystem-core-inner{
+    position:relative;
+    z-index:2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS PARTNERSHIP NETWORK
+   NODE 03 + NODE 04 SIZE ALIGNMENT
+   Match Node 01 + Node 02
+   NO POSITION / COLOR / ANIMATION CHANGE
+   ========================================================= */
+
+.ars-group-page .partnership-node-03,
+.ars-group-page .partnership-node-04 {
+    width: clamp(245px, 25vw, 330px) !important;
+    min-height: clamp(205px, 20vw, 255px) !important;
+    padding: 30px 32px !important;
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (min-width:701px) and (max-width:1100px) {
+
+    .ars-group-page .partnership-node-03,
+    .ars-group-page .partnership-node-04 {
+        width: clamp(220px, 25vw, 290px) !important;
+        min-height: 205px !important;
+        padding: 28px 28px !important;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   Keep the existing mobile system untouched.
+   All nodes use the same mobile dimensions.
+   ========================================================= */
+
+@media (max-width:700px) {
+
+    .ars-group-page .partnership-node-03,
+    .ars-group-page .partnership-node-04 {
+        width: 100% !important;
+        min-height: 230px !important;
+        padding: 26px 24px !important;
+        box-sizing: border-box !important;
+    }
+
+}
