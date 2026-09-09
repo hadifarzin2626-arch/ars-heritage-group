@@ -19427,64 +19427,68 @@ REDUCED MOTION
 
 
 
-
-
-
-
-
-
 /* =========================================================
-   ARS HERITAGE GROUP
-   PARTNERSHIP NETWORK
-   NODE 03 + 04 = EXACT SIZE OF NODE 01 + 02
-   GEOMETRY / POSITION / ANIMATION OTHERWISE UNCHANGED
+   PARTNERSHIP — NODE 03 / 04 EXACT MIRROR OF 01 / 02
    ========================================================= */
 
-.ars-group-page .partnership-node-03,
-.ars-group-page .partnership-node-04 {
-    width: clamp(245px, 25vw, 330px) !important;
-    min-width: clamp(245px, 25vw, 330px) !important;
+.partnership .partnership-node-03,
+.partnership .partnership-node-04 {
+    width: clamp(245px,25vw,330px) !important;
+    min-width: clamp(245px,25vw,330px) !important;
 
-    height: clamp(205px, 20vw, 255px) !important;
-    min-height: clamp(205px, 20vw, 255px) !important;
+    height: clamp(205px,20vw,255px) !important;
+    min-height: clamp(205px,20vw,255px) !important;
 
+    padding: 30px 32px !important;
     box-sizing: border-box !important;
 
     transform: none !important;
 }
 
-/* Keep the exact same hover scale as all partnership cards */
-.ars-group-page .partnership-node-03:hover,
-.ars-group-page .partnership-node-04:hover {
-    transform:
-        translateY(-8px)
-        scale(1.025) !important;
+/* NODE 03 = EXACT VERTICAL MIRROR OF NODE 01 */
+.partnership .partnership-node-03 {
+    top: auto !important;
+    bottom: 5% !important;
+    left: 3% !important;
+    right: auto !important;
 }
 
+/* NODE 04 = EXACT VERTICAL MIRROR OF NODE 02 */
+.partnership .partnership-node-04 {
+    top: auto !important;
+    bottom: 5% !important;
+    right: 3% !important;
+    left: auto !important;
+}
 
-/* TABLET — exactly same sizing logic as the other nodes */
+/* Keep the same hover behavior */
+.partnership .partnership-node-03:hover,
+.partnership .partnership-node-04:hover {
+    transform: translateY(-8px) !important;
+}
+
+/* MOBILE — same sizing logic as the common nodes */
 @media (max-width:900px) {
-
-    .ars-group-page .partnership-node-03,
-    .ars-group-page .partnership-node-04 {
+    .partnership .partnership-node-03,
+    .partnership .partnership-node-04 {
         width: 100% !important;
         min-width: 0 !important;
         height: auto !important;
         min-height: 230px !important;
     }
-
 }
 
-
-/* MOBILE — exactly same sizing logic as the other nodes */
 @media (max-width:600px) {
-
-    .ars-group-page .partnership-node-03,
-    .ars-group-page .partnership-node-04 {
+    .partnership .partnership-node-03,
+    .partnership .partnership-node-04 {
         width: 100% !important;
         min-width: 0 !important;
         height: auto !important;
         min-height: 230px !important;
     }
-
 }
+
+
+
+
+
