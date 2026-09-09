@@ -19680,17 +19680,6 @@ REDUCED MOTION
 
 
 
-/* =========================================================
-   ARS PARTNERSHIP NETWORK
-   NODE 03 + 04 — SAME AS NODE 01 + 02
-   ========================================================= */
-
-.ars-group-page .partnership-node-03,
-.ars-group-page .partnership-node-04 {
-    width: clamp(245px, 25vw, 330px) !important;
-    min-height: clamp(205px, 20vw, 255px) !important;
-}
-
 
 
 
@@ -19794,3 +19783,96 @@ REDUCED MOTION
 
     animation: none !important;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS FOOTER — FULL WIDTH CINEMATIC BACKGROUND
+========================================================= */
+
+.ars-footer {
+    position: relative !important;
+    overflow: hidden !important;
+    isolation: isolate !important;
+    min-height: 520px !important;
+}
+
+.ars-footer .footer-background {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: -3 !important;
+    overflow: hidden !important;
+}
+
+.ars-footer .footer-background img {
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+}
+
+.ars-footer .footer-overlay {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: -2 !important;
+    pointer-events: none !important;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3,7,11,.94) 0%,
+            rgba(3,7,11,.78) 32%,
+            rgba(3,7,11,.48) 62%,
+            rgba(3,7,11,.72) 100%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(3,7,11,.28) 0%,
+            rgba(3,7,11,.10) 45%,
+            rgba(3,7,11,.82) 100%
+        );
+}
+
+.ars-footer .footer-content {
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+@media (max-width:700px) {
+
+    .ars-footer {
+        min-height: 620px !important;
+    }
+
+    .ars-footer .footer-background img {
+        object-position: center center !important;
+    }
+
+    .ars-footer .footer-overlay {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(3,7,11,.72) 0%,
+                rgba(3,7,11,.42) 42%,
+                rgba(3,7,11,.90) 100%
+            );
+    }
+}
+
+
+
