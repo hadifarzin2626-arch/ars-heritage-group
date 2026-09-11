@@ -19905,25 +19905,35 @@ REDUCED MOTION
 
 
 
+
+
+
 /* =========================================================
    ARS HERITAGE GROUP — GALLERY
-   IMAGE FILLS THE ENTIRE CARD
+   SHOW THE COMPLETE IMAGE — NO CROP / NO ZOOM
    ========================================================= */
 
 .gallery .gallery-card {
     padding: 0 !important;
     overflow: hidden !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
 .gallery .gallery-card img {
     display: block !important;
+
     width: 100% !important;
     height: 100% !important;
-    max-width: none !important;
-    max-height: none !important;
+
+    max-width: 100% !important;
+    max-height: 100% !important;
+
     margin: 0 !important;
     padding: 0 !important;
-    object-fit: cover !important;
+
+    object-fit: contain !important;
     object-position: center center !important;
 }
-
