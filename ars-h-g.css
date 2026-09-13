@@ -19899,32 +19899,25 @@ REDUCED MOTION
 
 
 
-
-
-
-
-
-
-
-
-
 /* =========================================================
    ARS HERITAGE GROUP — GALLERY
-   SHOW THE COMPLETE IMAGE — NO CROP / NO ZOOM
+   FULL IMAGE / NO CROP / NO ZOOM
    ========================================================= */
 
-.gallery .gallery-card {
-    padding: 0 !important;
-    overflow: hidden !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+.ars-group-page .gallery .gallery-grid {
+    grid-auto-rows: auto !important;
 }
 
-.gallery .gallery-card img {
-    display: block !important;
+.ars-group-page .gallery .gallery-card {
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: 1 / 1 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+}
 
+.ars-group-page .gallery .gallery-card img {
+    display: block !important;
     width: 100% !important;
     height: 100% !important;
 
@@ -19937,3 +19930,10 @@ REDUCED MOTION
     object-fit: contain !important;
     object-position: center center !important;
 }
+
+
+
+
+
+
+
