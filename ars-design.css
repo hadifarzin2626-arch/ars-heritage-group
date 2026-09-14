@@ -8512,56 +8512,164 @@ section:nth-of-type(7)::after {
 
 
 
+/* =========================================================
+   ARS DESIGN — ICON SIGNATURE
+   ELECTRIC BLUE × 3D PREMIUM
+   ========================================================= */
 
+.about-icon,
+.heritage-icon,
+.modernization-icon,
+.exterior-icon,
+.interior-icon,
+.offroad-icon,
+.performance-icon,
+.integration-icon,
+.workshop-icon,
+.experience-icon,
+.future-icon,
+.promise-icon{
 
+    position:relative;
 
-.ars-design-hero {
-    background-size: 100% auto !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
+    color:#00A8FF !important;
+
+    background:
+        radial-gradient(
+            circle at 35% 25%,
+            rgba(0,168,255,.24),
+            rgba(0,168,255,.08) 42%,
+            rgba(3,9,20,.88) 100%
+        ) !important;
+
+    border:
+        1px solid rgba(0,168,255,.65) !important;
+
+    box-shadow:
+
+        inset 0 1px 0 rgba(255,255,255,.10),
+
+        inset 0 -10px 22px rgba(0,168,255,.08),
+
+        0 8px 18px rgba(0,0,0,.45),
+
+        0 0 22px rgba(0,168,255,.18),
+
+        0 0 45px rgba(0,168,255,.08);
+
+    text-shadow:
+        0 0 8px rgba(0,168,255,.75),
+        0 0 18px rgba(0,168,255,.35);
+
+    transform:
+        translateZ(0);
+
 }
 
 
+/* --- Premium 3D light reflection --- */
 
+.about-icon::before,
+.heritage-icon::before,
+.modernization-icon::before,
+.exterior-icon::before,
+.interior-icon::before,
+.offroad-icon::before,
+.performance-icon::before,
+.integration-icon::before,
+.workshop-icon::before,
+.experience-icon::before,
+.future-icon::before,
+.promise-icon::before{
 
+    content:"";
 
+    position:absolute;
 
+    inset:2px;
 
+    border-radius:16px;
 
-/* ARS DESIGN HERO — STRONGER BACKGROUND IMAGE */
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.16),
+            transparent 28%,
+            transparent 68%,
+            rgba(0,168,255,.10)
+        );
 
-.ars-design-hero::before {
-    opacity: 0.85 !important;
+    pointer-events:none;
+
 }
 
-.ars-design-hero::after {
-    opacity: 0.15 !important;
+
+/* --- Electric-blue inner edge --- */
+
+.about-icon::after,
+.heritage-icon::after,
+.modernization-icon::after,
+.exterior-icon::after,
+.interior-icon::after,
+.offroad-icon::after,
+.performance-icon::after,
+.integration-icon::after,
+.workshop-icon::after,
+.experience-icon::after,
+.future-icon::after,
+.promise-icon::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-1px;
+
+    border-radius:18px;
+
+    box-shadow:
+        inset 0 0 12px rgba(0,168,255,.20);
+
+    pointer-events:none;
+
 }
 
 
+/* --- Hover: controlled 3D electric glow --- */
 
+.ars-glass:hover .about-icon,
+.ars-glass:hover .heritage-icon,
+.ars-glass:hover .modernization-icon,
+.ars-glass:hover .exterior-icon,
+.ars-glass:hover .interior-icon,
+.ars-glass:hover .offroad-icon,
+.ars-glass:hover .performance-icon,
+.ars-glass:hover .integration-icon,
+.ars-glass:hover .workshop-icon,
+.ars-glass:hover .experience-icon,
+.ars-glass:hover .future-icon,
+.ars-glass:hover .promise-icon{
 
+    color:#38BFFF !important;
 
+    border-color:
+        rgba(0,168,255,.95) !important;
 
+    box-shadow:
 
+        inset 0 1px 0 rgba(255,255,255,.14),
 
+        inset 0 -12px 25px rgba(0,168,255,.12),
 
+        0 12px 25px rgba(0,0,0,.50),
 
+        0 0 28px rgba(0,168,255,.30),
 
-/* =========================================
-   ARS DESIGN — UNIFIED ICON COLOR
-   ELECTRIC BLUE
-========================================= */
+        0 0 60px rgba(0,168,255,.14);
 
-.ars-design-page i,
-.ars-design-page svg,
-.ars-design-page .icon,
-.ars-design-page .about-icon,
-.ars-design-page .feature-icon,
-.ars-design-page .service-icon,
-.ars-design-page .pillar-icon,
-.ars-design-page .contact-icon {
-    color: #00A8FF !important;
-    fill: #00A8FF !important;
-    stroke: #00A8FF !important;
+    text-shadow:
+        0 0 10px rgba(0,168,255,.90),
+        0 0 24px rgba(0,168,255,.50);
+
 }
+
