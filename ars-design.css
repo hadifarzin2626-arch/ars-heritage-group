@@ -9242,7 +9242,26 @@ section:nth-of-type(7)::after {
 
 
 
+/* =========================================================
+   ARS DESIGN — BEFORE IMAGE CLARITY FIX ONLY
+   ========================================================= */
 
+.ars-design-hero .ars-hero-before-image {
+    filter: saturate(1.08)
+             contrast(1.10)
+             brightness(1.06) !important;
+    opacity: 1 !important;
+}
+
+/* کاهش تیرگی روی عکس — بدون تغییر کادر یا اندازه */
+.ars-design-hero .ars-hero-before-overlay {
+    opacity: .12 !important;
+}
+
+/* فقط اثر وینیت روی BEFORE کمتر شود */
+.ars-design-hero .ars-hero-before .ars-hero-vignette {
+    opacity: .12 !important;
+}
 
 
 /* =========================================================
@@ -9254,3 +9273,35 @@ section:nth-of-type(7)::after {
     animation: none !important;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS DESIGN — MOVE ENTIRE HERO CONTENT UP
+   ========================================================= */
+
+.ars-design-hero .ars-hero-content {
+    transform: translateY(-120px) !important;
+}
