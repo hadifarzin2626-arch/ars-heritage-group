@@ -9082,583 +9082,230 @@ section:nth-of-type(7)::after {
 
 
 
-/* =========================================================
-   ARS DESIGN — FINAL VISUAL POSITION PATCH
-   ========================================================= */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* =========================================================
-   01 — HERO
-   IMAGE = FULL HERO BACKGROUND
-   BRIGHT / CLEAR / SHARP
+   ARS DESIGN HERO — PATCH 01
+   BEFORE IMAGE
+   FULL FRAME / NO CROP / CLEAR CINEMATIC VISIBILITY
    ========================================================= */
 
-.arsdesign-hero{
-    position:relative;
-    isolation:isolate;
-    overflow:hidden;
-}
 
-.arsdesign-hero .hero-visual{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    min-height:0;
+/* ---------------------------------------------------------
+   01. BEFORE IMAGE — SHOW THE COMPLETE IMAGE
+   --------------------------------------------------------- */
 
-    display:block;
+.ars-design-hero .ars-hero-before-image {
 
-    z-index:0;
-    pointer-events:none;
-}
+    /*
+     * IMPORTANT:
+     * Show the complete source image.
+     * No cropping / no aggressive zoom.
+     */
+    object-fit: contain;
 
-.arsdesign-hero .hero-visual::before{
-    content:"";
+    /*
+     * Keep the entire image centered inside
+     * the complete Hero frame.
+     */
+    object-position: center center;
 
-    position:absolute;
-    inset:0;
+    /*
+     * Remove the previous artificial enlargement.
+     */
+    transform: none;
 
-    width:auto;
-    height:auto;
-
-    background:
-        radial-gradient(
-            circle at 70% 45%,
-            rgba(214,168,79,.12),
-            transparent 38%
-        );
-
-    filter:none;
-    animation:none;
-}
-
-.arsdesign-hero .hero-visual img{
-    position:absolute;
-    inset:0;
-
-    width:100%;
-    height:100%;
-    max-width:none;
-
-    object-fit:cover;
-    object-position:center center;
-
-    opacity:1;
-
-    filter:
-        brightness(1.10)
-        contrast(1.10)
-        saturate(1.08);
-
-    transform:none;
-
-    animation:none;
-}
-
-.arsdesign-hero::before{
-    z-index:1;
-
-    background:
-        linear-gradient(
-            105deg,
-            rgba(3,9,20,.52) 0%,
-            rgba(3,9,20,.30) 35%,
-            rgba(3,9,20,.10) 65%,
-            rgba(3,9,20,.02) 100%
-        );
-}
-
-.arsdesign-hero .container{
-    position:relative;
-    z-index:3;
-}
-
-
-/* =========================================================
-   02 — SECOND IMAGE
-   ONLY DOWNWARD MOVEMENT
-   20% OF ITS OWN HEIGHT
-   NO LEFT / RIGHT MOVEMENT
-   ========================================================= */
-
-/*
-   این بخش فقط تصویر ABOUT را هدف می‌گیرد.
-*/
-
-.about-image{
-    position:relative;
-    overflow:hidden;
-}
-
-.about-image img{
-    position:absolute;
-
-    left:0;
-    right:0;
-
-    width:100%;
-    height:100%;
-
-    max-width:none;
-
-    object-fit:cover;
-
-    transform:translateY(20%) !important;
-}
-
-
-/* =========================================================
-   03 — FINAL VISION IMAGE
-   BREATHING SPACE
-   ========================================================= */
-
-.final-vision-image{
-    position:relative;
-    overflow:hidden;
-
-    padding:5%;
-}
-
-.final-vision-image img{
-    position:absolute;
-
-    top:5% !important;
-    right:5% !important;
-    bottom:5% !important;
-    left:5% !important;
-
-    width:90% !important;
-    height:90% !important;
-
-    object-fit:cover;
-
-    transform:none !important;
-
+    /*
+     * Restore image clarity.
+     */
     filter:
         saturate(.98)
         contrast(1.06)
-        brightness(.90);
+        brightness(.92);
+
+    /*
+     * Prevent the old breathing animation
+     * from zooming/cropping the image.
+     */
+    animation: none;
+
+    /*
+     * Keep image fully visible.
+     */
+    opacity: 1;
 }
 
 
-/* =========================================================
-   04 — BEFORE / HERITAGE
-   KEEP IT BESIDE THE IMAGE
-   NEVER UNDER THE TEXT
-   ========================================================= */
-
-.heritage-image{
-    position:relative;
-    overflow:hidden;
-}
-
-.heritage-image img{
-    position:absolute;
-    inset:0;
-
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-}
-
-
-/*
-   اگر BEFORE / HERITAGE به‌صورت متن داخل
-   تصویر قرار گرفته باشد، آن را به سمت راست
-   خود تصویر می‌بریم.
-*/
-
-.heritage-image .before,
-.heritage-image .before-label,
-.heritage-image .heritage-label,
-.heritage-image .image-label,
-.heritage-image [class*="before"],
-.heritage-image [class*="heritage-label"]{
-
-    position:absolute !important;
-
-    left:auto !important;
-    right:6% !important;
-
-    top:50% !important;
-    bottom:auto !important;
-
-    transform:translateY(-50%) !important;
-
-    z-index:10;
-
-    white-space:nowrap;
-}
-
-
-/* =========================================================
-   05 — DO NOT LET HERITAGE TEXT FALL UNDER IMAGE
-   ========================================================= */
-
-.heritage-content{
-    position:relative;
-    z-index:5;
-}
-
-.heritage-layout{
-    align-items:center;
-}
-
-
-/* =========================================================
-   06 — MOBILE SAFETY
-   ========================================================= */
-
-@media (max-width:1100px){
-
-    .arsdesign-hero .hero-visual{
-        position:absolute;
-        inset:0;
-        width:100%;
-        height:100%;
-        min-height:0;
-    }
-
-    .arsdesign-hero .hero-visual img{
-        width:100%;
-        height:100%;
-        object-fit:cover;
-    }
-
-}
-
-@media (max-width:700px){
-
-    .arsdesign-hero .hero-visual img{
-        object-position:center center;
-    }
-
-    .about-image img{
-        transform:translateY(20%) !important;
-    }
-
-    .final-vision-image{
-        padding:4%;
-    }
-
-    .final-vision-image img{
-        top:4% !important;
-        right:4% !important;
-        bottom:4% !important;
-        left:4% !important;
-
-        width:92% !important;
-        height:92% !important;
-    }
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* =========================================================
-   ARS DESIGN — FINAL VISUAL POSITION PATCH
-   ========================================================= */
-
-
-/* =========================================================
-   01 — HERO
-   IMAGE = FULL HERO BACKGROUND
-   BRIGHT / CLEAR / SHARP
-   ========================================================= */
-
-.arsdesign-hero{
-    position:relative;
-    isolation:isolate;
-    overflow:hidden;
-}
-
-.arsdesign-hero .hero-visual{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    min-height:0;
-
-    display:block;
-
-    z-index:0;
-    pointer-events:none;
-}
-
-.arsdesign-hero .hero-visual::before{
-    content:"";
-
-    position:absolute;
-    inset:0;
-
-    width:auto;
-    height:auto;
+/* ---------------------------------------------------------
+   02. BEFORE IMAGE — CINEMATIC ATMOSPHERE
+   --------------------------------------------------------- */
+
+.ars-design-hero .ars-hero-before-overlay {
+
+    /*
+     * Keep the cinematic ARS atmosphere,
+     * but dramatically reduce the darkness.
+     */
 
     background:
+
+        /* MATTE BRONZE */
         radial-gradient(
-            circle at 70% 45%,
-            rgba(214,168,79,.12),
-            transparent 38%
+            ellipse at 58% 48%,
+            rgba(154,118,81,.14) 0%,
+            rgba(154,118,81,.07) 24%,
+            transparent 52%
+        ),
+
+        /* ELECTRIC BLUE */
+        radial-gradient(
+            ellipse at 83% 50%,
+            rgba(22,140,255,.10) 0%,
+            rgba(7,60,114,.06) 30%,
+            transparent 58%
+        ),
+
+        /* SUBTLE GOLD */
+        radial-gradient(
+            ellipse at 14% 18%,
+            rgba(199,167,91,.07) 0%,
+            transparent 28%
+        ),
+
+        /*
+         * Very light cinematic darkening.
+         * The previous version was too heavy.
+         */
+        linear-gradient(
+            90deg,
+            rgba(1,3,6,.24) 0%,
+            rgba(3,9,18,.10) 38%,
+            rgba(3,9,18,.03) 70%,
+            rgba(1,3,6,.22) 100%
         );
 
-    filter:none;
-    animation:none;
+    opacity: 1;
 }
 
-.arsdesign-hero .hero-visual img{
-    position:absolute;
-    inset:0;
 
-    width:100%;
-    height:100%;
-    max-width:none;
+/* ---------------------------------------------------------
+   03. BEFORE VIGNETTE — MUCH LIGHTER
+   --------------------------------------------------------- */
 
-    object-fit:cover;
-    object-position:center center;
-
-    opacity:1;
-
-    filter:
-        brightness(1.10)
-        contrast(1.10)
-        saturate(1.08);
-
-    transform:none;
-
-    animation:none;
-}
-
-.arsdesign-hero::before{
-    z-index:1;
+.ars-design-hero .ars-hero-vignette {
 
     background:
+
+        radial-gradient(
+            ellipse at center,
+            transparent 42%,
+            rgba(1,3,6,.08) 70%,
+            rgba(1,3,6,.30) 100%
+        ),
+
         linear-gradient(
-            105deg,
-            rgba(3,9,20,.52) 0%,
-            rgba(3,9,20,.30) 35%,
-            rgba(3,9,20,.10) 65%,
-            rgba(3,9,20,.02) 100%
+            180deg,
+            rgba(1,3,6,.14) 0%,
+            transparent 25%,
+            transparent 72%,
+            rgba(1,3,6,.32) 100%
         );
 }
 
-.arsdesign-hero .container{
-    position:relative;
-    z-index:3;
+
+/* ---------------------------------------------------------
+   04. KEEP THE IMAGE CRISP
+   --------------------------------------------------------- */
+
+.ars-design-hero .ars-hero-before {
+
+    background:
+        #030912;
 }
 
 
-/* =========================================================
-   02 — SECOND IMAGE
-   ONLY DOWNWARD MOVEMENT
-   20% OF ITS OWN HEIGHT
-   NO LEFT / RIGHT MOVEMENT
-   ========================================================= */
+/* ---------------------------------------------------------
+   05. MOBILE — SAME PRINCIPLE
+   --------------------------------------------------------- */
 
-/*
-   این بخش فقط تصویر ABOUT را هدف می‌گیرد.
-*/
+@media (max-width: 760px) {
 
-.about-image{
-    position:relative;
-    overflow:hidden;
-}
+    .ars-design-hero .ars-hero-before-image {
 
-.about-image img{
-    position:absolute;
+        object-fit: contain;
 
-    left:0;
-    right:0;
+        object-position: center center;
 
-    width:100%;
-    height:100%;
+        transform: none;
 
-    max-width:none;
+        animation: none;
 
-    object-fit:cover;
+        filter:
+            saturate(.96)
+            contrast(1.05)
+            brightness(.88);
 
-    transform:translateY(20%) !important;
-}
-
-
-/* =========================================================
-   03 — FINAL VISION IMAGE
-   BREATHING SPACE
-   ========================================================= */
-
-.final-vision-image{
-    position:relative;
-    overflow:hidden;
-
-    padding:5%;
-}
-
-.final-vision-image img{
-    position:absolute;
-
-    top:5% !important;
-    right:5% !important;
-    bottom:5% !important;
-    left:5% !important;
-
-    width:90% !important;
-    height:90% !important;
-
-    object-fit:cover;
-
-    transform:none !important;
-
-    filter:
-        saturate(.98)
-        contrast(1.06)
-        brightness(.90);
-}
-
-
-/* =========================================================
-   04 — BEFORE / HERITAGE
-   KEEP IT BESIDE THE IMAGE
-   NEVER UNDER THE TEXT
-   ========================================================= */
-
-.heritage-image{
-    position:relative;
-    overflow:hidden;
-}
-
-.heritage-image img{
-    position:absolute;
-    inset:0;
-
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-}
-
-
-/*
-   اگر BEFORE / HERITAGE به‌صورت متن داخل
-   تصویر قرار گرفته باشد، آن را به سمت راست
-   خود تصویر می‌بریم.
-*/
-
-.heritage-image .before,
-.heritage-image .before-label,
-.heritage-image .heritage-label,
-.heritage-image .image-label,
-.heritage-image [class*="before"],
-.heritage-image [class*="heritage-label"]{
-
-    position:absolute !important;
-
-    left:auto !important;
-    right:6% !important;
-
-    top:50% !important;
-    bottom:auto !important;
-
-    transform:translateY(-50%) !important;
-
-    z-index:10;
-
-    white-space:nowrap;
-}
-
-
-/* =========================================================
-   05 — DO NOT LET HERITAGE TEXT FALL UNDER IMAGE
-   ========================================================= */
-
-.heritage-content{
-    position:relative;
-    z-index:5;
-}
-
-.heritage-layout{
-    align-items:center;
-}
-
-
-/* =========================================================
-   06 — MOBILE SAFETY
-   ========================================================= */
-
-@media (max-width:1100px){
-
-    .arsdesign-hero .hero-visual{
-        position:absolute;
-        inset:0;
-        width:100%;
-        height:100%;
-        min-height:0;
+        opacity: 1;
     }
 
-    .arsdesign-hero .hero-visual img{
-        width:100%;
-        height:100%;
-        object-fit:cover;
+    .ars-design-hero .ars-hero-before-overlay {
+
+        background:
+
+            radial-gradient(
+                ellipse at 55% 45%,
+                rgba(154,118,81,.10),
+                transparent 55%
+            ),
+
+            radial-gradient(
+                ellipse at 82% 52%,
+                rgba(22,140,255,.07),
+                transparent 58%
+            ),
+
+            linear-gradient(
+                90deg,
+                rgba(1,3,6,.18),
+                rgba(1,3,6,.04),
+                rgba(1,3,6,.18)
+            );
+    }
+
+    .ars-design-hero .ars-hero-vignette {
+
+        background:
+
+            radial-gradient(
+                ellipse at center,
+                transparent 45%,
+                rgba(1,3,6,.10) 78%,
+                rgba(1,3,6,.28) 100%
+            );
     }
 
 }
-
-@media (max-width:700px){
-
-    .arsdesign-hero .hero-visual img{
-        object-position:center center;
-    }
-
-    .about-image img{
-        transform:translateY(20%) !important;
-    }
-
-    .final-vision-image{
-        padding:4%;
-    }
-
-    .final-vision-image img{
-        top:4% !important;
-        right:4% !important;
-        bottom:4% !important;
-        left:4% !important;
-
-        width:92% !important;
-        height:92% !important;
-    }
-
-}
-
-
