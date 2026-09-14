@@ -4974,3 +4974,617 @@ section,
     0;
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS DESIGN — COLOR DNA OVERRIDE
+   MATTE BRONZE × ELECTRIC BLUE
+   ========================================================= */
+
+:root {
+
+    /* -----------------------------------------------------
+       ARS DESIGN CORE SURFACES
+       ----------------------------------------------------- */
+
+    --ars-design-black:
+        #030507;
+
+    --ars-design-black-soft:
+        #070b10;
+
+    --ars-design-deep-navy:
+        #081522;
+
+    --ars-design-navy:
+        #0c1c2c;
+
+    --ars-design-navy-light:
+        #122b42;
+
+
+    /* -----------------------------------------------------
+       MATTE BRONZE
+       Heritage / Craftsmanship / Luxury
+       ----------------------------------------------------- */
+
+    --ars-design-bronze:
+        #8F6B4A;
+
+    --ars-design-bronze-light:
+        #B08A62;
+
+    --ars-design-bronze-dark:
+        #604630;
+
+    --ars-design-bronze-deep:
+        #3D2C1E;
+
+
+    /* -----------------------------------------------------
+       ELECTRIC BLUE
+       Technology / Engineering / Intelligence
+       ----------------------------------------------------- */
+
+    --ars-design-blue:
+        #1597FF;
+
+    --ars-design-blue-bright:
+        #35B5FF;
+
+    --ars-design-blue-dark:
+        #0864B5;
+
+    --ars-design-blue-deep:
+        #04345E;
+
+
+    /* -----------------------------------------------------
+       CONTROLLED GOLD
+       Only premium highlights
+       ----------------------------------------------------- */
+
+    --ars-design-gold:
+        #C9A45C;
+
+    --ars-design-gold-light:
+        #E2C27B;
+
+    --ars-design-gold-dark:
+        #8D6D32;
+
+
+    /* -----------------------------------------------------
+       TEXT
+       ----------------------------------------------------- */
+
+    --ars-design-white:
+        #F4F5F3;
+
+    --ars-design-text:
+        #D7DBDE;
+
+    --ars-design-text-soft:
+        #A8B0B7;
+
+    --ars-design-text-muted:
+        #737D85;
+
+
+    /* -----------------------------------------------------
+       GLASS / BORDERS
+       ----------------------------------------------------- */
+
+    --ars-design-glass:
+        rgba(255,255,255,.045);
+
+    --ars-design-glass-strong:
+        rgba(8,21,34,.72);
+
+    --ars-design-bronze-border:
+        rgba(176,138,98,.30);
+
+    --ars-design-blue-border:
+        rgba(21,151,255,.32);
+
+    --ars-design-blue-glow:
+        rgba(21,151,255,.22);
+
+    --ars-design-bronze-glow:
+        rgba(143,107,74,.20);
+}
+
+
+/* =========================================================
+   GLOBAL PAGE DNA
+   ========================================================= */
+
+body {
+
+    background:
+        radial-gradient(
+            circle at 72% 12%,
+            rgba(21,151,255,.055),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 18% 40%,
+            rgba(143,107,74,.045),
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            #030507 0%,
+            #07111D 48%,
+            #030507 100%
+        );
+
+    color:
+        var(--ars-design-white);
+}
+
+
+/* =========================================================
+   PRIMARY HEADINGS
+   BRONZE = HERITAGE
+   ========================================================= */
+
+h1,
+h2 {
+
+    color:
+        var(--ars-design-bronze-light);
+
+    text-shadow:
+        0 0 22px
+        rgba(143,107,74,.12);
+}
+
+
+/* =========================================================
+   SECONDARY HEADINGS
+   ========================================================= */
+
+h3,
+h4 {
+
+    color:
+        var(--ars-design-bronze);
+}
+
+
+/* =========================================================
+   SECTION LABELS / EYEBROWS
+   ========================================================= */
+
+.section-label,
+.section-kicker,
+.eyebrow,
+.label {
+
+    color:
+        var(--ars-design-blue-bright);
+
+    letter-spacing:
+        .16em;
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+
+    color:
+        var(--ars-design-bronze-light);
+
+    transition:
+        color .3s ease,
+        text-shadow .3s ease;
+}
+
+a:hover {
+
+    color:
+        var(--ars-design-blue-bright);
+
+    text-shadow:
+        0 0 14px
+        rgba(21,151,255,.35);
+}
+
+
+/* =========================================================
+   PRIMARY BRONZE ACCENTS
+   ========================================================= */
+
+.hero-title,
+.page-title,
+.section-title,
+.display-title {
+
+    color:
+        var(--ars-design-bronze-light);
+}
+
+
+/* =========================================================
+   TECHNOLOGY / INTELLIGENCE ELEMENTS
+   ========================================================= */
+
+.tech,
+.technology,
+.intelligence,
+.engineering,
+[data-tech],
+[data-intelligence] {
+
+    color:
+        var(--ars-design-blue-bright);
+}
+
+
+/* =========================================================
+   GLASS CARDS
+   ========================================================= */
+
+.ars-glass,
+.card,
+.project-card,
+.service-card,
+.feature-card,
+.gallery-card {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(12,28,44,.72),
+            rgba(4,8,13,.82)
+        );
+
+    border-color:
+        var(--ars-design-bronze-border);
+
+    box-shadow:
+        0 18px 55px
+        rgba(0,0,0,.35),
+        inset 0 1px 0
+        rgba(255,255,255,.035);
+}
+
+
+/* =========================================================
+   CARD HOVER
+   ========================================================= */
+
+.ars-glass:hover,
+.card:hover,
+.project-card:hover,
+.service-card:hover,
+.feature-card:hover,
+.gallery-card:hover {
+
+    border-color:
+        var(--ars-design-blue-border);
+
+    box-shadow:
+        0 20px 65px
+        rgba(0,0,0,.42),
+        0 0 30px
+        rgba(21,151,255,.08);
+}
+
+
+/* =========================================================
+   BRONZE LINES / DIVIDERS
+   ========================================================= */
+
+.section-header::after,
+.section-divider,
+.divider {
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--ars-design-bronze),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   ELECTRIC BLUE ENERGY LINES
+   ========================================================= */
+
+.energy-line,
+.tech-line,
+.accent-line,
+.ars-energy-line {
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--ars-design-blue),
+            transparent
+        );
+
+    box-shadow:
+        0 0 12px
+        var(--ars-design-blue-glow);
+}
+
+
+/* =========================================================
+   BUTTON SYSTEM
+   ========================================================= */
+
+.btn-primary,
+.primary-btn,
+.cta-primary {
+
+    color:
+        #05080B;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--ars-design-bronze-light),
+            var(--ars-design-bronze)
+        );
+
+    border:
+        1px solid
+        var(--ars-design-bronze-light);
+
+    box-shadow:
+        0 8px 30px
+        rgba(143,107,74,.18);
+}
+
+.btn-primary:hover,
+.primary-btn:hover,
+.cta-primary:hover {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--ars-design-blue-bright),
+            var(--ars-design-blue)
+        );
+
+    border-color:
+        var(--ars-design-blue-bright);
+
+    box-shadow:
+        0 8px 35px
+        rgba(21,151,255,.28);
+}
+
+
+/* =========================================================
+   SECONDARY BUTTONS
+   ========================================================= */
+
+.btn-secondary,
+.secondary-btn,
+.cta-secondary {
+
+    color:
+        var(--ars-design-bronze-light);
+
+    border:
+        1px solid
+        var(--ars-design-bronze-border);
+
+    background:
+        rgba(8,21,34,.48);
+}
+
+.btn-secondary:hover,
+.secondary-btn:hover,
+.cta-secondary:hover {
+
+    color:
+        var(--ars-design-blue-bright);
+
+    border-color:
+        var(--ars-design-blue);
+
+    box-shadow:
+        0 0 25px
+        rgba(21,151,255,.12);
+}
+
+
+/* =========================================================
+   IMAGES / PREMIUM FRAMES
+   ========================================================= */
+
+.about-image,
+.hero-visual,
+.gallery-item,
+.project-image,
+.service-image {
+
+    border-color:
+        var(--ars-design-bronze-border);
+
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,.42);
+}
+
+
+/* =========================================================
+   IMAGE HOVER ENERGY
+   ========================================================= */
+
+.about-image:hover,
+.hero-visual:hover,
+.gallery-item:hover,
+.project-image:hover,
+.service-image:hover {
+
+    border-color:
+        var(--ars-design-blue-border);
+
+    box-shadow:
+        0 20px 65px
+        rgba(0,0,0,.48),
+        0 0 35px
+        rgba(21,151,255,.10);
+}
+
+
+/* =========================================================
+   RETURN SYSTEM
+   ARS NAVIGATION
+   ========================================================= */
+
+.ars-return-system {
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(21,151,255,.055),
+            transparent 35%
+        ),
+        linear-gradient(
+            180deg,
+            #030507,
+            #07111D
+        );
+}
+
+
+/* Bronze gateway */
+
+.ars-return-gateway-frame {
+
+    border-color:
+        var(--ars-design-bronze-border);
+
+    box-shadow:
+        inset 0 0 35px
+        rgba(143,107,74,.06),
+        0 0 30px
+        rgba(143,107,74,.08);
+}
+
+
+/* Blue energy */
+
+.ars-return-energy {
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--ars-design-blue),
+            transparent
+        );
+
+    box-shadow:
+        0 0 18px
+        rgba(21,151,255,.35);
+}
+
+
+/* Return titles */
+
+.ars-return-gateway strong {
+
+    color:
+        var(--ars-design-bronze-light);
+}
+
+.ars-return-gateway:hover strong {
+
+    color:
+        var(--ars-design-blue-bright);
+}
+
+
+/* Return small labels */
+
+.ars-return-gateway small,
+.ars-return-gateway em {
+
+    color:
+        var(--ars-design-text-soft);
+}
+
+
+/* =========================================================
+   SUBTLE GOLD — KEEP ONLY AS PREMIUM HIGHLIGHT
+   ========================================================= */
+
+.gold,
+.luxury-gold,
+.premium-gold {
+
+    color:
+        var(--ars-design-gold);
+}
+
+
+/* =========================================================
+   ELECTRIC BLUE MICRO ACCENTS
+   ========================================================= */
+
+.ars-return-link-core,
+.ars-return-link-line {
+
+    background:
+        var(--ars-design-blue);
+
+    box-shadow:
+        0 0 12px
+        rgba(21,151,255,.45);
+}
+
+
+/* =========================================================
+   FINAL DNA BALANCE
+   =========================================================
+
+   ~50% existing Gold identity
+        → Matte Bronze
+
+   ~35% new Technology identity
+        → Electric Blue
+
+   ~15% Gold
+        → controlled luxury highlight
+
+   Base
+        → Deep Navy / Black
+
+   ========================================================= */
