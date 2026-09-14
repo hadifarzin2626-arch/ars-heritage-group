@@ -8477,3 +8477,903 @@ section:nth-of-type(7)::after {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS DESIGN — 3D ICON & CARD SIGNATURE SYSTEM
+   V1 — MATTE BRONZE × ELECTRIC BLUE × DEEP NAVY
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   01 — GLOBAL ARS DESIGN PALETTE
+   --------------------------------------------------------- */
+
+:root{
+    --arsd-black:#010306;
+    --arsd-deep:#030912;
+    --arsd-navy:#07111d;
+    --arsd-navy-2:#0b1a2a;
+
+    --arsd-bronze:#9a7651;
+    --arsd-bronze-deep:#60452f;
+    --arsd-bronze-light:#c3a27b;
+    --arsd-bronze-bright:#d1b18a;
+
+    --arsd-blue:#168cff;
+    --arsd-blue-bright:#38a7ff;
+    --arsd-blue-deep:#073c72;
+
+    --arsd-gold:#c7a75b;
+    --arsd-white:#f3f1ec;
+    --arsd-white-soft:#d9dce0;
+}
+
+
+/* =========================================================
+   02 — CARD BASE
+   ========================================================= */
+
+body:has(.ars-design-hero) .workshop-card,
+body:has(.ars-design-hero) .facility-card,
+body:has(.ars-design-hero) .experience-card,
+body:has(.ars-design-hero) .future-stage,
+body:has(.ars-design-hero) .future-card,
+body:has(.ars-design-hero) .showcase-project,
+body:has(.ars-design-hero) .project-card,
+body:has(.ars-design-hero) .promise-card,
+body:has(.ars-design-hero) .journey-card{
+
+    position:relative;
+    isolation:isolate;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(19,28,39,.94) 0%,
+            rgba(5,11,18,.97) 58%,
+            rgba(1,4,8,.99) 100%
+        );
+
+    border:1px solid rgba(154,118,81,.34);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.045),
+        inset 0 -1px 0 rgba(0,0,0,.75),
+        0 18px 45px rgba(0,0,0,.35);
+
+    transition:
+        transform .45s cubic-bezier(.2,.75,.25,1),
+        border-color .4s ease,
+        box-shadow .4s ease,
+        background .4s ease;
+
+    overflow:hidden;
+}
+
+
+/* internal bronze atmosphere */
+
+body:has(.ars-design-hero) .workshop-card::before,
+body:has(.ars-design-hero) .facility-card::before,
+body:has(.ars-design-hero) .experience-card::before,
+body:has(.ars-design-hero) .future-stage::before,
+body:has(.ars-design-hero) .future-card::before,
+body:has(.ars-design-hero) .showcase-project::before,
+body:has(.ars-design-hero) .project-card::before,
+body:has(.ars-design-hero) .promise-card::before,
+body:has(.ars-design-hero) .journey-card::before{
+
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:-2;
+    pointer-events:none;
+
+    background:
+        radial-gradient(
+            circle at 18% 12%,
+            rgba(195,162,123,.12),
+            transparent 34%
+        ),
+        linear-gradient(
+            120deg,
+            rgba(154,118,81,.045),
+            transparent 42%
+        );
+}
+
+
+/* subtle blue technological atmosphere */
+
+body:has(.ars-design-hero) .workshop-card::after,
+body:has(.ars-design-hero) .facility-card::after,
+body:has(.ars-design-hero) .experience-card::after,
+body:has(.ars-design-hero) .future-stage::after,
+body:has(.ars-design-hero) .future-card::after,
+body:has(.ars-design-hero) .showcase-project::after,
+body:has(.ars-design-hero) .project-card::after,
+body:has(.ars-design-hero) .promise-card::after,
+body:has(.ars-design-hero) .journey-card::after{
+
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    right:-90px;
+    bottom:-100px;
+
+    border-radius:50%;
+    pointer-events:none;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(22,140,255,.11) 0%,
+            rgba(22,140,255,.045) 34%,
+            transparent 70%
+        );
+
+    filter:blur(10px);
+}
+
+
+/* =========================================================
+   03 — CARD HOVER
+   ========================================================= */
+
+body:has(.ars-design-hero) .workshop-card:hover,
+body:has(.ars-design-hero) .facility-card:hover,
+body:has(.ars-design-hero) .experience-card:hover,
+body:has(.ars-design-hero) .future-stage:hover,
+body:has(.ars-design-hero) .future-card:hover,
+body:has(.ars-design-hero) .showcase-project:hover,
+body:has(.ars-design-hero) .project-card:hover,
+body:has(.ars-design-hero) .promise-card:hover,
+body:has(.ars-design-hero) .journey-card:hover{
+
+    transform:
+        translateY(-7px)
+        perspective(900px)
+        rotateX(1deg);
+
+    border-color:rgba(195,162,123,.68);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.07),
+        0 22px 55px rgba(0,0,0,.55),
+        0 0 28px rgba(22,140,255,.08);
+}
+
+
+/* =========================================================
+   04 — BLUE / NAVY CARD FAMILY
+   About 1/3 of the card system becomes technology-dominant.
+   ========================================================= */
+
+body:has(.ars-design-hero) .workshop-grid > :nth-child(3n),
+body:has(.ars-design-hero) .facility-grid > :nth-child(3n),
+body:has(.ars-design-hero) .experience-grid > :nth-child(3n),
+body:has(.ars-design-hero) .future-grid > :nth-child(3n),
+body:has(.ars-design-hero) .future-timeline > :nth-child(3n),
+body:has(.ars-design-hero) .project-showcase-grid > :nth-child(3n),
+body:has(.ars-design-hero) .promise-grid > :nth-child(3n){
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(8,29,52,.97) 0%,
+            rgba(4,16,29,.98) 58%,
+            rgba(1,7,14,1) 100%
+        );
+
+    border-color:rgba(22,140,255,.34);
+
+    box-shadow:
+        inset 0 1px 0 rgba(56,167,255,.08),
+        inset 0 0 35px rgba(7,60,114,.10),
+        0 18px 48px rgba(0,0,0,.42);
+}
+
+
+/* blue card hover */
+
+body:has(.ars-design-hero) .workshop-grid > :nth-child(3n):hover,
+body:has(.ars-design-hero) .facility-grid > :nth-child(3n):hover,
+body:has(.ars-design-hero) .experience-grid > :nth-child(3n):hover,
+body:has(.ars-design-hero) .future-grid > :nth-child(3n):hover,
+body:has(.ars-design-hero) .future-timeline > :nth-child(3n):hover,
+body:has(.ars-design-hero) .project-showcase-grid > :nth-child(3n):hover,
+body:has(.ars-design-hero) .promise-grid > :nth-child(3n):hover{
+
+    border-color:rgba(56,167,255,.7);
+
+    box-shadow:
+        inset 0 1px 0 rgba(56,167,255,.13),
+        0 24px 60px rgba(0,0,0,.6),
+        0 0 35px rgba(22,140,255,.13);
+}
+
+
+/* =========================================================
+   05 — CARD TYPOGRAPHY
+   ========================================================= */
+
+body:has(.ars-design-hero) .workshop-card h3,
+body:has(.ars-design-hero) .facility-card h3,
+body:has(.ars-design-hero) .experience-card h3,
+body:has(.ars-design-hero) .future-stage h3,
+body:has(.ars-design-hero) .future-card h3,
+body:has(.ars-design-hero) .showcase-project h3,
+body:has(.ars-design-hero) .project-card h3,
+body:has(.ars-design-hero) .promise-card h3,
+body:has(.ars-design-hero) .journey-card h3{
+
+    color:var(--arsd-bronze-light);
+
+    text-shadow:
+        0 1px 0 rgba(0,0,0,.9),
+        0 0 14px rgba(195,162,123,.10);
+
+    letter-spacing:.035em;
+}
+
+
+body:has(.ars-design-hero) .workshop-card p,
+body:has(.ars-design-hero) .facility-card p,
+body:has(.ars-design-hero) .experience-card p,
+body:has(.ars-design-hero) .future-stage p,
+body:has(.ars-design-hero) .future-card p,
+body:has(.ars-design-hero) .showcase-project p,
+body:has(.ars-design-hero) .project-card p,
+body:has(.ars-design-hero) .promise-card p,
+body:has(.ars-design-hero) .journey-card p{
+
+    color:var(--arsd-white);
+
+    opacity:.91;
+    line-height:1.78;
+}
+
+
+body:has(.ars-design-hero) .workshop-grid > :nth-child(3n) h3,
+body:has(.ars-design-hero) .facility-grid > :nth-child(3n) h3,
+body:has(.ars-design-hero) .experience-grid > :nth-child(3n) h3,
+body:has(.ars-design-hero) .future-grid > :nth-child(3n) h3,
+body:has(.ars-design-hero) .future-timeline > :nth-child(3n) h3,
+body:has(.ars-design-hero) .project-showcase-grid > :nth-child(3n) h3,
+body:has(.ars-design-hero) .promise-grid > :nth-child(3n) h3{
+
+    color:#d8e8f7;
+
+    text-shadow:
+        0 0 16px rgba(56,167,255,.16);
+}
+
+
+/* =========================================================
+   06 — UNIVERSAL 3D ICON ENGINE
+   This catches the existing icon wrappers throughout ARS DESIGN.
+   ========================================================= */
+
+body:has(.ars-design-hero) [class*="icon"]{
+
+    position:relative;
+    isolation:isolate;
+
+    color:var(--arsd-bronze-light);
+
+    transform:
+        translateZ(0)
+        perspective(700px);
+
+    transition:
+        transform .45s cubic-bezier(.2,.75,.25,1),
+        filter .4s ease,
+        color .4s ease;
+}
+
+
+/* metallic aura behind every icon */
+
+body:has(.ars-design-hero) [class*="icon"]::before{
+
+    content:"";
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:74%;
+    height:74%;
+
+    transform:
+        translate(-50%,-50%)
+        translateZ(-20px);
+
+    border-radius:28%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(195,162,123,.20) 0%,
+            rgba(154,118,81,.08) 35%,
+            transparent 72%
+        );
+
+    filter:blur(9px);
+
+    opacity:.85;
+    z-index:-2;
+    pointer-events:none;
+}
+
+
+/* electric-blue technological rim */
+
+body:has(.ars-design-hero) [class*="icon"]::after{
+
+    content:"";
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:58%;
+    height:58%;
+
+    transform:
+        translate(-50%,-50%)
+        rotate(-12deg)
+        translateZ(-10px);
+
+    border-radius:50%;
+
+    border:1px solid rgba(22,140,255,.22);
+
+    box-shadow:
+        0 0 16px rgba(22,140,255,.12),
+        inset 0 0 12px rgba(22,140,255,.07);
+
+    opacity:.7;
+
+    z-index:-1;
+    pointer-events:none;
+}
+
+
+/* SVG icons */
+
+body:has(.ars-design-hero) [class*="icon"] svg{
+
+    width:100%;
+    height:100%;
+
+    overflow:visible;
+
+    fill:none;
+
+    stroke:currentColor;
+
+    stroke-width:1.45;
+
+    stroke-linecap:round;
+    stroke-linejoin:round;
+
+    filter:
+        drop-shadow(0 1px 1px rgba(0,0,0,.9))
+        drop-shadow(0 0 4px rgba(195,162,123,.15));
+
+    transform:
+        translateZ(12px)
+        rotateX(2deg);
+
+    transition:
+        transform .45s cubic-bezier(.2,.75,.25,1),
+        filter .45s ease,
+        stroke .4s ease;
+}
+
+
+/* image icons */
+
+body:has(.ars-design-hero) [class*="icon"] img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(0 2px 2px rgba(0,0,0,.95))
+        drop-shadow(0 0 5px rgba(195,162,123,.14))
+        contrast(1.05)
+        saturate(.82);
+
+    transform:
+        translateZ(14px)
+        rotateX(2deg);
+
+    transition:
+        transform .45s cubic-bezier(.2,.75,.25,1),
+        filter .45s ease;
+}
+
+
+/* icon hover */
+
+body:has(.ars-design-hero) [class*="icon"]:hover{
+
+    transform:
+        translateY(-3px)
+        translateZ(18px)
+        perspective(700px)
+        rotateX(-3deg)
+        rotateY(4deg);
+
+    color:var(--arsd-bronze-bright);
+
+    filter:
+        drop-shadow(0 0 10px rgba(195,162,123,.18));
+}
+
+
+body:has(.ars-design-hero) [class*="icon"]:hover svg,
+body:has(.ars-design-hero) [class*="icon"]:hover img{
+
+    transform:
+        translateZ(22px)
+        rotateX(-4deg)
+        rotateY(5deg)
+        scale(1.045);
+
+    filter:
+        drop-shadow(0 2px 2px rgba(0,0,0,.95))
+        drop-shadow(0 0 9px rgba(56,167,255,.22))
+        drop-shadow(0 0 5px rgba(195,162,123,.16));
+}
+
+
+/* =========================================================
+   07 — BLUE ICON FAMILY
+   Every third card gets stronger technology signature.
+   ========================================================= */
+
+body:has(.ars-design-hero) .workshop-grid > :nth-child(3n) [class*="icon"],
+body:has(.ars-design-hero) .facility-grid > :nth-child(3n) [class*="icon"],
+body:has(.ars-design-hero) .experience-grid > :nth-child(3n) [class*="icon"],
+body:has(.ars-design-hero) .future-grid > :nth-child(3n) [class*="icon"],
+body:has(.ars-design-hero) .future-timeline > :nth-child(3n) [class*="icon"],
+body:has(.ars-design-hero) .project-showcase-grid > :nth-child(3n) [class*="icon"],
+body:has(.ars-design-hero) .promise-grid > :nth-child(3n) [class*="icon"]{
+
+    color:var(--arsd-blue-bright);
+}
+
+
+body:has(.ars-design-hero) .workshop-grid > :nth-child(3n) [class*="icon"]::before,
+body:has(.ars-design-hero) .facility-grid > :nth-child(3n) [class*="icon"]::before,
+body:has(.ars-design-hero) .experience-grid > :nth-child(3n) [class*="icon"]::before,
+body:has(.ars-design-hero) .future-grid > :nth-child(3n) [class*="icon"]::before,
+body:has(.ars-design-hero) .future-timeline > :nth-child(3n) [class*="icon"]::before,
+body:has(.ars-design-hero) .project-showcase-grid > :nth-child(3n) [class*="icon"]::before,
+body:has(.ars-design-hero) .promise-grid > :nth-child(3n) [class*="icon"]::before{
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(56,167,255,.22) 0%,
+            rgba(22,140,255,.09) 34%,
+            transparent 72%
+        );
+}
+
+
+body:has(.ars-design-hero) .workshop-grid > :nth-child(3n) [class*="icon"]::after,
+body:has(.ars-design-hero) .facility-grid > :nth-child(3n) [class*="icon"]::after,
+body:has(.ars-design-hero) .experience-grid > :nth-child(3n) [class*="icon"]::after,
+body:has(.ars-design-hero) .future-grid > :nth-child(3n) [class*="icon"]::after,
+body:has(.ars-design-hero) .future-timeline > :nth-child(3n) [class*="icon"]::after,
+body:has(.ars-design-hero) .project-showcase-grid > :nth-child(3n) [class*="icon"]::after,
+body:has(.ars-design-hero) .promise-grid > :nth-child(3n) [class*="icon"]::after{
+
+    border-color:rgba(56,167,255,.38);
+
+    box-shadow:
+        0 0 20px rgba(22,140,255,.18),
+        inset 0 0 14px rgba(22,140,255,.08);
+}
+
+
+/* =========================================================
+   08 — ICON SIZE / PRESENCE
+   ========================================================= */
+
+body:has(.ars-design-hero) .workshop-card [class*="icon"],
+body:has(.ars-design-hero) .experience-card [class*="icon"],
+body:has(.ars-design-hero) .future-card [class*="icon"],
+body:has(.ars-design-hero) .promise-card [class*="icon"]{
+
+    width:62px;
+    height:62px;
+
+    margin-bottom:22px;
+}
+
+
+body:has(.ars-design-hero) .facility-card [class*="icon"]{
+
+    width:58px;
+    height:58px;
+
+    margin-bottom:18px;
+}
+
+
+body:has(.ars-design-hero) .future-stage [class*="icon"]{
+
+    width:54px;
+    height:54px;
+
+    margin-bottom:16px;
+}
+
+
+/* =========================================================
+   09 — ICON LABEL / CATEGORY
+   ========================================================= */
+
+body:has(.ars-design-hero) [class*="icon"] + .section-label,
+body:has(.ars-design-hero) [class*="icon"] + span{
+
+    color:var(--arsd-bronze-light);
+
+    letter-spacing:.12em;
+
+    text-shadow:
+        0 0 10px rgba(195,162,123,.10);
+}
+
+
+/* =========================================================
+   10 — SPECIAL BLUE TECH MARKER
+   ========================================================= */
+
+body:has(.ars-design-hero) .workshop-grid > :nth-child(3n)::marker,
+body:has(.ars-design-hero) .facility-grid > :nth-child(3n)::marker{
+    color:var(--arsd-blue);
+}
+
+
+/* =========================================================
+   11 — FACILITY IMAGE + CARD DEPTH
+   ========================================================= */
+
+body:has(.ars-design-hero) .facility-card .facility-image{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:inherit;
+
+    box-shadow:
+        inset 0 0 0 1px rgba(195,162,123,.10);
+}
+
+
+body:has(.ars-design-hero) .facility-card .facility-image::after{
+
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 55%,
+            rgba(1,3,6,.72) 100%
+        );
+
+    pointer-events:none;
+}
+
+
+body:has(.ars-design-hero) .facility-card:hover .facility-image img{
+
+    transform:scale(1.045);
+
+    filter:
+        brightness(1.06)
+        contrast(1.06)
+        saturate(1.04);
+}
+
+
+/* =========================================================
+   12 — PROJECT CARDS
+   ========================================================= */
+
+body:has(.ars-design-hero) .showcase-project,
+body:has(.ars-design-hero) .project-card{
+
+    perspective:900px;
+}
+
+
+body:has(.ars-design-hero) .showcase-project:hover,
+body:has(.ars-design-hero) .project-card:hover{
+
+    transform:
+        translateY(-8px)
+        rotateX(1.5deg);
+}
+
+
+body:has(.ars-design-hero) .showcase-project h3,
+body:has(.ars-design-hero) .project-card h3{
+
+    color:var(--arsd-bronze-bright);
+}
+
+
+/* =========================================================
+   13 — EXPERIENCE / PHILOSOPHY
+   ========================================================= */
+
+body:has(.ars-design-hero) .experience-card{
+
+    min-height:220px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+}
+
+
+body:has(.ars-design-hero) .experience-card h3{
+
+    margin-top:auto;
+    padding-top:8px;
+}
+
+
+/* =========================================================
+   14 — FUTURE CARDS
+   ========================================================= */
+
+body:has(.ars-design-hero) .future-card,
+body:has(.ars-design-hero) .future-stage{
+
+    background-image:
+        linear-gradient(
+            145deg,
+            rgba(20,29,39,.90),
+            rgba(3,9,16,.98)
+        );
+
+    backdrop-filter:blur(12px);
+}
+
+
+/* =========================================================
+   15 — PROMISE CARDS
+   ========================================================= */
+
+body:has(.ars-design-hero) .promise-card{
+
+    min-height:230px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+
+body:has(.ars-design-hero) .promise-card h3{
+
+    font-size:clamp(1.15rem,1.5vw,1.55rem);
+
+    letter-spacing:.06em;
+}
+
+
+/* =========================================================
+   16 — WORKSHOP CARDS
+   ========================================================= */
+
+body:has(.ars-design-hero) .workshop-card{
+
+    min-height:240px;
+
+    display:flex;
+    flex-direction:column;
+}
+
+
+body:has(.ars-design-hero) .workshop-card h3{
+
+    margin-top:auto;
+}
+
+
+/* =========================================================
+   17 — MICRO METALLIC EDGE
+   ========================================================= */
+
+body:has(.ars-design-hero) .workshop-card,
+body:has(.ars-design-hero) .facility-card,
+body:has(.ars-design-hero) .experience-card,
+body:has(.ars-design-hero) .future-stage,
+body:has(.ars-design-hero) .future-card,
+body:has(.ars-design-hero) .showcase-project,
+body:has(.ars-design-hero) .project-card,
+body:has(.ars-design-hero) .promise-card,
+body:has(.ars-design-hero) .journey-card{
+
+    --card-edge-angle:120deg;
+
+    border-image:
+        linear-gradient(
+            var(--card-edge-angle),
+            rgba(195,162,123,.55),
+            rgba(154,118,81,.08) 38%,
+            rgba(22,140,255,.15) 70%,
+            rgba(195,162,123,.30)
+        ) 1;
+}
+
+
+/* =========================================================
+   18 — SECTION HEADINGS
+   ========================================================= */
+
+body:has(.ars-design-hero) .section-label{
+
+    color:var(--arsd-blue-bright);
+
+    text-shadow:
+        0 0 12px rgba(22,140,255,.18);
+
+    letter-spacing:.18em;
+}
+
+
+body:has(.ars-design-hero) .section-header h2,
+body:has(.ars-design-hero) .section-heading h2{
+
+    color:var(--arsd-bronze-bright);
+
+    text-shadow:
+        0 2px 0 rgba(0,0,0,.8),
+        0 0 20px rgba(195,162,123,.08);
+}
+
+
+body:has(.ars-design-hero) .section-header p,
+body:has(.ars-design-hero) .section-heading p{
+
+    color:var(--arsd-white);
+
+    opacity:.88;
+}
+
+
+/* =========================================================
+   19 — ACTION / LINK DETAILS
+   ========================================================= */
+
+body:has(.ars-design-hero) .project-content a,
+body:has(.ars-design-hero) .project-overlay a,
+body:has(.ars-design-hero) .showcase-project a{
+
+    color:var(--arsd-blue-bright);
+
+    transition:
+        color .3s ease,
+        text-shadow .3s ease,
+        transform .3s ease;
+}
+
+
+body:has(.ars-design-hero) .project-content a:hover,
+body:has(.ars-design-hero) .project-overlay a:hover,
+body:has(.ars-design-hero) .showcase-project a:hover{
+
+    color:#8bceff;
+
+    text-shadow:
+        0 0 12px rgba(56,167,255,.35);
+
+    transform:translateX(3px);
+}
+
+
+/* =========================================================
+   20 — RESPONSIVE
+   ========================================================= */
+
+@media (max-width:900px){
+
+    body:has(.ars-design-hero) .workshop-card [class*="icon"],
+    body:has(.ars-design-hero) .experience-card [class*="icon"],
+    body:has(.ars-design-hero) .future-card [class*="icon"],
+    body:has(.ars-design-hero) .promise-card [class*="icon"]{
+
+        width:56px;
+        height:56px;
+    }
+
+    body:has(.ars-design-hero) .facility-card [class*="icon"]{
+
+        width:52px;
+        height:52px;
+    }
+}
+
+
+@media (max-width:600px){
+
+    body:has(.ars-design-hero) .workshop-card,
+    body:has(.ars-design-hero) .facility-card,
+    body:has(.ars-design-hero) .experience-card,
+    body:has(.ars-design-hero) .future-stage,
+    body:has(.ars-design-hero) .future-card,
+    body:has(.ars-design-hero) .showcase-project,
+    body:has(.ars-design-hero) .project-card,
+    body:has(.ars-design-hero) .promise-card,
+    body:has(.ars-design-hero) .journey-card{
+
+        transform:none !important;
+    }
+
+    body:has(.ars-design-hero) .workshop-card [class*="icon"],
+    body:has(.ars-design-hero) .facility-card [class*="icon"],
+    body:has(.ars-design-hero) .experience-card [class*="icon"],
+    body:has(.ars-design-hero) .future-stage [class*="icon"],
+    body:has(.ars-design-hero) .future-card [class*="icon"],
+    body:has(.ars-design-hero) .promise-card [class*="icon"]{
+
+        width:50px;
+        height:50px;
+
+        margin-bottom:16px;
+    }
+
+    body:has(.ars-design-hero) .workshop-card h3,
+    body:has(.ars-design-hero) .facility-card h3,
+    body:has(.ars-design-hero) .experience-card h3,
+    body:has(.ars-design-hero) .future-stage h3,
+    body:has(.ars-design-hero) .future-card h3,
+    body:has(.ars-design-hero) .showcase-project h3,
+    body:has(.ars-design-hero) .project-card h3,
+    body:has(.ars-design-hero) .promise-card h3{
+
+        letter-spacing:.025em;
+    }
+}
