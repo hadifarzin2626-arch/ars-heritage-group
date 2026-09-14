@@ -9107,253 +9107,14 @@ section:nth-of-type(7)::after {
 
 
 
-/* =========================================================
-   ARS DESIGN HERO — PATCH 02
-   FULL HERO COVER / NO EMPTY SPACE / CLEAR IMAGE
-   ========================================================= */
 
-.ars-design-hero .ars-hero-before-image {
 
-    /* Fill the entire Hero frame */
-    width: 100%;
-    height: 100%;
 
-    object-fit: cover;
 
-    /*
-     * Center the complete composition as much as possible.
-     */
-    object-position: center center;
 
-    /*
-     * Remove artificial zoom.
-     */
-    transform: none;
 
-    /*
-     * Make the original image clearly visible.
-     */
-    filter:
-        saturate(1)
-        contrast(1.08)
-        brightness(.98);
 
-    opacity: 1;
 
-    /*
-     * No breathing zoom.
-     */
-    animation: none;
-}
-
-
-/* ---------------------------------------------------------
-   CINEMATIC LAYER — VERY LIGHT
-   --------------------------------------------------------- */
-
-.ars-design-hero .ars-hero-before-overlay {
-
-    background:
-
-        radial-gradient(
-            ellipse at 58% 48%,
-            rgba(154,118,81,.10),
-            transparent 52%
-        ),
-
-        radial-gradient(
-            ellipse at 83% 50%,
-            rgba(22,140,255,.08),
-            transparent 58%
-        ),
-
-        linear-gradient(
-            90deg,
-            rgba(1,3,6,.14) 0%,
-            rgba(3,9,18,.04) 45%,
-            rgba(1,3,6,.12) 100%
-        );
-}
-
-
-/* ---------------------------------------------------------
-   LIGHT VIGNETTE
-   --------------------------------------------------------- */
-
-.ars-design-hero .ars-hero-vignette {
-
-    background:
-
-        radial-gradient(
-            ellipse at center,
-            transparent 48%,
-            rgba(1,3,6,.06) 75%,
-            rgba(1,3,6,.24) 100%
-        ),
-
-        linear-gradient(
-            180deg,
-            rgba(1,3,6,.08) 0%,
-            transparent 25%,
-            transparent 72%,
-            rgba(1,3,6,.22) 100%
-        );
-}
-
-
-/* ---------------------------------------------------------
-   MOBILE
-   --------------------------------------------------------- */
-
-@media (max-width: 760px) {
-
-    .ars-design-hero .ars-hero-before-image {
-
-        width: 100%;
-        height: 100%;
-
-        object-fit: cover;
-
-        object-position: center center;
-
-        transform: none;
-
-        animation: none;
-
-        filter:
-            saturate(.98)
-            contrast(1.06)
-            brightness(.90);
-
-        opacity: 1;
-    }
-
-    .ars-design-hero .ars-hero-before-overlay {
-
-        background:
-
-            radial-gradient(
-                ellipse at center,
-                rgba(154,118,81,.08),
-                transparent 58%
-            ),
-
-            linear-gradient(
-                90deg,
-                rgba(1,3,6,.12),
-                rgba(1,3,6,.03),
-                rgba(1,3,6,.14)
-            );
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/* =========================================================
-   ARS DESIGN HERO — PATCH 03
-   FULL ORIGINAL IMAGE
-   NO CROP / NO ZOOM / FULL HERO FRAME
-   ========================================================= */
-
-.ars-design-hero .ars-hero-before-image {
-
-    width: 100%;
-    height: 100%;
-
-    /*
-     * IMPORTANT:
-     * The source image is 16:9.
-     * Fill the complete Hero frame without cropping.
-     */
-    object-fit: fill;
-
-    object-position: center center;
-
-    /*
-     * Absolutely no artificial zoom.
-     */
-    transform: none;
-
-    /*
-     * Keep the image clear and visible.
-     */
-    filter:
-        saturate(1)
-        contrast(1.08)
-        brightness(.98);
-
-    opacity: 1;
-
-    /*
-     * Disable the original breathing zoom.
-     */
-    animation: none;
-}
-
-
-/* ---------------------------------------------------------
-   LIGHT CINEMATIC VEIL
-   --------------------------------------------------------- */
-
-.ars-design-hero .ars-hero-before-overlay {
-
-    background:
-
-        radial-gradient(
-            ellipse at 58% 48%,
-            rgba(154,118,81,.10),
-            transparent 52%
-        ),
-
-        radial-gradient(
-            ellipse at 83% 50%,
-            rgba(22,140,255,.08),
-            transparent 58%
-        ),
-
-        linear-gradient(
-            90deg,
-            rgba(1,3,6,.14) 0%,
-            rgba(3,9,18,.04) 45%,
-            rgba(1,3,6,.12) 100%
-        );
-
-    opacity: 1;
-}
-
-
-/* ---------------------------------------------------------
-   LIGHT VIGNETTE
-   --------------------------------------------------------- */
-
-.ars-design-hero .ars-hero-vignette {
-
-    background:
-
-        radial-gradient(
-            ellipse at center,
-            transparent 48%,
-            rgba(1,3,6,.06) 75%,
-            rgba(1,3,6,.24) 100%
-        ),
-
-        linear-gradient(
-            180deg,
-            rgba(1,3,6,.08) 0%,
-            transparent 25%,
-            transparent 72%,
-            rgba(1,3,6,.22) 100%
-        );
-}
 
 
 
@@ -9511,4 +9272,93 @@ section:nth-of-type(7)::after {
             translateY(30%)
             scale(1);
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS DESIGN — BEFORE IMAGE INNER FRAME
+   IMAGE STAYS INSIDE THE 4 CORNER MARKS
+   ========================================================= */
+
+.ars-design-hero .ars-hero-before-image {
+    position:absolute;
+
+    /* تقریباً 1 تا 1.5 سانت فاصله از هر طرف */
+    top:24px;
+    right:24px;
+    bottom:24px;
+    left:24px;
+
+    width:calc(100% - 48px);
+    height:calc(100% - 48px);
+
+    object-fit:contain;
+    object-position:center center;
+
+    display:block;
+
+    transform:none;
+
+    filter:saturate(1.02)
+           contrast(1.08)
+           brightness(.98);
+
+    opacity:1;
+    animation:none;
+}
+
+
+/* Overlay دقیقاً داخل همان فریم */
+.ars-design-hero .ars-hero-before-overlay {
+    position:absolute;
+
+    top:24px;
+    right:24px;
+    bottom:24px;
+    left:24px;
+
+    z-index:2;
+    pointer-events:none;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(1,3,6,.035) 0%,
+            rgba(1,3,6,.015) 45%,
+            rgba(1,3,6,.07) 100%
+        ),
+        radial-gradient(
+            ellipse at center,
+            transparent 60%,
+            rgba(1,3,6,.08) 100%
+        );
+
+    opacity:1;
+    mix-blend-mode:normal;
+}
+
+
+/* گوشه‌های فعلی دقیقاً مرز فریم را مشخص می‌کنند */
+.ars-design-hero .ars-hero-corner {
+    z-index:22;
 }
