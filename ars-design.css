@@ -9245,3 +9245,269 @@ section:nth-of-type(7)::after {
             );
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS DESIGN HERO — PATCH 03
+   FULL ORIGINAL IMAGE
+   NO CROP / NO ZOOM / FULL HERO FRAME
+   ========================================================= */
+
+.ars-design-hero .ars-hero-before-image {
+
+    width: 100%;
+    height: 100%;
+
+    /*
+     * IMPORTANT:
+     * The source image is 16:9.
+     * Fill the complete Hero frame without cropping.
+     */
+    object-fit: fill;
+
+    object-position: center center;
+
+    /*
+     * Absolutely no artificial zoom.
+     */
+    transform: none;
+
+    /*
+     * Keep the image clear and visible.
+     */
+    filter:
+        saturate(1)
+        contrast(1.08)
+        brightness(.98);
+
+    opacity: 1;
+
+    /*
+     * Disable the original breathing zoom.
+     */
+    animation: none;
+}
+
+
+/* ---------------------------------------------------------
+   LIGHT CINEMATIC VEIL
+   --------------------------------------------------------- */
+
+.ars-design-hero .ars-hero-before-overlay {
+
+    background:
+
+        radial-gradient(
+            ellipse at 58% 48%,
+            rgba(154,118,81,.10),
+            transparent 52%
+        ),
+
+        radial-gradient(
+            ellipse at 83% 50%,
+            rgba(22,140,255,.08),
+            transparent 58%
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(1,3,6,.14) 0%,
+            rgba(3,9,18,.04) 45%,
+            rgba(1,3,6,.12) 100%
+        );
+
+    opacity: 1;
+}
+
+
+/* ---------------------------------------------------------
+   LIGHT VIGNETTE
+   --------------------------------------------------------- */
+
+.ars-design-hero .ars-hero-vignette {
+
+    background:
+
+        radial-gradient(
+            ellipse at center,
+            transparent 48%,
+            rgba(1,3,6,.06) 75%,
+            rgba(1,3,6,.24) 100%
+        ),
+
+        linear-gradient(
+            180deg,
+            rgba(1,3,6,.08) 0%,
+            transparent 25%,
+            transparent 72%,
+            rgba(1,3,6,.22) 100%
+        );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS DESIGN HERO — PATCH 04
+   BEFORE / HERITAGE — HORIZONTAL MIRROR POSITION
+   ========================================================= */
+
+.ars-design-hero .ars-hero-before-label {
+
+    /*
+     * Remove the original LEFT position.
+     */
+    left: auto;
+
+    /*
+     * Exact horizontal mirror:
+     * same distance from the edge, now on the RIGHT.
+     */
+    right: clamp(28px, 5vw, 82px);
+
+    /*
+     * KEEP EXACTLY THE SAME VERTICAL POSITION.
+     */
+    bottom: clamp(130px, 15vh, 190px);
+
+    /*
+     * Bring the label above the main Hero content
+     * so it remains clearly visible.
+     */
+    z-index: 23;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS DESIGN HERO — PATCH 05
+   FINAL IMAGE — MOVE DOWN 30%
+   NO LEFT / RIGHT MOVEMENT
+   NO SIZE CHANGE
+   ========================================================= */
+
+.ars-design-hero .ars-hero-after {
+
+    /*
+     * Keep the exact original horizontal position.
+     * Move ONLY vertically downward by 30% of
+     * the Final panel's own height.
+     */
+    transform: translateY(30%);
+
+    /*
+     * Disable the original reveal animation because
+     * its transform would override the vertical movement.
+     */
+    animation: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS DESIGN HERO — PATCH 06
+   FINAL FRAME + IMAGE
+   STRONG / CLEAR BREATHING MOTION
+   ========================================================= */
+
+.ars-design-hero .ars-hero-after {
+
+    /*
+     * Keep the existing 30% downward position
+     * while adding a strong breathing movement.
+     */
+    animation:
+        arsFinalBreathing
+        5.5s
+        ease-in-out
+        infinite;
+}
+
+
+/* ---------------------------------------------------------
+   STRONG FINAL BREATHING
+   --------------------------------------------------------- */
+
+@keyframes arsFinalBreathing {
+
+    0% {
+
+        transform:
+            translateY(30%)
+            scale(1);
+    }
+
+    50% {
+
+        transform:
+            translateY(30%)
+            scale(1.055);
+    }
+
+    100% {
+
+        transform:
+            translateY(30%)
+            scale(1);
+    }
+}
