@@ -6124,598 +6124,6 @@ section:nth-of-type(7)::after {
 
 
 
-/* =========================================================
-   ARS DESIGN — OUR PHILOSOPHY
-   THREE FULL-WIDTH HORIZONTAL CARDS
-   ========================================================= */
-
-.ars-philosophy-grid {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) !important;
-
-    width: 100% !important;
-    max-width: 1400px !important;
-
-    margin: 0 auto !important;
-
-    gap: 30px !important;
-}
-
-
-/* هر Philosophy Card یک ردیف کامل */
-
-.ars-philosophy-grid .ars-philosophy-card {
-    width: 100% !important;
-    min-width: 0 !important;
-
-    min-height: 250px !important;
-
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-
-    box-sizing: border-box !important;
-
-    padding: 42px clamp(30px, 5vw, 78px) !important;
-
-    overflow: hidden !important;
-}
-
-
-/* محتوای داخل کارت */
-
-.ars-philosophy-grid .ars-philosophy-card > * {
-    max-width: 100% !important;
-    min-width: 0 !important;
-}
-
-
-/* عنوان */
-
-.ars-philosophy-grid .ars-philosophy-card h3,
-.ars-philosophy-grid .ars-philosophy-card h4 {
-
-    margin: 0 0 15px 0 !important;
-
-    max-width: 900px !important;
-
-    font-size: clamp(21px, 1.7vw, 29px) !important;
-
-    line-height: 1.2 !important;
-
-    letter-spacing: .02em !important;
-
-    color: var(--ars-design-bronze-bright) !important;
-}
-
-
-/* متن */
-
-.ars-philosophy-grid .ars-philosophy-card p {
-
-    margin: 0 !important;
-
-    max-width: 950px !important;
-
-    font-size: clamp(14px, 1vw, 16px) !important;
-
-    line-height: 1.8 !important;
-
-    color: var(--ars-design-text) !important;
-}
-
-
-/* شماره / Label */
-
-.ars-philosophy-grid .ars-philosophy-card small,
-.ars-philosophy-grid .ars-philosophy-card .label,
-.ars-philosophy-grid .ars-philosophy-card .eyebrow {
-
-    display: block !important;
-
-    margin: 0 0 11px 0 !important;
-
-    color: var(--ars-design-blue-bright) !important;
-
-    font-size: 11px !important;
-
-    line-height: 1.4 !important;
-
-    letter-spacing: .16em !important;
-
-    text-transform: uppercase !important;
-}
-
-
-/* خط تکنولوژی داخل کارت */
-
-.ars-philosophy-grid .ars-philosophy-card::before {
-
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    top: 0;
-    bottom: 0;
-
-    width: 3px;
-
-    background:
-        linear-gradient(
-            180deg,
-            transparent,
-            var(--ars-design-blue),
-            var(--ars-design-bronze),
-            transparent
-        );
-
-    opacity: .85;
-
-    pointer-events: none;
-}
-
-
-/* Hover */
-
-.ars-philosophy-grid .ars-philosophy-card:hover {
-
-    border-color:
-        var(--ars-design-blue-border) !important;
-
-    box-shadow:
-        0 0 35px rgba(21,158,255,.10),
-        0 18px 55px rgba(0,0,0,.35) !important;
-
-    transform: translateY(-3px);
-}
-
-
-/* Tablet */
-
-@media (max-width: 900px) {
-
-    .ars-philosophy-grid {
-        gap: 22px !important;
-    }
-
-    .ars-philosophy-grid .ars-philosophy-card {
-
-        min-height: 220px !important;
-
-        padding: 32px !important;
-    }
-}
-
-
-/* Mobile */
-
-@media (max-width: 600px) {
-
-    .ars-philosophy-grid {
-        gap: 18px !important;
-    }
-
-    .ars-philosophy-grid .ars-philosophy-card {
-
-        min-height: auto !important;
-
-        padding: 28px 22px !important;
-    }
-
-    .ars-philosophy-grid .ars-philosophy-card h3,
-    .ars-philosophy-grid .ars-philosophy-card h4 {
-
-        font-size: 20px !important;
-    }
-
-    .ars-philosophy-grid .ars-philosophy-card p {
-
-        font-size: 13.5px !important;
-
-        line-height: 1.72 !important;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* =========================================================
-   ARS DESIGN — UNIVERSAL CARD / CONTENT ALIGNMENT
-   FINAL TYPOGRAPHY PATCH
-   ========================================================= */
-
-
-/* ---------------------------------------------------------
-   01 — BOX MODEL
-   --------------------------------------------------------- */
-
-.ars-glass,
-[class*="card"],
-[class*="box"],
-[class*="panel"] {
-
-    box-sizing: border-box;
-
-    min-width: 0;
-}
-
-
-/* ---------------------------------------------------------
-   02 — INNER CONTENT SAFETY
-   --------------------------------------------------------- */
-
-.ars-glass > *,
-[class*="card"] > *,
-[class*="box"] > *,
-[class*="panel"] > * {
-
-    box-sizing: border-box;
-
-    min-width: 0;
-
-    max-width: 100%;
-}
-
-
-/* ---------------------------------------------------------
-   03 — HEADINGS
-   --------------------------------------------------------- */
-
-.ars-glass h1,
-.ars-glass h2,
-.ars-glass h3,
-.ars-glass h4,
-.ars-glass h5,
-.ars-glass h6,
-
-[class*="card"] h1,
-[class*="card"] h2,
-[class*="card"] h3,
-[class*="card"] h4,
-[class*="card"] h5,
-[class*="card"] h6,
-
-[class*="box"] h1,
-[class*="box"] h2,
-[class*="box"] h3,
-[class*="box"] h4,
-[class*="box"] h5,
-[class*="box"] h6,
-
-[class*="panel"] h1,
-[class*="panel"] h2,
-[class*="panel"] h3,
-[class*="panel"] h4,
-[class*="panel"] h5,
-[class*="panel"] h6 {
-
-    margin-top: 0;
-
-    max-width: 100%;
-
-    overflow-wrap: break-word;
-
-    word-break: normal;
-
-    hyphens: none;
-}
-
-
-/* ---------------------------------------------------------
-   04 — CARD TITLE
-   --------------------------------------------------------- */
-
-.ars-glass h3,
-.ars-glass h4,
-
-[class*="card"] h3,
-[class*="card"] h4,
-
-[class*="box"] h3,
-[class*="box"] h4,
-
-[class*="panel"] h3,
-[class*="panel"] h4 {
-
-    margin-bottom: 12px;
-
-    line-height: 1.25;
-
-    letter-spacing: .015em;
-
-    color: var(--ars-design-bronze-light);
-}
-
-
-/* ---------------------------------------------------------
-   05 — PARAGRAPHS
-   --------------------------------------------------------- */
-
-.ars-glass p,
-
-[class*="card"] p,
-[class*="box"] p,
-[class*="panel"] p {
-
-    margin-top: 0;
-
-    margin-bottom: 14px;
-
-    max-width: 100%;
-
-    line-height: 1.72;
-
-    color: var(--ars-design-text);
-
-    overflow-wrap: break-word;
-
-    word-break: normal;
-}
-
-
-.ars-glass p:last-child,
-[class*="card"] p:last-child,
-[class*="box"] p:last-child,
-[class*="panel"] p:last-child {
-
-    margin-bottom: 0;
-}
-
-
-/* ---------------------------------------------------------
-   06 — LABEL / EYEBROW
-   --------------------------------------------------------- */
-
-.ars-glass small,
-
-[class*="card"] small,
-[class*="box"] small,
-[class*="panel"] small {
-
-    display: block;
-
-    max-width: 100%;
-
-    margin-top: 0;
-
-    margin-bottom: 9px;
-
-    line-height: 1.45;
-
-    overflow-wrap: break-word;
-
-    color: var(--ars-design-blue-bright);
-}
-
-
-/* ---------------------------------------------------------
-   07 — CONTENT WRAPPERS
-   --------------------------------------------------------- */
-
-.ars-glass .content,
-.ars-glass .card-content,
-.ars-glass .info,
-.ars-glass .details,
-
-[class*="card"] .content,
-[class*="card"] .card-content,
-[class*="card"] .info,
-[class*="card"] .details,
-
-[class*="box"] .content,
-[class*="box"] .box-content,
-[class*="box"] .info,
-[class*="box"] .details,
-
-[class*="panel"] .content,
-[class*="panel"] .panel-content {
-
-    width: 100%;
-
-    max-width: 100%;
-
-    min-width: 0;
-
-    box-sizing: border-box;
-}
-
-
-/* ---------------------------------------------------------
-   08 — IMAGES
-   --------------------------------------------------------- */
-
-.ars-glass img,
-
-[class*="card"] img,
-[class*="box"] img,
-[class*="panel"] img {
-
-    display: block;
-
-    max-width: 100%;
-
-    height: auto;
-}
-
-
-/* ---------------------------------------------------------
-   09 — TEXT NEXT TO / UNDER IMAGE
-   --------------------------------------------------------- */
-
-[class*="card"] img + *,
-[class*="box"] img + *,
-[class*="panel"] img + * {
-
-    min-width: 0;
-
-    max-width: 100%;
-}
-
-
-/* ---------------------------------------------------------
-   10 — LISTS
-   --------------------------------------------------------- */
-
-[class*="card"] ul,
-[class*="card"] ol,
-
-[class*="box"] ul,
-[class*="box"] ol,
-
-[class*="panel"] ul,
-[class*="panel"] ol {
-
-    max-width: 100%;
-
-    margin-top: 0;
-
-    margin-bottom: 15px;
-
-    padding-left: 1.2em;
-}
-
-
-[class*="card"] li,
-[class*="box"] li,
-[class*="panel"] li {
-
-    margin-bottom: 7px;
-
-    line-height: 1.6;
-
-    overflow-wrap: break-word;
-}
-
-
-/* ---------------------------------------------------------
-   11 — BUTTONS
-   --------------------------------------------------------- */
-
-[class*="card"] a,
-[class*="card"] button,
-
-[class*="box"] a,
-[class*="box"] button,
-
-[class*="panel"] a,
-[class*="panel"] button {
-
-    box-sizing: border-box;
-
-    max-width: 100%;
-
-    white-space: normal;
-
-    line-height: 1.35;
-
-    overflow-wrap: break-word;
-}
-
-
-/* ---------------------------------------------------------
-   12 — FIRST / LAST ELEMENT SPACING
-   --------------------------------------------------------- */
-
-.ars-glass > :first-child,
-
-[class*="card"] > :first-child,
-[class*="box"] > :first-child,
-[class*="panel"] > :first-child {
-
-    margin-top: 0;
-}
-
-
-.ars-glass > :last-child,
-
-[class*="card"] > :last-child,
-[class*="box"] > :last-child,
-[class*="panel"] > :last-child {
-
-    margin-bottom: 0;
-}
-
-
-/* ---------------------------------------------------------
-   13 — PREVENT CONTENT FROM ESCAPING CARD
-   --------------------------------------------------------- */
-
-.ars-glass,
-[class*="card"],
-[class*="box"],
-[class*="panel"] {
-
-    overflow: hidden;
-}
-
-
-/* ---------------------------------------------------------
-   14 — RESPONSIVE
-   --------------------------------------------------------- */
-
-@media (max-width: 900px) {
-
-    [class*="card"] h3,
-    [class*="card"] h4,
-    [class*="box"] h3,
-    [class*="box"] h4,
-    [class*="panel"] h3,
-    [class*="panel"] h4 {
-
-        line-height: 1.28;
-    }
-
-    [class*="card"] p,
-    [class*="box"] p,
-    [class*="panel"] p {
-
-        line-height: 1.68;
-    }
-}
-
-
-@media (max-width: 600px) {
-
-    .ars-glass,
-    [class*="card"],
-    [class*="box"],
-    [class*="panel"] {
-
-        overflow: hidden;
-    }
-
-    [class*="card"] h3,
-    [class*="card"] h4,
-    [class*="box"] h3,
-    [class*="box"] h4,
-    [class*="panel"] h3,
-    [class*="panel"] h4 {
-
-        line-height: 1.3;
-    }
-
-    [class*="card"] p,
-    [class*="box"] p,
-    [class*="panel"] p {
-
-        font-size: 13.5px;
-
-        line-height: 1.7;
-    }
-}
 
 
 
@@ -8646,6 +8054,426 @@ section:nth-of-type(7)::after {
         transition-duration: .01ms !important;
 
         scroll-behavior: auto !important;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS DESIGN — GLOBAL CARD & FRAME TYPOGRAPHY SYSTEM
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   01 — UNIVERSAL CARD BOX MODEL
+   --------------------------------------------------------- */
+
+.ars-glass,
+.philosophy-card,
+.philosophy-message,
+.about-card,
+.heritage-card,
+.modernization-card,
+.process-card,
+.showcase-card,
+.exterior-card,
+.bodykit-card,
+.interior-card,
+.interior-project-card,
+.offroad-card,
+.transformation-card,
+.performance-card,
+.performance-project-card,
+.roadmap-item,
+.integration-card,
+.integration-step,
+.smart-retrofit-card,
+.workshop-card,
+.facility-card,
+.workshop-gallery-item,
+.gallery-item {
+
+    box-sizing: border-box;
+
+}
+
+
+/* ---------------------------------------------------------
+   02 — UNIVERSAL CONTENT SPACING
+   --------------------------------------------------------- */
+
+.philosophy-card,
+.about-card,
+.heritage-card,
+.modernization-card,
+.process-card,
+.showcase-card,
+.exterior-card,
+.bodykit-card,
+.interior-card,
+.interior-project-card,
+.offroad-card,
+.transformation-card,
+.performance-card,
+.performance-project-card,
+.integration-card,
+.integration-step,
+.smart-retrofit-card,
+.workshop-card,
+.facility-card {
+
+    padding: clamp(24px, 2.2vw, 36px);
+
+}
+
+
+/* ---------------------------------------------------------
+   03 — UNIVERSAL HEADINGS
+   --------------------------------------------------------- */
+
+.philosophy-card h3,
+.about-card h3,
+.heritage-card h3,
+.modernization-card h3,
+.process-card h3,
+.showcase-card h3,
+.exterior-card h3,
+.bodykit-card h3,
+.interior-card h3,
+.interior-project-card h3,
+.offroad-card h3,
+.transformation-card h3,
+.performance-card h3,
+.performance-project-card h3,
+.integration-card h3,
+.integration-step h3,
+.smart-retrofit-card h3,
+.workshop-card h3,
+.facility-card h3 {
+
+    margin-top: 0;
+    margin-bottom: 14px;
+
+    line-height: 1.25;
+
+    letter-spacing: 0.01em;
+
+}
+
+
+/* ---------------------------------------------------------
+   04 — UNIVERSAL PARAGRAPHS
+   --------------------------------------------------------- */
+
+.philosophy-card p,
+.about-card p,
+.heritage-card p,
+.modernization-card p,
+.process-card p,
+.showcase-card p,
+.exterior-card p,
+.bodykit-card p,
+.interior-card p,
+.interior-project-card p,
+.offroad-card p,
+.transformation-card p,
+.performance-card p,
+.performance-project-card p,
+.integration-card p,
+.integration-step p,
+.smart-retrofit-card p,
+.workshop-card p,
+.facility-card p {
+
+    margin-top: 0;
+    margin-bottom: 0;
+
+    line-height: 1.75;
+
+}
+
+
+/* ---------------------------------------------------------
+   05 — ICON / LABEL → TITLE SPACING
+   --------------------------------------------------------- */
+
+.philosophy-card > .philosophy-icon,
+.about-card > .about-icon,
+.heritage-card > .heritage-icon,
+.modernization-card > .modernization-icon,
+.process-card > .process-number,
+.exterior-card > .exterior-icon,
+.interior-card > .interior-icon,
+.offroad-card > .offroad-icon,
+.performance-card > .performance-icon,
+.integration-card > .integration-icon,
+.workshop-card > .workshop-icon {
+
+    margin-bottom: 16px;
+
+}
+
+
+/* ---------------------------------------------------------
+   06 — IMAGE CARDS
+   --------------------------------------------------------- */
+
+.bodykit-card img,
+.interior-project-card img,
+.transformation-card img,
+.performance-project-card img,
+.smart-retrofit-card img,
+.facility-card img,
+.gallery-item img,
+.workshop-gallery-item img {
+
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+}
+
+
+/* ---------------------------------------------------------
+   07 — IMAGE → TEXT SPACING
+   --------------------------------------------------------- */
+
+.bodykit-card img,
+.interior-project-card img,
+.transformation-card img,
+.performance-project-card img,
+.smart-retrofit-card img,
+.facility-card img {
+
+    margin-bottom: 22px;
+
+}
+
+
+/* ---------------------------------------------------------
+   08 — CARD CONTENT WIDTH
+   --------------------------------------------------------- */
+
+.philosophy-card > *,
+.about-card > *,
+.heritage-card > *,
+.modernization-card > *,
+.process-card > *,
+.showcase-card > *,
+.exterior-card > *,
+.bodykit-card > *,
+.interior-card > *,
+.interior-project-card > *,
+.offroad-card > *,
+.transformation-card > *,
+.performance-card > *,
+.performance-project-card > *,
+.integration-card > *,
+.integration-step > *,
+.smart-retrofit-card > *,
+.workshop-card > *,
+.facility-card > * {
+
+    max-width: 100%;
+
+}
+
+
+/* ---------------------------------------------------------
+   09 — PREVENT TEXT FROM TOUCHING CARD EDGES
+   --------------------------------------------------------- */
+
+.philosophy-card,
+.about-card,
+.heritage-card,
+.modernization-card,
+.process-card,
+.showcase-card,
+.exterior-card,
+.bodykit-card,
+.interior-card,
+.interior-project-card,
+.offroad-card,
+.transformation-card,
+.performance-card,
+.performance-project-card,
+.integration-card,
+.integration-step,
+.smart-retrofit-card,
+.workshop-card,
+.facility-card {
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   OUR PHILOSOPHY
+   THREE CARDS → THREE FULL-WIDTH ROWS
+   ========================================================= */
+
+.philosophy-grid {
+
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+
+    gap: clamp(18px, 2vw, 28px);
+
+}
+
+
+/* Each philosophy card occupies the entire row */
+
+.philosophy-grid .philosophy-card {
+
+    width: 100%;
+
+    min-width: 0;
+
+    display: block;
+
+}
+
+
+/* Keep the text comfortably readable on very wide screens */
+
+.philosophy-grid .philosophy-card h3,
+.philosophy-grid .philosophy-card p {
+
+    max-width: 1100px;
+
+}
+
+
+/* Slightly stronger visual hierarchy */
+
+.philosophy-grid .philosophy-card h3 {
+
+    font-size: clamp(20px, 1.6vw, 28px);
+
+    line-height: 1.25;
+
+    margin-bottom: 12px;
+
+}
+
+
+.philosophy-grid .philosophy-card p {
+
+    font-size: clamp(14px, 0.95vw, 16px);
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   PHILOSOPHY MESSAGE — FULL WIDTH
+   ========================================================= */
+
+.philosophy-message {
+
+    width: 100%;
+
+    margin-top: clamp(24px, 3vw, 42px);
+
+    box-sizing: border-box;
+
+}
+
+
+.philosophy-message h2 {
+
+    margin-top: 0;
+
+    margin-bottom: 18px;
+
+    line-height: 1.2;
+
+}
+
+
+.philosophy-message p {
+
+    margin: 0;
+
+    line-height: 1.85;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE PROTECTION
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .philosophy-grid {
+
+        gap: 16px;
+
+    }
+
+    .philosophy-grid .philosophy-card {
+
+        padding: 22px;
+
+    }
+
+    .philosophy-grid .philosophy-card h3 {
+
+        font-size: 20px;
+
+    }
+
+    .philosophy-grid .philosophy-card p {
+
+        font-size: 14px;
+
+        line-height: 1.75;
+
     }
 
 }
