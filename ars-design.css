@@ -8928,3 +8928,173 @@ section:nth-of-type(7)::after {
             }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS DESIGN — FINAL IMAGE POSITION & CLARITY PATCH
+   ========================================================= */
+
+
+/* =========================================================
+   01 — HERO IMAGE
+   Full background / brighter / sharper
+   ========================================================= */
+
+.arsdesign-hero{
+    position:relative;
+    overflow:hidden;
+}
+
+.arsdesign-hero .hero-visual{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    min-height:0;
+    z-index:0;
+    display:block;
+    pointer-events:none;
+}
+
+.arsdesign-hero .hero-visual::before{
+    width:100%;
+    height:100%;
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at 72% 48%,
+            rgba(214,168,79,.16),
+            transparent 35%
+        );
+
+    filter:none;
+    animation:none;
+}
+
+.arsdesign-hero .hero-visual img{
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+    max-width:none;
+
+    object-fit:cover;
+    object-position:center center;
+
+    opacity:1;
+
+    filter:
+        brightness(1.08)
+        contrast(1.08)
+        saturate(1.06);
+
+    animation:none;
+
+    transform:none;
+}
+
+.arsdesign-hero::before{
+    background:
+        linear-gradient(
+            105deg,
+            rgba(3,9,20,.52) 0%,
+            rgba(3,9,20,.28) 38%,
+            rgba(3,9,20,.08) 68%,
+            transparent 100%
+        );
+}
+
+.arsdesign-hero .container{
+    position:relative;
+    z-index:3;
+}
+
+
+/* =========================================================
+   02 — SECOND IMAGE
+   Only 20% of its own height downward
+   No horizontal movement
+   ========================================================= */
+
+.about-image img{
+    transform:translateY(20%) !important;
+}
+
+.about-image{
+    overflow:hidden;
+}
+
+
+/* =========================================================
+   03 — FINAL IMAGE
+   Give the image breathing room
+   ========================================================= */
+
+.final-vision-image{
+    padding:5%;
+    box-sizing:border-box;
+    overflow:hidden;
+}
+
+.final-vision-image img{
+    inset:5% !important;
+
+    width:90% !important;
+    height:90% !important;
+
+    object-fit:cover;
+
+    transform:none !important;
+
+    filter:
+        saturate(.96)
+        contrast(1.05)
+        brightness(.90);
+}
+
+
+/* =========================================================
+   04 — BEFORE / HERITAGE
+   Move label to the right side of its image
+   ========================================================= */
+
+.before-heritage,
+.before-heritage-image,
+.heritage-image{
+    position:relative;
+}
+
+.before-heritage .before-label,
+.before-heritage .heritage-label,
+.before-heritage .image-label,
+.heritage-image .before-label,
+.heritage-image .heritage-label{
+    position:absolute;
+
+    right:6%;
+    left:auto;
+
+    bottom:8%;
+
+    z-index:5;
+
+    white-space:nowrap;
+}
