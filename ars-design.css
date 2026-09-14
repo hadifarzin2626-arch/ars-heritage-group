@@ -8946,18 +8946,156 @@ section:nth-of-type(7)::after {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 /* =========================================================
-   ARS DESIGN — FINAL IMAGE POSITION & CLARITY PATCH
+   ARS DESIGN — ELECTRIC BLUE ICON OVERRIDE
+   ICON = DARKER + BRIGHTER ELECTRIC BLUE
+   FRAME REMAINS LIGHTER
+   ========================================================= */
+
+.about-icon,
+.heritage-icon,
+.pillar-icon,
+.feature-icon,
+.service-icon,
+.project-icon,
+.contact-icon,
+.tech-icon,
+.benefit-icon,
+.value-icon,
+.process-icon,
+.icon-box,
+.icon,
+[class*="icon"] {
+
+    color: #0076B8 !important;
+
+    background: linear-gradient(
+        145deg,
+        #1599D2 0%,
+        #0076B8 28%,
+        #005486 58%,
+        #0087C9 82%,
+        #00456F 100%
+    ) !important;
+
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+
+    -webkit-text-fill-color: transparent !important;
+
+    text-shadow:
+        0 1px 0 rgba(140,225,255,.18),
+        0 2px 0 rgba(0,58,91,.90),
+        0 4px 6px rgba(0,0,0,.85),
+        0 0 8px rgba(0,174,255,.35),
+        0 0 18px rgba(0,174,255,.18) !important;
+
+    filter:
+        drop-shadow(0 2px 2px rgba(0,0,0,.85))
+        drop-shadow(0 0 7px rgba(0,174,255,.38))
+        drop-shadow(0 0 15px rgba(0,174,255,.16)) !important;
+}
+
+
+/* ---------------------------------------------------------
+   ELECTRIC BLUE ICON HIGHLIGHT
+   --------------------------------------------------------- */
+
+.about-icon > *,
+.heritage-icon > *,
+.pillar-icon > *,
+.feature-icon > *,
+.service-icon > *,
+.project-icon > *,
+.contact-icon > *,
+.tech-icon > *,
+.benefit-icon > *,
+.value-icon > *,
+.process-icon > * {
+
+    filter:
+        grayscale(1)
+        sepia(0)
+        saturate(1)
+        hue-rotate(165deg)
+        brightness(.72)
+        contrast(1.35)
+        drop-shadow(0 2px 2px rgba(0,0,0,.85))
+        drop-shadow(0 0 6px rgba(0,174,255,.42))
+        drop-shadow(0 0 13px rgba(0,174,255,.18));
+
+    opacity: 1;
+}
+
+
+/* ---------------------------------------------------------
+   HOVER — STRONGER ELECTRIC BLUE GLOW
+   --------------------------------------------------------- */
+
+.about-icon:hover,
+.heritage-icon:hover,
+.pillar-icon:hover,
+.feature-icon:hover,
+.service-icon:hover,
+.project-icon:hover,
+.contact-icon:hover,
+.tech-icon:hover,
+.benefit-icon:hover,
+.value-icon:hover,
+.process-icon:hover,
+.icon-box:hover,
+.icon:hover,
+[class*="icon"]:hover {
+
+    filter:
+        drop-shadow(0 5px 4px rgba(0,0,0,.88))
+        drop-shadow(0 0 10px rgba(0,174,255,.55))
+        drop-shadow(0 0 22px rgba(0,174,255,.28)) !important;
+
+    text-shadow:
+        0 1px 0 rgba(160,235,255,.22),
+        0 3px 0 rgba(0,55,88,.95),
+        0 6px 8px rgba(0,0,0,.88),
+        0 0 12px rgba(0,174,255,.48),
+        0 0 24px rgba(0,174,255,.24) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS DESIGN — FINAL VISUAL POSITION PATCH
    ========================================================= */
 
 
 /* =========================================================
-   01 — HERO IMAGE
-   Full background / brighter / sharper
+   01 — HERO
+   IMAGE = FULL HERO BACKGROUND
+   BRIGHT / CLEAR / SHARP
    ========================================================= */
 
 .arsdesign-hero{
     position:relative;
+    isolation:isolate;
     overflow:hidden;
 }
 
@@ -8967,21 +9105,27 @@ section:nth-of-type(7)::after {
     width:100%;
     height:100%;
     min-height:0;
-    z-index:0;
+
     display:block;
+
+    z-index:0;
     pointer-events:none;
 }
 
 .arsdesign-hero .hero-visual::before{
-    width:100%;
-    height:100%;
+    content:"";
+
+    position:absolute;
     inset:0;
+
+    width:auto;
+    height:auto;
 
     background:
         radial-gradient(
-            circle at 72% 48%,
-            rgba(214,168,79,.16),
-            transparent 35%
+            circle at 70% 45%,
+            rgba(214,168,79,.12),
+            transparent 38%
         );
 
     filter:none;
@@ -9002,23 +9146,25 @@ section:nth-of-type(7)::after {
     opacity:1;
 
     filter:
-        brightness(1.08)
-        contrast(1.08)
-        saturate(1.06);
-
-    animation:none;
+        brightness(1.10)
+        contrast(1.10)
+        saturate(1.08);
 
     transform:none;
+
+    animation:none;
 }
 
 .arsdesign-hero::before{
+    z-index:1;
+
     background:
         linear-gradient(
             105deg,
             rgba(3,9,20,.52) 0%,
-            rgba(3,9,20,.28) 38%,
-            rgba(3,9,20,.08) 68%,
-            transparent 100%
+            rgba(3,9,20,.30) 35%,
+            rgba(3,9,20,.10) 65%,
+            rgba(3,9,20,.02) 100%
         );
 }
 
@@ -9030,32 +9176,56 @@ section:nth-of-type(7)::after {
 
 /* =========================================================
    02 — SECOND IMAGE
-   Only 20% of its own height downward
-   No horizontal movement
+   ONLY DOWNWARD MOVEMENT
+   20% OF ITS OWN HEIGHT
+   NO LEFT / RIGHT MOVEMENT
    ========================================================= */
 
-.about-image img{
-    transform:translateY(20%) !important;
-}
+/*
+   این بخش فقط تصویر ABOUT را هدف می‌گیرد.
+*/
 
 .about-image{
+    position:relative;
     overflow:hidden;
+}
+
+.about-image img{
+    position:absolute;
+
+    left:0;
+    right:0;
+
+    width:100%;
+    height:100%;
+
+    max-width:none;
+
+    object-fit:cover;
+
+    transform:translateY(20%) !important;
 }
 
 
 /* =========================================================
-   03 — FINAL IMAGE
-   Give the image breathing room
+   03 — FINAL VISION IMAGE
+   BREATHING SPACE
    ========================================================= */
 
 .final-vision-image{
-    padding:5%;
-    box-sizing:border-box;
+    position:relative;
     overflow:hidden;
+
+    padding:5%;
 }
 
 .final-vision-image img{
-    inset:5% !important;
+    position:absolute;
+
+    top:5% !important;
+    right:5% !important;
+    bottom:5% !important;
+    left:5% !important;
 
     width:90% !important;
     height:90% !important;
@@ -9065,36 +9235,430 @@ section:nth-of-type(7)::after {
     transform:none !important;
 
     filter:
-        saturate(.96)
-        contrast(1.05)
+        saturate(.98)
+        contrast(1.06)
         brightness(.90);
 }
 
 
 /* =========================================================
    04 — BEFORE / HERITAGE
-   Move label to the right side of its image
+   KEEP IT BESIDE THE IMAGE
+   NEVER UNDER THE TEXT
    ========================================================= */
 
-.before-heritage,
-.before-heritage-image,
 .heritage-image{
     position:relative;
+    overflow:hidden;
 }
 
-.before-heritage .before-label,
-.before-heritage .heritage-label,
-.before-heritage .image-label,
-.heritage-image .before-label,
-.heritage-image .heritage-label{
+.heritage-image img{
     position:absolute;
+    inset:0;
 
-    right:6%;
-    left:auto;
+    width:100%;
+    height:100%;
 
-    bottom:8%;
+    object-fit:cover;
+}
 
-    z-index:5;
+
+/*
+   اگر BEFORE / HERITAGE به‌صورت متن داخل
+   تصویر قرار گرفته باشد، آن را به سمت راست
+   خود تصویر می‌بریم.
+*/
+
+.heritage-image .before,
+.heritage-image .before-label,
+.heritage-image .heritage-label,
+.heritage-image .image-label,
+.heritage-image [class*="before"],
+.heritage-image [class*="heritage-label"]{
+
+    position:absolute !important;
+
+    left:auto !important;
+    right:6% !important;
+
+    top:50% !important;
+    bottom:auto !important;
+
+    transform:translateY(-50%) !important;
+
+    z-index:10;
 
     white-space:nowrap;
 }
+
+
+/* =========================================================
+   05 — DO NOT LET HERITAGE TEXT FALL UNDER IMAGE
+   ========================================================= */
+
+.heritage-content{
+    position:relative;
+    z-index:5;
+}
+
+.heritage-layout{
+    align-items:center;
+}
+
+
+/* =========================================================
+   06 — MOBILE SAFETY
+   ========================================================= */
+
+@media (max-width:1100px){
+
+    .arsdesign-hero .hero-visual{
+        position:absolute;
+        inset:0;
+        width:100%;
+        height:100%;
+        min-height:0;
+    }
+
+    .arsdesign-hero .hero-visual img{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+    }
+
+}
+
+@media (max-width:700px){
+
+    .arsdesign-hero .hero-visual img{
+        object-position:center center;
+    }
+
+    .about-image img{
+        transform:translateY(20%) !important;
+    }
+
+    .final-vision-image{
+        padding:4%;
+    }
+
+    .final-vision-image img{
+        top:4% !important;
+        right:4% !important;
+        bottom:4% !important;
+        left:4% !important;
+
+        width:92% !important;
+        height:92% !important;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS DESIGN — FINAL VISUAL POSITION PATCH
+   ========================================================= */
+
+
+/* =========================================================
+   01 — HERO
+   IMAGE = FULL HERO BACKGROUND
+   BRIGHT / CLEAR / SHARP
+   ========================================================= */
+
+.arsdesign-hero{
+    position:relative;
+    isolation:isolate;
+    overflow:hidden;
+}
+
+.arsdesign-hero .hero-visual{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    min-height:0;
+
+    display:block;
+
+    z-index:0;
+    pointer-events:none;
+}
+
+.arsdesign-hero .hero-visual::before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    width:auto;
+    height:auto;
+
+    background:
+        radial-gradient(
+            circle at 70% 45%,
+            rgba(214,168,79,.12),
+            transparent 38%
+        );
+
+    filter:none;
+    animation:none;
+}
+
+.arsdesign-hero .hero-visual img{
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+    max-width:none;
+
+    object-fit:cover;
+    object-position:center center;
+
+    opacity:1;
+
+    filter:
+        brightness(1.10)
+        contrast(1.10)
+        saturate(1.08);
+
+    transform:none;
+
+    animation:none;
+}
+
+.arsdesign-hero::before{
+    z-index:1;
+
+    background:
+        linear-gradient(
+            105deg,
+            rgba(3,9,20,.52) 0%,
+            rgba(3,9,20,.30) 35%,
+            rgba(3,9,20,.10) 65%,
+            rgba(3,9,20,.02) 100%
+        );
+}
+
+.arsdesign-hero .container{
+    position:relative;
+    z-index:3;
+}
+
+
+/* =========================================================
+   02 — SECOND IMAGE
+   ONLY DOWNWARD MOVEMENT
+   20% OF ITS OWN HEIGHT
+   NO LEFT / RIGHT MOVEMENT
+   ========================================================= */
+
+/*
+   این بخش فقط تصویر ABOUT را هدف می‌گیرد.
+*/
+
+.about-image{
+    position:relative;
+    overflow:hidden;
+}
+
+.about-image img{
+    position:absolute;
+
+    left:0;
+    right:0;
+
+    width:100%;
+    height:100%;
+
+    max-width:none;
+
+    object-fit:cover;
+
+    transform:translateY(20%) !important;
+}
+
+
+/* =========================================================
+   03 — FINAL VISION IMAGE
+   BREATHING SPACE
+   ========================================================= */
+
+.final-vision-image{
+    position:relative;
+    overflow:hidden;
+
+    padding:5%;
+}
+
+.final-vision-image img{
+    position:absolute;
+
+    top:5% !important;
+    right:5% !important;
+    bottom:5% !important;
+    left:5% !important;
+
+    width:90% !important;
+    height:90% !important;
+
+    object-fit:cover;
+
+    transform:none !important;
+
+    filter:
+        saturate(.98)
+        contrast(1.06)
+        brightness(.90);
+}
+
+
+/* =========================================================
+   04 — BEFORE / HERITAGE
+   KEEP IT BESIDE THE IMAGE
+   NEVER UNDER THE TEXT
+   ========================================================= */
+
+.heritage-image{
+    position:relative;
+    overflow:hidden;
+}
+
+.heritage-image img{
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+
+/*
+   اگر BEFORE / HERITAGE به‌صورت متن داخل
+   تصویر قرار گرفته باشد، آن را به سمت راست
+   خود تصویر می‌بریم.
+*/
+
+.heritage-image .before,
+.heritage-image .before-label,
+.heritage-image .heritage-label,
+.heritage-image .image-label,
+.heritage-image [class*="before"],
+.heritage-image [class*="heritage-label"]{
+
+    position:absolute !important;
+
+    left:auto !important;
+    right:6% !important;
+
+    top:50% !important;
+    bottom:auto !important;
+
+    transform:translateY(-50%) !important;
+
+    z-index:10;
+
+    white-space:nowrap;
+}
+
+
+/* =========================================================
+   05 — DO NOT LET HERITAGE TEXT FALL UNDER IMAGE
+   ========================================================= */
+
+.heritage-content{
+    position:relative;
+    z-index:5;
+}
+
+.heritage-layout{
+    align-items:center;
+}
+
+
+/* =========================================================
+   06 — MOBILE SAFETY
+   ========================================================= */
+
+@media (max-width:1100px){
+
+    .arsdesign-hero .hero-visual{
+        position:absolute;
+        inset:0;
+        width:100%;
+        height:100%;
+        min-height:0;
+    }
+
+    .arsdesign-hero .hero-visual img{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+    }
+
+}
+
+@media (max-width:700px){
+
+    .arsdesign-hero .hero-visual img{
+        object-position:center center;
+    }
+
+    .about-image img{
+        transform:translateY(20%) !important;
+    }
+
+    .final-vision-image{
+        padding:4%;
+    }
+
+    .final-vision-image img{
+        top:4% !important;
+        right:4% !important;
+        bottom:4% !important;
+        left:4% !important;
+
+        width:92% !important;
+        height:92% !important;
+    }
+
+}
+
+
