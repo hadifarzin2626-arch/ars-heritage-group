@@ -8509,167 +8509,422 @@ section:nth-of-type(7)::after {
 
 
 
-
-
-
 /* =========================================================
-   ARS DESIGN — ICON SIGNATURE
-   ELECTRIC BLUE × 3D PREMIUM
+   ARS DESIGN — SIGNATURE ICON SYSTEM
+   MATTE BRONZE × ELECTRIC BLUE
+   Premium Monochrome 3D Icon Treatment
    ========================================================= */
+
+
+/* ---------------------------------------------------------
+   1. GLOBAL ICON BASE
+   --------------------------------------------------------- */
 
 .about-icon,
 .heritage-icon,
-.modernization-icon,
-.exterior-icon,
-.interior-icon,
-.offroad-icon,
-.performance-icon,
-.integration-icon,
-.workshop-icon,
-.experience-icon,
-.future-icon,
-.promise-icon{
+.pillar-icon,
+.feature-icon,
+.service-icon,
+.project-icon,
+.contact-icon,
+.tech-icon,
+.benefit-icon,
+.value-icon,
+.process-icon,
+.icon-box,
+.icon,
+[class*="icon"] {
 
-    position:relative;
+    color: #B58A62 !important;
 
-    color:#00A8FF !important;
+    position: relative;
 
-    background:
-        radial-gradient(
-            circle at 35% 25%,
-            rgba(0,168,255,.24),
-            rgba(0,168,255,.08) 42%,
-            rgba(3,9,20,.88) 100%
-        ) !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-    border:
-        1px solid rgba(0,168,255,.65) !important;
-
-    box-shadow:
-
-        inset 0 1px 0 rgba(255,255,255,.10),
-
-        inset 0 -10px 22px rgba(0,168,255,.08),
-
-        0 8px 18px rgba(0,0,0,.45),
-
-        0 0 22px rgba(0,168,255,.18),
-
-        0 0 45px rgba(0,168,255,.08);
+    isolation: isolate;
 
     text-shadow:
-        0 0 8px rgba(0,168,255,.75),
-        0 0 18px rgba(0,168,255,.35);
+        0 1px 0 rgba(255,255,255,.16),
+        0 2px 0 rgba(105,72,45,.85),
+        0 4px 7px rgba(0,0,0,.75),
+        0 0 14px rgba(0,174,255,.16);
 
-    transform:
-        translateZ(0);
+    filter:
+        drop-shadow(0 3px 3px rgba(0,0,0,.75))
+        drop-shadow(0 0 7px rgba(0,174,255,.16));
 
+    transition:
+        transform .35s ease,
+        filter .35s ease,
+        text-shadow .35s ease;
+
+    z-index: 1;
 }
 
 
-/* --- Premium 3D light reflection --- */
+/* ---------------------------------------------------------
+   2. ELECTRIC BLUE PREMIUM FRAME
+   --------------------------------------------------------- */
 
 .about-icon::before,
 .heritage-icon::before,
-.modernization-icon::before,
-.exterior-icon::before,
-.interior-icon::before,
-.offroad-icon::before,
-.performance-icon::before,
-.integration-icon::before,
-.workshop-icon::before,
-.experience-icon::before,
-.future-icon::before,
-.promise-icon::before{
+.pillar-icon::before,
+.feature-icon::before,
+.service-icon::before,
+.project-icon::before,
+.contact-icon::before,
+.tech-icon::before,
+.benefit-icon::before,
+.value-icon::before,
+.process-icon::before,
+.icon-box::before,
+.icon::before,
+[class*="icon"]::before {
 
-    content:"";
+    content: "";
 
-    position:absolute;
+    position: absolute;
 
-    inset:2px;
+    width: 1.75em;
+    height: 1.75em;
 
-    border-radius:16px;
+    border: 1px solid rgba(0,174,255,.72);
+
+    border-radius: 22%;
 
     background:
         linear-gradient(
-            135deg,
-            rgba(255,255,255,.16),
-            transparent 28%,
-            transparent 68%,
-            rgba(0,168,255,.10)
+            145deg,
+            rgba(0,174,255,.10),
+            rgba(0,174,255,.025) 55%,
+            rgba(0,174,255,.08)
         );
 
-    pointer-events:none;
+    box-shadow:
+        inset 0 0 0 1px rgba(0,174,255,.10),
+        inset 0 0 18px rgba(0,174,255,.055),
+        0 0 5px rgba(0,174,255,.35),
+        0 0 16px rgba(0,174,255,.12);
 
+    transform:
+        perspective(500px)
+        rotateX(2deg);
+
+    z-index: -1;
+
+    transition:
+        .35s ease;
 }
 
 
-/* --- Electric-blue inner edge --- */
+/* ---------------------------------------------------------
+   3. SECONDARY INNER ELECTRIC-BLUE FRAME
+   --------------------------------------------------------- */
 
 .about-icon::after,
 .heritage-icon::after,
-.modernization-icon::after,
-.exterior-icon::after,
-.interior-icon::after,
-.offroad-icon::after,
-.performance-icon::after,
-.integration-icon::after,
-.workshop-icon::after,
-.experience-icon::after,
-.future-icon::after,
-.promise-icon::after{
+.pillar-icon::after,
+.feature-icon::after,
+.service-icon::after,
+.project-icon::after,
+.contact-icon::after,
+.tech-icon::after,
+.benefit-icon::after,
+.value-icon::after,
+.process-icon::after,
+.icon-box::after,
+.icon::after,
+[class*="icon"]::after {
 
-    content:"";
+    content: "";
 
-    position:absolute;
+    position: absolute;
 
-    inset:-1px;
+    width: 1.48em;
+    height: 1.48em;
 
-    border-radius:18px;
+    border: 1px solid rgba(0,174,255,.20);
+
+    border-radius: 17%;
 
     box-shadow:
-        inset 0 0 12px rgba(0,168,255,.20);
+        inset 0 0 8px rgba(0,174,255,.06);
 
-    pointer-events:none;
-
+    z-index: -1;
 }
 
 
-/* --- Hover: controlled 3D electric glow --- */
+/* ---------------------------------------------------------
+   4. MATTE BRONZE 3D DEPTH
+   --------------------------------------------------------- */
 
-.ars-glass:hover .about-icon,
-.ars-glass:hover .heritage-icon,
-.ars-glass:hover .modernization-icon,
-.ars-glass:hover .exterior-icon,
-.ars-glass:hover .interior-icon,
-.ars-glass:hover .offroad-icon,
-.ars-glass:hover .performance-icon,
-.ars-glass:hover .integration-icon,
-.ars-glass:hover .workshop-icon,
-.ars-glass:hover .experience-icon,
-.ars-glass:hover .future-icon,
-.ars-glass:hover .promise-icon{
+.about-icon,
+.heritage-icon,
+.pillar-icon,
+.feature-icon,
+.service-icon,
+.project-icon,
+.contact-icon,
+.tech-icon,
+.benefit-icon,
+.value-icon,
+.process-icon,
+.icon-box,
+.icon,
+[class*="icon"] {
 
-    color:#38BFFF !important;
+    background:
+        linear-gradient(
+            145deg,
+            #D0AA83 0%,
+            #B58A62 25%,
+            #8D6849 55%,
+            #C19A70 78%,
+            #755338 100%
+        );
 
-    border-color:
-        rgba(0,168,255,.95) !important;
+    -webkit-background-clip: text;
+    background-clip: text;
 
-    box-shadow:
-
-        inset 0 1px 0 rgba(255,255,255,.14),
-
-        inset 0 -12px 25px rgba(0,168,255,.12),
-
-        0 12px 25px rgba(0,0,0,.50),
-
-        0 0 28px rgba(0,168,255,.30),
-
-        0 0 60px rgba(0,168,255,.14);
+    -webkit-text-fill-color: transparent;
 
     text-shadow:
-        0 0 10px rgba(0,168,255,.90),
-        0 0 24px rgba(0,168,255,.50);
+        0 1px 0 rgba(255,255,255,.15),
+        0 2px 0 #674A32,
+        0 4px 5px rgba(0,0,0,.85),
+        0 0 12px rgba(181,138,98,.15);
+
+    filter:
+        drop-shadow(0 1px 0 rgba(255,255,255,.12))
+        drop-shadow(0 3px 4px rgba(0,0,0,.8))
+        drop-shadow(0 0 8px rgba(0,174,255,.12));
+}
+
+
+/* ---------------------------------------------------------
+   5. HOVER — PREMIUM 3D LIFT
+   --------------------------------------------------------- */
+
+.about-icon:hover,
+.heritage-icon:hover,
+.pillar-icon:hover,
+.feature-icon:hover,
+.service-icon:hover,
+.project-icon:hover,
+.contact-icon:hover,
+.tech-icon:hover,
+.benefit-icon:hover,
+.value-icon:hover,
+.process-icon:hover,
+.icon-box:hover,
+.icon:hover,
+[class*="icon"]:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.045);
+
+    filter:
+        drop-shadow(0 7px 5px rgba(0,0,0,.8))
+        drop-shadow(0 0 12px rgba(0,174,255,.32))
+        drop-shadow(0 0 22px rgba(0,174,255,.12));
+
+    text-shadow:
+        0 1px 0 rgba(255,255,255,.18),
+        0 3px 0 #674A32,
+        0 6px 8px rgba(0,0,0,.85),
+        0 0 18px rgba(0,174,255,.20);
+}
+
+
+/* ---------------------------------------------------------
+   6. HOVER FRAME
+   --------------------------------------------------------- */
+
+.about-icon:hover::before,
+.heritage-icon:hover::before,
+.pillar-icon:hover::before,
+.feature-icon:hover::before,
+.service-icon:hover::before,
+.project-icon:hover::before,
+.contact-icon:hover::before,
+.tech-icon:hover::before,
+.benefit-icon:hover::before,
+.value-icon:hover::before,
+.process-icon:hover::before,
+.icon-box:hover::before,
+.icon:hover::before,
+[class*="icon"]:hover::before {
+
+    border-color: rgba(0,174,255,.98);
+
+    box-shadow:
+        inset 0 0 0 1px rgba(0,174,255,.16),
+        inset 0 0 20px rgba(0,174,255,.09),
+        0 0 7px rgba(0,174,255,.55),
+        0 0 20px rgba(0,174,255,.20);
+
+    transform:
+        perspective(500px)
+        rotateX(2deg)
+        scale(1.04);
+}
+
+
+/* ---------------------------------------------------------
+   7. ICON CONTAINER — LUXURY 3D PANEL
+   --------------------------------------------------------- */
+
+.about-icon,
+.heritage-icon,
+.pillar-icon,
+.feature-icon,
+.service-icon,
+.project-icon,
+.contact-icon,
+.tech-icon,
+.benefit-icon,
+.value-icon,
+.process-icon {
+
+    width: 64px;
+    height: 64px;
+
+    border-radius: 18px;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(181,138,98,.055),
+            rgba(0,174,255,.025)
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.07),
+        inset 0 -8px 18px rgba(0,0,0,.20),
+        0 8px 18px rgba(0,0,0,.30);
+}
+
+
+/* ---------------------------------------------------------
+   8. ICON EDGE LIGHT
+   --------------------------------------------------------- */
+
+.about-icon,
+.heritage-icon,
+.pillar-icon,
+.feature-icon,
+.service-icon,
+.project-icon,
+.contact-icon,
+.tech-icon,
+.benefit-icon,
+.value-icon,
+.process-icon {
+
+    border: 1px solid rgba(0,174,255,.20);
+}
+
+
+/* ---------------------------------------------------------
+   9. SPECIAL TREATMENT FOR EMOJI ICONS
+   Existing HTML can remain unchanged.
+   --------------------------------------------------------- */
+
+.about-icon > *,
+.heritage-icon > *,
+.pillar-icon > *,
+.feature-icon > *,
+.service-icon > *,
+.project-icon > *,
+.contact-icon > *,
+.tech-icon > *,
+.benefit-icon > *,
+.value-icon > *,
+.process-icon > * {
+
+    filter:
+        grayscale(1)
+        sepia(.55)
+        saturate(.75)
+        brightness(.82)
+        contrast(1.15)
+        drop-shadow(0 3px 3px rgba(0,0,0,.75));
+
+    opacity: .96;
+}
+
+
+/* ---------------------------------------------------------
+   10. MICRO 3D HIGHLIGHT
+   --------------------------------------------------------- */
+
+.about-icon,
+.heritage-icon,
+.pillar-icon,
+.feature-icon,
+.service-icon,
+.project-icon,
+.contact-icon,
+.tech-icon,
+.benefit-icon,
+.value-icon,
+.process-icon {
+
+    overflow: visible;
+}
+
+
+/* ---------------------------------------------------------
+   11. PREMIUM BLUE ENERGY LINE
+   --------------------------------------------------------- */
+
+.about-icon::before,
+.heritage-icon::before,
+.pillar-icon::before,
+.feature-icon::before,
+.service-icon::before,
+.project-icon::before,
+.contact-icon::before,
+.tech-icon::before,
+.benefit-icon::before,
+.value-icon::before,
+.process-icon::before {
+
+    box-shadow:
+        inset 0 0 12px rgba(0,174,255,.055),
+        0 0 4px rgba(0,174,255,.30),
+        0 0 12px rgba(0,174,255,.10);
 
 }
+
+
+/* ---------------------------------------------------------
+   12. RESPONSIVE
+   --------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+    .about-icon,
+    .heritage-icon,
+    .pillar-icon,
+    .feature-icon,
+    .service-icon,
+    .project-icon,
+    .contact-icon,
+    .tech-icon,
+    .benefit-icon,
+    .value-icon,
+    .process-icon {
+
+        width: 56px;
+        height: 56px;
+    }
+            }
+
 
