@@ -9409,17 +9409,16 @@ section:nth-of-type(7)::after {
 
 
 
-
-
 /* =========================================================
    ARS DESIGN — FINAL IMAGE
-   FREE FLOATING / CLEAN / CINEMATIC-FREE
+   FULL HERO FLOAT / ORBIT MOTION
    ========================================================= */
 
 .ars-design-hero .ars-hero-after {
-    animation: arsFinalFloat 8s ease-in-out infinite !important;
+    animation: arsFinalHeroOrbit 14s ease-in-out infinite !important;
     filter: none !important;
     box-shadow: none !important;
+    will-change: transform;
 }
 
 .ars-design-hero .ars-hero-after-frame {
@@ -9431,30 +9430,39 @@ section:nth-of-type(7)::after {
 .ars-design-hero .ars-hero-after-image {
     filter: none !important;
     opacity: 1 !important;
-
     animation: arsFinalImageBreath 6s ease-in-out infinite !important;
-
     transform-origin: center center;
 }
 
 
-/* حرکت شناور خود Final در فضای Hero */
-@keyframes arsFinalFloat {
+/* =========================================================
+   FINAL — LARGE FLOATING ORBIT THROUGH HERO
+   ========================================================= */
+
+@keyframes arsFinalHeroOrbit {
 
     0% {
         transform: translate3d(0, 0, 0);
     }
 
-    25% {
-        transform: translate3d(-18px, -14px, 0);
+    16% {
+        transform: translate3d(-90px, -70px, 0);
+    }
+
+    33% {
+        transform: translate3d(-150px, 20px, 0);
     }
 
     50% {
-        transform: translate3d(12px, -24px, 0);
+        transform: translate3d(-40px, 110px, 0);
     }
 
-    75% {
-        transform: translate3d(20px, -8px, 0);
+    66% {
+        transform: translate3d(100px, 65px, 0);
+    }
+
+    83% {
+        transform: translate3d(130px, -55px, 0);
     }
 
     100% {
@@ -9463,7 +9471,10 @@ section:nth-of-type(7)::after {
 }
 
 
-/* تنفس خود تصویر */
+/* =========================================================
+   FINAL — BREATHING
+   ========================================================= */
+
 @keyframes arsFinalImageBreath {
 
     0% {
