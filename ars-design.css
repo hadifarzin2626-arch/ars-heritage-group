@@ -9410,83 +9410,93 @@ section:nth-of-type(7)::after {
 
 
 
+
+
+
+
+
+
+
 /* =========================================================
-   ARS DESIGN — FINAL
-   CLEAN + BRIGHT + BREATHING + FLOATING
-   NO FRAME / POSITION CHANGES
+   ARS DESIGN — FINAL REAL FLOAT FIX
+   ONLY: LIGHTNESS + FLOAT
    ========================================================= */
 
-.ars-design-hero .ars-hero-after {
-    animation: arsFinalFloat 12s ease-in-out infinite !important;
-    filter: none !important;
-    box-shadow: none !important;
-    will-change: transform;
+/* 1 — REMOVE FINAL DARK CINEMATIC OVERLAY */
+.ars-design-hero .ars-hero-after-overlay {
+    opacity:0 !important;
+    background:none !important;
+    display:none !important;
 }
 
 
-/* حذف تیرگی فقط از خود تصویر Final */
+/* 2 — MAKE FINAL IMAGE CLEAN + BRIGHT */
 .ars-design-hero .ars-hero-after-image {
-    filter: saturate(1.08)
-            contrast(1.06)
-            brightness(1.08) !important;
+    opacity:1 !important;
 
-    opacity: 1 !important;
+    filter:
+        brightness(1.18)
+        contrast(1.04)
+        saturate(1.08) !important;
 
-    animation: arsFinalBreath 5.5s ease-in-out infinite !important;
-    will-change: transform;
+    animation:arsFinalBreath 5.5s ease-in-out infinite !important;
 }
 
 
-/* حذف هاله سینمایی خود Final */
-.ars-design-hero .ars-hero-after-frame {
-    filter: none !important;
-    box-shadow: none !important;
+/* 3 — REAL FLOATING MOTION OF THE WHOLE FINAL FRAME */
+.ars-design-hero .ars-hero-after {
+    animation:arsFinalRealFloat 12s ease-in-out infinite !important;
+    will-change:transform;
 }
 
 
 /* =========================================================
-   FLOAT — خود Final در فضای Hero شناور می‌شود
+   FINAL FRAME — FLOATING PATH
    ========================================================= */
 
-@keyframes arsFinalFloat {
+@keyframes arsFinalRealFloat {
 
     0% {
-        transform: translate3d(0, 0, 0);
+        transform:translate3d(0,0,0);
     }
 
-    25% {
-        transform: translate3d(-45px, -35px, 0);
+    20% {
+        transform:translate3d(-35px,-55px,0);
     }
 
-    50% {
-        transform: translate3d(-15px, 45px, 0);
+    40% {
+        transform:translate3d(-75px,10px,0);
     }
 
-    75% {
-        transform: translate3d(45px, 20px, 0);
+    60% {
+        transform:translate3d(-30px,70px,0);
+    }
+
+    80% {
+        transform:translate3d(45px,35px,0);
     }
 
     100% {
-        transform: translate3d(0, 0, 0);
+        transform:translate3d(0,0,0);
     }
 }
 
 
 /* =========================================================
-   BREATH — تنفس خود عکس
+   BREATHING — KEEP IT
    ========================================================= */
 
 @keyframes arsFinalBreath {
 
     0% {
-        transform: scale(1);
+        transform:scale(1);
     }
 
     50% {
-        transform: scale(1.055);
+        transform:scale(1.055);
     }
 
     100% {
-        transform: scale(1);
+        transform:scale(1);
     }
 }
