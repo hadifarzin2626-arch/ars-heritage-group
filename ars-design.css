@@ -9544,11 +9544,23 @@ section:nth-of-type(7)::after {
 
 
 
-
+/* =========================================================
+   ARS DESIGN HERO — EXACT +20% HEIGHT
+   FINAL OVERRIDE — PLACE AT VERY END OF CSS
+   ========================================================= */
 
 .ars-design-hero {
-    min-height: 100svh !important;
-    height: auto !important;
-    padding-bottom: 30svh !important;
-    box-sizing: border-box !important;
+    width: 100% !important;
+    height: 120svh !important;
+    min-height: 120svh !important;
+    max-height: none !important;
+}
+
+@media (max-width: 760px) {
+    .ars-design-hero {
+        width: 100% !important;
+        height: 1080px !important;
+        min-height: 1080px !important;
+        max-height: none !important;
+    }
 }
