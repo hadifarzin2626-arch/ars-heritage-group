@@ -9273,18 +9273,6 @@ section:nth-of-type(7)::after {
    STRONG / CLEAR BREATHING MOTION
    ========================================================= */
 
-.ars-design-hero .ars-hero-after {
-
-    /*
-     * Keep the existing 30% downward position
-     * while adding a strong breathing movement.
-     */
-    animation:
-        arsFinalBreathing
-        5.5s
-        ease-in-out
-        infinite;
-}
 
 
 /* ---------------------------------------------------------
@@ -9331,29 +9319,6 @@ section:nth-of-type(7)::after {
 
 
 
-
-/* =========================================================
-   ARS DESIGN — FINAL IMAGE BREATHING RESTORE
-   POSITION UNCHANGED
-   ========================================================= */
-
-.ars-design-hero .ars-hero-after {
-    animation: arsFinalBreathing 5.5s ease-in-out infinite !important;
-}
-
-@keyframes arsFinalBreathing {
-    0% {
-        transform: none;
-    }
-
-    50% {
-        transform: scale(1.055);
-    }
-
-    100% {
-        transform: none;
-    }
-}
 
 
 
@@ -9430,52 +9395,6 @@ section:nth-of-type(7)::after {
 
 
 
-/* =========================================================
-   ARS DESIGN — FINAL HERO IMAGE BREATH + CLEAR IMAGE
-   ========================================================= */
-
-/* 01 — FINAL IMAGE: SUBTLE CINEMATIC BREATH */
-/* =========================================================
-   ARS DESIGN — FINAL HERO IMAGE BREATH
-   ========================================================= */
-
-.ars-design-hero .ars-hero-after-image {
-    animation:
-        arsHeroAfterBreath 8s ease-in-out infinite alternate;
-}
-
-
-@keyframes arsHeroAfterBreath {
-
-    0% {
-        transform: scale(1.025);
-    }
-
-    100% {
-        transform: scale(1.065);
-    }
-
-}
-
-
-
-
-/* 02 — REMOVE DARK CURTAIN FROM FINAL IMAGE */
-
-.ars-design-hero .ars-hero-after-overlay {
-    background: none !important;
-    opacity: 0 !important;
-}
-
-
-/* 03 — KEEP THE FINAL IMAGE NATURAL AND CLEAR */
-
-.ars-design-hero .ars-hero-after-image {
-    filter:
-        saturate(1.05)
-        contrast(1.05)
-        brightness(1) !important;
-}
 
 
 
@@ -9495,7 +9414,89 @@ section:nth-of-type(7)::after {
 
 
 
+/* =========================================================
+   ARS DESIGN — FINAL REAL FLOAT FIX
+   ONLY: LIGHTNESS + FLOAT
+   ========================================================= */
 
+/* 1 — REMOVE FINAL DARK CINEMATIC OVERLAY */
+.ars-design-hero .ars-hero-after-overlay {
+    opacity:0 !important;
+    background:none !important;
+    display:none !important;
+}
+
+
+/* 2 — MAKE FINAL IMAGE CLEAN + BRIGHT */
+.ars-design-hero .ars-hero-after-image {
+    opacity:1 !important;
+
+    filter:
+        brightness(1.18)
+        contrast(1.04)
+        saturate(1.08) !important;
+
+    animation:arsFinalBreath 5.5s ease-in-out infinite !important;
+}
+
+
+/* 3 — REAL FLOATING MOTION OF THE WHOLE FINAL FRAME */
+.ars-design-hero .ars-hero-after {
+    animation:arsFinalRealFloat 12s ease-in-out infinite !important;
+    will-change:transform;
+}
+
+
+/* =========================================================
+   FINAL FRAME — FLOATING PATH
+   ========================================================= */
+
+@keyframes arsFinalRealFloat {
+
+    0% {
+        transform:translate3d(0,0,0);
+    }
+
+    20% {
+        transform:translate3d(-35px,-55px,0);
+    }
+
+    40% {
+        transform:translate3d(-75px,10px,0);
+    }
+
+    60% {
+        transform:translate3d(-30px,70px,0);
+    }
+
+    80% {
+        transform:translate3d(45px,35px,0);
+    }
+
+    100% {
+        transform:translate3d(0,0,0);
+    }
+}
+
+
+/* =========================================================
+   BREATHING — KEEP IT
+   ========================================================= */
+
+@keyframes arsFinalBreath {
+
+    0% {
+        transform:scale(1);
+    }
+
+    50% {
+        transform:scale(1.055);
+    }
+
+    100% {
+        transform:scale(1);
+    }
+}
 
 
 
