@@ -9566,8 +9566,9 @@ section:nth-of-type(7)::after {
 
 
 
-
-/* PATCH — AFTER LABEL ON IMAGE */
+/* =========================================================
+FIX — AFTER LABEL ON FINAL IMAGE
+========================================================= */
 
 .ars-design-hero .ars-hero-after-frame {
     position: relative !important;
@@ -9577,44 +9578,27 @@ section:nth-of-type(7)::after {
     position: absolute !important;
     right: 30px !important;
     bottom: 30px !important;
-    z-index: 50 !important;
+    z-index: 100 !important;
 
     display: flex !important;
-    align-items: center;
-    gap: 12px;
+    align-items: center !important;
+    gap: 12px !important;
 
     opacity: 1 !important;
     visibility: visible !important;
-    color: #c3a27b !important;
-
-    text-shadow: 0 2px 12px rgba(0,0,0,.95);
+    transform: none !important;
 }
 
 .ars-design-hero .ars-hero-after-label .ars-hero-label-text {
+    display: inline-block !important;
     color: #f3f1ec !important;
-    font-weight: 800;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .ars-design-hero .ars-hero-after-label .ars-hero-label-sub {
+    display: inline-block !important;
     color: #38a7ff !important;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* PATCH — CURRENT ARS DESIGN HERO HEIGHT +15% */
-
-.ars-design-hero {
-    min-height: 115vh !important;
-    height: 115vh !important;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
