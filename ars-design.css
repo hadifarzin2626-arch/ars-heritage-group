@@ -9381,17 +9381,6 @@ section:nth-of-type(7)::after {
 
 
 
-/* =========================================================
-   ARS DESIGN — HERO BUTTON CLICK FIX
-   ========================================================= */
-
-.ars-design-hero .ars-hero-primary-btn,
-.ars-design-hero .ars-hero-secondary-btn {
-    position:relative;
-    z-index:100 !important;
-    pointer-events:auto !important;
-    cursor:pointer;
-}
 
 
 
@@ -9402,104 +9391,6 @@ section:nth-of-type(7)::after {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* =========================================================
-   ARS DESIGN — FINAL REAL FLOAT FIX
-   ONLY: LIGHTNESS + FLOAT
-   ========================================================= */
-
-/* 1 — REMOVE FINAL DARK CINEMATIC OVERLAY */
-.ars-design-hero .ars-hero-after-overlay {
-    opacity:0 !important;
-    background:none !important;
-    display:none !important;
-}
-
-
-/* 2 — MAKE FINAL IMAGE CLEAN + BRIGHT */
-.ars-design-hero .ars-hero-after-image {
-    opacity:1 !important;
-
-    filter:
-        brightness(1.18)
-        contrast(1.04)
-        saturate(1.08) !important;
-
-    animation:arsFinalBreath 5.5s ease-in-out infinite !important;
-}
-
-
-/* 3 — REAL FLOATING MOTION OF THE WHOLE FINAL FRAME */
-.ars-design-hero .ars-hero-after {
-    animation:arsFinalRealFloat 12s ease-in-out infinite !important;
-    will-change:transform;
-}
-
-
-/* =========================================================
-   FINAL FRAME — FLOATING PATH
-   ========================================================= */
-
-@keyframes arsFinalRealFloat {
-
-    0% {
-        transform:translate3d(0,0,0);
-    }
-
-    20% {
-        transform:translate3d(-35px,-55px,0);
-    }
-
-    40% {
-        transform:translate3d(-75px,10px,0);
-    }
-
-    60% {
-        transform:translate3d(-30px,70px,0);
-    }
-
-    80% {
-        transform:translate3d(45px,35px,0);
-    }
-
-    100% {
-        transform:translate3d(0,0,0);
-    }
-}
-
-
-/* =========================================================
-   BREATHING — KEEP IT
-   ========================================================= */
-
-@keyframes arsFinalBreath {
-
-    0% {
-        transform:scale(1);
-    }
-
-    50% {
-        transform:scale(1.055);
-    }
-
-    100% {
-        transform:scale(1);
-    }
-}
 
 
 
@@ -9522,7 +9413,7 @@ section:nth-of-type(7)::after {
    ========================================================= */
 
 .ars-design-hero .ars-hero-after {
-    transform: translateY(60%) !important;
+    transform: translateY(55%) !important;
     animation: none !important;
 }
 
@@ -9565,40 +9456,3 @@ section:nth-of-type(7)::after {
 
 
 
-
-/* =========================================================
-FIX — AFTER LABEL ON FINAL IMAGE
-========================================================= */
-
-.ars-design-hero .ars-hero-after-frame {
-    position: relative !important;
-}
-
-.ars-design-hero .ars-hero-after-label {
-    position: absolute !important;
-    right: 30px !important;
-    bottom: 30px !important;
-    z-index: 100 !important;
-
-    display: flex !important;
-    align-items: center !important;
-    gap: 12px !important;
-
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
-}
-
-.ars-design-hero .ars-hero-after-label .ars-hero-label-text {
-    display: inline-block !important;
-    color: #f3f1ec !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-
-.ars-design-hero .ars-hero-after-label .ars-hero-label-sub {
-    display: inline-block !important;
-    color: #38a7ff !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-}
