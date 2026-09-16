@@ -9504,458 +9504,261 @@ section:nth-of-type(7)::after {
 
 
 
-/* =========================================================
-   ARS DESIGN — GLASS CARDS
-   50% ELECTRIC BLUE × DEEP NAVY
-   ========================================================= */
+
+
+
+
+
+
 
 
 /* =========================================================
-   01 — ALL GLASS CARDS
+   ARS DESIGN — UNIVERSAL PREMIUM CARD SYSTEM
+   DEEP NAVY × ELECTRIC BLUE × MATTE BRONZE
    ========================================================= */
 
-.ars-glass {
+/* ---------- BASE CARD ---------- */
+
+.ars-design-hero ~ section .ars-glass,
+.ars-design-hero ~ section [class*="card"],
+.ars-design-hero ~ section [class*="box"] {
 
     position: relative;
-
+    isolation: isolate;
     overflow: hidden;
 
     background:
         linear-gradient(
             145deg,
-            rgba(255,255,255,.075) 0%,
-            rgba(255,255,255,.025) 45%,
-            rgba(1,6,12,.38) 100%
+            rgba(7,17,29,.96) 0%,
+            rgba(7,28,48,.94) 48%,
+            rgba(3,12,24,.98) 100%
         ) !important;
 
-    border:
-        1px solid rgba(255,255,255,.16) !important;
+    border: 1px solid rgba(22,140,255,.24) !important;
+    border-radius: inherit;
 
-    backdrop-filter:
-        blur(28px)
-        saturate(155%);
+    transform: translateZ(0);
 
-    -webkit-backdrop-filter:
-        blur(28px)
-        saturate(155%);
-
-    box-shadow:
-
-        inset 0 1px 0
-        rgba(255,255,255,.18),
-
-        inset 0 -1px 0
-        rgba(0,0,0,.35),
-
-        0 20px 55px
-        rgba(0,0,0,.34),
-
-        0 5px 18px
-        rgba(0,0,0,.20);
-
-    transition:
-        transform .45s cubic-bezier(.16,1,.3,1),
-        box-shadow .45s cubic-bezier(.16,1,.3,1),
-        border-color .45s ease;
-}
-
-
-/* =========================================================
-   02 — ELECTRIC BLUE × DEEP NAVY
-   EVERY SECOND GLASS CARD
-   ========================================================= */
-
-.ars-glass:nth-child(even) {
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(22,140,255,.30) 0%,
-            rgba(7,60,114,.24) 30%,
-            rgba(7,17,29,.82) 68%,
-            rgba(3,9,18,.96) 100%
-        ) !important;
-
-    border:
-        1px solid rgba(56,167,255,.38) !important;
-
-    box-shadow:
-
-        inset 0 1px 0
-        rgba(56,167,255,.28),
-
-        inset 0 -1px 0
-        rgba(0,0,0,.55),
-
-        0 22px 60px
-        rgba(0,0,0,.46),
-
-        0 0 32px
-        rgba(22,140,255,.14);
-}
-
-
-/* =========================================================
-   03 — BLUE GLASS INTERNAL LIGHT
-   ========================================================= */
-
-.ars-glass:nth-child(even)::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    pointer-events: none;
-
-    background:
-        radial-gradient(
-            circle at 12% 8%,
-            rgba(56,167,255,.28),
-            transparent 34%
-        ),
-
-        linear-gradient(
-            125deg,
-            rgba(255,255,255,.12),
-            transparent 28%,
-            transparent 72%,
-            rgba(22,140,255,.07)
-        );
-
-    opacity: 1;
-}
-
-
-/* =========================================================
-   04 — GLASS HIGHLIGHT ON ALL CARDS
-   ========================================================= */
-
-.ars-glass::after {
-
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: 8%;
-    right: 8%;
-
-    height: 1px;
-
-    pointer-events: none;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,.35),
-            rgba(56,167,255,.38),
-            transparent
-        );
-
-    opacity: .8;
-}
-
-
-/* =========================================================
-   05 — 3D DEPTH
-   ========================================================= */
-
-.ars-glass:hover {
-
-    transform:
-        translateY(-8px)
-        scale(1.012);
-
-    border-color:
-        rgba(56,167,255,.45) !important;
-
-    box-shadow:
-
-        inset 0 1px 0
-        rgba(255,255,255,.22),
-
-        0 30px 75px
-        rgba(0,0,0,.48),
-
-        0 0 42px
-        rgba(22,140,255,.16);
-}
-
-
-/* =========================================================
-   06 — BLUE CARDS GET STRONGER BLUE ON HOVER
-   ========================================================= */
-
-.ars-glass:nth-child(even):hover {
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(22,140,255,.38),
-            rgba(7,60,114,.30) 35%,
-            rgba(7,17,29,.86) 70%,
-            rgba(3,9,18,.97)
-        ) !important;
-
-    border-color:
-        rgba(56,167,255,.58) !important;
-
-    box-shadow:
-
-        inset 0 1px 0
-        rgba(56,167,255,.34),
-
-        0 32px 80px
-        rgba(0,0,0,.52),
-
-        0 0 55px
-        rgba(22,140,255,.22);
-            }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* =========================================================
-   ARS DESIGN — PREMIUM 3D CARD + BRONZE AURA
-   ~70% of cards receive the premium treatment
-   ========================================================= */
-
-.ars-design-hero ~ section .ars-glass,
-.ars-design-hero ~ section [class*="card"] {
-    position: relative;
-    isolation: isolate;
     transform-style: preserve-3d;
+
+    box-shadow:
+        0 18px 38px rgba(0,0,0,.42),
+        0 5px 14px rgba(0,0,0,.28),
+        inset 0 1px 0 rgba(255,255,255,.08),
+        inset 0 -1px 0 rgba(0,0,0,.42);
+
     transition:
         transform .55s cubic-bezier(.2,.8,.2,1),
         box-shadow .55s ease,
         border-color .45s ease,
         background .45s ease;
+
 }
 
-/* ---------------------------------------------------------
-   3D / RAISED TREATMENT — approximately 70%
-   --------------------------------------------------------- */
 
-.ars-design-hero ~ section .ars-glass:nth-child(1),
-.ars-design-hero ~ section .ars-glass:nth-child(2),
-.ars-design-hero ~ section .ars-glass:nth-child(4),
-.ars-design-hero ~ section .ars-glass:nth-child(5),
-.ars-design-hero ~ section .ars-glass:nth-child(7),
-.ars-design-hero ~ section .ars-glass:nth-child(8),
-.ars-design-hero ~ section [class*="card"]:nth-child(1),
-.ars-design-hero ~ section [class*="card"]:nth-child(2),
-.ars-design-hero ~ section [class*="card"]:nth-child(4),
-.ars-design-hero ~ section [class*="card"]:nth-child(5),
-.ars-design-hero ~ section [class*="card"]:nth-child(7),
-.ars-design-hero ~ section [class*="card"]:nth-child(8) {
-
-    transform: translateY(-4px) translateZ(0);
-
-    box-shadow:
-        0 18px 35px rgba(0,0,0,.42),
-        0 8px 18px rgba(0,0,0,.30),
-        inset 0 1px 0 rgba(255,255,255,.10),
-        inset 0 -1px 0 rgba(0,0,0,.35);
-}
-
-/* ---------------------------------------------------------
-   INNER DEPTH
-   --------------------------------------------------------- */
+/* ---------- ELECTRIC BLUE GLASS LIGHT ---------- */
 
 .ars-design-hero ~ section .ars-glass::before,
-.ars-design-hero ~ section [class*="card"]::before {
-    content:"";
-    position:absolute;
-    inset:0;
-    border-radius:inherit;
-    pointer-events:none;
-    z-index:-1;
+.ars-design-hero ~ section [class*="card"]::before,
+.ars-design-hero ~ section [class*="box"]::before {
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.10),
-            transparent 28%,
-            transparent 68%,
-            rgba(0,0,0,.16)
-        );
+    content: "";
 
-    opacity:.75;
-}
+    position: absolute;
+    inset: 0;
 
-/* ---------------------------------------------------------
-   BRONZE AURA — normally invisible
-   --------------------------------------------------------- */
+    border-radius: inherit;
 
-.ars-design-hero ~ section .ars-glass::after,
-.ars-design-hero ~ section [class*="card"]::after {
-    content:"";
-    position:absolute;
-
-    left:7%;
-    right:7%;
-    bottom:-18px;
-    height:42px;
-
-    border-radius:50%;
-
-    background:
-        radial-gradient(
-            ellipse,
-            rgba(154,118,81,.62) 0%,
-            rgba(154,118,81,.30) 28%,
-            rgba(154,118,81,.12) 48%,
-            transparent 72%
-        );
-
-    filter:blur(15px);
-
-    opacity:0;
-    transform:scale(.72);
-    transition:
-        opacity .5s ease,
-        transform .55s cubic-bezier(.2,.8,.2,1);
-
-    pointer-events:none;
-    z-index:-1;
-}
-
-/* ---------------------------------------------------------
-   HOVER / SELECTED — BRONZE ENERGY
-   --------------------------------------------------------- */
-
-.ars-design-hero ~ section .ars-glass:hover,
-.ars-design-hero ~ section [class*="card"]:hover {
-
-    transform:
-        translateY(-12px)
-        translateZ(18px)
-        scale(1.018);
-
-    border-color:rgba(195,162,123,.72);
-
-    box-shadow:
-        0 30px 55px rgba(0,0,0,.58),
-        0 12px 28px rgba(154,118,81,.20),
-        inset 0 1px 0 rgba(255,255,255,.18),
-        inset 0 -1px 0 rgba(154,118,81,.18);
-}
-
-/* Bronze glow turns on */
-
-.ars-design-hero ~ section .ars-glass:hover::after,
-.ars-design-hero ~ section [class*="card"]:hover::after {
-
-    opacity:1;
-    transform:scale(1.12);
-}
-
-/* ---------------------------------------------------------
-   BRONZE EDGE LIGHT
-   --------------------------------------------------------- */
-
-.ars-design-hero ~ section .ars-glass:hover::before,
-.ars-design-hero ~ section [class*="card"]:hover::before {
+    pointer-events: none;
 
     background:
         linear-gradient(
             135deg,
-            rgba(255,255,255,.16) 0%,
-            rgba(195,162,123,.08) 24%,
-            transparent 45%,
+            rgba(56,167,255,.14) 0%,
+            rgba(22,140,255,.06) 25%,
+            transparent 48%,
             transparent 72%,
-            rgba(154,118,81,.12) 100%
+            rgba(7,60,114,.14) 100%
+        );
+
+    opacity: .9;
+
+    z-index: -1;
+}
+
+
+/* ---------- 3D TOP LIGHT ---------- */
+
+.ars-design-hero ~ section .ars-glass::after,
+.ars-design-hero ~ section [class*="card"]::after,
+.ars-design-hero ~ section [class*="box"]::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 8%;
+    right: 8%;
+    bottom: -24px;
+
+    height: 48px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(154,118,81,.58) 0%,
+            rgba(154,118,81,.30) 30%,
+            rgba(154,118,81,.12) 48%,
+            transparent 72%
+        );
+
+    filter: blur(17px);
+
+    opacity: 0;
+
+    transform: scale(.72);
+
+    pointer-events: none;
+
+    transition:
+        opacity .5s ease,
+        transform .55s cubic-bezier(.2,.8,.2,1);
+
+    z-index: -1;
+}
+
+
+/* ---------- UNIVERSAL 3D LIFT ---------- */
+
+.ars-design-hero ~ section .ars-glass:hover,
+.ars-design-hero ~ section [class*="card"]:hover,
+.ars-design-hero ~ section [class*="box"]:hover {
+
+    transform:
+        translateY(-11px)
+        translateZ(18px)
+        scale(1.015);
+
+    border-color:
+        rgba(195,162,123,.72) !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(9,24,40,.98) 0%,
+            rgba(7,36,61,.97) 48%,
+            rgba(3,13,25,.99) 100%
+        ) !important;
+
+    box-shadow:
+        0 30px 58px rgba(0,0,0,.58),
+        0 12px 30px rgba(22,140,255,.12),
+        0 8px 30px rgba(154,118,81,.18),
+        inset 0 1px 0 rgba(255,255,255,.16),
+        inset 0 -1px 0 rgba(154,118,81,.16);
+}
+
+
+/* ---------- BRONZE AURA ON HOVER ---------- */
+
+.ars-design-hero ~ section .ars-glass:hover::after,
+.ars-design-hero ~ section [class*="card"]:hover::after,
+.ars-design-hero ~ section [class*="box"]:hover::after {
+
+    opacity: 1;
+
+    transform: scale(1.15);
+}
+
+
+/* ---------- BLUE EDGE ON HOVER ---------- */
+
+.ars-design-hero ~ section .ars-glass:hover::before,
+.ars-design-hero ~ section [class*="card"]:hover::before,
+.ars-design-hero ~ section [class*="box"]:hover::before {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(56,167,255,.20) 0%,
+            rgba(22,140,255,.10) 24%,
+            transparent 46%,
+            transparent 70%,
+            rgba(195,162,123,.12) 100%
         );
 }
 
-/* ---------------------------------------------------------
-   OPTIONAL — ACTIVE / SELECTED CARD
-   --------------------------------------------------------- */
+
+/* ---------- ACTIVE / SELECTED CARD ---------- */
 
 .ars-design-hero ~ section .ars-glass.is-active,
-.ars-design-hero ~ section [class*="card"].is-active {
+.ars-design-hero ~ section [class*="card"].is-active,
+.ars-design-hero ~ section [class*="box"].is-active {
 
     transform:
         translateY(-13px)
-        translateZ(20px)
+        translateZ(22px)
         scale(1.02);
 
-    border-color:rgba(195,162,123,.85);
+    border-color:
+        rgba(195,162,123,.88) !important;
 
     box-shadow:
-        0 32px 60px rgba(0,0,0,.60),
-        0 0 32px rgba(154,118,81,.24),
-        0 12px 35px rgba(154,118,81,.20),
+        0 34px 64px rgba(0,0,0,.62),
+        0 0 34px rgba(154,118,81,.24),
+        0 12px 35px rgba(22,140,255,.10),
         inset 0 1px 0 rgba(255,255,255,.20);
 }
 
+
 .ars-design-hero ~ section .ars-glass.is-active::after,
-.ars-design-hero ~ section [class*="card"].is-active::after {
-    opacity:1;
-    transform:scale(1.18);
+.ars-design-hero ~ section [class*="card"].is-active::after,
+.ars-design-hero ~ section [class*="box"].is-active::after {
+
+    opacity: 1;
+
+    transform: scale(1.2);
 }
 
-/* ---------------------------------------------------------
-   MOBILE — KEEP IT PREMIUM, NOT EXAGGERATED
-   --------------------------------------------------------- */
+
+/* ---------- CARD CONTENT DEPTH ---------- */
+
+.ars-design-hero ~ section .ars-glass > *,
+.ars-design-hero ~ section [class*="card"] > *,
+.ars-design-hero ~ section [class*="box"] > * {
+
+    position: relative;
+
+    transform: translateZ(8px);
+}
+
+
+/* ---------- MOBILE ---------- */
 
 @media (max-width:760px) {
 
     .ars-design-hero ~ section .ars-glass,
-    .ars-design-hero ~ section [class*="card"] {
-        transform:translateY(-2px);
+    .ars-design-hero ~ section [class*="card"],
+    .ars-design-hero ~ section [class*="box"] {
+
+        transform: translateZ(0);
+
+        box-shadow:
+            0 14px 30px rgba(0,0,0,.42),
+            inset 0 1px 0 rgba(255,255,255,.08);
     }
 
     .ars-design-hero ~ section .ars-glass:hover,
-    .ars-design-hero ~ section [class*="card"]:hover {
-        transform:translateY(-7px) scale(1.01);
+    .ars-design-hero ~ section [class*="card"]:hover,
+    .ars-design-hero ~ section [class*="box"]:hover {
+
+        transform:
+            translateY(-7px)
+            scale(1.01);
     }
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-/* =====================================================
-   ARS DESIGN HERO — FORCE HEIGHT
-   ===================================================== */
-
-.ars-design-hero {
-    height: 1080px !important;
-    min-height: 1080px !important;
-    max-height: none !important;
-    aspect-ratio: auto !important;
-}
-
-@media (max-width: 760px) {
-    .ars-design-hero {
-        height: 1080px !important;
-        min-height: 1080px !important;
-        max-height: none !important;
-        aspect-ratio: auto !important;
     }
-}
+
+
