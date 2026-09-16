@@ -6193,7 +6193,8 @@ section:nth-of-type(7)::after {
     position: relative;
 
     width: 100%;
-    min-height: 90px;
+    height: 120vh;
+min-height: 120vh;
 
     overflow: hidden;
 
@@ -9431,7 +9432,45 @@ section:nth-of-type(7)::after {
 
 
 
+/* =========================================================
+   ARS DESIGN — FINAL HERO IMAGE BREATH + CLEAR IMAGE
+   ========================================================= */
 
+/* 01 — FINAL IMAGE: SUBTLE CINEMATIC BREATH */
+
+.ars-design-hero .ars-hero-after-image {
+    animation: arsFinalHeroBreath 10s ease-in-out infinite alternate;
+}
+
+@keyframes arsFinalHeroBreath {
+
+    0% {
+        transform: scale(1.025);
+    }
+
+    100% {
+        transform: scale(1.055);
+    }
+
+}
+
+
+/* 02 — REMOVE DARK CURTAIN FROM FINAL IMAGE */
+
+.ars-design-hero .ars-hero-after-overlay {
+    background: none !important;
+    opacity: 0 !important;
+}
+
+
+/* 03 — KEEP THE FINAL IMAGE NATURAL AND CLEAR */
+
+.ars-design-hero .ars-hero-after-image {
+    filter:
+        saturate(1.05)
+        contrast(1.05)
+        brightness(1) !important;
+}
 
 
 
