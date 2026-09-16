@@ -9457,7 +9457,7 @@ section:nth-of-type(7)::after {
 
 }
 
-}
+
 
 
 /* 02 — REMOVE DARK CURTAIN FROM FINAL IMAGE */
@@ -9483,10 +9483,10 @@ section:nth-of-type(7)::after {
    ARS DESIGN — MOBILE HERO HEIGHT ONLY
    ========================================================= */
 
-@media (max-width: 860px) {
+@media (max-width: 760px) {
 
     .ars-design-hero {
-        min-height: 1220px;
+        min-height: 1140px;
         height: auto;
     }
 
@@ -9873,4 +9873,88 @@ section:nth-of-type(7)::after {
 .ars-design-hero ~ section .ars-glass:hover::before,
 .ars-design-hero ~ section [class*="card"]:hover::before {
 
-    background
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.16) 0%,
+            rgba(195,162,123,.08) 24%,
+            transparent 45%,
+            transparent 72%,
+            rgba(154,118,81,.12) 100%
+        );
+}
+
+/* ---------------------------------------------------------
+   OPTIONAL — ACTIVE / SELECTED CARD
+   --------------------------------------------------------- */
+
+.ars-design-hero ~ section .ars-glass.is-active,
+.ars-design-hero ~ section [class*="card"].is-active {
+
+    transform:
+        translateY(-13px)
+        translateZ(20px)
+        scale(1.02);
+
+    border-color:rgba(195,162,123,.85);
+
+    box-shadow:
+        0 32px 60px rgba(0,0,0,.60),
+        0 0 32px rgba(154,118,81,.24),
+        0 12px 35px rgba(154,118,81,.20),
+        inset 0 1px 0 rgba(255,255,255,.20);
+}
+
+.ars-design-hero ~ section .ars-glass.is-active::after,
+.ars-design-hero ~ section [class*="card"].is-active::after {
+    opacity:1;
+    transform:scale(1.18);
+}
+
+/* ---------------------------------------------------------
+   MOBILE — KEEP IT PREMIUM, NOT EXAGGERATED
+   --------------------------------------------------------- */
+
+@media (max-width:760px) {
+
+    .ars-design-hero ~ section .ars-glass,
+    .ars-design-hero ~ section [class*="card"] {
+        transform:translateY(-2px);
+    }
+
+    .ars-design-hero ~ section .ars-glass:hover,
+    .ars-design-hero ~ section [class*="card"]:hover {
+        transform:translateY(-7px) scale(1.01);
+    }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   ARS DESIGN HERO — FORCE HEIGHT
+   ===================================================== */
+
+.ars-design-hero {
+    height: 1080px !important;
+    min-height: 1080px !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+}
+
+@media (max-width: 760px) {
+    .ars-design-hero {
+        height: 1080px !important;
+        min-height: 1080px !important;
+        max-height: none !important;
+        aspect-ratio: auto !important;
+    }
+}
