@@ -18173,3 +18173,260 @@ body.brain-test-page .btn-secondary {
         transition: none !important;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS BRAIN — IMAGE FRAME EXPANSION PATCH
+   PRODUCT FAMILY + ARS BRAIN PLATFORM
+   ========================================================= */
+
+
+/* =========================================================
+   01 — PRODUCT FAMILY
+   Make the image area as large as the card allows
+   ========================================================= */
+
+.arsbrain-family .family-card {
+    overflow: hidden;
+}
+
+.arsbrain-family .family-visual {
+    position: relative;
+
+    width: 100%;
+    height: clamp(260px, 28vw, 420px);
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+}
+
+
+/* Remove any spacing around the image slot */
+
+.arsbrain-family .family-logo-slot {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    display: block;
+
+    overflow: hidden;
+
+    z-index: 2;
+}
+
+
+/* Image fills the COMPLETE visual frame */
+
+.arsbrain-family .family-logo-slot img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    object-fit: cover;
+    object-position: center center;
+
+    border: 0;
+    border-radius: 0;
+
+    transform: scale(1.001);
+}
+
+
+/* Keep glow behind the image */
+
+.arsbrain-family .family-visual-glow {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* Keep card content clean and separated */
+
+.arsbrain-family .family-content {
+    position: relative;
+    z-index: 3;
+}
+
+
+/* =========================================================
+   02 — ARS BRAIN PLATFORM
+   Larger image area + full-frame image
+   ========================================================= */
+
+.arsbrain-platform .platform-layout {
+    align-items: stretch;
+}
+
+
+/* Make the image column substantially larger */
+
+.arsbrain-platform .platform-visual {
+    position: relative;
+
+    width: 100%;
+
+    min-height: clamp(420px, 42vw, 680px);
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+}
+
+
+/* Main platform image fills EVERYTHING */
+
+.arsbrain-platform .platform-visual img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    min-width: 100%;
+    min-height: 100%;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    object-fit: cover;
+    object-position: center center;
+
+    border: 0;
+    border-radius: inherit;
+
+    transform: scale(1.001);
+}
+
+
+/* =========================================================
+   03 — DESKTOP
+   Give the image more visual weight than the text column
+   ========================================================= */
+
+@media (min-width: 1000px) {
+
+    .arsbrain-platform .platform-layout {
+        grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.85fr);
+        gap: 28px;
+    }
+
+    .arsbrain-platform .platform-visual {
+        min-height: 620px;
+    }
+
+}
+
+
+/* =========================================================
+   04 — LARGE DESKTOP
+   ========================================================= */
+
+@media (min-width: 1400px) {
+
+    .arsbrain-family .family-visual {
+        height: 390px;
+    }
+
+    .arsbrain-platform .platform-layout {
+        grid-template-columns: minmax(0, 1.55fr) minmax(360px, 0.8fr);
+    }
+
+    .arsbrain-platform .platform-visual {
+        min-height: 680px;
+    }
+
+}
+
+
+/* =========================================================
+   05 — TABLET
+   ========================================================= */
+
+@media (max-width: 999px) {
+
+    .arsbrain-family .family-visual {
+        height: clamp(260px, 45vw, 360px);
+    }
+
+    .arsbrain-platform .platform-visual {
+        min-height: 480px;
+    }
+
+}
+
+
+/* =========================================================
+   06 — MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .arsbrain-family .family-visual {
+        height: 300px;
+    }
+
+    .arsbrain-platform .platform-visual {
+        min-height: 360px;
+    }
+
+    .arsbrain-platform .platform-visual img {
+        object-position: center center;
+    }
+
+}
