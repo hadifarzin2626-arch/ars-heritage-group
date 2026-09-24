@@ -22517,3 +22517,123 @@ body.brain-test-page .btn-secondary {
     z-index: 1;
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS OS — BACKGROUND ONLY
+   MATTE DEEP PURPLE × DARK INDIGO × SOFT VIOLET
+   ========================================================= */
+
+#ars-os {
+
+    background:
+
+        /* Matte Purple atmosphere */
+        radial-gradient(
+            ellipse at 18% 12%,
+            rgba(104,82,145,.34) 0%,
+            rgba(104,82,145,.16) 25%,
+            transparent 54%
+        ),
+
+        /* Deep Violet */
+        radial-gradient(
+            ellipse at 82% 28%,
+            rgba(81,70,184,.30) 0%,
+            rgba(81,70,184,.14) 28%,
+            transparent 58%
+        ),
+
+        /* Dark Indigo depth */
+        radial-gradient(
+            ellipse at 50% 100%,
+            rgba(11,10,32,.94) 0%,
+            rgba(21,20,58,.72) 36%,
+            transparent 72%
+        ),
+
+        /* Main Matte Purple layer */
+        linear-gradient(
+            125deg,
+            #211A32 0%,
+            #302445 18%,
+            #3A2A50 34%,
+            #2B2140 49%,
+            #44315B 64%,
+            #29203D 78%,
+            #0B0A20 100%
+        ) !important;
+
+    background-color: #211A32 !important;
+}
+
+
+/* =========================================================
+   SUBTLE MATTE VIOLET ATMOSPHERE
+   Background only
+   ========================================================= */
+
+#ars-os::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+
+        radial-gradient(
+            circle at 28% 20%,
+            rgba(123,116,242,.08),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 76% 55%,
+            rgba(102,95,224,.08),
+            transparent 34%
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(11,10,32,.20),
+            transparent 35%,
+            transparent 65%,
+            rgba(11,10,32,.25)
+        );
+
+    z-index: 0;
+}
+
+
+/* Keep all ARS OS content above the background atmosphere */
+
+#ars-os > .container {
+
+    position: relative;
+    z-index: 1;
+
+}
