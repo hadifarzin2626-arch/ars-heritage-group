@@ -18467,228 +18467,46 @@ body.brain-test-page .btn-secondary {
 
 
 
+
+
+
+
+
+
+
+
+
+
 /* =========================================================
-   ARS BRAIN — NEW PLATFORM SHOWCASE CSS
-   SCOPE: ONLY
+   ARS BRAIN PLATFORM
+   TWO PREMIUM SHOWCASE CARDS
+   ---------------------------------------------------------
+   ONLY AFFECTS:
    .arsbrain-platform-showcase
    .arsbrain-vehicle-showcase
    ========================================================= */
 
 
 /* =========================================================
-   01 — PLATFORM CAPABILITIES
+   GLOBAL CONTAINER FOR THESE TWO SECTIONS ONLY
    ========================================================= */
 
-.arsbrain-platform-showcase {
-    width: 100%;
-    position: relative;
-    margin: 90px 0 0;
-    padding: 0;
-}
-
-
-.arsbrain-platform-showcase > .container {
-    width: 100%;
-    position: relative;
-}
-
-
-/* MAIN LARGE CARD */
-
-.arsbrain-platform-showcase .platform-showcase-card {
-    width: 100%;
-    position: relative;
-
-    overflow: hidden;
-
-    padding: 0 !important;
-    margin: 0 !important;
-
-    border-radius: 24px;
-}
-
-
-/* HEADING */
-
-.arsbrain-platform-showcase .showcase-heading {
-    width: 100%;
-    max-width: 1050px;
-
-    margin: 0 auto;
-    padding: 70px 60px 45px;
-
-    text-align: center;
-
-    position: relative;
-    z-index: 3;
-}
-
-
-.arsbrain-platform-showcase .showcase-heading .section-label {
-    display: inline-block;
-    margin-bottom: 18px;
-}
-
-
-.arsbrain-platform-showcase .showcase-heading h2 {
-    margin: 0 0 22px;
-}
-
-
-.arsbrain-platform-showcase .showcase-heading p {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-
-/* LARGE IMAGE */
-
-.arsbrain-platform-showcase .showcase-image {
-    width: calc(100% - 80px);
-    height: 680px;
-
-    margin: 0 auto;
-
-    position: relative;
-
-    overflow: hidden;
-
-    border-radius: 18px;
-}
-
-
-.arsbrain-platform-showcase .showcase-image img {
-    position: absolute;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    min-width: 100%;
-    min-height: 100%;
-
-    max-width: none !important;
-    max-height: none !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    display: block;
-
-    object-fit: cover;
-    object-position: center center;
-
-    border: 0;
-}
-
-
-/* DESCRIPTION UNDER IMAGE */
-
-.arsbrain-platform-showcase .showcase-content {
-    width: calc(100% - 120px);
-    max-width: 1100px;
-
-    margin: 0 auto;
-
-    padding: 55px 0 30px;
-
-    text-align: center;
-}
-
-
-.arsbrain-platform-showcase .showcase-content h3 {
-    margin: 0 0 20px;
-}
-
-
-.arsbrain-platform-showcase .showcase-content p {
-    max-width: 950px;
-
-    margin: 0 auto 18px;
-
-    line-height: 1.9;
-}
-
-
-/* CAPABILITY CARDS */
-
-.arsbrain-platform-showcase .showcase-feature-grid {
-    width: calc(100% - 120px);
-
-    max-width: 1200px;
-
-    margin: 25px auto 70px;
-
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 18px;
-}
-
-
-.arsbrain-platform-showcase .showcase-feature {
-    min-height: 170px;
-
-    padding: 28px 26px;
-
-    border-radius: 16px;
-
-    background: rgba(255,255,255,0.025);
-
-    border: 1px solid rgba(255,255,255,0.07);
-
-    transition:
-        transform 0.3s ease,
-        border-color 0.3s ease,
-        background 0.3s ease;
-}
-
-
-.arsbrain-platform-showcase .showcase-feature:hover {
-    transform: translateY(-4px);
-
-    border-color: rgba(255,255,255,0.16);
-
-    background: rgba(255,255,255,0.045);
-}
-
-
-.arsbrain-platform-showcase .showcase-feature h4 {
-    margin: 0 0 12px;
-}
-
-
-.arsbrain-platform-showcase .showcase-feature p {
-    margin: 0;
-
-    line-height: 1.7;
-}
-
-
-/* =========================================================
-   02 — TARGET VEHICLE ECOSYSTEM
-   ========================================================= */
-
+.arsbrain-platform-showcase,
 .arsbrain-vehicle-showcase {
     width: 100%;
     position: relative;
-
     margin: 100px 0 0;
     padding: 0;
 }
 
 
-.arsbrain-vehicle-showcase > .container {
-    width: 100%;
-    position: relative;
-}
+/* =========================================================
+   MAIN OUTER CARDS
+   ========================================================= */
 
-
-/* MAIN VEHICLE CARD */
-
+.arsbrain-platform-showcase .platform-showcase-card,
 .arsbrain-vehicle-showcase .vehicle-showcase-card {
+
     width: 100%;
     position: relative;
 
@@ -18698,39 +18516,57 @@ body.brain-test-page .btn-secondary {
     margin: 0 !important;
 
     border-radius: 24px;
+
+    box-sizing: border-box;
 }
 
 
-/* HEADING */
+/* =========================================================
+   HEADER — IDENTICAL FOR BOTH
+   ========================================================= */
 
+.arsbrain-platform-showcase .showcase-heading,
 .arsbrain-vehicle-showcase .showcase-heading {
+
     width: 100%;
-    max-width: 1050px;
+    max-width: 1100px;
 
     margin: 0 auto;
 
-    padding: 70px 60px 45px;
+    padding: 72px 60px 48px;
 
     text-align: center;
 
+    box-sizing: border-box;
+
     position: relative;
-    z-index: 3;
+    z-index: 5;
 }
 
 
+.arsbrain-platform-showcase .showcase-heading .section-label,
 .arsbrain-vehicle-showcase .showcase-heading .section-label {
+
     display: inline-block;
 
     margin-bottom: 18px;
+
+    letter-spacing: 0.16em;
 }
 
 
+.arsbrain-platform-showcase .showcase-heading h2,
 .arsbrain-vehicle-showcase .showcase-heading h2 {
+
     margin: 0 0 22px;
+
+    line-height: 1.12;
 }
 
 
+.arsbrain-platform-showcase .showcase-heading p,
 .arsbrain-vehicle-showcase .showcase-heading p {
+
     max-width: 900px;
 
     margin: 0 auto;
@@ -18739,12 +18575,21 @@ body.brain-test-page .btn-secondary {
 }
 
 
-/* LARGE VERTICAL VEHICLE IMAGE */
+/* =========================================================
+   IMAGE FRAME
+   IDENTICAL SIZE / IDENTICAL BEHAVIOR
+   ========================================================= */
 
+.arsbrain-platform-showcase .showcase-image,
 .arsbrain-vehicle-showcase .vehicle-showcase-image {
+
     width: calc(100% - 80px);
 
-    height: 720px;
+    height: 68vh;
+
+    min-height: 620px;
+
+    max-height: 820px;
 
     margin: 0 auto;
 
@@ -18753,10 +18598,20 @@ body.brain-test-page .btn-secondary {
     overflow: hidden;
 
     border-radius: 18px;
+
+    box-sizing: border-box;
+
+    background: #080b10;
 }
 
 
+/* =========================================================
+   BOTH IMAGES — FULL FRAME
+   ========================================================= */
+
+.arsbrain-platform-showcase .showcase-image img,
 .arsbrain-vehicle-showcase .vehicle-showcase-image img {
+
     position: absolute;
 
     inset: 0;
@@ -18770,39 +18625,79 @@ body.brain-test-page .btn-secondary {
     max-width: none !important;
     max-height: none !important;
 
+    display: block;
+
     margin: 0 !important;
     padding: 0 !important;
 
-    display: block;
-
     object-fit: cover;
+
     object-position: center center;
 
     border: 0;
+
+    box-sizing: border-box;
 }
 
 
-/* VEHICLE DESCRIPTION */
+/* =========================================================
+   SUBTLE IMAGE FRAME
+   ========================================================= */
 
+.arsbrain-platform-showcase .showcase-image::after,
+.arsbrain-vehicle-showcase .vehicle-showcase-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    border: 1px solid rgba(183, 145, 91, 0.22);
+
+    border-radius: inherit;
+
+    box-shadow:
+        inset 0 0 60px rgba(0,0,0,0.28),
+        inset 0 -80px 120px rgba(0,0,0,0.20);
+}
+
+
+/* =========================================================
+   DESCRIPTION AREA — IDENTICAL
+   ========================================================= */
+
+.arsbrain-platform-showcase .showcase-content,
 .arsbrain-vehicle-showcase .vehicle-showcase-content {
+
     width: calc(100% - 120px);
 
     max-width: 1100px;
 
     margin: 0 auto;
 
-    padding: 55px 0 35px;
+    padding: 58px 0 30px;
 
     text-align: center;
+
+    box-sizing: border-box;
 }
 
 
+.arsbrain-platform-showcase .showcase-content h3,
 .arsbrain-vehicle-showcase .vehicle-showcase-content h3 {
+
     margin: 0 0 20px;
+
+    line-height: 1.2;
 }
 
 
+.arsbrain-platform-showcase .showcase-content p,
 .arsbrain-vehicle-showcase .vehicle-showcase-content p {
+
     max-width: 950px;
 
     margin: 0 auto 18px;
@@ -18812,186 +18707,412 @@ body.brain-test-page .btn-secondary {
 
 
 /* =========================================================
-   03 — TARGET BRANDS
+   PLATFORM CAPABILITIES
+   SIX FEATURE CARDS
    ========================================================= */
 
-.arsbrain-vehicle-showcase .vehicle-brands {
+.arsbrain-platform-showcase .showcase-feature-grid {
+
     width: calc(100% - 120px);
 
     max-width: 1200px;
 
-    margin: 20px auto 75px;
+    margin: 28px auto 75px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FEATURE CARD
+   ========================================================= */
+
+.arsbrain-platform-showcase .showcase-feature {
+
+    min-height: 175px;
+
+    padding: 30px 28px;
+
+    border-radius: 14px;
+
+    box-sizing: border-box;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(78, 61, 43, 0.25),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(177, 140, 88, 0.25);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.06),
+        0 8px 25px rgba(0,0,0,0.18);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.arsbrain-platform-showcase .showcase-feature:hover {
+
+    transform: translateY(-5px);
+
+    border-color: rgba(193, 153, 96, 0.62);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.08),
+        0 15px 35px rgba(0,0,0,0.30);
+}
+
+
+.arsbrain-platform-showcase .showcase-feature h4 {
+
+    margin: 0 0 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.04em;
+}
+
+
+.arsbrain-platform-showcase .showcase-feature p {
+
+    margin: 0;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   TARGET VEHICLE ECOSYSTEM
+   13 AUTOMOTIVE BRANDS
+   ========================================================= */
+
+.arsbrain-vehicle-showcase .vehicle-brands {
+
+    width: calc(100% - 120px);
+
+    max-width: 1250px;
+
+    margin: 32px auto 78px;
 
     display: grid;
 
     grid-template-columns: repeat(4, 1fr);
 
-    gap: 14px;
+    gap: 18px;
+
+    box-sizing: border-box;
 }
 
 
+/* =========================================================
+   PREMIUM BRAND CARD
+   SAME VISUAL LANGUAGE AS FEATURE CARDS
+   ========================================================= */
+
 .arsbrain-vehicle-showcase .vehicle-brand {
-    min-height: 70px;
+
+    position: relative;
+
+    min-height: 100px;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    padding: 15px 20px;
+    padding: 20px 14px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
 
     border-radius: 12px;
 
-    background: rgba(255,255,255,0.025);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(102, 78, 49, 0.48),
+            rgba(20, 23, 28, 0.94) 48%,
+            rgba(72, 53, 34, 0.50)
+        );
 
-    border: 1px solid rgba(255,255,255,0.07);
+    border: 1px solid rgba(190, 151, 94, 0.52);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.10),
+        inset 0 -1px 0 rgba(0,0,0,0.65),
+        0 10px 25px rgba(0,0,0,0.28);
+
+    color: #d6b47c;
+
+    font-size: clamp(0.88rem, 1.05vw, 1.12rem);
+
+    font-weight: 900;
+
+    letter-spacing: 0.16em;
+
+    line-height: 1.15;
 
     text-align: center;
 
-    letter-spacing: 0.12em;
+    text-transform: uppercase;
 
-    font-weight: 600;
+    text-shadow:
+        0 1px 0 rgba(255,255,255,0.10),
+        0 4px 12px rgba(0,0,0,0.85);
 
     transition:
-        transform 0.3s ease,
-        border-color 0.3s ease,
-        background 0.3s ease;
-}
-
-
-.arsbrain-vehicle-showcase .vehicle-brand:hover {
-    transform: translateY(-3px);
-
-    border-color: rgba(255,255,255,0.16);
-
-    background: rgba(255,255,255,0.045);
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease,
+        color 0.35s ease;
 }
 
 
 /* =========================================================
-   04 — LARGE DESKTOP
+   TOP BRONZE LIGHT
+   ========================================================= */
+
+.arsbrain-vehicle-showcase .vehicle-brand::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 12%;
+    right: 12%;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(226, 190, 128, 0.9),
+            transparent
+        );
+
+    opacity: 0.8;
+}
+
+
+/* =========================================================
+   BOTTOM BRONZE SIGNATURE
+   ========================================================= */
+
+.arsbrain-vehicle-showcase .vehicle-brand::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 24%;
+    right: 24%;
+
+    bottom: 0;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(190, 145, 85, 0.95),
+            transparent
+        );
+
+    opacity: 0.75;
+
+    transition:
+        left 0.35s ease,
+        right 0.35s ease;
+}
+
+
+/* =========================================================
+   BRAND CARD HOVER
+   ========================================================= */
+
+.arsbrain-vehicle-showcase .vehicle-brand:hover {
+
+    transform: translateY(-7px);
+
+    color: #efd09a;
+
+    border-color: rgba(220, 178, 111, 0.95);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.15),
+        inset 0 -1px 0 rgba(0,0,0,0.7),
+        0 16px 38px rgba(0,0,0,0.45),
+        0 0 25px rgba(188, 143, 83, 0.15);
+}
+
+
+.arsbrain-vehicle-showcase .vehicle-brand:hover::after {
+
+    left: 12%;
+    right: 12%;
+}
+
+
+/* =========================================================
+   DESKTOP — LARGE
    ========================================================= */
 
 @media (min-width: 1400px) {
 
-    .arsbrain-platform-showcase .showcase-image {
-        height: 760px;
+    .arsbrain-platform-showcase .showcase-image,
+    .arsbrain-vehicle-showcase .vehicle-showcase-image {
+
+        height: 70vh;
+
+        min-height: 680px;
+
+        max-height: 880px;
     }
 
-    .arsbrain-vehicle-showcase .vehicle-showcase-image {
-        height: 800px;
+
+    .arsbrain-vehicle-showcase .vehicle-brand {
+
+        min-height: 108px;
+
+        font-size: 1.08rem;
+
+        letter-spacing: 0.18em;
     }
 
 }
 
 
 /* =========================================================
-   05 — TABLET
+   TABLET
    ========================================================= */
 
 @media (max-width: 999px) {
 
-    .arsbrain-platform-showcase {
-        margin-top: 70px;
+    .arsbrain-platform-showcase,
+    .arsbrain-vehicle-showcase {
+
+        margin-top: 75px;
     }
 
 
     .arsbrain-platform-showcase .showcase-heading,
     .arsbrain-vehicle-showcase .showcase-heading {
-        padding: 55px 35px 35px;
+
+        padding: 55px 35px 38px;
     }
 
 
     .arsbrain-platform-showcase .showcase-image,
     .arsbrain-vehicle-showcase .vehicle-showcase-image {
+
         width: calc(100% - 50px);
-    }
 
+        height: 60vh;
 
-    .arsbrain-platform-showcase .showcase-image {
-        height: 560px;
-    }
+        min-height: 500px;
 
-
-    .arsbrain-vehicle-showcase .vehicle-showcase-image {
-        height: 600px;
+        max-height: 680px;
     }
 
 
     .arsbrain-platform-showcase .showcase-content,
-    .arsbrain-vehicle-showcase .vehicle-showcase-content {
+    .arsbrain-vehicle-showcase .showcase-content {
+
         width: calc(100% - 70px);
     }
 
 
     .arsbrain-platform-showcase .showcase-feature-grid {
+
         width: calc(100% - 70px);
 
         grid-template-columns: repeat(2, 1fr);
 
-        margin-bottom: 55px;
+        margin-bottom: 60px;
     }
 
 
     .arsbrain-vehicle-showcase .vehicle-brands {
+
         width: calc(100% - 70px);
 
         grid-template-columns: repeat(3, 1fr);
+    }
 
-        margin-bottom: 55px;
+
+    .arsbrain-vehicle-showcase .vehicle-brand {
+
+        min-height: 86px;
+
+        font-size: 0.88rem;
+
+        letter-spacing: 0.12em;
     }
 
 }
 
 
 /* =========================================================
-   06 — MOBILE
+   MOBILE
    ========================================================= */
 
 @media (max-width: 600px) {
 
-    .arsbrain-platform-showcase {
-        margin-top: 55px;
-    }
-
-
+    .arsbrain-platform-showcase,
     .arsbrain-vehicle-showcase {
-        margin-top: 65px;
+
+        margin-top: 60px;
     }
 
 
     .arsbrain-platform-showcase .platform-showcase-card,
     .arsbrain-vehicle-showcase .vehicle-showcase-card {
+
         border-radius: 18px;
     }
 
 
     .arsbrain-platform-showcase .showcase-heading,
     .arsbrain-vehicle-showcase .showcase-heading {
+
         padding: 45px 22px 30px;
     }
 
 
     .arsbrain-platform-showcase .showcase-image,
     .arsbrain-vehicle-showcase .vehicle-showcase-image {
+
         width: calc(100% - 30px);
+
+        height: 55vh;
+
+        min-height: 400px;
+
+        max-height: 560px;
 
         border-radius: 14px;
     }
 
 
-    .arsbrain-platform-showcase .showcase-image {
-        height: 430px;
-    }
-
-
-    .arsbrain-vehicle-showcase .vehicle-showcase-image {
-        height: 470px;
-    }
-
-
     .arsbrain-platform-showcase .showcase-content,
-    .arsbrain-vehicle-showcase .vehicle-showcase-content {
+    .arsbrain-vehicle-showcase .showcase-content {
+
         width: calc(100% - 40px);
 
         padding-top: 40px;
@@ -18999,17 +19120,19 @@ body.brain-test-page .btn-secondary {
 
 
     .arsbrain-platform-showcase .showcase-feature-grid {
+
         width: calc(100% - 40px);
 
         grid-template-columns: 1fr;
 
         gap: 12px;
 
-        margin-bottom: 40px;
+        margin-bottom: 45px;
     }
 
 
     .arsbrain-platform-showcase .showcase-feature {
+
         min-height: auto;
 
         padding: 24px 20px;
@@ -19017,48 +19140,51 @@ body.brain-test-page .btn-secondary {
 
 
     .arsbrain-vehicle-showcase .vehicle-brands {
+
         width: calc(100% - 40px);
 
         grid-template-columns: repeat(2, 1fr);
 
-        gap: 10px;
+        gap: 12px;
 
-        margin-bottom: 40px;
+        margin-bottom: 50px;
     }
 
 
     .arsbrain-vehicle-showcase .vehicle-brand {
-        min-height: 58px;
 
-        padding: 12px 8px;
+        min-height: 76px;
 
-        font-size: 0.78rem;
+        padding: 14px 8px;
+
+        font-size: 0.76rem;
+
+        letter-spacing: 0.10em;
+
+        border-radius: 9px;
     }
 
 }
 
 
 /* =========================================================
-   07 — SMALL MOBILE
+   VERY SMALL MOBILE
    ========================================================= */
 
 @media (max-width: 380px) {
 
-    .arsbrain-platform-showcase .showcase-image {
-        height: 380px;
-    }
-
-
+    .arsbrain-platform-showcase .showcase-image,
     .arsbrain-vehicle-showcase .vehicle-showcase-image {
-        height: 420px;
+
+        min-height: 360px;
     }
 
 
     .arsbrain-vehicle-showcase .vehicle-brands {
+
         grid-template-columns: 1fr;
     }
 
-}
-
+   }
 
 
