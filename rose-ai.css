@@ -18278,3 +18278,717 @@ to{
    ========================================================= */
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS BRAIN PLATFORM
+   ROSE × ARS BRAIN
+========================================================= */
+
+.rose-ars-brain-platform{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  padding:140px 7vw;
+  background:
+    radial-gradient(
+      circle at 18% 45%,
+      rgba(105,25,55,.30),
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 82% 55%,
+      rgba(18,48,92,.28),
+      transparent 44%
+    ),
+    linear-gradient(
+      135deg,
+      #050811 0%,
+      #120610 48%,
+      #071322 100%
+    );
+  color:#f3eee7;
+}
+
+.ars-brain-platform-atmosphere{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(
+      115deg,
+      transparent 0%,
+      rgba(184,137,63,.035) 45%,
+      transparent 65%
+    );
+  z-index:-1;
+}
+
+.ars-brain-platform-inner{
+  position:relative;
+  max-width:1450px;
+  margin:0 auto;
+}
+
+.ars-brain-platform-heading{
+  max-width:850px;
+  margin-bottom:80px;
+}
+
+.ars-brain-platform-heading .section-label{
+  display:block;
+  margin-bottom:18px;
+  color:#a98251;
+  letter-spacing:.24em;
+  font-size:.72rem;
+  font-weight:600;
+}
+
+.ars-brain-platform-heading h2{
+  margin:0 0 24px;
+  font-size:clamp(2.8rem,5vw,5.5rem);
+  line-height:.96;
+  letter-spacing:-.045em;
+  font-weight:500;
+  color:#eee7dd;
+}
+
+.ars-brain-platform-heading h2 span{
+  display:block;
+  color:#9e294f;
+}
+
+.ars-brain-platform-heading p{
+  max-width:680px;
+  margin:0;
+  color:rgba(224,215,204,.68);
+  font-size:1.05rem;
+  line-height:1.9;
+}
+
+
+/* =========================================================
+   LAYOUT
+========================================================= */
+
+.ars-brain-platform-layout{
+  display:grid;
+  grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);
+  gap:80px;
+  align-items:center;
+}
+
+
+/* =========================================================
+   VISUAL
+========================================================= */
+
+.ars-brain-platform-visual{
+  position:relative;
+}
+
+.ars-brain-platform-image-frame{
+  position:relative;
+  overflow:hidden;
+  min-height:650px;
+  border:1px solid rgba(184,137,63,.18);
+  background:#050811;
+  box-shadow:
+    0 35px 100px rgba(0,0,0,.55),
+    0 0 70px rgba(105,25,55,.14);
+}
+
+.ars-brain-platform-image{
+  display:block;
+  width:100%;
+  height:650px;
+  object-fit:cover;
+  object-position:center;
+  filter:
+    saturate(.88)
+    contrast(1.08)
+    brightness(.82);
+}
+
+.ars-brain-platform-image-overlay{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5,8,17,.08),
+      transparent 45%,
+      rgba(5,8,17,.22)
+    ),
+    linear-gradient(
+      180deg,
+      rgba(5,8,17,.06),
+      transparent 55%,
+      rgba(5,8,17,.48)
+    );
+}
+
+.ars-brain-platform-visual-label{
+  position:absolute;
+  left:28px;
+  bottom:26px;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  padding:14px 18px;
+  background:rgba(5,8,17,.72);
+  border-left:2px solid #9e294f;
+  backdrop-filter:blur(14px);
+}
+
+.ars-brain-platform-visual-label span{
+  color:#b8893f;
+  font-size:.65rem;
+  letter-spacing:.22em;
+}
+
+.ars-brain-platform-visual-label strong{
+  color:#eee7dd;
+  font-size:.72rem;
+  letter-spacing:.12em;
+  font-weight:500;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.ars-brain-platform-content{
+  max-width:650px;
+}
+
+.ars-brain-platform-kicker{
+  display:block;
+  margin-bottom:18px;
+  color:#a98251;
+  font-size:.68rem;
+  letter-spacing:.25em;
+  text-transform:uppercase;
+}
+
+.ars-brain-platform-content h3{
+  margin:0 0 30px;
+  font-size:clamp(2.2rem,4vw,4rem);
+  line-height:1;
+  font-weight:500;
+  letter-spacing:-.04em;
+  color:#eee7dd;
+}
+
+.ars-brain-platform-content h3 span{
+  display:block;
+  color:#9e294f;
+}
+
+.ars-brain-platform-content > p{
+  margin:0 0 18px;
+  color:rgba(224,215,204,.72);
+  font-size:.98rem;
+  line-height:1.9;
+}
+
+
+/* =========================================================
+   PRINCIPLES
+========================================================= */
+
+.ars-brain-platform-principles{
+  display:grid;
+  gap:14px;
+  margin-top:42px;
+}
+
+.ars-brain-platform-principle{
+  display:grid;
+  grid-template-columns:48px 1fr;
+  gap:18px;
+  padding:20px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(67,9,31,.88),
+      rgba(43,7,25,.92) 65%,
+      rgba(8,22,40,.94)
+    );
+  border:1px solid rgba(184,137,63,.13);
+  transition:
+    transform .35s ease,
+    border-color .35s ease,
+    background .35s ease;
+}
+
+.ars-brain-platform-principle:hover{
+  transform:translateX(5px);
+  border-color:rgba(184,137,63,.30);
+}
+
+.ars-brain-platform-number{
+  color:#9e294f;
+  font-size:.72rem;
+  letter-spacing:.12em;
+  padding-top:3px;
+}
+
+.ars-brain-platform-principle h4{
+  margin:0 0 7px;
+  color:#b8893f;
+  font-size:.76rem;
+  letter-spacing:.18em;
+  font-weight:600;
+}
+
+.ars-brain-platform-principle p{
+  margin:0;
+  color:rgba(220,210,199,.62);
+  font-size:.82rem;
+  line-height:1.7;
+}
+
+
+/* =========================================================
+   SIGNATURE
+========================================================= */
+
+.ars-brain-platform-signature{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-top:38px;
+  color:rgba(238,231,221,.48);
+  font-size:.64rem;
+  letter-spacing:.2em;
+}
+
+.ars-brain-platform-signature span{
+  display:block;
+  width:42px;
+  height:1px;
+  background:
+    linear-gradient(
+      90deg,
+      #9e294f,
+      #b8893f
+    );
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1000px){
+
+  .ars-brain-platform-layout{
+    grid-template-columns:1fr;
+    gap:55px;
+  }
+
+  .ars-brain-platform-content{
+    max-width:800px;
+  }
+
+}
+
+@media(max-width:650px){
+
+  .rose-ars-brain-platform{
+    padding:95px 6vw;
+  }
+
+  .ars-brain-platform-heading{
+    margin-bottom:55px;
+  }
+
+  .ars-brain-platform-image-frame,
+  .ars-brain-platform-image{
+    min-height:440px;
+    height:440px;
+  }
+
+  .ars-brain-platform-principle{
+    grid-template-columns:36px 1fr;
+    padding:16px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS HAVEN
+   HUMAN PROTECTION & PEACE OF MIND
+========================================================= */
+
+.ars-haven-section{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  padding:150px 7vw;
+  background:
+    radial-gradient(
+      circle at 78% 30%,
+      rgba(28,64,105,.24),
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 20% 70%,
+      rgba(105,25,55,.20),
+      transparent 42%
+    ),
+    linear-gradient(
+      135deg,
+      #050811,
+      #07101c 48%,
+      #0b0610 100%
+    );
+  color:#f3eee7;
+}
+
+.ars-haven-atmosphere{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(
+      120deg,
+      transparent 25%,
+      rgba(184,137,63,.025) 50%,
+      transparent 75%
+    );
+  z-index:-1;
+}
+
+.ars-haven-inner{
+  max-width:1450px;
+  margin:0 auto;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.ars-haven-heading{
+  max-width:850px;
+  margin-bottom:85px;
+}
+
+.ars-haven-heading .section-label{
+  display:block;
+  margin-bottom:18px;
+  color:#a98251;
+  font-size:.72rem;
+  letter-spacing:.24em;
+}
+
+.ars-haven-heading h2{
+  margin:0 0 24px;
+  font-size:clamp(2.8rem,5vw,5.4rem);
+  line-height:.96;
+  letter-spacing:-.045em;
+  font-weight:500;
+}
+
+.ars-haven-heading h2 span{
+  display:block;
+  color:#8b3150;
+}
+
+.ars-haven-heading p{
+  max-width:700px;
+  margin:0;
+  color:rgba(224,215,204,.67);
+  font-size:1.03rem;
+  line-height:1.9;
+}
+
+
+/* =========================================================
+   LAYOUT
+========================================================= */
+
+.ars-haven-layout{
+  display:grid;
+  grid-template-columns:minmax(360px,.9fr) minmax(0,1.1fr);
+  gap:85px;
+  align-items:center;
+}
+
+
+/* =========================================================
+   VISUAL
+========================================================= */
+
+.ars-haven-visual{
+  position:relative;
+}
+
+.ars-haven-image-frame{
+  position:relative;
+  overflow:hidden;
+  min-height:650px;
+  background:#050811;
+  border:1px solid rgba(184,137,63,.15);
+  box-shadow:
+    0 35px 100px rgba(0,0,0,.58),
+    0 0 70px rgba(28,64,105,.12);
+}
+
+.ars-haven-image{
+  display:block;
+  width:100%;
+  height:650px;
+  object-fit:cover;
+  object-position:center;
+  filter:
+    saturate(.82)
+    contrast(1.08)
+    brightness(.78);
+}
+
+.ars-haven-image-overlay{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5,8,17,.04),
+      transparent 50%,
+      rgba(5,8,17,.58)
+    ),
+    linear-gradient(
+      90deg,
+      rgba(5,8,17,.20),
+      transparent 55%
+    );
+}
+
+.ars-haven-visual-mark{
+  position:absolute;
+  left:28px;
+  bottom:26px;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  padding:14px 18px;
+  background:rgba(5,8,17,.74);
+  border-left:2px solid #315c91;
+  backdrop-filter:blur(14px);
+}
+
+.ars-haven-visual-mark span{
+  color:#b8893f;
+  font-size:.65rem;
+  letter-spacing:.22em;
+}
+
+.ars-haven-visual-mark strong{
+  color:#eee7dd;
+  font-size:.68rem;
+  letter-spacing:.12em;
+  font-weight:500;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.ars-haven-content{
+  max-width:680px;
+}
+
+.ars-haven-kicker{
+  display:block;
+  margin-bottom:18px;
+  color:#a98251;
+  font-size:.68rem;
+  letter-spacing:.25em;
+}
+
+.ars-haven-content h3{
+  margin:0 0 30px;
+  font-size:clamp(2.2rem,4vw,4rem);
+  line-height:1;
+  letter-spacing:-.04em;
+  font-weight:500;
+}
+
+.ars-haven-content h3 span{
+  display:block;
+  color:#315c91;
+}
+
+.ars-haven-content > p{
+  margin:0 0 18px;
+  color:rgba(224,215,204,.70);
+  font-size:.98rem;
+  line-height:1.9;
+}
+
+
+/* =========================================================
+   PILLARS
+========================================================= */
+
+.ars-haven-pillars{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-top:42px;
+}
+
+.ars-haven-pillar{
+  display:grid;
+  grid-template-columns:40px 1fr;
+  gap:15px;
+  padding:20px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(8,28,49,.94),
+      rgba(9,22,40,.96) 65%,
+      rgba(52,8,27,.88)
+    );
+  border:1px solid rgba(49,92,145,.18);
+  transition:
+    transform .35s ease,
+    border-color .35s ease;
+}
+
+.ars-haven-pillar:hover{
+  transform:translateY(-4px);
+  border-color:rgba(49,92,145,.38);
+}
+
+.ars-haven-pillar > span{
+  color:#315c91;
+  font-size:.72rem;
+  letter-spacing:.1em;
+  padding-top:3px;
+}
+
+.ars-haven-pillar h4{
+  margin:0 0 7px;
+  color:#b8893f;
+  font-size:.74rem;
+  letter-spacing:.16em;
+}
+
+.ars-haven-pillar p{
+  margin:0;
+  color:rgba(220,210,199,.60);
+  font-size:.78rem;
+  line-height:1.7;
+}
+
+
+/* =========================================================
+   SIGNATURE
+========================================================= */
+
+.ars-haven-signature{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-top:40px;
+  color:rgba(238,231,221,.48);
+  font-size:.64rem;
+  letter-spacing:.2em;
+}
+
+.ars-haven-signature span{
+  width:42px;
+  height:1px;
+  display:block;
+  background:
+    linear-gradient(
+      90deg,
+      #315c91,
+      #b8893f
+    );
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1000px){
+
+  .ars-haven-layout{
+    grid-template-columns:1fr;
+    gap:55px;
+  }
+
+  .ars-haven-content{
+    max-width:820px;
+  }
+
+}
+
+@media(max-width:650px){
+
+  .ars-haven-section{
+    padding:100px 6vw;
+  }
+
+  .ars-haven-heading{
+    margin-bottom:55px;
+  }
+
+  .ars-haven-image-frame,
+  .ars-haven-image{
+    min-height:440px;
+    height:440px;
+  }
+
+  .ars-haven-pillars{
+    grid-template-columns:1fr;
+  }
+
+}
