@@ -18992,3 +18992,126 @@ to{
   }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS / ROSE — FULL IMAGE VISIBILITY PATCH
+   HERO 2 → ALL IMAGE SECTIONS
+   SHOW COMPLETE IMAGE / NO CROP / NO ZOOM
+========================================================= */
+
+/* Hero 2 — Cinematic Image */
+.rose-cinematic-image img{
+    width:100% !important;
+    height:100% !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+    transform:none !important;
+}
+
+
+/* All image elements inside ROSE sections */
+.rose-cinematic-image img,
+.rose-philosophy-image,
+.future-life-image,
+.highlight-image,
+.trust-image,
+.beyond-voice-image,
+.human-connection-image,
+.assistance-image,
+.critical-image,
+.ars-brain-platform-image,
+.ars-haven-image{
+    object-fit:contain !important;
+    object-position:center center !important;
+    transform:none !important;
+}
+
+
+/* Image containers — don't force cropping */
+.rose-cinematic-image,
+.rose-philosophy-visual,
+.future-life-visual,
+.highlight-visual,
+.trust-visual,
+.beyond-voice-visual,
+.human-connection-visual,
+.assistance-visual,
+.critical-visual,
+.ars-brain-platform-image-frame,
+.ars-haven-image-frame{
+    overflow:hidden;
+}
+
+
+/* Prevent image zoom caused by width/height mismatch */
+.rose-cinematic-image img,
+.rose-philosophy-image,
+.future-life-image,
+.highlight-image,
+.trust-image,
+.beyond-voice-image,
+.human-connection-image,
+.assistance-image,
+.critical-image,
+.ars-brain-platform-image,
+.ars-haven-image{
+    max-width:100% !important;
+    max-height:100% !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ROSE HERO 2 — FULL IMAGE / NO CROP / NO ZOOM
+   ========================================================= */
+
+.rose-cinematic-image{
+    overflow:hidden !important;
+}
+
+.rose-cinematic-image img{
+    width:100% !important;
+    height:100% !important;
+
+    object-fit:contain !important;
+    object-position:center center !important;
+
+    transform:none !important;
+    scale:1 !important;
+
+    max-width:100% !important;
+    max-height:100% !important;
+}
