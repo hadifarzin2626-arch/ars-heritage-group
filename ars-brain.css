@@ -23249,64 +23249,40 @@ body.brain-test-page .btn-secondary {
 
 
 
+
+
+
 /* =========================================================
-   ARS BRAIN — MASTER SHARED BACKGROUND
-   FORCE FULL HEIGHT — PREMIUM 2 + HERO + WHAT IS
+   ARS BRAIN — MASTER HEIGHT FORCE
    ========================================================= */
 
 .arsbrain-hero-master {
     position: relative !important;
-    display: flow-root !important;
-    min-height: 0 !important;
     height: auto !important;
-    overflow: hidden !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+
+    display: flex !important;
+    flex-direction: column !important;
 }
 
-/* Shared background layer */
-.arsbrain-hero-master .arsbrain-shared-background {
-    position: absolute !important;
-    inset: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    z-index: 0 !important;
-    overflow: hidden !important;
-    pointer-events: none !important;
-}
-
-/* THE IMPORTANT PART */
-.arsbrain-hero-master .arsbrain-shared-background img {
-    position: absolute !important;
-    inset: 0 !important;
-
-    width: 100% !important;
-    height: 100% !important;
-
-    max-width: none !important;
-    max-height: none !important;
-
-    object-fit: fill !important;
-    object-position: center center !important;
-
-    transform: none !important;
-}
-
-/* Background overlay */
-.arsbrain-hero-master .arsbrain-shared-overlay {
-    position: absolute !important;
-    inset: 0 !important;
-
-    width: 100% !important;
-    height: 100% !important;
-
-    z-index: 1 !important;
-    pointer-events: none !important;
-}
-
-/* Every section must remain above the shared background */
-.arsbrain-hero-master > section {
+/* FORCE WHAT IS TO PARTICIPATE IN MASTER HEIGHT */
+.arsbrain-hero-master > .what-is-arsbrain {
     position: relative !important;
-    z-index: 2 !important;
+    display: block !important;
+    flex: 0 0 auto !important;
 }
+
+/* ALL THREE MAIN SECTIONS PARTICIPATE IN FLOW */
+.arsbrain-hero-master > .arsbrain-premium-2,
+.arsbrain-hero-master > .arsbrain-hero,
+.arsbrain-hero-master > .what-is-arsbrain {
+    position: relative !important;
+    flex: 0 0 auto !important;
+}
+
+
+
 
 
 
