@@ -23058,3 +23058,316 @@ body.brain-test-page .btn-secondary {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS BRAIN — HERO VISUAL CLARITY PATCH
+   ---------------------------------------------------------
+   PURPOSE:
+   Improve visibility of the existing Hero 1 neural system
+   and Hero 2 ARS Brain identity over the new shared
+   architectural background.
+
+   IMPORTANT:
+   NO HTML / STRUCTURE / POSITION / SIZE CHANGES.
+   ========================================================= */
+
+
+/* =========================================================
+   HERO 1 — ATMOSPHERIC AURA BEHIND EXISTING SYSTEM
+   ---------------------------------------------------------
+   Adds a soft bronze/gold atmospheric field behind the
+   existing Premium 2 system without changing its geometry.
+   ========================================================= */
+
+#ars-brain-product-architecture {
+    position: relative;
+    isolation: isolate;
+}
+
+#ars-brain-product-architecture::before {
+    content: "";
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 72%;
+    height: 72%;
+
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+    z-index: 0;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(193,154,104,.20) 0%,
+            rgba(193,154,104,.13) 24%,
+            rgba(193,154,104,.07) 43%,
+            rgba(193,154,104,.025) 62%,
+            transparent 78%
+        );
+
+    filter: blur(24px);
+}
+
+
+/* Keep all existing Premium 2 content above the aura */
+
+#ars-brain-product-architecture > * {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================================
+   HERO 1 — EXISTING CORE
+   ---------------------------------------------------------
+   Adds subtle depth and illumination.
+   Does NOT change size or position.
+   ========================================================= */
+
+#ars-brain-product-architecture .ars-p2-core-frame {
+    box-shadow:
+        0 0 0 1px rgba(193,154,104,.18),
+        0 0 28px rgba(193,154,104,.16),
+        0 0 70px rgba(57,191,255,.10),
+        inset 0 0 32px rgba(57,191,255,.055);
+}
+
+
+/* Existing core inner area */
+
+#ars-brain-product-architecture .ars-p2-core-inner {
+    box-shadow:
+        inset 0 0 22px rgba(193,154,104,.08),
+        0 0 18px rgba(57,191,255,.08);
+}
+
+
+/* =========================================================
+   HERO 1 — ACTIVE PRODUCT CARDS
+   ---------------------------------------------------------
+   PLATFORM + HAVEN become more visible while preserving
+   their existing design.
+   ========================================================= */
+
+#ars-brain-product-architecture .ars-p2-product {
+    filter:
+        drop-shadow(0 0 8px rgba(57,191,255,.20))
+        drop-shadow(0 0 18px rgba(193,154,104,.10));
+}
+
+
+/* Product nodes */
+
+#ars-brain-product-architecture .ars-p2-node {
+    box-shadow:
+        0 0 8px rgba(57,191,255,.72),
+        0 0 18px rgba(57,191,255,.34),
+        0 0 28px rgba(193,154,104,.16);
+}
+
+
+/* =========================================================
+   HERO 1 — FUTURE SYSTEMS
+   ---------------------------------------------------------
+   Keep Coming Soon weaker than active products, but make
+   them readable against the architectural background.
+   ========================================================= */
+
+#ars-brain-product-architecture .ars-p2-future {
+    filter:
+        drop-shadow(0 0 7px rgba(57,191,255,.16))
+        drop-shadow(0 0 14px rgba(193,154,104,.07));
+}
+
+
+#ars-brain-product-architecture .ars-p2-future-node {
+    box-shadow:
+        0 0 7px rgba(57,191,255,.50),
+        0 0 15px rgba(57,191,255,.20);
+}
+
+
+/* =========================================================
+   HERO 1 — NEURAL CONNECTIONS
+   ---------------------------------------------------------
+   Strengthens existing blue light paths only.
+   No path geometry is changed.
+   ========================================================= */
+
+#ars-brain-product-architecture .ars-p2-neural-map {
+    filter:
+        drop-shadow(0 0 4px rgba(57,191,255,.35))
+        drop-shadow(0 0 12px rgba(57,191,255,.14));
+}
+
+
+#ars-brain-product-architecture .ars-p2-line {
+    filter:
+        drop-shadow(0 0 3px rgba(57,191,255,.55))
+        drop-shadow(0 0 8px rgba(57,191,255,.20));
+}
+
+
+/* =========================================================
+   HERO 2 — ARS BRAIN IDENTITY
+   ---------------------------------------------------------
+   Adds the requested Electric Blue + Matte Bronze aura
+   behind the existing logo/orbital system.
+   ========================================================= */
+
+.arsbrain-hero {
+    position: relative;
+    isolation: isolate;
+}
+
+
+.arsbrain-hero::before {
+    content: "";
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 58%;
+    height: 68%;
+
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+    z-index: 0;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(57,191,255,.14) 0%,
+            rgba(57,191,255,.08) 28%,
+            rgba(193,154,104,.09) 48%,
+            rgba(193,154,104,.035) 65%,
+            transparent 80%
+        );
+
+    filter: blur(30px);
+}
+
+
+/* Existing Hero 2 content stays above the aura */
+
+.arsbrain-hero > * {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================================
+   HERO 2 — EXISTING ARS BRAIN LOGO
+   ---------------------------------------------------------
+   No size or position modification.
+   Only additional light depth.
+   ========================================================= */
+
+.arsbrain-hero .ars-identity-logo {
+    filter:
+        drop-shadow(0 0 10px rgba(57,191,255,.24))
+        drop-shadow(0 0 24px rgba(57,191,255,.13))
+        drop-shadow(0 0 32px rgba(193,154,104,.10));
+}
+
+
+/* Existing logo aura */
+
+.arsbrain-hero .ars-logo-aura {
+    filter:
+        blur(2px)
+        drop-shadow(0 0 18px rgba(57,191,255,.30))
+        drop-shadow(0 0 30px rgba(193,154,104,.12));
+}
+
+
+/* =========================================================
+   HERO 2 — ORBITAL SYSTEM
+   ---------------------------------------------------------
+   Existing orbital rings become clearer against background.
+   ========================================================= */
+
+.arsbrain-hero .ars-identity-orbit {
+    filter:
+        drop-shadow(0 0 5px rgba(57,191,255,.30))
+        drop-shadow(0 0 14px rgba(193,154,104,.10));
+}
+
+
+.arsbrain-hero .ars-orbit-ring {
+    filter:
+        drop-shadow(0 0 4px rgba(57,191,255,.42))
+        drop-shadow(0 0 10px rgba(193,154,104,.12));
+}
+
+
+/* =========================================================
+   HERO 2 — ENERGY BEAMS
+   ---------------------------------------------------------
+   Existing beams remain exactly where they are.
+   ========================================================= */
+
+.arsbrain-hero .ars-identity-energy {
+    filter:
+        drop-shadow(0 0 5px rgba(57,191,255,.35))
+        drop-shadow(0 0 12px rgba(193,154,104,.12));
+}
+
+
+/* =========================================================
+   HERO 2 — CINEMATIC LIGHT
+   ---------------------------------------------------------
+   Existing effects only receive additional visibility.
+   ========================================================= */
+
+.arsbrain-hero .ars-hero-cinematic {
+    filter:
+        drop-shadow(0 0 12px rgba(57,191,255,.12));
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ---------------------------------------------------------
+   Keep the aura proportional on smaller screens.
+   No layout changes.
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    #ars-brain-product-architecture::before {
+        width: 92%;
+        height: 78%;
+        filter: blur(20px);
+    }
+
+    .arsbrain-hero::before {
+        width: 88%;
+        height: 72%;
+        filter: blur(22px);
+    }
+
+}
