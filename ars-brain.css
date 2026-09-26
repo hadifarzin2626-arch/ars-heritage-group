@@ -22930,128 +22930,138 @@ body.brain-test-page .btn-secondary {
 
 
 
+
 /* =========================================================
-   ARS BRAIN — ONE CONTINUOUS BACKGROUND
+   ARS BRAIN — TRUE CONTINUOUS SHARED BACKGROUND
    PREMIUM 2 + HERO 1 + WHAT IS ARS BRAIN
    ========================================================= */
 
 .arsbrain-hero-master {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    isolation: isolate;
-
-    background: #050B12;
+    position: relative !important;
+    width: 100% !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+    isolation: isolate !important;
 }
 
 
-/* ---------------------------------------------------------
-   SHARED BACKGROUND
-   --------------------------------------------------------- */
+/* =========================================================
+   THE SINGLE BACKGROUND
+   ========================================================= */
 
 .arsbrain-shared-background {
-    position: absolute;
-    inset: 0;
+    position: absolute !important;
 
-    width: 100%;
-    height: 100%;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
 
-    z-index: 0;
-    pointer-events: none;
-    overflow: hidden;
+    width: 100% !important;
+    height: 100% !important;
+
+    z-index: 0 !important;
+
+    overflow: hidden !important;
+    pointer-events: none !important;
 }
 
+
 .arsbrain-shared-background img {
-    position: absolute;
-    inset: 0;
+    position: absolute !important;
 
-    width: 100%;
-    height: 100%;
+    top: 0 !important;
+    left: 0 !important;
 
-    display: block;
+    width: 100% !important;
+    height: 100% !important;
 
-    /*
-       IMPORTANT:
-       No crop on left or right.
-       Entire image stretches across the
-       complete shared section.
-    */
+    max-width: none !important;
+    max-height: none !important;
 
-    object-fit: fill;
-    object-position: center center;
+    display: block !important;
 
-    max-width: none;
+    object-fit: fill !important;
+    object-position: center top !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
 
     transform: none !important;
 }
 
 
-/* ---------------------------------------------------------
-   SHARED OVERLAY
-   --------------------------------------------------------- */
+/* =========================================================
+   OVERLAY
+   ========================================================= */
 
 .arsbrain-shared-overlay {
-    position: absolute;
-    inset: 0;
+    position: absolute !important;
 
-    width: 100%;
-    height: 100%;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
 
-    z-index: 1;
-    pointer-events: none;
+    width: 100% !important;
+    height: 100% !important;
+
+    z-index: 1 !important;
+
+    pointer-events: none !important;
 
     background:
         linear-gradient(
             180deg,
-            rgba(3,10,18,.12) 0%,
-            rgba(3,10,18,.06) 35%,
-            rgba(3,10,18,.10) 65%,
-            rgba(3,10,18,.22) 100%
-        );
+            rgba(3,10,18,.10) 0%,
+            rgba(3,10,18,.04) 35%,
+            rgba(3,10,18,.08) 65%,
+            rgba(3,10,18,.18) 100%
+        ) !important;
 }
 
 
-/* ---------------------------------------------------------
-   ALL THREE SECTIONS SIT ABOVE THE SAME IMAGE
-   --------------------------------------------------------- */
+/* =========================================================
+   THREE SECTIONS = ONE CONTINUOUS VISUAL FIELD
+   ========================================================= */
 
 .arsbrain-hero-master > .arsbrain-premium-2,
 .arsbrain-hero-master > .arsbrain-hero,
 .arsbrain-hero-master > .what-is-arsbrain {
 
-    position: relative;
-    z-index: 2;
+    position: relative !important;
+
+    z-index: 2 !important;
 
     background: transparent !important;
 }
 
 
-/* ---------------------------------------------------------
-   REMOVE THEIR OWN BACKGROUND LAYERS
-   --------------------------------------------------------- */
+/* =========================================================
+   REMOVE OLD INDIVIDUAL HERO BACKGROUNDS
+   ========================================================= */
 
 .arsbrain-hero-master .ars-p2-bg,
 .arsbrain-hero-master .arsbrain-background {
 
     background: transparent !important;
+
+    background-image: none !important;
 }
 
 
-/* ---------------------------------------------------------
-   KEEP ALL EXISTING HERO ELEMENTS ABOVE THE IMAGE
-   --------------------------------------------------------- */
+/* =========================================================
+   IMPORTANT:
+   DO NOT LET INNER HERO ELEMENTS CREATE THEIR OWN
+   SOLID BACKGROUND OVER THE SHARED IMAGE
+   ========================================================= */
 
 .arsbrain-hero-master .ars-p2-stage,
-.arsbrain-hero-master .ars-p2-core,
-.arsbrain-hero-master .ars-p2-neural-map,
 .arsbrain-hero-master .arsbrain-wrapper,
-.arsbrain-hero-master .hero-visual,
-.arsbrain-hero-master .ars-hero-identity {
+.arsbrain-hero-master .what-is-arsbrain .container {
 
-    position: relative;
-    z-index: 3;
-           }
-
+    background: transparent !important;
+}
 
 
 
