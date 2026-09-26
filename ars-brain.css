@@ -23359,79 +23359,478 @@ body.brain-test-page .btn-secondary {
 
 
 
+
+
+
+
 /* =========================================================
-   ARS BRAIN — SHARED BACKGROUND
-   NATURAL IMAGE PROPORTION / COVER
+   ARS BRAIN — PREMIUM 2
+   7-SYSTEM VISIBILITY / LIGHT CLARITY PATCH
+   ---------------------------------------------------------
+   EXACT HTML CLASSES:
+   .ars-p2-core
+   .ars-p2-core-frame
+   .ars-p2-core-inner
+   .ars-p2-core-light
+
+   .ars-p2-product
+   .ars-p2-product-platform
+   .ars-p2-product-haven
+   .ars-p2-node
+
+   .ars-p2-future
+   .ars-p2-future-node
+
+   .ars-p2-neural-map
+   .ars-p2-line
+   .active-line
+   .future-line
+
+   NO SIZE / POSITION / LAYOUT CHANGES
+   ========================================================= */
+
+
+/* =========================================================
+   01 — SOFT AURA BEHIND THE COMPLETE 7-SYSTEM
+   ========================================================= */
+
+#ars-brain-product-architecture::before {
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    width: 82%;
+    height: 82%;
+
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+    z-index: -1;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(57,191,255,.18) 0%,
+            rgba(57,191,255,.12) 22%,
+            rgba(57,191,255,.07) 40%,
+            rgba(193,154,104,.08) 55%,
+            rgba(193,154,104,.035) 68%,
+            transparent 84%
+        );
+
+    filter: blur(30px);
+}
+
+
+/* =========================================================
+   02 — CENTRAL SQUARE
+   .ars-p2-core
+   ========================================================= */
+
+#ars-brain-product-architecture .ars-p2-core {
+    filter:
+        drop-shadow(0 0 12px rgba(57,191,255,.30))
+        drop-shadow(0 0 28px rgba(57,191,255,.16))
+        drop-shadow(0 0 38px rgba(193,154,104,.10));
+}
+
+
+#ars-brain-product-architecture .ars-p2-core-frame {
+    box-shadow:
+        0 0 0 1px rgba(193,154,104,.42),
+        0 0 14px rgba(193,154,104,.28),
+        0 0 30px rgba(57,191,255,.30),
+        0 0 60px rgba(57,191,255,.18),
+        inset 0 0 26px rgba(57,191,255,.12) !important;
+}
+
+
+#ars-brain-product-architecture .ars-p2-core-inner {
+    box-shadow:
+        inset 0 0 18px rgba(57,191,255,.16),
+        inset 0 0 34px rgba(193,154,104,.08),
+        0 0 18px rgba(57,191,255,.18) !important;
+}
+
+
+/* =========================================================
+   03 — CENTRAL LIGHT
+   .ars-p2-core-light
+   ========================================================= */
+
+#ars-brain-product-architecture .ars-p2-core-light {
+    filter:
+        blur(1px)
+        drop-shadow(0 0 8px rgba(57,191,255,.85))
+        drop-shadow(0 0 20px rgba(57,191,255,.55))
+        drop-shadow(0 0 38px rgba(57,191,255,.25))
+        drop-shadow(0 0 24px rgba(193,154,104,.14));
+}
+
+
+/* =========================================================
+   04 — TWO ACTIVE RECTANGLES
+   .ars-p2-product
+   ========================================================= */
+
+#ars-brain-product-architecture .ars-p2-product {
+    filter:
+        drop-shadow(0 0 6px rgba(57,191,255,.55))
+        drop-shadow(0 0 14px rgba(57,191,255,.32))
+        drop-shadow(0 0 28px rgba(57,191,255,.16))
+        drop-shadow(0 0 14px rgba(193,154,104,.08));
+}
+
+
+/* ACTIVE NODES */
+
+#ars-brain-product-architecture .ars-p2-node {
+    box-shadow:
+        0 0 5px rgba(57,191,255,1),
+        0 0 12px rgba(57,191,255,.88),
+        0 0 24px rgba(57,191,255,.55),
+        0 0 42px rgba(57,191,255,.25) !important;
+}
+
+
+/* =========================================================
+   05 — FOUR FUTURE RECTANGLES
+   .ars-p2-future
+   ========================================================= */
+
+#ars-brain-product-architecture .ars-p2-future {
+    filter:
+        drop-shadow(0 0 5px rgba(57,191,255,.42))
+        drop-shadow(0 0 12px rgba(57,191,255,.24))
+        drop-shadow(0 0 24px rgba(57,191,255,.12))
+        drop-shadow(0 0 12px rgba(193,154,104,.06));
+}
+
+
+/* FUTURE NODES */
+
+#ars-brain-product-architecture .ars-p2-future-node {
+    box-shadow:
+        0 0 5px rgba(57,191,255,.92),
+        0 0 12px rgba(57,191,255,.62),
+        0 0 24px rgba(57,191,255,.32),
+        0 0 36px rgba(57,191,255,.15) !important;
+}
+
+
+/* =========================================================
+   06 — SIX ENERGY LINES
+   .ars-p2-neural-map
+   ========================================================= */
+
+#ars-brain-product-architecture .ars-p2-neural-map {
+    filter:
+        drop-shadow(0 0 3px rgba(57,191,255,.90))
+        drop-shadow(0 0 8px rgba(57,191,255,.58))
+        drop-shadow(0 0 18px rgba(57,191,255,.30))
+        drop-shadow(0 0 28px rgba(193,154,104,.08));
+}
+
+
+/* ALL SIX LINES */
+
+#ars-brain-product-architecture .ars-p2-line {
+    filter:
+        drop-shadow(0 0 2px rgba(57,191,255,1))
+        drop-shadow(0 0 6px rgba(57,191,255,.72))
+        drop-shadow(0 0 13px rgba(57,191,255,.40))
+        drop-shadow(0 0 22px rgba(57,191,255,.18));
+}
+
+
+/* ACTIVE TWO LINES */
+
+#ars-brain-product-architecture .ars-p2-line.active-line {
+    filter:
+        drop-shadow(0 0 3px rgba(57,191,255,1))
+        drop-shadow(0 0 7px rgba(57,191,255,.88))
+        drop-shadow(0 0 15px rgba(57,191,255,.55))
+        drop-shadow(0 0 26px rgba(57,191,255,.25));
+}
+
+
+/* FOUR FUTURE LINES */
+
+#ars-brain-product-architecture .ars-p2-line.future-line {
+    filter:
+        drop-shadow(0 0 2px rgba(57,191,255,.95))
+        drop-shadow(0 0 6px rgba(57,191,255,.68))
+        drop-shadow(0 0 13px rgba(57,191,255,.38))
+        drop-shadow(0 0 20px rgba(193,154,104,.10));
+}
+
+
+/* =========================================================
+   07 — TEXT READABILITY
+   ========================================================= */
+
+#ars-brain-product-architecture .ars-p2-product-copy {
+    text-shadow:
+        0 2px 4px rgba(0,0,0,.90),
+        0 0 9px rgba(57,191,255,.16);
+}
+
+
+#ars-brain-product-architecture .ars-p2-future strong,
+#ars-brain-product-architecture .ars-p2-future small {
+    text-shadow:
+        0 2px 4px rgba(0,0,0,.90),
+        0 0 9px rgba(57,191,255,.14);
+}
+
+
+#ars-brain-product-architecture .ars-p2-core-inner {
+    text-shadow:
+        0 2px 5px rgba(0,0,0,.90),
+        0 0 10px rgba(57,191,255,.16);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS BRAIN — ONE SHARED BACKGROUND
+   PREMIUM 2 + HERO + WHAT IS ARS BRAIN
+   ---------------------------------------------------------
+   EXACT HTML CLASSES
+   NO IMAGE DISTORTION
+   NO STRETCH
+   NO SQUASH
+   NO ARTIFICIAL WIDTH/HEIGHT RATIO
+   PRESERVE ORIGINAL IMAGE PROPORTION
+   ========================================================= */
+
+
+/* =========================================================
+   01 — MASTER
+   The three sections live inside this single container.
    ========================================================= */
 
 .arsbrain-hero-master {
-    position: relative;
-    overflow: hidden;
+    position: relative !important;
+
+    width: 100% !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+
+    margin: 0 !important;
+
+    overflow: hidden !important;
 }
 
-/* Background layer */
+
+/* =========================================================
+   02 — ONE SHARED BACKGROUND LAYER
+   ========================================================= */
+
 .arsbrain-hero-master > .arsbrain-shared-background {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: 0;
+
+    position: absolute !important;
+
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    overflow: hidden !important;
+
+    pointer-events: none !important;
+
+    z-index: 0 !important;
+
+    background: transparent !important;
 }
 
-/* Keep the original image proportions */
-.arsbrain-hero-master > .arsbrain-shared-background img {
-    position: absolute;
-    inset: 0;
 
-    width: 100%;
-    height: 100%;
+/* =========================================================
+   03 — THE ACTUAL IMAGE
+   ---------------------------------------------------------
+   IMPORTANT:
+   object-fit: cover preserves the original aspect ratio.
+   It NEVER stretches or squashes the image.
+   Excess image is cropped instead.
+   ========================================================= */
 
-    max-width: none;
-    max-height: none;
+.arsbrain-hero-master
+> .arsbrain-shared-background
+> img {
 
-    object-fit: cover;
-    object-position: center center;
+    position: absolute !important;
 
-    transform: none;
+    top: 50% !important;
+    left: 50% !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    transform: translate(-50%, -50%) !important;
+
+    object-fit: cover !important;
+    object-position: center center !important;
+
+    display: block !important;
+
+    /* absolutely NO distortion */
+    aspect-ratio: auto !important;
+
+    border: 0 !important;
+
+    opacity: 1 !important;
 }
 
-/* Background overlay */
+
+/* =========================================================
+   04 — SHARED OVERLAY
+   Keep it transparent so the single image remains visible.
+   ========================================================= */
+
 .arsbrain-hero-master > .arsbrain-shared-overlay {
-    position: absolute;
-    inset: 0;
 
-    width: 100%;
-    height: 100%;
+    position: absolute !important;
 
-    pointer-events: none;
-    z-index: 1;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    pointer-events: none !important;
+
+    z-index: 1 !important;
+
+    background: transparent !important;
 }
 
-/* Keep all actual sections above the background */
-.arsbrain-hero-master > section {
-    position: relative;
-    z-index: 2;
+
+/* =========================================================
+   05 — THREE SECTIONS ABOVE THE SINGLE BACKGROUND
+   ========================================================= */
+
+.arsbrain-hero-master
+> .arsbrain-premium-2,
+
+.arsbrain-hero-master
+> .arsbrain-hero,
+
+.arsbrain-hero-master
+> .what-is-arsbrain {
+
+    position: relative !important;
+
+    z-index: 2 !important;
+
+    background: transparent !important;
 }
 
 
+/* =========================================================
+   06 — REMOVE THEIR OWN SOLID BACKGROUNDS
+   ---------------------------------------------------------
+   Otherwise their existing backgrounds can cover the
+   shared architectural image.
+   ========================================================= */
 
+.arsbrain-hero-master
+> .arsbrain-premium-2
+> .ars-p2-bg {
 
+    background: transparent !important;
 
+    opacity: 0 !important;
 
-
-
-
-
-
-
-
-
-/* Make the shared background follow the complete Master */
-.arsbrain-hero-master {
-    min-height: 100%;
-    height: auto;
+    pointer-events: none !important;
 }
+
+
+.arsbrain-hero-master
+> .arsbrain-hero
+> .arsbrain-background {
+
+    background: transparent !important;
+}
+
+
+.arsbrain-hero-master
+> .arsbrain-hero
+> .arsbrain-overlay {
+
+    background: transparent !important;
+}
+
+
+/* =========================================================
+   07 — WHAT IS ARS BRAIN
+   ---------------------------------------------------------
+   Make sure this section does not create a solid layer
+   over the shared architectural image.
+   ========================================================= */
+
+.arsbrain-hero-master
+> .what-is-arsbrain {
+
+    background-color: transparent !important;
+}
+
+
+/* =========================================================
+   08 — MOBILE
+   ---------------------------------------------------------
+   Still preserve image proportions.
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .arsbrain-hero-master
+    > .arsbrain-shared-background
+    > img {
+
+        object-fit: cover !important;
+        object-position: center center !important;
+
+        transform: translate(-50%, -50%) !important;
+    }
+
+   }
+
+
+
+
+
 
 
