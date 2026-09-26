@@ -22903,3 +22903,143 @@ body.brain-test-page .btn-secondary {
         0 0 22px rgba(16,76,105,.16),
         inset 0 1px 0 rgba(255,255,255,.06) !important;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS BRAIN — SHARED HERO BACKGROUND
+   ONE IMAGE • TWO HERO SECTIONS
+   ========================================================= */
+
+.arsbrain-hero-master {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+
+/* ---------------------------------------------------------
+   SINGLE BACKGROUND FOR BOTH HERO 1 + HERO 2
+   --------------------------------------------------------- */
+
+.arsbrain-shared-background {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.arsbrain-shared-background img {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center center;
+
+    max-width: none;
+
+    transform: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   DARK / CINEMATIC PROTECTION LAYER
+   --------------------------------------------------------- */
+
+.arsbrain-shared-overlay {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(3,10,18,.18) 0%,
+            rgba(3,10,18,.08) 35%,
+            rgba(3,10,18,.18) 70%,
+            rgba(3,10,18,.34) 100%
+        );
+}
+
+
+/* ---------------------------------------------------------
+   HERO CONTENT ABOVE THE SHARED BACKGROUND
+   --------------------------------------------------------- */
+
+.arsbrain-hero-master > .arsbrain-premium-2,
+.arsbrain-hero-master > .arsbrain-hero {
+    position: relative;
+    z-index: 2;
+
+    background: transparent !important;
+}
+
+
+/* ---------------------------------------------------------
+   DO NOT LET EXISTING HERO BACKGROUNDS COVER THE IMAGE
+   --------------------------------------------------------- */
+
+.arsbrain-hero-master .ars-p2-bg,
+.arsbrain-hero-master .arsbrain-background {
+    background: transparent !important;
+}
+
+
+/* ---------------------------------------------------------
+   PRESERVE ALL EXISTING CONTENT / VISUALS
+   --------------------------------------------------------- */
+
+.arsbrain-hero-master .ars-p2-stage,
+.arsbrain-hero-master .ars-p2-core,
+.arsbrain-hero-master .ars-p2-neural-map,
+.arsbrain-hero-master .arsbrain-wrapper,
+.arsbrain-hero-master .hero-visual,
+.arsbrain-hero-master .ars-hero-identity {
+    position: relative;
+    z-index: 3;
+}
