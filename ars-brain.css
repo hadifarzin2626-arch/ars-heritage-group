@@ -23998,31 +23998,36 @@ img {
 
 
 /* =========================================================
-   ARS BRAIN HERO 2
-   EXTEND HERO IMAGE DOWNWARD ONLY
+   ARS BRAIN — HERO 2
+   EXTEND THE WHOLE HERO VISUAL DOWNWARD
    Exact HTML:
    .arsbrain-hero
    .hero-visual
    img[src="images/ars-brain-hero.png"]
 
-   NO LEFT / RIGHT MOVEMENT
+   CENTER HORIZONTAL POSITION LOCKED
+   DOWNWARD EXTENSION ONLY
    ========================================================= */
 
 .arsbrain-hero .hero-visual {
-    overflow: visible !important;
+
+    transform: scaleY(1.6666667) !important;
+
+    transform-origin: center top !important;
+
 }
 
-.arsbrain-hero .hero-visual img[src="images/ars-brain-hero.png"] {
-    transform:
-        translateY(80.5%) !important;
 
-    transform-origin: center center !important;
+/* Keep the image itself at its normal size inside the enlarged frame */
+
+.arsbrain-hero .hero-visual img[src="images/ars-brain-hero.png"] {
+
+    transform: none !important;
 
     width: 100% !important;
-    height: auto !important;
+    height: 100% !important;
 
-    max-width: none !important;
-    max-height: none !important;
+    object-fit: contain !important;
+    object-position: center center !important;
 
-    object-fit: initial !important;
 }
