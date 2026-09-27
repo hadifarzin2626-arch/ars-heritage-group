@@ -23666,78 +23666,321 @@ body.brain-test-page .btn-secondary {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* =========================================================
    ARS BRAIN — ONE SHARED BACKGROUND
    PREMIUM 2 + HERO + WHAT IS ARS BRAIN
-   NO LAYOUT / NO SECTION POSITION CHANGES
+   ---------------------------------------------------------
+   EXACT HTML CLASSES
+   NO IMAGE DISTORTION
+   NO STRETCH
+   NO SQUASH
+   NO ARTIFICIAL WIDTH/HEIGHT RATIO
+   PRESERVE ORIGINAL IMAGE PROPORTION
    ========================================================= */
 
-/* Master فقط مرجع عرض و clipping باشد */
+
+/* =========================================================
+   01 — MASTER
+   The three sections live inside this single container.
+   ========================================================= */
+
 .arsbrain-hero-master {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
+    position: relative !important;
+
+    width: 100% !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+
+    margin: 0 !important;
+
+    overflow: hidden !important;
 }
 
-/* Shared background */
+
+/* =========================================================
+   02 — ONE SHARED BACKGROUND LAYER
+   ========================================================= */
+
 .arsbrain-hero-master > .arsbrain-shared-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: 0;
-}
 
-/* The single background image */
-.arsbrain-hero-master > .arsbrain-shared-background > img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    position: absolute !important;
 
-    width: 100%;
-    height: 100%;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
 
-    max-width: none;
-    max-height: none;
+    width: 100% !important;
+    height: 100% !important;
 
-    margin: 0;
-    padding: 0;
+    margin: 0 !important;
+    padding: 0 !important;
 
-    transform: translate(-50%, -50%);
+    overflow: hidden !important;
 
-    object-fit: cover;
-    object-position: center center;
+    pointer-events: none !important;
 
-    display: block;
+    z-index: 0 !important;
 
-    border: 0;
-}
-
-/* Shared overlay */
-.arsbrain-hero-master > .arsbrain-shared-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    pointer-events: none;
-    z-index: 1;
-}
-
-/* Keep all three sections above the shared image */
-.arsbrain-hero-master > .arsbrain-premium-2,
-.arsbrain-hero-master > .arsbrain-hero,
-.arsbrain-hero-master > .what-is-arsbrain {
-    z-index: 2;
-}
-
-/* Disable individual background layers ONLY */
-.arsbrain-hero-master > .arsbrain-premium-2 > .ars-p2-bg,
-.arsbrain-hero-master > .arsbrain-hero > .arsbrain-background,
-.arsbrain-hero-master > .arsbrain-hero > .arsbrain-overlay {
     background: transparent !important;
-       }
+}
+
+
+/* =========================================================
+   03 — THE ACTUAL IMAGE
+   ---------------------------------------------------------
+   IMPORTANT:
+   object-fit: cover preserves the original aspect ratio.
+   It NEVER stretches or squashes the image.
+   Excess image is cropped instead.
+   ========================================================= */
+
+.arsbrain-hero-master
+> .arsbrain-shared-background
+> img {
+
+    position: absolute !important;
+
+    top: 50% !important;
+    left: 50% !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    transform: translate(-50%, -50%) !important;
+
+    object-fit: cover !important;
+    object-position: center center !important;
+
+    display: block !important;
+
+    /* absolutely NO distortion */
+    aspect-ratio: auto !important;
+
+    border: 0 !important;
+
+    opacity: 1 !important;
+}
+
+
+/* =========================================================
+   04 — SHARED OVERLAY
+   Keep it transparent so the single image remains visible.
+   ========================================================= */
+
+.arsbrain-hero-master > .arsbrain-shared-overlay {
+
+    position: absolute !important;
+
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    pointer-events: none !important;
+
+    z-index: 1 !important;
+
+    background: transparent !important;
+}
+
+
+/* =========================================================
+   05 — THREE SECTIONS ABOVE THE SINGLE BACKGROUND
+   ========================================================= */
+
+.arsbrain-hero-master
+> .arsbrain-premium-2,
+
+.arsbrain-hero-master
+> .arsbrain-hero,
+
+.arsbrain-hero-master
+> .what-is-arsbrain {
+
+    position: relative !important;
+
+    z-index: 2 !important;
+
+    background: transparent !important;
+}
+
+
+/* =========================================================
+   06 — REMOVE THEIR OWN SOLID BACKGROUNDS
+   ---------------------------------------------------------
+   Otherwise their existing backgrounds can cover the
+   shared architectural image.
+   ========================================================= */
+
+.arsbrain-hero-master
+> .arsbrain-premium-2
+> .ars-p2-bg {
+
+    background: transparent !important;
+
+    opacity: 0 !important;
+
+    pointer-events: none !important;
+}
+
+
+.arsbrain-hero-master
+> .arsbrain-hero
+> .arsbrain-background {
+
+    background: transparent !important;
+}
+
+
+.arsbrain-hero-master
+> .arsbrain-hero
+> .arsbrain-overlay {
+
+    background: transparent !important;
+}
+
+
+/* =========================================================
+   07 — WHAT IS ARS BRAIN
+   ---------------------------------------------------------
+   Make sure this section does not create a solid layer
+   over the shared architectural image.
+   ========================================================= */
+
+.arsbrain-hero-master
+> .what-is-arsbrain {
+
+    background-color: transparent !important;
+}
+
+
+/* =========================================================
+   08 — MOBILE
+   ---------------------------------------------------------
+   Still preserve image proportions.
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .arsbrain-hero-master
+    > .arsbrain-shared-background
+    > img {
+
+        object-fit: cover !important;
+        object-position: center center !important;
+
+        transform: translate(-50%, -50%) !important;
+    }
+
+}
+
+
+
+
+
+
+/* =========================================================
+   ARS BRAIN — HERO 2 IDENTITY LOGO BACKGROUND EXTENSION
+   ---------------------------------------------------------
+   Exact existing HTML:
+   .ars-hero-identity
+   .ars-identity-logo
+   ars-brain-logo-temp.png
+
+   Extends the SAME architectural background behind the
+   lower Hero 2 identity/logo area.
+
+   NO layout changes
+   NO width/height changes
+   NO distortion
+   ========================================================= */
+
+.arsbrain-hero-master
+.arsbrain-hero
+.ars-hero-identity {
+
+    background-image:
+        url("images/ars-brain-heritage-architecturebackg130.png") !important;
+
+    background-repeat: no-repeat !important;
+
+    background-position: center bottom !important;
+
+    background-size: auto 100% !important;
+
+}
+
+
+/* Keep the actual ARS Brain logo completely above the background */
+
+.arsbrain-hero-master
+.ars-hero-identity
+.ars-identity-logo {
+
+    position: relative;
+    z-index: 5;
+}
+
+
+/* Keep logo image itself untouched */
+
+.arsbrain-hero-master
+.ars-hero-identity
+.ars-identity-logo
+img {
+
+    position: relative;
+    z-index: 6;
+
+    object-fit: contain !important;
+
+    object-position: center center !important;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
