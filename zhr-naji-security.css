@@ -2982,4 +2982,260 @@ body{
 }
 
 
+/* =========================================================
+   ZHR NAJI — PATCH 02
+   INDUSTRIAL 3D PROTECTION MODULES
+   ========================================================= */
 
+.zhr-naji-mission-card,
+.zhr-naji-layer-grid article,
+.zhr-naji-human-grid article,
+.zhr-naji-intelligence-content article,
+.zhr-naji-accessibility-grid article,
+.zhr-naji-prevention-grid article,
+.zhr-naji-trust-pillars article,
+.zhr-naji-future-pillars article {
+
+    transform-style: preserve-3d;
+    perspective: 1200px;
+
+    background:
+        linear-gradient(
+            155deg,
+            rgba(111, 79, 43, .92) 0%,
+            rgba(65, 46, 27, .96) 34%,
+            rgba(30, 27, 23, .98) 68%,
+            rgba(8, 19, 28, .98) 100%
+        );
+
+    border: 1px solid rgba(215, 185, 116, .42);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 2px 0 rgba(230, 204, 143, .12) inset,
+        0 -2px 0 rgba(0, 0, 0, .55) inset,
+        0 18px 0 -7px rgba(31, 22, 14, .95),
+        0 26px 0 -11px rgba(12, 17, 20, .92),
+        0 34px 65px rgba(0, 0, 0, .62),
+        0 0 0 1px rgba(0, 0, 0, .38);
+
+    transition:
+        transform .5s cubic-bezier(.2,.75,.25,1),
+        box-shadow .5s cubic-bezier(.2,.75,.25,1),
+        border-color .5s ease,
+        background .5s ease;
+}
+
+
+/* ---------------------------------------------------------
+   INDUSTRIAL INNER FRAME
+   --------------------------------------------------------- */
+
+.zhr-naji-mission-card::before,
+.zhr-naji-layer-grid article::before,
+.zhr-naji-human-grid article::before,
+.zhr-naji-intelligence-content article::before,
+.zhr-naji-accessibility-grid article::before,
+.zhr-naji-prevention-grid article::before,
+.zhr-naji-trust-pillars article::before,
+.zhr-naji-future-pillars article::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 8px;
+
+    border: 1px solid rgba(199, 169, 106, .15);
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.025),
+            transparent 28%,
+            transparent 72%,
+            rgba(35,136,216,.035)
+        );
+
+    box-shadow:
+        inset 0 0 0 1px rgba(0,0,0,.18),
+        inset 0 0 25px rgba(169,132,74,.035);
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* ---------------------------------------------------------
+   3D TOP PLATE
+   --------------------------------------------------------- */
+
+.zhr-naji-mission-card::after,
+.zhr-naji-layer-grid article::after,
+.zhr-naji-human-grid article::after,
+.zhr-naji-intelligence-content article::after,
+.zhr-naji-accessibility-grid article::after,
+.zhr-naji-prevention-grid article::after,
+.zhr-naji-trust-pillars article::after,
+.zhr-naji-future-pillars article::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 20%;
+    right: 20%;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(225, 198, 130, .9),
+            rgba(255, 255, 255, .25),
+            rgba(225, 198, 130, .9),
+            transparent
+        );
+
+    box-shadow:
+        0 0 12px rgba(199,169,106,.18);
+
+    opacity: .9;
+
+    pointer-events: none;
+
+    z-index: 3;
+}
+
+
+/* ---------------------------------------------------------
+   CONTENT FLOATS ABOVE THE HARDWARE
+   --------------------------------------------------------- */
+
+.zhr-naji-mission-card > *,
+.zhr-naji-layer-grid article > *,
+.zhr-naji-human-grid article > *,
+.zhr-naji-intelligence-content article > *,
+.zhr-naji-accessibility-grid article > *,
+.zhr-naji-prevention-grid article > *,
+.zhr-naji-trust-pillars article > *,
+.zhr-naji-future-pillars article > * {
+
+    position: relative;
+
+    z-index: 5;
+
+    transform: translateZ(18px);
+}
+
+
+/* ---------------------------------------------------------
+   INDUSTRIAL HOVER / PHYSICAL LIFT
+   --------------------------------------------------------- */
+
+.zhr-naji-mission-card:hover,
+.zhr-naji-layer-grid article:hover,
+.zhr-naji-human-grid article:hover,
+.zhr-naji-intelligence-content article:hover,
+.zhr-naji-accessibility-grid article:hover,
+.zhr-naji-prevention-grid article:hover,
+.zhr-naji-trust-pillars article:hover,
+.zhr-naji-future-pillars article:hover {
+
+    transform:
+        translateY(-12px)
+        translateZ(10px)
+        rotateX(1deg);
+
+    border-color:
+        rgba(226, 197, 127, .72);
+
+    background:
+        linear-gradient(
+            155deg,
+            rgba(130, 93, 50, .96) 0%,
+            rgba(71, 49, 28, .98) 34%,
+            rgba(29, 30, 28, .99) 66%,
+            rgba(8, 24, 36, 1) 100%
+        );
+
+    box-shadow:
+        0 2px 0 rgba(242, 218, 160, .18) inset,
+        0 -3px 0 rgba(0,0,0,.62) inset,
+        0 20px 0 -7px rgba(31,22,14,.98),
+        0 30px 0 -11px rgba(8,15,19,.96),
+        0 48px 95px rgba(0,0,0,.72),
+        0 0 45px rgba(169,132,74,.12);
+}
+
+
+/* ---------------------------------------------------------
+   METAL CORNER DETAILS
+   --------------------------------------------------------- */
+
+.zhr-naji-mission-card > :first-child::before,
+.zhr-naji-layer-grid article > :first-child::before,
+.zhr-naji-human-grid article > :first-child::before,
+.zhr-naji-intelligence-content article > :first-child::before,
+.zhr-naji-accessibility-grid article > :first-child::before,
+.zhr-naji-prevention-grid article > :first-child::before,
+.zhr-naji-trust-pillars article > :first-child::before,
+.zhr-naji-future-pillars article > :first-child::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 7px;
+    height: 7px;
+
+    top: -3px;
+    left: -3px;
+
+    border-top: 1px solid rgba(216,188,122,.8);
+    border-left: 1px solid rgba(216,188,122,.8);
+
+    opacity: .8;
+}
+
+
+/* ---------------------------------------------------------
+   RESPONSIVE
+   --------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    .zhr-naji-mission-card,
+    .zhr-naji-layer-grid article,
+    .zhr-naji-human-grid article,
+    .zhr-naji-intelligence-content article,
+    .zhr-naji-accessibility-grid article,
+    .zhr-naji-prevention-grid article,
+    .zhr-naji-trust-pillars article,
+    .zhr-naji-future-pillars article {
+
+        border-radius: 18px;
+
+        box-shadow:
+            0 14px 0 -7px rgba(31,22,14,.95),
+            0 24px 48px rgba(0,0,0,.55);
+    }
+
+    .zhr-naji-mission-card:hover,
+    .zhr-naji-layer-grid article:hover,
+    .zhr-naji-human-grid article:hover,
+    .zhr-naji-intelligence-content article:hover,
+    .zhr-naji-accessibility-grid article:hover,
+    .zhr-naji-prevention-grid article:hover,
+    .zhr-naji-trust-pillars article:hover,
+    .zhr-naji-future-pillars article:hover {
+
+        transform: translateY(-6px);
+    }
+}
