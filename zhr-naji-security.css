@@ -614,3 +614,1086 @@ img{
 /* ========================================================= */
 /* END — FOUNDATION / PART 01                                */
 /* ========================================================= */
+
+
+/* ========================================================= */
+/* ZHR NAJI — SECURITY VISUAL SYSTEM                         */
+/* PART 02 — PROTECTED CARD ARCHITECTURE                     */
+/* ========================================================= */
+
+
+/* ========================================================= */
+/* 16 — UNIVERSAL PROTECTED SURFACE                          */
+/* ========================================================= */
+
+.zhr-protected-surface{
+
+    position:relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(169,132,74,.075) 0%,
+            rgba(6,16,28,.72) 38%,
+            rgba(2,3,4,.94) 100%
+        );
+
+    border:1px solid rgba(169,132,74,.20);
+
+    border-radius:28px;
+
+    box-shadow:
+        0 32px 90px rgba(0,0,0,.55),
+        inset 0 1px 0 rgba(255,255,255,.045),
+        inset 0 0 0 1px rgba(169,132,74,.035);
+
+    backdrop-filter:
+        blur(24px)
+        saturate(130%);
+
+    -webkit-backdrop-filter:
+        blur(24px)
+        saturate(130%);
+
+    overflow:hidden;
+
+    isolation:isolate;
+}
+
+
+/* ========================================================= */
+/* 17 — PROTECTED SURFACE INNER ARMOR                        */
+/* ========================================================= */
+
+.zhr-protected-surface::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:7px;
+
+    border:1px solid rgba(199,169,106,.085);
+
+    border-radius:22px;
+
+    pointer-events:none;
+
+    z-index:-1;
+}
+
+
+/* ========================================================= */
+/* 18 — PROTECTED SURFACE TOP SEAL                           */
+/* ========================================================= */
+
+.zhr-protected-surface::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:12%;
+    right:12%;
+
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(216,188,122,.42),
+            transparent
+        );
+
+    box-shadow:
+        0 0 18px rgba(169,132,74,.10);
+
+    pointer-events:none;
+}
+
+
+/* ========================================================= */
+/* 19 — ZHR SECURITY CARDS                                   */
+/* ========================================================= */
+
+[class*="card"]{
+
+    position:relative;
+
+    transition:
+        transform .65s var(--zhr-ease),
+        border-color .65s var(--zhr-ease),
+        box-shadow .65s var(--zhr-ease),
+        background .65s var(--zhr-ease);
+
+}
+
+
+/* ========================================================= */
+/* 20 — CARD SECURITY SKIN                                   */
+/* ========================================================= */
+
+.zhr-card,
+.security-card,
+.protection-card,
+.human-protection-card,
+.emergency-card,
+.architecture-card,
+.trust-card{
+
+    position:relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(169,132,74,.065),
+            rgba(6,16,28,.68) 40%,
+            rgba(2,3,4,.90)
+        );
+
+    border:1px solid rgba(169,132,74,.18);
+
+    border-radius:26px;
+
+    box-shadow:
+        0 26px 70px rgba(0,0,0,.48),
+        inset 0 1px 0 rgba(255,255,255,.035);
+
+    overflow:hidden;
+
+    isolation:isolate;
+}
+
+
+/* ========================================================= */
+/* 21 — CARD INNER SECURITY PANEL                            */
+/* ========================================================= */
+
+.zhr-card::before,
+.security-card::before,
+.protection-card::before,
+.human-protection-card::before,
+.emergency-card::before,
+.architecture-card::before,
+.trust-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:8px;
+
+    border:1px solid rgba(199,169,106,.065);
+
+    border-radius:19px;
+
+    pointer-events:none;
+
+    z-index:-1;
+}
+
+
+/* ========================================================= */
+/* 22 — CARD TOP PROTECTION LINE                             */
+/* ========================================================= */
+
+.zhr-card::after,
+.security-card::after,
+.protection-card::after,
+.human-protection-card::after,
+.emergency-card::after,
+.architecture-card::after,
+.trust-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:10%;
+    right:10%;
+
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(199,169,106,.36),
+            transparent
+        );
+
+    opacity:.65;
+
+    pointer-events:none;
+}
+
+
+/* ========================================================= */
+/* 23 — CARD HOVER                                           */
+/* ========================================================= */
+
+.zhr-card:hover,
+.security-card:hover,
+.protection-card:hover,
+.human-protection-card:hover,
+.emergency-card:hover,
+.architecture-card:hover,
+.trust-card:hover{
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(199,169,106,.32);
+
+    box-shadow:
+        0 38px 95px rgba(0,0,0,.60),
+        0 0 42px rgba(169,132,74,.075),
+        inset 0 1px 0 rgba(255,255,255,.055);
+}
+
+
+/* ========================================================= */
+/* 24 — SECURITY CORNER MARKS                                */
+/* ========================================================= */
+
+.zhr-card .security-corner,
+.security-card .security-corner,
+.protection-card .security-corner{
+
+    position:absolute;
+
+    width:22px;
+    height:22px;
+
+    pointer-events:none;
+
+    opacity:.65;
+
+    transition:
+        opacity .55s var(--zhr-ease),
+        transform .55s var(--zhr-ease);
+}
+
+
+/* TOP LEFT */
+
+.zhr-card .security-corner.tl,
+.security-card .security-corner.tl,
+.protection-card .security-corner.tl{
+
+    top:12px;
+    left:12px;
+
+    border-top:1px solid var(--zhr-bronze-gold);
+    border-left:1px solid var(--zhr-bronze-gold);
+}
+
+
+/* TOP RIGHT */
+
+.zhr-card .security-corner.tr,
+.security-card .security-corner.tr,
+.protection-card .security-corner.tr{
+
+    top:12px;
+    right:12px;
+
+    border-top:1px solid var(--zhr-bronze-gold);
+    border-right:1px solid var(--zhr-bronze-gold);
+}
+
+
+/* BOTTOM LEFT */
+
+.zhr-card .security-corner.bl,
+.security-card .security-corner.bl,
+.protection-card .security-corner.bl{
+
+    bottom:12px;
+    left:12px;
+
+    border-bottom:1px solid var(--zhr-bronze-gold);
+    border-left:1px solid var(--zhr-bronze-gold);
+}
+
+
+/* BOTTOM RIGHT */
+
+.zhr-card .security-corner.br,
+.security-card .security-corner.br,
+.protection-card .security-corner.br{
+
+    bottom:12px;
+    right:12px;
+
+    border-bottom:1px solid var(--zhr-bronze-gold);
+    border-right:1px solid var(--zhr-bronze-gold);
+}
+
+
+/* ========================================================= */
+/* 25 — CORNER ACTIVATION                                    */
+/* ========================================================= */
+
+.zhr-card:hover .security-corner,
+.security-card:hover .security-corner,
+.protection-card:hover .security-corner{
+
+    opacity:1;
+
+    transform:
+        scale(1.12);
+
+    filter:
+        drop-shadow(
+            0 0 8px rgba(199,169,106,.24)
+        );
+}
+
+
+/* ========================================================= */
+/* 26 — SECURITY STATUS                                      */
+/* ========================================================= */
+
+.zhr-status{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    padding:
+        7px 12px;
+
+    border:
+        1px solid rgba(35,136,216,.20);
+
+    border-radius:999px;
+
+    background:
+        rgba(35,136,216,.055);
+
+    color:
+        var(--zhr-electric-light);
+
+    font-size:.68rem;
+
+    font-weight:600;
+
+    letter-spacing:.16em;
+
+    text-transform:uppercase;
+}
+
+
+/* ========================================================= */
+/* 27 — ACTIVE SECURITY SIGNAL                               */
+/* ========================================================= */
+
+.zhr-status::before{
+
+    content:"";
+
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:
+        var(--zhr-electric);
+
+    box-shadow:
+        0 0 0 3px rgba(35,136,216,.08),
+        0 0 16px rgba(35,136,216,.45);
+
+    animation:
+        zhrSecurityPulse 2.8s ease-in-out infinite;
+}
+
+
+@keyframes zhrSecurityPulse{
+
+    0%,
+    100%{
+        opacity:.55;
+        transform:scale(.85);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+
+/* ========================================================= */
+/* 28 — PROTECTION INDICATOR                                 */
+/* ========================================================= */
+
+.zhr-protection-indicator{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:
+        var(--zhr-bronze-gold-light);
+
+    font-size:.72rem;
+
+    letter-spacing:.14em;
+
+    text-transform:uppercase;
+}
+
+
+.zhr-protection-indicator::before{
+
+    content:"";
+
+    width:9px;
+    height:9px;
+
+    border-radius:50%;
+
+    background:
+        var(--zhr-bronze-gold);
+
+    box-shadow:
+        0 0 0 4px rgba(169,132,74,.075),
+        0 0 20px rgba(169,132,74,.20);
+}
+
+
+/* ========================================================= */
+/* 29 — SECURITY DIVIDER                                     */
+/* ========================================================= */
+
+.zhr-security-divider{
+
+    width:100%;
+
+    height:1px;
+
+    margin:
+        42px 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(169,132,74,.24),
+            rgba(35,136,216,.10),
+            transparent
+        );
+}
+
+
+/* ========================================================= */
+/* 30 — SECURITY MICRO GRID                                  */
+/* ========================================================= */
+
+.zhr-security-grid{
+
+    background-image:
+
+        linear-gradient(
+            rgba(169,132,74,.035) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(169,132,74,.035) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        42px 42px;
+
+    background-position:
+        center center;
+}
+
+
+/* ========================================================= */
+/* 31 — PROTECTED CONTENT                                    */
+/* ========================================================= */
+
+.zhr-protected-content{
+
+    position:relative;
+
+    z-index:2;
+
+    padding:
+        clamp(28px,4vw,52px);
+}
+
+
+/* ========================================================= */
+/* 32 — CARD EYEBROW                                         */
+/* ========================================================= */
+
+.zhr-card-eyebrow{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:18px;
+
+    color:
+        var(--zhr-bronze-gold-light);
+
+    font-size:.68rem;
+
+    font-weight:600;
+
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
+}
+
+
+.zhr-card-eyebrow::before{
+
+    content:"";
+
+    width:24px;
+    height:1px;
+
+    background:
+        var(--zhr-bronze-gold);
+}
+
+
+/* ========================================================= */
+/* 33 — CARD HEADINGS                                        */
+/* ========================================================= */
+
+.zhr-card h3,
+.security-card h3,
+.protection-card h3,
+.human-protection-card h3,
+.emergency-card h3,
+.architecture-card h3,
+.trust-card h3{
+
+    color:
+        var(--zhr-white);
+
+    margin-bottom:16px;
+
+    transition:
+        color .45s var(--zhr-ease);
+}
+
+
+.zhr-card:hover h3,
+.security-card:hover h3,
+.protection-card:hover h3{
+
+    color:
+        var(--zhr-bronze-gold-bright);
+}
+
+
+/* ========================================================= */
+/* 34 — CARD BODY TEXT                                       */
+/* ========================================================= */
+
+.zhr-card p,
+.security-card p,
+.protection-card p,
+.human-protection-card p,
+.emergency-card p,
+.architecture-card p,
+.trust-card p{
+
+    color:
+        var(--zhr-text-soft);
+
+    max-width:700px;
+}
+
+
+/* ========================================================= */
+/* 35 — BLUE INTELLIGENCE ACCENT                             */
+/* ========================================================= */
+
+.zhr-intelligence{
+
+    color:
+        var(--zhr-electric-light);
+
+    text-shadow:
+        0 0 22px rgba(35,136,216,.14);
+}
+
+
+.zhr-intelligence-line{
+
+    position:relative;
+
+    padding-left:18px;
+}
+
+
+.zhr-intelligence-line::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:.55em;
+
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:
+        var(--zhr-electric);
+
+    box-shadow:
+        0 0 14px rgba(35,136,216,.45);
+}
+
+
+/* ========================================================= */
+/* 36 — RESPONSIVE CARDS                                     */
+/* ========================================================= */
+
+@media (max-width:768px){
+
+    .zhr-card,
+    .security-card,
+    .protection-card,
+    .human-protection-card,
+    .emergency-card,
+    .architecture-card,
+    .trust-card{
+
+        border-radius:20px;
+    }
+
+    .zhr-protected-content{
+        padding:26px 22px;
+    }
+
+    .zhr-card:hover,
+    .security-card:hover,
+    .protection-card:hover{
+
+        transform:
+            translateY(-3px);
+    }
+
+}
+
+
+/* ========================================================= */
+/* END — PART 02                                             */
+/* ========================================================= */
+/* =========================================================
+   ZHR NAJI SECURITY SYSTEM
+   PART 03 — IMAGE SECURITY FRAMES
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   37 — PROTECTED IMAGE VISUAL FOUNDATION
+   --------------------------------------------------------- */
+
+.naji-philosophy-visual,
+.purpose-intro-visual,
+.human-protection-visual,
+.emergency-visual{
+
+    position: relative;
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(169,132,74,.055),
+            rgba(6,16,28,.72) 46%,
+            rgba(2,3,4,.94)
+        );
+
+    border: 1px solid rgba(169,132,74,.20);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.48),
+        0 0 45px rgba(169,132,74,.055);
+
+    transition:
+        transform .8s var(--zhr-ease-soft),
+        border-color .7s var(--zhr-ease),
+        box-shadow .8s var(--zhr-ease-soft);
+}
+
+
+/* ---------------------------------------------------------
+   38 — IMAGE OUTER PROTECTION FRAME
+   --------------------------------------------------------- */
+
+.naji-philosophy-visual::before,
+.purpose-intro-visual::before,
+.human-protection-visual::before,
+.emergency-visual::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:9px;
+
+    z-index:2;
+
+    pointer-events:none;
+
+    border:1px solid rgba(199,169,106,.13);
+
+    box-shadow:
+        inset 0 0 0 1px rgba(0,0,0,.42),
+        inset 0 0 35px rgba(169,132,74,.045);
+
+    border-radius:inherit;
+}
+
+
+/* ---------------------------------------------------------
+   39 — CONTROLLED TOP SECURITY LIGHT
+   --------------------------------------------------------- */
+
+.naji-philosophy-visual::after,
+.purpose-intro-visual::after,
+.human-protection-visual::after,
+.emergency-visual::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:10%;
+    right:10%;
+    top:0;
+
+    height:1px;
+
+    z-index:4;
+
+    pointer-events:none;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(216,188,122,.48),
+            transparent
+        );
+
+    opacity:.7;
+
+    box-shadow:
+        0 0 16px rgba(169,132,74,.12);
+}
+
+
+/* ---------------------------------------------------------
+   40 — IMAGE FOUNDATION
+   --------------------------------------------------------- */
+
+.naji-philosophy-image,
+.purpose-intro-image,
+.human-protection-image,
+.emergency-image{
+
+    display:block;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    position:relative;
+    z-index:1;
+
+    filter:
+        saturate(.88)
+        contrast(1.04)
+        brightness(.91);
+
+    transform:scale(1.001);
+
+    transition:
+        transform 1.2s var(--zhr-ease-soft),
+        filter 1s var(--zhr-ease-soft);
+}
+
+
+/* ---------------------------------------------------------
+   41 — CINEMATIC IMAGE DEPTH
+   --------------------------------------------------------- */
+
+.naji-philosophy-visual:hover .naji-philosophy-image,
+.purpose-intro-visual:hover .purpose-intro-image,
+.human-protection-visual:hover .human-protection-image,
+.emergency-visual:hover .emergency-image{
+
+    transform:scale(1.035);
+
+    filter:
+        saturate(.96)
+        contrast(1.06)
+        brightness(.96);
+}
+
+
+/* ---------------------------------------------------------
+   42 — IMAGE PROTECTION VIGNETTE
+   --------------------------------------------------------- */
+
+.naji-philosophy-visual .naji-philosophy-image,
+.purpose-intro-visual .purpose-intro-image,
+.human-protection-visual .human-protection-image,
+.emergency-visual .emergency-image{
+
+    box-shadow:
+        inset 0 0 70px rgba(0,0,0,.22);
+}
+
+
+/* ---------------------------------------------------------
+   43 — DARK PROTECTION OVERLAY
+   --------------------------------------------------------- */
+
+.naji-philosophy-visual > img,
+.purpose-intro-visual > img,
+.human-protection-visual > img,
+.emergency-visual > img{
+
+    position:relative;
+}
+
+
+/* ---------------------------------------------------------
+   44 — PHILOSOPHY IMAGE CHARACTER
+   --------------------------------------------------------- */
+
+.naji-philosophy-visual{
+
+    box-shadow:
+        0 35px 90px rgba(0,0,0,.55),
+        0 0 55px rgba(169,132,74,.07);
+}
+
+
+/* ---------------------------------------------------------
+   45 — PURPOSE IMAGE CHARACTER
+   --------------------------------------------------------- */
+
+.purpose-intro-visual{
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.52),
+        0 0 45px rgba(169,132,74,.06);
+}
+
+
+/* ---------------------------------------------------------
+   46 — HUMAN PROTECTION IMAGE CHARACTER
+   --------------------------------------------------------- */
+
+.human-protection-visual{
+
+    box-shadow:
+        0 26px 70px rgba(0,0,0,.48),
+        0 0 35px rgba(169,132,74,.045);
+}
+
+
+/* ---------------------------------------------------------
+   47 — EMERGENCY IMAGE CHARACTER
+   --------------------------------------------------------- */
+
+.emergency-visual{
+
+    border-color:
+        rgba(169,132,74,.24);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.56),
+        0 0 42px rgba(35,136,216,.07);
+}
+
+
+/* ---------------------------------------------------------
+   48 — EMERGENCY INTELLIGENCE SIGNAL
+   --------------------------------------------------------- */
+
+.emergency-visual:hover{
+
+    border-color:
+        rgba(35,136,216,.34);
+
+    box-shadow:
+        0 35px 90px rgba(0,0,0,.58),
+        0 0 50px rgba(35,136,216,.10);
+}
+
+
+/* ---------------------------------------------------------
+   49 — PHILOSOPHY / PURPOSE HOVER DEPTH
+   --------------------------------------------------------- */
+
+.naji-philosophy-visual:hover,
+.purpose-intro-visual:hover{
+
+    transform:translateY(-4px);
+
+    border-color:
+        rgba(199,169,106,.32);
+
+    box-shadow:
+        0 40px 100px rgba(0,0,0,.58),
+        0 0 55px rgba(169,132,74,.085);
+}
+
+
+/* ---------------------------------------------------------
+   50 — HUMAN PROTECTION HOVER
+   --------------------------------------------------------- */
+
+.human-protection-visual:hover{
+
+    transform:translateY(-3px);
+
+    border-color:
+        rgba(199,169,106,.29);
+
+    box-shadow:
+        0 34px 82px rgba(0,0,0,.54),
+        0 0 42px rgba(169,132,74,.065);
+}
+
+
+/* ---------------------------------------------------------
+   51 — SECURITY CORNER MARKS
+   --------------------------------------------------------- */
+
+.naji-philosophy-visual,
+.purpose-intro-visual,
+.human-protection-visual,
+.emergency-visual{
+
+    --zhr-image-corner: rgba(199,169,106,.42);
+}
+
+
+/* ---------------------------------------------------------
+   52 — TOP LEFT CORNER
+   --------------------------------------------------------- */
+
+.naji-philosophy-visual > :first-child,
+.purpose-intro-visual > :first-child,
+.human-protection-visual > :first-child,
+.emergency-visual > :first-child{
+
+    max-width:100%;
+}
+
+
+/* ---------------------------------------------------------
+   53 — IMAGE ANTI-FLATNESS
+   --------------------------------------------------------- */
+
+.naji-philosophy-image,
+.purpose-intro-image,
+.human-protection-image,
+.emergency-image{
+
+    backface-visibility:hidden;
+
+    -webkit-backface-visibility:hidden;
+}
+
+
+/* ---------------------------------------------------------
+   54 — MOBILE IMAGE BEHAVIOR
+   --------------------------------------------------------- */
+
+@media (max-width:900px){
+
+    .naji-philosophy-visual,
+    .purpose-intro-visual,
+    .human-protection-visual,
+    .emergency-visual{
+
+        border-radius:
+            var(--zhr-radius-md);
+
+        box-shadow:
+            0 22px 55px rgba(0,0,0,.48),
+            0 0 30px rgba(169,132,74,.045);
+    }
+
+    .naji-philosophy-visual::before,
+    .purpose-intro-visual::before,
+    .human-protection-visual::before,
+    .emergency-visual::before{
+
+        inset:7px;
+    }
+
+    .naji-philosophy-visual:hover,
+    .purpose-intro-visual:hover,
+    .human-protection-visual:hover,
+    .emergency-visual:hover{
+
+        transform:none;
+    }
+
+    .naji-philosophy-visual:hover .naji-philosophy-image,
+    .purpose-intro-visual:hover .purpose-intro-image,
+    .human-protection-visual:hover .human-protection-image,
+    .emergency-visual:hover .emergency-image{
+
+        transform:none;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   55 — REDUCED MOTION
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion:reduce){
+
+    .naji-philosophy-visual,
+    .purpose-intro-visual,
+    .human-protection-visual,
+    .emergency-visual,
+    .naji-philosophy-image,
+    .purpose-intro-image,
+    .human-protection-image,
+    .emergency-image{
+
+        transition:none;
+    }
+           }
