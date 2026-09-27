@@ -1,350 +1,211 @@
-/* ============================================================
-   ZHR NAJI — SECURITY / PROTECTION SYSTEM
-   Premium Automotive Protection Interface
-   ============================================================
-
-   VISUAL DNA
-   ------------------------------------------------------------
-   SIGNATURE  : Matte Bronze-Gold
-   CORE       : Piano Black / Deep Navy
-   INTELLIGENCE: Electric Blue
-   INFORMATION: White / Steel
-   STATES     : Red / Yellow / Green / Blue
-   HERITAGE   : Brown
-   ============================================================ */
-
-
-/* ============================================================
-   01 — ROOT / DESIGN TOKENS
-   ============================================================ */
+/* =========================================================
+   ZHR NAJI — PROTECTION INTELLIGENCE
+   MASTER SECURITY / VISUAL SYSTEM
+   ========================================================= */
 
 :root{
-
-    /* --------------------------------------------------------
+    /* =====================================================
        ZHR SIGNATURE — MATTE BRONZE / GOLD
-       -------------------------------------------------------- */
-
-    --zhr-bronze-gold:        #A9844A;
-    --zhr-bronze-gold-light:  #C7A96A;
-    --zhr-bronze-gold-bright: #D8BC7A;
-    --zhr-bronze-gold-deep:   #72552F;
-    --zhr-bronze-shadow:      #4B3820;
-
-    --zhr-gold-soft:          #B99A60;
-    --zhr-gold-pale:          #E0CA91;
-    --zhr-gold-dark:          #5D431F;
-
-
-    /* --------------------------------------------------------
-       PIANO BLACK
-       -------------------------------------------------------- */
-
-    --zhr-black:              #020304;
-    --zhr-black-soft:         #050607;
-    --zhr-black-deep:         #010203;
-
-    --zhr-piano:              #080A0D;
-    --zhr-piano-light:        #0D1014;
-    --zhr-piano-deep:         #050608;
-
-    --zhr-charcoal:           #111417;
-    --zhr-charcoal-light:     #181C20;
-
-
-    /* --------------------------------------------------------
-       DEEP NAVY
-       -------------------------------------------------------- */
-
-    --zhr-navy-deep:          #020711;
-    --zhr-navy:               #06101C;
-    --zhr-navy-mid:           #0A1725;
-    --zhr-navy-light:         #102235;
-    --zhr-navy-bright:        #153149;
-    --zhr-navy-dark:          #030B14;
-
-
-    /* --------------------------------------------------------
-       ELECTRIC BLUE — ACTIVE INTELLIGENCE
-       -------------------------------------------------------- */
-
-    --zhr-electric:           #2388D8;
-    --zhr-electric-light:     #59B5FF;
-    --zhr-electric-bright:    #7AC7FF;
-    --zhr-electric-deep:      #0B4F8A;
-    --zhr-electric-dark:      #07345C;
-
-    --zhr-blue-electric-soft: #347EAF;
-
-
-    /* --------------------------------------------------------
-       WHITE / INFORMATION
-       -------------------------------------------------------- */
-
-    --zhr-white:              #F4F5F3;
-    --zhr-white-soft:         #E4E6E4;
-    --zhr-white-muted:        #C9CDCC;
-
-    --zhr-text:               #D2D4D2;
-    --zhr-text-soft:          #A8ADAC;
-    --zhr-muted:              #777F82;
-    --zhr-text-dark:          #4F575A;
-
-
-    /* --------------------------------------------------------
-       GRAPHITE / STEEL
-       -------------------------------------------------------- */
-
-    --zhr-graphite:           #15191D;
-    --zhr-graphite-light:     #20262C;
-    --zhr-graphite-deep:      #0C0F12;
-
-    --zhr-steel:              #667078;
-    --zhr-steel-light:        #8C969D;
-    --zhr-steel-bright:       #B1B8BC;
-    --zhr-steel-dark:         #3E474D;
-
-
-    /* --------------------------------------------------------
-       GLASS SYSTEM
-       -------------------------------------------------------- */
-
-    --zhr-glass:              rgba(255,255,255,.045);
-    --zhr-glass-soft:         rgba(255,255,255,.028);
-
-    --zhr-glass-dark:         rgba(2,3,4,.72);
-    --zhr-glass-deep:         rgba(2,3,4,.88);
-
-    --zhr-glass-navy:         rgba(6,16,28,.62);
-    --zhr-glass-navy-soft:    rgba(6,16,28,.42);
-
-    --zhr-glass-blue:         rgba(35,136,216,.055);
-    --zhr-glass-blue-strong:  rgba(35,136,216,.11);
-
-    --zhr-glass-bronze:       rgba(169,132,74,.055);
-    --zhr-glass-bronze-soft:  rgba(169,132,74,.035);
-
-    --zhr-glass-black:        rgba(0,0,0,.55);
-    --zhr-glass-white:        rgba(255,255,255,.065);
-
-
-    /* --------------------------------------------------------
-       RED — CRITICAL / DANGER
-       -------------------------------------------------------- */
-
-    --zhr-red:                #C63B32;
-    --zhr-red-light:          #F06A5F;
-    --zhr-red-bright:         #FF8176;
-    --zhr-red-deep:           #7A211D;
-    --zhr-red-dark:           #4A1512;
-
-    --zhr-red-glass:          rgba(198,59,50,.10);
-    --zhr-red-line:           rgba(198,59,50,.28);
-
-
-    /* --------------------------------------------------------
-       YELLOW — WARNING / ATTENTION
-       -------------------------------------------------------- */
-
-    --zhr-yellow:             #D6A52E;
-    --zhr-yellow-light:       #F0C75E;
-    --zhr-yellow-bright:      #FFD978;
-    --zhr-yellow-deep:        #8A6818;
-    --zhr-yellow-dark:        #55400E;
-
-    --zhr-yellow-glass:       rgba(214,165,46,.10);
-    --zhr-yellow-line:        rgba(214,165,46,.28);
-
-
-    /* --------------------------------------------------------
-       GREEN — SAFE / HEALTHY / CONFIRMED
-       -------------------------------------------------------- */
-
-    --zhr-green:              #4D9A68;
-    --zhr-green-light:        #72C58D;
-    --zhr-green-bright:       #91D9A8;
-    --zhr-green-deep:         #285A3B;
-    --zhr-green-dark:         #173D27;
-
-    --zhr-green-glass:        rgba(77,154,104,.10);
-    --zhr-green-line:         rgba(77,154,104,.28);
-
-
-    /* --------------------------------------------------------
-       BLUE — INFORMATION / COMMUNICATION
-       -------------------------------------------------------- */
-
-    --zhr-blue:               #2F78B7;
-    --zhr-blue-light:         #62B5F5;
-    --zhr-blue-bright:        #82C9FF;
-    --zhr-blue-deep:          #17466F;
-    --zhr-blue-dark:          #0E2C47;
-
-    --zhr-blue-glass:         rgba(47,120,183,.10);
-    --zhr-blue-line:          rgba(47,120,183,.28);
-
-
-    /* --------------------------------------------------------
-       BROWN — HERITAGE / MATERIAL / PHYSICAL
-       -------------------------------------------------------- */
-
-    --zhr-brown:              #6B4932;
-    --zhr-brown-light:        #967054;
-    --zhr-brown-bright:       #B08A68;
-    --zhr-brown-deep:         #3D281C;
-    --zhr-brown-dark:         #241810;
-
-    --zhr-brown-glass:        rgba(107,73,50,.10);
-    --zhr-brown-line:         rgba(107,73,50,.28);
-
-
-    /* --------------------------------------------------------
-       SEMANTIC SYSTEM
-       -------------------------------------------------------- */
-
-    --zhr-state-critical:     var(--zhr-red);
-    --zhr-state-warning:      var(--zhr-yellow);
-    --zhr-state-safe:         var(--zhr-green);
-    --zhr-state-info:         var(--zhr-blue);
-    --zhr-state-active:       var(--zhr-electric);
-
-    --zhr-state-brand:        var(--zhr-bronze-gold);
-    --zhr-state-heritage:     var(--zhr-brown);
-
-
-    /* --------------------------------------------------------
-       PROTECTIVE LINES
-       -------------------------------------------------------- */
-
-    --zhr-line-dark:          rgba(255,255,255,.055);
-    --zhr-line:               rgba(169,132,74,.16);
-    --zhr-line-bright:        rgba(199,169,106,.30);
-
-    --zhr-line-blue:          rgba(35,136,216,.22);
-    --zhr-line-white:         rgba(255,255,255,.12);
-    --zhr-line-steel:         rgba(140,150,157,.20);
-
-    --zhr-line-red:           rgba(198,59,50,.28);
-    --zhr-line-yellow:        rgba(214,165,46,.28);
-    --zhr-line-green:         rgba(77,154,104,.28);
-    --zhr-line-brown:         rgba(107,73,50,.28);
-
-
-    /* --------------------------------------------------------
-       GLOW SYSTEM
-       -------------------------------------------------------- */
-
-    --zhr-glow-bronze:        rgba(169,132,74,.12);
-    --zhr-glow-bronze-soft:   rgba(169,132,74,.055);
-
-    --zhr-glow-blue:          rgba(35,136,216,.13);
-    --zhr-glow-blue-soft:     rgba(35,136,216,.06);
-
-    --zhr-glow-red:           rgba(198,59,50,.10);
-    --zhr-glow-yellow:        rgba(214,165,46,.09);
-    --zhr-glow-green:         rgba(77,154,104,.09);
-
-
-    /* --------------------------------------------------------
-       SHADOWS
-       -------------------------------------------------------- */
-
-    --zhr-shadow-deep:
-        0 35px 90px rgba(0,0,0,.58);
-
-    --zhr-shadow-card:
-        0 24px 65px rgba(0,0,0,.46);
-
-    --zhr-shadow-soft:
-        0 16px 45px rgba(0,0,0,.32);
-
-    --zhr-shadow-bronze:
-        0 0 55px rgba(169,132,74,.10);
-
-    --zhr-shadow-blue:
-        0 0 45px rgba(35,136,216,.12);
-
-    --zhr-shadow-red:
-        0 0 45px rgba(198,59,50,.10);
-
-    --zhr-shadow-green:
-        0 0 45px rgba(77,154,104,.10);
-
-
-    /* --------------------------------------------------------
+       ===================================================== */
+
+    --zhr-bronze-gold:#A9844A;
+    --zhr-bronze-gold-light:#C7A96A;
+    --zhr-bronze-gold-bright:#D8BC7A;
+    --zhr-bronze-gold-deep:#72552F;
+    --zhr-bronze-shadow:#4B3820;
+    --zhr-gold-soft:#B99A60;
+    --zhr-gold-pale:#E0CA91;
+    --zhr-gold-dark:#5D431F;
+
+    /* =====================================================
+       BLACK / PIANO / DEPTH
+       ===================================================== */
+
+    --zhr-black:#020304;
+    --zhr-black-soft:#050607;
+    --zhr-black-deep:#010203;
+    --zhr-piano:#080A0D;
+    --zhr-piano-light:#0D1014;
+    --zhr-piano-deep:#050608;
+    --zhr-charcoal:#111417;
+    --zhr-charcoal-light:#181C20;
+
+    /* =====================================================
+       NAVY
+       ===================================================== */
+
+    --zhr-navy-deep:#020711;
+    --zhr-navy:#06101C;
+    --zhr-navy-mid:#0A1725;
+    --zhr-navy-light:#102235;
+    --zhr-navy-bright:#153149;
+    --zhr-navy-dark:#030B14;
+
+    /* =====================================================
+       ELECTRIC BLUE
+       ===================================================== */
+
+    --zhr-electric:#2388D8;
+    --zhr-electric-light:#59B5FF;
+    --zhr-electric-bright:#7AC7FF;
+    --zhr-electric-deep:#0B4F8A;
+    --zhr-electric-dark:#07345C;
+
+    /* =====================================================
+       WHITE / STEEL / INFORMATION
+       ===================================================== */
+
+    --zhr-white:#F4F5F3;
+    --zhr-white-soft:#E4E6E4;
+    --zhr-white-muted:#C9CDCC;
+    --zhr-text:#D2D4D2;
+    --zhr-text-soft:#A8ADAC;
+    --zhr-muted:#777F82;
+    --zhr-text-dark:#4F575A;
+
+    --zhr-graphite:#15191D;
+    --zhr-graphite-light:#20262C;
+    --zhr-graphite-deep:#0C0F12;
+    --zhr-steel:#667078;
+    --zhr-steel-light:#8C969D;
+    --zhr-steel-bright:#B1B8BC;
+    --zhr-steel-dark:#3E474D;
+
+    /* =====================================================
+       GLASS
+       ===================================================== */
+
+    --zhr-glass:rgba(255,255,255,.045);
+    --zhr-glass-soft:rgba(255,255,255,.028);
+    --zhr-glass-dark:rgba(2,3,4,.72);
+    --zhr-glass-deep:rgba(2,3,4,.88);
+    --zhr-glass-navy:rgba(6,16,28,.62);
+    --zhr-glass-navy-soft:rgba(6,16,28,.42);
+    --zhr-glass-blue:rgba(35,136,216,.055);
+    --zhr-glass-blue-strong:rgba(35,136,216,.11);
+    --zhr-glass-bronze:rgba(169,132,74,.055);
+    --zhr-glass-bronze-soft:rgba(169,132,74,.035);
+    --zhr-glass-black:rgba(0,0,0,.55);
+    --zhr-glass-white:rgba(255,255,255,.065);
+
+    /* =====================================================
+       STATE COLORS
+       ===================================================== */
+
+    --zhr-red:#C63B32;
+    --zhr-red-light:#F06A5F;
+    --zhr-red-bright:#FF8176;
+    --zhr-red-deep:#7A211D;
+    --zhr-red-dark:#4A1512;
+    --zhr-red-glass:rgba(198,59,50,.10);
+    --zhr-red-line:rgba(198,59,50,.28);
+
+    --zhr-yellow:#D6A52E;
+    --zhr-yellow-light:#F0C75E;
+    --zhr-yellow-bright:#FFD978;
+    --zhr-yellow-deep:#8A6818;
+    --zhr-yellow-dark:#55400E;
+    --zhr-yellow-glass:rgba(214,165,46,.10);
+    --zhr-yellow-line:rgba(214,165,46,.28);
+
+    --zhr-green:#4D9A68;
+    --zhr-green-light:#72C58D;
+    --zhr-green-bright:#91D9A8;
+    --zhr-green-deep:#285A3B;
+    --zhr-green-dark:#173D27;
+    --zhr-green-glass:rgba(77,154,104,.10);
+    --zhr-green-line:rgba(77,154,104,.28);
+
+    --zhr-blue:#2F78B7;
+    --zhr-blue-light:#62B5F5;
+    --zhr-blue-bright:#82C9FF;
+    --zhr-blue-deep:#17466F;
+    --zhr-blue-dark:#0E2C47;
+    --zhr-blue-glass:rgba(47,120,183,.10);
+    --zhr-blue-line:rgba(47,120,183,.28);
+
+    --zhr-brown:#6B4932;
+    --zhr-brown-light:#967054;
+    --zhr-brown-bright:#B08A68;
+    --zhr-brown-deep:#3D281C;
+    --zhr-brown-dark:#241810;
+    --zhr-brown-glass:rgba(107,73,50,.10);
+    --zhr-brown-line:rgba(107,73,50,.28);
+
+    /* =====================================================
+       LINES / GLOWS
+       ===================================================== */
+
+    --zhr-line-dark:rgba(255,255,255,.055);
+    --zhr-line:rgba(169,132,74,.16);
+    --zhr-line-bright:rgba(199,169,106,.30);
+    --zhr-line-blue:rgba(35,136,216,.22);
+    --zhr-line-white:rgba(255,255,255,.12);
+    --zhr-line-steel:rgba(140,150,157,.20);
+    --zhr-line-red:rgba(198,59,50,.28);
+    --zhr-line-yellow:rgba(214,165,46,.28);
+    --zhr-line-green:rgba(77,154,104,.28);
+    --zhr-line-brown:rgba(107,73,50,.28);
+
+    --zhr-glow-bronze:rgba(169,132,74,.12);
+    --zhr-glow-bronze-soft:rgba(169,132,74,.055);
+    --zhr-glow-blue:rgba(35,136,216,.13);
+    --zhr-glow-blue-soft:rgba(35,136,216,.06);
+    --zhr-glow-red:rgba(198,59,50,.10);
+    --zhr-glow-yellow:rgba(214,165,46,.09);
+    --zhr-glow-green:rgba(77,154,104,.09);
+
+    --zhr-shadow-deep:0 35px 90px rgba(0,0,0,.58);
+    --zhr-shadow-card:0 24px 65px rgba(0,0,0,.46);
+    --zhr-shadow-soft:0 16px 45px rgba(0,0,0,.32);
+    --zhr-shadow-bronze:0 0 55px rgba(169,132,74,.10);
+    --zhr-shadow-blue:0 0 45px rgba(35,136,216,.12);
+    --zhr-shadow-red:0 0 45px rgba(198,59,50,.10);
+    --zhr-shadow-green:0 0 45px rgba(77,154,104,.10);
+
+    /* =====================================================
        GEOMETRY
-       -------------------------------------------------------- */
+       ===================================================== */
 
-    --zhr-radius-sm:          12px;
-    --zhr-radius-md:          20px;
-    --zhr-radius-lg:          28px;
-    --zhr-radius-xl:          36px;
+    --zhr-radius-sm:12px;
+    --zhr-radius-md:20px;
+    --zhr-radius-lg:28px;
+    --zhr-radius-xl:36px;
 
-    --zhr-max-width:          1420px;
-    --zhr-content-width:      1180px;
+    --zhr-max-width:1420px;
+    --zhr-content-width:1180px;
 
+    --zhr-ease:cubic-bezier(.22,.61,.36,1);
+    --zhr-ease-soft:cubic-bezier(.16,1,.3,1);
 
-    /* --------------------------------------------------------
-       MOTION
-       -------------------------------------------------------- */
-
-    --zhr-ease:
-        cubic-bezier(.22,.61,.36,1);
-
-    --zhr-ease-soft:
-        cubic-bezier(.16,1,.3,1);
-
-    --zhr-transition:
-        .55s var(--zhr-ease);
-
-    --zhr-transition-slow:
-        .9s var(--zhr-ease-soft);
+    --zhr-transition:.55s var(--zhr-ease);
+    --zhr-transition-slow:.9s var(--zhr-ease-soft);
 }
 
 
-/* ============================================================
-   02 — RESET
-   ============================================================ */
+/* =========================================================
+   BASE
+   ========================================================= */
 
 html{
-    margin:0;
-    padding:0;
-    background:var(--zhr-black);
-    color:var(--zhr-text);
     scroll-behavior:smooth;
+    background:var(--zhr-black-deep);
 }
 
 body{
     margin:0;
-    padding:0;
-    min-width:320px;
-
     background:
-        radial-gradient(
-            circle at 50% -10%,
-            rgba(169,132,74,.055),
-            transparent 34%
-        ),
-        linear-gradient(
-            180deg,
-            var(--zhr-black-deep) 0%,
-            var(--zhr-navy-deep) 42%,
-            var(--zhr-black) 100%
-        );
-
+        radial-gradient(circle at 50% 0%,rgba(35,136,216,.045),transparent 30%),
+        radial-gradient(circle at 15% 30%,rgba(169,132,74,.035),transparent 28%),
+        var(--zhr-black-deep);
     color:var(--zhr-text);
-
     font-family:
         Inter,
         "Segoe UI",
-        Roboto,
         Arial,
         sans-serif;
-
     line-height:1.7;
     overflow-x:hidden;
-
-    -webkit-font-smoothing:antialiased;
-    text-rendering:optimizeLegibility;
 }
 
 *,
@@ -353,2256 +214,2216 @@ body{
     box-sizing:border-box;
 }
 
+::selection{
+    background:var(--zhr-bronze-gold);
+    color:#080705;
+}
+
 img{
     display:block;
     max-width:100%;
 }
 
-button,
-a{
-    -webkit-tap-highlight-color:transparent;
-}
 
-a{
-    color:inherit;
-}
+/* =========================================================
+   MAIN
+   ========================================================= */
 
-::selection{
-    background:var(--zhr-bronze-gold);
-    color:var(--zhr-black);
-}
-
-
-/* ============================================================
-   03 — GLOBAL ZHR PAGE FIELD
-   ============================================================ */
-
-.zhr-naji-page{
+.zhr-naji-main{
     position:relative;
     isolation:isolate;
-    min-height:100vh;
-    background:
-        linear-gradient(
-            90deg,
-            transparent 0,
-            rgba(169,132,74,.018) 50%,
-            transparent 100%
-        );
-}
-
-
-/* Protective vertical rails */
-
-.zhr-naji-page::before,
-.zhr-naji-page::after{
-    content:"";
-    position:fixed;
-    top:0;
-    bottom:0;
-    width:1px;
-    z-index:-1;
-    pointer-events:none;
-}
-
-.zhr-naji-page::before{
-    left:clamp(12px,2vw,30px);
     background:
         linear-gradient(
             180deg,
-            transparent,
-            rgba(169,132,74,.18),
-            rgba(35,136,216,.08),
-            transparent
+            var(--zhr-black-deep) 0%,
+            var(--zhr-navy-deep) 22%,
+            var(--zhr-black) 52%,
+            var(--zhr-navy-deep) 76%,
+            var(--zhr-black-deep) 100%
         );
 }
-
-.zhr-naji-page::after{
-    right:clamp(12px,2vw,30px);
-    background:
-        linear-gradient(
-            180deg,
-            transparent,
-            rgba(169,132,74,.18),
-            rgba(35,136,216,.08),
-            transparent
-        );
-}
-
-
-/* ============================================================
-   04 — SECTION FOUNDATION
-   ============================================================ */
 
 .zhr-naji-section{
     position:relative;
-    width:100%;
-    padding:
-        clamp(88px,9vw,150px)
-        0;
-
-    border-top:1px solid var(--zhr-line-dark);
+    padding:120px 24px;
     overflow:hidden;
 }
-
-
-/* subtle technical grid */
 
 .zhr-naji-section::before{
     content:"";
     position:absolute;
     inset:0;
-    z-index:-1;
     pointer-events:none;
-
-    background-image:
-        linear-gradient(
-            rgba(255,255,255,.018) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,.018) 1px,
-            transparent 1px
-        );
-
-    background-size:
-        72px 72px;
-
-    mask-image:
-        linear-gradient(
-            to bottom,
-            transparent,
-            black 18%,
-            black 82%,
-            transparent
-        );
-}
-
-
-/* protective section edge */
-
-.zhr-naji-section::after{
-    content:"";
-    position:absolute;
-    left:5%;
-    right:5%;
-    top:0;
-    height:1px;
-
     background:
         linear-gradient(
             90deg,
             transparent,
-            var(--zhr-line),
-            var(--zhr-line-bright),
-            var(--zhr-line),
+            rgba(169,132,74,.025),
             transparent
         );
-
-    opacity:.7;
 }
 
-
-/* ============================================================
-   05 — CONTENT WIDTH
-   ============================================================ */
-
-.zhr-naji-section > .zhr-naji-container,
-.zhr-naji-section .zhr-naji-container{
-    width:min(
-        calc(100% - 40px),
-        var(--zhr-content-width)
-    );
-
+.zhr-naji-section-container{
+    position:relative;
+    z-index:2;
+    width:min(100%,var(--zhr-max-width));
     margin-inline:auto;
 }
 
+.zhr-naji-section-heading{
+    max-width:850px;
+    margin:0 auto 70px;
+    text-align:center;
+}
 
-/* ============================================================
-   06 — TYPOGRAPHY
-   ============================================================ */
+.zhr-naji-section-kicker{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:18px;
+    color:var(--zhr-bronze-gold-light);
+    font-size:.72rem;
+    font-weight:700;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+}
+
+.zhr-naji-section-kicker::before,
+.zhr-naji-section-kicker::after{
+    content:"";
+    width:28px;
+    height:1px;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        var(--zhr-bronze-gold)
+    );
+}
+
+.zhr-naji-section-kicker::after{
+    background:linear-gradient(
+        90deg,
+        var(--zhr-bronze-gold),
+        transparent
+    );
+}
+
+.zhr-naji-section-heading h2{
+    margin:0;
+    color:var(--zhr-white);
+    font-size:clamp(2rem,4vw,4rem);
+    line-height:1.05;
+    letter-spacing:-.035em;
+}
+
+.zhr-naji-section-heading-fa{
+    margin:20px 0 0;
+    color:var(--zhr-gold-pale);
+    direction:rtl;
+    font-size:clamp(1rem,2vw,1.35rem);
+    line-height:2;
+}
+
+
+/* =========================================================
+   UNIVERSAL CONTENT ELEMENTS
+   ========================================================= */
+
+.zhr-naji-fa,
+.zhr-naji-highlight-fa,
+.zhr-naji-sacred-persian,
+.zhr-naji-sacred-subtitle-fa,
+.zhr-naji-final-title-fa{
+    direction:rtl;
+    text-align:right;
+}
+
+.zhr-naji-highlight{
+    color:var(--zhr-bronze-gold-bright);
+}
+
+.zhr-naji-highlight-fa{
+    color:var(--zhr-gold-pale);
+}
+
+.zhr-naji-section-closing{
+    margin:70px auto 0;
+    max-width:900px;
+    text-align:center;
+    color:var(--zhr-white-soft);
+    font-size:1.1rem;
+}
+
+.zhr-naji-section-closing-fa{
+    margin:16px auto 0;
+    max-width:900px;
+    text-align:center;
+    direction:rtl;
+    color:var(--zhr-gold-pale);
+    font-size:1rem;
+}
+
+
+/* =========================================================
+   MEDIA SLOTS
+   ========================================================= */
+
+.zhr-naji-media-slot{
+    position:relative;
+    min-height:300px;
+    overflow:hidden;
+    border:1px solid var(--zhr-line);
+    border-radius:var(--zhr-radius-lg);
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(35,136,216,.10),
+            transparent 42%
+        ),
+        linear-gradient(
+            135deg,
+            rgba(169,132,74,.10),
+            rgba(6,16,28,.86) 45%,
+            rgba(2,3,4,.98)
+        );
+    box-shadow:
+        var(--zhr-shadow-card),
+        inset 0 0 0 1px rgba(255,255,255,.025);
+}
+
+.zhr-naji-media-slot::before{
+    content:"";
+    position:absolute;
+    inset:12px;
+    border:1px solid rgba(199,169,106,.16);
+    border-radius:calc(var(--zhr-radius-lg) - 8px);
+    pointer-events:none;
+}
+
+.zhr-naji-media-slot::after{
+    content:"";
+    position:absolute;
+    width:150px;
+    height:150px;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    border:1px solid rgba(35,136,216,.28);
+    border-radius:50%;
+    box-shadow:
+        0 0 0 18px rgba(35,136,216,.025),
+        0 0 55px rgba(35,136,216,.10);
+    pointer-events:none;
+}
+
+.zhr-naji-media-slot img{
+    position:relative;
+    z-index:2;
+    width:100%;
+    height:100%;
+    min-height:300px;
+    object-fit:cover;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.zhr-naji-hero{
+    position:relative;
+    min-height:100svh;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    background:
+        radial-gradient(
+            circle at 75% 42%,
+            rgba(35,136,216,.14),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(169,132,74,.11),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #010203 0%,
+            #030B14 45%,
+            #020304 100%
+        );
+}
+
+.zhr-naji-hero-background{
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(2,3,4,.96) 0%,
+            rgba(2,3,4,.80) 40%,
+            rgba(2,3,4,.25) 75%,
+            rgba(2,3,4,.78) 100%
+        );
+}
+
+.zhr-naji-hero-grid{
+    position:absolute;
+    inset:0;
+    opacity:.32;
+    background-image:
+        linear-gradient(
+            rgba(169,132,74,.075) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(35,136,216,.065) 1px,
+            transparent 1px
+        );
+    background-size:70px 70px;
+    mask-image:linear-gradient(
+        90deg,
+        black,
+        transparent 90%
+    );
+}
+
+.zhr-naji-hero-scan{
+    position:absolute;
+    width:680px;
+    height:680px;
+    right:-180px;
+    top:50%;
+    transform:translateY(-50%);
+    border:1px solid rgba(35,136,216,.18);
+    border-radius:50%;
+    box-shadow:
+        0 0 0 40px rgba(35,136,216,.025),
+        0 0 0 100px rgba(169,132,74,.018),
+        0 0 100px rgba(35,136,216,.12);
+    animation:zhr-naji-scan-pulse 6s ease-in-out infinite;
+}
+
+.zhr-naji-hero-scan::before,
+.zhr-naji-hero-scan::after{
+    content:"";
+    position:absolute;
+    inset:12%;
+    border:1px solid rgba(169,132,74,.20);
+    border-radius:50%;
+}
+
+.zhr-naji-hero-scan::after{
+    inset:28%;
+    border-color:rgba(35,136,216,.25);
+}
+
+.zhr-naji-hero-container{
+    position:relative;
+    z-index:5;
+    width:min(100%,var(--zhr-max-width));
+    margin:auto;
+    padding:130px 32px 120px;
+    display:grid;
+    grid-template-columns:minmax(0,1.05fr) minmax(380px,.95fr);
+    align-items:center;
+    gap:70px;
+}
+
+.zhr-naji-hero-copy{
+    max-width:780px;
+}
 
 .zhr-naji-eyebrow{
     display:inline-flex;
     align-items:center;
-    gap:10px;
-
-    margin-bottom:18px;
-
-    color:var(--zhr-bronze-gold-light);
-
-    font-size:.70rem;
-    font-weight:700;
-    letter-spacing:.24em;
+    gap:12px;
+    margin-bottom:24px;
+    color:var(--zhr-bronze-gold-bright);
+    font-size:.72rem;
+    font-weight:800;
+    letter-spacing:.30em;
     text-transform:uppercase;
 }
 
 .zhr-naji-eyebrow::before{
     content:"";
-    width:28px;
+    width:42px;
     height:1px;
     background:var(--zhr-bronze-gold);
-    box-shadow:0 0 14px var(--zhr-glow-bronze);
+    box-shadow:0 0 18px var(--zhr-glow-bronze);
 }
 
-.zhr-naji-section-title{
-    max-width:900px;
+.zhr-naji-hero-title{
     margin:0;
-
     color:var(--zhr-white);
-
-    font-size:
-        clamp(2.1rem,5vw,4.6rem);
-
-    line-height:1.04;
-    letter-spacing:-.035em;
-    font-weight:700;
+    font-size:clamp(3.2rem,7vw,7rem);
+    line-height:.92;
+    letter-spacing:-.055em;
+    max-width:850px;
+    text-shadow:0 20px 60px rgba(0,0,0,.5);
 }
 
-.zhr-naji-section-title strong{
-    color:var(--zhr-bronze-gold-light);
-    font-weight:700;
+.zhr-naji-hero-title::first-line{
+    color:var(--zhr-white);
 }
 
-.zhr-naji-section-lead{
-    max-width:760px;
-    margin:25px 0 0;
-
-    color:var(--zhr-text-soft);
-
-    font-size:
-        clamp(1rem,1.5vw,1.18rem);
-
-    line-height:1.85;
-}
-
-
-/* Persian */
-
-.zhr-naji-persian{
+.zhr-naji-hero-title-fa{
+    margin:30px 0 0;
+    color:var(--zhr-gold-pale);
+    font-size:clamp(1.25rem,2.5vw,2rem);
+    line-height:1.8;
     direction:rtl;
-    text-align:right;
+    text-align:left;
+}
 
+.zhr-naji-hero-description{
+    max-width:720px;
+    margin:28px 0 0;
+    color:var(--zhr-text-soft);
+    font-size:1.05rem;
+    line-height:1.9;
+}
+
+.zhr-naji-hero-description-fa{
+    max-width:720px;
+    margin:14px 0 0;
+    color:var(--zhr-white-muted);
+    direction:rtl;
+    text-align:left;
+    line-height:2;
+}
+
+.zhr-naji-hero-status{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-top:32px;
+}
+
+.zhr-naji-status-point{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    padding:10px 15px;
+    border:1px solid rgba(169,132,74,.25);
+    border-radius:999px;
+    background:rgba(6,16,28,.58);
     color:var(--zhr-white-soft);
+    font-size:.76rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    backdrop-filter:blur(14px);
+}
 
-    font-family:
-        "Noto Sans Arabic",
-        "Vazirmatn",
-        Tahoma,
-        Arial,
-        sans-serif;
+.zhr-naji-status-point::before{
+    content:"";
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:var(--zhr-green);
+    box-shadow:0 0 14px rgba(77,154,104,.65);
+}
 
-    line-height:2.05;
+.zhr-naji-hero-media{
+    min-height:500px;
+    border-color:rgba(169,132,74,.28);
+    box-shadow:
+        var(--zhr-shadow-deep),
+        0 0 90px rgba(35,136,216,.10),
+        inset 0 0 50px rgba(169,132,74,.05);
+}
+
+.zhr-naji-hero-bottom{
+    position:absolute;
+    z-index:8;
+    left:50%;
+    bottom:28px;
+    transform:translateX(-50%);
+    width:min(calc(100% - 48px),1000px);
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    border:1px solid rgba(169,132,74,.20);
+    background:rgba(2,3,4,.72);
+    backdrop-filter:blur(18px);
+}
+
+.zhr-naji-hero-bottom > *{
+    position:relative;
+    padding:14px 10px;
+    text-align:center;
+    color:var(--zhr-text-soft);
+    font-size:.65rem;
+    font-weight:700;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+}
+
+.zhr-naji-hero-bottom > * + *::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:30%;
+    width:1px;
+    height:40%;
+    background:var(--zhr-line);
+}
+
+.zhr-naji-hero-bottom > *:nth-child(1),
+.zhr-naji-hero-bottom > *:nth-child(2){
+    color:var(--zhr-electric-light);
+}
+
+.zhr-naji-hero-bottom > *:nth-child(3){
+    color:var(--zhr-yellow-light);
+}
+
+.zhr-naji-hero-bottom > *:nth-child(4){
+    color:var(--zhr-bronze-gold-bright);
+}
+
+.zhr-naji-hero-bottom > *:nth-child(5){
+    color:var(--zhr-red-light);
+}
+
+.zhr-naji-hero-bottom > *:nth-child(6){
+    color:var(--zhr-green-light);
 }
 
 
-/* ============================================================
-   07 — PROTECTIVE FRAME
-   ============================================================ */
+/* =========================================================
+   PHILOSOPHY
+   ========================================================= */
 
-.zhr-naji-protection-frame{
+.zhr-naji-philosophy{
+    background:
+        radial-gradient(
+            circle at 20% 50%,
+            rgba(169,132,74,.09),
+            transparent 35%
+        ),
+        var(--zhr-black);
+}
+
+.zhr-naji-philosophy-layout{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:80px;
+    align-items:center;
+}
+
+.zhr-naji-philosophy-copy{
+    max-width:680px;
+}
+
+.zhr-naji-philosophy-copy h3{
+    margin:0 0 24px;
+    color:var(--zhr-white);
+    font-size:clamp(2rem,4vw,3.6rem);
+    line-height:1.05;
+}
+
+.zhr-naji-philosophy-copy p{
+    color:var(--zhr-text-soft);
+    font-size:1.05rem;
+}
+
+.zhr-naji-principle-list{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+    margin-top:38px;
+}
+
+.zhr-naji-principle{
     position:relative;
+    padding:22px;
     border:1px solid var(--zhr-line);
+    border-radius:var(--zhr-radius-md);
     background:
         linear-gradient(
             145deg,
-            rgba(169,132,74,.055),
-            rgba(6,16,28,.34) 42%,
-            rgba(2,3,4,.72)
+            rgba(169,132,74,.11),
+            rgba(6,16,28,.64)
         );
-
-    box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.035),
-        inset 0 0 0 1px rgba(169,132,74,.025),
-        var(--zhr-shadow-card);
-
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
+    box-shadow:var(--zhr-shadow-soft);
+    transition:var(--zhr-transition);
 }
 
-
-/* Four corner security brackets */
-
-.zhr-naji-protection-frame::before,
-.zhr-naji-protection-frame::after{
-    content:"";
-    position:absolute;
-    width:34px;
-    height:34px;
-    pointer-events:none;
+.zhr-naji-principle:hover{
+    transform:translateY(-5px);
+    border-color:var(--zhr-line-bright);
+    box-shadow:var(--zhr-shadow-bronze);
 }
 
-.zhr-naji-protection-frame::before{
-    top:-1px;
-    left:-1px;
-
-    border-top:2px solid var(--zhr-bronze-gold);
-    border-left:2px solid var(--zhr-bronze-gold);
+.zhr-naji-principle strong{
+    display:block;
+    color:var(--zhr-bronze-gold-bright);
+    font-size:.78rem;
+    letter-spacing:.18em;
 }
 
-.zhr-naji-protection-frame::after{
-    right:-1px;
-    bottom:-1px;
-
-    border-right:2px solid var(--zhr-bronze-gold);
-    border-bottom:2px solid var(--zhr-bronze-gold);
+.zhr-naji-principle span{
+    display:block;
+    margin-top:7px;
+    color:var(--zhr-text-soft);
 }
 
-
-/* ============================================================
-   08 — HERO
-   ============================================================ */
-
-.zhr-naji-hero{
-    position:relative;
-    min-height:
-        min(920px,100svh);
-
-    display:grid;
-    place-items:center;
-
-    padding:
-        130px 24px 100px;
-
-    overflow:hidden;
-
+.zhr-naji-philosophy-mission{
+    padding:44px;
+    border:1px solid rgba(169,132,74,.28);
+    border-radius:var(--zhr-radius-xl);
     background:
         radial-gradient(
-            circle at 50% 40%,
-            rgba(35,136,216,.09),
-            transparent 30%
+            circle at 80% 20%,
+            rgba(169,132,74,.14),
+            transparent 42%
         ),
+        linear-gradient(
+            145deg,
+            rgba(169,132,74,.10),
+            rgba(5,6,8,.90)
+        );
+    box-shadow:
+        var(--zhr-shadow-card),
+        inset 0 0 45px rgba(169,132,74,.04);
+}
+
+.zhr-naji-mission-label{
+    color:var(--zhr-bronze-gold);
+    font-size:.68rem;
+    font-weight:800;
+    letter-spacing:.25em;
+    text-transform:uppercase;
+}
+
+.zhr-naji-philosophy-mission h3{
+    margin:20px 0 12px;
+    color:var(--zhr-white);
+    font-size:2rem;
+}
+
+.zhr-naji-philosophy-mission p{
+    margin:0;
+    color:var(--zhr-text-soft);
+}
+
+
+/* =========================================================
+   SACRED / FIRST MESSAGE
+   ========================================================= */
+
+.zhr-naji-first-message{
+    padding-top:145px;
+    padding-bottom:145px;
+    background:
         radial-gradient(
-            circle at 50% 65%,
-            rgba(169,132,74,.08),
+            circle at 50% 50%,
+            rgba(169,132,74,.13),
             transparent 42%
         ),
         linear-gradient(
             180deg,
-            var(--zhr-black-deep),
-            var(--zhr-navy-deep)
+            #050403,
+            #0A0805,
+            #020304
         );
 }
 
-
-/* Hero technical grid */
-
-.zhr-naji-hero::before{
-    content:"";
-    position:absolute;
-    inset:0;
-
-    background-image:
-        linear-gradient(
-            rgba(169,132,74,.025) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(169,132,74,.025) 1px,
-            transparent 1px
-        );
-
-    background-size:80px 80px;
-
-    mask-image:
-        radial-gradient(
-            ellipse at center,
-            black 0%,
-            transparent 72%
-        );
-}
-
-
-/* central protection field */
-
-.zhr-naji-hero::after{
-    content:"";
-    position:absolute;
-
-    width:min(70vw,760px);
-    aspect-ratio:1;
-
-    border:
-        1px solid rgba(169,132,74,.14);
-
-    border-radius:50%;
-
-    box-shadow:
-        0 0 0 32px rgba(169,132,74,.018),
-        0 0 0 90px rgba(35,136,216,.012),
-        0 0 100px rgba(169,132,74,.07);
-
-    animation:
-        zhr-naji-protection-pulse 7s ease-in-out infinite;
-}
-
-.zhr-naji-hero > .zhr-naji-container{
+.zhr-naji-sacred-frame{
     position:relative;
-    z-index:2;
-    width:min(1180px,100%);
-    text-align:center;
-}
-
-.zhr-naji-hero .zhr-naji-eyebrow{
-    justify-content:center;
-}
-
-.zhr-naji-hero .zhr-naji-eyebrow::before{
-    display:none;
-}
-
-.zhr-naji-hero h1{
-    margin:0;
-
-    color:var(--zhr-white);
-
-    font-size:
-        clamp(3.2rem,9vw,8.6rem);
-
-    line-height:.9;
-    letter-spacing:-.065em;
-    font-weight:800;
-
-    text-shadow:
-        0 0 45px rgba(169,132,74,.10);
-}
-
-.zhr-naji-hero h1 span{
-    display:block;
-    color:var(--zhr-bronze-gold-light);
-}
-
-.zhr-naji-hero p{
-    max-width:700px;
-    margin:32px auto 0;
-
-    color:var(--zhr-text-soft);
-
-    font-size:
-        clamp(1rem,1.5vw,1.2rem);
-
-    line-height:1.85;
-}
-
-
-/* ============================================================
-   09 — STATUS SYSTEM
-   ============================================================ */
-
-.zhr-naji-status{
-    display:inline-flex;
-    align-items:center;
-    gap:9px;
-
-    color:var(--zhr-text-soft);
-
-    font-size:.70rem;
-    letter-spacing:.18em;
-    text-transform:uppercase;
-}
-
-.zhr-naji-status-dot{
-    width:8px;
-    height:8px;
-    border-radius:50%;
-
-    background:var(--zhr-state-active);
-
-    box-shadow:
-        0 0 0 4px rgba(35,136,216,.08),
-        0 0 18px rgba(35,136,216,.45);
-}
-
-.zhr-naji-status--safe .zhr-naji-status-dot{
-    background:var(--zhr-green);
-    box-shadow:
-        0 0 0 4px rgba(77,154,104,.08),
-        0 0 18px rgba(77,154,104,.45);
-}
-
-.zhr-naji-status--warning .zhr-naji-status-dot{
-    background:var(--zhr-yellow);
-}
-
-.zhr-naji-status--critical .zhr-naji-status-dot{
-    background:var(--zhr-red);
-}
-
-
-/* ============================================================
-   10 — GLASS MODULES
-   ============================================================ */
-
-.zhr-naji-glass{
-    position:relative;
-
-    padding:clamp(24px,3vw,42px);
-
-    border:
-        1px solid var(--zhr-line-dark);
-
-    border-radius:var(--zhr-radius-lg);
-
+    max-width:1050px;
+    margin:auto;
+    padding:70px;
+    border:1px solid rgba(199,169,106,.42);
+    border-radius:var(--zhr-radius-xl);
     background:
         linear-gradient(
             145deg,
-            rgba(255,255,255,.045),
-            rgba(6,16,28,.42) 45%,
-            rgba(2,3,4,.72)
+            rgba(169,132,74,.13),
+            rgba(5,6,8,.90) 50%,
+            rgba(114,85,47,.08)
         );
-
     box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.045),
-        var(--zhr-shadow-card);
+        0 40px 120px rgba(0,0,0,.65),
+        0 0 90px rgba(169,132,74,.08),
+        inset 0 0 60px rgba(169,132,74,.045);
+}
 
+.zhr-naji-sacred-frame::before,
+.zhr-naji-sacred-frame::after{
+    content:"";
+    position:absolute;
+    width:90px;
+    height:90px;
+    pointer-events:none;
+}
+
+.zhr-naji-sacred-frame::before{
+    top:18px;
+    left:18px;
+    border-top:1px solid var(--zhr-bronze-gold-bright);
+    border-left:1px solid var(--zhr-bronze-gold-bright);
+}
+
+.zhr-naji-sacred-frame::after{
+    right:18px;
+    bottom:18px;
+    border-right:1px solid var(--zhr-bronze-gold-bright);
+    border-bottom:1px solid var(--zhr-bronze-gold-bright);
+}
+
+.zhr-naji-sacred-subtitle{
+    margin:0;
+    color:var(--zhr-bronze-gold-bright);
+    font-size:.72rem;
+    font-weight:800;
+    letter-spacing:.30em;
+    text-align:center;
+}
+
+.zhr-naji-sacred-subtitle-fa{
+    margin:14px 0 45px;
+    color:var(--zhr-gold-pale);
+    text-align:center;
+}
+
+.zhr-naji-sacred-message{
+    text-align:center;
+}
+
+.zhr-naji-sacred-english{
+    max-width:850px;
+    margin:auto;
+    color:var(--zhr-white-soft);
+    font-size:clamp(1.1rem,2vw,1.5rem);
+    line-height:2;
+}
+
+.zhr-naji-sacred-persian{
+    max-width:850px;
+    margin:38px auto 0;
+    color:var(--zhr-white-muted);
+    font-size:1.05rem;
+    line-height:2.4;
+}
+
+.zhr-naji-sacred-strong{
+    display:block;
+    margin:18px 0;
+    color:var(--zhr-gold-pale);
+    font-size:clamp(1.5rem,3vw,2.5rem);
+    font-weight:800;
+    letter-spacing:.04em;
+}
+
+.zhr-naji-sacred-transition{
+    margin:42px auto;
+    width:80px;
+    height:1px;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        var(--zhr-bronze-gold-bright),
+        transparent
+    );
+}
+
+
+/* =========================================================
+   PURPOSE
+   ========================================================= */
+
+.zhr-naji-purpose{
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(35,136,216,.10),
+            transparent 32%
+        ),
+        var(--zhr-navy-deep);
+}
+
+.zhr-naji-purpose-intro{
+    max-width:800px;
+    margin:0 auto 55px;
+    text-align:center;
+}
+
+.zhr-naji-purpose-intro p,
+.zhr-naji-purpose-human p{
+    color:var(--zhr-text-soft);
+}
+
+.zhr-naji-purpose-human{
+    margin:45px auto;
+    max-width:900px;
+    padding:30px;
+    border-left:2px solid var(--zhr-electric);
+    background:linear-gradient(
+        90deg,
+        rgba(35,136,216,.08),
+        transparent
+    );
+}
+
+.zhr-naji-human-groups{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+    margin-top:28px;
+}
+
+.zhr-naji-human-groups span{
+    padding:10px 17px;
+    border:1px solid var(--zhr-line-blue);
+    border-radius:999px;
+    color:var(--zhr-electric-light);
+    background:var(--zhr-glass-blue);
+}
+
+.zhr-naji-mission-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.zhr-naji-mission-card{
+    position:relative;
+    min-height:240px;
+    padding:34px;
+    border:1px solid rgba(35,136,216,.20);
+    border-radius:var(--zhr-radius-lg);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(35,136,216,.11),
+            rgba(6,16,28,.75) 55%,
+            rgba(169,132,74,.045)
+        );
+    box-shadow:var(--zhr-shadow-card);
+    transition:var(--zhr-transition);
+}
+
+.zhr-naji-mission-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:28px;
+    right:28px;
+    height:2px;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        var(--zhr-electric),
+        transparent
+    );
+}
+
+.zhr-naji-mission-card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(89,181,255,.40);
+    box-shadow:var(--zhr-shadow-blue);
+}
+
+.zhr-naji-mission-card h3{
+    margin:0 0 15px;
+    color:var(--zhr-white);
+}
+
+.zhr-naji-mission-card p{
+    margin:0;
+    color:var(--zhr-text-soft);
+}
+
+.zhr-naji-prevention-message,
+.zhr-naji-responsibility-note{
+    margin:38px auto 0;
+    max-width:900px;
+    padding:25px 30px;
+    border:1px solid var(--zhr-line);
+    border-radius:var(--zhr-radius-md);
+    background:var(--zhr-glass-bronze);
+    color:var(--zhr-white-soft);
+}
+
+.zhr-naji-emergency-actions{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    margin-top:30px;
+}
+
+.zhr-naji-emergency-actions > *{
+    padding:18px;
+    border:1px solid var(--zhr-line-red);
+    background:var(--zhr-red-glass);
+    border-radius:var(--zhr-radius-md);
+    color:var(--zhr-red-light);
+}
+
+.zhr-naji-rose-link{
+    display:inline-block;
+    margin-top:30px;
+    color:var(--zhr-electric-light);
+    text-decoration:none;
+}
+
+
+/* =========================================================
+   ARCHITECTURE
+   ========================================================= */
+
+.zhr-naji-architecture{
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(35,136,216,.10),
+            transparent 38%
+        ),
+        var(--zhr-black);
+}
+
+.zhr-naji-system-flow{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-bottom:60px;
+}
+
+.zhr-naji-system-flow span,
+.zhr-naji-system-flow b{
+    padding:13px 18px;
+    border:1px solid var(--zhr-line-blue);
+    border-radius:999px;
+    background:var(--zhr-glass-blue);
+    color:var(--zhr-electric-light);
+    font-size:.76rem;
+    letter-spacing:.08em;
+}
+
+.zhr-naji-system-flow b{
+    border:none;
+    background:none;
+    color:var(--zhr-bronze-gold-bright);
+}
+
+.zhr-naji-layer-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.zhr-naji-layer-grid article{
+    min-height:190px;
+    padding:27px;
+    border:1px solid rgba(35,136,216,.17);
+    border-radius:var(--zhr-radius-md);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(35,136,216,.09),
+            rgba(6,16,28,.75)
+        );
+    box-shadow:var(--zhr-shadow-soft);
+    transition:var(--zhr-transition);
+}
+
+.zhr-naji-layer-grid article:hover{
+    transform:translateY(-5px);
+    border-color:var(--zhr-line-blue);
+    box-shadow:var(--zhr-shadow-blue);
+}
+
+.zhr-naji-layer-grid h3{
+    color:var(--zhr-white);
+}
+
+.zhr-naji-layer-grid p{
+    color:var(--zhr-text-soft);
+}
+
+.zhr-naji-architecture-trinity{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-top:55px;
+}
+
+.zhr-naji-architecture-trinity > div{
+    padding:30px;
+    border:1px solid var(--zhr-line);
+    border-radius:var(--zhr-radius-lg);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(169,132,74,.08),
+            rgba(6,16,28,.72)
+        );
+    text-align:center;
+    box-shadow:var(--zhr-shadow-card);
+}
+
+.zhr-naji-architecture-trinity > div:nth-child(2){
+    border-color:var(--zhr-line-blue);
+}
+
+.zhr-naji-architecture-trinity strong{
+    display:block;
+    color:var(--zhr-bronze-gold-bright);
+    font-size:1.2rem;
+}
+
+.zhr-naji-architecture-trinity > div:nth-child(2) strong{
+    color:var(--zhr-electric-light);
+}
+
+.zhr-naji-architecture-principles{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-top:28px;
+}
+
+.zhr-naji-architecture-principles article{
+    padding:25px;
+    border-top:2px solid var(--zhr-electric);
+    background:var(--zhr-glass-blue);
+}
+
+
+/* =========================================================
+   HUMAN PROTECTION
+   ========================================================= */
+
+.zhr-naji-human-protection{
+    background:
+        radial-gradient(
+            circle at 15% 45%,
+            rgba(77,154,104,.08),
+            transparent 30%
+        ),
+        var(--zhr-black);
+}
+
+.zhr-naji-heading-line,
+.zhr-naji-heading-line-fa{
+    text-align:center;
+}
+
+.zhr-naji-heading-line{
+    color:var(--zhr-green-light);
+    font-size:clamp(1.8rem,4vw,3.4rem);
+}
+
+.zhr-naji-heading-line-fa{
+    color:var(--zhr-gold-pale);
+    direction:rtl;
+}
+
+.zhr-naji-human-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-top:55px;
+}
+
+.zhr-naji-human-grid article{
+    position:relative;
+    padding:32px;
+    min-height:210px;
+    border:1px solid var(--zhr-line-green);
+    border-radius:var(--zhr-radius-lg);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(77,154,104,.09),
+            rgba(6,16,28,.76)
+        );
+    box-shadow:var(--zhr-shadow-card);
+    transition:var(--zhr-transition);
+}
+
+.zhr-naji-human-grid article:hover{
+    transform:translateY(-6px);
+    box-shadow:var(--zhr-shadow-green);
+}
+
+.zhr-naji-human-grid h3{
+    color:var(--zhr-white);
+}
+
+.zhr-naji-human-grid p{
+    color:var(--zhr-text-soft);
+}
+
+.zhr-naji-dignity-message{
+    max-width:900px;
+    margin:50px auto 0;
+    text-align:center;
+    color:var(--zhr-green-light);
+    font-size:1.15rem;
+}
+
+
+/* =========================================================
+   INTELLIGENT SAFETY
+   ========================================================= */
+
+.zhr-naji-intelligent-safety{
+    background:
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(35,136,216,.11),
+            transparent 35%
+        ),
+        var(--zhr-navy-deep);
+}
+
+.zhr-naji-intelligence-intro{
+    max-width:800px;
+    margin:0 auto 45px;
+    text-align:center;
+    color:var(--zhr-text-soft);
+}
+
+.zhr-naji-intelligence-principles{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-bottom:45px;
+}
+
+.zhr-naji-intelligence-principles span{
+    padding:11px 18px;
+    border:1px solid var(--zhr-line-blue);
+    border-radius:999px;
+    color:var(--zhr-electric-light);
+    background:var(--zhr-glass-blue);
+}
+
+.zhr-naji-intelligence-content{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.zhr-naji-intelligence-content article{
+    padding:34px;
+    border:1px solid rgba(35,136,216,.20);
+    border-radius:var(--zhr-radius-lg);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(35,136,216,.10),
+            rgba(2,7,17,.85)
+        );
+    box-shadow:var(--zhr-shadow-card);
+}
+
+.zhr-naji-intelligence-content h3{
+    color:var(--zhr-white);
+}
+
+.zhr-naji-intelligence-content p{
+    color:var(--zhr-text-soft);
+}
+
+.zhr-naji-intelligence-closing{
+    max-width:850px;
+    margin:50px auto 0;
+    text-align:center;
+    color:var(--zhr-electric-light);
+}
+
+
+/* =========================================================
+   EMERGENCY
+   ========================================================= */
+
+.zhr-naji-emergency{
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(198,59,50,.08),
+            transparent 38%
+        ),
+        linear-gradient(
+            180deg,
+            #080303,
+            #030304
+        );
+}
+
+.zhr-naji-emergency-journey{
+    position:relative;
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:12px;
+    margin-bottom:55px;
+}
+
+.zhr-naji-emergency-journey::before{
+    content:"";
+    position:absolute;
+    left:5%;
+    right:5%;
+    top:42px;
+    height:1px;
+    background:linear-gradient(
+        90deg,
+        var(--zhr-electric),
+        var(--zhr-yellow),
+        var(--zhr-red),
+        var(--zhr-green)
+    );
+    opacity:.55;
+}
+
+.zhr-naji-emergency-step{
+    position:relative;
+    z-index:2;
+    padding:20px 10px;
+    text-align:center;
+    border:1px solid rgba(198,59,50,.20);
+    border-radius:var(--zhr-radius-md);
+    background:rgba(12,5,5,.86);
+}
+
+.zhr-naji-emergency-step strong{
+    display:block;
+    margin-bottom:5px;
+    color:var(--zhr-red-light);
+    font-size:.75rem;
+    letter-spacing:.14em;
+}
+
+.zhr-naji-emergency-step span{
+    display:block;
+    color:var(--zhr-white-soft);
+}
+
+.zhr-naji-emergency-step small{
+    color:var(--zhr-text-soft);
+}
+
+.zhr-naji-emergency-step:nth-child(1),
+.zhr-naji-emergency-step:nth-child(2){
+    border-color:var(--zhr-line-blue);
+}
+
+.zhr-naji-emergency-step:nth-child(1) strong,
+.zhr-naji-emergency-step:nth-child(2) strong{
+    color:var(--zhr-electric-light);
+}
+
+.zhr-naji-emergency-step:nth-child(3){
+    border-color:var(--zhr-line-yellow);
+}
+
+.zhr-naji-emergency-step:nth-child(3) strong{
+    color:var(--zhr-yellow-light);
+}
+
+.zhr-naji-emergency-step:nth-child(6){
+    border-color:var(--zhr-line-green);
+}
+
+.zhr-naji-emergency-step:nth-child(6) strong{
+    color:var(--zhr-green-light);
+}
+
+.zhr-naji-emergency-content{
+    max-width:900px;
+    margin:auto;
+    padding:40px;
+    border:1px solid var(--zhr-line-red);
+    border-radius:var(--zhr-radius-lg);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(198,59,50,.09),
+            rgba(15,5,5,.80)
+        );
+    box-shadow:var(--zhr-shadow-red);
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.zhr-naji-accessibility{
+    background:var(--zhr-navy-deep);
+}
+
+.zhr-naji-accessibility-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.zhr-naji-accessibility-grid article{
+    padding:30px;
+    border:1px solid var(--zhr-line-blue);
+    border-radius:var(--zhr-radius-lg);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(47,120,183,.09),
+            rgba(6,16,28,.78)
+        );
+    box-shadow:var(--zhr-shadow-card);
+}
+
+.zhr-naji-accessibility-grid article:nth-child(2n){
+    border-color:var(--zhr-line-green);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(77,154,104,.075),
+            rgba(6,16,28,.78)
+        );
+}
+
+.zhr-naji-accessibility-grid h3{
+    color:var(--zhr-white);
+}
+
+.zhr-naji-accessibility-grid p{
+    color:var(--zhr-text-soft);
+}
+
+.zhr-naji-accessibility-closing{
+    margin:45px auto 0;
+    max-width:850px;
+    text-align:center;
+    color:var(--zhr-green-light);
+}
+
+
+/* =========================================================
+   LIVING PROTECTION ECOSYSTEM
+   ========================================================= */
+
+.zhr-naji-circle{
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(169,132,74,.09),
+            transparent 40%
+        ),
+        var(--zhr-black);
+}
+
+.zhr-naji-evolution-cycle{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:0;
+    margin:50px auto;
+    max-width:1000px;
+}
+
+.zhr-naji-evolution-cycle > *{
+    position:relative;
+    flex:1;
+    padding:25px 15px;
+    text-align:center;
+    border:1px solid var(--zhr-line);
+    background:var(--zhr-glass-bronze);
+}
+
+.zhr-naji-evolution-cycle > * + *{
+    margin-left:-1px;
+}
+
+.zhr-naji-version-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.zhr-naji-version-grid article{
+    padding:28px;
+    border:1px solid var(--zhr-line);
+    border-radius:var(--zhr-radius-lg);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(169,132,74,.075),
+            rgba(6,16,28,.78)
+        );
+    box-shadow:var(--zhr-shadow-soft);
+}
+
+.zhr-naji-version-grid article h3{
+    color:var(--zhr-bronze-gold-bright);
+}
+
+.zhr-naji-evolution-content{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+    margin-top:25px;
+}
+
+.zhr-naji-evolution-content article{
+    padding:35px;
+    border:1px solid var(--zhr-line-blue);
+    border-radius:var(--zhr-radius-lg);
+    background:var(--zhr-glass-blue);
+}
+
+.zhr-naji-feedback-loop{
+    margin:35px auto;
+    max-width:900px;
+    padding:28px;
+    border:1px solid var(--zhr-line-green);
+    border-radius:var(--zhr-radius-lg);
+    background:var(--zhr-green-glass);
+    text-align:center;
+}
+
+.zhr-naji-evolution-principles{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+}
+
+.zhr-naji-evolution-principles > *{
+    padding:10px 17px;
+    border-radius:999px;
+    border:1px solid var(--zhr-line);
+    background:var(--zhr-glass-bronze);
+}
+
+.zhr-naji-ota,
+.zhr-naji-long-term,
+.zhr-naji-future-capabilities{
+    margin-top:25px;
+    padding:30px;
+    border:1px solid var(--zhr-line-blue);
+    border-radius:var(--zhr-radius-lg);
+    background:var(--zhr-glass-navy);
+}
+
+.zhr-naji-circle-closing{
+    max-width:900px;
+    margin:50px auto 0;
+    text-align:center;
+    color:var(--zhr-bronze-gold-bright);
+}
+
+
+/* =========================================================
+   PREVENTION
+   ========================================================= */
+
+.zhr-naji-prevention{
+    background:
+        radial-gradient(
+            circle at 25% 40%,
+            rgba(214,165,46,.08),
+            transparent 32%
+        ),
+        var(--zhr-black);
+}
+
+.zhr-naji-prevention-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.zhr-naji-prevention-grid article{
+    padding:30px;
+    border:1px solid var(--zhr-line-yellow);
+    border-radius:var(--zhr-radius-lg);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(214,165,46,.08),
+            rgba(20,15,5,.80)
+        );
+    box-shadow:var(--zhr-shadow-card);
+}
+
+.zhr-naji-prevention-grid h3{
+    color:var(--zhr-yellow-light);
+}
+
+.zhr-naji-prevention-grid p{
+    color:var(--zhr-text-soft);
+}
+
+.zhr-naji-prevention-note{
+    max-width:900px;
+    margin:45px auto 0;
+    padding:28px;
+    border-left:3px solid var(--zhr-yellow);
+    background:var(--zhr-yellow-glass);
+}
+
+.zhr-naji-prevention-note-fa{
+    direction:rtl;
+    text-align:right;
+    color:var(--zhr-gold-pale);
+}
+
+
+/* =========================================================
+   ENGINEERING
+   ========================================================= */
+
+.zhr-naji-engineering-responsibility{
+    background:
+        linear-gradient(
+            180deg,
+            var(--zhr-black),
+            var(--zhr-graphite-deep)
+        );
+}
+
+.zhr-naji-engineering-intro{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+    color:var(--zhr-text-soft);
+}
+
+.zhr-naji-engineering-principles{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin:40px auto;
+}
+
+.zhr-naji-engineering-principles span{
+    padding:11px 18px;
+    border:1px solid var(--zhr-line-steel);
+    border-radius:999px;
+    color:var(--zhr-steel-bright);
+    background:rgba(102,112,120,.07);
+}
+
+.zhr-naji-engineering-validation,
+.zhr-naji-engineering-honesty{
+    max-width:1000px;
+    margin:22px auto;
+    padding:34px;
+    border:1px solid var(--zhr-line-steel);
+    border-radius:var(--zhr-radius-lg);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(102,112,120,.08),
+            rgba(5,6,8,.88)
+        );
+}
+
+.zhr-naji-engineering-honesty{
+    border-color:var(--zhr-line);
+}
+
+.zhr-naji-engineering-closing{
+    max-width:850px;
+    margin:45px auto 0;
+    text-align:center;
+    color:var(--zhr-bronze-gold-light);
+}
+
+
+/* =========================================================
+   UNIFIED ARCHITECTURE
+   ========================================================= */
+
+.zhr-naji-unified-architecture{
+    background:
+        radial-gradient(
+            circle at 70% 35%,
+            rgba(35,136,216,.10),
+            transparent 36%
+        ),
+        var(--zhr-navy-deep);
+}
+
+.zhr-naji-unified-layers{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.zhr-naji-unified-layers > *{
+    padding:30px;
+    border:1px solid var(--zhr-line-blue);
+    border-radius:var(--zhr-radius-lg);
+    background:var(--zhr-glass-blue);
+}
+
+.zhr-naji-unified-flow{
+    margin:45px auto;
+    max-width:1000px;
+    padding:35px;
+    border:1px solid var(--zhr-line);
+    border-radius:var(--zhr-radius-lg);
+    background:var(--zhr-glass-bronze);
+    text-align:center;
+}
+
+.zhr-naji-zhr-rose{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+    margin-top:25px;
+}
+
+.zhr-naji-zhr-rose > *{
+    padding:35px;
+    border-radius:var(--zhr-radius-lg);
+    border:1px solid var(--zhr-line);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(169,132,74,.08),
+            rgba(6,16,28,.78)
+        );
+}
+
+.zhr-naji-zhr-rose > *:nth-child(2){
+    border-color:var(--zhr-line-blue);
+}
+
+.zhr-naji-unified-security{
+    margin-top:25px;
+    padding:35px;
+    border:1px solid var(--zhr-line-green);
+    border-radius:var(--zhr-radius-lg);
+    background:var(--zhr-green-glass);
+}
+
+.zhr-naji-unified-closing{
+    max-width:900px;
+    margin:45px auto 0;
+    text-align:center;
+    color:var(--zhr-electric-light);
+}
+
+
+/* =========================================================
+   TRUST / SECURITY
+   ========================================================= */
+
+.zhr-naji-trust-security{
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(169,132,74,.10),
+            transparent 40%
+        ),
+        #030405;
+}
+
+.zhr-naji-trust-pillars{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.zhr-naji-trust-pillars article{
+    padding:30px;
+    border:1px solid var(--zhr-line);
+    border-radius:var(--zhr-radius-lg);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(169,132,74,.08),
+            rgba(6,16,28,.80)
+        );
+    box-shadow:var(--zhr-shadow-card);
+}
+
+.zhr-naji-trust-pillars h3{
+    color:var(--zhr-bronze-gold-bright);
+}
+
+.zhr-naji-trust-content{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-top:25px;
+}
+
+.zhr-naji-trust-content article{
+    padding:32px;
+    border:1px solid var(--zhr-line-blue);
+    border-radius:var(--zhr-radius-lg);
+    background:var(--zhr-glass-navy);
+}
+
+.zhr-naji-data-lifecycle{
+    margin-top:35px;
+    padding:35px;
+    border:1px solid var(--zhr-line-steel);
+    border-radius:var(--zhr-radius-lg);
+    background:rgba(102,112,120,.055);
+}
+
+.zhr-naji-trust-principles{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+    margin-top:30px;
+}
+
+.zhr-naji-trust-principles > *{
+    padding:11px 18px;
+    border:1px solid var(--zhr-line);
+    border-radius:999px;
+    background:var(--zhr-glass-bronze);
+    color:var(--zhr-gold-pale);
+}
+
+.zhr-naji-trust-closing{
+    max-width:900px;
+    margin:50px auto 0;
+    text-align:center;
+    color:var(--zhr-bronze-gold-bright);
+}
+
+
+/* =========================================================
+   FUTURE PROTECTION
+   ========================================================= */
+
+.zhr-naji-future-protection{
+    background:
+        radial-gradient(
+            circle at 30% 40%,
+            rgba(77,154,104,.08),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 75% 35%,
+            rgba(35,136,216,.08),
+            transparent 32%
+        ),
+        var(--zhr-black);
+}
+
+.zhr-naji-future-intro{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+    color:var(--zhr-text-soft);
+}
+
+.zhr-naji-future-pillars{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+    margin-top:50px;
+}
+
+.zhr-naji-future-pillars article{
+    padding:35px;
+    border:1px solid var(--zhr-line-green);
+    border-radius:var(--zhr-radius-lg);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(77,154,104,.08),
+            rgba(6,16,28,.80)
+        );
+    box-shadow:var(--zhr-shadow-card);
+}
+
+.zhr-naji-future-pillars article:nth-child(2){
+    border-color:var(--zhr-line-blue);
+}
+
+.zhr-naji-future-pillars article:nth-child(3){
+    border-color:var(--zhr-line);
+}
+
+.zhr-naji-future-humanity{
+    max-width:900px;
+    margin:45px auto 0;
+    padding:35px;
+    border:1px solid var(--zhr-line);
+    border-radius:var(--zhr-radius-lg);
+    background:var(--zhr-glass-bronze);
+    text-align:center;
+}
+
+.zhr-naji-future-closing{
+    max-width:900px;
+    margin:50px auto 0;
+    text-align:center;
+    color:var(--zhr-green-light);
+}
+
+
+/* =========================================================
+   ARCHITECTURE OF TRUST
+   ========================================================= */
+
+.zhr-naji-trust-architecture{
+    background:
+        linear-gradient(
+            180deg,
+            #050403,
+            #0A0805,
+            #030405
+        );
+}
+
+.zhr-naji-trust-foundation,
+.zhr-naji-trust-security-model{
+    max-width:1000px;
+    margin:25px auto;
+    padding:40px;
+    border:1px solid var(--zhr-line);
+    border-radius:var(--zhr-radius-xl);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(169,132,74,.10),
+            rgba(6,16,28,.82)
+        );
+    box-shadow:var(--zhr-shadow-card);
+}
+
+.zhr-naji-trust-security-model{
+    border-color:var(--zhr-line-blue);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(35,136,216,.09),
+            rgba(6,16,28,.84)
+        );
+}
+
+.zhr-naji-trust-final-note{
+    max-width:850px;
+    margin:45px auto 0;
+    text-align:center;
+    color:var(--zhr-gold-pale);
+}
+
+
+/* =========================================================
+   FINAL MESSAGE
+   ========================================================= */
+
+.zhr-naji-final-message{
+    position:relative;
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    padding:130px 24px;
+    overflow:hidden;
+    background:#010203;
+}
+
+.zhr-naji-final-background{
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(
+            circle at 75% 45%,
+            rgba(35,136,216,.14),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 25% 55%,
+            rgba(169,132,74,.12),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #010203,
+            #06101C 52%,
+            #020304
+        );
+}
+
+.zhr-naji-final-media{
+    position:absolute;
+    inset:0;
+    border:0;
+    border-radius:0;
+    opacity:.30;
+    box-shadow:none;
+}
+
+.zhr-naji-final-media::before{
+    border:0;
+}
+
+.zhr-naji-final-media::after{
+    width:500px;
+    height:500px;
+    border-color:rgba(35,136,216,.12);
+}
+
+.zhr-naji-final-shell{
+    position:relative;
+    z-index:5;
+    width:min(100%,1000px);
+    margin:auto;
+    padding:70px;
+    border:1px solid rgba(169,132,74,.30);
+    border-radius:var(--zhr-radius-xl);
+    background:rgba(2,3,4,.70);
     backdrop-filter:blur(22px);
-    -webkit-backdrop-filter:blur(22px);
+    box-shadow:
+        var(--zhr-shadow-deep),
+        0 0 90px rgba(35,136,216,.08);
+    text-align:center;
+}
 
+.zhr-naji-final-title-fa{
+    margin:0 0 30px;
+    color:var(--zhr-gold-pale);
+    font-size:1.25rem;
+}
+
+.zhr-naji-final-copy{
+    color:var(--zhr-white);
+    font-size:clamp(2rem,5vw,4.5rem);
+    line-height:1.05;
+    letter-spacing:-.045em;
+}
+
+.zhr-naji-final-sacred-line{
+    margin:40px auto 0;
+    max-width:700px;
+    color:var(--zhr-bronze-gold-bright);
+    font-size:1.2rem;
+    line-height:2;
+}
+
+.zhr-naji-signature{
+    margin-top:40px;
+    color:var(--zhr-electric-light);
+    font-size:.72rem;
+    font-weight:800;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+}
+
+.zhr-naji-final-closing{
+    margin-top:20px;
+    color:var(--zhr-text-soft);
+}
+
+
+/* =========================================================
+   GLOBAL TYPOGRAPHY INSIDE ZHR ONLY
+   ========================================================= */
+
+.zhr-naji-section p{
+    font-size:1rem;
+}
+
+.zhr-naji-section h3{
+    line-height:1.2;
+}
+
+.zhr-naji-section article{
     transition:
         transform var(--zhr-transition),
         border-color var(--zhr-transition),
         box-shadow var(--zhr-transition);
 }
 
-.zhr-naji-glass:hover{
-    transform:translateY(-5px);
 
-    border-color:
-        rgba(169,132,74,.30);
-
-    box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.06),
-        0 30px 80px rgba(0,0,0,.52),
-        0 0 42px rgba(169,132,74,.06);
-}
-
-
-/* ============================================================
-   11 — MODULE CARDS
-   ============================================================ */
-
-.zhr-naji-module-grid{
-    display:grid;
-    grid-template-columns:
-        repeat(3,minmax(0,1fr));
-
-    gap:18px;
-
-    margin-top:55px;
-}
-
-.zhr-naji-module{
-    position:relative;
-    min-height:220px;
-
-    padding:30px;
-
-    border:
-        1px solid var(--zhr-line-dark);
-
-    border-radius:var(--zhr-radius-md);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.035),
-            rgba(6,16,28,.50)
-        );
-
-    overflow:hidden;
-
-    transition:
-        transform var(--zhr-transition),
-        border-color var(--zhr-transition),
-        background var(--zhr-transition);
-}
-
-.zhr-naji-module::before{
-    content:"";
-    position:absolute;
-    left:0;
-    top:0;
-    bottom:0;
-    width:2px;
-
-    background:
-        linear-gradient(
-            180deg,
-            var(--zhr-bronze-gold-bright),
-            transparent
-        );
-
-    opacity:.7;
-}
-
-.zhr-naji-module::after{
-    content:"";
-    position:absolute;
-
-    top:18px;
-    right:18px;
-
-    width:7px;
-    height:7px;
-
-    border-radius:50%;
-
-    background:var(--zhr-bronze-gold);
-
-    box-shadow:
-        0 0 14px rgba(169,132,74,.4);
-}
-
-.zhr-naji-module:hover{
-    transform:translateY(-6px);
-
-    border-color:
-        rgba(169,132,74,.30);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(169,132,74,.07),
-            rgba(6,16,28,.55)
-        );
-}
-
-.zhr-naji-module h3{
-    margin:0 0 12px;
-
-    color:var(--zhr-white);
-
-    font-size:1.1rem;
-}
-
-.zhr-naji-module p{
-    margin:0;
-
-    color:var(--zhr-text-soft);
-
-    line-height:1.8;
-}
-
-
-/* ============================================================
-   12 — FUNCTIONAL COLOR MODULES
-   ============================================================ */
-
-.zhr-naji-module--critical{
-    border-color:var(--zhr-red-line);
-}
-
-.zhr-naji-module--critical::before{
-    background:
-        linear-gradient(
-            180deg,
-            var(--zhr-red-light),
-            transparent
-        );
-}
-
-.zhr-naji-module--warning{
-    border-color:var(--zhr-yellow-line);
-}
-
-.zhr-naji-module--warning::before{
-    background:
-        linear-gradient(
-            180deg,
-            var(--zhr-yellow-light),
-            transparent
-        );
-}
-
-.zhr-naji-module--safe{
-    border-color:var(--zhr-green-line);
-}
-
-.zhr-naji-module--safe::before{
-    background:
-        linear-gradient(
-            180deg,
-            var(--zhr-green-light),
-            transparent
-        );
-}
-
-.zhr-naji-module--info{
-    border-color:var(--zhr-blue-line);
-}
-
-.zhr-naji-module--info::before{
-    background:
-        linear-gradient(
-            180deg,
-            var(--zhr-blue-light),
-            transparent
-        );
-}
-
-.zhr-naji-module--heritage{
-    border-color:var(--zhr-brown-line);
-}
-
-.zhr-naji-module--heritage::before{
-    background:
-        linear-gradient(
-            180deg,
-            var(--zhr-brown-light),
-            transparent
-        );
-}
-
-
-/* ============================================================
-   13 — PHILOSOPHY
-   ============================================================ */
-
-.zhr-naji-philosophy{
-    background:
-        radial-gradient(
-            circle at 20% 50%,
-            rgba(169,132,74,.055),
-            transparent 30%
-        ),
-        var(--zhr-black);
-}
-
-.zhr-naji-philosophy .zhr-naji-protection-frame{
-    padding:clamp(32px,5vw,70px);
-}
-
-
-/* ============================================================
-   14 — FIRST MESSAGE / FAITH
-   ============================================================ */
-
-.zhr-naji-first-message{
-    background:
-        radial-gradient(
-            circle at 50% 20%,
-            rgba(169,132,74,.10),
-            transparent 34%
-        ),
-        linear-gradient(
-            180deg,
-            var(--zhr-navy-deep),
-            var(--zhr-black)
-        );
-}
-
-.zhr-naji-first-message .zhr-naji-protection-frame{
-    border-color:
-        rgba(169,132,74,.25);
-
-    background:
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(169,132,74,.075),
-            transparent 45%
-        ),
-        rgba(2,3,4,.72);
-}
-
-.zhr-naji-first-message h2{
-    color:var(--zhr-bronze-gold-light);
-}
-
-.zhr-naji-first-message .zhr-naji-faith-line{
-    margin:
-        28px 0;
-
-    color:var(--zhr-gold-pale);
-
-    font-size:
-        clamp(1.35rem,2.8vw,2.2rem);
-
-    font-weight:600;
-    letter-spacing:-.02em;
-}
-
-.zhr-naji-first-message .zhr-naji-persian{
-    color:var(--zhr-white-soft);
-}
-
-
-/* ============================================================
-   15 — PURPOSE / MISSION
-   ============================================================ */
-
-.zhr-naji-purpose{
-    background:
-        linear-gradient(
-            180deg,
-            var(--zhr-black),
-            var(--zhr-navy-deep)
-        );
-}
-
-.zhr-naji-mission-core{
-    position:relative;
-
-    margin-top:55px;
-    padding:clamp(32px,5vw,62px);
-
-    text-align:center;
-
-    border:
-        1px solid rgba(35,136,216,.20);
-
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(35,136,216,.08),
-            transparent 62%
-        ),
-        rgba(6,16,28,.42);
-
-    box-shadow:
-        0 0 70px rgba(35,136,216,.05);
-}
-
-.zhr-naji-mission-core h3{
-    margin:0;
-
-    color:var(--zhr-electric-light);
-
-    font-size:
-        clamp(1.6rem,3vw,2.8rem);
-
-    letter-spacing:-.025em;
-}
-
-
-/* ============================================================
-   16 — ARCHITECTURE
-   ============================================================ */
-
-.zhr-naji-architecture{
-    background:
-        radial-gradient(
-            circle at 50% 50%,
-            rgba(35,136,216,.055),
-            transparent 45%
-        ),
-        var(--zhr-black);
-}
-
-
-/* System flow */
-
-.zhr-naji-system-flow{
-    display:flex;
-    align-items:stretch;
-    justify-content:center;
-    flex-wrap:wrap;
-
-    margin-top:60px;
-}
-
-.zhr-naji-system-node{
-    position:relative;
-
-    min-width:150px;
-    padding:22px 18px;
-
-    border:
-        1px solid var(--zhr-line-blue);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(35,136,216,.08),
-            rgba(6,16,28,.48)
-        );
-
-    text-align:center;
-}
-
-.zhr-naji-system-node:not(:last-child)::after{
-    content:"";
-    position:absolute;
-
-    top:50%;
-    right:-31px;
-
-    width:30px;
-    height:1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--zhr-electric),
-            transparent
-        );
-}
-
-.zhr-naji-system-node strong{
-    display:block;
-
-    color:var(--zhr-white);
-
-    font-size:.82rem;
-    letter-spacing:.08em;
-    text-transform:uppercase;
-}
-
-.zhr-naji-system-node span{
-    display:block;
-    margin-top:7px;
-
-    color:var(--zhr-text-soft);
-
-    font-size:.75rem;
-}
-
-
-/* ============================================================
-   17 — PROTECTION LAYERS
-   ============================================================ */
-
-.zhr-naji-layer-list{
-    display:grid;
-    gap:10px;
-
-    margin-top:48px;
-}
-
-.zhr-naji-layer{
-    position:relative;
-
-    display:grid;
-    grid-template-columns:
-        70px 1fr auto;
-
-    align-items:center;
-    gap:20px;
-
-    padding:22px 25px;
-
-    border:
-        1px solid var(--zhr-line-dark);
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(169,132,74,.035),
-            rgba(6,16,28,.40)
-        );
-
-    transition:
-        border-color var(--zhr-transition),
-        transform var(--zhr-transition);
-}
-
-.zhr-naji-layer:hover{
-    transform:translateX(5px);
-    border-color:var(--zhr-line);
-}
-
-.zhr-naji-layer-number{
-    color:var(--zhr-bronze-gold-light);
-
-    font-size:.72rem;
-    font-weight:700;
-    letter-spacing:.15em;
-}
-
-.zhr-naji-layer h3{
-    margin:0;
-    color:var(--zhr-white);
-}
-
-.zhr-naji-layer p{
-    margin:4px 0 0;
-    color:var(--zhr-text-soft);
-    font-size:.9rem;
-}
-
-
-/* ============================================================
-   18 — HUMAN PROTECTION
-   ============================================================ */
-
-.zhr-naji-human-protection{
-    background:
-        radial-gradient(
-            circle at 80% 40%,
-            rgba(77,154,104,.035),
-            transparent 30%
-        ),
-        var(--zhr-navy-deep);
-}
-
-.zhr-naji-human-grid{
-    display:grid;
-    grid-template-columns:
-        repeat(3,minmax(0,1fr));
-
-    gap:16px;
-    margin-top:55px;
-}
-
-.zhr-naji-human-item{
-    position:relative;
-
-    padding:28px;
-
-    border:
-        1px solid var(--zhr-line-dark);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.032),
-            rgba(6,16,28,.45)
-        );
-
+/* =========================================================
+   PROTECTION CORNERS
+   ========================================================= */
+
+.zhr-naji-mission-card,
+.zhr-naji-layer-grid article,
+.zhr-naji-human-grid article,
+.zhr-naji-intelligence-content article,
+.zhr-naji-accessibility-grid article,
+.zhr-naji-prevention-grid article,
+.zhr-naji-trust-pillars article,
+.zhr-naji-future-pillars article{
     overflow:hidden;
 }
 
-.zhr-naji-human-item::after{
+.zhr-naji-mission-card::after,
+.zhr-naji-layer-grid article::after,
+.zhr-naji-human-grid article::after,
+.zhr-naji-intelligence-content article::after,
+.zhr-naji-accessibility-grid article::after,
+.zhr-naji-prevention-grid article::after,
+.zhr-naji-trust-pillars article::after,
+.zhr-naji-future-pillars article::after{
     content:"";
     position:absolute;
-
-    right:-25px;
-    bottom:-25px;
-
-    width:80px;
-    height:80px;
-
-    border:
-        1px solid rgba(169,132,74,.10);
-
-    border-radius:50%;
-}
-
-.zhr-naji-human-item h3{
-    margin:0 0 10px;
-    color:var(--zhr-white);
-}
-
-.zhr-naji-human-item p{
-    margin:0;
-    color:var(--zhr-text-soft);
-}
-
-
-/* ============================================================
-   19 — INTELLIGENT SAFETY
-   ============================================================ */
-
-.zhr-naji-intelligent-safety{
-    background:
-        linear-gradient(
-            180deg,
-            var(--zhr-navy-deep),
-            var(--zhr-black)
-        );
-}
-
-
-/* ============================================================
-   20 — EMERGENCY / CRITICAL SYSTEM
-   ============================================================ */
-
-.zhr-naji-emergency{
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(198,59,50,.055),
-            transparent 42%
-        ),
-        var(--zhr-black);
-}
-
-.zhr-naji-emergency .zhr-naji-protection-frame{
-    border-color:
-        rgba(198,59,50,.20);
-}
-
-.zhr-naji-emergency .zhr-naji-status-dot{
-    background:var(--zhr-red);
-
-    box-shadow:
-        0 0 0 5px rgba(198,59,50,.08),
-        0 0 22px rgba(198,59,50,.45);
-}
-
-
-/* Emergency sequence */
-
-.zhr-naji-emergency-flow{
-    display:grid;
-
-    grid-template-columns:
-        repeat(6,minmax(0,1fr));
-
-    gap:8px;
-
-    margin-top:55px;
-}
-
-.zhr-naji-emergency-step{
-    position:relative;
-
-    padding:24px 14px;
-
-    text-align:center;
-
-    border:
-        1px solid var(--zhr-red-line);
-
-    background:
-        linear-gradient(
-            180deg,
-            var(--zhr-red-glass),
-            rgba(2,3,4,.5)
-        );
-}
-
-.zhr-naji-emergency-step strong{
-    display:block;
-    color:var(--zhr-red-light);
-    font-size:.76rem;
-    letter-spacing:.08em;
-}
-
-
-/* ============================================================
-   21 — ACCESSIBILITY
-   ============================================================ */
-
-.zhr-naji-accessibility{
-    background:
-        radial-gradient(
-            circle at 20% 50%,
-            rgba(47,120,183,.05),
-            transparent 35%
-        ),
-        var(--zhr-navy-deep);
-}
-
-.zhr-naji-accessibility .zhr-naji-module{
-    border-color:
-        var(--zhr-blue-line);
-}
-
-
-/* ============================================================
-   22 — PREVENTION
-   ============================================================ */
-
-.zhr-naji-prevention{
-    background:
-        linear-gradient(
-            180deg,
-            var(--zhr-navy-deep),
-            var(--zhr-black)
-        );
-}
-
-.zhr-naji-prevention .zhr-naji-protection-frame{
-    border-color:
-        rgba(77,154,104,.18);
-}
-
-
-/* ============================================================
-   23 — ENGINEERING RESPONSIBILITY
-   ============================================================ */
-
-.zhr-naji-engineering-responsibility{
-    background:
-        radial-gradient(
-            circle at 75% 35%,
-            rgba(169,132,74,.05),
-            transparent 32%
-        ),
-        var(--zhr-black);
-}
-
-.zhr-naji-engineering-principles{
-    display:grid;
-    grid-template-columns:
-        repeat(3,minmax(0,1fr));
-
-    gap:14px;
-
-    margin-top:55px;
-}
-
-.zhr-naji-engineering-principle{
-    padding:25px;
-
-    border:
-        1px solid var(--zhr-line-dark);
-
-    border-top:
-        2px solid var(--zhr-bronze-gold);
-
-    background:
-        rgba(255,255,255,.025);
-}
-
-.zhr-naji-engineering-principle strong{
-    display:block;
-
-    margin-bottom:10px;
-
-    color:var(--zhr-bronze-gold-light);
-
-    font-size:.72rem;
-    letter-spacing:.14em;
-}
-
-
-/* ============================================================
-   24 — UNIFIED ARCHITECTURE
-   ============================================================ */
-
-.zhr-naji-unified-architecture{
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(35,136,216,.055),
-            transparent 50%
-        ),
-        var(--zhr-black);
-}
-
-
-/* ============================================================
-   25 — RESPONSIBLE INTELLIGENCE
-   ============================================================ */
-
-.zhr-naji-responsible-intelligence{
-    background:
-        linear-gradient(
-            180deg,
-            var(--zhr-black),
-            var(--zhr-navy-deep)
-        );
-}
-
-.zhr-naji-intelligence-loop{
-    position:relative;
-
-    display:grid;
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:12px;
-
-    margin-top:55px;
-}
-
-.zhr-naji-intelligence-step{
-    position:relative;
-
-    padding:30px 20px;
-
-    text-align:center;
-
-    border:
-        1px solid var(--zhr-line-blue);
-
-    background:
-        rgba(35,136,216,.035);
-}
-
-.zhr-naji-intelligence-step strong{
-    color:var(--zhr-electric-light);
-
-    font-size:.8rem;
-    letter-spacing:.13em;
-}
-
-
-/* ============================================================
-   26 — TRUST & SECURITY
-   ============================================================ */
-
-.zhr-naji-trust-security{
-    background:
-        radial-gradient(
-            circle at 50% 30%,
-            rgba(169,132,74,.07),
-            transparent 38%
-        ),
-        var(--zhr-black);
-}
-
-.zhr-naji-trust-security .zhr-naji-protection-frame{
-    border-color:
-        rgba(169,132,74,.24);
-}
-
-.zhr-naji-trust-pillars{
-    display:grid;
-    grid-template-columns:
-        repeat(4,minmax(0,1fr));
-
-    gap:12px;
-
-    margin-top:55px;
-}
-
-.zhr-naji-trust-pillar{
-    padding:30px 22px;
-
-    text-align:center;
-
-    border:
-        1px solid var(--zhr-line);
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(169,132,74,.055),
-            rgba(2,3,4,.45)
-        );
-}
-
-.zhr-naji-trust-pillar strong{
-    display:block;
-
-    color:var(--zhr-bronze-gold-light);
-
-    font-size:.78rem;
-    letter-spacing:.12em;
-}
-
-
-/* Data lifecycle */
-
-.zhr-naji-data-lifecycle{
-    display:grid;
-    grid-template-columns:
-        repeat(5,1fr);
-
-    margin-top:30px;
-}
-
-.zhr-naji-data-step{
-    padding:20px 10px;
-
-    text-align:center;
-
-    border:
-        1px solid var(--zhr-line-dark);
-
-    color:var(--zhr-text-soft);
-
-    font-size:.72rem;
-    letter-spacing:.08em;
-}
-
-
-/* ============================================================
-   27 — LIVING PROTECTION ECOSYSTEM
-   ============================================================ */
-
-.zhr-naji-circle,
-.zhr-naji-future-protection{
-    background:
-        radial-gradient(
-            circle at 50% 35%,
-            rgba(35,136,216,.045),
-            transparent 42%
-        ),
-        var(--zhr-navy-deep);
-}
-
-
-/* Evolution cycle */
-
-.zhr-naji-evolution{
-    display:grid;
-    grid-template-columns:
-        repeat(5,1fr);
-
-    gap:10px;
-
-    margin-top:55px;
-}
-
-.zhr-naji-evolution-step{
-    position:relative;
-
-    min-height:150px;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-
-    padding:20px;
-
-    border:
-        1px solid var(--zhr-line);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(169,132,74,.045),
-            rgba(6,16,28,.44)
-        );
-
-    text-align:center;
-}
-
-.zhr-naji-evolution-step strong{
-    color:var(--zhr-bronze-gold-light);
-    font-size:.78rem;
-    letter-spacing:.12em;
-}
-
-.zhr-naji-evolution-step span{
-    margin-top:8px;
-    color:var(--zhr-text-soft);
-    font-size:.8rem;
-}
-
-
-/* Version cards */
-
-.zhr-naji-version-grid{
-    display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:12px;
-
-    margin-top:30px;
-}
-
-.zhr-naji-version{
-    padding:25px;
-
-    border:
-        1px solid var(--zhr-line-dark);
-
-    background:
-        rgba(255,255,255,.025);
-}
-
-.zhr-naji-version strong{
-    display:block;
-
-    color:var(--zhr-electric-light);
-
-    font-size:.72rem;
-    letter-spacing:.15em;
-}
-
-.zhr-naji-version h3{
-    margin:10px 0 0;
-    color:var(--zhr-white);
-}
-
-
-/* ============================================================
-   28 — OTA / CONTINUOUS IMPROVEMENT
-   ============================================================ */
-
-.zhr-naji-ota{
-    position:relative;
-
-    padding:clamp(28px,4vw,52px);
-
-    border:
-        1px solid var(--zhr-line-blue);
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(35,136,216,.07),
-            rgba(6,16,28,.45)
-        );
-}
-
-.zhr-naji-ota::before{
-    content:"OTA / CONTINUOUS IMPROVEMENT";
-
-    position:absolute;
-    top:18px;
-    right:22px;
-
-    color:var(--zhr-electric);
-
-    font-size:.58rem;
-    letter-spacing:.18em;
-}
-
-
-/* ============================================================
-   29 — 10+ YEAR VISION
-   ============================================================ */
-
-.zhr-naji-long-term{
-    margin-top:30px;
-
-    padding:clamp(30px,5vw,60px);
-
-    border:
-        1px solid rgba(169,132,74,.20);
-
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(169,132,74,.055),
-            transparent 65%
-        );
-}
-
-.zhr-naji-long-term h3{
-    color:var(--zhr-gold-pale);
-}
-
-
-/* ============================================================
-   30 — FUTURE PROTECTION
-   ============================================================ */
-
-.zhr-naji-future-protection{
-    background:
-        linear-gradient(
-            180deg,
-            var(--zhr-navy-deep),
-            var(--zhr-black)
-        );
-}
-
-.zhr-naji-future-pillars{
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:15px;
-
-    margin-top:55px;
-}
-
-.zhr-naji-future-pillar{
-    position:relative;
-
-    padding:34px;
-
-    border:
-        1px solid var(--zhr-line);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(169,132,74,.045),
-            rgba(6,16,28,.46)
-        );
-}
-
-.zhr-naji-future-pillar::before{
-    content:"";
-
-    position:absolute;
-    left:0;
-    top:0;
-
-    width:100%;
-    height:2px;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--zhr-bronze-gold),
-            var(--zhr-electric),
-            transparent
-        );
-}
-
-.zhr-naji-future-pillar h3{
-    color:var(--zhr-white);
-}
-
-
-/* ============================================================
-   31 — FINAL MESSAGE
-   ============================================================ */
-
-.zhr-naji-final-message{
-    position:relative;
-
-    min-height:85vh;
-
-    display:grid;
-    place-items:center;
-
-    text-align:center;
-
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(169,132,74,.12),
-            transparent 32%
-        ),
-        radial-gradient(
-            circle at center,
-            rgba(35,136,216,.055),
-            transparent 58%
-        ),
-        var(--zhr-black-deep);
-}
-
-
-/* Protective rings */
-
-.zhr-naji-final-message::before,
-.zhr-naji-final-message::after{
-    content:"";
-
-    position:absolute;
-    left:50%;
-    top:50%;
-
-    transform:translate(-50%,-50%);
-
-    border-radius:50%;
-
-    pointer-events:none;
-}
-
-.zhr-naji-final-message::before{
-    width:min(80vw,850px);
-    aspect-ratio:1;
-
-    border:
-        1px solid rgba(169,132,74,.12);
-
-    box-shadow:
-        0 0 80px rgba(169,132,74,.045);
-}
-
-.zhr-naji-final-message::after{
-    width:min(60vw,620px);
-    aspect-ratio:1;
-
-    border:
-        1px solid rgba(35,136,216,.08);
-}
-
-.zhr-naji-final-message .zhr-naji-container{
-    position:relative;
-    z-index:2;
-}
-
-.zhr-naji-final-message h2{
-    max-width:1000px;
-    margin:0 auto;
-
-    color:var(--zhr-white);
-
-    font-size:
-        clamp(2.6rem,7vw,6.8rem);
-
-    line-height:.98;
-    letter-spacing:-.055em;
-}
-
-.zhr-naji-final-message h2 span{
-    color:var(--zhr-bronze-gold-light);
-}
-
-.zhr-naji-final-message p{
-    max-width:720px;
-    margin:30px auto 0;
-
-    color:var(--zhr-text-soft);
-
-    font-size:1.05rem;
-    line-height:1.9;
-}
-
-
-/* ============================================================
-   32 — SIGNATURE
-   ============================================================ */
-
-.zhr-naji-signature{
-    display:inline-flex;
-    flex-direction:column;
-    align-items:center;
-
-    margin-top:48px;
-}
-
-.zhr-naji-signature strong{
-    color:var(--zhr-bronze-gold-light);
-
-    font-size:.82rem;
-    letter-spacing:.24em;
-    text-transform:uppercase;
-}
-
-.zhr-naji-signature span{
-    margin-top:7px;
-
-    color:var(--zhr-muted);
-
-    font-size:.68rem;
-    letter-spacing:.12em;
-}
-
-
-/* ============================================================
-   33 — PROTECTION JOURNEY
-   ============================================================ */
-
-.zhr-naji-protection-journey{
-    display:grid;
-
-    grid-template-columns:
-        repeat(6,1fr);
-
-    gap:0;
-
-    margin-top:55px;
-}
-
-.zhr-naji-journey-step{
-    position:relative;
-
-    padding:22px 10px;
-
-    text-align:center;
-
-    border-top:
-        1px solid var(--zhr-line);
-
-    border-bottom:
-        1px solid var(--zhr-line);
-}
-
-.zhr-naji-journey-step:not(:last-child)::after{
-    content:"";
-
-    position:absolute;
-
-    top:50%;
+    width:45px;
+    height:45px;
     right:0;
-
-    width:1px;
-    height:34px;
-
-    transform:translateY(-50%);
-
-    background:
-        linear-gradient(
-            180deg,
-            transparent,
-            var(--zhr-bronze-gold),
-            transparent
-        );
-}
-
-.zhr-naji-journey-step strong{
-    display:block;
-
-    color:var(--zhr-bronze-gold-light);
-
-    font-size:.68rem;
-    letter-spacing:.12em;
-}
-
-.zhr-naji-journey-step span{
-    display:block;
-
-    margin-top:5px;
-
-    color:var(--zhr-text-soft);
-
-    font-size:.72rem;
-}
-
-
-/* ============================================================
-   34 — MEDIA / IMAGE SYSTEM
-   ============================================================ */
-
-.zhr-naji-media-slot{
-    position:relative;
-
-    min-height:280px;
-
-    overflow:hidden;
-
-    border:
-        1px solid var(--zhr-line);
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--zhr-piano),
-            var(--zhr-navy)
-        );
-
-    box-shadow:
-        inset 0 0 0 1px rgba(255,255,255,.025),
-        var(--zhr-shadow-card);
-}
-
-.zhr-naji-media-slot img{
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    opacity:.88;
-
-    transition:
-        transform 1s var(--zhr-ease),
-        opacity var(--zhr-transition);
-}
-
-.zhr-naji-media-slot:hover img{
-    transform:scale(1.035);
-    opacity:1;
-}
-
-
-/* image protection overlay */
-
-.zhr-naji-media-slot::after{
-    content:"";
-
-    position:absolute;
-    inset:0;
-
+    bottom:0;
+    border-right:1px solid rgba(199,169,106,.25);
+    border-bottom:1px solid rgba(199,169,106,.25);
     pointer-events:none;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(2,3,4,.04),
-            rgba(2,3,4,.30)
-        ),
-        linear-gradient(
-            90deg,
-            rgba(169,132,74,.06),
-            transparent 30%,
-            transparent 70%,
-            rgba(35,136,216,.04)
-        );
 }
 
 
-/* ============================================================
-   35 — TECHNICAL MICRO-LINES
-   ============================================================ */
+/* =========================================================
+   SAFE STATE
+   ========================================================= */
 
-.zhr-naji-techline{
-    display:flex;
-    align-items:center;
-    gap:10px;
-
-    color:var(--zhr-steel);
-
-    font-size:.62rem;
-    letter-spacing:.16em;
-    text-transform:uppercase;
-}
-
-.zhr-naji-techline::before{
-    content:"";
-
-    width:22px;
-    height:1px;
-
-    background:var(--zhr-bronze-gold);
-}
-
-
-/* ============================================================
-   36 — SAFE / WARNING / CRITICAL LABELS
-   ============================================================ */
-
-.zhr-naji-state{
-    display:inline-flex;
-
-    padding:6px 10px;
-
-    border:1px solid;
-
-    font-size:.62rem;
-    font-weight:700;
-
-    letter-spacing:.13em;
-    text-transform:uppercase;
-}
-
-.zhr-naji-state--safe{
-    color:var(--zhr-green-light);
-    border-color:var(--zhr-green-line);
-    background:var(--zhr-green-glass);
-}
-
-.zhr-naji-state--warning{
-    color:var(--zhr-yellow-light);
-    border-color:var(--zhr-yellow-line);
-    background:var(--zhr-yellow-glass);
-}
-
-.zhr-naji-state--critical{
-    color:var(--zhr-red-light);
-    border-color:var(--zhr-red-line);
-    background:var(--zhr-red-glass);
-}
-
-.zhr-naji-state--info{
-    color:var(--zhr-blue-light);
-    border-color:var(--zhr-blue-line);
-    background:var(--zhr-blue-glass);
-}
-
-.zhr-naji-state--brand{
-    color:var(--zhr-bronze-gold-light);
-    border-color:var(--zhr-line);
-    background:var(--zhr-glass-bronze);
-}
-
-
-/* ============================================================
-   37 — HORIZONTAL PROTECTION SIGNAL
-   ============================================================ */
-
-.zhr-naji-signal-line{
-    position:relative;
-
-    width:100%;
-    height:1px;
-
-    margin:45px 0;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            var(--zhr-line),
-            var(--zhr-electric),
-            var(--zhr-line),
-            transparent
-        );
-}
-
-.zhr-naji-signal-line::after{
-    content:"";
-
-    position:absolute;
-
-    top:-2px;
-    left:0;
-
-    width:55px;
-    height:5px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            var(--zhr-electric),
-            transparent
-        );
-
-    filter:
-        drop-shadow(
-            0 0 8px
-            rgba(35,136,216,.55)
-        );
-
-    animation:
-        zhr-naji-signal-scan 4s linear infinite;
-}
-
-
-/* ============================================================
-   38 — FOOTER
-   ============================================================ */
-
-.zhr-naji-footer{
-    position:relative;
-
-    padding:
-        70px 24px 45px;
-
-    border-top:
-        1px solid var(--zhr-line);
-
-    background:
-        linear-gradient(
-            180deg,
-            var(--zhr-black),
-            var(--zhr-black-deep)
-        );
-
-    text-align:center;
-}
-
-.zhr-naji-footer strong{
-    color:var(--zhr-bronze-gold-light);
-
-    font-size:.8rem;
-    letter-spacing:.2em;
-}
-
-.zhr-naji-footer p{
-    margin:12px auto 0;
-
-    max-width:620px;
-
-    color:var(--zhr-muted);
-
-    font-size:.78rem;
-}
-
-
-/* ============================================================
-   39 — FOCUS / ACCESSIBILITY
-   ============================================================ */
-
-.zhr-naji-page :focus-visible{
-    outline:
-        2px solid var(--zhr-electric-light);
-
-    outline-offset:4px;
-
+.zhr-naji-unified-security,
+.zhr-naji-feedback-loop{
     box-shadow:
-        0 0 0 5px rgba(35,136,216,.10);
+        var(--zhr-shadow-soft),
+        inset 0 0 35px rgba(77,154,104,.035);
 }
 
 
-/* ============================================================
-   40 — RESPONSIVE 1100px
-   ============================================================ */
+/* =========================================================
+   FOCUS
+   ========================================================= */
+
+.zhr-naji-main a:focus-visible,
+.zhr-naji-main button:focus-visible{
+    outline:2px solid var(--zhr-electric-light);
+    outline-offset:4px;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes zhr-naji-scan-pulse{
+    0%,100%{
+        transform:translateY(-50%) scale(.96);
+        opacity:.55;
+    }
+
+    50%{
+        transform:translateY(-50%) scale(1.02);
+        opacity:.95;
+    }
+}
+
+@keyframes zhr-naji-status-pulse{
+    0%,100%{
+        opacity:.55;
+        transform:scale(.9);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
 
 @media (max-width:1100px){
 
-    .zhr-naji-module-grid,
-    .zhr-naji-human-grid,
-    .zhr-naji-engineering-principles{
-        grid-template-columns:
-            repeat(2,minmax(0,1fr));
+    .zhr-naji-hero-container{
+        grid-template-columns:1fr;
+        gap:45px;
     }
 
+    .zhr-naji-hero-copy{
+        max-width:900px;
+    }
+
+    .zhr-naji-hero-media{
+        min-height:380px;
+    }
+
+    .zhr-naji-layer-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .zhr-naji-prevention-grid,
+    .zhr-naji-version-grid,
     .zhr-naji-trust-pillars{
-        grid-template-columns:
-            repeat(2,minmax(0,1fr));
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .zhr-naji-version-grid{
-        grid-template-columns:
-            repeat(2,minmax(0,1fr));
+    .zhr-naji-human-grid,
+    .zhr-naji-accessibility-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .zhr-naji-future-pillars{
-        grid-template-columns:
-            repeat(3,minmax(0,1fr));
+    .zhr-naji-emergency-journey{
+        grid-template-columns:repeat(3,1fr);
     }
 
-    .zhr-naji-system-node{
-        min-width:135px;
-    }
-
-    .zhr-naji-protection-journey{
-        grid-template-columns:
-            repeat(3,1fr);
-    }
-
-    .zhr-naji-evolution{
-        grid-template-columns:
-            repeat(3,1fr);
-    }
-
-    .zhr-naji-data-lifecycle{
-        grid-template-columns:
-            repeat(3,1fr);
+    .zhr-naji-emergency-journey::before{
+        display:none;
     }
 }
 
 
-/* ============================================================
-   41 — RESPONSIVE 800px
-   ============================================================ */
+/* =========================================================
+   MOBILE / TABLET
+   ========================================================= */
 
 @media (max-width:800px){
 
     .zhr-naji-section{
-        padding:
-            78px 0;
+        padding:85px 20px;
     }
 
-    .zhr-naji-module-grid,
-    .zhr-naji-human-grid,
-    .zhr-naji-engineering-principles,
+    .zhr-naji-hero-container{
+        padding:110px 20px 130px;
+    }
+
+    .zhr-naji-hero-title{
+        font-size:clamp(2.7rem,12vw,5rem);
+    }
+
+    .zhr-naji-hero-media{
+        min-height:320px;
+    }
+
+    .zhr-naji-hero-bottom{
+        width:calc(100% - 30px);
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .zhr-naji-hero-bottom > *{
+        border-bottom:1px solid rgba(169,132,74,.12);
+    }
+
+    .zhr-naji-philosophy-layout,
+    .zhr-naji-mission-grid,
+    .zhr-naji-intelligence-content,
+    .zhr-naji-architecture-trinity,
+    .zhr-naji-architecture-principles,
+    .zhr-naji-evolution-content,
+    .zhr-naji-unified-layers,
+    .zhr-naji-zhr-rose,
+    .zhr-naji-trust-content,
     .zhr-naji-future-pillars{
         grid-template-columns:1fr;
     }
 
-    .zhr-naji-system-flow{
-        display:grid;
-        grid-template-columns:1fr;
-        gap:8px;
+    .zhr-naji-sacred-frame,
+    .zhr-naji-final-shell{
+        padding:42px 25px;
     }
 
-    .zhr-naji-system-node{
+    .zhr-naji-evolution-cycle{
+        flex-direction:column;
+    }
+
+    .zhr-naji-evolution-cycle > *{
         width:100%;
     }
 
-    .zhr-naji-system-node:not(:last-child)::after{
-        top:auto;
-        right:auto;
-        bottom:-9px;
-        left:50%;
-
-        width:1px;
-        height:10px;
-
-        background:
-            linear-gradient(
-                180deg,
-                var(--zhr-electric),
-                transparent
-            );
-    }
-
-    .zhr-naji-emergency-flow{
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-    .zhr-naji-intelligence-loop{
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-    .zhr-naji-evolution{
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-    .zhr-naji-protection-journey{
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-    .zhr-naji-data-lifecycle{
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-    .zhr-naji-layer{
-        grid-template-columns:
-            50px 1fr;
-    }
-
-    .zhr-naji-layer .zhr-naji-status{
-        grid-column:2;
+    .zhr-naji-evolution-cycle > * + *{
+        margin-left:0;
+        margin-top:-1px;
     }
 }
 
 
-/* ============================================================
-   42 — RESPONSIVE 560px
-   ============================================================ */
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
 
 @media (max-width:560px){
 
-    .zhr-naji-section > .zhr-naji-container,
-    .zhr-naji-section .zhr-naji-container{
-        width:
-            calc(100% - 28px);
+    .zhr-naji-section{
+        padding:70px 16px;
     }
 
-    .zhr-naji-hero{
-        min-height:90svh;
-
-        padding:
-            110px 18px 70px;
+    .zhr-naji-hero-container{
+        padding:90px 16px 140px;
     }
 
-    .zhr-naji-hero h1{
-        font-size:
-            clamp(3rem,16vw,5.2rem);
+    .zhr-naji-hero-status{
+        gap:8px;
     }
 
-    .zhr-naji-protection-frame{
-        border-radius:
-            var(--zhr-radius-md);
+    .zhr-naji-status-point{
+        font-size:.65rem;
+        padding:8px 11px;
     }
 
-    .zhr-naji-glass{
-        padding:24px 20px;
+    .zhr-naji-hero-bottom{
+        grid-template-columns:repeat(2,1fr);
+        bottom:12px;
     }
 
-    .zhr-naji-module{
-        padding:24px;
+    .zhr-naji-hero-bottom > *{
+        padding:11px 5px;
+        font-size:.58rem;
     }
 
-    .zhr-naji-emergency-flow,
-    .zhr-naji-intelligence-loop,
-    .zhr-naji-evolution,
-    .zhr-naji-protection-journey,
-    .zhr-naji-data-lifecycle{
-        grid-template-columns:1fr;
-    }
-
+    .zhr-naji-principle-list,
+    .zhr-naji-emergency-actions,
+    .zhr-naji-layer-grid,
+    .zhr-naji-human-grid,
+    .zhr-naji-accessibility-grid,
+    .zhr-naji-prevention-grid,
+    .zhr-naji-version-grid,
     .zhr-naji-trust-pillars{
         grid-template-columns:1fr;
     }
 
-    .zhr-naji-version-grid{
-        grid-template-columns:1fr;
+    .zhr-naji-sacred-frame{
+        padding:38px 20px;
     }
 
-    .zhr-naji-layer{
-        grid-template-columns:
-            42px 1fr;
-        gap:12px;
-        padding:20px;
+    .zhr-naji-sacred-strong{
+        font-size:1.55rem;
     }
 
-    .zhr-naji-layer .zhr-naji-status{
-        grid-column:1 / -1;
-    }
-
-    .zhr-naji-journey-step:not(:last-child)::after{
-        display:none;
+    .zhr-naji-purpose-human{
+        padding:22px;
     }
 
     .zhr-naji-media-slot{
-        min-height:210px;
+        min-height:240px;
     }
 
-    .zhr-naji-hero::after{
-        width:95vw;
+    .zhr-naji-media-slot img{
+        min-height:240px;
     }
 
     .zhr-naji-final-message{
-        min-height:75vh;
+        padding:90px 16px;
     }
 
-    .zhr-naji-final-message::before{
-        width:120vw;
+    .zhr-naji-final-shell{
+        padding:40px 20px;
     }
 
-    .zhr-naji-final-message::after{
-        width:90vw;
+    .zhr-naji-final-copy{
+        font-size:2.2rem;
     }
 }
 
 
-/* ============================================================
-   43 — REDUCED MOTION
-   ============================================================ */
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
 
 @media (prefers-reduced-motion:reduce){
 
@@ -2613,54 +2434,8 @@ a{
     *,
     *::before,
     *::after{
-        animation-duration:.001ms !important;
+        animation-duration:.01ms !important;
         animation-iteration-count:1 !important;
-        transition-duration:.001ms !important;
+        transition-duration:.01ms !important;
     }
-}
-
-
-/* ============================================================
-   44 — MOTION
-   ============================================================ */
-
-@keyframes zhr-naji-protection-pulse{
-
-    0%,
-    100%{
-        transform:scale(.96);
-        opacity:.55;
-    }
-
-    50%{
-        transform:scale(1.02);
-        opacity:1;
-    }
-}
-
-
-@keyframes zhr-naji-signal-scan{
-
-    0%{
-        left:0;
-        opacity:0;
-    }
-
-    10%{
-        opacity:1;
-    }
-
-    85%{
-        opacity:1;
-    }
-
-    100%{
-        left:calc(100% - 55px);
-        opacity:0;
-    }
-}
-
-
-/* ============================================================
-   END — ZHR NAJI SECURITY SYSTEM
-   ============================================================ */
+   }
