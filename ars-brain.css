@@ -23915,47 +23915,39 @@ body.brain-test-page .btn-secondary {
 
 
 
-
 /* =========================================================
-   ARS BRAIN — SIGNATURE SECTION HEADINGS
-   MATTE BRONZE + ELECTRIC BLUE HORIZONTAL LIGHT LINE
+   ARS BRAIN — HEADLINE LINES / 50% CENTERED
    ========================================================= */
 
-
-/* =========================================================
-   01 — COMMON HEADING STYLE
-   ========================================================= */
-
+/* فقط رنگ برنزی سرتیترها */
 .arsbrain-hero h1,
 .what-is-arsbrain .section-heading h2,
 .arsbrain-pillars .section-heading h2,
 .arsbrain-architecture .section-heading h2 {
-
-    color: #B88A5A !important;
+    color: #C19A68 !important;
 
     background: linear-gradient(
         180deg,
-        #E0BE8B 0%,
-        #C59A68 28%,
-        #A97848 58%,
-        #8D5F38 100%
+        #E2C18D 0%,
+        #C9A06C 35%,
+        #B47F4E 68%,
+        #8F6039 100%
     ) !important;
 
     -webkit-background-clip: text !important;
     background-clip: text !important;
-
     -webkit-text-fill-color: transparent !important;
 
     text-shadow:
-        0 1px 1px rgba(0,0,0,.55),
-        0 0 10px rgba(193,154,104,.12) !important;
+        0 1px 1px rgba(0,0,0,.65),
+        0 0 10px rgba(193,154,104,.14) !important;
 
     position: relative !important;
 }
 
 
 /* =========================================================
-   02 — ELECTRIC BLUE LIGHT LINE
+   HALF-LENGTH ELECTRIC BLUE LINES
    ========================================================= */
 
 .arsbrain-hero h1::after,
@@ -23963,98 +23955,289 @@ body.brain-test-page .btn-secondary {
 .arsbrain-pillars .section-heading h2::after,
 .arsbrain-architecture .section-heading h2::after {
 
-    content: "";
+    content: "" !important;
 
-    display: block;
+    display: block !important;
 
-    width: 100%;
+    width: 50% !important;
+    height: 1px !important;
 
-    height: 1px;
-
-    margin-top: 22px;
+    margin: 20px auto 0 !important;
 
     background: linear-gradient(
         90deg,
         transparent 0%,
-        rgba(0,174,255,.15) 8%,
-        rgba(0,191,255,.65) 25%,
+        rgba(0,174,255,.18) 12%,
+        rgba(0,191,255,.75) 32%,
         #39BFFF 50%,
-        rgba(0,191,255,.65) 75%,
-        rgba(0,174,255,.15) 92%,
+        rgba(0,191,255,.75) 68%,
+        rgba(0,174,255,.18) 88%,
         transparent 100%
-    );
+    ) !important;
 
     box-shadow:
-        0 0 4px rgba(57,191,255,.85),
-        0 0 12px rgba(0,174,255,.65),
-        0 0 28px rgba(0,120,255,.32);
+        0 0 4px rgba(57,191,255,.95),
+        0 0 12px rgba(0,174,255,.75),
+        0 0 24px rgba(0,120,255,.38) !important;
 
-    opacity: .95;
+    opacity: 1 !important;
+}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS BRAIN HERO 2
+   GLASS 3D COMMAND BUTTONS
+   HTML TARGET:
+   .hero-buttons
+   .btn-primary
+   .btn-secondary
+   ========================================================= */
+
+/* ---------- CANCEL / OVERRIDE PREVIOUS BUTTON STYLES ---------- */
+
+.ars-hero-identity .hero-buttons .btn-primary,
+.ars-hero-identity .hero-buttons .btn-secondary {
+
+    /* RESET OLD VISUAL EFFECTS */
+    background: transparent !important;
+    background-image: none !important;
+
+    border: 1px solid rgba(57,191,255,.32) !important;
+
+    color: #D7EFFF !important;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.16),
+        inset 0 -12px 24px rgba(0,110,170,.08),
+        0 8px 18px rgba(0,0,0,.28),
+        0 0 10px rgba(0,174,255,.08) !important;
+
+    text-shadow:
+        0 1px 3px rgba(0,0,0,.75),
+        0 0 8px rgba(57,191,255,.22) !important;
+
+    backdrop-filter: blur(14px) saturate(125%) !important;
+    -webkit-backdrop-filter: blur(14px) saturate(125%) !important;
+
+    position: relative !important;
+    overflow: hidden !important;
+
+    transform: translateY(0) !important;
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease,
+        background .35s ease !important;
 }
 
 
 /* =========================================================
-   03 — PREMIUM BRONZE HIGHLIGHT
+   GLASS SURFACE
    ========================================================= */
 
-.arsbrain-hero h1::before,
-.what-is-arsbrain .section-heading h2::before,
-.arsbrain-pillars .section-heading h2::before,
-.arsbrain-architecture .section-heading h2::before {
+.ars-hero-identity .hero-buttons .btn-primary::before,
+.ars-hero-identity .hero-buttons .btn-secondary::before {
 
-    content: "";
+    content: "" !important;
 
-    position: absolute;
+    position: absolute !important;
 
-    left: 0;
+    inset: 0 !important;
 
-    bottom: -23px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.12) 0%,
+            rgba(255,255,255,.035) 24%,
+            rgba(0,174,255,.045) 52%,
+            rgba(0,100,160,.08) 100%
+        ) !important;
 
-    width: 34%;
+    opacity: .9 !important;
 
-    height: 1px;
+    pointer-events: none !important;
+
+    z-index: 0 !important;
+}
+
+
+/* =========================================================
+   SUBTLE ELECTRIC BLUE GLASS LIGHT
+   ========================================================= */
+
+.ars-hero-identity .hero-buttons .btn-primary::after,
+.ars-hero-identity .hero-buttons .btn-secondary::after {
+
+    content: "" !important;
+
+    position: absolute !important;
+
+    left: 12% !important;
+    right: 12% !important;
+    top: 0 !important;
+
+    height: 1px !important;
 
     background: linear-gradient(
         90deg,
         transparent,
-        rgba(193,154,104,.65),
+        rgba(57,191,255,.15),
+        rgba(57,191,255,.65),
+        rgba(57,191,255,.15),
         transparent
-    );
+    ) !important;
 
-    filter: blur(.2px);
+    box-shadow:
+        0 0 5px rgba(57,191,255,.45),
+        0 0 12px rgba(0,174,255,.20) !important;
 
-    opacity: .65;
+    pointer-events: none !important;
 
+    z-index: 2 !important;
 }
 
 
 /* =========================================================
-   04 — MOBILE
+   KEEP BUTTON TEXT ABOVE GLASS LAYERS
    ========================================================= */
 
-@media (max-width: 768px) {
+.ars-hero-identity .hero-buttons .btn-primary,
+.ars-hero-identity .hero-buttons .btn-secondary {
+    isolation: isolate !important;
+}
 
-    .arsbrain-hero h1::after,
-    .what-is-arsbrain .section-heading h2::after,
-    .arsbrain-pillars .section-heading h2::after,
-    .arsbrain-architecture .section-heading h2::after {
-
-        margin-top: 17px;
-
-    }
-
+.ars-hero-identity .hero-buttons .btn-primary,
+.ars-hero-identity .hero-buttons .btn-secondary {
+    font-weight: 600 !important;
+    letter-spacing: .08em !important;
 }
 
 
+/* =========================================================
+   3D RAISED / EMBOSSED EFFECT
+   ========================================================= */
+
+.ars-hero-identity .hero-buttons .btn-primary {
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.20),
+        inset 0 -1px 0 rgba(0,0,0,.32),
+        inset 0 -12px 25px rgba(0,110,170,.08),
+        0 3px 0 rgba(3,25,39,.85),
+        0 7px 16px rgba(0,0,0,.34),
+        0 0 12px rgba(0,174,255,.10) !important;
+}
+
+.ars-hero-identity .hero-buttons .btn-secondary {
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.20),
+        inset 0 -1px 0 rgba(0,0,0,.32),
+        inset 0 -12px 25px rgba(0,110,170,.08),
+        0 3px 0 rgba(3,25,39,.85),
+        0 7px 16px rgba(0,0,0,.34),
+        0 0 12px rgba(0,174,255,.10) !important;
+}
 
 
+/* =========================================================
+   HOVER — LIGHT ELECTRIC BLUE LIFT
+   ========================================================= */
+
+.ars-hero-identity .hero-buttons .btn-primary:hover,
+.ars-hero-identity .hero-buttons .btn-secondary:hover {
+
+    transform: translateY(-3px) !important;
+
+    border-color: rgba(57,191,255,.68) !important;
+
+    color: #F0FAFF !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.10),
+            rgba(0,174,255,.07),
+            rgba(0,100,160,.12)
+        ) !important;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.25),
+        inset 0 -12px 25px rgba(0,140,210,.12),
+        0 4px 0 rgba(3,25,39,.82),
+        0 12px 25px rgba(0,0,0,.38),
+        0 0 12px rgba(0,174,255,.24),
+        0 0 28px rgba(0,174,255,.12) !important;
+
+    text-shadow:
+        0 1px 3px rgba(0,0,0,.7),
+        0 0 10px rgba(57,191,255,.40) !important;
+}
 
 
+/* =========================================================
+   ACTIVE / PRESS — REAL 3D DEPTH
+   ========================================================= */
+
+.ars-hero-identity .hero-buttons .btn-primary:active,
+.ars-hero-identity .hero-buttons .btn-secondary:active {
+
+    transform: translateY(1px) !important;
+
+    box-shadow:
+        inset 0 2px 5px rgba(0,0,0,.30),
+        inset 0 -1px 0 rgba(255,255,255,.08),
+        0 1px 0 rgba(3,25,39,.8),
+        0 4px 10px rgba(0,0,0,.30),
+        0 0 10px rgba(0,174,255,.16) !important;
+}
 
 
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
+@media (max-width: 700px) {
 
+    .ars-hero-identity .hero-buttons .btn-primary,
+    .ars-hero-identity .hero-buttons .btn-secondary {
 
+        backdrop-filter: blur(10px) saturate(120%) !important;
+        -webkit-backdrop-filter: blur(10px) saturate(120%) !important;
 
-
+        box-shadow:
+            inset 0 1px 0 rgba(255,255,255,.16),
+            inset 0 -10px 20px rgba(0,110,170,.07),
+            0 3px 0 rgba(3,25,39,.82),
+            0 7px 15px rgba(0,0,0,.30),
+            0 0 10px rgba(0,174,255,.08) !important;
+    }
+}
