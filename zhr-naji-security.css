@@ -3850,195 +3850,46 @@ body{
 
 
 
-
-
 /* =========================================================
    ZHR NAJI — PATCH 05
-   INNER ORBIT RADIATION
-   ONLY — DO NOT ALTER THE ORBITS
+   INNER RADIATION ONLY
+   DO NOT TOUCH THE ORBIT GEOMETRY
    ========================================================= */
 
-/* ---------------------------------------------------------
-   MAIN ORBIT
-   KEEP EVERYTHING FROM PATCH 03 + 04
-   ADD ONLY A VERY SUBTLE INNER ATMOSPHERE
-   --------------------------------------------------------- */
+/*
+   IMPORTANT:
+   This patch does NOT modify:
+   ::before
+   ::after
+   width
+   height
+   position
+   inset
+   transform
+   animation
+
+   It only adds inward light to the EXISTING main orbit.
+*/
 
 .zhr-naji-hero-scan{
-    position: absolute;
-
-    /* IMPORTANT:
-       DO NOT CHANGE:
-       width
-       height
-       right
-       top
-       transform
-       border
-       animation
-    */
 
     box-shadow:
-        /* ORIGINAL OUTER ENERGY — PRESERVED */
+
+        /* ================================================
+           EXISTING OUTER RADIATION — PATCH 04
+           ================================================ */
+
         0 0 12px rgba(216,188,122,.72),
         0 0 32px rgba(199,169,106,.58),
         0 0 70px rgba(169,132,74,.42),
         0 0 125px rgba(169,132,74,.22),
 
-        /* VERY SOFT INNER RADIATION */
-        inset 0 0 22px rgba(216,188,122,.10),
-        inset 0 0 55px rgba(199,169,106,.075),
-        inset 0 0 95px rgba(169,132,74,.045);
+        /* ================================================
+           NEW — INWARD RADIATION ONLY
+           ================================================ */
+
+        inset 0 0 18px rgba(216,188,122,.18),
+        inset 0 0 42px rgba(199,169,106,.12),
+        inset 0 0 75px rgba(169,132,74,.075),
+        inset 0 0 120px rgba(169,132,74,.035);
 }
-
-
-/* ---------------------------------------------------------
-   INNER RADIATION LAYER
-   SITS INSIDE THE EXISTING ORBIT
-   --------------------------------------------------------- */
-
-.zhr-naji-hero-scan::before{
-
-    content:"";
-
-    position:absolute;
-
-    /* DO NOT TOUCH THE EXISTING ORBIT GEOMETRY */
-    inset:12%;
-
-    border:
-        1px solid rgba(216,188,122,.62);
-
-    border-radius:50%;
-
-    /* NO FULL DISK
-       NO CENTRAL CORE
-       ONLY A SOFT LIGHT FALLING TOWARD THE CENTER */
-
-    background:
-        radial-gradient(
-            circle at center,
-
-            rgba(216,188,122,.11) 0%,
-            rgba(199,169,106,.075) 18%,
-            rgba(169,132,74,.045) 38%,
-            rgba(169,132,74,.018) 58%,
-            transparent 76%
-        );
-
-    box-shadow:
-
-        /* LIGHT EMITTED TOWARD THE INSIDE */
-        inset 0 0 18px rgba(216,188,122,.16),
-        inset 0 0 42px rgba(199,169,106,.11),
-        inset 0 0 80px rgba(169,132,74,.065),
-
-        /* KEEP THE RING ITSELF */
-        0 0 10px rgba(216,188,122,.42),
-        0 0 25px rgba(199,169,106,.22);
-
-    pointer-events:none;
-}
-
-
-/* ---------------------------------------------------------
-   SECOND INNER ORBIT
-   THIS IS STILL AN ORBIT — NOT A CORE
-   --------------------------------------------------------- */
-
-.zhr-naji-hero-scan::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:28%;
-
-    border:
-        1px solid rgba(216,188,122,.68);
-
-    border-radius:50%;
-
-    background:transparent;
-
-    box-shadow:
-
-        /* INNER EDGE GLOW */
-        inset 0 0 14px rgba(216,188,122,.18),
-        inset 0 0 32px rgba(199,169,106,.12),
-
-        /* RING GLOW */
-        0 0 10px rgba(216,188,122,.48),
-        0 0 24px rgba(199,169,106,.25),
-        0 0 48px rgba(169,132,74,.12);
-
-    pointer-events:none;
-}
-
-
-/* ---------------------------------------------------------
-   VERY SUBTLE BREATHING
-   NO MOVEMENT / NO SEPARATION OF ORBITS
-   --------------------------------------------------------- */
-
-.zhr-naji-hero-scan::before{
-    animation:
-        zhr-naji-inner-radiation 5.8s ease-in-out infinite;
-}
-
-@keyframes zhr-naji-inner-radiation{
-
-    0%,
-    100%{
-        opacity:.72;
-    }
-
-    50%{
-        opacity:1;
-    }
-}
-
-
-/* ---------------------------------------------------------
-   MOBILE
-   --------------------------------------------------------- */
-
-@media (max-width:700px){
-
-    .zhr-naji-hero-scan{
-
-        box-shadow:
-
-            /* OUTER — PRESERVED */
-            0 0 10px rgba(216,188,122,.65),
-            0 0 28px rgba(199,169,106,.45),
-            0 0 65px rgba(169,132,74,.28),
-
-            /* INNER — SUBTLE */
-            inset 0 0 18px rgba(216,188,122,.08),
-            inset 0 0 45px rgba(169,132,74,.045);
-    }
-
-    .zhr-naji-hero-scan::before{
-
-        box-shadow:
-
-            inset 0 0 16px rgba(216,188,122,.14),
-            inset 0 0 35px rgba(199,169,106,.09),
-
-            0 0 8px rgba(216,188,122,.38),
-            0 0 20px rgba(199,169,106,.18);
-    }
-
-    .zhr-naji-hero-scan::after{
-
-        box-shadow:
-
-            inset 0 0 12px rgba(216,188,122,.15),
-
-            0 0 8px rgba(216,188,122,.42),
-            0 0 20px rgba(199,169,106,.20),
-            0 0 40px rgba(169,132,74,.10);
-    }
-       }
-
