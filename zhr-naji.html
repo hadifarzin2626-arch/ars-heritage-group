@@ -2329,14 +2329,134 @@
 <script>
 
     /*
-     * ZHR NAJI
-     * Structural JavaScript placeholder.
-     *
-     * No layout logic is intentionally placed here.
-     * Visual behavior, protection states and motion should
-     * be added only after the HTML + CSS architecture is locked.
-     */
+     * ZHR <script>
+/* =========================================================
+   ZHR NAJI — PROTECTION PULSE SYSTEM
+   STAGE 01 — LIVING CARDS
+   ========================================================= */
 
+document.addEventListener("DOMContentLoaded", () => {
+
+    const cards = document.querySelectorAll(
+        ".zhr-naji-mission-card, " +
+        ".zhr-naji-layer-grid article, " +
+        ".zhr-naji-human-grid article, " +
+        ".zhr-naji-intelligence-content article, " +
+        ".zhr-naji-accessibility-grid article, " +
+        ".zhr-naji-prevention-grid article, " +
+        ".zhr-naji-trust-pillars article, " +
+        ".zhr-naji-future-pillars article"
+    );
+
+    if (!cards.length) return;
+
+    const observer = new IntersectionObserver(
+        (entries, obs) => {
+
+            entries.forEach(entry => {
+
+                if (!entry.isIntersecting) return;
+
+                const card = entry.target;
+
+                card.classList.add("zhr-pulse-active");
+
+                /*
+                 * Small delay creates:
+                 * CARD APPEARS → THEN SCAN ACTIVATES
+                 */
+
+                setTimeout(() => {
+                    card.classList.add("zhr-pulse-scan");
+                }, 180);
+
+                /*
+                 * Scan is a one-time activation.
+                 * Remove its class afterwards so it
+                 * never becomes a continuous animation.
+                 */
+
+                setTimeout(() => {
+                    card.classList.remove("zhr-pulse-scan");
+                }, 1600);
+
+                obs.unobserve(card);
+            });
+
+        },
+        {
+            threshold: 0.18,
+            rootMargin: "0px 0px -8% 0px"
+        }
+    );
+
+    cards.forEach(card => observer.observe(card));
+
+});
+</script><script>
+/* =========================================================
+   ZHR NAJI — PROTECTION PULSE SYSTEM
+   STAGE 01 — LIVING CARDS
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const cards = document.querySelectorAll(
+        ".zhr-naji-mission-card, " +
+        ".zhr-naji-layer-grid article, " +
+        ".zhr-naji-human-grid article, " +
+        ".zhr-naji-intelligence-content article, " +
+        ".zhr-naji-accessibility-grid article, " +
+        ".zhr-naji-prevention-grid article, " +
+        ".zhr-naji-trust-pillars article, " +
+        ".zhr-naji-future-pillars article"
+    );
+
+    if (!cards.length) return;
+
+    const observer = new IntersectionObserver(
+        (entries, obs) => {
+
+            entries.forEach(entry => {
+
+                if (!entry.isIntersecting) return;
+
+                const card = entry.target;
+
+                card.classList.add("zhr-pulse-active");
+
+                /*
+                 * Small delay creates:
+                 * CARD APPEARS → THEN SCAN ACTIVATES
+                 */
+
+                setTimeout(() => {
+                    card.classList.add("zhr-pulse-scan");
+                }, 180);
+
+                /*
+                 * Scan is a one-time activation.
+                 * Remove its class afterwards so it
+                 * never becomes a continuous animation.
+                 */
+
+                setTimeout(() => {
+                    card.classList.remove("zhr-pulse-scan");
+                }, 1600);
+
+                obs.unobserve(card);
+            });
+
+        },
+        {
+            threshold: 0.18,
+            rootMargin: "0px 0px -8% 0px"
+        }
+    );
+
+    cards.forEach(card => observer.observe(card));
+
+});
 </script>
 
 </body>
