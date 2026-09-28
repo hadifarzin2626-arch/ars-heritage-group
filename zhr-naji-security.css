@@ -4293,3 +4293,197 @@ body{
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ZHR NAJI — PROTECTION PULSE SYSTEM
+   STAGE 02 — PROTECTION FRAME PULSE
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   01 — PROTECTION FRAME
+   --------------------------------------------------------- */
+
+.zhr-naji-mission-card.zhr-pulse-active,
+.zhr-naji-layer-grid article.zhr-pulse-active,
+.zhr-naji-human-grid article.zhr-pulse-active,
+.zhr-naji-intelligence-content article.zhr-pulse-active,
+.zhr-naji-accessibility-grid article.zhr-pulse-active,
+.zhr-naji-prevention-grid article.zhr-pulse-active,
+.zhr-naji-trust-pillars article.zhr-pulse-active,
+.zhr-naji-future-pillars article.zhr-pulse-active{
+
+    isolation:isolate;
+}
+
+
+/* ---------------------------------------------------------
+   02 — LIVING PROTECTION BORDER
+   --------------------------------------------------------- */
+
+.zhr-naji-mission-card.zhr-pulse-active > .zhr-pulse-frame,
+.zhr-naji-layer-grid article.zhr-pulse-active > .zhr-pulse-frame,
+.zhr-naji-human-grid article.zhr-pulse-active > .zhr-pulse-frame,
+.zhr-naji-intelligence-content article.zhr-pulse-active > .zhr-pulse-frame,
+.zhr-naji-accessibility-grid article.zhr-pulse-active > .zhr-pulse-frame,
+.zhr-naji-prevention-grid article.zhr-pulse-active > .zhr-pulse-frame,
+.zhr-naji-trust-pillars article.zhr-pulse-active > .zhr-pulse-frame,
+.zhr-naji-future-pillars article.zhr-pulse-active > .zhr-pulse-frame{
+
+    position:absolute;
+    inset:0;
+
+    pointer-events:none;
+
+    border-radius:inherit;
+
+    z-index:25;
+
+    overflow:hidden;
+}
+
+
+/* ---------------------------------------------------------
+   03 — FRAME LIGHT
+   --------------------------------------------------------- */
+
+.zhr-naji-mission-card.zhr-pulse-active::marker{
+    display:none;
+}
+
+
+/* ---------------------------------------------------------
+   04 — CARD EDGE PULSE
+   Uses the existing pseudo-element without changing
+   card geometry.
+   --------------------------------------------------------- */
+
+.zhr-naji-mission-card.zhr-pulse-active,
+.zhr-naji-layer-grid article.zhr-pulse-active,
+.zhr-naji-human-grid article.zhr-pulse-active,
+.zhr-naji-intelligence-content article.zhr-pulse-active,
+.zhr-naji-accessibility-grid article.zhr-pulse-active,
+.zhr-naji-prevention-grid article.zhr-pulse-active,
+.zhr-naji-trust-pillars article.zhr-pulse-active,
+.zhr-naji-future-pillars article.zhr-pulse-active{
+
+    --zhr-frame-alpha:.30;
+}
+
+
+/* ---------------------------------------------------------
+   05 — MOVING LIGHT ON THE FRAME
+   --------------------------------------------------------- */
+
+.zhr-naji-mission-card.zhr-pulse-active::before,
+.zhr-naji-layer-grid article.zhr-pulse-active::before,
+.zhr-naji-human-grid article.zhr-pulse-active::before,
+.zhr-naji-intelligence-content article.zhr-pulse-active::before,
+.zhr-naji-accessibility-grid article.zhr-pulse-active::before,
+.zhr-naji-prevention-grid article.zhr-pulse-active::before,
+.zhr-naji-trust-pillars article.zhr-pulse-active::before,
+.zhr-naji-future-pillars article.zhr-pulse-active::before{
+
+    border-color:
+        rgba(216,188,122,.28);
+
+    box-shadow:
+        inset 0 0 22px
+        rgba(169,132,74,.07);
+
+}
+
+
+/* ---------------------------------------------------------
+   06 — PERIODIC PROTECTION PULSE
+   --------------------------------------------------------- */
+
+.zhr-naji-mission-card.zhr-pulse-active,
+.zhr-naji-layer-grid article.zhr-pulse-active,
+.zhr-naji-human-grid article.zhr-pulse-active,
+.zhr-naji-intelligence-content article.zhr-pulse-active,
+.zhr-naji-accessibility-grid article.zhr-pulse-active,
+.zhr-naji-prevention-grid article.zhr-pulse-active,
+.zhr-naji-trust-pillars article.zhr-pulse-active,
+.zhr-naji-future-pillars article.zhr-pulse-active{
+
+    animation:
+        zhr-protection-breath
+        6.5s
+        ease-in-out
+        infinite;
+}
+
+
+/* ---------------------------------------------------------
+   07 — VERY SUBTLE SYSTEM BREATH
+   --------------------------------------------------------- */
+
+@keyframes zhr-protection-breath{
+
+    0%,
+    100%{
+
+        box-shadow:
+            0 2px 0 rgba(242,218,160,.12) inset,
+            0 0 0 1px rgba(169,132,74,.06),
+            0 28px 70px rgba(0,0,0,.55),
+            0 0 28px rgba(169,132,74,.045);
+    }
+
+    50%{
+
+        box-shadow:
+            0 2px 0 rgba(242,218,160,.20) inset,
+            0 0 0 1px rgba(199,169,106,.13),
+            0 28px 72px rgba(0,0,0,.58),
+            0 0 48px rgba(169,132,74,.11);
+    }
+}
+
+
+/* ---------------------------------------------------------
+   08 — HOVER OVERRIDES THE PULSE
+   --------------------------------------------------------- */
+
+.zhr-naji-mission-card.zhr-pulse-active:hover,
+.zhr-naji-layer-grid article.zhr-pulse-active:hover,
+.zhr-naji-human-grid article.zhr-pulse-active:hover,
+.zhr-naji-intelligence-content article.zhr-pulse-active:hover,
+.zhr-naji-accessibility-grid article.zhr-pulse-active:hover,
+.zhr-naji-prevention-grid article.zhr-pulse-active:hover,
+.zhr-naji-trust-pillars article.zhr-pulse-active:hover,
+.zhr-naji-future-pillars article.zhr-pulse-active:hover{
+
+    animation:none;
+
+}
+
+
+/* ---------------------------------------------------------
+   09 — REDUCED MOTION
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion:reduce){
+
+    .zhr-naji-mission-card.zhr-pulse-active,
+    .zhr-naji-layer-grid article.zhr-pulse-active,
+    .zhr-naji-human-grid article.zhr-pulse-active,
+    .zhr-naji-intelligence-content article.zhr-pulse-active,
+    .zhr-naji-accessibility-grid article.zhr-pulse-active,
+    .zhr-naji-prevention-grid article.zhr-pulse-active,
+    .zhr-naji-trust-pillars article.zhr-pulse-active,
+    .zhr-naji-future-pillars article.zhr-pulse-active{
+
+        animation:none;
+    }
+
+}
