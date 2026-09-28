@@ -2458,6 +2458,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 </script>
+<script>
+/* =========================================================
+   ZHR NAJI — STAGE 03
+   EMERGENCY SIGNAL OBSERVER
+   ========================================================= */
 
+document.addEventListener("DOMContentLoaded", () => {
+
+    const emergencySteps = document.querySelectorAll(
+        ".zhr-naji-emergency-step"
+    );
+
+    if (!emergencySteps.length) return;
+
+    const observer = new IntersectionObserver(
+        (entries, obs) => {
+
+            entries.forEach(entry => {
+
+                if (!entry.isIntersecting) return;
+
+                const step = entry.target;
+
+                step.classList.add("zhr-pulse-active");
+
+                setTimeout(() => {
+                    step.classList.remove("zhr-pulse-active");
+                }, 1900);
+
+                obs.unobserve(step);
+            });
+
+        },
+        {
+            threshold:.35,
+            rootMargin:"0px 0px -10% 0px"
+        }
+    );
+
+    emergencySteps.forEach(step => {
+        observer.observe(step);
+    });
+
+});
+</script>
 </body>
   </html>
