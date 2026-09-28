@@ -4049,3 +4049,247 @@ body{
             auto !important;
     }
 }
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ZHR NAJI — PROTECTION PULSE SYSTEM
+   STAGE 01 — LIVING CARDS
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   CARD ACTIVATION BASE
+   --------------------------------------------------------- */
+
+.zhr-naji-mission-card,
+.zhr-naji-layer-grid article,
+.zhr-naji-human-grid article,
+.zhr-naji-intelligence-content article,
+.zhr-naji-accessibility-grid article,
+.zhr-naji-prevention-grid article,
+.zhr-naji-trust-pillars article,
+.zhr-naji-future-pillars article{
+
+    position:relative;
+    overflow:hidden;
+
+    opacity:0;
+
+    transform:
+        translateY(34px)
+        scale(.965);
+
+    transition:
+        opacity .8s cubic-bezier(.16,1,.3,1),
+        transform 1s cubic-bezier(.16,1,.3,1),
+        border-color .6s ease,
+        box-shadow .8s ease;
+
+}
+
+
+/* ---------------------------------------------------------
+   ACTIVATED STATE
+   --------------------------------------------------------- */
+
+.zhr-naji-mission-card.zhr-pulse-active,
+.zhr-naji-layer-grid article.zhr-pulse-active,
+.zhr-naji-human-grid article.zhr-pulse-active,
+.zhr-naji-intelligence-content article.zhr-pulse-active,
+.zhr-naji-accessibility-grid article.zhr-pulse-active,
+.zhr-naji-prevention-grid article.zhr-pulse-active,
+.zhr-naji-trust-pillars article.zhr-pulse-active,
+.zhr-naji-future-pillars article.zhr-pulse-active{
+
+    opacity:1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    border-color:
+        rgba(216,188,122,.58);
+
+    box-shadow:
+
+        0 2px 0 rgba(242,218,160,.15) inset,
+
+        0 0 0 1px
+        rgba(169,132,74,.08),
+
+        0 28px 70px
+        rgba(0,0,0,.58),
+
+        0 0 42px
+        rgba(169,132,74,.10);
+
+}
+
+
+/* ---------------------------------------------------------
+   BRONZE SCAN LINE
+   --------------------------------------------------------- */
+
+.zhr-naji-mission-card::after,
+.zhr-naji-layer-grid article::after,
+.zhr-naji-human-grid article::after,
+.zhr-naji-intelligence-content article::after,
+.zhr-naji-accessibility-grid article::after,
+.zhr-naji-prevention-grid article::after,
+.zhr-naji-trust-pillars article::after,
+.zhr-naji-future-pillars article::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-35%;
+
+    width:35%;
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(216,188,122,.18),
+            rgba(255,239,194,.72),
+            rgba(216,188,122,.18),
+            transparent
+        );
+
+    filter:
+        blur(4px);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    z-index:20;
+
+}
+
+
+/* ---------------------------------------------------------
+   SCAN ACTIVATION
+   --------------------------------------------------------- */
+
+.zhr-naji-mission-card.zhr-pulse-scan::after,
+.zhr-naji-layer-grid article.zhr-pulse-scan::after,
+.zhr-naji-human-grid article.zhr-pulse-scan::after,
+.zhr-naji-intelligence-content article.zhr-pulse-scan::after,
+.zhr-naji-accessibility-grid article.zhr-pulse-scan::after,
+.zhr-naji-prevention-grid article.zhr-pulse-scan::after,
+.zhr-naji-trust-pillars article.zhr-pulse-scan::after,
+.zhr-naji-future-pillars article.zhr-pulse-scan::after{
+
+    opacity:1;
+
+    animation:
+        zhr-pulse-card-scan
+        1.25s
+        cubic-bezier(.16,1,.3,1)
+        forwards;
+
+}
+
+
+@keyframes zhr-pulse-card-scan{
+
+    0%{
+        left:-35%;
+        opacity:0;
+    }
+
+    12%{
+        opacity:1;
+    }
+
+    75%{
+        opacity:.85;
+    }
+
+    100%{
+        left:105%;
+        opacity:0;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   INNER PROTECTION FRAME
+   --------------------------------------------------------- */
+
+.zhr-naji-mission-card::before,
+.zhr-naji-layer-grid article::before,
+.zhr-naji-human-grid article::before,
+.zhr-naji-intelligence-content article::before,
+.zhr-naji-accessibility-grid article::before,
+.zhr-naji-prevention-grid article::before,
+.zhr-naji-trust-pillars article::before,
+.zhr-naji-future-pillars article::before{
+
+    transition:
+        opacity .7s ease,
+        border-color .7s ease,
+        box-shadow .7s ease;
+
+}
+
+
+/* ---------------------------------------------------------
+   FRAME ACTIVATION
+   --------------------------------------------------------- */
+
+.zhr-naji-mission-card.zhr-pulse-active::before,
+.zhr-naji-layer-grid article.zhr-pulse-active::before,
+.zhr-naji-human-grid article.zhr-pulse-active::before,
+.zhr-naji-intelligence-content article.zhr-pulse-active::before,
+.zhr-naji-accessibility-grid article.zhr-pulse-active::before,
+.zhr-naji-prevention-grid article.zhr-pulse-active::before,
+.zhr-naji-trust-pillars article.zhr-pulse-active::before,
+.zhr-naji-future-pillars article.zhr-pulse-active::before{
+
+    border-color:
+        rgba(216,188,122,.28);
+
+    box-shadow:
+
+        inset 0 0 24px
+        rgba(169,132,74,.075),
+
+        0 0 22px
+        rgba(169,132,74,.055);
+
+}
+
+
+/* ---------------------------------------------------------
+   ACCESSIBILITY
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce){
+
+    .zhr-naji-mission-card,
+    .zhr-naji-layer-grid article,
+    .zhr-naji-human-grid article,
+    .zhr-naji-intelligence-content article,
+    .zhr-naji-accessibility-grid article,
+    .zhr-naji-prevention-grid article,
+    .zhr-naji-trust-pillars article,
+    .zhr-naji-future-pillars article{
+
+        opacity:1;
+        transform:none;
+        transition:none;
+    }
+
+}
