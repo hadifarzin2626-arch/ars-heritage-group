@@ -3620,4 +3620,220 @@ body{
 }
 
 
+/* =========================================================
+   ZHR NAJI — PATCH 04
+   HERO BRONZE ENERGY FIELD
+   Strong Matte Bronze-Gold Atmospheric Glow
+   ========================================================= */
 
+
+/* ---------------------------------------------------------
+   PRIMARY BRONZE ENERGY AURA
+   --------------------------------------------------------- */
+
+.zhr-naji-hero-scan {
+
+    filter:
+        drop-shadow(0 0 12px rgba(216,188,122,.72))
+        drop-shadow(0 0 32px rgba(199,169,106,.58))
+        drop-shadow(0 0 70px rgba(169,132,74,.42))
+        drop-shadow(0 0 125px rgba(169,132,74,.22));
+
+}
+
+
+/* ---------------------------------------------------------
+   INNER ENERGY FIELD
+   --------------------------------------------------------- */
+
+.zhr-naji-hero-scan::before {
+
+    box-shadow:
+
+        0 0 20px rgba(216,188,122,.62),
+
+        0 0 45px rgba(199,169,106,.52),
+
+        0 0 90px rgba(169,132,74,.40),
+
+        0 0 150px rgba(169,132,74,.24),
+
+        0 0 230px rgba(169,132,74,.13),
+
+        inset 0 0 35px rgba(216,188,122,.18);
+
+}
+
+
+/* ---------------------------------------------------------
+   OUTER ATMOSPHERIC ENERGY
+   --------------------------------------------------------- */
+
+.zhr-naji-hero-scan::after {
+
+    box-shadow:
+
+        0 0 35px rgba(216,188,122,.38),
+
+        0 0 75px rgba(199,169,106,.34),
+
+        0 0 130px rgba(169,132,74,.27),
+
+        0 0 210px rgba(169,132,74,.18),
+
+        0 0 320px rgba(169,132,74,.10);
+
+}
+
+
+/* ---------------------------------------------------------
+   HERO ATMOSPHERE
+   Bronze energy actually illuminates the environment
+   --------------------------------------------------------- */
+
+.zhr-naji-hero {
+
+    background:
+
+        radial-gradient(
+            ellipse at 50% 45%,
+            rgba(199,169,106,.16) 0%,
+            rgba(169,132,74,.11) 18%,
+            rgba(169,132,74,.065) 34%,
+            rgba(169,132,74,.025) 52%,
+            transparent 72%
+        ),
+
+        radial-gradient(
+            ellipse at 50% 55%,
+            rgba(216,188,122,.075) 0%,
+            transparent 58%
+        );
+
+}
+
+
+/* ---------------------------------------------------------
+   CENTRAL BRONZE LIGHT BLOOM
+   --------------------------------------------------------- */
+
+.zhr-naji-hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 75vw;
+    height: 75vw;
+
+    transform: translate(-50%, -50%);
+
+    max-width: 1050px;
+    max-height: 1050px;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(216,188,122,.075) 0%,
+            rgba(199,169,106,.055) 18%,
+            rgba(169,132,74,.035) 38%,
+            transparent 70%
+        );
+
+    filter: blur(18px);
+
+    pointer-events: none;
+
+    z-index: 0;
+
+}
+
+
+/* ---------------------------------------------------------
+   SECONDARY BRONZE LIGHT CLOUD
+   --------------------------------------------------------- */
+
+.zhr-naji-hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 38%;
+
+    width: 55vw;
+    height: 35vw;
+
+    transform: translate(-50%, -50%);
+
+    background:
+
+        radial-gradient(
+            ellipse,
+            rgba(199,169,106,.09) 0%,
+            rgba(169,132,74,.045) 32%,
+            transparent 72%
+        );
+
+    filter: blur(35px);
+
+    pointer-events: none;
+
+    z-index: 0;
+
+}
+
+
+/* ---------------------------------------------------------
+   KEEP HERO CONTENT ABOVE LIGHT
+   --------------------------------------------------------- */
+
+.zhr-naji-hero-container,
+.zhr-naji-hero-copy,
+.zhr-naji-hero-media,
+.zhr-naji-hero-bottom {
+
+    position: relative;
+
+    z-index: 5;
+
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE — STILL VISIBLE, LESS SPREAD
+   --------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    .zhr-naji-hero-scan {
+
+        filter:
+            drop-shadow(0 0 10px rgba(216,188,122,.65))
+            drop-shadow(0 0 28px rgba(199,169,106,.45))
+            drop-shadow(0 0 65px rgba(169,132,74,.28));
+
+    }
+
+    .zhr-naji-hero::before {
+
+        width: 125vw;
+        height: 125vw;
+
+    }
+
+    .zhr-naji-hero::after {
+
+        width: 100vw;
+        height: 65vw;
+
+    }
+
+}
