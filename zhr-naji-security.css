@@ -4487,3 +4487,248 @@ body{
     }
 
 }
+
+
+
+
+
+
+
+/* =========================================================
+   ZHR NAJI — PROTECTION PULSE SYSTEM
+   STAGE 03 — EMERGENCY SIGNAL FLOW
+   ========================================================= */
+
+.zhr-naji-emergency-step{
+    position:relative;
+    isolation:isolate;
+    overflow:hidden;
+}
+
+
+/* ---------------------------------------------------------
+   ACTIVE SIGNAL CORE
+   --------------------------------------------------------- */
+
+.zhr-naji-emergency-step::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:7px;
+    height:7px;
+
+    top:50%;
+    left:0;
+
+    transform:
+        translate(-50%,-50%)
+        scale(.6);
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #F4D58C 0%,
+            #D8BC7A 38%,
+            #A9844A 68%,
+            transparent 72%
+        );
+
+    box-shadow:
+
+        0 0 8px
+        rgba(216,188,122,.95),
+
+        0 0 20px
+        rgba(199,169,106,.62),
+
+        0 0 38px
+        rgba(169,132,74,.32);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    z-index:10;
+}
+
+
+/* ---------------------------------------------------------
+   SIGNAL ACTIVATES WHEN STEP ENTERS VIEW
+   --------------------------------------------------------- */
+
+.zhr-naji-emergency-step.zhr-pulse-active::after{
+
+    opacity:1;
+
+    animation:
+        zhr-emergency-signal
+        1.7s
+        cubic-bezier(.16,1,.3,1)
+        forwards;
+}
+
+
+@keyframes zhr-emergency-signal{
+
+    0%{
+
+        left:0;
+
+        opacity:0;
+
+        transform:
+            translate(-50%,-50%)
+            scale(.55);
+    }
+
+    12%{
+
+        opacity:1;
+
+        transform:
+            translate(-50%,-50%)
+            scale(1);
+    }
+
+    70%{
+
+        opacity:1;
+
+        transform:
+            translate(-50%,-50%)
+            scale(1.15);
+    }
+
+    100%{
+
+        left:100%;
+
+        opacity:0;
+
+        transform:
+            translate(-50%,-50%)
+            scale(.65);
+    }
+}
+
+
+/* ---------------------------------------------------------
+   SIGNAL TRAIL
+   --------------------------------------------------------- */
+
+.zhr-naji-emergency-step::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    right:0;
+
+    top:50%;
+
+    height:1px;
+
+    transform:
+        translateY(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(169,132,74,.08) 20%,
+            rgba(199,169,106,.16) 50%,
+            rgba(169,132,74,.08) 80%,
+            transparent 100%
+        );
+
+    opacity:.35;
+
+    pointer-events:none;
+
+    z-index:1;
+}
+
+
+/* ---------------------------------------------------------
+   ACTIVE STEP EMPHASIS
+   --------------------------------------------------------- */
+
+.zhr-naji-emergency-step.zhr-pulse-active{
+
+    border-color:
+        rgba(216,188,122,.38);
+
+    box-shadow:
+
+        0 0 0 1px
+        rgba(169,132,74,.06),
+
+        0 0 28px
+        rgba(169,132,74,.07);
+}
+
+
+/* ---------------------------------------------------------
+   CRITICAL STEP — RESPOND / RESCUE
+   --------------------------------------------------------- */
+
+.zhr-naji-emergency-step:nth-child(5).zhr-pulse-active::after,
+.zhr-naji-emergency-step:nth-child(6).zhr-pulse-active::after{
+
+    background:
+        radial-gradient(
+            circle,
+            #FFF0D0 0%,
+            #F0C75E 30%,
+            #D6A52E 62%,
+            transparent 72%
+        );
+
+    box-shadow:
+
+        0 0 9px
+        rgba(240,199,94,.95),
+
+        0 0 22px
+        rgba(214,165,46,.60),
+
+        0 0 42px
+        rgba(214,165,46,.30);
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width:700px){
+
+    .zhr-naji-emergency-step::after{
+
+        width:6px;
+        height:6px;
+    }
+
+    .zhr-naji-emergency-step.zhr-pulse-active::after{
+
+        animation-duration:1.35s;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion:reduce){
+
+    .zhr-naji-emergency-step.zhr-pulse-active::after{
+
+        animation:none;
+    }
+}
