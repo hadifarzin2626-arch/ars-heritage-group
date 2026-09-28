@@ -3847,59 +3847,54 @@ body{
 
 
 
+
+
+
+
+
 /* =========================================================
-   ZHR NAJI — PATCH 5D
-   HERO — INNER BRONZE ENERGY CORE
-   Built specifically for the current ZHR NAJI Hero CSS
+   ZHR NAJI — PATCH 05
+   INNER ORBIT RADIATION
+   ONLY — DO NOT ALTER THE ORBITS
    ========================================================= */
 
 /* ---------------------------------------------------------
-   01 — THE MAIN ORBIT
-   Preserve the existing bronze outer energy from Patch 04
-   and add a luminous inner field.
+   MAIN ORBIT
+   KEEP EVERYTHING FROM PATCH 03 + 04
+   ADD ONLY A VERY SUBTLE INNER ATMOSPHERE
    --------------------------------------------------------- */
 
 .zhr-naji-hero-scan{
+    position: absolute;
 
-    /* Keep the orbit itself visible */
-    border-color:
-        rgba(216,188,122,.78) !important;
-
-    background:
-        radial-gradient(
-            circle at 50% 50%,
-            rgba(216,188,122,.18) 0%,
-            rgba(199,169,106,.13) 12%,
-            rgba(169,132,74,.085) 24%,
-            rgba(169,132,74,.045) 38%,
-            rgba(169,132,74,.018) 54%,
-            transparent 70%
-        ) !important;
+    /* IMPORTANT:
+       DO NOT CHANGE:
+       width
+       height
+       right
+       top
+       transform
+       border
+       animation
+    */
 
     box-shadow:
-
-        /* INNER / CORE RADIATION */
-        inset 0 0 28px rgba(216,188,122,.32),
-        inset 0 0 65px rgba(199,169,106,.24),
-        inset 0 0 120px rgba(169,132,74,.18),
-        inset 0 0 190px rgba(169,132,74,.10),
-
-        /* OUTER ENERGY — KEEPING PATCH 04 DNA */
+        /* ORIGINAL OUTER ENERGY — PRESERVED */
         0 0 12px rgba(216,188,122,.72),
         0 0 32px rgba(199,169,106,.58),
         0 0 70px rgba(169,132,74,.42),
         0 0 125px rgba(169,132,74,.22),
 
-        /* LARGE ATMOSPHERIC FIELD */
-        0 0 210px rgba(169,132,74,.12);
-
+        /* VERY SOFT INNER RADIATION */
+        inset 0 0 22px rgba(216,188,122,.10),
+        inset 0 0 55px rgba(199,169,106,.075),
+        inset 0 0 95px rgba(169,132,74,.045);
 }
 
 
 /* ---------------------------------------------------------
-   02 — INNER ENERGY FIELD
-   The existing ::before ring becomes a luminous bronze
-   energy membrane instead of only a thin border.
+   INNER RADIATION LAYER
+   SITS INSIDE THE EXISTING ORBIT
    --------------------------------------------------------- */
 
 .zhr-naji-hero-scan::before{
@@ -3908,6 +3903,7 @@ body{
 
     position:absolute;
 
+    /* DO NOT TOUCH THE EXISTING ORBIT GEOMETRY */
     inset:12%;
 
     border:
@@ -3915,44 +3911,39 @@ body{
 
     border-radius:50%;
 
+    /* NO FULL DISK
+       NO CENTRAL CORE
+       ONLY A SOFT LIGHT FALLING TOWARD THE CENTER */
+
     background:
         radial-gradient(
-            circle at 50% 50%,
+            circle at center,
 
-            rgba(216,188,122,.34) 0%,
-            rgba(216,188,122,.25) 12%,
-            rgba(199,169,106,.18) 25%,
-            rgba(169,132,74,.11) 40%,
-            rgba(169,132,74,.055) 56%,
-            rgba(169,132,74,.018) 70%,
-            transparent 84%
+            rgba(216,188,122,.11) 0%,
+            rgba(199,169,106,.075) 18%,
+            rgba(169,132,74,.045) 38%,
+            rgba(169,132,74,.018) 58%,
+            transparent 76%
         );
 
     box-shadow:
 
-        /* INNER GLOW */
-        inset 0 0 24px rgba(216,188,122,.34),
-        inset 0 0 55px rgba(199,169,106,.25),
-        inset 0 0 100px rgba(169,132,74,.16),
+        /* LIGHT EMITTED TOWARD THE INSIDE */
+        inset 0 0 18px rgba(216,188,122,.16),
+        inset 0 0 42px rgba(199,169,106,.11),
+        inset 0 0 80px rgba(169,132,74,.065),
 
-        /* RING GLOW */
-        0 0 12px rgba(216,188,122,.58),
-        0 0 30px rgba(199,169,106,.42),
-        0 0 65px rgba(169,132,74,.25),
-
-        /* FIELD SPILL */
-        0 0 120px rgba(169,132,74,.14);
+        /* KEEP THE RING ITSELF */
+        0 0 10px rgba(216,188,122,.42),
+        0 0 25px rgba(199,169,106,.22);
 
     pointer-events:none;
-
-    z-index:0;
-
 }
 
 
 /* ---------------------------------------------------------
-   03 — CENTRAL ENERGY CORE
-   Existing ::after becomes the concentrated energy source.
+   SECOND INNER ORBIT
+   THIS IS STILL AN ORBIT — NOT A CORE
    --------------------------------------------------------- */
 
 .zhr-naji-hero-scan::after{
@@ -3964,139 +3955,52 @@ body{
     inset:28%;
 
     border:
-        1px solid rgba(216,188,122,.72);
+        1px solid rgba(216,188,122,.68);
 
     border-radius:50%;
 
-    background:
-        radial-gradient(
-            circle at 50% 50%,
-
-            rgba(224,202,145,.46) 0%,
-            rgba(216,188,122,.34) 10%,
-            rgba(199,169,106,.24) 23%,
-            rgba(169,132,74,.14) 40%,
-            rgba(169,132,74,.065) 58%,
-            rgba(169,132,74,.018) 73%,
-            transparent 88%
-        );
+    background:transparent;
 
     box-shadow:
 
-        /* HOT CORE */
-        inset 0 0 22px rgba(224,202,145,.38),
-        inset 0 0 48px rgba(216,188,122,.30),
-        inset 0 0 90px rgba(199,169,106,.20),
+        /* INNER EDGE GLOW */
+        inset 0 0 14px rgba(216,188,122,.18),
+        inset 0 0 32px rgba(199,169,106,.12),
 
-        /* CENTRAL HALO */
-        0 0 15px rgba(216,188,122,.70),
-        0 0 35px rgba(199,169,106,.55),
-        0 0 75px rgba(169,132,74,.34),
-        0 0 135px rgba(169,132,74,.20),
-        0 0 210px rgba(169,132,74,.11);
+        /* RING GLOW */
+        0 0 10px rgba(216,188,122,.48),
+        0 0 24px rgba(199,169,106,.25),
+        0 0 48px rgba(169,132,74,.12);
 
     pointer-events:none;
-
-    z-index:1;
-
 }
 
 
 /* ---------------------------------------------------------
-   04 — MAKE THE ENERGY BREATHE
-   Very subtle — not a flashing neon effect.
+   VERY SUBTLE BREATHING
+   NO MOVEMENT / NO SEPARATION OF ORBITS
    --------------------------------------------------------- */
 
 .zhr-naji-hero-scan::before{
-
     animation:
-        zhr-naji-inner-energy 5.5s ease-in-out infinite;
-
+        zhr-naji-inner-radiation 5.8s ease-in-out infinite;
 }
 
-.zhr-naji-hero-scan::after{
-
-    animation:
-        zhr-naji-core-energy 4.2s ease-in-out infinite;
-
-}
-
-
-/* ---------------------------------------------------------
-   05 — INNER ENERGY ANIMATION
-   --------------------------------------------------------- */
-
-@keyframes zhr-naji-inner-energy{
+@keyframes zhr-naji-inner-radiation{
 
     0%,
     100%{
         opacity:.72;
-
-        filter:
-            blur(.2px);
-
     }
 
     50%{
         opacity:1;
-
-        filter:
-            blur(1px);
-
     }
-
 }
 
 
 /* ---------------------------------------------------------
-   06 — CENTRAL CORE ANIMATION
-   --------------------------------------------------------- */
-
-@keyframes zhr-naji-core-energy{
-
-    0%,
-    100%{
-        opacity:.70;
-
-        transform:
-            scale(.96);
-
-        filter:
-            blur(.4px);
-
-    }
-
-    50%{
-        opacity:1;
-
-        transform:
-            scale(1.04);
-
-        filter:
-            blur(1.2px);
-
-    }
-
-}
-
-
-/* ---------------------------------------------------------
-   07 — KEEP THE OUTER FIELD STRONG
-   --------------------------------------------------------- */
-
-.zhr-naji-hero-scan{
-
-    filter:
-        drop-shadow(0 0 12px rgba(216,188,122,.72))
-        drop-shadow(0 0 32px rgba(199,169,106,.58))
-        drop-shadow(0 0 70px rgba(169,132,74,.42))
-        drop-shadow(0 0 125px rgba(169,132,74,.22));
-
-}
-
-
-/* ---------------------------------------------------------
-   08 — MOBILE
+   MOBILE
    --------------------------------------------------------- */
 
 @media (max-width:700px){
@@ -4105,40 +4009,36 @@ body{
 
         box-shadow:
 
-            inset 0 0 20px rgba(216,188,122,.28),
-            inset 0 0 50px rgba(199,169,106,.20),
-            inset 0 0 90px rgba(169,132,74,.13),
-
+            /* OUTER — PRESERVED */
             0 0 10px rgba(216,188,122,.65),
             0 0 28px rgba(199,169,106,.45),
-            0 0 65px rgba(169,132,74,.28);
+            0 0 65px rgba(169,132,74,.28),
 
+            /* INNER — SUBTLE */
+            inset 0 0 18px rgba(216,188,122,.08),
+            inset 0 0 45px rgba(169,132,74,.045);
     }
 
     .zhr-naji-hero-scan::before{
 
         box-shadow:
 
-            inset 0 0 20px rgba(216,188,122,.30),
-            inset 0 0 45px rgba(199,169,106,.20),
+            inset 0 0 16px rgba(216,188,122,.14),
+            inset 0 0 35px rgba(199,169,106,.09),
 
-            0 0 10px rgba(216,188,122,.50),
-            0 0 25px rgba(199,169,106,.34),
-            0 0 55px rgba(169,132,74,.20);
-
+            0 0 8px rgba(216,188,122,.38),
+            0 0 20px rgba(199,169,106,.18);
     }
 
     .zhr-naji-hero-scan::after{
 
         box-shadow:
 
-            inset 0 0 18px rgba(224,202,145,.34),
-            inset 0 0 40px rgba(216,188,122,.25),
+            inset 0 0 12px rgba(216,188,122,.15),
 
-            0 0 12px rgba(216,188,122,.60),
-            0 0 30px rgba(199,169,106,.42),
-            0 0 65px rgba(169,132,74,.24);
-
+            0 0 8px rgba(216,188,122,.42),
+            0 0 20px rgba(199,169,106,.20),
+            0 0 40px rgba(169,132,74,.10);
     }
+       }
 
-}
