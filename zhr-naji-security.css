@@ -3239,3 +3239,162 @@ body{
         transform: translateY(-6px);
     }
 }
+
+
+
+
+/* =========================================================
+   ZHR NAJI — PATCH 03
+   HERO / SIGNATURE BRONZE PROTECTION ORBITS
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   MAIN ORBIT COLOR
+   --------------------------------------------------------- */
+
+.zhr-naji-hero-scan,
+.zhr-naji-hero-scan::before,
+.zhr-naji-hero-scan::after {
+
+    border-color:
+        rgba(199, 169, 106, 0.78) !important;
+
+    box-shadow:
+        0 0 10px rgba(169, 132, 74, 0.30),
+        0 0 28px rgba(169, 132, 74, 0.16),
+        0 0 55px rgba(169, 132, 74, 0.08);
+
+}
+
+
+/* ---------------------------------------------------------
+   STRONGER BRONZE ENERGY FIELD
+   --------------------------------------------------------- */
+
+.zhr-naji-hero-scan {
+
+    filter:
+        drop-shadow(0 0 10px rgba(169,132,74,.28))
+        drop-shadow(0 0 28px rgba(169,132,74,.12));
+
+    opacity: 0.96 !important;
+
+}
+
+
+/* ---------------------------------------------------------
+   INNER ENERGY HALO
+   --------------------------------------------------------- */
+
+.zhr-naji-hero-scan::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -18px;
+
+    border: 1px solid
+        rgba(169,132,74,.16);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 18px rgba(169,132,74,.14),
+        0 0 45px rgba(169,132,74,.09),
+        inset 0 0 25px rgba(169,132,74,.06);
+
+    pointer-events: none;
+
+}
+
+
+/* ---------------------------------------------------------
+   OUTER PROTECTION ENERGY
+   --------------------------------------------------------- */
+
+.zhr-naji-hero-scan::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -34px;
+
+    border: 1px solid
+        rgba(169,132,74,.075);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 35px rgba(169,132,74,.10),
+        0 0 80px rgba(169,132,74,.055);
+
+    pointer-events: none;
+
+}
+
+
+/* ---------------------------------------------------------
+   REMOVE BLUE / NAVY DOMINANCE FROM HERO ORBITS
+   --------------------------------------------------------- */
+
+.zhr-naji-hero-scan {
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(169,132,74,.035) 0%,
+            rgba(169,132,74,.018) 42%,
+            transparent 72%
+        ) !important;
+
+}
+
+
+/* ---------------------------------------------------------
+   SIGNATURE MATTE BRONZE HIGHLIGHT
+   --------------------------------------------------------- */
+
+.zhr-naji-hero-scan {
+
+    border-color:
+        rgba(216,188,122,.72) !important;
+
+    box-shadow:
+        0 0 0 1px rgba(115,84,43,.18),
+        0 0 14px rgba(169,132,74,.24),
+        0 0 35px rgba(169,132,74,.13),
+        0 0 75px rgba(169,132,74,.065);
+
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE CONTROL
+   --------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    .zhr-naji-hero-scan {
+
+        box-shadow:
+            0 0 10px rgba(169,132,74,.24),
+            0 0 28px rgba(169,132,74,.10);
+
+    }
+
+    .zhr-naji-hero-scan::before {
+
+        inset: -12px;
+
+    }
+
+    .zhr-naji-hero-scan::after {
+
+        inset: -22px;
+
+    }
+
+}
