@@ -2539,38 +2539,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
 
-    const sacred =
-        document.querySelector(".zhr-naji-first-message");
-
-    if (!sacred) return;
-
-    const observer =
-        new IntersectionObserver((entries, obs) => {
-
-            entries.forEach(entry => {
-
-                if (!entry.isIntersecting) return;
-
-                sacred.classList.add(
-                    "zhr-sacred-awake"
-                );
-
-                obs.unobserve(sacred);
-
-            });
-
-        }, {
-            threshold:0.12,
-            rootMargin:"0px 0px -5% 0px"
-        });
-
-    observer.observe(sacred);
-
-});
-</script>
     
 </body>
   </html>
