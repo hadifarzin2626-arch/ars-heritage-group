@@ -5389,112 +5389,129 @@ body{
 
 
 
-
-
-
-
 /* =========================================================
-   ZHR NAJI — SACRED MESSAGE
-   PURE COLORLESS GLASS CHAMBER
-   VERY SUBTLE ELECTRIC BLUE REFLECTION
+   ZHR NAJI — SACRED GLASS MONUMENT
+   TRUE COLORLESS 3D GLASS
+   BRONZE ENVIRONMENT / ELECTRIC BLUE REFLECTION
    ========================================================= */
 
 .zhr-naji-first-message{
-    position:relative;
-    isolation:isolate;
-    overflow:hidden;
+    position:relative !important;
+    isolation:isolate !important;
+    overflow:visible !important;
 
     background:
         radial-gradient(
-            ellipse at 50% 42%,
-            rgba(169,132,74,.11),
-            transparent 58%
+            ellipse at 50% 45%,
+            rgba(169,132,74,.16) 0%,
+            rgba(169,132,74,.06) 32%,
+            transparent 68%
         ),
         linear-gradient(
             180deg,
             #24180D 0%,
-            #1E140B 48%,
+            #1E140B 52%,
             #120C07 100%
-        );
+        ) !important;
 }
 
 
 /* =========================================================
-   ONE GIANT GLASS CARD
+   THE SINGLE GIANT GLASS CHAMBER
    ========================================================= */
 
 .zhr-naji-sacred-frame{
 
-    position:relative;
-    isolation:isolate;
+    position:relative !important;
+    isolation:isolate !important;
 
-    width:100%;
+    width:100% !important;
 
     padding:
-        clamp(55px,7vw,110px)
-        clamp(30px,6vw,100px);
+        clamp(55px,7vw,105px)
+        clamp(30px,6vw,95px) !important;
 
-    border-radius:38px;
+    margin:0 !important;
+
+    border-radius:34px !important;
 
     /*
-       THE GLASS ITSELF IS NEUTRAL.
-       NO BLUE BODY COLOR.
+       COLORLESS GLASS
     */
 
     background:
         linear-gradient(
-            135deg,
-            rgba(255,255,255,.055) 0%,
-            rgba(255,255,255,.018) 24%,
-            rgba(255,255,255,.008) 52%,
-            rgba(255,255,255,.035) 78%,
-            rgba(255,255,255,.055) 100%
-        );
+            125deg,
+            rgba(255,255,255,.075) 0%,
+            rgba(255,255,255,.025) 18%,
+            rgba(255,255,255,.008) 42%,
+            rgba(255,255,255,.018) 67%,
+            rgba(255,255,255,.065) 100%
+        ) !important;
+
+    /*
+       REAL GLASS EDGE
+    */
 
     border:
         1px solid
-        rgba(238,240,238,.30);
+        rgba(242,245,244,.38) !important;
 
     /*
-       DEEP GLASS SHADOW
+       DEEP 3D BODY
     */
 
     box-shadow:
 
-        0 20px 0 -7px rgba(8,7,6,.62),
-
-        0 38px 0 -13px rgba(5,5,5,.72),
-
-        0 65px 115px rgba(0,0,0,.64),
-
-        /*
-           VERY SUBTLE BLUE REFLECTION
-        */
-
-        0 0 55px rgba(35,136,216,.045),
-
-        0 0 110px rgba(35,136,216,.018),
-
-        /*
-           GLASS EDGES
-        */
-
+        /* glass thickness */
         inset 0 1px 0
-        rgba(255,255,255,.20),
+        rgba(255,255,255,.28),
 
-        inset 0 -1px 0
-        rgba(0,0,0,.32),
+        inset 1px 0 0
+        rgba(255,255,255,.12),
 
-        inset 0 0 70px
-        rgba(255,255,255,.012);
+        inset -1px 0 0
+        rgba(0,0,0,.28),
+
+        inset 0 -2px 0
+        rgba(0,0,0,.38),
+
+        /* internal depth */
+        inset 0 0 90px
+        rgba(255,255,255,.018),
+
+        /* bronze reflected light */
+        inset 0 0 45px
+        rgba(169,132,74,.035),
+
+        /* extremely subtle blue */
+        0 0 70px
+        rgba(35,136,216,.045),
+
+        /* physical depth */
+        0 18px 0 -7px
+        rgba(15,10,6,.88),
+
+        0 32px 0 -11px
+        rgba(7,7,7,.78),
+
+        0 55px 95px
+        rgba(0,0,0,.72);
+
+    /*
+       REAL GLASS BLUR
+    */
 
     backdrop-filter:
-        blur(24px)
-        saturate(115%);
+        blur(26px)
+        saturate(125%) !important;
 
     -webkit-backdrop-filter:
-        blur(24px)
-        saturate(115%);
+        blur(26px)
+        saturate(125%) !important;
+
+    transform:
+        translateZ(0);
 
     transform-style:
         preserve-3d;
@@ -5502,145 +5519,224 @@ body{
     transition:
         transform .65s cubic-bezier(.16,1,.3,1),
         box-shadow .65s ease,
-        border-color .65s ease;
+        border-color .5s ease;
 
-    overflow:hidden;
+    overflow:hidden !important;
 }
 
 
 /* =========================================================
-   VERY FAINT ELECTRIC BLUE REFLECTION
+   INTERNAL BLUE GLASS REFLECTION
    ========================================================= */
 
 .zhr-naji-sacred-frame::before{
 
-    content:"";
+    content:"" !important;
 
-    position:absolute;
+    position:absolute !important;
 
-    inset:-20%;
+    inset:0 !important;
 
-    pointer-events:none;
+    pointer-events:none !important;
+
+    z-index:1 !important;
 
     background:
 
         /*
-           main reflection
+           LARGE SOFT BLUE REFLECTION
         */
 
         radial-gradient(
-            ellipse at 52% 38%,
-            rgba(89,181,255,.032),
-            transparent 38%
+            ellipse 65% 38% at 62% 30%,
+            rgba(89,181,255,.055) 0%,
+            rgba(35,136,216,.025) 35%,
+            transparent 72%
         ),
 
         /*
-           tiny side reflection
+           LOWER REFLECTION
         */
 
         radial-gradient(
-            ellipse at 15% 72%,
-            rgba(35,136,216,.022),
-            transparent 30%
+            ellipse 55% 25% at 38% 82%,
+            rgba(35,136,216,.025),
+            transparent 72%
         ),
 
-        radial-gradient(
-            ellipse at 88% 25%,
-            rgba(35,136,216,.018),
-            transparent 28%
+        /*
+           GLASS LIGHT
+        */
+
+        linear-gradient(
+            118deg,
+            transparent 0%,
+            rgba(255,255,255,.025) 35%,
+            rgba(255,255,255,.055) 48%,
+            rgba(89,181,255,.025) 52%,
+            transparent 64%
         );
 
     filter:
-        blur(30px);
-
-    opacity:.85;
-
-    z-index:0;
+        blur(12px);
 }
 
 
 /* =========================================================
-   REAL GLASS REFLECTION
+   OUTER GLASS REFLECTION / THICK EDGE
    ========================================================= */
 
 .zhr-naji-sacred-frame::after{
 
-    content:"";
+    content:"" !important;
 
-    position:absolute;
+    position:absolute !important;
 
-    top:-45%;
-    left:-48%;
+    inset:9px !important;
 
-    width:38%;
-    height:190%;
-
-    transform:
-        rotate(18deg);
-
-    background:
-
-        linear-gradient(
-            90deg,
-            transparent 0%,
-            rgba(255,255,255,.012) 34%,
-            rgba(255,255,255,.055) 50%,
-            rgba(89,181,255,.025) 57%,
-            transparent 100%
-        );
-
-    filter:
-        blur(10px);
-
-    opacity:.65;
-
-    pointer-events:none;
-
-    z-index:2;
-}
-
-
-/* =========================================================
-   CONTENT ABOVE GLASS
-   ========================================================= */
-
-.zhr-naji-sacred-frame > *{
-    position:relative;
-    z-index:5;
-}
-
-
-/* =========================================================
-   MESSAGE CONTENT
-   ONE CONTINUOUS GLASS SURFACE
-   ========================================================= */
-
-.zhr-naji-sacred-message{
-
-    position:relative;
-
-    margin-top:
-        clamp(55px,7vw,95px);
-
-    padding:
-        clamp(20px,3vw,45px);
+    border-radius:27px !important;
 
     border:
         1px solid
-        rgba(255,255,255,.085);
+        rgba(255,255,255,.095) !important;
 
-    border-radius:24px;
+    pointer-events:none !important;
 
-    background:
-        rgba(255,255,255,.008);
+    z-index:2 !important;
 
     box-shadow:
 
         inset 0 1px 0
-        rgba(255,255,255,.045),
+        rgba(255,255,255,.12),
+
+        inset 0 0 35px
+        rgba(255,255,255,.018),
 
         inset 0 0 45px
-        rgba(255,255,255,.008);
+        rgba(35,136,216,.018);
+}
+
+
+/* =========================================================
+   EVERYTHING ABOVE THE GLASS
+   ========================================================= */
+
+.zhr-naji-sacred-frame > *{
+
+    position:relative !important;
+
+    z-index:10 !important;
+
+    opacity:1 !important;
+
+    visibility:visible !important;
+}
+
+
+/* =========================================================
+   HEADER AREA
+   ========================================================= */
+
+.zhr-naji-sacred-frame >
+.zhr-naji-section-kicker{
+
+    color:
+        rgba(216,188,122,.90) !important;
+
+    text-shadow:
+        0 0 18px
+        rgba(169,132,74,.20);
+
+    letter-spacing:
+        .28em;
+}
+
+
+.zhr-naji-sacred-frame > h2{
+
+    color:
+        #F4F5F3 !important;
+
+    text-shadow:
+
+        0 2px 20px rgba(0,0,0,.55),
+
+        0 0 28px
+        rgba(255,255,255,.045);
+
+    transform:
+        translateZ(35px);
+}
+
+
+.zhr-naji-sacred-frame > h3{
+
+    color:
+        #DFC581 !important;
+
+    text-shadow:
+
+        0 0 18px
+        rgba(216,188,122,.22),
+
+        0 0 40px
+        rgba(169,132,74,.08);
+
+    transform:
+        translateZ(38px);
+}
+
+
+/* =========================================================
+   SUBTITLE
+   ========================================================= */
+
+.zhr-naji-sacred-subtitle{
+
+    color:
+        rgba(232,235,233,.76) !important;
+
+    text-shadow:
+        0 2px 14px rgba(0,0,0,.45);
+
+    transform:
+        translateZ(28px);
+}
+
+
+/* =========================================================
+   ONE CONTINUOUS INNER GLASS SURFACE
+   ========================================================= */
+
+.zhr-naji-sacred-message{
+
+    position:relative !important;
+
+    margin-top:
+        clamp(55px,7vw,90px) !important;
+
+    padding:
+        clamp(30px,4vw,60px) !important;
+
+    background:
+        rgba(255,255,255,.012) !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,.075) !important;
+
+    border-radius:24px !important;
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255,255,255,.075),
+
+        inset 0 0 55px
+        rgba(255,255,255,.012),
+
+        0 20px 45px
+        rgba(0,0,0,.14);
 
     backdrop-filter:
         blur(8px);
@@ -5649,57 +5745,64 @@ body{
         blur(8px);
 
     transform:
-        translateZ(20px);
+        translateZ(25px);
 }
 
 
 /* =========================================================
-   REMOVE ANY "INNER CARD" FEEL
+   NO INNER CARDS
    ========================================================= */
 
 .zhr-naji-sacred-english,
 .zhr-naji-sacred-persian{
 
-    position:relative;
+    position:relative !important;
 
-    margin:0;
+    background:
+        transparent !important;
 
-    padding:
-        clamp(8px,1vw,15px);
+    border:
+        0 !important;
 
-    background:transparent !important;
+    box-shadow:
+        none !important;
 
-    border:0 !important;
+    border-radius:
+        0 !important;
 
-    border-radius:0;
+    backdrop-filter:
+        none !important;
 
-    box-shadow:none !important;
+    -webkit-backdrop-filter:
+        none !important;
 
-    backdrop-filter:none;
+    opacity:
+        1 !important;
 
-    -webkit-backdrop-filter:none;
+    visibility:
+        visible !important;
 }
 
 
 /* =========================================================
-   ENGLISH → PERSIAN CONTINUATION
+   PERSIAN CONTINUATION
    ========================================================= */
 
 .zhr-naji-sacred-persian{
 
     margin-top:
-        clamp(55px,7vw,90px);
+        70px !important;
 
     padding-top:
-        clamp(45px,5vw,70px);
+        65px !important;
 
     border-top:
         1px solid
         rgba(255,255,255,.075) !important;
 
     box-shadow:
-        0 -25px 55px
-        rgba(35,136,216,.012) !important;
+        0 -20px 50px
+        rgba(35,136,216,.018) !important;
 }
 
 
@@ -5710,45 +5813,47 @@ body{
 .zhr-naji-sacred-english p{
 
     color:
-        rgba(246,246,243,.88);
+        rgba(247,248,246,.90) !important;
 
     font-size:
-        clamp(16px,1.32vw,21px);
+        clamp(16px,1.3vw,21px);
 
     line-height:
-        2;
+        2.05;
 
     text-shadow:
-        0 2px 12px rgba(0,0,0,.48);
+        0 2px 15px
+        rgba(0,0,0,.52);
 
     transition:
-        color .5s ease,
-        text-shadow .5s ease;
+        color .45s ease,
+        text-shadow .45s ease;
 }
 
 
 .zhr-naji-sacred-persian p{
 
     color:
-        rgba(241,239,233,.86);
+        rgba(244,242,237,.88) !important;
 
     font-size:
         clamp(17px,1.4vw,22px);
 
     line-height:
-        2.3;
+        2.35;
 
     text-shadow:
-        0 2px 12px rgba(0,0,0,.48);
+        0 2px 15px
+        rgba(0,0,0,.52);
 
     transition:
-        color .5s ease,
-        text-shadow .5s ease;
+        color .45s ease,
+        text-shadow .45s ease;
 }
 
 
 /* =========================================================
-   BRONZE / GOLD SACRED TEXT
+   SACRED GOLD
    ========================================================= */
 
 .zhr-naji-sacred-strong,
@@ -5756,20 +5861,20 @@ body{
 .zhr-naji-sacred-persian .divine-emphasis-large strong{
 
     color:
-        #DFC581;
+        #E1C989 !important;
 
     text-shadow:
 
-        0 0 16px
-        rgba(216,188,122,.16),
+        0 0 18px
+        rgba(216,188,122,.20),
 
-        0 0 38px
-        rgba(169,132,74,.055);
+        0 0 42px
+        rgba(169,132,74,.075);
 }
 
 
 /* =========================================================
-   VERY SUBTLE BLUE LIGHT IN THE GLASS
+   SUBTLE BLUE LIGHT INSIDE MESSAGE
    ========================================================= */
 
 .zhr-naji-sacred-message::before{
@@ -5779,33 +5884,32 @@ body{
     position:absolute;
 
     left:50%;
-    top:45%;
+    top:35%;
 
-    width:65%;
-    height:70%;
+    width:70%;
+    height:55%;
 
     transform:
         translate(-50%,-50%);
 
     background:
-
         radial-gradient(
             ellipse,
-            rgba(89,181,255,.022),
-            transparent 67%
+            rgba(89,181,255,.025),
+            transparent 68%
         );
 
     filter:
-        blur(35px);
+        blur(30px);
 
     pointer-events:none;
 
-    z-index:-1;
+    z-index:0;
 }
 
 
 /* =========================================================
-   GLASS DEPTH LINE
+   GLASS REFLECTION LINE
    ========================================================= */
 
 .zhr-naji-sacred-message::after{
@@ -5815,87 +5919,86 @@ body{
     position:absolute;
 
     left:50%;
-    top:5%;
+
+    top:4%;
 
     width:1px;
-    height:90%;
+
+    height:92%;
 
     background:
         linear-gradient(
             180deg,
             transparent,
-            rgba(89,181,255,.055) 25%,
-            rgba(89,181,255,.025) 50%,
-            rgba(89,181,255,.055) 75%,
+            rgba(89,181,255,.055),
             transparent
         );
 
-    box-shadow:
-        0 0 12px
-        rgba(35,136,216,.035);
-
-    opacity:.55;
+    opacity:.45;
 
     pointer-events:none;
 }
 
 
 /* =========================================================
-   THE WHOLE GLASS CHAMBER LIFTS + ZOOMS
+   HOVER — GLASS COMES FORWARD
    ========================================================= */
 
-@media (hover:hover){
+@media(hover:hover){
 
     .zhr-naji-sacred-frame:hover{
 
         transform:
-            translateY(-12px)
-            scale(1.012)
-            translateZ(25px);
+            translateY(-14px)
+            scale(1.014)
+            translateZ(30px);
 
         border-color:
-            rgba(242,243,240,.42);
+            rgba(255,255,255,.48) !important;
 
         box-shadow:
 
-            0 27px 0 -7px rgba(8,7,6,.68),
-
-            0 48px 0 -13px rgba(5,5,5,.78),
-
-            0 78px 125px rgba(0,0,0,.70),
-
-            /*
-               blue becomes slightly more visible
-               ONLY on interaction
-            */
-
-            0 0 65px
-            rgba(35,136,216,.075),
-
-            0 0 130px
-            rgba(35,136,216,.025),
-
             inset 0 1px 0
-            rgba(255,255,255,.27),
+            rgba(255,255,255,.34),
 
-            inset 0 -1px 0
-            rgba(0,0,0,.35),
+            inset 0 -2px 0
+            rgba(0,0,0,.40),
 
-            inset 0 0 80px
-            rgba(255,255,255,.018);
+            inset 0 0 100px
+            rgba(255,255,255,.022),
+
+            0 20px 0 -7px
+            rgba(15,10,6,.92),
+
+            0 38px 0 -11px
+            rgba(7,7,7,.84),
+
+            0 72px 125px
+            rgba(0,0,0,.78),
+
+            0 0 80px
+            rgba(35,136,216,.075);
     }
 
-    .zhr-naji-sacred-frame:hover
-    .zhr-naji-sacred-english p,
-    .zhr-naji-sacred-frame:hover
-    .zhr-naji-sacred-persian p{
+    .zhr-naji-sacred-frame:hover::before{
 
-        color:
-            rgba(252,252,249,.95);
+        background:
 
-        text-shadow:
-            0 2px 14px rgba(0,0,0,.50),
-            0 0 18px rgba(89,181,255,.018);
+            radial-gradient(
+                ellipse 65% 38% at 62% 30%,
+                rgba(89,181,255,.075),
+                rgba(35,136,216,.035) 35%,
+                transparent 72%
+            ),
+
+            linear-gradient(
+                118deg,
+                transparent 0%,
+                rgba(255,255,255,.035) 40%,
+                rgba(255,255,255,.075) 48%,
+                rgba(89,181,255,.035) 53%,
+                transparent 66%
+            );
     }
 }
 
@@ -5909,27 +6012,39 @@ body{
     .zhr-naji-sacred-frame{
 
         padding:
-            40px 18px;
+            42px 18px !important;
 
-        border-radius:26px;
+        border-radius:
+            26px !important;
 
         box-shadow:
 
-            0 30px 65px rgba(0,0,0,.65),
-
-            0 0 45px
-            rgba(35,136,216,.025),
-
             inset 0 1px 0
-            rgba(255,255,255,.16);
+            rgba(255,255,255,.20),
+
+            inset 0 -1px 0
+            rgba(0,0,0,.35),
+
+            0 35px 70px
+            rgba(0,0,0,.70);
     }
 
     .zhr-naji-sacred-message{
 
         padding:
-            14px 8px;
+            24px 12px !important;
 
-        border-radius:18px;
+        border-radius:
+            18px !important;
+    }
+
+    .zhr-naji-sacred-persian{
+
+        margin-top:
+            50px !important;
+
+        padding-top:
+            45px !important;
     }
 
     .zhr-naji-sacred-frame:hover{
@@ -5938,11 +6053,14 @@ body{
             translateY(-6px)
             scale(1.006);
     }
+}
 
-    .zhr-naji-sacred-message::after{
-        display:none;
-    }
-   }
+
+
+
+
+
+
 
 
 
@@ -5985,7 +6103,7 @@ body{
     flex:0 0 auto;
 
     background-image:
-        url("images/zhr-naji-hero.png") !important;
+        url("images/zhr-naji-hero13.png") !important;
 
     background-repeat:no-repeat !important;
 
