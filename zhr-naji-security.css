@@ -5392,9 +5392,8 @@ body{
 
 
 /* =========================================================
-   ZHR NAJI — SACRED CHAMBER
-   STAGE A / MONUMENTAL GLASS
-   Visual foundation only — NO JS
+   ZHR NAJI — SACRED MESSAGE
+   PREMIUM BLUE GLASS / 3D CARD
    ========================================================= */
 
 .zhr-naji-first-message{
@@ -5402,62 +5401,23 @@ body{
     isolation:isolate;
     overflow:hidden;
 
-    padding-top:clamp(90px,10vw,150px);
-    padding-bottom:clamp(90px,10vw,150px);
-
     background:
         radial-gradient(
-            ellipse 70% 45% at 50% 42%,
-            rgba(216,188,122,.13),
-            transparent 62%
-        ),
-        radial-gradient(
-            ellipse 55% 70% at 50% 55%,
-            rgba(169,132,74,.055),
-            transparent 70%
+            ellipse at 50% 45%,
+            rgba(35,136,216,.075),
+            transparent 45%
         ),
         linear-gradient(
             180deg,
-            #21150B 0%,
-            #191008 48%,
-            #0E0905 100%
+            #21150b 0%,
+            #160e08 55%,
+            #0d0906 100%
         );
 }
 
 
 /* =========================================================
-   DEEP CHAMBER
-   ========================================================= */
-
-.zhr-naji-first-message::before{
-    content:"";
-
-    position:absolute;
-    inset:5% 3%;
-
-    border:
-        1px solid
-        rgba(216,188,122,.055);
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(216,188,122,.018) 50%,
-            transparent
-        );
-
-    box-shadow:
-        inset 0 0 120px rgba(169,132,74,.035),
-        0 0 100px rgba(169,132,74,.025);
-
-    pointer-events:none;
-    z-index:-1;
-}
-
-
-/* =========================================================
-   MAIN GLASS MONUMENT
+   THE GLASS CARD
    ========================================================= */
 
 .zhr-naji-sacred-frame{
@@ -5468,58 +5428,60 @@ body{
     width:100%;
 
     padding:
-        clamp(55px,7vw,115px)
-        clamp(28px,7vw,120px);
+        clamp(55px,7vw,110px)
+        clamp(28px,7vw,105px);
 
-    border-radius:
-        clamp(28px,3vw,44px);
+    border-radius:32px;
 
     border:
-        1px solid
-        rgba(216,188,122,.38);
+        1px solid rgba(199,169,106,.48);
 
     background:
 
-        /* glass light */
+        /* blue glass body */
         linear-gradient(
-            135deg,
-            rgba(122,89,48,.34) 0%,
-            rgba(61,43,26,.24) 22%,
-            rgba(19,25,28,.40) 57%,
-            rgba(7,12,16,.62) 100%
+            145deg,
+            rgba(18,39,57,.92) 0%,
+            rgba(8,23,36,.94) 32%,
+            rgba(5,13,21,.97) 68%,
+            rgba(13,10,8,.96) 100%
         );
 
     box-shadow:
 
-        /* monumental shadow */
-        0 70px 150px rgba(0,0,0,.72),
+        /* 3D floating shadow */
+        0 45px 0 -12px rgba(3,8,12,.92),
+        0 65px 100px rgba(0,0,0,.78),
 
-        /* bronze aura */
-        0 0 100px rgba(169,132,74,.10),
+        /* blue atmospheric light */
+        0 0 70px rgba(35,136,216,.14),
+        0 0 150px rgba(35,136,216,.055),
 
-        /* upper glass edge */
-        inset 0 1px 0 rgba(255,247,220,.13),
+        /* bronze identity */
+        0 0 0 1px rgba(169,132,74,.12),
 
-        /* lower glass depth */
-        inset 0 -2px 0 rgba(0,0,0,.48),
-
-        /* internal chamber */
-        inset 0 0 100px rgba(169,132,74,.055);
+        /* glass depth */
+        inset 0 1px 0 rgba(255,255,255,.13),
+        inset 0 -2px 0 rgba(0,0,0,.7),
+        inset 0 0 90px rgba(35,136,216,.055);
 
     backdrop-filter:
         blur(28px)
-        saturate(125%);
+        saturate(145%);
 
     -webkit-backdrop-filter:
         blur(28px)
-        saturate(125%);
+        saturate(145%);
 
     overflow:hidden;
+
+    transform:
+        translateZ(0);
 }
 
 
 /* =========================================================
-   OUTER ARCHITECTURAL FRAME
+   BLUE GLASS INNER LIGHT
    ========================================================= */
 
 .zhr-naji-sacred-frame::before{
@@ -5527,41 +5489,39 @@ body{
     content:"";
 
     position:absolute;
+    inset:1px;
 
-    inset:13px;
-
-    border:
-        1px solid
-        rgba(216,188,122,.16);
-
-    border-radius:
-        clamp(21px,2.2vw,32px);
+    border-radius:31px;
 
     background:
 
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(89,181,255,.13),
+            transparent 38%
+        ),
+
         linear-gradient(
-            135deg,
-            rgba(255,255,255,.025),
-            transparent 24%,
-            transparent 74%,
-            rgba(216,188,122,.025)
+            115deg,
+            rgba(89,181,255,.045),
+            transparent 30%,
+            transparent 68%,
+            rgba(35,136,216,.06)
         );
 
     box-shadow:
 
-        inset 0 1px 0
-        rgba(255,255,255,.045),
-
-        inset 0 0 50px
-        rgba(169,132,74,.035);
+        inset 0 0 55px rgba(35,136,216,.075),
+        inset 0 0 120px rgba(0,0,0,.42);
 
     pointer-events:none;
+
     z-index:0;
 }
 
 
 /* =========================================================
-   INNER CHAMBER
+   GLASS REFLECTION
    ========================================================= */
 
 .zhr-naji-sacred-frame::after{
@@ -5570,173 +5530,82 @@ body{
 
     position:absolute;
 
-    inset:31px;
+    top:-20%;
+    left:-35%;
 
-    border:
-        1px solid
-        rgba(199,169,106,.065);
+    width:42%;
+    height:150%;
 
-    border-radius:
-        clamp(16px,1.8vw,25px);
+    transform:rotate(18deg);
 
-    box-shadow:
-        inset 0 0 60px
-        rgba(0,0,0,.18);
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.055),
+            rgba(89,181,255,.075),
+            transparent
+        );
+
+    filter:blur(12px);
 
     pointer-events:none;
-    z-index:0;
+
+    z-index:2;
 }
 
 
 /* =========================================================
-   CORNER ARCHITECTURE
+   INTERNAL FRAME
    ========================================================= */
 
-.zhr-naji-sacred-frame > .zhr-naji-section-kicker::before,
-.zhr-naji-sacred-frame > .zhr-naji-section-kicker::after{
+.zhr-naji-sacred-frame > .zhr-naji-section-kicker{
 
-    content:"";
-
-    position:absolute;
-
-    width:42px;
-    height:42px;
-
-    pointer-events:none;
-}
-
-
-.zhr-naji-sacred-frame > .zhr-naji-section-kicker::before{
-
-    left:-82px;
-    top:-25px;
-
-    border-top:
-        1px solid
-        rgba(216,188,122,.65);
-
-    border-left:
-        1px solid
-        rgba(216,188,122,.65);
-}
-
-
-.zhr-naji-sacred-frame > .zhr-naji-section-kicker::after{
-
-    right:-82px;
-    top:-25px;
-
-    border-top:
-        1px solid
-        rgba(216,188,122,.65);
-
-    border-right:
-        1px solid
-        rgba(216,188,122,.65);
-}
-
-
-/* =========================================================
-   CONTENT LAYER
-   ========================================================= */
-
-.zhr-naji-sacred-frame > *{
     position:relative;
     z-index:5;
 }
 
 
-/* =========================================================
-   HEADER
-   ========================================================= */
+/* thin architectural frame */
 
 .zhr-naji-sacred-frame
-.zhr-naji-section-kicker{
-
-    color:
-        #C7A96A;
-
-    letter-spacing:
-        .34em;
-
-    text-shadow:
-        0 0 22px rgba(216,188,122,.13);
-}
-
-
-.zhr-naji-sacred-frame > h2{
-
-    color:
-        #E1C781;
-
-    font-size:
-        clamp(34px,4vw,66px);
-
-    letter-spacing:
-        -.015em;
-
-    line-height:
-        1.02;
-
-    text-shadow:
-
-        0 0 24px rgba(216,188,122,.16),
-
-        0 0 70px rgba(169,132,74,.07);
-}
-
-
-.zhr-naji-sacred-frame > h3{
-
-    color:
-        #F1E8D6;
-
-    font-size:
-        clamp(23px,2.3vw,37px);
-
-    letter-spacing:
-        .08em;
-
-    text-shadow:
-        0 0 30px rgba(216,188,122,.10);
-}
-
-
-.zhr-naji-sacred-subtitle{
-
-    max-width:760px;
-
-    color:
-        rgba(222,219,209,.72);
-
-    font-size:
-        clamp(16px,1.3vw,20px);
-
-    line-height:
-        1.8;
-}
-
-
-/* =========================================================
-   CENTRAL LIGHT CHAMBER
-   ========================================================= */
-
 .zhr-naji-sacred-message{
 
     position:relative;
 
+    padding:
+        clamp(30px,4vw,55px);
+
     margin-top:
-        clamp(60px,8vw,110px);
+        clamp(50px,7vw,90px);
 
-    display:flex;
-    flex-direction:column;
+    border:
+        1px solid rgba(89,181,255,.18);
 
-    gap:
-        clamp(70px,9vw,130px);
+    border-radius:22px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(16,36,53,.45),
+            rgba(3,11,18,.55)
+        );
+
+    box-shadow:
+
+        inset 0 1px 0 rgba(255,255,255,.045),
+        inset 0 0 45px rgba(35,136,216,.045),
+
+        0 0 45px rgba(35,136,216,.055);
+
+    z-index:4;
 }
 
 
-/* central bronze field */
+/* =========================================================
+   BLUE LIGHT CORE
+   ========================================================= */
 
 .zhr-naji-sacred-message::before{
 
@@ -5747,210 +5616,160 @@ body{
     left:50%;
     top:50%;
 
-    width:
-        min(760px,70vw);
-
-    height:
-        min(760px,70vw);
+    width:70%;
+    height:65%;
 
     transform:
         translate(-50%,-50%);
 
-    border-radius:50%;
-
     background:
 
         radial-gradient(
-            circle,
-            rgba(216,188,122,.075) 0%,
-            rgba(169,132,74,.035) 25%,
-            transparent 68%
+            ellipse,
+            rgba(35,136,216,.105) 0%,
+            rgba(35,136,216,.045) 30%,
+            transparent 70%
         );
 
-    filter:
-        blur(18px);
+    filter:blur(25px);
 
     pointer-events:none;
 
-    z-index:0;
+    z-index:-1;
 }
 
 
 /* =========================================================
-   ENGLISH GLASS PLANE
+   ENGLISH / PERSIAN — GLASS PLANES
    ========================================================= */
 
-.zhr-naji-sacred-english{
-
-    position:relative;
-
-    padding:
-        clamp(32px,4vw,60px);
-
-    border-left:
-        2px solid
-        rgba(216,188,122,.32);
-
-    background:
-
-        linear-gradient(
-            90deg,
-            rgba(169,132,74,.075),
-            rgba(169,132,74,.025) 42%,
-            transparent 85%
-        );
-
-    box-shadow:
-
-        inset 22px 0 50px
-        rgba(169,132,74,.025),
-
-        0 0 55px
-        rgba(169,132,74,.025);
-}
-
-
-/* =========================================================
-   ENGLISH TEXT
-   ========================================================= */
-
-.zhr-naji-sacred-english p{
-
-    color:
-        rgba(239,239,235,.88);
-
-    font-size:
-        clamp(16px,1.35vw,21px);
-
-    line-height:
-        2;
-
-    max-width:
-        1080px;
-
-    letter-spacing:
-        .01em;
-}
-
-
-/* =========================================================
-   ENGLISH SACRED EMPHASIS
-   ========================================================= */
-
-.zhr-naji-sacred-english
-.zhr-naji-sacred-strong{
-
-    color:
-        #E3C985;
-
-    font-size:
-        clamp(19px,1.65vw,27px);
-
-    font-weight:
-        600;
-
-    text-shadow:
-        0 0 26px rgba(216,188,122,.16);
-}
-
-
-/* =========================================================
-   PERSIAN GLASS PLANE
-   ========================================================= */
-
+.zhr-naji-sacred-english,
 .zhr-naji-sacred-persian{
 
     position:relative;
 
     padding:
-        clamp(38px,4.5vw,68px);
+        clamp(30px,4vw,58px);
 
-    border-right:
-        2px solid
-        rgba(216,188,122,.34);
+    border-radius:18px;
 
     background:
 
         linear-gradient(
-            -90deg,
-            rgba(169,132,74,.085),
-            rgba(169,132,74,.025) 42%,
-            transparent 85%
+            145deg,
+            rgba(17,39,57,.55),
+            rgba(4,13,21,.48)
+        );
+
+    border:
+        1px solid rgba(89,181,255,.13);
+
+    box-shadow:
+
+        inset 0 1px 0 rgba(255,255,255,.035),
+        inset 0 0 35px rgba(35,136,216,.035),
+
+        0 18px 50px rgba(0,0,0,.28);
+
+    z-index:5;
+}
+
+
+/* =========================================================
+   SEPARATION BETWEEN GLASS PLANES
+   ========================================================= */
+
+.zhr-naji-sacred-persian{
+
+    margin-top:
+        clamp(45px,6vw,80px);
+
+    border-color:
+        rgba(199,169,106,.20);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(44,35,24,.42),
+            rgba(5,15,23,.62)
         );
 
     box-shadow:
 
-        inset -22px 0 50px
-        rgba(169,132,74,.025),
+        inset 0 1px 0 rgba(216,188,122,.045),
+        inset 0 0 40px rgba(35,136,216,.045),
 
-        0 0 55px
-        rgba(169,132,74,.025);
+        0 20px 55px rgba(0,0,0,.32);
 }
 
 
 /* =========================================================
-   PERSIAN TEXT
+   TEXT
    ========================================================= */
+
+.zhr-naji-sacred-english p{
+
+    color:
+        rgba(242,245,246,.91);
+
+    line-height:2;
+
+    font-size:
+        clamp(16px,1.3vw,21px);
+
+    text-shadow:
+        0 1px 12px rgba(0,0,0,.65);
+}
+
 
 .zhr-naji-sacred-persian p{
 
     color:
-        rgba(235,230,218,.86);
+        rgba(239,237,231,.90);
+
+    line-height:2.3;
 
     font-size:
-        clamp(17px,1.42vw,22px);
+        clamp(17px,1.4vw,22px);
 
-    line-height:
-        2.3;
+    text-shadow:
+        0 1px 12px rgba(0,0,0,.7);
 }
 
 
 /* =========================================================
-   PERSIAN DIVINE EMPHASIS
+   SACRED GOLD
    ========================================================= */
 
-.zhr-naji-sacred-persian
-.divine-emphasis strong{
+.zhr-naji-sacred-english
+.zhr-naji-sacred-strong{
 
-    color:
-        #DDBF7B;
+    color:#E0C783;
 
     text-shadow:
 
-        0 0 24px
-        rgba(216,188,122,.20),
-
-        0 0 55px
-        rgba(169,132,74,.08);
+        0 0 15px rgba(216,188,122,.20),
+        0 0 40px rgba(169,132,74,.10);
 }
 
 
+.zhr-naji-sacred-persian
+.divine-emphasis strong,
 .zhr-naji-sacred-persian
 .divine-emphasis-large strong{
 
-    display:block;
-
-    color:
-        #E8CF91;
-
-    font-size:
-        clamp(22px,2vw,33px);
-
-    line-height:
-        2;
+    color:#E2C987;
 
     text-shadow:
 
-        0 0 30px
-        rgba(216,188,122,.22),
-
-        0 0 70px
-        rgba(169,132,74,.09);
+        0 0 16px rgba(216,188,122,.22),
+        0 0 45px rgba(169,132,74,.11);
 }
 
 
 /* =========================================================
-   SACRED CORE RING
+   HERO-LIKE BLUE ENERGY EDGE
    ========================================================= */
 
 .zhr-naji-sacred-message::after{
@@ -5960,36 +5779,103 @@ body{
     position:absolute;
 
     left:50%;
-    top:50%;
+    top:0;
 
-    width:
-        min(500px,46vw);
+    width:1px;
+    height:100%;
 
-    aspect-ratio:1;
-
-    transform:
-        translate(-50%,-50%);
-
-    border:
-        1px solid
-        rgba(216,188,122,.07);
-
-    border-radius:50%;
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(89,181,255,.32) 20%,
+            rgba(89,181,255,.14) 50%,
+            rgba(89,181,255,.32) 80%,
+            transparent
+        );
 
     box-shadow:
-
-        0 0 45px
-        rgba(216,188,122,.045),
-
-        0 0 100px
-        rgba(169,132,74,.035),
-
-        inset 0 0 55px
-        rgba(216,188,122,.025);
+        0 0 16px rgba(35,136,216,.20);
 
     pointer-events:none;
+}
 
-    z-index:0;
+
+/* =========================================================
+   HEADER COLORS
+   ========================================================= */
+
+.zhr-naji-sacred-frame
+.zhr-naji-section-kicker{
+
+    color:
+        #C7A96A;
+
+    text-shadow:
+        0 0 20px rgba(216,188,122,.15);
+}
+
+
+.zhr-naji-sacred-frame > h2{
+
+    color:#E2C987;
+
+    text-shadow:
+
+        0 0 20px rgba(216,188,122,.16),
+        0 0 65px rgba(169,132,74,.08);
+}
+
+
+.zhr-naji-sacred-frame > h3{
+
+    color:#F0F4F6;
+
+    text-shadow:
+        0 0 28px rgba(89,181,255,.12);
+}
+
+
+.zhr-naji-sacred-subtitle{
+
+    color:
+        rgba(180,204,218,.78);
+}
+
+
+/* =========================================================
+   3D HOVER
+   ========================================================= */
+
+@media (hover:hover){
+
+    .zhr-naji-sacred-frame{
+
+        transition:
+            transform .7s cubic-bezier(.16,1,.3,1),
+            box-shadow .7s ease,
+            border-color .7s ease;
+    }
+
+    .zhr-naji-sacred-frame:hover{
+
+        transform:
+            translateY(-6px);
+
+        border-color:
+            rgba(216,188,122,.62);
+
+        box-shadow:
+
+            0 52px 0 -12px rgba(3,8,12,.95),
+            0 75px 120px rgba(0,0,0,.82),
+
+            0 0 85px rgba(35,136,216,.18),
+            0 0 170px rgba(35,136,216,.07),
+
+            inset 0 1px 0 rgba(255,255,255,.16),
+            inset 0 0 100px rgba(35,136,216,.07);
+    }
 }
 
 
@@ -5999,47 +5885,36 @@ body{
 
 @media(max-width:700px){
 
-    .zhr-naji-first-message{
-        padding-top:70px;
-        padding-bottom:70px;
-    }
-
     .zhr-naji-sacred-frame{
-        padding:
-            40px 20px;
 
-        border-radius:25px;
+        padding:42px 18px;
+
+        border-radius:22px;
+
+        box-shadow:
+
+            0 25px 55px rgba(0,0,0,.72),
+            0 0 45px rgba(35,136,216,.10),
+
+            inset 0 1px 0 rgba(255,255,255,.10);
     }
 
-    .zhr-naji-sacred-frame::before{
-        inset:8px;
-        border-radius:18px;
-    }
+    .zhr-naji-sacred-message{
 
-    .zhr-naji-sacred-frame::after{
-        inset:20px;
-        border-radius:14px;
-    }
+        padding:18px;
 
-    .zhr-naji-sacred-frame
-    .zhr-naji-section-kicker::before,
-    .zhr-naji-sacred-frame
-    .zhr-naji-section-kicker::after{
-        display:none;
+        border-radius:16px;
     }
 
     .zhr-naji-sacred-english,
     .zhr-naji-sacred-persian{
-        padding:24px 18px;
-    }
 
-    .zhr-naji-sacred-english p,
-    .zhr-naji-sacred-persian p{
-        font-size:16px;
+        padding:22px 16px;
+
+        border-radius:14px;
     }
 
     .zhr-naji-sacred-message::after{
-        width:85vw;
+        display:none;
     }
    }
-
