@@ -7655,3 +7655,176 @@ body{
     }
 
                  }
+
+
+
+
+
+
+
+
+/* ================================================================
+   ZHR DIVINE GLASS — SYMMETRY / NO HORIZONTAL OVERFLOW
+   FINAL WIDTH CORRECTION
+   ================================================================ */
+
+/* ---------- GLOBAL WIDTH CONTROL ---------- */
+
+html,
+body{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden !important;
+}
+
+.zhr-naji-section,
+.zhr-divine-glass-section{
+    width:100%;
+    max-width:100%;
+    overflow-x:clip !important;
+}
+
+
+/* ---------- SECTION CONTAINER ---------- */
+
+.zhr-divine-glass-section .zhr-naji-section-container{
+
+    width:100% !important;
+    max-width:none !important;
+
+    margin-left:0 !important;
+    margin-right:0 !important;
+
+    padding-left:
+        clamp(12px,2vw,32px) !important;
+
+    padding-right:
+        clamp(12px,2vw,32px) !important;
+
+    box-sizing:border-box !important;
+}
+
+
+/* ---------- THE GLASS CARD ---------- */
+
+.zhr-divine-glass{
+
+    /* مهم‌ترین اصلاح */
+    width:
+        100% !important;
+
+    max-width:
+        1680px !important;
+
+    margin-left:auto !important;
+    margin-right:auto !important;
+
+    box-sizing:border-box !important;
+
+    /* جلوگیری از بزرگ‌تر شدن به‌خاطر transform */
+    transform-origin:center center !important;
+}
+
+
+/* ---------- INNER BOXES MUST NEVER EXPAND THE CARD ---------- */
+
+.zhr-divine-glass,
+.zhr-divine-glass *,
+.zhr-divine-glass::before,
+.zhr-divine-glass::after{
+
+    box-sizing:border-box;
+}
+
+
+/* ---------- SHADOW STAYS INSIDE THE VISUAL FIELD ---------- */
+
+.zhr-divine-glass-shadow{
+
+    left:4% !important;
+    right:4% !important;
+
+    width:auto !important;
+
+    transform:
+        translateZ(-60px)
+        scaleX(.92) !important;
+}
+
+
+/* ---------- LARGE DESKTOP ---------- */
+
+@media (min-width:1400px){
+
+    .zhr-divine-glass-section .zhr-naji-section-container{
+
+        padding-left:
+            clamp(18px,2vw,40px) !important;
+
+        padding-right:
+            clamp(18px,2vw,40px) !important;
+    }
+
+    .zhr-divine-glass{
+
+        width:
+            100% !important;
+
+        max-width:
+            1680px !important;
+    }
+}
+
+
+/* ---------- VERY LARGE DESKTOP ---------- */
+
+@media (min-width:1800px){
+
+    .zhr-divine-glass{
+
+        width:
+            100% !important;
+
+        max-width:
+            1780px !important;
+    }
+}
+
+
+/* ---------- TABLET ---------- */
+
+@media (max-width:900px){
+
+    .zhr-divine-glass-section .zhr-naji-section-container{
+
+        padding-left:14px !important;
+        padding-right:14px !important;
+    }
+
+    .zhr-divine-glass{
+
+        width:100% !important;
+        max-width:none !important;
+    }
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width:640px){
+
+    .zhr-divine-glass-section .zhr-naji-section-container{
+
+        padding-left:8px !important;
+        padding-right:8px !important;
+    }
+
+    .zhr-divine-glass{
+
+        width:100% !important;
+        max-width:none !important;
+
+        margin-left:auto !important;
+        margin-right:auto !important;
+    }
+}
