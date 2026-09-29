@@ -2536,6 +2536,187 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 </script>
-    
+
+
+
+
+
+
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const section =
+        document.querySelector(".zhr-naji-first-message");
+
+    if (!section) return;
+
+    let ticking = false;
+
+    function updateSacred(){
+
+        const rect =
+            section.getBoundingClientRect();
+
+        const viewport =
+            window.innerHeight;
+
+        const sectionHeight =
+            Math.max(section.offsetHeight, viewport);
+
+        /*
+         * 0 = section far below
+         * 1 = section deeply inside viewport
+         */
+
+        let progress =
+            (viewport - rect.top) /
+            (sectionHeight + viewport);
+
+        progress =
+            Math.max(0, Math.min(1, progress));
+
+        section.style.setProperty(
+            "--sacred-progress",
+            progress.toFixed(3)
+        );
+
+        /*
+         * Energy rises toward the middle
+         * and slowly settles again.
+         */
+
+        const energy =
+            Math.sin(progress * Math.PI);
+
+        section.style.setProperty(
+            "--sacred-energy",
+            energy.toFixed(3)
+        );
+
+
+        /*
+         * Focus state
+         */
+
+        if (progress > .08){
+
+            section.classList.add(
+                "sacred-focused"
+            );
+
+        } else {
+
+            section.classList.remove(
+                "sacred-focused"
+            );
+
+        }
+
+
+        /*
+         * Persian activation
+         *
+         * We determine when the lower
+         * half of the message enters the
+         * visual focus zone.
+         */
+
+        const persian =
+            section.querySelector(
+                ".zhr-naji-sacred-persian"
+            );
+
+        if (persian){
+
+            const pRect =
+                persian.getBoundingClientRect();
+
+            const pCenter =
+                pRect.top +
+                pRect.height / 2;
+
+            if (
+                pCenter >
+                viewport * .18 &&
+                pCenter <
+                viewport * .82
+            ){
+
+                section.classList.add(
+                    "sacred-persian-active"
+                );
+
+            } else {
+
+                section.classList.remove(
+                    "sacred-persian-active"
+                );
+
+            }
+        }
+
+
+        /*
+         * One premium reflection
+         * when the section becomes active.
+         */
+
+        if (
+            progress > .08 &&
+            !section.dataset.reflectionPlayed
+        ){
+
+            section.dataset.reflectionPlayed =
+                "true";
+
+            section.classList.add(
+                "sacred-reflection"
+            );
+
+            setTimeout(() => {
+
+                section.classList.remove(
+                    "sacred-reflection"
+                );
+
+            }, 2600);
+        }
+
+
+        ticking = false;
+    }
+
+
+    function requestUpdate(){
+
+        if (!ticking){
+
+            window.requestAnimationFrame(
+                updateSacred
+            );
+
+            ticking = true;
+        }
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        requestUpdate,
+        { passive:true }
+    );
+
+    window.addEventListener(
+        "resize",
+        requestUpdate,
+        { passive:true }
+    );
+
+
+    requestUpdate();
+
+});
+    </script>
 </body>
   </html>
