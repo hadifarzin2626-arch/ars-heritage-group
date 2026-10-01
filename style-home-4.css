@@ -50335,3 +50335,283 @@ body{
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ROSE AI — DISPLAY 03
+   BURGUNDY TRANSLUCENT INTELLIGENCE SCANNER
+   ISOLATED PATCH — ROSE DISPLAY ONLY
+   ========================================================= */
+
+.ars-rose-display .ars-rose-screen {
+    --rose-scan-color: 142, 38, 69;
+    --rose-scan-light: 205, 91, 119;
+
+    position: relative;
+    isolation: isolate;
+}
+
+/* Central scanner positioning */
+.ars-rose-display .ars-rose-orbit {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    width: clamp(86px, 34%, 190px);
+    aspect-ratio: 1 / 1;
+
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+
+    display: grid;
+    place-items: center;
+
+    overflow: hidden;
+    isolation: isolate;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(var(--rose-scan-color), 0.08) 0%,
+            rgba(var(--rose-scan-color), 0.16) 42%,
+            rgba(var(--rose-scan-color), 0.035) 68%,
+            transparent 76%
+        );
+
+    border: 1px solid
+        rgba(var(--rose-scan-light), 0.48);
+
+    box-shadow:
+        0 0 14px rgba(var(--rose-scan-color), 0.22),
+        inset 0 0 18px rgba(var(--rose-scan-color), 0.18);
+
+    pointer-events: none;
+    z-index: 6;
+}
+
+/* Three independent scanner rings */
+.ars-rose-display .ars-rose-orbit::before,
+.ars-rose-display .ars-rose-orbit::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.ars-rose-display .ars-rose-orbit::before {
+    inset: 10%;
+
+    border: 1px solid
+        rgba(var(--rose-scan-light), 0.64);
+
+    box-shadow:
+        inset 0 0 12px rgba(var(--rose-scan-color), 0.18),
+        0 0 8px rgba(var(--rose-scan-color), 0.16);
+
+    animation: roseScannerPulse 3.8s ease-in-out infinite;
+}
+
+.ars-rose-display .ars-rose-orbit::after {
+    inset: 23%;
+
+    border: 1px dashed
+        rgba(var(--rose-scan-light), 0.65);
+
+    animation: roseScannerRotate 14s linear infinite;
+}
+
+/* Existing inner ring */
+.ars-rose-display .ars-rose-orbit-ring {
+    position: absolute;
+    inset: 34%;
+
+    display: block;
+    border-radius: 50%;
+
+    border: 1px solid
+        rgba(var(--rose-scan-light), 0.82);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(var(--rose-scan-light), 0.24),
+            rgba(var(--rose-scan-color), 0.08) 56%,
+            transparent 74%
+        );
+
+    box-shadow:
+        0 0 12px rgba(var(--rose-scan-light), 0.20),
+        inset 0 0 12px rgba(var(--rose-scan-color), 0.24);
+
+    animation: roseScannerCore 4.5s ease-in-out infinite;
+}
+
+/* Rotating translucent scan beam */
+.ars-rose-display .ars-rose-orbit-ring::before {
+    content: "";
+    position: absolute;
+
+    inset: -105%;
+
+    border-radius: 50%;
+
+    background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        transparent 218deg,
+        rgba(var(--rose-scan-color), 0.02) 238deg,
+        rgba(var(--rose-scan-light), 0.16) 270deg,
+        rgba(var(--rose-scan-light), 0.72) 292deg,
+        rgba(var(--rose-scan-light), 0.12) 310deg,
+        transparent 336deg,
+        transparent 360deg
+    );
+
+    -webkit-mask: radial-gradient(
+        circle,
+        transparent 0 57%,
+        #000 60% 64%,
+        transparent 68%
+    );
+
+    mask: radial-gradient(
+        circle,
+        transparent 0 57%,
+        #000 60% 64%,
+        transparent 68%
+    );
+
+    animation: roseScannerRotate 5.5s linear infinite;
+}
+
+/* Scanner focal point */
+.ars-rose-display .ars-rose-orbit-dot {
+    position: absolute;
+
+    width: 7px;
+    height: 7px;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: rgb(var(--rose-scan-light));
+
+    box-shadow:
+        0 0 6px rgba(var(--rose-scan-light), 0.95),
+        0 0 18px rgba(var(--rose-scan-color), 0.9),
+        0 0 30px rgba(var(--rose-scan-light), 0.35);
+
+    animation: roseScannerHeartbeat 2.6s ease-in-out infinite;
+}
+
+/* Moving scan line across the scanner */
+.ars-rose-display .ars-rose-orbit {
+    background-image:
+        linear-gradient(
+            180deg,
+            transparent 49.5%,
+            rgba(var(--rose-scan-light), 0.25) 49.9%,
+            rgba(var(--rose-scan-light), 0.48) 50%,
+            rgba(var(--rose-scan-light), 0.12) 50.3%,
+            transparent 50.8%
+        ),
+        radial-gradient(
+            circle,
+            rgba(var(--rose-scan-color), 0.08) 0%,
+            rgba(var(--rose-scan-color), 0.16) 42%,
+            rgba(var(--rose-scan-color), 0.035) 68%,
+            transparent 76%
+        );
+
+    background-size: 100% 100%, 100% 100%;
+}
+
+/* Scanner animations */
+@keyframes roseScannerRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes roseScannerPulse {
+    0%, 100% {
+        opacity: 0.48;
+        transform: scale(0.96);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.035);
+    }
+}
+
+@keyframes roseScannerCore {
+    0%, 100% {
+        opacity: 0.68;
+        transform: scale(0.92);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.08);
+    }
+}
+
+@keyframes roseScannerHeartbeat {
+    0%, 100% {
+        opacity: 0.72;
+        box-shadow:
+            0 0 6px rgba(var(--rose-scan-light), 0.75),
+            0 0 15px rgba(var(--rose-scan-color), 0.75);
+    }
+
+    50% {
+        opacity: 1;
+        box-shadow:
+            0 0 9px rgba(var(--rose-scan-light), 1),
+            0 0 23px rgba(var(--rose-scan-light), 0.48);
+    }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .ars-rose-display .ars-rose-orbit::before,
+    .ars-rose-display .ars-rose-orbit::after,
+    .ars-rose-display .ars-rose-orbit-ring,
+    .ars-rose-display .ars-rose-orbit-ring::before,
+    .ars-rose-display .ars-rose-orbit-dot {
+        animation: none !important;
+    }
+}
