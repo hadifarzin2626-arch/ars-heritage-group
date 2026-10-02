@@ -3322,3 +3322,737 @@ body.no-webgl .collection-background {
 /* =========================================================
    END — ARS COLLECTION V2
    ========================================================= */
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS COLLECTION
+   MOTION LAYER V2.1
+   ---------------------------------------------------------
+   Existing V2 CSS remains untouched.
+   This is an additive motion patch only.
+
+   Motion DNA:
+   BRONZE  = Identity / Energy / Depth
+   BLUE    = Interaction / Intelligence
+   BLACK   = Environment
+   ========================================================= */
+
+
+/* =========================================================
+   01 — ARS BRONZE CURRENT
+   ---------------------------------------------------------
+   A very slow ambient bronze energy moving through the
+   environment.
+
+   It should feel like one continuous atmosphere connecting
+   the entire Collection.
+   ========================================================= */
+
+:root {
+    --ars-motion-bronze:
+        rgba(168, 121, 69, 0.075);
+
+    --ars-motion-bronze-soft:
+        rgba(208, 168, 106, 0.035);
+
+    --ars-motion-bronze-line:
+        rgba(208, 168, 106, 0.72);
+
+    --ars-motion-blue-response:
+        rgba(47, 143, 255, 0.22);
+
+    --ars-motion-duration: 14s;
+}
+
+
+/* Ambient atmosphere */
+
+section {
+    position: relative;
+    isolation: isolate;
+}
+
+section::after {
+    content: "";
+    position: absolute;
+
+    width: 42vw;
+    height: 42vw;
+
+    min-width: 360px;
+    min-height: 360px;
+
+    max-width: 760px;
+    max-height: 760px;
+
+    left: -18%;
+    top: 8%;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle,
+            var(--ars-motion-bronze),
+            var(--ars-motion-bronze-soft) 32%,
+            transparent 72%
+        );
+
+    filter: blur(70px);
+
+    opacity: .42;
+
+    transform:
+        translate3d(0, 0, 0)
+        scale(.92);
+
+    animation:
+        arsBronzeCurrent
+        20s
+        ease-in-out
+        infinite alternate;
+
+    z-index: -1;
+}
+
+section:nth-of-type(even)::after {
+    left: auto;
+    right: -18%;
+    animation-delay: -7s;
+}
+
+@keyframes arsBronzeCurrent {
+
+    0% {
+        transform:
+            translate3d(-2%, 0, 0)
+            scale(.92);
+
+        opacity: .28;
+    }
+
+    45% {
+        opacity: .48;
+    }
+
+    100% {
+        transform:
+            translate3d(18%, 8%, 0)
+            scale(1.08);
+
+        opacity: .36;
+    }
+}
+
+
+/* =========================================================
+   02 — BRONZE EDGE SWEEP
+   ---------------------------------------------------------
+   A very thin bronze energy line travels across card edges.
+
+   It does NOT create a permanent glowing border.
+   ========================================================= */
+
+.ars-glass {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/*
+   Existing glass border remains untouched.
+   This is an additional moving light layer.
+*/
+
+.ars-glass::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -42%;
+
+    width: 42%;
+    height: 1px;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(168, 121, 69, 0.08) 15%,
+            rgba(208, 168, 106, 0.72) 50%,
+            rgba(168, 121, 69, 0.08) 85%,
+            transparent 100%
+        );
+
+    opacity: 0;
+
+    transform: translateX(0);
+
+    animation:
+        arsBronzeEdgeSweep
+        10s
+        cubic-bezier(.4, 0, .2, 1)
+        infinite;
+
+    z-index: 5;
+}
+
+
+@keyframes arsBronzeEdgeSweep {
+
+    0% {
+        left: -42%;
+        opacity: 0;
+    }
+
+    8% {
+        opacity: .72;
+    }
+
+    32% {
+        opacity: .82;
+    }
+
+    48% {
+        opacity: 0;
+    }
+
+    100% {
+        left: 120%;
+        opacity: 0;
+    }
+}
+
+
+/* Desynchronize different cards */
+
+.ars-glass:nth-child(2n)::after {
+    animation-delay: -3.2s;
+}
+
+.ars-glass:nth-child(3n)::after {
+    animation-delay: -6.1s;
+}
+
+.ars-glass:nth-child(5n)::after {
+    animation-delay: -8.4s;
+}
+
+
+/* =========================================================
+   03 — HOVER BRONZE EDGE RESPONSE
+   ---------------------------------------------------------
+   Idle  = almost invisible
+   Hover = bronze becomes slightly more alive
+   ========================================================= */
+
+.ars-glass:hover::after {
+    animation-duration: 3.2s;
+    opacity: .9;
+}
+
+
+.ars-glass:hover {
+    border-color:
+        rgba(168, 121, 69, 0.32);
+
+    box-shadow:
+        0 24px 70px rgba(0, 0, 0, .28),
+        0 0 0 1px rgba(168, 121, 69, .045);
+}
+
+
+/* =========================================================
+   04 — BRONZE REFLECTION
+   ---------------------------------------------------------
+   Very slow diagonal reflection over major imagery.
+   ========================================================= */
+
+.featured-image,
+.product-image,
+.project-image,
+.design-image,
+.future-right,
+.signature-image,
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.featured-image::after,
+.product-image::after,
+.project-image::after,
+.design-image::after,
+.future-right::after,
+.signature-image::after,
+.gallery-item::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: -20%;
+    left: -45%;
+
+    width: 22%;
+    height: 140%;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(208, 168, 106, 0.055),
+            rgba(168, 121, 69, 0.12),
+            rgba(208, 168, 106, 0.035),
+            transparent
+        );
+
+    transform:
+        skewX(-18deg)
+        translateX(0);
+
+    opacity: 0;
+
+    animation:
+        arsBronzeReflection
+        11s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes arsBronzeReflection {
+
+    0% {
+        transform:
+            skewX(-18deg)
+            translateX(0);
+
+        opacity: 0;
+    }
+
+    12% {
+        opacity: .35;
+    }
+
+    28% {
+        opacity: .5;
+    }
+
+    42% {
+        opacity: 0;
+    }
+
+    100% {
+        transform:
+            skewX(-18deg)
+            translateX(720%);
+
+        opacity: 0;
+    }
+}
+
+
+/* Different rhythm for different image groups */
+
+.product-image::after {
+    animation-delay: -3s;
+}
+
+.project-image::after {
+    animation-delay: -5.5s;
+}
+
+.design-image::after {
+    animation-delay: -2s;
+}
+
+.future-right::after {
+    animation-delay: -7s;
+}
+
+.signature-image::after {
+    animation-delay: -4.5s;
+}
+
+.gallery-item::after {
+    animation-delay: -8s;
+}
+
+
+/* =========================================================
+   05 — DEPTH DRIFT
+   ---------------------------------------------------------
+   Extremely small movement.
+   No heavy parallax.
+   No floating cards.
+   ========================================================= */
+
+.collection-background,
+.hero-display img,
+.featured-image img,
+.product-image img,
+.project-image img,
+.design-image img,
+.future-right img,
+.signature-image img,
+.gallery-item img {
+
+    transform:
+        translate3d(0, 0, 0)
+        scale(1.001);
+
+    transition:
+        transform
+        1.4s
+        cubic-bezier(.2, .65, .2, 1);
+}
+
+
+.featured-card:hover .featured-image img,
+.product-card:hover .product-image img,
+.project-card:hover .project-image img,
+.design-card:hover .design-image img,
+.signature-showcase:hover .signature-image img,
+.gallery-item:hover img {
+
+    transform:
+        translate3d(
+            calc(var(--ars-pointer-x, 0) * 5px),
+            calc(var(--ars-pointer-y, 0) * 5px),
+            0
+        )
+        scale(1.025);
+}
+
+
+/* =========================================================
+   06 — INTELLIGENT REVEAL
+   ---------------------------------------------------------
+   Gentle entrance rhythm.
+   Not everything appears simultaneously.
+
+   CSS-only version:
+   label → title → description → cards
+   ========================================================= */
+
+.section-heading .section-label {
+    animation:
+        arsRevealLabel
+        .8s
+        cubic-bezier(.2, .7, .2, 1)
+        both;
+}
+
+
+.section-heading h2 {
+    animation:
+        arsRevealContent
+        .9s
+        .08s
+        cubic-bezier(.2, .7, .2, 1)
+        both;
+}
+
+
+.section-heading p {
+    animation:
+        arsRevealContent
+        1s
+        .16s
+        cubic-bezier(.2, .7, .2, 1)
+        both;
+}
+
+
+@keyframes arsRevealLabel {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(10px);
+        letter-spacing: .28em;
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+        letter-spacing: inherit;
+    }
+}
+
+
+@keyframes arsRevealContent {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   07 — CARD MICRO REVEAL
+   ---------------------------------------------------------
+   A quiet initial entrance.
+   ========================================================= */
+
+.featured-card,
+.product-card,
+.project-card,
+.design-card,
+.future-card,
+.signature-card,
+.hub-card,
+.gallery-item,
+.experience-card {
+
+    animation:
+        arsCardReveal
+        1s
+        cubic-bezier(.2, .7, .2, 1)
+        both;
+}
+
+
+.featured-card:nth-child(2),
+.product-card:nth-child(2),
+.project-card:nth-child(2),
+.design-card:nth-child(2),
+.future-card:nth-child(2),
+.signature-card:nth-child(2),
+.hub-card:nth-child(2),
+.gallery-item:nth-child(2),
+.experience-card:nth-child(2) {
+    animation-delay: .08s;
+}
+
+
+.featured-card:nth-child(3),
+.product-card:nth-child(3),
+.project-card:nth-child(3),
+.design-card:nth-child(3),
+.future-card:nth-child(3),
+.signature-card:nth-child(3),
+.hub-card:nth-child(3),
+.gallery-item:nth-child(3),
+.experience-card:nth-child(3) {
+    animation-delay: .16s;
+}
+
+
+.featured-card:nth-child(4),
+.product-card:nth-child(4),
+.project-card:nth-child(4),
+.design-card:nth-child(4),
+.future-card:nth-child(4),
+.signature-card:nth-child(4),
+.hub-card:nth-child(4),
+.gallery-item:nth-child(4),
+.experience-card:nth-child(4) {
+    animation-delay: .24s;
+}
+
+
+@keyframes arsCardReveal {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   08 — BLUE RESPONSE
+   ---------------------------------------------------------
+   Blue appears primarily when the user interacts.
+   ========================================================= */
+
+.ars-glass:hover {
+    box-shadow:
+        0 24px 70px rgba(0, 0, 0, .28),
+        0 0 24px rgba(47, 143, 255, .045),
+        inset 0 1px 0
+        rgba(208, 168, 106, .06);
+}
+
+
+a:hover,
+button:hover {
+
+    text-shadow:
+        0 0 18px
+        rgba(47, 143, 255, .18);
+}
+
+
+.product-card:hover,
+.project-card:hover,
+.design-card:hover,
+.future-card:hover,
+.signature-card:hover,
+.hub-card:hover,
+.experience-card:hover {
+
+    border-color:
+        rgba(47, 143, 255, .22);
+}
+
+
+/* =========================================================
+   09 — HERO: BRONZE ENVIRONMENTAL MOVEMENT
+   ========================================================= */
+
+.collection-hero {
+    position: relative;
+}
+
+
+.collection-hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 55vw;
+    height: 55vw;
+
+    max-width: 850px;
+    max-height: 850px;
+
+    right: -20%;
+    bottom: -15%;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(168, 121, 69, .085),
+            rgba(168, 121, 69, .025) 35%,
+            transparent 70%
+        );
+
+    filter: blur(80px);
+
+    animation:
+        arsHeroBronzeDrift
+        18s
+        ease-in-out
+        infinite alternate;
+
+    opacity: .55;
+
+    z-index: 0;
+}
+
+
+@keyframes arsHeroBronzeDrift {
+
+    0% {
+        transform:
+            translate3d(0, 0, 0)
+            scale(.95);
+    }
+
+    100% {
+        transform:
+            translate3d(-10%, -7%, 0)
+            scale(1.06);
+    }
+}
+
+
+/* =========================================================
+   10 — PREMIUM BRONZE IDLE
+   ---------------------------------------------------------
+   Very subtle breathing on important ARS elements only.
+   ========================================================= */
+
+.featured-product,
+.featured-project,
+.signature-showcase,
+.experience-banner,
+.collection-final-card {
+
+    box-shadow:
+        0 24px 70px rgba(0, 0, 0, .22),
+        inset 0 1px 0
+        rgba(208, 168, 106, .035);
+
+    animation:
+        arsBronzePresence
+        9s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes arsBronzePresence {
+
+    0%,
+    100% {
+        box-shadow:
+            0 24px 70px rgba(0, 0, 0, .22),
+            inset 0 1px 0
+            rgba(208, 168, 106, .035);
+    }
+
+    50% {
+        box-shadow:
+            0 26px 76px rgba(0, 0, 0, .25),
+            inset 0 1px 0
+            rgba(208, 168, 106, .075);
+    }
+}
+
+
+/* =========================================================
+   11 — MOTION REDUCTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+/* =========================================================
+   END — ARS MOTION LAYER V2.1
+   ========================================================= */
