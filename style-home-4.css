@@ -50359,259 +50359,331 @@ body{
 
 
 
-
-
 /* =========================================================
-   ROSE AI — DISPLAY 03
-   BURGUNDY TRANSLUCENT INTELLIGENCE SCANNER
-   ISOLATED PATCH — ROSE DISPLAY ONLY
+   ROSE AI — 3D VERTICAL INTELLIGENCE CORE
+   Multi-orbit architecture / active scanner / depth
+   STRICT SCOPE: ROSE AI DISPLAY ONLY
    ========================================================= */
 
 .ars-rose-display .ars-rose-screen {
-    --rose-scan-color: 142, 38, 69;
-    --rose-scan-light: 205, 91, 119;
+    --rose-core: 142, 30, 65;
+    --rose-light: 218, 105, 139;
+    --rose-hot: 255, 157, 183;
 
     position: relative;
     isolation: isolate;
 }
 
-/* Central scanner positioning */
+/* Keep the complete orbital system in front of the image */
 .ars-rose-display .ars-rose-orbit {
     position: absolute;
     left: 50%;
     top: 50%;
 
-    width: clamp(86px, 34%, 190px);
+    width: clamp(150px, 43%, 270px);
     aspect-ratio: 1 / 1;
 
     transform: translate(-50%, -50%);
+    transform-style: preserve-3d;
+    perspective: 850px;
+
     border-radius: 50%;
-
-    display: grid;
-    place-items: center;
-
-    overflow: hidden;
+    display: block;
+    overflow: visible;
     isolation: isolate;
+    pointer-events: none;
+    z-index: 20;
 
     background:
         radial-gradient(
-            circle,
-            rgba(var(--rose-scan-color), 0.08) 0%,
-            rgba(var(--rose-scan-color), 0.16) 42%,
-            rgba(var(--rose-scan-color), 0.035) 68%,
-            transparent 76%
+            ellipse at 50% 50%,
+            rgba(var(--rose-core), .27) 0%,
+            rgba(var(--rose-core), .14) 25%,
+            rgba(var(--rose-core), .05) 48%,
+            transparent 70%
         );
 
-    border: 1px solid
-        rgba(var(--rose-scan-light), 0.48);
+    border: 1px solid rgba(var(--rose-light), .35);
 
     box-shadow:
-        0 0 14px rgba(var(--rose-scan-color), 0.22),
-        inset 0 0 18px rgba(var(--rose-scan-color), 0.18);
+        0 0 18px rgba(var(--rose-core), .30),
+        0 0 42px rgba(var(--rose-core), .17),
+        inset 0 0 24px rgba(var(--rose-light), .10);
 
-    pointer-events: none;
-    z-index: 6;
+    animation: roseCoreFloat 5s ease-in-out infinite;
 }
 
-/* Three independent scanner rings */
+/* Outer orbital rings */
 .ars-rose-display .ars-rose-orbit::before,
 .ars-rose-display .ars-rose-orbit::after {
     content: "";
     position: absolute;
+    inset: -8%;
     border-radius: 50%;
     pointer-events: none;
+    transform-style: preserve-3d;
 }
 
+/* Wide tilted orbit */
 .ars-rose-display .ars-rose-orbit::before {
-    inset: 10%;
+    inset: -7%;
 
-    border: 1px solid
-        rgba(var(--rose-scan-light), 0.64);
+    border: 1px solid rgba(var(--rose-light), .85);
 
     box-shadow:
-        inset 0 0 12px rgba(var(--rose-scan-color), 0.18),
-        0 0 8px rgba(var(--rose-scan-color), 0.16);
+        0 0 9px rgba(var(--rose-light), .24),
+        inset 0 0 9px rgba(var(--rose-core), .24);
 
-    animation: roseScannerPulse 3.8s ease-in-out infinite;
+    transform: rotateX(68deg) rotateZ(0deg);
+    animation: roseOuterOrbit 7s linear infinite;
 }
 
+/* Opposing vertical orbit */
 .ars-rose-display .ars-rose-orbit::after {
-    inset: 23%;
+    inset: -12% 3%;
 
-    border: 1px dashed
-        rgba(var(--rose-scan-light), 0.65);
+    border: 1px dashed rgba(var(--rose-light), .72);
 
-    animation: roseScannerRotate 14s linear infinite;
+    transform: rotateX(28deg) rotateY(62deg);
+    animation: roseVerticalOrbit 11s linear infinite;
 }
 
-/* Existing inner ring */
+/* Inner ring stack */
 .ars-rose-display .ars-rose-orbit-ring {
     position: absolute;
-    inset: 34%;
-
+    inset: 17%;
     display: block;
-    border-radius: 50%;
 
-    border: 1px solid
-        rgba(var(--rose-scan-light), 0.82);
+    border-radius: 50%;
+    border: 1px solid rgba(var(--rose-light), .76);
 
     background:
         radial-gradient(
             circle,
-            rgba(var(--rose-scan-light), 0.24),
-            rgba(var(--rose-scan-color), 0.08) 56%,
-            transparent 74%
+            rgba(var(--rose-core), .20),
+            rgba(var(--rose-core), .07) 52%,
+            transparent 72%
         );
 
     box-shadow:
-        0 0 12px rgba(var(--rose-scan-light), 0.20),
-        inset 0 0 12px rgba(var(--rose-scan-color), 0.24);
+        0 0 12px rgba(var(--rose-light), .17),
+        inset 0 0 18px rgba(var(--rose-core), .24);
 
-    animation: roseScannerCore 4.5s ease-in-out infinite;
+    transform-style: preserve-3d;
+    animation: roseInnerOrbit 6s linear infinite;
 }
 
-/* Rotating translucent scan beam */
-.ars-rose-display .ars-rose-orbit-ring::before {
+/* Multiple orbit tracks */
+.ars-rose-display .ars-rose-orbit-ring::before,
+.ars-rose-display .ars-rose-orbit-ring::after {
     content: "";
     position: absolute;
-
-    inset: -105%;
-
+    inset: -12%;
     border-radius: 50%;
-
-    background: conic-gradient(
-        from 0deg,
-        transparent 0deg,
-        transparent 218deg,
-        rgba(var(--rose-scan-color), 0.02) 238deg,
-        rgba(var(--rose-scan-light), 0.16) 270deg,
-        rgba(var(--rose-scan-light), 0.72) 292deg,
-        rgba(var(--rose-scan-light), 0.12) 310deg,
-        transparent 336deg,
-        transparent 360deg
-    );
-
-    -webkit-mask: radial-gradient(
-        circle,
-        transparent 0 57%,
-        #000 60% 64%,
-        transparent 68%
-    );
-
-    mask: radial-gradient(
-        circle,
-        transparent 0 57%,
-        #000 60% 64%,
-        transparent 68%
-    );
-
-    animation: roseScannerRotate 5.5s linear infinite;
+    pointer-events: none;
 }
 
-/* Scanner focal point */
+/* Fast luminous scanning ring */
+.ars-rose-display .ars-rose-orbit-ring::before {
+    border: 2px solid transparent;
+
+    background:
+        conic-gradient(
+            from 0deg,
+            transparent 0deg,
+            transparent 35deg,
+            rgba(var(--rose-light), .12) 65deg,
+            rgba(var(--rose-hot), .98) 88deg,
+            rgba(var(--rose-light), .58) 105deg,
+            transparent 135deg,
+            transparent 230deg,
+            rgba(var(--rose-light), .55) 250deg,
+            transparent 278deg,
+            transparent 360deg
+        ) border-box;
+
+    -webkit-mask:
+        linear-gradient(#000 0 0) padding-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    animation: roseBeamSpin 2.4s linear infinite;
+}
+
+/* Secondary orbit, moving in the opposite direction */
+.ars-rose-display .ars-rose-orbit-ring::after {
+    inset: 12%;
+
+    border: 1px dashed rgba(var(--rose-light), .80);
+
+    transform: rotateX(66deg);
+    animation: roseSecondarySpin 4.8s linear infinite;
+}
+
+/* Central intelligence core */
 .ars-rose-display .ars-rose-orbit-dot {
     position: absolute;
-
-    width: 7px;
-    height: 7px;
-
-    top: 50%;
     left: 50%;
+    top: 50%;
+
+    width: 13px;
+    height: 13px;
 
     transform: translate(-50%, -50%);
-
     border-radius: 50%;
+    z-index: 5;
 
-    background: rgb(var(--rose-scan-light));
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #ffe0e9 0%,
+            rgb(var(--rose-hot)) 20%,
+            rgb(var(--rose-light)) 48%,
+            rgb(var(--rose-core)) 100%
+        );
 
     box-shadow:
-        0 0 6px rgba(var(--rose-scan-light), 0.95),
-        0 0 18px rgba(var(--rose-scan-color), 0.9),
-        0 0 30px rgba(var(--rose-scan-light), 0.35);
+        0 0 8px rgba(var(--rose-hot), 1),
+        0 0 20px rgba(var(--rose-light), .90),
+        0 0 42px rgba(var(--rose-core), .90),
+        0 0 65px rgba(var(--rose-light), .32);
 
-    animation: roseScannerHeartbeat 2.6s ease-in-out infinite;
+    animation: roseCorePulse 1.8s ease-in-out infinite;
 }
 
-/* Moving scan line across the scanner */
+/* Vertical scan plane — visible moving light */
 .ars-rose-display .ars-rose-orbit {
     background-image:
         linear-gradient(
-            180deg,
-            transparent 49.5%,
-            rgba(var(--rose-scan-light), 0.25) 49.9%,
-            rgba(var(--rose-scan-light), 0.48) 50%,
-            rgba(var(--rose-scan-light), 0.12) 50.3%,
-            transparent 50.8%
+            90deg,
+            transparent 0%,
+            transparent 48%,
+            rgba(var(--rose-light), .08) 49%,
+            rgba(var(--rose-hot), .82) 50%,
+            rgba(var(--rose-light), .15) 51%,
+            transparent 53%,
+            transparent 100%
         ),
         radial-gradient(
-            circle,
-            rgba(var(--rose-scan-color), 0.08) 0%,
-            rgba(var(--rose-scan-color), 0.16) 42%,
-            rgba(var(--rose-scan-color), 0.035) 68%,
-            transparent 76%
+            ellipse at 50% 50%,
+            rgba(var(--rose-core), .25) 0%,
+            rgba(var(--rose-core), .12) 35%,
+            transparent 72%
         );
 
-    background-size: 100% 100%, 100% 100%;
+    background-size: 220% 100%, 100% 100%;
+    background-position: 180% 0, center;
+    background-repeat: no-repeat;
+
+    animation:
+        roseCoreFloat 5s ease-in-out infinite,
+        roseVerticalScan 2.8s ease-in-out infinite;
 }
 
-/* Scanner animations */
-@keyframes roseScannerRotate {
-    from {
-        transform: rotate(0deg);
-    }
+/* Additional horizontal scan beam */
+.ars-rose-display .ars-rose-screen::after {
+    content: "";
+    position: absolute;
 
-    to {
-        transform: rotate(360deg);
-    }
+    left: 0;
+    right: 0;
+    top: 0;
+
+    height: 2px;
+    z-index: 21;
+    pointer-events: none;
+
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(var(--rose-light), .15) 15%,
+        rgba(var(--rose-hot), .95) 50%,
+        rgba(var(--rose-light), .15) 85%,
+        transparent 100%
+    );
+
+    box-shadow: 0 0 12px rgba(var(--rose-light), .62);
+
+    animation: roseHorizontalScan 4.2s linear infinite;
 }
 
-@keyframes roseScannerPulse {
+/* Orbital motion */
+@keyframes roseOuterOrbit {
+    from { transform: rotateX(68deg) rotateZ(0deg); }
+    to   { transform: rotateX(68deg) rotateZ(360deg); }
+}
+
+@keyframes roseVerticalOrbit {
+    from { transform: rotateX(28deg) rotateY(62deg) rotateZ(0deg); }
+    to   { transform: rotateX(28deg) rotateY(62deg) rotateZ(360deg); }
+}
+
+@keyframes roseInnerOrbit {
+    0%   { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+    50%  { transform: rotateX(18deg) rotateY(35deg) rotateZ(180deg); }
+    100% { transform: rotateX(0deg) rotateY(0deg) rotateZ(360deg); }
+}
+
+@keyframes roseBeamSpin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+@keyframes roseSecondarySpin {
+    from { transform: rotateX(66deg) rotateZ(360deg); }
+    to   { transform: rotateX(66deg) rotateZ(0deg); }
+}
+
+/* Floating depth */
+@keyframes roseCoreFloat {
     0%, 100% {
-        opacity: 0.48;
-        transform: scale(0.96);
+        translate: 0 0;
     }
+    50% {
+        translate: 0 -7px;
+    }
+}
 
+/* Stronger focal pulse */
+@keyframes roseCorePulse {
+    0%, 100% {
+        opacity: .72;
+        scale: .82;
+        filter: brightness(.9);
+    }
     50% {
         opacity: 1;
-        transform: scale(1.035);
+        scale: 1.22;
+        filter: brightness(1.3);
     }
 }
 
-@keyframes roseScannerCore {
-    0%, 100% {
-        opacity: 0.68;
-        transform: scale(0.92);
-    }
-
-    50% {
-        opacity: 1;
-        transform: scale(1.08);
-    }
+/* Scan line travels across the core */
+@keyframes roseVerticalScan {
+    0%   { background-position: 180% 0, center; }
+    100% { background-position: -80% 0, center; }
 }
 
-@keyframes roseScannerHeartbeat {
-    0%, 100% {
-        opacity: 0.72;
-        box-shadow:
-            0 0 6px rgba(var(--rose-scan-light), 0.75),
-            0 0 15px rgba(var(--rose-scan-color), 0.75);
-    }
-
-    50% {
-        opacity: 1;
-        box-shadow:
-            0 0 9px rgba(var(--rose-scan-light), 1),
-            0 0 23px rgba(var(--rose-scan-light), 0.48);
-    }
+/* Screen-wide horizontal scan */
+@keyframes roseHorizontalScan {
+    0%   { top: -2px; opacity: 0; }
+    8%   { opacity: .9; }
+    92%  { opacity: .9; }
+    100% { top: 100%; opacity: 0; }
 }
 
-/* Respect reduced-motion preferences */
+/* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
+    .ars-rose-display .ars-rose-orbit,
     .ars-rose-display .ars-rose-orbit::before,
     .ars-rose-display .ars-rose-orbit::after,
     .ars-rose-display .ars-rose-orbit-ring,
     .ars-rose-display .ars-rose-orbit-ring::before,
-    .ars-rose-display .ars-rose-orbit-dot {
+    .ars-rose-display .ars-rose-orbit-ring::after,
+    .ars-rose-display .ars-rose-orbit-dot,
+    .ars-rose-display .ars-rose-screen::after {
         animation: none !important;
     }
 }
+
