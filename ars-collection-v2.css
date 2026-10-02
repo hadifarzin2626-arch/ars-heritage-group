@@ -3329,88 +3329,91 @@ body.no-webgl .collection-background {
 
 
 
-
 /* =========================================================
    ARS COLLECTION
-   MOTION LAYER V2.1
+   MOTION LAYER V2.1 — CORRECTED
    ---------------------------------------------------------
+   ADDITIVE PATCH
    Existing V2 CSS remains untouched.
-   This is an additive motion patch only.
-
-   Motion DNA:
-   BRONZE  = Identity / Energy / Depth
-   BLUE    = Interaction / Intelligence
-   BLACK   = Environment
    ========================================================= */
 
 
 /* =========================================================
-   01 — ARS BRONZE CURRENT
-   ---------------------------------------------------------
-   A very slow ambient bronze energy moving through the
-   environment.
-
-   It should feel like one continuous atmosphere connecting
-   the entire Collection.
+   01 — MOTION VARIABLES
    ========================================================= */
 
 :root {
+
     --ars-motion-bronze:
-        rgba(168, 121, 69, 0.075);
+        rgba(168, 121, 69, .075);
 
     --ars-motion-bronze-soft:
-        rgba(208, 168, 106, 0.035);
+        rgba(208, 168, 106, .035);
 
     --ars-motion-bronze-line:
-        rgba(208, 168, 106, 0.72);
+        rgba(208, 168, 106, .72);
 
-    --ars-motion-blue-response:
-        rgba(47, 143, 255, 0.22);
+    --ars-motion-blue:
+        rgba(47, 143, 255, .20);
 
-    --ars-motion-duration: 14s;
 }
 
 
-/* Ambient atmosphere */
+/* =========================================================
+   02 — ARS BRONZE CURRENT
+   ---------------------------------------------------------
+   Uses a dedicated child layer instead of section::after.
+   ========================================================= */
 
-section {
-    position: relative;
-    isolation: isolate;
+.ars-motion-layer {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 1;
+
 }
 
-section::after {
+
+.ars-motion-layer::before {
+
     content: "";
+
     position: absolute;
 
     width: 42vw;
     height: 42vw;
 
-    min-width: 360px;
-    min-height: 360px;
+    min-width: 320px;
+    min-height: 320px;
 
-    max-width: 760px;
-    max-height: 760px;
+    max-width: 720px;
+    max-height: 720px;
 
     left: -18%;
     top: 8%;
 
-    pointer-events: none;
+    border-radius: 50%;
 
     background:
         radial-gradient(
             circle,
-            var(--ars-motion-bronze),
-            var(--ars-motion-bronze-soft) 32%,
+            rgba(168,121,69,.075) 0%,
+            rgba(208,168,106,.035) 32%,
             transparent 72%
         );
 
     filter: blur(70px);
 
-    opacity: .42;
-
-    transform:
-        translate3d(0, 0, 0)
-        scale(.92);
+    opacity: .55;
 
     animation:
         arsBronzeCurrent
@@ -3418,14 +3421,49 @@ section::after {
         ease-in-out
         infinite alternate;
 
-    z-index: -1;
 }
 
-section:nth-of-type(even)::after {
-    left: auto;
-    right: -18%;
-    animation-delay: -7s;
+
+.ars-motion-layer::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 38vw;
+    height: 38vw;
+
+    min-width: 300px;
+    min-height: 300px;
+
+    max-width: 650px;
+    max-height: 650px;
+
+    right: -15%;
+    bottom: 5%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(168,121,69,.06) 0%,
+            rgba(208,168,106,.025) 35%,
+            transparent 72%
+        );
+
+    filter: blur(80px);
+
+    opacity: .45;
+
+    animation:
+        arsBronzeCurrentReverse
+        24s
+        ease-in-out
+        infinite alternate;
+
 }
+
 
 @keyframes arsBronzeCurrent {
 
@@ -3433,148 +3471,163 @@ section:nth-of-type(even)::after {
         transform:
             translate3d(-2%, 0, 0)
             scale(.92);
-
-        opacity: .28;
     }
 
-    45% {
-        opacity: .48;
+    50% {
+        transform:
+            translate3d(8%, 5%, 0)
+            scale(1);
     }
 
     100% {
         transform:
-            translate3d(18%, 8%, 0)
+            translate3d(22%, 10%, 0)
             scale(1.08);
-
-        opacity: .36;
     }
+
 }
 
 
-/* =========================================================
-   02 — BRONZE EDGE SWEEP
-   ---------------------------------------------------------
-   A very thin bronze energy line travels across card edges.
-
-   It does NOT create a permanent glowing border.
-   ========================================================= */
-
-.ars-glass {
-    position: relative;
-    overflow: hidden;
-}
-
-
-/*
-   Existing glass border remains untouched.
-   This is an additional moving light layer.
-*/
-
-.ars-glass::after {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: -42%;
-
-    width: 42%;
-    height: 1px;
-
-    pointer-events: none;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent 0%,
-            rgba(168, 121, 69, 0.08) 15%,
-            rgba(208, 168, 106, 0.72) 50%,
-            rgba(168, 121, 69, 0.08) 85%,
-            transparent 100%
-        );
-
-    opacity: 0;
-
-    transform: translateX(0);
-
-    animation:
-        arsBronzeEdgeSweep
-        10s
-        cubic-bezier(.4, 0, .2, 1)
-        infinite;
-
-    z-index: 5;
-}
-
-
-@keyframes arsBronzeEdgeSweep {
+@keyframes arsBronzeCurrentReverse {
 
     0% {
-        left: -42%;
-        opacity: 0;
-    }
-
-    8% {
-        opacity: .72;
-    }
-
-    32% {
-        opacity: .82;
-    }
-
-    48% {
-        opacity: 0;
+        transform:
+            translate3d(10%, 5%, 0)
+            scale(.92);
     }
 
     100% {
-        left: 120%;
-        opacity: 0;
+        transform:
+            translate3d(-15%, -8%, 0)
+            scale(1.08);
     }
-}
 
-
-/* Desynchronize different cards */
-
-.ars-glass:nth-child(2n)::after {
-    animation-delay: -3.2s;
-}
-
-.ars-glass:nth-child(3n)::after {
-    animation-delay: -6.1s;
-}
-
-.ars-glass:nth-child(5n)::after {
-    animation-delay: -8.4s;
 }
 
 
 /* =========================================================
-   03 — HOVER BRONZE EDGE RESPONSE
+   03 — BRONZE EDGE SWEEP
    ---------------------------------------------------------
-   Idle  = almost invisible
-   Hover = bronze becomes slightly more alive
+   IMPORTANT:
+   Does NOT touch .ars-glass::after.
+   Uses a dedicated background layer on the card itself.
    ========================================================= */
 
-.ars-glass:hover::after {
-    animation-duration: 3.2s;
-    opacity: .9;
+.ars-glass {
+
+    position: relative;
+    overflow: hidden;
+
+}
+
+
+.ars-glass::before {
+
+    /*
+       Preserve the existing V2 visual layer as much as possible.
+       The motion itself is created through a background layer
+       attached to the element rather than replacing ::after.
+    */
+
+    /* existing V2 rule remains authoritative */
 }
 
 
 .ars-glass:hover {
+
     border-color:
-        rgba(168, 121, 69, 0.32);
+        rgba(168,121,69,.30);
 
     box-shadow:
-        0 24px 70px rgba(0, 0, 0, .28),
-        0 0 0 1px rgba(168, 121, 69, .045);
+        0 24px 70px rgba(0,0,0,.28),
+        0 0 0 1px rgba(168,121,69,.04);
+
+}
+
+
+/* Dedicated moving bronze edge */
+
+.ars-glass {
+
+    --ars-edge-position: -120%;
+
+}
+
+
+.ars-glass:hover {
+
+    --ars-edge-position: 120%;
+
+}
+
+
+/*
+   CSS Houdini is NOT required.
+   The effect is produced through background positioning.
+*/
+
+.ars-glass {
+
+    background-image:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            transparent 43%,
+            rgba(208,168,106,.42) 49%,
+            rgba(208,168,106,.75) 50%,
+            rgba(208,168,106,.42) 51%,
+            transparent 57%,
+            transparent 100%
+        ),
+        var(--ars-existing-glass-background, transparent);
+
+    background-size:
+        260% 1px,
+        100% 100%;
+
+    background-position:
+        -160% 0,
+        0 0;
+
+    background-repeat:
+        no-repeat,
+        no-repeat;
+
+}
+
+
+.ars-glass:hover {
+
+    animation:
+        arsBronzeCardResponse
+        3.2s
+        cubic-bezier(.4,0,.2,1)
+        1;
+
+}
+
+
+@keyframes arsBronzeCardResponse {
+
+    0% {
+        background-position:
+            -160% 0,
+            0 0;
+    }
+
+    100% {
+        background-position:
+            160% 0,
+            0 0;
+    }
+
 }
 
 
 /* =========================================================
    04 — BRONZE REFLECTION
    ---------------------------------------------------------
-   Very slow diagonal reflection over major imagery.
+   Dedicated wrapper overlay.
    ========================================================= */
 
 .featured-image,
@@ -3584,38 +3637,42 @@ section:nth-of-type(even)::after {
 .future-right,
 .signature-image,
 .gallery-item {
+
     position: relative;
     overflow: hidden;
+
 }
 
 
-.featured-image::after,
-.product-image::after,
-.project-image::after,
-.design-image::after,
-.future-right::after,
-.signature-image::after,
-.gallery-item::after {
+.featured-image::before,
+.product-image::before,
+.project-image::before,
+.design-image::before,
+.future-right::before,
+.signature-image::before,
+.gallery-item::before {
 
     content: "";
 
     position: absolute;
 
     top: -20%;
-    left: -45%;
+    left: -55%;
 
-    width: 22%;
+    width: 20%;
     height: 140%;
 
     pointer-events: none;
+
+    z-index: 3;
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            rgba(208, 168, 106, 0.055),
-            rgba(168, 121, 69, 0.12),
-            rgba(208, 168, 106, 0.035),
+            rgba(208,168,106,.025),
+            rgba(168,121,69,.12),
+            rgba(208,168,106,.025),
             transparent
         );
 
@@ -3627,9 +3684,10 @@ section:nth-of-type(even)::after {
 
     animation:
         arsBronzeReflection
-        11s
+        12s
         ease-in-out
         infinite;
+
 }
 
 
@@ -3643,83 +3701,57 @@ section:nth-of-type(even)::after {
         opacity: 0;
     }
 
-    12% {
-        opacity: .35;
+    10% {
+        opacity: .22;
     }
 
-    28% {
-        opacity: .5;
+    24% {
+        opacity: .38;
     }
 
-    42% {
+    38% {
         opacity: 0;
     }
 
     100% {
         transform:
             skewX(-18deg)
-            translateX(720%);
+            translateX(760%);
 
         opacity: 0;
     }
+
 }
 
 
-/* Different rhythm for different image groups */
-
-.product-image::after {
+.product-image::before {
     animation-delay: -3s;
 }
 
-.project-image::after {
-    animation-delay: -5.5s;
+.project-image::before {
+    animation-delay: -5s;
 }
 
-.design-image::after {
+.design-image::before {
     animation-delay: -2s;
 }
 
-.future-right::after {
+.future-right::before {
     animation-delay: -7s;
 }
 
-.signature-image::after {
-    animation-delay: -4.5s;
+.signature-image::before {
+    animation-delay: -4s;
 }
 
-.gallery-item::after {
+.gallery-item::before {
     animation-delay: -8s;
 }
 
 
 /* =========================================================
-   05 — DEPTH DRIFT
-   ---------------------------------------------------------
-   Extremely small movement.
-   No heavy parallax.
-   No floating cards.
+   05 — VERY LIGHT IMAGE DEPTH
    ========================================================= */
-
-.collection-background,
-.hero-display img,
-.featured-image img,
-.product-image img,
-.project-image img,
-.design-image img,
-.future-right img,
-.signature-image img,
-.gallery-item img {
-
-    transform:
-        translate3d(0, 0, 0)
-        scale(1.001);
-
-    transition:
-        transform
-        1.4s
-        cubic-bezier(.2, .65, .2, 1);
-}
-
 
 .featured-card:hover .featured-image img,
 .product-card:hover .product-image img,
@@ -3730,178 +3762,27 @@ section:nth-of-type(even)::after {
 
     transform:
         translate3d(
-            calc(var(--ars-pointer-x, 0) * 5px),
-            calc(var(--ars-pointer-y, 0) * 5px),
+            calc(var(--ars-pointer-x, 0) * 3px),
+            calc(var(--ars-pointer-y, 0) * 3px),
             0
         )
-        scale(1.025);
+        scale(1.018);
+
 }
 
 
 /* =========================================================
-   06 — INTELLIGENT REVEAL
-   ---------------------------------------------------------
-   Gentle entrance rhythm.
-   Not everything appears simultaneously.
-
-   CSS-only version:
-   label → title → description → cards
-   ========================================================= */
-
-.section-heading .section-label {
-    animation:
-        arsRevealLabel
-        .8s
-        cubic-bezier(.2, .7, .2, 1)
-        both;
-}
-
-
-.section-heading h2 {
-    animation:
-        arsRevealContent
-        .9s
-        .08s
-        cubic-bezier(.2, .7, .2, 1)
-        both;
-}
-
-
-.section-heading p {
-    animation:
-        arsRevealContent
-        1s
-        .16s
-        cubic-bezier(.2, .7, .2, 1)
-        both;
-}
-
-
-@keyframes arsRevealLabel {
-
-    from {
-        opacity: 0;
-        transform:
-            translateY(10px);
-        letter-spacing: .28em;
-    }
-
-    to {
-        opacity: 1;
-        transform:
-            translateY(0);
-        letter-spacing: inherit;
-    }
-}
-
-
-@keyframes arsRevealContent {
-
-    from {
-        opacity: 0;
-        transform:
-            translateY(16px);
-    }
-
-    to {
-        opacity: 1;
-        transform:
-            translateY(0);
-    }
-}
-
-
-/* =========================================================
-   07 — CARD MICRO REVEAL
-   ---------------------------------------------------------
-   A quiet initial entrance.
-   ========================================================= */
-
-.featured-card,
-.product-card,
-.project-card,
-.design-card,
-.future-card,
-.signature-card,
-.hub-card,
-.gallery-item,
-.experience-card {
-
-    animation:
-        arsCardReveal
-        1s
-        cubic-bezier(.2, .7, .2, 1)
-        both;
-}
-
-
-.featured-card:nth-child(2),
-.product-card:nth-child(2),
-.project-card:nth-child(2),
-.design-card:nth-child(2),
-.future-card:nth-child(2),
-.signature-card:nth-child(2),
-.hub-card:nth-child(2),
-.gallery-item:nth-child(2),
-.experience-card:nth-child(2) {
-    animation-delay: .08s;
-}
-
-
-.featured-card:nth-child(3),
-.product-card:nth-child(3),
-.project-card:nth-child(3),
-.design-card:nth-child(3),
-.future-card:nth-child(3),
-.signature-card:nth-child(3),
-.hub-card:nth-child(3),
-.gallery-item:nth-child(3),
-.experience-card:nth-child(3) {
-    animation-delay: .16s;
-}
-
-
-.featured-card:nth-child(4),
-.product-card:nth-child(4),
-.project-card:nth-child(4),
-.design-card:nth-child(4),
-.future-card:nth-child(4),
-.signature-card:nth-child(4),
-.hub-card:nth-child(4),
-.gallery-item:nth-child(4),
-.experience-card:nth-child(4) {
-    animation-delay: .24s;
-}
-
-
-@keyframes arsCardReveal {
-
-    from {
-        opacity: 0;
-        transform:
-            translateY(18px);
-    }
-
-    to {
-        opacity: 1;
-        transform:
-            translateY(0);
-    }
-}
-
-
-/* =========================================================
-   08 — BLUE RESPONSE
-   ---------------------------------------------------------
-   Blue appears primarily when the user interacts.
+   06 — BLUE RESPONSE
    ========================================================= */
 
 .ars-glass:hover {
+
     box-shadow:
-        0 24px 70px rgba(0, 0, 0, .28),
-        0 0 24px rgba(47, 143, 255, .045),
+        0 24px 70px rgba(0,0,0,.28),
+        0 0 26px rgba(47,143,255,.045),
         inset 0 1px 0
-        rgba(208, 168, 106, .06);
+        rgba(208,168,106,.06);
+
 }
 
 
@@ -3910,91 +3791,15 @@ button:hover {
 
     text-shadow:
         0 0 18px
-        rgba(47, 143, 255, .18);
-}
+        rgba(47,143,255,.16);
 
-
-.product-card:hover,
-.project-card:hover,
-.design-card:hover,
-.future-card:hover,
-.signature-card:hover,
-.hub-card:hover,
-.experience-card:hover {
-
-    border-color:
-        rgba(47, 143, 255, .22);
 }
 
 
 /* =========================================================
-   09 — HERO: BRONZE ENVIRONMENTAL MOVEMENT
-   ========================================================= */
-
-.collection-hero {
-    position: relative;
-}
-
-
-.collection-hero::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 55vw;
-    height: 55vw;
-
-    max-width: 850px;
-    max-height: 850px;
-
-    right: -20%;
-    bottom: -15%;
-
-    pointer-events: none;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(168, 121, 69, .085),
-            rgba(168, 121, 69, .025) 35%,
-            transparent 70%
-        );
-
-    filter: blur(80px);
-
-    animation:
-        arsHeroBronzeDrift
-        18s
-        ease-in-out
-        infinite alternate;
-
-    opacity: .55;
-
-    z-index: 0;
-}
-
-
-@keyframes arsHeroBronzeDrift {
-
-    0% {
-        transform:
-            translate3d(0, 0, 0)
-            scale(.95);
-    }
-
-    100% {
-        transform:
-            translate3d(-10%, -7%, 0)
-            scale(1.06);
-    }
-}
-
-
-/* =========================================================
-   10 — PREMIUM BRONZE IDLE
+   07 — PREMIUM BRONZE PRESENCE
    ---------------------------------------------------------
-   Very subtle breathing on important ARS elements only.
+   Only major feature cards.
    ========================================================= */
 
 .featured-product,
@@ -4003,16 +3808,12 @@ button:hover {
 .experience-banner,
 .collection-final-card {
 
-    box-shadow:
-        0 24px 70px rgba(0, 0, 0, .22),
-        inset 0 1px 0
-        rgba(208, 168, 106, .035);
-
     animation:
         arsBronzePresence
         9s
         ease-in-out
         infinite;
+
 }
 
 
@@ -4020,39 +3821,61 @@ button:hover {
 
     0%,
     100% {
+
         box-shadow:
-            0 24px 70px rgba(0, 0, 0, .22),
+            0 24px 70px rgba(0,0,0,.22),
             inset 0 1px 0
-            rgba(208, 168, 106, .035);
+            rgba(208,168,106,.035);
+
     }
 
     50% {
+
         box-shadow:
-            0 26px 76px rgba(0, 0, 0, .25),
+            0 26px 76px rgba(0,0,0,.24),
             inset 0 1px 0
-            rgba(208, 168, 106, .075);
+            rgba(208,168,106,.065);
+
     }
+
 }
 
 
 /* =========================================================
-   11 — MOTION REDUCTION
+   08 — POINTER VARIABLES
+   ========================================================= */
+
+html.ars-motion-ready {
+
+    --ars-pointer-x: 0;
+    --ars-pointer-y: 0;
+
+}
+
+
+/* =========================================================
+   09 — REDUCED MOTION
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
-    *,
-    *::before,
-    *::after {
+    .ars-motion-layer::before,
+    .ars-motion-layer::after,
+    .featured-image::before,
+    .product-image::before,
+    .project-image::before,
+    .design-image::before,
+    .future-right::before,
+    .signature-image::before,
+    .gallery-item::before,
+    .featured-product,
+    .featured-project,
+    .signature-showcase,
+    .experience-banner,
+    .collection-final-card {
 
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
-        scroll-behavior: auto !important;
+        animation: none !important;
+
     }
-}
 
-
-/* =========================================================
-   END — ARS MOTION LAYER V2.1
-   ========================================================= */
+                 }
