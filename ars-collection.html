@@ -1711,6 +1711,79 @@ Join ARS
 
 
 
+
+
+
+  <!-- =========================================================
+     ARS COLLECTION — MOTION LAYER
+     HTML PATCH V2.1
+     No existing structure changed.
+========================================================= -->
+
+<div class="ars-motion-layer" aria-hidden="true">
+    <div class="ars-motion-orb ars-motion-orb-1"></div>
+    <div class="ars-motion-orb ars-motion-orb-2"></div>
+    <div class="ars-motion-orb ars-motion-orb-3"></div>
+    <div class="ars-motion-line ars-motion-line-1"></div>
+    <div class="ars-motion-line ars-motion-line-2"></div>
+</div>
+
+<script>
+/* =========================================================
+   ARS COLLECTION — MOTION ENGINE V2.1
+   Lightweight CSS-driven ambient motion.
+   Does not modify existing page logic.
+========================================================= */
+
+(function () {
+    'use strict';
+
+    document.documentElement.classList.add('ars-motion-ready');
+
+    /* ---------------------------------------------------------
+       Subtle interaction response
+    --------------------------------------------------------- */
+
+    const cards = document.querySelectorAll('.ars-glass');
+
+    cards.forEach((card, index) => {
+        card.style.setProperty(
+            '--ars-motion-index',
+            index
+        );
+    });
+
+    /* ---------------------------------------------------------
+       Pointer presence
+       Very subtle — no aggressive parallax.
+    --------------------------------------------------------- */
+
+    let pointerX = 0;
+    let pointerY = 0;
+
+    window.addEventListener('pointermove', function (event) {
+
+        pointerX = (event.clientX / window.innerWidth) - 0.5;
+        pointerY = (event.clientY / window.innerHeight) - 0.5;
+
+        document.documentElement.style.setProperty(
+            '--ars-pointer-x',
+            pointerX.toFixed(3)
+        );
+
+        document.documentElement.style.setProperty(
+            '--ars-pointer-y',
+            pointerY.toFixed(3)
+        );
+
+    }, { passive: true });
+
+})();
+</script>
+
+<!-- END ARS MOTION LAYER -->
+
+
 </body>
 
 </html>
