@@ -1261,9 +1261,23 @@ View Engineering Projects
                     01
                 </div>
 
-                <div class="human-system-orbit">
-                    <span>ROSE AI</span>
-                </div>
+
+<button
+    type="button"
+    class="human-system-orbit"
+    data-human-orbit="rose"
+    aria-label="Activate ROSE AI visual interface"
+    aria-pressed="false"
+>
+    <span class="human-orbit-core" aria-hidden="true"></span>
+    <span class="human-orbit-ring human-orbit-ring-one" aria-hidden="true"></span>
+    <span class="human-orbit-ring human-orbit-ring-two" aria-hidden="true"></span>
+    <span class="human-orbit-ring human-orbit-ring-three" aria-hidden="true"></span>
+    <span class="human-orbit-particle" aria-hidden="true"></span>
+    <span class="human-orbit-label">ROSE AI</span>
+</button>
+
+              
 
                 <div class="human-system-content">
 
@@ -1305,9 +1319,23 @@ View Engineering Projects
                     02
                 </div>
 
-                <div class="human-system-orbit">
-                    <span>ZHR NAJI</span>
-                </div>
+
+              
+<button
+    type="button"
+    class="human-system-orbit"
+    data-human-orbit="zhr"
+    aria-label="Activate ZHR NAJI visual interface"
+    aria-pressed="false"
+>
+    <span class="human-orbit-core" aria-hidden="true"></span>
+    <span class="human-orbit-ring human-orbit-ring-one" aria-hidden="true"></span>
+    <span class="human-orbit-ring human-orbit-ring-two" aria-hidden="true"></span>
+    <span class="human-orbit-ring human-orbit-ring-three" aria-hidden="true"></span>
+    <span class="human-orbit-particle" aria-hidden="true"></span>
+    <span class="human-orbit-label">ZHR NAJI</span>
+</button>
+
 
                 <div class="human-system-content">
 
@@ -1350,9 +1378,25 @@ View Engineering Projects
                     03
                 </div>
 
-                <div class="human-system-orbit">
-                    <span>ARS HAVEN</span>
-                </div>
+
+
+
+<button
+    type="button"
+    class="human-system-orbit"
+    data-human-orbit="haven"
+    aria-label="Activate ARS HAVEN visual interface"
+    aria-pressed="false"
+>
+    <span class="human-orbit-core" aria-hidden="true"></span>
+    <span class="human-orbit-ring human-orbit-ring-one" aria-hidden="true"></span>
+    <span class="human-orbit-ring human-orbit-ring-two" aria-hidden="true"></span>
+    <span class="human-orbit-ring human-orbit-ring-three" aria-hidden="true"></span>
+    <span class="human-orbit-particle" aria-hidden="true"></span>
+    <span class="human-orbit-label">ARS HAVEN</span>
+</button>
+
+              
 
                 <div class="human-system-content">
 
@@ -2804,8 +2848,175 @@ Join ARS
   </script>
 
 
-  
+  <script>
+/* =========================================================
+   HUMAN INTELLIGENCE — INTERACTIVE ORBIT CONTROLS
+   ========================================================= */
 
+(() => {
+    'use strict';
+
+    const section = document.querySelector('#human-intelligence');
+
+    if (!section) return;
+
+    const orbits = section.querySelectorAll('[data-human-orbit]');
+    const cards = section.querySelectorAll('.human-system');
+
+    const reduceMotion = window.matchMedia(
+        '(prefers-reduced-motion: reduce)'
+    ).matches;
+
+
+    /* =====================================================
+       ORBIT INTERACTION
+       ===================================================== */
+
+    orbits.forEach((orbit) => {
+
+        orbit.addEventListener('click', () => {
+
+            const wasActive =
+                orbit.classList.contains('is-active');
+
+            /* Only one orbit can be active at a time. */
+
+            orbits.forEach((item) => {
+                item.classList.remove('is-active');
+                item.setAttribute(
+                    'aria-pressed',
+                    'false'
+                );
+            });
+
+            if (!wasActive) {
+                orbit.classList.add('is-active');
+
+                orbit.setAttribute(
+                    'aria-pressed',
+                    'true'
+                );
+            }
+        });
+
+
+        /* =================================================
+           POINTER RESPONSE
+           ================================================= */
+
+        if (reduceMotion) return;
+
+        orbit.addEventListener(
+            'pointermove',
+            (event) => {
+
+                if (event.pointerType === 'touch') {
+                    return;
+                }
+
+                const rect =
+                    orbit.getBoundingClientRect();
+
+                const x =
+                    (event.clientX - rect.left)
+                    / rect.width - 0.5;
+
+                const y =
+                    (event.clientY - rect.top)
+                    / rect.height - 0.5;
+
+                orbit.style.setProperty(
+                    '--orbit-pointer-x',
+                    `${x * 5}px`
+                );
+
+                orbit.style.setProperty(
+                    '--orbit-pointer-y',
+                    `${y * 5}px`
+                );
+            }
+        );
+
+
+        orbit.addEventListener(
+            'pointerleave',
+            () => {
+
+                orbit.style.setProperty(
+                    '--orbit-pointer-x',
+                    '0px'
+                );
+
+                orbit.style.setProperty(
+                    '--orbit-pointer-y',
+                    '0px'
+                );
+            }
+        );
+
+    });
+
+
+    /* =====================================================
+       CARD LIGHT RESPONSE
+       ===================================================== */
+
+    if (!reduceMotion) {
+
+        cards.forEach((card) => {
+
+            card.addEventListener(
+                'pointermove',
+                (event) => {
+
+                    if (event.pointerType === 'touch') {
+                        return;
+                    }
+
+                    const rect =
+                        card.getBoundingClientRect();
+
+                    const x =
+                        (event.clientX - rect.left)
+                        / rect.width;
+
+                    const y =
+                        (event.clientY - rect.top)
+                        / rect.height;
+
+                    card.style.setProperty(
+                        '--human-light-x',
+                        `${x * 100}%`
+                    );
+
+                    card.style.setProperty(
+                        '--human-light-y',
+                        `${y * 100}%`
+                    );
+                }
+            );
+
+
+            card.addEventListener(
+                'pointerleave',
+                () => {
+
+                    card.style.removeProperty(
+                        '--human-light-x'
+                    );
+
+                    card.style.removeProperty(
+                        '--human-light-y'
+                    );
+                }
+            );
+
+        });
+
+    }
+
+})();
+</script>
 
 
 
