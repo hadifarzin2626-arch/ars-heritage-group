@@ -3503,7 +3503,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -3513,31 +3512,61 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!filmButton || !overlay || !closeButton) return;
 
+    let previousBodyOverflow = "";
+
     function openFilmWindow() {
+
+        if (!overlay.hidden) return;
+
+        previousBodyOverflow = document.body.style.overflow;
+
         overlay.hidden = false;
         document.body.style.overflow = "hidden";
+
+        filmButton.classList.add("is-active");
+        filmButton.setAttribute("aria-expanded", "true");
+
         closeButton.focus();
     }
 
     function closeFilmWindow() {
+
+        if (overlay.hidden) return;
+
         overlay.hidden = true;
-        document.body.style.overflow = "";
+        document.body.style.overflow = previousBodyOverflow;
+
+        filmButton.classList.remove("is-active");
+        filmButton.setAttribute("aria-expanded", "false");
+
         filmButton.focus();
     }
 
+    /* WATCH FILM */
     filmButton.addEventListener("click", openFilmWindow);
+
+    /* CLOSE BUTTON */
     closeButton.addEventListener("click", closeFilmWindow);
 
+    /* CLICK OUTSIDE THE CINEMATIC PANEL */
     overlay.addEventListener("click", (event) => {
+
         if (event.target === overlay) {
             closeFilmWindow();
         }
+
     });
 
+    /* ESCAPE KEY */
     document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && !overlay.hidden) {
+
+        if (
+            event.key === "Escape" &&
+            !overlay.hidden
+        ) {
             closeFilmWindow();
         }
+
     });
 
 });
