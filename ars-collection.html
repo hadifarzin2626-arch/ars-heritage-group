@@ -2308,52 +2308,8 @@ Join ARS
 
 
 
-<!-- =========================================================
-     ARS MOTION LAYER V2.1
-========================================================= -->
 
-<div
-    class="ars-motion-layer"
-    aria-hidden="true">
-</div>
 
-<script>
-(function () {
-
-    'use strict';
-
-    document.documentElement.classList.add(
-        'ars-motion-ready'
-    );
-
-    window.addEventListener(
-        'pointermove',
-        function (event) {
-
-            const x =
-                (event.clientX / window.innerWidth) - 0.5;
-
-            const y =
-                (event.clientY / window.innerHeight) - 0.5;
-
-            document.documentElement.style.setProperty(
-                '--ars-pointer-x',
-                x.toFixed(3)
-            );
-
-            document.documentElement.style.setProperty(
-                '--ars-pointer-y',
-                y.toFixed(3)
-            );
-
-        },
-        { passive: true }
-    );
-
-})();
-</script>
-
-<!-- END ARS MOTION LAYER -->
   
 
 
