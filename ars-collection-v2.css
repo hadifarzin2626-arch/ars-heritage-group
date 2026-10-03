@@ -7415,3 +7415,44 @@ section.collection-hero .collection-stats .stat-box:hover::before {
 
     opacity: 0.85;
 }
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   FEATURED OBJECTS — OBJECT TRANSITION
+   ========================================================= */
+
+.featured-object-exhibition {
+    transition:
+        opacity 0.45s ease,
+        transform 0.45s ease,
+        filter 0.45s ease;
+}
+
+.featured-object-exhibition.is-switching {
+    opacity: 0.72;
+    transform: scale(0.992);
+    filter: blur(1.2px);
+}
+
+.featured-object-image {
+    transition:
+        opacity 0.45s ease,
+        transform 0.65s cubic-bezier(.22,.61,.36,1),
+        filter 0.45s ease;
+}
+
+.featured-object-exhibition.is-switching
+.featured-object-image {
+    opacity: 0;
+    transform: scale(0.965) translateY(8px);
+    filter: blur(4px);
+}
