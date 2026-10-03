@@ -7615,3 +7615,271 @@ section.collection-hero .collection-stats .stat-box:hover::before {
     }
    }
 
+
+
+
+
+
+/* =========================================================
+   ARS COLLECTION — WATCH FILM / ACTIVE LUXURY STATE
+   ========================================================= */
+
+.featured-object-film {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    cursor: pointer !important;
+    opacity: 1 !important;
+    color: #d7eaff !important;
+    border: 1px solid rgba(75, 151, 235, 0.55) !important;
+    background:
+        linear-gradient(
+            120deg,
+            rgba(47, 143, 255, 0.13),
+            rgba(5, 10, 18, 0.92) 65%
+        ) !important;
+    box-shadow:
+        inset 0 0 18px rgba(47, 143, 255, 0.035),
+        0 0 12px rgba(47, 143, 255, 0.045);
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+.featured-object-film:hover,
+.featured-object-film.is-active {
+    color: #ffffff !important;
+    border-color: rgba(78, 164, 255, 0.95) !important;
+    background:
+        linear-gradient(
+            120deg,
+            rgba(47, 143, 255, 0.24),
+            rgba(9, 19, 34, 0.96) 70%
+        ) !important;
+    box-shadow:
+        inset 0 0 22px rgba(47, 143, 255, 0.08),
+        0 0 12px rgba(47, 143, 255, 0.15),
+        0 0 28px rgba(47, 143, 255, 0.08);
+    transform: translateY(-1px);
+}
+
+.featured-object-film .film-icon {
+    display: inline-grid;
+    place-items: center;
+    transition:
+        transform 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+.featured-object-film:hover .film-icon,
+.featured-object-film.is-active .film-icon {
+    transform: scale(1.12);
+    text-shadow: 0 0 12px rgba(80, 165, 255, 0.8);
+}
+
+.featured-object-film:focus-visible {
+    outline: 2px solid #5f9bd6;
+    outline-offset: 4px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS COLLECTION — CINEMATIC FILM EXPERIENCE
+   ========================================================= */
+
+.featured-film-overlay {
+    padding: clamp(12px, 3vw, 38px);
+    background: rgba(1, 3, 8, 0.94);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+}
+
+.featured-film-panel {
+    width: min(1120px, 100%);
+    min-height: min(680px, 88dvh);
+    border: 1px solid rgba(154, 118, 80, 0.42);
+    background:
+        radial-gradient(
+            ellipse at 50% 45%,
+            rgba(30, 103, 174, 0.13),
+            transparent 54%
+        ),
+        linear-gradient(
+            145deg,
+            #101721 0%,
+            #070a10 48%,
+            #030406 100%
+        );
+    box-shadow:
+        0 35px 120px rgba(0, 0, 0, 0.78),
+        inset 0 0 70px rgba(47, 143, 255, 0.025),
+        0 0 50px rgba(47, 143, 255, 0.06);
+    animation: arsCinemaEnter 0.5s cubic-bezier(.2,.7,.2,1) both;
+}
+
+.featured-film-panel::before,
+.featured-film-panel::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.featured-film-panel::before {
+    inset: 12px;
+    border: 1px solid rgba(154, 118, 80, 0.12);
+}
+
+.featured-film-panel::after {
+    top: 0;
+    left: -40%;
+    width: 35%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(79, 155, 232, 0.045),
+        transparent
+    );
+    transform: skewX(-18deg);
+    animation: arsCinemaLight 7s ease-in-out infinite;
+}
+
+.featured-film-frame {
+    position: relative;
+    z-index: 1;
+    min-height: min(680px, 88dvh);
+    padding: clamp(65px, 10vw, 110px) 24px 55px;
+}
+
+.featured-film-close {
+    top: 24px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    border-color: rgba(154, 118, 80, 0.35);
+    background: rgba(4, 7, 12, 0.72);
+    color: #c8d3df;
+    font-size: 27px;
+}
+
+.featured-film-eyebrow {
+    color: #9a7650;
+    letter-spacing: 0.32em;
+    font-size: 10px;
+}
+
+.featured-film-symbol {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 48px 0 34px;
+    border-color: rgba(79, 155, 232, 0.7);
+    background: radial-gradient(
+        circle,
+        rgba(47, 143, 255, 0.12),
+        rgba(3, 7, 13, 0.35) 70%
+    );
+    box-shadow:
+        0 0 24px rgba(47, 143, 255, 0.1),
+        inset 0 0 25px rgba(47, 143, 255, 0.07);
+    animation: arsCinemaPulse 3.5s ease-in-out infinite;
+}
+
+.featured-film-frame h2 {
+    color: #806344;
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 500;
+    letter-spacing: clamp(0.08em, 1vw, 0.2em);
+    text-shadow: 0 0 25px rgba(47, 143, 255, 0.06);
+}
+
+.featured-film-line {
+    width: 90px;
+    margin: 24px 0;
+}
+
+.featured-film-frame p {
+    max-width: 460px;
+    color: #dbe5ef;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.featured-film-footer {
+    margin-top: 55px;
+    letter-spacing: 0.3em;
+}
+
+@keyframes arsCinemaEnter {
+    from {
+        opacity: 0;
+        transform: scale(0.975) translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes arsCinemaLight {
+    0%, 15% {
+        left: -40%;
+    }
+    65%, 100% {
+        left: 120%;
+    }
+}
+
+@keyframes arsCinemaPulse {
+    0%, 100% {
+        box-shadow:
+            0 0 20px rgba(47, 143, 255, 0.08),
+            inset 0 0 20px rgba(47, 143, 255, 0.04);
+    }
+    50% {
+        box-shadow:
+            0 0 36px rgba(47, 143, 255, 0.19),
+            inset 0 0 30px rgba(47, 143, 255, 0.1);
+    }
+}
+
+@media (max-width: 600px) {
+    .featured-film-panel,
+    .featured-film-frame {
+        min-height: 72dvh;
+    }
+
+    .featured-film-frame {
+        padding: 75px 20px 40px;
+    }
+
+    .featured-film-footer {
+        margin-top: 38px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .featured-film-panel,
+    .featured-film-panel::after,
+    .featured-film-symbol {
+        animation: none !important;
+    }
+}
