@@ -5440,3 +5440,122 @@ html.ars-motion-ready [data-ars-reveal].is-visible {
         ),
         linear-gradient(145deg, #101113, #050607 76%);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS — BRONZE HEADINGS / ELECTRIC BLUE LIGHT LINE
+   Correction Patch
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   1. LARGE SECTION HEADINGS — MATTE BRONZE
+   --------------------------------------------------------- */
+
+.section-heading h2,
+.human-intelligence-heading h2 {
+    color: var(--ars-matte-bronze) !important;
+}
+
+
+/* ---------------------------------------------------------
+   2. DESCRIPTIVE TEXT UNDER HEADINGS — WHITE
+   --------------------------------------------------------- */
+
+.section-heading p,
+.human-intelligence-heading p,
+.section-heading .section-description,
+.human-intelligence-heading .section-description {
+    color: var(--ars-soft-white) !important;
+}
+
+
+/* ---------------------------------------------------------
+   3. ELECTRIC BLUE LIGHT LINE
+   --------------------------------------------------------- */
+
+.section-heading h2,
+.human-intelligence-heading h2 {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 22px;
+}
+
+
+/* Main light line */
+
+.section-heading h2::after,
+.human-intelligence-heading h2::after {
+    content: "";
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 86px;
+    height: 3px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #2f8fff 20%,
+            #58b0ff 50%,
+            #2f8fff 80%,
+            transparent
+        );
+
+    box-shadow:
+        0 0 6px rgba(47,143,255,.75),
+        0 0 16px rgba(47,143,255,.48),
+        0 0 30px rgba(47,143,255,.20);
+
+    border-radius: 999px;
+
+    pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   4. SMALL LABELS ABOVE HEADINGS
+      Keep ARS bronze identity
+   --------------------------------------------------------- */
+
+.section-heading .section-label,
+.human-intelligence-heading .section-label {
+    color: var(--ars-matte-bronze-light) !important;
+}
+
+
+/* ---------------------------------------------------------
+   5. IMPORTANT:
+      TEXT INSIDE THE CARDS MUST NOT TURN BRONZE
+   --------------------------------------------------------- */
+
+.human-system p {
+    color: var(--ars-soft-white) !important;
+}
+
+.human-system-content {
+    color: var(--ars-soft-white);
+}
+
+.human-system-content h3 {
+    color: var(--ars-premium-white) !important;
+}
