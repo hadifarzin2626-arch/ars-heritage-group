@@ -2307,7 +2307,501 @@ Join ARS
 
 
 
+<script>
+(() => {
+  'use strict';
 
+  const reduceMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches;
+
+  if (reduceMotion) return;
+
+  const root = document.documentElement;
+
+  /* =====================================================
+     ARS COLLECTION V2
+     BRONZE MOTION SYSTEM
+     ===================================================== */
+
+  /* -----------------------------------------------------
+     CARD SELECTORS
+     ----------------------------------------------------- */
+
+  const cardSelector = [
+    '.featured-card',
+    '.product-card',
+    '.project-card',
+    '.design-card',
+    '.future-card',
+    '.signature-card',
+    '.signature-showcase',
+    '.hub-card',
+    '.gallery-item',
+    '.media-card',
+    '.experience-card',
+    '.collection-final-card',
+    '.human-system',
+    '.ars-visual-item',
+    '.ars-one-node'
+  ].join(',');
+
+
+  /* -----------------------------------------------------
+     01 — BRONZE CURRENT
+     ----------------------------------------------------- */
+
+  const current = document.createElement('div');
+
+  current.className = 'ars-motion-current';
+  current.setAttribute('aria-hidden', 'true');
+
+  document.body.appendChild(current);
+
+  function runCurrent() {
+
+    if (document.hidden) return;
+
+    current.classList.remove('is-running');
+
+    void current.offsetWidth;
+
+    current.classList.add('is-running');
+  }
+
+  runCurrent();
+
+  window.setInterval(runCurrent, 19000);
+
+
+  /* -----------------------------------------------------
+     02 — INTELLIGENT REVEAL
+     ----------------------------------------------------- */
+
+  const revealSelectors = [
+    '.section-label',
+    '.section-heading',
+    '.ars-one-heading',
+    '.section-description',
+    '.products-footer',
+    '.projects-highlight',
+    '.design-footer',
+    '.human-intelligence-statement',
+    '.ars-one-bottom',
+    '.roadmap',
+    '.collection-banner',
+    '.collection-showcase',
+    cardSelector,
+    '.ars-one-vehicle'
+  ];
+
+  const revealSet = new Set();
+
+  revealSelectors.forEach((selector, groupIndex) => {
+
+    document.querySelectorAll(selector).forEach((element) => {
+
+      if (revealSet.has(element)) return;
+
+      revealSet.add(element);
+
+      element.setAttribute(
+        'data-ars-reveal',
+        ''
+      );
+
+      element.style.setProperty(
+        '--ars-reveal-delay',
+        `${Math.min(groupIndex * 55, 220)}ms`
+      );
+
+    });
+
+  });
+
+
+  /* -----------------------------------------------------
+     03 — PREPARE CARDS
+     ----------------------------------------------------- */
+
+  document.querySelectorAll(cardSelector).forEach((card) => {
+
+    card.classList.add('ars-motion-card');
+
+    if (!card.querySelector(':scope > .ars-motion-edge')) {
+
+      const edge = document.createElement('span');
+
+      edge.className = 'ars-motion-edge';
+
+      edge.setAttribute(
+        'aria-hidden',
+        'true'
+      );
+
+      card.appendChild(edge);
+
+    }
+
+  });
+
+
+  /* -----------------------------------------------------
+     04 — BRONZE REFLECTION
+     ----------------------------------------------------- */
+
+  const imageSelector = [
+    '.collection-hero img',
+    '.ars-one img',
+    '.project-card img',
+    '.design-card img',
+    '.future-card img',
+    '.signature-card img',
+    '.signature-showcase img',
+    '.ars-visual-item img'
+  ].join(',');
+
+  const reflectionTargets = [];
+
+
+  document.querySelectorAll(imageSelector).forEach((img) => {
+
+    const parent = img.parentElement;
+
+    if (!parent) return;
+
+    /*
+      Only use containers that contain a single image.
+      This prevents the reflection from covering text.
+    */
+
+    if (parent.children.length !== 1) return;
+
+
+    if (
+      getComputedStyle(parent).position === 'static'
+    ) {
+
+      parent.style.position = 'relative';
+
+    }
+
+
+    if (
+      getComputedStyle(parent).overflow === 'visible'
+    ) {
+
+      parent.style.overflow = 'hidden';
+
+    }
+
+
+    parent.classList.add(
+      'ars-motion-reflection'
+    );
+
+
+    if (
+      !parent.querySelector(
+        ':scope > .ars-motion-reflection-overlay'
+      )
+    ) {
+
+      const reflection =
+        document.createElement('span');
+
+      reflection.className =
+        'ars-motion-reflection-overlay';
+
+      reflection.setAttribute(
+        'aria-hidden',
+        'true'
+      );
+
+
+      const beam =
+        document.createElement('span');
+
+      beam.className =
+        'ars-motion-reflection-beam';
+
+
+      reflection.appendChild(beam);
+
+      parent.appendChild(reflection);
+
+      reflectionTargets.push(parent);
+
+    }
+
+  });
+
+
+  /* -----------------------------------------------------
+     05 — INTERSECTION OBSERVER
+     ----------------------------------------------------- */
+
+  if ('IntersectionObserver' in window) {
+
+    const revealObserver =
+      new IntersectionObserver(
+        (entries) => {
+
+          entries.forEach((entry) => {
+
+            if (!entry.isIntersecting) return;
+
+
+            entry.target.classList.add(
+              'is-visible'
+            );
+
+
+            revealObserver.unobserve(
+              entry.target
+            );
+
+
+            /*
+              Bronze Edge Sweep
+            */
+
+            if (
+              entry.target.matches(cardSelector)
+            ) {
+
+              const edge =
+                entry.target.querySelector(
+                  ':scope > .ars-motion-edge'
+                );
+
+
+              if (edge) {
+
+                edge.classList.remove(
+                  'is-running'
+                );
+
+                void edge.offsetWidth;
+
+                edge.classList.add(
+                  'is-running'
+                );
+
+              }
+
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.12,
+          rootMargin:
+            '0px 0px -35px 0px'
+        }
+      );
+
+
+    revealSet.forEach((element) => {
+
+      revealObserver.observe(element);
+
+    });
+
+  } else {
+
+    /*
+      Fallback for old browsers
+    */
+
+    revealSet.forEach((element) => {
+
+      element.classList.add(
+        'is-visible'
+      );
+
+    });
+
+  }
+
+
+  /* -----------------------------------------------------
+     06 — DEPTH DRIFT
+     ----------------------------------------------------- */
+
+  const depthTargets =
+    document.querySelectorAll(
+      [
+        '.collection-hero',
+        '.ars-one-vehicle',
+        '.ars-one-atmosphere',
+        '.human-intelligence-atmosphere'
+      ].join(',')
+    );
+
+
+  let framePending = false;
+
+
+  function updateDepth() {
+
+    if (framePending) return;
+
+    framePending = true;
+
+
+    window.requestAnimationFrame(() => {
+
+      const viewportHeight =
+        window.innerHeight || 1;
+
+
+      depthTargets.forEach((element) => {
+
+        const rect =
+          element.getBoundingClientRect();
+
+
+        if (
+          rect.bottom < 0 ||
+          rect.top > viewportHeight
+        ) {
+          return;
+        }
+
+
+        const distanceFromCenter =
+          (
+            rect.top +
+            rect.height / 2 -
+            viewportHeight / 2
+          ) /
+          viewportHeight;
+
+
+        const offset =
+          Math.max(
+            -4,
+            Math.min(
+              4,
+              distanceFromCenter * -4
+            )
+          );
+
+
+        element.style.setProperty(
+          '--ars-depth-y',
+          `${offset}px`
+        );
+
+
+        element.classList.add(
+          'ars-motion-depth'
+        );
+
+      });
+
+
+      framePending = false;
+
+    });
+
+  }
+
+
+  window.addEventListener(
+    'scroll',
+    updateDepth,
+    { passive: true }
+  );
+
+
+  window.addEventListener(
+    'resize',
+    updateDepth,
+    { passive: true }
+  );
+
+
+  updateDepth();
+
+
+  /* -----------------------------------------------------
+     07 — BRONZE IMAGE REFLECTION
+     ----------------------------------------------------- */
+
+  function runReflections() {
+
+    if (document.hidden) return;
+
+
+    reflectionTargets.forEach((parent) => {
+
+      const rect =
+        parent.getBoundingClientRect();
+
+
+      if (
+        rect.bottom <= 0 ||
+        rect.top >= window.innerHeight
+      ) {
+        return;
+      }
+
+
+      const beam =
+        parent.querySelector(
+          '.ars-motion-reflection-beam'
+        );
+
+
+      if (!beam) return;
+
+
+      beam.style.animation = 'none';
+
+      void beam.offsetWidth;
+
+      beam.style.animation =
+        'arsBronzeReflection 2.8s ease-in-out 1 both';
+
+    });
+
+  }
+
+
+  /*
+    First reflection shortly after page load.
+  */
+
+  window.setTimeout(
+    runReflections,
+    1200
+  );
+
+
+  /*
+    Then approximately every 11 seconds.
+  */
+
+  window.setInterval(
+    runReflections,
+    11000
+  );
+
+
+  /* -----------------------------------------------------
+     08 — ENABLE MOTION CSS
+     ----------------------------------------------------- */
+
+  root.classList.add(
+    'ars-motion-ready'
+  );
+
+
+})();
+  </script>
 
 
   
