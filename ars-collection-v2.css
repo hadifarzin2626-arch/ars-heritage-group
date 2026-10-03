@@ -4333,3 +4333,229 @@ body.no-webgl .collection-background {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS COLLECTION V2 — BRONZE MOTION
+   Additive patch: append to the END of ars-collection-v2.css
+   ========================================================= */
+
+@keyframes arsBronzeCurrent {
+  0%   { transform: translate3d(-120%, 0, 0) rotate(-12deg); opacity: 0; }
+  12%  { opacity: 1; }
+  78%  { opacity: .75; }
+  100% { transform: translate3d(120%, 0, 0) rotate(-12deg); opacity: 0; }
+}
+
+@keyframes arsBronzeEdge {
+  0%   { transform: rotate(0deg); opacity: 0; }
+  12%  { opacity: .85; }
+  82%  { opacity: .7; }
+  100% { transform: rotate(360deg); opacity: 0; }
+}
+
+@keyframes arsBronzeReflection {
+  0%, 72% { transform: translateX(-150%) skewX(-18deg); opacity: 0; }
+  76%     { opacity: .16; }
+  90%     { opacity: .12; }
+  100%    { transform: translateX(150%) skewX(-18deg); opacity: 0; }
+}
+
+@keyframes arsBronzeAtmosphere {
+  0%, 100% { opacity: .10; transform: translate3d(-3%, 0, 0); }
+  50%      { opacity: .20; transform: translate3d(3%, 0, 0); }
+}
+
+/* 01 — BRONZE CURRENT
+   A faint, non-interactive bronze light crossing the viewport. */
+.ars-motion-current {
+  position: fixed;
+  inset: -35% -50%;
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0;
+  overflow: hidden;
+  background: linear-gradient(
+    112deg,
+    transparent 46%,
+    rgba(176, 128, 83, 0.015) 48%,
+    rgba(176, 128, 83, 0.13) 49.5%,
+    rgba(210, 170, 123, 0.08) 50%,
+    rgba(176, 128, 83, 0.015) 51.5%,
+    transparent 54%
+  );
+  mix-blend-mode: screen;
+}
+
+.ars-motion-current.is-running {
+  animation: arsBronzeCurrent 15s cubic-bezier(.45, 0, .35, 1) 1 both;
+}
+
+/* 02 — BRONZE EDGE SWEEP
+   The JavaScript adds this overlay only to the intended cards. */
+.ars-motion-edge {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  border-radius: inherit;
+  padding: 1px;
+  opacity: 0;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 285deg,
+    rgba(176, 128, 83, .05) 305deg,
+    rgba(190, 145, 101, .9) 325deg,
+    rgba(176, 128, 83, .25) 340deg,
+    transparent 355deg
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.ars-motion-edge.is-running {
+  animation: arsBronzeEdge 1.7s ease-out 1 both;
+}
+
+/* Hover repeats the edge sweep only while the user interacts. */
+.ars-motion-card:hover > .ars-motion-edge {
+  animation: arsBronzeEdge 1.7s ease-out 1 both;
+}
+
+/* 03 — DEPTH DRIFT
+   Tiny movement; no card rotation and no layout changes. */
+.ars-motion-depth {
+  transform: translate3d(0, var(--ars-depth-y, 0px), 0);
+  transition: transform .35s ease-out;
+}
+
+/* 04 — INTELLIGENT REVEAL
+   Content remains visible unless the script initializes correctly. */
+html.ars-motion-ready [data-ars-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+  transition:
+    opacity .7s ease var(--ars-reveal-delay, 0ms),
+    transform .7s cubic-bezier(.2, .65, .25, 1) var(--ars-reveal-delay, 0ms);
+}
+
+html.ars-motion-ready [data-ars-reveal].is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Bronze is the resting identity; blue appears on actual interaction. */
+.ars-motion-card {
+  transition:
+    border-color .35s ease,
+    box-shadow .35s ease;
+}
+
+.ars-motion-card:hover {
+  border-color: rgba(176, 128, 83, .38);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, .18);
+}
+
+.ars-motion-card:focus-within {
+  border-color: rgba(64, 151, 255, .5);
+  box-shadow: 0 0 0 1px rgba(64, 151, 255, .12);
+}
+
+/* Image reflection overlay; created only on selected image containers. */
+.ars-motion-reflection {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.ars-motion-reflection::after {
+  content: "";
+  position: absolute;
+  top: -20%;
+  bottom: -20%;
+  left: 0;
+  width: 32%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(190, 145, 101, .18),
+    rgba(210, 170, 123, .06),
+    transparent
+  );
+  opacity: 0;
+  transform: translateX(-150%) skewX(-18deg);
+}
+
+.ars-motion-reflection.is-running::after {
+  animation: arsBronzeReflection 11s ease-in-out 1 both;
+}
+
+/* 05 — BLUE RESPONSE
+   Blue is reserved for controls that are actually being interacted with. */
+.ars-motion-card a:focus-visible,
+.ars-motion-card button:focus-visible,
+.ars-motion-card a:active,
+.ars-motion-card button:active {
+  outline-color: rgba(64, 151, 255, .75);
+}
+
+/* Accessibility: no motion for users who request reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  .ars-motion-current,
+  .ars-motion-current.is-running,
+  .ars-motion-edge,
+  .ars-motion-edge.is-running,
+  .ars-motion-card:hover > .ars-motion-edge,
+  .ars-motion-reflection.is-running::after {
+    animation: none !important;
+  }
+
+  html.ars-motion-ready [data-ars-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .ars-motion-depth {
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+
+
+
+
+.ars-motion-reflection-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.ars-motion-reflection-beam {
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ars-motion-reflection-beam {
+    animation: none !important;
+  }
+}
