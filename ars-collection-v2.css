@@ -3329,553 +3329,302 @@ body.no-webgl .collection-background {
 
 
 
-/* =========================================================
-   ARS COLLECTION
-   MOTION LAYER V2.1 — CORRECTED
-   ---------------------------------------------------------
-   ADDITIVE PATCH
-   Existing V2 CSS remains untouched.
-   ========================================================= */
+
+
+
 
 
 /* =========================================================
-   01 — MOTION VARIABLES
+   ARS COLLECTION V2.2
+   BRONZE MOTION SYSTEM
+   Additive motion layer — no existing pseudo-elements touched
    ========================================================= */
 
 :root {
-
-    --ars-motion-bronze:
-        rgba(168, 121, 69, .075);
-
-    --ars-motion-bronze-soft:
-        rgba(208, 168, 106, .035);
-
-    --ars-motion-bronze-line:
-        rgba(208, 168, 106, .72);
-
-    --ars-motion-blue:
-        rgba(47, 143, 255, .20);
-
+    --ars-motion-bronze: #A87945;
+    --ars-motion-bronze-light: #D0A86A;
+    --ars-motion-bronze-soft: rgba(168, 121, 69, 0.28);
+    --ars-motion-bronze-faint: rgba(168, 121, 69, 0.12);
 }
 
 
 /* =========================================================
-   02 — ARS BRONZE CURRENT
-   ---------------------------------------------------------
-   Uses a dedicated child layer instead of section::after.
+   01 — GLOBAL BRONZE CURRENT
    ========================================================= */
 
-.ars-motion-layer {
+body {
+    position: relative;
+}
 
+body::before {
+    content: "";
     position: fixed;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
+    inset: -35%;
+    z-index: 0;
     pointer-events: none;
 
-    overflow: hidden;
+    background:
+        radial-gradient(
+            ellipse at 15% 50%,
+            rgba(168, 121, 69, 0.045),
+            transparent 24%
+        ),
+        radial-gradient(
+            ellipse at 85% 35%,
+            rgba(208, 168, 106, 0.035),
+            transparent 22%
+        ),
+        radial-gradient(
+            ellipse at 50% 100%,
+            rgba(168, 121, 69, 0.025),
+            transparent 28%
+        );
 
+    filter: blur(35px);
+
+    animation:
+        arsBronzeCurrent 18s ease-in-out infinite alternate;
+
+    will-change: transform;
+}
+
+
+/* Keep actual page content above the atmosphere */
+
+body > * {
+    position: relative;
     z-index: 1;
-
 }
 
 
-.ars-motion-layer::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 42vw;
-    height: 42vw;
-
-    min-width: 320px;
-    min-height: 320px;
-
-    max-width: 720px;
-    max-height: 720px;
-
-    left: -18%;
-    top: 8%;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(168,121,69,.075) 0%,
-            rgba(208,168,106,.035) 32%,
-            transparent 72%
-        );
-
-    filter: blur(70px);
-
-    opacity: .55;
-
-    animation:
-        arsBronzeCurrent
-        20s
-        ease-in-out
-        infinite alternate;
-
-}
-
-
-.ars-motion-layer::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 38vw;
-    height: 38vw;
-
-    min-width: 300px;
-    min-height: 300px;
-
-    max-width: 650px;
-    max-height: 650px;
-
-    right: -15%;
-    bottom: 5%;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(168,121,69,.06) 0%,
-            rgba(208,168,106,.025) 35%,
-            transparent 72%
-        );
-
-    filter: blur(80px);
-
-    opacity: .45;
-
-    animation:
-        arsBronzeCurrentReverse
-        24s
-        ease-in-out
-        infinite alternate;
-
-}
-
+/* =========================================================
+   02 — BRONZE CURRENT MOTION
+   ========================================================= */
 
 @keyframes arsBronzeCurrent {
 
     0% {
         transform:
-            translate3d(-2%, 0, 0)
-            scale(.92);
+            translate3d(-4%, -2%, 0)
+            scale(1);
     }
 
     50% {
         transform:
-            translate3d(8%, 5%, 0)
-            scale(1);
+            translate3d(3%, 2%, 0)
+            scale(1.04);
     }
 
     100% {
         transform:
-            translate3d(22%, 10%, 0)
-            scale(1.08);
+            translate3d(-1%, 4%, 0)
+            scale(1.02);
     }
-
-}
-
-
-@keyframes arsBronzeCurrentReverse {
-
-    0% {
-        transform:
-            translate3d(10%, 5%, 0)
-            scale(.92);
-    }
-
-    100% {
-        transform:
-            translate3d(-15%, -8%, 0)
-            scale(1.08);
-    }
-
 }
 
 
 /* =========================================================
-   03 — BRONZE EDGE SWEEP
-   ---------------------------------------------------------
-   IMPORTANT:
-   Does NOT touch .ars-glass::after.
-   Uses a dedicated background layer on the card itself.
+   03 — CAR BRONZE PRESENCE
    ========================================================= */
 
 .ars-glass {
-
     position: relative;
-    overflow: hidden;
-
+    transition:
+        transform 700ms cubic-bezier(.16, 1, .3, 1),
+        border-color 700ms ease,
+        box-shadow 700ms ease;
 }
 
 
-.ars-glass::before {
-
-    /*
-       Preserve the existing V2 visual layer as much as possible.
-       The motion itself is created through a background layer
-       attached to the element rather than replacing ::after.
-    */
-
-    /* existing V2 rule remains authoritative */
-}
-
-
-.ars-glass:hover {
-
-    border-color:
-        rgba(168,121,69,.30);
-
-    box-shadow:
-        0 24px 70px rgba(0,0,0,.28),
-        0 0 0 1px rgba(168,121,69,.04);
-
-}
-
-
-/* Dedicated moving bronze edge */
+/* Subtle bronze breathing */
 
 .ars-glass {
+    animation:
+        arsCardBronzeBreath 8s ease-in-out infinite;
+}
 
-    --ars-edge-position: -120%;
+@keyframes arsCardBronzeBreath {
 
+    0%,
+    100% {
+        box-shadow:
+            0 20px 60px rgba(0, 0, 0, 0.34),
+            0 0 0 rgba(168, 121, 69, 0);
+    }
+
+    50% {
+        box-shadow:
+            0 22px 64px rgba(0, 0, 0, 0.38),
+            0 0 28px rgba(168, 121, 69, 0.055);
+    }
 }
 
 
+/* =========================================================
+   04 — CARD HOVER
+   ========================================================= */
+
 .ars-glass:hover {
+    transform: translateY(-7px);
 
-    --ars-edge-position: 120%;
+    border-color:
+        rgba(208, 168, 106, 0.62);
 
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.52),
+        0 0 34px rgba(168, 121, 69, 0.14),
+        inset 0 0 30px rgba(168, 121, 69, 0.025);
+}
+
+
+/* =========================================================
+   05 — IMAGE BRONZE REFLECTION
+   ========================================================= */
+
+.ars-card-image {
+    position: relative;
+    overflow: hidden;
 }
 
 
 /*
-   CSS Houdini is NOT required.
-   The effect is produced through background positioning.
+   IMPORTANT:
+   We use the IMAGE CONTAINER's background,
+   not ::before / ::after.
+   This avoids destroying V2 pseudo-elements.
 */
 
-.ars-glass {
-
-    background-image:
+.ars-card-image {
+    background:
         linear-gradient(
-            90deg,
+            115deg,
             transparent 0%,
-            transparent 43%,
-            rgba(208,168,106,.42) 49%,
-            rgba(208,168,106,.75) 50%,
-            rgba(208,168,106,.42) 51%,
-            transparent 57%,
+            transparent 38%,
+            rgba(208, 168, 106, 0.075) 48%,
+            transparent 58%,
             transparent 100%
         ),
-        var(--ars-existing-glass-background, transparent);
+        var(--ars-deep-navy, #061426);
 
     background-size:
-        260% 1px,
+        240% 100%,
         100% 100%;
 
     background-position:
-        -160% 0,
+        -120% 0,
         0 0;
 
-    background-repeat:
-        no-repeat,
-        no-repeat;
-
-}
-
-
-.ars-glass:hover {
-
     animation:
-        arsBronzeCardResponse
-        3.2s
-        cubic-bezier(.4,0,.2,1)
-        1;
-
+        arsImageReflection 12s ease-in-out infinite;
 }
 
 
-@keyframes arsBronzeCardResponse {
+@keyframes arsImageReflection {
 
     0% {
         background-position:
-            -160% 0,
+            -120% 0,
+            0 0;
+    }
+
+    45% {
+        background-position:
+            120% 0,
             0 0;
     }
 
     100% {
         background-position:
-            160% 0,
+            120% 0,
             0 0;
     }
-
 }
 
 
 /* =========================================================
-   04 — BRONZE REFLECTION
-   ---------------------------------------------------------
-   Dedicated wrapper overlay.
+   06 — IMAGE DEPTH
    ========================================================= */
 
-.featured-image,
-.product-image,
-.project-image,
-.design-image,
-.future-right,
-.signature-image,
-.gallery-item {
-
-    position: relative;
-    overflow: hidden;
-
+.ars-card-image img {
+    transition:
+        transform 1.2s cubic-bezier(.16, 1, .3, 1),
+        filter 900ms ease;
 }
 
 
-.featured-image::before,
-.product-image::before,
-.project-image::before,
-.design-image::before,
-.future-right::before,
-.signature-image::before,
-.gallery-item::before {
+.ars-glass:hover .ars-card-image img {
+    transform: scale(1.035);
 
-    content: "";
-
-    position: absolute;
-
-    top: -20%;
-    left: -55%;
-
-    width: 20%;
-    height: 140%;
-
-    pointer-events: none;
-
-    z-index: 3;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(208,168,106,.025),
-            rgba(168,121,69,.12),
-            rgba(208,168,106,.025),
-            transparent
-        );
-
-    transform:
-        skewX(-18deg)
-        translateX(0);
-
-    opacity: 0;
-
-    animation:
-        arsBronzeReflection
-        12s
-        ease-in-out
-        infinite;
-
-}
-
-
-@keyframes arsBronzeReflection {
-
-    0% {
-        transform:
-            skewX(-18deg)
-            translateX(0);
-
-        opacity: 0;
-    }
-
-    10% {
-        opacity: .22;
-    }
-
-    24% {
-        opacity: .38;
-    }
-
-    38% {
-        opacity: 0;
-    }
-
-    100% {
-        transform:
-            skewX(-18deg)
-            translateX(760%);
-
-        opacity: 0;
-    }
-
-}
-
-
-.product-image::before {
-    animation-delay: -3s;
-}
-
-.project-image::before {
-    animation-delay: -5s;
-}
-
-.design-image::before {
-    animation-delay: -2s;
-}
-
-.future-right::before {
-    animation-delay: -7s;
-}
-
-.signature-image::before {
-    animation-delay: -4s;
-}
-
-.gallery-item::before {
-    animation-delay: -8s;
+    filter:
+        brightness(1.025)
+        contrast(1.015);
 }
 
 
 /* =========================================================
-   05 — VERY LIGHT IMAGE DEPTH
+   07 — BRONZE LIGHT ON MAJOR CARD IMAGES
    ========================================================= */
 
-.featured-card:hover .featured-image img,
-.product-card:hover .product-image img,
-.project-card:hover .project-image img,
-.design-card:hover .design-image img,
-.signature-showcase:hover .signature-image img,
-.gallery-item:hover img {
-
-    transform:
-        translate3d(
-            calc(var(--ars-pointer-x, 0) * 3px),
-            calc(var(--ars-pointer-y, 0) * 3px),
-            0
-        )
-        scale(1.018);
-
-}
-
-
-/* =========================================================
-   06 — BLUE RESPONSE
-   ========================================================= */
-
-.ars-glass:hover {
-
+.ars-glass:hover .ars-card-image {
     box-shadow:
-        0 24px 70px rgba(0,0,0,.28),
-        0 0 26px rgba(47,143,255,.045),
-        inset 0 1px 0
-        rgba(208,168,106,.06);
-
-}
-
-
-a:hover,
-button:hover {
-
-    text-shadow:
-        0 0 18px
-        rgba(47,143,255,.16);
-
+        inset 0 0 0 1px rgba(208, 168, 106, 0.16),
+        inset 0 0 60px rgba(168, 121, 69, 0.055);
 }
 
 
 /* =========================================================
-   07 — PREMIUM BRONZE PRESENCE
-   ---------------------------------------------------------
-   Only major feature cards.
+   08 — BUTTON / LINK RESPONSE
    ========================================================= */
 
-.featured-product,
-.featured-project,
-.signature-showcase,
-.experience-banner,
-.collection-final-card {
-
-    animation:
-        arsBronzePresence
-        9s
-        ease-in-out
-        infinite;
-
+.ars-glass a,
+.ars-glass button {
+    transition:
+        color 350ms ease,
+        border-color 350ms ease,
+        transform 350ms cubic-bezier(.16, 1, .3, 1);
 }
 
 
-@keyframes arsBronzePresence {
-
-    0%,
-    100% {
-
-        box-shadow:
-            0 24px 70px rgba(0,0,0,.22),
-            inset 0 1px 0
-            rgba(208,168,106,.035);
-
-    }
-
-    50% {
-
-        box-shadow:
-            0 26px 76px rgba(0,0,0,.24),
-            inset 0 1px 0
-            rgba(208,168,106,.065);
-
-    }
-
+.ars-glass a:hover,
+.ars-glass button:hover {
+    color: var(--ars-matte-bronze-light, #D0A86A);
 }
 
 
 /* =========================================================
-   08 — POINTER VARIABLES
+   09 — SECTION LABEL RESPONSE
    ========================================================= */
 
-html.ars-motion-ready {
+.section-label {
+    transition:
+        color 450ms ease,
+        letter-spacing 450ms ease;
+}
 
-    --ars-pointer-x: 0;
-    --ars-pointer-y: 0;
 
+.section-label:hover {
+    color: var(--ars-matte-bronze-light, #D0A86A);
+
+    letter-spacing:
+        calc(var(--ars-label-spacing, .18em) + .025em);
 }
 
 
 /* =========================================================
-   09 — REDUCED MOTION
+   10 — ACCESSIBILITY
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
-    .ars-motion-layer::before,
-    .ars-motion-layer::after,
-    .featured-image::before,
-    .product-image::before,
-    .project-image::before,
-    .design-image::before,
-    .future-right::before,
-    .signature-image::before,
-    .gallery-item::before,
-    .featured-product,
-    .featured-project,
-    .signature-showcase,
-    .experience-banner,
-    .collection-final-card {
-
+    body::before,
+    .ars-glass,
+    .ars-card-image {
         animation: none !important;
-
     }
 
-                 }
+    .ars-card-image img,
+    .ars-glass {
+        transition: none !important;
+    }
+}
+
