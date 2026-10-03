@@ -4876,12 +4876,12 @@ html.ars-motion-ready [data-ars-reveal].is-visible {
   filter:
     drop-shadow(
       0 0 5px
-      rgba(202, 161, 108, .72)
+      rgba(225, 191, 128, 1.5)
     )
 
     drop-shadow(
       0 0 15px
-      rgba(176, 128, 83, .40)
+      rgba(199, 158, 93, 1)
     );
 }
 
@@ -4901,3 +4901,136 @@ html.ars-motion-ready [data-ars-reveal].is-visible {
   }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS COLLECTION — UNIVERSAL MATTE BRONZE HEADINGS
+   Scope: Headings only
+   No layout / spacing / background / animation changes
+   ========================================================= */
+
+:root {
+  --ars-heading-bronze:
+    linear-gradient(
+      180deg,
+      #d0b07a 0%,
+      #b8945d 38%,
+      #9a7648 68%,
+      #82633d 100%
+    );
+}
+
+/* ---------------------------------------------------------
+   ALL PRIMARY / SECONDARY PAGE HEADINGS
+   --------------------------------------------------------- */
+
+.collection-hero h1,
+.collection-showcase h2,
+.ars-one h1,
+.ars-one h2,
+.featured-collection h2,
+.featured-card h3,
+.ars-products h2,
+.product-card h3,
+.ars-projects h2,
+.project-card h3,
+.design-studio h2,
+.design-card h3,
+.human-intelligence h2,
+.human-intelligence h3,
+.ars-visual-collection h2,
+.ars-visual-item h3,
+.future-vision h2,
+.future-card h3,
+.signature-collection h2,
+.signature-card h3,
+.collection-hub h2,
+.hub-card h3,
+.collection-gallery h2,
+.gallery-item h3,
+.ars-experience h2,
+.experience-card h3,
+.collection-final h2,
+.collection-final h3,
+.section-heading,
+.ars-one-heading,
+.collection-banner h2,
+.roadmap h2 {
+  color: transparent;
+  background-image: var(--ars-heading-bronze);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Keep the bronze refined and matte */
+  text-shadow: none;
+}
+
+/* ---------------------------------------------------------
+   SMALLER HEADINGS / HEADINGS INSIDE SPECIAL COMPONENTS
+   --------------------------------------------------------- */
+
+.featured-card h4,
+.product-card h4,
+.project-card h4,
+.design-card h4,
+.future-card h4,
+.signature-card h4,
+.hub-card h4,
+.gallery-item h4,
+.experience-card h4 {
+  color: transparent;
+  background-image: var(--ars-heading-bronze);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+}
+
+/* ---------------------------------------------------------
+   ARS ONE INTELLIGENCE NODES
+   Only heading text — not the node itself
+   --------------------------------------------------------- */
+
+.ars-one-node h3,
+.ars-one-node h4 {
+  color: transparent;
+  background-image: var(--ars-heading-bronze);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+}
+
+/* ---------------------------------------------------------
+   PREVENT INTERFERENCE WITH EXISTING STATES
+   --------------------------------------------------------- */
+
+.collection-hero h1 *,
+.ars-one h1 *,
+.ars-one h2 *,
+.section-heading *,
+.featured-card h3 *,
+.product-card h3 *,
+.project-card h3 *,
+.design-card h3 *,
+.future-card h3 *,
+.signature-card h3 *,
+.hub-card h3 *,
+.gallery-item h3 *,
+.experience-card h3 * {
+  color: inherit;
+           }
+
