@@ -3221,6 +3221,263 @@ Join ARS
 </script>
 
 
+<script>
+/* =========================================================
+   ARS COLLECTION — FEATURED OBJECTS ENGINE
+   ========================================================= */
+
+
+    /* =========================================================
+   ARS COLLECTION — FEATURED OBJECTS ENGINE
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const exhibition = document.querySelector("[data-featured-exhibition]");
+
+    if (!exhibition) return;
+
+    const selectors = Array.from(
+        document.querySelectorAll(".featured-object-select")
+    );
+
+    const image = exhibition.querySelector("[data-featured-image]");
+    const type = exhibition.querySelector("[data-featured-type]");
+    const number = exhibition.querySelector("[data-featured-number]");
+    const title = exhibition.querySelector("[data-featured-title]");
+    const subtitle = exhibition.querySelector("[data-featured-subtitle]");
+    const description = exhibition.querySelector("[data-featured-description]");
+    const category = exhibition.querySelector("[data-featured-category]");
+    const status = exhibition.querySelector("[data-featured-status]");
+    const link = exhibition.querySelector("[data-featured-link]");
+
+    const progressCurrent = document.querySelector(
+        "[data-featured-progress-current]"
+    );
+
+    const progressFill = document.querySelector(
+        "[data-featured-progress-fill]"
+    );
+
+    const previousButton = document.querySelector(
+        "[data-featured-prev]"
+    );
+
+    const nextButton = document.querySelector(
+        "[data-featured-next]"
+    );
+
+    if (!selectors.length || !image) return;
+
+    let currentIndex = 0;
+    let isChanging = false;
+
+    function updateFeaturedObject(index) {
+
+        if (isChanging) return;
+
+        const selected = selectors[index];
+
+        if (!selected) return;
+
+        isChanging = true;
+
+        currentIndex = index;
+
+        /* -----------------------------------------
+           READ OBJECT DATA
+        ----------------------------------------- */
+
+        const objectData = {
+            type: selected.dataset.type || "",
+            number: `${selected.dataset.index || ""} / ${selectors.length
+                .toString()
+                .padStart(2, "0")}`,
+            title: selected.dataset.title || "",
+            subtitle: selected.dataset.subtitle || "",
+            description: selected.dataset.description || "",
+            category: selected.dataset.category || "",
+            status: selected.dataset.status || "",
+            image: selected.dataset.image || "",
+            link: selected.dataset.link || "#"
+        };
+
+        /* -----------------------------------------
+           EXHIBITION TRANSITION
+        ----------------------------------------- */
+
+        exhibition.classList.add("is-switching");
+
+        /* -----------------------------------------
+           UPDATE CONTENT
+        ----------------------------------------- */
+
+        setTimeout(() => {
+
+            if (type) {
+                type.textContent = objectData.type;
+            }
+
+            if (number) {
+                number.textContent = objectData.number;
+            }
+
+            if (title) {
+                title.textContent = objectData.title;
+            }
+
+            if (subtitle) {
+                subtitle.textContent = objectData.subtitle;
+            }
+
+            if (description) {
+                description.textContent = objectData.description;
+            }
+
+            if (category) {
+                category.textContent = objectData.category;
+            }
+
+            if (status) {
+                status.textContent = objectData.status;
+            }
+
+            if (link) {
+                link.href = objectData.link;
+            }
+
+            if (image && objectData.image) {
+                image.src = objectData.image;
+                image.alt = objectData.title;
+            }
+
+            /* -----------------------------------------
+               ACTIVE SELECTOR
+            ----------------------------------------- */
+
+            selectors.forEach((button, buttonIndex) => {
+
+                const isActive = buttonIndex === currentIndex;
+
+                button.classList.toggle(
+                    "active",
+                    isActive
+                );
+
+                if (isActive) {
+                    button.setAttribute(
+                        "aria-current",
+                        "true"
+                    );
+                } else {
+                    button.removeAttribute(
+                        "aria-current"
+                    );
+                }
+
+            });
+
+            /* -----------------------------------------
+               PROGRESS
+            ----------------------------------------- */
+
+            if (progressCurrent) {
+                progressCurrent.textContent =
+                    String(index + 1).padStart(2, "0");
+            }
+
+            if (progressFill) {
+
+                const progress =
+                    ((index + 1) / selectors.length) * 100;
+
+                progressFill.style.width =
+                    `${progress}%`;
+            }
+
+            /* -----------------------------------------
+               END TRANSITION
+            ----------------------------------------- */
+
+            requestAnimationFrame(() => {
+
+                exhibition.classList.remove(
+                    "is-switching"
+                );
+
+                isChanging = false;
+
+            });
+
+        }, 220);
+    }
+
+    /* =====================================================
+       SELECTOR BUTTONS
+       ===================================================== */
+
+    selectors.forEach((button, index) => {
+
+        button.addEventListener("click", () => {
+
+            if (index === currentIndex) return;
+
+            updateFeaturedObject(index);
+
+        });
+
+    });
+
+    /* =====================================================
+       PREVIOUS
+       ===================================================== */
+
+    if (previousButton) {
+
+        previousButton.addEventListener("click", () => {
+
+            const previousIndex =
+                (currentIndex - 1 + selectors.length) %
+                selectors.length;
+
+            updateFeaturedObject(previousIndex);
+
+        });
+
+    }
+
+    /* =====================================================
+       NEXT
+       ===================================================== */
+
+    if (nextButton) {
+
+        nextButton.addEventListener("click", () => {
+
+            const nextIndex =
+                (currentIndex + 1) %
+                selectors.length;
+
+            updateFeaturedObject(nextIndex);
+
+        });
+
+    }
+
+    /* =====================================================
+       INITIAL STATE
+       ===================================================== */
+
+    updateFeaturedObject(0);
+
+
+
+});
+</script>
+
+
+
+  
 
 </body>
 
