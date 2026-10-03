@@ -7456,3 +7456,162 @@ section.collection-hero .collection-stats .stat-box:hover::before {
     transform: scale(0.965) translateY(8px);
     filter: blur(4px);
 }
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS COLLECTION — COMING SOON FILM OVERLAY
+   ========================================================= */
+
+.featured-film-overlay[hidden] {
+    display: none !important;
+}
+
+.featured-film-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: grid;
+    place-items: center;
+    padding: 22px;
+    background: rgba(2, 5, 10, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.featured-film-panel {
+    position: relative;
+    width: min(900px, 100%);
+    min-height: 420px;
+    overflow: hidden;
+    border: 1px solid rgba(111, 85, 57, 0.48);
+    background:
+        radial-gradient(
+            ellipse at 50% 45%,
+            rgba(47, 143, 255, 0.10),
+            transparent 48%
+        ),
+        linear-gradient(145deg, #10151d, #050608 75%);
+    box-shadow:
+        0 30px 100px rgba(0, 0, 0, 0.65),
+        0 0 35px rgba(47, 143, 255, 0.06);
+    animation: featuredFilmAppear 0.35s ease both;
+}
+
+.featured-film-frame {
+    min-height: 420px;
+    padding: 65px 24px 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.featured-film-close {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    z-index: 2;
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(154, 118, 80, 0.35);
+    background: rgba(255, 255, 255, 0.025);
+    color: #eef5fb;
+    font-size: 29px;
+    cursor: pointer;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.featured-film-close:hover {
+    background: rgba(47, 143, 255, 0.12);
+    color: #5f9bd6;
+}
+
+.featured-film-eyebrow,
+.featured-film-footer {
+    color: #9a7650;
+    font-size: 10px;
+    letter-spacing: 0.24em;
+}
+
+.featured-film-symbol {
+    display: grid;
+    place-items: center;
+    width: 76px;
+    height: 76px;
+    margin: 35px 0 25px;
+    padding-left: 4px;
+    border: 1px solid rgba(95, 155, 214, 0.55);
+    border-radius: 50%;
+    color: #5f9bd6;
+    font-size: 23px;
+    box-shadow: 0 0 30px rgba(47, 143, 255, 0.10);
+}
+
+.featured-film-frame h2 {
+    margin: 0;
+    color: #6f5539;
+    font-size: clamp(25px, 4vw, 42px);
+    font-weight: 500;
+    letter-spacing: 0.12em;
+}
+
+.featured-film-line {
+    width: 72px;
+    height: 2px;
+    margin: 18px 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(66, 153, 224, 0.75),
+        transparent
+    );
+}
+
+.featured-film-frame p {
+    max-width: 440px;
+    color: #eef5fb;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.featured-film-footer {
+    margin-top: 30px;
+    opacity: 0.75;
+}
+
+@keyframes featuredFilmAppear {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.985);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 600px) {
+    .featured-film-panel,
+    .featured-film-frame {
+        min-height: 360px;
+    }
+
+    .featured-film-frame {
+        padding: 55px 20px 35px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .featured-film-panel {
+        animation: none;
+    }
+   }
+
