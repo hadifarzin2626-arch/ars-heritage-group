@@ -7952,3 +7952,100 @@ section.collection-hero .collection-stats .stat-box:hover::before {
 .featured-object-title-line {
     width: 72px !important;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS COLLECTION — HERO SHORTCUTS
+   SHAPE & FORM ONLY
+   COLORS REMAIN UNCHANGED
+   ========================================================= */
+
+.collection-buttons {
+    gap: 16px !important;
+}
+
+/* ALL THREE SHORTCUTS */
+.collection-buttons .btn-primary,
+.collection-buttons .btn-secondary,
+.collection-buttons .btn-outline {
+    position: relative;
+    overflow: hidden;
+
+    min-height: 64px !important;
+    padding: 17px 30px !important;
+
+    /* Less generic than a pill */
+    border-radius: 14px !important;
+
+    /* Subtle industrial geometry */
+    clip-path: polygon(
+        0 10px,
+        10px 0,
+        calc(100% - 10px) 0,
+        100% 10px,
+        100% calc(100% - 10px),
+        calc(100% - 10px) 100%,
+        10px 100%,
+        0 calc(100% - 10px)
+    );
+
+    letter-spacing: 0.08em !important;
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease,
+        clip-path 0.3s ease;
+}
+
+/* HOVER — SHAPE / MOTION ONLY */
+.collection-buttons .btn-primary:hover,
+.collection-buttons .btn-secondary:hover,
+.collection-buttons .btn-outline:hover {
+    transform: translateY(-3px) !important;
+
+    clip-path: polygon(
+        0 7px,
+        7px 0,
+        calc(100% - 7px) 0,
+        100% 7px,
+        100% calc(100% - 7px),
+        calc(100% - 7px) 100%,
+        7px 100%,
+        0 calc(100% - 7px)
+    );
+
+    filter: brightness(1.05);
+}
+
+/* CLICK / PRESS */
+.collection-buttons .btn-primary:active,
+.collection-buttons .btn-secondary:active,
+.collection-buttons .btn-outline:active {
+    transform: translateY(-1px) !important;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+
+    .collection-buttons {
+        gap: 14px !important;
+    }
+
+    .collection-buttons .btn-primary,
+    .collection-buttons .btn-secondary,
+    .collection-buttons .btn-outline {
+        min-height: 62px !important;
+        padding: 16px 22px !important;
+        letter-spacing: 0.065em !important;
+    }
+}
