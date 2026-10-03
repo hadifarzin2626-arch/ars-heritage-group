@@ -3504,7 +3504,44 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
 
+    const filmButton = document.querySelector("[data-featured-film]");
+    const overlay = document.querySelector("[data-featured-film-overlay]");
+    const closeButton = document.querySelector("[data-featured-film-close]");
+
+    if (!filmButton || !overlay || !closeButton) return;
+
+    function openFilmWindow() {
+        overlay.hidden = false;
+        document.body.style.overflow = "hidden";
+        closeButton.focus();
+    }
+
+    function closeFilmWindow() {
+        overlay.hidden = true;
+        document.body.style.overflow = "";
+        filmButton.focus();
+    }
+
+    filmButton.addEventListener("click", openFilmWindow);
+    closeButton.addEventListener("click", closeFilmWindow);
+
+    overlay.addEventListener("click", (event) => {
+        if (event.target === overlay) {
+            closeFilmWindow();
+        }
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && !overlay.hidden) {
+            closeFilmWindow();
+        }
+    });
+
+});
+</script>
   
 
 </body>
