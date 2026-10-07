@@ -5179,3 +5179,217 @@ body.signature-page::selection {
 
 
 
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS SIGNATURE — HERO
+   DESIGN 02 — PURE CINEMATIC FIELD
+   ---------------------------------------------------------
+   • Subtle background parallax
+   • Soft luxury light field
+   • Minimal grid movement
+   • NO magnetic UI
+   • NO text scaling
+   • NO content transform
+   • NO layout changes
+   ========================================================= */
+
+.signature-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    --hero-x: 0px;
+    --hero-y: 0px;
+    --light-x: 50%;
+    --light-y: 50%;
+}
+
+/* ---------------------------------------------------------
+   BACKGROUND
+   --------------------------------------------------------- */
+
+.signature-hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    transform:
+        translate3d(
+            var(--hero-x),
+            var(--hero-y),
+            0
+        );
+
+    will-change: transform;
+}
+
+.signature-hero-background img {
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    object-fit: cover;
+
+    /* NO SCALE */
+    transform: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   LUXURY LIGHT FIELD
+   --------------------------------------------------------- */
+
+.signature-hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle 320px at
+            var(--light-x)
+            var(--light-y),
+
+            rgba(57,181,255,.075) 0%,
+            rgba(57,181,255,.035) 28%,
+            transparent 70%
+        );
+
+    opacity: .72;
+
+    pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   VERY SUBTLE ROSE-GOLD AMBIENT LIGHT
+   --------------------------------------------------------- */
+
+.signature-hero::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse 480px 280px at
+            calc(var(--light-x) - 10%)
+            calc(var(--light-y) + 8%),
+
+            rgba(201,133,104,.045) 0%,
+            rgba(201,133,104,.018) 35%,
+            transparent 72%
+        );
+
+    opacity: .65;
+}
+
+
+/* ---------------------------------------------------------
+   GRID — MINIMAL MOVEMENT ONLY
+   --------------------------------------------------------- */
+
+.signature-hero-grid {
+    position: absolute;
+    inset: 0;
+
+    z-index: 4;
+
+    pointer-events: none;
+
+    will-change: transform;
+}
+
+
+/* ---------------------------------------------------------
+   CONTENT — PROTECTED
+   --------------------------------------------------------- */
+
+.signature-hero-content {
+    position: relative;
+    z-index: 10;
+
+    transform: none !important;
+    scale: none !important;
+}
+
+
+/* Protect all typography from accidental scaling */
+
+.signature-hero h1,
+.signature-hero p,
+.signature-hero span,
+.signature-hero a,
+.signature-hero .signature-mark {
+    transform-origin: center center;
+}
+
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .signature-hero-background,
+    .signature-hero-grid {
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .signature-hero::before,
+    .signature-hero::after {
+        display: none;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE — EVEN MORE SUBTLE
+   --------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+    .signature-hero-background {
+        transform:
+            translate3d(
+                var(--hero-x),
+                var(--hero-y),
+                0
+            );
+    }
+
+    .signature-hero::before {
+        opacity: .48;
+    }
+
+    .signature-hero::after {
+        opacity: .38;
+    }
+}
+
+
+
+
+
+
+
+
