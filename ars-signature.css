@@ -3782,3 +3782,377 @@ body.signature-page::selection {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS SIGNATURE — EXCLUSIVE DARK INDUSTRIAL ROSE GOLD WORLDS
+   ---------------------------------------------------------
+   WORLD 01 — Signature Vehicles
+   WORLD 04 — Heritage Masterpiece
+   WORLD 06 — Founder Collection
+
+   Full Rose Gold architecture
+   + Dark Industrial Rose Gold base
+   + Electric Blue luminous upper/lower lines
+   + Metallic gloss / reflection
+   + Premium inner frame
+   ========================================================= */
+
+
+/* =========================================================
+   01 / 04 / 06
+   DARK INDUSTRIAL ROSE GOLD BASE
+   ========================================================= */
+
+.signature-world-featured,
+.signature-world:nth-of-type(4),
+.signature-world-founder {
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4F3028 0%,
+            #74483A 18%,
+            #9D6752 38%,
+            #B77D63 50%,
+            #9D6752 62%,
+            #74483A 82%,
+            #4F3028 100%
+        );
+
+    border:
+        1px solid rgba(240,198,164,.68);
+
+    box-shadow:
+        0 35px 100px rgba(0,0,0,.58),
+        inset 0 1px 0 rgba(255,236,215,.82),
+        inset 0 -1px 0 rgba(79,48,40,.75),
+        0 0 45px rgba(216,160,122,.15);
+}
+
+
+/* =========================================================
+   INNER ARCHITECTURAL FRAME
+   ========================================================= */
+
+.signature-world-featured::after,
+.signature-world:nth-of-type(4)::after,
+.signature-world-founder::after {
+
+    content: "";
+
+    position: absolute;
+    inset: 18px;
+
+    z-index: 3;
+
+    border:
+        1px solid rgba(240,198,164,.42);
+
+    box-shadow:
+        inset 0 0 30px rgba(255,224,194,.055),
+        0 0 20px rgba(216,160,122,.12);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   ELECTRIC BLUE — TOP LUMINOUS LINE
+   ========================================================= */
+
+.signature-world-featured::before,
+.signature-world:nth-of-type(4)::before,
+.signature-world-founder::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 18px;
+    left: 18px;
+    right: 18px;
+
+    height: 2px;
+
+    z-index: 6;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(21,155,255,.42) 12%,
+            #39B5FF 32%,
+            #C8EDFF 50%,
+            #39B5FF 68%,
+            rgba(21,155,255,.42) 88%,
+            transparent 100%
+        );
+
+    box-shadow:
+        0 0 7px rgba(57,181,255,.75),
+        0 0 18px rgba(21,155,255,.48),
+        0 0 34px rgba(21,155,255,.22);
+}
+
+
+/* =========================================================
+   ELECTRIC BLUE — LOWER LUMINOUS LINE
+   ========================================================= */
+
+.signature-world-featured .signature-world-content::after,
+.signature-world:nth-of-type(4) .signature-world-content::after,
+.signature-world-founder .signature-world-content::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: -28px;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #39B5FF 25%,
+            #C8EDFF 50%,
+            #39B5FF 75%,
+            transparent
+        );
+
+    box-shadow:
+        0 0 8px rgba(57,181,255,.70),
+        0 0 22px rgba(21,155,255,.38);
+
+    opacity: .95;
+}
+
+
+/* =========================================================
+   IMAGE LAYERS
+   ========================================================= */
+
+.signature-world-featured .signature-world-image,
+.signature-world:nth-of-type(4) .signature-world-image,
+.signature-world-founder .signature-world-image {
+
+    z-index: 0;
+}
+
+
+.signature-world-featured .signature-world-overlay,
+.signature-world:nth-of-type(4) .signature-world-overlay,
+.signature-world-founder .signature-world-overlay {
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(79,48,40,.08) 0%,
+            rgba(79,48,40,.14) 38%,
+            rgba(32,16,12,.58) 72%,
+            rgba(25,12,9,.88) 100%
+        );
+
+    mix-blend-mode: multiply;
+}
+
+
+.signature-world-featured .signature-world-content,
+.signature-world:nth-of-type(4) .signature-world-content,
+.signature-world-founder .signature-world-content {
+
+    z-index: 7;
+}
+
+
+/* =========================================================
+   BLUE WORLD LABEL
+   ========================================================= */
+
+.signature-world-featured .signature-world-label,
+.signature-world:nth-of-type(4) .signature-world-label,
+.signature-world-founder .signature-world-label {
+
+    color: #39B5FF !important;
+
+    text-shadow:
+        0 0 8px rgba(57,181,255,.65),
+        0 0 18px rgba(21,155,255,.38);
+}
+
+
+/* =========================================================
+   ROSE GOLD WORLD TITLE
+   ========================================================= */
+
+.signature-world-featured h3,
+.signature-world:nth-of-type(4) h3,
+.signature-world-founder h3 {
+
+    color: #E5B28F !important;
+
+    text-shadow:
+        0 0 8px rgba(255,224,194,.68),
+        0 0 18px rgba(216,160,122,.42),
+        0 0 32px rgba(216,160,122,.22),
+        0 1px 0 rgba(255,236,215,.90);
+}
+
+
+/* =========================================================
+   WORLD NUMBER
+   ========================================================= */
+
+.signature-world-featured .signature-world-number,
+.signature-world:nth-of-type(4) .signature-world-number,
+.signature-world-founder .signature-world-number {
+
+    color: #FFE0C2 !important;
+
+    text-shadow:
+        0 0 8px rgba(255,224,194,.72),
+        0 0 18px rgba(216,160,122,.42);
+}
+
+
+/* =========================================================
+   DISCOVER LINK
+   ========================================================= */
+
+.signature-world-featured .signature-world-content a,
+.signature-world:nth-of-type(4) .signature-world-content a,
+.signature-world-founder .signature-world-content a {
+
+    color: #FFE0C2;
+
+    text-shadow:
+        0 0 7px rgba(255,224,194,.38);
+}
+
+
+.signature-world-featured .signature-world-content a::after,
+.signature-world:nth-of-type(4) .signature-world-content a::after,
+.signature-world-founder .signature-world-content a::after {
+
+    background:
+        linear-gradient(
+            90deg,
+            #FFE0C2,
+            #39B5FF,
+            transparent
+        );
+
+    box-shadow:
+        0 0 8px rgba(57,181,255,.35);
+}
+
+
+/* =========================================================
+   IMAGE REFLECTION
+   ========================================================= */
+
+.signature-world-featured .signature-world-image::after,
+.signature-world:nth-of-type(4) .signature-world-image::after,
+.signature-world-founder .signature-world-image::after {
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(255,224,194,.06) 38%,
+            rgba(255,236,215,.20) 50%,
+            rgba(57,181,255,.08) 56%,
+            transparent 72%
+        );
+}
+
+
+/* =========================================================
+   WORLD 06 — FOUNDER COLLECTION
+   EXTRA DARK / EXTRA EXCLUSIVE
+   ========================================================= */
+
+.signature-world-founder {
+
+    background:
+        linear-gradient(
+            135deg,
+            #432821 0%,
+            #684033 20%,
+            #8F5B48 38%,
+            #AA7058 50%,
+            #8F5B48 62%,
+            #684033 80%,
+            #432821 100%
+        );
+
+    border-color:
+        rgba(255,236,215,.82);
+
+    box-shadow:
+        0 40px 120px rgba(0,0,0,.64),
+        inset 0 1px 0 rgba(255,245,232,.92),
+        inset 0 -1px 0 rgba(67,40,33,.82),
+        0 0 65px rgba(216,160,122,.18);
+}
+
+
+/* Founder — stronger blue signature line */
+
+.signature-world-founder::before {
+
+    height: 3px;
+
+    box-shadow:
+        0 0 9px rgba(57,181,255,.90),
+        0 0 24px rgba(21,155,255,.60),
+        0 0 42px rgba(21,155,255,.30);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .signature-world-featured::before,
+    .signature-world:nth-of-type(4)::before,
+    .signature-world-founder::before {
+
+        left: 10px;
+        right: 10px;
+        top: 10px;
+    }
+
+    .signature-world-featured::after,
+    .signature-world:nth-of-type(4)::after,
+    .signature-world-founder::after {
+
+        inset: 10px;
+    }
+}
