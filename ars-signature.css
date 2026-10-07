@@ -5470,3 +5470,869 @@ body.signature-page::selection {
                       }
 
 
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS SIGNATURE — FINAL DETAIL CORRECTION
+   01 — Section labels: dark industrial Rose Gold
+   02 — Blue heading lines: shorter / thinner / left aligned
+   03 — Signature Worlds 01 / 04 / 06: full Rose Gold
+   ========================================================= */
+
+
+/* =========================================================
+   01 — SMALL SECTION LABELS
+   Electric Blue text → Dark Glossy Industrial Rose Gold
+   Side lines → Rose Gold
+   ========================================================= */
+
+.signature-section-label {
+
+    color: #C98568 !important;
+
+    text-shadow:
+        0 1px 0 rgba(242,194,165,.55),
+        0 0 4px rgba(217,154,121,.62),
+        0 0 10px rgba(169,107,82,.42),
+        0 0 18px rgba(155,95,73,.20) !important;
+}
+
+
+/* LEFT LINE */
+
+.signature-section-label::before {
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(155,95,73,.28) 12%,
+            #9B5F49 34%,
+            #C98568 68%,
+            #E5AA87 100%
+        ) !important;
+
+    box-shadow:
+        0 0 4px rgba(229,170,135,.62),
+        0 0 10px rgba(201,133,104,.42),
+        0 0 18px rgba(169,107,82,.22) !important;
+}
+
+
+/* RIGHT LINE */
+
+.signature-section-label::after {
+
+    background:
+        linear-gradient(
+            90deg,
+            #E5AA87 0%,
+            #C98568 32%,
+            #9B5F49 68%,
+            rgba(155,95,73,.28) 88%,
+            transparent 100%
+        ) !important;
+
+    box-shadow:
+        0 0 4px rgba(229,170,135,.62),
+        0 0 10px rgba(201,133,104,.42),
+        0 0 18px rgba(169,107,82,.22) !important;
+}
+
+
+/* =========================================================
+   HERO EYEBROW
+   ========================================================= */
+
+.signature-hero .signature-eyebrow {
+
+    color: #C98568 !important;
+
+    text-shadow:
+        0 0 5px rgba(217,154,121,.52),
+        0 0 12px rgba(169,107,82,.32) !important;
+}
+
+
+/* =========================================================
+   02 — MAJOR BLUE LINES UNDER HEADINGS
+   30% THINNER
+   25% SHORTER
+   SHIFTED TOWARD LEFT
+   ========================================================= */
+
+.signature-page h1::after,
+.signature-page h2::after {
+
+    height: 1.4px !important;
+
+    width: 58.5% !important;
+
+    left: 43% !important;
+
+    transform: translateX(-50%) !important;
+
+    bottom: -18px !important;
+}
+
+
+/* HERO */
+
+.signature-hero h1::after {
+
+    width: 54% !important;
+
+    left: 43% !important;
+
+    height: 1.4px !important;
+
+    bottom: -20px !important;
+}
+
+
+/* INTRO */
+
+.signature-intro h2::after {
+
+    width: 61.5% !important;
+
+    left: 43% !important;
+
+    height: 1.4px !important;
+
+    bottom: -20px !important;
+}
+
+
+/* OTHER MAJOR HEADINGS */
+
+.signature-principles h2::after,
+.signature-worlds h2::after,
+.signature-experience h2::after,
+.signature-process h2::after,
+.signature-private h2::after,
+.signature-closing h2::after {
+
+    width: 55.5% !important;
+
+    left: 43% !important;
+
+    height: 1.4px !important;
+
+    bottom: -18px !important;
+}
+
+
+/* =========================================================
+   03 — THREE EXCLUSIVE SIGNATURE WORLD CARDS
+   01 / 04 / 06
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   COMMON INDUSTRIAL ROSE GOLD FOUNDATION
+   --------------------------------------------------------- */
+
+.signature-world-featured,
+.signature-world:has(
+    img[src*="heritage-masterpiece"]
+),
+.signature-world-founder {
+
+    background:
+        linear-gradient(
+            135deg,
+            #1A0E0B 0%,
+            #2B1712 20%,
+            #4B261C 43%,
+            #311913 67%,
+            #160B09 100%
+        ) !important;
+
+    border:
+        1px solid rgba(201,133,104,.62) !important;
+
+    box-shadow:
+        inset 0 0 0 1px rgba(242,194,165,.08),
+        inset 0 0 70px rgba(169,107,82,.12),
+        0 0 28px rgba(169,107,82,.18),
+        0 18px 50px rgba(0,0,0,.42) !important;
+}
+
+
+/* ---------------------------------------------------------
+   IMAGE — KEEP IT VISIBLE
+   --------------------------------------------------------- */
+
+.signature-world-featured .signature-world-image,
+.signature-world:has(
+    img[src*="heritage-masterpiece"]
+) .signature-world-image,
+.signature-world-founder .signature-world-image {
+
+    z-index: 0 !important;
+}
+
+
+.signature-world-featured .signature-world-image img,
+.signature-world:has(
+    img[src*="heritage-masterpiece"]
+) .signature-world-image img,
+.signature-world-founder .signature-world-image img {
+
+    filter:
+        saturate(.72)
+        contrast(1.08)
+        brightness(.70)
+        sepia(.08) !important;
+}
+
+
+/* ---------------------------------------------------------
+   ROSE GOLD ATMOSPHERIC OVERLAY
+   --------------------------------------------------------- */
+
+.signature-world-featured .signature-world-overlay,
+.signature-world:has(
+    img[src*="heritage-masterpiece"]
+) .signature-world-overlay,
+.signature-world-founder .signature-world-overlay {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(55,25,18,.72),
+            rgba(169,107,82,.22) 45%,
+            rgba(15,7,6,.76) 100%
+        ) !important;
+
+    z-index: 1 !important;
+}
+
+
+/* ---------------------------------------------------------
+   ELECTRIC BLUE OUTER TOP LINE
+   --------------------------------------------------------- */
+
+.signature-world-featured::before,
+.signature-world:has(
+    img[src*="heritage-masterpiece"]
+)::before,
+.signature-world-founder::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    z-index: 6;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            #159BFF 18%,
+            #39B5FF 38%,
+            #C8EDFF 50%,
+            #39B5FF 62%,
+            #159BFF 82%,
+            transparent 100%
+        ) !important;
+
+    box-shadow:
+        0 0 5px rgba(200,237,255,1),
+        0 0 12px rgba(57,181,255,.96),
+        0 0 24px rgba(21,155,255,.70),
+        0 0 40px rgba(21,155,255,.38) !important;
+
+    pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   ELECTRIC BLUE INNER FRAME
+   --------------------------------------------------------- */
+
+.signature-world-featured::after,
+.signature-world:has(
+    img[src*="heritage-masterpiece"]
+)::after,
+.signature-world-founder::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 9px;
+
+    z-index: 4;
+
+    border:
+        1px solid rgba(57,181,255,.34);
+
+    box-shadow:
+        inset 0 0 16px rgba(57,181,255,.055),
+        0 0 12px rgba(57,181,255,.08);
+
+    pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   CARD CONTENT
+   --------------------------------------------------------- */
+
+.signature-world-featured .signature-world-content,
+.signature-world:has(
+    img[src*="heritage-masterpiece"]
+) .signature-world-content,
+.signature-world-founder .signature-world-content {
+
+    z-index: 7 !important;
+}
+
+
+/* ---------------------------------------------------------
+   CARD NUMBERS — ROSE GOLD
+   --------------------------------------------------------- */
+
+.signature-world-featured .signature-world-number,
+.signature-world:has(
+    img[src*="heritage-masterpiece"]
+) .signature-world-number,
+.signature-world-founder .signature-world-number {
+
+    color: #E5AA87 !important;
+
+    text-shadow:
+        0 1px 0 rgba(242,194,165,.72),
+        0 0 5px rgba(229,170,135,.72),
+        0 0 12px rgba(201,133,104,.58),
+        0 0 24px rgba(169,107,82,.34) !important;
+}
+
+
+/* ---------------------------------------------------------
+   CARD LABEL — ELECTRIC BLUE
+   --------------------------------------------------------- */
+
+.signature-world-featured .signature-world-label,
+.signature-world:has(
+    img[src*="heritage-masterpiece"]
+) .signature-world-label,
+.signature-world-founder .signature-world-label {
+
+    color: #39B5FF !important;
+
+    text-shadow:
+        0 0 6px rgba(57,181,255,.58),
+        0 0 14px rgba(21,155,255,.32) !important;
+}
+
+
+/* ---------------------------------------------------------
+   CARD TITLE — INDUSTRIAL ROSE GOLD
+   --------------------------------------------------------- */
+
+.signature-world-featured h3,
+.signature-world:has(
+    img[src*="heritage-masterpiece"]
+) h3,
+.signature-world-founder h3 {
+
+    color: #E0A481 !important;
+
+    text-shadow:
+        0 1px 0 rgba(242,194,165,.80),
+        0 0 3px rgba(242,194,165,.76),
+        0 0 9px rgba(229,170,135,.72),
+        0 0 18px rgba(201,133,104,.58),
+        0 0 34px rgba(169,107,82,.34),
+        0 2px 16px rgba(0,0,0,.76) !important;
+}
+
+
+/* ---------------------------------------------------------
+   CARD DESCRIPTION — PEARL WHITE
+   --------------------------------------------------------- */
+
+.signature-world-featured p,
+.signature-world:has(
+    img[src*="heritage-masterpiece"]
+) p,
+.signature-world-founder p {
+
+    color: #F1F4F6 !important;
+
+    text-shadow:
+        0 1px 5px rgba(0,0,0,.72);
+}
+
+
+/* ---------------------------------------------------------
+   CARD CTA — ELECTRIC BLUE / ROSE GOLD RESPONSE
+   --------------------------------------------------------- */
+
+.signature-world-featured a,
+.signature-world:has(
+    img[src*="heritage-masterpiece"]
+) a,
+.signature-world-founder a {
+
+    color: #39B5FF !important;
+
+    text-shadow:
+        0 0 7px rgba(57,181,255,.46);
+
+    transition:
+        color .3s ease,
+        text-shadow .3s ease;
+}
+
+
+.signature-world-featured a:hover,
+.signature-world:has(
+    img[src*="heritage-masterpiece"]
+) a:hover,
+.signature-world-founder a:hover {
+
+    color: #E5AA87 !important;
+
+    text-shadow:
+        0 0 7px rgba(229,170,135,.62),
+        0 0 16px rgba(201,133,104,.36);
+}
+
+
+/* ---------------------------------------------------------
+   FOUNDER COLLECTION — DARKEST / MOST EXCLUSIVE
+   --------------------------------------------------------- */
+
+.signature-world-founder {
+
+    background:
+        linear-gradient(
+            135deg,
+            #100706 0%,
+            #1D0D0A 25%,
+            #3A1B14 48%,
+            #1E0D0A 72%,
+            #090404 100%
+        ) !important;
+
+    border-color:
+        rgba(201,133,104,.72) !important;
+
+    box-shadow:
+        inset 0 0 70px rgba(169,107,82,.16),
+        0 0 34px rgba(169,107,82,.22),
+        0 20px 55px rgba(0,0,0,.50) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS SIGNATURE — HERO INTERACTIVE FIELD
+   01 — Cinematic Parallax
+   02 — Luxury Light Field
+   03 — Magnetic UI
+   04 — Smooth Return
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   HERO — INTERACTION BASE
+   --------------------------------------------------------- */
+
+.signature-hero {
+    --hero-mx: 0;
+    --hero-my: 0;
+    --hero-light-x: 50%;
+    --hero-light-y: 50%;
+
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    perspective: 1400px;
+}
+
+
+/* ---------------------------------------------------------
+   01 — SUBTLE 3D PARALLAX
+   --------------------------------------------------------- */
+
+/*
+   The image moves only a few pixels.
+   The movement is intentionally restrained.
+*/
+
+.signature-hero-background {
+    transform:
+        translate3d(
+            calc(var(--hero-mx) * -1px),
+            calc(var(--hero-my) * -1px),
+            0
+        )
+        scale(1.025);
+
+    transition:
+        transform 0.18s cubic-bezier(.22,.61,.36,1);
+
+    will-change: transform;
+}
+
+
+/*
+   Hero image itself remains cinematic and calm.
+*/
+
+.signature-hero-background img {
+    transform:
+        scale(1.015);
+
+    will-change: transform;
+
+    transition:
+        filter 0.35s ease;
+}
+
+
+/*
+   Very subtle depth movement for the atmospheric
+   layers already present in the Hero.
+*/
+
+.signature-hero-grid,
+.signature-hero-vignette,
+.signature-hero-overlay {
+    will-change: transform;
+}
+
+.signature-hero-grid {
+    transform:
+        translate3d(
+            calc(var(--hero-mx) * .35px),
+            calc(var(--hero-my) * .35px),
+            0
+        );
+
+    transition:
+        transform 0.35s cubic-bezier(.22,.61,.36,1);
+}
+
+
+/* ---------------------------------------------------------
+   02 — LUXURY LIGHT FIELD
+   --------------------------------------------------------- */
+
+/*
+   This is NOT a cursor glow.
+   It behaves like a soft architectural light field.
+*/
+
+.signature-hero::before {
+    content: "";
+
+    position: absolute;
+    inset: -18%;
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle 260px at
+            var(--hero-light-x)
+            var(--hero-light-y),
+            rgba(57,181,255,.105) 0%,
+            rgba(57,181,255,.055) 24%,
+            rgba(57,181,255,.022) 42%,
+            transparent 72%
+        );
+
+    mix-blend-mode: screen;
+
+    opacity: .72;
+
+    filter: blur(18px);
+
+    transition:
+        opacity .45s ease;
+
+    will-change:
+        background;
+}
+
+
+/*
+   A second, much warmer reflection.
+   This prevents the Hero from becoming visually
+   dominated by blue.
+*/
+
+.signature-hero::after {
+    content: "";
+
+    position: absolute;
+    inset: -20%;
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse 420px 250px at
+            calc(var(--hero-light-x) - 8%)
+            calc(var(--hero-light-y) + 10%),
+            rgba(216,160,122,.065) 0%,
+            rgba(216,160,122,.025) 35%,
+            transparent 72%
+        );
+
+    mix-blend-mode: screen;
+
+    opacity: .55;
+
+    filter: blur(24px);
+
+    transition:
+        opacity .45s ease;
+
+    will-change:
+        background;
+}
+
+
+/*
+   Focus field:
+   tiny increase in visual presence around
+   the interaction area.
+*/
+
+.signature-hero-background img {
+    filter:
+        saturate(.94)
+        contrast(1.045)
+        brightness(.88);
+}
+
+.signature-hero.signature-hero-active
+.signature-hero-background img {
+    filter:
+        saturate(.98)
+        contrast(1.055)
+        brightness(.90);
+}
+
+
+/* ---------------------------------------------------------
+   HERO CONTENT — REMAINS STABLE
+   --------------------------------------------------------- */
+
+/*
+   Important:
+   Text does NOT chase the mouse.
+   This keeps the interaction luxurious.
+*/
+
+.signature-hero-content {
+    position: relative;
+    z-index: 10;
+
+    transform: translate3d(0,0,0);
+
+    will-change: transform;
+}
+
+
+/* ---------------------------------------------------------
+   03 — MAGNETIC UI
+   --------------------------------------------------------- */
+
+.signature-hero .signature-mark,
+.signature-hero .signature-hero-enter {
+    --mag-x: 0px;
+    --mag-y: 0px;
+
+    transform:
+        translate3d(
+            var(--mag-x),
+            var(--mag-y),
+            0
+        );
+
+    transition:
+        transform .28s cubic-bezier(.22,.61,.36,1);
+
+    will-change: transform;
+}
+
+
+/*
+   Slightly stronger magnetic response for
+   the main CTA.
+*/
+
+.signature-hero .signature-hero-enter {
+    --mag-strength: 1;
+}
+
+
+/*
+   Signature mark gets a much smaller movement.
+*/
+
+.signature-hero .signature-mark {
+    --mag-strength: .55;
+}
+
+
+/*
+   CTA hover refinement.
+*/
+
+.signature-hero .signature-hero-enter:hover {
+    transition:
+        transform .18s cubic-bezier(.22,.61,.36,1),
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+
+/* ---------------------------------------------------------
+   MAGNETIC BLUE RESPONSE
+   --------------------------------------------------------- */
+
+.signature-hero .signature-hero-enter::after {
+    content: "";
+
+    position: absolute;
+    inset: -1px;
+
+    pointer-events: none;
+
+    border: 1px solid rgba(57,181,255,0);
+
+    opacity: 0;
+
+    transition:
+        opacity .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+}
+
+.signature-hero .signature-hero-enter:hover::after {
+    opacity: 1;
+
+    border-color:
+        rgba(57,181,255,.42);
+
+    box-shadow:
+        0 0 14px rgba(57,181,255,.18),
+        inset 0 0 12px rgba(57,181,255,.035);
+}
+
+
+/* ---------------------------------------------------------
+   HERO SIDE INFORMATION
+   --------------------------------------------------------- */
+
+.signature-hero-side {
+    position: relative;
+    z-index: 8;
+
+    transition:
+        transform .4s cubic-bezier(.22,.61,.36,1);
+
+    will-change: transform;
+}
+
+
+/* ---------------------------------------------------------
+   DISCOVER INDICATOR
+   --------------------------------------------------------- */
+
+.signature-scroll {
+    position: relative;
+    z-index: 8;
+
+    transition:
+        transform .4s cubic-bezier(.22,.61,.36,1);
+
+    will-change: transform;
+}
+
+
+/* ---------------------------------------------------------
+   04 — SMOOTH RETURN
+   --------------------------------------------------------- */
+
+/*
+   JS removes .signature-hero-active when pointer leaves.
+   CSS transitions then allow every layer to return
+   naturally toward its neutral state.
+*/
+
+.signature-hero:not(.signature-hero-active)::before,
+.signature-hero:not(.signature-hero-active)::after {
+    opacity: .48;
+}
+
+
+/* ---------------------------------------------------------
+   REDUCE MOTION — ACCESSIBILITY
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .signature-hero-background,
+    .signature-hero-grid,
+    .signature-hero .signature-mark,
+    .signature-hero .signature-hero-enter,
+    .signature-hero-side,
+    .signature-scroll {
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .signature-hero::before,
+    .signature-hero::after {
+        display: none;
+    }
+
+}
