@@ -4156,3 +4156,1045 @@ body.signature-page::selection {
         inset: 10px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS SIGNATURE — MASTER ROSE GOLD / CHAMPAGNE OVERRIDE
+   =========================================================
+   GLOBAL COLOR DNA — FINAL
+
+   Rose Gold:
+   • ultra glossy
+   • highly reflective
+   • transparent metallic feeling
+   • slightly warmer / more champagne-gold
+   • darker copper/rose base
+   • NEVER dusty pink
+   • NEVER flat matte
+   • NEVER ordinary yellow gold
+
+   MAIN HEADINGS → Brilliant Champagne Rose Gold
+   SMALL LABELS  → Electric Blue
+   LIGHT LINES   → Brilliant Rose Gold
+   BODY TEXT     → Pearl White
+   ========================================================= */
+
+
+/* =========================================================
+   MASTER COLOR TOKENS
+   ========================================================= */
+
+.signature-page {
+
+    --signature-rose-base: #B97858;
+    --signature-rose-deep: #744033;
+    --signature-rose-copper: #9A5C45;
+
+    --signature-rose-main: #E7B88F;
+    --signature-rose-light: #F6D5B5;
+    --signature-rose-bright: #FFE9D2;
+    --signature-rose-white: #FFF4E8;
+
+    /* Slightly more champagne / gold warmth */
+    --signature-champagne: #E9C39B;
+    --signature-champagne-light: #F7D9B0;
+    --signature-champagne-white: #FFF0D8;
+
+    --signature-blue: #39B5FF;
+    --signature-blue-bright: #8BD9FF;
+
+    --signature-pearl: #F1F4F6;
+}
+
+
+/* =========================================================
+   MAIN HEADINGS
+   H1 / H2 / H3
+   ULTRA-BRIGHT METALLIC ROSE GOLD
+   ========================================================= */
+
+.signature-page h1,
+.signature-page h2,
+.signature-page h3 {
+
+    color:
+        var(--signature-rose-light) !important;
+
+    text-shadow:
+
+        /* crisp metallic reflection */
+        0 1px 0
+            rgba(255,244,232,.95),
+
+        0 0 2px
+            rgba(255,240,216,.95),
+
+        /* brilliant Rose Gold core */
+        0 0 8px
+            rgba(246,213,181,.82),
+
+        0 0 16px
+            rgba(231,184,143,.68),
+
+        0 0 30px
+            rgba(216,160,122,.48),
+
+        /* subtle warm champagne aura */
+        0 0 48px
+            rgba(233,195,155,.26),
+
+        /* depth */
+        0 3px 18px
+            rgba(0,0,0,.62);
+}
+
+
+/* =========================================================
+   LARGE SECTION HEADINGS
+   EXTRA BRILLIANCE
+   ========================================================= */
+
+.signature-hero h1,
+.signature-intro h2,
+.signature-principles h2,
+.signature-worlds h2,
+.signature-experience h2,
+.signature-process h2,
+.signature-private h2,
+.signature-closing h2 {
+
+    color:
+        var(--signature-rose-bright) !important;
+
+    text-shadow:
+
+        0 1px 0
+            rgba(255,244,232,1),
+
+        0 0 3px
+            rgba(255,240,216,.98),
+
+        0 0 9px
+            rgba(246,213,181,.92),
+
+        0 0 18px
+            rgba(231,184,143,.78),
+
+        0 0 34px
+            rgba(216,160,122,.58),
+
+        0 0 58px
+            rgba(233,195,155,.34),
+
+        0 4px 22px
+            rgba(0,0,0,.68);
+}
+
+
+/* =========================================================
+   HERO MAIN TITLE
+   MOST BRILLIANT TYPOGRAPHY ON THE PAGE
+   ========================================================= */
+
+.signature-hero h1 {
+
+    color:
+        #FFF0DC !important;
+
+    text-shadow:
+
+        0 1px 0
+            #FFF8EF,
+
+        0 0 3px
+            rgba(255,244,232,1),
+
+        0 0 10px
+            rgba(255,224,194,.95),
+
+        0 0 22px
+            rgba(231,184,143,.82),
+
+        0 0 42px
+            rgba(216,160,122,.60),
+
+        0 0 70px
+            rgba(233,195,155,.32),
+
+        0 5px 25px
+            rgba(0,0,0,.72);
+}
+
+
+/* =========================================================
+   WORLD TITLES
+   ========================================================= */
+
+.signature-world h3,
+.signature-principle h3,
+.signature-process-step h3 {
+
+    color:
+        var(--signature-rose-light) !important;
+
+    text-shadow:
+
+        0 1px 0
+            rgba(255,244,232,.95),
+
+        0 0 3px
+            rgba(255,236,215,.92),
+
+        0 0 10px
+            rgba(246,213,181,.78),
+
+        0 0 20px
+            rgba(216,160,122,.55),
+
+        0 0 34px
+            rgba(233,195,155,.26),
+
+        0 2px 14px
+            rgba(0,0,0,.70);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS SIGNATURE — MASTER ELECTRIC BLUE HEADING LIGHT
+   ---------------------------------------------------------
+   ALL MAJOR ROSE GOLD HEADINGS
+   → Brilliant Electric Blue luminous underline
+
+   No bronze beginning.
+   No dim blue.
+   No muted line.
+   Pure Electric Blue + bright core + strong glow.
+   ========================================================= */
+
+
+/* =========================================================
+   MASTER HEADING UNDERLINE
+   ========================================================= */
+
+.signature-page h1,
+.signature-page h2 {
+
+    position: relative;
+    display: inline-block;
+}
+
+
+/* =========================================================
+   ELECTRIC BLUE LIGHT LINE
+   ========================================================= */
+
+.signature-page h1::after,
+.signature-page h2::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -18px;
+
+    width: 78%;
+    height: 2px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(57,181,255,.35) 12%,
+            #159BFF 28%,
+            #39B5FF 42%,
+            #C8EDFF 50%,
+            #39B5FF 58%,
+            #159BFF 72%,
+            rgba(57,181,255,.35) 88%,
+            transparent 100%
+        );
+
+    box-shadow:
+
+        0 0 4px
+            rgba(200,237,255,.98),
+
+        0 0 9px
+            rgba(57,181,255,.95),
+
+        0 0 18px
+            rgba(21,155,255,.82),
+
+        0 0 32px
+            rgba(21,155,255,.58),
+
+        0 0 55px
+            rgba(21,155,255,.30);
+
+    opacity: 1;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO TITLE — STRONGEST BLUE LIGHT
+   ========================================================= */
+
+.signature-hero h1::after {
+
+    width: 72%;
+    height: 2px;
+    bottom: -20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #159BFF 22%,
+            #39B5FF 40%,
+            #C8EDFF 50%,
+            #39B5FF 60%,
+            #159BFF 78%,
+            transparent
+        );
+
+    box-shadow:
+
+        0 0 5px
+            rgba(200,237,255,1),
+
+        0 0 11px
+            rgba(57,181,255,1),
+
+        0 0 22px
+            rgba(21,155,255,.92),
+
+        0 0 42px
+            rgba(21,155,255,.68),
+
+        0 0 70px
+            rgba(21,155,255,.34);
+}
+
+
+/* =========================================================
+   NOT BUILT FOR EVERYONE.
+   This is the first major section heading.
+   Make the line especially visible.
+   ========================================================= */
+
+.signature-intro h2::after {
+
+    width: 82%;
+    height: 2px;
+    bottom: -20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            #159BFF 20%,
+            #39B5FF 38%,
+            #C8EDFF 50%,
+            #39B5FF 62%,
+            #159BFF 80%,
+            transparent 100%
+        );
+
+    box-shadow:
+
+        0 0 5px
+            rgba(200,237,255,1),
+
+        0 0 12px
+            rgba(57,181,255,1),
+
+        0 0 24px
+            rgba(21,155,255,.92),
+
+        0 0 42px
+            rgba(21,155,255,.62),
+
+        0 0 68px
+            rgba(21,155,255,.30);
+}
+
+
+/* =========================================================
+   ALL OTHER MAJOR SECTION HEADINGS
+   ========================================================= */
+
+.signature-principles h2::after,
+.signature-worlds h2::after,
+.signature-experience h2::after,
+.signature-process h2::after,
+.signature-private h2::after,
+.signature-closing h2::after {
+
+    width: 74%;
+    height: 2px;
+    bottom: -18px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(21,155,255,.45) 12%,
+            #159BFF 28%,
+            #39B5FF 42%,
+            #C8EDFF 50%,
+            #39B5FF 58%,
+            #159BFF 72%,
+            rgba(21,155,255,.45) 88%,
+            transparent 100%
+        );
+
+    box-shadow:
+
+        0 0 4px
+            rgba(200,237,255,.98),
+
+        0 0 10px
+            rgba(57,181,255,.95),
+
+        0 0 20px
+            rgba(21,155,255,.82),
+
+        0 0 36px
+            rgba(21,155,255,.55),
+
+        0 0 58px
+            rgba(21,155,255,.28);
+}
+
+
+/* =========================================================
+   WORLD / PRINCIPLE / PROCESS TITLES
+   These are also Rose Gold and deserve the same language.
+   ========================================================= */
+
+.signature-world h3,
+.signature-principle h3,
+.signature-process-step h3 {
+
+    position: relative;
+    display: inline-block;
+}
+
+
+/* =========================================================
+   SMALLER HEADING BLUE LINE
+   ========================================================= */
+
+.signature-world h3::after,
+.signature-principle h3::after,
+.signature-process-step h3::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -11px;
+
+    width: 68%;
+    height: 1.5px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #159BFF 25%,
+            #39B5FF 42%,
+            #C8EDFF 50%,
+            #39B5FF 58%,
+            #159BFF 75%,
+            transparent
+        );
+
+    box-shadow:
+
+        0 0 4px
+            rgba(200,237,255,.95),
+
+        0 0 9px
+            rgba(57,181,255,.90),
+
+        0 0 17px
+            rgba(21,155,255,.72),
+
+        0 0 30px
+            rgba(21,155,255,.38);
+}
+
+
+/* =========================================================
+   IMPORTANT:
+   REMOVE THE OLD BRONZE STARTING EFFECT FROM SECTION LABELS
+   Keep their lines, but make them PURE ELECTRIC BLUE.
+   ========================================================= */
+
+.signature-section-label::before,
+.signature-section-label::after {
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(21,155,255,.35) 12%,
+            #159BFF 30%,
+            #39B5FF 43%,
+            #C8EDFF 50%,
+            #39B5FF 57%,
+            #159BFF 70%,
+            rgba(21,155,255,.35) 88%,
+            transparent 100%
+        ) !important;
+
+    box-shadow:
+
+        0 0 4px
+            rgba(200,237,255,.95),
+
+        0 0 9px
+            rgba(57,181,255,.95),
+
+        0 0 18px
+            rgba(21,155,255,.78),
+
+        0 0 32px
+            rgba(21,155,255,.42) !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .signature-page h1::after,
+    .signature-page h2::after {
+
+        width: 70%;
+        bottom: -14px;
+    }
+
+    .signature-world h3::after,
+    .signature-principle h3::after,
+    .signature-process-step h3::after {
+
+        width: 60%;
+        bottom: -9px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS SIGNATURE
+   EXCLUSIVE FULL ROSE GOLD WORLDS
+   01 — SIGNATURE VEHICLES
+   04 — HERITAGE MASTERPIECE
+   06 — FOUNDER COLLECTION
+
+   FULL DARK INDUSTRIAL ROSE GOLD
+   + ELECTRIC BLUE ARCHITECTURAL LIGHT
+   ========================================================= */
+
+
+/* =========================================================
+   TARGET THE THREE SPECIAL WORLDS
+   ========================================================= */
+
+.signature-world-featured,
+.signature-world:has(.signature-world-number:nth-child(1)),
+.signature-world-founder {
+
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+
+    background:
+        linear-gradient(
+            135deg,
+            #3E241E 0%,
+            #5C382D 14%,
+            #80503F 30%,
+            #A66A52 44%,
+            #C08A6C 50%,
+            #A66A52 56%,
+            #80503F 70%,
+            #5C382D 86%,
+            #3E241E 100%
+        ) !important;
+
+    border:
+        1px solid rgba(246,213,181,.72) !important;
+
+    box-shadow:
+        0 35px 100px rgba(0,0,0,.68),
+        inset 0 1px 0 rgba(255,244,232,.92),
+        inset 0 -1px 0 rgba(48,27,22,.88),
+        0 0 35px rgba(216,160,122,.22),
+        0 0 75px rgba(216,160,122,.12);
+}
+
+
+/* =========================================================
+   WORLD 06 — FOUNDER COLLECTION
+   DARKEST / MOST EXCLUSIVE
+   ========================================================= */
+
+.signature-world-founder {
+
+    background:
+        linear-gradient(
+            135deg,
+            #321B17 0%,
+            #4E2E25 18%,
+            #704535 34%,
+            #94604A 46%,
+            #AF765B 50%,
+            #94604A 54%,
+            #704535 66%,
+            #4E2E25 82%,
+            #321B17 100%
+        ) !important;
+
+    border-color:
+        rgba(255,236,215,.82) !important;
+
+    box-shadow:
+        0 45px 125px rgba(0,0,0,.76),
+        inset 0 1px 0 rgba(255,245,232,.98),
+        inset 0 -1px 0 rgba(50,27,23,.92),
+        0 0 45px rgba(216,160,122,.24),
+        0 0 90px rgba(216,160,122,.13);
+}
+
+
+/* =========================================================
+   REMOVE DARK IMAGE OVERLAY FROM SPECIAL CARDS
+   OTHERWISE ROSE GOLD CANNOT READ AS ROSE GOLD
+   ========================================================= */
+
+.signature-world-featured .signature-world-overlay,
+.signature-world-founder .signature-world-overlay {
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(48,27,22,.04) 0%,
+            rgba(48,27,22,.10) 40%,
+            rgba(25,12,9,.34) 72%,
+            rgba(18,8,6,.68) 100%
+        ) !important;
+
+    mix-blend-mode: multiply;
+}
+
+
+/* =========================================================
+   HERITAGE MASTERPIECE
+   TARGET BY ITS IMAGE
+   ========================================================= */
+
+.signature-world:has(
+    img[src*="heritage-masterpiece"]
+) {
+
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+
+    background:
+        linear-gradient(
+            135deg,
+            #3E241E 0%,
+            #5C382D 14%,
+            #80503F 30%,
+            #A66A52 44%,
+            #C08A6C 50%,
+            #A66A52 56%,
+            #80503F 70%,
+            #5C382D 86%,
+            #3E241E 100%
+        ) !important;
+
+    border:
+        1px solid rgba(246,213,181,.72) !important;
+
+    box-shadow:
+        0 35px 100px rgba(0,0,0,.68),
+        inset 0 1px 0 rgba(255,244,232,.92),
+        inset 0 -1px 0 rgba(48,27,22,.88),
+        0 0 35px rgba(216,160,122,.22),
+        0 0 75px rgba(216,160,122,.12);
+}
+
+
+.signature-world:has(
+    img[src*="heritage-masterpiece"]
+) .signature-world-overlay {
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(48,27,22,.04),
+            rgba(48,27,22,.10) 40%,
+            rgba(25,12,9,.34) 72%,
+            rgba(18,8,6,.68) 100%
+        ) !important;
+
+    mix-blend-mode: multiply;
+}
+
+
+/* =========================================================
+   ELECTRIC BLUE TOP FRAME
+   ========================================================= */
+
+.signature-world-featured::before,
+.signature-world:has(
+    img[src*="heritage-masterpiece"]
+)::before,
+.signature-world-founder::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 16px;
+    left: 16px;
+    right: 16px;
+
+    height: 3px;
+
+    z-index: 20;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            #159BFF 15%,
+            #39B5FF 32%,
+            #C8EDFF 50%,
+            #39B5FF 68%,
+            #159BFF 85%,
+            transparent 100%
+        );
+
+    box-shadow:
+        0 0 5px rgba(200,237,255,1),
+        0 0 12px rgba(57,181,255,1),
+        0 0 24px rgba(21,155,255,.92),
+        0 0 44px rgba(21,155,255,.60),
+        0 0 75px rgba(21,155,255,.30);
+}
+
+
+/* =========================================================
+   ELECTRIC BLUE INNER FRAME
+   ========================================================= */
+
+.signature-world-featured::after,
+.signature-world:has(
+    img[src*="heritage-masterpiece"]
+)::after,
+.signature-world-founder::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 16px;
+
+    z-index: 15;
+
+    border:
+        1px solid rgba(57,181,255,.48);
+
+    box-shadow:
+        inset 0 0 24px rgba(57,181,255,.055),
+        0 0 14px rgba(57,181,255,.16),
+        0 0 30px rgba(21,155,255,.10);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   IMAGE
+   KEEP IT VISIBLE — NOT BEHIND THE CARD
+   ========================================================= */
+
+.signature-world-featured .signature-world-image,
+.signature-world:has(
+    img[src*="heritage-masterpiece"]
+) .signature-world-image,
+.signature-world-founder .signature-world-image {
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.signature-world-featured .signature-world-content,
+.signature-world:has(
+    img[src*="heritage-masterpiece"]
+) .signature-world-content,
+.signature-world-founder .signature-world-content {
+
+    position: relative;
+
+    z-index: 25;
+}
+
+
+/* =========================================================
+   SPECIAL CARD LABEL
+   ========================================================= */
+
+.signature-world-featured .signature-world-label,
+.signature-world:has(
+    img[src*="heritage-masterpiece"]
+) .signature-world-label,
+.signature-world-founder .signature-world-label {
+
+    color: #8BD9FF !important;
+
+    text-shadow:
+        0 0 5px rgba(200,237,255,.90),
+        0 0 12px rgba(57,181,255,1),
+        0 0 25px rgba(21,155,255,.78),
+        0 0 42px rgba(21,155,255,.38);
+}
+
+
+/* =========================================================
+   SPECIAL CARD NUMBER
+   ========================================================= */
+
+.signature-world-featured .signature-world-number,
+.signature-world:has(
+    img[src*="heritage-masterpiece"]
+) .signature-world-number,
+.signature-world-founder .signature-world-number {
+
+    color: #FFE9D2 !important;
+
+    text-shadow:
+        0 1px 0 rgba(255,244,232,1),
+        0 0 5px rgba(255,233,210,1),
+        0 0 12px rgba(246,213,181,.90),
+        0 0 25px rgba(216,160,122,.60);
+}
+
+
+/* =========================================================
+   SPECIAL CARD TITLE
+   ========================================================= */
+
+.signature-world-featured h3,
+.signature-world:has(
+    img[src*="heritage-masterpiece"]
+) h3,
+.signature-world-founder h3 {
+
+    color: #F6D5B5 !important;
+
+    text-shadow:
+        0 1px 0 rgba(255,244,232,1),
+        0 0 4px rgba(255,233,210,1),
+        0 0 10px rgba(246,213,181,.92),
+        0 0 22px rgba(216,160,122,.72),
+        0 0 40px rgba(233,195,155,.35),
+        0 3px 16px rgba(0,0,0,.72);
+}
+
+
+/* =========================================================
+   SPECIAL CARD DESCRIPTION
+   ========================================================= */
+
+.signature-world-featured p,
+.signature-world:has(
+    img[src*="heritage-masterpiece"]
+) p,
+.signature-world-founder p {
+
+    color: #FFF4E8 !important;
+
+    text-shadow:
+        0 1px 8px rgba(0,0,0,.80);
+}
+
+
+/* =========================================================
+   DISCOVER LINK
+   ========================================================= */
+
+.signature-world-featured .signature-world-content a,
+.signature-world:has(
+    img[src*="heritage-masterpiece"]
+) .signature-world-content a,
+.signature-world-founder .signature-world-content a {
+
+    color: #FFE9D2 !important;
+
+    text-shadow:
+        0 0 6px rgba(255,233,210,.68),
+        0 0 15px rgba(216,160,122,.35);
+}
+
+
+.signature-world-featured .signature-world-content a::after,
+.signature-world:has(
+    img[src*="heritage-masterpiece"]
+) .signature-world-content a::after,
+.signature-world-founder .signature-world-content a::after {
+
+    background:
+        linear-gradient(
+            90deg,
+            #FFE9D2,
+            #39B5FF,
+            #C8EDFF,
+            transparent
+        ) !important;
+
+    box-shadow:
+        0 0 7px rgba(57,181,255,.90),
+        0 0 18px rgba(21,155,255,.50);
+}
+
+
+/* =========================================================
+   ELECTRIC BLUE LOWER LIGHT
+   ========================================================= */
+
+.signature-world-featured .signature-world-content::after,
+.signature-world:has(
+    img[src*="heritage-masterpiece"]
+) .signature-world-content::after,
+.signature-world-founder .signature-world-content::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: -30px;
+
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #159BFF 20%,
+            #39B5FF 38%,
+            #C8EDFF 50%,
+            #39B5FF 62%,
+            #159BFF 80%,
+            transparent
+        );
+
+    box-shadow:
+        0 0 5px rgba(200,237,255,1),
+        0 0 12px rgba(57,181,255,1),
+        0 0 25px rgba(21,155,255,.82),
+        0 0 45px rgba(21,155,255,.45);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .signature-world-featured::before,
+    .signature-world:has(
+        img[src*="heritage-masterpiece"]
+    )::before,
+    .signature-world-founder::before {
+
+        top: 10px;
+        left: 10px;
+        right: 10px;
+    }
+
+    .signature-world-featured::after,
+    .signature-world:has(
+        img[src*="heritage-masterpiece"]
+    )::after,
+    .signature-world-founder::after {
+
+        inset: 10px;
+    }
+}
+
