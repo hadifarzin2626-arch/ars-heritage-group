@@ -5495,17 +5495,6 @@ body.signature-page::selection {
    Side lines → Rose Gold
    ========================================================= */
 
-.signature-section-label {
-
-    color: #C98568 !important;
-
-    text-shadow:
-        0 1px 0 rgba(242,194,165,.55),
-        0 0 4px rgba(217,154,121,.62),
-        0 0 10px rgba(169,107,82,.42),
-        0 0 18px rgba(155,95,73,.20) !important;
-}
-
 
 /* LEFT LINE */
 
@@ -5632,333 +5621,353 @@ body.signature-page::selection {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* =========================================================
-   03 — THREE EXCLUSIVE SIGNATURE WORLD CARDS
-   01 / 04 / 06
+   ARS SIGNATURE — HERO INTERACTION
+   DESIGN 02 — CINEMATIC INTELLIGENCE FIELD
+   ---------------------------------------------------------
+   • Cinematic background parallax
+   • Luxury light field
+   • Subtle grid movement
+   • Magnetic Signature mark
+   • Magnetic CTA
+   • NO text zoom
+   • NO layout scaling
    ========================================================= */
 
+.signature-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
 
-/* ---------------------------------------------------------
-   COMMON INDUSTRIAL ROSE GOLD FOUNDATION
-   --------------------------------------------------------- */
+    --hero-parallax-x: 0px;
+    --hero-parallax-y: 0px;
 
-.signature-world-featured,
-.signature-world:has(
-    img[src*="heritage-masterpiece"]
-),
-.signature-world-founder {
-
-    background:
-        linear-gradient(
-            135deg,
-            #1A0E0B 0%,
-            #2B1712 20%,
-            #4B261C 43%,
-            #311913 67%,
-            #160B09 100%
-        ) !important;
-
-    border:
-        1px solid rgba(201,133,104,.62) !important;
-
-    box-shadow:
-        inset 0 0 0 1px rgba(242,194,165,.08),
-        inset 0 0 70px rgba(169,107,82,.12),
-        0 0 28px rgba(169,107,82,.18),
-        0 18px 50px rgba(0,0,0,.42) !important;
+    --hero-light-x: 50%;
+    --hero-light-y: 50%;
 }
 
 
-/* ---------------------------------------------------------
-   IMAGE — KEEP IT VISIBLE
-   --------------------------------------------------------- */
+/* =========================================================
+   01 — BACKGROUND PARALLAX
+   ========================================================= */
 
-.signature-world-featured .signature-world-image,
-.signature-world:has(
-    img[src*="heritage-masterpiece"]
-) .signature-world-image,
-.signature-world-founder .signature-world-image {
+.signature-hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
 
-    z-index: 0 !important;
+    transform:
+        translate3d(
+            var(--hero-parallax-x),
+            var(--hero-parallax-y),
+            0
+        );
+
+    will-change: transform;
 }
 
+.signature-hero-background img {
+    width: 100%;
+    height: 100%;
+    display: block;
 
-.signature-world-featured .signature-world-image img,
-.signature-world:has(
-    img[src*="heritage-masterpiece"]
-) .signature-world-image img,
-.signature-world-founder .signature-world-image img {
+    object-fit: cover;
+
+    transform: scale(1.015);
 
     filter:
-        saturate(.72)
-        contrast(1.08)
-        brightness(.70)
-        sepia(.08) !important;
+        saturate(.94)
+        contrast(1.045)
+        brightness(.88);
+
+    transition:
+        filter .45s ease;
+
+    will-change: filter;
 }
 
 
-/* ---------------------------------------------------------
-   ROSE GOLD ATMOSPHERIC OVERLAY
-   --------------------------------------------------------- */
+/* =========================================================
+   02 — LUXURY LIGHT FIELD
+   ========================================================= */
 
-.signature-world-featured .signature-world-overlay,
-.signature-world:has(
-    img[src*="heritage-masterpiece"]
-) .signature-world-overlay,
-.signature-world-founder .signature-world-overlay {
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(55,25,18,.72),
-            rgba(169,107,82,.22) 45%,
-            rgba(15,7,6,.76) 100%
-        ) !important;
-
-    z-index: 1 !important;
-}
-
-
-/* ---------------------------------------------------------
-   ELECTRIC BLUE OUTER TOP LINE
-   --------------------------------------------------------- */
-
-.signature-world-featured::before,
-.signature-world:has(
-    img[src*="heritage-masterpiece"]
-)::before,
-.signature-world-founder::before {
-
+.signature-hero::before {
     content: "";
 
     position: absolute;
+    inset: -20%;
 
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 2px;
-
-    z-index: 6;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent 0%,
-            #159BFF 18%,
-            #39B5FF 38%,
-            #C8EDFF 50%,
-            #39B5FF 62%,
-            #159BFF 82%,
-            transparent 100%
-        ) !important;
-
-    box-shadow:
-        0 0 5px rgba(200,237,255,1),
-        0 0 12px rgba(57,181,255,.96),
-        0 0 24px rgba(21,155,255,.70),
-        0 0 40px rgba(21,155,255,.38) !important;
+    z-index: 3;
 
     pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle 280px at
+            var(--hero-light-x)
+            var(--hero-light-y),
+
+            rgba(57,181,255,.10) 0%,
+            rgba(57,181,255,.055) 25%,
+            rgba(57,181,255,.018) 45%,
+            transparent 72%
+        );
+
+    mix-blend-mode: screen;
+
+    opacity: .72;
+
+    filter: blur(18px);
+
+    will-change: background;
 }
 
 
-/* ---------------------------------------------------------
-   ELECTRIC BLUE INNER FRAME
-   --------------------------------------------------------- */
-
-.signature-world-featured::after,
-.signature-world:has(
-    img[src*="heritage-masterpiece"]
-)::after,
-.signature-world-founder::after {
-
+.signature-hero::after {
     content: "";
 
     position: absolute;
+    inset: -20%;
 
-    inset: 9px;
+    z-index: 3;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse 430px 250px at
+            calc(var(--hero-light-x) - 8%)
+            calc(var(--hero-light-y) + 10%),
+
+            rgba(201,133,104,.07) 0%,
+            rgba(201,133,104,.025) 36%,
+            transparent 72%
+        );
+
+    mix-blend-mode: screen;
+
+    opacity: .55;
+
+    filter: blur(24px);
+
+    will-change: background;
+}
+
+
+/* =========================================================
+   03 — GRID
+   ========================================================= */
+
+.signature-hero-grid {
+    position: absolute;
+    inset: 0;
 
     z-index: 4;
 
-    border:
-        1px solid rgba(57,181,255,.34);
-
-    box-shadow:
-        inset 0 0 16px rgba(57,181,255,.055),
-        0 0 12px rgba(57,181,255,.08);
-
-    pointer-events: none;
+    will-change: transform;
 }
 
 
-/* ---------------------------------------------------------
-   CARD CONTENT
-   --------------------------------------------------------- */
+/* =========================================================
+   04 — CONTENT
+   ---------------------------------------------------------
+   IMPORTANT:
+   No transform.
+   No scale.
+   No zoom.
+   ========================================================= */
 
-.signature-world-featured .signature-world-content,
-.signature-world:has(
-    img[src*="heritage-masterpiece"]
-) .signature-world-content,
-.signature-world-founder .signature-world-content {
+.signature-hero-content {
+    position: relative;
+    z-index: 10;
 
-    z-index: 7 !important;
+    transform: none !important;
+
+    will-change: auto;
 }
 
 
-/* ---------------------------------------------------------
-   CARD NUMBERS — ROSE GOLD
-   --------------------------------------------------------- */
+/* =========================================================
+   05 — SIGNATURE MARK
+   ========================================================= */
 
-.signature-world-featured .signature-world-number,
-.signature-world:has(
-    img[src*="heritage-masterpiece"]
-) .signature-world-number,
-.signature-world-founder .signature-world-number {
+.signature-hero .signature-mark {
+    --mag-x: 0px;
+    --mag-y: 0px;
 
-    color: #E5AA87 !important;
+    position: relative;
 
-    text-shadow:
-        0 1px 0 rgba(242,194,165,.72),
-        0 0 5px rgba(229,170,135,.72),
-        0 0 12px rgba(201,133,104,.58),
-        0 0 24px rgba(169,107,82,.34) !important;
-}
-
-
-/* ---------------------------------------------------------
-   CARD LABEL — ELECTRIC BLUE
-   --------------------------------------------------------- */
-
-.signature-world-featured .signature-world-label,
-.signature-world:has(
-    img[src*="heritage-masterpiece"]
-) .signature-world-label,
-.signature-world-founder .signature-world-label {
-
-    color: #39B5FF !important;
-
-    text-shadow:
-        0 0 6px rgba(57,181,255,.58),
-        0 0 14px rgba(21,155,255,.32) !important;
-}
-
-
-/* ---------------------------------------------------------
-   CARD TITLE — INDUSTRIAL ROSE GOLD
-   --------------------------------------------------------- */
-
-.signature-world-featured h3,
-.signature-world:has(
-    img[src*="heritage-masterpiece"]
-) h3,
-.signature-world-founder h3 {
-
-    color: #E0A481 !important;
-
-    text-shadow:
-        0 1px 0 rgba(242,194,165,.80),
-        0 0 3px rgba(242,194,165,.76),
-        0 0 9px rgba(229,170,135,.72),
-        0 0 18px rgba(201,133,104,.58),
-        0 0 34px rgba(169,107,82,.34),
-        0 2px 16px rgba(0,0,0,.76) !important;
-}
-
-
-/* ---------------------------------------------------------
-   CARD DESCRIPTION — PEARL WHITE
-   --------------------------------------------------------- */
-
-.signature-world-featured p,
-.signature-world:has(
-    img[src*="heritage-masterpiece"]
-) p,
-.signature-world-founder p {
-
-    color: #F1F4F6 !important;
-
-    text-shadow:
-        0 1px 5px rgba(0,0,0,.72);
-}
-
-
-/* ---------------------------------------------------------
-   CARD CTA — ELECTRIC BLUE / ROSE GOLD RESPONSE
-   --------------------------------------------------------- */
-
-.signature-world-featured a,
-.signature-world:has(
-    img[src*="heritage-masterpiece"]
-) a,
-.signature-world-founder a {
-
-    color: #39B5FF !important;
-
-    text-shadow:
-        0 0 7px rgba(57,181,255,.46);
+    transform:
+        translate3d(
+            var(--mag-x),
+            var(--mag-y),
+            0
+        );
 
     transition:
-        color .3s ease,
-        text-shadow .3s ease;
+        transform .28s cubic-bezier(.22,.61,.36,1);
+
+    will-change: transform;
 }
 
 
-.signature-world-featured a:hover,
-.signature-world:has(
-    img[src*="heritage-masterpiece"]
-) a:hover,
-.signature-world-founder a:hover {
+/* =========================================================
+   06 — CTA MAGNETIC FIELD
+   ========================================================= */
 
-    color: #E5AA87 !important;
+.signature-hero .signature-hero-enter {
+    --mag-x: 0px;
+    --mag-y: 0px;
 
-    text-shadow:
-        0 0 7px rgba(229,170,135,.62),
-        0 0 16px rgba(201,133,104,.36);
+    position: relative;
+
+    transform:
+        translate3d(
+            var(--mag-x),
+            var(--mag-y),
+            0
+        );
+
+    transition:
+        transform .28s cubic-bezier(.22,.61,.36,1);
+
+    will-change: transform;
 }
 
 
-/* ---------------------------------------------------------
-   FOUNDER COLLECTION — DARKEST / MOST EXCLUSIVE
-   --------------------------------------------------------- */
+/* =========================================================
+   07 — CTA BLUE INTERACTION
+   ========================================================= */
 
-.signature-world-founder {
+.signature-hero .signature-hero-enter::after {
+    content: "";
 
-    background:
-        linear-gradient(
-            135deg,
-            #100706 0%,
-            #1D0D0A 25%,
-            #3A1B14 48%,
-            #1E0D0A 72%,
-            #090404 100%
-        ) !important;
+    position: absolute;
+    inset: -1px;
+
+    pointer-events: none;
+
+    border: 1px solid transparent;
+
+    opacity: 0;
+
+    transition:
+        opacity .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+}
+
+.signature-hero .signature-hero-enter:hover::after {
+    opacity: 1;
 
     border-color:
-        rgba(201,133,104,.72) !important;
+        rgba(57,181,255,.42);
 
     box-shadow:
-        inset 0 0 70px rgba(169,107,82,.16),
-        0 0 34px rgba(169,107,82,.22),
-        0 20px 55px rgba(0,0,0,.50) !important;
+        0 0 14px rgba(57,181,255,.18),
+        inset 0 0 12px rgba(57,181,255,.035);
 }
 
 
+/* =========================================================
+   08 — SIDE INFORMATION
+   ========================================================= */
+
+.signature-hero-side,
+.signature-scroll {
+    position: relative;
+    z-index: 8;
+
+    will-change: transform;
+}
 
 
+/* =========================================================
+   09 — ACTIVE LIGHT RESPONSE
+   ========================================================= */
+
+.signature-hero.signature-hero-active
+.signature-hero-background img {
+    filter:
+        saturate(.98)
+        contrast(1.055)
+        brightness(.90);
+}
 
 
+/* =========================================================
+   10 — REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .signature-hero-background,
+    .signature-hero-grid,
+    .signature-hero .signature-mark,
+    .signature-hero .signature-hero-enter,
+    .signature-hero-side,
+    .signature-scroll {
+
+        transform: none !important;
+
+        transition: none !important;
+    }
+
+    .signature-hero::before,
+    .signature-hero::after {
+
+        display: none;
+    }
+}
 
 
+/* =========================================================
+   11 — MOBILE
+   ========================================================= */
 
+@media (max-width: 768px) {
 
+    .signature-hero-background {
 
+        transform:
+            translate3d(
+                var(--hero-parallax-x),
+                var(--hero-parallax-y),
+                0
+            );
+    }
 
+    .signature-hero::before {
 
+        opacity: .55;
 
+        filter: blur(22px);
+    }
 
+    .signature-hero::after {
 
+        opacity: .40;
 
+        filter: blur(28px);
+    }
 
+    .signature-hero .signature-mark,
+    .signature-hero .signature-hero-enter {
 
-
+        transition:
+            transform .32s cubic-bezier(.22,.61,.36,1);
+    }
+}
