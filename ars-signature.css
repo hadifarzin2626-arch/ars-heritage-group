@@ -6602,3 +6602,93 @@ body.signature-page::selection {
         animation: none !important;
     }
 }
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS SIGNATURE — HERO DESIGN 02
+   Subtle Intelligent Field
+   ========================================================= */
+
+(() => {
+    const hero = document.querySelector(".signature-hero");
+
+    if (!hero) return;
+
+    const background = hero.querySelector(".signature-hero-background");
+    const grid = hero.querySelector(".signature-hero-grid");
+
+    if (!background) return;
+
+    const isReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (isReducedMotion) return;
+
+    let targetX = 0;
+    let targetY = 0;
+
+    let currentX = 0;
+    let currentY = 0;
+
+    const maxMove = 7;
+
+    function updateTarget(clientX, clientY) {
+
+        const rect = hero.getBoundingClientRect();
+
+        const x = (clientX - rect.left) / rect.width - 0.5;
+        const y = (clientY - rect.top) / rect.height - 0.5;
+
+        targetX = -x * maxMove;
+        targetY = -y * maxMove;
+
+        hero.style.setProperty(
+            "--light-x",
+            `${((x + 0.5) * 100).toFixed(2)}%`
+        );
+
+        hero.style.setProperty(
+            "--light-y",
+            `${((y + 0.5) * 100).toFixed(2)}%`
+        );
+    }
+
+    hero.addEventListener("pointermove", (event) => {
+        updateTarget(event.clientX, event.clientY);
+    }, { passive: true });
+
+    hero.addEventListener("pointerleave", () => {
+        targetX = 0;
+        targetY = 0;
+
+        hero.style.setProperty("--light-x", "50%");
+        hero.style.setProperty("--light-y", "50%");
+    });
+
+    function animate() {
+
+        currentX += (targetX - currentX) * 0.055;
+        currentY += (targetY - currentY) * 0.055;
+
+        background.style.transform =
+            `translate3d(${currentX}px, ${currentY}px, 0)`;
+
+        if (grid) {
+            grid.style.transform =
+                `translate3d(${currentX * 0.28}px, ${currentY * 0.28}px, 0)`;
+        }
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+
+})();
