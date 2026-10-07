@@ -6500,288 +6500,105 @@ body.signature-page::selection {
 
 
 
-
-/* ===================================================== */
-/* ARS SIGNATURE — HERO */
-/* LIVING ATELIER */
-/* CSS ONLY / SAFE */
-/* ===================================================== */
+/* =========================================================
+   ARS SIGNATURE — DESIGN 02 LAYER FIX
+   Keep existing colors / layout / imagery
+   ========================================================= */
 
 .signature-hero {
+    position: relative !important;
+    isolation: isolate !important;
+    overflow: hidden !important;
+}
+
+/* 01 — actual image layer */
+.signature-hero-background {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+}
+
+/* Design 02 motion stays on the image itself */
+.signature-hero-background img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    will-change: transform !important;
+}
+
+/* 02 — existing visual layers stay ABOVE image */
+.signature-hero-overlay {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+}
+
+.signature-hero-vignette {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+}
+
+/* 03 — Design 02 ambient field */
+.signature-hero::before,
+.signature-hero::after {
+    pointer-events: none !important;
+}
+
+/* 04 — grid remains above visual field */
+.signature-hero-grid {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 3 !important;
+    pointer-events: none !important;
+}
+
+/* 05 — decorative lines */
+.signature-hero-line {
+    position: absolute !important;
+    z-index: 4 !important;
+    pointer-events: none !important;
+}
+
+/* 06 — content always remains completely clear */
+.signature-hero-content {
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+/* Side information + scroll indicator */
+.signature-hero-side,
+.signature-scroll {
+    position: absolute !important;
+    z-index: 10 !important;
+}
+
+/* Never allow Design 02 to alter typography/layout */
+.signature-hero h1,
+.signature-hero p,
+.signature-hero a,
+.signature-hero span,
+.signature-hero .signature-mark {
     position: relative;
-    isolation: isolate;
+    z-index: 11;
+    transform-origin: center center;
 }
 
-/* بسیار ظریف: نور محیطی آرام */
-.signature-hero .signature-hero-background::after {
-    content: "";
-    position: absolute;
-    inset: -8%;
-    pointer-events: none;
-    background:
-        radial-gradient(
-            ellipse 38% 28% at 50% 48%,
-            rgba(201,133,104,.075),
-            transparent 72%
-        );
-    animation: arsHeroAmbient 8s ease-in-out infinite;
-    z-index: 2;
-}
-
-/* Signature mark — هویت اصلی Hero */
-.signature-hero .signature-mark-text {
-    color: #39B5FF !important;
-    -webkit-text-fill-color: #39B5FF !important;
-    text-shadow:
-        0 0 6px rgba(57,181,255,.34),
-        0 0 14px rgba(21,155,255,.18) !important;
-    animation: arsHeroSignature 5s ease-in-out infinite;
-}
-
-/* خطوط Rose Gold بدون تغییر رنگ */
-.signature-hero .signature-mark-line {
-    animation: arsHeroLines 5s ease-in-out infinite;
-}
-
-/* یک حرکت بسیار ظریف نور روی CTA */
-.signature-hero .signature-hero-enter-line {
-    position: relative;
-    overflow: hidden;
-}
-
-.signature-hero .signature-hero-enter-line::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -35%;
-    width: 28%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(200,237,255,.9),
-        transparent
-    );
-    animation: arsHeroSweep 5.5s ease-in-out infinite;
-}
-
-@keyframes arsHeroAmbient {
-    0%, 100% {
-        opacity: .55;
-        transform: scale(1);
-    }
-    50% {
-        opacity: .85;
-        transform: scale(1.025);
-    }
-}
-
-@keyframes arsHeroSignature {
-    0%, 100% {
-        filter: brightness(1);
-    }
-    50% {
-        filter: brightness(1.225);
-    }
-}
-
-@keyframes arsHeroLines {
-    0%, 100% {
-        opacity: .72;
-        filter: brightness(1);
-    }
-    50% {
-        opacity: 1;
-        filter: brightness(1.225);
-    }
-}
-
-@keyframes arsHeroSweep {
-    0%, 55% {
-        left: -35%;
-        opacity: 0;
-    }
-    65% {
-        opacity: 1;
-    }
-    85%, 100% {
-        left: 120%;
-        opacity: 0;
-    }
-}
-
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-    .signature-hero .signature-hero-background::after,
-    .signature-hero .signature-mark-text,
-    .signature-hero .signature-mark-line,
-    .signature-hero .signature-hero-enter-line::after {
+    .signature-hero-background img {
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .signature-hero::before,
+    .signature-hero::after {
         animation: none !important;
     }
-   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ===================================================== */
-/* ARS SIGNATURE — SIGNATURE PHILOSOPHY */
-/* PRIVATE MANIFESTO */
-/* ===================================================== */
-
-.signature-intro {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-    background:
-        radial-gradient(
-            ellipse 55% 70% at 50% 45%,
-            rgba(201,133,104,.055),
-            transparent 72%
-        ),
-        linear-gradient(
-            180deg,
-            #070B11 0%,
-            #0A0F17 50%,
-            #060A10 100%
-        );
 }
-
-/* یک هاله معماری بسیار آرام */
-.signature-intro::before {
-    content: "";
-    position: absolute;
-    width: 55vw;
-    height: 55vw;
-    max-width: 760px;
-    max-height: 760px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    border: 1px solid rgba(201,133,104,.055);
-    border-radius: 50%;
-    box-shadow:
-        0 0 70px rgba(201,133,104,.035),
-        inset 0 0 70px rgba(21,155,255,.018);
-    pointer-events: none;
-}
-
-/* Section label — Electric Blue */
-.signature-intro .signature-section-label {
-    position: relative;
-    color: #39B5FF !important;
-    text-shadow:
-        0 0 7px rgba(57,181,255,.38),
-        0 0 15px rgba(21,155,255,.18);
-}
-
-/* دو خط ظریف کنار هویت بخش */
-.signature-intro .signature-section-label::before,
-.signature-intro .signature-section-label::after {
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            #9B5F49 30%,
-            #E5AA87 70%,
-            transparent
-        ) !important;
-    box-shadow:
-        0 0 5px rgba(229,170,135,.42),
-        0 0 14px rgba(201,133,104,.18);
-}
-
-/* عنوان اصلی — همان Rose Gold DNA */
-.signature-intro h2 {
-    position: relative;
-    letter-spacing: .025em;
-    text-shadow:
-        0 1px 0 rgba(242,194,165,.36),
-        0 0 9.8px rgba(229,170,135,.4165),
-        0 0 24.5px rgba(201,133,104,.2695),
-        0 0 41.65px rgba(169,107,82,.1225);
-}
-
-/* Lead — کمی برجسته‌تر از متن عادی */
-.signature-intro-lead {
-    position: relative;
-    color: #F2F4F6 !important;
-    text-shadow:
-        0 1px 8px rgba(0,0,0,.55);
-    max-width: 760px;
-}
-
-/* متن فلسفه */
-.signature-intro-text {
-    position: relative;
-    color: rgba(232,237,241,.78) !important;
-    max-width: 820px;
-    line-height: 1.95;
-}
-
-/* خط پایانی — Industrial Rose Gold */
-.signature-intro-rule {
-    position: relative;
-    height: 1px;
-    margin-top: 42px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent 0%,
-            #9B5F49 20%,
-            #C98568 38%,
-            #E5AA87 50%,
-            #C98568 62%,
-            #9B5F49 80%,
-            transparent 100%
-        ) !important;
-
-    box-shadow:
-        0 0 4px rgba(242,194,165,.55),
-        0 0 10px rgba(229,170,135,.42),
-        0 0 20px rgba(201,133,104,.22),
-        0 0 34px rgba(169,107,82,.12);
-
-    animation: arsManifestoLine 6s ease-in-out infinite;
-}
-
-@keyframes arsManifestoLine {
-    0%, 100% {
-        opacity: .68;
-        transform: scaleX(.94);
-    }
-
-    50% {
-        opacity: 1;
-        transform: scaleX(1);
-    }
-}
-
-@media (max-width: 768px) {
-    .signature-intro::before {
-        width: 110vw;
-        height: 110vw;
-    }
-
-    .signature-intro-text {
-        line-height: 1.8;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .signature-intro-rule {
-        animation: none !important;
-    }
-       }
