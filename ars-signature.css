@@ -5393,3 +5393,939 @@ body.signature-page::selection {
 
 
 
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS SIGNATURE
+   SECTION 03 — THE SIGNATURE PRINCIPLE
+   ---------------------------------------------------------
+   ARCHITECTURAL SIGNATURE SYSTEM
+   Luxury Automotive Engineering Language
+   ========================================================= */
+
+.signature-principles {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    padding: 170px 6vw 150px;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 42%,
+            rgba(28, 52, 72, .20) 0%,
+            rgba(10, 18, 27, .08) 32%,
+            transparent 68%
+        ),
+        linear-gradient(
+            180deg,
+            #05080C 0%,
+            #071018 48%,
+            #04070B 100%
+        );
+}
+
+
+/* =========================================================
+   AMBIENT ARCHITECTURAL FIELD
+   ========================================================= */
+
+.signature-principles::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: -2;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(57,181,255,.018) 25%,
+            rgba(57,181,255,.045) 50%,
+            rgba(57,181,255,.018) 75%,
+            transparent 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* very subtle vertical architectural atmosphere */
+
+.signature-principles::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    left: 50%;
+
+    width: 1px;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 0%,
+            rgba(57,181,255,.04) 20%,
+            rgba(57,181,255,.12) 50%,
+            rgba(57,181,255,.04) 80%,
+            transparent 100%
+        );
+
+    opacity: .65;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   INNER
+   ========================================================= */
+
+.signature-principles-inner {
+    position: relative;
+
+    max-width: 1500px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.signature-principles-header {
+    position: relative;
+
+    max-width: 1000px;
+
+    margin: 0 auto 95px;
+
+    text-align: center;
+}
+
+
+/* section label remains ELECTRIC BLUE */
+
+.signature-principles-header
+.signature-section-label {
+    display: inline-flex;
+
+    align-items: center;
+
+    color: #39B5FF !important;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: .32em;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 7px rgba(57,181,255,.42),
+        0 0 18px rgba(21,155,255,.16);
+}
+
+
+/* Rose Gold side architecture */
+
+.signature-principles-header
+.signature-section-label::before,
+.signature-principles-header
+.signature-section-label::after {
+    content: "";
+
+    display: block;
+
+    width: 74px;
+    height: 1px;
+
+    margin: 0 18px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #9B5F49 30%,
+            #C98568 70%,
+            #E5AA87
+        );
+
+    box-shadow:
+        0 0 6px rgba(229,170,135,.42),
+        0 0 16px rgba(201,133,104,.16);
+}
+
+
+.signature-principles-header
+.signature-section-label::after {
+    background:
+        linear-gradient(
+            90deg,
+            #E5AA87,
+            #C98568 30%,
+            #9B5F49 70%,
+            transparent
+        );
+}
+
+
+/* MAIN HEADING */
+
+.signature-principles-header h2 {
+    position: relative;
+
+    margin: 30px auto 0;
+
+    max-width: 950px;
+
+    color: #E5AA87;
+
+    font-size: clamp(34px, 4vw, 68px);
+
+    font-weight: 500;
+
+    line-height: 1.08;
+
+    letter-spacing: .025em;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 1px 0 rgba(242,194,165,.55),
+        0 0 5px rgba(229,170,135,.34),
+        0 0 20px rgba(201,133,104,.18);
+}
+
+
+/* =========================================================
+   SYSTEM
+   ========================================================= */
+
+.signature-system {
+    position: relative;
+
+    width: 100%;
+
+    margin: 0 auto;
+}
+
+
+.signature-system-frame {
+    position: relative;
+
+    min-height: 720px;
+
+    padding: 90px;
+
+    border: 1px solid rgba(201,133,104,.25);
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(57,181,255,.055),
+            transparent 38%
+        ),
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.025),
+            transparent 35%,
+            rgba(201,133,104,.018)
+        );
+
+    box-shadow:
+        inset 0 0 100px rgba(0,0,0,.48),
+        inset 0 0 35px rgba(57,181,255,.025),
+        0 30px 80px rgba(0,0,0,.42);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   ARCHITECTURAL CORNERS
+   ========================================================= */
+
+.signature-system-corner {
+    position: absolute;
+
+    width: 42px;
+    height: 42px;
+
+    border-color: #C98568;
+
+    opacity: .75;
+
+    filter:
+        drop-shadow(
+            0 0 7px rgba(201,133,104,.22)
+        );
+}
+
+
+.signature-system-corner-tl {
+    top: 20px;
+    left: 20px;
+
+    border-top: 1px solid;
+    border-left: 1px solid;
+}
+
+
+.signature-system-corner-tr {
+    top: 20px;
+    right: 20px;
+
+    border-top: 1px solid;
+    border-right: 1px solid;
+}
+
+
+.signature-system-corner-bl {
+    bottom: 20px;
+    left: 20px;
+
+    border-bottom: 1px solid;
+    border-left: 1px solid;
+}
+
+
+.signature-system-corner-br {
+    bottom: 20px;
+    right: 20px;
+
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+}
+
+
+/* =========================================================
+   BLUE SYSTEM SCAN
+   ========================================================= */
+
+.signature-system-scan {
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    left: 50%;
+
+    width: 1px;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(57,181,255,.20),
+            rgba(57,181,255,.72),
+            rgba(57,181,255,.20),
+            transparent
+        );
+
+    box-shadow:
+        0 0 10px rgba(57,181,255,.45),
+        0 0 28px rgba(21,155,255,.20);
+
+    opacity: .42;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   PRINCIPLE NODES
+   ========================================================= */
+
+.signature-system-node {
+    position: absolute;
+
+    width: 255px;
+
+    padding: 24px 26px 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(18,29,39,.82),
+            rgba(5,10,15,.72)
+        );
+
+    border: 1px solid rgba(201,133,104,.20);
+
+    box-shadow:
+        inset 0 1px 0 rgba(242,194,165,.08),
+        inset 0 0 35px rgba(57,181,255,.018),
+        0 18px 45px rgba(0,0,0,.30);
+
+    backdrop-filter: blur(8px);
+
+    transition:
+        border-color .45s ease,
+        box-shadow .45s ease,
+        transform .45s ease;
+}
+
+
+.signature-system-node:hover {
+    border-color: rgba(201,133,104,.48);
+
+    box-shadow:
+        inset 0 1px 0 rgba(242,194,165,.13),
+        inset 0 0 35px rgba(57,181,255,.035),
+        0 22px 55px rgba(0,0,0,.42),
+        0 0 22px rgba(201,133,104,.08);
+
+    transform: translateY(-4px);
+}
+
+
+/* node positions */
+
+.signature-node-identity {
+    top: 80px;
+    left: 70px;
+}
+
+
+.signature-node-craft {
+    top: 80px;
+    right: 70px;
+}
+
+
+.signature-node-engineering {
+    bottom: 80px;
+    left: 70px;
+}
+
+
+.signature-node-rarity {
+    bottom: 80px;
+    right: 70px;
+}
+
+
+/* numbers */
+
+.signature-node-number {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #E5AA87;
+
+    font-size: 12px;
+
+    letter-spacing: .25em;
+
+    text-shadow:
+        0 0 8px rgba(229,170,135,.38);
+}
+
+
+/* PRINCIPLE label */
+
+.signature-node-label {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #39B5FF;
+
+    font-size: 9px;
+
+    letter-spacing: .28em;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 8px rgba(57,181,255,.34);
+}
+
+
+/* node heading */
+
+.signature-system-node h3 {
+    margin: 0 0 14px;
+
+    color: #E5AA87;
+
+    font-size: 24px;
+
+    font-weight: 500;
+
+    letter-spacing: .12em;
+
+    text-shadow:
+        0 1px 0 rgba(242,194,165,.45),
+        0 0 10px rgba(201,133,104,.20);
+}
+
+
+.signature-system-node p {
+    margin: 0;
+
+    color: #E9EEF2;
+
+    font-size: 13px;
+
+    line-height: 1.75;
+
+    letter-spacing: .02em;
+}
+
+
+/* node line */
+
+.signature-node-line {
+    display: block;
+
+    width: 100%;
+
+    height: 1px;
+
+    margin-top: 22px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #C98568,
+            rgba(201,133,104,.12),
+            transparent
+        );
+
+    box-shadow:
+        0 0 8px rgba(201,133,104,.16);
+}
+
+
+/* =========================================================
+   CENTRAL CORE
+   ========================================================= */
+
+.signature-system-core {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 270px;
+    height: 210px;
+
+    transform: translate(-50%, -50%);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(19,38,52,.92),
+            rgba(5,10,15,.96) 72%
+        );
+
+    border:
+        1px solid rgba(201,133,104,.48);
+
+    box-shadow:
+        inset 0 0 55px rgba(201,133,104,.045),
+        inset 0 0 30px rgba(57,181,255,.035),
+        0 0 35px rgba(201,133,104,.10),
+        0 25px 65px rgba(0,0,0,.48);
+}
+
+
+.signature-core-label {
+    margin-bottom: 18px;
+
+    color: #39B5FF;
+
+    font-size: 9px;
+
+    letter-spacing: .3em;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 8px rgba(57,181,255,.38);
+}
+
+
+.signature-core-mark {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+.signature-core-mark span {
+    width: 35px;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #C98568
+        );
+
+    box-shadow:
+        0 0 7px rgba(201,133,104,.35);
+}
+
+
+.signature-core-mark span:last-child {
+    background:
+        linear-gradient(
+            90deg,
+            #C98568,
+            transparent
+        );
+}
+
+
+.signature-core-mark strong {
+    color: #E5AA87;
+
+    font-size: 34px;
+
+    font-weight: 500;
+
+    letter-spacing: .12em;
+
+    text-shadow:
+        0 1px 0 rgba(242,194,165,.55),
+        0 0 8px rgba(229,170,135,.34),
+        0 0 22px rgba(201,133,104,.18);
+}
+
+
+.signature-system-core p {
+    margin-top: 17px;
+
+    color: rgba(233,238,242,.62);
+
+    font-size: 8px;
+
+    letter-spacing: .25em;
+}
+
+
+/* =========================================================
+   SIGNATURE SCANNER
+   ========================================================= */
+
+.signature-system-scanner {
+    position: absolute;
+
+    right: 50px;
+    top: 50%;
+
+    width: 190px;
+
+    transform: translateY(-50%);
+
+    padding: 18px;
+
+    background:
+        rgba(3,8,13,.76);
+
+    border-left: 1px solid rgba(57,181,255,.32);
+
+    box-shadow:
+        inset 12px 0 25px rgba(57,181,255,.018),
+        0 15px 35px rgba(0,0,0,.30);
+}
+
+
+.signature-scanner-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding-bottom: 12px;
+    margin-bottom: 8px;
+
+    border-bottom: 1px solid rgba(201,133,104,.18);
+
+    color: #C98568;
+
+    font-size: 8px;
+
+    letter-spacing: .16em;
+}
+
+
+.signature-scanner-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 9px 0;
+
+    border-bottom: 1px solid rgba(255,255,255,.035);
+
+    color: rgba(233,238,242,.68);
+
+    font-size: 8px;
+
+    letter-spacing: .12em;
+}
+
+
+.signature-scanner-row strong {
+    color: #39B5FF;
+
+    font-size: 7px;
+
+    font-weight: 500;
+
+    letter-spacing: .08em;
+
+    text-shadow:
+        0 0 7px rgba(57,181,255,.42);
+}
+
+
+/* =========================================================
+   BRAND DNA
+   ========================================================= */
+
+.signature-brand-dna {
+    position: relative;
+
+    max-width: 820px;
+
+    margin: 110px auto 0;
+
+    text-align: center;
+}
+
+
+.signature-brand-dna-label {
+    display: block;
+
+    margin-bottom: 24px;
+
+    color: #39B5FF;
+
+    font-size: 9px;
+
+    letter-spacing: .38em;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 8px rgba(57,181,255,.30);
+}
+
+
+/* architectural breathing line */
+
+.signature-brand-dna-line {
+    width: 100%;
+    height: 1px;
+
+    margin: 0 auto 30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #9B5F49 18%,
+            #C98568 38%,
+            #E5AA87 50%,
+            #C98568 62%,
+            #9B5F49 82%,
+            transparent
+        );
+
+    box-shadow:
+        0 0 7px rgba(229,170,135,.25),
+        0 0 18px rgba(201,133,104,.12);
+}
+
+
+/* =========================================================
+   OFFICIAL ARS HERITAGE GROUP SLOGAN
+   ROSE GOLD — HEROIC BUT RESTRAINED
+   ========================================================= */
+
+.signature-brand-dna-motto {
+    margin: 0;
+
+    color: #E5AA87 !important;
+
+    font-size: clamp(18px, 2vw, 29px);
+
+    font-weight: 500;
+
+    line-height: 1.65;
+
+    letter-spacing: .10em;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 1px 0 rgba(242,194,165,.58),
+        0 0 5px rgba(229,170,135,.42),
+        0 0 15px rgba(201,133,104,.25),
+        0 0 32px rgba(169,107,82,.12);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .signature-system-frame {
+        min-height: 850px;
+
+        padding: 60px 30px;
+    }
+
+    .signature-system-node {
+        width: 220px;
+    }
+
+    .signature-node-identity,
+    .signature-node-engineering {
+        left: 35px;
+    }
+
+    .signature-node-craft,
+    .signature-node-rarity {
+        right: 35px;
+    }
+
+    .signature-system-scanner {
+        right: 30px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .signature-principles {
+        padding:
+            110px 20px 100px;
+    }
+
+    .signature-principles-header {
+        margin-bottom: 55px;
+    }
+
+    .signature-principles-header
+    .signature-section-label::before,
+    .signature-principles-header
+    .signature-section-label::after {
+        width: 28px;
+        margin: 0 9px;
+    }
+
+    .signature-principles-header h2 {
+        font-size: 30px;
+
+        line-height: 1.18;
+    }
+
+    .signature-system-frame {
+        min-height: auto;
+
+        padding: 35px 20px 40px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 18px;
+    }
+
+    .signature-system-scan {
+        display: none;
+    }
+
+    .signature-system-node,
+    .signature-node-identity,
+    .signature-node-craft,
+    .signature-node-engineering,
+    .signature-node-rarity {
+        position: relative;
+
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+
+        width: 100%;
+
+        transform: none;
+    }
+
+    .signature-system-node:hover {
+        transform: none;
+    }
+
+    .signature-system-core {
+        position: relative;
+
+        top: auto;
+        left: auto;
+
+        width: 100%;
+        height: 180px;
+
+        transform: none;
+
+        order: -1;
+
+        margin-bottom: 8px;
+    }
+
+    .signature-system-scanner {
+        position: relative;
+
+        top: auto;
+        right: auto;
+
+        width: 100%;
+
+        transform: none;
+
+        margin-top: 4px;
+    }
+
+    .signature-brand-dna {
+        margin-top: 70px;
+    }
+
+    .signature-brand-dna-motto {
+        font-size: 17px;
+
+        letter-spacing: .065em;
+    }
+   }
+
