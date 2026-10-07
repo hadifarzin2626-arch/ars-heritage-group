@@ -8145,3 +8145,286 @@ section.collection-hero .collection-stats .stat-box:hover::before {
     margin: 0;
     padding: 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   FUTURE + SIGNATURE SHOWCASE IMAGES
+   FULL IMAGE — NO SIDE CROPPING
+   ========================================================= */
+
+.future-right,
+.signature-image {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.future-right img,
+.signature-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center center;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   GALLERY 06 — ARS EXPERIENCE
+   FINAL FEATURED VISUAL
+   ========================================================= */
+
+.gallery-final {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    min-height: 0;
+    isolation: isolate;
+    cursor: pointer;
+}
+
+
+/* ---------------------------------------------------------
+   IMAGE
+   --------------------------------------------------------- */
+
+.gallery-final-image {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.gallery-final-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transform: scale(1.01);
+    transition:
+        transform 1.2s cubic-bezier(.22,.61,.36,1),
+        filter 1.2s ease;
+}
+
+
+/* ---------------------------------------------------------
+   SUBTLE CINEMATIC GLOW
+   --------------------------------------------------------- */
+
+.gallery-final-glow {
+    position: absolute;
+    inset: -20%;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(47, 143, 255, 0.16),
+            transparent 38%
+        );
+
+    opacity: 0.35;
+
+    animation:
+        galleryFinalGlow 6s ease-in-out infinite;
+}
+
+
+/* ---------------------------------------------------------
+   SCANNING LIGHT
+   --------------------------------------------------------- */
+
+.gallery-final-scan {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -25%;
+    height: 25%;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(95, 155, 214, 0.10),
+            rgba(154, 118, 80, 0.18),
+            transparent
+        );
+
+    filter: blur(8px);
+
+    opacity: 0.45;
+
+    animation:
+        galleryFinalScan 7s ease-in-out infinite;
+}
+
+
+/* ---------------------------------------------------------
+   DARK CINEMATIC OVERLAY
+   --------------------------------------------------------- */
+
+.gallery-final-image::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 35%,
+            rgba(5, 9, 14, 0.12) 55%,
+            rgba(5, 9, 14, 0.82) 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   FINAL INFO
+   --------------------------------------------------------- */
+
+.gallery-final-info {
+    position: absolute;
+    left: 28px;
+    right: 28px;
+    bottom: 25px;
+
+    z-index: 5;
+
+    pointer-events: none;
+}
+
+.gallery-final-label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #9a7650;
+
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0.20em;
+    text-transform: uppercase;
+}
+
+.gallery-final-info h3 {
+    margin: 0 0 7px;
+
+    color: #ffffff;
+
+    font-size: 19px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.gallery-final-info p {
+    margin: 0;
+
+    color: rgba(220, 228, 235, 0.62);
+
+    font-size: 8px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+
+/* ---------------------------------------------------------
+   HOVER
+   --------------------------------------------------------- */
+
+.gallery-final:hover .gallery-final-image img {
+    transform: scale(1.045);
+    filter: brightness(1.06);
+}
+
+.gallery-final:hover .gallery-final-glow {
+    opacity: 0.60;
+}
+
+
+/* ---------------------------------------------------------
+   ANIMATIONS
+   --------------------------------------------------------- */
+
+@keyframes galleryFinalGlow {
+
+    0%,
+    100% {
+        transform: scale(0.95);
+        opacity: 0.25;
+    }
+
+    50% {
+        transform: scale(1.08);
+        opacity: 0.55;
+    }
+}
+
+
+@keyframes galleryFinalScan {
+
+    0% {
+        transform: translateY(-30%);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.45;
+    }
+
+    55% {
+        opacity: 0.25;
+    }
+
+    75%,
+    100% {
+        transform: translateY(500%);
+        opacity: 0;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .gallery-final-image img,
+    .gallery-final-glow,
+    .gallery-final-scan {
+        animation: none;
+        transition: none;
+    }
+
+}
