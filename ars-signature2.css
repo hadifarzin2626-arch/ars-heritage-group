@@ -1,0 +1,1243 @@
+/* =========================================================
+   ARS SIGNATURE 2
+   SECTION 01 — MASTER DNA / COLOR / GLOBAL FOUNDATION
+   ========================================================= */
+
+
+/* =========================================================
+   01 — MASTER COLOR DNA
+   ========================================================= */
+
+:root {
+
+    /* -----------------------------------------------------
+       INDUSTRIAL DARK COPPER ROSE GOLD
+       ~25% darker / redder / copper-oriented
+       ----------------------------------------------------- */
+
+    --ars-rose-deep:       #4F2B25;
+    --ars-rose-base:       #69382F;
+    --ars-rose-copper:     #844537;
+    --ars-rose-main:       #9E5542;
+    --ars-rose-light:      #B86A52;
+    --ars-rose-bright:     #C77B60;
+    --ars-rose-white:      #D89473;
+
+
+    /* -----------------------------------------------------
+       ELECTRIC BLUE
+       ----------------------------------------------------- */
+
+    --ars-blue-deep:       #0874C4;
+    --ars-blue:            #159BFF;
+    --ars-blue-light:      #39B5FF;
+    --ars-blue-white:     #C8EDFF;
+
+
+    /* -----------------------------------------------------
+       ARCHITECTURAL BLACK / NAVY
+       ----------------------------------------------------- */
+
+    --ars-black:           #040609;
+    --ars-black-soft:      #070B10;
+
+    --ars-navy-deep:       #0A111A;
+    --ars-navy:            #101A26;
+    --ars-navy-soft:       #162433;
+
+
+    /* -----------------------------------------------------
+       GLASS SYSTEM
+       ----------------------------------------------------- */
+
+    --ars-glass-dark:
+        rgba(7, 12, 19, .72);
+
+    --ars-glass-deep:
+        rgba(3, 7, 12, .86);
+
+    --ars-glass-soft:
+        rgba(17, 27, 39, .58);
+
+    --ars-glass-highlight:
+        rgba(255, 255, 255, .055);
+
+    --ars-glass-border:
+        rgba(199, 123, 96, .20);
+
+    --ars-glass-border-strong:
+        rgba(184, 106, 82, .34);
+
+    --ars-glass-blue-border:
+        rgba(57, 181, 255, .24);
+
+
+    /* -----------------------------------------------------
+       TYPOGRAPHY
+       ----------------------------------------------------- */
+
+    --ars-white:           #F3F5F7;
+    --ars-white-soft:      #D7DDE3;
+    --ars-gray:            #9AA5AF;
+    --ars-gray-dark:       #66717C;
+
+
+    /* -----------------------------------------------------
+       ARCHITECTURAL RADIUS
+       ----------------------------------------------------- */
+
+    --ars-radius-xs:       4px;
+    --ars-radius-small:    7px;
+    --ars-radius-medium:   12px;
+    --ars-radius-large:    18px;
+
+
+    /* -----------------------------------------------------
+       SHADOW SYSTEM
+       ----------------------------------------------------- */
+
+    --ars-shadow-deep:
+        0 30px 90px rgba(0, 0, 0, .62);
+
+    --ars-shadow-medium:
+        0 18px 55px rgba(0, 0, 0, .46);
+
+    --ars-shadow-glass:
+        0 20px 65px rgba(0, 0, 0, .40);
+
+
+    /* -----------------------------------------------------
+       ROSE GOLD GLOW
+       ----------------------------------------------------- */
+
+    --ars-rose-glow-soft:
+        0 0 10px rgba(158, 85, 66, .20);
+
+    --ars-rose-glow:
+        0 0 18px rgba(184, 106, 82, .24);
+
+    --ars-rose-glow-strong:
+        0 0 30px rgba(199, 123, 96, .28);
+
+
+    /* -----------------------------------------------------
+       ELECTRIC BLUE GLOW
+       ----------------------------------------------------- */
+
+    --ars-blue-glow:
+        0 0 14px rgba(21, 155, 255, .24);
+
+    --ars-blue-glow-strong:
+        0 0 28px rgba(57, 181, 255, .30);
+
+
+    /* -----------------------------------------------------
+       MOTION
+       ----------------------------------------------------- */
+
+    --ars-transition-fast:
+        240ms cubic-bezier(.22, .61, .36, 1);
+
+    --ars-transition:
+        420ms cubic-bezier(.22, .61, .36, 1);
+
+    --ars-transition-slow:
+        760ms cubic-bezier(.16, 1, .3, 1);
+}
+
+
+/* =========================================================
+   02 — GLOBAL RESET
+   ========================================================= */
+
+.signature-page,
+.signature-page *,
+.signature-page *::before,
+.signature-page *::after {
+    box-sizing: border-box;
+}
+
+
+.signature-page {
+    position: relative;
+
+    width: 100%;
+    min-height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    background:
+        var(--ars-black);
+
+    color:
+        var(--ars-white);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    overflow-x: hidden;
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+
+.signature-page img {
+    display: block;
+    max-width: 100%;
+}
+
+
+.signature-page a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+.signature-page button,
+.signature-page input,
+.signature-page textarea,
+.signature-page select {
+    font: inherit;
+}
+
+
+/* =========================================================
+   03 — GLOBAL SECTION FOUNDATION
+   ========================================================= */
+
+.signature-page section {
+    position: relative;
+    width: 100%;
+}
+
+
+.signature-page section::selection {
+    background:
+        rgba(21, 155, 255, .24);
+
+    color:
+        var(--ars-white);
+}
+
+
+/* =========================================================
+   04 — SECTION LABEL
+   Electric Blue typography
+   ========================================================= */
+
+.signature-section-label {
+
+    display: inline-flex;
+    align-items: center;
+
+    color:
+        var(--ars-blue);
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: .28em;
+    line-height: 1.4;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 8px rgba(21, 155, 255, .16);
+}
+
+
+/* =========================================================
+   05 — MASTER HEADINGS
+   Dark Copper Rose Gold
+   ========================================================= */
+
+.signature-page h1,
+.signature-page h2,
+.signature-page h3 {
+
+    margin: 0;
+
+    font-weight: 600;
+
+    background:
+        linear-gradient(
+            90deg,
+
+            #69382F 0%,
+            #844537 25%,
+            #9E5542 42%,
+            #B86A52 50%,
+            #9E5542 58%,
+            #844537 75%,
+            #69382F 100%
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+    text-shadow:
+        0 1px 0 rgba(216, 148, 115, .16),
+        0 0 8px rgba(184, 106, 82, .18),
+        0 0 20px rgba(158, 85, 66, .10);
+}
+
+
+/* =========================================================
+   06 — BODY TYPOGRAPHY
+   ========================================================= */
+
+.signature-page p {
+    margin-top: 0;
+
+    color:
+        var(--ars-white-soft);
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   07 — GLASS ARCHITECTURE
+   ========================================================= */
+
+.signature-glass {
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.055) 0%,
+            rgba(255,255,255,.018) 45%,
+            rgba(0,0,0,.10) 100%
+        ),
+        var(--ars-glass-dark);
+
+    border:
+        1px solid var(--ars-glass-border);
+
+    border-radius:
+        var(--ars-radius-medium);
+
+    box-shadow:
+        var(--ars-shadow-glass);
+
+    backdrop-filter:
+        blur(18px)
+        saturate(115%);
+
+    -webkit-backdrop-filter:
+        blur(18px)
+        saturate(115%);
+
+    overflow: hidden;
+
+    transition:
+        border-color var(--ars-transition),
+        box-shadow var(--ars-transition),
+        transform var(--ars-transition);
+}
+
+
+/* ---------------------------------------------------------
+   Glass internal highlight
+   --------------------------------------------------------- */
+
+.signature-glass::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    border-radius: inherit;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.055);
+
+    opacity: .9;
+}
+
+
+/* ---------------------------------------------------------
+   Glass copper edge
+   --------------------------------------------------------- */
+
+.signature-glass::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 8%;
+    right: 8%;
+    top: 0;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(216,148,115,.32),
+            transparent
+        );
+
+    opacity: .7;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   08 — ROSE GOLD ARCHITECTURAL LINE
+   ========================================================= */
+
+.signature-rose-line {
+
+    position: relative;
+
+    width: 100%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            #69382F 20%,
+            #844537 35%,
+            #B86A52 50%,
+            #844537 65%,
+            #69382F 80%,
+            transparent 100%
+        );
+
+    box-shadow:
+        0 0 5px rgba(216,148,115,.22),
+        0 0 14px rgba(184,106,82,.16);
+}
+
+
+/* =========================================================
+   09 — ELECTRIC BLUE TECH LINE
+   ========================================================= */
+
+.signature-blue-line {
+
+    position: relative;
+
+    width: 100%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            var(--ars-blue-deep) 20%,
+            var(--ars-blue) 50%,
+            var(--ars-blue-deep) 80%,
+            transparent 100%
+        );
+
+    box-shadow:
+        var(--ars-blue-glow);
+}
+
+
+/* =========================================================
+   10 — GLOBAL ARCHITECTURAL CORNER
+   ========================================================= */
+
+.signature-corner {
+
+    position: absolute;
+
+    width: 22px;
+    height: 22px;
+
+    pointer-events: none;
+}
+
+
+.signature-corner::before,
+.signature-corner::after {
+
+    content: "";
+
+    position: absolute;
+
+    background:
+        var(--ars-rose-main);
+
+    box-shadow:
+        0 0 8px rgba(184,106,82,.18);
+}
+
+
+.signature-corner::before {
+
+    width: 100%;
+    height: 1px;
+}
+
+
+.signature-corner::after {
+
+    width: 1px;
+    height: 100%;
+}
+
+
+/* =========================================================
+   11 — GLOBAL MICRO HIGHLIGHT
+   ========================================================= */
+
+.signature-highlight {
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(216,148,115,.10),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   12 — ACCESSIBILITY / REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .signature-page *,
+    .signature-page *::before,
+    .signature-page *::after {
+
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+/* =========================================================
+   13 — MOBILE FOUNDATION
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .signature-page {
+        overflow-x: hidden;
+    }
+
+    .signature-section-label {
+        font-size: 9px;
+        letter-spacing: .22em;
+    }
+
+    .signature-glass {
+        border-radius:
+            var(--ars-radius-small);
+
+        backdrop-filter:
+            blur(14px)
+            saturate(110%);
+
+        -webkit-backdrop-filter:
+            blur(14px)
+            saturate(110%);
+    }
+}
+
+
+
+
+
+/* =========================================================
+   ARS SIGNATURE 2
+   SECTION 02 — HERO
+   CINEMATIC GLASS / ARCHITECTURAL FIELD
+   ========================================================= */
+
+.signature-hero {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    isolation: isolate;
+    overflow: hidden;
+
+    background:
+        var(--ars-black);
+}
+
+
+/* =========================================================
+   HERO — CINEMATIC IMAGE
+   ========================================================= */
+
+.signature-hero-background {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    overflow: hidden;
+}
+
+
+.signature-hero-background img {
+    position: absolute;
+
+    inset: -2%;
+
+    width: 104%;
+    height: 104%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center center;
+
+    filter:
+        saturate(.88)
+        contrast(1.08)
+        brightness(.78);
+
+    transform:
+        scale(1.015);
+
+    will-change:
+        transform;
+}
+
+
+/* =========================================================
+   HERO — CINEMATIC OVERLAY
+   ========================================================= */
+
+.signature-hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3,7,12,.82) 0%,
+            rgba(5,9,15,.48) 38%,
+            rgba(5,9,15,.22) 62%,
+            rgba(3,7,12,.72) 100%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(3,7,12,.32) 0%,
+            transparent 32%,
+            transparent 68%,
+            rgba(3,7,12,.82) 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO — VIGNETTE
+   ========================================================= */
+
+.signature-hero-vignette {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 28%,
+            rgba(0,0,0,.22) 62%,
+            rgba(0,0,0,.70) 100%
+        );
+}
+
+
+/* =========================================================
+   HERO — AMBIENT LIGHT
+   ========================================================= */
+
+.signature-hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle 420px at 48% 48%,
+            rgba(57,181,255,.055),
+            transparent 72%
+        ),
+        radial-gradient(
+            circle 360px at 72% 58%,
+            rgba(158,85,66,.045),
+            transparent 72%
+        );
+}
+
+
+/* =========================================================
+   HERO — ARCHITECTURAL GRID
+   ========================================================= */
+
+.signature-hero-grid {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 4;
+
+    pointer-events: none;
+
+    opacity: .20;
+
+    background-image:
+        linear-gradient(
+            rgba(57,181,255,.045) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(57,181,255,.045) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        90px 90px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            transparent,
+            black 18%,
+            black 82%,
+            transparent
+        );
+
+    -webkit-mask-image:
+        linear-gradient(
+            to bottom,
+            transparent,
+            black 18%,
+            black 82%,
+            transparent
+        );
+}
+
+
+/* =========================================================
+   HERO — SIDE LINES
+   ========================================================= */
+
+.signature-hero-line {
+
+    position: absolute;
+
+    top: 18%;
+    bottom: 18%;
+
+    width: 1px;
+
+    z-index: 5;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(184,106,82,.40) 25%,
+            rgba(184,106,82,.16) 50%,
+            rgba(184,106,82,.40) 75%,
+            transparent
+        );
+
+    box-shadow:
+        0 0 12px rgba(184,106,82,.12);
+}
+
+
+.signature-hero-line-left {
+    left: 5%;
+}
+
+
+.signature-hero-line-right {
+    right: 5%;
+}
+
+
+/* =========================================================
+   HERO — CONTENT
+   ========================================================= */
+
+.signature-hero-content {
+
+    position: relative;
+
+    z-index: 10;
+
+    min-height: 100vh;
+
+    width: min(1180px, 88%);
+
+    margin: 0 auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    padding:
+        110px 0 100px;
+}
+
+
+/* =========================================================
+   HERO — EYEBROW
+   ========================================================= */
+
+.signature-eyebrow {
+
+    margin-bottom: 28px;
+
+    color:
+        var(--ars-blue);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: .34em;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 10px rgba(21,155,255,.20);
+}
+
+
+/* =========================================================
+   HERO — SIGNATURE MARK
+   ========================================================= */
+
+.signature-mark {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 18px;
+}
+
+
+.signature-mark-line {
+
+    width: 48px;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--ars-rose-main)
+        );
+
+    box-shadow:
+        var(--ars-rose-glow-soft);
+}
+
+
+.signature-mark-line:last-child {
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--ars-rose-main),
+            transparent
+        );
+}
+
+
+.signature-mark-text {
+
+    color:
+        var(--ars-rose-light);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: .38em;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 12px rgba(184,106,82,.20);
+}
+
+
+/* =========================================================
+   HERO — MAIN TITLE
+   ========================================================= */
+
+.signature-hero h1 {
+
+    max-width: 900px;
+
+    font-size:
+        clamp(52px, 8vw, 112px);
+
+    font-weight: 500;
+
+    line-height: .92;
+
+    letter-spacing: -.045em;
+
+    margin-bottom: 30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #69382F 0%,
+            #844537 24%,
+            #9E5542 43%,
+            #B86A52 50%,
+            #9E5542 57%,
+            #844537 76%,
+            #69382F 100%
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* =========================================================
+   HERO — SUBTITLE
+   ========================================================= */
+
+.signature-hero-subtitle {
+
+    margin-bottom: 18px;
+
+    color:
+        var(--ars-white);
+
+    font-size:
+        clamp(11px, 1.2vw, 14px);
+
+    font-weight: 500;
+
+    letter-spacing: .34em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   HERO — DESCRIPTION
+   ========================================================= */
+
+.signature-hero-description {
+
+    max-width: 570px;
+
+    margin-bottom: 42px;
+
+    color:
+        var(--ars-white-soft);
+
+    font-size:
+        clamp(14px, 1.3vw, 17px);
+
+    line-height: 1.85;
+
+    letter-spacing: .01em;
+}
+
+
+/* =========================================================
+   HERO — ENTER
+   ========================================================= */
+
+.signature-hero-enter {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    color:
+        var(--ars-white);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: .25em;
+
+    text-transform: uppercase;
+
+    transition:
+        color var(--ars-transition);
+}
+
+
+.signature-hero-enter-line {
+
+    width: 70px;
+    height: 1px;
+
+    background:
+        var(--ars-blue);
+
+    box-shadow:
+        var(--ars-blue-glow);
+
+    transition:
+        width var(--ars-transition);
+}
+
+
+.signature-hero-enter-arrow {
+
+    color:
+        var(--ars-blue);
+
+    font-size: 18px;
+
+    transition:
+        transform var(--ars-transition);
+}
+
+
+.signature-hero-enter:hover {
+
+    color:
+        var(--ars-rose-light);
+}
+
+
+.signature-hero-enter:hover
+.signature-hero-enter-line {
+
+    width: 92px;
+}
+
+
+.signature-hero-enter:hover
+.signature-hero-enter-arrow {
+
+    transform:
+        translateX(6px);
+}
+
+
+/* =========================================================
+   HERO — SIDE INFORMATION
+   ========================================================= */
+
+.signature-hero-side {
+
+    position: absolute;
+
+    z-index: 10;
+
+    top: 50%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    color:
+        var(--ars-gray);
+
+    font-size: 8px;
+
+    letter-spacing: .22em;
+
+    text-transform: uppercase;
+
+    writing-mode: vertical-rl;
+
+    transform:
+        translateY(-50%);
+}
+
+
+.signature-hero-side-left {
+    left: 2.5%;
+}
+
+
+.signature-hero-side-right {
+    right: 2.5%;
+}
+
+
+.signature-hero-side span:first-child {
+
+    color:
+        var(--ars-rose-light);
+}
+
+
+/* =========================================================
+   HERO — SCROLL
+   ========================================================= */
+
+.signature-scroll {
+
+    position: absolute;
+
+    z-index: 10;
+
+    left: 50%;
+    bottom: 34px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 10px;
+
+    transform:
+        translateX(-50%);
+
+    color:
+        var(--ars-gray);
+
+    font-size: 8px;
+
+    letter-spacing: .28em;
+
+    text-transform: uppercase;
+}
+
+
+.signature-scroll-line {
+
+    width: 1px;
+    height: 42px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            var(--ars-rose-main),
+            transparent
+        );
+
+    box-shadow:
+        var(--ars-rose-glow-soft);
+}
+
+
+/* =========================================================
+   HERO — MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .signature-hero {
+        min-height: 92vh;
+    }
+
+    .signature-hero-content {
+        width: 84%;
+
+        min-height: 92vh;
+
+        padding:
+            100px 0 110px;
+    }
+
+    .signature-hero-background img {
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+
+        object-position:
+            center center;
+    }
+
+    .signature-hero-grid {
+        opacity: .10;
+
+        background-size:
+            60px 60px;
+    }
+
+    .signature-hero-line {
+        display: none;
+    }
+
+    .signature-hero-side {
+        display: none;
+    }
+
+    .signature-hero h1 {
+        font-size:
+            clamp(44px, 14vw, 72px);
+
+        letter-spacing:
+            -.035em;
+    }
+
+    .signature-hero-description {
+        max-width: 92%;
+    }
+
+    .signature-scroll {
+        bottom: 24px;
+    }
+}
