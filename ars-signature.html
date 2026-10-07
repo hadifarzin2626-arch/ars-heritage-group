@@ -1044,7 +1044,587 @@
 <!-- SIGNATURE SCRIPT -->
 <!-- ===================================================== -->
 
-<script src="ars-signature.js"></script>
+
+/* =========================================================
+   ARS SIGNATURE — HERO INTERACTIVE FIELD
+   01 — Cinematic Parallax
+   02 — Luxury Light Field
+   03 — Magnetic UI
+   04 — Smooth Return
+   ========================================================= */
+<script> 
+
+
+
+    
+(function () {
+
+    const hero = document.querySelector(".signature-hero");
+
+    if (!hero) return;
+
+
+    /* -----------------------------------------------------
+       TARGET ELEMENTS
+       ----------------------------------------------------- */
+
+    const background = hero.querySelector(
+        ".signature-hero-background"
+    );
+
+    const grid = hero.querySelector(
+        ".signature-hero-grid"
+    );
+
+    const mark = hero.querySelector(
+        ".signature-mark"
+    );
+
+    const enter = hero.querySelector(
+        ".signature-hero-enter"
+    );
+
+    const sideLeft = hero.querySelector(
+        ".signature-hero-side-left"
+    );
+
+    const sideRight = hero.querySelector(
+        ".signature-hero-side-right"
+    );
+
+    const scroll = hero.querySelector(
+        ".signature-scroll"
+    );
+
+
+    /* -----------------------------------------------------
+       POINTER STATE
+       ----------------------------------------------------- */
+
+    let pointerX = 0;
+    let pointerY = 0;
+
+    let targetX = 0;
+    let targetY = 0;
+
+    let currentX = 0;
+    let currentY = 0;
+
+    let active = false;
+
+    let animationFrame = null;
+
+
+    /* -----------------------------------------------------
+       HELPERS
+       ----------------------------------------------------- */
+
+    function clamp(value, min, max) {
+        return Math.max(min, Math.min(max, value));
+    }
+
+
+    /* -----------------------------------------------------
+       MAGNETIC ELEMENT
+       ----------------------------------------------------- */
+
+    function magneticMove(element, strength, rect, x, y) {
+
+        if (!element) return;
+
+        const centerX =
+            rect.left + rect.width / 2;
+
+        const centerY =
+            rect.top + rect.height / 2;
+
+        const distanceX =
+            x - centerX;
+
+        const distanceY =
+            y - centerY;
+
+        const distance =
+            Math.sqrt(
+                distanceX * distanceX +
+                distanceY * distanceY
+            );
+
+        /*
+           Magnetic field activates only when the pointer
+           is reasonably close to the element.
+        */
+
+        const magneticRadius = 180;
+
+        if (distance > magneticRadius) {
+
+            element.style.setProperty(
+                "--mag-x",
+                "0px"
+            );
+
+            element.style.setProperty(
+                "--mag-y",
+                "0px"
+            );
+
+            return;
+        }
+
+
+        /*
+           Smooth falloff.
+        */
+
+        const influence =
+            1 - (distance / magneticRadius);
+
+
+        const moveX =
+            clamp(
+                distanceX * influence * 0.018 * strength,
+                -3,
+                3
+            );
+
+        const moveY =
+            clamp(
+                distanceY * influence * 0.018 * strength,
+                -3,
+                3
+            );
+
+
+        element.style.setProperty(
+            "--mag-x",
+            `${moveX}px`
+        );
+
+        element.style.setProperty(
+            "--mag-y",
+            `${moveY}px`
+        );
+    }
+
+
+    /* -----------------------------------------------------
+       ANIMATION LOOP
+       ----------------------------------------------------- */
+
+    function animate() {
+
+        /*
+           Smooth interpolation.
+           This is what gives the Hero the expensive,
+           slow, controlled feeling.
+        */
+
+        currentX +=
+            (targetX - currentX) * 0.075;
+
+        currentY +=
+            (targetY - currentY) * 0.075;
+
+
+        /* -------------------------------------------------
+           01 — PARALLAX
+           ------------------------------------------------- */
+
+        if (background) {
+
+            background.style.transform =
+                `translate3d(${
+                    currentX * -0.95
+                }px,${
+                    currentY * -0.95
+                }px,0) scale(1.025)`;
+        }
+
+
+        if (grid) {
+
+            grid.style.transform =
+                `translate3d(${
+                    currentX * 0.30
+                }px,${
+                    currentY * 0.30
+                }px,0)`;
+        }
+
+
+        /* -------------------------------------------------
+           HERO SIDE INFORMATION
+           ------------------------------------------------- */
+
+        if (sideLeft) {
+
+            sideLeft.style.transform =
+                `translate3d(${
+                    currentX * 0.16
+                }px,${
+                    currentY * 0.16
+                }px,0)`;
+        }
+
+
+        if (sideRight) {
+
+            sideRight.style.transform =
+                `translate3d(${
+                    currentX * -0.16
+                }px,${
+                    currentY * -0.16
+                }px,0)`;
+        }
+
+
+        /* -------------------------------------------------
+           DISCOVER
+           ------------------------------------------------- */
+
+        if (scroll) {
+
+            scroll.style.transform =
+                `translate3d(${
+                    currentX * 0.10
+                }px,${
+                    currentY * 0.10
+                }px,0)`;
+        }
+
+
+        /* -------------------------------------------------
+           02 — LIGHT FIELD
+           ------------------------------------------------- */
+
+        const lightX =
+            50 + currentX * 1.9;
+
+        const lightY =
+            50 + currentY * 1.9;
+
+
+        hero.style.setProperty(
+            "--hero-light-x",
+            `${lightX}%`
+        );
+
+        hero.style.setProperty(
+            "--hero-light-y",
+            `${lightY}%`
+        );
+
+
+        /* -------------------------------------------------
+           03 — MAGNETIC UI
+           ------------------------------------------------- */
+
+        if (active) {
+
+            if (mark) {
+
+                magneticMove(
+                    mark,
+                    0.55,
+                    mark.getBoundingClientRect(),
+                    pointerX,
+                    pointerY
+                );
+            }
+
+
+            if (enter) {
+
+                magneticMove(
+                    enter,
+                    1.0,
+                    enter.getBoundingClientRect(),
+                    pointerX,
+                    pointerY
+                );
+            }
+        }
+
+
+        animationFrame =
+            requestAnimationFrame(animate);
+    }
+
+
+    /* -----------------------------------------------------
+       POINTER MOVE
+       ----------------------------------------------------- */
+
+    hero.addEventListener(
+        "pointermove",
+        function (event) {
+
+            /*
+               Ignore multi-touch gestures.
+            */
+
+            if (
+                event.pointerType === "touch" &&
+                event.isPrimary === false
+            ) {
+                return;
+            }
+
+
+            const rect =
+                hero.getBoundingClientRect();
+
+
+            /*
+               Convert pointer position into
+               normalized -1 → +1 coordinates.
+            */
+
+            const normalizedX =
+                (
+                    event.clientX -
+                    rect.left
+                ) / rect.width;
+
+
+            const normalizedY =
+                (
+                    event.clientY -
+                    rect.top
+                ) / rect.height;
+
+
+            /*
+               Very small movement range.
+               This is intentionally NOT dramatic.
+            */
+
+            targetX =
+                clamp(
+                    (normalizedX - 0.5) * 5.0,
+                    -2.5,
+                    2.5
+                );
+
+            targetY =
+                clamp(
+                    (normalizedY - 0.5) * 3.8,
+                    -1.9,
+                    1.9
+                );
+
+
+            pointerX =
+                event.clientX;
+
+            pointerY =
+                event.clientY;
+
+
+            if (!active) {
+
+                active = true;
+
+                hero.classList.add(
+                    "signature-hero-active"
+                );
+            }
+
+        },
+        {
+            passive: true
+        }
+    );
+
+
+    /* -----------------------------------------------------
+       POINTER ENTER
+       ----------------------------------------------------- */
+
+    hero.addEventListener(
+        "pointerenter",
+        function () {
+
+            active = true;
+
+            hero.classList.add(
+                "signature-hero-active"
+            );
+        },
+        {
+            passive: true
+        }
+    );
+
+
+    /* -----------------------------------------------------
+       POINTER LEAVE
+       ----------------------------------------------------- */
+
+    hero.addEventListener(
+        "pointerleave",
+        function () {
+
+            active = false;
+
+
+            /*
+               Return to center.
+               The animation loop handles the
+               smooth physical return.
+            */
+
+            targetX = 0;
+            targetY = 0;
+
+
+            hero.classList.remove(
+                "signature-hero-active"
+            );
+
+
+            /*
+               Reset magnetic UI.
+            */
+
+            if (mark) {
+
+                mark.style.setProperty(
+                    "--mag-x",
+                    "0px"
+                );
+
+                mark.style.setProperty(
+                    "--mag-y",
+                    "0px"
+                );
+            }
+
+
+            if (enter) {
+
+                enter.style.setProperty(
+                    "--mag-x",
+                    "0px"
+                );
+
+                enter.style.setProperty(
+                    "--mag-y",
+                    "0px"
+                );
+            }
+
+        },
+        {
+            passive: true
+        }
+    );
+
+
+    /* -----------------------------------------------------
+       TOUCH SUPPORT
+       ----------------------------------------------------- */
+
+    hero.addEventListener(
+        "touchmove",
+        function (event) {
+
+            if (!event.touches.length) return;
+
+            const touch =
+                event.touches[0];
+
+            const rect =
+                hero.getBoundingClientRect();
+
+
+            const normalizedX =
+                (
+                    touch.clientX -
+                    rect.left
+                ) / rect.width;
+
+
+            const normalizedY =
+                (
+                    touch.clientY -
+                    rect.top
+                ) / rect.height;
+
+
+            targetX =
+                clamp(
+                    (normalizedX - 0.5) * 4.0,
+                    -2,
+                    2
+                );
+
+            targetY =
+                clamp(
+                    (normalizedY - 0.5) * 3.0,
+                    -1.5,
+                    1.5
+                );
+
+
+            pointerX =
+                touch.clientX;
+
+            pointerY =
+                touch.clientY;
+
+
+            active = true;
+
+            hero.classList.add(
+                "signature-hero-active"
+            );
+
+        },
+        {
+            passive: true
+        }
+    );
+
+
+    /* -----------------------------------------------------
+       TOUCH END
+       ----------------------------------------------------- */
+
+    hero.addEventListener(
+        "touchend",
+        function () {
+
+            active = false;
+
+            targetX = 0;
+            targetY = 0;
+
+            hero.classList.remove(
+                "signature-hero-active"
+            );
+
+        },
+        {
+            passive: true
+        }
+    );
+
+
+    /* -----------------------------------------------------
+       START
+       ----------------------------------------------------- */
+
+    if (!animationFrame) {
+        animationFrame =
+            requestAnimationFrame(animate);
+    }
+
+})();
+    
+    
+    </script>
 
 
 </body>
