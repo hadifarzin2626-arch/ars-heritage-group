@@ -6515,3 +6515,167 @@ body.signature-page::selection {
         0 0 6px rgba(57,181,255,.42),
         0 0 14px rgba(21,155,255,.24) !important;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===================================================== */
+/* ARS SIGNATURE — HERO */
+/* SIGNATURE REVEAL — DESIGN 03 */
+/* ===================================================== */
+
+.signature-hero {
+    --sig-reveal-ease: cubic-bezier(.22,.61,.36,1);
+}
+
+/* Initial reveal state */
+.signature-hero .signature-eyebrow,
+.signature-hero .signature-mark,
+.signature-hero h1,
+.signature-hero .signature-hero-subtitle,
+.signature-hero .signature-hero-description,
+.signature-hero .signature-hero-enter {
+    opacity: 0;
+    transform: translateY(18px);
+}
+
+/* Mark lines start closed */
+.signature-hero .signature-mark-line {
+    transform: scaleX(0);
+    transform-origin: center;
+}
+
+/* Blue scan line */
+.signature-hero::after {
+    content: "";
+    position: absolute;
+    left: 12%;
+    bottom: 16%;
+    width: 0;
+    height: 1px;
+    z-index: 8;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #159BFF 25%,
+        #C8EDFF 50%,
+        #159BFF 75%,
+        transparent
+    );
+    box-shadow:
+        0 0 5px rgba(200,237,255,.8),
+        0 0 14px rgba(21,155,255,.45);
+    pointer-events: none;
+}
+
+/* Activated state */
+.signature-hero.signature-reveal-active
+.signature-eyebrow {
+    animation: sigRevealUp .8s var(--sig-reveal-ease) .15s forwards;
+}
+
+.signature-hero.signature-reveal-active
+.signature-mark {
+    animation: sigRevealUp .8s var(--sig-reveal-ease) .35s forwards;
+}
+
+.signature-hero.signature-reveal-active
+.signature-mark-line {
+    animation: sigMarkLine .9s var(--sig-reveal-ease) .45s forwards;
+}
+
+.signature-hero.signature-reveal-active
+h1 {
+    animation: sigRevealUp 1s var(--sig-reveal-ease) .65s forwards;
+}
+
+.signature-hero.signature-reveal-active
+.signature-hero-subtitle {
+    animation: sigRevealUp .8s var(--sig-reveal-ease) .85s forwards;
+}
+
+.signature-hero.signature-reveal-active
+.signature-hero-description {
+    animation: sigRevealUp .8s var(--sig-reveal-ease) 1s forwards;
+}
+
+.signature-hero.signature-reveal-active
+.signature-hero-enter {
+    animation: sigRevealUp .8s var(--sig-reveal-ease) 1.15s forwards;
+}
+
+.signature-hero.signature-reveal-active::after {
+    animation: sigBlueScan 1.5s var(--sig-reveal-ease) 1.25s forwards;
+}
+
+@keyframes sigRevealUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes sigMarkLine {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes sigBlueScan {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    100% {
+        width: 76%;
+        opacity: .9;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .signature-hero .signature-eyebrow,
+    .signature-hero .signature-mark,
+    .signature-hero h1,
+    .signature-hero .signature-hero-subtitle,
+    .signature-hero .signature-hero-description,
+    .signature-hero .signature-hero-enter {
+        opacity: 1;
+        transform: none;
+        animation: none !important;
+    }
+
+    .signature-hero .signature-mark-line {
+        transform: scaleX(1);
+        animation: none !important;
+    }
+
+    .signature-hero::after {
+        width: 76%;
+        animation: none !important;
+    }
+}
