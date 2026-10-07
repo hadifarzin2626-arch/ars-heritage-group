@@ -6916,3 +6916,392 @@ body.signature-page {
     }
    }
 
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS SIGNATURE 2
+   FINAL WORLDS VISUAL REFINEMENT
+   DARKER / ELECTRIC BLUE / DEEP LUXURY
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   01 — ALL WORLD CARDS : MUCH DARKER
+   --------------------------------------------------------- */
+
+.signature-world {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(2, 5, 8, 0.97),
+            rgba(7, 12, 18, 0.94)
+        );
+
+    border-color:
+        rgba(57, 181, 255, 0.08);
+
+    box-shadow:
+        0 35px 100px rgba(0, 0, 0, 0.78),
+        inset 0 0 80px rgba(0, 0, 0, 0.38);
+}
+
+
+/* تصویر هم کمی تاریک‌تر */
+
+.signature-world-image img {
+    filter:
+        saturate(0.72)
+        contrast(1.12)
+        brightness(0.52);
+}
+
+
+.signature-world:hover .signature-world-image img {
+    filter:
+        saturate(0.82)
+        contrast(1.14)
+        brightness(0.60);
+}
+
+
+/* Overlay قوی‌تر */
+
+.signature-world-overlay {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(2, 4, 7, 0.97) 0%,
+            rgba(2, 4, 7, 0.84) 38%,
+            rgba(2, 4, 7, 0.48) 72%,
+            rgba(2, 4, 7, 0.72) 100%
+        );
+}
+
+
+/* ---------------------------------------------------------
+   02 — BIG TITLES → ELECTRIC BLUE
+   --------------------------------------------------------- */
+
+.signature-world-content h3 {
+    color:
+        var(--ars-blue-light);
+
+    text-shadow:
+        0 0 12px rgba(57, 181, 255, 0.28),
+        0 0 32px rgba(21, 155, 255, 0.16);
+
+    font-size:
+        clamp(2.35rem, 4vw, 4.5rem);
+}
+
+
+/* خط زیر عنوان */
+
+.signature-world-content h3::after {
+    width: 145px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--ars-blue-light),
+            rgba(57, 181, 255, 0.28),
+            transparent
+        );
+
+    box-shadow:
+        0 0 12px rgba(21, 155, 255, 0.65);
+}
+
+
+/* ---------------------------------------------------------
+   03 — WORLD LABEL SMALLER
+   --------------------------------------------------------- */
+
+.signature-world-label {
+    color:
+        rgba(200, 237, 255, 0.82);
+
+    font-size: 0.55rem;
+
+    letter-spacing:
+        0.28em;
+}
+
+
+.signature-world-number {
+    color:
+        var(--ars-blue-light);
+
+    font-size:
+        0.58rem;
+}
+
+
+/* ---------------------------------------------------------
+   04 — NORMAL WORLD TEXT
+   --------------------------------------------------------- */
+
+.signature-world-content p {
+    color:
+        rgba(215, 221, 227, 0.72);
+
+    font-size:
+        0.70rem;
+
+    line-height:
+        1.85;
+}
+
+
+/* ---------------------------------------------------------
+   05 — SELECTED ROSE GOLD WORLDS
+   Darker by ~20%
+   --------------------------------------------------------- */
+
+
+/*
+   03 — VIP ENGINEERING
+   05 — CONCEPT COLLECTION
+   06 — FOUNDER COLLECTION
+*/
+
+
+.signature-world:nth-of-type(4),
+.signature-world:nth-of-type(6),
+.signature-world:nth-of-type(7) {
+
+    background:
+        radial-gradient(
+            ellipse at 70% 15%,
+            rgba(193, 132, 108, 0.18),
+            transparent 34%
+        ),
+        linear-gradient(
+            135deg,
+            #3F2924 0%,
+            #51342C 48%,
+            #33221F 100%
+        );
+
+    border-color:
+        rgba(212, 154, 124, 0.28);
+
+    box-shadow:
+        0 45px 110px rgba(0, 0, 0, 0.82),
+        inset 0 0 100px rgba(20, 8, 5, 0.32);
+}
+
+
+/* Rose Gold cards remain dark */
+
+.signature-world:nth-of-type(4) .signature-world-image,
+.signature-world:nth-of-type(6) .signature-world-image,
+.signature-world:nth-of-type(7) .signature-world-image {
+    opacity: 0.045;
+}
+
+
+.signature-world:nth-of-type(4) .signature-world-overlay,
+.signature-world:nth-of-type(6) .signature-world-overlay,
+.signature-world:nth-of-type(7) .signature-world-overlay {
+    opacity: 0.18;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(25, 12, 9, 0.92),
+            rgba(25, 12, 9, 0.62),
+            rgba(25, 12, 9, 0.84)
+        );
+}
+
+
+/* Rose Gold card title also becomes Electric Blue */
+
+.signature-world:nth-of-type(4) .signature-world-content h3,
+.signature-world:nth-of-type(6) .signature-world-content h3,
+.signature-world:nth-of-type(7) .signature-world-content h3 {
+    color:
+        var(--ars-blue-light);
+
+    text-shadow:
+        0 0 15px rgba(57, 181, 255, 0.32),
+        0 0 40px rgba(21, 155, 255, 0.14);
+}
+
+
+.signature-world:nth-of-type(4) .signature-world-content p,
+.signature-world:nth-of-type(6) .signature-world-content p,
+.signature-world:nth-of-type(7) .signature-world-content p {
+    color:
+        rgba(243, 245, 247, 0.72);
+}
+
+
+/* ---------------------------------------------------------
+   06 — ELECTRIC BLUE FRAME
+   Half-two / selected cards
+   --------------------------------------------------------- */
+
+.signature-world:nth-of-type(n+5) {
+
+    border:
+        1px solid rgba(57, 181, 255, 0.48);
+
+    box-shadow:
+        0 35px 100px rgba(0, 0, 0, 0.82),
+        0 0 25px rgba(21, 155, 255, 0.08),
+        inset 0 0 70px rgba(21, 155, 255, 0.025);
+
+    transition:
+        border-color 700ms ease,
+        box-shadow 900ms ease,
+        transform 900ms var(--ars-ease);
+}
+
+
+.signature-world:nth-of-type(n+5)::before {
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--ars-blue-deep),
+            var(--ars-blue-light),
+            var(--ars-blue),
+            var(--ars-blue-light),
+            var(--ars-blue-deep)
+        );
+
+    box-shadow:
+        0 0 14px rgba(57, 181, 255, 0.85),
+        0 0 35px rgba(21, 155, 255, 0.30);
+}
+
+
+.signature-world:nth-of-type(n+5):hover {
+
+    border-color:
+        rgba(57, 181, 255, 0.82);
+
+    box-shadow:
+        0 45px 120px rgba(0, 0, 0, 0.88),
+        0 0 35px rgba(21, 155, 255, 0.18),
+        inset 0 0 90px rgba(21, 155, 255, 0.045);
+}
+
+
+/* ---------------------------------------------------------
+   07 — ELECTRIC BLUE CURTAIN
+   More elegant / less neon
+   --------------------------------------------------------- */
+
+.signature-world:nth-of-type(n+5)::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: -35%;
+    left: 8%;
+
+    width: 26%;
+    height: 170%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(57, 181, 255, 0.10),
+            rgba(57, 181, 255, 0.035),
+            transparent
+        );
+
+    filter:
+        blur(22px);
+
+    transform:
+        rotate(12deg);
+
+    opacity:
+        0.7;
+
+    pointer-events:
+        none;
+
+    transition:
+        transform 1.6s var(--ars-ease),
+        opacity 800ms ease;
+}
+
+
+.signature-world:nth-of-type(n+5):hover::after {
+
+    transform:
+        rotate(12deg)
+        translateX(35%);
+
+    opacity:
+        1;
+}
+
+
+/* ---------------------------------------------------------
+   08 — REDUCE HUGE "ARS SIGNATURE" VISUAL IMPACT
+   --------------------------------------------------------- */
+
+.signature-world-content .signature-world-label {
+    transform: scale(0.88);
+    transform-origin: left center;
+}
+
+
+/* ---------------------------------------------------------
+   09 — WORLD LINKS
+   --------------------------------------------------------- */
+
+.signature-world-content a {
+    color:
+        var(--ars-blue-light);
+
+    font-size:
+        0.60rem;
+
+    letter-spacing:
+        0.18em;
+}
+
+
+.signature-world-content a:hover {
+    color:
+        var(--ars-blue-white);
+}
+
+
+/* ---------------------------------------------------------
+   10 — MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    .signature-world-content h3 {
+        font-size:
+            clamp(2.2rem, 10vw, 3.5rem);
+    }
+
+    .signature-world:nth-of-type(n+5) {
+        border-color:
+            rgba(57, 181, 255, 0.42);
+    }
+}
