@@ -10633,4 +10633,215 @@ section:nth-of-type(7)::after {
         height: 170px;
     }
 
+
+
 }
+
+
+/* ===================================================== */
+/* ARS SIGNATURE PORTAL — SCALE + ROSE GOLD HALO */
+/* ===================================================== */
+
+
+/* ----------------------------------------------------- */
+/* LARGER DEFAULT PORTAL */
+/* ----------------------------------------------------- */
+
+.signature-portal {
+    width: 247px;
+    height: 325px;
+
+    transition:
+        transform 0.45s cubic-bezier(.22,.61,.36,1);
+}
+
+
+/* ----------------------------------------------------- */
+/* LARGER ARCHITECTURAL FRAME */
+/* ----------------------------------------------------- */
+
+.signature-portal-frame {
+    width: 153px;
+    height: 231px;
+
+    transition:
+        width 0.5s cubic-bezier(.22,.61,.36,1),
+        height 0.5s cubic-bezier(.22,.61,.36,1),
+        border-color 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+
+/* ----------------------------------------------------- */
+/* ROSE GOLD ATMOSPHERIC HALO BEHIND THE PORTAL */
+/* ----------------------------------------------------- */
+
+.signature-portal::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 230px;
+    height: 290px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(212, 154, 124, 0.22) 0%,
+            rgba(212, 154, 124, 0.13) 25%,
+            rgba(212, 154, 124, 0.065) 48%,
+            rgba(212, 154, 124, 0.018) 68%,
+            transparent 78%
+        );
+
+    filter: blur(18px);
+
+    opacity: 0.85;
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+
+/* ----------------------------------------------------- */
+/* SECONDARY INNER ROSE GOLD GLOW */
+/* ----------------------------------------------------- */
+
+.signature-portal::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 155px;
+    height: 215px;
+
+    transform: translate(-50%, -50%);
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(230, 179, 154, 0.12),
+            transparent 68%
+        );
+
+    filter: blur(12px);
+
+    opacity: 0.75;
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+
+/* ----------------------------------------------------- */
+/* KEEP FRAME ABOVE THE HALO */
+/* ----------------------------------------------------- */
+
+.signature-portal-frame {
+    z-index: 1;
+}
+
+
+/* ----------------------------------------------------- */
+/* HOVER — CONTROLLED EXPANSION */
+/* ----------------------------------------------------- */
+
+.signature-portal:hover .signature-portal-frame {
+    width: 166px;
+    height: 247px;
+
+    border-color: rgba(230, 179, 154, 0.96);
+
+    box-shadow:
+        0 0 18px rgba(230, 179, 154, 0.30),
+        0 0 45px rgba(212, 154, 124, 0.20),
+        0 0 90px rgba(212, 154, 124, 0.10),
+        inset 0 0 38px rgba(212, 154, 124, 0.06);
+}
+
+
+/* ----------------------------------------------------- */
+/* CLICK STATE */
+/* ----------------------------------------------------- */
+
+.signature-portal.is-entering {
+    transform: scale(1.25);
+
+    transition:
+        transform 0.38s cubic-bezier(.16,1,.3,1);
+}
+
+
+.signature-portal.is-entering::before {
+    opacity: 1;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1.18);
+
+    filter: blur(20px);
+}
+
+
+.signature-portal.is-entering::after {
+    opacity: 1;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1.22);
+}
+
+
+/* ----------------------------------------------------- */
+/* CLICKED FRAME */
+/* ----------------------------------------------------- */
+
+.signature-portal.is-entering .signature-portal-frame {
+    border-color: #E6B39A;
+
+    box-shadow:
+        0 0 20px rgba(230, 179, 154, 0.65),
+        0 0 55px rgba(212, 154, 124, 0.38),
+        0 0 110px rgba(212, 154, 124, 0.18),
+        inset 0 0 45px rgba(212, 154, 124, 0.10);
+}
+
+
+/* ----------------------------------------------------- */
+/* MOBILE */
+/* ----------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+    .signature-portal {
+        width: 221px;
+        height: 293px;
+    }
+
+    .signature-portal-frame {
+        width: 137px;
+        height: 208px;
+    }
+
+    .signature-portal:hover .signature-portal-frame {
+        width: 149px;
+        height: 222px;
+    }
+
+}
+
+
+
+        
