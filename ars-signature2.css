@@ -2222,3 +2222,428 @@ body.signature-page {
     }
 
        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===================================================== */
+/* ARS SIGNATURE — UNIQUE HERO VISUAL SYSTEM */
+/* ===================================================== */
+
+
+/* ----------------------------------------------------- */
+/* HERO */
+/* ----------------------------------------------------- */
+
+.signature-hero {
+    position: relative;
+
+    min-height: 900px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            #05070A 0%,
+            #080D14 48%,
+            #0B111A 100%
+        );
+}
+
+
+/* ----------------------------------------------------- */
+/* HERO VISUAL — INDEPENDENT ARCHITECTURAL IMAGE */
+/* ----------------------------------------------------- */
+
+.signature-hero-visual {
+    position: absolute;
+
+    top: 50%;
+    right: 5%;
+
+    width: min(48vw, 760px);
+    height: 76%;
+
+    transform: translateY(-50%);
+
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    pointer-events: none;
+}
+
+
+/* ----------------------------------------------------- */
+/* VISUAL FRAME */
+/* ----------------------------------------------------- */
+
+.signature-hero-visual-frame {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    background: #080D14;
+
+    border:
+        1px solid
+        rgba(212, 154, 124, 0.32);
+
+    box-shadow:
+        0 0 35px rgba(212, 154, 124, 0.08),
+        0 0 90px rgba(21, 155, 255, 0.06);
+
+}
+
+
+/* ----------------------------------------------------- */
+/* IMAGE */
+/* ----------------------------------------------------- */
+
+.signature-hero-visual-image {
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+}
+
+
+.signature-hero-visual-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    opacity: 0.90;
+}
+
+
+/* ----------------------------------------------------- */
+/* ARCHITECTURAL IMAGE FADE */
+/* ----------------------------------------------------- */
+
+.signature-hero-visual-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 7, 10, 0.92) 0%,
+            rgba(5, 7, 10, 0.20) 26%,
+            transparent 55%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(5, 7, 10, 0.28),
+            transparent 25%,
+            transparent 72%,
+            rgba(5, 7, 10, 0.72)
+        );
+}
+
+
+/* ----------------------------------------------------- */
+/* ROSE GOLD ATMOSPHERIC LIGHT */
+/* ----------------------------------------------------- */
+
+.signature-hero-visual-glow {
+    position: absolute;
+
+    left: 0;
+    top: 50%;
+
+    width: 70%;
+    height: 80%;
+
+    transform:
+        translate(-25%, -50%);
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(212, 154, 124, 0.16),
+            rgba(212, 154, 124, 0.05) 42%,
+            transparent 72%
+        );
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+
+/* ----------------------------------------------------- */
+/* SIGNATURE EDGE */
+/* ----------------------------------------------------- */
+
+.signature-hero-visual-edge {
+    position: absolute;
+
+    top: 6%;
+    bottom: 6%;
+    left: 0;
+
+    width: 1px;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            #D49A7C 20%,
+            #E6B39A 50%,
+            #D49A7C 80%,
+            transparent
+        );
+
+    box-shadow:
+        0 0 14px rgba(230, 179, 154, 0.42);
+
+    z-index: 3;
+}
+
+
+/* ----------------------------------------------------- */
+/* HERO OVERLAY */
+/* ----------------------------------------------------- */
+
+.signature-hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 7, 10, 0.98) 0%,
+            rgba(5, 7, 10, 0.82) 32%,
+            rgba(5, 7, 10, 0.18) 68%,
+            rgba(5, 7, 10, 0.42) 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* ----------------------------------------------------- */
+/* VIGNETTE */
+/* ----------------------------------------------------- */
+
+.signature-hero-vignette {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 3;
+
+    background:
+        radial-gradient(
+            ellipse at 70% 50%,
+            transparent 35%,
+            rgba(3, 5, 8, 0.48) 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* ----------------------------------------------------- */
+/* CONTENT */
+/* ----------------------------------------------------- */
+
+.signature-hero-content {
+    position: relative;
+
+    z-index: 5;
+
+    width: min(720px, 48%);
+
+    margin-left: 8%;
+
+    text-align: left;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+/* ----------------------------------------------------- */
+/* EYEBROW */
+/* ----------------------------------------------------- */
+
+.signature-eyebrow {
+    color: #D49A7C;
+}
+
+
+/* ----------------------------------------------------- */
+/* MARK */
+/* ----------------------------------------------------- */
+
+.signature-mark {
+    justify-content: flex-start;
+}
+
+
+/* ----------------------------------------------------- */
+/* HERO TITLE */
+/* ----------------------------------------------------- */
+
+.signature-hero h1 {
+    text-align: left;
+}
+
+
+/* ----------------------------------------------------- */
+/* SUBTITLE */
+/* ----------------------------------------------------- */
+
+.signature-hero-subtitle {
+    text-align: left;
+}
+
+
+/* ----------------------------------------------------- */
+/* DESCRIPTION */
+/* ----------------------------------------------------- */
+
+.signature-hero-description {
+    text-align: left;
+
+    max-width: 560px;
+}
+
+
+/* ----------------------------------------------------- */
+/* SIDE INFORMATION */
+/* ----------------------------------------------------- */
+
+.signature-hero-side {
+    z-index: 6;
+}
+
+
+/* ----------------------------------------------------- */
+/* MOBILE */
+/* ----------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+    .signature-hero {
+        min-height: 820px;
+
+        display: flex;
+        align-items: flex-end;
+    }
+
+
+    .signature-hero-visual {
+
+        top: 0;
+        right: 0;
+
+        width: 100%;
+        height: 58%;
+
+        transform: none;
+    }
+
+
+    .signature-hero-visual-frame {
+
+        border-left: none;
+        border-right: none;
+    }
+
+
+    .signature-hero-overlay {
+
+        background:
+            linear-gradient(
+                180deg,
+                rgba(5, 7, 10, 0.12) 0%,
+                rgba(5, 7, 10, 0.35) 35%,
+                rgba(5, 7, 10, 0.92) 72%,
+                #05070A 100%
+            );
+    }
+
+
+    .signature-hero-vignette {
+
+        background:
+            radial-gradient(
+                ellipse at center top,
+                transparent 20%,
+                rgba(3, 5, 8, 0.68) 100%
+            );
+    }
+
+
+    .signature-hero-content {
+
+        width: 88%;
+
+        margin:
+            0 auto
+            90px;
+
+        align-items: center;
+
+        text-align: center;
+    }
+
+
+    .signature-hero h1,
+    .signature-hero-subtitle,
+    .signature-hero-description {
+
+        text-align: center;
+    }
+
+
+    .signature-hero-description {
+        max-width: 520px;
+    }
+
+
+    .signature-hero-side {
+        display: none;
+    }
+
+}
