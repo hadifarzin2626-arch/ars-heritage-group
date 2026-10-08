@@ -7189,242 +7189,663 @@ body.signature-page {
 
 
 
-
-
-
-
 /* =========================================================
-   ARS SIGNATURE — MASTER TITLE / LINE OVERRIDE
-   HTML-ALIGNED FINAL TEST
+   ARS SIGNATURE 2
+   TYPOGRAPHY SCALE + COLOR HIERARCHY
    ========================================================= */
 
 
-/* =========================================================
-   01 — ALL MAJOR TITLES
-   Electric Blue
-   ========================================================= */
+/* ---------------------------------------------------------
+   MASTER LARGE TITLE DNA
+   --------------------------------------------------------- */
 
-.signature-intro-inner > h2,
-.signature-principles-header > h2,
-.signature-worlds-header > h2,
-.signature-world-content > h3,
-.signature-experience-content > h2,
-.signature-process-header > h2,
-.signature-private-content > h2,
-.signature-closing > h2,
-.signature-footer-brand > strong {
+.signature-world-content h3,
+.signature-experience-content h2,
+.signature-process-header h2,
+.signature-private-content h2,
+.signature-closing h2 {
 
-    color: #39B5FF !important;
+    color:
+        var(--ars-blue-light);
 
+    text-shadow:
+        0 0 14px rgba(57, 181, 255, 0.28),
+        0 0 34px rgba(21, 155, 255, 0.14);
 }
 
 
-/* =========================================================
-   02 — REMOVE OLD TITLE LINE SOURCES
-   Prevent old pseudo-elements from fighting the new line
-   ========================================================= */
+/* ---------------------------------------------------------
+   ROSE GOLD LIGHT LINE UNDER LARGE TITLES
+   --------------------------------------------------------- */
 
-.signature-intro-inner > h2::before,
-.signature-intro-inner > h2::after,
-
-.signature-principles-header > h2::before,
-.signature-principles-header > h2::after,
-
-.signature-worlds-header > h2::before,
-.signature-worlds-header > h2::after,
-
-.signature-world-content > h3::before,
-.signature-world-content > h3::after,
-
-.signature-experience-content > h2::before,
-.signature-experience-content > h2::after,
-
-.signature-process-header > h2::before,
-.signature-process-header > h2::after,
-
-.signature-private-content > h2::before,
-.signature-private-content > h2::after,
-
-.signature-closing > h2::before,
-.signature-closing > h2::after {
-
-    box-sizing: border-box !important;
-
-}
-
-
-/* =========================================================
-   03 — FORCE THE ACTUAL TITLE LINE
-   Rose Gold luminous line
-   ========================================================= */
-
-.signature-intro-inner > h2::after,
-.signature-principles-header > h2::after,
-.signature-worlds-header > h2::after,
-.signature-world-content > h3::after,
-.signature-experience-content > h2::after,
-.signature-process-header > h2::after,
-.signature-private-content > h2::after,
-.signature-closing > h2::after {
-
-    content: "" !important;
-
-    display: block !important;
-
-    position: relative !important;
-
-    width: 150px !important;
-
-    height: 2px !important;
-
-    margin-top: 22px !important;
-
-    margin-left: 0 !important;
-
-    margin-right: 0 !important;
+.signature-world-content h3::after,
+.signature-experience-content h2::after,
+.signature-process-header h2::after,
+.signature-private-content h2::after,
+.signature-closing h2::after {
 
     background:
         linear-gradient(
             90deg,
-            #E6B39A 0%,
-            #D49A7C 35%,
-            #A96D58 72%,
-            rgba(169,109,88,0) 100%
-        ) !important;
-
-    border: none !important;
-
-    opacity: 1 !important;
+            var(--ars-rose-bright),
+            var(--ars-rose-light),
+            transparent
+        );
 
     box-shadow:
-        0 0 4px rgba(230,179,154,.95),
-        0 0 12px rgba(212,154,124,.85),
-        0 0 26px rgba(169,109,88,.45) !important;
-
+        0 0 12px rgba(212, 154, 124, 0.58),
+        0 0 28px rgba(169, 109, 88, 0.18);
 }
 
 
 /* =========================================================
-   04 — INDIVIDUAL LINE SIZES
+   EXPERIENCE
+   One Vehicle. One Vision. One Signature.
    ========================================================= */
 
-.signature-intro-inner > h2::after {
-    width: 145px !important;
-}
+.signature-experience-content h2 {
 
-.signature-principles-header > h2::after {
-    width: 190px !important;
-}
+    font-size:
+        clamp(2.65rem, 4.15vw, 4.65rem);
 
-.signature-worlds-header > h2::after {
-    width: 180px !important;
-}
+    line-height:
+        0.98;
 
-.signature-world-content > h3::after {
-    width: 120px !important;
-    margin-top: 14px !important;
-}
-
-.signature-experience-content > h2::after {
-    width: 190px !important;
-}
-
-.signature-process-header > h2::after {
-    width: 190px !important;
-}
-
-.signature-private-content > h2::after {
-    width: 200px !important;
-}
-
-.signature-closing > h2::after {
-    width: 240px !important;
+    max-width:
+        760px;
 }
 
 
 /* =========================================================
-   05 — SECTION LABELS
-   Electric Blue + Rose Gold lines
+   PROCESS
+   From Vision To Signature.
    ========================================================= */
 
-.signature-section-label {
+.signature-process-header h2 {
 
-    color: #39B5FF !important;
+    font-size:
+        clamp(2.65rem, 4.25vw, 4.8rem);
 
+    line-height:
+        0.98;
 }
 
 
 /* =========================================================
-   06 — PROCESS SMALL TITLES
+   PRIVATE ACCESS
+   Created For Exceptional Vision.
    ========================================================= */
 
-.signature-process-step > h3 {
+.signature-private-content h2 {
 
-    color: #39B5FF !important;
+    font-size:
+        clamp(2.8rem, 4.5vw, 5rem);
 
+    line-height:
+        0.96;
+
+    max-width:
+        760px;
 }
 
 
 /* =========================================================
-   07 — CLOSING ARS MARK
+   CLOSING
+   ARS SIGNATURE
    ========================================================= */
 
-.signature-closing-mark > strong {
+.signature-closing h2 {
 
-    color: #39B5FF !important;
+    font-size:
+        clamp(3.5rem, 7vw, 7.5rem);
 
+    line-height:
+        0.88;
+}
+
+
+/* ---------------------------------------------------------
+   CLOSING ARS MARK
+   Previously too large
+   --------------------------------------------------------- */
+
+.signature-closing-mark strong {
+
+    font-size:
+        2.9rem;
+
+    color:
+        var(--ars-rose-white);
 }
 
 
 /* =========================================================
-   08 — FOOTER ARS
+   FOOTER ARS
+   Previously extremely oversized
    ========================================================= */
 
-.signature-footer-brand > strong {
+.signature-footer-brand strong {
 
-    color: #39B5FF !important;
+    font-size:
+        clamp(3rem, 5.5vw, 5.5rem);
 
+    line-height:
+        0.78;
+}
+
+
+/* HERITAGE GROUP */
+
+.signature-footer-brand span {
+
+    font-size:
+        0.52rem;
+
+    letter-spacing:
+        0.42em;
 }
 
 
 /* =========================================================
-   09 — MOBILE
+   WORLD TITLES
+   Keep consistent with the new scale
+   ========================================================= */
+
+.signature-world-content h3 {
+
+    font-size:
+        clamp(2.2rem, 3.5vw, 4rem);
+
+    line-height:
+        0.98;
+}
+
+
+/* =========================================================
+   WORLD HEADER
+   Six Expressions. One Signature.
+   ========================================================= */
+
+.signature-worlds-header h2 {
+
+    font-size:
+        clamp(2.6rem, 4.5vw, 5rem);
+
+    line-height:
+        0.98;
+}
+
+
+/* =========================================================
+   EXPERIENCE META
+   ========================================================= */
+
+.signature-experience-meta span {
+
+    color:
+        var(--ars-rose-light);
+}
+
+
+/* =========================================================
+   PROCESS STEP TITLES
+   ========================================================= */
+
+.signature-process-step h3 {
+
+    color:
+        var(--ars-blue-light);
+
+    font-size:
+        2rem;
+}
+
+
+/* =========================================================
+   MOBILE SCALE
    ========================================================= */
 
 @media (max-width: 700px) {
 
-    .signature-intro-inner > h2::after {
-        width: 110px !important;
+    .signature-worlds-header h2 {
+
+        font-size:
+            clamp(2.25rem, 9vw, 3.4rem);
     }
 
-    .signature-principles-header > h2::after {
-        width: 135px !important;
+    .signature-world-content h3 {
+
+        font-size:
+            clamp(2rem, 9vw, 3.1rem);
     }
 
-    .signature-worlds-header > h2::after {
-        width: 130px !important;
+    .signature-experience-content h2 {
+
+        font-size:
+            clamp(2.2rem, 9vw, 3.2rem);
     }
 
-    .signature-world-content > h3::after {
-        width: 95px !important;
+    .signature-process-header h2 {
+
+        font-size:
+            clamp(2.2rem, 9vw, 3.2rem);
     }
 
-    .signature-experience-content > h2::after {
-        width: 140px !important;
+    .signature-private-content h2 {
+
+        font-size:
+            clamp(2.3rem, 9vw, 3.4rem);
     }
 
-    .signature-process-header > h2::after {
-        width: 140px !important;
+    .signature-closing h2 {
+
+        font-size:
+            clamp(3rem, 15vw, 5rem);
     }
 
-    .signature-private-content > h2::after {
-        width: 150px !important;
+    .signature-closing-mark strong {
+
+        font-size:
+            2.3rem;
     }
 
-    .signature-closing > h2::after {
-        width: 175px !important;
+    .signature-footer-brand strong {
+
+        font-size:
+            clamp(2.8rem, 14vw, 4.5rem);
     }
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS SIGNATURE — CINEMATIC IMAGE SYSTEM
+   HTML-ALIGNED
+   ========================================================= */
+
+
+/* =========================================================
+   HERO IMAGE
+   ========================================================= */
+
+.signature-hero {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.signature-hero-background {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.signature-hero-background img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center center;
+    transform: scale(1.035);
+}
+
+
+/* =========================================================
+   SIX SIGNATURE WORLDS
+   LARGE CINEMATIC SCENES
+   ========================================================= */
+
+.signature-worlds {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.signature-world {
+    position: relative;
+    width: 100%;
+    min-height: 78vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.signature-world-featured {
+    min-height: 88vh;
+}
+
+.signature-world-founder {
+    min-height: 88vh;
+}
+
+
+/* IMAGE CONTAINER */
+
+.signature-world-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+/* ACTUAL HTML IMG */
+
+.signature-world-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    object-fit: cover;
+    object-position: center center;
+
+    transform: scale(1.025);
+
+    transition:
+        transform 1.8s cubic-bezier(.22,.61,.36,1),
+        filter 1.2s ease;
+}
+
+
+/* CINEMATIC MOVEMENT */
+
+.signature-world:hover .signature-world-image img {
+    transform: scale(1.065);
+}
+
+
+/* =========================================================
+   WORLD IMAGE GRADING
+   ========================================================= */
+
+.signature-world-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(4,6,9,.90) 0%,
+            rgba(4,6,9,.52) 35%,
+            rgba(4,6,9,.16) 68%,
+            rgba(4,6,9,.58) 100%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(4,6,9,.18) 0%,
+            transparent 42%,
+            rgba(4,6,9,.82) 100%
+        );
+}
+
+
+/* =========================================================
+   WORLD CONTENT
+   ========================================================= */
+
+.signature-world-content {
+    position: relative;
+    z-index: 3;
+
+    min-height: inherit;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding:
+        clamp(40px, 6vw, 110px)
+        clamp(28px, 7vw, 120px);
+
+    max-width: 900px;
+}
+
+
+/* =========================================================
+   EXPERIENCE — LARGE CINEMATIC IMAGE
+   ========================================================= */
+
+.signature-experience {
+    position: relative;
+    width: 100%;
+    padding: clamp(40px, 7vw, 110px);
+
+    overflow: hidden;
+}
+
+.signature-experience-frame {
+    position: relative;
+    width: 100%;
+    min-height: 86vh;
+
+    overflow: hidden;
+}
+
+
+/* ACTUAL IMAGE */
+
+.signature-experience-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.signature-experience-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    object-fit: cover;
+    object-position: center center;
+
+    transform: scale(1.025);
+
+    transition:
+        transform 1.8s cubic-bezier(.22,.61,.36,1);
+}
+
+.signature-experience-frame:hover
+.signature-experience-image img {
+    transform: scale(1.055);
+}
+
+
+/* CINEMATIC EXPERIENCE OVERLAY */
+
+.signature-experience-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(4,6,9,.88) 0%,
+            rgba(4,6,9,.48) 42%,
+            rgba(4,6,9,.12) 78%,
+            rgba(4,6,9,.60) 100%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(4,6,9,.12),
+            transparent 45%,
+            rgba(4,6,9,.86)
+        );
+}
+
+
+/* =========================================================
+   PRIVATE ACCESS — FINAL CINEMATIC SCENE
+   ========================================================= */
+
+.signature-private {
+    position: relative;
+    width: 100%;
+    min-height: 88vh;
+
+    overflow: hidden;
+}
+
+
+.signature-private-background {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+
+.signature-private-background img {
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    object-fit: cover;
+    object-position: center center;
+
+    transform: scale(1.025);
+
+    transition:
+        transform 2s cubic-bezier(.22,.61,.36,1);
+}
+
+
+.signature-private:hover
+.signature-private-background img {
+    transform: scale(1.06);
+}
+
+
+/* PRIVATE CINEMATIC GRADING */
+
+.signature-private-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(4,6,9,.91) 0%,
+            rgba(4,6,9,.58) 38%,
+            rgba(4,6,9,.16) 72%,
+            rgba(4,6,9,.66) 100%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(4,6,9,.12) 0%,
+            transparent 40%,
+            rgba(4,6,9,.88) 100%
+        );
+}
+
+
+.signature-private-content {
+    position: relative;
+    z-index: 3;
+
+    min-height: 88vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding:
+        clamp(45px, 8vw, 130px)
+        clamp(30px, 8vw, 140px);
+
+    max-width: 900px;
+}
+
+
+/* =========================================================
+   CINEMATIC IMAGE DEPTH
+   ========================================================= */
+
+.signature-world-image::after,
+.signature-experience-image::after,
+.signature-private-background::after,
+.signature-hero-background::after {
+
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 42%,
+            rgba(0,0,0,.30) 100%
+        );
 
 }
 
 
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .signature-world {
+        min-height: 72vh;
+    }
+
+    .signature-world-featured,
+    .signature-world-founder {
+        min-height: 78vh;
+    }
+
+    .signature-world-content {
+        padding:
+            35px
+            24px
+            45px;
+    }
+
+    .signature-experience {
+        padding: 24px;
+    }
+
+    .signature-experience-frame {
+        min-height: 76vh;
+    }
+
+    .signature-private,
+    .signature-private-content {
+        min-height: 78vh;
+    }
+
+    .signature-private-content {
+        padding:
+            40px
+            25px;
+    }
+
+}
