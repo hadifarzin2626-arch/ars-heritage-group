@@ -9124,32 +9124,27 @@ body.signature-page {
    TRUE 2 × 2 HERO DIVISION
    ========================================================= */
 
-.signature-hero .signature-frame-grid {
+.signature-hero .signature-frame {
 
-    position: absolute;
-
-    inset: 0;
+    position: relative;
 
     width: 100%;
     height: 100%;
 
-    display: grid;
+    box-sizing: border-box;
 
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    border: 1px solid rgba(212,154,124,.30);
 
-    gap: 0;
+    background: transparent;
 
-    padding: 0;
+    box-shadow:
+        inset 0 0 35px rgba(212,154,124,.025),
+        0 0 22px rgba(212,154,124,.045);
 
-    margin: 0;
-
-    z-index: 6;
-
-    pointer-events: none;
+    animation:
+        arsSignatureFrameBreath
+        9s ease-in-out infinite;
 }
-
-
 /* =========================================================
    INDIVIDUAL FRAME
    ========================================================= */
@@ -9322,46 +9317,5 @@ body.signature-page {
 }
 
 
-/* =========================================================
-   REDUCED MOTION
-   ========================================================= */
 
-@media (prefers-reduced-motion: reduce) {
 
-    .signature-frame,
-    .signature-frame::after {
-
-        animation: none !important;
-    }
-}
-/* TEMP FRAME VISIBILITY TEST */
-
-.signature-hero .signature-frame-grid {
-    position: absolute !important;
-    inset: 0 !important;
-
-    width: 100% !important;
-    height: 100% !important;
-
-    display: grid !important;
-
-    grid-template-columns: 1fr 1fr !important;
-    grid-template-rows: 1fr 1fr !important;
-
-    z-index: 9999 !important;
-
-    pointer-events: none !important;
-}
-
-.signature-hero .signature-frame {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-
-    width: 100% !important;
-    height: 100% !important;
-
-    border: 4px solid red !important;
-
-    background: rgba(255, 0, 0, 0.08) !important;
-}
