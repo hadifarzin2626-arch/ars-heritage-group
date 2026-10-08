@@ -4858,6 +4858,30 @@ Begin The Journey
 </section>
 
 
+  <script>
+document.querySelectorAll('.signature-portal-link').forEach(link => {
+
+    link.addEventListener('click', function (event) {
+
+        event.preventDefault();
+
+        const portal = this.closest('.signature-portal');
+
+        portal.classList.add('is-entering');
+
+        setTimeout(() => {
+            window.location.href = this.href;
+        }, 420);
+
+    });
+
+});
+  </script>
+
+
+
+
+
   
 </body>
 
