@@ -6935,135 +6935,6 @@ body.signature-page {
    ========================================================= */
 
 
-/* ---------------------------------------------------------
-   01 — ALL WORLD CARDS : MUCH DARKER
-   --------------------------------------------------------- */
-
-.signature-world {
-    background:
-        linear-gradient(
-            135deg,
-            rgba(2, 5, 8, 0.97),
-            rgba(7, 12, 18, 0.94)
-        );
-
-    border-color:
-        rgba(57, 181, 255, 0.08);
-
-    box-shadow:
-        0 35px 100px rgba(0, 0, 0, 0.78),
-        inset 0 0 80px rgba(0, 0, 0, 0.38);
-}
-
-
-/* تصویر هم کمی تاریک‌تر */
-
-.signature-world-image img {
-    filter:
-        saturate(0.72)
-        contrast(1.12)
-        brightness(0.52);
-}
-
-
-.signature-world:hover .signature-world-image img {
-    filter:
-        saturate(0.82)
-        contrast(1.14)
-        brightness(0.60);
-}
-
-
-/* Overlay قوی‌تر */
-
-.signature-world-overlay {
-    background:
-        linear-gradient(
-            90deg,
-            rgba(2, 4, 7, 0.97) 0%,
-            rgba(2, 4, 7, 0.84) 38%,
-            rgba(2, 4, 7, 0.48) 72%,
-            rgba(2, 4, 7, 0.72) 100%
-        );
-}
-
-
-/* ---------------------------------------------------------
-   02 — BIG TITLES → ELECTRIC BLUE
-   --------------------------------------------------------- */
-
-.signature-world-content h3 {
-    color:
-        var(--ars-blue-light);
-
-    text-shadow:
-        0 0 12px rgba(57, 181, 255, 0.28),
-        0 0 32px rgba(21, 155, 255, 0.16);
-
-    font-size:
-        clamp(2.35rem, 4vw, 4.5rem);
-}
-
-
-/* خط زیر عنوان */
-
-.signature-world-content h3::after {
-    width: 145px;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--ars-blue-light),
-            rgba(57, 181, 255, 0.28),
-            transparent
-        );
-
-    box-shadow:
-        0 0 12px rgba(21, 155, 255, 0.65);
-}
-
-
-/* ---------------------------------------------------------
-   03 — WORLD LABEL SMALLER
-   --------------------------------------------------------- */
-
-.signature-world-label {
-    color:
-        rgba(200, 237, 255, 0.82);
-
-    font-size: 0.55rem;
-
-    letter-spacing:
-        0.28em;
-}
-
-
-.signature-world-number {
-    color:
-        var(--ars-blue-light);
-
-    font-size:
-        0.58rem;
-}
-
-
-/* ---------------------------------------------------------
-   04 — NORMAL WORLD TEXT
-   --------------------------------------------------------- */
-
-.signature-world-content p {
-    color:
-        rgba(215, 221, 227, 0.72);
-
-    font-size:
-        0.70rem;
-
-    line-height:
-        1.85;
-}
-
-
-/* ---------------------------------------------------------
    05 — SELECTED ROSE GOLD WORLDS
    Darker by ~20%
    --------------------------------------------------------- */
@@ -7317,392 +7188,243 @@ body.signature-page {
 
 
 
+
+
+
+
+
 /* =========================================================
-   ARS SIGNATURE 2
-   TYPOGRAPHY SCALE + COLOR HIERARCHY
+   ARS SIGNATURE — MASTER TITLE / LINE OVERRIDE
+   HTML-ALIGNED FINAL TEST
    ========================================================= */
 
 
-/* ---------------------------------------------------------
-   MASTER LARGE TITLE DNA
-   --------------------------------------------------------- */
+/* =========================================================
+   01 — ALL MAJOR TITLES
+   Electric Blue
+   ========================================================= */
 
-.signature-world-content h3,
-.signature-experience-content h2,
-.signature-process-header h2,
-.signature-private-content h2,
-.signature-closing h2 {
+.signature-intro-inner > h2,
+.signature-principles-header > h2,
+.signature-worlds-header > h2,
+.signature-world-content > h3,
+.signature-experience-content > h2,
+.signature-process-header > h2,
+.signature-private-content > h2,
+.signature-closing > h2,
+.signature-footer-brand > strong {
 
-    color:
-        var(--ars-blue-light);
+    color: #39B5FF !important;
 
-    text-shadow:
-        0 0 14px rgba(57, 181, 255, 0.28),
-        0 0 34px rgba(21, 155, 255, 0.14);
 }
 
 
-/* ---------------------------------------------------------
-   ROSE GOLD LIGHT LINE UNDER LARGE TITLES
-   --------------------------------------------------------- */
+/* =========================================================
+   02 — REMOVE OLD TITLE LINE SOURCES
+   Prevent old pseudo-elements from fighting the new line
+   ========================================================= */
 
-.signature-world-content h3::after,
-.signature-experience-content h2::after,
-.signature-process-header h2::after,
-.signature-private-content h2::after,
-.signature-closing h2::after {
+.signature-intro-inner > h2::before,
+.signature-intro-inner > h2::after,
+
+.signature-principles-header > h2::before,
+.signature-principles-header > h2::after,
+
+.signature-worlds-header > h2::before,
+.signature-worlds-header > h2::after,
+
+.signature-world-content > h3::before,
+.signature-world-content > h3::after,
+
+.signature-experience-content > h2::before,
+.signature-experience-content > h2::after,
+
+.signature-process-header > h2::before,
+.signature-process-header > h2::after,
+
+.signature-private-content > h2::before,
+.signature-private-content > h2::after,
+
+.signature-closing > h2::before,
+.signature-closing > h2::after {
+
+    box-sizing: border-box !important;
+
+}
+
+
+/* =========================================================
+   03 — FORCE THE ACTUAL TITLE LINE
+   Rose Gold luminous line
+   ========================================================= */
+
+.signature-intro-inner > h2::after,
+.signature-principles-header > h2::after,
+.signature-worlds-header > h2::after,
+.signature-world-content > h3::after,
+.signature-experience-content > h2::after,
+.signature-process-header > h2::after,
+.signature-private-content > h2::after,
+.signature-closing > h2::after {
+
+    content: "" !important;
+
+    display: block !important;
+
+    position: relative !important;
+
+    width: 150px !important;
+
+    height: 2px !important;
+
+    margin-top: 22px !important;
+
+    margin-left: 0 !important;
+
+    margin-right: 0 !important;
 
     background:
         linear-gradient(
             90deg,
-            var(--ars-rose-bright),
-            var(--ars-rose-light),
-            transparent
-        );
-
-    box-shadow:
-        0 0 12px rgba(212, 154, 124, 0.58),
-        0 0 28px rgba(169, 109, 88, 0.18);
-}
-
-
-/* =========================================================
-   EXPERIENCE
-   One Vehicle. One Vision. One Signature.
-   ========================================================= */
-
-.signature-experience-content h2 {
-
-    font-size:
-        clamp(2.65rem, 4.15vw, 4.65rem);
-
-    line-height:
-        0.98;
-
-    max-width:
-        760px;
-}
-
-
-/* =========================================================
-   PROCESS
-   From Vision To Signature.
-   ========================================================= */
-
-.signature-process-header h2 {
-
-    font-size:
-        clamp(2.65rem, 4.25vw, 4.8rem);
-
-    line-height:
-        0.98;
-}
-
-
-/* =========================================================
-   PRIVATE ACCESS
-   Created For Exceptional Vision.
-   ========================================================= */
-
-.signature-private-content h2 {
-
-    font-size:
-        clamp(2.8rem, 4.5vw, 5rem);
-
-    line-height:
-        0.96;
-
-    max-width:
-        760px;
-}
-
-
-/* =========================================================
-   CLOSING
-   ARS SIGNATURE
-   ========================================================= */
-
-.signature-closing h2 {
-
-    font-size:
-        clamp(3.5rem, 7vw, 7.5rem);
-
-    line-height:
-        0.88;
-}
-
-
-/* ---------------------------------------------------------
-   CLOSING ARS MARK
-   Previously too large
-   --------------------------------------------------------- */
-
-.signature-closing-mark strong {
-
-    font-size:
-        2.9rem;
-
-    color:
-        var(--ars-rose-white);
-}
-
-
-/* =========================================================
-   FOOTER ARS
-   Previously extremely oversized
-   ========================================================= */
-
-.signature-footer-brand strong {
-
-    font-size:
-        clamp(3rem, 5.5vw, 5.5rem);
-
-    line-height:
-        0.78;
-}
-
-
-/* HERITAGE GROUP */
-
-.signature-footer-brand span {
-
-    font-size:
-        0.52rem;
-
-    letter-spacing:
-        0.42em;
-}
-
-
-/* =========================================================
-   WORLD TITLES
-   Keep consistent with the new scale
-   ========================================================= */
-
-.signature-world-content h3 {
-
-    font-size:
-        clamp(2.2rem, 3.5vw, 4rem);
-
-    line-height:
-        0.98;
-}
-
-
-/* =========================================================
-   WORLD HEADER
-   Six Expressions. One Signature.
-   ========================================================= */
-
-.signature-worlds-header h2 {
-
-    font-size:
-        clamp(2.6rem, 4.5vw, 5rem);
-
-    line-height:
-        0.98;
-}
-
-
-/* =========================================================
-   EXPERIENCE META
-   ========================================================= */
-
-.signature-experience-meta span {
-
-    color:
-        var(--ars-rose-light);
-}
-
-
-/* =========================================================
-   PROCESS STEP TITLES
-   ========================================================= */
-
-.signature-process-step h3 {
-
-    color:
-        var(--ars-blue-light);
-
-    font-size:
-        2rem;
-}
-
-
-/* =========================================================
-   MOBILE SCALE
-   ========================================================= */
-
-@media (max-width: 700px) {
-
-    .signature-worlds-header h2 {
-
-        font-size:
-            clamp(2.25rem, 9vw, 3.4rem);
-    }
-
-    .signature-world-content h3 {
-
-        font-size:
-            clamp(2rem, 9vw, 3.1rem);
-    }
-
-    .signature-experience-content h2 {
-
-        font-size:
-            clamp(2.2rem, 9vw, 3.2rem);
-    }
-
-    .signature-process-header h2 {
-
-        font-size:
-            clamp(2.2rem, 9vw, 3.2rem);
-    }
-
-    .signature-private-content h2 {
-
-        font-size:
-            clamp(2.3rem, 9vw, 3.4rem);
-    }
-
-    .signature-closing h2 {
-
-        font-size:
-            clamp(3rem, 15vw, 5rem);
-    }
-
-    .signature-closing-mark strong {
-
-        font-size:
-            2.3rem;
-    }
-   
-
-    .signature-footer-brand strong {
-
-        font-size:
-            clamp(2.8rem, 14vw, 4.5rem);
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* =========================================================
-   ARS SIGNATURE
-   FINAL TITLE LIGHT-LINE OVERRIDE
-   BLUE TITLE + ROSE GOLD LIGHT LINE
-   ========================================================= */
-
-
-/* ===== ALL LARGE TITLES ===== */
-
-.signature-world-content h3,
-.signature-experience-content h2,
-.signature-process-header h2,
-.signature-private-content h2,
-.signature-closing h2 {
-    color: var(--ars-blue-light) !important;
-}
-
-
-/* ===== ROSE GOLD LIGHT LINE ===== */
-
-.signature-world-content h3::after,
-.signature-experience-content h2::after,
-.signature-process-header h2::after,
-.signature-private-content h2::after,
-.signature-closing h2::after {
-
-    background: linear-gradient(
-        90deg,
-        #E6B39A 0%,
-        #D49A7C 38%,
-        #A96D58 72%,
-        transparent 100%
-    ) !important;
-
-    box-shadow:
-        0 0 5px rgba(230, 179, 154, 0.95),
-        0 0 14px rgba(212, 154, 124, 0.75),
-        0 0 30px rgba(169, 109, 88, 0.35) !important;
+            #E6B39A 0%,
+            #D49A7C 35%,
+            #A96D58 72%,
+            rgba(169,109,88,0) 100%
+        ) !important;
+
+    border: none !important;
 
     opacity: 1 !important;
-}
 
+    box-shadow:
+        0 0 4px rgba(230,179,154,.95),
+        0 0 12px rgba(212,154,124,.85),
+        0 0 26px rgba(169,109,88,.45) !important;
 
-/* ===== WORLD TITLE LINE ===== */
-
-.signature-world-content h3::after {
-    height: 2px !important;
-    width: 150px !important;
-}
-
-
-/* ===== EXPERIENCE TITLE LINE ===== */
-
-.signature-experience-content h2::after {
-    height: 2px !important;
-    width: 210px !important;
-}
-
-
-/* ===== PROCESS TITLE LINE ===== */
-
-.signature-process-header h2::after {
-    height: 2px !important;
-    width: 220px !important;
-}
-
-
-/* ===== PRIVATE ACCESS TITLE LINE ===== */
-
-.signature-private-content h2::after {
-    height: 2px !important;
-    width: 230px !important;
-}
-
-
-/* ===== FINAL ARS SIGNATURE LINE ===== */
-
-.signature-closing h2::after {
-    height: 2px !important;
-    width: 280px !important;
 }
 
 
 /* =========================================================
-   MOBILE
+   04 — INDIVIDUAL LINE SIZES
+   ========================================================= */
+
+.signature-intro-inner > h2::after {
+    width: 145px !important;
+}
+
+.signature-principles-header > h2::after {
+    width: 190px !important;
+}
+
+.signature-worlds-header > h2::after {
+    width: 180px !important;
+}
+
+.signature-world-content > h3::after {
+    width: 120px !important;
+    margin-top: 14px !important;
+}
+
+.signature-experience-content > h2::after {
+    width: 190px !important;
+}
+
+.signature-process-header > h2::after {
+    width: 190px !important;
+}
+
+.signature-private-content > h2::after {
+    width: 200px !important;
+}
+
+.signature-closing > h2::after {
+    width: 240px !important;
+}
+
+
+/* =========================================================
+   05 — SECTION LABELS
+   Electric Blue + Rose Gold lines
+   ========================================================= */
+
+.signature-section-label {
+
+    color: #39B5FF !important;
+
+}
+
+
+/* =========================================================
+   06 — PROCESS SMALL TITLES
+   ========================================================= */
+
+.signature-process-step > h3 {
+
+    color: #39B5FF !important;
+
+}
+
+
+/* =========================================================
+   07 — CLOSING ARS MARK
+   ========================================================= */
+
+.signature-closing-mark > strong {
+
+    color: #39B5FF !important;
+
+}
+
+
+/* =========================================================
+   08 — FOOTER ARS
+   ========================================================= */
+
+.signature-footer-brand > strong {
+
+    color: #39B5FF !important;
+
+}
+
+
+/* =========================================================
+   09 — MOBILE
    ========================================================= */
 
 @media (max-width: 700px) {
 
-    .signature-world-content h3::after {
+    .signature-intro-inner > h2::after {
         width: 110px !important;
     }
 
-    .signature-experience-content h2::after {
+    .signature-principles-header > h2::after {
+        width: 135px !important;
+    }
+
+    .signature-worlds-header > h2::after {
+        width: 130px !important;
+    }
+
+    .signature-world-content > h3::after {
+        width: 95px !important;
+    }
+
+    .signature-experience-content > h2::after {
+        width: 140px !important;
+    }
+
+    .signature-process-header > h2::after {
+        width: 140px !important;
+    }
+
+    .signature-private-content > h2::after {
         width: 150px !important;
     }
 
-    .signature-process-header h2::after {
-        width: 160px !important;
+    .signature-closing > h2::after {
+        width: 175px !important;
     }
 
-    .signature-private-content h2::after {
-        width: 170px !important;
-    }
-
-    .signature-closing h2::after {
-        width: 190px !important;
-    }
 }
+
+
