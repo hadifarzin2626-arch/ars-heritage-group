@@ -9811,3 +9811,80 @@ body.signature-page {
         animation: none !important;
     }
    }
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS SIGNATURE — FINAL FRAME SIZE OVERRIDE
+   FORCE TRUE 2 × 2
+   ========================================================= */
+
+.signature-hero .signature-frame {
+    position: absolute !important;
+
+    box-sizing: border-box !important;
+
+    width: 50% !important;
+    height: 50% !important;
+
+    margin: 0 !important;
+
+    min-width: 0 !important;
+    max-width: none !important;
+
+    min-height: 0 !important;
+    max-height: none !important;
+
+    transform: none !important;
+
+    z-index: 3 !important;
+}
+
+
+/* ───────── TOP ───────── */
+
+.signature-hero .signature-frame.frame-one {
+    left: 0 !important;
+    right: auto !important;
+    top: 0 !important;
+    bottom: auto !important;
+}
+
+.signature-hero .signature-frame.frame-two {
+    left: 50% !important;
+    right: auto !important;
+    top: 0 !important;
+    bottom: auto !important;
+}
+
+
+/* ───────── BOTTOM ───────── */
+
+.signature-hero .signature-frame.frame-three {
+    left: 0 !important;
+    right: auto !important;
+    top: 50% !important;
+    bottom: auto !important;
+}
+
+.signature-hero .signature-frame.frame-four {
+    left: 50% !important;
+    right: auto !important;
+    top: 50% !important;
+    bottom: auto !important;
+}
+
+
+/* ───────── KEEP CONTENT ABOVE FRAMES ───────── */
+
+.signature-hero .signature-hero-layout {
+    position: relative !important;
+    z-index: 10 !important;
+}
