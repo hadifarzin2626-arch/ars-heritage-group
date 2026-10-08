@@ -7584,3 +7584,125 @@ body.signature-page {
             clamp(2.8rem, 14vw, 4.5rem);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS SIGNATURE
+   FINAL TITLE LIGHT-LINE OVERRIDE
+   BLUE TITLE + ROSE GOLD LIGHT LINE
+   ========================================================= */
+
+
+/* ===== ALL LARGE TITLES ===== */
+
+.signature-world-content h3,
+.signature-experience-content h2,
+.signature-process-header h2,
+.signature-private-content h2,
+.signature-closing h2 {
+    color: var(--ars-blue-light) !important;
+}
+
+
+/* ===== ROSE GOLD LIGHT LINE ===== */
+
+.signature-world-content h3::after,
+.signature-experience-content h2::after,
+.signature-process-header h2::after,
+.signature-private-content h2::after,
+.signature-closing h2::after {
+
+    background: linear-gradient(
+        90deg,
+        #E6B39A 0%,
+        #D49A7C 38%,
+        #A96D58 72%,
+        transparent 100%
+    ) !important;
+
+    box-shadow:
+        0 0 5px rgba(230, 179, 154, 0.95),
+        0 0 14px rgba(212, 154, 124, 0.75),
+        0 0 30px rgba(169, 109, 88, 0.35) !important;
+
+    opacity: 1 !important;
+}
+
+
+/* ===== WORLD TITLE LINE ===== */
+
+.signature-world-content h3::after {
+    height: 2px !important;
+    width: 150px !important;
+}
+
+
+/* ===== EXPERIENCE TITLE LINE ===== */
+
+.signature-experience-content h2::after {
+    height: 2px !important;
+    width: 210px !important;
+}
+
+
+/* ===== PROCESS TITLE LINE ===== */
+
+.signature-process-header h2::after {
+    height: 2px !important;
+    width: 220px !important;
+}
+
+
+/* ===== PRIVATE ACCESS TITLE LINE ===== */
+
+.signature-private-content h2::after {
+    height: 2px !important;
+    width: 230px !important;
+}
+
+
+/* ===== FINAL ARS SIGNATURE LINE ===== */
+
+.signature-closing h2::after {
+    height: 2px !important;
+    width: 280px !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .signature-world-content h3::after {
+        width: 110px !important;
+    }
+
+    .signature-experience-content h2::after {
+        width: 150px !important;
+    }
+
+    .signature-process-header h2::after {
+        width: 160px !important;
+    }
+
+    .signature-private-content h2::after {
+        width: 170px !important;
+    }
+
+    .signature-closing h2::after {
+        width: 190px !important;
+    }
+}
