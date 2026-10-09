@@ -8064,241 +8064,248 @@ body.signature-page {
 
 
 
-
-
-
-
-
-
-
-
-
-
 /* =========================================================
-   ARS SIGNATURE — ARCHITECTURAL FRAME GRID
-   TRUE 2 × 2 HERO DIVISION
+   ARS SIGNATURE — ARCHITECTURAL LIGHT GRID
+   ADD AT THE VERY END OF ars-signature-2.css
+   Decorative layers only — no layout changes
    ========================================================= */
 
-.signature-frame-grid {
 
+/* ---------------------------------------------------------
+   1. FINE, EVEN ELECTRIC-BLUE GRID
+   --------------------------------------------------------- */
+
+.signature-hero .signature-hero-grid {
     position: absolute;
-
     inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-
-    gap: 0;
-
-    padding: 0;
-
-    margin: 0;
-
     z-index: 3;
+    pointer-events: none;
 
+    /* Equal-width and equal-height grid cells */
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(48, 103, 151, 0.25) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            to bottom,
+            rgba(48, 103, 151, 0.25) 1px,
+            transparent 1px
+        );
+
+    /* Equal square cells; adjust both values together */
+    background-size: 64px 64px;
+
+    opacity: 0.82;
+
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        #000 9%,
+        #000 91%,
+        transparent 100%
+    );
+
+    mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        #000 9%,
+        #000 91%,
+        transparent 100%
+    );
+}
+
+
+/* ---------------------------------------------------------
+   2. ADDITIONAL ELECTRIC-BLUE LIGHT ACCENTS
+   Existing two architectural lines remain in place.
+   --------------------------------------------------------- */
+
+.signature-hero .signature-hero-line {
+    width: 2px;
+    height: 78px;
+    z-index: 4;
+
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(60, 169, 245, 0.35) 12%,
+        #3ca9f5 38%,
+        #a6e1ff 50%,
+        #3ca9f5 68%,
+        rgba(60, 169, 245, 0.35) 88%,
+        transparent 100%
+    );
+
+    box-shadow:
+        0 0 5px rgba(60, 169, 245, 0.65),
+        0 0 12px rgba(60, 169, 245, 0.28);
+
+    opacity: 0.9;
+}
+
+
+/* Preserve the original line positions */
+
+.signature-hero .signature-hero-line-left {
+    left: 6%;
+}
+
+.signature-hero .signature-hero-line-right {
+    right: 6%;
+}
+
+
+/* ---------------------------------------------------------
+   3. ROSE-GOLD HORIZONTAL LIGHT ACCENTS
+   Use unused pseudo-elements of the existing layout.
+   --------------------------------------------------------- */
+
+.signature-hero .signature-hero-layout::before,
+.signature-hero .signature-hero-layout::after {
+    content: "";
+    position: absolute;
+    z-index: 6;
+    width: 84px;
+    height: 2px;
+    pointer-events: none;
+
+    background: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(196, 119, 141, 0.55) 22%,
+        #e3a0b1 50%,
+        rgba(196, 119, 141, 0.55) 78%,
+        transparent 100%
+    );
+
+    box-shadow:
+        0 0 5px rgba(196, 119, 141, 0.65),
+        0 0 13px rgba(196, 119, 141, 0.24);
+
+    opacity: 0.9;
+}
+
+.signature-hero .signature-hero-layout::before {
+    left: 8%;
+    top: 17%;
+}
+
+.signature-hero .signature-hero-layout::after {
+    right: 8%;
+    bottom: 17%;
+}
+
+
+/* ---------------------------------------------------------
+   4. EXTRA VERTICAL LIGHT ACCENTS BESIDE THE IMAGE
+   --------------------------------------------------------- */
+
+.signature-hero .signature-hero-visual-frame {
+    position: relative;
+}
+
+/* Left side */
+
+.signature-hero .signature-hero-visual-frame::before {
+    content: "";
+    position: absolute;
+    left: -9px;
+    top: 20%;
+    width: 2px;
+    height: 78px;
+    z-index: 7;
+    pointer-events: none;
+
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        #3ca9f5 25%,
+        #a6e1ff 50%,
+        #3ca9f5 75%,
+        transparent
+    );
+
+    box-shadow:
+        0 0 5px rgba(60, 169, 245, 0.8),
+        0 0 12px rgba(60, 169, 245, 0.3);
+}
+
+
+/* Right side */
+
+.signature-hero .signature-hero-visual-frame::after {
+    content: "";
+    position: absolute;
+    right: -9px;
+    bottom: 20%;
+    width: 2px;
+    height: 78px;
+    z-index: 7;
+    pointer-events: none;
+
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        #c4778d 25%,
+        #e3a0b1 50%,
+        #c4778d 75%,
+        transparent
+    );
+
+    box-shadow:
+        0 0 5px rgba(196, 119, 141, 0.8),
+        0 0 12px rgba(196, 119, 141, 0.3);
+}
+
+
+/* ---------------------------------------------------------
+   5. HORIZONTAL LIGHT UNDER THE IMAGE
+   --------------------------------------------------------- */
+
+.signature-hero .signature-hero-visual-image img {
+    /* Do not alter image dimensions, crop or filter */
+}
+
+.signature-hero .signature-hero-visual-frame {
+    overflow: visible;
+}
+
+.signature-hero .signature-hero-visual-frame
+.signature-hero-visual-image {
+    overflow: hidden;
+}
+
+/* The underline is drawn outside the image layer
+   using the existing frame's inner-edge element. */
+
+.signature-hero .signature-hero-visual-edge {
     pointer-events: none;
 }
 
-
-/* =========================================================
-   INDIVIDUAL FRAME
-   ========================================================= */
-
-.signature-frame {
-
-    position: relative;
-
-    width: 100%;
-    height: 100%;
-
-    box-sizing: border-box;
-
-    border: 1px solid rgba(212,154,124,.32);
-
-    background: transparent;
-
-    box-shadow:
-        inset 0 0 35px rgba(212,154,124,.025),
-        0 0 20px rgba(212,154,124,.045);
-
-    animation:
-        arsSignatureFrameBreath 9s ease-in-out infinite;
-}
-
-
-/* =========================================================
-   FRAME TIMING
-   ========================================================= */
-
-.signature-frame.frame-one {
-    animation-delay: 0s;
-}
-
-.signature-frame.frame-two {
-    animation-delay: -2.25s;
-}
-
-.signature-frame.frame-three {
-    animation-delay: -4.5s;
-}
-
-.signature-frame.frame-four {
-    animation-delay: -6.75s;
-}
-
-
-/* =========================================================
-   ARCHITECTURAL CORNER
-   ========================================================= */
-
-.signature-frame::before {
-
+.signature-hero .signature-hero-visual-edge::after {
     content: "";
-
     position: absolute;
+    left: 25%;
+    bottom: -10px;
+    width: 50%;
+    height: 2px;
+    pointer-events: none;
 
-    right: 0;
-    bottom: 0;
-
-    width: 46px;
-    height: 46px;
-
-    border-right:
-        1px solid
-        rgba(230,179,154,.68);
-
-    border-bottom:
-        1px solid
-        rgba(230,179,154,.68);
-
-    opacity: .72;
+    background: linear-gradient(
+        to right,
+        transparent,
+        #3ca9f5 25%,
+        #a6e1ff 50%,
+        #3ca9f5 75%,
+        transparent
+    );
 
     box-shadow:
-        5px 5px 18px
-        rgba(212,154,124,.10);
+        0 0 5px rgba(60, 169, 245, 0.8),
+        0 0 12px rgba(60, 169, 245, 0.32);
 }
-
-
-/* =========================================================
-   SUBTLE LIGHT SWEEP
-   ========================================================= */
-
-.signature-frame::after {
-
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: -25%;
-
-    width: 25%;
-    height: 1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            #E6B39A,
-            #D49A7C,
-            transparent
-        );
-
-    box-shadow:
-        0 0 8px rgba(230,179,154,.65),
-        0 0 18px rgba(212,154,124,.25);
-
-    animation:
-        arsSignatureFrameSweep 8s linear infinite;
-}
-
-
-/* =========================================================
-   FRAME BREATH
-   ========================================================= */
-
-@keyframes arsSignatureFrameBreath {
-
-    0%,
-    100% {
-        opacity: .32;
-    }
-
-    50% {
-        opacity: .62;
-    }
-}
-
-
-/* =========================================================
-   FRAME LIGHT
-   ========================================================= */
-
-@keyframes arsSignatureFrameSweep {
-
-    0% {
-        left: -25%;
-        opacity: 0;
-    }
-
-    15% {
-        opacity: .9;
-    }
-
-    45% {
-        opacity: .65;
-    }
-
-    60% {
-        opacity: 0;
-    }
-
-    100% {
-        left: 110%;
-        opacity: 0;
-    }
-}
-
-
-/* =========================================================
-   HERO CONTENT ABOVE FRAME SYSTEM
-   ========================================================= */
-
-.signature-hero-layout {
-
-    position: relative;
-
-    z-index: 10;
-}
-
-
-/* =========================================================
-   REDUCED MOTION
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    .signature-frame,
-    .signature-frame::after {
-
-        animation: none !important;
-    }
-}
-
-
-
-
-
-
-
-
-
-
 
 
 
