@@ -8164,3 +8164,324 @@ body.signature-page {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS SIGNATURE HERO
+   FOUR ARCHITECTURAL FRAMES
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   FRAME 01 — OUTER CONTENT FRAME
+   --------------------------------------------------------- */
+
+.signature-hero-content {
+    position: relative;
+    z-index: 20;
+    isolation: isolate;
+}
+
+.signature-hero-content::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 18px 38px 18px 0;
+
+    border: 1px solid rgba(212,154,124,.28);
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    box-shadow:
+        0 0 22px rgba(212,154,124,.08),
+        inset 0 0 22px rgba(212,154,124,.035);
+
+    animation:
+        signatureFramePulse 7s ease-in-out infinite;
+}
+
+
+/* ---------------------------------------------------------
+   FRAME 02 — INNER CONTENT FRAME
+   --------------------------------------------------------- */
+
+.signature-hero-content::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 34px 54px 34px 16px;
+
+    border: 1px solid rgba(230,179,154,.13);
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    animation:
+        signatureFrameShift 9s ease-in-out infinite;
+}
+
+
+/* ---------------------------------------------------------
+   FRAME 03 — OUTER IMAGE FRAME
+   --------------------------------------------------------- */
+
+.signature-hero-visual {
+    position: relative;
+    z-index: 15;
+    isolation: isolate;
+}
+
+.signature-hero-visual::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border: 1px solid rgba(212,154,124,.34);
+
+    pointer-events: none;
+
+    z-index: 5;
+
+    box-shadow:
+        0 0 26px rgba(212,154,124,.09);
+
+    animation:
+        signatureFramePulse 8s ease-in-out infinite reverse;
+}
+
+
+/* ---------------------------------------------------------
+   FRAME 04 — INNER IMAGE FRAME
+   --------------------------------------------------------- */
+
+.signature-hero-visual::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 18px;
+
+    border: 1px solid rgba(230,179,154,.16);
+
+    pointer-events: none;
+
+    z-index: 6;
+
+    animation:
+        signatureFrameShift 11s ease-in-out infinite reverse;
+}
+
+
+/* =========================================================
+   MOVING ROSE-GOLD ARCHITECTURAL LIGHT
+   ========================================================= */
+
+.signature-hero-content-panel::before,
+.signature-hero-visual-frame::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -30%;
+
+    width: 30%;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(230,179,154,.95),
+            rgba(212,154,124,.65),
+            transparent
+        );
+
+    box-shadow:
+        0 0 8px rgba(230,179,154,.65),
+        0 0 18px rgba(212,154,124,.32);
+
+    pointer-events: none;
+
+    animation:
+        signatureLightSweep 6s linear infinite;
+}
+
+
+/* =========================================================
+   ROSE-GOLD CORNER ACCENTS
+   ========================================================= */
+
+.signature-hero-content-panel::after,
+.signature-hero-visual-frame::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    width: 70px;
+    height: 70px;
+
+    border-right: 1px solid rgba(230,179,154,.55);
+    border-bottom: 1px solid rgba(230,179,154,.55);
+
+    pointer-events: none;
+
+    box-shadow:
+        5px 5px 18px rgba(212,154,124,.10);
+
+    opacity: .85;
+}
+
+
+/* =========================================================
+   FRAME ANIMATIONS
+   ========================================================= */
+
+@keyframes signatureFramePulse {
+
+    0%,
+    100% {
+
+        opacity: .62;
+
+        transform: scale(1);
+
+    }
+
+    50% {
+
+        opacity: .95;
+
+        transform: scale(1.006);
+
+    }
+
+}
+
+
+@keyframes signatureFrameShift {
+
+    0%,
+    100% {
+
+        opacity: .35;
+
+    }
+
+    50% {
+
+        opacity: .72;
+
+    }
+
+}
+
+
+@keyframes signatureLightSweep {
+
+    0% {
+
+        left: -30%;
+
+        opacity: 0;
+
+    }
+
+    12% {
+
+        opacity: .9;
+
+    }
+
+    38% {
+
+        opacity: 1;
+
+    }
+
+    55% {
+
+        opacity: .15;
+
+    }
+
+    100% {
+
+        left: 130%;
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =========================================================
+   KEEP THE IMAGE FRAME CLEAN
+   ========================================================= */
+
+.signature-hero-visual-frame {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-color:
+        rgba(212,154,124,.62);
+
+    box-shadow:
+        0 0 0 1px rgba(212,154,124,.08),
+        0 0 28px rgba(212,154,124,.12),
+        0 28px 70px rgba(0,0,0,.55);
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .signature-hero-content::before,
+    .signature-hero-content::after,
+    .signature-hero-visual::before,
+    .signature-hero-visual::after,
+    .signature-hero-content-panel::before,
+    .signature-hero-visual-frame::before {
+
+        animation: none !important;
+    }
+
+}
