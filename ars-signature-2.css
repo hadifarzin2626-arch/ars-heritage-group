@@ -8922,201 +8922,254 @@ body.signature-page {
 
 
 
+/* =========================================================
+   ARS SIGNATURE — NAVY ARCHITECTURAL GRID
+   Visual layers only — preserve the existing Hero layout
+   ========================================================= */
+
+.signature-hero .signature-hero-grid {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+
+    /* Fine, dark navy architectural grid */
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(35, 49, 76, 0.58) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            to bottom,
+            rgba(35, 49, 76, 0.58) 1px,
+            transparent 1px
+        );
+
+    /* Approximately 5–6 cells across */
+    background-size: 17.5% 17.5%;
+
+    opacity: 0.88;
+
+    /* Concentrate the grid across most of the Hero */
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        #000 10%,
+        #000 85%,
+        transparent 100%
+    );
+
+    mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        #000 10%,
+        #000 85%,
+        transparent 100%
+    );
+}
 
 
 /* =========================================================
-   ARS SIGNATURE — 4 FRAME GRID / TRUE 2×2
+   EXISTING BLUE LIGHTS — EXTENDED BY ABOUT 35%
    ========================================================= */
 
-.signature-hero {
-    position: relative;
-    overflow: hidden;
-}
-
-/* چهار فریم کاملاً Overlay و مستقل */
-.signature-frame {
-    position: absolute;
-    box-sizing: border-box;
+.signature-hero .signature-hero-line {
+    height: 78px;
+    width: 2px;
+    z-index: 6;
     pointer-events: none;
 
-    width: calc(50% - 8px);
-    height: calc(50% - 8px);
-
-    border: 1px solid rgba(212,154,124,.38);
-
-    z-index: 2;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        #3ca9f5 20%,
+        #a6e1ff 50%,
+        #3ca9f5 80%,
+        transparent
+    );
 
     box-shadow:
-        inset 0 0 24px rgba(212,154,124,.035),
-        0 0 20px rgba(212,154,124,.07);
+        0 0 6px rgba(60, 169, 245, 0.85),
+        0 0 13px rgba(60, 169, 245, 0.38);
 
-    animation: arsFrameBreath 8s ease-in-out infinite;
-}
-
-/* ───────────── TOP ROW ───────────── */
-
-.signature-frame.frame-one {
-    left: 0;
-    top: 0;
-}
-
-.signature-frame.frame-two {
-    right: 0;
-    top: 0;
-    animation-delay: -2s;
-}
-
-/* ───────────── BOTTOM ROW ───────────── */
-
-.signature-frame.frame-three {
-    left: 0;
-    bottom: 0;
-    animation-delay: -4s;
-}
-
-.signature-frame.frame-four {
-    right: 0;
-    bottom: 0;
-    animation-delay: -6s;
+    animation: arsSignatureBluePulse 6s ease-in-out infinite alternate;
 }
 
 
-/* ───────────── MOVING LIGHT ───────────── */
+/* Preserve the existing two vertical light positions */
 
-.signature-frame::after {
+.signature-hero .signature-hero-line-left {
+    left: 27%;
+    top: 22%;
+}
+
+.signature-hero .signature-hero-line-right {
+    right: 24%;
+    top: 61%;
+    animation-delay: -3s;
+}
+
+
+/* Existing horizontal blue accents */
+
+.signature-hero .signature-hero-layout::before,
+.signature-hero .signature-hero-layout::after {
     content: "";
-
     position: absolute;
-    top: -1px;
-    left: -30%;
+    width: 78px;
+    height: 2px;
+    z-index: 6;
+    pointer-events: none;
 
-    width: 30%;
-    height: 1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            #E6B39A,
-            #D49A7C,
-            transparent
-        );
+    background: linear-gradient(
+        to right,
+        transparent,
+        #3ca9f5 20%,
+        #a6e1ff 50%,
+        #3ca9f5 80%,
+        transparent
+    );
 
     box-shadow:
-        0 0 8px rgba(230,179,154,.80),
-        0 0 20px rgba(212,154,124,.35);
+        0 0 6px rgba(60, 169, 245, 0.85),
+        0 0 13px rgba(60, 169, 245, 0.38);
 
-    animation: arsFrameSweep 7s linear infinite;
+    animation: arsSignatureBluePulse 7s ease-in-out infinite alternate;
+}
+
+.signature-hero .signature-hero-layout::before {
+    left: 18%;
+    top: 34%;
+}
+
+.signature-hero .signature-hero-layout::after {
+    right: 17%;
+    bottom: 28%;
+    animation-delay: -3.5s;
 }
 
 
-/* ───────────── ARCHITECTURAL CORNER ───────────── */
+/* =========================================================
+   THREE NEW LIGHT ACCENTS AROUND THE IMAGE
+   ========================================================= */
 
-.signature-frame::before {
+.signature-hero .signature-hero-visual-frame {
+    position: relative;
+}
+
+/* New accent 1 — vertical, left of image */
+
+.signature-hero .signature-hero-visual-frame::before {
     content: "";
-
     position: absolute;
-    right: 0;
-    bottom: 0;
+    left: -12px;
+    top: 22%;
+    width: 2px;
+    height: 78px;
+    z-index: 8;
+    pointer-events: none;
 
-    width: 52px;
-    height: 52px;
-
-    border-right: 1px solid rgba(230,179,154,.70);
-    border-bottom: 1px solid rgba(230,179,154,.70);
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        #3ca9f5 20%,
+        #a6e1ff 50%,
+        #3ca9f5 80%,
+        transparent
+    );
 
     box-shadow:
-        5px 5px 18px rgba(212,154,124,.12);
+        0 0 6px rgba(60, 169, 245, 0.85),
+        0 0 13px rgba(60, 169, 245, 0.4);
+}
 
-    opacity: .8;
+/* New accent 2 — vertical, right of image */
+
+.signature-hero .signature-hero-visual-frame::after {
+    content: "";
+    position: absolute;
+    right: -12px;
+    bottom: 20%;
+    width: 2px;
+    height: 78px;
+    z-index: 8;
+    pointer-events: none;
+
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        #3ca9f5 20%,
+        #a6e1ff 50%,
+        #3ca9f5 80%,
+        transparent
+    );
+
+    box-shadow:
+        0 0 6px rgba(60, 169, 245, 0.85),
+        0 0 13px rgba(60, 169, 245, 0.4);
+}
+
+/* New accent 3 — horizontal, below image */
+
+.signature-hero .signature-hero-visual-image {
+    position: relative;
+}
+
+.signature-hero .signature-hero-visual-image::after {
+    content: "";
+    position: absolute;
+    left: 25%;
+    bottom: -9px;
+    width: 50%;
+    height: 2px;
+    z-index: 9;
+    pointer-events: none;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        #3ca9f5 20%,
+        #a6e1ff 50%,
+        #3ca9f5 80%,
+        transparent
+    );
+
+    box-shadow:
+        0 0 6px rgba(60, 169, 245, 0.85),
+        0 0 13px rgba(60, 169, 245, 0.4);
 }
 
 
-/* ───────────── ANIMATION ───────────── */
+/* =========================================================
+   SUBTLE LIGHT PULSE
+   ========================================================= */
 
-@keyframes arsFrameBreath {
-
-    0%,
-    100% {
-        opacity: .42;
+@keyframes arsSignatureBluePulse {
+    0% {
+        opacity: 0.45;
+        filter: brightness(0.85);
     }
 
     50% {
-        opacity: .82;
-    }
-}
-
-@keyframes arsFrameSweep {
-
-    0% {
-        left: -30%;
-        opacity: 0;
-    }
-
-    15% {
         opacity: 1;
-    }
-
-    45% {
-        opacity: .85;
-    }
-
-    65% {
-        opacity: 0;
+        filter: brightness(1.2);
     }
 
     100% {
-        left: 120%;
-        opacity: 0;
+        opacity: 0.65;
+        filter: brightness(1);
     }
 }
 
 
-/* ───────────── CONTENT ABOVE FRAMES ───────────── */
-
-.signature-hero-layout {
-    position: relative;
-    z-index: 10;
-}
-
-
-/* ───────────── MOBILE ───────────── */
-
-@media (max-width: 900px) {
-
-    .signature-frame {
-        width: calc(50% - 5px);
-        height: calc(50% - 5px);
-    }
-
-    .signature-frame.frame-one {
-        left: 0;
-        top: 0;
-    }
-
-    .signature-frame.frame-two {
-        right: 0;
-        top: 0;
-    }
-
-    .signature-frame.frame-three {
-        left: 0;
-        bottom: 0;
-    }
-
-    .signature-frame.frame-four {
-        right: 0;
-        bottom: 0;
-    }
-}
-
-
-/* ───────────── REDUCED MOTION ───────────── */
+/* Reduced motion */
 
 @media (prefers-reduced-motion: reduce) {
-
-    .signature-frame,
-    .signature-frame::after {
+    .signature-hero .signature-hero-line,
+    .signature-hero .signature-hero-layout::before,
+    .signature-hero .signature-hero-layout::after {
         animation: none !important;
     }
 }
+
