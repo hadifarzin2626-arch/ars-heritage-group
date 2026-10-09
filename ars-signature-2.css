@@ -942,6 +942,566 @@ body.signature-page {
    ========================================================= */
 
 
+/* =========================================================
+   ARS SIGNATURE — PHILOSOPHY
+   LUXURY ARCHITECTURAL CINEMATIC SYSTEM
+   ========================================================= */
+
+.signature-intro {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    min-height: 780px;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 120px 0;
+
+    background: #07090d;
+
+    border-top: 1px solid rgba(212, 154, 124, .28);
+    border-bottom: 1px solid rgba(212, 154, 124, .22);
+}
+
+
+/* =========================================================
+   BACKGROUND IMAGE — FULL SECTION
+   ========================================================= */
+
+.signature-intro .signature-intro-background {
+    position: absolute;
+    inset: 0;
+    z-index: -3;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.signature-intro .signature-intro-background img {
+    display: block;
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center 52%;
+
+    opacity: .76;
+
+    transform: scale(1.04);
+
+    filter:
+        brightness(.78)
+        contrast(1.08)
+        saturate(.78);
+
+    animation:
+        arsPhilosophyImageDrift
+        32s
+        cubic-bezier(.45, 0, .55, 1)
+        infinite alternate;
+
+    will-change: transform;
+}
+
+
+/* =========================================================
+   CINEMATIC DARK OVERLAY
+   ========================================================= */
+
+.signature-intro .signature-intro-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 7, 11, .97) 0%,
+            rgba(5, 7, 11, .86) 24%,
+            rgba(5, 7, 11, .58) 53%,
+            rgba(5, 7, 11, .25) 76%,
+            rgba(5, 7, 11, .48) 100%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(4, 5, 8, .58) 0%,
+            transparent 24%,
+            transparent 74%,
+            rgba(4, 5, 8, .88) 100%
+        );
+}
+
+
+/* =========================================================
+   ROSE GOLD ATMOSPHERIC LIGHT
+   ========================================================= */
+
+.signature-intro::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at 76% 42%,
+            rgba(212, 154, 124, .16) 0%,
+            rgba(212, 154, 124, .055) 23%,
+            transparent 48%
+        );
+
+    opacity: .8;
+
+    animation:
+        arsPhilosophyAtmosphere
+        14s
+        ease-in-out
+        infinite alternate;
+}
+
+
+/* =========================================================
+   OUTER ARCHITECTURAL FRAME
+   ========================================================= */
+
+.signature-intro::after {
+    content: "";
+    position: absolute;
+
+    inset: 24px;
+
+    z-index: 1;
+    pointer-events: none;
+
+    border: 1px solid rgba(212, 154, 124, .34);
+
+    box-shadow:
+        inset 0 0 28px rgba(212, 154, 124, .025),
+        0 0 24px rgba(212, 154, 124, .035);
+
+    animation:
+        arsPhilosophyFrameBreath
+        10s
+        ease-in-out
+        infinite alternate;
+}
+
+
+/* =========================================================
+   CONTENT LAYOUT
+   ========================================================= */
+
+.signature-intro .signature-intro-inner {
+    position: relative;
+    z-index: 2;
+
+    width: min(1180px, 84%);
+    min-height: 540px;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    text-align: left;
+    box-sizing: border-box;
+
+    padding: 65px 0;
+}
+
+
+/* =========================================================
+   SECTION LABEL
+   ========================================================= */
+
+.signature-intro .signature-section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-bottom: 34px;
+
+    color: #79c8ef;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    line-height: 1.8;
+    letter-spacing: .34em;
+    text-transform: uppercase;
+}
+
+.signature-intro .signature-section-label::before {
+    content: "";
+
+    display: block;
+
+    width: 42px;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #e6b39a
+        );
+
+    box-shadow: 0 0 10px rgba(230, 179, 154, .32);
+}
+
+
+/* =========================================================
+   PHILOSOPHY HEADING
+   ========================================================= */
+
+.signature-intro .signature-intro-inner h2 {
+    position: relative;
+
+    max-width: 850px;
+
+    margin: 0;
+
+    color: #e6edf3;
+
+    font-size: clamp(42px, 6vw, 82px);
+    font-weight: 300;
+
+    line-height: 1.08;
+    letter-spacing: -.025em;
+
+    text-wrap: balance;
+
+    text-shadow:
+        0 3px 24px rgba(0, 0, 0, .48),
+        0 0 38px rgba(212, 154, 124, .06);
+}
+
+.signature-intro .signature-intro-inner h2::after {
+    content: "";
+
+    display: block;
+
+    width: min(300px, 65%);
+    height: 1px;
+
+    margin-top: 30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #e6b39a 0%,
+            #d49a7c 38%,
+            rgba(212, 154, 124, .25) 72%,
+            transparent 100%
+        );
+
+    box-shadow:
+        0 0 10px rgba(212, 154, 124, .28),
+        0 0 24px rgba(212, 154, 124, .10);
+
+    transform-origin: left center;
+
+    animation:
+        arsPhilosophyRuleReveal
+        2s
+        ease-out
+        both;
+}
+
+
+/* =========================================================
+   LEAD STATEMENT
+   ========================================================= */
+
+.signature-intro .signature-intro-lead {
+    max-width: 700px;
+
+    margin: 32px 0 0;
+
+    color: #f0d4c7;
+
+    font-size: clamp(17px, 2vw, 23px);
+    font-weight: 300;
+
+    line-height: 1.9;
+    letter-spacing: .025em;
+
+    text-shadow: 0 2px 15px rgba(0, 0, 0, .65);
+}
+
+
+/* =========================================================
+   BODY COPY
+   ========================================================= */
+
+.signature-intro .signature-intro-text {
+    max-width: 680px;
+
+    margin: 22px 0 0;
+
+    color: rgba(232, 237, 242, .79);
+
+    font-size: 14px;
+    font-weight: 300;
+
+    line-height: 2.05;
+    letter-spacing: .018em;
+
+    text-shadow: 0 2px 12px rgba(0, 0, 0, .72);
+}
+
+
+/* =========================================================
+   FINAL ROSE GOLD DETAIL
+   ========================================================= */
+
+.signature-intro .signature-intro-rule {
+    position: relative;
+
+    width: 110px;
+    height: 2px;
+
+    margin-top: 40px;
+
+    overflow: hidden;
+
+    background: rgba(212, 154, 124, .18);
+}
+
+.signature-intro .signature-intro-rule::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #e6b39a,
+            #fff0e6,
+            #d49a7c,
+            transparent
+        );
+
+    transform: translateX(-100%);
+
+    animation:
+        arsPhilosophyRuleLight
+        6s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   ANIMATION — CINEMATIC IMAGE DRIFT
+   ========================================================= */
+
+@keyframes arsPhilosophyImageDrift {
+    0% {
+        transform: scale(1.04) translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: scale(1.105) translate3d(-1.1%, .5%, 0);
+    }
+}
+
+
+/* =========================================================
+   ANIMATION — ATMOSPHERIC LIGHT
+   ========================================================= */
+
+@keyframes arsPhilosophyAtmosphere {
+    0% {
+        opacity: .45;
+        transform: translate3d(-1%, 0, 0);
+    }
+
+    100% {
+        opacity: .95;
+        transform: translate3d(1%, 0, 0);
+    }
+}
+
+
+/* =========================================================
+   ANIMATION — ARCHITECTURAL FRAME
+   ========================================================= */
+
+@keyframes arsPhilosophyFrameBreath {
+    0% {
+        border-color: rgba(212, 154, 124, .22);
+
+        box-shadow:
+            inset 0 0 20px rgba(212, 154, 124, .015),
+            0 0 12px rgba(212, 154, 124, .02);
+    }
+
+    100% {
+        border-color: rgba(230, 179, 154, .52);
+
+        box-shadow:
+            inset 0 0 30px rgba(212, 154, 124, .035),
+            0 0 25px rgba(212, 154, 124, .07);
+    }
+}
+
+
+/* =========================================================
+   ANIMATION — HEADING RULE REVEAL
+   ========================================================= */
+
+@keyframes arsPhilosophyRuleReveal {
+    from {
+        opacity: 0;
+        transform: scaleX(.15);
+    }
+
+    to {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+
+/* =========================================================
+   ANIMATION — MOVING LIGHT
+   ========================================================= */
+
+@keyframes arsPhilosophyRuleLight {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    55%,
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+    .signature-intro {
+        min-height: 700px;
+        padding: 90px 0;
+    }
+
+    .signature-intro::after {
+        inset: 16px;
+    }
+
+    .signature-intro .signature-intro-inner {
+        width: 86%;
+        min-height: 520px;
+    }
+
+    .signature-intro .signature-intro-overlay {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(5, 7, 11, .94),
+                rgba(5, 7, 11, .72)
+            ),
+            linear-gradient(
+                180deg,
+                rgba(4, 5, 8, .35),
+                transparent 45%,
+                rgba(4, 5, 8, .75)
+            );
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+    .signature-intro {
+        min-height: 650px;
+        padding: 72px 0;
+    }
+
+    .signature-intro::after {
+        inset: 10px;
+    }
+
+    .signature-intro .signature-intro-inner {
+        width: 84%;
+        min-height: 500px;
+        padding: 45px 0;
+    }
+
+    .signature-intro .signature-section-label {
+        gap: 10px;
+        margin-bottom: 25px;
+
+        font-size: 9px;
+        letter-spacing: .23em;
+    }
+
+    .signature-intro .signature-section-label::before {
+        width: 25px;
+    }
+
+    .signature-intro .signature-intro-inner h2 {
+        font-size: clamp(38px, 10vw, 56px);
+        line-height: 1.12;
+    }
+
+    .signature-intro .signature-intro-inner h2::after {
+        margin-top: 22px;
+    }
+
+    .signature-intro .signature-intro-lead {
+        margin-top: 24px;
+        font-size: 17px;
+        line-height: 1.8;
+    }
+
+    .signature-intro .signature-intro-text {
+        margin-top: 17px;
+        font-size: 13px;
+        line-height: 1.9;
+    }
+
+    .signature-intro .signature-intro-rule {
+        margin-top: 30px;
+    }
+
+    .signature-intro .signature-intro-background img {
+        object-position: 60% center;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY — REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .signature-intro .signature-intro-background img,
+    .signature-intro::before,
+    .signature-intro::after,
+    .signature-intro .signature-intro-inner h2::after,
+    .signature-intro .signature-intro-rule::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
 
 
 /* =========================================================
@@ -8052,23 +8612,16 @@ body.signature-page {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* =========================================================
-   ARS SIGNATURE — TWO-TONE ARCHITECTURAL GRID
-   Grid only — preserve all existing Hero components
+   ARS SIGNATURE — ARCHITECTURAL LIGHT GRID
+   ADD AT THE VERY END OF ars-signature-2.css
+   Decorative layers only — no layout changes
    ========================================================= */
+
+
+/* ---------------------------------------------------------
+   1. FINE, EVEN ELECTRIC-BLUE GRID
+   --------------------------------------------------------- */
 
 .signature-hero .signature-hero-grid {
     position: absolute;
@@ -8076,25 +8629,23 @@ body.signature-page {
     z-index: 3;
     pointer-events: none;
 
+    /* Equal-width and equal-height grid cells */
     background-image:
-        /* Electric blue vertical lines */
         linear-gradient(
             to right,
-            rgba(53, 139, 196, 0.42) 1px,
+            rgba(48, 103, 151, 0.29) 1px,
             transparent 1px
         ),
-
-        /* Rose-gold horizontal lines */
         linear-gradient(
             to bottom,
-            rgba(196, 119, 141, 0.42) 1px,
+            rgba(48, 103, 151, 0.29) 1px,
             transparent 1px
         );
 
-    /* Equal square cells */
-    background-size: 64px 64px;
+    /* Equal square cells; adjust both values together */
+    background-size: 72px 72px;
 
-    opacity: 1;
+    opacity: 0.82;
 
     -webkit-mask-image: linear-gradient(
         to bottom,
@@ -8111,6 +8662,197 @@ body.signature-page {
         #000 91%,
         transparent 100%
     );
+}
+
+
+/* ---------------------------------------------------------
+   2. ADDITIONAL ELECTRIC-BLUE LIGHT ACCENTS
+   Existing two architectural lines remain in place.
+   --------------------------------------------------------- */
+
+.signature-hero .signature-hero-line {
+    width: 2px;
+    height: 78px;
+    z-index: 4;
+
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(60, 169, 245, 0.35) 12%,
+        #3ca9f5 38%,
+        #a6e1ff 50%,
+        #3ca9f5 68%,
+        rgba(60, 169, 245, 0.35) 88%,
+        transparent 100%
+    );
+
+    box-shadow:
+        0 0 5px rgba(60, 169, 245, 0.65),
+        0 0 12px rgba(60, 169, 245, 0.28);
+
+    opacity: 0.9;
+}
+
+
+/* Preserve the original line positions */
+
+.signature-hero .signature-hero-line-left {
+    left: 6%;
+}
+
+.signature-hero .signature-hero-line-right {
+    right: 6%;
+}
+
+
+/* ---------------------------------------------------------
+   3. ROSE-GOLD HORIZONTAL LIGHT ACCENTS
+   Use unused pseudo-elements of the existing layout.
+   --------------------------------------------------------- */
+
+.signature-hero .signature-hero-layout::before,
+.signature-hero .signature-hero-layout::after {
+    content: "";
+    position: absolute;
+    z-index: 6;
+    width: 84px;
+    height: 2px;
+    pointer-events: none;
+
+    background: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(196, 119, 141, 0.55) 22%,
+        #e3a0b1 50%,
+        rgba(196, 119, 141, 0.55) 78%,
+        transparent 100%
+    );
+
+    box-shadow:
+        0 0 5px rgba(196, 119, 141, 0.65),
+        0 0 13px rgba(196, 119, 141, 0.24);
+
+    opacity: 0.9;
+}
+
+.signature-hero .signature-hero-layout::before {
+    left: 8%;
+    top: 17%;
+}
+
+.signature-hero .signature-hero-layout::after {
+    right: 8%;
+    bottom: 17%;
+}
+
+
+/* ---------------------------------------------------------
+   4. EXTRA VERTICAL LIGHT ACCENTS BESIDE THE IMAGE
+   --------------------------------------------------------- */
+
+.signature-hero .signature-hero-visual-frame {
+    position: relative;
+}
+
+/* Left side */
+
+.signature-hero .signature-hero-visual-frame::before {
+    content: "";
+    position: absolute;
+    left: -9px;
+    top: 20%;
+    width: 2px;
+    height: 78px;
+    z-index: 7;
+    pointer-events: none;
+
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        #3ca9f5 25%,
+        #a6e1ff 50%,
+        #3ca9f5 75%,
+        transparent
+    );
+
+    box-shadow:
+        0 0 5px rgba(60, 169, 245, 0.8),
+        0 0 12px rgba(60, 169, 245, 0.3);
+}
+
+
+/* Right side */
+
+.signature-hero .signature-hero-visual-frame::after {
+    content: "";
+    position: absolute;
+    right: -9px;
+    bottom: 20%;
+    width: 2px;
+    height: 78px;
+    z-index: 7;
+    pointer-events: none;
+
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        #c4778d 25%,
+        #e3a0b1 50%,
+        #c4778d 75%,
+        transparent
+    );
+
+    box-shadow:
+        0 0 5px rgba(196, 119, 141, 0.8),
+        0 0 12px rgba(196, 119, 141, 0.3);
+}
+
+
+/* ---------------------------------------------------------
+   5. HORIZONTAL LIGHT UNDER THE IMAGE
+   --------------------------------------------------------- */
+
+.signature-hero .signature-hero-visual-image img {
+    /* Do not alter image dimensions, crop or filter */
+}
+
+.signature-hero .signature-hero-visual-frame {
+    overflow: visible;
+}
+
+.signature-hero .signature-hero-visual-frame
+.signature-hero-visual-image {
+    overflow: hidden;
+}
+
+/* The underline is drawn outside the image layer
+   using the existing frame's inner-edge element. */
+
+.signature-hero .signature-hero-visual-edge {
+    pointer-events: none;
+}
+
+.signature-hero .signature-hero-visual-edge::after {
+    content: "";
+    position: absolute;
+    left: 25%;
+    bottom: -10px;
+    width: 50%;
+    height: 2px;
+    pointer-events: none;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        #3ca9f5 25%,
+        #a6e1ff 50%,
+        #3ca9f5 75%,
+        transparent
+    );
+
+    box-shadow:
+        0 0 5px rgba(60, 169, 245, 0.8),
+        0 0 12px rgba(60, 169, 245, 0.32);
 }
 
 
