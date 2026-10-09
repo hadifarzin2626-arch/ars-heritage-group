@@ -8922,3 +8922,204 @@ body.signature-page {
     margin: 0;
     flex: none;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS SIGNATURE — BACKGROUND IMAGE CLARITY
+   Append at the very end of ars-signature-2.css
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   1. PHILOSOPHY — SHOW THE BACKGROUND IMAGE CLEARLY
+   --------------------------------------------------------- */
+
+.signature-page .signature-intro-background {
+    opacity: 1 !important;
+}
+
+.signature-page .signature-intro-background img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+/* Keep the text readable without hiding the photograph */
+.signature-page .signature-intro-overlay {
+    background: linear-gradient(
+        90deg,
+        rgba(8, 13, 20, 0.34) 0%,
+        rgba(8, 13, 20, 0.16) 55%,
+        rgba(8, 13, 20, 0.08) 100%
+    ) !important;
+}
+
+
+/* ---------------------------------------------------------
+   2. SIX COLLECTION CARDS — CLEAR IMAGE LAYERS
+   --------------------------------------------------------- */
+
+.signature-page .signature-world-image {
+    opacity: 1 !important;
+}
+
+.signature-page .signature-world-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+/* Reduce the dark veil over the images */
+.signature-page .signature-world-overlay {
+    background: linear-gradient(
+        to top,
+        rgba(5, 10, 17, 0.62) 0%,
+        rgba(5, 10, 17, 0.22) 45%,
+        rgba(5, 10, 17, 0.04) 100%
+    ) !important;
+}
+
+
+/* ---------------------------------------------------------
+   3. CARD 04 — HERITAGE MASTERPIECE
+   ROSE-GOLD GLASS / MIRROR FINISH
+   --------------------------------------------------------- */
+
+.signature-page .signature-world:nth-of-type(4) {
+    background: linear-gradient(
+        135deg,
+        rgba(227, 160, 177, 0.22),
+        rgba(94, 43, 58, 0.12),
+        rgba(227, 160, 177, 0.20)
+    ) !important;
+
+    border: 1px solid rgba(227, 160, 177, 0.72);
+    box-shadow:
+        inset 0 0 24px rgba(227, 160, 177, 0.12),
+        0 0 18px rgba(196, 119, 141, 0.16);
+}
+
+.signature-page .signature-world:nth-of-type(4)
+.signature-world-overlay {
+    background: linear-gradient(
+        135deg,
+        rgba(196, 119, 141, 0.14),
+        rgba(25, 15, 22, 0.10),
+        rgba(227, 160, 177, 0.20)
+    ) !important;
+}
+
+
+/* ---------------------------------------------------------
+   4. CARD 06 — FOUNDER COLLECTION
+   MATCHING ROSE-GOLD GLASS / MIRROR FINISH
+   --------------------------------------------------------- */
+
+.signature-page .signature-world-founder {
+    background: linear-gradient(
+        135deg,
+        rgba(227, 160, 177, 0.22),
+        rgba(94, 43, 58, 0.12),
+        rgba(227, 160, 177, 0.20)
+    ) !important;
+
+    border: 1px solid rgba(227, 160, 177, 0.72);
+    box-shadow:
+        inset 0 0 24px rgba(227, 160, 177, 0.12),
+        0 0 18px rgba(196, 119, 141, 0.16);
+}
+
+.signature-page .signature-world-founder
+.signature-world-overlay {
+    background: linear-gradient(
+        135deg,
+        rgba(196, 119, 141, 0.14),
+        rgba(25, 15, 22, 0.10),
+        rgba(227, 160, 177, 0.20)
+    ) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS SIGNATURE — BACKGROUND IMAGE BRIGHTNESS CORRECTION
+   Append at the very end of ars-signature-2.css
+   ========================================================= */
+
+
+/* 1. PHILOSOPHY BACKGROUND — REDUCE DARK OVERLAY */
+
+.signature-page .signature-intro-overlay {
+    background: linear-gradient(
+        90deg,
+        rgba(8, 13, 20, 0.12) 0%,
+        rgba(8, 13, 20, 0.06) 55%,
+        rgba(8, 13, 20, 0.02) 100%
+    ) !important;
+    opacity: 1 !important;
+}
+
+
+/* 2. ALL SIX COLLECTION IMAGES — KEEP THEM BRIGHT */
+
+.signature-page .signature-world-image,
+.signature-page .signature-world-image img {
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+
+/* 3. COLLECTION OVERLAY — KEEP ONLY A LIGHT TEXT-READABILITY GRADIENT */
+
+.signature-page .signature-world-overlay {
+    background: linear-gradient(
+        to top,
+        rgba(5, 10, 17, 0.30) 0%,
+        rgba(5, 10, 17, 0.10) 35%,
+        rgba(5, 10, 17, 0.00) 75%
+    ) !important;
+    opacity: 1 !important;
+}
+
+
+/* 4. ROSE-GOLD CARDS 04 AND 06 — PRESERVE THE IMAGE UNDER THE TINT */
+
+.signature-page .signature-world:nth-of-type(4)
+.signature-world-overlay,
+.signature-page .signature-world-founder
+.signature-world-overlay {
+    background: linear-gradient(
+        135deg,
+        rgba(196, 119, 141, 0.08),
+        rgba(25, 15, 22, 0.04),
+        rgba(227, 160, 177, 0.10)
+    ) !important;
+}
+
+
