@@ -8064,16 +8064,11 @@ body.signature-page {
 
 
 
+
 /* =========================================================
-   ARS SIGNATURE — ARCHITECTURAL LIGHT GRID
-   ADD AT THE VERY END OF ars-signature-2.css
-   Decorative layers only — no layout changes
+   ARS SIGNATURE — TWO-TONE ARCHITECTURAL GRID
+   Grid only — preserve all existing Hero components
    ========================================================= */
-
-
-/* ---------------------------------------------------------
-   1. FINE, EVEN ELECTRIC-BLUE GRID
-   --------------------------------------------------------- */
 
 .signature-hero .signature-hero-grid {
     position: absolute;
@@ -8081,23 +8076,25 @@ body.signature-page {
     z-index: 3;
     pointer-events: none;
 
-    /* Equal-width and equal-height grid cells */
     background-image:
+        /* Electric blue vertical lines */
         linear-gradient(
             to right,
-            rgba(48, 103, 151, 0.25) 1px,
+            rgba(53, 139, 196, 0.42) 1px,
             transparent 1px
         ),
+
+        /* Rose-gold horizontal lines */
         linear-gradient(
             to bottom,
-            rgba(48, 103, 151, 0.25) 1px,
+            rgba(196, 119, 141, 0.42) 1px,
             transparent 1px
         );
 
-    /* Equal square cells; adjust both values together */
+    /* Equal square cells */
     background-size: 64px 64px;
 
-    opacity: 0.82;
+    opacity: 1;
 
     -webkit-mask-image: linear-gradient(
         to bottom,
@@ -8115,201 +8112,6 @@ body.signature-page {
         transparent 100%
     );
 }
-
-
-/* ---------------------------------------------------------
-   2. ADDITIONAL ELECTRIC-BLUE LIGHT ACCENTS
-   Existing two architectural lines remain in place.
-   --------------------------------------------------------- */
-
-.signature-hero .signature-hero-line {
-    width: 2px;
-    height: 78px;
-    z-index: 4;
-
-    background: linear-gradient(
-        to bottom,
-        transparent 0%,
-        rgba(60, 169, 245, 0.35) 12%,
-        #3ca9f5 38%,
-        #a6e1ff 50%,
-        #3ca9f5 68%,
-        rgba(60, 169, 245, 0.35) 88%,
-        transparent 100%
-    );
-
-    box-shadow:
-        0 0 5px rgba(60, 169, 245, 0.65),
-        0 0 12px rgba(60, 169, 245, 0.28);
-
-    opacity: 0.9;
-}
-
-
-/* Preserve the original line positions */
-
-.signature-hero .signature-hero-line-left {
-    left: 6%;
-}
-
-.signature-hero .signature-hero-line-right {
-    right: 6%;
-}
-
-
-/* ---------------------------------------------------------
-   3. ROSE-GOLD HORIZONTAL LIGHT ACCENTS
-   Use unused pseudo-elements of the existing layout.
-   --------------------------------------------------------- */
-
-.signature-hero .signature-hero-layout::before,
-.signature-hero .signature-hero-layout::after {
-    content: "";
-    position: absolute;
-    z-index: 6;
-    width: 84px;
-    height: 2px;
-    pointer-events: none;
-
-    background: linear-gradient(
-        to right,
-        transparent 0%,
-        rgba(196, 119, 141, 0.55) 22%,
-        #e3a0b1 50%,
-        rgba(196, 119, 141, 0.55) 78%,
-        transparent 100%
-    );
-
-    box-shadow:
-        0 0 5px rgba(196, 119, 141, 0.65),
-        0 0 13px rgba(196, 119, 141, 0.24);
-
-    opacity: 0.9;
-}
-
-.signature-hero .signature-hero-layout::before {
-    left: 8%;
-    top: 17%;
-}
-
-.signature-hero .signature-hero-layout::after {
-    right: 8%;
-    bottom: 17%;
-}
-
-
-/* ---------------------------------------------------------
-   4. EXTRA VERTICAL LIGHT ACCENTS BESIDE THE IMAGE
-   --------------------------------------------------------- */
-
-.signature-hero .signature-hero-visual-frame {
-    position: relative;
-}
-
-/* Left side */
-
-.signature-hero .signature-hero-visual-frame::before {
-    content: "";
-    position: absolute;
-    left: -9px;
-    top: 20%;
-    width: 2px;
-    height: 78px;
-    z-index: 7;
-    pointer-events: none;
-
-    background: linear-gradient(
-        to bottom,
-        transparent,
-        #3ca9f5 25%,
-        #a6e1ff 50%,
-        #3ca9f5 75%,
-        transparent
-    );
-
-    box-shadow:
-        0 0 5px rgba(60, 169, 245, 0.8),
-        0 0 12px rgba(60, 169, 245, 0.3);
-}
-
-
-/* Right side */
-
-.signature-hero .signature-hero-visual-frame::after {
-    content: "";
-    position: absolute;
-    right: -9px;
-    bottom: 20%;
-    width: 2px;
-    height: 78px;
-    z-index: 7;
-    pointer-events: none;
-
-    background: linear-gradient(
-        to bottom,
-        transparent,
-        #c4778d 25%,
-        #e3a0b1 50%,
-        #c4778d 75%,
-        transparent
-    );
-
-    box-shadow:
-        0 0 5px rgba(196, 119, 141, 0.8),
-        0 0 12px rgba(196, 119, 141, 0.3);
-}
-
-
-/* ---------------------------------------------------------
-   5. HORIZONTAL LIGHT UNDER THE IMAGE
-   --------------------------------------------------------- */
-
-.signature-hero .signature-hero-visual-image img {
-    /* Do not alter image dimensions, crop or filter */
-}
-
-.signature-hero .signature-hero-visual-frame {
-    overflow: visible;
-}
-
-.signature-hero .signature-hero-visual-frame
-.signature-hero-visual-image {
-    overflow: hidden;
-}
-
-/* The underline is drawn outside the image layer
-   using the existing frame's inner-edge element. */
-
-.signature-hero .signature-hero-visual-edge {
-    pointer-events: none;
-}
-
-.signature-hero .signature-hero-visual-edge::after {
-    content: "";
-    position: absolute;
-    left: 25%;
-    bottom: -10px;
-    width: 50%;
-    height: 2px;
-    pointer-events: none;
-
-    background: linear-gradient(
-        to right,
-        transparent,
-        #3ca9f5 25%,
-        #a6e1ff 50%,
-        #3ca9f5 75%,
-        transparent
-    );
-
-    box-shadow:
-        0 0 5px rgba(60, 169, 245, 0.8),
-        0 0 12px rgba(60, 169, 245, 0.32);
-}
-
-
-
-
 
 
 
