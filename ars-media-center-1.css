@@ -3916,3 +3916,570 @@ p {
    END OF APPEND-ONLY SAFETY PATCH
    ========================================================= */
 
+/* =========================================================
+   ARS MEDIA CENTER
+   HTML-VERIFIED NAVIGATION & SLIDESHOW COMPLETION
+   ========================================================= */
+
+/* 01 — MOBILE MENU BUTTON */
+
+.ars-site-header .ars-menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ars-site-header .ars-menu-toggle span {
+  flex-shrink: 0;
+}
+
+.ars-site-header .ars-menu-toggle:focus-visible {
+  outline: 2px solid #55c8ff;
+  outline-offset: 4px;
+}
+
+/* 02 — NAVIGATION LINKS */
+
+.ars-site-header .ars-primary-nav a {
+  text-decoration: none;
+  overflow-wrap: break-word;
+}
+
+.ars-site-header .ars-primary-nav a:focus-visible {
+  outline: 2px solid #55c8ff;
+  outline-offset: 3px;
+}
+
+/* 03 — ADVERTISING SLIDE VISIBILITY */
+
+#ars-advertising-rotator .advertising-slides {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+}
+
+#ars-advertising-rotator .advertising-slide {
+  min-width: 0;
+  max-width: 100%;
+}
+
+#ars-advertising-rotator .advertising-slide img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* 04 — SLIDESHOW PROGRESS */
+
+#ars-advertising-rotator .advertising-progress-track {
+  min-width: 0;
+  overflow: hidden;
+}
+
+#ars-advertising-rotator .advertising-progress {
+  display: block;
+  max-width: 100%;
+  transition: width 0.25s ease;
+}
+
+/* 05 — SLIDESHOW CONTROLS */
+
+#ars-advertising-rotator .advertising-control,
+#ars-ad-pause {
+  -webkit-tap-highlight-color: transparent;
+}
+
+#ars-advertising-rotator .advertising-control:focus-visible,
+#ars-ad-pause:focus-visible {
+  outline: 2px solid #55c8ff;
+  outline-offset: 3px;
+}
+
+/* 06 — REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  #ars-advertising-rotator .advertising-progress {
+    transition: none;
+  }
+}
+
+
+
+
+
+
+/* ARS MEDIA CENTER — HTML-VERIFIED FORM VALIDATION FIX */
+
+/* Do not show validation errors before the user interacts */
+.ars-contact-form input:user-invalid,
+.ars-contact-form select:user-invalid,
+.ars-contact-form textarea:user-invalid {
+  border-color: #d98282;
+  box-shadow: 0 0 0 1px rgba(217, 130, 130, 0.16);
+}
+
+/* Keep normal fields visually neutral */
+.ars-contact-form input:invalid:not(:focus):not(:user-invalid),
+.ars-contact-form select:invalid:not(:focus):not(:user-invalid),
+.ars-contact-form textarea:invalid:not(:focus):not(:user-invalid) {
+  border-color: var(--ars-glass-border, rgba(255, 255, 255, 0.16));
+  box-shadow: none;
+}
+
+
+
+
+/* ARS MEDIA CENTER — HTML-VERIFIED PRODUCT & GALLERY IMAGE FIX */
+
+.media-division .product-image-frame {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.media-division .product-image-frame > img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.media-division .image-showcase-grid .gallery-card {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.media-division .image-showcase-grid .gallery-card > img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+.media-division .product-showcase-grid,
+.media-division .image-showcase-grid {
+  min-width: 0;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .media-division .product-showcase-grid,
+  .media-division .image-showcase-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+
+
+/* ARS MEDIA CENTER — HTML-VERIFIED VIDEO FRAME FIX */
+
+.ars-media-page .media-frame {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  aspect-ratio: 64 / 45;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.ars-media-page .media-frame > video,
+.ars-media-page .media-frame > iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  border: 0;
+  object-fit: cover;
+}
+
+.ars-media-page .division-video-grid,
+.ars-media-page .spotlight-grid,
+.ars-media-page .film-library-grid {
+  min-width: 0;
+}
+
+.ars-media-page .video-card,
+.ars-media-page .spotlight-video-card,
+.ars-media-page .film-card {
+  min-width: 0;
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .ars-media-page .media-frame {
+    aspect-ratio: 64 / 45;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ars-media-page .media-frame > video {
+    scroll-behavior: auto;
+  }
+}
+
+
+
+
+
+
+/* ARS MEDIA CENTER — DIVISION GRID RESPONSIVE FIX */
+
+.ars-media-page .media-division > .container,
+.ars-media-page .division-header,
+.ars-media-page .division-media-block,
+.ars-media-page .division-gallery-block {
+  min-width: 0;
+  width: 100%;
+}
+
+.ars-media-page .division-video-grid,
+.ars-media-page .image-showcase-grid,
+.ars-media-page .product-showcase-grid {
+  width: 100%;
+  min-width: 0;
+}
+
+.ars-media-page .division-video-grid > *,
+.ars-media-page .image-showcase-grid > *,
+.ars-media-page .product-showcase-grid > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.ars-media-page .film-card-content,
+.ars-media-page .division-heading-copy,
+.ars-media-page .section-header {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 760px) {
+  .ars-media-page .division-video-grid,
+  .ars-media-page .image-showcase-grid,
+  .ars-media-page .product-showcase-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+
+
+
+/* ARS MEDIA CENTER — HTML-VERIFIED CONTACT LAYOUT */
+
+.ars-media-page .contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  min-width: 0;
+  width: 100%;
+}
+
+.ars-media-page .contact-card,
+.ars-media-page .ars-contact-form-wrap {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.ars-media-page .ars-contact-form {
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+  width: 100%;
+}
+
+.ars-media-page .contact-form-field {
+  min-width: 0;
+  width: 100%;
+}
+
+.ars-media-page .contact-form-field input,
+.ars-media-page .contact-form-field select,
+.ars-media-page .contact-form-field textarea {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.ars-media-page .contact-form-field textarea {
+  resize: vertical;
+}
+
+.ars-media-page .ars-social-links,
+.ars-media-page .contact-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+@media (max-width: 700px) {
+  .ars-media-page .contact-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+
+
+
+
+/* ARS MEDIA CENTER — HTML-VERIFIED FOOTER RESPONSIVENESS */
+
+.ars-media-page .ars-footer > .container {
+  min-width: 0;
+  width: 100%;
+}
+
+.ars-media-page .footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  min-width: 0;
+}
+
+.ars-media-page .footer-brand,
+.ars-media-page .footer-links {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.ars-media-page .footer-logo-link {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+}
+
+.ars-media-page .footer-logo {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.ars-media-page .footer-links a,
+.ars-media-page .footer-tagline,
+.ars-media-page .footer-bottom {
+  overflow-wrap: anywhere;
+}
+
+.ars-media-page .footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.ars-media-page .footer-back-to-top {
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .ars-media-page .footer-top,
+  .ars-media-page .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+
+
+/* ARS MEDIA CENTER — HTML-VERIFIED HERO RESPONSIVENESS */
+
+.ars-media-page .media-hero {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.ars-media-page .media-hero-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.ars-media-page .media-logo-wrapper {
+  max-width: 100%;
+  min-width: 0;
+}
+
+.ars-media-page .media-logo {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.ars-media-page .media-hero-title,
+.ars-media-page .media-hero-subtitle,
+.ars-media-page .hero-description {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.ars-media-page .media-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.875rem;
+  min-width: 0;
+}
+
+.ars-media-page .media-buttons > a {
+  max-width: 100%;
+  min-width: 0;
+}
+
+@media (max-width: 600px) {
+  .ars-media-page .media-buttons {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .ars-media-page .media-buttons > a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+
+/* ARS MEDIA CENTER — ADVERTISING ROTATOR CONTROL LAYER */
+
+#ars-advertising-rotator {
+  min-width: 0;
+  max-width: 100%;
+}
+
+#ars-advertising-rotator .advertising-slides {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+}
+
+#ars-advertising-rotator .advertising-slide {
+  min-width: 0;
+  max-width: 100%;
+}
+
+#ars-advertising-rotator .advertising-slide img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+#ars-advertising-rotator .advertising-control {
+  z-index: 2;
+  touch-action: manipulation;
+}
+
+#ars-advertising-rotator .advertising-display-footer {
+  min-width: 0;
+  max-width: 100%;
+}
+
+#ars-advertising-rotator .advertising-counter {
+  font-variant-numeric: tabular-nums;
+}
+
+#ars-advertising-rotator .advertising-progress-track {
+  min-width: 0;
+  overflow: hidden;
+}
+
+#ars-advertising-rotator .advertising-progress {
+  display: block;
+  max-width: 100%;
+}
+
+#ars-advertising-rotator .advertising-pause {
+  touch-action: manipulation;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #ars-advertising-rotator .advertising-progress {
+    transition: none;
+  }
+     }
+
+/* ARS MEDIA CENTER — HTML-VERIFIED NAVIGATION RESPONSIVENESS */
+
+.ars-site-header,
+.ars-site-header .ars-nav-shell {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.ars-site-header .ars-nav-brand {
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.ars-site-header .ars-nav-brand img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.ars-site-header .ars-primary-nav {
+  min-width: 0;
+}
+
+.ars-site-header .ars-primary-nav a {
+  overflow-wrap: anywhere;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ars-site-header .ars-menu-toggle {
+  flex-shrink: 0;
+  touch-action: manipulation;
+}
+
+.ars-site-header .ars-menu-toggle:focus-visible,
+.ars-site-header .ars-primary-nav a:focus-visible {
+  outline: 2px solid #55c8ff;
+  outline-offset: 3px;
+}
+
+@media (max-width: 999px) {
+  .ars-site-header .ars-primary-nav.is-open {
+    visibility: visible;
+  }
+   }
+
+        /* ARS MEDIA CENTER — FINAL KEYBOARD ACCESSIBILITY */
+
+.ars-media-page a:focus-visible,
+.ars-media-page button:focus-visible,
+.ars-media-page input:focus-visible,
+.ars-media-page select:focus-visible,
+.ars-media-page textarea:focus-visible {
+  outline: 2px solid #55c8ff;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ars-media-page *,
+  .ars-site-header *,
+  .ars-footer * {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
