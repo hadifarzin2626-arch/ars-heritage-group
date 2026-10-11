@@ -4494,37 +4494,63 @@ p {
 
 
 
+/* =========================================================
+   ARS MEDIA CENTER — GALLERY FRAME ALIGNMENT FIX
+   Fix: gallery frames protruding beyond the LEFT edge
+   Applies to all 7 media divisions
+   ========================================================= */
 
-/* ARS MEDIA CENTER — GALLERY FRAME CONTAINMENT FIX */
-
-.ars-media-page .image-showcase-grid {
+.ars-media-page .ars-divisions,
+.ars-media-page .media-division,
+.ars-media-page .media-division > .container,
+.ars-media-page .division-gallery-block {
+  box-sizing: border-box;
   min-width: 0;
   max-width: 100%;
-  width: 100%;
-  box-sizing: border-box;
 }
 
-.ars-media-page .image-showcase-grid > .gallery-card {
+.ars-media-page .division-gallery-block {
+  width: 100%;
+  margin-inline: 0;
+  padding-inline: 0;
+}
+
+.ars-media-page .division-gallery-block .image-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  box-sizing: border-box;
+  position: relative;
+  inset-inline: auto;
+  transform: none;
+  width: 100%;
   min-width: 0;
   max-width: 100%;
-  width: 100%;
-  box-sizing: border-box;
-  overflow: hidden;
+  margin-inline: 0;
+  padding-inline: 0;
 }
 
-.ars-media-page .image-showcase-grid > .gallery-card > img {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  height: auto;
+.ars-media-page .division-gallery-block
+.image-showcase-grid > .gallery-card {
+  position: relative;
+  inset-inline: auto;
+  transform: none;
   box-sizing: border-box;
-  object-fit: cover;
-}
-
-.ars-media-page .media-division > .container {
+  width: 100%;
   min-width: 0;
   max-width: 100%;
-  box-sizing: border-box;
+  margin-inline: 0;
+}
+
+@media (max-width: 760px) {
+  .ars-media-page .division-gallery-block .image-showcase-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .ars-media-page .division-gallery-block .image-showcase-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 
@@ -4535,118 +4561,282 @@ p {
 
 
 
-/* ARS MEDIA CENTER — PREMIUM CONTACT & FOOTER */
+/* ==========================================================
+   ARS MEDIA CENTER — LUXURY GLASS & GOLD SIGNATURE
+   Footer glass keys + premium contact form enclosure
+   ========================================================== */
 
-.ars-media-page .media-contact {
+/* ---------- 1. FOOTER: GLASS NAVIGATION KEYS ---------- */
+
+.ars-media-page .ars-footer .footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  min-width: 0;
+}
+
+.ars-media-page .ars-footer .footer-links a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 48px;
+  padding: 12px 15px;
+
+  color: #f1d49a;
+  font-size: 0.92rem;
+  font-weight: 500;
+  line-height: 1.65;
+  letter-spacing: 0.025em;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.075),
+      rgba(255, 255, 255, 0.018) 55%,
+      rgba(196, 151, 79, 0.055)
+    );
+
+  border: 1px solid rgba(218, 178, 104, 0.38);
+  border-radius: 12px;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.09),
+    inset 0 0 18px rgba(218, 178, 104, 0.035),
+    0 5px 16px rgba(0, 0, 0, 0.18);
+
+  text-shadow:
+    0 0 7px rgba(230, 187, 104, 0.38),
+    0 0 17px rgba(230, 187, 104, 0.12);
+
+  transition:
+    color 220ms ease,
+    background 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease;
+}
+
+.ars-media-page .ars-footer .footer-links a::before {
+  content: "";
+  flex: 0 0 5px;
+  width: 5px;
+  height: 5px;
+  margin-inline-end: 10px;
+  border-radius: 50%;
+  background: #e5bd73;
+  box-shadow:
+    0 0 7px rgba(229, 189, 115, 0.75),
+    0 0 14px rgba(229, 189, 115, 0.25);
+}
+
+.ars-media-page .ars-footer .footer-links a:hover {
+  color: #fff0c9;
+  border-color: rgba(255, 210, 125, 0.85);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(218, 178, 104, 0.17),
+      rgba(255, 255, 255, 0.045) 55%,
+      rgba(85, 200, 255, 0.07)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.13),
+    0 0 0 1px rgba(218, 178, 104, 0.08),
+    0 0 20px rgba(218, 178, 104, 0.14),
+    0 8px 22px rgba(0, 0, 0, 0.25);
+
+  text-shadow:
+    0 0 8px rgba(255, 210, 125, 0.62),
+    0 0 20px rgba(255, 210, 125, 0.24);
+
+  transform: translateY(-2px);
+}
+
+.ars-media-page .ars-footer .footer-links a:focus-visible {
+  outline: 2px solid #e5bd73;
+  outline-offset: 3px;
+}
+
+.ars-media-page .ars-footer .footer-links a:active {
+  transform: translateY(0);
+}
+
+
+/* ---------- 2. CONTACT: SIGNATURE GLASS ENCLOSURE ---------- */
+
+.ars-media-page .media-contact .ars-contact-form-wrap {
   position: relative;
   isolation: isolate;
-  padding-block: clamp(4rem, 8vw, 7rem);
-  background:
-    radial-gradient(ellipse at 15% 20%, rgba(0, 174, 255, 0.09), transparent 45%),
-    radial-gradient(ellipse at 85% 80%, rgba(176, 125, 82, 0.10), transparent 45%);
-}
-
-.ars-media-page .ars-contact-form-wrap {
-  border: 1px solid rgba(190, 151, 112, 0.35);
-  border-radius: 22px;
-  padding: clamp(1.25rem, 4vw, 2.5rem);
-  background: linear-gradient(
-    145deg,
-    rgba(20, 31, 47, 0.92),
-    rgba(7, 13, 24, 0.96)
-  );
-  box-shadow:
-    0 24px 70px rgba(0, 0, 0, 0.30),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
-}
-
-.ars-media-page .contact-card {
-  border: 1px solid rgba(85, 200, 255, 0.20);
-  border-radius: 16px;
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.055),
-    rgba(255, 255, 255, 0.018)
-  );
-  transition: border-color 0.25s ease, transform 0.25s ease;
-}
-
-.ars-media-page .contact-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(190, 151, 112, 0.55);
-}
-
-.ars-media-page .ars-footer {
-  position: relative;
   overflow: hidden;
-  border-top: 1px solid rgba(190, 151, 112, 0.42);
+  box-sizing: border-box;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+
+  margin-top: clamp(32px, 5vw, 60px);
+  padding: clamp(22px, 4vw, 46px);
+
+  border: 1px solid rgba(218, 178, 104, 0.48);
+  border-radius: 26px;
+
   background:
-    radial-gradient(ellipse at 50% 0%, rgba(0, 153, 255, 0.10), transparent 55%),
-    linear-gradient(180deg, #0b1220 0%, #05080e 100%);
+    radial-gradient(
+      ellipse at 8% 0%,
+      rgba(85, 200, 255, 0.15),
+      transparent 42%
+    ),
+    radial-gradient(
+      ellipse at 100% 100%,
+      rgba(218, 178, 104, 0.12),
+      transparent 45%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(22, 34, 51, 0.97),
+      rgba(9, 15, 26, 0.985) 58%,
+      rgba(12, 17, 27, 0.98)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.10),
+    inset 0 0 42px rgba(85, 200, 255, 0.035),
+    0 24px 70px rgba(0, 0, 0, 0.34),
+    0 0 30px rgba(218, 178, 104, 0.045);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 
-.ars-media-page .ars-footer::before {
+/* Fine gold line across the upper edge */
+
+.ars-media-page .media-contact .ars-contact-form-wrap::before {
   content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 8%;
+  width: 84%;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(218, 178, 104, 0.9),
+    rgba(255, 232, 181, 0.95),
+    rgba(85, 200, 255, 0.48),
+    transparent
+  );
+
+  box-shadow: 0 0 14px rgba(218, 178, 104, 0.22);
+}
+
+/* Contact form layout */
+
+.ars-media-page .media-contact .ars-contact-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  width: 100%;
+  min-width: 0;
+}
+
+.ars-media-page .media-contact .ars-contact-form .contact-form-field {
+  min-width: 0;
+  width: 100%;
+}
+
+.ars-media-page .media-contact .ars-contact-form .contact-form-field:has(textarea),
+.ars-media-page .media-contact .ars-contact-form > button {
+  grid-column: 1 / -1;
+}
+
+.ars-media-page .media-contact .ars-contact-form input,
+.ars-media-page .media-contact .ars-contact-form select,
+.ars-media-page .media-contact .ars-contact-form textarea {
   display: block;
-  width: min(180px, 32%);
-  height: 2px;
-  margin: 0 auto;
-  background: linear-gradient(90deg, transparent, #b68a60, #55c8ff, transparent);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  color: #edf3fb;
+  background: rgba(3, 9, 18, 0.56);
+  border: 1px solid rgba(190, 151, 112, 0.34);
+  border-radius: 12px;
+
+  box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.12);
+
+  transition:
+    border-color 200ms ease,
+    box-shadow 200ms ease,
+    background 200ms ease;
 }
 
-.ars-media-page .footer-top {
-  padding-block: clamp(2.5rem, 5vw, 4rem);
-  gap: clamp(2rem, 5vw, 5rem);
+.ars-media-page .media-contact .ars-contact-form input:focus,
+.ars-media-page .media-contact .ars-contact-form select:focus,
+.ars-media-page .media-contact .ars-contact-form textarea:focus {
+  outline: none;
+  border-color: rgba(85, 200, 255, 0.82);
+  background: rgba(5, 13, 24, 0.82);
+
+  box-shadow:
+    0 0 0 3px rgba(85, 200, 255, 0.09),
+    0 0 18px rgba(85, 200, 255, 0.075);
 }
 
-.ars-media-page .footer-logo {
-  max-width: min(190px, 100%);
+.ars-media-page .media-contact .ars-contact-form textarea {
+  min-height: 145px;
+  resize: vertical;
 }
 
-.ars-media-page .footer-tagline {
-  color: rgba(225, 231, 240, 0.68);
-  line-height: 1.8;
+/* Mobile layout */
+
+@media (max-width: 760px) {
+  .ars-media-page .ars-footer .footer-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
-.ars-media-page .footer-links a {
-  color: rgba(232, 237, 245, 0.78);
-  text-decoration: none;
-  transition: color 0.2s ease;
+@media (max-width: 650px) {
+  .ars-media-page .media-contact .ars-contact-form {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .ars-media-page .media-contact .ars-contact-form .contact-form-field:has(textarea),
+  .ars-media-page .media-contact .ars-contact-form > button {
+    grid-column: auto;
+  }
+
+  .ars-media-page .media-contact .ars-contact-form-wrap {
+    padding: 22px 17px;
+    border-radius: 20px;
+  }
 }
 
-.ars-media-page .footer-links a:hover {
-  color: #55c8ff;
-}
-
-.ars-media-page .footer-bottom {
-  padding-block: 1.25rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.10);
-  color: rgba(225, 231, 240, 0.58);
-}
-
-.ars-media-page .footer-back-to-top {
-  border: 1px solid rgba(190, 151, 112, 0.45);
-  border-radius: 999px;
-  padding: 0.65rem 1rem;
-  color: #d6b18b;
-  background: rgba(255, 255, 255, 0.035);
-  text-decoration: none;
-  transition: background 0.2s ease, border-color 0.2s ease;
-}
-
-.ars-media-page .footer-back-to-top:hover {
-  background: rgba(85, 200, 255, 0.09);
-  border-color: #55c8ff;
+@media (max-width: 420px) {
+  .ars-media-page .ars-footer .footer-links {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ars-media-page .contact-card,
-  .ars-media-page .footer-links a,
-  .ars-media-page .footer-back-to-top {
+  .ars-media-page .ars-footer .footer-links a,
+  .ars-media-page .media-contact .ars-contact-form input,
+  .ars-media-page .media-contact .ars-contact-form select,
+  .ars-media-page .media-contact .ars-contact-form textarea {
     transition: none;
   }
 
-  .ars-media-page .contact-card:hover {
+  .ars-media-page .ars-footer .footer-links a:hover {
     transform: none;
   }
 }
+
