@@ -4840,3 +4840,37 @@ p {
   }
 }
 
+
+
+
+
+
+/* =========================================
+   ARS MEDIA CENTER — FOOTER LINKS GRID PATCH
+   Two columns / compact footer
+   ========================================= */
+
+.ars-footer .ars-footer-links,
+.ars-footer .footer-links,
+.ars-footer .ars-footer-nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 12px;
+    align-items: stretch;
+}
+
+.ars-footer .ars-footer-links > *,
+.ars-footer .footer-links > *,
+.ars-footer .ars-footer-nav > * {
+    min-width: 0;
+    margin: 0;
+}
+
+@media (max-width: 480px) {
+    .ars-footer .ars-footer-links,
+    .ars-footer .footer-links,
+    .ars-footer .ars-footer-nav {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+}
