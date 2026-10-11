@@ -4874,3 +4874,22 @@ p {
         gap: 8px;
     }
 }
+
+
+
+
+/* ARS MEDIA CENTER — CAROUSEL VISIBILITY FIX */
+
+#ars-advertising-rotator .advertising-slides > .advertising-slide {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
+}
+
+#ars-advertising-rotator .advertising-slides > .advertising-slide.is-active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 2 !important;
+    pointer-events: auto !important;
+}
