@@ -3767,6 +3767,132 @@ html::-webkit-scrollbar-thumb:hover {
     }
 }
 
+
+
+
+
+
+/* =========================================
+   ARS MEDIA CENTER
+   DIVISION 01 — ARS BRAIN
+   MASTER GLASS CARD
+   ========================================= */
+
+#ars-divisions #ars-brain {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    padding: clamp(1.5rem, 4vw, 4.5rem);
+
+    background:
+        radial-gradient(
+            ellipse at 8% 4%,
+            rgba(0, 140, 255, 0.13),
+            transparent 38%
+        ),
+        radial-gradient(
+            ellipse at 94% 88%,
+            rgba(0, 76, 150, 0.14),
+            transparent 36%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(9, 19, 32, 0.97) 0%,
+            rgba(3, 7, 13, 0.985) 48%,
+            rgba(5, 13, 24, 0.98) 100%
+        );
+
+    border: 1px solid rgba(0, 153, 255, 0.42);
+    border-radius: clamp(22px, 3vw, 38px);
+
+    box-shadow:
+        0 0 0 1px rgba(0, 100, 200, 0.08),
+        0 0 34px rgba(0, 119, 255, 0.12),
+        0 0 90px rgba(0, 91, 190, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.075),
+        inset 0 0 55px rgba(0, 112, 220, 0.055);
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+}
+
+/* Electric-blue ambient lighting */
+#ars-divisions #ars-brain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at 0% 20%,
+            rgba(0, 153, 255, 0.16),
+            transparent 34%
+        ),
+        radial-gradient(
+            ellipse at 100% 72%,
+            rgba(0, 101, 255, 0.12),
+            transparent 38%
+        );
+
+    opacity: 0.9;
+}
+
+/* Keep all division content above the lighting */
+#ars-divisions #ars-brain > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Unified brilliant metallic-gold headings */
+#ars-divisions #ars-brain .division-heading-main h2,
+#ars-divisions #ars-brain .division-heading-main h2 span {
+    color: #F2D18A;
+    background: linear-gradient(
+        180deg,
+        #FFF4CE 0%,
+        #F4D58D 24%,
+        #D9AC53 58%,
+        #FFF0BE 78%,
+        #C9953C 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow: 0 0 24px rgba(225, 177, 83, 0.12);
+}
+
+/* Preserve the existing site font */
+#ars-divisions #ars-brain,
+#ars-divisions #ars-brain h2,
+#ars-divisions #ars-brain p {
+    font-family: inherit;
+}
+
+/* Mobile refinement */
+@media (max-width: 600px) {
+    #ars-divisions #ars-brain {
+        padding: 1.25rem;
+        border-radius: 22px;
+    }
+}
+
+/* Reduced visual effects for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    #ars-divisions #ars-brain {
+        scroll-behavior: auto;
+    }
+}
+
+
 /* END OF SECTION 05 */
 
 
