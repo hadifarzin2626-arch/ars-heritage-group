@@ -4084,6 +4084,301 @@ html::-webkit-scrollbar-thumb:hover {
 
 
 
+/* =========================================
+   ARS BRAIN — PREMIUM GOLD & ELECTRIC BLUE
+   FULL-WIDTH MEDIA / SHORT LIGHT ACCENTS
+   ========================================= */
+
+/* 1. Use the full available width inside the master card */
+#ars-divisions #ars-brain .product-showcase-grid,
+#ars-divisions #ars-brain .division-video-grid,
+#ars-divisions #ars-brain .image-showcase-grid,
+#ars-divisions #ars-brain .division-media-block,
+#ars-divisions #ars-brain .division-gallery-block {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Stretch cards within their existing grid columns */
+#ars-divisions #ars-brain .product-card,
+#ars-divisions #ars-brain .video-card,
+#ars-divisions #ars-brain .gallery-card {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* 2. Increase media display height by approximately 10% */
+#ars-divisions #ars-brain .product-card .media-frame {
+    aspect-ratio: 1.515 / 1;
+}
+
+#ars-divisions #ars-brain .video-card .media-frame {
+    aspect-ratio: 1.636 / 1;
+}
+
+#ars-divisions #ars-brain .gallery-card img {
+    width: 100%;
+    aspect-ratio: 1.636 / 1;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* 3. Brilliant metallic gold — main headings */
+#ars-divisions #ars-brain .division-heading-main h2,
+#ars-divisions #ars-brain .product-showcase-heading {
+    color: #F3D18A;
+    background: linear-gradient(
+        180deg,
+        #FFF8DC 0%,
+        #F8E4AC 18%,
+        #E8C16F 38%,
+        #C99843 58%,
+        #FBE9B5 76%,
+        #D6AA5B 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 16px rgba(230, 183, 91, 0.16);
+}
+
+/* Remove long borders from large headings */
+#ars-divisions #ars-brain .division-heading-main h2,
+#ars-divisions #ars-brain .product-showcase-heading {
+    border-bottom: 0;
+    box-shadow: none;
+    position: relative;
+    display: table;
+    max-width: 100%;
+    padding-bottom: 0.8rem;
+}
+
+/* Short electric-blue luminous underline */
+#ars-divisions #ars-brain .product-showcase-heading::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 30%;
+    max-width: 100px;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        #00B7FF,
+        rgba(0, 183, 255, 0.58),
+        transparent
+    );
+    box-shadow:
+        0 0 7px rgba(0, 183, 255, 0.9),
+        0 0 16px rgba(0, 140, 255, 0.42);
+}
+
+/* 4. Small section titles — electric blue */
+#ars-divisions #ars-brain .subsection-heading {
+    color: #00B7FF;
+    -webkit-text-fill-color: #00B7FF;
+    background: none;
+    text-shadow:
+        0 0 8px rgba(0, 183, 255, 0.55),
+        0 0 18px rgba(0, 140, 255, 0.25);
+
+    border-bottom: 0;
+    box-shadow: none;
+    position: relative;
+    display: table;
+    max-width: 100%;
+    padding-bottom: 0.7rem;
+}
+
+/* Short, brilliant gold underline beneath small titles */
+#ars-divisions #ars-brain .subsection-heading::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 30%;
+    max-width: 90px;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        #FFF0BC,
+        #D6A64D 60%,
+        transparent
+    );
+    box-shadow:
+        0 0 6px rgba(255, 220, 145, 0.95),
+        0 0 14px rgba(224, 169, 66, 0.55);
+}
+
+/* 5. Division label stays electric blue */
+#ars-divisions #ars-brain .division-heading-main .division-label {
+    color: #00B7FF;
+    -webkit-text-fill-color: #00B7FF;
+}
+
+/* 6. "FOUR FEATURED SPACES" — brilliant gold */
+#ars-divisions #ars-brain .product-showcase-heading {
+    font-weight: 700;
+    letter-spacing: 0.09em;
+}
+
+/* 7. The main card grows naturally with all enlarged content */
+#ars-divisions #ars-brain {
+    height: auto;
+    min-height: 0;
+}
+
+/* Mobile safety */
+@media (max-width: 600px) {
+    #ars-divisions #ars-brain .product-card .media-frame {
+        aspect-ratio: 1.515 / 1;
+    }
+
+    #ars-divisions #ars-brain .video-card .media-frame {
+        aspect-ratio: 1.636 / 1;
+    }
+
+    #ars-divisions #ars-brain .division-heading-main h2,
+    #ars-divisions #ars-brain .product-showcase-heading,
+    #ars-divisions #ars-brain .subsection-heading {
+        max-width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* =========================================
+   ARS BRAIN — MAXIMUM MEDIA WIDTH
+   FULL-WIDTH CARDS + TALLER DISPLAY FRAMES
+   ========================================= */
+
+/* 1. Each display grid uses the entire available width */
+#ars-divisions #ars-brain .product-showcase-grid,
+#ars-divisions #ars-brain .division-video-grid,
+#ars-divisions #ars-brain .image-showcase-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    box-sizing: border-box;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+/* 2. Media sections must not restrict their contents */
+#ars-divisions #ars-brain .division-media-block,
+#ars-divisions #ars-brain .division-gallery-block {
+    display: block;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* 3. Every card expands to the full row width */
+#ars-divisions #ars-brain .product-card,
+#ars-divisions #ars-brain .video-card,
+#ars-divisions #ars-brain .gallery-card {
+    display: block;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    justify-self: stretch;
+    box-sizing: border-box;
+}
+
+/* 4. Product displays: taller frames */
+#ars-divisions #ars-brain .product-card .media-frame {
+    display: block;
+    width: 100%;
+    max-width: none;
+    aspect-ratio: 1.32 / 1;
+    height: auto;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Ensure product media fills its frame */
+#ars-divisions #ars-brain .product-card .media-frame img,
+#ars-divisions #ars-brain .product-card .media-frame video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 5. Video displays: taller frames */
+#ars-divisions #ars-brain .video-card .media-frame {
+    display: block;
+    width: 100%;
+    max-width: none;
+    aspect-ratio: 1.42 / 1;
+    height: auto;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#ars-divisions #ars-brain .video-card .media-frame video,
+#ars-divisions #ars-brain .video-card .media-frame iframe,
+#ars-divisions #ars-brain .video-card .media-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+}
+
+/* 6. Gallery images: full width and generous height */
+#ars-divisions #ars-brain .gallery-card img {
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: clamp(280px, 48vw, 680px);
+    object-fit: cover;
+    box-sizing: border-box;
+}
+
+/* 7. Prevent inner content from shrinking the media */
+#ars-divisions #ars-brain .product-card *,
+#ars-divisions #ars-brain .video-card *,
+#ars-divisions #ars-brain .gallery-card * {
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* 8. Responsive adjustments */
+@media (max-width: 600px) {
+    #ars-divisions #ars-brain .product-showcase-grid,
+    #ars-divisions #ars-brain .division-video-grid,
+    #ars-divisions #ars-brain .image-showcase-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.5rem;
+    }
+
+    #ars-divisions #ars-brain .product-card .media-frame {
+        aspect-ratio: 1.25 / 1;
+    }
+
+    #ars-divisions #ars-brain .video-card .media-frame {
+        aspect-ratio: 1.35 / 1;
+    }
+
+    #ars-divisions #ars-brain .gallery-card img {
+        height: clamp(250px, 75vw, 420px);
+    }
+}
+
+
 
 
 /* Unified brilliant metallic-gold headings */
