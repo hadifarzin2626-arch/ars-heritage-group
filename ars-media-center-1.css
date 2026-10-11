@@ -3561,3 +3561,358 @@ p {
   }
 }
 
+
+
+
+
+
+
+
+/* =========================================================
+   ARS MEDIA CENTER
+   FOOTER + NAVIGATION POLISH
+   Append-only completion patch
+   ========================================================= */
+
+/* 01 — NAVIGATION LINK TRANSITIONS */
+
+.ars-media-page .ars-site-header a,
+.ars-site-header a {
+  transition:
+    color 0.25s ease,
+    opacity 0.25s ease;
+}
+
+/* 02 — BRAND STABILITY */
+
+.ars-site-header .ars-nav-brand {
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.ars-site-header .ars-nav-brand img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 03 — MOBILE MENU BUTTON */
+
+.ars-site-header #ars-menu-toggle {
+  flex-shrink: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ars-site-header #ars-menu-toggle:focus-visible {
+  outline: 2px solid #55c8ff;
+  outline-offset: 4px;
+}
+
+/* 04 — FOOTER LAYOUT SAFETY */
+
+.ars-footer .footer-top,
+.ars-footer .footer-bottom,
+.ars-footer .footer-brand,
+.ars-footer .footer-links {
+  min-width: 0;
+}
+
+.ars-footer .footer-links a {
+  overflow-wrap: anywhere;
+  transition:
+    color 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.ars-footer .footer-links a:hover {
+  opacity: 0.8;
+}
+
+/* 05 — FOOTER BRAND IMAGE */
+
+.ars-footer .footer-brand img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 06 — MOBILE NAVIGATION WIDTH SAFETY */
+
+@media (max-width: 767px) {
+  .ars-site-header .ars-nav-shell {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .ars-site-header .ars-primary-nav {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .ars-footer .footer-top,
+  .ars-footer .footer-bottom {
+    max-width: 100%;
+  }
+
+  .ars-footer .footer-links a {
+    overflow-wrap: anywhere;
+  }
+}
+
+/* 07 — REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .ars-site-header a,
+  .ars-footer .footer-links a {
+    transition: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ARS MEDIA CENTER
+   ADVERTISING ROTATOR — FINAL UI POLISH
+   Append-only patch
+   ========================================================= */
+
+/* 01 — ROTATOR CONTAINMENT */
+
+.ars-media-page #ars-advertising-rotator {
+  position: relative;
+  min-width: 0;
+  max-width: 100%;
+  isolation: isolate;
+}
+
+.ars-media-page #ars-advertising-rotator .advertising-slides {
+  position: relative;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* 02 — SLIDE MEDIA */
+
+.ars-media-page #ars-advertising-rotator .advertising-slide {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.ars-media-page #ars-advertising-rotator .advertising-slide img,
+.ars-media-page #ars-advertising-rotator .advertising-slide video {
+  max-width: 100%;
+  object-position: center;
+}
+
+/* 03 — COUNTER AND PROGRESS CONTAINMENT */
+
+.ars-media-page #ars-ad-counter,
+.ars-media-page #ars-ad-progress {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* 04 — ROTATOR CONTROL INTERACTION */
+
+.ars-media-page #ars-advertising-rotator button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ars-media-page #ars-advertising-rotator button:focus-visible {
+  outline: 2px solid #55c8ff;
+  outline-offset: 3px;
+}
+
+/* 05 — TOUCH TARGET SAFETY */
+
+@media (max-width: 767px) {
+  .ars-media-page #ars-advertising-rotator button {
+    touch-action: manipulation;
+  }
+
+  .ars-media-page #ars-advertising-rotator .advertising-slide {
+    overflow-wrap: anywhere;
+  }
+}
+
+/* 06 — REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .ars-media-page #ars-advertising-rotator *,
+  .ars-media-page #ars-advertising-rotator *::before,
+  .ars-media-page #ars-advertising-rotator *::after {
+    scroll-behavior: auto;
+  }
+}
+
+
+
+
+
+
+
+/* =========================================================
+   ARS MEDIA CENTER
+   DIVISION MEDIA CARDS — COMPLETION PATCH
+   ========================================================= */
+
+/* 01 — VIDEO CARDS */
+
+.ars-media-page .division-video-grid .video-card {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.ars-media-page .division-video-grid .video-card .media-frame {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.ars-media-page .division-video-grid .video-card .media-frame video,
+.ars-media-page .division-video-grid .video-card .media-frame iframe {
+  display: block;
+  max-width: 100%;
+}
+
+/* 02 — GALLERY CARDS */
+
+.ars-media-page .image-showcase-grid .gallery-card {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.ars-media-page .image-showcase-grid .gallery-card img {
+  display: block;
+  max-width: 100%;
+  backface-visibility: hidden;
+}
+
+/* 03 — PRODUCT CARDS */
+
+.ars-media-page .product-showcase-grid .product-card {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.ars-media-page .product-showcase-grid .product-card .product-image-frame {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* 04 — CONSISTENT CONTENT FLOW */
+
+.ars-media-page .video-card > *,
+.ars-media-page .gallery-card > *,
+.ars-media-page .product-card > * {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+/* 05 — MOBILE OVERFLOW PROTECTION */
+
+@media (max-width: 767px) {
+  .ars-media-page .division-video-grid,
+  .ars-media-page .image-showcase-grid,
+  .ars-media-page .product-showcase-grid {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .ars-media-page .division-video-grid .video-card,
+  .ars-media-page .image-showcase-grid .gallery-card,
+  .ars-media-page .product-showcase-grid .product-card {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* 06 — REDUCED MOTION COMPATIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  .ars-media-page .gallery-card img,
+  .ars-media-page .product-image-frame img {
+    backface-visibility: visible;
+  }
+}
+
+
+
+
+/* =========================================================
+   ARS MEDIA CENTER
+   FINAL RESPONSIVE & ACCESSIBILITY SAFETY
+   Append-only patch
+   ========================================================= */
+
+/* 01 — GLOBAL BOX MODEL */
+
+.ars-media-page *,
+.ars-media-page *::before,
+.ars-media-page *::after {
+  box-sizing: border-box;
+}
+
+/* 02 — PREVENT HORIZONTAL OVERFLOW */
+
+.ars-media-page {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.ars-media-page .container,
+.ars-media-page .media-hero-content,
+.ars-media-page .division-header,
+.ars-media-page .contact-grid {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* 03 — RESPONSIVE TEXT SAFETY */
+
+.ars-media-page h1,
+.ars-media-page h2,
+.ars-media-page h3,
+.ars-media-page p {
+  overflow-wrap: break-word;
+}
+
+/* 04 — EMBEDDED MEDIA SAFETY */
+
+.ars-media-page img,
+.ars-media-page video,
+.ars-media-page iframe {
+  max-width: 100%;
+}
+
+/* 05 — ACCESSIBLE KEYBOARD FOCUS */
+
+.ars-media-page a:focus-visible,
+.ars-media-page button:focus-visible {
+  outline-offset: 3px;
+}
+
+/* 06 — REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .ars-media-page {
+    scroll-behavior: auto;
+  }
+}
+
+/* =========================================================
+   END OF APPEND-ONLY SAFETY PATCH
+   ========================================================= */
+
