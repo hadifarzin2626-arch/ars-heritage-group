@@ -2963,6 +2963,35 @@ html::-webkit-scrollbar-thumb:hover {
     gap: 1rem 2rem;
 }
 
+/* Division heading content wrapper */
+#ars-divisions .division-heading-copy {
+    flex: 1 1 20rem;
+    min-width: 0;
+}
+
+#ars-divisions .division-heading-copy > p {
+    max-width: 760px;
+    margin: 1rem 0 0;
+    color: var(--ars-text-muted);
+    font-size: clamp(0.94rem, 1.2vw, 1.05rem);
+    line-height: 1.85;
+}
+
+#ars-divisions .division-heading-copy h2 {
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+    #ars-divisions .division-heading-copy {
+        flex-basis: 100%;
+    }
+
+    #ars-divisions .division-heading-main {
+        align-items: flex-start;
+    }
+}
+
+
 #ars-divisions .division-heading-main h2,
 #ars-divisions .division-heading-main .division-title {
     min-width: 0;
