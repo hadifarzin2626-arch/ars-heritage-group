@@ -3769,130 +3769,325 @@ html::-webkit-scrollbar-thumb:hover {
 
 
 
-
-
-
 /* =========================================
    ARS MEDIA CENTER
-   DIVISION 01 — ARS BRAIN
-   MASTER GLASS CARD
+   ARS BRAIN — BLACK MIRROR MASTER CARD
    ========================================= */
 
 #ars-divisions #ars-brain {
     position: relative;
     isolation: isolate;
     overflow: hidden;
-
+    box-sizing: border-box;
     width: 100%;
     max-width: 100%;
-    box-sizing: border-box;
 
-    padding: clamp(1.5rem, 4vw, 4.5rem);
+    /* Extra vertical breathing room */
+    padding-block: clamp(5rem, 9vw, 8rem);
+    padding-inline: clamp(1.25rem, 4vw, 4.5rem);
+    margin-block: 2.5rem;
 
+    /* Piano-black glass with blue reflections */
     background:
         radial-gradient(
-            ellipse at 8% 4%,
-            rgba(0, 140, 255, 0.13),
-            transparent 38%
+            ellipse at 12% 0%,
+            rgba(0, 145, 255, 0.19),
+            transparent 34%
         ),
         radial-gradient(
-            ellipse at 94% 88%,
-            rgba(0, 76, 150, 0.14),
-            transparent 36%
+            ellipse at 90% 100%,
+            rgba(0, 105, 255, 0.17),
+            transparent 38%
         ),
         linear-gradient(
             145deg,
-            rgba(9, 19, 32, 0.97) 0%,
-            rgba(3, 7, 13, 0.985) 48%,
-            rgba(5, 13, 24, 0.98) 100%
+            #080B10 0%,
+            #020305 48%,
+            #070B12 100%
         );
 
-    border: 1px solid rgba(0, 153, 255, 0.42);
-    border-radius: clamp(22px, 3vw, 38px);
+    border: 1px solid rgba(0, 157, 255, 0.48);
+    border-radius: clamp(24px, 3vw, 40px);
 
+    /* Deep, raised glass effect */
     box-shadow:
-        0 0 0 1px rgba(0, 100, 200, 0.08),
-        0 0 34px rgba(0, 119, 255, 0.12),
-        0 0 90px rgba(0, 91, 190, 0.08),
-        inset 0 1px 0 rgba(255, 255, 255, 0.075),
-        inset 0 0 55px rgba(0, 112, 220, 0.055);
+        0 28px 65px rgba(0, 0, 0, 0.78),
+        0 12px 28px rgba(0, 0, 0, 0.6),
+        0 0 30px rgba(0, 120, 255, 0.13),
+        inset 0 2px 0 rgba(255, 255, 255, 0.09),
+        inset 0 0 45px rgba(0, 110, 255, 0.07);
 
-    backdrop-filter: blur(22px);
-    -webkit-backdrop-filter: blur(22px);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+
+    transform: translateY(0);
+    transition:
+        transform 600ms cubic-bezier(.2, .75, .25, 1),
+        box-shadow 600ms ease,
+        border-color 600ms ease;
 }
 
-/* Electric-blue ambient lighting */
+/* Blue reflections across the black-glass surface */
 #ars-divisions #ars-brain::before {
     content: "";
     position: absolute;
     inset: 0;
     z-index: -1;
     pointer-events: none;
+    border-radius: inherit;
 
     background:
-        radial-gradient(
-            ellipse at 0% 20%,
-            rgba(0, 153, 255, 0.16),
-            transparent 34%
+        linear-gradient(
+            115deg,
+            transparent 12%,
+            rgba(0, 145, 255, 0.075) 30%,
+            transparent 47%
         ),
         radial-gradient(
-            ellipse at 100% 72%,
-            rgba(0, 101, 255, 0.12),
-            transparent 38%
+            ellipse at 50% 0%,
+            rgba(255, 255, 255, 0.055),
+            transparent 48%
         );
 
-    opacity: 0.9;
+    opacity: 1;
 }
 
-/* Keep all division content above the lighting */
-#ars-divisions #ars-brain > * {
-    position: relative;
-    z-index: 1;
+/* Warm gold reflection beneath the card */
+#ars-divisions #ars-brain::after {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    pointer-events: none;
+
+    left: 8%;
+    right: 8%;
+    bottom: -24px;
+    height: 38px;
+
+    background: rgba(231, 174, 65, 0.0);
+    filter: blur(24px);
+    border-radius: 50%;
+
+    transition:
+        background 600ms ease,
+        filter 600ms ease;
 }
 
-/* Unified brilliant metallic-gold headings */
-#ars-divisions #ars-brain .division-heading-main h2,
-#ars-divisions #ars-brain .division-heading-main h2 span {
-    color: #F2D18A;
-    background: linear-gradient(
-        180deg,
-        #FFF4CE 0%,
-        #F4D58D 24%,
-        #D9AC53 58%,
-        #FFF0BE 78%,
-        #C9953C 100%
-    );
+/* Lift + stronger gold aura on hover */
+@media (hover: hover) and (pointer: fine) {
+    #ars-divisions #ars-brain:hover {
+        transform: translateY(-12px);
 
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+        border-color: rgba(0, 166, 255, 0.75);
 
-    text-shadow: 0 0 24px rgba(225, 177, 83, 0.12);
+        box-shadow:
+            0 42px 85px rgba(0, 0, 0, 0.82),
+            0 20px 48px rgba(0, 0, 0, 0.6),
+            0 0 38px rgba(0, 135, 255, 0.2),
+            0 24px 48px rgba(210, 155, 48, 0.13),
+            inset 0 2px 0 rgba(255, 255, 255, 0.12),
+            inset 0 0 55px rgba(0, 115, 255, 0.09);
+    }
+
+    #ars-divisions #ars-brain:hover::after {
+        background: rgba(235, 181, 70, 0.75);
+        filter: blur(28px);
+    }
 }
 
-/* Preserve the existing site font */
-#ars-divisions #ars-brain,
-#ars-divisions #ars-brain h2,
-#ars-divisions #ars-brain p {
+/* Reveal state: add .is-visible when the section enters view */
+#ars-divisions #ars-brain.is-visible {
+    box-shadow:
+        0 32px 75px rgba(0, 0, 0, 0.8),
+        0 18px 40px rgba(0, 0, 0, 0.55),
+        0 0 34px rgba(0, 125, 255, 0.16),
+        0 22px 45px rgba(218, 165, 55, 0.12),
+        inset 0 2px 0 rgba(255, 255, 255, 0.1),
+        inset 0 0 50px rgba(0, 110, 255, 0.07);
+}
+
+#ars-divisions #ars-brain.is-visible::after {
+    background: rgba(225, 170, 60, 0.65);
+    filter: blur(27px);
+}
+
+/* Preserve the site's existing font */
+#ars-divisions #ars-brain {
     font-family: inherit;
 }
 
-/* Mobile refinement */
 @media (max-width: 600px) {
     #ars-divisions #ars-brain {
-        padding: 1.25rem;
-        border-radius: 22px;
+        padding-block: 4rem;
+        padding-inline: 1.1rem;
+        margin-block: 1.5rem;
+        border-radius: 24px;
     }
 }
 
-/* Reduced visual effects for accessibility */
 @media (prefers-reduced-motion: reduce) {
     #ars-divisions #ars-brain {
-        scroll-behavior: auto;
+        transition: none;
+    }
+
+    #ars-divisions #ars-brain::after {
+        transition: none;
     }
 }
 
 
+
+
+
+
+
+
+
+
+/* =========================================
+   ARS BRAIN — FULL-WIDTH MEDIA & GOLD/BLUE
+   ========================================= */
+
+/* 1. Let the master card grow with its content */
+#ars-divisions #ars-brain {
+    height: auto;
+    min-height: 0;
+    box-sizing: border-box;
+}
+
+/* 2. All content grids use the available width */
+#ars-divisions #ars-brain .product-showcase-grid,
+#ars-divisions #ars-brain .division-video-grid,
+#ars-divisions #ars-brain .image-showcase-grid {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Display cards stretch evenly across their grid */
+#ars-divisions #ars-brain .product-card,
+#ars-divisions #ars-brain .video-card,
+#ars-divisions #ars-brain .gallery-card {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+/* 3. Increase media-frame height by 20% via aspect ratio */
+#ars-divisions #ars-brain .product-card .media-frame {
+    aspect-ratio: 5 / 3;
+}
+
+#ars-divisions #ars-brain .video-card .media-frame {
+    aspect-ratio: 4 / 3;
+}
+
+#ars-divisions #ars-brain .gallery-card img {
+    aspect-ratio: 5 / 3;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+/* Keep media inside its frame */
+#ars-divisions #ars-brain .media-frame video,
+#ars-divisions #ars-brain .media-frame img,
+#ars-divisions #ars-brain .media-frame iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* 4. Main division heading: 10% larger and brilliant gold */
+#ars-divisions #ars-brain .division-heading-main h2 {
+    font-size: calc(1em * 1.1);
+    color: #F5D58B;
+    background: linear-gradient(
+        180deg,
+        #FFF8D9 0%,
+        #FFE6A0 22%,
+        #E4B653 54%,
+        #FFF0BC 76%,
+        #C58D32 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 18px rgba(244, 190, 75, 0.22);
+    line-height: 1.2;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+/* 5. Blue electric underline beneath the main heading */
+#ars-divisions #ars-brain .division-heading-main h2 {
+    padding-bottom: 0.7rem;
+    border-bottom: 1px solid rgba(0, 160, 255, 0.75);
+    box-shadow: 0 8px 16px -12px rgba(0, 160, 255, 0.95);
+}
+
+/* 6. Small subsection titles: electric blue */
+#ars-divisions #ars-brain .subsection-heading,
+#ars-divisions #ars-brain .product-showcase-heading {
+    color: #00A8FF;
+    font-size: 1.1em;
+    line-height: 1.3;
+    text-shadow:
+        0 0 8px rgba(0, 153, 255, 0.55),
+        0 0 20px rgba(0, 119, 255, 0.25);
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid rgba(244, 190, 75, 0.9);
+    box-shadow: 0 8px 16px -12px rgba(255, 195, 76, 1);
+}
+
+/* 7. Keep every media section full width */
+#ars-divisions #ars-brain .division-media-block,
+#ars-divisions #ars-brain .division-gallery-block {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* 8. Responsive layout: fill the card width */
+@media (max-width: 1000px) {
+    #ars-divisions #ars-brain .product-showcase-grid,
+    #ars-divisions #ars-brain .division-video-grid,
+    #ars-divisions #ars-brain .image-showcase-grid {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    #ars-divisions #ars-brain .product-card .media-frame {
+        aspect-ratio: 5 / 3;
+    }
+
+    #ars-divisions #ars-brain .video-card .media-frame {
+        aspect-ratio: 4 / 3;
+    }
+
+    #ars-divisions #ars-brain .gallery-card img {
+        aspect-ratio: 5 / 3;
+    }
+
+    #ars-divisions #ars-brain .division-heading-main h2 {
+        overflow-wrap: anywhere;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* Unified brilliant metallic-gold headings */
+#ars-divisions #ars-brain
 /* END OF SECTION 05 */
 
 
