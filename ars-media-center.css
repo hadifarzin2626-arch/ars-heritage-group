@@ -4252,131 +4252,100 @@ html::-webkit-scrollbar-thumb:hover {
 
 
 
+/* ARS BRAIN — FORCE MAXIMUM MEDIA DIMENSIONS */
 
-
-
-
-/* =========================================
-   ARS BRAIN — MAXIMUM MEDIA WIDTH
-   FULL-WIDTH CARDS + TALLER DISPLAY FRAMES
-   ========================================= */
-
-/* 1. Each display grid uses the entire available width */
+/* Make each media grid occupy the full available card width */
 #ars-divisions #ars-brain .product-showcase-grid,
 #ars-divisions #ars-brain .division-video-grid,
 #ars-divisions #ars-brain .image-showcase-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    width: 100%;
-    max-width: none;
-    min-width: 0;
-    box-sizing: border-box;
-    justify-items: stretch;
-    align-items: stretch;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    justify-items: stretch !important;
+    box-sizing: border-box !important;
 }
 
-/* 2. Media sections must not restrict their contents */
-#ars-divisions #ars-brain .division-media-block,
-#ars-divisions #ars-brain .division-gallery-block {
-    display: block;
-    width: 100%;
-    max-width: none;
-    min-width: 0;
-    box-sizing: border-box;
-}
-
-/* 3. Every card expands to the full row width */
+/* Expand every media card across its entire grid row */
 #ars-divisions #ars-brain .product-card,
 #ars-divisions #ars-brain .video-card,
 #ars-divisions #ars-brain .gallery-card {
-    display: block;
-    width: 100%;
-    max-width: none;
-    min-width: 0;
-    justify-self: stretch;
-    box-sizing: border-box;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    justify-self: stretch !important;
+    box-sizing: border-box !important;
 }
 
-/* 4. Product displays: taller frames */
+/* PRODUCT: 10–15% taller than the original 4:3 frame */
 #ars-divisions #ars-brain .product-card .media-frame {
-    display: block;
-    width: 100%;
-    max-width: none;
-    aspect-ratio: 1.32 / 1;
-    height: auto;
-    box-sizing: border-box;
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    aspect-ratio: 1.18 / 1 !important;
+    height: auto !important;
+    box-sizing: border-box !important;
     overflow: hidden;
 }
 
-/* Ensure product media fills its frame */
-#ars-divisions #ars-brain .product-card .media-frame img,
-#ars-divisions #ars-brain .product-card .media-frame video {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* 5. Video displays: taller frames */
+/* VIDEO: 10–15% taller than the original 16:9 frame */
 #ars-divisions #ars-brain .video-card .media-frame {
-    display: block;
-    width: 100%;
-    max-width: none;
-    aspect-ratio: 1.42 / 1;
-    height: auto;
-    box-sizing: border-box;
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    aspect-ratio: 1.58 / 1 !important;
+    height: auto !important;
+    box-sizing: border-box !important;
     overflow: hidden;
 }
 
+/* Images and videos fill the entire frame */
+#ars-divisions #ars-brain .product-card .media-frame img,
+#ars-divisions #ars-brain .product-card .media-frame video,
+#ars-divisions #ars-brain .video-card .media-frame img,
 #ars-divisions #ars-brain .video-card .media-frame video,
-#ars-divisions #ars-brain .video-card .media-frame iframe,
-#ars-divisions #ars-brain .video-card .media-frame img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    max-width: none;
+#ars-divisions #ars-brain .video-card .media-frame iframe {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: 100% !important;
     object-fit: cover;
 }
 
-/* 6. Gallery images: full width and generous height */
+/* GALLERY: full available width and taller frames */
 #ars-divisions #ars-brain .gallery-card img {
-    display: block;
-    width: 100%;
-    max-width: none;
-    height: clamp(280px, 48vw, 680px);
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    aspect-ratio: 1.18 / 1 !important;
+    height: auto !important;
     object-fit: cover;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
 }
 
-/* 7. Prevent inner content from shrinking the media */
-#ars-divisions #ars-brain .product-card *,
-#ars-divisions #ars-brain .video-card *,
-#ars-divisions #ars-brain .gallery-card * {
-    min-width: 0;
-    box-sizing: border-box;
-}
-
-/* 8. Responsive adjustments */
+/* Mobile: preserve full width and taller proportions */
 @media (max-width: 600px) {
     #ars-divisions #ars-brain .product-showcase-grid,
     #ars-divisions #ars-brain .division-video-grid,
     #ars-divisions #ars-brain .image-showcase-grid {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 1.5rem;
+        grid-template-columns: minmax(0, 1fr) !important;
     }
 
-    #ars-divisions #ars-brain .product-card .media-frame {
-        aspect-ratio: 1.25 / 1;
+    #ars-divisions #ars-brain .product-card .media-frame,
+    #ars-divisions #ars-brain .gallery-card img {
+        aspect-ratio: 1.12 / 1 !important;
     }
 
     #ars-divisions #ars-brain .video-card .media-frame {
-        aspect-ratio: 1.35 / 1;
-    }
-
-    #ars-divisions #ars-brain .gallery-card img {
-        height: clamp(250px, 75vw, 420px);
+        aspect-ratio: 1.48 / 1 !important;
     }
 }
+
+
+
+
+
 
 
 
