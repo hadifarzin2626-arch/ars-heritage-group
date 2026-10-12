@@ -5229,5 +5229,41 @@ p {
 
 
 
+/* =========================================================
+   ARS MEDIA CENTER — FULL-WIDTH VIDEO ROWS
+   ========================================================= */
 
+.ars-media-page .media-division .division-video-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 30px;
+  width: 100%;
+}
+
+.ars-media-page .media-division .division-video-grid > .video-card {
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  box-sizing: border-box;
+}
+
+.ars-media-page .media-division .division-video-grid .media-frame {
+  width: 100%;
+}
+
+/* Keep videos at a cinematic size */
+.ars-media-page .media-division .division-video-grid .media-frame video,
+.ars-media-page .media-division .division-video-grid .media-frame iframe {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .ars-media-page .media-division .division-video-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+  }
+}
 
