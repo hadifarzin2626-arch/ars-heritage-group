@@ -4500,29 +4500,38 @@ p {
 
 
 
-
 /* ==========================================================
    ARS MEDIA CENTER — LUXURY GLASS & GOLD SIGNATURE
+   FIXED: TWO FOOTER KEYS PER ROW AT ALL SCREEN SIZES
    Footer glass keys + premium contact form enclosure
    ========================================================== */
+
 
 /* ---------- 1. FOOTER: GLASS NAVIGATION KEYS ---------- */
 
 .ars-media-page .ars-footer .footer-links {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  grid-auto-flow: row;
+  grid-auto-rows: max-content;
   gap: 14px;
+  width: 100%;
+  max-width: 560px;
   min-width: 0;
+  box-sizing: border-box;
 }
 
-.ars-media-page .ars-footer .footer-links a {
+.ars-media-page .ars-footer .footer-links > a {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   box-sizing: border-box;
+  width: auto !important;
   min-width: 0;
+  max-width: 100%;
   min-height: 48px;
+  margin: 0;
   padding: 12px 15px;
 
   color: #f1d49a;
@@ -4532,6 +4541,7 @@ p {
   letter-spacing: 0.025em;
   text-decoration: none;
   overflow-wrap: anywhere;
+  white-space: normal;
 
   background:
     linear-gradient(
@@ -4561,7 +4571,7 @@ p {
     transform 220ms ease;
 }
 
-.ars-media-page .ars-footer .footer-links a::before {
+.ars-media-page .ars-footer .footer-links > a::before {
   content: "";
   flex: 0 0 5px;
   width: 5px;
@@ -4569,12 +4579,13 @@ p {
   margin-inline-end: 10px;
   border-radius: 50%;
   background: #e5bd73;
+
   box-shadow:
     0 0 7px rgba(229, 189, 115, 0.75),
     0 0 14px rgba(229, 189, 115, 0.25);
 }
 
-.ars-media-page .ars-footer .footer-links a:hover {
+.ars-media-page .ars-footer .footer-links > a:hover {
   color: #fff0c9;
   border-color: rgba(255, 210, 125, 0.85);
 
@@ -4599,12 +4610,12 @@ p {
   transform: translateY(-2px);
 }
 
-.ars-media-page .ars-footer .footer-links a:focus-visible {
+.ars-media-page .ars-footer .footer-links > a:focus-visible {
   outline: 2px solid #e5bd73;
   outline-offset: 3px;
 }
 
-.ars-media-page .ars-footer .footer-links a:active {
+.ars-media-page .ars-footer .footer-links > a:active {
   transform: translateY(0);
 }
 
@@ -4677,7 +4688,8 @@ p {
   box-shadow: 0 0 14px rgba(218, 178, 104, 0.22);
 }
 
-/* Contact form layout */
+
+/* ---------- 3. CONTACT FORM LAYOUT ---------- */
 
 .ars-media-page .media-contact .ars-contact-form {
   display: grid;
@@ -4736,13 +4748,8 @@ p {
   resize: vertical;
 }
 
-/* Mobile layout */
 
-@media (max-width: 760px) {
-  .ars-media-page .ars-footer .footer-links {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
+/* ---------- 4. MOBILE CONTACT FORM ---------- */
 
 @media (max-width: 650px) {
   .ars-media-page .media-contact .ars-contact-form {
@@ -4761,21 +4768,18 @@ p {
   }
 }
 
-@media (max-width: 420px) {
-  .ars-media-page .ars-footer .footer-links {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
+
+/* ---------- 5. REDUCED MOTION ---------- */
 
 @media (prefers-reduced-motion: reduce) {
-  .ars-media-page .ars-footer .footer-links a,
+  .ars-media-page .ars-footer .footer-links > a,
   .ars-media-page .media-contact .ars-contact-form input,
   .ars-media-page .media-contact .ars-contact-form select,
   .ars-media-page .media-contact .ars-contact-form textarea {
     transition: none;
   }
 
-  .ars-media-page .ars-footer .footer-links a:hover {
+  .ars-media-page .ars-footer .footer-links > a:hover {
     transform: none;
   }
 }
@@ -4787,101 +4791,70 @@ p {
 
 
 
+/* ==========================================================
+   ARS MEDIA CENTER — CINEMATIC HERO REVEAL
+   Depth • Vertical Lift • Staggered Entrance
+   ========================================================== */
 
+/* Initial hidden state */
+.ars-media-page [data-hero-reveal] {
+  opacity: 0;
+  transform: perspective(1200px)
+             translate3d(0, 64px, -100px)
+             scale(0.965);
+  transform-origin: center center;
 
+  transition:
+    opacity 1800ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 2000ms cubic-bezier(0.16, 1, 0.3, 1);
 
+  transition-delay: var(--hero-reveal-delay, 0ms);
 
-
-
-
-
-
-
-
-
-
-/* =====================================================
-   ARS MEDIA CENTER — HTML-VERIFIED FOOTER RESPONSIVENESS
-   Footer navigation: two links per row
-   ===================================================== */
-
-.ars-media-page .ars-footer > .container {
-  min-width: 0;
-  width: 100%;
+  will-change: opacity, transform;
+  backface-visibility: hidden;
 }
 
-.ars-media-page .footer-top {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 2rem;
-  min-width: 0;
+/* Revealed state */
+.ars-media-page [data-hero-reveal].is-visible {
+  opacity: 1;
+  transform: perspective(1200px)
+             translate3d(0, 0, 0)
+             scale(1);
 }
 
-.ars-media-page .footer-brand,
-.ars-media-page .footer-links {
-  min-width: 0;
-  max-width: 100%;
+/* Staggered entrance */
+.ars-media-page [data-hero-reveal]:nth-child(1) {
+  --hero-reveal-delay: 100ms;
 }
 
-.ars-media-page .footer-logo-link {
-  display: inline-flex;
-  align-items: center;
-  max-width: 100%;
+.ars-media-page [data-hero-reveal]:nth-child(2) {
+  --hero-reveal-delay: 350ms;
 }
 
-.ars-media-page .footer-logo {
-  display: block;
-  max-width: 100%;
-  height: auto;
+.ars-media-page [data-hero-reveal]:nth-child(3) {
+  --hero-reveal-delay: 600ms;
 }
 
-/* Footer navigation — two columns */
-.ars-media-page nav.footer-links {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: start;
-  gap: 10px 20px;
-  flex: 1 1 420px;
+.ars-media-page [data-hero-reveal]:nth-child(4) {
+  --hero-reveal-delay: 850ms;
 }
 
-.ars-media-page .footer-links a {
-  display: block;
-  min-width: 0;
-  max-width: 100%;
-  overflow-wrap: anywhere;
+.ars-media-page [data-hero-reveal]:nth-child(5) {
+  --hero-reveal-delay: 1100ms;
 }
 
-.ars-media-page .footer-tagline,
-.ars-media-page .footer-bottom {
-  overflow-wrap: anywhere;
+.ars-media-page [data-hero-reveal]:nth-child(6) {
+  --hero-reveal-delay: 1350ms;
 }
 
-.ars-media-page .footer-bottom {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.ars-media-page .footer-back-to-top {
-  flex-shrink: 0;
-}
-
-@media (max-width: 600px) {
-  .ars-media-page .footer-top,
-  .ars-media-page .footer-bottom {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .ars-media-page nav.footer-links {
-    width: 100%;
-    flex: 1 1 100%;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px 12px;
+/* Accessibility: respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .ars-media-page [data-hero-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    transition-delay: 0ms;
+    will-change: auto;
   }
 }
 
