@@ -5505,3 +5505,187 @@ p {
   }
 }
 
+
+
+
+
+
+/* =========================================================
+   PATCH 20 — ARS CRYSTAL GLASS HEADER
+   More Transparency × Deep Navy × Subtle Electric Blue
+   ========================================================= */
+
+.ars-site-header {
+  background: rgba(5, 11, 24, 0.48) !important;
+
+  -webkit-backdrop-filter: blur(12px) saturate(125%);
+  backdrop-filter: blur(12px) saturate(125%);
+
+  border-bottom: 1px solid rgba(0, 191, 255, 0.18) !important;
+
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.10),
+    0 1px 4px rgba(0, 145, 255, 0.04) !important;
+}
+
+@media (max-width: 768px) {
+  .ars-site-header {
+    background: rgba(5, 11, 24, 0.60) !important;
+
+    -webkit-backdrop-filter: blur(10px) saturate(120%);
+    backdrop-filter: blur(10px) saturate(120%);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   PATCH 21 — ARS CONTACT CARDS
+   Deep Navy Glass × Electric Blue
+   ========================================================= */
+
+.ars-media-page #ars-contact .contact-grid .contact-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  border: 1px solid rgba(0, 191, 255, 0.55) !important;
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(0, 191, 255, 0.075) 0%,
+      rgba(5, 11, 24, 0.78) 48%,
+      rgba(0, 100, 180, 0.06) 100%
+    ) !important;
+
+  box-shadow:
+    0 0 0 1px rgba(0, 191, 255, 0.08),
+    0 0 12px rgba(0, 191, 255, 0.10),
+    inset 0 1px 0 rgba(140, 225, 255, 0.10) !important;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* Subtle electric-blue accent */
+
+.ars-media-page #ars-contact .contact-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+
+  top: 0;
+  left: 12%;
+  right: 12%;
+
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 191, 255, 0.85),
+    transparent
+  );
+
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+/* Contact number */
+
+.ars-media-page #ars-contact .contact-number {
+  color: #53D8FF;
+
+  text-shadow:
+    0 0 8px rgba(0, 191, 255, 0.20);
+}
+
+/* Card headings */
+
+.ars-media-page #ars-contact .contact-card h3 {
+  color: #EAF8FF;
+}
+
+/* Card descriptions */
+
+.ars-media-page #ars-contact .contact-card p {
+  color: rgba(226, 239, 250, 0.82);
+}
+
+/* Contact links */
+
+.ars-media-page #ars-contact .contact-link {
+  color: #63D9FF;
+
+  text-decoration-color: rgba(99, 217, 255, 0.35);
+
+  text-underline-offset: 4px;
+
+  transition:
+    color 0.25s ease,
+    text-shadow 0.25s ease;
+}
+
+.ars-media-page #ars-contact .contact-link:hover,
+.ars-media-page #ars-contact .contact-link:focus-visible {
+  color: #FFFFFF;
+
+  text-shadow:
+    0 0 8px rgba(0, 191, 255, 0.28);
+}
+
+/* Hover interaction */
+
+@media (hover: hover) and (pointer: fine) {
+  .ars-media-page #ars-contact .contact-grid .contact-card:hover {
+    border-color: rgba(0, 191, 255, 0.82) !important;
+
+    background:
+      linear-gradient(
+        145deg,
+        rgba(0, 191, 255, 0.11) 0%,
+        rgba(5, 11, 24, 0.82) 55%,
+        rgba(0, 120, 210, 0.09) 100%
+      ) !important;
+
+    box-shadow:
+      0 0 0 1px rgba(0, 191, 255, 0.12),
+      0 0 18px rgba(0, 191, 255, 0.17),
+      inset 0 1px 0 rgba(140, 225, 255, 0.15) !important;
+
+    transform: translateY(-3px);
+  }
+}
+
+/* Mobile refinement */
+
+@media (max-width: 600px) {
+  .ars-media-page #ars-contact .contact-grid .contact-card {
+    border-radius: 15px;
+    box-shadow:
+      0 0 0 1px rgba(0, 191, 255, 0.06),
+      0 0 8px rgba(0, 191, 255, 0.08),
+      inset 0 1px 0 rgba(140, 225, 255, 0.08) !important;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .ars-media-page #ars-contact .contact-grid .contact-card,
+  .ars-media-page #ars-contact .contact-link {
+    transition: none;
+  }
+}
