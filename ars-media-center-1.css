@@ -2574,9 +2574,9 @@ p {
 
 
 
-
 /* =========================================================
-   SECTION 10 — UNIVERSAL DIVISION GLASS & MEDIA SYSTEM
+   SECTION 10 — ARS SIGNATURE
+   ULTRA ELECTRIC BLUE DIVISION GLASS
    ========================================================= */
 
 .ars-media-page .ars-divisions {
@@ -2598,20 +2598,43 @@ p {
   max-width: 1600px;
   margin-inline: auto;
   padding: clamp(22px, 3.5vw, 52px);
-  border: 1px solid rgba(255, 255, 255, 0.19);
+
+  /* ELECTRIC BLUE GLASS BORDER */
+  border: 1px solid rgba(0, 185, 255, 0.95);
   border-radius: clamp(20px, 2.4vw, 36px);
+
+  /* DEEP GLASS WITH VISIBLE BLUE ENERGY */
   background:
+    radial-gradient(
+      ellipse at 8% 0%,
+      rgba(0, 170, 255, 0.20),
+      transparent 48%
+    ),
     linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.075),
-      rgba(255, 255, 255, 0.018) 45%,
-      rgba(255, 255, 255, 0.045)
+      rgba(0, 170, 255, 0.095),
+      rgba(7, 18, 38, 0.30) 45%,
+      rgba(35, 90, 255, 0.085)
     );
-  -webkit-backdrop-filter: blur(24px) saturate(135%);
-  backdrop-filter: blur(24px) saturate(135%);
+
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  backdrop-filter: blur(24px) saturate(150%);
+
+  /* STRONG MULTI-LAYER ELECTRIC BLUE GLOW */
   box-shadow:
-    0 24px 80px rgba(0, 0, 0, 0.30),
-    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    0 0 0 1px rgba(0, 170, 255, 0.42),
+    0 0 8px rgba(0, 190, 255, 0.85),
+    0 0 20px rgba(0, 160, 255, 0.72),
+    0 0 42px rgba(0, 120, 255, 0.48),
+    0 0 72px rgba(0, 90, 255, 0.26),
+    0 24px 80px rgba(0, 0, 0, 0.38),
+    inset 0 1px 0 rgba(150, 230, 255, 0.58),
+    inset 0 0 22px rgba(0, 160, 255, 0.13);
+
+  transition:
+    border-color 260ms ease,
+    box-shadow 260ms ease,
+    background 260ms ease;
 }
 
 .ars-media-page .media-division > .container > * {
@@ -2619,6 +2642,24 @@ p {
   z-index: 1;
 }
 
+/* STRONGER GLOW ON HOVER */
+@media (hover: hover) {
+  .ars-media-page .media-division > .container:hover {
+    border-color: rgba(50, 205, 255, 1);
+
+    box-shadow:
+      0 0 0 1px rgba(0, 190, 255, 0.55),
+      0 0 10px rgba(0, 200, 255, 0.95),
+      0 0 26px rgba(0, 170, 255, 0.85),
+      0 0 52px rgba(0, 130, 255, 0.58),
+      0 0 86px rgba(0, 90, 255, 0.32),
+      0 24px 80px rgba(0, 0, 0, 0.38),
+      inset 0 1px 0 rgba(170, 240, 255, 0.72),
+      inset 0 0 26px rgba(0, 170, 255, 0.18);
+  }
+}
+
+/* UNIVERSAL GRID WIDTHS */
 .ars-media-page .media-division .division-video-grid,
 .ars-media-page .media-division .image-showcase-grid,
 .ars-media-page .media-division .product-showcase-grid {
@@ -2626,10 +2667,12 @@ p {
   max-width: none;
 }
 
+/* VIDEO GRID */
 .ars-media-page .media-division .division-video-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(18px, 2.5vw, 36px);
+  margin-top: clamp(24px, 3vw, 42px);
 }
 
 .ars-media-page .media-division .division-video-grid .media-frame {
@@ -2638,14 +2681,7 @@ p {
   overflow: hidden;
 }
 
-.ars-media-page .media-division .division-video-grid video,
-.ars-media-page .media-division .division-video-grid iframe {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
+/* IMAGE GRID */
 .ars-media-page .media-division .image-showcase-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2658,6 +2694,9 @@ p {
   overflow: hidden;
 }
 
+/* MEDIA ELEMENTS */
+.ars-media-page .media-division .division-video-grid video,
+.ars-media-page .media-division .division-video-grid iframe,
 .ars-media-page .media-division .image-showcase-grid img {
   display: block;
   width: 100%;
@@ -2665,22 +2704,27 @@ p {
   object-fit: cover;
 }
 
+/* INNER MEDIA CARDS */
 .ars-media-page .media-division .video-card,
 .ars-media-page .media-division .gallery-card,
 .ars-media-page .media-division .product-card {
   min-width: 0;
   overflow: hidden;
+  border-color: rgba(0, 175, 255, 0.62);
+
+  box-shadow:
+    0 0 8px rgba(0, 170, 255, 0.24),
+    0 0 20px rgba(0, 130, 255, 0.13),
+    inset 0 1px 0 rgba(140, 225, 255, 0.20);
 }
 
+/* GALLERY SPACING */
 .ars-media-page .media-division .division-gallery-block {
   width: 100%;
   margin-top: clamp(30px, 4vw, 56px);
 }
 
-.ars-media-page .media-division .division-video-grid {
-  margin-top: clamp(24px, 3vw, 42px);
-}
-
+/* PRODUCT GRID */
 .ars-media-page .media-division .product-showcase-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -2700,41 +2744,29 @@ p {
   object-fit: cover;
 }
 
+/* TABLET */
 @media (max-width: 900px) {
-  .ars-media-page .media-division .image-showcase-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .ars-media-page .media-division .product-showcase-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 600px) {
-  .ars-media-page .media-division {
-    padding: 36px 0;
-  }
-
-  .ars-media-page .media-division > .container {
-    width: calc(100% - 24px);
-    padding: 18px 14px;
-    border-radius: 20px;
-  }
-
-  .ars-media-page .media-division .division-video-grid,
   .ars-media-page .media-division .image-showcase-grid,
   .ars-media-page .media-division .product-showcase-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .ars-media-page .media-division .division-video-grid .media-frame,
-  .ars-media-page .media-division .image-showcase-grid .media-frame,
-  .ars-media-page .media-division .product-card .media-frame {
-    aspect-ratio: 5 / 4;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+/* MOBILE */
+@
+
+
+
+
+
+
+
+
+
+
 /* =========================================================
    SECTION 11 — ARS BRAIN
+   ENHANCED ELECTRIC BLUE GLASS
    ========================================================= */
 
 .ars-media-page .division-brain {
@@ -2743,42 +2775,41 @@ p {
 }
 
 .ars-media-page .division-brain > .container {
-  border-color: rgba(0, 170, 255, 0.48);
+  border-color: rgba(0, 170, 255, 0.96);
+
   background:
     radial-gradient(
       ellipse at 8% 0%,
-      rgba(0, 170, 255, 0.15),
+      rgba(0, 170, 255, 0.30),
       transparent 48%
     ),
     linear-gradient(
       135deg,
-      rgba(0, 170, 255, 0.055),
+      rgba(0, 170, 255, 0.11),
       rgba(7, 18, 38, 0.13),
-      rgba(40, 95, 255, 0.045)
+      rgba(40, 95, 255, 0.09)
     );
+
   box-shadow:
-    0 0 0 1px rgba(0, 170, 255, 0.08),
-    0 0 46px rgba(0, 170, 255, 0.13),
+    0 0 0 1px rgba(0, 170, 255, 0.16),
+    0 0 46px rgba(0, 170, 255, 0.26),
     0 28px 85px rgba(0, 0, 0, 0.32),
-    inset 0 1px 0 rgba(120, 220, 255, 0.20);
+    inset 0 1px 0 rgba(120, 220, 255, 0.40);
 }
 
 .ars-media-page .division-brain .video-card,
 .ars-media-page .division-brain .gallery-card,
 .ars-media-page .division-brain .product-card {
-  border-color: rgba(0, 170, 255, 0.28);
+  border-color: rgba(0, 170, 255, 0.56);
+
   box-shadow:
-    0 0 24px rgba(0, 170, 255, 0.075),
-    inset 0 1px 0 rgba(255, 255, 255, 0.075);
-   }
-
-
-
-
-
+    0 0 24px rgba(0, 170, 255, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
 
 /* =========================================================
    SECTION 12 — ARS DESIGN
+   ENHANCED LUXURY GLASS
    ========================================================= */
 
 .ars-media-page .division-design {
@@ -2787,36 +2818,45 @@ p {
 }
 
 .ars-media-page .division-design > .container {
-  border-color: rgba(91, 119, 190, 0.36);
+  border-color: rgba(91, 119, 190, 0.72);
+
   background:
     radial-gradient(
       ellipse at 90% 0%,
-      rgba(53, 83, 160, 0.16),
+      rgba(53, 83, 160, 0.30),
       transparent 48%
     ),
     linear-gradient(
       135deg,
-      rgba(21, 34, 69, 0.20),
-      rgba(7, 12, 28, 0.15),
-      rgba(45, 58, 91, 0.06)
+      rgba(21, 34, 69, 0.38),
+      rgba(7, 12, 28, 0.24),
+      rgba(45, 58, 91, 0.12)
     );
+
   box-shadow:
-    0 0 38px rgba(35, 58, 120, 0.13),
+    0 0 0 1px rgba(91, 119, 190, 0.16),
+    0 0 12px rgba(53, 83, 160, 0.24),
+    0 0 38px rgba(35, 58, 120, 0.26),
     0 28px 85px rgba(0, 0, 0, 0.34),
-    inset 0 1px 0 rgba(180, 198, 255, 0.13);
+    inset 0 1px 0 rgba(180, 198, 255, 0.26);
 }
 
 .ars-media-page .division-design .video-card,
 .ars-media-page .division-design .gallery-card {
-  border-color: rgba(108, 133, 198, 0.27);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.065);
-}
+  border-color: rgba(108, 133, 198, 0.54);
+
+  box-shadow:
+    0 0 12px rgba(53, 83, 160, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.13);
+       }
+
 
 
 
 
 /* =========================================================
    SECTION 13 — ARS SIGNATURE
+   ENHANCED LUXURY GLASS
    ========================================================= */
 
 .ars-media-page .division-signature {
@@ -2825,38 +2865,43 @@ p {
 }
 
 .ars-media-page .division-signature > .container {
-  border-color: rgba(191, 132, 113, 0.42);
+  border-color: rgba(191, 132, 113, 0.82);
+
   background:
     radial-gradient(
       ellipse at 12% 0%,
-      rgba(184, 112, 100, 0.15),
+      rgba(184, 112, 100, 0.30),
       transparent 48%
     ),
     linear-gradient(
       135deg,
-      rgba(115, 66, 61, 0.10),
-      rgba(23, 17, 20, 0.15),
-      rgba(164, 112, 95, 0.055)
+      rgba(115, 66, 61, 0.20),
+      rgba(23, 17, 20, 0.22),
+      rgba(164, 112, 95, 0.11)
     );
+
   box-shadow:
-    0 0 42px rgba(170, 105, 94, 0.12),
+    0 0 0 1px rgba(191, 132, 113, 0.18),
+    0 0 12px rgba(184, 112, 100, 0.24),
+    0 0 42px rgba(170, 105, 94, 0.25),
     0 28px 85px rgba(0, 0, 0, 0.34),
-    inset 0 1px 0 rgba(235, 186, 159, 0.16);
+    inset 0 1px 0 rgba(235, 186, 159, 0.32);
 }
 
 .ars-media-page .division-signature .video-card,
 .ars-media-page .division-signature .gallery-card {
-  border-color: rgba(191, 132, 113, 0.30);
+  border-color: rgba(191, 132, 113, 0.60);
+
   box-shadow:
-    0 0 22px rgba(184, 112, 100, 0.065),
-    inset 0 1px 0 rgba(255, 255, 255, 0.065);
+    0 0 12px rgba(184, 112, 100, 0.14),
+    0 0 22px rgba(184, 112, 100, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.13);
 }
-
-
 
 
 /* =========================================================
    SECTION 14 — ARS COMPANY
+   ENHANCED LUXURY GLASS
    ========================================================= */
 
 .ars-media-page .division-company {
@@ -2865,70 +2910,84 @@ p {
 }
 
 .ars-media-page .division-company > .container {
-  border-color: rgba(160, 184, 204, 0.36);
+  border-color: rgba(160, 184, 204, 0.72);
+
   background:
     radial-gradient(
       ellipse at 85% 0%,
-      rgba(120, 157, 190, 0.13),
+      rgba(120, 157, 190, 0.27),
       transparent 48%
     ),
     linear-gradient(
       135deg,
-      rgba(104, 128, 151, 0.085),
-      rgba(15, 23, 33, 0.15),
-      rgba(155, 172, 187, 0.035)
+      rgba(104, 128, 151, 0.17),
+      rgba(15, 23, 33, 0.24),
+      rgba(155, 172, 187, 0.08)
     );
+
   box-shadow:
-    0 0 38px rgba(105, 143, 177, 0.10),
+    0 0 0 1px rgba(160, 184, 204, 0.16),
+    0 0 12px rgba(120, 157, 190, 0.20),
+    0 0 38px rgba(105, 143, 177, 0.22),
     0 28px 85px rgba(0, 0, 0, 0.34),
-    inset 0 1px 0 rgba(220, 233, 244, 0.14);
+    inset 0 1px 0 rgba(220, 233, 244, 0.28);
 }
 
 .ars-media-page .division-company .video-card,
 .ars-media-page .division-company .gallery-card {
-  border-color: rgba(160, 184, 204, 0.27);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.065);
-     }
+  border-color: rgba(160, 184, 204, 0.54);
 
+  box-shadow:
+    0 0 12px rgba(120, 157, 190, 0.12),
+    0 0 22px rgba(105, 143, 177, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.13);
+}
 
 /* =========================================================
    SECTION 15 — REZ AI + ZHR NAJI
+   ENHANCED LUXURY GLASS
    ========================================================= */
 
-.ars-media-page .division-rez-zhr {
+.ars-media-page .division-rose-zhr {
   --division-glow: 132, 34, 62;
   --division-glow-secondary: 190, 139, 65;
 }
 
-.ars-media-page .division-rez-zhr > .container {
-  border-color: rgba(178, 111, 89, 0.42);
+.ars-media-page .division-rose-zhr > .container {
+  border-color: rgba(178, 111, 89, 0.82);
+
   background:
     linear-gradient(
       112deg,
-      rgba(116, 22, 49, 0.16) 0%,
-      rgba(93, 28, 46, 0.075) 43%,
-      rgba(155, 109, 48, 0.075) 57%,
-      rgba(192, 143, 70, 0.13) 100%
+      rgba(116, 22, 49, 0.30) 0%,
+      rgba(93, 28, 46, 0.15) 43%,
+      rgba(155, 109, 48, 0.15) 57%,
+      rgba(192, 143, 70, 0.26) 100%
     ),
-    rgba(15, 12, 18, 0.10);
+    rgba(15, 12, 18, 0.20);
+
   box-shadow:
-    0 0 42px rgba(138, 46, 67, 0.10),
-    0 0 42px rgba(190, 139, 65, 0.075),
+    0 0 0 1px rgba(178, 111, 89, 0.18),
+    0 0 12px rgba(132, 34, 62, 0.22),
+    0 0 42px rgba(138, 46, 67, 0.22),
+    0 0 42px rgba(190, 139, 65, 0.16),
     0 28px 85px rgba(0, 0, 0, 0.34),
-    inset 0 1px 0 rgba(235, 192, 141, 0.16);
+    inset 0 1px 0 rgba(235, 192, 141, 0.30);
 }
 
-.ars-media-page .division-rez-zhr .video-card,
-.ars-media-page .division-rez-zhr .gallery-card {
-  border-color: rgba(178, 111, 89, 0.30);
-  box-shadow:
-    0 0 20px rgba(132, 34, 62, 0.055),
-    inset 0 1px 0 rgba(255, 255, 255, 0.065);
-     }
+.ars-media-page .division-rose-zhr .video-card,
+.ars-media-page .division-rose-zhr .gallery-card {
+  border-color: rgba(178, 111, 89, 0.60);
 
+  box-shadow:
+    0 0 12px rgba(132, 34, 62, 0.12),
+    0 0 20px rgba(190, 139, 65, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.13);
+                   }
 
 /* =========================================================
    SECTION 16 — ARS GENERAL
+   ENHANCED LUXURY GLASS
    ========================================================= */
 
 .ars-media-page .division-general {
@@ -2937,39 +2996,46 @@ p {
 }
 
 .ars-media-page .division-general > .container {
-  border-color: rgba(75, 174, 174, 0.36);
+  border-color: rgba(75, 174, 174, 0.72);
+
   background:
     radial-gradient(
       ellipse at 8% 0%,
-      rgba(35, 156, 158, 0.13),
+      rgba(35, 156, 158, 0.26),
       transparent 48%
     ),
     linear-gradient(
       135deg,
-      rgba(29, 110, 119, 0.075),
-      rgba(9, 22, 29, 0.13),
-      rgba(35, 100, 145, 0.065)
+      rgba(29, 110, 119, 0.15),
+      rgba(9, 22, 29, 0.22),
+      rgba(35, 100, 145, 0.13)
     );
+
   box-shadow:
-    0 0 38px rgba(34, 145, 151, 0.10),
+    0 0 0 1px rgba(75, 174, 174, 0.16),
+    0 0 12px rgba(35, 156, 158, 0.20),
+    0 0 38px rgba(34, 145, 151, 0.22),
     0 28px 85px rgba(0, 0, 0, 0.32),
-    inset 0 1px 0 rgba(155, 230, 225, 0.14);
+    inset 0 1px 0 rgba(155, 230, 225, 0.28);
 }
 
 .ars-media-page .division-general .video-card,
 .ars-media-page .division-general .gallery-card {
-  border-color: rgba(75, 174, 174, 0.27);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.065);
+  border-color: rgba(75, 174, 174, 0.54);
+
+  box-shadow:
+    0 0 12px rgba(35, 156, 158, 0.12),
+    0 0 22px rgba(34, 145, 151, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.13);
 }
 
 
-
-
-
+}
 
 
 /* =========================================================
    SECTION 17 — ARS HERITAGE & ENGINEERING
+   ENHANCED LUXURY GLASS
    ========================================================= */
 
 .ars-media-page .division-heritage {
@@ -2978,37 +3044,48 @@ p {
 }
 
 .ars-media-page .division-heritage > .container {
-  border-color: rgba(188, 147, 81, 0.42);
+  border-color: rgba(188, 147, 81, 0.82);
+
   background:
     radial-gradient(
       ellipse at 90% 0%,
-      rgba(174, 128, 59, 0.15),
+      rgba(174, 128, 59, 0.30),
       transparent 48%
     ),
     linear-gradient(
       135deg,
-      rgba(123, 86, 39, 0.105),
-      rgba(22, 18, 13, 0.15),
-      rgba(180, 139, 72, 0.045)
+      rgba(123, 86, 39, 0.21),
+      rgba(22, 18, 13, 0.23),
+      rgba(180, 139, 72, 0.09)
     );
+
   box-shadow:
-    0 0 42px rgba(170, 124, 57, 0.11),
+    0 0 0 1px rgba(188, 147, 81, 0.18),
+    0 0 12px rgba(174, 128, 59, 0.22),
+    0 0 42px rgba(170, 124, 57, 0.23),
     0 28px 85px rgba(0, 0, 0, 0.34),
-    inset 0 1px 0 rgba(235, 204, 145, 0.16);
+    inset 0 1px 0 rgba(235, 204, 145, 0.32);
 }
 
 .ars-media-page .division-heritage .video-card,
 .ars-media-page .division-heritage .gallery-card {
-  border-color: rgba(188, 147, 81, 0.30);
+  border-color: rgba(188, 147, 81, 0.60);
+
   box-shadow:
-    0 0 20px rgba(170, 124, 57, 0.055),
-    inset 0 1px 0 rgba(255, 255, 255, 0.065);
-}
+    0 0 12px rgba(170, 124, 57, 0.12),
+    0 0 20px rgba(190, 151, 83, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.13);
+                  }
+
+
 
 
 /* =========================================================
    SECTION 18 — FINAL RESPONSIVE POLISH
+   ENHANCED GLASS RESPONSIVE SYSTEM
    ========================================================= */
+
+/* ---------- ULTRA-WIDE SCREENS ---------- */
 
 @media (min-width: 1500px) {
   .ars-media-page .media-division > .container {
@@ -3016,19 +3093,29 @@ p {
   }
 }
 
+/* ---------- TABLETS & SMALL LAPTOPS ---------- */
+
 @media (max-width: 900px) {
   .ars-media-page .media-division > .container {
     width: calc(100% - 32px);
     padding: 28px 22px;
   }
+
+  .ars-media-page .media-division > .container {
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    backdrop-filter: blur(20px) saturate(140%);
+  }
 }
+
+/* ---------- MOBILE ---------- */
 
 @media (max-width: 600px) {
   .ars-media-page .media-division > .container {
     width: calc(100% - 20px);
     padding: 20px 13px;
-    -webkit-backdrop-filter: blur(14px) saturate(120%);
-    backdrop-filter: blur(14px) saturate(120%);
+
+    -webkit-backdrop-filter: blur(14px) saturate(130%);
+    backdrop-filter: blur(14px) saturate(130%);
   }
 
   .ars-media-page .media-division .division-video-grid,
@@ -3042,8 +3129,11 @@ p {
   .ars-media-page .media-division .product-card {
     width: 100%;
     min-width: 0;
+    box-sizing: border-box;
   }
 }
+
+/* ---------- REDUCED MOTION ACCESSIBILITY ---------- */
 
 @media (prefers-reduced-motion: reduce) {
   .ars-media-page .media-division > .container,
@@ -3053,10 +3143,9 @@ p {
     scroll-behavior: auto;
     transition-duration: 0.01ms;
     animation-duration: 0.01ms;
+    animation-iteration-count: 1;
   }
 }
-
-
 
 
 
