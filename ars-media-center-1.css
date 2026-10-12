@@ -6327,3 +6327,281 @@ p {
 }
 
 
+
+
+/* =========================================================
+   PATCH 26 — ARS CINEMATIC HERO SIGNATURE
+   +25% Hero Logo
+   Champagne Gold Halo
+   Premium Media Interface Buttons
+   ========================================================= */
+
+
+/* 01. HERO LOGO — 25% LARGER */
+
+.ars-media-page .media-hero .media-logo-wrapper {
+    position: relative;
+    isolation: isolate;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: visible;
+    transform: translateZ(0);
+}
+
+.ars-media-page .media-hero .media-logo {
+    position: relative;
+    z-index: 2;
+    display: block;
+    height: auto;
+    max-width: none;
+    transform: scale(1.25);
+    transform-origin: center center;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.22));
+}
+
+
+/* 02. CHAMPAGNE GOLD HALO — BEHIND THE LOGO */
+
+.ars-media-page .media-hero .media-logo-wrapper::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+
+    left: -24%;
+    right: -24%;
+    top: 12%;
+    bottom: -30%;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        ellipse at 50% 65%,
+        rgba(255, 221, 150, 0.23) 0%,
+        rgba(216, 183, 106, 0.19) 23%,
+        rgba(177, 128, 53, 0.10) 45%,
+        rgba(177, 128, 53, 0.035) 62%,
+        transparent 76%
+    );
+
+    filter: blur(17px);
+    opacity: 1;
+}
+
+
+/* 03. FINE GOLD REFLECTION UNDER THE LOGO */
+
+.ars-media-page .media-hero .media-logo-wrapper::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+
+    left: 19%;
+    right: 19%;
+    bottom: -7%;
+
+    height: 2px;
+    border-radius: 50%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(216, 183, 106, 0.20) 12%,
+        rgba(255, 231, 173, 0.88) 50%,
+        rgba(216, 183, 106, 0.20) 88%,
+        transparent
+    );
+
+    box-shadow:
+        0 0 5px rgba(255, 220, 145, 0.35),
+        0 4px 15px rgba(216, 183, 106, 0.22);
+
+    filter: blur(0.3px);
+}
+
+
+/* 04. MEDIA BUTTONS — ENGINEERED LAYOUT */
+
+.ars-media-page .media-hero .media-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.ars-media-page .media-hero .media-buttons .btn-primary,
+.ars-media-page .media-hero .media-buttons .btn-secondary {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    min-height: 56px;
+    padding: 16px 27px;
+
+    border-radius: 3px;
+
+    text-decoration: none;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.055em;
+    line-height: 1.35;
+
+    /* Preserve existing button colors */
+    background-color: inherit;
+
+    transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease,
+        border-color 0.28s ease,
+        filter 0.28s ease;
+}
+
+
+/* 05. PRECISION FRAME */
+
+.ars-media-page .media-hero .media-buttons .btn-primary::before,
+.ars-media-page .media-hero .media-buttons .btn-secondary::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+
+    inset: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.17);
+
+    transition:
+        inset 0.28s ease,
+        border-color 0.28s ease,
+        opacity 0.28s ease;
+}
+
+
+/* 06. CINEMATIC LIGHT SWEEP */
+
+.ars-media-page .media-hero .media-buttons .btn-primary::after,
+.ars-media-page .media-hero .media-buttons .btn-secondary::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+
+    top: -60%;
+    bottom: -60%;
+    left: -75%;
+    width: 35%;
+
+    transform: skewX(-22deg);
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.16),
+        transparent
+    );
+
+    opacity: 0;
+    transition:
+        left 0.55s ease,
+        opacity 0.25s ease;
+}
+
+
+/* 07. PREMIUM HOVER — DESKTOP */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .ars-media-page .media-hero .media-buttons .btn-primary:hover,
+    .ars-media-page .media-hero .media-buttons .btn-secondary:hover {
+        transform: translateY(-3px);
+        filter: brightness(1.07);
+
+        box-shadow:
+            0 9px 25px rgba(0, 0, 0, 0.22),
+            0 0 18px rgba(0, 191, 255, 0.10);
+    }
+
+    .ars-media-page .media-hero .media-buttons .btn-primary:hover::before,
+    .ars-media-page .media-hero .media-buttons .btn-secondary:hover::before {
+        inset: 2px;
+        border-color: rgba(255, 255, 255, 0.35);
+    }
+
+    .ars-media-page .media-hero .media-buttons .btn-primary:hover::after,
+    .ars-media-page .media-hero .media-buttons .btn-secondary:hover::after {
+        left: 140%;
+        opacity: 1;
+    }
+}
+
+
+/* 08. ACTIVE PRESS */
+
+.ars-media-page .media-hero .media-buttons .btn-primary:active,
+.ars-media-page .media-hero .media-buttons .btn-secondary:active {
+    transform: translateY(0) scale(0.985);
+}
+
+.ars-media-page .media-hero .media-buttons .btn-primary:focus-visible,
+.ars-media-page .media-hero .media-buttons .btn-secondary:focus-visible {
+    outline: 2px solid rgba(255, 221, 150, 0.85);
+    outline-offset: 5px;
+}
+
+
+/* 09. MOBILE REFINEMENT */
+
+@media (max-width: 600px) {
+
+    .ars-media-page .media-hero .media-logo-wrapper::before {
+        left: -17%;
+        right: -17%;
+        bottom: -23%;
+        filter: blur(13px);
+    }
+
+    .ars-media-page .media-hero .media-logo-wrapper::after {
+        left: 23%;
+        right: 23%;
+        box-shadow: 0 0 8px rgba(216, 183, 106, 0.20);
+    }
+
+    .ars-media-page .media-hero .media-buttons {
+        gap: 12px;
+        width: 100%;
+    }
+
+    .ars-media-page .media-hero .media-buttons .btn-primary,
+    .ars-media-page .media-hero .media-buttons .btn-secondary {
+        max-width: 100%;
+        min-height: 52px;
+        padding: 14px 19px;
+        letter-spacing: 0.035em;
+    }
+}
+
+
+/* 10. ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ars-media-page .media-hero .media-buttons .btn-primary,
+    .ars-media-page .media-hero .media-buttons .btn-secondary,
+    .ars-media-page .media-hero .media-buttons .btn-primary::before,
+    .ars-media-page .media-hero .media-buttons .btn-secondary::before,
+    .ars-media-page .media-hero .media-buttons .btn-primary::after,
+    .ars-media-page .media-hero .media-buttons .btn-secondary::after {
+        transition: none !important;
+    }
+}
+
+
+
