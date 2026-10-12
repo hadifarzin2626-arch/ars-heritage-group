@@ -5689,3 +5689,60 @@ p {
     transition: none;
   }
 }
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   PATCH 22 — ARS HEADER TRANSPARENCY FIX
+   Remove opaque inner navigation panel
+   ========================================================= */
+
+/* Keep the glass effect on the outer header */
+.ars-media-page,
+.ars-site-header {
+  background-color: transparent;
+}
+
+.ars-site-header {
+  background: rgba(5, 11, 24, 0.48) !important;
+
+  -webkit-backdrop-filter: blur(12px) saturate(125%);
+  backdrop-filter: blur(12px) saturate(125%);
+}
+
+/* Remove black backgrounds from inner header layers */
+.ars-site-header .ars-nav-shell,
+.ars-site-header .ars-primary-nav {
+  background: transparent !important;
+  background-color: transparent !important;
+
+  box-shadow: none !important;
+}
+
+/* Remove any opaque decorative panel */
+.ars-site-header .ars-nav-shell::before,
+.ars-site-header .ars-nav-shell::after,
+.ars-site-header .ars-primary-nav::before,
+.ars-site-header .ars-primary-nav::after {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Preserve readable links without a black panel */
+.ars-site-header .ars-primary-nav a {
+  background-color: transparent;
+}
+
+/* Mobile menu: keep its panel transparent when closed/open */
+@media (max-width: 768px) {
+  .ars-site-header .ars-primary-nav {
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+}
