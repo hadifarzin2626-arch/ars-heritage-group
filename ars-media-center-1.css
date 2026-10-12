@@ -6605,3 +6605,197 @@ p {
 
 
 
+
+
+
+
+/* =========================================================
+   PATCH 27 — ARS DUAL-SIDED CHAMPAGNE LIGHT SIGNATURE
+   All small labels • Hero to Footer
+   No solid gold or blue divider lines
+   ========================================================= */
+
+/* 01. REAL LABEL SELECTORS FROM THE ARS MEDIA CENTER HTML */
+
+.ars-media-page .media-overline,
+.ars-media-page .section-label,
+.ars-media-page .media-kicker,
+.ars-media-page .media-index,
+.ars-media-page .product-index,
+.ars-media-page .contact-number,
+.ars-media-page .division-number,
+.ars-media-page .advertising-counter,
+.ars-media-page .product-showcase-heading > span,
+.ars-media-page .display-live-indicator,
+.ars-media-page .status-indicator,
+.ars-media-page .advertising-pause,
+.ars-media-page .footer-tagline,
+.ars-media-page .footer-back-to-top {
+    --ars-label-light-width: clamp(18px, 3vw, 34px);
+    --ars-label-light-gap: 10px;
+}
+
+/* 02. CREATE THE TWO-SIDED LIGHT EFFECT */
+
+.ars-media-page .media-overline,
+.ars-media-page .section-label,
+.ars-media-page .media-kicker,
+.ars-media-page .media-index,
+.ars-media-page .product-index,
+.ars-media-page .contact-number,
+.ars-media-page .division-number,
+.ars-media-page .product-showcase-heading > span,
+.ars-media-page .footer-tagline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--ars-label-light-gap, 10px);
+    width: fit-content;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+/* The light is a fading glow, NOT a solid line. */
+
+.ars-media-page .media-overline::before,
+.ars-media-page .media-overline::after,
+.ars-media-page .section-label::before,
+.ars-media-page .section-label::after,
+.ars-media-page .media-kicker::before,
+.ars-media-page .media-kicker::after,
+.ars-media-page .media-index::before,
+.ars-media-page .media-index::after,
+.ars-media-page .product-index::before,
+.ars-media-page .product-index::after,
+.ars-media-page .contact-number::before,
+.ars-media-page .contact-number::after,
+.ars-media-page .division-number::before,
+.ars-media-page .division-number::after,
+.ars-media-page .product-showcase-heading > span::before,
+.ars-media-page .product-showcase-heading > span::after,
+.ars-media-page .footer-tagline::before,
+.ars-media-page .footer-tagline::after {
+    content: "";
+    display: block;
+    flex: 0 0 var(--ars-label-light-width, 30px);
+    width: var(--ars-label-light-width, 30px);
+    height: 2px;
+    border: 0;
+    border-radius: 50%;
+
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(177, 128, 53, 0.14) 13%,
+        rgba(216, 183, 106, 0.65) 37%,
+        rgba(255, 231, 173, 0.98) 50%,
+        rgba(216, 183, 106, 0.65) 63%,
+        rgba(177, 128, 53, 0.14) 87%,
+        transparent 100%
+    );
+
+    box-shadow:
+        0 0 3px rgba(255, 220, 145, 0.34),
+        0 0 8px rgba(216, 183, 106, 0.24),
+        0 0 15px rgba(177, 128, 53, 0.10);
+
+    filter: blur(0.35px);
+    opacity: 0.92;
+    pointer-events: none;
+}
+
+/* 03. SUBTLE TEXT HALO — PRESERVE ORIGINAL LABEL COLORS */
+
+.ars-media-page .media-overline,
+.ars-media-page .section-label,
+.ars-media-page .media-kicker,
+.ars-media-page .media-index,
+.ars-media-page .product-index,
+.ars-media-page .contact-number,
+.ars-media-page .division-number,
+.ars-media-page .product-showcase-heading > span,
+.ars-media-page .footer-tagline {
+    text-shadow:
+        0 0 9px rgba(216, 183, 106, 0.10);
+}
+
+/* 04. SMALL INDICATOR LABELS
+   Keep their existing text colors and inner content intact. */
+
+.ars-media-page .display-live-indicator,
+.ars-media-page .status-indicator {
+    position: relative;
+    text-shadow:
+        0 0 8px rgba(216, 183, 106, 0.12);
+}
+
+/* 05. COUNTER AND PAUSE CONTROL — KEEP FUNCTIONAL UI INTACT */
+
+.ars-media-page .advertising-counter,
+.ars-media-page .advertising-pause {
+    text-shadow:
+        0 0 8px rgba(216, 183, 106, 0.12);
+}
+
+/* 06. FOOTER BACK-TO-TOP — TEXT GLOW ONLY */
+
+.ars-media-page .footer-back-to-top {
+    text-shadow:
+        0 0 8px rgba(216, 183, 106, 0.12);
+}
+
+/* 07. MOBILE — SHORTER, MORE REFINED LIGHT */
+
+@media (max-width: 600px) {
+    .ars-media-page .media-overline,
+    .ars-media-page .section-label,
+    .ars-media-page .media-kicker,
+    .ars-media-page .media-index,
+    .ars-media-page .product-index,
+    .ars-media-page .contact-number,
+    .ars-media-page .division-number,
+    .ars-media-page .product-showcase-heading > span,
+    .ars-media-page .footer-tagline {
+        --ars-label-light-width: 19px;
+        --ars-label-light-gap: 7px;
+    }
+
+    .ars-media-page .media-overline::before,
+    .ars-media-page .media-overline::after,
+    .ars-media-page .section-label::before,
+    .ars-media-page .section-label::after,
+    .ars-media-page .media-kicker::before,
+    .ars-media-page .media-kicker::after,
+    .ars-media-page .media-index::before,
+    .ars-media-page .media-index::after,
+    .ars-media-page .product-index::before,
+    .ars-media-page .product-index::after,
+    .ars-media-page .contact-number::before,
+    .ars-media-page .contact-number::after,
+    .ars-media-page .division-number::before,
+    .ars-media-page .division-number::after,
+    .ars-media-page .product-showcase-heading > span::before,
+    .ars-media-page .product-showcase-heading > span::after,
+    .ars-media-page .footer-tagline::before,
+    .ars-media-page .footer-tagline::after {
+        box-shadow:
+            0 0 3px rgba(255, 220, 145, 0.28),
+            0 0 7px rgba(216, 183, 106, 0.18);
+    }
+}
+
+/* 08. ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    .ars-media-page .media-overline,
+    .ars-media-page .section-label,
+    .ars-media-page .media-kicker,
+    .ars-media-page .media-index,
+    .ars-media-page .product-index,
+    .ars-media-page .contact-number,
+    .ars-media-page .division-number {
+        scroll-behavior: auto;
+    }
+}
+
+
