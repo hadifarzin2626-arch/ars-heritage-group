@@ -1,3 +1,4 @@
+
 /* =========================================================
    ARS MEDIA CENTER
    ARS SIGNATURE DESIGN SYSTEM
@@ -5267,3 +5268,117 @@ p {
   }
 }
 
+
+
+
+
+
+
+/* =========================================================
+   PATCH 01 — ARS BRAIN PRODUCT SHOWCASE
+   ONE PRODUCT PER ROW
+   ========================================================= */
+
+.ars-media-page .division-brain .product-showcase-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 30px;
+  width: 100%;
+}
+
+.ars-media-page .division-brain .product-showcase-grid > .product-card {
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  box-sizing: border-box;
+}
+
+.ars-media-page .division-brain .product-showcase-grid .media-frame {
+  width: 100%;
+  max-width: none;
+}
+
+.ars-media-page .division-brain .product-showcase-grid img,
+.ars-media-page .division-brain .product-showcase-grid video,
+.ars-media-page .division-brain .product-showcase-grid iframe {
+  max-width: 100%;
+}
+
+@media (max-width: 600px) {
+  .ars-media-page .division-brain .product-showcase-grid {
+    gap: 22px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   PATCH 01 — ARS FEATURED MEDIA
+   PURE GOLD DISPLAY
+   ========================================================= */
+
+.ars-media-page #ars-spotlight .spotlight-video-card,
+.ars-media-page #ars-spotlight .spotlight-display-card {
+  border: 2px solid #FFD700 !important;
+
+  box-shadow:
+    0 0 0 1px rgba(255, 215, 0, 0.45),
+    0 0 14px rgba(255, 215, 0, 0.65),
+    0 0 32px rgba(255, 190, 0, 0.35),
+    inset 0 1px 0 rgba(255, 235, 150, 0.30) !important;
+}
+
+.ars-media-page #ars-spotlight .spotlight-video-frame,
+.ars-media-page #ars-spotlight .advertising-rotator {
+  border: 2px solid #FFD700 !important;
+
+  box-shadow:
+    0 0 10px rgba(255, 215, 0, 0.75),
+    0 0 24px rgba(255, 190, 0, 0.40),
+    inset 0 0 10px rgba(255, 215, 0, 0.12) !important;
+}
+
+.ars-media-page #ars-spotlight .spotlight-video,
+.ars-media-page #ars-spotlight .advertising-slides,
+.ars-media-page #ars-spotlight .advertising-slide {
+  border-color: #FFD700 !important;
+}
+
+
+
+
+
+/* =========================================================
+   PATCH 02 — ARS FEATURED FILMS
+   STRONG ELECTRIC BLUE DISPLAY
+   ========================================================= */
+
+.ars-media-page #ars-spotlight .advertising-film-library .film-card {
+  border: 2px solid #00BFFF !important;
+
+  box-shadow:
+    0 0 0 1px rgba(0, 191, 255, 0.50),
+    0 0 14px rgba(0, 191, 255, 0.75),
+    0 0 30px rgba(0, 145, 255, 0.45),
+    inset 0 1px 0 rgba(100, 225, 255, 0.28) !important;
+}
+
+.ars-media-page #ars-spotlight .advertising-film-library .media-frame {
+  border: 2px solid #00BFFF !important;
+
+  box-shadow:
+    0 0 10px rgba(0, 191, 255, 0.85),
+    0 0 24px rgba(0, 145, 255, 0.50),
+    inset 0 0 10px rgba(0, 191, 255, 0.14) !important;
+}
+
+.ars-media-page #ars-spotlight .advertising-film-library video {
+  border-color: #00BFFF !important;
+}
