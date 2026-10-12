@@ -5312,65 +5312,7 @@ p {
 
 
 
-/* =========================================================
-   PATCH 01 — ARS FEATURED MEDIA
-   PURE GOLD — FURTHER 50% GLOW REDUCTION
-   ========================================================= */
 
-.ars-media-page #ars-spotlight .spotlight-video-card,
-.ars-media-page #ars-spotlight .spotlight-display-card {
-  border: 1.5px solid #FFD700 !important;
-
-  box-shadow:
-    0 0 0 1px rgba(215, 215, 0, 0.0225),
-    0 0 7px rgba(215, 215, 0, 0.0325),
-    0 0 16px rgba(225, 190, 0, 0.0275),
-    inset 0 1px 0 rgba(215, 195, 110, 0.015) !important;
-}
-
-.ars-media-page #ars-spotlight .spotlight-video-frame,
-.ars-media-page #ars-spotlight .advertising-rotator {
-  border: 1.5px solid #FFD700 !important;
-
-  box-shadow:
-    0 0 5px rgba(255, 215, 0, 0.0575),
-    0 0 12px rgba(235, 190, 0, 0.030),
-    inset 0 0 5px rgba(215, 215, 0, 0.01) !important;
-}
-
-.ars-media-page #ars-spotlight .spotlight-video,
-.ars-media-page #ars-spotlight .advertising-slides,
-.ars-media-page #ars-spotlight .advertising-slide {
-  border-color: #FFD700 !important;
-}
-
-/* =========================================================
-   PATCH 02 — ARS FEATURED FILMS
-   ELECTRIC BLUE — FURTHER 50% GLOW REDUCTION
-   ========================================================= */
-
-.ars-media-page #ars-spotlight .advertising-film-library .film-card {
-  border: 1.5px solid #00BFFF !important;
-
-  box-shadow:
-    0 0 0 1px rgba(0, 191, 255, 0.055),
-    0 0 7px rgba(0, 191, 255, 0.0475),
-    0 0 15px rgba(0, 145, 255, 0.025),
-    inset 0 1px 0 rgba(100, 225, 255, 0.01) !important;
-}
-
-.ars-media-page #ars-spotlight .advertising-film-library .media-frame {
-  border: 1.5px solid #00BFFF !important;
-
-  box-shadow:
-    0 0 5px rgba(0, 191, 255, 0.0125),
-    0 0 12px rgba(0, 145, 255, 0.055),
-    inset 0 0 5px rgba(0, 191, 255, 0.015) !important;
-}
-
-.ars-media-page #ars-spotlight .advertising-film-library video {
-  border-color: #00BFFF !important;
-}
 
 
 
@@ -5746,3 +5688,315 @@ p {
     background-color: transparent !important;
   }
 }
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   PATCH 23 — ARS CINEMATIC MEDIA SHOWCASE
+   Champagne Gold × Electric Blue × Steel Blue
+   Based on the actual ARS Media Center HTML
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   01. FEATURED FILM — CHAMPAGNE GOLD
+   --------------------------------------------------------- */
+
+.ars-media-page #ars-spotlight .spotlight-video-card {
+  border: 1px solid rgba(216, 183, 106, 0.78) !important;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(216, 183, 106, 0.075),
+      rgba(5, 11, 24, 0.90) 48%,
+      rgba(120, 83, 34, 0.07)
+    ) !important;
+
+  box-shadow:
+    0 0 0 1px rgba(216, 183, 106, 0.08),
+    0 0 14px rgba(216, 183, 106, 0.10),
+    inset 0 1px 0 rgba(255, 231, 173, 0.14) !important;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.ars-media-page #ars-spotlight .spotlight-video-frame {
+  border: 1px solid rgba(216, 183, 106, 0.85) !important;
+
+  background: #030711 !important;
+
+  box-shadow:
+    0 0 0 1px rgba(216, 183, 106, 0.12),
+    0 0 12px rgba(216, 183, 106, 0.12),
+    inset 0 0 12px rgba(216, 183, 106, 0.045) !important;
+
+  overflow: hidden;
+}
+
+.ars-media-page #ars-spotlight .spotlight-video-frame video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border-radius: inherit;
+}
+
+.ars-media-page #ars-spotlight .spotlight-video-card .media-kicker,
+.ars-media-page #ars-spotlight .spotlight-video-card .media-index {
+  color: #D8B76A;
+}
+
+.ars-media-page #ars-spotlight .spotlight-video-footer h3 {
+  color: #FFF3D4;
+  text-shadow: 0 0 12px rgba(216, 183, 106, 0.10);
+}
+
+
+/* ---------------------------------------------------------
+   02. VISUAL SHOWCASE — ELECTRIC BLUE
+   --------------------------------------------------------- */
+
+.ars-media-page #ars-spotlight .spotlight-display-card {
+  border: 1px solid rgba(0, 191, 255, 0.68) !important;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(0, 191, 255, 0.075),
+      rgba(5, 11, 24, 0.91) 50%,
+      rgba(0, 100, 180, 0.065)
+    ) !important;
+
+  box-shadow:
+    0 0 0 1px rgba(0, 191, 255, 0.07),
+    0 0 14px rgba(0, 191, 255, 0.11),
+    inset 0 1px 0 rgba(110, 225, 255, 0.12) !important;
+}
+
+.ars-media-page #ars-spotlight .advertising-rotator {
+  position: relative;
+
+  border: 1px solid rgba(0, 191, 255, 0.82) !important;
+
+  background: #030916 !important;
+
+  box-shadow:
+    0 0 0 1px rgba(0, 191, 255, 0.10),
+    0 0 15px rgba(0, 191, 255, 0.13),
+    inset 0 0 12px rgba(0, 191, 255, 0.045) !important;
+
+  overflow: hidden;
+}
+
+.ars-media-page #ars-spotlight .advertising-slides {
+  border-color: rgba(0, 191, 255, 0.32);
+}
+
+.ars-media-page #ars-spotlight .advertising-slide {
+  border-color: rgba(0, 191, 255, 0.28);
+}
+
+.ars-media-page #ars-spotlight .advertising-slide img {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+/* Image caption */
+
+.ars-media-page #ars-spotlight .advertising-slide figcaption {
+  color: #FFFFFF;
+
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(3, 9, 22, 0.68) 35%,
+    rgba(3, 9, 22, 0.94) 100%
+  );
+
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+}
+
+/* Gallery navigation controls */
+
+.ars-media-page #ars-spotlight .advertising-control {
+  color: #EAF9FF;
+
+  background: rgba(5, 20, 38, 0.78);
+
+  border: 1px solid rgba(0, 191, 255, 0.68);
+
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.12);
+
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.ars-media-page #ars-spotlight .advertising-control:hover,
+.ars-media-page #ars-spotlight .advertising-control:focus-visible {
+  background: rgba(0, 145, 210, 0.30);
+
+  border-color: #00BFFF;
+
+  box-shadow: 0 0 14px rgba(0, 191, 255, 0.23);
+}
+
+/* Gallery counter and progress */
+
+.ars-media-page #ars-spotlight .advertising-counter {
+  color: #75DFFF;
+}
+
+.ars-media-page #ars-spotlight .advertising-progress-track {
+  background: rgba(0, 191, 255, 0.14);
+  overflow: hidden;
+}
+
+.ars-media-page #ars-spotlight .advertising-progress {
+  background: linear-gradient(
+    90deg,
+    #087DAF,
+    #00BFFF,
+    #8BE8FF
+  );
+
+  box-shadow: 0 0 8px rgba(0, 191, 255, 0.22);
+}
+
+.ars-media-page #ars-spotlight .advertising-pause {
+  color: #83DFFF;
+
+  border-color: rgba(0, 191, 255, 0.40);
+}
+
+
+/* ---------------------------------------------------------
+   03. FEATURED FILMS — STEEL BLUE
+   --------------------------------------------------------- */
+
+.ars-media-page #ars-spotlight .advertising-film-library .film-card {
+  border: 1px solid rgba(91, 151, 195, 0.72) !important;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(66, 108, 145, 0.12),
+      rgba(5, 11, 24, 0.92) 52%,
+      rgba(30, 73, 110, 0.08)
+    ) !important;
+
+  box-shadow:
+    0 0 0 1px rgba(91, 151, 195, 0.07),
+    0 0 12px rgba(66, 108, 145, 0.12),
+    inset 0 1px 0 rgba(160, 205, 235, 0.11) !important;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.ars-media-page #ars-spotlight .advertising-film-library .film-card .media-frame {
+  border: 1px solid rgba(91, 151, 195, 0.75) !important;
+
+  background: #030711 !important;
+
+  box-shadow:
+    0 0 0 1px rgba(91, 151, 195, 0.09),
+    0 0 10px rgba(66, 108, 145, 0.12) !important;
+
+  overflow: hidden;
+}
+
+.ars-media-page #ars-spotlight .advertising-film-library .film-card video {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+
+  border-radius: inherit;
+}
+
+.ars-media-page #ars-spotlight .film-card-content .media-kicker {
+  color: #78C9F5;
+}
+
+.ars-media-page #ars-spotlight .film-card-content h4 {
+  color: #EAF6FF;
+}
+
+.ars-media-page #ars-spotlight .film-card-content p {
+  color: rgba(221, 235, 247, 0.80);
+}
+
+
+/* ---------------------------------------------------------
+   04. INTERACTION — RESTRAINED PREMIUM HOVER
+   --------------------------------------------------------- */
+
+@media (hover: hover) and (pointer: fine) {
+  .ars-media-page #ars-spotlight .spotlight-video-card:hover {
+    border-color: rgba(235, 204, 132, 0.95) !important;
+
+    box-shadow:
+      0 0 0 1px rgba(216, 183, 106, 0.12),
+      0 0 19px rgba(216, 183, 106, 0.15),
+      inset 0 1px 0 rgba(255, 231, 173, 0.17) !important;
+
+    transform: translateY(-2px);
+  }
+
+  .ars-media-page #ars-spotlight
+  .advertising-film-library .film-card:hover {
+    border-color: rgba(112, 190, 235, 0.95) !important;
+
+    box-shadow:
+      0 0 0 1px rgba(91, 151, 195, 0.12),
+      0 0 17px rgba(66, 145, 195, 0.17),
+      inset 0 1px 0 rgba(160, 205, 235, 0.15) !important;
+
+    transform: translateY(-2px);
+  }
+}
+
+
+/* ---------------------------------------------------------
+   05. RESPONSIVE & ACCESSIBILITY
+   --------------------------------------------------------- */
+
+@media (max-width: 600px) {
+  .ars-media-page #ars-spotlight .spotlight-video-card,
+  .ars-media-page #ars-spotlight .spotlight-display-card,
+  .ars-media-page #ars-spotlight .advertising-film-library .film-card {
+    box-shadow:
+      0 0 8px rgba(0, 145, 200, 0.07),
+      inset 0 1px 0 rgba(160, 205, 235, 0.07) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ars-media-page #ars-spotlight .spotlight-video-card,
+  .ars-media-page #ars-spotlight .advertising-film-library .film-card,
+  .ars-media-page #ars-spotlight .advertising-control {
+    transition: none;
+  }
+}
+
