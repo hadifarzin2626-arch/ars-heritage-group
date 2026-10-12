@@ -4231,66 +4231,6 @@ p {
 
 
 
-/* ARS MEDIA CENTER — HTML-VERIFIED FOOTER RESPONSIVENESS */
-
-.ars-media-page .ars-footer > .container {
-  min-width: 0;
-  width: 100%;
-}
-
-.ars-media-page .footer-top {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 2rem;
-  min-width: 0;
-}
-
-.ars-media-page .footer-brand,
-.ars-media-page .footer-links {
-  min-width: 0;
-  max-width: 100%;
-}
-
-.ars-media-page .footer-logo-link {
-  display: inline-flex;
-  align-items: center;
-  max-width: 100%;
-}
-
-.ars-media-page .footer-logo {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-.ars-media-page .footer-links a,
-.ars-media-page .footer-tagline,
-.ars-media-page .footer-bottom {
-  overflow-wrap: anywhere;
-}
-
-.ars-media-page .footer-bottom {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.ars-media-page .footer-back-to-top {
-  flex-shrink: 0;
-}
-
-@media (max-width: 600px) {
-  .ars-media-page .footer-top,
-  .ars-media-page .footer-bottom {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
 
 
 
@@ -4845,51 +4785,103 @@ p {
 
 
 
-/* =========================================
-   ARS MEDIA CENTER — FOOTER LINKS GRID PATCH
-   Two columns / compact footer
-   ========================================= */
 
-.ars-footer .ars-footer-links,
-.ars-footer .footer-links,
-.ars-footer .ars-footer-nav {
-    display: grid;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   ARS MEDIA CENTER — HTML-VERIFIED FOOTER RESPONSIVENESS
+   Footer navigation: two links per row
+   ===================================================== */
+
+.ars-media-page .ars-footer > .container {
+  min-width: 0;
+  width: 100%;
+}
+
+.ars-media-page .footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  min-width: 0;
+}
+
+.ars-media-page .footer-brand,
+.ars-media-page .footer-links {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.ars-media-page .footer-logo-link {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+}
+
+.ars-media-page .footer-logo {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Footer navigation — two columns */
+.ars-media-page nav.footer-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 10px 20px;
+  flex: 1 1 420px;
+}
+
+.ars-media-page .footer-links a {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.ars-media-page .footer-tagline,
+.ars-media-page .footer-bottom {
+  overflow-wrap: anywhere;
+}
+
+.ars-media-page .footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.ars-media-page .footer-back-to-top {
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .ars-media-page .footer-top,
+  .ars-media-page .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ars-media-page nav.footer-links {
+    width: 100%;
+    flex: 1 1 100%;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px 12px;
-    align-items: stretch;
+  }
 }
 
-.ars-footer .ars-footer-links > *,
-.ars-footer .footer-links > *,
-.ars-footer .ars-footer-nav > * {
-    min-width: 0;
-    margin: 0;
-}
-
-@media (max-width: 480px) {
-    .ars-footer .ars-footer-links,
-    .ars-footer .footer-links,
-    .ars-footer .ars-footer-nav {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 8px;
-    }
-}
-
-
-
-
-/* ARS MEDIA CENTER — CAROUSEL VISIBILITY FIX */
-
-#ars-advertising-rotator .advertising-slides > .advertising-slide {
-    opacity: 0 !important;
-    visibility: hidden !important;
-    z-index: 0 !important;
-    pointer-events: none !important;
-}
-
-#ars-advertising-rotator .advertising-slides > .advertising-slide.is-active {
-    opacity: 1 !important;
-    visibility: visible !important;
-    z-index: 2 !important;
-    pointer-events: auto !important;
-}
