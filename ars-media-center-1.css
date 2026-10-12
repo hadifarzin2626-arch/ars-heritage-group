@@ -4790,6 +4790,34 @@ p {
 
 
 
+/* ARS FOOTER — COMPACT LUXURY GLASS KEYS */
+
+.ars-media-page .ars-footer .footer-links > a {
+    min-height: 38px;
+    padding: 7px 11px;
+    line-height: 1.35;
+    font-size: 0.86rem;
+    border-radius: 10px;
+}
+
+.ars-media-page .ars-footer .footer-links {
+    gap: 9px 12px;
+}
+
+.ars-media-page .ars-footer .footer-links > a::before {
+    flex-basis: 4px;
+    width: 4px;
+    height: 4px;
+    margin-inline-end: 8px;
+}
+
+
+
+
+
+
+
+
 
 /* ==========================================================
    ARS MEDIA CENTER — CINEMATIC HERO REVEAL
@@ -4824,27 +4852,27 @@ p {
 
 /* Staggered entrance */
 .ars-media-page [data-hero-reveal]:nth-child(1) {
-  --hero-reveal-delay: 100ms;
+  --hero-reveal-delay: 200ms;
 }
 
 .ars-media-page [data-hero-reveal]:nth-child(2) {
-  --hero-reveal-delay: 350ms;
+  --hero-reveal-delay: 500ms;
 }
 
 .ars-media-page [data-hero-reveal]:nth-child(3) {
-  --hero-reveal-delay: 600ms;
+  --hero-reveal-delay: 900ms;
 }
 
 .ars-media-page [data-hero-reveal]:nth-child(4) {
-  --hero-reveal-delay: 850ms;
+  --hero-reveal-delay: 1000ms;
 }
 
 .ars-media-page [data-hero-reveal]:nth-child(5) {
-  --hero-reveal-delay: 1100ms;
+  --hero-reveal-delay: 1500ms;
 }
 
 .ars-media-page [data-hero-reveal]:nth-child(6) {
-  --hero-reveal-delay: 1350ms;
+  --hero-reveal-delay: 1850ms;
 }
 
 /* Accessibility: respect reduced-motion preferences */
@@ -4856,5 +4884,251 @@ p {
     transition-delay: 0ms;
     will-change: auto;
   }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================
+   ARS MEDIA CENTER
+   GLOBAL LUXURY GOLD HEADINGS + ELECTRIC BLUE LIGHT LINE
+   Scope: Hero, all 7 divisions, media, contact and footer
+   ========================================================== */
+
+.ars-media-page {
+    --ars-heading-gold-light: #fff0bf;
+    --ars-heading-gold: #e9c777;
+    --ars-heading-gold-rich: #c99a43;
+    --ars-heading-blue: #19aaff;
+    --ars-heading-blue-glow: rgba(0, 153, 255, 0.48);
+}
+
+/* ----------------------------------------------------------
+   1. PRIMARY HEADINGS
+   ---------------------------------------------------------- */
+
+.ars-media-page .media-hero-title,
+.ars-media-page .media-hero-subtitle,
+.ars-media-page .section-header h2,
+.ars-media-page .spotlight-heading h2,
+.ars-media-page .division-heading-copy h2,
+.ars-media-page .division-heading-copy h2 span,
+.ars-media-page .section-header h2 span,
+.ars-media-page .spotlight-heading h2 span,
+.ars-media-page .subsection-heading h3,
+.ars-media-page .product-showcase-heading h3,
+.ars-media-page .spotlight-video-footer h3,
+.ars-media-page .film-card-content h3,
+.ars-media-page .film-card-content h4,
+.ars-media-page .product-card-content h4,
+.ars-media-page .contact-card h3,
+.ars-media-page .ars-contact-form-wrap .subsection-heading h3 {
+    color: var(--ars-heading-gold-light);
+    background-image: linear-gradient(
+        115deg,
+        #fff5d5 0%,
+        #f4dda0 20%,
+        #d4a94f 48%,
+        #fff0bf 68%,
+        #bd8734 100%
+    );
+    background-size: 100% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
+        0 0 1px rgba(255, 231, 170, 0.12),
+        0 0 12px rgba(224, 177, 84, 0.08);
+}
+
+/* ----------------------------------------------------------
+   2. LUXURY ELECTRIC BLUE UNDERLINE
+   ---------------------------------------------------------- */
+
+.ars-media-page .media-hero-title,
+.ars-media-page .media-hero-subtitle,
+.ars-media-page .section-header h2,
+.ars-media-page .spotlight-heading h2,
+.ars-media-page .division-heading-copy h2,
+.ars-media-page .subsection-heading h3,
+.ars-media-page .product-showcase-heading h3 {
+    position: relative;
+    width: fit-content;
+    max-width: 100%;
+    padding-bottom: 12px;
+}
+
+/* Fine luminous line beneath the main headings */
+
+.ars-media-page .media-hero-title::after,
+.ars-media-page .media-hero-subtitle::after,
+.ars-media-page .section-header h2::after,
+.ars-media-page .spotlight-heading h2::after,
+.ars-media-page .division-heading-copy h2::after,
+.ars-media-page .subsection-heading h3::after,
+.ars-media-page .product-showcase-heading h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+
+    width: min(100%, 116px);
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        rgba(25, 170, 255, 0.98) 0%,
+        rgba(25, 170, 255, 0.72) 48%,
+        rgba(25, 170, 255, 0) 100%
+    );
+
+    border-radius: 999px;
+
+    box-shadow:
+        0 0 4px rgba(25, 170, 255, 0.58),
+        0 0 10px var(--ars-heading-blue-glow);
+
+    pointer-events: none;
+}
+
+/* Center the line for centered hero and section headings */
+
+.ars-media-page .media-hero-title,
+.ars-media-page .media-hero-subtitle,
+.ars-media-page .section-header h2,
+.ars-media-page .spotlight-heading h2 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ars-media-page .media-hero-title::after,
+.ars-media-page .media-hero-subtitle::after,
+.ars-media-page .section-header h2::after,
+.ars-media-page .spotlight-heading h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* ----------------------------------------------------------
+   3. HERO — KEEP THE EXISTING HERO DESIGN
+   ---------------------------------------------------------- */
+
+.ars-media-page .media-hero-title,
+.ars-media-page .media-hero-subtitle {
+    text-align: center;
+}
+
+/* ----------------------------------------------------------
+   4. DIVISION HEADINGS — ALL SEVEN DIVISIONS
+   ---------------------------------------------------------- */
+
+.ars-media-page .division-heading-copy h2 {
+    display: table;
+}
+
+.ars-media-page .division-heading-copy h2::after {
+    width: min(100%, 116px);
+}
+
+/* ----------------------------------------------------------
+   5. SUBSECTION TITLES
+   ---------------------------------------------------------- */
+
+.ars-media-page .subsection-heading h3,
+.ars-media-page .product-showcase-heading h3 {
+    display: table;
+}
+
+.ars-media-page .subsection-heading h3::after,
+.ars-media-page .product-showcase-heading h3::after {
+    width: min(100%, 88px);
+    height: 2px;
+}
+
+/* ----------------------------------------------------------
+   6. CARD TITLES — GOLD, WITHOUT EXTRA UNDERLINES
+   ---------------------------------------------------------- */
+
+.ars-media-page .spotlight-video-footer h3,
+.ars-media-page .film-card-content h3,
+.ars-media-page .film-card-content h4,
+.ars-media-page .product-card-content h4,
+.ars-media-page .contact-card h3 {
+    background-image: linear-gradient(
+        115deg,
+        #fff0bf 0%,
+        #e9c777 45%,
+        #c99a43 100%
+    );
+}
+
+/* ----------------------------------------------------------
+   7. FOOTER BRAND STATEMENT
+   ---------------------------------------------------------- */
+
+.ars-media-page .ars-footer .footer-tagline {
+    color: var(--ars-heading-gold-light);
+    text-shadow: 0 0 10px rgba(224, 177, 84, 0.12);
+}
+
+/* ----------------------------------------------------------
+   8. MOBILE SAFETY
+   ---------------------------------------------------------- */
+
+@media (max-width: 600px) {
+    .ars-media-page .media-hero-title,
+    .ars-media-page .media-hero-subtitle,
+    .ars-media-page .section-header h2,
+    .ars-media-page .spotlight-heading h2,
+    .ars-media-page .division-heading-copy h2,
+    .ars-media-page .subsection-heading h3,
+    .ars-media-page .product-showcase-heading h3 {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+}
+
+/* ----------------------------------------------------------
+   9. ACCESSIBILITY — HIGH CONTRAST MODE
+   ---------------------------------------------------------- */
+
+@media (forced-colors: active) {
+    .ars-media-page .media-hero-title,
+    .ars-media-page .media-hero-subtitle,
+    .ars-media-page .section-header h2,
+    .ars-media-page .spotlight-heading h2,
+    .ars-media-page .division-heading-copy h2,
+    .ars-media-page .division-heading-copy h2 span,
+    .ars-media-page .subsection-heading h3,
+    .ars-media-page .product-showcase-heading h3,
+    .ars-media-page .spotlight-video-footer h3,
+    .ars-media-page .film-card-content h3,
+    .ars-media-page .film-card-content h4,
+    .ars-media-page .product-card-content h4,
+    .ars-media-page .contact-card h3 {
+        color: CanvasText;
+        background: none;
+        -webkit-text-fill-color: currentColor;
+        text-shadow: none;
+    }
+
+    .ars-media-page .media-hero-title::after,
+    .ars-media-page .media-hero-subtitle::after,
+    .ars-media-page .section-header h2::after,
+    .ars-media-page .spotlight-heading h2::after,
+    .ars-media-page .division-heading-copy h2::after,
+    .ars-media-page .subsection-heading h3::after,
+    .ars-media-page .product-showcase-heading h3::after {
+        background: Highlight;
+        box-shadow: none;
+    }
 }
 
