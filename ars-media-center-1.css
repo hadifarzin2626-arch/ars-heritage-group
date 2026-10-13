@@ -6992,3 +6992,74 @@ p {
 
     filter: blur(30px);
 }
+
+
+
+
+
+/* =========================================
+   PATCH 30 — ARS HERO BREATHING
+   Natural Cinematic Logo Animation
+   ========================================= */
+
+#media-hero .media-logo-wrapper {
+    animation: arsHeroLogoBreathing 6s ease-in-out infinite;
+    transform-origin: center center;
+    will-change: transform;
+}
+
+#media-hero .media-logo-wrapper .media-logo {
+    display: block;
+    transform-origin: center center;
+    animation: arsHeroLogoPresence 6s ease-in-out infinite;
+}
+
+/* Champagne energy breathes beneath the logo */
+#media-hero .media-logo-wrapper::after {
+    animation: arsChampagneBreathing 6s ease-in-out infinite;
+    transform-origin: center center;
+}
+
+/* Natural, subtle movement */
+@keyframes arsHeroLogoBreathing {
+    0%, 100% {
+        transform: translateY(-40%) scale(1);
+    }
+
+    50% {
+        transform: translateY(-40%) scale(1.035);
+    }
+}
+
+/* Gentle luminosity on the logo itself */
+@keyframes arsHeroLogoPresence {
+    0%, 100% {
+        filter: drop-shadow(0 0 2px rgba(225, 190, 130, 0.08));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 8px rgba(225, 190, 130, 0.22));
+    }
+}
+
+/* Slow champagne aura expansion */
+@keyframes arsChampagneBreathing {
+    0%, 100% {
+        opacity: 0.72;
+        scale: 0.94;
+    }
+
+    50% {
+        opacity: 1;
+        scale: 1.08;
+    }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    #media-hero .media-logo-wrapper,
+    #media-hero .media-logo-wrapper .media-logo,
+    #media-hero .media-logo-wrapper::after {
+        animation: none !important;
+    }
+}
