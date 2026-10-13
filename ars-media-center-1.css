@@ -6951,41 +6951,45 @@ p {
 
 
 
-
-
-
 /* =========================================
-   PATCH 29 — HERO LOGO
-   CHAMPAGNE HALO + UPWARD POSITION
+   PATCH 29 — ARS HERO LOGO
+   CHAMPAGNE HALO + UPWARD SHIFT
+   Targets the actual HTML selectors
    ========================================= */
 
-.hero-logo {
-    position: relative;
-    transform: translateY(calc(-1 * var(--hero-logo-diameter, 100px)));
-    isolation: isolate;
+#media-hero .media-hero-content {
+    --ars-hero-logo-diameter: 150px;
 }
 
-.hero-logo::after {
+/* Move only the hero logo upward */
+#media-hero .media-logo-wrapper {
+    position: relative;
+    isolation: isolate;
+    transform: translateY(calc(-1 * var(--ars-hero-logo-diameter)));
+}
+
+/* Champagne halo directly beneath the logo */
+#media-hero .media-logo-wrapper::after {
     content: "";
     position: absolute;
     z-index: -1;
 
     left: 50%;
-    top: 100%;
+    bottom: -12%;
 
-    width: 135%;
+    width: 140%;
     aspect-ratio: 1;
 
-    transform: translate(-50%, -65%);
+    transform: translateX(-50%);
     border-radius: 50%;
     pointer-events: none;
 
     background: radial-gradient(
         ellipse at center,
-        rgba(224, 190, 130, 0.32) 0%,
-        rgba(205, 166, 105, 0.19) 28%,
-        rgba(190, 150, 90, 0.08) 48%,
-        rgba(190, 150, 90, 0) 72%
+        rgba(232, 202, 151, 0.34) 0%,
+        rgba(215, 179, 119, 0.23) 28%,
+        rgba(197, 156, 91, 0.11) 48%,
+        rgba(197, 156, 91, 0) 72%
     );
 
     filter: blur(15px);
