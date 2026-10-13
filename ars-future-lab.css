@@ -1,63 +1,154 @@
 /*
 ===============================================================================
 ARS FUTURE LAB
-ARS FUTURE SIGNATURE SYSTEM
-DEEP SPACE NAVY × ARS FUTURE BLUE × ELECTRIC CYAN
-Standalone stylesheet — v2.0
-===============================================================================
+ARS FUTURE SIGNATURE SYSTEM — v3.0
+
+ELECTRIC FUTURE BLUE × QUANTUM CYAN × DEEP SPACE BLACK
+
+Standalone stylesheet — PART 1
+
+DESIGN IDENTITY
+- Dominant electric future blue.
+- High-energy neon blue and quantum cyan.
+- Deep space black-blue backgrounds.
+- Cinematic futuristic lighting.
+- Controlled holographic glow.
+- Existing HTML structure preserved.
+- No external fonts, libraries, JavaScript, or extra wrappers.
 
 IMPLEMENTATION CONTRACT
-- Built against the supplied ARS FUTURE LAB HTML structure.
-- Keeps the existing HTML intact.
-- .future-lab is the Hero section, NOT a wrapper around all sections.
-- All other main sections are siblings in <body>.
-- Uses the supplied component and section classes.
-- No external fonts, libraries, JavaScript, or extra HTML wrappers.
-- Motion is decorative and respects prefers-reduced-motion.
+- .future-lab is the Hero section only.
+- Other main sections are siblings in <body>.
+- Existing HTML and class names remain unchanged.
+- Continue with PART 2 in the same CSS file.
 ===============================================================================
 */
 
 
 /* ============================================================================
    01 — DESIGN TOKENS
+   ELECTRIC FUTURE BLUE × QUANTUM CYAN
    ========================================================================== */
 
 :root {
   color-scheme: dark;
 
-  --ars-future-blue: #087cff;
-  --ars-electric-cyan: #00d9ff;
-  --ars-deep-space: #030817;
-  --ars-midnight-blue: #07152e;
-  --ars-ice-blue: #b9f3ff;
-  --ars-matte-champagne: #c7ad7f;
+  /* PRIMARY FUTURE PALETTE */
+
+  --ars-future-blue: #087CFF;
+  --ars-neon-blue: #00A3FF;
+  --ars-electric-cyan: #00E5FF;
+  --ars-quantum-blue: #245BFF;
+  --ars-ice-blue: #C5F5FF;
+
+  /* DEEP SPACE BACKGROUNDS */
+
+  --ars-deep-space: #020817;
+  --ars-midnight-blue: #06142B;
+  --ars-space-blue: #081B3A;
+  --ars-black-blue: #030B1A;
+
+  /* REFINED LUXURY ACCENT */
+
+  --ars-matte-champagne: #C7AD7F;
+
+  /* RGB TOKENS */
 
   --ars-future-blue-rgb: 8, 124, 255;
-  --ars-electric-cyan-rgb: 0, 217, 255;
-  --ars-ice-blue-rgb: 185, 243, 255;
+  --ars-neon-blue-rgb: 0, 163, 255;
+  --ars-electric-cyan-rgb: 0, 229, 255;
+  --ars-quantum-blue-rgb: 36, 91, 255;
+  --ars-ice-blue-rgb: 197, 245, 255;
 
-  --ars-bg: #030817;
-  --ars-bg-raised: #07152e;
+  /* COMPATIBILITY ALIASES */
 
-  --ars-panel: rgba(7, 21, 46, 0.74);
-  --ars-panel-strong: rgba(5, 14, 32, 0.90);
-  --ars-panel-soft: rgba(9, 28, 57, 0.56);
+  --ars-deep-space-rgb: 2, 8, 23;
+  --ars-midnight-blue-rgb: 6, 20, 43;
 
-  --ars-text: #edf8ff;
-  --ars-text-soft: #c2d8ec;
-  --ars-text-muted: #8da8c5;
+  /* BACKGROUND SYSTEM */
 
-  --ars-line: rgba(120, 190, 255, 0.18);
-  --ars-line-strong: rgba(0, 217, 255, 0.38);
+  --ars-bg: var(--ars-deep-space);
+  --ars-bg-raised: var(--ars-midnight-blue);
+
+  --ars-bg-blue:
+    linear-gradient(
+      145deg,
+      #06142B 0%,
+      #081B3A 48%,
+      #030B1A 100%
+    );
+
+  /* HOLOGRAPHIC GLASS PANELS */
+
+  --ars-panel:
+    rgba(6, 20, 43, 0.78);
+
+  --ars-panel-strong:
+    rgba(3, 11, 26, 0.94);
+
+  --ars-panel-soft:
+    rgba(8, 27, 58, 0.62);
+
+  --ars-panel-blue:
+    rgba(8, 124, 255, 0.09);
+
+  --ars-panel-cyan:
+    rgba(0, 229, 255, 0.045);
+
+  /* TYPOGRAPHY */
+
+  --ars-text: #F1FAFF;
+  --ars-text-soft: #C8DFF2;
+  --ars-text-muted: #91ABC9;
+
+  --ars-text-blue: #8ED8FF;
+  --ars-text-cyan: #C5F5FF;
+
+  /* BORDER SYSTEM */
+
+  --ars-line:
+    rgba(77, 163, 255, 0.22);
+
+  --ars-line-strong:
+    rgba(0, 163, 255, 0.48);
+
+  --ars-line-cyan:
+    rgba(0, 229, 255, 0.42);
+
+  --ars-line-ice:
+    rgba(197, 245, 255, 0.24);
+
+  /* CINEMATIC SHADOWS */
 
   --ars-shadow-deep:
-    0 24px 80px rgba(0, 0, 0, 0.38);
+    0 24px 80px rgba(0, 0, 0, 0.46);
 
   --ars-shadow-blue:
-    0 0 34px rgba(8, 124, 255, 0.14);
+    0 0 34px rgba(8, 124, 255, 0.22);
+
+  --ars-shadow-blue-strong:
+    0 0 48px rgba(8, 124, 255, 0.30);
 
   --ars-shadow-cyan:
-    0 0 26px rgba(0, 217, 255, 0.13);
+    0 0 30px rgba(0, 229, 255, 0.18);
+
+  --ars-shadow-quantum:
+    0 0 42px rgba(36, 91, 255, 0.20);
+
+  --ars-shadow-glass:
+    0 20px 65px rgba(0, 0, 0, 0.32);
+
+  /* CONTROLLED NEON GLOW */
+
+  --ars-glow-blue:
+    0 0 12px rgba(8, 124, 255, 0.34),
+    0 0 32px rgba(8, 124, 255, 0.16);
+
+  --ars-glow-cyan:
+    0 0 10px rgba(0, 229, 255, 0.42),
+    0 0 28px rgba(0, 229, 255, 0.18);
+
+  /* CORNER SYSTEM */
 
   --ars-radius-sm: 12px;
   --ars-radius-md: 20px;
@@ -65,21 +156,31 @@ IMPLEMENTATION CONTRACT
   --ars-radius-xl: 36px;
   --ars-radius-pill: 999px;
 
+  /* LAYOUT */
+
   --ars-content-width: 1240px;
 
-  --ars-page-gutter: clamp(18px, 4.5vw, 72px);
+  --ars-page-gutter:
+    clamp(18px, 4.5vw, 72px);
 
-  --ars-section-space: clamp(76px, 10vw, 148px);
+  --ars-section-space:
+    clamp(76px, 10vw, 148px);
 
-  --ars-card-gap: clamp(14px, 2vw, 24px);
+  --ars-card-gap:
+    clamp(14px, 2vw, 24px);
 
-  --ars-transition-fast: 180ms ease;
+  /* MOTION */
+
+  --ars-transition-fast:
+    180ms ease;
 
   --ars-transition-base:
     320ms cubic-bezier(0.2, 0.7, 0.2, 1);
 
   --ars-transition-slow:
     650ms cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  /* TYPOGRAPHY */
 
   --ars-font-ui:
     Inter,
@@ -93,12 +194,15 @@ IMPLEMENTATION CONTRACT
 
 /* ============================================================================
    02 — GLOBAL FOUNDATION
+   DEEP SPACE × ELECTRIC BLUE ATMOSPHERE
    ========================================================================== */
 
 html {
   min-width: 320px;
+
   scroll-behavior: smooth;
   scroll-padding-top: 28px;
+
   background: var(--ars-deep-space);
 }
 
@@ -115,21 +219,31 @@ body {
 
   background:
     radial-gradient(
-      ellipse at 50% -8%,
-      rgba(8, 124, 255, 0.14),
-      transparent 42%
+      ellipse at 50% -10%,
+      rgba(8, 124, 255, 0.23),
+      transparent 46%
     ),
     radial-gradient(
-      ellipse at 90% 35%,
-      rgba(0, 217, 255, 0.035),
-      transparent 34%
+      ellipse at 85% 24%,
+      rgba(0, 163, 255, 0.105),
+      transparent 35%
     ),
     radial-gradient(
-      ellipse at 4% 76%,
-      rgba(8, 124, 255, 0.045),
-      transparent 36%
+      ellipse at 8% 56%,
+      rgba(36, 91, 255, 0.095),
+      transparent 37%
     ),
-    var(--ars-deep-space);
+    radial-gradient(
+      ellipse at 58% 100%,
+      rgba(0, 229, 255, 0.055),
+      transparent 38%
+    ),
+    linear-gradient(
+      180deg,
+      #020817 0%,
+      #040C1E 46%,
+      #020817 100%
+    );
 
   font-family: var(--ars-font-ui);
   font-size: 16px;
@@ -142,7 +256,9 @@ body {
 }
 
 
-/* Persistent technical grid */
+/* --------------------------------------------------------------------------
+   PERSISTENT FUTURE TECHNOLOGY GRID
+   -------------------------------------------------------------------------- */
 
 body::before {
   position: fixed;
@@ -152,30 +268,40 @@ body::before {
   pointer-events: none;
   content: "";
 
-  opacity: 0.18;
+  opacity: 0.24;
 
   background-image:
     linear-gradient(
-      rgba(106, 179, 255, 0.045) 1px,
+      rgba(0, 163, 255, 0.065) 1px,
       transparent 1px
     ),
     linear-gradient(
       90deg,
-      rgba(106, 179, 255, 0.045) 1px,
+      rgba(0, 163, 255, 0.065) 1px,
       transparent 1px
     );
 
   background-size: 76px 76px;
 
   -webkit-mask-image:
-    linear-gradient(to bottom, #000, transparent 78%);
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.85),
+      transparent 84%
+    );
 
   mask-image:
-    linear-gradient(to bottom, #000, transparent 78%);
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.85),
+      transparent 84%
+    );
 }
 
 
-/* Subtle ambient particles */
+/* --------------------------------------------------------------------------
+   QUANTUM PARTICLE ATMOSPHERE
+   -------------------------------------------------------------------------- */
 
 body::after {
   position: fixed;
@@ -185,28 +311,28 @@ body::after {
   pointer-events: none;
   content: "";
 
-  opacity: 0.15;
+  opacity: 0.20;
 
   background:
     radial-gradient(
       circle at 20% 24%,
-      rgba(185, 243, 255, 0.4) 0 1px,
-      transparent 1.8px
+      rgba(197, 245, 255, 0.62) 0 1px,
+      transparent 1.9px
     ),
     radial-gradient(
       circle at 74% 18%,
-      rgba(0, 217, 255, 0.55) 0 1px,
-      transparent 1.8px
+      rgba(0, 229, 255, 0.75) 0 1px,
+      transparent 2px
     ),
     radial-gradient(
       circle at 88% 61%,
-      rgba(185, 243, 255, 0.3) 0 1px,
-      transparent 1.8px
+      rgba(0, 163, 255, 0.65) 0 1px,
+      transparent 1.9px
     ),
     radial-gradient(
       circle at 35% 80%,
-      rgba(8, 124, 255, 0.5) 0 1px,
-      transparent 1.8px
+      rgba(36, 91, 255, 0.75) 0 1px,
+      transparent 2px
     );
 
   background-size:
@@ -217,7 +343,9 @@ body::after {
 }
 
 
-/* Predictable box model */
+/* --------------------------------------------------------------------------
+   PREDICTABLE BOX MODEL
+   -------------------------------------------------------------------------- */
 
 *,
 *::before,
@@ -255,7 +383,9 @@ a {
 }
 
 
-/* Accessible keyboard focus */
+/* --------------------------------------------------------------------------
+   ACCESSIBLE KEYBOARD FOCUS
+   -------------------------------------------------------------------------- */
 
 a:focus-visible,
 button:focus-visible,
@@ -266,14 +396,20 @@ select:focus-visible {
   outline-offset: 5px;
 }
 
+
+/* --------------------------------------------------------------------------
+   TEXT SELECTION
+   -------------------------------------------------------------------------- */
+
 ::selection {
-  color: #fff;
-  background: rgba(8, 124, 255, 0.72);
+  color: #FFFFFF;
+  background: rgba(8, 124, 255, 0.82);
 }
 
 
 /* ============================================================================
    03 — SHARED FUTURE LAB LAYOUT
+   ELECTRIC BLUE SIGNATURE
    ========================================================================== */
 
 .future-lab,
@@ -300,6 +436,9 @@ select:focus-visible {
   background-color: transparent;
 }
 
+
+/* Protect existing component layouts */
+
 .future-lab *,
 .future-space-core *,
 .future-mobility *,
@@ -315,6 +454,9 @@ select:focus-visible {
 .future-ai-gateway * {
   min-width: 0;
 }
+
+
+/* Shared section spacing */
 
 .future-space-core,
 .future-mobility,
@@ -334,7 +476,7 @@ select:focus-visible {
 }
 
 
-/* Shared content width */
+/* Shared content positioning */
 
 .future-container,
 .future-core-container,
@@ -355,7 +497,9 @@ select:focus-visible {
 }
 
 
-/* Shared headings */
+/* --------------------------------------------------------------------------
+   SHARED SECTION HEADINGS
+   -------------------------------------------------------------------------- */
 
 .section-heading {
   position: relative;
@@ -382,6 +526,9 @@ select:focus-visible {
   letter-spacing: -0.035em;
 
   text-wrap: balance;
+
+  text-shadow:
+    0 0 28px rgba(0, 163, 255, 0.12);
 }
 
 .section-heading p {
@@ -398,7 +545,9 @@ select:focus-visible {
 }
 
 
-/* Shared text treatment */
+/* --------------------------------------------------------------------------
+   SHARED SECTION TEXT
+   -------------------------------------------------------------------------- */
 
 .future-space-core p,
 .future-mobility p,
@@ -414,6 +563,9 @@ select:focus-visible {
 .future-ai-gateway p {
   color: var(--ars-text-soft);
 }
+
+
+/* Shared heading colors */
 
 .future-space-core h1,
 .future-space-core h2,
@@ -457,7 +609,8 @@ select:focus-visible {
 
 
 /* ============================================================================
-   04 — HERO: ARS FUTURE LAB
+   04 — HERO
+   ARS FUTURE LAB × ELECTRIC FUTURE BLUE
    ========================================================================== */
 
 .future-lab {
@@ -475,24 +628,31 @@ select:focus-visible {
   background:
     radial-gradient(
       ellipse at 50% 42%,
-      rgba(8, 124, 255, 0.17),
-      transparent 48%
+      rgba(8, 124, 255, 0.28),
+      transparent 49%
     ),
     radial-gradient(
       ellipse at 78% 30%,
-      rgba(0, 217, 255, 0.09),
+      rgba(0, 229, 255, 0.13),
       transparent 36%
+    ),
+    radial-gradient(
+      ellipse at 18% 72%,
+      rgba(36, 91, 255, 0.13),
+      transparent 37%
     ),
     linear-gradient(
       180deg,
-      #030817 0%,
-      #06142b 52%,
-      #030817 100%
+      #020817 0%,
+      #06142B 50%,
+      #020817 100%
     );
 }
 
 
-/* Hero space background */
+/* --------------------------------------------------------------------------
+   HERO SPACE ATMOSPHERE
+   -------------------------------------------------------------------------- */
 
 .future-space-bg {
   position: absolute;
@@ -506,18 +666,18 @@ select:focus-visible {
   background:
     radial-gradient(
       circle at 50% 48%,
-      rgba(8, 124, 255, 0.17),
-      transparent 32%
+      rgba(8, 124, 255, 0.26),
+      transparent 34%
     ),
     radial-gradient(
       circle at 18% 22%,
-      rgba(0, 217, 255, 0.075),
-      transparent 25%
+      rgba(0, 229, 255, 0.12),
+      transparent 26%
     ),
     radial-gradient(
       circle at 83% 72%,
-      rgba(8, 124, 255, 0.095),
-      transparent 30%
+      rgba(36, 91, 255, 0.17),
+      transparent 31%
     );
 }
 
@@ -530,46 +690,65 @@ select:focus-visible {
   pointer-events: none;
 }
 
+
+/* Holographic orbital field */
+
 .future-space-bg::before {
-  opacity: 0.42;
+  opacity: 0.52;
 
   background:
     repeating-radial-gradient(
       ellipse at 50% 50%,
       transparent 0 66px,
-      rgba(0, 217, 255, 0.075) 67px,
+      rgba(0, 229, 255, 0.095) 67px,
       transparent 68px 116px
     );
 
-  transform: perspective(900px) rotateX(64deg) scale(1.35);
+  transform:
+    perspective(900px)
+    rotateX(64deg)
+    scale(1.35);
 
   transform-origin: center 58%;
 
   animation: ars-future-orbit 34s linear infinite;
 }
 
+
+/* Controlled diagonal energy beams */
+
 .future-space-bg::after {
-  opacity: 0.55;
+  opacity: 0.66;
 
   background:
     linear-gradient(
       112deg,
       transparent 0 37%,
-      rgba(0, 217, 255, 0.11) 37.1%,
-      transparent 37.35% 62%,
-      rgba(8, 124, 255, 0.10) 62.1%,
-      transparent 62.35%
+      rgba(0, 229, 255, 0.15) 37.1%,
+      transparent 37.4% 62%,
+      rgba(8, 124, 255, 0.15) 62.1%,
+      transparent 62.4%
     );
 
   -webkit-mask-image:
-    radial-gradient(ellipse at center, #000, transparent 72%);
+    radial-gradient(
+      ellipse at center,
+      #000,
+      transparent 72%
+    );
 
   mask-image:
-    radial-gradient(ellipse at center, #000, transparent 72%);
+    radial-gradient(
+      ellipse at center,
+      #000,
+      transparent 72%
+    );
 }
 
 
-/* Hero grid */
+/* --------------------------------------------------------------------------
+   HERO GRID
+   -------------------------------------------------------------------------- */
 
 .future-grid {
   position: absolute;
@@ -578,16 +757,16 @@ select:focus-visible {
 
   pointer-events: none;
 
-  opacity: 0.26;
+  opacity: 0.34;
 
   background-image:
     linear-gradient(
-      rgba(0, 217, 255, 0.085) 1px,
+      rgba(0, 229, 255, 0.095) 1px,
       transparent 1px
     ),
     linear-gradient(
       90deg,
-      rgba(0, 217, 255, 0.085) 1px,
+      rgba(0, 229, 255, 0.095) 1px,
       transparent 1px
     );
 
@@ -615,7 +794,9 @@ select:focus-visible {
 }
 
 
-/* Hero content container */
+/* --------------------------------------------------------------------------
+   HERO CONTENT CONTAINER
+   -------------------------------------------------------------------------- */
 
 .future-lab .future-container {
   position: relative;
@@ -642,7 +823,9 @@ select:focus-visible {
 }
 
 
-/* Hero identity label */
+/* --------------------------------------------------------------------------
+   FUTURE LAB IDENTITY LABEL
+   -------------------------------------------------------------------------- */
 
 .future-label {
   display: inline-flex;
@@ -653,7 +836,7 @@ select:focus-visible {
   margin-bottom: clamp(22px, 3vw, 34px);
   padding: 9px 16px;
 
-  border: 1px solid rgba(0, 217, 255, 0.32);
+  border: 1px solid rgba(0, 229, 255, 0.43);
   border-radius: var(--ars-radius-pill);
 
   color: var(--ars-ice-blue);
@@ -661,13 +844,13 @@ select:focus-visible {
   background:
     linear-gradient(
       135deg,
-      rgba(8, 124, 255, 0.15),
-      rgba(0, 217, 255, 0.045)
+      rgba(8, 124, 255, 0.22),
+      rgba(0, 229, 255, 0.075)
     );
 
   box-shadow:
-    inset 0 0 18px rgba(0, 217, 255, 0.035),
-    0 0 28px rgba(8, 124, 255, 0.075);
+    inset 0 0 18px rgba(0, 229, 255, 0.055),
+    0 0 30px rgba(8, 124, 255, 0.12);
 
   font-size: 0.76rem;
   font-weight: 750;
@@ -690,19 +873,21 @@ select:focus-visible {
   background: var(--ars-electric-cyan);
 
   box-shadow:
-    0 0 8px rgba(0, 217, 255, 0.85),
-    0 0 18px rgba(0, 217, 255, 0.42);
+    0 0 8px rgba(0, 229, 255, 0.95),
+    0 0 20px rgba(0, 229, 255, 0.58);
 }
 
 
-/* Main hero title */
+/* --------------------------------------------------------------------------
+   HERO MAIN TITLE
+   -------------------------------------------------------------------------- */
 
 .future-hero h1 {
   max-width: 1000px;
 
   margin: 0;
 
-  color: #f2fbff;
+  color: #F1FAFF;
 
   font-size: clamp(2.7rem, 7.2vw, 6.6rem);
   font-weight: 800;
@@ -713,17 +898,19 @@ select:focus-visible {
   text-wrap: balance;
 
   text-shadow:
-    0 0 34px rgba(8, 124, 255, 0.14),
-    0 0 70px rgba(0, 217, 255, 0.07);
+    0 0 34px rgba(8, 124, 255, 0.22),
+    0 0 76px rgba(0, 163, 255, 0.12);
 }
 
 .future-hero h1::selection {
-  color: #fff;
-  background: rgba(0, 217, 255, 0.48);
+  color: #FFFFFF;
+  background: rgba(0, 229, 255, 0.58);
 }
 
 
-/* Hero introductory statement */
+/* --------------------------------------------------------------------------
+   HERO INTRODUCTION
+   -------------------------------------------------------------------------- */
 
 .future-hero > p {
   max-width: 740px;
@@ -739,7 +926,10 @@ select:focus-visible {
 }
 
 
-/* AI entry panel */
+/* ============================================================================
+   05 — AI ENTRY PANEL
+   QUANTUM GLASS × ELECTRIC ENERGY
+   ========================================================================== */
 
 .future-ai-entry {
   position: relative;
@@ -752,27 +942,38 @@ select:focus-visible {
 
   overflow: hidden;
 
-  border: 1px solid rgba(0, 217, 255, 0.27);
+  border: 1px solid rgba(0, 229, 255, 0.38);
   border-radius: var(--ars-radius-lg);
 
+  color: var(--ars-text);
+
   background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(0, 229, 255, 0.095),
+      transparent 38%
+    ),
     linear-gradient(
       140deg,
-      rgba(8, 124, 255, 0.13),
-      rgba(7, 21, 46, 0.88) 45%,
-      rgba(0, 217, 255, 0.045)
+      rgba(8, 124, 255, 0.19),
+      rgba(6, 20, 43, 0.91) 48%,
+      rgba(0, 163, 255, 0.075)
     );
 
   box-shadow:
     var(--ars-shadow-deep),
-    inset 0 1px 0 rgba(185, 243, 255, 0.075),
-    0 0 42px rgba(8, 124, 255, 0.09);
+    inset 0 1px 0 rgba(197, 245, 255, 0.10),
+    0 0 44px rgba(8, 124, 255, 0.14),
+    0 0 22px rgba(0, 229, 255, 0.055);
 
   -webkit-backdrop-filter: blur(18px);
   backdrop-filter: blur(18px);
 
   text-align: center;
 }
+
+
+/* Moving cyan energy edge */
 
 .future-ai-entry::before {
   position: absolute;
@@ -795,10 +996,13 @@ select:focus-visible {
     );
 
   box-shadow:
-    0 0 16px rgba(0, 217, 255, 0.75);
+    0 0 16px rgba(0, 229, 255, 0.85);
 
   animation: ars-future-edge-flow 8s ease-in-out infinite;
 }
+
+
+/* Internal holographic light */
 
 .future-ai-entry::after {
   position: absolute;
@@ -809,15 +1013,23 @@ select:focus-visible {
   content: "";
   pointer-events: none;
 
-  opacity: 0.5;
+  opacity: 0.62;
 
   background:
     radial-gradient(
       circle at 100% 0%,
-      rgba(0, 217, 255, 0.12),
+      rgba(0, 229, 255, 0.14),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 0% 100%,
+      rgba(8, 124, 255, 0.10),
       transparent 38%
     );
 }
+
+
+/* AI panel eyebrow */
 
 .future-ai-entry > span {
   display: inline-block;
@@ -832,7 +1044,13 @@ select:focus-visible {
   letter-spacing: 0.17em;
   line-height: 1.6;
   text-transform: uppercase;
+
+  text-shadow:
+    0 0 18px rgba(0, 229, 255, 0.20);
 }
+
+
+/* AI panel title */
 
 .future-ai-entry h2 {
   margin: 0;
@@ -846,10 +1064,16 @@ select:focus-visible {
   letter-spacing: -0.025em;
 
   text-wrap: balance;
+
+  text-shadow:
+    0 0 24px rgba(8, 124, 255, 0.12);
 }
 
 
-/* Hero call to action */
+/* ============================================================================
+   06 — PRIMARY FUTURE CTA
+   ELECTRIC BLUE × QUANTUM CYAN
+   ========================================================================== */
 
 .future-ai-entry a {
   position: relative;
@@ -866,22 +1090,24 @@ select:focus-visible {
 
   overflow: hidden;
 
-  border: 1px solid rgba(185, 243, 255, 0.48);
+  border: 1px solid rgba(197, 245, 255, 0.56);
   border-radius: var(--ars-radius-pill);
 
-  color: #fff;
+  color: #FFFFFF;
 
   background:
     linear-gradient(
       110deg,
-      #087cff,
-      #0069df 48%,
-      #009acb
+      #087CFF 0%,
+      #0869F2 42%,
+      #008EDC 72%,
+      #00A3FF 100%
     );
 
   box-shadow:
-    0 8px 28px rgba(8, 124, 255, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    0 8px 30px rgba(8, 124, 255, 0.34),
+    0 0 22px rgba(0, 163, 255, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
 
   font-size: 0.92rem;
   font-weight: 750;
@@ -894,6 +1120,9 @@ select:focus-visible {
     border-color var(--ars-transition-base),
     filter var(--ars-transition-base);
 }
+
+
+/* CTA light sweep */
 
 .future-ai-entry a::after {
   position: absolute;
@@ -912,7 +1141,7 @@ select:focus-visible {
     linear-gradient(
       90deg,
       transparent,
-      rgba(255, 255, 255, 0.22),
+      rgba(255, 255, 255, 0.27),
       transparent
     );
 
@@ -921,15 +1150,18 @@ select:focus-visible {
   transition: left 600ms ease;
 }
 
+
+/* CTA hover */
+
 .future-ai-entry a:hover {
   border-color: var(--ars-ice-blue);
 
   box-shadow:
-    0 12px 36px rgba(8, 124, 255, 0.35),
-    0 0 28px rgba(0, 217, 255, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    0 12px 38px rgba(8, 124, 255, 0.42),
+    0 0 30px rgba(0, 229, 255, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
 
-  filter: brightness(1.08);
+  filter: brightness(1.10);
 
   transform: translateY(-3px);
 }
@@ -948,17 +1180,414 @@ select:focus-visible {
 
 
 
+
+
+/* =========================================================
+   ARS FUTURE LAB
+   SIGNATURE TYPOGRAPHY COLOR PATCH
+   ELECTRIC BLUE × MATTE CHAMPAGNE
+   VERSION 1.0
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   01. HERO — ELECTRIC BLUE SIGNATURE
+   --------------------------------------------------------- */
+
+.future-hero h1 {
+    color: var(--ars-future-blue, #087CFF);
+
+    background: linear-gradient(
+        105deg,
+        #00A3FF 0%,
+        #00E5FF 32%,
+        #087CFF 65%,
+        #C5F5FF 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
+        0 0 22px rgba(0, 163, 255, 0.16),
+        0 0 44px rgba(0, 229, 255, 0.10);
+}
+
+/* متن توضیحی Hero: خوانا و روشن، نه سفید خالص */
+
+.future-hero > p {
+    color: #C8DFF2;
+}
+
+
+/* ---------------------------------------------------------
+   02. SECTION HEADINGS — MATTE CHAMPAGNE
+   --------------------------------------------------------- */
+
+/* تیتر اصلی هر بخش، در صورت استفاده از این کلاس */
+
+.section-heading h2 {
+    color: #C7AD7F;
+
+    text-shadow:
+        0 0 14px rgba(199, 173, 127, 0.12);
+}
+
+/* زیرتیترهای بخش‌ها */
+
+.section-heading h3 {
+    color: #E5D2A9;
+}
+
+
+/* ---------------------------------------------------------
+   03. FUTURE SPACE CORE
+   --------------------------------------------------------- */
+
+.future-core-content h2 {
+    color: #00A3FF;
+}
+
+.future-core-content h3 {
+    color: #C7AD7F;
+}
+
+.future-mini-card h3 {
+    color: #C5F5FF;
+}
+
+.future-mini-card p {
+    color: #C8DFF2;
+}
+
+
+/* ---------------------------------------------------------
+   04. FUTURE MOBILITY
+   --------------------------------------------------------- */
+
+.mobility-card h3 {
+    color: #00A3FF;
+}
+
+.mobility-card p {
+    color: #C8DFF2;
+}
+
+.mobility-message {
+    border-color: rgba(199, 173, 127, 0.32);
+}
+
+.mobility-message h3 {
+    color: #C7AD7F;
+}
+
+
+/* ---------------------------------------------------------
+   05. ARS OS CORE
+   --------------------------------------------------------- */
+
+.os-content h2 {
+    color: #00A3FF;
+}
+
+.os-content h3 {
+    color: #C7AD7F;
+}
+
+.os-card h3 {
+    color: #C5F5FF;
+}
+
+.os-card p {
+    color: #C8DFF2;
+}
+
+
+/* ---------------------------------------------------------
+   06. ROSE FUTURE
+   --------------------------------------------------------- */
+
+.rose-content h2 {
+    color: #00A3FF;
+}
+
+.rose-content h3 {
+    color: #C7AD7F;
+}
+
+.rose-card h3 {
+    color: #C5F5FF;
+}
+
+.rose-card p {
+    color: #C8DFF2;
+}
+
+
+/* ---------------------------------------------------------
+   07. ZHR FUTURE
+   --------------------------------------------------------- */
+
+.zhr-content h2 {
+    color: #00A3FF;
+}
+
+.zhr-content h3 {
+    color: #C7AD7F;
+}
+
+.zhr-card h3 {
+    color: #C5F5FF;
+}
+
+.zhr-card p {
+    color: #C8DFF2;
+}
+
+.zhr-message h3 {
+    color: #C7AD7F;
+}
+
+
+/* ---------------------------------------------------------
+   08. ZHR FUTURE ECOSYSTEM
+   --------------------------------------------------------- */
+
+.zhr-ecosystem-content h2 {
+    color: #00A3FF;
+}
+
+.zhr-ecosystem-content h3 {
+    color: #C7AD7F;
+}
+
+.zhr-future-cards h3 {
+    color: #C5F5FF;
+}
+
+.zhr-human-message h3 {
+    color: #C7AD7F;
+}
+
+
+/* ---------------------------------------------------------
+   09. DESIGN FUTURE
+   --------------------------------------------------------- */
+
+.design-content h2 {
+    color: #00A3FF;
+}
+
+.design-content h3 {
+    color: #C7AD7F;
+}
+
+.design-cards h3 {
+    color: #C5F5FF;
+}
+
+.design-message h3 {
+    color: #C7AD7F;
+}
+
+
+/* ---------------------------------------------------------
+   10. ARS DIGITAL FAMILY
+   --------------------------------------------------------- */
+
+.family-content h2 {
+    color: #00A3FF;
+}
+
+.family-content h3 {
+    color: #C7AD7F;
+}
+
+.family-cards h3 {
+    color: #C5F5FF;
+}
+
+.family-vision h3 {
+    color: #C7AD7F;
+}
+
+
+/* ---------------------------------------------------------
+   11. ARS SMART TRANSPORTATION
+   --------------------------------------------------------- */
+
+.transport-content h2 {
+    color: #00A3FF;
+}
+
+.transport-content h3 {
+    color: #C7AD7F;
+}
+
+.transport-cards h3 {
+    color: #C5F5FF;
+}
+
+.transport-message h3 {
+    color: #C7AD7F;
+}
+
+
+/* ---------------------------------------------------------
+   12. ARS RESEARCH LAB
+   --------------------------------------------------------- */
+
+.research-content h2 {
+    color: #00A3FF;
+}
+
+.research-content h3 {
+    color: #C7AD7F;
+}
+
+.research-cards h3 {
+    color: #C5F5FF;
+}
+
+.research-step h3 {
+    color: #E5D2A9;
+}
+
+
+/* ---------------------------------------------------------
+   13. ARS 2050 VISION
+   --------------------------------------------------------- */
+
+.vision-content h2 {
+    color: #00A3FF;
+}
+
+.vision-content h3 {
+    color: #C7AD7F;
+}
+
+.vision-cards h3 {
+    color: #C5F5FF;
+}
+
+.future-manifesto h3 {
+    color: #E5D2A9;
+}
+
+
+/* ---------------------------------------------------------
+   14. FUTURE AI GATEWAY
+   --------------------------------------------------------- */
+
+.ai-gateway-content h2 {
+    color: #00A3FF;
+}
+
+.ai-gateway-content h3 {
+    color: #C7AD7F;
+}
+
+.future-closing h2 {
+    color: #E5D2A9;
+}
+
+
+/* ---------------------------------------------------------
+   15. SHARED BODY TEXT — READABILITY
+   --------------------------------------------------------- */
+
+.future-core-content p,
+.mobility-card p,
+.mobility-message p,
+.os-content p,
+.os-card p,
+.rose-content p,
+.rose-card p,
+.zhr-content p,
+.zhr-card p,
+.zhr-message p,
+.zhr-ecosystem-content p,
+.zhr-human-message p,
+.design-content p,
+.design-cards p,
+.design-message p,
+.family-content p,
+.family-cards p,
+.family-vision p,
+.transport-content p,
+.transport-cards p,
+.transport-message p,
+.research-content p,
+.research-cards p,
+.research-timeline p,
+.vision-content p,
+.vision-cards p,
+.future-manifesto p,
+.ai-gateway-content p,
+.future-closing p {
+    color: #C8DFF2;
+}
+
+
+/* ---------------------------------------------------------
+   16. CHAMPAGNE — PREMIUM MICRO-ACCENTS
+   --------------------------------------------------------- */
+
+.future-label {
+    border-color: rgba(199, 173, 127, 0.48);
+}
+
+.future-label span {
+    color: #E5D2A9;
+}
+
+.future-ai-entry {
+    border-color: rgba(0, 163, 255, 0.38);
+}
+
+.future-ai-entry:hover {
+    border-color: rgba(199, 173, 127, 0.68);
+
+    box-shadow:
+        0 0 24px rgba(0, 163, 255, 0.16),
+        0 0 32px rgba(199, 173, 127, 0.08);
+}
+
+
+/* ---------------------------------------------------------
+   17. ACCESSIBILITY — TEXT SELECTION
+   --------------------------------------------------------- */
+
+.future-lab ::selection,
+.future-space-core ::selection,
+.future-mobility ::selection,
+.ars-os-core ::selection,
+.rose-future ::selection,
+.zhr-future ::selection,
+.zhr-future-ecosystem ::selection,
+.design-future ::selection,
+.ars-digital-family ::selection,
+.ars-smart-transportation ::selection,
+.ars-research-lab ::selection,
+.ars-2050-vision ::selection,
+.future-ai-gateway ::selection {
+    color: #F1FAFF;
+    background: rgba(0, 163, 255, 0.48);
+}
+
+/* =========================================================
+   END — SIGNATURE TYPOGRAPHY COLOR PATCH
+   ========================================================= */
+
 /* ============================================================================
-   END OF PART 1
-   Continue with PART 2 in the same CSS file.
+   END OF PART 1 — v3.0 FUTURE SIGNATURE EDITION
+
+   COLOR IDENTITY:
+   ELECTRIC FUTURE BLUE × QUANTUM CYAN × DEEP SPACE BLACK
+
+   Continue with PART 2 in the SAME CSS FILE.
    Do not create a second stylesheet.
-  ========================================================================== */
-
-
-
-
-
-
+   ========================================================================== */
 
 
 /* ============================================================================
