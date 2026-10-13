@@ -1,32 +1,280 @@
-/* ========================================================= */
-/* ========================================================= */
-/*                                                           */
-/*              ARS FUTURE LAB — 2050 EXPERIENCE             */
-/*                                                           */
-/*       FUTURE BLUE / GOLDEN ENERGY / CRYSTAL GLASS         */
-/*                                                           */
-/* ========================================================= */
-/* ========================================================= */
+/*
+===============================================================================
+ARS FUTURE LAB
+ARS FUTURE SIGNATURE SYSTEM
+DEEP SPACE NAVY × ARS FUTURE BLUE × ELECTRIC CYAN
+Standalone stylesheet — v2.0
+===============================================================================
+
+IMPLEMENTATION CONTRACT
+- Built against the supplied ARS FUTURE LAB HTML structure.
+- Keeps the existing HTML intact.
+- .future-lab is the Hero section, NOT a wrapper around all sections.
+- All other main sections are siblings in <body>.
+- Uses the supplied component and section classes.
+- No external fonts, libraries, JavaScript, or extra HTML wrappers.
+- Motion is decorative and respects prefers-reduced-motion.
+===============================================================================
+*/
 
 
-/* ========================================================= */
-/* ARS FUTURE LAB — SKY FUTURE ENERGY BACKGROUND             */
-/* ========================================================= */
+/* ============================================================================
+   01 — DESIGN TOKENS
+   ========================================================================== */
 
-/* ========================================================= */
-/* ========================================================= */
-/*                                                           */
-/*        ARS FUTURE LAB 2050 — LUXURY ENERGY OVERRIDE       */
-/*                                                           */
-/*        DEEP NAVY / LIQUID GOLD / CRYSTAL GLASS           */
-/*                                                           */
-/* ========================================================= */
-/* ========================================================= */
+:root {
+  color-scheme: dark;
+
+  --ars-future-blue: #087cff;
+  --ars-electric-cyan: #00d9ff;
+  --ars-deep-space: #030817;
+  --ars-midnight-blue: #07152e;
+  --ars-ice-blue: #b9f3ff;
+  --ars-matte-champagne: #c7ad7f;
+
+  --ars-future-blue-rgb: 8, 124, 255;
+  --ars-electric-cyan-rgb: 0, 217, 255;
+  --ars-ice-blue-rgb: 185, 243, 255;
+
+  --ars-bg: #030817;
+  --ars-bg-raised: #07152e;
+
+  --ars-panel: rgba(7, 21, 46, 0.74);
+  --ars-panel-strong: rgba(5, 14, 32, 0.90);
+  --ars-panel-soft: rgba(9, 28, 57, 0.56);
+
+  --ars-text: #edf8ff;
+  --ars-text-soft: #c2d8ec;
+  --ars-text-muted: #8da8c5;
+
+  --ars-line: rgba(120, 190, 255, 0.18);
+  --ars-line-strong: rgba(0, 217, 255, 0.38);
+
+  --ars-shadow-deep:
+    0 24px 80px rgba(0, 0, 0, 0.38);
+
+  --ars-shadow-blue:
+    0 0 34px rgba(8, 124, 255, 0.14);
+
+  --ars-shadow-cyan:
+    0 0 26px rgba(0, 217, 255, 0.13);
+
+  --ars-radius-sm: 12px;
+  --ars-radius-md: 20px;
+  --ars-radius-lg: 28px;
+  --ars-radius-xl: 36px;
+  --ars-radius-pill: 999px;
+
+  --ars-content-width: 1240px;
+
+  --ars-page-gutter: clamp(18px, 4.5vw, 72px);
+
+  --ars-section-space: clamp(76px, 10vw, 148px);
+
+  --ars-card-gap: clamp(14px, 2vw, 24px);
+
+  --ars-transition-fast: 180ms ease;
+
+  --ars-transition-base:
+    320ms cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  --ars-transition-slow:
+    650ms cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  --ars-font-ui:
+    Inter,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
 
 
-/* ========================================================= */
-/* 01 — DEEP LUXURY FUTURE BACKGROUND                         */
-/* ========================================================= */
+/* ============================================================================
+   02 — GLOBAL FOUNDATION
+   ========================================================================== */
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 28px;
+  background: var(--ars-deep-space);
+}
+
+body {
+  position: relative;
+  isolation: isolate;
+
+  min-width: 320px;
+  margin: 0;
+
+  overflow-x: clip;
+
+  color: var(--ars-text);
+
+  background:
+    radial-gradient(
+      ellipse at 50% -8%,
+      rgba(8, 124, 255, 0.14),
+      transparent 42%
+    ),
+    radial-gradient(
+      ellipse at 90% 35%,
+      rgba(0, 217, 255, 0.035),
+      transparent 34%
+    ),
+    radial-gradient(
+      ellipse at 4% 76%,
+      rgba(8, 124, 255, 0.045),
+      transparent 36%
+    ),
+    var(--ars-deep-space);
+
+  font-family: var(--ars-font-ui);
+  font-size: 16px;
+  line-height: 1.7;
+
+  text-rendering: optimizeLegibility;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* Persistent technical grid */
+
+body::before {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+
+  pointer-events: none;
+  content: "";
+
+  opacity: 0.18;
+
+  background-image:
+    linear-gradient(
+      rgba(106, 179, 255, 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(106, 179, 255, 0.045) 1px,
+      transparent 1px
+    );
+
+  background-size: 76px 76px;
+
+  -webkit-mask-image:
+    linear-gradient(to bottom, #000, transparent 78%);
+
+  mask-image:
+    linear-gradient(to bottom, #000, transparent 78%);
+}
+
+
+/* Subtle ambient particles */
+
+body::after {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+
+  pointer-events: none;
+  content: "";
+
+  opacity: 0.15;
+
+  background:
+    radial-gradient(
+      circle at 20% 24%,
+      rgba(185, 243, 255, 0.4) 0 1px,
+      transparent 1.8px
+    ),
+    radial-gradient(
+      circle at 74% 18%,
+      rgba(0, 217, 255, 0.55) 0 1px,
+      transparent 1.8px
+    ),
+    radial-gradient(
+      circle at 88% 61%,
+      rgba(185, 243, 255, 0.3) 0 1px,
+      transparent 1.8px
+    ),
+    radial-gradient(
+      circle at 35% 80%,
+      rgba(8, 124, 255, 0.5) 0 1px,
+      transparent 1.8px
+    );
+
+  background-size:
+    310px 310px,
+    390px 390px,
+    460px 460px,
+    350px 350px;
+}
+
+
+/* Predictable box model */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+img {
+  display: block;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* Accessible keyboard focus */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--ars-electric-cyan);
+  outline-offset: 5px;
+}
+
+::selection {
+  color: #fff;
+  background: rgba(8, 124, 255, 0.72);
+}
+
+
+/* ============================================================================
+   03 — SHARED FUTURE LAB LAYOUT
+   ========================================================================== */
 
 .future-lab,
 .future-space-core,
@@ -40,3715 +288,2360 @@
 .ars-smart-transportation,
 .ars-research-lab,
 .ars-2050-vision,
-.future-ai-gateway{
+.future-ai-gateway {
+  position: relative;
+  isolation: isolate;
 
-    position:
-        relative;
+  width: 100%;
+  min-width: 0;
 
-    overflow:
-        hidden;
+  color: var(--ars-text);
 
-    isolation:
-        isolate;
+  background-color: transparent;
+}
 
-    color:
-        #f7f1e3;
+.future-lab *,
+.future-space-core *,
+.future-mobility *,
+.ars-os-core *,
+.rose-future *,
+.zhr-future *,
+.zhr-future-ecosystem *,
+.design-future *,
+.ars-digital-family *,
+.ars-smart-transportation *,
+.ars-research-lab *,
+.ars-2050-vision *,
+.future-ai-gateway * {
+  min-width: 0;
+}
 
-    background:
-
-        radial-gradient(
-            ellipse at 50% 15%,
-            rgba(18,65,110,.75),
-            transparent 42%
-        ),
-
-        radial-gradient(
-            ellipse at 10% 55%,
-            rgba(8,45,85,.85),
-            transparent 42%
-        ),
-
-        radial-gradient(
-            ellipse at 90% 70%,
-            rgba(20,52,92,.80),
-            transparent 45%
-        ),
-
-        linear-gradient(
-            180deg,
-            #020b18 0%,
-            #041426 28%,
-            #061b32 52%,
-            #030d1b 78%,
-            #01050c 100%
-        );
-
+.future-space-core,
+.future-mobility,
+.ars-os-core,
+.rose-future,
+.zhr-future,
+.zhr-future-ecosystem,
+.design-future,
+.ars-digital-family,
+.ars-smart-transportation,
+.ars-research-lab,
+.ars-2050-vision,
+.future-ai-gateway {
+  padding:
+    var(--ars-section-space)
+    var(--ars-page-gutter);
 }
 
 
-/* ========================================================= */
-/* 02 — LIQUID GOLD ENERGY FIELD                             */
-/* ========================================================= */
+/* Shared content width */
 
-.future-lab::before,
-.future-space-core::before,
-.future-mobility::before,
-.ars-os-core::before,
-.rose-future::before,
-.zhr-future::before,
-.zhr-future-ecosystem::before,
-.design-future::before,
-.ars-digital-family::before,
-.ars-smart-transportation::before,
-.ars-research-lab::before,
-.ars-2050-vision::before,
-.future-ai-gateway::before{
-
-    content:"";
-
-    position:
-        absolute;
-
-    inset:
-        -35%;
-
-    z-index:
-        -2;
-
-    pointer-events:
-        none;
-
-    background:
-
-        /* GOLD ENERGY STREAM 01 */
-
-        linear-gradient(
-            115deg,
-
-            transparent 0%,
-
-            transparent 24%,
-
-            rgba(184,137,63,.05) 30%,
-
-            rgba(210,164,82,.55) 38%,
-
-            rgba(255,211,120,.98) 42%,
-
-            rgba(255,238,175,1) 44%,
-
-            rgba(255,194,70,.95) 46%,
-
-            rgba(184,137,63,.55) 50%,
-
-            transparent 58%,
-
-            transparent 100%
-        ),
-
-        /* GOLD ENERGY STREAM 02 */
-
-        linear-gradient(
-            72deg,
-
-            transparent 8%,
-
-            transparent 34%,
-
-            rgba(210,164,82,.15) 40%,
-
-            rgba(255,203,80,.75) 47%,
-
-            rgba(255,236,155,1) 50%,
-
-            rgba(255,190,40,.85) 53%,
-
-            rgba(184,137,63,.35) 59%,
-
-            transparent 68%
-        ),
-
-        /* BLUE ENERGY FIELD */
-
-        radial-gradient(
-            ellipse at 50% 50%,
-            rgba(15,100,180,.42),
-            transparent 48%
-        ),
-
-        /* GOLD CORE */
-
-        radial-gradient(
-            ellipse at 50% 80%,
-            rgba(230,188,103,.18),
-            transparent 45%
-        );
-
-    filter:
-        blur(10px);
-
-    opacity:
-        1;
-
-    transform:
-        translate3d(-8%,0,0)
-        rotate(-3deg);
-
-    animation:
-        arsLiquidGoldFlow
-        14s
-        ease-in-out
-        infinite
-        alternate;
-
+.future-container,
+.future-core-container,
+.future-space-core > *,
+.future-mobility > *,
+.ars-os-core > *,
+.rose-future > *,
+.zhr-future > *,
+.zhr-future-ecosystem > *,
+.design-future > *,
+.ars-digital-family > *,
+.ars-smart-transportation > *,
+.ars-research-lab > *,
+.ars-2050-vision > *,
+.future-ai-gateway > * {
+  position: relative;
+  z-index: 1;
 }
 
 
-@keyframes arsLiquidGoldFlow{
+/* Shared headings */
 
-    0%{
+.section-heading {
+  position: relative;
 
-        transform:
-            translate3d(-12%,3%,0)
-            rotate(-4deg)
-            scale(1);
+  max-width: 900px;
 
-    }
+  margin: 0 auto clamp(32px, 5vw, 62px);
 
-    50%{
+  color: var(--ars-text);
 
-        transform:
-            translate3d(0,-2%,0)
-            rotate(0deg)
-            scale(1.08);
+  text-align: center;
+}
 
-    }
+.section-heading h2,
+.section-heading h3 {
+  margin-top: 0;
+  margin-bottom: 18px;
 
-    100%{
+  color: var(--ars-ice-blue);
 
-        transform:
-            translate3d(12%,3%,0)
-            rotate(4deg)
-            scale(1);
+  font-size: clamp(1.8rem, 4vw, 3.5rem);
+  font-weight: 750;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
 
-    }
+  text-wrap: balance;
+}
 
+.section-heading p {
+  max-width: 760px;
+
+  margin: 0 auto;
+
+  color: var(--ars-text-soft);
+
+  font-size: clamp(0.98rem, 1.5vw, 1.12rem);
+  line-height: 1.85;
+
+  text-wrap: pretty;
 }
 
 
-/* ========================================================= */
-/* 03 — SHARP GOLD ENERGY RAYS                               */
-/* ========================================================= */
+/* Shared text treatment */
 
-.future-lab::after,
-.future-space-core::after,
-.future-mobility::after,
-.ars-os-core::after,
-.rose-future::after,
-.zhr-future::after,
-.zhr-future-ecosystem::after,
-.design-future::after,
-.ars-digital-family::after,
-.ars-smart-transportation::after,
-.ars-research-lab::after,
-.ars-2050-vision::after,
-.future-ai-gateway::after{
-
-    content:"";
-
-    position:
-        absolute;
-
-    inset:
-        -20%;
-
-    z-index:
-        -1;
-
-    pointer-events:
-        none;
-
-    background:
-
-        repeating-linear-gradient(
-            118deg,
-
-            transparent 0px,
-
-            transparent 170px,
-
-            rgba(184,137,63,.04) 175px,
-
-            rgba(255,198,70,.55) 180px,
-
-            rgba(255,230,145,1) 184px,
-
-            rgba(255,193,50,.80) 188px,
-
-            rgba(184,137,63,.12) 194px,
-
-            transparent 200px,
-
-            transparent 370px
-        ),
-
-        repeating-linear-gradient(
-            68deg,
-
-            transparent 0px,
-
-            transparent 240px,
-
-            rgba(210,164,82,.08) 245px,
-
-            rgba(255,208,85,.60) 250px,
-
-            rgba(255,235,160,1) 255px,
-
-            rgba(255,195,45,.75) 260px,
-
-            transparent 270px,
-
-            transparent 510px
-        );
-
-    filter:
-        blur(2px);
-
-    opacity:
-        .95;
-
-    mix-blend-mode:
-        screen;
-
-    animation:
-        arsEnergyRays
-        18s
-        linear
-        infinite;
-
+.future-space-core p,
+.future-mobility p,
+.ars-os-core p,
+.rose-future p,
+.zhr-future p,
+.zhr-future-ecosystem p,
+.design-future p,
+.ars-digital-family p,
+.ars-smart-transportation p,
+.ars-research-lab p,
+.ars-2050-vision p,
+.future-ai-gateway p {
+  color: var(--ars-text-soft);
 }
 
-
-@keyframes arsEnergyRays{
-
-    0%{
-
-        transform:
-            translate3d(-12%,0,0);
-
-    }
-
-    50%{
-
-        transform:
-            translate3d(0,-4%,0);
-
-    }
-
-    100%{
-
-        transform:
-            translate3d(12%,5%,0);
-
-    }
-
-}
-
-
-/* ========================================================= */
-/* 04 — FUTURE HERO                                          */
-/* ========================================================= */
-
-.future-hero{
-
-    position:
-        relative;
-
-    overflow:
-        hidden;
-
-    background:
-
-        radial-gradient(
-            ellipse at 50% 35%,
-            rgba(18,92,160,.35),
-            transparent 48%
-        ),
-
-        radial-gradient(
-            ellipse at 50% 85%,
-            rgba(255,197,65,.20),
-            transparent 40%
-        );
-
-}
-
-
-/* ========================================================= */
-/* 05 — HERO GOLDEN LIGHT                                    */
-/* ========================================================= */
-
-.future-hero::after{
-
-    content:"";
-
-    position:
-        absolute;
-
-    left:
-        50%;
-
-    bottom:
-        -80px;
-
-    width:
-        130%;
-
-    height:
-        420px;
-
-    transform:
-        translateX(-50%);
-
-    pointer-events:
-        none;
-
-    background:
-
-        radial-gradient(
-            ellipse,
-
-            rgba(255,218,125,.65) 0%,
-
-            rgba(230,188,103,.35) 25%,
-
-            rgba(184,137,63,.18) 45%,
-
-            transparent 72%
-        );
-
-    filter:
-        blur(35px);
-
-    mix-blend-mode:
-        screen;
-
-}
-
-
-/* ========================================================= */
-/* 06 — MOVING GOLDEN HERO WAVE                              */
-/* ========================================================= */
-
-.future-hero::before{
-
-    content:"";
-
-    position:
-        absolute;
-
-    top:
-        -30%;
-
-    left:
-        -40%;
-
-    width:
-        180%;
-
-    height:
-        100%;
-
-    pointer-events:
-        none;
-
-    background:
-
-        linear-gradient(
-            115deg,
-
-            transparent 38%,
-
-            rgba(184,137,63,.10) 43%,
-
-            rgba(255,198,65,.65) 47%,
-
-            rgba(255,237,170,1) 49%,
-
-            rgba(255,196,55,.75) 51%,
-
-            rgba(184,137,63,.18) 55%,
-
-            transparent 61%
-        );
-
-    filter:
-        blur(8px);
-
-    opacity:
-        .95;
-
-    transform:
-        rotate(-5deg);
-
-    animation:
-        arsHeroEnergyWave
-        9s
-        ease-in-out
-        infinite
-        alternate;
-
-}
-
-
-@keyframes arsHeroEnergyWave{
-
-    0%{
-
-        transform:
-            translateX(-15%)
-            rotate(-7deg);
-
-    }
-
-    100%{
-
-        transform:
-            translateX(15%)
-            rotate(-2deg);
-
-    }
-
-}
-
-
-/* ========================================================= */
-/* 07 — UNIVERSAL CRYSTAL GLASS CARDS                        */
-/* ========================================================= */
-
-.future-lab [class*="card"],
-.future-space-core [class*="card"],
-.future-mobility [class*="card"],
-.ars-os-core [class*="card"],
-.rose-future [class*="card"],
-.zhr-future [class*="card"],
-.zhr-future-ecosystem [class*="card"],
-.design-future [class*="card"],
-.ars-digital-family [class*="card"],
-.ars-smart-transportation [class*="card"],
-.ars-research-lab [class*="card"],
-.ars-2050-vision [class*="card"],
-.future-ai-gateway [class*="card"]{
-
-    position:
-        relative;
-
-    overflow:
-        hidden;
-
-    background:
-
-        linear-gradient(
-            145deg,
-
-            rgba(255,255,255,.20),
-
-            rgba(255,255,255,.08) 28%,
-
-            rgba(6,30,55,.48) 60%,
-
-            rgba(184,137,63,.16)
-        );
-
-    border:
-        1px solid
-        rgba(255,215,130,.42);
-
-    box-shadow:
-
-        0
-        20px
-        50px
-        rgba(0,0,0,.42),
-
-        0
-        0
-        35px
-        rgba(184,137,63,.16),
-
-        inset
-        0
-        1px
-        0
-        rgba(255,255,255,.28),
-
-        inset
-        0
-        0
-        35px
-        rgba(255,215,130,.045);
-
-    backdrop-filter:
-        blur(22px)
-        saturate(165%);
-
-    -webkit-backdrop-filter:
-        blur(22px)
-        saturate(165%);
-
-    transition:
-
-        transform
-        .8s
-        cubic-bezier(.16,1,.3,1),
-
-        box-shadow
-        .8s
-        ease,
-
-        border-color
-        .8s
-        ease;
-
-}
-
-
-/* ========================================================= */
-/* 08 — GLASS CARD REFLECTION                                */
-/* ========================================================= */
-
-.future-lab [class*="card"]::before,
-.future-space-core [class*="card"]::before,
-.future-mobility [class*="card"]::before,
-.ars-os-core [class*="card"]::before,
-.rose-future [class*="card"]::before,
-.zhr-future [class*="card"]::before,
-.zhr-future-ecosystem [class*="card"]::before,
-.design-future [class*="card"]::before,
-.ars-digital-family [class*="card"]::before,
-.ars-smart-transportation [class*="card"]::before,
-.ars-research-lab [class*="card"]::before,
-.ars-2050-vision [class*="card"]::before,
-.future-ai-gateway [class*="card"]::before{
-
-    content:"";
-
-    position:
-        absolute;
-
-    inset:
-        0;
-
-    pointer-events:
-        none;
-
-    background:
-
-        linear-gradient(
-            125deg,
-
-            rgba(255,255,255,.22),
-
-            transparent 28%,
-
-            transparent 58%,
-
-            rgba(255,210,100,.14)
-        );
-
-    opacity:
-        .8;
-
-}
-
-
-/* ========================================================= */
-/* 09 — GLASS CARD HOVER                                    */
-/* ========================================================= */
-
-.future-lab [class*="card"]:hover,
-.future-space-core [class*="card"]:hover,
-.future-mobility [class*="card"]:hover,
-.ars-os-core [class*="card"]:hover,
-.rose-future [class*="card"]:hover,
-.zhr-future [class*="card"]:hover,
-.zhr-future-ecosystem [class*="card"]:hover,
-.design-future [class*="card"]:hover,
-.ars-digital-family [class*="card"]:hover,
-.ars-smart-transportation [class*="card"]:hover,
-.ars-research-lab [class*="card"]:hover,
-.ars-2050-vision [class*="card"]:hover,
-.future-ai-gateway [class*="card"]:hover{
-
-    transform:
-        translateY(-14px)
-        scale(1.025);
-
-    border-color:
-        rgba(255,225,150,.90);
-
-    box-shadow:
-
-        0
-        30px
-        70px
-        rgba(0,0,0,.55),
-
-        0
-        0
-        45px
-        rgba(255,198,65,.35),
-
-        0
-        0
-        100px
-        rgba(230,188,103,.18),
-
-        inset
-        0
-        1px
-        0
-        rgba(255,255,255,.40);
-
-}
-
-
-/* ========================================================= */
-/* 10 — GOLDEN LUXURY BUTTONS                                */
-/* ========================================================= */
-
-.future-lab button,
-.future-lab a[class*="btn"],
-.future-lab a[class*="button"],
-.future-space-core button,
-.future-space-core a[class*="btn"],
-.future-mobility button,
-.future-mobility a[class*="btn"],
-.ars-os-core button,
-.ars-os-core a[class*="btn"],
-.rose-future button,
-.rose-future a[class*="btn"],
-.zhr-future button,
-.zhr-future a[class*="btn"],
-.design-future button,
-.design-future a[class*="btn"],
-.ars-digital-family button,
-.ars-digital-family a[class*="btn"],
-.ars-smart-transportation button,
-.ars-smart-transportation a[class*="btn"],
-.ars-research-lab button,
-.ars-research-lab a[class*="btn"],
-.ars-2050-vision button,
-.ars-2050-vision a[class*="btn"],
-.future-ai-gateway button,
-.future-ai-gateway a[class*="btn"]{
-
-    position:
-        relative;
-
-    display:
-        inline-flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    min-height:
-        54px;
-
-    padding:
-        0
-        30px;
-
-    border:
-        1px
-        solid
-        rgba(255,218,130,.65);
-
-    border-radius:
-        999px;
-
-    color:
-        #fff4d0;
-
-    background:
-
-        linear-gradient(
-            135deg,
-
-            rgba(255,255,255,.16),
-
-            rgba(184,137,63,.24),
-
-            rgba(5,25,45,.65)
-        );
-
-    box-shadow:
-
-        0
-        0
-        20px
-        rgba(255,198,65,.18),
-
-        inset
-        0
-        1px
-        0
-        rgba(255,255,255,.35);
-
-    backdrop-filter:
-        blur(16px);
-
-    transition:
-
-        transform
-        .5s
-        ease,
-
-        box-shadow
-        .5s
-        ease,
-
-        border-color
-        .5s
-        ease;
-
-}
-
-
-/* ========================================================= */
-/* 11 — BUTTON GOLDEN LIGHT                                  */
-/* ========================================================= */
-
-.future-lab button::before,
-.future-lab a[class*="btn"]::before,
-.future-space-core button::before,
-.future-space-core a[class*="btn"]::before,
-.future-mobility button::before,
-.future-mobility a[class*="btn"]::before,
-.ars-os-core button::before,
-.ars-os-core a[class*="btn"]::before{
-
-    content:"";
-
-    position:
-        absolute;
-
-    inset:
-        2px;
-
-    border-radius:
-        inherit;
-
-    background:
-
-        linear-gradient(
-            110deg,
-
-            transparent 20%,
-
-            rgba(255,238,170,.60) 48%,
-
-            transparent 75%
-        );
-
-    opacity:
-        .45;
-
-    transform:
-        translateX(-100%);
-
-    transition:
-        transform
-        .8s
-        ease;
-
-}
-
-
-.future-lab button:hover,
-.future-lab a[class*="btn"]:hover,
-.future-space-core button:hover,
-.future-space-core a[class*="btn"]:hover,
-.future-mobility button:hover,
-.future-mobility a[class*="btn"]:hover{
-
-    transform:
-        translateY(-5px);
-
-    border-color:
-        rgba(255,235,170,1);
-
-    box-shadow:
-
-        0
-        0
-        30px
-        rgba(255,205,75,.40),
-
-        0
-        0
-        80px
-        rgba(230,188,103,.22);
-
-}
-
-
-/* ========================================================= */
-/* 12 — GOLDEN GLASS PANELS                                  */
-/* ========================================================= */
-
-.future-lab [class*="panel"],
-.future-space-core [class*="panel"],
-.future-mobility [class*="panel"],
-.ars-os-core [class*="panel"],
-.rose-future [class*="panel"],
-.zhr-future [class*="panel"],
-.zhr-future-ecosystem [class*="panel"],
-.design-future [class*="panel"],
-.ars-digital-family [class*="panel"],
-.ars-smart-transportation [class*="panel"],
-.ars-research-lab [class*="panel"],
-.ars-2050-vision [class*="panel"],
-.future-ai-gateway [class*="panel"]{
-
-    background:
-
-        linear-gradient(
-            145deg,
-
-            rgba(255,255,255,.16),
-
-            rgba(255,255,255,.055) 35%,
-
-            rgba(184,137,63,.13) 75%,
-
-            rgba(4,20,38,.48)
-        );
-
-    border:
-        1px
-        solid
-        rgba(255,215,130,.35);
-
-    backdrop-filter:
-        blur(26px)
-        saturate(170%);
-
-    -webkit-backdrop-filter:
-        blur(26px)
-        saturate(170%);
-
-    box-shadow:
-
-        0
-        25px
-        70px
-        rgba(0,0,0,.40),
-
-        0
-        0
-        40px
-        rgba(184,137,63,.12),
-
-        inset
-        0
-        1px
-        0
-        rgba(255,255,255,.22);
-
-}
-
-
-/* ========================================================= */
-/* 13 — GOLDEN FRAMES                                        */
-/* ========================================================= */
-
-.future-lab [class*="card"],
-.future-lab [class*="panel"]{
-
-    outline:
-        1px
-        solid
-        rgba(255,210,105,.08);
-
-}
-
-
-/* ========================================================= */
-/* 14 — FUTURE LAB HEADINGS                                  */
-/* ========================================================= */
-
-.future-lab h1,
-.future-lab h2,
-.future-lab h3,
 .future-space-core h1,
 .future-space-core h2,
 .future-space-core h3,
 .future-mobility h1,
 .future-mobility h2,
-.future-mobility h3{
+.future-mobility h3,
+.ars-os-core h1,
+.ars-os-core h2,
+.ars-os-core h3,
+.rose-future h1,
+.rose-future h2,
+.rose-future h3,
+.zhr-future h1,
+.zhr-future h2,
+.zhr-future h3,
+.zhr-future-ecosystem h1,
+.zhr-future-ecosystem h2,
+.zhr-future-ecosystem h3,
+.design-future h1,
+.design-future h2,
+.design-future h3,
+.ars-digital-family h1,
+.ars-digital-family h2,
+.ars-digital-family h3,
+.ars-smart-transportation h1,
+.ars-smart-transportation h2,
+.ars-smart-transportation h3,
+.ars-research-lab h1,
+.ars-research-lab h2,
+.ars-research-lab h3,
+.ars-2050-vision h1,
+.ars-2050-vision h2,
+.ars-2050-vision h3,
+.future-ai-gateway h1,
+.future-ai-gateway h2,
+.future-ai-gateway h3 {
+  color: var(--ars-text);
+  text-wrap: balance;
+}
+
+
+/* ============================================================================
+   04 — HERO: ARS FUTURE LAB
+   ========================================================================== */
+
+.future-lab {
+  display: flex;
+  align-items: center;
+
+  min-height: min(900px, 100svh);
+
+  padding:
+    clamp(90px, 12vh, 150px)
+    var(--ars-page-gutter);
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 42%,
+      rgba(8, 124, 255, 0.17),
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 78% 30%,
+      rgba(0, 217, 255, 0.09),
+      transparent 36%
+    ),
+    linear-gradient(
+      180deg,
+      #030817 0%,
+      #06142b 52%,
+      #030817 100%
+    );
+}
+
+
+/* Hero space background */
+
+.future-space-bg {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+
+  pointer-events: none;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 48%,
+      rgba(8, 124, 255, 0.17),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 18% 22%,
+      rgba(0, 217, 255, 0.075),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 83% 72%,
+      rgba(8, 124, 255, 0.095),
+      transparent 30%
+    );
+}
+
+.future-space-bg::before,
+.future-space-bg::after {
+  position: absolute;
+  inset: -20%;
 
-    color:
-        #fff5d7;
-
-    text-shadow:
-
-        0
-        0
-        18px
-        rgba(255,210,110,.20);
-
-}
-
-
-/* ========================================================= */
-/* 15 — GOLDEN TEXT ACCENTS                                  */
-/* ========================================================= */
-
-.future-lab strong,
-.future-lab [class*="label"],
-.future-lab [class*="eyebrow"]{
-
-    color:
-        #f2c96d;
-
-    text-shadow:
-        0
-        0
-        15px
-        rgba(255,201,80,.30);
-
-}
-
-
-/* ========================================================= */
-/* 16 — LUXURY GOLDEN DATA LINES                             */
-/* ========================================================= */
-
-.future-lab [class*="card"]::after{
-
-    content:"";
-
-    position:
-        absolute;
-
-    left:
-        0;
-
-    bottom:
-        0;
-
-    width:
-        100%;
-
-    height:
-        2px;
-
-    background:
-
-        linear-gradient(
-            90deg,
-
-            transparent,
-
-            #b8893f,
-
-            #ffe39b,
-
-            #b8893f,
-
-            transparent
-        );
-
-    box-shadow:
-
-        0
-        0
-        18px
-        rgba(255,210,100,.55);
-
-}
-
-
-/* ========================================================= */
-
-/* ========================================================= */
-/* 33 — MOBILE                                             */
-/* ========================================================= */
-
-@media (max-width:900px){
-
-    .future-container,
-    .future-core-container{
-
-        width:
-
-            min(
-                92%,
-                700px
-            );
-
-    }
-
-
-    .future-core-container,
-    .os-core-panel,
-    .rose-core,
-    .zhr-core,
-    .zhr-ecosystem-core,
-    .design-future-main,
-    .family-network,
-    .transport-core,
-    .research-main,
-    .vision-2050-core,
-    .ai-gateway-card{
-
-        grid-template-columns:
-
-            1fr;
-
-    }
-
-
-    .mobility-universe{
-
-        grid-template-columns:
-
-            repeat(
-                2,
-                minmax(0,1fr)
-            );
-
-    }
-
-}
-
-
-@media (max-width:600px){
-
-    .future-container,
-    .future-core-container{
-
-        width:
-
-            90%;
-
-    }
-
-
-    .future-lab,
-    .future-space-core,
-    .future-mobility,
-    .ars-os-core,
-    .rose-future,
-    .zhr-future,
-    .zhr-future-ecosystem,
-    .design-future,
-    .ars-digital-family,
-    .ars-smart-transportation,
-    .ars-research-lab,
-    .ars-2050-vision{
-
-        padding:
-
-            110px
-            0;
-
-    }
-
-
-    .future-hero h1{
-
-        font-size:
-
-            3rem;
-
-    }
-
-
-    .future-core-cards,
-    .os-cards,
-    .rose-cards,
-    .zhr-cards,
-    .zhr-future-cards,
-    .design-cards,
-    .family-cards,
-    .transport-cards,
-    .research-cards,
-    .vision-cards{
-
-        grid-template-columns:
-
-            1fr;
-
-    }
-
-
-    .mobility-universe{
-
-        grid-template-columns:
-
-            1fr;
-
-        padding:
-
-            20px;
-
-    }
-
-
-    .os-core-panel,
-    .rose-core,
-    .zhr-core,
-    .zhr-ecosystem-core,
-    .design-future-main,
-    .family-network,
-    .transport-core,
-    .research-main,
-    .vision-2050-core,
-    .ai-gateway-card{
-
-        padding:
-
-            35px
-            22px;
-
-        border-radius:
-
-            28px;
-
-    }
-
-
-    .mobility-message,
-    .zhr-message,
-    .zhr-human-message,
-    .design-message,
-    .family-vision,
-    .transport-message,
-    .future-manifesto,
-    .future-closing{
-
-        padding:
-
-            45px
-            25px;
-
-    }
-
-}
-
-
-/* ========================================================= */
-/* 34 — REDUCED MOTION                                      */
-/* ========================================================= */
-
-@media (prefers-reduced-motion:reduce){
-
-    *,
-    *::before,
-    *::after{
-
-        animation-duration:
-
-            .01ms !important;
-
-        animation-iteration-count:
-
-            1 !important;
-
-        scroll-behavior:
-
-            auto !important;
-
-        transition-duration:
-
-            .01ms !important;
-
-    }
-
-}
-
-
-
-/* ========================================================= */
-/* ========================================================= */
-/*                                                           */
-/*       ARS FUTURE LAB — LIVING BRAND ENERGY FIELD          */
-/*                                                           */
-/*       ARS HERITAGE GROUP / ARS DESIGN / ARS BRAIN         */
-/*       ROSE AI / ZHR NAJI                                  */
-/*                                                           */
-/*       DEEP NAVY BACKGROUND + MATTE GOLD ENERGY            */
-/*                                                           */
-/* ========================================================= */
-/* ========================================================= */
-
-
-/* ========================================================= */
-/* 01 — GLOBAL BRAND ENERGY FIELD                            */
-/* ========================================================= */
-
-.future-lab{
-
-    position:relative;
-
-    overflow:hidden;
-
-    isolation:isolate;
-
-}
-
-
-/* ========================================================= */
-/* 02 — MOVING BRAND NAMES                                   */
-/* ========================================================= */
-
-.future-lab::after{
-
-    content:
-
-        "ARS HERITAGE GROUP     ARS DESIGN     ARS BRAIN     ROSE AI     ZHR NAJI     "
-        "ARS HERITAGE GROUP     ARS DESIGN     ARS BRAIN     ROSE AI     ZHR NAJI     "
-        "ARS HERITAGE GROUP     ARS DESIGN     ARS BRAIN     ROSE AI     ZHR NAJI";
-
-    position:absolute;
-
-    inset:-20%;
-
-    z-index:-1;
-
-    pointer-events:none;
-
-    display:block;
-
-    width:140%;
-
-    height:140%;
-
-    color:
-
-        rgba(242,201,109,.12);
-
-    font-family:
-
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size:
-
-        clamp(
-            18px,
-            2.2vw,
-            34px
-        );
-
-    font-weight:
-
-        800;
-
-    letter-spacing:
-
-        .28em;
-
-    line-height:
-
-        5;
-
-    text-align:
-
-        center;
-
-    white-space:
-
-        pre-wrap;
-
-    word-spacing:
-
-        1.5em;
-
-    opacity:
-
-        .75;
-
-    filter:
-
-        blur(.35px);
-
-    text-shadow:
-
-        0
-        0
-        8px
-        rgba(214,168,79,.18),
-
-        0
-        0
-        25px
-        rgba(214,168,79,.08);
-
-    transform:
-
-        rotate(-12deg)
-        translate3d(-3%,0,0);
-
-    animation:
-
-        arsBrandEnergyDrift
-        55s
-        ease-in-out
-        infinite
-        alternate;
-
-}
-
-
-/* ========================================================= */
-/* 03 — GOLDEN ENERGY DRIFT                                  */
-/* ========================================================= */
-
-@keyframes arsBrandEnergyDrift{
-
-    0%{
-
-        transform:
-
-            rotate(-12deg)
-            translate3d(-8%,-4%,0)
-            scale(1);
-
-        opacity:
-
-            .38;
-
-    }
-
-    25%{
-
-        transform:
-
-            rotate(-9deg)
-            translate3d(2%,2%,0)
-            scale(1.025);
-
-        opacity:
-
-            .62;
-
-    }
-
-    50%{
-
-        transform:
-
-            rotate(-14deg)
-            translate3d(7%,-1%,0)
-            scale(1.05);
-
-        opacity:
-
-            .48;
-
-    }
-
-    75%{
-
-        transform:
-
-            rotate(-10deg)
-            translate3d(-2%,5%,0)
-            scale(1.02);
-
-        opacity:
-
-            .70;
-
-    }
-
-    100%{
-
-        transform:
-
-            rotate(-13deg)
-            translate3d(-9%,1%,0)
-            scale(1);
-
-        opacity:
-
-            .40;
-
-    }
-
-}
-
-
-/* ========================================================= */
-/* 04 — SECONDARY GOLD ENERGY LAYER                          */
-/* ========================================================= */
-
-.future-lab::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:-30%;
-
-    z-index:-2;
-
-    pointer-events:none;
-
-    background:
-
-        radial-gradient(
-            ellipse at 20% 20%,
-            rgba(255,215,120,.10),
-            transparent 30%
-        ),
-
-        radial-gradient(
-            ellipse at 80% 35%,
-            rgba(255,201,80,.08),
-            transparent 28%
-        ),
-
-        radial-gradient(
-            ellipse at 35% 80%,
-            rgba(255,224,150,.07),
-            transparent 30%
-        ),
-
-        radial-gradient(
-            ellipse at 75% 85%,
-            rgba(184,137,63,.10),
-            transparent 32%
-        );
-
-    filter:
-
-        blur(35px);
-
-    opacity:
-
-        .8;
-
-    animation:
-
-        arsGoldenAtmosphere
-        28s
-        ease-in-out
-        infinite
-        alternate;
-
-}
-
-
-@keyframes arsGoldenAtmosphere{
-
-    0%{
-
-        transform:
-
-            translate3d(-4%,-3%,0)
-            scale(1);
-
-    }
-
-    50%{
-
-        transform:
-
-            translate3d(5%,4%,0)
-            scale(1.08);
-
-    }
-
-    100%{
-
-        transform:
-
-            translate3d(-2%,7%,0)
-            scale(1.03);
-
-    }
-
-}
-
-
-/* ========================================================= */
-/* 05 — FLOATING GOLD PARTICLES                              */
-/* ========================================================= */
-
-.future-lab{
-
-    background-image:
-
-        radial-gradient(
-            circle at 12% 18%,
-            rgba(255,220,135,.16) 0 1px,
-            transparent 2px
-        ),
-
-        radial-gradient(
-            circle at 82% 28%,
-            rgba(255,220,135,.13) 0 1px,
-            transparent 2px
-        ),
-
-        radial-gradient(
-            circle at 35% 72%,
-            rgba(255,220,135,.11) 0 1px,
-            transparent 2px
-        ),
-
-        radial-gradient(
-            circle at 68% 84%,
-            rgba(255,220,135,.14) 0 1px,
-            transparent 2px
-        );
-
-    background-size:
-
-        260px
-        260px,
-
-        340px
-        340px,
-
-        300px
-        300px,
-
-        420px
-        420px;
-
-    animation:
-
-        arsParticleField
-        40s
-        linear
-        infinite;
-
-}
-
-
-@keyframes arsParticleField{
-
-    0%{
-
-        background-position:
-
-            0
-            0,
-
-            0
-            0,
-
-            0
-            0,
-
-            0
-            0;
-
-    }
-
-    50%{
-
-        background-position:
-
-            80px
-            -60px,
-
-            -100px
-            90px,
-
-            70px
-            100px,
-
-            -80px
-            -50px;
-
-    }
-
-    100%{
-
-        background-position:
-
-            160px
-            -120px,
-
-            -200px
-            180px,
-
-            140px
-            200px,
-
-            -160px
-            -100px;
-
-    }
-
-}
-
-
-/* ========================================================= */
-/* 06 — BRAND ENERGY GLOW                                   */
-/* ========================================================= */
-
-.future-lab .brand-energy,
-.future-lab .future-brand-energy,
-.future-lab .ars-brand-energy{
-
-    color:
-
-        rgba(
-            245,
-            211,
-            130,
-            .78
-        );
-
-    text-shadow:
-
-        0
-        0
-        10px
-        rgba(255,215,120,.25),
-
-        0
-        0
-        30px
-        rgba(214,168,79,.15);
-
-    animation:
-
-        arsBrandGlow
-        7s
-        ease-in-out
-        infinite
-        alternate;
-
-}
-
-
-@keyframes arsBrandGlow{
-
-    0%{
-
-        opacity:
-
-            .45;
-
-        filter:
-
-            blur(.3px);
-
-    }
-
-    100%{
-
-        opacity:
-
-            .85;
-
-        filter:
-
-            blur(0);
-
-    }
-
-}
-
-
-/* ========================================================= */
-/* 07 — MOBILE OPTIMIZATION                                  */
-/* ========================================================= */
-
-@media(max-width:700px){
-
-    .future-lab::after{
-
-        font-size:
-
-            15px;
-
-        line-height:
-
-            6;
-
-        letter-spacing:
-
-            .20em;
-
-        opacity:
-
-            .45;
-
-        filter:
-
-            blur(.6px);
-
-        animation-duration:
-
-            70s;
-
-    }
-
-}
-
-
-/* ========================================================= */
-/* 08 — REDUCED MOTION                                       */
-/* ========================================================= */
-
-@media(prefers-reduced-motion:reduce){
-
-    .future-lab::before,
-    .future-lab::after,
-    .future-lab{
-
-        animation:
-
-            none !important;
-
-    }
-
-}
-/* ========================================================= */
-/* ========================================================= */
-/*                                                           */
-/*       ARS FUTURE LAB — FINAL LAYOUT & STRUCTURE SYSTEM    */
-/*                                                           */
-/*       PURPOSE:                                            */
-/*       GLOBAL PAGE STRUCTURE / SPACING / CONTAINERS       */
-/*       CARDS / PANELS / TYPOGRAPHY / RESPONSIVE           */
-/*                                                           */
-/*       THIS BLOCK SHOULD BE PLACED AT THE VERY END         */
-/*       OF THE FUTURE LAB CSS FILE                          */
-/*                                                           */
-/* ========================================================= */
-/* ========================================================= */
-
-
-/* ========================================================= */
-/* 01 — GLOBAL PAGE RESET                                    */
-/* ========================================================= */
-
-html{
-
-    width:
-        100%;
-
-    min-height:
-        100%;
-
-    margin:
-        0;
-
-    padding:
-        0;
-
-    overflow-x:
-        hidden;
-
-    background:
-        #020b18;
-
-}
-
-
-body{
-
-    width:
-        100%;
-
-    min-height:
-        100%;
-
-    margin:
-        0;
-
-    padding:
-        0;
-
-    overflow-x:
-        hidden;
-
-    background:
-        #020b18;
-
-    color:
-        #f7f1e3;
-
-}
-
-
-/* ========================================================= */
-/* 02 — FUTURE LAB MASTER PAGE                              */
-/* ========================================================= */
-
-.future-lab{
-
-    width:
-        100%;
-
-    max-width:
-        100%;
-
-    min-height:
-        100vh;
-
-    margin:
-        0;
-
-    padding:
-        0;
-
-    position:
-        relative;
-
-    overflow:
-        hidden;
-
-    box-sizing:
-        border-box;
-
-}
-
-
-/* ========================================================= */
-/* 03 — UNIVERSAL BOX SIZING                                */
-/* ========================================================= */
-
-.future-lab *,
-.future-lab *::before,
-.future-lab *::after{
-
-    box-sizing:
-        border-box;
-
-}
-
-
-/* ========================================================= */
-/* 04 — FUTURE LAB SECTION SYSTEM                           */
-/* ========================================================= */
-
-.future-lab > section{
-
-    position:
-        relative;
-
-    width:
-        100%;
-
-    max-width:
-        100%;
-
-    margin:
-        0;
-
-    padding:
-        120px
-        0;
-
-    box-sizing:
-        border-box;
-
-}
-
-
-/* ========================================================= */
-/* 05 — INNER CONTENT CONTAINER                             */
-/* ========================================================= */
-
-.future-lab .future-container,
-.future-lab .future-core-container{
-
-    width:
-        min(
-            90%,
-            1280px
-        );
-
-    max-width:
-        1280px;
-
-    margin-left:
-        auto;
-
-    margin-right:
-        auto;
-
-    padding-left:
-        32px;
-
-    padding-right:
-        32px;
-
-    position:
-        relative;
-
-    z-index:
-        2;
-
-}
-
-
-/* ========================================================= */
-/* 06 — HERO STRUCTURE                                      */
-/* ========================================================= */
-
-.future-lab .future-hero{
-
-    width:
-        100%;
-
-    min-height:
-        760px;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    position:
-        relative;
-
-    padding:
-        120px
-        0;
-
-}
-
-
-/* ========================================================= */
-/* 07 — HERO CONTENT                                        */
-/* ========================================================= */
-
-.future-lab .future-hero > *{
-
-    position:
-        relative;
-
-    z-index:
-        3;
-
-}
-
-
-.future-lab .future-hero .future-container{
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    justify-content:
-        center;
-
-    align-items:
-        flex-start;
-
-    min-height:
-        520px;
-
-}
-
-
-/* ========================================================= */
-/* 08 — HERO TYPOGRAPHY                                     */
-/* ========================================================= */
-
-.future-lab .future-hero h1{
-
-    max-width:
-        900px;
-
-    margin:
-        0
-        0
-        35px;
-
-    line-height:
-        1.02;
-
-    letter-spacing:
-        -0.025em;
-
-}
-
-
-.future-lab .future-hero p{
-
-    max-width:
-        720px;
-
-    margin:
-        0
-        0
-        35px;
-
-    line-height:
-        1.8;
-
-}
-
-
-.future-lab .future-hero a{
-
-    margin-top:
-        10px;
-
-}
-
-
-/* ========================================================= */
-/* 09 — SECTION CONTENT STRUCTURE                            */
-/* ========================================================= */
-
-.future-lab > section > .future-container,
-.future-lab > section > .future-core-container{
-
-    display:
-        block;
-
-}
-
-
-.future-lab section h1,
-.future-lab section h2,
-.future-lab section h3{
-
-    margin-top:
-        0;
-
-}
-
-
-.future-lab section p{
-
-    line-height:
-        1.85;
-
-}
-
-
-/* ========================================================= */
-/* 10 — UNIVERSAL CONTENT WIDTH                              */
-/* ========================================================= */
-
-.future-lab [class*="message"],
-.future-lab [class*="vision"],
-.future-lab [class*="manifesto"],
-.future-lab [class*="closing"]{
-
-    width:
-        100%;
-
-    max-width:
-        1100px;
-
-    margin-left:
-        auto;
-
-    margin-right:
-        auto;
-
-}
-
-
-/* ========================================================= */
-/* 11 — UNIVERSAL GRID SYSTEM                                */
-/* ========================================================= */
-
-.future-lab [class*="cards"],
-.future-lab [class*="grid"]{
-
-    width:
-        100%;
-
-    display:
-        grid;
-
-    gap:
-        28px;
-
-    margin-top:
-        55px;
-
-}
-
-
-/* ========================================================= */
-/* 12 — COMMON CARD GRID                                     */
-/* ========================================================= */
-
-.future-lab .future-core-cards,
-.future-lab .os-cards,
-.future-lab .rose-cards,
-.future-lab .zhr-cards,
-.future-lab .zhr-future-cards,
-.future-lab .design-cards,
-.future-lab .family-cards,
-.future-lab .transport-cards,
-.future-lab .research-cards,
-.future-lab .vision-cards{
-
-    grid-template-columns:
-        repeat(
-            3,
-            minmax(
-                0,
-                1fr
-            )
-        );
-
-    align-items:
-        stretch;
-
-}
-
-
-/* ========================================================= */
-/* 13 — UNIVERSAL CARD STRUCTURE                             */
-/* ========================================================= */
-
-.future-lab [class*="card"]{
-
-    width:
-        100%;
-
-    min-width:
-        0;
-
-    min-height:
-        240px;
-
-    padding:
-        34px;
-
-    border-radius:
-        28px;
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    justify-content:
-        flex-start;
-
-    gap:
-        18px;
-
-}
-
-
-/* ========================================================= */
-/* 14 — CARD TYPOGRAPHY                                      */
-/* ========================================================= */
-
-.future-lab [class*="card"] h1,
-.future-lab [class*="card"] h2,
-.future-lab [class*="card"] h3,
-.future-lab [class*="card"] h4{
-
-    margin:
-        0;
-
-    line-height:
-        1.25;
-
-}
-
-
-.future-lab [class*="card"] p{
-
-    margin:
-        0;
-
-    line-height:
-        1.8;
-
-}
-
-
-/* ========================================================= */
-/* 15 — UNIVERSAL PANELS                                    */
-/* ========================================================= */
-
-.future-lab [class*="panel"]{
-
-    width:
-        100%;
-
-    max-width:
-        1100px;
-
-    margin-left:
-        auto;
-
-    margin-right:
-        auto;
-
-    padding:
-        45px;
-
-    border-radius:
-        32px;
-
-}
-
-
-/* ========================================================= */
-/* 16 — CONTENT INSIDE PANELS                               */
-/* ========================================================= */
-
-.future-lab [class*="panel"] h1,
-.future-lab [class*="panel"] h2,
-.future-lab [class*="panel"] h3{
-
-    margin-top:
-        0;
-
-    margin-bottom:
-        20px;
-
+  content: "";
+  pointer-events: none;
 }
 
+.future-space-bg::before {
+  opacity: 0.42;
 
-.future-lab [class*="panel"] p{
+  background:
+    repeating-radial-gradient(
+      ellipse at 50% 50%,
+      transparent 0 66px,
+      rgba(0, 217, 255, 0.075) 67px,
+      transparent 68px 116px
+    );
 
-    margin:
-        0
-        0
-        20px;
+  transform: perspective(900px) rotateX(64deg) scale(1.35);
 
-    line-height:
-        1.85;
+  transform-origin: center 58%;
 
+  animation: ars-future-orbit 34s linear infinite;
 }
 
+.future-space-bg::after {
+  opacity: 0.55;
 
-/* ========================================================= */
-/* 17 — BUTTON GROUP STRUCTURE                               */
-/* ========================================================= */
+  background:
+    linear-gradient(
+      112deg,
+      transparent 0 37%,
+      rgba(0, 217, 255, 0.11) 37.1%,
+      transparent 37.35% 62%,
+      rgba(8, 124, 255, 0.10) 62.1%,
+      transparent 62.35%
+    );
 
-.future-lab .future-container > a,
-.future-lab .future-container > button{
+  -webkit-mask-image:
+    radial-gradient(ellipse at center, #000, transparent 72%);
 
-    margin-top:
-        20px;
-
+  mask-image:
+    radial-gradient(ellipse at center, #000, transparent 72%);
 }
-
-
-.future-lab [class*="buttons"],
-.future-lab [class*="actions"],
-.future-lab [class*="cta"]{
-
-    display:
-        flex;
 
-    flex-wrap:
-        wrap;
 
-    align-items:
-        center;
+/* Hero grid */
 
-    gap:
-        18px;
+.future-grid {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
 
-    margin-top:
-        30px;
+  pointer-events: none;
 
-}
-
-
-/* ========================================================= */
-/* 18 — FUTURE SPACE STRUCTURE                              */
-/* ========================================================= */
-
-.future-lab .future-space-core,
-.future-lab .future-mobility,
-.future-lab .ars-os-core,
-.future-lab .rose-future,
-.future-lab .zhr-future,
-.future-lab .zhr-future-ecosystem,
-.future-lab .design-future,
-.future-lab .ars-digital-family,
-.future-lab .ars-smart-transportation,
-.future-lab .ars-research-lab,
-.future-lab .ars-2050-vision,
-.future-lab .future-ai-gateway{
+  opacity: 0.26;
 
-    width:
-        100%;
+  background-image:
+    linear-gradient(
+      rgba(0, 217, 255, 0.085) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 217, 255, 0.085) 1px,
+      transparent 1px
+    );
 
-    max-width:
-        100%;
+  background-size:
+    clamp(36px, 5vw, 70px)
+    clamp(36px, 5vw, 70px);
 
-    position:
-        relative;
+  -webkit-mask-image:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      #000 25%,
+      #000 72%,
+      transparent 100%
+    );
 
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      #000 25%,
+      #000 72%,
+      transparent 100%
+    );
 }
 
 
-/* ========================================================= */
-/* 19 — SECTION SEPARATION                                  */
-/* ========================================================= */
+/* Hero content container */
 
-.future-lab > section + section{
+.future-lab .future-container {
+  position: relative;
+  z-index: 2;
 
-    border-top:
-        1px
-        solid
-        rgba(
-            255,
-            215,
-            130,
-            .045
-        );
+  width: min(100%, var(--ars-content-width));
 
+  margin-inline: auto;
 }
 
+.future-hero {
+  position: relative;
 
-/* ========================================================= */
-/* 20 — SAFE IMAGE SYSTEM                                   */
-/* ========================================================= */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-.future-lab img{
+  width: 100%;
+  max-width: 1000px;
 
-    max-width:
-        100%;
+  margin-inline: auto;
 
-    height:
-        auto;
-
-    display:
-        block;
-
+  text-align: center;
 }
 
 
-.future-lab img:not([src]),
-.future-lab img[src=""]{
+/* Hero identity label */
 
-    display:
-        none;
+.future-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
 
-}
+  margin-bottom: clamp(22px, 3vw, 34px);
+  padding: 9px 16px;
 
+  border: 1px solid rgba(0, 217, 255, 0.32);
+  border-radius: var(--ars-radius-pill);
 
-/* ========================================================= */
-/* 21 — PREVENT BROKEN IMAGE COLLAPSE                        */
-/* ========================================================= */
+  color: var(--ars-ice-blue);
 
-.future-lab [class*="image"],
-.future-lab [class*="visual"],
-.future-lab [class*="media"]{
+  background:
+    linear-gradient(
+      135deg,
+      rgba(8, 124, 255, 0.15),
+      rgba(0, 217, 255, 0.045)
+    );
 
-    min-width:
-        0;
+  box-shadow:
+    inset 0 0 18px rgba(0, 217, 255, 0.035),
+    0 0 28px rgba(8, 124, 255, 0.075);
 
-    overflow:
-        hidden;
+  font-size: 0.76rem;
+  font-weight: 750;
 
+  letter-spacing: 0.19em;
+  line-height: 1.4;
+  text-transform: uppercase;
 }
 
+.future-label::before {
+  width: 7px;
+  height: 7px;
 
-.future-lab [class*="image"] img,
-.future-lab [class*="visual"] img,
-.future-lab [class*="media"] img{
+  flex: 0 0 7px;
 
-    width:
-        100%;
+  border-radius: 50%;
 
-    max-width:
-        100%;
+  content: "";
 
-    object-fit:
-        cover;
+  background: var(--ars-electric-cyan);
 
+  box-shadow:
+    0 0 8px rgba(0, 217, 255, 0.85),
+    0 0 18px rgba(0, 217, 255, 0.42);
 }
-
 
-/* ========================================================= */
-/* 22 — FUTURE LAB SCROLL FLOW                              */
-/* ========================================================= */
 
-.future-lab section{
+/* Main hero title */
 
-    scroll-margin-top:
-        80px;
+.future-hero h1 {
+  max-width: 1000px;
 
-}
-
+  margin: 0;
 
-/* ========================================================= */
-/* 23 — REMOVE UNWANTED INLINE SPACING                       */
-/* ========================================================= */
+  color: #f2fbff;
 
-.future-lab > *{
+  font-size: clamp(2.7rem, 7.2vw, 6.6rem);
+  font-weight: 800;
 
-    margin-left:
-        0;
+  line-height: 1.04;
+  letter-spacing: -0.065em;
 
-    margin-right:
-        0;
+  text-wrap: balance;
 
+  text-shadow:
+    0 0 34px rgba(8, 124, 255, 0.14),
+    0 0 70px rgba(0, 217, 255, 0.07);
 }
-
-
-/* ========================================================= */
-/* 24 — LARGE SCREEN                                        */
-/* ========================================================= */
-
-@media (min-width:1200px){
-
-    .future-lab > section{
-
-        padding-top:
-            150px;
-
-        padding-bottom:
-            150px;
 
-    }
-
-
-    .future-lab .future-hero{
-
-        min-height:
-            820px;
-
-    }
-
-
-    .future-lab .future-container,
-    .future-lab .future-core-container{
-
-        width:
-            min(
-                88%,
-                1320px
-            );
-
-        max-width:
-            1320px;
-
-    }
-
+.future-hero h1::selection {
+  color: #fff;
+  background: rgba(0, 217, 255, 0.48);
 }
-
-
-/* ========================================================= */
-/* 25 — TABLET                                             */
-/* ========================================================= */
-
-@media (max-width:900px){
-
-    .future-lab > section{
-
-        padding:
-            90px
-            0;
-
-    }
 
 
-    .future-lab .future-container,
-    .future-lab .future-core-container{
+/* Hero introductory statement */
 
-        width:
-            92%;
+.future-hero > p {
+  max-width: 740px;
 
-        max-width:
-            700px;
+  margin: clamp(22px, 3vw, 32px) auto 0;
 
-        padding-left:
-            20px;
+  color: var(--ars-text-soft);
 
-        padding-right:
-            20px;
+  font-size: clamp(1rem, 1.7vw, 1.25rem);
+  line-height: 1.9;
 
-    }
-
-
-    .future-lab .future-hero{
-
-        min-height:
-            700px;
-
-        padding:
-            100px
-            0;
-
-    }
-
-
-    .future-lab .future-core-cards,
-    .future-lab .os-cards,
-    .future-lab .rose-cards,
-    .future-lab .zhr-cards,
-    .future-lab .zhr-future-cards,
-    .future-lab .design-cards,
-    .future-lab .family-cards,
-    .future-lab .transport-cards,
-    .future-lab .research-cards,
-    .future-lab .vision-cards{
-
-        grid-template-columns:
-            repeat(
-                2,
-                minmax(
-                    0,
-                    1fr
-                )
-            );
-
-    }
-
-
-    .future-lab [class*="card"]{
-
-        padding:
-            30px;
-
-    }
-
+  text-wrap: pretty;
 }
-
-
-/* ========================================================= */
-/* 26 — MOBILE                                             */
-/* ========================================================= */
-
-@media (max-width:600px){
-
-    html,
-    body{
-
-        width:
-            100%;
-
-        max-width:
-            100%;
-
-        overflow-x:
-            hidden;
-
-    }
-
-
-    .future-lab{
-
-        width:
-            100%;
-
-        max-width:
-            100%;
-
-        overflow-x:
-            hidden;
-
-    }
-
-
-    .future-lab > section{
-
-        width:
-            100%;
-
-        padding:
-            80px
-            0;
-
-    }
-
-
-    .future-lab .future-container,
-    .future-lab .future-core-container{
-
-        width:
-            calc(
-                100% - 32px
-            );
-
-        max-width:
-            none;
-
-        margin-left:
-            16px;
-
-        margin-right:
-            16px;
-
-        padding-left:
-            0;
-
-        padding-right:
-            0;
-
-    }
-
-
-    .future-lab .future-hero{
-
-        min-height:
-            650px;
-
-        padding:
-            80px
-            0;
-
-    }
-
-
-    .future-lab .future-hero .future-container{
-
-        min-height:
-            500px;
-
-        justify-content:
-            center;
-
-    }
-
-
-    .future-lab .future-hero h1{
-
-        font-size:
-            clamp(
-                2.6rem,
-                11vw,
-                4rem
-            );
-
-        line-height:
-            1.05;
-
-        margin-bottom:
-            28px;
-
-    }
-
-
-    .future-lab .future-hero p{
-
-        font-size:
-            1rem;
-
-        line-height:
-            1.75;
-
-    }
-
 
-    .future-lab .future-core-cards,
-    .future-lab .os-cards,
-    .future-lab .rose-cards,
-    .future-lab .zhr-cards,
-    .future-lab .zhr-future-cards,
-    .future-lab .design-cards,
-    .future-lab .family-cards,
-    .future-lab .transport-cards,
-    .future-lab .research-cards,
-    .future-lab .vision-cards{
 
-        grid-template-columns:
-            1fr;
+/* AI entry panel */
 
-        gap:
-            22px;
+.future-ai-entry {
+  position: relative;
+  isolation: isolate;
 
-        margin-top:
-            40px;
+  width: min(100%, 650px);
 
-    }
+  margin-top: clamp(38px, 6vw, 66px);
+  padding: clamp(26px, 4vw, 42px);
 
+  overflow: hidden;
 
-    .future-lab [class*="card"]{
+  border: 1px solid rgba(0, 217, 255, 0.27);
+  border-radius: var(--ars-radius-lg);
 
-        min-height:
-            220px;
+  background:
+    linear-gradient(
+      140deg,
+      rgba(8, 124, 255, 0.13),
+      rgba(7, 21, 46, 0.88) 45%,
+      rgba(0, 217, 255, 0.045)
+    );
 
-        padding:
-            28px
-            24px;
+  box-shadow:
+    var(--ars-shadow-deep),
+    inset 0 1px 0 rgba(185, 243, 255, 0.075),
+    0 0 42px rgba(8, 124, 255, 0.09);
 
-        border-radius:
-            24px;
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
 
-    }
-
-
-    .future-lab [class*="panel"]{
-
-        padding:
-            32px
-            24px;
-
-        border-radius:
-            26px;
-
-    }
-
-
-    .future-lab [class*="buttons"],
-    .future-lab [class*="actions"],
-    .future-lab [class*="cta"]{
-
-        flex-direction:
-            column;
-
-        align-items:
-            stretch;
-
-    }
-
-
-    .future-lab button,
-    .future-lab a[class*="btn"],
-    .future-lab a[class*="button"]{
-
-        width:
-            100%;
-
-        min-height:
-            56px;
-
-    }
-
+  text-align: center;
 }
 
+.future-ai-entry::before {
+  position: absolute;
+  z-index: -1;
 
-/* ========================================================= */
-/* 27 — VERY SMALL MOBILE                                   */
-/* ========================================================= */
+  top: 0;
+  left: -70%;
 
-@media (max-width:380px){
+  width: 60%;
+  height: 1px;
 
-    .future-lab .future-container,
-    .future-lab .future-core-container{
+  content: "";
 
-        width:
-            calc(
-                100% - 24px
-            );
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--ars-electric-cyan),
+      transparent
+    );
 
-        margin-left:
-            12px;
+  box-shadow:
+    0 0 16px rgba(0, 217, 255, 0.75);
 
-        margin-right:
-            12px;
-
-    }
-
-
-    .future-lab [class*="card"]{
-
-        padding:
-            24px
-            20px;
-
-    }
-
-
-    .future-lab [class*="panel"]{
-
-        padding:
-            28px
-            20px;
-
-    }
-
+  animation: ars-future-edge-flow 8s ease-in-out infinite;
 }
 
+.future-ai-entry::after {
+  position: absolute;
+  z-index: -1;
 
-/* ========================================================= */
-/* 28 — FINAL ANTI-OVERFLOW SAFETY                          */
-/* ========================================================= */
+  inset: 0;
 
-.future-lab h1,
-.future-lab h2,
-.future-lab h3,
-.future-lab h4,
-.future-lab p,
-.future-lab a{
+  content: "";
+  pointer-events: none;
 
-    max-width:
-        100%;
+  opacity: 0.5;
 
-    overflow-wrap:
-        break-word;
-
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(0, 217, 255, 0.12),
+      transparent 38%
+    );
 }
-
 
-/* ========================================================= */
-/* 29 — FINAL PAGE EDGE PROTECTION                           */
-/* ========================================================= */
+.future-ai-entry > span {
+  display: inline-block;
 
-.future-lab{
+  margin-bottom: 12px;
 
-    isolation:
-        isolate;
+  color: var(--ars-electric-cyan);
 
-    background-color:
-        #020b18;
+  font-size: 0.72rem;
+  font-weight: 750;
 
+  letter-spacing: 0.17em;
+  line-height: 1.6;
+  text-transform: uppercase;
 }
 
+.future-ai-entry h2 {
+  margin: 0;
 
-/* ========================================================= */
-/* 30 — FINAL FUTURE LAB STRUCTURE LOCK                     */
-/* ========================================================= */
+  color: var(--ars-text);
 
-.future-lab > section > *{
+  font-size: clamp(1.35rem, 2.8vw, 2rem);
+  font-weight: 750;
 
-    position:
-        relative;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
 
-    z-index:
-        2;
-
+  text-wrap: balance;
 }
-/* ========================================================= */
-/* ========================================================= */
-/*                                                           */
-/*        ARS FUTURE LAB — FINAL PAGE STRUCTURE              */
-/*        GLOBAL VISUAL UNIFICATION OVERRIDE                 */
-/*                                                           */
-/*        PURPOSE:                                           */
-/*        ONE PAGE / ONE BACKGROUND / ONE VISUAL WORLD       */
-/*                                                           */
-/* ========================================================= */
-/* ========================================================= */
-
 
-/* ========================================================= */
-/* 01 — GLOBAL RESET                                         */
-/* ========================================================= */
 
-html,
-body{
+/* Hero call to action */
 
-    margin:0 !important;
+.future-ai-entry a {
+  position: relative;
 
-    padding:0 !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
 
-    width:100% !important;
+  min-height: 52px;
 
-    min-width:100% !important;
+  margin-top: 26px;
+  padding: 14px 25px;
 
-    max-width:100% !important;
+  overflow: hidden;
 
-    overflow-x:hidden !important;
+  border: 1px solid rgba(185, 243, 255, 0.48);
+  border-radius: var(--ars-radius-pill);
 
-    background:#031426 !important;
-
-}
+  color: #fff;
 
+  background:
+    linear-gradient(
+      110deg,
+      #087cff,
+      #0069df 48%,
+      #009acb
+    );
 
-/* ========================================================= */
-/* 02 — REMOVE WHITE PAGE EDGES                              */
-/* ========================================================= */
+  box-shadow:
+    0 8px 28px rgba(8, 124, 255, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
 
-*,
-*::before,
-*::after{
+  font-size: 0.92rem;
+  font-weight: 750;
 
-    box-sizing:border-box;
+  line-height: 1.4;
 
+  transition:
+    transform var(--ars-transition-base),
+    box-shadow var(--ars-transition-base),
+    border-color var(--ars-transition-base),
+    filter var(--ars-transition-base);
 }
 
+.future-ai-entry a::after {
+  position: absolute;
 
-body{
+  top: -50%;
+  left: -65%;
 
-    background:
+  width: 45%;
+  height: 200%;
 
-        radial-gradient(
-            ellipse at 50% 8%,
-            rgba(18,76,125,.32),
-            transparent 42%
-        ),
+  content: "";
 
-        radial-gradient(
-            ellipse at 15% 48%,
-            rgba(8,54,96,.28),
-            transparent 45%
-        ),
+  pointer-events: none;
 
-        radial-gradient(
-            ellipse at 85% 72%,
-            rgba(12,67,112,.24),
-            transparent 48%
-        ),
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.22),
+      transparent
+    );
 
-        linear-gradient(
-            180deg,
-            #020b18 0%,
-            #041426 25%,
-            #061b32 52%,
-            #031426 76%,
-            #020914 100%
-        ) !important;
+  transform: rotate(18deg);
 
-    color:#f7f1e3 !important;
-
+  transition: left 600ms ease;
 }
-
-
-/* ========================================================= */
-/* 03 — FUTURE LAB MAIN WORLD                                */
-/* ========================================================= */
-
-.future-lab{
-
-    position:relative !important;
-
-    display:block !important;
-
-    width:100% !important;
-
-    max-width:none !important;
 
-    min-height:100vh !important;
+.future-ai-entry a:hover {
+  border-color: var(--ars-ice-blue);
 
-    margin:0 !important;
+  box-shadow:
+    0 12px 36px rgba(8, 124, 255, 0.35),
+    0 0 28px rgba(0, 217, 255, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
 
-    padding:0 !important;
+  filter: brightness(1.08);
 
-    overflow:hidden !important;
-
-    isolation:isolate !important;
-
-    background:
-
-        radial-gradient(
-            ellipse at 50% 10%,
-            rgba(18,76,125,.42),
-            transparent 45%
-        ),
-
-        radial-gradient(
-            ellipse at 8% 42%,
-            rgba(8,58,104,.32),
-            transparent 44%
-        ),
-
-        radial-gradient(
-            ellipse at 92% 65%,
-            rgba(10,63,110,.28),
-            transparent 48%
-        ),
-
-        linear-gradient(
-            180deg,
-            #020b18 0%,
-            #041426 22%,
-            #061b32 48%,
-            #04182c 72%,
-            #020b18 100%
-        ) !important;
-
+  transform: translateY(-3px);
 }
-
 
-/* ========================================================= */
-/* 04 — ALL SECTIONS BECOME TRANSPARENT                      */
-/* ========================================================= */
-
-.future-lab > section,
-.future-lab section,
-.future-space-core,
-.future-mobility,
-.ars-os-core,
-.rose-future,
-.zhr-future,
-.zhr-future-ecosystem,
-.design-future,
-.ars-digital-family,
-.ars-smart-transportation,
-.ars-research-lab,
-.ars-2050-vision,
-.future-ai-gateway{
-
-    position:relative !important;
-
-    width:100% !important;
-
-    max-width:none !important;
-
-    margin:0 !important;
-
-    background:transparent !important;
-
+.future-ai-entry a:hover::after {
+  left: 130%;
 }
-
 
-/* ========================================================= */
-/* 05 — REMOVE SEPARATE BACKGROUND BLOCKS                   */
-/* ========================================================= */
-
-.future-lab > section::before,
-.future-lab > section::after{
-
-    pointer-events:none;
-
+.future-ai-entry a:active {
+  transform: translateY(-1px);
 }
-
-
-/* ========================================================= */
-/* 06 — HERO IS PART OF THE SAME WORLD                       */
-/* ========================================================= */
-
-.future-hero{
-
-    position:relative !important;
-
-    width:100% !important;
 
-    min-width:100% !important;
 
-    max-width:none !important;
 
-    min-height:100vh !important;
 
-    margin:0 !important;
 
-    border:0 !important;
 
-    border-radius:0 !important;
 
-    background:
+/* ============================================================================
+   END OF PART 1
+   Continue with PART 2 in the same CSS file.
+   Do not create a second stylesheet.
+  ========================================================================== */
 
-        radial-gradient(
-            ellipse at 50% 30%,
-            rgba(18,88,150,.30),
-            transparent 52%
-        ),
 
-        transparent !important;
 
-}
-
-
-/* ========================================================= */
-/* 07 — HERO GOLD LIGHT — INTEGRATED                         */
-/* ========================================================= */
-
-.future-hero::after{
-
-    content:"" !important;
-
-    position:absolute !important;
-
-    inset:-20% -15% !important;
-
-    z-index:-1 !important;
 
-    pointer-events:none !important;
 
-    background:
 
-        radial-gradient(
-            ellipse at 50% 55%,
-            rgba(255,211,120,.22),
-            transparent 28%
-        ),
 
-        radial-gradient(
-            ellipse at 35% 35%,
-            rgba(255,198,65,.12),
-            transparent 30%
-        ),
 
-        radial-gradient(
-            ellipse at 70% 70%,
-            rgba(230,188,103,.10),
-            transparent 34%
-        ) !important;
+/* ============================================================================
+   06 — FUTURE SPACE CORE
+   ========================================================================== */
 
-    filter:blur(40px) !important;
-
-    opacity:.85 !important;
-
+.future-core-container {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.92fr) minmax(0, 1.08fr);
+  align-items: center;
+  gap: clamp(38px, 7vw, 94px);
 }
-
-
-/* ========================================================= */
-/* 08 — UNIFIED CONTENT CONTAINER                            */
-/* ========================================================= */
-
-.future-container,
-.future-core-container{
-
-    position:relative !important;
-
-    width:min(1180px, 92%) !important;
-
-    max-width:1180px !important;
 
-    margin-left:auto !important;
-
-    margin-right:auto !important;
-
-    padding-left:0 !important;
-
-    padding-right:0 !important;
-
+.future-core-visual {
+  position: relative;
+  display: grid;
+  min-height: clamp(320px, 42vw, 520px);
+  place-items: center;
+  isolation: isolate;
 }
-
-
-/* ========================================================= */
-/* 09 — ALL MAIN CONTENT ALIGNMENT                            */
-/* ========================================================= */
-
-.future-lab > section > .future-container,
-.future-lab > section > .future-core-container{
-
-    margin-left:auto !important;
 
-    margin-right:auto !important;
-
+.future-core-visual::before {
+  position: absolute;
+  z-index: -1;
+  width: 76%;
+  aspect-ratio: 1;
+  content: "";
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(8, 124, 255, 0.22),
+      rgba(0, 217, 255, 0.05) 42%,
+      transparent 70%
+    );
+  filter: blur(10px);
 }
-
-
-/* ========================================================= */
-/* 10 — HERO CONTENT                                         */
-/* ========================================================= */
-
-.future-hero .future-container{
-
-    min-height:100vh !important;
-
-    display:flex !important;
-
-    flex-direction:column !important;
-
-    justify-content:center !important;
 
-    align-items:flex-start !important;
-
-    padding-top:120px !important;
-
-    padding-bottom:120px !important;
-
+.core-ring {
+  position: absolute;
+  width: 64%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(0, 217, 255, 0.42);
+  border-radius: 50%;
+  box-shadow:
+    0 0 22px rgba(8, 124, 255, 0.1),
+    inset 0 0 22px rgba(8, 124, 255, 0.06);
 }
-
 
-/* ========================================================= */
-/* 11 — TEXT STRUCTURE                                       */
-/* ========================================================= */
-
-.future-lab h1,
-.future-lab h2,
-.future-lab h3,
-.future-lab h4,
-.future-lab p,
-.future-lab span,
-.future-lab strong,
-.future-lab a{
-
-    max-width:100%;
-
+.core-ring.ring-1 {
+  width: 54%;
+  border-color: rgba(185, 243, 255, 0.5);
+  animation: ars-orbit-spin 24s linear infinite;
 }
-
 
-.future-lab h1{
-
-    margin-top:0 !important;
-
-    margin-bottom:28px !important;
-
-    line-height:1.05 !important;
-
+.core-ring.ring-2 {
+  width: 70%;
+  border-style: dashed;
+  border-color: rgba(8, 124, 255, 0.5);
+  transform: rotateX(62deg) rotateZ(-18deg);
+  animation: ars-orbit-spin-reverse 38s linear infinite;
 }
-
-
-.future-lab h2{
-
-    margin-top:0 !important;
-
-    margin-bottom:22px !important;
 
-    line-height:1.15 !important;
-
+.core-ring.ring-3 {
+  width: 84%;
+  border-color: rgba(0, 217, 255, 0.19);
+  transform: rotateX(66deg) rotateZ(34deg);
+  animation: ars-orbit-spin 46s linear infinite;
 }
-
-
-.future-lab p{
-
-    margin-top:0 !important;
 
-    margin-bottom:24px !important;
-
-    line-height:1.75 !important;
-
+.future-core-logo {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  width: clamp(116px, 17vw, 190px);
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid rgba(0, 217, 255, 0.32);
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(9, 37, 73, 0.96),
+      rgba(3, 8, 23, 0.9) 72%
+    );
+  box-shadow:
+    0 0 48px rgba(8, 124, 255, 0.22),
+    inset 0 0 28px rgba(0, 217, 255, 0.08);
 }
-
-
-/* ========================================================= */
-/* 12 — IMAGE SAFETY                                         */
-/* ========================================================= */
 
-.future-lab img{
-
-    display:block;
-
-    max-width:100%;
-
-    height:auto;
-
+.future-core-logo img {
+  width: 66%;
+  max-height: 66%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 12px rgba(0, 217, 255, 0.18));
 }
 
-
-.future-lab img:not([src]),
-.future-lab img[src=""]{
-
-    display:none !important;
-
+.future-core-content {
+  position: relative;
+  z-index: 1;
 }
 
+.future-core-content h2 {
+  margin-bottom: 22px;
+  font-size: clamp(2rem, 4.3vw, 3.9rem);
+}
 
-/* ========================================================= */
-/* 13 — GRID STRUCTURE                                       */
-/* ========================================================= */
+.future-core-content > p {
+  margin-bottom: 28px;
+  color: var(--ars-text-soft);
+  font-size: 1.04rem;
+  line-height: 1.9;
+}
 
 .future-core-cards,
 .os-cards,
 .rose-cards,
 .zhr-cards,
-.zhr-future-cards,
 .design-cards,
 .family-cards,
 .transport-cards,
 .research-cards,
-.vision-cards{
+.vision-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--ars-card-gap);
+}
 
-    width:100% !important;
+.future-mini-card,
+.os-card,
+.rose-card {
+  min-height: 150px;
+  padding: clamp(20px, 2.6vw, 28px);
+  transition:
+    transform var(--ars-transition-base),
+    border-color var(--ars-transition-base),
+    box-shadow var(--ars-transition-base);
+}
 
-    max-width:1180px !important;
+.future-mini-card h3,
+.os-card h3,
+.rose-card h3,
+.mobility-card h3 {
+  margin-bottom: 10px;
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+  letter-spacing: -0.025em;
+}
 
-    margin-left:auto !important;
-
-    margin-right:auto !important;
-
-    display:grid !important;
-
-    grid-template-columns:
-        repeat(3,minmax(0,1fr));
-
-    gap:28px !important;
-
-    align-items:stretch !important;
-
+.future-mini-card p,
+.os-card p,
+.rose-card p,
+.mobility-card p {
+  margin-bottom: 0;
+  color: var(--ars-text-muted);
+  font-size: 0.93rem;
+  line-height: 1.75;
 }
 
 
-/* ========================================================= */
-/* 14 — CARD STRUCTURE                                       */
-/* ========================================================= */
+/* ============================================================================
+   07 — FUTURE MOBILITY
+   ========================================================================== */
 
-.future-lab [class*="card"]{
+.future-mobility {
+  background:
+    radial-gradient(
+      ellipse at 50% 28%,
+      rgba(0, 217, 255, 0.065),
+      transparent 46%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(7, 21, 46, 0.12),
+      rgba(3, 8, 23, 0.4)
+    );
+}
 
-    width:100% !important;
+.mobility-universe {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--ars-card-gap);
+  padding: clamp(18px, 3vw, 34px);
+}
 
-    min-width:0 !important;
+.mobility-card {
+  min-height: 210px;
+  padding: clamp(22px, 2.7vw, 32px);
+  border-radius: var(--ars-radius-md);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(10, 31, 61, 0.8),
+      rgba(4, 12, 28, 0.76)
+    );
+  transition:
+    transform var(--ars-transition-base),
+    border-color var(--ars-transition-base),
+    box-shadow var(--ars-transition-base);
+}
 
-    margin:0 !important;
+.mobility-card::before {
+  opacity: 0.68;
+}
 
-    padding:32px !important;
+.mobility-card h3 {
+  position: relative;
+  padding-top: 26px;
+}
 
-    border-radius:28px !important;
+.mobility-card h3::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 3px;
+  border-radius: var(--ars-radius-pill);
+  content: "";
+  background:
+    linear-gradient(
+      90deg,
+      var(--ars-electric-cyan),
+      var(--ars-future-blue)
+    );
+  box-shadow: 0 0 12px rgba(0, 217, 255, 0.28);
+}
 
-    overflow:hidden !important;
+.mobility-message {
+  margin-top: clamp(20px, 3vw, 32px);
+  padding: clamp(24px, 4vw, 40px);
+  text-align: center;
+}
 
+.mobility-message p {
+  max-width: 840px;
+  margin: 0 auto;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.9;
 }
 
 
-/* ========================================================= */
-/* 15 — CARD INTERNAL SPACING                                */
-/* ========================================================= */
+/* ============================================================================
+   08 — ARS OS CORE
+   ========================================================================== */
 
-.future-lab [class*="card"] h1,
-.future-lab [class*="card"] h2,
-.future-lab [class*="card"] h3,
-.future-lab [class*="card"] h4{
+.os-core-panel {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(30px, 6vw, 76px);
+  padding: clamp(24px, 5vw, 58px);
+}
 
-    margin-top:0 !important;
+.os-visual {
+  position: relative;
+  display: grid;
+  min-height: clamp(280px, 35vw, 430px);
+  place-items: center;
+  isolation: isolate;
+}
 
-    margin-bottom:18px !important;
+.os-visual::before {
+  position: absolute;
+  z-index: -1;
+  width: 84%;
+  aspect-ratio: 1;
+  content: "";
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(8, 124, 255, 0.2),
+      rgba(0, 217, 255, 0.04) 48%,
+      transparent 72%
+    );
+}
 
+.os-circle {
+  position: relative;
+  display: grid;
+  width: min(76%, 310px);
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid rgba(0, 217, 255, 0.46);
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(8, 124, 255, 0.16),
+      rgba(3, 8, 23, 0.14) 68%
+    );
+  box-shadow:
+    0 0 34px rgba(8, 124, 255, 0.12),
+    inset 0 0 40px rgba(0, 217, 255, 0.07);
+}
+
+.os-circle::before,
+.os-circle::after {
+  position: absolute;
+  inset: 12%;
+  content: "";
+  border: 1px dashed rgba(185, 243, 255, 0.34);
+  border-radius: 50%;
+}
+
+.os-circle::after {
+  inset: -12%;
+  border-style: solid;
+  border-color: rgba(8, 124, 255, 0.2);
+  transform: rotateX(66deg);
+}
+
+.os-node {
+  position: absolute;
+  z-index: 2;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--ars-ice-blue);
+  border-radius: 50%;
+  background: var(--ars-electric-cyan);
+  box-shadow:
+    0 0 12px rgba(0, 217, 255, 0.75),
+    0 0 28px rgba(8, 124, 255, 0.36);
+}
+
+.os-node.node-1 {
+  top: 5%;
+  left: 48%;
+}
+
+.os-node.node-2 {
+  top: 29%;
+  right: 5%;
+}
+
+.os-node.node-3 {
+  right: 15%;
+  bottom: 14%;
+}
+
+.os-node.node-4 {
+  bottom: 9%;
+  left: 20%;
+}
+
+.os-node.node-5 {
+  top: 32%;
+  left: 4%;
+}
+
+.os-content h2 {
+  margin-bottom: 20px;
+  font-size: clamp(1.9rem, 3.8vw, 3.5rem);
+}
+
+.os-content > p {
+  margin-bottom: 28px;
+  line-height: 1.9;
+}
+
+.os-card {
+  min-height: 132px;
+  padding: 22px;
+}
+
+.os-card h3 {
+  font-size: 1.05rem;
 }
 
 
-.future-lab [class*="card"] p{
+/* ============================================================================
+   END OF PART 2
+   Continue with PART 3 in the same CSS file.
+   Do not create a second stylesheet.
+   ========================================================================== */
 
-    margin-bottom:0 !important;
 
+/* ============================================================================
+   09 — ROSE FUTURE INTELLIGENCE
+   ========================================================================== */
+
+.rose-future {
+  --section-accent: #48baff;
+  --section-accent-rgb: 72, 186, 255;
+}
+
+.rose-core {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.82fr) minmax(0, 1.18fr);
+  align-items: center;
+  gap: clamp(34px, 6vw, 78px);
+  padding: clamp(24px, 5vw, 58px);
+}
+
+.rose-visual {
+  position: relative;
+  display: grid;
+  min-height: clamp(300px, 37vw, 450px);
+  place-items: center;
+  isolation: isolate;
+}
+
+.rose-visual::before {
+  position: absolute;
+  z-index: -1;
+  width: 85%;
+  aspect-ratio: 1;
+  content: "";
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(8, 124, 255, 0.24),
+      rgba(0, 217, 255, 0.075) 42%,
+      transparent 70%
+    );
+  filter: blur(8px);
+}
+
+.rose-orb {
+  position: relative;
+  display: grid;
+  width: min(74%, 320px);
+  aspect-ratio: 1;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(0, 217, 255, 0.32);
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle at 50% 38%,
+      rgba(11, 45, 83, 0.85),
+      rgba(3, 8, 23, 0.82) 70%
+    );
+  box-shadow:
+    0 0 42px rgba(8, 124, 255, 0.17),
+    inset 0 0 30px rgba(0, 217, 255, 0.06);
+}
+
+.rose-orb img {
+  width: 76%;
+  height: 76%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 18px rgba(0, 217, 255, 0.2));
+}
+
+.rose-wave {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(0, 217, 255, 0.7),
+      transparent
+    );
+  box-shadow: 0 0 12px rgba(0, 217, 255, 0.36);
+  animation: ars-wave-scan 5.5s ease-in-out infinite;
+}
+
+.rose-content h2 {
+  margin-bottom: 20px;
+  font-size: clamp(1.9rem, 3.8vw, 3.5rem);
+}
+
+.rose-content > p {
+  margin-bottom: 28px;
+  line-height: 1.9;
+}
+
+.rose-card {
+  min-height: 135px;
+  padding: 22px;
 }
 
 
-/* ========================================================= */
-/* 16 — PANEL STRUCTURE                                      */
-/* ========================================================= */
+/* ============================================================================
+   10 — ZHR FUTURE
+   ========================================================================== */
 
-.future-lab [class*="panel"]{
+.zhr-future {
+  --section-accent: #00c9f2;
+  --section-accent-rgb: 0, 201, 242;
+}
 
-    width:100% !important;
+.zhr-core {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: clamp(34px, 6vw, 78px);
+  padding: clamp(24px, 5vw, 58px);
+}
 
-    max-width:1180px !important;
+.zhr-visual {
+  position: relative;
+  display: grid;
+  min-height: clamp(300px, 36vw, 430px);
+  place-items: center;
+  isolation: isolate;
+}
 
-    margin-left:auto !important;
+.zhr-visual::before {
+  position: absolute;
+  z-index: -1;
+  width: 82%;
+  aspect-ratio: 1;
+  content: "";
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 217, 255, 0.14),
+      rgba(8, 124, 255, 0.08) 44%,
+      transparent 70%
+    );
+}
 
-    margin-right:auto !important;
+.zhr-shield {
+  position: relative;
+  width: min(62%, 240px);
+  aspect-ratio: 0.88;
+  border: 1px solid rgba(0, 217, 255, 0.46);
+  border-radius: 48% 48% 42% 42% / 28% 28% 60% 60%;
+  background:
+    linear-gradient(
+      155deg,
+      rgba(8, 124, 255, 0.2),
+      rgba(3, 8, 23, 0.5)
+    );
+  box-shadow:
+    0 0 34px rgba(8, 124, 255, 0.16),
+    inset 0 0 28px rgba(0, 217, 255, 0.07);
+}
 
-    border-radius:32px !important;
+.zhr-shield::before {
+  position: absolute;
+  inset: 12%;
+  content: "";
+  border: 1px solid rgba(185, 243, 255, 0.26);
+  border-radius: inherit;
+}
 
-    padding:50px !important;
+.zhr-pulse {
+  position: absolute;
+  width: 80%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  border-radius: 50%;
+  animation: ars-pulse-ring 5s ease-out infinite;
+}
 
+.zhr-pulse.pulse-2 {
+  animation-delay: 1.6s;
+}
+
+.zhr-pulse.pulse-3 {
+  animation-delay: 3.2s;
+}
+
+.zhr-content h2 {
+  margin-bottom: 20px;
+  font-size: clamp(1.9rem, 3.8vw, 3.5rem);
+}
+
+.zhr-content > p {
+  margin-bottom: 28px;
+  line-height: 1.9;
+}
+
+.zhr-cards > * {
+  min-height: 130px;
+  padding: 22px;
+}
+
+.zhr-message {
+  margin-top: 24px;
+  padding: clamp(22px, 3.5vw, 34px);
+}
+
+.zhr-message p {
+  margin: 0;
+  color: var(--ars-text-soft);
+  line-height: 1.9;
 }
 
 
-/* ========================================================= */
-/* 17 — SECTION RHYTHM                                       */
-/* ========================================================= */
+/* ============================================================================
+   END OF PART 3
+   Continue with PART 4 in the same CSS file.
+   Do not create a second stylesheet.
+   ========================================================================== */
 
-.future-lab > section{
 
-    padding-top:120px !important;
 
-    padding-bottom:120px !important;
 
+/* ============================================================================
+   11 — ZHR FUTURE ECOSYSTEM
+   ========================================================================== */
+
+.zhr-future-ecosystem {
+  background:
+    radial-gradient(
+      ellipse at 50% 38%,
+      rgba(0, 217, 255, 0.055),
+      transparent 45%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(3, 8, 23, 0.12),
+      rgba(7, 21, 46, 0.22)
+    );
+}
+
+.zhr-ecosystem-core {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(250px, 0.88fr);
+  align-items: center;
+  gap: clamp(32px, 6vw, 78px);
+  padding: clamp(24px, 5vw, 58px);
+}
+
+.zhr-network {
+  position: relative;
+  display: grid;
+  min-height: clamp(300px, 38vw, 460px);
+  place-items: center;
+  isolation: isolate;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(8, 124, 255, 0.12),
+      transparent 52%
+    );
+}
+
+.zhr-network::before,
+.zhr-network::after {
+  position: absolute;
+  width: 70%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(0, 217, 255, 0.24);
+  border-radius: 50%;
+  content: "";
+}
+
+.zhr-network::before {
+  transform: rotateX(65deg) rotateZ(20deg);
+}
+
+.zhr-network::after {
+  width: 88%;
+  border-style: dashed;
+  border-color: rgba(8, 124, 255, 0.26);
+  transform: rotateX(68deg) rotateZ(-24deg);
+}
+
+.zhr-center {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  width: clamp(110px, 16vw, 170px);
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid rgba(0, 217, 255, 0.4);
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(8, 33, 66, 0.95),
+      rgba(3, 8, 23, 0.94)
+    );
+  box-shadow:
+    0 0 40px rgba(8, 124, 255, 0.2),
+    inset 0 0 20px rgba(0, 217, 255, 0.08);
+}
+
+.zhr-center img {
+  width: 72%;
+  height: 72%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 12px rgba(0, 217, 255, 0.16));
+}
+
+.zhr-node {
+  position: absolute;
+  z-index: 3;
+  display: block;
+  width: 11px;
+  height: 11px;
+  border: 2px solid var(--ars-ice-blue);
+  border-radius: 50%;
+  background: var(--ars-electric-cyan);
+  box-shadow: 0 0 12px rgba(0, 217, 255, 0.65);
+}
+
+.zhr-node:nth-of-type(2) {
+  top: 16%;
+  left: 50%;
+}
+
+.zhr-node:nth-of-type(3) {
+  top: 31%;
+  right: 14%;
+}
+
+.zhr-node:nth-of-type(4) {
+  right: 14%;
+  bottom: 28%;
+}
+
+.zhr-node:nth-of-type(5) {
+  bottom: 14%;
+  left: 50%;
+}
+
+.zhr-node:nth-of-type(6) {
+  bottom: 29%;
+  left: 14%;
+}
+
+.zhr-node:nth-of-type(7) {
+  top: 31%;
+  left: 14%;
+}
+
+.zhr-ecosystem-content h2 {
+  margin-bottom: 20px;
+  font-size: clamp(1.9rem, 3.8vw, 3.5rem);
+}
+
+.zhr-ecosystem-content > p {
+  margin-bottom: 28px;
+  line-height: 1.9;
+}
+
+.zhr-future-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--ars-card-gap);
+}
+
+.zhr-human-message {
+  margin-top: 24px;
+  padding: clamp(22px, 3.5vw, 34px);
+}
+
+.zhr-human-message p {
+  margin: 0;
+  line-height: 1.9;
 }
 
 
-/* ========================================================= */
-/* 18 — FIRST SECTION                                        */
-/* ========================================================= */
+/* ============================================================================
+   12 — DESIGN FUTURE
+   ========================================================================== */
 
-.future-lab > section:first-of-type{
+.design-future-main {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.95fr) minmax(0, 1.05fr);
+  align-items: center;
+  gap: clamp(34px, 6vw, 78px);
+  padding: clamp(24px, 5vw, 58px);
+}
 
-    padding-top:0 !important;
+.design-visual {
+  position: relative;
+  display: grid;
+  min-height: clamp(290px, 36vw, 440px);
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(0, 217, 255, 0.14);
+  border-radius: var(--ars-radius-lg);
+  background:
+    radial-gradient(
+      ellipse at 50% 50%,
+      rgba(8, 124, 255, 0.13),
+      transparent 60%
+    ),
+    rgba(3, 8, 23, 0.36);
+}
 
+.design-visual img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  max-height: 440px;
+  object-fit: contain;
+  filter: drop-shadow(0 16px 34px rgba(0, 0, 0, 0.25));
+}
+
+.design-light {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  width: 74%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(0, 217, 255, 0.24);
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(8, 124, 255, 0.16),
+      transparent 68%
+    );
+  box-shadow: 0 0 36px rgba(8, 124, 255, 0.12);
+  transform: translate(-50%, -50%);
+}
+
+.design-light::before,
+.design-light::after {
+  position: absolute;
+  inset: -12%;
+  border: 1px solid rgba(0, 217, 255, 0.16);
+  border-radius: 50%;
+  content: "";
+  transform: rotateX(64deg);
+}
+
+.design-light::after {
+  inset: -24%;
+  border-color: rgba(8, 124, 255, 0.12);
+  transform: rotateX(64deg) rotateZ(40deg);
+}
+
+.design-content h2 {
+  margin-bottom: 20px;
+  font-size: clamp(1.9rem, 3.8vw, 3.5rem);
+}
+
+.design-content > p {
+  margin-bottom: 28px;
+  line-height: 1.9;
+}
+
+.design-cards > * {
+  min-height: 130px;
+  padding: 22px;
+}
+
+.design-message {
+  margin-top: 24px;
+  padding: clamp(22px, 3.5vw, 34px);
+}
+
+.design-message p {
+  margin: 0;
+  line-height: 1.9;
 }
 
 
-/* ========================================================= */
-/* 19 — LAST SECTION                                         */
-/* ========================================================= */
+/* ============================================================================
+   END OF PART 4
+   Continue with PART 5 in the same CSS file.
+   Do not create a second stylesheet.
+   ========================================================================== */
 
-.future-lab > section:last-of-type{
 
-    padding-bottom:160px !important;
 
+
+/* ============================================================================
+   13 — ARS DIGITAL FAMILY
+   ========================================================================== */
+
+.ars-digital-family {
+  --section-accent: var(--ars-electric-cyan);
+  --section-accent-rgb: 0, 217, 255;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 35%,
+      rgba(8, 124, 255, 0.075),
+      transparent 48%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(7, 21, 46, 0.14),
+      rgba(3, 8, 23, 0.3)
+    );
+}
+
+.family-network {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(250px, 0.88fr) minmax(0, 1.12fr);
+  align-items: center;
+  gap: clamp(34px, 6vw, 78px);
+  padding: clamp(24px, 5vw, 58px);
+  overflow: hidden;
+}
+
+.family-core {
+  position: relative;
+  display: grid;
+  min-height: clamp(300px, 38vw, 450px);
+  place-items: center;
+  isolation: isolate;
+}
+
+.family-core::before {
+  position: absolute;
+  z-index: -1;
+  width: 86%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  content: "";
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 217, 255, 0.14),
+      rgba(8, 124, 255, 0.08) 44%,
+      transparent 70%
+    );
+}
+
+.family-core::after {
+  position: absolute;
+  width: 74%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(0, 217, 255, 0.24);
+  border-radius: 50%;
+  content: "";
+  transform: rotateX(64deg) rotateZ(-24deg);
+  animation: ars-orbit-spin 38s linear infinite;
+}
+
+.family-core img {
+  position: relative;
+  z-index: 2;
+  width: min(74%, 300px);
+  max-height: 330px;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 0 18px rgba(0, 217, 255, 0.14))
+    drop-shadow(0 18px 32px rgba(0, 0, 0, 0.25));
+}
+
+.family-content {
+  position: relative;
+  z-index: 1;
+}
+
+.family-content h2 {
+  margin-bottom: 20px;
+  font-size: clamp(1.9rem, 3.8vw, 3.5rem);
+}
+
+.family-content > p {
+  margin-bottom: 28px;
+  line-height: 1.9;
+}
+
+.family-cards > * {
+  min-height: 135px;
+  padding: 22px;
+}
+
+.family-vision {
+  margin-top: 24px;
+  padding: clamp(22px, 3.5vw, 34px);
+}
+
+.family-vision p {
+  margin: 0;
+  color: var(--ars-text-soft);
+  line-height: 1.9;
 }
 
 
-/* ========================================================= */
-/* 20 — REMOVE DOUBLE SECTION BORDERS                        */
-/* ========================================================= */
+/* ============================================================================
+   14 — ARS SMART TRANSPORTATION
+   ========================================================================== */
 
-.future-lab > section{
+.ars-smart-transportation {
+  --section-accent: var(--ars-future-blue);
+  --section-accent-rgb: 8, 124, 255;
 
-    border-top:0 !important;
+  background:
+    radial-gradient(
+      ellipse at 50% 32%,
+      rgba(8, 124, 255, 0.075),
+      transparent 48%
+    );
+}
 
-    border-bottom:0 !important;
+.transport-core {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(250px, 0.92fr);
+  align-items: center;
+  gap: clamp(34px, 6vw, 78px);
+  padding: clamp(24px, 5vw, 58px);
+}
 
+.earth-network {
+  position: relative;
+  display: grid;
+  min-height: clamp(300px, 38vw, 460px);
+  place-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid rgba(0, 217, 255, 0.12);
+  border-radius: var(--ars-radius-lg);
+  background:
+    radial-gradient(
+      circle at 50% 48%,
+      rgba(8, 124, 255, 0.18),
+      transparent 55%
+    ),
+    rgba(3, 8, 23, 0.3);
+}
+
+.earth-network::before {
+  position: absolute;
+  width: min(62%, 260px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(0, 217, 255, 0.32);
+  border-radius: 50%;
+  content: "";
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      rgba(0, 217, 255, 0.12),
+      rgba(8, 124, 255, 0.08) 45%,
+      rgba(3, 8, 23, 0.8) 75%
+    );
+  box-shadow:
+    0 0 36px rgba(8, 124, 255, 0.14),
+    inset 0 0 32px rgba(0, 217, 255, 0.06);
+}
+
+.earth-network::after {
+  position: absolute;
+  width: 78%;
+  aspect-ratio: 1;
+  border: 1px dashed rgba(0, 217, 255, 0.22);
+  border-radius: 50%;
+  content: "";
+  transform: rotateX(66deg) rotateZ(22deg);
+}
+
+.network-line {
+  position: absolute;
+  z-index: 1;
+  display: block;
+  width: 66%;
+  height: 1px;
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(0, 217, 255, 0.7),
+      rgba(8, 124, 255, 0.48),
+      transparent
+    );
+  box-shadow: 0 0 10px rgba(0, 217, 255, 0.2);
+  transform-origin: center;
+}
+
+.network-line.line-1 {
+  transform: rotate(25deg);
+}
+
+.network-line.line-2 {
+  transform: rotate(-32deg);
+}
+
+.network-line.line-3 {
+  width: 54%;
+  transform: rotate(90deg);
+}
+
+.transport-content {
+  position: relative;
+  z-index: 2;
+}
+
+.transport-content h2 {
+  margin-bottom: 20px;
+  font-size: clamp(1.9rem, 3.8vw, 3.5rem);
+}
+
+.transport-content > p {
+  margin-bottom: 28px;
+  line-height: 1.9;
+}
+
+.transport-cards > * {
+  min-height: 135px;
+  padding: 22px;
+}
+
+.transport-message {
+  margin-top: 24px;
+  padding: clamp(22px, 3.5vw, 34px);
+}
+
+.transport-message p {
+  margin: 0;
+  color: var(--ars-text-soft);
+  line-height: 1.9;
 }
 
 
-/* ========================================================= */
-/* 21 — GLOBAL CONTENT WIDTH                                 */
-/* ========================================================= */
+/* ============================================================================
+   END OF PART 5
+   Continue with PART 6 in the same CSS file.
+   Do not create a second stylesheet.
+   ========================================================================== */
 
-.future-lab .future-message,
-.future-lab .future-manifesto,
-.future-lab .future-closing,
-.future-lab .mobility-message,
-.future-lab .zhr-message,
-.future-lab .zhr-human-message,
-.future-lab .design-message,
-.future-lab .family-vision,
-.future-lab .transport-message{
 
-    width:min(100%,1000px) !important;
+/* ============================================================================
+   15 — ARS RESEARCH LAB
+   ========================================================================== */
 
-    margin-left:auto !important;
+.research-main {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(34px, 6vw, 78px);
+  padding: clamp(24px, 5vw, 58px);
+}
 
-    margin-right:auto !important;
+.research-visual {
+  position: relative;
+  display: grid;
+  min-height: clamp(290px, 36vw, 440px);
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(0, 217, 255, 0.13);
+  border-radius: var(--ars-radius-lg);
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(8, 124, 255, 0.16),
+      transparent 65%
+    ),
+    rgba(3, 8, 23, 0.3);
+}
 
+.research-visual img {
+  position: relative;
+  z-index: 1;
+  width: min(88%, 400px);
+  max-height: 410px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 22px rgba(0, 217, 255, 0.15));
+}
+
+.research-core-light {
+  position: absolute;
+  width: 58%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(0, 217, 255, 0.32);
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(8, 124, 255, 0.18),
+      transparent 70%
+    );
+  box-shadow: 0 0 30px rgba(8, 124, 255, 0.12);
+}
+
+.research-core-light::before,
+.research-core-light::after {
+  position: absolute;
+  inset: -18%;
+  border: 1px dashed rgba(185, 243, 255, 0.24);
+  border-radius: 50%;
+  content: "";
+  transform: rotateX(64deg);
+}
+
+.research-core-light::after {
+  inset: -32%;
+  border-style: solid;
+  border-color: rgba(8, 124, 255, 0.16);
+  transform: rotateX(64deg) rotateZ(48deg);
+}
+
+.research-content h2 {
+  margin-bottom: 20px;
+  font-size: clamp(1.9rem, 3.8vw, 3.5rem);
+}
+
+.research-content > p {
+  margin-bottom: 28px;
+  line-height: 1.9;
+}
+
+.research-cards > * {
+  min-height: 130px;
+  padding: 22px;
+}
+
+.research-timeline {
+  margin-top: 24px;
+  padding: clamp(24px, 4vw, 40px);
+}
+
+.research-step {
+  position: relative;
+  padding: 0 0 24px 24px;
+  border-left: 1px solid rgba(0, 217, 255, 0.3);
+}
+
+.research-step:last-child {
+  padding-bottom: 0;
+  border-left-color: transparent;
+}
+
+.research-step::before {
+  position: absolute;
+  top: 7px;
+  left: -5px;
+  width: 9px;
+  height: 9px;
+  border: 2px solid var(--ars-ice-blue);
+  border-radius: 50%;
+  content: "";
+  background: var(--ars-electric-cyan);
+  box-shadow: 0 0 12px rgba(0, 217, 255, 0.42);
+}
+
+.research-step h3 {
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+}
+
+.research-step p {
+  margin-bottom: 0;
+  color: var(--ars-text-muted);
+  font-size: 0.93rem;
 }
 
 
-/* ========================================================= */
-/* 22 — NO HORIZONTAL OVERFLOW                               */
-/* ========================================================= */
+/* ============================================================================
+   16 — ARS 2050 VISION
+   ========================================================================== */
 
-.future-lab,
-.future-lab *{
+.ars-2050-vision {
+  background:
+    radial-gradient(
+      ellipse at 50% 24%,
+      rgba(8, 124, 255, 0.14),
+      transparent 44%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(7, 21, 46, 0.22),
+      rgba(3, 8, 23, 0.2)
+    );
+}
 
-    max-width:100%;
+.vision-2050-core {
+  max-width: 1120px;
+  margin-inline: auto;
+  padding: clamp(28px, 6vw, 72px);
+  text-align: center;
+}
 
+.vision-year {
+  display: inline-block;
+  margin-bottom: 22px;
+  color: var(--ars-electric-cyan);
+  font-size: clamp(4rem, 12vw, 9rem);
+  font-weight: 800;
+  letter-spacing: -0.09em;
+  line-height: 0.9;
+  text-shadow:
+    0 0 32px rgba(8, 124, 255, 0.28),
+    0 0 70px rgba(0, 217, 255, 0.08);
+}
+
+.vision-content h2 {
+  max-width: 850px;
+  margin: 0 auto 22px;
+  font-size: clamp(2rem, 5vw, 4.6rem);
+}
+
+.vision-content > p {
+  max-width: 760px;
+  margin: 0 auto clamp(30px, 4vw, 42px);
+  color: var(--ars-text-soft);
+  font-size: clamp(1rem, 1.5vw, 1.18rem);
+  line-height: 1.9;
+}
+
+.vision-cards > * {
+  min-height: 130px;
+  padding: 22px;
+  text-align: left;
+}
+
+.future-manifesto {
+  max-width: 1120px;
+  margin: 24px auto 0;
+  padding: clamp(24px, 4vw, 42px);
+  text-align: center;
+}
+
+.future-manifesto p {
+  margin: 0;
+  color: var(--ars-ice-blue);
+  font-size: clamp(1.05rem, 2vw, 1.45rem);
+  font-weight: 550;
+  line-height: 1.85;
 }
 
 
-.future-lab{
+/* ============================================================================
+   END OF PART 6
+   Continue with PART 7 in the same CSS file.
+   Do not create a second stylesheet.
+   ========================================================================== */
 
-    overflow-x:hidden !important;
 
+/* ============================================================================
+   17 — FUTURE AI GATEWAY
+   ========================================================================== */
+
+.future-ai-gateway {
+  position: relative;
+  padding-bottom: clamp(100px, 14vw, 180px);
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse at 50% 36%,
+      rgba(8, 124, 255, 0.19),
+      transparent 48%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(3, 8, 23, 0.12),
+      var(--ars-deep-space) 85%
+    );
+}
+
+.ai-gateway-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(230px, 0.8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: clamp(30px, 6vw, 76px);
+  max-width: 1120px;
+  margin-inline: auto;
+  padding: clamp(26px, 5.5vw, 64px);
+  overflow: hidden;
+  border-color: rgba(0, 217, 255, 0.27);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.075),
+    0 30px 100px rgba(0, 0, 0, 0.4),
+    0 0 70px rgba(8, 124, 255, 0.13);
+}
+
+.ai-gateway-card::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background:
+    linear-gradient(
+      120deg,
+      transparent 25%,
+      rgba(0, 217, 255, 0.045) 50%,
+      transparent 75%
+    );
+  transform: translateX(-100%);
+  animation: ars-gateway-light 12s ease-in-out infinite;
+}
+
+.ai-gateway-core {
+  position: relative;
+  display: grid;
+  min-height: clamp(250px, 31vw, 360px);
+  place-items: center;
+  isolation: isolate;
+}
+
+.ai-gateway-core::before {
+  position: absolute;
+  z-index: -1;
+  width: 92%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(0, 217, 255, 0.22);
+  border-radius: 50%;
+  content: "";
+  background:
+    radial-gradient(
+      circle,
+      rgba(8, 124, 255, 0.16),
+      transparent 68%
+    );
+  box-shadow: 0 0 38px rgba(8, 124, 255, 0.1);
+}
+
+.ai-gateway-core::after {
+  position: absolute;
+  z-index: -1;
+  width: 112%;
+  aspect-ratio: 1;
+  border: 1px dashed rgba(0, 217, 255, 0.19);
+  border-radius: 50%;
+  content: "";
+  transform: rotateX(66deg);
+  animation: ars-orbit-spin 45s linear infinite;
+}
+
+.ai-orb {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: min(68%, 245px);
+  aspect-ratio: 1;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(0, 217, 255, 0.4);
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle at 45% 38%,
+      rgba(8, 124, 255, 0.28),
+      rgba(3, 8, 23, 0.9) 72%
+    );
+  box-shadow:
+    0 0 44px rgba(8, 124, 255, 0.2),
+    inset 0 0 32px rgba(0, 217, 255, 0.08);
+  animation: ars-orb-breathe 7s ease-in-out infinite;
+}
+
+.ai-orb img {
+  width: 78%;
+  height: 78%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 20px rgba(0, 217, 255, 0.2));
+}
+
+.ai-gateway-content {
+  position: relative;
+  z-index: 1;
+}
+
+.ai-gateway-content h2 {
+  margin-bottom: 20px;
+  font-size: clamp(2rem, 4.3vw, 4rem);
+}
+
+.ai-gateway-content > p {
+  margin-bottom: 0;
+  color: var(--ars-text-soft);
+  font-size: 1.04rem;
+  line-height: 1.9;
 }
 
 
-/* ========================================================= */
-/* 23 — MOBILE STRUCTURE                                     */
-/* ========================================================= */
+/* ============================================================================
+   18 — FUTURE CLOSING SIGNATURE
+   ========================================================================== */
 
-@media(max-width:900px){
+.future-closing {
+  position: relative;
+  max-width: 1120px;
+  margin: 24px auto 0;
+  padding: clamp(24px, 4vw, 42px);
+  overflow: hidden;
+  text-align: center;
+}
 
-    .future-container,
-    .future-core-container{
+.future-closing::before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(220px, 40%);
+  height: 1px;
+  content: "";
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--ars-electric-cyan),
+      transparent
+    );
+  box-shadow: 0 0 18px rgba(0, 217, 255, 0.35);
+  transform: translateX(-50%);
+}
 
-        width:90% !important;
-
-        max-width:none !important;
-
-    }
-
-
-    .future-core-cards,
-    .os-cards,
-    .rose-cards,
-    .zhr-cards,
-    .zhr-future-cards,
-    .design-cards,
-    .family-cards,
-    .transport-cards,
-    .research-cards,
-    .vision-cards{
-
-        grid-template-columns:
-            repeat(2,minmax(0,1fr)) !important;
-
-        gap:22px !important;
-
-    }
-
-
-    .future-lab > section{
-
-        padding-top:90px !important;
-
-        padding-bottom:90px !important;
-
-    }
-
+.future-closing p {
+  position: relative;
+  z-index: 1;
+  max-width: 820px;
+  margin: 0 auto;
+  color: var(--ars-ice-blue);
+  font-size: clamp(1.05rem, 2vw, 1.42rem);
+  line-height: 1.9;
 }
 
 
-/* ========================================================= */
-/* 24 — SMALL MOBILE                                        */
-/* ========================================================= */
+/* ============================================================================
+   END OF PART 7
+   Continue with PART 8 in the same CSS file.
+   ========================================================================== */
+/* ============================================================================
+   17 — FUTURE AI GATEWAY
+   ========================================================================== */
 
-@media(max-width:600px){
+.future-ai-gateway {
+  position: relative;
+  padding-bottom: clamp(100px, 14vw, 180px);
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse at 50% 36%,
+      rgba(8, 124, 255, 0.19),
+      transparent 48%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(3, 8, 23, 0.12),
+      var(--ars-deep-space) 85%
+    );
+}
 
-    body{
+.ai-gateway-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(230px, 0.8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: clamp(30px, 6vw, 76px);
+  max-width: 1120px;
+  margin-inline: auto;
+  padding: clamp(26px, 5.5vw, 64px);
+  overflow: hidden;
+  border-color: rgba(0, 217, 255, 0.27);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.075),
+    0 30px 100px rgba(0, 0, 0, 0.4),
+    0 0 70px rgba(8, 124, 255, 0.13);
+}
 
-        width:100% !important;
+.ai-gateway-card::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background:
+    linear-gradient(
+      120deg,
+      transparent 25%,
+      rgba(0, 217, 255, 0.045) 50%,
+      transparent 75%
+    );
+  transform: translateX(-100%);
+  animation: ars-gateway-light 12s ease-in-out infinite;
+}
 
-        overflow-x:hidden !important;
+.ai-gateway-core {
+  position: relative;
+  display: grid;
+  min-height: clamp(250px, 31vw, 360px);
+  place-items: center;
+  isolation: isolate;
+}
 
-    }
+.ai-gateway-core::before {
+  position: absolute;
+  z-index: -1;
+  width: 92%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(0, 217, 255, 0.22);
+  border-radius: 50%;
+  content: "";
+  background:
+    radial-gradient(
+      circle,
+      rgba(8, 124, 255, 0.16),
+      transparent 68%
+    );
+  box-shadow: 0 0 38px rgba(8, 124, 255, 0.1);
+}
 
+.ai-gateway-core::after {
+  position: absolute;
+  z-index: -1;
+  width: 112%;
+  aspect-ratio: 1;
+  border: 1px dashed rgba(0, 217, 255, 0.19);
+  border-radius: 50%;
+  content: "";
+  transform: rotateX(66deg);
+  animation: ars-orbit-spin 45s linear infinite;
+}
 
-    .future-lab{
+.ai-orb {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: min(68%, 245px);
+  aspect-ratio: 1;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(0, 217, 255, 0.4);
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle at 45% 38%,
+      rgba(8, 124, 255, 0.28),
+      rgba(3, 8, 23, 0.9) 72%
+    );
+  box-shadow:
+    0 0 44px rgba(8, 124, 255, 0.2),
+    inset 0 0 32px rgba(0, 217, 255, 0.08);
+  animation: ars-orb-breathe 7s ease-in-out infinite;
+}
 
-        width:100% !important;
+.ai-orb img {
+  width: 78%;
+  height: 78%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 20px rgba(0, 217, 255, 0.2));
+}
 
-        min-width:100% !important;
+.ai-gateway-content {
+  position: relative;
+  z-index: 1;
+}
 
-    }
+.ai-gateway-content h2 {
+  margin-bottom: 20px;
+  font-size: clamp(2rem, 4.3vw, 4rem);
+}
 
-
-    .future-container,
-    .future-core-container{
-
-        width:calc(100% - 36px) !important;
-
-        max-width:none !important;
-
-    }
-
-
-    .future-hero{
-
-        min-height:100svh !important;
-
-    }
-
-
-    .future-hero .future-container{
-
-        min-height:100svh !important;
-
-        padding-top:90px !important;
-
-        padding-bottom:90px !important;
-
-    }
-
-
-    .future-core-cards,
-    .os-cards,
-    .rose-cards,
-    .zhr-cards,
-    .zhr-future-cards,
-    .design-cards,
-    .family-cards,
-    .transport-cards,
-    .research-cards,
-    .vision-cards{
-
-        grid-template-columns:1fr !important;
-
-        gap:20px !important;
-
-    }
-
-
-    .future-lab > section{
-
-        padding-top:75px !important;
-
-        padding-bottom:75px !important;
-
-    }
-
-
-    .future-lab [class*="card"]{
-
-        padding:26px !important;
-
-        border-radius:24px !important;
-
-    }
-
-
-    .future-lab [class*="panel"]{
-
-        padding:30px 24px !important;
-
-        border-radius:26px !important;
-
-    }
-
-
-    .future-lab h1{
-
-        font-size:clamp(
-            2.4rem,
-            10vw,
-            4rem
-        ) !important;
-
-    }
-
-
-    .future-lab h2{
-
-        font-size:clamp(
-            2rem,
-            8vw,
-            3rem
-        ) !important;
-
-    }
-
-
-    .future-lab p{
-
-        font-size:1.05rem !important;
-
-        line-height:1.75 !important;
-
-    }
-
+.ai-gateway-content > p {
+  margin-bottom: 0;
+  color: var(--ars-text-soft);
+  font-size: 1.04rem;
+  line-height: 1.9;
 }
 
 
-/* ========================================================= */
-/* 25 — FINAL PAGE INTEGRITY                                */
-/* ========================================================= */
+/* ============================================================================
+   18 — FUTURE CLOSING SIGNATURE
+   ========================================================================== */
 
-.future-lab > *{
+.future-closing {
+  position: relative;
+  max-width: 1120px;
+  margin: 24px auto 0;
+  padding: clamp(24px, 4vw, 42px);
+  overflow: hidden;
+  text-align: center;
+}
 
-    position:relative;
+.future-closing::before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(220px, 40%);
+  height: 1px;
+  content: "";
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--ars-electric-cyan),
+      transparent
+    );
+  box-shadow: 0 0 18px rgba(0, 217, 255, 0.35);
+  transform: translateX(-50%);
+}
 
-    z-index:1;
-
+.future-closing p {
+  position: relative;
+  z-index: 1;
+  max-width: 820px;
+  margin: 0 auto;
+  color: var(--ars-ice-blue);
+  font-size: clamp(1.05rem, 2vw, 1.42rem);
+  line-height: 1.9;
 }
 
 
-/* ========================================================= */
-/* 26 — PREVENT VISUAL FRAGMENTATION                         */
-/* ========================================================= */
-
-.future-lab > section + section{
-
-    margin-top:0 !important;
-
-    border-top:0 !important;
-
-}
-
-
-/* ========================================================= */
-/* 27 — FINAL BODY EDGE LOCK                                 */
-/* ========================================================= */
-
-html{
-
-    background:#020b18 !important;
-
-}
-
-
-body{
-
-    border:0 !important;
-
-}
-
-
-.future-lab{
-
-    border:0 !important;
-
-    outline:0 !important;
-
-}
-
-
-/* ========================================================= */
-/*                    END OF STRUCTURE                       */
-/* ========================================================= */
-
-/* ========================================================= */
-/* ========================================================= */
-/*                 END — FUTURE LAB SYSTEM                   */
-/* ========================================================= */
-/* ========================================================= */
+/* ============================================================================
+   END OF PART 7
+   Continue with PART 8 in the same CSS file.
+   ========================================================================== */
