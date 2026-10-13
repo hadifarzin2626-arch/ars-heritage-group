@@ -6996,68 +6996,101 @@ p {
 
 
 
+/* =========================================================
+   PATCH 30 — ARS SIGNATURE BREATHING
+   Direct Logo Animation + Champagne Energy Halo
+   ========================================================= */
 
-/* =========================================
-   PATCH 30 — ARS HERO BREATHING
-   Natural Cinematic Logo Animation
-   ========================================= */
-
+/* HERO LOGO POSITION */
 #media-hero .media-logo-wrapper {
-    animation: arsHeroLogoBreathing 6s ease-in-out infinite;
-    transform-origin: center center;
-    will-change: transform;
+    position: relative;
+    isolation: isolate;
+
+    /* Preserve the logo's upward position */
+    transform: translateY(-40%);
 }
 
+/* DIRECT BREATHING ON THE IMAGE */
 #media-hero .media-logo-wrapper .media-logo {
     display: block;
+    width: 100%;
+    height: auto;
+
     transform-origin: center center;
-    animation: arsHeroLogoPresence 6s ease-in-out infinite;
+
+    animation: arsSignatureBreathing 5s ease-in-out infinite;
+
+    will-change: transform, filter;
 }
 
-/* Champagne energy breathes beneath the logo */
+/* CHAMPAGNE ENERGY HALO */
 #media-hero .media-logo-wrapper::after {
-    animation: arsChampagneBreathing 6s ease-in-out infinite;
+    content: "";
+    position: absolute;
+
+    z-index: -1;
+
+    left: 50%;
+    bottom: -12%;
+
+    width: 140%;
+    aspect-ratio: 1;
+
+    transform: translateX(-50%);
     transform-origin: center center;
+
+    border-radius: 50%;
+    pointer-events: none;
+
+    background: radial-gradient(
+        ellipse at center,
+        rgba(232, 202, 151, 0.48) 0%,
+        rgba(215, 179, 119, 0.34) 28%,
+        rgba(197, 156, 91, 0.17) 48%,
+        rgba(197, 156, 91, 0) 72%
+    );
+
+    filter: blur(20px);
+
+    animation: arsChampagneHaloBreathing 5s ease-in-out infinite;
+
+    will-change: opacity, scale;
 }
 
-/* Natural, subtle movement */
-@keyframes arsHeroLogoBreathing {
-    0%, 100% {
-        transform: translateY(-40%) scale(1);
+/* NATURAL LOGO BREATHING */
+@keyframes arsSignatureBreathing {
+    0%,
+    100% {
+        transform: scale(1);
+        filter: drop-shadow(
+            0 0 3px rgba(225, 190, 130, 0.08)
+        );
     }
 
     50% {
-        transform: translateY(-40%) scale(1.035);
+        transform: scale(1.045);
+        filter: drop-shadow(
+            0 0 12px rgba(225, 190, 130, 0.28)
+        );
     }
 }
 
-/* Gentle luminosity on the logo itself */
-@keyframes arsHeroLogoPresence {
-    0%, 100% {
-        filter: drop-shadow(0 0 2px rgba(225, 190, 130, 0.08));
-    }
-
-    50% {
-        filter: drop-shadow(0 0 8px rgba(225, 190, 130, 0.22));
-    }
-}
-
-/* Slow champagne aura expansion */
-@keyframes arsChampagneBreathing {
-    0%, 100% {
-        opacity: 0.72;
-        scale: 0.94;
+/* SLOW, LUMINOUS CHAMPAGNE HALO */
+@keyframes arsChampagneHaloBreathing {
+    0%,
+    100% {
+        opacity: 0.65;
+        scale: 0.92;
     }
 
     50% {
         opacity: 1;
-        scale: 1.08;
+        scale: 1.10;
     }
 }
 
-/* Respect reduced-motion preferences */
+/* ACCESSIBILITY */
 @media (prefers-reduced-motion: reduce) {
-    #media-hero .media-logo-wrapper,
     #media-hero .media-logo-wrapper .media-logo,
     #media-hero .media-logo-wrapper::after {
         animation: none !important;
