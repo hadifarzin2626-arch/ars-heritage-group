@@ -6953,45 +6953,42 @@ p {
 
 /* =========================================
    PATCH 29 — ARS HERO LOGO
-   CHAMPAGNE HALO + UPWARD SHIFT
-   Targets the actual HTML selectors
+   REFINED CHAMPAGNE HALO
    ========================================= */
 
-#media-hero .media-hero-content {
-    --ars-hero-logo-diameter: 150px;
-}
-
-/* Move only the hero logo upward */
 #media-hero .media-logo-wrapper {
     position: relative;
     isolation: isolate;
-    transform: translateY(calc(-1 * var(--ars-hero-logo-diameter)));
+
+    /* Move upward by only 25% of the logo diameter */
+    transform: translateY(-25%);
 }
 
-/* Champagne halo directly beneath the logo */
+/* Premium champagne aura beneath the logo */
 #media-hero .media-logo-wrapper::after {
     content: "";
     position: absolute;
-    z-index: -1;
 
     left: 50%;
-    bottom: -12%;
+    top: 58%;
 
-    width: 140%;
-    aspect-ratio: 1;
+    width: 155%;
+    height: 155%;
 
-    transform: translateX(-50%);
+    transform: translate(-50%, 0);
     border-radius: 50%;
+
+    z-index: -1;
     pointer-events: none;
 
     background: radial-gradient(
         ellipse at center,
-        rgba(232, 202, 151, 0.34) 0%,
-        rgba(215, 179, 119, 0.23) 28%,
-        rgba(197, 156, 91, 0.11) 48%,
-        rgba(197, 156, 91, 0) 72%
+        rgba(242, 211, 160, 0.34) 0%,
+        rgba(220, 184, 125, 0.24) 25%,
+        rgba(196, 155, 92, 0.12) 48%,
+        rgba(196, 155, 92, 0.04) 65%,
+        transparent 76%
     );
 
-    filter: blur(15px);
+    filter: blur(20px);
 }
-
