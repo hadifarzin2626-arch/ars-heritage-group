@@ -7149,48 +7149,1009 @@ body {
 /* =========================================================
    END — ARS SIGNATURE TYPOGRAPHY PATCH
    ========================================================= */
-
-
-
-/* ==========================================
+/* ============================================================
    ARS FUTURE LAB
-   TEXT COLOR ONLY — MATTE DARK BRONZE
-   No changes to cards, backgrounds or layout
-   ========================================== */
+   SIGNATURE OVERRIDE — MATTE BRONZE / ICE WHITE / DEEP SPACE
+   HTML-ALIGNED PATCH
+   ============================================================ */
 
-.future-lab .future-hero h1,
-.future-lab .future-hero h2,
-.future-space-core .section-heading h2,
-.future-mobility .section-heading h2,
-.ars-os-core .section-heading h2,
-.rose-future .section-heading h2,
-.zhr-future .section-heading h2,
-.zhr-future-ecosystem .section-heading h2,
-.design-future .section-heading h2,
-.ars-digital-family .section-heading h2,
-.ars-smart-transportation .section-heading h2,
-.ars-research-lab .section-heading h2,
-.ars-2050-vision .section-heading h2,
-.future-ai-gateway .section-heading h2 {
-    color: #96725D !important;
+
+/* ------------------------------------------------------------
+   01 — SIGNATURE PALETTE
+   ------------------------------------------------------------ */
+
+:root {
+    --fl-bronze: #96725D;
+    --fl-bronze-light: #B18A70;
+    --fl-bronze-deep: #654A3C;
+    --fl-bronze-muted: #785747;
+
+    --fl-white: #F5F5F2;
+    --fl-white-soft: #D9DEE3;
+    --fl-muted: #AAB5C0;
+
+    --fl-blue: #087CFF;
+    --fl-cyan: #36C9F4;
+
+    --fl-black: #030507;
+    --fl-space: #070C13;
+    --fl-panel: #0B1420;
+
+    --fl-glass-border: rgba(150, 114, 93, .32);
+    --fl-blue-border: rgba(54, 201, 244, .22);
 }
 
-/* تیترهای اصلی و بزرگ داخل بخش‌ها */
-.future-space-core h2,
-.future-mobility h2,
-.ars-os-core h2,
-.rose-future h2,
-.zhr-future h2,
-.zhr-future-ecosystem h2,
-.design-future h2,
-.ars-digital-family h2,
-.ars-smart-transportation h2,
-.ars-research-lab h2,
-.ars-2050-vision h2,
-.future-ai-gateway h2 {
-    color: #96725D !important;
+
+/* ------------------------------------------------------------
+   02 — PAGE BACKGROUNDS
+   ------------------------------------------------------------ */
+
+.future-lab,
+.future-space-core,
+.future-mobility,
+.ars-os-core,
+.rose-future,
+.zhr-future,
+.zhr-future-ecosystem,
+.design-future,
+.ars-digital-family,
+.ars-smart-transportation,
+.ars-research-lab,
+.ars-2050-vision,
+.future-ai-gateway {
+    color: var(--fl-white);
+    background-color: var(--fl-black);
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
 }
 
-/* متن‌های سفید و نوشته‌های داخل کارت‌ها عمداً تغییر نمی‌کنند */
 
+/* Avoid a flat, uniformly blue background */
+
+.future-lab {
+    background:
+        radial-gradient(
+            ellipse at 78% 38%,
+            rgba(8, 124, 255, .13),
+            transparent 31%
+        ),
+        radial-gradient(
+            ellipse at 16% 65%,
+            rgba(101, 74, 60, .16),
+            transparent 36%
+        ),
+        linear-gradient(
+            125deg,
+            #030507 0%,
+            #0A111A 52%,
+            #030507 100%
+        );
+}
+
+
+/* Give the remaining sections subtle variations */
+
+.future-space-core,
+.future-mobility,
+.ars-os-core,
+.rose-future,
+.zhr-future,
+.zhr-future-ecosystem,
+.design-future,
+.ars-digital-family,
+.ars-smart-transportation,
+.ars-research-lab,
+.ars-2050-vision,
+.future-ai-gateway {
+    background:
+        radial-gradient(
+            ellipse at 12% 30%,
+            rgba(120, 87, 71, .075),
+            transparent 35%
+        ),
+        radial-gradient(
+            ellipse at 90% 65%,
+            rgba(8, 124, 255, .055),
+            transparent 34%
+        ),
+        linear-gradient(
+            180deg,
+            #070B11,
+            #040609 80%
+        );
+}
+
+
+/* ------------------------------------------------------------
+   03 — HERO
+   ------------------------------------------------------------ */
+
+.future-lab {
+    min-height: 760px;
+    overflow: hidden;
+    position: relative;
+    isolation: isolate;
+}
+
+.future-lab .future-space-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 76% 46%,
+            rgba(8, 124, 255, .17),
+            transparent 17%
+        ),
+        radial-gradient(
+            circle at 76% 46%,
+            rgba(54, 201, 244, .075),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 76% 46%,
+            rgba(150, 114, 93, .12),
+            transparent 40%
+        );
+}
+
+.future-lab .future-grid {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: .16;
+
+    background-image:
+        linear-gradient(
+            rgba(54, 201, 244, .11) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(54, 201, 244, .11) 1px,
+            transparent 1px
+        );
+
+    background-size: 68px 68px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            transparent,
+            #000 18%,
+            #000 76%,
+            transparent
+        );
+}
+
+.future-lab .future-container {
+    position: relative;
+    z-index: 2;
+}
+
+.future-lab .future-hero {
+    max-width: 100%;
+    padding-top: clamp(130px, 15vh, 190px);
+    padding-bottom: clamp(100px, 13vh, 155px);
+}
+
+
+/* Exact HTML: <span class="future-label"> */
+
+.future-lab .future-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+
+    color: var(--fl-bronze-light) !important;
+
+    font-size: .76rem;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+}
+
+.future-lab .future-label::before {
+    content: "";
+    display: inline-block;
+    width: 36px;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--fl-bronze-light)
+        );
+}
+
+
+/* Hero headline: bronze, not blue */
+
+.future-lab .future-hero h1 {
+    max-width: 1050px;
+    margin: 0 0 28px;
+
+    color: var(--fl-bronze-light) !important;
+
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    font-size: clamp(3.3rem, 6.4vw, 6.8rem);
+    font-weight: 800;
+    line-height: .99;
+    letter-spacing: -.065em;
+
+    text-shadow:
+        0 12px 38px rgba(0, 0, 0, .48);
+}
+
+.future-lab .future-hero > p {
+    max-width: 660px;
+    margin-bottom: 32px;
+
+    color: var(--fl-white-soft) !important;
+
+    font-size: clamp(1.02rem, 1.35vw, 1.23rem);
+    line-height: 1.9;
+}
+
+
+/* AI entry panel */
+
+.future-lab .future-ai-entry {
+    position: relative;
+    max-width: 520px;
+    margin-top: 38px;
+    padding: 30px 32px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--fl-glass-border);
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(25, 35, 44, .92),
+            rgba(5, 10, 17, .91)
+        );
+
+    box-shadow:
+        0 25px 65px rgba(0, 0, 0, .42),
+        inset 0 1px 0 rgba(255, 255, 255, .075);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    transition:
+        transform .4s ease,
+        border-color .4s ease,
+        box-shadow .4s ease;
+}
+
+.future-lab .future-ai-entry:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(177, 138, 112, .68);
+
+    box-shadow:
+        0 32px 75px rgba(0, 0, 0, .5),
+        0 0 28px rgba(8, 124, 255, .07);
+}
+
+.future-lab .future-ai-entry > span {
+    color: var(--fl-bronze-light) !important;
+
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+}
+
+.future-lab .future-ai-entry h2 {
+    margin: 15px 0 20px;
+
+    color: var(--fl-white) !important;
+
+    font-size: clamp(1.25rem, 2vw, 1.65rem);
+    line-height: 1.35;
+    letter-spacing: -.035em;
+}
+
+
+/* ------------------------------------------------------------
+   04 — ACTUAL SECTION HEADING STRUCTURE
+   HTML: .section-heading > span + h2 + p
+   ------------------------------------------------------------ */
+
+.section-heading {
+    margin-bottom: clamp(36px, 5vw, 66px);
+}
+
+.section-heading > span {
+    display: inline-block;
+    margin-bottom: 17px;
+
+    color: var(--fl-bronze-light) !important;
+
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .17em;
+    line-height: 1.6;
+    text-transform: uppercase;
+}
+
+.section-heading > h2 {
+    max-width: 1000px;
+    margin: 0 0 22px;
+
+    color: var(--fl-bronze-light) !important;
+
+    font-size: clamp(2.35rem, 4.2vw, 4.4rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -.055em;
+
+    text-shadow: 0 8px 30px rgba(0, 0, 0, .32);
+}
+
+.section-heading > p {
+    max-width: 760px;
+    margin: 0;
+
+    color: var(--fl-white-soft) !important;
+
+    font-size: clamp(1rem, 1.2vw, 1.15rem);
+    line-height: 1.9;
+}
+
+
+/* Content headings inside actual HTML */
+
+.future-core-content > h2,
+.os-content > h2,
+.rose-content > h2,
+.zhr-content > h2,
+.zhr-ecosystem-content > h2,
+.design-content > h2,
+.family-content > h2,
+.transport-content > h2,
+.research-content > h2,
+.vision-content > h2,
+.ai-gateway-content > h2 {
+    color: var(--fl-white) !important;
+
+    font-size: clamp(1.9rem, 3vw, 3.1rem);
+    font-weight: 760;
+    line-height: 1.16;
+    letter-spacing: -.045em;
+}
+
+.future-core-content > p,
+.os-content > p,
+.rose-content > p,
+.zhr-content > p,
+.zhr-ecosystem-content > p,
+.design-content > p,
+.family-content > p,
+.transport-content > p,
+.research-content > p,
+.vision-content > p,
+.ai-gateway-content > p {
+    color: var(--fl-white-soft) !important;
+
+    font-size: 1rem;
+    line-height: 1.9;
+}
+
+
+/* ------------------------------------------------------------
+   05 — ALL REAL CARD SELECTORS
+   ------------------------------------------------------------ */
+
+.future-mini-card,
+.mobility-card,
+.os-card,
+.rose-card,
+.zhr-card,
+.zhr-future-card,
+.design-card,
+.family-card,
+.transport-card,
+.research-card,
+.vision-card {
+    position: relative;
+    min-width: 0;
+    padding: 28px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(150, 114, 93, .30);
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(21, 33, 45, .92),
+            rgba(6, 12, 20, .92)
+        );
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, .32),
+        inset 0 1px 0 rgba(255, 255, 255, .065);
+
+    transition:
+        transform .4s cubic-bezier(.2, .75, .25, 1),
+        border-color .4s ease,
+        box-shadow .4s ease,
+        background .4s ease;
+}
+
+
+/* Glass highlight */
+
+.future-mini-card::before,
+.mobility-card::before,
+.os-card::before,
+.rose-card::before,
+.zhr-card::before,
+.zhr-future-card::before,
+.design-card::before,
+.family-card::before,
+.transport-card::before,
+.research-card::before,
+.vision-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    border-radius: inherit;
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            140deg,
+            rgba(255, 255, 255, .065),
+            transparent 32%,
+            transparent 76%,
+            rgba(8, 124, 255, .035)
+        );
+}
+
+
+/* Keep the real card contents visible */
+
+.future-mini-card > *,
+.mobility-card > *,
+.os-card > *,
+.rose-card > *,
+.zhr-card > *,
+.zhr-future-card > *,
+.design-card > *,
+.family-card > *,
+.transport-card > *,
+.research-card > *,
+.vision-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* 3D hover */
+
+.future-mini-card:hover,
+.mobility-card:hover,
+.os-card:hover,
+.rose-card:hover,
+.zhr-card:hover,
+.zhr-future-card:hover,
+.design-card:hover,
+.family-card:hover,
+.transport-card:hover,
+.research-card:hover,
+.vision-card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(177, 138, 112, .7);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(27, 41, 53, .97),
+            rgba(7, 13, 21, .96)
+        );
+
+    box-shadow:
+        0 30px 65px rgba(0, 0, 0, .45),
+        0 0 25px rgba(8, 124, 255, .06),
+        inset 0 1px 0 rgba(255, 255, 255, .1);
+}
+
+
+/* Card headings: white, never blue */
+
+.future-mini-card h3,
+.mobility-card h3,
+.os-card h3,
+.rose-card h3,
+.zhr-card h3,
+.zhr-future-card h3,
+.design-card h3,
+.family-card h3,
+.transport-card h3,
+.research-card h3,
+.vision-card h3 {
+    margin-top: 0;
+    margin-bottom: 13px;
+
+    color: var(--fl-white) !important;
+
+    font-size: clamp(1.12rem, 1.45vw, 1.38rem);
+    font-weight: 720;
+    line-height: 1.35;
+    letter-spacing: -.025em;
+}
+
+.future-mini-card p,
+.mobility-card p,
+.os-card p,
+.rose-card p,
+.zhr-card p,
+.zhr-future-card p,
+.design-card p,
+.family-card p,
+.transport-card p,
+.research-card p,
+.vision-card p {
+    margin-bottom: 0;
+
+    color: #C5CED7 !important;
+
+    font-size: .96rem;
+    line-height: 1.8;
+}
+
+
+/* ------------------------------------------------------------
+   06 — ENLARGE CARD LAYOUTS
+   ------------------------------------------------------------ */
+
+.future-core-cards,
+.os-cards,
+.rose-cards,
+.zhr-cards,
+.zhr-future-cards,
+.design-cards,
+.family-cards,
+.transport-cards,
+.research-cards,
+.vision-cards {
+    gap: 22px;
+}
+
+.future-core-cards > .future-mini-card {
+    min-height: 190px;
+}
+
+.os-cards > .os-card,
+.rose-cards > .rose-card,
+.zhr-cards > .zhr-card,
+.zhr-future-cards > .zhr-future-card,
+.design-cards > .design-card,
+.family-cards > .family-card,
+.transport-cards > .transport-card,
+.research-cards > .research-card,
+.vision-cards > .vision-card {
+    min-height: 205px;
+}
+
+
+/* Main glass panels */
+
+.mobility-universe.ars-glass,
+.os-core-panel.ars-glass,
+.rose-core.ars-glass,
+.zhr-core.ars-glass,
+.zhr-ecosystem-core.ars-glass,
+.design-future-main.ars-glass,
+.family-network.ars-glass,
+.transport-core.ars-glass,
+.research-main.ars-glass,
+.vision-2050-core.ars-glass,
+.ai-gateway-card.ars-glass {
+    border: 1px solid rgba(150, 114, 93, .28);
+    border-radius: 28px;
+
+    background:
+        radial-gradient(
+            ellipse at 15% 10%,
+            rgba(150, 114, 93, .085),
+            transparent 40%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(15, 25, 36, .94),
+            rgba(4, 8, 14, .96)
+        );
+
+    box-shadow:
+        0 28px 70px rgba(0, 0, 0, .35),
+        inset 0 1px 0 rgba(255, 255, 255, .055);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+
+/* ------------------------------------------------------------
+   07 — MOBILITY IMAGE CARDS
+   ------------------------------------------------------------ */
+
+.mobility-universe.ars-glass {
+    padding: clamp(18px, 3vw, 36px);
+}
+
+.mobility-card {
+    min-height: 280px;
+    border-radius: 20px;
+}
+
+.mobility-card img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform .65s ease,
+        filter .5s ease;
+
+    filter: saturate(.84) contrast(1.06);
+}
+
+.mobility-card:hover img {
+    transform: scale(1.045);
+    filter: saturate(1.02) contrast(1.08);
+}
+
+
+/* ------------------------------------------------------------
+   08 — GLASS MESSAGE PANELS
+   ------------------------------------------------------------ */
+
+.mobility-message.ars-glass,
+.zhr-message.ars-glass,
+.zhr-human-message.ars-glass,
+.design-message.ars-glass,
+.family-vision.ars-glass,
+.transport-message.ars-glass,
+.research-timeline.ars-glass,
+.future-manifesto.ars-glass,
+.future-closing.ars-glass {
+    padding: clamp(28px, 4vw, 48px);
+
+    border: 1px solid rgba(150, 114, 93, .30);
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(20, 30, 40, .88),
+            rgba(5, 10, 17, .91)
+        );
+
+    box-shadow:
+        0 20px 55px rgba(0, 0, 0, .30),
+        inset 0 1px 0 rgba(255, 255, 255, .055);
+}
+
+.mobility-message h2,
+.zhr-message h2,
+.zhr-human-message h2,
+.design-message h2,
+.family-vision h2,
+.transport-message h2,
+.future-manifesto h2,
+.future-closing h2 {
+    color: var(--fl-bronze-light) !important;
+
+    font-size: clamp(1.65rem, 2.8vw, 2.8rem);
+    font-weight: 760;
+    line-height: 1.2;
+    letter-spacing: -.04em;
+}
+
+
+/* ------------------------------------------------------------
+   09 — CORE VISUALS: BLUE IS LIGHT, NOT TYPOGRAPHY
+   ------------------------------------------------------------ */
+
+.future-core-visual.ars-hologram {
+    filter: drop-shadow(0 0 32px rgba(8, 124, 255, .12));
+}
+
+.future-core-visual .core-ring {
+    border-color: rgba(54, 201, 244, .42);
+    box-shadow: 0 0 22px rgba(8, 124, 255, .08);
+}
+
+.future-core-visual .ring-2 {
+    border-color: rgba(177, 138, 112, .62);
+}
+
+.os-circle {
+    box-shadow:
+        0 0 30px rgba(8, 124, 255, .13),
+        inset 0 0 20px rgba(8, 124, 255, .06);
+}
+
+.os-node {
+    border-color: rgba(177, 138, 112, .55);
+}
+
+.rose-orb,
+.ai-orb {
+    filter: drop-shadow(0 0 28px rgba(8, 124, 255, .13));
+}
+
+.rose-wave,
+.zhr-pulse {
+    border-color: rgba(177, 138, 112, .38);
+}
+
+.zhr-center,
+.family-core {
+    box-shadow:
+        0 0 24px rgba(8, 124, 255, .1),
+        0 0 24px rgba(150, 114, 93, .08);
+}
+
+.network-line {
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(54, 201, 244, .58),
+            rgba(177, 138, 112, .5),
+            transparent
+        );
+}
+
+
+/* ------------------------------------------------------------
+   10 — IMAGE VISUALS
+   ------------------------------------------------------------ */
+
+.rose-visual img,
+.zhr-center img,
+.design-visual img,
+.family-core img,
+.earth-network img,
+.research-visual img,
+.ai-orb img,
+.future-core-logo img {
+    max-width: 100%;
+}
+
+.design-visual img,
+.earth-network img,
+.research-visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+/* ------------------------------------------------------------
+   11 — TIMELINE AND YEAR
+   ------------------------------------------------------------ */
+
+.research-step {
+    padding: 25px;
+
+    border: 1px solid rgba(150, 114, 93, .30);
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(19, 31, 43, .92),
+            rgba(5, 10, 17, .94)
+        );
+}
+
+.research-step > span {
+    color: var(--fl-bronze-light) !important;
+    font-weight: 750;
+}
+
+.research-step h3 {
+    color: var(--fl-white) !important;
+}
+
+.vision-year {
+    color: var(--fl-bronze-light) !important;
+
+    font-size: clamp(5rem, 12vw, 10rem);
+    font-weight: 800;
+    letter-spacing: -.08em;
+
+    text-shadow: 0 10px 40px rgba(150, 114, 93, .12);
+}
+
+
+/* ------------------------------------------------------------
+   12 — LINKS AND BUTTONS
+   ------------------------------------------------------------ */
+
+.future-lab a,
+.future-space-core a,
+.future-mobility a,
+.ars-os-core a,
+.rose-future a,
+.zhr-future a,
+.zhr-future-ecosystem a,
+.design-future a,
+.ars-digital-family a,
+.ars-smart-transportation a,
+.ars-research-lab a,
+.ars-2050-vision a,
+.future-ai-gateway a {
+    transition:
+        color .3s ease,
+        background .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease,
+        transform .3s ease;
+}
+
+.future-lab .future-ai-entry a {
+    border-color: rgba(150, 114, 93, .56);
+}
+
+
+/* ------------------------------------------------------------
+   13 — TABLET
+   ------------------------------------------------------------ */
+
+@media (max-width: 1024px) {
+    .future-lab {
+        min-height: auto;
+    }
+
+    .future-lab .future-hero {
+        padding-top: 120px;
+        padding-bottom: 90px;
+    }
+
+    .future-lab .future-hero h1 {
+        font-size: clamp(3rem, 8vw, 5.2rem);
+    }
+
+    .mobility-card {
+        min-height: 235px;
+    }
+
+    .future-mini-card,
+    .os-card,
+    .rose-card,
+    .zhr-card,
+    .zhr-future-card,
+    .design-card,
+    .family-card,
+    .transport-card,
+    .research-card,
+    .vision-card {
+        min-height: 180px;
+    }
+}
+
+
+/* ------------------------------------------------------------
+   14 — MOBILE
+   ------------------------------------------------------------ */
+
+@media (max-width: 640px) {
+    .future-lab .future-hero {
+        padding-top: 100px;
+        padding-bottom: 70px;
+    }
+
+    .future-lab .future-hero h1 {
+        font-size: clamp(2.55rem, 10.5vw, 3.8rem);
+        line-height: 1.04;
+        letter-spacing: -.055em;
+    }
+
+    .section-heading > h2 {
+        font-size: clamp(2rem, 8.3vw, 2.9rem);
+    }
+
+    .future-core-content > h2,
+    .os-content > h2,
+    .rose-content > h2,
+    .zhr-content > h2,
+    .zhr-ecosystem-content > h2,
+    .design-content > h2,
+    .family-content > h2,
+    .transport-content > h2,
+    .research-content > h2,
+    .vision-content > h2,
+    .ai-gateway-content > h2 {
+        font-size: clamp(1.7rem, 7vw, 2.35rem);
+    }
+
+    .future-space-core,
+    .future-mobility,
+    .ars-os-core,
+    .rose-future,
+    .zhr-future,
+    .zhr-future-ecosystem,
+    .design-future,
+    .ars-digital-family,
+    .ars-smart-transportation,
+    .ars-research-lab,
+    .ars-2050-vision,
+    .future-ai-gateway {
+        padding-top: 68px;
+        padding-bottom: 68px;
+    }
+
+    .future-mini-card,
+    .mobility-card,
+    .os-card,
+    .rose-card,
+    .zhr-card,
+    .zhr-future-card,
+    .design-card,
+    .family-card,
+    .transport-card,
+    .research-card,
+    .vision-card {
+        min-height: 0;
+        padding: 23px;
+    }
+
+    .mobility-card {
+        min-height: 220px;
+    }
+
+    .future-lab .future-ai-entry {
+        max-width: 100%;
+        padding: 25px;
+    }
+
+    .vision-year {
+        font-size: clamp(4.5rem, 20vw, 7rem);
+    }
+}
+
+
+/* ------------------------------------------------------------
+   15 — REDUCED MOTION
+   ------------------------------------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+    .future-lab *,
+    .future-space-core *,
+    .future-mobility *,
+    .ars-os-core *,
+    .rose-future *,
+    .zhr-future *,
+    .zhr-future-ecosystem *,
+    .design-future *,
+    .ars-digital-family *,
+    .ars-smart-transportation *,
+    .ars-research-lab *,
+    .ars-2050-vision *,
+    .future-ai-gateway * {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+/* ================= END HTML-ALIGNED PATCH ================= */
 
