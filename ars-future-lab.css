@@ -4777,3 +4777,525 @@ section h4 {
 /* ============================================================
    END — ELECTRIC BLUE DOMINANCE v1.0
    ============================================================ */
+
+
+
+/* ============================================================
+   ARS FUTURE LAB
+   GLOBAL ELECTRIC FUTURE BLUE × MATTE CHAMPAGNE
+   FULL-PAGE COLOR OVERRIDE — v2.0
+
+   Based strictly on the supplied HTML selectors.
+   Append at the END of ars-future-lab.css.
+   ============================================================ */
+
+
+/* ============================================================
+   01 — GLOBAL COLOR SYSTEM
+   ============================================================ */
+
+:root {
+    --ars-future-blue: #087CFF;
+    --ars-neon-blue: #00A3FF;
+    --ars-electric-cyan: #00E5FF;
+    --ars-quantum-blue: #245BFF;
+    --ars-ice-blue: #C5F5FF;
+
+    --ars-matte-champagne: #C7AD7F;
+    --ars-champagne-light: #E5D2A9;
+
+    --ars-deep-space: #041B46;
+    --ars-midnight-blue: #05285F;
+    --ars-space-blue: #073B86;
+    --ars-black-blue: #05265B;
+
+    --ars-body-text: #CDEAFF;
+    --ars-heading-blue: #35B7FF;
+
+    --ars-blue-glass:
+        linear-gradient(
+            135deg,
+            rgba(8, 91, 190, 0.88),
+            rgba(5, 65, 151, 0.84)
+        );
+
+    --ars-blue-glass-light:
+        linear-gradient(
+            135deg,
+            rgba(13, 112, 226, 0.76),
+            rgba(5, 72, 166, 0.80)
+        );
+}
+
+
+/* ============================================================
+   02 — PAGE BASE
+   Make the whole page feel like a future technology environment.
+   ============================================================ */
+
+html {
+    background-color: #05285F;
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+        radial-gradient(
+            ellipse at 50% 8%,
+            rgba(0, 163, 255, 0.22) 0%,
+            transparent 38%
+        ),
+        radial-gradient(
+            ellipse at 8% 34%,
+            rgba(0, 229, 255, 0.10) 0%,
+            transparent 32%
+        ),
+        radial-gradient(
+            ellipse at 92% 66%,
+            rgba(0, 112, 255, 0.18) 0%,
+            transparent 38%
+        ),
+        linear-gradient(
+            145deg,
+            #073B86 0%,
+            #06469B 28%,
+            #07377F 60%,
+            #05285F 100%
+        ) !important;
+
+    color: var(--ars-body-text);
+}
+
+
+/* ============================================================
+   03 — ALL MAJOR SECTIONS
+   Replace the old navy-dominant backgrounds with future blue.
+   ============================================================ */
+
+.future-lab,
+.future-space-core,
+.future-mobility,
+.ars-os-core,
+.rose-future,
+.zhr-future,
+.zhr-future-ecosystem,
+.design-future,
+.ars-digital-family,
+.ars-smart-transportation,
+.ars-research-lab,
+.ars-2050-vision,
+.future-ai-gateway {
+    position: relative;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 24%,
+            rgba(0, 163, 255, 0.16) 0%,
+            transparent 55%
+        ),
+        linear-gradient(
+            135deg,
+            rgba(7, 68, 151, 0.96) 0%,
+            rgba(5, 76, 170, 0.94) 48%,
+            rgba(5, 48, 119, 0.97) 100%
+        ) !important;
+}
+
+
+/* Alternate blue illumination across sections.
+   This prevents the page from becoming one flat blue block. */
+
+.future-space-core,
+.ars-os-core,
+.zhr-future-ecosystem,
+.ars-digital-family,
+.ars-research-lab,
+.future-ai-gateway {
+    background:
+        radial-gradient(
+            ellipse at 78% 30%,
+            rgba(0, 229, 255, 0.11) 0%,
+            transparent 42%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(8, 88, 183, 0.97) 0%,
+            rgba(5, 58, 139, 0.97) 52%,
+            rgba(5, 43, 105, 0.98) 100%
+        ) !important;
+}
+
+
+/* ============================================================
+   04 — HERO BACKGROUND
+   Keep the reference image's vivid blue character.
+   ============================================================ */
+
+.future-lab {
+    background:
+        radial-gradient(
+            ellipse at 50% 42%,
+            rgba(0, 183, 255, 0.28) 0%,
+            transparent 48%
+        ),
+        radial-gradient(
+            ellipse at 80% 12%,
+            rgba(0, 229, 255, 0.13) 0%,
+            transparent 38%
+        ),
+        linear-gradient(
+            135deg,
+            #07377F 0%,
+            #0750AD 42%,
+            #06449A 68%,
+            #052D6D 100%
+        ) !important;
+}
+
+.future-space-bg {
+    background:
+        radial-gradient(
+            ellipse at 50% 40%,
+            rgba(0, 229, 255, 0.17),
+            transparent 58%
+        ),
+        radial-gradient(
+            ellipse at 30% 65%,
+            rgba(0, 163, 255, 0.18),
+            transparent 50%
+        ) !important;
+}
+
+
+/* ============================================================
+   05 — HERO TITLE
+   ============================================================ */
+
+.future-hero h1 {
+    color: #00BFFF;
+
+    background: linear-gradient(
+        105deg,
+        #00E5FF 0%,
+        #00BFFF 34%,
+        #087CFF 70%,
+        #73D8FF 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
+        0 0 22px rgba(0, 163, 255, 0.12),
+        0 0 42px rgba(0, 229, 255, 0.08);
+}
+
+.future-hero > p {
+    color: #D1E9FF;
+}
+
+
+/* ============================================================
+   06 — HERO LABEL: CHAMPAGNE SIGNATURE
+   ============================================================ */
+
+.future-label {
+    color: var(--ars-champagne-light);
+
+    border-color: rgba(229, 210, 169, 0.72);
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(199, 173, 127, 0.12),
+            rgba(0, 163, 255, 0.08)
+        );
+}
+
+
+/* ============================================================
+   07 — HERO AI ENTRY PANEL
+   ============================================================ */
+
+.future-ai-entry {
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(0, 229, 255, 0.18),
+            transparent 64%
+        ),
+        linear-gradient(
+            135deg,
+            rgba(7, 83, 177, 0.94),
+            rgba(4, 55, 128, 0.94)
+        ) !important;
+
+    border: 1px solid rgba(199, 173, 127, 0.75);
+
+    box-shadow:
+        inset 0 1px 0 rgba(197, 245, 255, 0.16),
+        inset 0 0 30px rgba(0, 163, 255, 0.10),
+        0 18px 48px rgba(0, 22, 68, 0.18);
+}
+
+.future-ai-entry > span,
+.future-core-content > span,
+.ai-gateway-content > span {
+    color: var(--ars-electric-cyan);
+}
+
+.future-ai-entry h2 {
+    color: #EAF8FF;
+}
+
+.future-ai-entry a,
+.ai-gateway-content > a {
+    color: #FFFFFF;
+
+    background: linear-gradient(
+        105deg,
+        #087CFF 0%,
+        #00BFFF 52%,
+        #00E5FF 100%
+    );
+
+    border: 1px solid rgba(197, 245, 255, 0.90);
+
+    box-shadow:
+        0 0 26px rgba(0, 195, 255, 0.23),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        filter 0.3s ease;
+}
+
+.future-ai-entry a:hover,
+.ai-gateway-content > a:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+
+    box-shadow:
+        0 0 34px rgba(0, 195, 255, 0.32),
+        0 0 48px rgba(0, 229, 255, 0.13);
+}
+
+
+/* ============================================================
+   08 — SHARED GLASS SURFACES
+   Critical: these classes are used across the supplied HTML.
+   ============================================================ */
+
+.ars-glass,
+.mobility-universe,
+.os-core-panel,
+.rose-core,
+.zhr-core,
+.zhr-ecosystem-core,
+.design-future-main,
+.family-network,
+.transport-core,
+.research-main,
+.research-timeline,
+.vision-2050-core,
+.ai-gateway-card,
+.future-closing {
+    background:
+        radial-gradient(
+            ellipse at 15% 0%,
+            rgba(0, 229, 255, 0.11),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            rgba(10, 103, 210, 0.82),
+            rgba(5, 66, 157, 0.88)
+        ) !important;
+
+    border-color: rgba(76, 178, 255, 0.42);
+
+    box-shadow:
+        inset 0 1px 0 rgba(197, 245, 255, 0.12),
+        inset 0 0 35px rgba(0, 163, 255, 0.06),
+        0 16px 42px rgba(0, 25, 78, 0.12);
+
+    -webkit-backdrop-filter: blur(16px) saturate(135%);
+    backdrop-filter: blur(16px) saturate(135%);
+}
+
+
+/* More illuminated panels for key showcase areas. */
+
+.mobility-message,
+.zhr-message,
+.zhr-human-message,
+.design-message,
+.family-vision,
+.transport-message,
+.future-manifesto {
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(0, 229, 255, 0.12),
+            transparent 62%
+        ),
+        linear-gradient(
+            120deg,
+            rgba(8, 95, 198, 0.88),
+            rgba(5, 64, 151, 0.90)
+        ) !important;
+
+    border-color: rgba(199, 173, 127, 0.42);
+}
+
+
+/* ============================================================
+   09 — SECTION HEADINGS
+   All .section-heading elements exist in the supplied HTML.
+   ============================================================ */
+
+.section-heading > span {
+    color: var(--ars-electric-cyan);
+
+    letter-spacing: 0.16em;
+
+    text-shadow:
+        0 0 15px rgba(0, 229, 255, 0.16);
+}
+
+.section-heading h2 {
+    color: var(--ars-champagne-light);
+
+    text-shadow:
+        0 0 20px rgba(199, 173, 127, 0.09);
+}
+
+.section-heading > p {
+    color: #CDEAFF;
+}
+
+
+/* ============================================================
+   10 — CORE CONTENT HEADINGS
+   ============================================================ */
+
+.future-core-content h2,
+.os-content h2,
+.rose-content h2,
+.zhr-content h2,
+.zhr-ecosystem-content h2,
+.design-content h2,
+.family-content h2,
+.transport-content h2,
+.research-content h2,
+.vision-content h2,
+.ai-gateway-content h2 {
+    color: #42B8FF;
+
+    text-shadow:
+        0 0 20px rgba(0, 163, 255, 0.10);
+}
+
+
+/* ============================================================
+   11 — CARD SURFACES
+   Apply to actual card classes from the HTML.
+   ============================================================ */
+
+.future-mini-card,
+.mobility-card,
+.os-card,
+.rose-card,
+.zhr-card,
+.zhr-future-card,
+.design-card,
+.family-card,
+.transport-card,
+.research-card,
+.vision-card {
+    background:
+        linear-gradient(
+            140deg,
+            rgba(11, 105, 210, 0.72),
+            rgba(5, 67, 157, 0.78)
+        ) !important;
+
+    border-color: rgba(73, 175, 255, 0.30);
+
+    box-shadow:
+        inset 0 1px 0 rgba(197, 245, 255, 0.08),
+        0 10px 28px rgba(0, 25, 78, 0.10);
+}
+
+
+/* ============================================================
+   12 — CARD HEADINGS
+   ============================================================ */
+
+.future-mini-card h3,
+.mobility-card h3,
+.os-card h3,
+.rose-card h3,
+.zhr-card h3,
+.zhr-future-card h3,
+.design-card h3,
+.family-card h3,
+.transport-card h3,
+.research-card h3,
+.vision-card h3 {
+    color: #39B8FF;
+}
+
+
+/* ============================================================
+   13 — BODY TEXT
+   Readable blue-white instead of pure white everywhere.
+   ============================================================ */
+
+.future-core-content > p,
+.future-mini-card > p,
+.mobility-card > p,
+.mobility-message > p,
+.os-content > p,
+.os-card > p,
+.rose-content > p,
+.rose-card > p,
+.zhr-content > p,
+.zhr-card > p,
+.zhr-message > p,
+.zhr-ecosystem-content > p,
+.zhr-future-card > p,
+.zhr-human-message > p,
+.design-content > p,
+.design-card > p,
+.design-message > p,
+.family-content > p,
+.family-card > p,
+.family-vision > p,
+.transport-content > p,
+.transport-card > p,
+.transport-message > p,
+.research-content > p,
+.research-card > p,
+.research-step > p,
+.vision-content > p,
+.vision-card > p,
+.future-manifesto > p,
+.ai-gateway-content > p,
+.future-closing > p {
+    color: #CDEAFF;
+}
+
+
+/* ============================================================
+   14 — SELECTED CHAMPAGNE STATEMENTS
+   ============================================================ */
+
+.mobility-message h2,
+.zhr-message h2,
+.zhr-human-message h2,
+.design-message h2,
+.family-vision h2,
+.transport-message h2
