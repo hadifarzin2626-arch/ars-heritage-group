@@ -4780,6 +4780,13 @@ section h4 {
 
 
 
+
+
+
+
+
+
+
 /* ============================================================
    ARS FUTURE LAB
    GLOBAL ELECTRIC FUTURE BLUE × MATTE CHAMPAGNE
@@ -5298,4 +5305,141 @@ body {
 .zhr-human-message h2,
 .design-message h2,
 .family-vision h2,
-.transport-message h2
+.transport-message h2,
+.future-manifesto h2,
+.future-closing h2 {
+    color: var(--ars-champagne-light);
+}
+
+
+/* ============================================================
+   15 — FUTURE VISUALS AND ENERGY DETAILS
+   ============================================================ */
+
+.core-ring,
+.rose-wave,
+.zhr-pulse,
+.network-line,
+.design-light,
+.research-core-light,
+.vision-year,
+.ai-orb {
+    border-color: rgba(0, 229, 255, 0.62);
+}
+
+.os-circle {
+    border-color: rgba(0, 229, 255, 0.82);
+
+    box-shadow:
+        0 0 25px rgba(0, 163, 255, 0.20),
+        inset 0 0 22px rgba(0, 229, 255, 0.10);
+}
+
+.os-node,
+.zhr-node,
+.research-step > span {
+    border-color: rgba(0, 229, 255, 0.52);
+    color: #C5F5FF;
+}
+
+.vision-year > span {
+    color: #00CFFF;
+
+    text-shadow:
+        0 0 30px rgba(0, 163, 255, 0.25);
+}
+
+
+/* ============================================================
+   16 — IMAGE PRESENTATION
+   Do not hide missing images; preserve their alt text.
+   ============================================================ */
+
+.mobility-card img,
+.future-core-logo img,
+.rose-orb img,
+.zhr-center img,
+.design-visual img,
+.family-core img,
+.earth-network img,
+.research-visual img,
+.ai-orb img {
+    filter: saturate(1.12);
+}
+
+
+/* ============================================================
+   17 — ACCESSIBILITY AND MOBILE
+   ============================================================ */
+
+.future-ai-entry a:focus-visible,
+.ai-gateway-content > a:focus-visible {
+    outline: 2px solid var(--ars-champagne-light);
+    outline-offset: 5px;
+}
+
+@media (max-width: 700px) {
+    .future-lab,
+    .future-space-core,
+    .future-mobility,
+    .ars-os-core,
+    .rose-future,
+    .zhr-future,
+    .zhr-future-ecosystem,
+    .design-future,
+    .ars-digital-family,
+    .ars-smart-transportation,
+    .ars-research-lab,
+    .ars-2050-vision,
+    .future-ai-gateway {
+        background:
+            radial-gradient(
+                ellipse at 50% 20%,
+                rgba(0, 163, 255, 0.15),
+                transparent 58%
+            ),
+            linear-gradient(
+                145deg,
+                rgba(7, 68, 151, 0.98),
+                rgba(5, 52, 127, 0.98)
+            ) !important;
+    }
+
+    .ars-glass,
+    .mobility-universe,
+    .os-core-panel,
+    .rose-core,
+    .zhr-core,
+    .zhr-ecosystem-core,
+    .design-future-main,
+    .family-network,
+    .transport-core,
+    .research-main,
+    .research-timeline,
+    .vision-2050-core,
+    .ai-gateway-card,
+    .future-closing {
+        background:
+            linear-gradient(
+                145deg,
+                rgba(9, 94, 195, 0.88),
+                rgba(5, 64, 150, 0.91)
+            ) !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .future-ai-entry a,
+    .ai-gateway-content > a {
+        transition: none;
+    }
+}
+
+/* ============================================================
+   END — FULL-PAGE ELECTRIC FUTURE BLUE
+   ============================================================ */
+
