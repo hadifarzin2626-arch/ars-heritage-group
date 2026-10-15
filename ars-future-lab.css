@@ -7720,3 +7720,148 @@ inset: 0;
         animation: none !important;
     }
        }
+
+
+
+
+
+/* =========================================================
+   ARS FUTURE LAB — FULL-PAGE PARTICLE ENHANCEMENT
+   Full section coverage | +30% density | +35% brightness
+   No HTML or typography changes
+   ========================================================= */
+
+/* Make the complete Future Lab section the effects canvas */
+.future-lab {
+    position: relative;
+    isolation: isolate;
+}
+
+/* Extend the effect layers across the complete section */
+.future-lab .future-space-bg,
+.future-lab .future-grid {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Keep effects behind the page content */
+.future-lab .future-space-bg {
+    z-index: 0;
+}
+
+.future-lab .future-grid {
+    z-index: 0;
+    opacity: 1;
+}
+
+/* Increase particle density by reducing pattern spacing */
+.future-lab .future-grid::before,
+.future-lab .future-grid::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(226, 199, 174, 1) 0 1.2px,
+            rgba(177, 138, 112, 0.43) 2px,
+            transparent 4px
+        ),
+        radial-gradient(
+            circle,
+            rgba(177, 138, 112, 1) 0 1.2px,
+            transparent 3.5px
+        ),
+        radial-gradient(
+            circle,
+            rgba(226, 199, 174, 0.95) 0 1px,
+            transparent 3.5px
+        ),
+        radial-gradient(
+            circle,
+            rgba(177, 138, 112, 0.75) 0 1px,
+            transparent 3px
+        );
+
+    background-size:
+        130px 145px,
+        180px 170px,
+        235px 210px,
+        155px 190px;
+
+    background-position:
+        20px 30px,
+        100px 80px,
+        50px 150px,
+        75px 45px;
+
+    background-repeat: repeat;
+}
+
+/* Particle layer A */
+.future-lab .future-grid::before {
+    opacity: 0.88;
+    animation: arsFLParticlesA 22s linear infinite;
+}
+
+/* Particle layer B */
+.future-lab .future-grid::after {
+    opacity: 0.54;
+    animation: arsFLParticlesB 30s linear infinite;
+}
+
+/* Keep all actual content above the particle layers */
+.future-lab .future-container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Smooth movement across the entire section */
+@keyframes arsFLParticlesA {
+    from {
+        background-position:
+            20px 30px,
+            100px 80px,
+            50px 150px,
+            75px 45px;
+    }
+    to {
+        background-position:
+            20px -160px,
+            220px -80px,
+            -70px -50px,
+            175px -145px;
+    }
+}
+
+@keyframes arsFLParticlesB {
+    from {
+        background-position:
+            50px 150px,
+            100px 80px,
+            20px 30px,
+            75px 45px;
+    }
+    to {
+        background-position:
+            -90px -60px,
+            0 200px,
+            180px -140px,
+            -125px 165px;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .future-lab .future-grid::before,
+    .future-lab .future-grid::after {
+        animation: none !important;
+    }
+}
